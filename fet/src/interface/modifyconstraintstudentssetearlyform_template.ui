@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>585</width>
-            <height>335</height>
+            <height>351</height>
         </rect>
     </property>
     <property name="caption">
@@ -19,118 +19,166 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QPushButton" row="5" column="0" rowspan="1" colspan="2">
+        <widget class="QLayoutWidget" row="0" column="1">
             <property name="name">
-                <cstring>okPushButton</cstring>
+                <cstring>layout38</cstring>
             </property>
-            <property name="text">
-                <string>Ok</string>
-            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>currentConstraintTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>Current constraint</string>
+                    </property>
+                </widget>
+                <widget class="QTextEdit">
+                    <property name="name">
+                        <cstring>currentConstraintTextEdit</cstring>
+                    </property>
+                    <property name="readOnly">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </vbox>
         </widget>
-        <widget class="QPushButton" row="5" column="2">
+        <widget class="QLayoutWidget" row="1" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>cancelPushButton</cstring>
+                <cstring>layout39</cstring>
             </property>
-            <property name="text">
-                <string>Cancel</string>
-            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>okPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Ok</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>cancelPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </hbox>
         </widget>
-        <widget class="QLabel" row="0" column="2">
+        <widget class="QLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>currentConstraintTextLabel</cstring>
+                <cstring>layout40</cstring>
             </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
-            </property>
-            <property name="text">
-                <string>Current constraint</string>
-            </property>
-        </widget>
-        <widget class="QTextEdit" row="1" column="2" rowspan="4" colspan="1">
-            <property name="name">
-                <cstring>currentConstraintTextEdit</cstring>
-            </property>
-            <property name="readOnly">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QLineEdit" row="4" column="1">
-            <property name="name">
-                <cstring>weightLineEdit</cstring>
-            </property>
-            <property name="text">
-                <string>100</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="0" column="0" rowspan="2" colspan="2">
-            <property name="name">
-                <cstring>weightTextLabel_2</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
-            </property>
-            <property name="text">
-                <string>Please note that in order to run the optimization algorithm,
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLineEdit" row="4" column="1">
+                    <property name="name">
+                        <cstring>weightLineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string>100</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="4" column="0">
+                    <property name="name">
+                        <cstring>weightTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>Weight percentage (necessary: 100%)</string>
+                    </property>
+                </widget>
+                <spacer row="1" column="0">
+                    <property name="name">
+                        <cstring>spacer20</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>40</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QComboBox" row="3" column="0" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>studentsComboBox</cstring>
+                    </property>
+                    <property name="editable">
+                        <bool>false</bool>
+                    </property>
+                    <property name="insertionPolicy">
+                        <enum>NoInsertion</enum>
+                    </property>
+                    <property name="autoCompletion">
+                        <bool>false</bool>
+                    </property>
+                    <property name="duplicatesEnabled">
+                        <bool>false</bool>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>weightTextLabel_2</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>Please note that in order to run the optimization algorithm,
 for each subgroup, you must have:
 	1. only no gaps or 
 	2. no gaps and early, with the same weight percentage
-
 You have to use weight percentage 100%, because
 otherwise you will get poor timetables. Currently, the algorithm
 only accepts 100% weight percentage for this constraint (or no
-constraint).</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="4" column="0">
-            <property name="name">
-                <cstring>weightTextLabel</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
-            </property>
-            <property name="text">
-                <string>Weight percentage (recommended: 100%)</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="2" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>studentsTextLabel</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
-            </property>
-            <property name="text">
-                <string>Students set</string>
-            </property>
-        </widget>
-        <widget class="QComboBox" row="3" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>studentsComboBox</cstring>
-            </property>
-            <property name="editable">
-                <bool>false</bool>
-            </property>
-            <property name="insertionPolicy">
-                <enum>NoInsertion</enum>
-            </property>
-            <property name="autoCompletion">
-                <bool>false</bool>
-            </property>
-            <property name="duplicatesEnabled">
-                <bool>false</bool>
-            </property>
+constraint).
+Note: students set not available and break are not counted as
+gaps (early gaps).</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="0" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>studentsTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>Students set</string>
+                    </property>
+                </widget>
+            </grid>
         </widget>
     </grid>
 </widget>

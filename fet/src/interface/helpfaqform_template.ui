@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 265 August 2007
+this documentation by Liviu Lalescu, reviewed and modified - 27 August 2007
 
 --------
 
@@ -65,7 +65,17 @@ A: - Students - organized into sets (years (or forms, or classes), containing gr
 
 Q: How to define the students into sections?
 
-A: Add years and the option "Divide ..." in the years dialog will be all that you need.
+A: Add years and the option "Divide ..." in the years dialog is the easiest way. You can also add manually years, groups and subgroups.
+
+
+-------------------------------------------------------------------------------
+
+
+Q: Help on ConstraintStudentsEarly.
+
+A: It is a constraint that imposes the condition that all the students must begin their courses as early as possible. The possible hours are the hours allowed from students not available and break. You have to be careful with this constraint: if any set of students begins the classes later than the first possible hour in a certain day, you will get a conflict.
+
+If you input only partial data, please use with caution. You might for instance input only 4+4 hourly activities of math with the same teacher for 2 students sets (each group of 4 activities must be ballanced - in different days). Then it is clear that you cannot place all 8 activities in a 5 days week without breaking the students early constraint, so you will get no possible timetable.
 
 
 -------------------------------------------------------------------------------
@@ -108,7 +118,7 @@ Activity2: teacher B, group boys, subject sport;
 
 Activity3: teacher C, group physics, subject optional physics.
 
-NEW: the thing can be automated now. Select year-&gt;divide in the years dialog.
+NEW: the thing can be also automated now. Select year-&gt;divide in the years dialog.
 
 
 
@@ -185,14 +195,6 @@ Example2: 2 activities, N=3. Then, one can place them on Monday and Thursday, on
 The weight is recommended to be between 95.0%-100.0%. It might be the case that you can use 99.75% for instance and timetable still solveable, and 100% not solveable. Please experiment with these.
 
 You can specify consecutive if same day. Please be careful, even if constraint min n days between activities has 0% weight, if you select this consecutive if same day, this consecutive will be forced. You will not be able to find a timetable with the two activities in the same day, separated by break, not available or other activities, even if the constraint has weight 0%, if you select consecutive if same day.
-
-
--------------------------------------------------------------------------------
-
-
-Q: Help on ConstraintStudentsEarly.
-
-A: It is a constraint that imposes the condition that all the students must begin their courses as early as possible. You have to be careful with this constraint: if any set of students begins the classes later than the first hour in a certain day, you will get a conflict.
 
 
 ------------------------------------------------------------------------------

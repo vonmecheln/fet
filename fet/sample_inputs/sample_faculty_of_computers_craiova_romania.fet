@@ -1,4 +1,4 @@
-<!DOCTYPE FET><FET version="5.0.0">
+﻿<!DOCTYPE FET><FET version="5.2.10">
 
 <Institution_Name>Default institution</Institution_Name>
 
@@ -6164,10 +6164,6 @@
 <ConstraintStudentsNoGaps>
 	<Weight_Percentage>100</Weight_Percentage>
 </ConstraintStudentsNoGaps>
-<ConstraintTeachersMaxGapsPerWeek>
-	<Weight_Percentage>0</Weight_Percentage>
-	<Max_Gaps>0</Max_Gaps>
-</ConstraintTeachersMaxGapsPerWeek>
 <ConstraintStudentsSetNotAvailable>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>C 10103</Students>

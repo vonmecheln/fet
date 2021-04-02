@@ -1030,41 +1030,42 @@ force activities consecutive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="27"/>
+        <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="67"/>
         <source>Add current constraint</source>
         <translation type="unfinished">Afegir activitat actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="35"/>
+        <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="75"/>
         <source>Close</source>
         <translation type="unfinished">Tancar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="49"/>
+        <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="41"/>
         <source>Current constraint</source>
         <translation type="unfinished">Restricció actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="65"/>
+        <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="147"/>
         <source>100</source>
         <translation type="unfinished">100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="79"/>
-        <source>Weight percentage (recommended: 100%)</source>
+        <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="116"/>
+        <source>Weight percentage (necessary: 100%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="93"/>
+        <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="130"/>
         <source>Please note that in order to run the optimization algorithm,
 for each subgroup, you must have:
 <byte value="x9"/>1. only no gaps or 
 <byte value="x9"/>2. no gaps and early, with the same weight percentage
-
 You have to use weight percentage 100%, because
 otherwise you will get poor timetables. Currently, the algorithm
 only accepts 100% weight percentage for this constraint (or no
-constraint).</source>
+constraint).
+Note: students set not available and break are not counted as
+gaps (early gaps).</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1152,41 +1153,42 @@ constraint).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="27"/>
+        <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="67"/>
         <source>Add current constraint</source>
         <translation type="unfinished">Afegir activitat actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="35"/>
+        <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="75"/>
         <source>Close</source>
         <translation type="unfinished">Tancar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="49"/>
+        <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="41"/>
         <source>Current constraint</source>
         <translation type="unfinished">Restricció actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="65"/>
+        <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="93"/>
         <source>100</source>
         <translation type="unfinished">100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="79"/>
-        <source>Weight - percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="93"/>
+        <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="107"/>
         <source>Please note that in order to run the optimization algorithm,
 for each subgroup, you must have:
 <byte value="x9"/>1. only no gaps or 
 <byte value="x9"/>2. no gaps and early, with the same weight percentage
-
 You have to use weight percentage 100%, because
 otherwise you will get poor timetables. Currently, the algorithm
 only accepts 100% weight percentage for this constraint (or no
-constraint).</source>
+constraint).
+Note: students set not available and break are not counted as
+gaps.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="130"/>
+        <source>Weight - percentage (necessary: 100%)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1198,47 +1200,48 @@ constraint).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="27"/>
+        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="67"/>
         <source>Add current constraint</source>
         <translation type="unfinished">Afegir activitat actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="35"/>
+        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="75"/>
         <source>Close</source>
         <translation type="unfinished">Tancar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="49"/>
+        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="41"/>
         <source>Current constraint</source>
         <translation type="unfinished">Restricció actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="65"/>
+        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="93"/>
         <source>100</source>
         <translation type="unfinished">100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="79"/>
-        <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="178"/>
+        <source>Students set</source>
+        <translation type="unfinished">Conjunt d&apos;estudians</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="93"/>
+        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="124"/>
         <source>Please note that in order to run the optimization algorithm,
 for each subgroup, you must have:
 <byte value="x9"/>1. only no gaps or 
 <byte value="x9"/>2. no gaps and early, with the same weight percentage
-
 You have to use weight percentage 100%, because
 otherwise you will get poor timetables. Currently, the algorithm
 only accepts 100% weight percentage for this constraint (or no
-constraint).</source>
+constraint).
+Note: students set not available and break are not counted as
+gaps (early gaps).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="132"/>
-        <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
+        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="147"/>
+        <source>Weight percentage (necessary: 100%)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1335,46 +1338,47 @@ constraint).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="27"/>
+        <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="67"/>
         <source>Add current constraint</source>
         <translation type="unfinished">Afegir activitat actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="35"/>
+        <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="75"/>
         <source>Close</source>
         <translation type="unfinished">Tancar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="49"/>
+        <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="41"/>
         <source>Current constraint</source>
         <translation type="unfinished">Restricció actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="88"/>
+        <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="116"/>
         <source>Students set</source>
         <translation type="unfinished">Conjunt d&apos;estudians</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="102"/>
-        <source>Weight - percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="110"/>
+        <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="124"/>
         <source>100</source>
         <translation type="unfinished">100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="124"/>
+        <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="169"/>
         <source>Please note that in order to run the optimization algorithm,
 for each subgroup, you must have:
 <byte value="x9"/>1. only no gaps or 
 <byte value="x9"/>2. no gaps and early, with the same weight percentage
-
 You have to use weight percentage 100%, because
 otherwise you will get poor timetables. Currently, the algorithm
 only accepts 100% weight percentage for this constraint (or no
-constraint).</source>
+constraint).
+Note: students set not available and break are not counted as 
+gaps.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="155"/>
+        <source>Weight - percentage (necessary: 100%)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1696,47 +1700,48 @@ not available period, there will be no gaps counted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="27"/>
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="35"/>
         <source>Add current constraint</source>
         <translation type="unfinished">Afegir activitat actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="35"/>
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="43"/>
         <source>Close</source>
         <translation type="unfinished">Tancar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="49"/>
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="67"/>
         <source>Current constraint</source>
         <translation type="unfinished">Restricció actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="71"/>
-        <source>Weight (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="79"/>
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="147"/>
         <source>100</source>
         <translation type="unfinished">100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="92"/>
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="186"/>
         <source>Max gaps per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="106"/>
-        <source>Please try to use weight percentage 100%, because
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="161"/>
+        <source>Teacher</source>
+        <translation type="unfinished">Professor</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="116"/>
+        <source>You must use weight percentage 100%, because
 otherwise you will get poor timetables. Try to fix firstly
 a rather large value for max gaps per week and
-lower it as you find new timetables.</source>
+lower it as you find new timetables. Note: teacher not 
+available and break are not counted as gaps.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="123"/>
-        <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="139"/>
+        <source>Weight (necessary: 100%)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1855,43 +1860,44 @@ not available period, there will be no gaps counted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="27"/>
+        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="35"/>
         <source>Add current constraint</source>
         <translation type="unfinished">Afegir activitat actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="35"/>
+        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="43"/>
         <source>Close</source>
         <translation type="unfinished">Tancar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="49"/>
+        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="67"/>
         <source>Current constraint</source>
         <translation type="unfinished">Restricció actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="71"/>
-        <source>Weight (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="79"/>
+        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="107"/>
         <source>100</source>
         <translation type="unfinished">100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="93"/>
-        <source>It is necessary to use only one constraint
-of this type for the optimization to be possible
-Please try to use weight percentage 100%, because
-otherwise you will get poor timetables. Try to fix firstly
-a rather large value for max gaps per week and
-lower it as you find new timetables.</source>
+        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="152"/>
+        <source>Max gaps per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="111"/>
-        <source>Max gaps per week</source>
+        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="99"/>
+        <source>Weight (necessary: 100%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="121"/>
+        <source>It is necessary to use only one constraint
+of this type for the optimization to be possible
+You must use weight percentage 100%, because
+otherwise you will get poor timetables. Try to fix firstly
+a rather large value for max gaps per week and
+lower it as you find new timetables. Note: teacher not 
+available and break are not counted as gaps.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4729,30 +4735,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.2.9 (August 2007)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="116"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -5040,6 +5022,30 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;It looks an excellent software for schools of all grades but not for universities&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.2.10 (August 2007)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HelpFaqForm_template</name>
@@ -5057,7 +5063,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/interface/helpfaqform_template.ui" line="41"/>
         <source>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 265 August 2007
+this documentation by Liviu Lalescu, reviewed and modified - 27 August 2007
 
 --------
 
@@ -5082,7 +5088,17 @@ A: - Students - organized into sets (years (or forms, or classes), containing gr
 
 Q: How to define the students into sections?
 
-A: Add years and the option &quot;Divide ...&quot; in the years dialog will be all that you need.
+A: Add years and the option &quot;Divide ...&quot; in the years dialog is the easiest way. You can also add manually years, groups and subgroups.
+
+
+-------------------------------------------------------------------------------
+
+
+Q: Help on ConstraintStudentsEarly.
+
+A: It is a constraint that imposes the condition that all the students must begin their courses as early as possible. The possible hours are the hours allowed from students not available and break. You have to be careful with this constraint: if any set of students begins the classes later than the first possible hour in a certain day, you will get a conflict.
+
+If you input only partial data, please use with caution. You might for instance input only 4+4 hourly activities of math with the same teacher for 2 students sets (each group of 4 activities must be ballanced - in different days). Then it is clear that you cannot place all 8 activities in a 5 days week without breaking the students early constraint, so you will get no possible timetable.
 
 
 -------------------------------------------------------------------------------
@@ -5125,7 +5141,7 @@ Activity2: teacher B, group boys, subject sport;
 
 Activity3: teacher C, group physics, subject optional physics.
 
-NEW: the thing can be automated now. Select year-&gt;divide in the years dialog.
+NEW: the thing can be also automated now. Select year-&gt;divide in the years dialog.
 
 
 
@@ -5202,14 +5218,6 @@ Example2: 2 activities, N=3. Then, one can place them on Monday and Thursday, on
 The weight is recommended to be between 95.0%-100.0%. It might be the case that you can use 99.75% for instance and timetable still solveable, and 100% not solveable. Please experiment with these.
 
 You can specify consecutive if same day. Please be careful, even if constraint min n days between activities has 0% weight, if you select this consecutive if same day, this consecutive will be forced. You will not be able to find a timetable with the two activities in the same day, separated by break, not available or other activities, even if the constraint has weight 0%, if you select consecutive if same day.
-
-
--------------------------------------------------------------------------------
-
-
-Q: Help on ConstraintStudentsEarly.
-
-A: It is a constraint that imposes the condition that all the students must begin their courses as early as possible. You have to be careful with this constraint: if any set of students begins the classes later than the first hour in a certain day, you will get a conflict.
 
 
 ------------------------------------------------------------------------------
@@ -5296,7 +5304,7 @@ You might want to choose different weights for different constraint min n days (
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform_template.ui" line="41"/>
-        <source>Updated: 23 August 2007
+        <source>Updated: 27 August 2007
 
 Instructions by Liviu Lalescu
 
@@ -5316,9 +5324,11 @@ You might want to choose different weights for different constraint min n days (
 
 4) Please only input the special rooms with constraints. Home rooms are not necessary (teachers&apos; or students&apos; rooms). You might firstly try togenerate a timetable without rooms, to see if it is possible, then add rooms and rooms related constraints.
 
-5) It is possible to work with institutions in which the students work in shifts (for instance, lowest forms in the morning and highest forms in the afternoon). Please see the Help/Frequently Asked Questions the solution to how to do that (the essence is to add corresponding constraints students set not available).
+5) Constraint students (set) early: if you input only partial data, please use with caution. You might for instance input only 4+4 hourly activities of math with the same teacher for 2 students sets (each group of 4 activities must be ballanced - in different days). Then it is clear that you cannot place all 8 activities in a 5 days week without breaking the students early constraint, so you will get no possible timetable.
 
-6) The new algorithm (after version 5.0.0) does not accept fortnightly activities. But you might apply a trick. Please see menu Help/Frequently Asked Questions menu (it has the description of a possible trick) (the essence is to make an activity with the sum of teachers and students of both fortnightly activities)</source>
+6) It is possible to work with institutions in which the students work in shifts (for instance, lowest forms in the morning and highest forms in the afternoon). Please see the Help/Frequently Asked Questions the solution to how to do that (the essence is to add corresponding constraints students set not available).
+
+7) The new algorithm (after version 5.0.0) does not accept fortnightly activities. But you might apply a trick. Please see menu Help/Frequently Asked Questions menu (it has the description of a possible trick) (the essence is to make an activity with the sum of teachers and students of both fortnightly activities)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6360,41 +6370,42 @@ force activities consecutive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="27"/>
+        <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="67"/>
         <source>Ok</source>
         <translation type="unfinished">D&apos;acord</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="35"/>
+        <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="75"/>
         <source>Cancel</source>
         <translation type="unfinished">Cancel·la</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="49"/>
+        <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="41"/>
         <source>Current constraint</source>
         <translation type="unfinished">Restricció actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="65"/>
+        <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="133"/>
         <source>100</source>
         <translation type="unfinished">100</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="79"/>
-        <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="93"/>
+        <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="116"/>
         <source>Please note that in order to run the optimization algorithm,
 for each subgroup, you must have:
 <byte value="x9"/>1. only no gaps or 
 <byte value="x9"/>2. no gaps and early, with the same weight percentage
-
 You have to use weight percentage 100%, because
 otherwise you will get poor timetables. Currently, the algorithm
 only accepts 100% weight percentage for this constraint (or no
-constraint).</source>
+constraint).
+Note: students set not available and break are not counted as
+gaps (early gaps).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="147"/>
+        <source>Weight percentage (necessary: 100%)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6482,41 +6493,42 @@ constraint).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="27"/>
+        <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="67"/>
         <source>Ok</source>
         <translation type="unfinished">D&apos;acord</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="35"/>
+        <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="75"/>
         <source>Cancel</source>
         <translation type="unfinished">Cancel·la</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="49"/>
+        <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="41"/>
         <source>Current constraint</source>
         <translation type="unfinished">Restricció actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="65"/>
+        <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="93"/>
         <source>100</source>
         <translation type="unfinished">100</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="93"/>
+        <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="124"/>
+        <source>Weight percentage (necessary: 100%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="138"/>
         <source>Please note that in order to run the optimization algorithm,
 for each subgroup, you must have:
 <byte value="x9"/>1. only no gaps or 
 <byte value="x9"/>2. no gaps and early, with the same weight percentage
-
 You have to use weight percentage 100%, because
 otherwise you will get poor timetables. Currently, the algorithm
 only accepts 100% weight percentage for this constraint (or no
-constraint).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="79"/>
-        <source>Weight percentage (recommended: 100%)</source>
+constraint).
+Note: students set not available and break are not counted as
+gaps.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6528,47 +6540,48 @@ constraint).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="27"/>
+        <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="67"/>
         <source>Ok</source>
         <translation type="unfinished">D&apos;acord</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="35"/>
+        <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="75"/>
         <source>Cancel</source>
         <translation type="unfinished">Cancel·la</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="49"/>
+        <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="41"/>
         <source>Current constraint</source>
         <translation type="unfinished">Restricció actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="65"/>
+        <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="93"/>
         <source>100</source>
         <translation type="unfinished">100</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="79"/>
+        <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="178"/>
+        <source>Students set</source>
+        <translation type="unfinished">Conjunt d&apos;estudians</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="107"/>
+        <source>Weight percentage (necessary: 100%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="155"/>
         <source>Please note that in order to run the optimization algorithm,
 for each subgroup, you must have:
 <byte value="x9"/>1. only no gaps or 
 <byte value="x9"/>2. no gaps and early, with the same weight percentage
-
 You have to use weight percentage 100%, because
 otherwise you will get poor timetables. Currently, the algorithm
 only accepts 100% weight percentage for this constraint (or no
-constraint).</source>
+constraint).
+Note: students set not available and break are not counted as
+gaps (early gaps).</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="101"/>
-        <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="115"/>
-        <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
     </message>
 </context>
 <context>
@@ -6665,46 +6678,47 @@ constraint).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="27"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="67"/>
         <source>Ok</source>
         <translation type="unfinished">D&apos;acord</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="35"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="75"/>
         <source>Cancel</source>
         <translation type="unfinished">Cancel·la</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="49"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="41"/>
         <source>Current constraint</source>
         <translation type="unfinished">Restricció actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="88"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="161"/>
         <source>Students</source>
         <translation type="unfinished">studiants</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="110"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="130"/>
         <source>100</source>
         <translation type="unfinished">100</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="124"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="113"/>
         <source>Please note that in order to run the optimization algorithm,
 for each subgroup, you must have:
 <byte value="x9"/>1. only no gaps or 
 <byte value="x9"/>2. no gaps and early, with the same weight percentage
-
 You have to use weight percentage 100%, because
 otherwise you will get poor timetables. Currently, the algorithm
 only accepts 100% weight percentage for this constraint (or no
-constraint).</source>
+constraint).
+Note: students set not available and break are not counted as
+gaps.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="102"/>
-        <source>Weight percentage (recommended: 100%)</source>
+        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="99"/>
+        <source>Weight percentage (necessary: 100%)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7026,47 +7040,48 @@ not available period, there will be no gaps counted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="27"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="35"/>
         <source>Ok</source>
         <translation type="unfinished">D&apos;acord</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="35"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="43"/>
         <source>Cancel</source>
         <translation type="unfinished">Cancel·la</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="49"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="178"/>
         <source>Current constraint</source>
         <translation type="unfinished">Restricció actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="65"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="115"/>
         <source>100</source>
         <translation type="unfinished">100</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="79"/>
-        <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="87"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="154"/>
         <source>Max gaps per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="106"/>
-        <source>Please try to use weight percentage 100%, because
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="90"/>
+        <source>Teacher</source>
+        <translation type="unfinished">Professor</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="72"/>
+        <source>You must use weight percentage 100%, because
 otherwise you will get poor timetables. Try to fix firstly
 a rather large value for max gaps per week and
-lower it as you find new timetables.</source>
+lower it as you find new timetables. Note: teacher not 
+available and break are not counted as gaps.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="123"/>
-        <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="129"/>
+        <source>Weight percentage (necessary: 100%)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7185,43 +7200,44 @@ not available period, there will be no gaps counted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="27"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="35"/>
         <source>Ok</source>
         <translation type="unfinished">D&apos;acord</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="35"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="43"/>
         <source>Cancel</source>
         <translation type="unfinished">Cancel·la</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="49"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="149"/>
         <source>Current constraint</source>
         <translation type="unfinished">Restricció actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="65"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="95"/>
         <source>100</source>
         <translation type="unfinished">100</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="79"/>
-        <source>Weight percentage (recommended: 100%)</source>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="103"/>
+        <source>Max gaps per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="93"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="67"/>
         <source>It is necessary to use only one constraint
 of this type for the optimization to be possible
-Please try to use weight percentage 100%, because
+You must use weight percentage 100%, because
 otherwise you will get poor timetables. Try to fix firstly
 a rather large value for max gaps per week and
-lower it as you find new timetables.</source>
+lower it as you find new timetables. Note: teacher not 
+available and break are not counted as gaps.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="106"/>
-        <source>Max gaps per week</source>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="87"/>
+        <source>Weight percentage (necessary: 100%)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9531,11 +9547,6 @@ referring to this activity before proceeding</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsearlyform.cpp" line="63"/>
-        <source>Students must begin classes at the first hour of each day</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsnogapsform.cpp" line="78"/>
         <source>Invalid weight(percentage)</source>
         <translation type="unfinished"></translation>
@@ -9543,11 +9554,6 @@ referring to this activity before proceeding</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform.cpp" line="70"/>
         <source>Max gaps=%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentsearlyform.cpp" line="66"/>
-        <source>Students must begin courses at the first hour of each day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9562,27 +9568,27 @@ referring to this activity before proceeding</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="760"/>
+        <location filename="../src/engine/generate_pre.cpp" line="797"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="884"/>
+        <location filename="../src/engine/generate_pre.cpp" line="921"/>
         <source>Cannot optimize for teacher %1, because it has at least two constraints max days per week. Please modify your data correspondingly (leave maximum one constraint of type constraint teacher max days per week for each teacher) and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="978"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1015"/>
         <source>Cannot optimize for subgroup %1, because you have a no gaps constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint no gaps or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="994"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1031"/>
         <source>Cannot optimize for subgroup %1, because you have an early constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint early or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1030"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1067"/>
         <source>Cannot optimize for subgroup %1, because early constraint has weight percentage %2, and &apos;no gaps&apos; constraint has weight percentage %3.. The algorithm can:
 1: Optimize with &apos;early&apos; and &apos;no gaps&apos; having the same weight percentage or
 2. Only &apos;no gaps&apos; optimization without &apos;early&apos;.
@@ -9635,11 +9641,6 @@ Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetearlyform.cpp" line="80"/>
-        <source>Students set must begin classes at the first hour of each day</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform.cpp" line="77"/>
         <source>Teacher max hours daily</source>
         <translation type="unfinished"></translation>
@@ -9647,11 +9648,6 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform.cpp" line="69"/>
         <source>Teachers max hours daily</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetearlyform.cpp" line="96"/>
-        <source>Students set must begin courses at the first hour of each day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9697,7 +9693,7 @@ If you really need that, please talk to the author
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1226"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1263"/>
         <source>Skip rest of constraints problems</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9712,52 +9708,52 @@ If you really need that, please talk to the author
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="761"/>
+        <location filename="../src/engine/generate_pre.cpp" line="798"/>
         <source>Skip rest of max gaps problems</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="761"/>
+        <location filename="../src/engine/generate_pre.cpp" line="798"/>
         <source>See next incompatibility max gaps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="885"/>
+        <location filename="../src/engine/generate_pre.cpp" line="922"/>
         <source>Skip rest of max days per week problems</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="885"/>
+        <location filename="../src/engine/generate_pre.cpp" line="922"/>
         <source>See next incompatibility max days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1033"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1070"/>
         <source>Skip rest of early - no gaps problems</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1033"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1070"/>
         <source>See next incompatibility no gaps - early</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1011"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1048"/>
         <source>Cannot optimize for subgroup %1, because a students early constraint exists for this subgroup, and you have not &apos;no gaps&apos; requirements for this subgroup. The algorithm can 1. optimize with &apos;early&apos; and &apos;no gaps&apos; having the same weight percentage or 2. only &apos;no gaps&apos; optimization without &apos;early&apos;. Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1180"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1217"/>
         <source>Cannot optimize, because you have constraints of type break with weight percentage less than 100%. Currently, FET can only optimize with constraints break with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1225"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1262"/>
         <source>Cannot optimize, because you have constraints of type activity preferred time with no day nor hour selected (for activity with id==%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1226"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1263"/>
         <source>See next incorrect constraint</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9813,17 +9809,17 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1841"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1878"/>
         <source>Skip rest of activities without rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1841"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1878"/>
         <source>See next problem</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1840"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1877"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed room (from the allowed number of students)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10038,12 +10034,12 @@ It is advisable to generate the timetable without the rooms, then, if a solution
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1362"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1399"/>
         <source>Cannot optimize, because you have no basic time constraints or weight lower than 100.0%. Please add a basic time constraint (100% weight)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1628"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1665"/>
         <source>Cannot optimize, because you have no basic space constraints or weight percentage lower than 100.0%. Please add a basic space constraint with 100% weight</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10202,12 +10198,12 @@ Separator character(s) is of your choice (default is space)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1108"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1145"/>
         <source>Cannot optimize, because you have constraints of type teacher not available with weight percentage less than 100% for teacher %1. Currently, FET can only optimize with constraints teacher not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1146"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1183"/>
         <source>Cannot optimize, because you have constraints of type students set not available with weight percentage less than 100% for students set %1. Currently, FET can only optimize with constraints students set not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10272,7 +10268,7 @@ Separator character(s) is of your choice (default is space)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1816"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1853"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed room (from constraints subject (subject tag) preferred room(s) and activity preferred room(s) )</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10510,32 +10506,32 @@ Starting with version 5.0.0, it is possible to add activities with no students o
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="797"/>
+        <location filename="../src/engine/generate_pre.cpp" line="834"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2  and you have only %3 days x %4 hours in a week. Probably you need to increase with 1 the number of hours per day (probably you misunderstood FET hours notation)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="801"/>
+        <location filename="../src/engine/generate_pre.cpp" line="838"/>
         <source>Skip rest of students problems</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="801"/>
+        <location filename="../src/engine/generate_pre.cpp" line="838"/>
         <source>See next students problem</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="821"/>
+        <location filename="../src/engine/generate_pre.cpp" line="858"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2  and you have only %3 free slots from constraints students set not available. Maybe you inputted wrong constraints students set not available or the number of hours per day is less with 1, because of a misunderstanding</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="824"/>
+        <location filename="../src/engine/generate_pre.cpp" line="861"/>
         <source>Skip rest of stud. not avail. problems</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="824"/>
+        <location filename="../src/engine/generate_pre.cpp" line="861"/>
         <source>See next stud. not avail. problem</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10566,6 +10562,36 @@ Starting with version 5.0.0, it is possible to add activities with no students o
     <message>
         <location filename="../src/interface/addstudentsyearform.cpp" line="61"/>
         <source>Year added. You might want to divide it into sections - this is done the easiest way in the years dialog - button &apos;Divide year ...&apos;, or more difficult by manually adding groups and subgroups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="715"/>
+        <source>Cannot optimize, because you have constraint teachers max gaps with weight (percentage) below 100. Please make weight 100% and try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="733"/>
+        <source>Cannot optimize, because you have constraint teacher max gaps with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsearlyform.cpp" line="66"/>
+        <source>Students must begin activities as early as possible (permitted by not available and break)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform.cpp" line="91"/>
+        <source>Invalid weight (percentage) - it must be 100%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentsnogapsform.cpp" line="83"/>
+        <source>Invalid weight(percentage) - it must be 100%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetearlyform.cpp" line="96"/>
+        <source>Students set must begin activities as early as possible (permitted by not available and break)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

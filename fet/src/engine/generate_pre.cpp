@@ -702,6 +702,43 @@ bool computeTeachersMaxGapsPercentage()
 	}
 	
 	bool ok=true;
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK){
+			ConstraintTeachersMaxGapsPerWeek* tg=(ConstraintTeachersMaxGapsPerWeek*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tg->weightPercentage!=100){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize, because you have constraint teachers max gaps with"
+				 " weight (percentage) below 100. Please make weight 100% and try again"),
+				 QObject::tr("Skip rest of max gaps problems"), QObject::tr("See next incompatibility max gaps"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+		}
+
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK){
+			ConstraintTeacherMaxGapsPerWeek* tg=(ConstraintTeacherMaxGapsPerWeek*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tg->weightPercentage!=100){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize, because you have constraint teacher max gaps with"
+				 " weight (percentage) below 100 for teacher %1. Please make weight 100% and try again")
+				 .arg(tg->teacherName),
+				 QObject::tr("Skip rest of max gaps problems"), QObject::tr("See next incompatibility max gaps"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+		}
+	}
 	
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK){
@@ -737,7 +774,7 @@ bool computeTeachersMaxGapsPercentage()
 		}
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK){
 			ConstraintTeacherMaxGapsPerWeek* tg=(ConstraintTeacherMaxGapsPerWeek*)gt.rules.internalTimeConstraintsList[i];
-			
+		
 			int j=tg->teacherIndex;
 			if(teachersMaxGapsMaxGaps[j]==-1 
 			 ||	teachersMaxGapsMaxGaps[j]>=0 && teachersMaxGapsMaxGaps[j]>=tg->maxGaps && teachersMaxGapsPercentage[j]<=tg->weightPercentage){

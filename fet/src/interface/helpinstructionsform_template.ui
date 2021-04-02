@@ -38,7 +38,7 @@
                 <cstring>textBrowser3_2</cstring>
             </property>
             <property name="text">
-                <string>Updated: 23 August 2007
+                <string>Updated: 27 August 2007
 
 Instructions by Liviu Lalescu
 
@@ -58,9 +58,11 @@ You might want to choose different weights for different constraint min n days (
 
 4) Please only input the special rooms with constraints. Home rooms are not necessary (teachers' or students' rooms). You might firstly try togenerate a timetable without rooms, to see if it is possible, then add rooms and rooms related constraints.
 
-5) It is possible to work with institutions in which the students work in shifts (for instance, lowest forms in the morning and highest forms in the afternoon). Please see the Help/Frequently Asked Questions the solution to how to do that (the essence is to add corresponding constraints students set not available).
+5) Constraint students (set) early: if you input only partial data, please use with caution. You might for instance input only 4+4 hourly activities of math with the same teacher for 2 students sets (each group of 4 activities must be ballanced - in different days). Then it is clear that you cannot place all 8 activities in a 5 days week without breaking the students early constraint, so you will get no possible timetable.
 
-6) The new algorithm (after version 5.0.0) does not accept fortnightly activities. But you might apply a trick. Please see menu Help/Frequently Asked Questions menu (it has the description of a possible trick) (the essence is to make an activity with the sum of teachers and students of both fortnightly activities)</string>
+6) It is possible to work with institutions in which the students work in shifts (for instance, lowest forms in the morning and highest forms in the afternoon). Please see the Help/Frequently Asked Questions the solution to how to do that (the essence is to add corresponding constraints students set not available).
+
+7) The new algorithm (after version 5.0.0) does not accept fortnightly activities. But you might apply a trick. Please see menu Help/Frequently Asked Questions menu (it has the description of a possible trick) (the essence is to make an activity with the sum of teachers and students of both fortnightly activities)</string>
             </property>
         </widget>
     </grid>

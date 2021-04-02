@@ -60,7 +60,7 @@ void AddConstraintStudentsEarlyForm::constraintChanged()
 	s+=QObject::tr("Compulsory=%1").arg(yesNo(compulsory));
 	s+="\n";*/
 
-	s+=QObject::tr("Students must begin classes at the first hour of each day");
+	s+=QObject::tr("Students must begin activities as early as possible (permitted by not available and break)");
 	s+="\n";
 
 	currentConstraintTextEdit->setText(s);
@@ -76,6 +76,11 @@ void AddConstraintStudentsEarlyForm::addCurrentConstraint()
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
 			QObject::tr("Invalid weight (percentage)"));
+		return;
+	}
+	if(weight!=100.0){
+		QMessageBox::warning(this, QObject::tr("FET information"),
+			QObject::tr("Invalid weight (percentage) - it must be 100%"));
 		return;
 	}
 

@@ -95,6 +95,11 @@ void AddConstraintTeacherMaxGapsPerWeekForm::addCurrentConstraint()
 			QObject::tr("Invalid weight (percentage)"));
 		return;
 	}
+	if(weight!=100.0){
+		QMessageBox::warning(this, QObject::tr("FET information"),
+			QObject::tr("Invalid weight (percentage) - it must be 100%"));
+		return;
+	}
 
 	QString teacher_name=teachersComboBox->currentText();
 	int teacher_ID=gt.rules.searchTeacher(teacher_name);

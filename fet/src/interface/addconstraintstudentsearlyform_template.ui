@@ -8,7 +8,7 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>585</width>
+            <width>610</width>
             <height>293</height>
         </rect>
     </property>
@@ -19,87 +19,135 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QPushButton" row="3" column="0" rowspan="1" colspan="2">
+        <widget class="QLayoutWidget" row="0" column="1">
             <property name="name">
-                <cstring>addConstraintPushButton</cstring>
+                <cstring>layout29</cstring>
             </property>
-            <property name="text">
-                <string>Add current constraint</string>
-            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>currentConstraintTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>Current constraint</string>
+                    </property>
+                </widget>
+                <widget class="QTextEdit">
+                    <property name="name">
+                        <cstring>currentConstraintTextEdit</cstring>
+                    </property>
+                    <property name="readOnly">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </vbox>
         </widget>
-        <widget class="QPushButton" row="3" column="2">
+        <widget class="QLayoutWidget" row="1" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>closePushButton</cstring>
+                <cstring>layout30</cstring>
             </property>
-            <property name="text">
-                <string>Close</string>
-            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>addConstraintPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Add current constraint</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>closePushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Close</string>
+                    </property>
+                </widget>
+            </hbox>
         </widget>
-        <widget class="QLabel" row="0" column="2">
+        <widget class="QLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>currentConstraintTextLabel</cstring>
+                <cstring>layout31</cstring>
             </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
-            </property>
-            <property name="text">
-                <string>Current constraint</string>
-            </property>
-        </widget>
-        <widget class="QTextEdit" row="1" column="2" rowspan="2" colspan="1">
-            <property name="name">
-                <cstring>currentConstraintTextEdit</cstring>
-            </property>
-            <property name="readOnly">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QLineEdit" row="2" column="1">
-            <property name="name">
-                <cstring>weightLineEdit</cstring>
-            </property>
-            <property name="text">
-                <string>100</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="2" column="0">
-            <property name="name">
-                <cstring>weightTextLabel</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
-            </property>
-            <property name="text">
-                <string>Weight percentage (recommended: 100%)</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="0" column="0" rowspan="2" colspan="2">
-            <property name="name">
-                <cstring>weightTextLabel_2</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
-            </property>
-            <property name="text">
-                <string>Please note that in order to run the optimization algorithm,
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <spacer row="1" column="0">
+                    <property name="name">
+                        <cstring>spacer11</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>40</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLabel" row="2" column="0">
+                    <property name="name">
+                        <cstring>weightTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>Weight percentage (necessary: 100%)</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>weightTextLabel_2</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>Please note that in order to run the optimization algorithm,
 for each subgroup, you must have:
 	1. only no gaps or 
 	2. no gaps and early, with the same weight percentage
-
 You have to use weight percentage 100%, because
 otherwise you will get poor timetables. Currently, the algorithm
 only accepts 100% weight percentage for this constraint (or no
-constraint).</string>
-            </property>
+constraint).
+Note: students set not available and break are not counted as
+gaps (early gaps).</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="2" column="1">
+                    <property name="name">
+                        <cstring>weightLineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string>100</string>
+                    </property>
+                </widget>
+            </grid>
         </widget>
     </grid>
 </widget>

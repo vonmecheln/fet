@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>585</width>
-            <height>251</height>
+            <width>668</width>
+            <height>299</height>
         </rect>
     </property>
     <property name="caption">
@@ -19,126 +19,174 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QPushButton" row="5" column="0" rowspan="1" colspan="3">
+        <widget class="QLayoutWidget" row="1" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>okPushButton</cstring>
+                <cstring>layout10</cstring>
             </property>
-            <property name="text">
-                <string>Ok</string>
-            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>okPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Ok</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>cancelPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </hbox>
         </widget>
-        <widget class="QPushButton" row="5" column="3">
+        <widget class="QLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>cancelPushButton</cstring>
+                <cstring>layout12</cstring>
             </property>
-            <property name="text">
-                <string>Cancel</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="0" column="3">
-            <property name="name">
-                <cstring>currentConstraintTextLabel</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
-            </property>
-            <property name="text">
-                <string>Current constraint</string>
-            </property>
-        </widget>
-        <widget class="QTextEdit" row="1" column="3" rowspan="4" colspan="1">
-            <property name="name">
-                <cstring>currentConstraintTextEdit</cstring>
-            </property>
-            <property name="readOnly">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QLineEdit" row="4" column="2">
-            <property name="name">
-                <cstring>weightLineEdit</cstring>
-            </property>
-            <property name="text">
-                <string>100</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="4" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>weightTextLabel</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
-            </property>
-            <property name="text">
-                <string>Weight percentage (recommended: 100%)</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="3" column="0">
-            <property name="name">
-                <cstring>textLabel1</cstring>
-            </property>
-            <property name="text">
-                <string>Max gaps per week</string>
-            </property>
-        </widget>
-        <widget class="QSpinBox" row="3" column="1" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>maxGapsSpinBox</cstring>
-            </property>
-        </widget>
-        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="3">
-            <property name="name">
-                <cstring>weightTextLabel_2</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
-            </property>
-            <property name="text">
-                <string>Please try to use weight percentage 100%, because
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QSpinBox" row="4" column="1" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>maxGapsSpinBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="0" rowspan="1" colspan="3">
+                    <property name="name">
+                        <cstring>weightTextLabel_2</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>You must use weight percentage 100%, because
 otherwise you will get poor timetables. Try to fix firstly
 a rather large value for max gaps per week and
-lower it as you find new timetables.</string>
-            </property>
+lower it as you find new timetables. Note: teacher not 
+available and break are not counted as gaps.</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="0" rowspan="1" colspan="3">
+                    <property name="name">
+                        <cstring>teacherTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>Teacher</string>
+                    </property>
+                </widget>
+                <spacer row="1" column="1">
+                    <property name="name">
+                        <cstring>spacer4</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>16</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLineEdit" row="5" column="2">
+                    <property name="name">
+                        <cstring>weightLineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string>100</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="5" column="0" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>weightTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>Weight percentage (necessary: 100%)</string>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="3" column="0" rowspan="1" colspan="3">
+                    <property name="name">
+                        <cstring>teachersComboBox</cstring>
+                    </property>
+                    <property name="editable">
+                        <bool>false</bool>
+                    </property>
+                    <property name="insertionPolicy">
+                        <enum>NoInsertion</enum>
+                    </property>
+                    <property name="autoCompletion">
+                        <bool>false</bool>
+                    </property>
+                    <property name="duplicatesEnabled">
+                        <bool>false</bool>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="4" column="0">
+                    <property name="name">
+                        <cstring>textLabel1</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Max gaps per week</string>
+                    </property>
+                </widget>
+            </grid>
         </widget>
-        <widget class="QLabel" row="1" column="0" rowspan="1" colspan="3">
+        <widget class="QLayoutWidget" row="0" column="1">
             <property name="name">
-                <cstring>teacherTextLabel</cstring>
+                <cstring>layout9</cstring>
             </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
-            </property>
-            <property name="text">
-                <string>Teacher</string>
-            </property>
-        </widget>
-        <widget class="QComboBox" row="2" column="0" rowspan="1" colspan="3">
-            <property name="name">
-                <cstring>teachersComboBox</cstring>
-            </property>
-            <property name="editable">
-                <bool>false</bool>
-            </property>
-            <property name="insertionPolicy">
-                <enum>NoInsertion</enum>
-            </property>
-            <property name="autoCompletion">
-                <bool>false</bool>
-            </property>
-            <property name="duplicatesEnabled">
-                <bool>false</bool>
-            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>currentConstraintTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>Current constraint</string>
+                    </property>
+                </widget>
+                <widget class="QTextEdit">
+                    <property name="name">
+                        <cstring>currentConstraintTextEdit</cstring>
+                    </property>
+                    <property name="readOnly">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </vbox>
         </widget>
     </grid>
 </widget>

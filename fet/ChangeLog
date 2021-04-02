@@ -996,4 +996,8 @@ Versions 5.2.0 - 5.2.
 	- Small bug fixes
 - Version 5.2.9
 	- Small improvements in interface
+- Version 5.2.10
+	- Small improvements in interface
+	- The teachers max gaps can have now only 100% weight
+	- Improvements in Romanian translation
 	
