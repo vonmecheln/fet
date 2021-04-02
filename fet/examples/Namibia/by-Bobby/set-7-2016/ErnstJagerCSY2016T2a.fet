@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.30.0">
+<fet version="5.30.3">
 
 <Institution_Name>Ernst Jager Combined School</Institution_Name>
 
@@ -62,78 +62,103 @@
 <Subjects_List>
 <Subject>
 	<Name>Acc</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Afr</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Agr</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Art</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>BIS</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>D&amp;T</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Eng</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Ent</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Geo</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>HEc</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>His</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>ICT</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>IPA</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>KWp</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Kkg</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>LSc</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>LSk</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Mat</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>NSH</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>NWk</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>PEd</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>PSc</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>RME</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Read</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>SSt</Name>
+	<Comments></Comments>
 </Subject>
 </Subjects_List>
 
@@ -146,150 +171,175 @@
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Basson</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Gariseb</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Hashipala</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Jobs</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Jossob</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Jossoph</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Laberloth</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Meyer</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Mupiya</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Nail</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Ndeulita</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Ngarizemo</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Nuseb</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Oarum</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Oberholster</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Shivute</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Sinvula</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Solomons</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Stoffel</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>SwartbooiP</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>SwartbooiR</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Tjerije</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Vries</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>VriesP</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 </Teachers_List>
 
@@ -297,476 +347,595 @@
 <Year>
 	<Name> 4a</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name> 4b</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name> 5a</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name> 5b</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name> 6a</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name> 6b</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name> 7a</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name> 7b</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name> 8a</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 	<Group>
 		<Name> 8a Agr</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 	</Group>
 	<Group>
 		<Name> 8a NWk</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 	</Group>
 </Year>
 <Year>
 	<Name> 8b</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name> 8c</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name> 8d</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name> 9a</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 	<Group>
 		<Name> 9a Afr</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 		<Subgroup>
 			<Name> 9a Afr Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name> 9a Afr NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 	</Group>
 	<Group>
 		<Name> 9a Kkg</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 		<Subgroup>
 			<Name> 9a Kkg Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name> 9a Kkg NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 	</Group>
 	<Group>
 		<Name> 9a Agr</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 		<Subgroup>
 			<Name> 9a Afr Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name> 9a Kkg Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 	</Group>
 	<Group>
 		<Name> 9a NWk</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 		<Subgroup>
 			<Name> 9a Afr NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name> 9a Kkg NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 	</Group>
 </Year>
 <Year>
 	<Name> 9b</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 	<Group>
 		<Name> 9b Acc</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 	</Group>
 	<Group>
 		<Name> 9b KWp</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 	</Group>
 </Year>
 <Year>
 	<Name> 9c</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>10a</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 	<Group>
 		<Name>10a Afr</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 		<Subgroup>
 			<Name>10a Afr Acc Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Afr Acc IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Afr Acc NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Afr KWp Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Afr KWp IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Afr KWp NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 	</Group>
 	<Group>
 		<Name>10a Kkg</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 		<Subgroup>
 			<Name>10a Kkg Acc Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Kkg Acc IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Kkg Acc NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Kkg KWp Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Kkg KWp IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Kkg KWp NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 	</Group>
 	<Group>
 		<Name>10a Acc</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 		<Subgroup>
 			<Name>10a Afr Acc Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Afr Acc IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Afr Acc NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Kkg Acc Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Kkg Acc IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Kkg Acc NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 	</Group>
 	<Group>
 		<Name>10a KWp</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 		<Subgroup>
 			<Name>10a Afr KWp Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Afr KWp IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Afr KWp NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Kkg KWp Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Kkg KWp IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Kkg KWp NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 	</Group>
 	<Group>
 		<Name>10a Agr</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 		<Subgroup>
 			<Name>10a Afr Acc Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Afr KWp Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Kkg Acc Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Kkg KWp Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 	</Group>
 	<Group>
 		<Name>10a IPA</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 		<Subgroup>
 			<Name>10a Afr Acc IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Afr KWp IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Kkg Acc IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Kkg KWp IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 	</Group>
 	<Group>
 		<Name>10a NWk</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 		<Subgroup>
 			<Name>10a Afr Acc NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Afr KWp NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Kkg Acc NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10a Kkg KWp NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 	</Group>
 </Year>
 <Year>
 	<Name>10b</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 	<Group>
 		<Name>10b Afr</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 		<Subgroup>
 			<Name>10b Afr Acc Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Afr Acc IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Afr Acc NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Afr KWp Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Afr KWp IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Afr KWp NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 	</Group>
 	<Group>
 		<Name>10b Kkg</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 		<Subgroup>
 			<Name>10b Kkg Acc Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Kkg Acc IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Kkg Acc NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Kkg KWp Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Kkg KWp IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Kkg KWp NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 	</Group>
 	<Group>
 		<Name>10b Acc</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 		<Subgroup>
 			<Name>10b Afr Acc Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Afr Acc IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Afr Acc NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Kkg Acc Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Kkg Acc IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Kkg Acc NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 	</Group>
 	<Group>
 		<Name>10b KWp</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 		<Subgroup>
 			<Name>10b Afr KWp Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Afr KWp IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Afr KWp NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Kkg KWp Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Kkg KWp IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Kkg KWp NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 	</Group>
 	<Group>
 		<Name>10b Agr</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 		<Subgroup>
 			<Name>10b Afr Acc Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Afr KWp Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Kkg Acc Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Kkg KWp Agr</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 	</Group>
 	<Group>
 		<Name>10b IPA</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 		<Subgroup>
 			<Name>10b Afr Acc IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Afr KWp IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Kkg Acc IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Kkg KWp IPA</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 	</Group>
 	<Group>
 		<Name>10b NWk</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 		<Subgroup>
 			<Name>10b Afr Acc NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Afr KWp NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Kkg Acc NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>10b Kkg KWp NWk</Name>
 			<Number_of_Students>0</Number_of_Students>
+			<Comments></Comments>
 		</Subgroup>
 	</Group>
 </Year>

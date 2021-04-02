@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.30.0">
+<fet version="5.30.3">
 
 <Institution_Name>Institutie implicita</Institution_Name>
 
@@ -47,39 +47,51 @@
 <Subjects_List>
 <Subject>
 	<Name>Lingua Portuguesa</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Matematica</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Historia</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Geografia</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Educcacao Fisica</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Artes</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Fisica</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Quimica</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Biologia</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Filosofia</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Sociologia</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Ingles</Name>
+	<Comments></Comments>
 </Subject>
 </Subjects_List>
 
@@ -92,162 +104,189 @@
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Helvecio</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Luzia</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Maria da Luz</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Tania</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Bruna</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Silvania</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Wellington</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Marli</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Dulcimar</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Andreia</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Aparacida</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Viviane</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Anderson</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Renata</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Carla</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Lima</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Andreia2</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Carlos</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Marcelo</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Giselle</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Osvaldo</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Cristiane</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Roberto</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Rosilene</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Silvana</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Terezinha</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 </Teachers_List>
 
@@ -255,66 +294,82 @@
 <Year>
 	<Name>101</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>102</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>103</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>104</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>111</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>201</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>202</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>203</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>204</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>205</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>206</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>301</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>302</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>303</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>304</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>305</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 </Students_List>
 

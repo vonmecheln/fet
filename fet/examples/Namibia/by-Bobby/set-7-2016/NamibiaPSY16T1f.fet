@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.30.0">
+<fet version="5.30.3">
 
 <Institution_Name>Namibia Primary School</Institution_Name>
 
@@ -59,45 +59,59 @@
 <Subjects_List>
 <Subject>
 	<Name>Afrikaans</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Agriculture</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Arts</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>English</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>ICT</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>KhoeKhoegowab</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Life Skills</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Mathematics</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Natural Science</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Otjiherero</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>PEd</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>RME</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Reading</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>Social Studies</Name>
+	<Comments></Comments>
 </Subject>
 </Subjects_List>
 
@@ -110,234 +124,273 @@
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Afrikaner Mr</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Amia Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Amutenya Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Binda Mr</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Bowe Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Dizomba Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Francis Ms (HoD)</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Hiakasekama Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Ijambo Mr (HoD)</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Japora Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Jesaya Mr</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Kaatura Mr</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Kandingua Ms (HoD LP)</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Kandjou Mr</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Katjimune Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Kazimbu Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Kooper Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Kudumo Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Litwayi Mr</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Lukas Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Lukor M</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Matheus Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Mberira Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Moller Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Mubiana Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Mudabeti Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Mukubonda Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Muvangua Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Nauiseb Mr</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Nghilotoka Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Rikambura Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Rittman Ms (HoD LP)</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Titus Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Tjahere Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Tjijenda Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Tjiroze Mr</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>Tuyoleni Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>X Ms</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 </Teachers_List>
 
@@ -345,130 +398,162 @@
 <Year>
 	<Name>1a</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>1b</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>1c</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>1d</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>2a</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>2b</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>2c</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>2d</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>3a</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>3b</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>3c</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>3d</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>4a</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>4b</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>4c</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>4d</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>5a</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>5b</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>5c</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>5d</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>6a</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>6b</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>6c</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>6d</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>7a</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>7b</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>7c</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>7d</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>PPa</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>PPb</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>PPc</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>SC</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 </Students_List>
 
@@ -6676,171 +6761,205 @@
 	<Name>A6</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B1</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B2</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B5</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B6</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B7</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>C1</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>C4</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>C5</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>C6</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>C7</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>C8</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D1</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D2</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D3</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D6</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>E1</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>E2</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>E3</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>E4</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>E5</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>E6</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>F1</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>F2</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>F3</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>F4</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>F5</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>F6</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>G1</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>G3</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>H1</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>H2</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Hall</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ICT Lab</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Comments></Comments>
 </Room>
 </Rooms_List>
 

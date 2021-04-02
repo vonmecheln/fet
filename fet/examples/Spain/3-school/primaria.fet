@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.30.0">
+<fet version="5.30.3">
 
 <Institution_Name>Colegio de Fitero</Institution_Name>
 
@@ -58,42 +58,55 @@ La complegidad de este horario está en que es muy pequeño y hay muchos profedo
 <Subjects_List>
 <Subject>
 	<Name>LENGUA</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>MATES</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>CONO</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>EF</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>INGLES</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>AE/REL</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>INFANTIL</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>PLASTICA</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>MUSICA</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>T. LENGUA</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>T. MATES</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>GUARDIA</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>PREP</Name>
+	<Comments></Comments>
 </Subject>
 </Subjects_List>
 
@@ -106,102 +119,119 @@ La complegidad de este horario está en que es muy pequeño y hay muchos profedo
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>MARISOL</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>MARI CARMEN</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>MERCEDES</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>MANUEL</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>SANDRA</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>MARIA MARQUES</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>ELENA</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>NATALIA</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>MAIALEN</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>ALICIA</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>VICTOR</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>ANA MUS</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>PRIMI</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>ANTONIO</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>MARIAN</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 <Teacher>
 	<Name>LOURDES</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
+	<Comments></Comments>
 </Teacher>
 </Teachers_List>
 
@@ -209,46 +239,57 @@ La complegidad de este horario está en que es muy pequeño y hay muchos profedo
 <Year>
 	<Name>3 AÑOS</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>4 AÑOS</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>5 AÑOS</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>1º</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>2º</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>3º</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 	<Group>
 		<Name>3º A</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 	</Group>
 	<Group>
 		<Name>3º B</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
 	</Group>
 </Year>
 <Year>
 	<Name>4º</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>5º</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 <Year>
 	<Name>6º</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
 </Year>
 </Students_List>
 
