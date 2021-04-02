@@ -117,17 +117,17 @@
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="541"/>
         <source>Above the (sub)activities list, we have 2 labels, containing 4 numbers. The first label contains text: No: a / b. The first number a is the number of active (sub)activities (we number each individual subactivity as 1), while the second number b is the number of total (sub)activities. The second label contains text: Dur: c / d. The third number c is the duration of active (sub)activities, in periods (or FET hours), while the fourth number d is the duration of total (sub)activities, in periods (or FET hours). So, No means number and Dur means duration.</source>
-        <translation>Acima da lista de (sub)atividades nós temos 2 róotulos contendo 4 números. O primeiro rótulo contém o texto: Nº: a / b. O primeiro número a é o número de (sub)atividades ativas (numeraremos cada subatividade individual como 1), enquando o segundo número b é o número total de (sub)atividades. O segundo rótulo contém o texto: Dur: c / d. O terceiro número c é a duração das (sub)atividades ativas, em períodos (ou horas FET), enquanto o quarto número é a duração total das (sub)atividades, em períodos (ou horas FET). Então, Nº significa número e Dur significa duração.</translation>
+        <translation>Acima da lista de (sub)atividades nós temos 2 rótulos contendo 4 números. O primeiro rótulo contém o texto: Ativ: a / b. O primeiro número a é o número de (sub)atividades ativas (numeraremos cada subatividade individual como 1), enquando o segundo número b é o número total de (sub)atividades. O segundo rótulo contém o texto: Aulas: c / d. O terceiro número c é a duração das (sub)atividades ativas, em períodos (ou horas FET), enquanto o quarto número é a duração total das (sub)atividades, em períodos (ou horas FET). Então, Ativ significa número de atividades (grupos de aulas) e Aulas significa o número de períodos.</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="547"/>
         <source>Example: No: 100 / 102, Dur: 114 / 117. They represent: 100 - the number of active (sub)activities, then 102 - the number of total (sub)activities, 114 - the duration of active activities (in periods or FET hours) and 117 - the duration of total activities (in periods or FET hours). In this example we have 2 inactive activities with their combined duration being 3 periods.</source>
-        <translation>Por exemplo: Nº: 100 / 102, Dur: 114 / 117. Representa: 100 - número de atividades ativas, então 102 - número total de (sub)atividades, 114 - duração das atividades ativas (em períodos de horas FET) e 117 - duração do total de atividades (em períodos de horas FET). Neste exemplo temos 2 atividades inativas que combinadas duram 3 períodos.</translation>
+        <translation>Por exemplo: Ativ: 100 / 102, Aulas: 114 / 117. Representa: 100 - número de atividades ativas, então 102 - número total de (sub)atividades, 114 - duração das atividades ativas (em &quot;períodos&quot; ou &quot;aulas&quot;) e 117 - duração do total de atividades (em períodos de horas FET). Neste exemplo temos 2 atividades inativas que combinadas duram 3 períodos (&quot;aulas&quot;).</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="553"/>
         <source>Explanation of the short description of an activity: first comes the id. If the activity is inactive, an X follows. Then the duration. Then, if the activity is split, a slash and the total duration. Then teachers, subject, activity tag (if it is not void) and students. Then the number of students (if specified).</source>
-        <translation>Explicação da descrição de uma atividade: primeiro vem a id. Se a atividade está inativa, aparece um X. Depois, sua duração. Se a atividade estiver dividida, uma barra e a duração total. Em seguida, professores, matéria, atividade (se não estiver vaga) e estudantes. Por fim, o número de estudantes (quando indicada).</translation>
+        <translation>Explicação da descrição de uma atividade: primeiro vem a id. Se a atividade está inativa, aparece um X. Depois, sua duração (quantos &quot;períodos&quot; ou &quot;aulas&quot;). Se a atividade estiver dividida, uma barra e a duração total. Em seguida, professores, matéria, atividade (se não estiver vaga) e estudantes. Por fim, o número de estudantes (quando indicada).</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="557"/>
@@ -186,7 +186,7 @@
         <location filename="../src/interface/activitiesform.cpp" line="322"/>
         <source>Dur: %1 / %2</source>
         <comment>Dur means duration, %1 is the duration of active activities, %2 is the duration of total activities. Please leave spaces between fields, so that they are better visible</comment>
-        <translation>Dur: %1 / %2</translation>
+        <translation>Aulas: %1 / %2</translation>
     </message>
 </context>
 <context>
@@ -289,13 +289,13 @@
         <location filename="../src/interface/activitiesroomsstatisticsform.cpp" line="313"/>
         <source>You have %1 activities which will certainly end up in an unspecified room. They are listed below:</source>
         <comment>Instructions for translators: take care, it is &apos;certainly&apos;.</comment>
-        <translation>Há %1 atividades que certamente encerrarão em uma sala indefinida. Elas são listadas abaixo:</translation>
+        <translation>Há %1 atividades que certamente não possuem uma sala definida. Elas são listadas abaixo:</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesroomsstatisticsform.cpp" line="326"/>
         <source>You do not have activities which will certainly end up in an unspecified room.</source>
         <comment>Instructions for translators: take care, it is &apos;certainly&apos;.</comment>
-        <translation>Não há atividades que certamente encerrarão em uma sala indefinida.</translation>
+        <translation>Não há atividades que certamente não possuem uma sala definida.</translation>
     </message>
 </context>
 <context>
@@ -388,12 +388,12 @@
     <message>
         <location filename="../src/engine/activity.cpp" line="618"/>
         <source>Duration=%1</source>
-        <translation>Duração=%1</translation>
+        <translation>Período(s)=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="621"/>
         <source>Total duration=%1</source>
-        <translation>Duração total=%1</translation>
+        <translation>Total de períodos=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="660"/>
@@ -660,7 +660,7 @@
         <location filename="../src/interface/activityplanningform.cpp" line="472"/>
         <source>B</source>
         <comment>Abbreviation for &apos;Buttons&apos;. Please keep translation very short (probably only one letter). There is an option to hide the buttons in the planning activity dialog, so that the tables can have larger visible parts. This button (B) will remain there after the user hides the other buttons. The user then can press this button to show again all the buttons. We need this &apos;B&apos; button to be very small, so keep translation abbreviated to the initial only</comment>
-        <translation></translation>
+        <translation>B</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningform.cpp" line="736"/>
@@ -1090,7 +1090,7 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="644"/>
         <source>Invalid duration</source>
-        <translation>Duração inválida</translation>
+        <translation>Número de períodos inválido</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="673"/>
@@ -1122,17 +1122,17 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="698"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min days between activities up to 100%)</source>
-        <translation>1. Se você marcar para forçar consecutivas, se no mesmo dia; então junte atividades extras aos pares para obter um número de atividades igual ao número de dias por semana. Exemplo: Para 7 atividades com duração 1 em 5 dias por semana, coloque-as como 5 atividades com durações: 2,2,1,1,1 e adicione um único contêiner para a atividade com estes 5 itens (possivelmente elevando o peso da restrição de mínimo de dias de entre as atividades até 100%)</translation>
+        <translation>1. Se você marcar para forçar consecutivas, se no mesmo dia; então junte atividades extras aos pares para obter um número de atividades igual ao número de dias por semana. Exemplo: Para 7 atividades com duração 1 em 5 dias por semana, coloque-as como 5 atividades com períodos (durações): 2,2,1,1,1 e adicione um único contêiner para a atividade com estes 5 itens (possivelmente elevando o peso da restrição de mínimo de dias de entre as atividades até 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="702"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity split into a number of activities equal with the number of days per week and the remaining components into other larger split activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one split into 5 activities with duration 1 and second one split into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
-        <translation>2. Se você não marcar para forçar consecutivas, se no mesmo dia; então, adicione uma atividade maior dividida em uma série de atividades com o número de dias por semana e os itens restantes em outra atividade. Por exemplo, suponha que você precisa adicionar 7 atividades com duração 1 em 5 dias por semana. Adicione-as em 2 grandes contêiners de atividades. No primeiro, divida em 5 atividades com duração 1; no segundo, as duas atividades restantes com duração 1 cada (possivelmente, elevando até 100% o peso das restrições do mínimo de dias entre as atividades em cada um dos contêiners)</translation>
+        <translation>2. Se você não marcar para forçar consecutivas, se no mesmo dia; então, adicione uma atividade maior dividida em uma série de atividades com o número de dias por semana e os itens restantes em outra atividade. Por exemplo, suponha que você precisa adicionar 7 atividades com duração 1 em 5 dias por semana. Adicione-as em 2 grandes contêiners de atividades. No primeiro, divida em 5 atividades com duração (período) 1; no segundo, as duas atividades restantes com duração 1 cada (possivelmente, elevando até 100% o peso das restrições do mínimo de dias entre as atividades em cada um dos contêiners)</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="765"/>
         <source>Split activity added. Please note that FET currently cannot check for duplicates when adding split activities. It is advisable to check the statistics after adding all the activities</source>
-        <translation>Atividade dividida adicionada. Por favor perceba que o FET atualmente não consegue verificar duplicadas ao adicionar atividades divididas. É recomendável verificar as estatísticas depois de adicionar todas as atividades.</translation>
+        <translation>Adicionada atividade com divisões. Por favor, perceba que o FET atualmente não consegue detectar duplicadas ao adicionar atividades divididas. É recomendável verificar as estatísticas depois de adicionar todas as atividades.</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="770"/>
@@ -1152,12 +1152,12 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="799"/>
         <source>&apos;Split&apos; means &apos;Split into ... activities per week&apos;</source>
-        <translation>&quot;Divisões&quot; quer dizer &quot;Sepadas em... atividades por semana&quot;</translation>
+        <translation>&quot;Divisões&quot; quer dizer &quot;Separadas em... atividades por semana&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="801"/>
         <source>&apos;Min days&apos; means &apos;The minimum required distance in days between each pair of activities&apos;</source>
-        <translation>&apos;Mín dias&quot; quer dizer &apos;O intervalo mínimo de dias necessário entre cada par de atividades&quot;</translation>
+        <translation>&apos;Mín dias&quot; quer dizer &apos;O intervalo mínimo de dias solicitado entre cada par de atividades&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="803"/>
@@ -1172,7 +1172,7 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="807"/>
         <source>The &apos;Duration&apos; spin box and the &apos;Active&apos; check box refer to each component of current activity, you can change them for each component, separately, by selecting the corresponding tab in the tab widget.</source>
-        <translation>As caixas &quot;Duração&quot; e &quot;Ativa&quot; referem-se a cada item da atividade atual. Você pode mudá-las para cada item, separadamente, ao selecionar a respectiva guia.</translation>
+        <translation>As caixas &quot;Período(s)&quot; e &quot;Ativa&quot; referem-se a cada item da atividade atual. Você pode mudá-las para cada item, separadamente, ao selecionar a respectiva guia.</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="811"/>
@@ -1224,12 +1224,12 @@ Você pode escolher a distância mínima em dias entre cada par de atividades. P
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="859"/>
         <source>If you choose a value greater or equal with 1 for min days, a time constraint min days between activities will be added automatically (you can see this constraint in the time constraints list or you can see this constraint in the detailed description of the activity). You can select a weight percentage for this constraint. If you select 100%, the constraint must be respected all the time. If you select 95%, there is a small chance that the timetable will not respect this constraint. Recommended values are 95.0%-100.0% (maybe you could try with 95%, then 99.75%, or even 100.0%, but the generation time might be larger). Generally, 99.75% might be a good value. Note: if you put a value less than 100% and the constraint is too tough, FET is able to find that this constraint is impossible and will break it. 99.75% might be better than 95% but possibly slower. The percentage is subjective (if you put 95% you may get 6 soft conflicts and if you put 99.75% you may get 3 soft conflicts). Starting with FET-5.3.6, it is possible to change this value for all constraints in one click, in constraint min days between activities dialog.</source>
-        <translation type="unfinished">Se você escolher um valor maior ou igual a 1 para mín dias, uma restrição de tempo para mín dias entre as atividades será adicionada automaticamente (você pode ver essa restrição na lista de restrições de tempo ou você pode vê-la na descrição detalhada da atividade). Você pode selecionar uma percentagem de peso para essa restrição. Se selecionar 100%, a restrição deve ser respeitada o tempo todo. Se você selecionar 95%, há uma pequena chance de que o calendário não respeite essa restrição. Os valores recomendados são 95,0% -100,0% (talvez você possa tentar com 95%; depois 99,75%, ou mesmo 100,0%; mas o tempo de resolução pode ser maior). Geralmente, 99,75% é um bom valor. Nota: se você colocar um valor inferior a 100% e a restrição for muito difícil, FET será capaz de achar que esta restrição é impossível e vai quebrá-la (ignorá-la). 99,75% pode ser melhor do que 95%, mas, possivelmente, ser lento. A percentagem é subjetiva (se você colocar 95%, poderá obter 6 conflitos leves e, se você colocar 99,75%, você poderá obter 3 conflitos leves). Desde a versão FET-5.3.6, é possível alterar este valor para todas as restrições com um clique, na janela de diálogo de restrição de mínimo de dias entre atividades.</translation>
+        <translation>Se você escolher um valor maior ou igual a 1 para mín dias, uma restrição de tempo para mín dias entre as atividades será adicionada automaticamente (você pode ver essa restrição na lista de restrições de tempo ou você pode vê-la na descrição detalhada da atividade). Você pode selecionar uma percentagem de peso para essa restrição. Se selecionar 100%, a restrição deve ser respeitada o tempo todo. Se você selecionar 95%, há uma pequena chance de que o calendário não respeite essa restrição. Os valores recomendados são 95% -100,0% (talvez você possa tentar com 95%; depois 99.75%, ou mesmo 100%; mas o tempo de resolução pode ser maior). Geralmente, 99.75% é um bom valor. Nota: se você colocar um valor inferior a 100% e a restrição for muito difícil, FET será capaz de achar que esta restrição é impossível e vai quebrá-la (ignorá-la). 99.75% pode ser melhor do que 95%, mas, possivelmente, ser lento. A percentagem é subjetiva (se você colocar 95%, poderá obter 6 conflitos leves e, se você colocar 99.75%, você poderá obter 3 conflitos leves). Desde a versão FET-5.3.6, é possível alterar este valor para todas as restrições com um clique, na janela de diálogo de restrição de mínimo de dias entre atividades.</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="873"/>
         <source>There is another option, if the activities are in the same day, force consecutive activities. You can select this option for instance if you have 5 lessons of math in 5 days, and there is no timetable which respects fully the days separation. Then, you can set the weight percent of the min days constraint to 95% and add consecutive if same day. You will have as results say 3 lessons with duration 1 and a 2 hours lesson in another day. Please be careful: if the activities are on the same day, even if the constraint has 0% weight, then the activities are forced to be consecutive.</source>
-        <translation>Para as atividades que ocorrem no mesmo dia, há outra possibilidade. Você pode selecionar a opção &quot;consecutivas, se no mesmo dia&quot;, por exemplo, se você tiver 5 aulas de matemática em 5 dias e sem nenhum horário que respeite integralmente a separação de dias. Em seguida, você pode definir o peso percentual em 95% da restrição de mínimo de dias e marcar &quot;Consecutivas&quot;, se no mesmo dia. Você terá como resultado, digamos, 3 aulas com duração de 1 e outra de 2 horas em outro dia. Por favor, tenha cuidado: se as atividades estiverem no mesmo dia, mesmo se a restrição tiver um peso 0%, elas serão forçadas a ser consecutivas.</translation>
+        <translation>Para as atividades que ocorrem no mesmo dia, há outra possibilidade. Você pode selecionar a opção &quot;consecutivas, se no mesmo dia&quot;, por exemplo, se você tiver 5 aulas de matemática em 5 dias e sem nenhum horário que respeite integralmente a separação de dias. Em seguida, você pode definir o peso percentual em 95% da restrição de mínimo de dias e marcar &quot;Consecutivas&quot;, se no mesmo dia. Você terá como resultado, digamos, 3 aulas com duração de 1 e outra de 2 horas em outro dia (em certas regiões, prefere-se dizer &quot; 3 aulas na semana com 1 período em um dia e 2 períodos no outro). Por favor, tenha cuidado: se as atividades estiverem no mesmo dia, mesmo se a restrição tiver um peso 0%, elas serão forçadas a ser consecutivas.</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="888"/>
@@ -1393,7 +1393,7 @@ Você pode escolher a distância mínima em dias entre cada par de atividades. P
         <location filename="../src/interface/addactivityform_template.ui" line="2410"/>
         <location filename="../src/interface/addactivityform_template.ui" line="2474"/>
         <source>Duration</source>
-        <translation>Duração</translation>
+        <translation>Período(s)</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="351"/>
@@ -2370,7 +2370,7 @@ Se você precisa de peso inferior a 100%, então você pode usar esta restriçã
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="78"/>
         <source>Duration</source>
-        <translation>Duração</translation>
+        <translation>Período(s)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="101"/>
@@ -2441,7 +2441,7 @@ Se você precisa de peso inferior a 100%, então você pode usar esta restriçã
  The best practice would be to use constraint break times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
-        <translation type="unfinished">Você marcou todas as atividades. Isso pode ser um pequeno problema: se você especificar uma janela não disponível entre duas janelas disponíveis, esta janela não permitida será contada como uma lacuna no horário dos professores e dos alunos.
+        <translation>Você marcou todas as atividades. Isso pode ser um pequeno problema: se você especificar uma janela não disponível entre duas janelas disponíveis, esta janela não permitida será contada como uma lacuna no horário dos professores e dos alunos.
 
 A melhor prática seria usar restrição de períodos de pausa.
 
@@ -2543,7 +2543,7 @@ Se você precisa de peso inferior a 100%, então você pode usar esta restriçã
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="78"/>
         <source>Duration</source>
-        <translation>Duração</translation>
+        <translation>Período(s)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="122"/>
@@ -4168,12 +4168,12 @@ Se você precisa de peso inferior a 100%, então você pode usar esta restriçã
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform.cpp" line="210"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min days between activities up to 100%)</source>
-        <translation>1. Se você marcar para forçar consecutivas, se no mesmo dia; então junte atividades extras aos pares para obter um número de atividades igual ao número de dias por semana. Exemplo: Para 7 atividades com duração 1 em 5 dias por semana, coloque-as como 5 atividades com durações: 2,2,1,1,1 e adicione um único contêiner para a atividade com estes 5 itens (possivelmente elevando o peso da restrição de mínimo de dias de entre as atividades até 100%)</translation>
+        <translation>1. Se você marcar para forçar consecutivas, se no mesmo dia; então junte atividades extras aos pares para obter um número de atividades igual ao número de dias por semana. Exemplo: Para 7 atividades com duração 1 em 5 dias por semana, coloque-as como 5 atividades com durações (períodos): 2,2,1,1,1 e adicione um único contêiner para a atividade com estes 5 itens (possivelmente elevando o peso da restrição de mínimo de dias de entre as atividades até 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform.cpp" line="216"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity split into a number of activities equal with the number of days per week and the remaining components into other larger split activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one split into 5 activities with duration 1 and second one split into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
-        <translation>2. Se você não marcar para forçar consecutivas, se no mesmo dia; então, adicione uma atividade maior dividida em uma série de atividades com o número de dias por semana e os itens restantes em outra atividade. Por exemplo, suponha que você precisa adicionar 7 atividades com duração 1 em 5 dias por semana. Adicione-as em 2 grandes contêiners de atividades. No primeiro, divida em 5 atividades com duração 1; no segundo, as duas atividades restantes com duração 1 cada (possivelmente, elevando até 100% o peso das restrições do mínimo de dias entre as atividades em cada um dos contêiners)</translation>
+        <translation>2. Se você não marcar para forçar consecutivas, se no mesmo dia; então, adicione uma atividade maior dividida em uma série de atividades com o número de dias por semana e os itens restantes em outra atividade. Por exemplo, suponha que você precisa adicionar 7 atividades com duração 1 em 5 dias por semana. Adicione-as em 2 grandes contêiners de atividades. No primeiro, divida em 5 atividades de um período cada; no segundo, as duas atividades restantes com 1 período cada (possivelmente, elevando até 100% o peso das restrições do mínimo de dias entre as atividades em cada um dos contêiners)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform.cpp" line="224"/>
@@ -4604,7 +4604,7 @@ mesmo dia, forçar consecutivas</translation>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="118"/>
         <source>Max hours daily</source>
-        <translation>Máx de horas diárias</translation>
+        <translation>Máx jornada</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="148"/>
@@ -4815,7 +4815,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas (lac
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Add students max building changes per day</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>Incluir máx trocas de prédio por dia da turma</translation>
+        <translation>Incluir máx troca diária de prédio da turma</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="22"/>
@@ -4830,7 +4830,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas (lac
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="68"/>
         <source>Max building changes per day</source>
-        <translation>Máx trocas de prédio por dia</translation>
+        <translation>Máx troca diária de prédio</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="46"/>
@@ -4871,7 +4871,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas (lac
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Add students max building changes per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>Incluir máx. troca de prédio por semana da turma</translation>
+        <translation>Incluir máx troca semanal de prédio da turma</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="22"/>
@@ -4886,7 +4886,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas (lac
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="68"/>
         <source>Max building changes per week</source>
-        <translation>Máx trocas prédio por semana</translation>
+        <translation>Máx troca de prédio por semana</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="46"/>
@@ -5191,7 +5191,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas.</tr
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="56"/>
         <source>Max hours daily</source>
-        <translation>Max de horas diárias</translation>
+        <translation>Max jornada</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="14"/>
@@ -5248,8 +5248,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas.</tr
     <message>
         <location filename="../src/interface/addconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="50"/>
         <source>Min gaps between building changes</source>
-        <translation>Intervalos min entre
-torcas de prédio</translation>
+        <translation>Mín intervalo entre troca de prédio</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="67"/>
@@ -5335,7 +5334,7 @@ torcas de prédio</translation>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform.cpp" line="108"/>
         <source>Explanation: only select this option if your institution allows empty days for students and a timetable is possible with empty days for students. Otherwise, it is IMPERATIVE (for performance reasons) to not select this option (or FET may not be able to find a timetable).</source>
-        <translation>Explicação: apenas selecione essa opção se sua instituição permite dias vagos para estudantes e um horário seja possível com dias vagos para alunos. Do contrário, é IMPERATIVO (em razão de performance) não selecionar essa opção (ou FET poderá ficar incapaz de fazer um horario).</translation>
+        <translation>Explicação: somente selecione esta opção se a sua instituição permitir dias vagos para os alunos e se for possível um horário com dias vagos para eles. Caso contrário, é IMPERATIVO (por motivos de desempenho) não selecionar essa opção (ou FET pode não ser capaz de encontrar um horário).</translation>
     </message>
 </context>
 <context>
@@ -5523,7 +5522,7 @@ torcas de prédio</translation>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="156"/>
         <source>Max hours daily</source>
-        <translation>Máx de horas diárias</translation>
+        <translation>Máx jornada</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="189"/>
@@ -5593,7 +5592,7 @@ torcas de prédio</translation>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="103"/>
         <source>Max beginnings at second hour (per week)</source>
-        <translation>Máx inícios no segundo horário (por semana)</translation>
+        <translation>Máx início no segundo horário (por semana)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="14"/>
@@ -5926,7 +5925,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas (int
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="103"/>
         <source>Max building changes per day</source>
-        <translation>Máx trocas diárias de prédio</translation>
+        <translation>Máx troca diária de prédio</translation>
     </message>
 </context>
 <context>
@@ -5966,7 +5965,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas (int
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Add students set max building changes per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>Incluir máx de mudança semanais de prédio para a turma</translation>
+        <translation>Incluir máx de troca semanal de prédio para a turma</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="22"/>
@@ -5991,7 +5990,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas (int
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="103"/>
         <source>Max building changes per week</source>
-        <translation>Máx trocas semanal de prédio</translation>
+        <translation>Máx troca semanal de prédio</translation>
     </message>
 </context>
 <context>
@@ -6349,7 +6348,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas.</tr
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="118"/>
         <source>Max hours daily</source>
-        <translation>Max de horas diárias</translation>
+        <translation>Máx jornada</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="77"/>
@@ -6396,7 +6395,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas.</tr
         <location filename="../src/interface/addconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Add students set min gaps between building changes</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>Incluir mín de intervalos entre mudanças de prédio para turma</translation>
+        <translation>Incluir mín de intervalos entre troca de prédio para turma</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="22"/>
@@ -6421,7 +6420,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas.</tr
     <message>
         <location filename="../src/interface/addconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="103"/>
         <source>Min gaps between building changes</source>
-        <translation>Intervalos mín. entre trocas de prédio</translation>
+        <translation>Mín intervalo entre trocas de prédio</translation>
     </message>
 </context>
 <context>
@@ -6465,7 +6464,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas.</tr
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="99"/>
         <source>Empty days for students min hours daily constraints are not enabled. You must enable them from the Settings-&gt;Advanced menu.</source>
-        <translation>Não são permitidos dias vazios para alunos com restrições de mínimo de horas diárias. Você deve ativá-las no menu Configurações -&gt; Avançado.</translation>
+        <translation>Não são permitidos dias vazios para alunos com restrições de mínima jornada (horas diárias). Você deve ativá-las no menu Configurações -&gt; Avançado.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="104"/>
@@ -7339,7 +7338,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas.</tr
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="150"/>
         <source>Max hours daily</source>
-        <translation>Máx de horas diárias</translation>
+        <translation>Máx jornada</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="180"/>
@@ -7659,7 +7658,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas.</tr
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperdayform_template.ui" line="103"/>
         <source>Max building changes per day</source>
-        <translation>Máx de trocas diárias de prédio</translation>
+        <translation>Máx troca diária de prédio</translation>
     </message>
 </context>
 <context>
@@ -7724,7 +7723,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas.</tr
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperweekform_template.ui" line="103"/>
         <source>Max building changes per week</source>
-        <translation>Máx de trocas semanais de prédio</translation>
+        <translation>Máx de troca semanal de prédio</translation>
     </message>
 </context>
 <context>
@@ -8074,7 +8073,7 @@ Nota: Docente indisponível e pausas não são contados como lacunas.</translati
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="118"/>
         <source>Max hours daily</source>
-        <translation>Máx de horas diárias</translation>
+        <translation>Máx jornada</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="28"/>
@@ -8222,8 +8221,7 @@ Nota: Docente indisponível e pausas não são contados como lacunas.</translati
     <message>
         <location filename="../src/interface/addconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="103"/>
         <source>Min gaps between building changes</source>
-        <translation>Mín de intervalo entre 
-trocas de prédio</translation>
+        <translation>Mín intervalo entre trocas de prédio</translation>
     </message>
 </context>
 <context>
@@ -8290,7 +8288,7 @@ trocas de prédio</translation>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="116"/>
         <source>Min hours daily</source>
-        <translation>Mín de horas diárias</translation>
+        <translation>Mín jornada</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="133"/>
@@ -8549,7 +8547,7 @@ trocas de prédio</translation>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="121"/>
         <source>Max hours daily</source>
-        <translation>Máx de horas diárias</translation>
+        <translation>Máx jornada</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="151"/>
@@ -8686,7 +8684,7 @@ trocas de prédio</translation>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Add teachers max building changes per day</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>Incluir máx. troca de prédio por dia para docentes</translation>
+        <translation>Incluir máx troca diária de prédio para docentes</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperdayform_template.ui" line="22"/>
@@ -8706,7 +8704,7 @@ trocas de prédio</translation>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperdayform_template.ui" line="67"/>
         <source>Max building changes per day</source>
-        <translation>Máx de trocas diárias de prédio</translation>
+        <translation>Máx de troca diária de prédio</translation>
     </message>
 </context>
 <context>
@@ -8740,7 +8738,7 @@ trocas de prédio</translation>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Add teachers max building changes per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>Incluir máx. troca de prédio por semana para docentes</translation>
+        <translation>Incluir máx troca semanal de prédio para docentes</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperweekform_template.ui" line="22"/>
@@ -8760,7 +8758,7 @@ trocas de prédio</translation>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperweekform_template.ui" line="67"/>
         <source>Max building changes per week</source>
-        <translation>Máx de trocas semanais de prédio</translation>
+        <translation>Máx troca semanal de prédio</translation>
     </message>
 </context>
 <context>
@@ -9053,7 +9051,7 @@ Nota: docente não disponível e intervalo não são contados como lacunas.</tra
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="56"/>
         <source>Max hours daily</source>
-        <translation>Max de horas diárias</translation>
+        <translation>Máx jornada</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="73"/>
@@ -9064,7 +9062,8 @@ Nota: docente não disponível e intervalo não são contados como lacunas.</tra
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="28"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation>Peso percentual (recomendado: 0.0%-100%)</translation>
+        <translation>Peso percentual
+(recomendado: 0.0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -9178,7 +9177,7 @@ Nota: docente não disponível e intervalo não são contados como lacunas.</tra
     <message>
         <location filename="../src/interface/addconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="67"/>
         <source>Min gaps between building changes</source>
-        <translation>Mín de intervalos entre trocas de prédio</translation>
+        <translation>Mín intervalo entre troca de prédio</translation>
     </message>
 </context>
 <context>
@@ -9239,7 +9238,7 @@ Nota: docente não disponível e intervalo não são contados como lacunas.</tra
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="84"/>
         <source>Min hours daily</source>
-        <translation>Mín de horas diárias</translation>
+        <translation>Mín jornada</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="14"/>
@@ -11431,7 +11430,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="17966"/>
         <source>Activities max simultaneous in selected time slots, WP:%1, NA:%2, A: %3, STS: %4, MS:%5</source>
         <comment>Constraint description. WP means weight percentage, NA means the number of activities, A means activities list, STS means selected time slots, MS means max simultaneous (number of activities in each selected time slot)</comment>
-        <translation type="unfinished">Atividades máx simultâneas nas janelas de tempo selecionadas, PP:%1, NAt:%2, At: %3, JTS: %4, MaxS:%5</translation>
+        <translation>Atividades máx simultâneas nas janelas de tempo selecionadas, PP:%1, NAt:%2, At: %3, JTS: %4, MáxS:%5</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17991"/>
@@ -11483,7 +11482,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18065"/>
         <source>Time constraint %1 broken - this should not happen, as this kind of constraint should have only 100.0% weight. Please report error!</source>
-        <translation type="unfinished">Restição de tempo %1 não atendida - isso não deveria ter ocorrido, pois esse tipo de restrição deveria ter apenas peso 100.0%. Favor relatar esse erro!</translation>
+        <translation>Restrição de tempo %1 não atendida - isso não deveria ter ocorrido, pois esse tipo de restrição deveria ter apenas peso 100.0%. Favor relatar esse erro!</translation>
     </message>
 </context>
 <context>
@@ -11528,7 +11527,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="301"/>
         <source>Important note: if you want the maximum number of simultaneous activities to be 1, then it is more efficient to use constraint activities not overlapping and the result is the same. (The underlying data structures make FET compute better the initial order of placing the activities and also the generation speed is faster, if using constraints of type activities not overlapping.)</source>
-        <translation type="unfinished">Nota importante: se quiser que o número máximo de atividades simultâneas seja 1, então é mais eficiente usar restrição de atividades sem sobreposição e o resultado será o mesmo. (As estruturas de dados subjacentes fazem FET computar melhor o pedido inicial de colocar as atividades e também a velocidade de geração é mais rápida, se estiver usando restrições de atividades do tipo não sobrepostas.)</translation>
+        <translation>Nota importante: se quiser que o número máximo de atividades simultâneas seja 1, então é mais eficiente usar restrição de atividades sem sobreposição e o resultado será o mesmo. (As estruturas de dados subjacentes fazem FET computar melhor o pedido inicial de colocar as atividades e também a velocidade de geração é mais rápida, se estiver usando restrições de atividades do tipo não sobrepostas.)</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="305"/>
@@ -11538,17 +11537,17 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="307"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum number of activities from those selected which can be simultaneous in each of the selected time slots.</source>
-        <translation type="unfinished">Para usar esta restrição, você precisa especificar um conjunto de atividades, um conjunto de intervalos de tempo, e um número máximo de atividades entre as seleccionados que possam ser simultâneas em cada um dos intervalos de tempo selecionados.</translation>
+        <translation>Para usar esta restrição, você precisa especificar um conjunto de atividades, um conjunto de intervalos de tempo, e um número máximo de atividades entre as seleccionados que possam ser simultâneas em cada um dos intervalos de tempo selecionados.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="310"/>
         <source>Uses of this constraint are probably wide. The main reason it was added was to enable users to specify that each time slot needs to have a specified number of free teachers, for supervision of students.</source>
-        <translation type="unfinished">OS usos desta restrição são, provavelmente, amplos. A principal razão para adicioná-la foi permitir que os usuários especificassem que, a cada intervalo de tempo, precisa ter um número especificado de professores livres, para supervisionar (atender) os alunos.</translation>
+        <translation>OS usos desta restrição são, provavelmente, amplos. A principal razão para adicioná-la foi permitir que os usuários especificassem que, a cada intervalo de tempo, precisa ter um número especificado de professores livres, para supervisionar (atender) os alunos.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="313"/>
         <source>Note that if you have activities with two or more teachers, you might need to use a trick for that: add one (or more) dummy activities, no teachers/no students, same starting time with the initial activity.</source>
-        <translation type="unfinished">Note que, se você tiver atividades com dois ou mais professores, pode ser necessário usar um truque para isso: adicionar uma (ou mais) atividades fantasmas, sem professores/sem alunos, mesmo tempo de início da atividade inicial.</translation>
+        <translation>Note que, se você tiver atividades com dois ou mais professores, pode ser necessário usar um truque para isso: adicionar uma (ou mais) atividades fantasmas, sem professores/sem alunos, mesmo tempo de início da atividade inicial.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="316"/>
@@ -11653,7 +11652,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1543"/>
         <source>Activities not overlapping</source>
-        <translation type="unfinished">Atividades não sobrepostas</translation>
+        <translation>Atividades não sobrepostas</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1544"/>
@@ -11714,7 +11713,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="1652"/>
         <source>Time constraint activities not overlapping broken: activity with id=%1 (%2) overlaps with activity with id=%3 (%4) on a number of %5 periods</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
-        <translation type="unfinished">Restrição de tempo para atividades sem sobreposição não atendida: atividade com id=%1 (%2) sobrepõe-se à atividade com id=%3 (%4) de uma série de %5 períodos</translation>
+        <translation>Restrição de tempo para atividades sem sobreposição não atendida: atividade com id=%1 (%2) sobrepõe-se à atividade com id=%3 (%4) de uma série de %5 períodos</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1660"/>
@@ -11947,7 +11946,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="302"/>
         <source>To use this constraint, you need to specify a set of activities and the maximum number of different rooms which can be occupied by these activities. Note that each activity can take place in a single room, and a single room can hold a single activity at a certain moment. This constraint may be used for instance to constrain all activities of type Physics of a certain students set to be in the same room throughout the week, by adding all Physics activities for this students set and making max different rooms = 1.</source>
-        <translation type="unfinished">Para usar esta restrição, você precisa especificar um conjunto de atividades e o número máximo de salas diferentes que podem ser ocupadas por essas atividades. Note que cada atividade pode ocorrer em uma única sala, e que cada sala pode conter apenas uma atividade em um determinado momento. Esta restrição pode ser usada, por exemplo, para restringir todas as atividades de Física de uma turma para um mesmo local ao longo da semana, coloque todas as atividades de Física para essa turma e faça máx salas diferentes = 1.</translation>
+        <translation>Para usar esta restrição, você precisa especificar um conjunto de atividades e o número máximo de salas diferentes que podem ser ocupadas por essas atividades. Note que cada atividade pode ocorrer em uma única sala, e que cada sala pode conter apenas uma atividade em um determinado momento. Esta restrição pode ser usada, por exemplo, para restringir todas as atividades de Física de uma turma para um mesmo local ao longo da semana, coloque todas as atividades de Física para essa turma e faça máx salas diferentes = 1.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="307"/>
@@ -12043,21 +12042,21 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="17499"/>
         <source>Constraint activities occupy max time slots from selection is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished">Seleção de restrição de atividades ocupam máx de janelas de tempo está errada pois se refere a dia removido. Corrija e tente novamente. Corrigir significa editar a restrição e atualizar a informação. Restrição é:
+        <translation>Restrição de atividades ocupando máx de janelas de tempo está errada pois se refere a dia removido. Corrija-a e tente novamente. Corrigir significa editar a restrição e atualizar a informação. Restrição é:
 %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17506"/>
         <source>Constraint activities occupy max time slots from selection is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished">Seleção de restrição de atividades ocupam máx de janelas de tempo está errada, pois uma hora preferida está tarde demais (após a última janela aceitável). Corrija e tente novamente. Corrigir significa editar a restrição e atualizar a informação. Restrição é:
+        <translation>Seleção de restrição de atividades ocupam máx de janelas de tempo está errada, pois uma hora preferida está tarde demais (após a última janela aceitável). Corrija e tente novamente. Corrigir significa editar a restrição e atualizar a informação. Restrição é:
 %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17513"/>
         <source>Constraint activities occupy max time slots from selection is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished">Restrição de atividades ocupando máx janelas de tempo da seleção está errada pois se refere a horas removidas. Corrija e tente novamente. Corrigir significa editar a restrição e atualizar a informação. Restrição é:
+        <translation>Restrição de atividades ocupando máx janelas de tempo da seleção está errada pois se refere a horas removidas. Corrija e tente novamente. Corrigir significa editar a restrição e atualizar a informação. Restrição é:
 %1</translation>
     </message>
     <message>
@@ -12089,7 +12088,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="17597"/>
         <source>Activities occupy max time slots from selection, WP:%1, NA:%2, A: %3, STS: %4, MTS:%5</source>
         <comment>Constraint description. WP means weight percentage, NA means the number of activities, A means activities list, STS means selected time slots, MTS means max time slots</comment>
-        <translation type="unfinished">Atividades ocupam janelas máx de tempo da seleção, PP:%1, NAt:%2, At: %3, JTS: %4, MJT:%5</translation>
+        <translation>Atividades ocupam máx janelas de tempo da seleção, PP:%1, NAt:%2, At: %3, JTS: %4, MJT:%5</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17622"/>
@@ -12099,7 +12098,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17623"/>
         <source>Activities occupy max time slots from selection</source>
-        <translation type="unfinished">Atividades ocupam máx janelas de tempo da seleção</translation>
+        <translation>Atividades ocupam máx janelas de tempo da seleção</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17624"/>
@@ -12196,7 +12195,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="306"/>
         <source>Uses of this constraint are probably very wide. The main reason it was added was to enable users to specify that a teacher should have activities in certain time slots. Example: we have a week with 30 hours. Teacher T has 20 hours of activities, and we would like him to have activities Monday and Tuesday on the first two hours. Add a constraint of this type, with the set of activities being all the activities of teacher T, selected time slots being the remaining 30-2*2=26 slots of the week, and the maximum number of selected time slots which can be occupied by these activities being 20-2*2=16.</source>
-        <translation type="unfinished">Usos desta restrição são, provavelmente, muito amplas. A principal razão pela qual foi adicionada era permitir que os usuários especificassem que um professor deve ter atividades em determinadas janelas de tempo. Exemplo: temos uma semana com 30 horas. Professor T tem 20 horas de atividades, e gostaríamos que ele tivesse atividades de segunda e terça-feira nas primeiras duas horas. Incluir uma restrição desse tipo, com o conjunto de atividades sendo todas as atividades do professor T, selecionadas as janelas de tempo sendo as restantes 30-2*2=26 janelas da semana, e o número máximo selecionado de janelas de tempo que pode ser ocupada por essas atividades como 20-2*2=16.</translation>
+        <translation>Usos desta restrição são, provavelmente, muito amplos. A principal razão pela qual foi adicionada era permitir que os usuários especificassem que um professor deve ter atividades em determinadas janelas de tempo. Exemplo: temos uma semana com 30 horas. Professor T tem 20 horas de atividades, e gostaríamos que ele tivesse atividades de segunda e terça-feira nas primeiras duas horas. Incluir uma restrição desse tipo, com o conjunto de atividades sendo todas as atividades do professor T, selecionadas as janelas de tempo sendo as restantes 30-2*2=26 janelas da semana, e o número máximo selecionado de janelas de tempo que pode ser ocupada por essas atividades como 20-2*2=16.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="312"/>
@@ -12215,7 +12214,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="26"/>
         <source>IMPORTANT: Please do not overuse this constraint, because the generation may be slowed down very much. Please read Help for more details.</source>
-        <translation type="unfinished">IMPORTANTE: utilize esta restrição com cuidado pois pode aumentar de forma significativa o tempo de geração. Consulte a Ajuda do sistema para maiores detalhes.</translation>
+        <translation>IMPORTANTE: utilize esta restrição com cuidado pois pode aumentar de forma significativa o tempo de resolução. Consulte a Ajuda do sistema para maiores detalhes.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="44"/>
@@ -12291,21 +12290,21 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="10790"/>
         <source>Constraint activities preferred starting times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished">Restrição de início preferido para atividades está errada pois se refere a dia removido. Corrija e tente novamente. Corrigir significa editar a restrição e atualizar as informações. Restrição é:
+        <translation>Restrição de início preferido para atividades está errada pois se refere a dia removido. Corrija e tente novamente. Corrigir significa editar a restrição e atualizar as informações. Restrição é:
 %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10797"/>
         <source>Constraint activities preferred starting times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished">Restrição de início preferido para atividades está errada pois uma hora preferida está muito tarde (após a última janela aceitável). Corrija e tente novamente. Corrigir significa editar a restrição e atualizar as informações. Restrição é:
+        <translation>Restrição de início preferido para atividades está errada pois uma hora preferida está muito tarde (após a última janela aceitável). Corrija e tente novamente. Corrigir significa editar a restrição e atualizar as informações. Restrição é:
 %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10804"/>
         <source>Constraint activities preferred starting times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished">Restrição de início preferido para atividades está errada pois se refere a hora removida. Corrija e tente novamente. Corrigir significa editar a restrição e atualizar as informações. Restrição é:
+        <translation>Restrição de início preferido para atividades está errada pois se refere a hora removida. Corrija e tente novamente. Corrigir significa editar a restrição e atualizar as informações. Restrição é:
 %1</translation>
     </message>
     <message>
@@ -12317,7 +12316,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="10816"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
-        <translation type="unfinished">As seguintes restrições estão incorretas (não referenciam atividades). Por favor, corrija:
+        <translation>As seguintes restrições estão incorretas (não referenciam atividades). Favor corriji-las:
 %1</translation>
     </message>
     <message>
@@ -12369,7 +12368,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10937"/>
         <source>duration=%1</source>
-        <translation>duração=%1</translation>
+        <translation>período=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10939"/>
@@ -12441,7 +12440,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10992"/>
         <source>Duration=%1</source>
-        <translation>Duração=%1</translation>
+        <translation>Período(s)=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10994"/>
@@ -12564,28 +12563,28 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="9487"/>
         <source>Constraint activities preferred time slots is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished">Restrição de atividades com janelas de tempo preferidas está errada poise se refere a dia removido. Corrija e tente novamente. Corrigir significa editar a restrição e atualizar as informações. Restrição é:
+        <translation>Restrição de atividades com janelas de tempo preferidas está errada poise se refere a dia removido. Corrija e tente novamente. Corrigir significa editar a restrição e atualizar as informações. Restrição é:
 %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9494"/>
         <source>Constraint activities preferred time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished">Restrição de atividades com janelas de tempo preferidas está errada pois uma hora preferida está muito tarde (após a última janela aceitável). Corrija e tente novamente. Corrigir significa editar a restrição e atualizar as informações. Restrição é:
+        <translation>Restrição de atividades com janelas de tempo preferidas está errada pois uma hora preferida está muito tarde (após a última janela aceitável). Corrija e tente novamente. Corrigir significa editar a restrição e atualizar as informações. Restrição é:
 %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9501"/>
         <source>Constraint activities preferred time slots is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished">Restrição de atividades com janelas de tempo preferidas está errada pois se refere a hora removida. Corrija e tente novamente. Corrigir significa editar a restrição e atualizar as informações. Restrição é:
+        <translation>Restrição de atividades com janelas de tempo preferidas está errada pois se refere a hora removida. Corrija e tente novamente. Corrigir significa editar a restrição e atualizar as informações. Restrição é:
 %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9508"/>
         <source>Constraint activities preferred time slots is wrong because hour or day is not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished">Restrição de atividades com janelas de tempo preferidas está errada pois hora ou dia não está especificada(o) para uma janela (-1). Corrija e tente novamente. Corrigir significa editar a restrição e atualizar as informações. Restrição é:
+        <translation>Restrição de atividades com janelas de tempo preferidas está errada pois hora ou dia não está especificada(o) para uma janela (-1). Corrija e tente novamente. Corrigir significa editar a restrição e atualizar as informações. Restrição é:
 %1</translation>
     </message>
     <message>
@@ -12597,7 +12596,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="9520"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
-        <translation type="unfinished">As seguintes restrições estão incorretas (não referenciam atividades). Por favor, corrija:
+        <translation>A restrição a seguir está incorreta (não referencia atividades). Favor corrija-la:
 %1</translation>
     </message>
     <message>
@@ -12649,7 +12648,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9643"/>
         <source>duration=%1</source>
-        <translation>duração=%1</translation>
+        <translation>período=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9645"/>
@@ -12660,7 +12659,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="9647"/>
         <source>Activities with %1, %2, %3, %4, %5, have a set of preferred time slots:</source>
         <comment>%1...%5 are conditions for the activities</comment>
-        <translation type="unfinished">Atividades com %1, %2, %3, %4 e %5 têm um conjunto de janelas de tempo preferidas:</translation>
+        <translation>Atividades com %1, %2, %3, %4 e %5 têm um conjunto de janelas de tempo preferidas:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9662"/>
@@ -12721,7 +12720,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9694"/>
         <source>Duration=%1</source>
-        <translation>Duração=%1</translation>
+        <translation>Período(s)=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9696"/>
@@ -12753,7 +12752,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9699"/>
         <source>have a set of preferred time slots (all hours of each affected activity must be in the allowed slots):</source>
-        <translation type="unfinished">tem um conjunto de janelas de tempo preferidas (todas as horas de cada atividade afectada devem estar nas janelas permitidas):</translation>
+        <translation>tem um conjunto de janelas de tempo preferidas (todas as horas de cada atividade afectada devem estar nas janelas permitidas):</translation>
     </message>
 </context>
 <context>
@@ -12832,7 +12831,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="26"/>
         <source>Each hour slot of each considered activity must be allowed by this constraint (more restrictive than preferred starting times for activities with duration greater than 1)</source>
-        <translation type="unfinished">Cada hora na janela de cada atividade considerada deve ser permitida para esta restrição (mais restritiva do que os tempos preferidos de início para atividades com duração superior a 1)</translation>
+        <translation>Cada janela de hora de cada atividade considerada deve ser permitida para esta restrição (mais restritiva do que os horários preferidos de início para atividades com mais de um período, isto é, duração superior a 1)</translation>
     </message>
 </context>
 <context>
@@ -13031,7 +13030,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12102"/>
         <source>Activities same starting day</source>
-        <translation type="unfinished">Atividades com mesmo dia de início</translation>
+        <translation>Atividades com mesmo dia de início</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12103"/>
@@ -13043,13 +13042,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="12104"/>
         <source>NA:%1</source>
         <comment>Number of activities</comment>
-        <translation>Número de atividades</translation>
+        <translation>NAtiv:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12106"/>
         <source>Id:%1</source>
         <comment>Id of activity</comment>
-        <translation type="unfinished">Id:%1</translation>
+        <translation>Id:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12117"/>
@@ -13075,7 +13074,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="12122"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
-        <translation type="unfinished">Atividade com id=%1 (%2)</translation>
+        <translation>Atividade com id=%1 (%2)</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12129"/>
@@ -13171,7 +13170,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="14"/>
         <source>Constraints activities same starting day</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Restrições a atividades com mesmo dia de início</translation>
+        <translation>Restrições de atividades com mesmo dia de início</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="96"/>
@@ -13191,7 +13190,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="32"/>
         <source>Please try to read Help/Important tips, advice 2). It is IMPORTANT to remove redundant min days constraints after adding constraints same starting day. Please also click Help button here for information.</source>
-        <translation type="unfinished">Por favor, leia Ajuda/Dicas importantes, conselho 2). É IMPORTANTE remover restrições redundantes de mínimo de dias após a adição de restrições com mesmo dia de início. Por favor, clique no botão Ajuda para obter informações.</translation>
+        <translation>Por favor, leia Ajuda/Dicas importantes, conselho 2). É IMPORTANTE remover restrições redundantes de mínimo de dias após a adição de restrições com mesmo dia de início. Por favor, clique no botão Ajuda para obter informações.</translation>
     </message>
 </context>
 <context>
@@ -13395,7 +13394,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="1240"/>
         <source>NA:%1</source>
         <comment>Number of activities</comment>
-        <translation>Número de atividades</translation>
+        <translation>NAtiv:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1242"/>
@@ -14783,7 +14782,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="26"/>
         <source>Each hour slot of each considered activity must be allowed by this constraint (more restrictive than preferred starting times for activities with duration greater than 1)</source>
-        <translation type="unfinished">Cada janela de hora de cada atividade considerada deve ser permitida por esta restrição (mais restritiva do que os tempos de início preferidos para atividades com duração superior a 1)</translation>
+        <translation type="unfinished">Cada janela de hora de cada atividade considerada deve ser permitida por esta restrição (mais restritiva do que os tempos de início preferidos para atividades com mais de 1 período, isto é, duração superior a 1)</translation>
     </message>
 </context>
 <context>
@@ -14802,7 +14801,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3377"/>
         <source>Following constraint is wrong:
 %1</source>
-        <translation type="unfinished">Essa restrição está errada:
+        <translation>Essa restrição está errada:
 %1</translation>
     </message>
     <message>
@@ -15359,7 +15358,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="358"/>
         <source>activity with id=%1 is late.</source>
-        <translation type="unfinished">atividade com id=%1 tarde.</translation>
+        <translation>atividade com id=%1 é tardia.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="361"/>
@@ -15371,12 +15370,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="389"/>
         <source>teacher with name %1 has more than one allocated activity on day %2, hour %3</source>
-        <translation type="unfinished">docente %1 tem mais de uma atividade alocada no dia %2, hora %3</translation>
+        <translation>docente %1 tem mais de uma atividade alocada no dia %2, hora %3</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="419"/>
         <source>subgroup %1 has more than one allocated activity on day %2, hour %3</source>
-        <translation type="unfinished">subgrupo %1 tem mais de uma atividade alocada no dia %2, hora %3</translation>
+        <translation>subgrupo %1 tem mais de uma atividade alocada no dia %2, hora %3</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="326"/>
@@ -15393,7 +15392,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="330"/>
         <source>this increases the conflicts total by %1</source>
-        <translation type="unfinished">isso aumenta o total de conflitos em %1</translation>
+        <translation>isso aumenta o total de conflitos em %1</translation>
     </message>
 </context>
 <context>
@@ -15443,7 +15442,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="164"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
-        <translation type="unfinished">Nota: você pode adicionar novamente uma restrição deste tipo a partir do menu de Dados -&gt; Restrições de tempo -&gt; Diversos -&gt; Restrições básicas obrigatórias de tempo.</translation>
+        <translation>Nota: você pode adicionar novamente uma restrição deste tipo a partir do menu Dados -&gt; Restrições de tempo -&gt; Diversos -&gt; Restrições básicas obrigatórias de tempo.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="167"/>
@@ -15634,7 +15633,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="26"/>
         <source>Note: An activity with duration greater than 1 cannot be split over a break. Also, the activities constrained by min days between activities constraints with &apos;consecutive if same day&apos; = true cannot spread over a break.</source>
-        <translation>Nota: Uma atividade com duração superior a 1 não pode ser dividida com pausa. O mesmo ocorre para atividades restritas por mín dias entre restrições de atividades com &quot;consecutivas, se no mesmo dia&quot;=verdadeiro.</translation>
+        <translation>Nota: Uma atividade com mais de um período não pode ser dividida com pausa. O mesmo ocorre para atividades restritas por mín dias entre restrições de atividades com &quot;consecutivas, se no mesmo dia&quot;=verdadeiro.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="61"/>
@@ -15990,12 +15989,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="2002"/>
         <source>Time constraint min days between activities broken: activity with id=%1 (%2) conflicts with activity with id=%3 (%4), being %5 days too close, on days %6 and %7</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr. Close here means near</comment>
-        <translation>Restrição de tempo &quot;mínimo de dias entre as atividades&quot; não atendida: atividade com id=%1 (%2) conflita com a atividade com id=%3 (%4), sendo %5 dias muito próximos, nos dias %6 e %7</translation>
+        <translation>Restrição de tempo &quot;mínimo de dias entre as atividades&quot; não atendida: atividade com id=%1 (%2) conflita com a atividade com id=%3 (%4), sendo %5 dia(s) muito próximo(s), nos dias %6 e %7</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2014"/>
         <source>conflicts factor increase=%1</source>
-        <translation>Incremento no fator de conflitos=%1</translation>
+        <translation>incremento no fator de conflitos=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2019"/>
@@ -16416,7 +16415,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="492"/>
         <source>R:%1</source>
         <comment>Room</comment>
-        <translation type="unfinished">S:%1</translation>
+        <translation>S:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="494"/>
@@ -16485,7 +16484,8 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="569"/>
         <source>Constraint room not available times is wrong because an hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation>Restrição de horários indisponíveis para sala está errada pois uma hora está muito tarde (após a última janela aceitável). Corrija e tente novamente. Corrigir significa editar a restrição e atualizar a informação. Restrição é:</translation>
+        <translation type="unfinished">Restrição de horários indisponíveis para sala está errada pois uma hora está muito tarde (após a última janela aceitável). Corrija e tente novamente. Corrigir significa editar a restrição e atualizar a informação. Restrição é:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="619"/>
@@ -16636,7 +16636,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="7871"/>
         <location filename="../src/engine/timeconstraint.cpp" line="7899"/>
         <source>Time constraint students, activity tag %1, max %2 hours continuously, broken for subgroup %3, on day %4, length=%5.</source>
-        <translation>Restrição de tempo para alunos, marcador de atividade %1, máx %2 h contínuas, não atendida para subgrupo %3, no dia %4, duração=%5.</translation>
+        <translation>Restrição de tempo para alunos, marcador de atividade %1, máx %2 h contínuas, não atendida para subgrupo %3, no dia %4, período=%5.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7882"/>
@@ -16777,7 +16777,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16533"/>
         <source>Maximum hours daily=%1</source>
-        <translation>Máx de horas diárias=%1</translation>
+        <translation>Máx jornada=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16536"/>
@@ -16793,7 +16793,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16590"/>
         <source>Time constraint students, activity tag %1, max %2 hours daily, broken for subgroup %3, on day %4, length=%5.</source>
-        <translation>Restrição de tempo para alunos, marcador de atividade %1, máx %2 h diárias, não atendida para subgrupo %3, no dia %4, duração=%5.</translation>
+        <translation>Restrição de tempo para alunos, marcador de atividade %1, máx %2 h diárias, não atendida para subgrupo %3, no dia %4, período=%5.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16601"/>
@@ -16847,7 +16847,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="26"/>
         <source>This constraint ensures that all students do not have more than max hours daily of activities with the specified activity tag.</source>
-        <translation>Esta restrição garante que todos os alunos não têm mais que o máximo de horas diárias de atividades com o marcador de atividade especificado.</translation>
+        <translation>Esta restrição garante que todos os alunos não tenham mais que o máximo de horas diárias (jornada) de atividades com o marcador de atividade especificado.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="42"/>
@@ -16953,7 +16953,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6372"/>
         <source>Constraint students early max %1 beginnings at second hour broken for subgroup %2, because students have too many arrivals at second hour, increases conflicts total by %3</source>
-        <translation>Restrição início máx %1 início na segunda hora não atendida para o subgrupo %2, pois os alunos têm muitas chegadas na segunda hora, aumenta conflitos totais em %4</translation>
+        <translation type="unfinished">Restrição  máx %1 início cedo na segunda hora não atendida para o subgrupo %2, pois os alunos têm muitas chegadas na segunda hora, aumenta conflitos totais em %3</translation>
     </message>
 </context>
 <context>
@@ -17043,21 +17043,21 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="15403"/>
         <source>Constraint students interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
-        <translation>Restrição de intervalo máximo de dias por semana para alunos está errado pois hora de início &gt;= hora final. Favor corrigi-la. Restrição é:
+        <translation>Restrição de intervalo máximo de dias por semana para alunos está errada pois hora de início &gt;= hora final. Favor corrigi-la. Restrição é:
 %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15410"/>
         <source>Constraint students interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
-        <translation type="unfinished">Restrição de intervalo máximo de dias por semana para alunos está errado pois hora de início &lt; primeira hora do dia. Favor corrigi-la. Restrição é:
+        <translation type="unfinished">Restrição de intervalo máximo de dias por semana para alunos está errada pois hora de início &lt; primeira hora do dia. Favor corrigi-la. Restrição é:
 %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15417"/>
         <source>Constraint students interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
-        <translation type="unfinished">Restrição de intervalo máximo de dias por semana para alunos está errado pois hora de término &gt; horas por dia. Favor corrigi-la. Restrição é:
+        <translation type="unfinished">Restrição de intervalo máximo de dias por semana para alunos está errada pois hora de término &gt; horas por dia. Favor corrigi-la. Restrição é:
 %1</translation>
     </message>
     <message>
@@ -17100,7 +17100,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="15473"/>
         <source>MD:%1</source>
         <comment>Abbreviation for max days</comment>
-        <translation type="unfinished">MáxD:%1</translation>
+        <translation>MáxD:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15481"/>
@@ -17147,7 +17147,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15540"/>
         <source>Time constraint students interval max days per week broken for subgroup: %1, allowed %2 days, required %3 days.</source>
-        <translation>As restrições de tempo para alunos com atividades em um intervalo máximo de dias por semana está errado para o subgrupo %1, permitido %2 dias, exigidos %3 dias.</translation>
+        <translation>A restrição de tempo máx de dias por semana para alunos está errada para o subgrupo %1, permitidos %2 dias, solicitados %3 dias.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15545"/>
@@ -17240,7 +17240,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4169"/>
         <source>Students max building changes per day</source>
-        <translation type="unfinished">Máx de trocas de prédio por dia para alunos</translation>
+        <translation>Máx troca diária de prédios para alunos</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4171"/>
@@ -17262,7 +17262,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4184"/>
         <source>Students maximum building changes per day</source>
-        <translation type="unfinished">Máx de trocas de prédio por dia para alunos</translation>
+        <translation>Máx troca diária de prédios para alunos</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4186"/>
@@ -17272,7 +17272,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4188"/>
         <source>Maximum building changes per day=%1</source>
-        <translation type="unfinished">Máx trocas de prédio por dia=%1</translation>
+        <translation>Máx troca diária de prédio=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4191"/>
@@ -17337,7 +17337,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Constraints students max building changes per day</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Restrições para máx de trocas de prédio por dia para alunos</translation>
+        <translation>Restrições para máx troca diária de prédio para alunos</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="28"/>
@@ -17381,7 +17381,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4693"/>
         <source>Students max building changes per week</source>
-        <translation>Máx de troca de prédio por semana para alunos</translation>
+        <translation>Máx troca semanal de prédio para alunos</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4695"/>
@@ -17403,7 +17403,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4708"/>
         <source>Students maximum building changes per week</source>
-        <translation>Máx de troca de prédio por semana para alunos</translation>
+        <translation>Máx troca semanal de prédio para alunos</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4710"/>
@@ -17413,7 +17413,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4712"/>
         <source>Maximum building changes per week=%1</source>
-        <translation>Máx de troca de prédio por semana=%1</translation>
+        <translation>Máx troca semanal de prédio=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4715"/>
@@ -17429,7 +17429,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4785"/>
         <source>Space constraint students max building changes per week broken for students=%1</source>
-        <translation>Restrição de espaço 7quot;máx de trocas de prédio por semana&quot; não atendida para alunos=%1</translation>
+        <translation>Restrição de espaço 7quot;máx troca semanal de prédio&quot; não atendida para alunos=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4788"/>
@@ -17478,7 +17478,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Constraints students max building changes per week</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Restrição de espaço máximo de troca de prédio por semana para alunos</translation>
+        <translation>Restrição de espaço máxima troca semanal de prédio para alunos</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform_template.ui" line="28"/>
@@ -17570,7 +17570,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18546"/>
         <source>Time constraint students max days per week broken for subgroup: %1, allowed %2 days, required %3 days.</source>
-        <translation>Restrição de tempo &quot;máx dias por semana para alunos7quot; não atendida para subgrupo: %1, permitidos %2 dias, necessários %3 dias.</translation>
+        <translation>Restrição de tempo &quot;máx dias por semana para alunos7quot; não atendida para subgrupo: %1, permitidos %2 dias, solicitados %3 dias.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18551"/>
@@ -18010,7 +18010,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="7320"/>
         <location filename="../src/engine/timeconstraint.cpp" line="7347"/>
         <source>Time constraint students max %1 hours continuously broken for subgroup %2, on day %3, length=%4.</source>
-        <translation>Restrição de tempo máx %1 horas contínuas para alunos não atendida para subgrupo %2, no dia %3, duração=%4</translation>
+        <translation>Restrição de tempo máx %1 horas contínuas para alunos não atendida para subgrupo %2, no dia %3, período=%4</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7330"/>
@@ -18104,7 +18104,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6810"/>
         <source>Students max hours daily</source>
-        <translation>Máx horas diárias para alunos</translation>
+        <translation>Máx jornada para alunos</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6811"/>
@@ -18126,7 +18126,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6822"/>
         <source>All students must respect the maximum number of hours daily</source>
-        <translation>Todos os alunos devem respeitar máximo de horas diárias</translation>
+        <translation>Todos os alunos devem respeitar máximo de horas diárias (jornada)</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6823"/>
@@ -18136,7 +18136,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6824"/>
         <source>Maximum hours daily=%1</source>
-        <translation>Máx de horas diárias=%1</translation>
+        <translation>Máx jornada=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6827"/>
@@ -18152,7 +18152,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6871"/>
         <source>Time constraint students max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4</source>
-        <translation>Restrição de tempo &quot;máx horas diárias para alunos&quot; não atendida para subgrupo: %1, dia: %2, duração=%3, aumento de conflito=%4</translation>
+        <translation>Restrição de tempo &quot;máx jornada para alunos&quot; não atendida para subgrupo: %1, dia: %2, período=%3, aumento de conflito=%4</translation>
     </message>
 </context>
 <context>
@@ -18196,7 +18196,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="14"/>
         <source>Constraints students max hours daily</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation>Restrições máx horas diárias para alunos</translation>
+        <translation>Restrições máx jornada para alunos</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="28"/>
@@ -18252,7 +18252,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="5232"/>
         <source>mG:%1</source>
         <comment>mG means min gaps</comment>
-        <translation type="unfinished">MínLac:%1</translation>
+        <translation>MínLac:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5241"/>
@@ -18262,7 +18262,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5243"/>
         <source>Students minimum gaps between building changes</source>
-        <translation>Mínima lacuna entre trocas de prédio para alunos</translation>
+        <translation>Mínima lacuna entre troca de prédio para alunos</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5245"/>
@@ -18272,7 +18272,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5247"/>
         <source>Minimum gaps between building changes=%1</source>
-        <translation>Mín de lacunas entre trocas de prédios=%1</translation>
+        <translation>Mín de lacunas entre troca de prédios=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5250"/>
@@ -18288,7 +18288,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5323"/>
         <source>Space constraint students min gaps between building changes broken for students=%1 on day %2</source>
-        <translation>Restrição de espaço &quot;mín lacunas entre trocas de prédio para alunos&quot; não atendida para alunos=%1 no dia %2</translation>
+        <translation>Restrição de espaço &quot;mín lacunas entre troca de prédio para alunos&quot; não atendida para alunos=%1 no dia %2</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5327"/>
@@ -18337,7 +18337,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Constraints students min gaps between building changes</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Restrições de mín lacunas entre trocas de prédio para alunos</translation>
+        <translation>Restrições de mín lacunas entre troca de prédio para alunos</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="28"/>
@@ -18414,7 +18414,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8396"/>
         <source>All students must respect the minimum number of hours daily</source>
-        <translation>Todos os alunos respeitam mínimo de horas diárias</translation>
+        <translation>Todos os alunos respeitam mínimo de horas diárias (jornada)</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8397"/>
@@ -18424,12 +18424,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8398"/>
         <source>Minimum hours daily=%1</source>
-        <translation>Mín de horas diárias=%1</translation>
+        <translation>Mín jornada=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8399"/>
         <source>Allow empty days=%1</source>
-        <translation type="unfinished">Dias vagos permitidos=%1</translation>
+        <translation>Dias vagos permitidos=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8402"/>
@@ -18445,7 +18445,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8449"/>
         <source>Time constraint students min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4</source>
-        <translation>Restrição de tempo de jornada mínima para alunos não atendida para subgrupo: %1, dia: %2, duração=%3, aumento de conflito=%4</translation>
+        <translation>Restrição de tempo de jornada mínima para alunos não atendida para subgrupo: %1, dia: %2, período=%3, aumento de conflito=%4</translation>
     </message>
 </context>
 <context>
@@ -18608,7 +18608,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="8196"/>
         <location filename="../src/engine/timeconstraint.cpp" line="8223"/>
         <source>Time constraint students set max %1 hours continuously broken for subgroup %2, on day %3, length=%4.</source>
-        <translation>Restrição de tempo máx %1 horas contínuas para turma não atendida para subgrupo %2, no dia %3, duração=%4.</translation>
+        <translation>Restrição de tempo máx %1 horas contínuas para turma não atendida para subgrupo %2, no dia %3, período=%4.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8206"/>
@@ -18734,7 +18734,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16744"/>
         <source>A students set, for an activity tag, must respect the maximum number of hours daily</source>
-        <translation type="unfinished">Uma turma, para um marcador de atividade, deve respeitar o máximo de horas diárias</translation>
+        <translation type="unfinished">Uma turma, para um marcador de atividade, deve respeitar o máximo de horas diárias (jornada)</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16745"/>
@@ -18754,7 +18754,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16748"/>
         <source>Maximum hours daily=%1</source>
-        <translation>Máx de horas diárias=%1</translation>
+        <translation>Máx jornada=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16751"/>
@@ -18776,12 +18776,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="16773"/>
         <source>Constraint students set max hours daily is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
-        <translation>Restrição de máx horas diárias para turma está errada, pois se refere a turma inexistente. Favor corrigi-la (removê-la pode ser uma solução). Favor relatar potencial bug. Restrição é:</translation>
+        <translation>Restrição de máx jornada (horas diárias) para turma está errada, pois se refere a turma inexistente. Favor corrigi-la (removê-la pode ser uma solução). Favor relatar potencial bug. Restrição é:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16884"/>
         <source>Time constraint students set, activity tag %1, max %2 hours daily, broken for subgroup %3, on day %4, length=%5.</source>
-        <translation>Restrição de tempo para turma, marcador de atividade %1, máx %2 horas diárias, não atendida para subgrupo %3, no dia %4, duração=%5.</translation>
+        <translation>Restrição de tempo para turma, marcador de atividade %1, máx %2 horas diárias, não atendida para subgrupo %3, no dia %4, período=%5.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16895"/>
@@ -19056,7 +19056,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1360"/>
         <source>Room=%1</source>
-        <translation type="unfinished">Sala=%1</translation>
+        <translation>Sala=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1339"/>
@@ -19118,7 +19118,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1425"/>
         <source>Space constraint students set home room broken for activity with id %1 (%2)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
-        <translation type="unfinished">Restrição de espaço &quot;sala pré-definida&quot; para turma não foi atendida para atividade com id %1 (%2)</translation>
+        <translation>Restrição de espaço &quot;sala principal&quot; para turma não foi atendida para atividade com id %1 (%2)</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1430"/>
@@ -19167,7 +19167,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="14"/>
         <source>Constraints students set home room</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation>Restrições para sala pré-definida da turma</translation>
+        <translation>Restrições para sala principal da turma</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="104"/>
@@ -19221,7 +19221,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1571"/>
         <source>Following constraint is wrong:
 %1</source>
-        <translation type="unfinished">Essa restrição está errada:
+        <translation>Essa restrição está errada:
 %1</translation>
     </message>
     <message>
@@ -19234,7 +19234,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1619"/>
         <location filename="../src/engine/spaceconstraint.cpp" line="1636"/>
         <source>Students set home rooms</source>
-        <translation>Salas pré-definidas da turma</translation>
+        <translation>Salas principais de turma</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1620"/>
@@ -19252,7 +19252,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1626"/>
         <source>R:%1</source>
         <comment>R means Room</comment>
-        <translation type="unfinished">S:%1</translation>
+        <translation>S:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1635"/>
@@ -19272,7 +19272,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1642"/>
         <source>Room=%1</source>
-        <translation type="unfinished">Sala=%1</translation>
+        <translation>Sala=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1647"/>
@@ -19289,7 +19289,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1712"/>
         <source>Space constraint students set home rooms broken for activity with id %1 (%2)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
-        <translation>Restrição de espaço &quot;salas pré-definidas&quot; não atendida para atividade com id %1 (%2)</translation>
+        <translation>Restrição de espaço &quot;salas principais&quot; não atendida para atividade com id %1 (%2)</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1717"/>
@@ -19338,7 +19338,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssethomeroomsform_template.ui" line="14"/>
         <source>Constraints students set home rooms</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation>Restrições para salas pré-definidas da turma</translation>
+        <translation>Restrições para salas principais da turma</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform_template.ui" line="104"/>
@@ -19402,14 +19402,14 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="15105"/>
         <source>Constraint students set interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
-        <translation>Restrição de máx intervalo de dias por semana para turma está errada pois horário de início &lt;= primeira hora do dia. Favor corrigi-la. Restrição é:
+        <translation>Restrição de máx intervalo de dias por semana para turma está errada pois horário de início &lt; primeira hora do dia. Favor corrigi-la. Restrição é:
 %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15112"/>
         <source>Constraint students set interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
-        <translation>Restrição de máx intervalo de dias por semana para turma está errada pois horário de término &gt;= número de horas por dia. Favor corrigi-la. Restrição é:
+        <translation>Restrição de máx intervalo de dias por semana para turma está errada pois horário de término &gt; número de horas por dia. Favor corrigi-la. Restrição é:
 %1</translation>
     </message>
     <message>
@@ -19465,7 +19465,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="15223"/>
         <source>MD:%1</source>
         <comment>Abbreviation for max days</comment>
-        <translation type="unfinished">MáxD:%1</translation>
+        <translation>MáxD:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15231"/>
@@ -19475,7 +19475,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15232"/>
         <source>A students set respects working in an hourly interval a maximum number of days per week</source>
-        <translation type="unfinished">Uma turma está autorizada a trabalhar em uma faixa horária por número limitado de dias por semana.</translation>
+        <translation type="unfinished">Uma turma está autorizada a trabalhar em uma faixa horária por número limitado de dias por semana</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15233"/>
@@ -19485,7 +19485,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15234"/>
         <source>Students set=%1</source>
-        <translation type="unfinished">Turma=%1</translation>
+        <translation>Turma=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15235"/>
@@ -19517,7 +19517,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15291"/>
         <source>Time constraint students set interval max days per week broken for subgroup: %1, allowed %2 days, required %3 days.</source>
-        <translation>Restrição de tempo máx intervalo de dias por semana para turma não atendida para subgrupo: %1, permitidos %2 dias, necessários %3 dias.</translation>
+        <translation>Restrição de tempo máx intervalo de dias por semana para turma não atendida para subgrupo: %1, permitidos %2 dias, solicitados %3 dias.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15296"/>
@@ -19615,7 +19615,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3851"/>
         <source>Constraint students set max building changes per day is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
-        <translation type="unfinished">Restrição máx trocas de prédio diária para turma está errada pois se refere a turma inexistente. Favor corrigi-la (removê-la pode ser uma solução). Por favor, reporte potencial bug. Restrição é:
+        <translation>Restrição máx troca diária de prédio para turma está errada pois se refere a turma inexistente. Favor corrigi-la (removê-la pode ser uma solução). Por favor, reporte potencial bug. Restrição é:
 %1</translation>
     </message>
     <message>
@@ -19655,7 +19655,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3947"/>
         <source>Students set maximum building changes per day</source>
-        <translation>Máx de trocas diárias de prédio para turma</translation>
+        <translation>Máx troca diária de prédio para turma</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3949"/>
@@ -19670,7 +19670,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3953"/>
         <source>Maximum building changes per day=%1</source>
-        <translation>Máx de trocas diárias de prédio=%1</translation>
+        <translation>Máx troca diária de prédio=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3956"/>
@@ -19686,7 +19686,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4025"/>
         <source>Space constraint students set max building changes per day broken for students=%1 on day %2</source>
-        <translation>Restrição de espaço &quot;máx trocas diárias de prédio para turma&quot; não atendida para turma=%1 no dia %2</translation>
+        <translation>Restrição de espaço &quot;máx troca diária de prédio para turma&quot; não atendida para turma=%1 no dia %2</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4029"/>
@@ -19735,7 +19735,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Constraints students set max building changes per day</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation>Restrições de máx trocas diárias de prédio para turma</translation>
+        <translation>Restrições de máx troca diária de prédio para turma</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperdayform_template.ui" line="28"/>
@@ -19784,7 +19784,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="4375"/>
         <source>Constraint students set max building changes per week is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
-        <translation type="unfinished">Restrição de máx trocas de prédio por semana para turma está errada pois se refere a turma inexistente. Favor corrigi-la (removê-la pode ser a solução). Favor relatar possível bug. Restrição é:
+        <translation>Restrição de máx troca de prédio por semana para turma está errada pois se refere a turma inexistente. Favor corrigi-la (removê-la pode ser a solução). Favor relatar possível bug. Restrição é:
 %1</translation>
     </message>
     <message>
@@ -19796,7 +19796,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4454"/>
         <source>Students set max building changes per week</source>
-        <translation>Máx trocas de prédio por semana para turmas</translation>
+        <translation>Máx troca de prédio por semana para turmas</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4456"/>
@@ -19824,7 +19824,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4471"/>
         <source>Students set maximum building changes per week</source>
-        <translation>Máxima troca de prédio por semana para turma</translation>
+        <translation>Máxima troca semanal de prédio para turma</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4473"/>
@@ -19839,7 +19839,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4477"/>
         <source>Maximum building changes per week=%1</source>
-        <translation type="unfinished">Máxima troca de prédio por semana=%1</translation>
+        <translation>Máxima troca semanal de prédio=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4480"/>
@@ -19855,7 +19855,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4550"/>
         <source>Space constraint students set max building changes per week broken for students=%1</source>
-        <translation type="unfinished">Restrição de espaço máx trocas de prédio por semana não atendida para turma=%1</translation>
+        <translation>Restrição de espaço máx troca semanal de prédio não atendida para turma=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4553"/>
@@ -19904,7 +19904,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Constraints students set max building changes per week</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation>Restrições máx trocas de prédio por semana para turma</translation>
+        <translation>Restrições máx troca semanal de prédio para turma</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperweekform_template.ui" line="28"/>
@@ -19983,7 +19983,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="18291"/>
         <source>MD:%1</source>
         <comment>Abbreviation for max days</comment>
-        <translation type="unfinished">MáxDias:%1</translation>
+        <translation>MáxDia:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18299"/>
@@ -20003,7 +20003,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18302"/>
         <source>Students set=%1</source>
-        <translation type="unfinished">Turma=%1</translation>
+        <translation>Turma=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18304"/>
@@ -20024,7 +20024,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18352"/>
         <source>Time constraint students set max days per week broken for subgroup: %1, allowed %2 days, required %3 days.</source>
-        <translation type="unfinished">Restrição de tempo máx dias por semana para turma não foi atendida para subgrupo: %1, permitidos %2 dias, necessários %3 dias.</translation>
+        <translation type="unfinished">Restrição de tempo máx dias por semana para turma não foi atendida para subgrupo: %1, permitidos %2 dias, solicitados %3 dias.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18357"/>
@@ -20122,7 +20122,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="17209"/>
         <source>Constraint students set max gaps per day is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
-        <translation type="unfinished">Restrição máx lacunas diárias está errada pois se refere a turma inexistente. Favor corrigi-la (removê-la pode ser a solução). Favor relatar possível bug. Restrição é:
+        <translation>Restrição máx lacunas diárias está errada pois se refere a turma inexistente. Favor corrigi-la (removê-la pode ser a solução). Favor relatar possível bug. Restrição é:
 %1</translation>
     </message>
     <message>
@@ -20488,7 +20488,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="7488"/>
         <source>St:%1</source>
         <comment>Students (set)</comment>
-        <translation type="unfinished">T:%1</translation>
+        <translation>T:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7489"/>
@@ -20514,12 +20514,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7501"/>
         <source>Students set=%1</source>
-        <translation type="unfinished">Turma=%1</translation>
+        <translation>Turma=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7502"/>
         <source>Maximum hours continuously=%1</source>
-        <translation type="unfinished">Máx de horas contínuas=%1</translation>
+        <translation>Máx de horas contínuas=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7505"/>
@@ -20541,14 +20541,14 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="7523"/>
         <source>Constraint students set max hours continuously is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
-        <translation type="unfinished">Restrição máx horas contínuas está errada pois se refere a turma inexistente. Favor corrigi-la (remover pode ser a soluçã). Favor relatar possível bug. Restrição é:
+        <translation>Restrição máx horas contínuas está errada pois se refere a turma inexistente. Favor corrigi-la (remover pode ser a solução). Favor relatar possível bug. Restrição é:
 %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7599"/>
         <location filename="../src/engine/timeconstraint.cpp" line="7626"/>
         <source>Time constraint students set max %1 hours continuously broken for subgroup %2, on day %3, length=%4.</source>
-        <translation type="unfinished">Restrição de tempo máx %1 hora contínua para turma não atendida para subgrupo %2, no dia %3, duração=%4.</translation>
+        <translation type="unfinished">Restrição de tempo máx %1 hora contínua para turma não atendida para subgrupo %2, no dia %3, período=%4.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7609"/>
@@ -20659,7 +20659,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="7007"/>
         <source>St:%1</source>
         <comment>Students (set)</comment>
-        <translation type="unfinished">Tur:%1</translation>
+        <translation>T:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7008"/>
@@ -20675,7 +20675,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7018"/>
         <source>A students set must respect the maximum number of hours daily</source>
-        <translation>Uma turma deve respeitar o máximo de horas diárias</translation>
+        <translation>Uma turma deve respeitar o máximo de horas diárias (jornada)</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7019"/>
@@ -20685,12 +20685,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7020"/>
         <source>Students set=%1</source>
-        <translation type="unfinished">Turma=%1</translation>
+        <translation>Turma=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7021"/>
         <source>Maximum hours daily=%1</source>
-        <translation type="unfinished">Máx de horas diárias=%1</translation>
+        <translation>Máx jornada=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7024"/>
@@ -20712,13 +20712,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="7042"/>
         <source>Constraint students set max hours daily is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
-        <translation type="unfinished">Restrição máx jornada está errada pois se refere a turma inexistente. Favor corrigi-la (remover pode ser a solução). Favor corrigir possível bug. Restrição é:
+        <translation>Restrição máx jornada está errada pois se refere a turma inexistente. Favor corrigi-la (remover pode ser a solução). Favor corrigir possível bug. Restrição é:
 %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7125"/>
         <source>Time constraint students set max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4</source>
-        <translation type="unfinished">Restrição de tempo máx jornada para turma não atendida para subgrupo: %1, dia: %2, duração=%3, aumento nos conflitos=%4</translation>
+        <translation>Restrição de tempo máx jornada para turma não atendida para subgrupo: %1, dia: %2, período=%3, aumento nos conflitos=%4</translation>
     </message>
 </context>
 <context>
@@ -20811,7 +20811,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="4898"/>
         <source>Constraint students set min gaps between building changes is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
-        <translation type="unfinished">Restrição mín lacunas entre trocas de prédio está errada pois se refere a turma inexistente. Favor corrigi-la (remover pode ser a solução). Favor corrigir possível bug. Restrição é:
+        <translation>Restrição mín lacunas entre trocas de prédio está errada pois se refere a turma inexistente. Favor corrigi-la (remover pode ser a solução). Favor corrigir possível bug. Restrição é:
 %1</translation>
     </message>
     <message>
@@ -20835,7 +20835,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="4981"/>
         <source>St:%1</source>
         <comment>St means students</comment>
-        <translation type="unfinished">T:%1</translation>
+        <translation>T:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4983"/>
@@ -20851,7 +20851,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4994"/>
         <source>Students set minimum gaps between building changes</source>
-        <translation>Mín de lacunas entre troca de prédios para turma</translation>
+        <translation>Mín de lacunas entre trocas de prédio para turma</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4996"/>
@@ -20882,7 +20882,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5076"/>
         <source>Space constraint students set min gaps between building changes broken for students=%1 on day %2</source>
-        <translation type="unfinished">Restrição de espaço mín lacunas entre trocas de prédio não atendida para turma=%1 no dia %2</translation>
+        <translation>Restrição de espaço mín lacunas entre trocas de prédio não atendida para turma=%1 no dia %2</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5080"/>
@@ -21014,12 +21014,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8613"/>
         <source>(nonstandard, students may have empty days)</source>
-        <translation type="unfinished">(não padrão, os alunos podem ter dias vagos)</translation>
+        <translation>(não padrão, os alunos podem ter dias vagos)</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8616"/>
         <source>A students set must respect the minimum number of hours daily</source>
-        <translation>Uma turma deve respeitar um mínimo de horas diárias</translation>
+        <translation>Uma turma deve respeitar um mínimo de horas diárias (jornada)</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8617"/>
@@ -21034,7 +21034,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8619"/>
         <source>Minimum hours daily=%1</source>
-        <translation>Mín de horas diárias=%1</translation>
+        <translation>Mín jornada=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8620"/>
@@ -21067,7 +21067,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8728"/>
         <source>Time constraint students set min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4</source>
-        <translation>Restrição de tempo de jornada mínima para turma não atendida para subgrupo: %1, dia: %2, duração=%3, aumento de conflito=%4</translation>
+        <translation>Restrição de tempo de jornada mínima para turma não atendida para subgrupo: %1, dia: %2, período=%3, aumento de conflito=%4</translation>
     </message>
 </context>
 <context>
@@ -21367,22 +21367,22 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="11277"/>
         <source>Constraint subactivities preferred starting times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished">Restrição de horário de início preferido para subatividades está errada, pois se refere a dia removido. Corrija e tente novamente. Corrigir significa editar a restrição e atualizar informações. Restrição é:
-1%</translation>
+        <translation>Restrição de horário de início preferido para subatividades está errada, pois se refere a dia removido. Corrija e tente novamente. Corrigir significa editar a restrição e atualizar informações. Restrição é:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11284"/>
         <source>Constraint subactivities preferred starting times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished">Restrição de horário de início preferido para subatividades está errada, pois um horário preferido está muito tarde (após a última janela aceitável). Corrija e tente novamente. Corrigir significa editar a restrição e atualizar informações. Restrição é:
-1%</translation>
+        <translation>Restrição de horário de início preferido para subatividades está errada, pois um horário preferido está muito tarde (após a última janela aceitável). Corrija e tente novamente. Corrigir significa editar a restrição e atualizar informações. Restrição é:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11291"/>
         <source>Constraint subactivities preferred starting times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished">Restrição de horário de início preferido para subatividades está errada, pois se refere a horário removido. Corrija e tente novamente. Corrigir significa editar a restrição e atualizar informações. Restrição é:
-1%</translation>
+        <translation>Restrição de horário de início preferido para subatividades está errada, pois se refere a horário removido. Corrija e tente novamente. Corrigir significa editar a restrição e atualizar informações. Restrição é:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11302"/>
@@ -21393,7 +21393,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="11303"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
-        <translation type="unfinished">A seguinte restrição está incorreta (não referencia a atividades). Por favor, corrija:
+        <translation>A seguinte restrição está incorreta (não referencia a atividades). Por favor, corrija:
 %1</translation>
     </message>
     <message>
@@ -21472,7 +21472,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11447"/>
         <source>Component number=%1</source>
-        <translation type="unfinished">Item=%1</translation>
+        <translation>Item=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11450"/>
@@ -21539,7 +21539,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11473"/>
         <source>have a set of preferred starting times:</source>
-        <translation type="unfinished">possuem horários preferenciais de início:</translation>
+        <translation>possuem horários preferenciais de início:</translation>
     </message>
 </context>
 <context>
@@ -21670,25 +21670,29 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="9987"/>
         <source>Constraint subactivities preferred time slots is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de intervalos de tempo preferidos para subatividades está errada, pois se refere a dia removido. Corrija e tente novamente. Corrigir significa editar a restrição e atualizar as informações. Restrição é:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9994"/>
         <source>Constraint subactivities preferred time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de intervalos de tempo preferidos para subatividades está errada, pois um horário preferido está muito tarde (após a janela de tempo aceitável). Corrija e tente novamente. Corrigir significa editar a restrição e atualizar as informações. Restrição é:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10001"/>
         <source>Constraint subactivities preferred time slots is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de intervalos de tempo preferidos para subatividades está errada, pois se refere a uma hora removida. Corrija e tente novamente. Corrigir significa editar a restrição e atualizar as informações. Restrição é:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10008"/>
         <source>Constraint subactivities preferred time slots is wrong because hour or day is not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição janelas de tempo preferidas para subatividades está errada pois hora ou dia não está especificado para uma janela (-1). Corrija e tente novamente. Corrigir significa editar a restrição e atualizar informações. Restrição é:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10019"/>
@@ -21699,7 +21703,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="10020"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
-        <translation type="unfinished">A seguinte restrição está incorreta (não referencia a atividades). Por favor, corrija:
+        <translation>A seguinte restrição está incorreta (não referencia a atividades). Por favor, corrija:
 %1</translation>
     </message>
     <message>
@@ -21757,7 +21761,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10138"/>
         <source>component number=%1</source>
-        <translation type="unfinished">item=%1</translation>
+        <translation>item=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10155"/>
@@ -21778,7 +21782,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10165"/>
         <source>Component number=%1</source>
-        <translation type="unfinished">item=%1</translation>
+        <translation>item=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10169"/>
@@ -21845,7 +21849,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="10268"/>
         <source>Time constraint subactivities preferred time slots broken for activity with id=%1 (%2), component number %3, on %4 hours, increases conflicts total by %5</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Retrição de janelas de tempo para subatividades não atendida para atividade com id=%1 (%2), item %3, em %4 horas, aumento no total de conflitos em %5</translation>
     </message>
 </context>
 <context>
@@ -21865,7 +21869,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="151"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Remover restrição?</translation>
+        <translation>Remover restrição?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="157"/>
@@ -21890,27 +21894,27 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="182"/>
         <source>This constraint is used to specify that for some components of a type of activities, for instance for Mathematics activities, you need that from say 4-5 per week, at least the first 2 to be early (say in the first 4 hours).</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta restrição é usada para especificar que, para alguns componentes de um tipo de atividade, por exemplo, para atividades de Matemática com 4 ou 5 aulas por semana, queremos pelo menos as 2 primeiras cedo (por exemplo, nas primeiras 4 horas).</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="187"/>
         <source>This is simple: just add 2 constraints of this type, with the component number 1, (then 2) and the corresponding subject (you can also define teacher, students set and activity tag, of course).</source>
-        <translation type="unfinished">Isso é simples: adicione (incluir) 2 restrições desse tipo, com o item 1, (então, 2) e a disciplina correspondente (você também poderá definir o professor, turma e marcador de atividade, naturalmente).</translation>
+        <translation>Isso é simples: adicione (inclua) 2 restrições desse tipo, com o item 1, (então, 2) e a disciplina correspondente (você também poderá definir professor, turma e marcador de atividade, naturalmente).</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="193"/>
         <source>Note: if you have Maths with 4 and 5 splits and want to constrain 2 subactivities for those with 4 per week and 3 subactivities for those with 5 per week, you can add constraints only for Maths with components 3, 4 and 5 (nice trick)</source>
-        <translation type="unfinished">Nota: se você tiver Matemática em 4 e 5 aulas divididas e deseja restringir 2 delas para 4 por semana e 3 subatividades para 5 por semana, você pode adicionar restrições apenas para Matemática com itens 3, 4 e 5 (truque legal)</translation>
+        <translation>Nota: se você tiver Matemática em 4 e 5 divisões e deseja restringir 2 delas para 4 por semana e 3 subatividades para 5 por semana, você pode adicionar restrições apenas para Matemática com itens 3, 4 e 5 (truque legal)</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="196"/>
         <source>Note: if an activity does not belong to a larger group (is a single activity), it is considered to have component number 1. As an advice, if you have activities of say Biology split into 1 or 2 per week and want to constrain only one component if there are 2 per week, add a constraint for Biology with component number=2</source>
-        <translation type="unfinished">Nota: se uma atividade não pertencer a um grupo maior (é uma única atividade), considera-se ter &quot;número de itens&quot;=1. Como sugestão, se você tiver atividades de Biologia dividida em 1 ou 2 por semana e quiser restringir apenas um item, se houver 2 por semana, inclua uma restrição no item de número=2</translation>
+        <translation>Nota: se uma atividade não pertencer a um grupo maior (é uma única atividade), considera-se ter &quot;número de itens&quot;=1. Como sugestão, se você tiver atividades de Biologia dividida em 1 ou 2 por semana e quiser restringir apenas um item, se houver 2 por semana, inclua uma restrição no item de número=2</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="200"/>
         <source>Note: if a teacher or a students set cannot have lessons in some slots because of this constraint, gaps will be counted (if you have max gaps constraints). So be careful if you add this constraint for all sub-activities, for only a teacher or for only a students set</source>
-        <translation type="unfinished">Nota: se um professor ou uma turma não pode ter aulas em algumas janelas por causa desta restrição, as lacunas serão contadas (se você tiver restrições máx lacunas). Portanto, tenha cuidado se você adicionar essa restrição para todas as subatividades, apenas para um professor ou para apenas uma turma</translation>
+        <translation>Nota: se um professor ou uma turma não pode ter aulas em algumas janelas por causa desta restrição, as lacunas serão contadas (se você tiver restrições máx lacunas). Portanto, tenha cuidado se você adicionar essa restrição para todas as subatividades, apenas para um professor ou para apenas uma turma</translation>
     </message>
 </context>
 <context>
@@ -21966,7 +21970,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2937"/>
         <source>Room=%1</source>
-        <translation type="unfinished">Sala=%1</translation>
+        <translation>Sala=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2876"/>
@@ -21977,7 +21981,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2877"/>
         <source>Following constraint is wrong:
 %1</source>
-        <translation type="unfinished">Essa restrição está errada:
+        <translation>Essa restrição está errada:
 %1</translation>
     </message>
     <message>
@@ -22051,7 +22055,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2991"/>
         <source>Space constraint subject activity tag preferred room broken for activity with id %1 (%2) (activity tag of constraint=%3)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Restrição de espaço sala preferida para marcador de atividade de disciplina não atendida para atividade com id %1 (%2) (marcador de atividade da restrição=%3)</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2997"/>
@@ -22100,7 +22104,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="14"/>
         <source>Constraints subject activity tag preferred room</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Restrições para sala preferida para marcador de atividade de disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="28"/>
@@ -22149,7 +22153,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3124"/>
         <source>Following constraint is wrong:
 %1</source>
-        <translation type="unfinished">Essa restrição está errada:
+        <translation>Essa restrição está errada:
 %1</translation>
     </message>
     <message>
@@ -22162,7 +22166,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3171"/>
         <location filename="../src/engine/spaceconstraint.cpp" line="3187"/>
         <source>Subject activity tag preferred rooms</source>
-        <translation type="unfinished"></translation>
+        <translation>Salas preferidas de marcador de atividade para disciplina</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3172"/>
@@ -22174,7 +22178,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3173"/>
         <source>S:%1</source>
         <comment>Subject</comment>
-        <translation type="unfinished">D:%1</translation>
+        <translation>Disc:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3174"/>
@@ -22186,7 +22190,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3177"/>
         <source>R:%1</source>
         <comment>Room</comment>
-        <translation type="unfinished">S:%1</translation>
+        <translation>S:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3186"/>
@@ -22228,7 +22232,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3252"/>
         <source>Space constraint subject activity tag preferred rooms broken for activity with id %1 (%2) (activity tag of constraint=%3)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de espaço salas preferidas para marcador de atividade de disciplina não atendida para atividade com id %1 (%2) (marcador de atividade da restrição=%3)</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3258"/>
@@ -22277,7 +22281,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform_template.ui" line="14"/>
         <source>Constraints subject activity tag preferred rooms</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições salas preferidas para marcador de atividade de disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform_template.ui" line="98"/>
@@ -22320,7 +22324,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2442"/>
         <source>Room=%1</source>
-        <translation type="unfinished">Sala=%1</translation>
+        <translation>Sala=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2384"/>
@@ -22331,7 +22335,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2385"/>
         <source>Following constraint is wrong:
 %1</source>
-        <translation type="unfinished">Essa restrição está errada:
+        <translation>Essa restrição está errada:
 %1</translation>
     </message>
     <message>
@@ -22517,13 +22521,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2671"/>
         <source>S:%1</source>
         <comment>Subject</comment>
-        <translation type="unfinished">D:%1</translation>
+        <translation>Disc:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2674"/>
         <source>R:%1</source>
         <comment>Room</comment>
-        <translation type="unfinished">S:%1</translation>
+        <translation>S:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2683"/>
@@ -22543,7 +22547,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2688"/>
         <source>Room=%1</source>
-        <translation type="unfinished">Sala=%1</translation>
+        <translation>Sala=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2693"/>
@@ -22609,7 +22613,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="14"/>
         <source>Constraints subject preferred rooms</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Restrições de salas reservadas para disciplina</translation>
+        <translation>Restrições de salas reservadas para disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="95"/>
@@ -22658,7 +22662,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3973"/>
         <source>Teacher %1 for activity tag %2 has max %3 hours continuously</source>
-        <translation type="unfinished">Docente %1 para marcador de atividade %2 tem máx %3 horas contínuas</translation>
+        <translation>Docente %1 para marcador de atividade %2 tem máx %3 horas contínuas</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3974"/>
@@ -22706,7 +22710,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="4048"/>
         <location filename="../src/engine/timeconstraint.cpp" line="4076"/>
         <source>Time constraint teacher activity tag max %1 hours continuously broken for teacher %2, activity tag %3, on day %4, length=%5.</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo máx %1 horas contínuas para marcador de atividade de professor não atendida para docente %2, marcador de atividade %3, dia %4, período=%5.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4059"/>
@@ -22781,7 +22785,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Constraints teacher activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições máx horas contínuas para marcador de atividade de professor</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="100"/>
@@ -22801,7 +22805,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="26"/>
         <source>This constraint ensures that the specified teacher does not have more than max hours continuously of activities with the specified activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Essa restrição garante que o(a) docente indicado(a) não terá mais que esse máx de horas contínuas de atividades com o marcador de atividade especificado</translation>
     </message>
 </context>
 <context>
@@ -22814,7 +22818,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16275"/>
         <source>Teacher %1 for activity tag %2 has max %3 hours daily</source>
-        <translation type="unfinished">Docente %1 para marcador de atividade %2 tem máx %3 horas diárias</translation>
+        <translation>Docente %1 para marcador de atividade %2 tem máx %3 horas diárias</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16271"/>
@@ -22857,7 +22861,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16290"/>
         <source>Maximum hours daily=%1</source>
-        <translation>Máx de horas diárias=%1</translation>
+        <translation>Máx jornada=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16293"/>
@@ -22873,7 +22877,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16347"/>
         <source>Time constraint teacher activity tag %1 max %2 hours daily broken for teacher %3, on day %4, length=%5.</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo máx %2 horas diárias para marcador de atividade %1 não atendida para professor %3, dia %4, período=%5.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16357"/>
@@ -22922,12 +22926,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Constraints teacher activity tag max hours daily</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições máx jornada para marcador de atividade de professor</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform_template.ui" line="26"/>
         <source>This constraint ensures that the specified teacher does not have more than max hours daily of activities with the specified activity tag.</source>
-        <translation type="unfinished"></translation>
+        <translation>Essa restrição garante que o(a) docente indicado(a) não terá mais que o máx de horas diárias (jornada) com atividades para o marcador de atividade indicado.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform_template.ui" line="42"/>
@@ -22980,13 +22984,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1912"/>
         <source>Room=%1</source>
-        <translation type="unfinished">Sala=%1</translation>
+        <translation>Sala=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1891"/>
         <location filename="../src/engine/spaceconstraint.cpp" line="1907"/>
         <source>Teacher home room</source>
-        <translation>Sala pré-definida para docente</translation>
+        <translation>Sala principal de docente</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1889"/>
@@ -23010,7 +23014,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1897"/>
         <source>R:%1</source>
         <comment>R means Room</comment>
-        <translation type="unfinished">S:%1</translation>
+        <translation>S:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1906"/>
@@ -23025,7 +23029,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1910"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished">Docente=%1</translation>
+        <translation>Docente=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1915"/>
@@ -23042,7 +23046,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1976"/>
         <source>Space constraint teacher home room broken for activity with id %1 (%2)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
-        <translation>Restrição de espaço sala pré-definida para docente não atendida para atividade com id %1 (%2)</translation>
+        <translation>Restrição de espaço sala principal para docente não atendida para atividade com id %1 (%2)</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1981"/>
@@ -23091,7 +23095,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteacherhomeroomform_template.ui" line="14"/>
         <source>Constraints teacher home room</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation>Restrições para sala pré-definida para docente</translation>
+        <translation>Restrições para sala principal para docente</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform_template.ui" line="114"/>
@@ -23131,7 +23135,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform_template.ui" line="26"/>
         <source>Note: a home room for a teacher means that every activity which has this and ONLY this teacher will have this as home room. Preferred rooms override the home rooms.</source>
-        <translation>Nota: uma sala de aula pré-definida para um professor significa que cada uma das atividades desse e SOMENTE desse professor ocorrerá nessa sala. &quot;Salas reservadas&quot; terão preferência sobre salas pré-definidas.</translation>
+        <translation>Nota: uma sala de aula principal para um professor significa que cada uma das atividades desse e SOMENTE desse professor ocorrerá nessa sala. &quot;Salas reservadas&quot; terão preferência sobre salas principais.</translation>
     </message>
 </context>
 <context>
@@ -23145,7 +23149,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2121"/>
         <source>Following constraint is wrong:
 %1</source>
-        <translation type="unfinished">Essa restrição está errada:
+        <translation>Essa restrição está errada:
 %1</translation>
     </message>
     <message>
@@ -23158,7 +23162,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2169"/>
         <location filename="../src/engine/spaceconstraint.cpp" line="2186"/>
         <source>Teacher home rooms</source>
-        <translation>Salas pré-definidas para docente</translation>
+        <translation>Salas principais de docente</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2170"/>
@@ -23176,7 +23180,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2176"/>
         <source>R:%1</source>
         <comment>R means Room</comment>
-        <translation type="unfinished">S:%1</translation>
+        <translation>S:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2185"/>
@@ -23191,12 +23195,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2189"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished">Docente=%1</translation>
+        <translation>Docente=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2192"/>
         <source>Room=%1</source>
-        <translation type="unfinished">Sala=%1</translation>
+        <translation>Sala=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2197"/>
@@ -23213,7 +23217,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2262"/>
         <source>Space constraint teacher home rooms broken for activity with id %1 (%2)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
-        <translation>Restrição de espaço sala pré-definidas para docente não atendida para atividade com id %1 (%2)</translation>
+        <translation>Restrição de espaço salas principais para docente não atendida para atividade com id %1 (%2)</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2267"/>
@@ -23262,7 +23266,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="14"/>
         <source>Constraints teacher home rooms</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation>Restrições para salas pré-definidas para docente</translation>
+        <translation>Restrições para salas principais para docente</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="114"/>
@@ -23302,7 +23306,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="26"/>
         <source>Note: home rooms for a teacher means that every activity which has this and ONLY this teacher will have these home rooms. Preferred rooms override the home rooms.</source>
-        <translation type="unfinished">Nota: salas de aula pré-definidas para um professor significa que cada uma das atividades desse e SOMENTE desse professor ocorrerá nessas salas de aula. &quot;Salas reservadas&quot; terão preferência sobre &quot;salas pré-definidas&quot;.</translation>
+        <translation type="unfinished">Nota: salas de aula principais para um professor significa que cada uma das atividades desse e SOMENTE desse professor ocorrerá nessas salas de aula. &quot;Salas reservadas&quot; terão preferência sobre &quot;salas principais&quot;.</translation>
     </message>
 </context>
 <context>
@@ -23318,19 +23322,22 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="14594"/>
         <source>Constraint teacher interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição máx dias por semana de intervalo para docente está errada pois hora de início &gt;= hora de término. Favor corrigi-la. Restrição é:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14601"/>
         <source>Constraint teacher interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição máx dias por semana de intervalo para docente está errada pois hora de início &lt; hora do dia. Favor corrigi-la. Restrição é:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14608"/>
         <source>Constraint teacher interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição máx dias por semana de intervalo para docente está errada pois hora de término &gt; horas por dia. Favor corrigi-la. Restrição é:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14653"/>
@@ -23341,7 +23348,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14655"/>
         <source>Teacher interval max days per week</source>
-        <translation type="unfinished">Máx intervalo de dias por semana para docente</translation>
+        <translation>Máx intervalo de dias por semana para docente</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14656"/>
@@ -23372,13 +23379,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="14662"/>
         <location filename="../src/engine/timeconstraint.cpp" line="14681"/>
         <source>End of the day</source>
-        <translation type="unfinished">Fim do dia</translation>
+        <translation>Fim do dia</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14664"/>
         <source>MD:%1</source>
         <comment>Abbreviation for max days</comment>
-        <translation type="unfinished">MáxD:%1</translation>
+        <translation>MáxD:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14672"/>
@@ -23388,7 +23395,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14673"/>
         <source>A teacher respects working in an hourly interval a maximum number of days per week</source>
-        <translation type="unfinished">Docente está autorizado a trabalhar em uma faixa horária por número limitado de dias por semana.</translation>
+        <translation>Docente está autorizado a trabalhar em uma faixa horária por número limitado de dias por semana</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14674"/>
@@ -23398,18 +23405,18 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14675"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished">Docente=%1</translation>
+        <translation>Docente=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14676"/>
         <source>Interval start hour=%1</source>
-        <translation type="unfinished">Início do intervalo=%1</translation>
+        <translation>Início do intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14679"/>
         <location filename="../src/engine/timeconstraint.cpp" line="14681"/>
         <source>Interval end hour=%1</source>
-        <translation type="unfinished">Fim do intervalo=%1</translation>
+        <translation>Fim do intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14684"/>
@@ -23430,7 +23437,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14732"/>
         <source>Time constraint teacher interval max days per week broken for teacher: %1, allowed %2 days, required %3 days.</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tmepo intervalo máx dias por semana não atendida para docente %1, permitidos %2 dias, solicitados %3 dias.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14737"/>
@@ -23479,7 +23486,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints teacher interval max days per week</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições intervalos máx dias por semana para docente</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="28"/>
@@ -23528,7 +23535,8 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="5444"/>
         <source>Constraint teacher max building changes per day is wrong because it refers to inexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição máx troca diária de prédio para professor está errada pois se refere a professor inexistente. Favor corrigi-la (removê-la pode ser a solução). Favor relatar potencial bug. Restrição é:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5486"/>
@@ -23539,7 +23547,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5488"/>
         <source>Teacher max building changes per day</source>
-        <translation type="unfinished">Máx troca de prédio por dia para docente</translation>
+        <translation>Máx troca diária de prédio para docente</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5490"/>
@@ -23567,7 +23575,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5505"/>
         <source>Teacher maximum building changes per day</source>
-        <translation type="unfinished"></translation>
+        <translation>Máx troca diária de prédio para docente</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5507"/>
@@ -23577,12 +23585,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5509"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished">Docente=%1</translation>
+        <translation>Docente=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5511"/>
         <source>Maximum building changes per day=%1</source>
-        <translation type="unfinished">Máxima troca de prédio por dia=%1</translation>
+        <translation>Máxima troca diária de prédio=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5514"/>
@@ -23598,7 +23606,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5584"/>
         <source>Space constraint teacher max building changes per day broken for teacher=%1 on day %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de espaço máx troca diária de prédio não atendida para professor=%1 no dia %2</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5588"/>
@@ -23647,7 +23655,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Constraints teacher max building changes per day</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições máx troca diária de prédio para docente</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform_template.ui" line="28"/>
@@ -23696,7 +23704,8 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="5932"/>
         <source>Constraint teacher max building changes per week is wrong because it refers to inexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição máx troca semanal de prédio para professor está errada pois se refere a docente inexistente. Favor corrigi-la (removê-la pode ser a solução). Favor relatar possível bug. Restrição é:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5974"/>
@@ -23707,7 +23716,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5976"/>
         <source>Teacher max building changes per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Máx troca semanal de prédio para professor</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5978"/>
@@ -23735,7 +23744,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5993"/>
         <source>Teacher maximum building changes per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Máx troca semanal de prédio para professor</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5995"/>
@@ -23745,12 +23754,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5997"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished">Docente=%1</translation>
+        <translation>Docente=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5999"/>
         <source>Maximum building changes per week=%1</source>
-        <translation type="unfinished">Máx de troca de prédio por semana=%1</translation>
+        <translation>Máx de troca semanal de prédio=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6002"/>
@@ -23766,7 +23775,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6074"/>
         <source>Space constraint teacher max building changes per week broken for teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de espaço máx de troca semanal de prédio não atendida para docente %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6077"/>
@@ -23815,7 +23824,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Constraints teacher max building changes per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições máx troca semanal de prédio para professor</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform_template.ui" line="28"/>
@@ -23864,7 +23873,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4221"/>
         <source>Teacher max days per week</source>
-        <translation type="unfinished">Máx de dias por semana para docente</translation>
+        <translation>Máx de dias por semana para docente</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4222"/>
@@ -23882,7 +23891,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="4224"/>
         <source>MD:%1</source>
         <comment>Max days (per week)</comment>
-        <translation type="unfinished">MáxD:%1</translation>
+        <translation>MáxD:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4232"/>
@@ -23902,7 +23911,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4235"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished">Docente=%1</translation>
+        <translation>Docente=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4236"/>
@@ -23972,7 +23981,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints teacher max days per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Restrições máx dias por semana para docente</translation>
+        <translation>Restrições máx dias por semana para docente</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="28"/>
@@ -24085,7 +24094,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5391"/>
         <source>Time constraint teacher max gaps per day broken for teacher: %1, day: %2, conflicts factor increase=%3</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo máx lacunas diárias para professor não atendida para docente %1, dia %2, aumento no faotr de conflitos=%3</translation>
     </message>
 </context>
 <context>
@@ -24129,7 +24138,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxgapsperdayform_template.ui" line="14"/>
         <source>Constraints teacher max gaps per day</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições máx lacunas por dia para professor</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform_template.ui" line="28"/>
@@ -24242,7 +24251,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4980"/>
         <source>Time constraint teacher max gaps per week broken for teacher: %1, conflicts factor increase=%2</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo máx lacunas por semana não atendida para docente %1, aumento no fator de conflitos=%2</translation>
     </message>
 </context>
 <context>
@@ -24286,7 +24295,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="14"/>
         <source>Constraints teacher max gaps per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições máx lacunas por semana para professor</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="28"/>
@@ -24335,7 +24344,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3457"/>
         <source>Teacher max hours continuously</source>
-        <translation type="unfinished"></translation>
+        <translation>Máx horas contínuas para docente</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3458"/>
@@ -24347,7 +24356,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="3460"/>
         <source>MH:%1</source>
         <comment>Maximum hours continuously</comment>
-        <translation type="unfinished"></translation>
+        <translation>MáxHC:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3468"/>
@@ -24367,12 +24376,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3471"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished">Docente=%1</translation>
+        <translation>Docente=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3472"/>
         <source>Maximum hours continuously=%1</source>
-        <translation type="unfinished">Máx de horas contínuas=%1</translation>
+        <translation>Máx de horas contínuas=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3475"/>
@@ -24389,7 +24398,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="3512"/>
         <location filename="../src/engine/timeconstraint.cpp" line="3539"/>
         <source>Time constraint teacher max %1 hours continuously broken for teacher %2, on day %3, length=%4.</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo máx %1 horas contínuas não atendida para docente %2, dia %3, período(s)=%4.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3522"/>
@@ -24445,7 +24454,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Constraints teacher max hours continuously</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições máx horas contínuas para professor</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="95"/>
@@ -24494,7 +24503,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3014"/>
         <source>Teacher max hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Máx horas diárias (jornada) para docente</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3015"/>
@@ -24506,7 +24515,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="3017"/>
         <source>MH:%1</source>
         <comment>Maximum hours (daily)</comment>
-        <translation type="unfinished"></translation>
+        <translation>MáxJor:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3025"/>
@@ -24526,12 +24535,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3028"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished">Docente=%1</translation>
+        <translation>Docente=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3029"/>
         <source>Maximum hours daily=%1</source>
-        <translation type="unfinished">Máx de horas diárias=%1</translation>
+        <translation>Máx de horas diárias=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3032"/>
@@ -24547,7 +24556,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3086"/>
         <source>Time constraint teacher max %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo máx %1 horas diárias não atendida para docente %2, dia %3, período(s)=%4.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3095"/>
@@ -24602,7 +24611,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="14"/>
         <source>Constraints teacher max hours daily</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições máx horas diárias para professor</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="95"/>
@@ -24651,7 +24660,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14221"/>
         <source>Teacher min days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Mín dias por semana para professor</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14218"/>
@@ -24669,7 +24678,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="14224"/>
         <source>mD:%1</source>
         <comment>Minimum days per week</comment>
-        <translation type="unfinished">MínD:%1</translation>
+        <translation>MínD:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14232"/>
@@ -24808,7 +24817,8 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="6420"/>
         <source>Constraint teacher min gaps between building changes is wrong because it refers to inexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição mín lacunas entre trocas de prédio para professor está errada pois se refere a professor(a) inexistente. Por favor, corrigi-a (removê-la pode ser a solução). Por favor, reporte potencial bug. Restrição é:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6462"/>
@@ -24878,7 +24888,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6564"/>
         <source>Space constraint teacher min gaps between building changes broken for teacher=%1 on day %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de espaço mín lacunas entre trocas de prédio não atendida para docente %1 na %2</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6568"/>
@@ -24927,7 +24937,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Constraints teacher min gaps between building changes</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições mín lacunas entre trocas de prédio para professor</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform_template.ui" line="28"/>
@@ -25061,7 +25071,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14072"/>
         <source>Time constraint teacher min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo mín %1 horas diárias não atendida para docente %2, %3, período(s)=%4.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14081"/>
@@ -25110,7 +25120,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="14"/>
         <source>Constraints teacher min hours daily</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Restrições jornada mínima para docente</translation>
+        <translation>Restrições jornada mínima para docente</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="95"/>
@@ -25225,7 +25235,8 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="626"/>
         <source>Constraint teacher not available times is wrong because it refers to inexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição horários indisponíveis de professor está errada pois se refere a docente inexistente. Favor corrigi-la (removê-la pode ser a solução). Reporte possível bug. Restrição é:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="635"/>
@@ -25237,23 +25248,25 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="636"/>
         <source>Constraint teacher not available times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de horários indisponíveis de professor está errada pois se refere a dias removidos. Corrija e tente novamente. Corrigir significa editar a restrição e atualizar informações. Restrição é:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="643"/>
         <source>Constraint teacher not available times is wrong because an hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de horários indisponíveis de professor está errada pois uma hora está muito tarde (após a última janela aceitável). Corrija e tente novamente. Corrigir significa editar a restrição e atualizar informações. Restrição é:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="695"/>
         <source>Time constraint teacher not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo para professor indisponível</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="697"/>
         <source>broken for teacher: %1 on day %2, hour %3</source>
-        <translation type="unfinished"></translation>
+        <translation>não atendida para docente %1, %2, hora %3</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="702"/>
@@ -25302,7 +25315,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachernotavailabletimesform_template.ui" line="14"/>
         <source>Constraints teacher not available times</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições de tempo horários indisponíveis do professor</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform_template.ui" line="28"/>
@@ -25351,7 +25364,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3703"/>
         <source>Teachers for activity tag %1 have max %2 hours continuously</source>
-        <translation type="unfinished"></translation>
+        <translation>Professores para marcador de atividade %1 têm máx %2 horas contínuas</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3704"/>
@@ -25399,7 +25412,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="3777"/>
         <location filename="../src/engine/timeconstraint.cpp" line="3805"/>
         <source>Time constraint teachers activity tag %1 max %2 hours continuously broken for teacher %3, on day %4, length=%5.</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo marcador de atividade %1 máx %2 horas contínuas não atendida para docente %3, %4, período(s)%5.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3788"/>
@@ -25454,7 +25467,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Constraints teachers activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições marcador de atividade máx horas contínuas para professores</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="90"/>
@@ -25489,7 +25502,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="26"/>
         <source>This constraint ensures that all teachers do not have more than max hours continuously of activities with the specified activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Essa restrição garante que todos os professores não terão mais que o máx horas contínuas de atividades com o marcador de atividade especificado</translation>
     </message>
 </context>
 <context>
@@ -25503,7 +25516,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16035"/>
         <source>Teachers for activity tag %1 have max %2 hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Professores para o marcador de atividade %1 têm máx %2 horas diárias</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16031"/>
@@ -25556,7 +25569,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16106"/>
         <source>Time constraint teachers activity tag %1 max %2 hours daily broken for teacher %3, on day %4, length=%5.</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo marcador de atividade %1 máx %2 horas diárias não atendida para docente %3, %4, períodos=%5.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16116"/>
@@ -25605,12 +25618,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Constraints teachers activity tag max hours daily</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições marcador de atividade máx horas diárias para professores</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="26"/>
         <source>This constraint ensures that all teachers do not have more than max hours daily of activities with the specified activity tag.</source>
-        <translation type="unfinished"></translation>
+        <translation>Essa restrição garante que todos os professores não terão mais que o máx horas diárias de atividades com o marcador especificado.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="42"/>
@@ -25671,19 +25684,22 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="14847"/>
         <source>Constraint teachers interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição intervalo máx de dias por semana para professores está errada pois hora de início &gt;= hora de término. Favor corrigi-la. Restrição é:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14854"/>
         <source>Constraint teachers interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição intervalo máx de dias por semana para professores está errada pois hora de início &lt; primeira hora do dia. Favor corrigi-la. Restrição é:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14861"/>
         <source>Constraint teachers interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição intervalo máx de dias por semana para professores está errada pois hora de término &gt; número de horas por dia. Favor corrigi-la. Restrição é:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14905"/>
@@ -25694,7 +25710,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14907"/>
         <source>Teachers interval max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervalo máx de dias por semana para professores</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14908"/>
@@ -25735,7 +25751,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14925"/>
         <source>All teachers respect working in an hourly interval a maximum number of days per week</source>
-        <translation type="unfinished">Todos os docentes são autorizados a trabalhar em uma faixa horária por número limitado de dias por semana.</translation>
+        <translation type="unfinished">Todos os docentes são autorizados a trabalhar em uma faixa horária por número limitado de dias por semana</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14926"/>
@@ -25745,13 +25761,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14927"/>
         <source>Interval start hour=%1</source>
-        <translation type="unfinished">Início do intervalo=%1</translation>
+        <translation>Início do intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14930"/>
         <location filename="../src/engine/timeconstraint.cpp" line="14932"/>
         <source>Interval end hour=%1</source>
-        <translation type="unfinished">Fim do intervalo=%1</translation>
+        <translation>Fim do intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14935"/>
@@ -25772,7 +25788,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14981"/>
         <source>Time constraint teachers interval max days per week broken for teacher: %1, allowed %2 days, required %3 days.</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo intervalo máx de dias por semana não atendida para docente %1, permitido %2 dias, requisitado %3</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14986"/>
@@ -25821,7 +25837,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints teachers interval max days per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições máx intervalo dias por semana para professores</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="28"/>
@@ -25865,7 +25881,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5728"/>
         <source>Teachers max building changes per day</source>
-        <translation type="unfinished"></translation>
+        <translation>Máx troca diária de prédios para professores</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5730"/>
@@ -25887,7 +25903,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5743"/>
         <source>Teachers maximum building changes per day</source>
-        <translation type="unfinished"></translation>
+        <translation>Máxima troca diária de prédios para professores</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5745"/>
@@ -25897,7 +25913,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5747"/>
         <source>Maximum building changes per day=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Máxima troca diária de prédio=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5750"/>
@@ -25913,7 +25929,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5819"/>
         <source>Space constraint teachers max building changes per day broken for teacher=%1 on day %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de espaço máx troca diária de prédio não atendida para docente=%1, dia %2</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5823"/>
@@ -25962,7 +25978,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Constraints teachers max building changes per day</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições máx troca diária de prédio para professores</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform_template.ui" line="28"/>
@@ -26006,13 +26022,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6216"/>
         <source>Teachers max building changes per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Máx troca semanal de prédio para professores</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6218"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished">Peso:%1%</translation>
+        <translation>Peso:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6220"/>
@@ -26028,17 +26044,17 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6231"/>
         <source>Teachers maximum building changes per week</source>
-        <translation type="unfinished">Máx de trocas de prédio por semana para docentes</translation>
+        <translation>Máx de troca semanal de prédio para docentes</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6233"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished">Peso (%)=%1%</translation>
+        <translation>Peso percentual=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6235"/>
         <source>Maximum building changes per week=%1</source>
-        <translation type="unfinished">Máx de troca de prédio por semana=%1</translation>
+        <translation>Máx de troca semanal de prédio=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6238"/>
@@ -26054,12 +26070,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6309"/>
         <source>Space constraint teachers max building changes per week broken for teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de espaço máx troca semanal de prédio não atendida para docente %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6312"/>
         <source>This increases the conflicts total by %1</source>
-        <translation type="unfinished">Isso aumenta o total de conflitos em %1</translation>
+        <translation>Isso aumenta o total de conflitos em %1</translation>
     </message>
 </context>
 <context>
@@ -26103,7 +26119,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Constraints teachers max building changes per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições máx troca semanal de prédio para professores</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="28"/>
@@ -26147,7 +26163,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4456"/>
         <source>Teachers max days per week</source>
-        <translation type="unfinished">Máx de dias por semana para docentes</translation>
+        <translation>Máx de dias por semana para docentes</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4457"/>
@@ -26159,7 +26175,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="4458"/>
         <source>MD:%1</source>
         <comment>Max days (per week)</comment>
-        <translation type="unfinished"></translation>
+        <translation>MáxD:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4466"/>
@@ -26195,7 +26211,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4564"/>
         <source>Time constraint teachers max days per week broken for teacher: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo máx dias semanais não atendida para docente %1.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4566"/>
@@ -26244,7 +26260,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints teachers max days per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições máx dias semanais para professores</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform_template.ui" line="28"/>
@@ -26341,7 +26357,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5180"/>
         <source>Time constraint teachers max gaps per day broken for teacher: %1, day: %2, conflicts factor increase=%3</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo máx lacunas diárias não atendida para docente %1, dia %2, aumento no fator de conflitos=%3</translation>
     </message>
 </context>
 <context>
@@ -26385,7 +26401,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxgapsperdayform_template.ui" line="14"/>
         <source>Constraints teachers max gaps per day</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições máx lacunas diárias para professores</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform_template.ui" line="28"/>
@@ -26482,7 +26498,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4768"/>
         <source>Time constraint teachers max gaps per week broken for teacher: %1, conflicts factor increase=%2</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo máx lacunas semanais não atendida para docente %1, aumento no faotr de conflitos=%2</translation>
     </message>
 </context>
 <context>
@@ -26526,7 +26542,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="14"/>
         <source>Constraints teachers max gaps per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições máx lacunas semanais para professores</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="28"/>
@@ -26570,7 +26586,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3229"/>
         <source>Teachers max hours continuously</source>
-        <translation type="unfinished"></translation>
+        <translation>Máx horas contínuas para professores</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3230"/>
@@ -26582,7 +26598,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="3231"/>
         <source>MH:%1</source>
         <comment>Maximum hours (continuously)</comment>
-        <translation type="unfinished"></translation>
+        <translation>MáxHC:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3239"/>
@@ -26602,7 +26618,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3242"/>
         <source>Maximum hours continuously=%1</source>
-        <translation type="unfinished">Máx de horas contínuas=%1</translation>
+        <translation>Máx de horas contínuas=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3245"/>
@@ -26619,7 +26635,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="3282"/>
         <location filename="../src/engine/timeconstraint.cpp" line="3309"/>
         <source>Time constraint teachers max %1 hours continuously broken for teacher %2, on day %3, length=%4.</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo máx %1 horas contínuas não atendida para docente %2, dia %3, período(s)=%4.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3292"/>
@@ -26669,7 +26685,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Constraints teachers max hours continuously</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições máx horas contínuas para professores</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="83"/>
@@ -26713,7 +26729,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2795"/>
         <source>Teachers max hours daily</source>
-        <translation type="unfinished">Máx horas diiárias para docentes</translation>
+        <translation>Máx horas diiárias para docentes</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2796"/>
@@ -26725,7 +26741,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="2797"/>
         <source>MH:%1</source>
         <comment>Maximum hours (daily)</comment>
-        <translation type="unfinished">MáxH:%1</translation>
+        <translation>MáxH:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2805"/>
@@ -26745,7 +26761,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2808"/>
         <source>Maximum hours daily=%1</source>
-        <translation type="unfinished">Máx de horas diárias=%1</translation>
+        <translation>Máx de horas diárias=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2811"/>
@@ -26761,7 +26777,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2865"/>
         <source>Time constraint teachers max %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo máx %1 horas diárias quebradas para docente %2, dia %3, período(s)=%4.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2875"/>
@@ -26810,7 +26826,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="14"/>
         <source>Constraints teachers max hours daily</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições máx jornada para professores</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="83"/>
@@ -26848,12 +26864,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14481"/>
         <source>Time constraint teachers min %1 days per week broken for teacher %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição mín %1 dias por semana não atendida para docente %2.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14421"/>
         <source>Teachers min days per week</source>
-        <translation type="unfinished">Mín dias por semana para docentes</translation>
+        <translation>Mín dias por semana para docentes</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14418"/>
@@ -26871,7 +26887,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="14423"/>
         <source>mD:%1</source>
         <comment>Minimum days per week</comment>
-        <translation type="unfinished">MínD:%1</translation>
+        <translation>MínD:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14431"/>
@@ -26891,7 +26907,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14434"/>
         <source>Minimum days per week=%1</source>
-        <translation type="unfinished">Mín dias por semana=%1</translation>
+        <translation>Mín dias por semana=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14437"/>
@@ -27043,7 +27059,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6811"/>
         <source>Space constraint teachers min gaps between building changes broken for teacher=%1 on day %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de espaço mín lacunas entre trocas de prédio não atendida para docente %1, dia %2</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6815"/>
@@ -27092,7 +27108,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Constraints teachers min gaps between building changes</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Restrições mín lacunas entre trocas de prédios para professores</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform_template.ui" line="28"/>
@@ -27162,7 +27178,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="13756"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation>PP:%1%</translation>
+        <translation>Peso:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13757"/>
@@ -27210,7 +27226,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13830"/>
         <source>Time constraint teachers min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo mín %1 horas diárias não atendida para docente %2, dia %3, período(s)=%4.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13839"/>
@@ -27259,7 +27275,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="14"/>
         <source>Constraints teachers min hours daily</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Restrições de mínima jornada para docentes</translation>
+        <translation>Restrições de mínima jornada para docentes</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="83"/>
@@ -27401,7 +27417,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="13123"/>
         <source>Time constraint three activities grouped broken for first activity with id=%1 (%2), second activity with id=%3 (%4) and third activity with id=%5 (%6), increases conflicts total by %7</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr., %5 id, %6 det. descr.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo não atendida para &quot;três atividades agrupadas&quot; para primeira atividade com id=%1 (%2), segunda com id=%3 (%4) e terceira  com id =%5 (%6), aumenta total de conflitos em %7</translation>
     </message>
 </context>
 <context>
@@ -27583,7 +27599,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="12473"/>
         <source>Time constraint two activities consecutive broken for first activity with id=%1 (%2) and second activity with id=%3 (%4), increases conflicts total by %5</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo não atendida para &quot;duas atividades consecutivas&quot; para primeira atividade com id=%1 (%2) e segunda com id=%3 (%4), aumenta total de conflitos em %5</translation>
     </message>
 </context>
 <context>
@@ -27765,7 +27781,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="12759"/>
         <source>Time constraint two activities grouped broken for first activity with id=%1 (%2) and second activity with id=%3 (%4), increases conflicts total by %5</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo não atendida para &quot;duas atividades agrupadas&quot; para primeira atividade com id=%1 (%2) e segunda com id=%3 (%4), aumenta total de conflitos em %5</translation>
     </message>
 </context>
 <context>
@@ -27947,7 +27963,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="13387"/>
         <source>Time constraint two activities ordered broken for first activity with id=%1 (%2) and second activity with id=%3 (%4), increases conflicts total by %5</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Restrição de tempo não atendida para duas atividades sequenciais: a primeiram com id=%1 e a segunda com id=%3 (%4), aumenta total de conflitos em %5</translation>
     </message>
 </context>
 <context>
@@ -28290,7 +28306,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/export.cpp" line="277"/>
         <source>no textquote</source>
         <comment>Please use at least 2 characters for the translation of this field, so that the program works OK</comment>
-        <translation type="unfinished"></translation>
+        <translation>sem aspas</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="294"/>
@@ -28310,12 +28326,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/export.cpp" line="316"/>
         <source>Please specify the text quote of text fields:</source>
-        <translation type="unfinished"></translation>
+        <translation>Favor indicar o tipo de aspas usadas nos campos de texto:</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="323"/>
         <source>Use textquote:</source>
-        <translation type="unfinished"></translation>
+        <translation>Uso de aspas:</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="332"/>
@@ -28359,17 +28375,17 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/export.cpp" line="1047"/>
         <location filename="../src/engine/export.cpp" line="1157"/>
         <source>FET critical. Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
+        <translation>Crítico - FET. Houve um erro ao gravar %1 (código do erro %2), que comprometeu o salvamento. Favor conferir se há espaço livre em disco (ou a outra mídia que está sendo usada).</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="524"/>
         <source>%1 rooms (with buildings) exported.</source>
-        <translation type="unfinished">%1 sala (com prédios) exportadas.</translation>
+        <translation>%1 salas (com prédios) exportadas.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="571"/>
         <source>%1 subjects exported.</source>
-        <translation type="unfinished">%1 disciplina exportadas.</translation>
+        <translation>%1 disciplinas exportadas.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="471"/>
@@ -28378,7 +28394,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/export.cpp" line="674"/>
         <location filename="../src/engine/export.cpp" line="684"/>
         <source>Warning! Import of activities will fail, because %1 include set separator +.</source>
-        <translation type="unfinished">Alerta! Importação de atividades não funcionará, pois %1 contém o separador +.</translation>
+        <translation>Alerta! Importação de atividades não funcionará, pois %1 contém o separador +.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="616"/>
@@ -28426,17 +28442,17 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/export.cpp" line="863"/>
         <source>different active flag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">opção &quot;ativa&quot; diferente</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="873"/>
         <source>Activity with id %1 has disabled active flag but it is exported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Atividade id %1 está com a opção &quot;ativa&quot; desmarcada, mas foi exportada.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="875"/>
         <source>Subactivities with activity group id %1 have disabled active flag but they are exported.</source>
-        <translation type="unfinished">Subatividades com grupo de atividade id %1 estão com a opção &quot;ativa&quot; desmarcada, mas são exportadas.</translation>
+        <translation>Subatividades com grupo de atividade id %1 estão com a opção &quot;ativa&quot; desmarcada, mas foram exportadas.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="964"/>
@@ -28463,7 +28479,7 @@ Importação de dados será mais fácil com elas.</translation>
     <message>
         <location filename="../src/engine/export.cpp" line="333"/>
         <source>The first line contains data. Don&apos;t export heading.</source>
-        <translation type="unfinished">A primeira linha contém dados. Não exportar cabeçalho.</translation>
+        <translation>A primeira linha contém dados. Não exportar cabeçalho.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="156"/>
@@ -28621,614 +28637,616 @@ Importação de dados será mais fácil com elas.</translation>
 <context>
     <name>FetMainForm</name>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="801"/>
-        <location filename="../src/interface/fetmainform.cpp" line="822"/>
-        <location filename="../src/interface/fetmainform.cpp" line="966"/>
-        <location filename="../src/interface/fetmainform.cpp" line="983"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1009"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1674"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3540"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3550"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3560"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3677"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3698"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3702"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3738"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3759"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3763"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3883"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3940"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4487"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4537"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4567"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4592"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4614"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4641"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4663"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4684"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4708"/>
+        <location filename="../src/interface/fetmainform.cpp" line="765"/>
+        <location filename="../src/interface/fetmainform.cpp" line="786"/>
+        <location filename="../src/interface/fetmainform.cpp" line="866"/>
+        <location filename="../src/interface/fetmainform.cpp" line="883"/>
+        <location filename="../src/interface/fetmainform.cpp" line="909"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1574"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3440"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3450"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3460"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3577"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3598"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3602"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3638"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3659"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3663"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3783"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3840"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4369"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4419"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4449"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4474"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4496"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4523"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4545"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4566"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4590"/>
         <source>FET warning</source>
         <translation>Alerta - FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="778"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1004"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1097"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1158"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1170"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1242"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1288"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1301"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1309"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1315"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1321"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1395"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1414"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1418"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1425"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1430"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1435"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1478"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1487"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1496"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1505"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1520"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1529"/>
+        <location filename="../src/interface/fetmainform.cpp" line="742"/>
+        <location filename="../src/interface/fetmainform.cpp" line="845"/>
+        <location filename="../src/interface/fetmainform.cpp" line="904"/>
+        <location filename="../src/interface/fetmainform.cpp" line="997"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1058"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1070"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1142"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1188"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1201"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1209"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1215"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1221"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1295"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1314"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1318"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1325"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1330"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1335"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1378"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1387"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1396"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1405"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1420"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1429"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1438"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1515"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1534"/>
         <location filename="../src/interface/fetmainform.cpp" line="1538"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1615"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1634"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1638"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1645"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1650"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1655"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1784"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1859"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1872"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1885"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1898"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1911"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1931"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1951"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1964"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1977"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1990"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2116"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2169"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2182"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2195"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2208"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2221"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2234"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2247"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2260"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2273"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2286"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2299"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2312"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2325"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2338"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2351"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2364"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2377"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2390"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2403"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2416"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2429"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2442"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2455"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2468"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2481"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2494"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2507"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2520"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2533"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2546"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2559"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2573"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2586"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2600"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2613"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2627"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2640"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2653"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2666"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2679"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2692"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2705"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2717"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2730"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2743"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2756"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2769"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2782"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2795"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2808"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2821"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2834"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2847"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2860"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2873"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2886"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2899"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2912"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2925"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2938"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2951"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2964"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2977"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2990"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3003"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3016"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3029"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3042"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3060"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3078"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3091"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3104"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3117"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3130"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3143"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3155"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3168"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3186"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3204"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3217"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3230"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3243"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3256"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3269"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3282"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3295"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3308"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3321"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3334"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3347"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3360"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3378"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3396"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3409"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3422"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3435"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3448"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3461"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3474"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3487"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3501"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3515"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3616"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3628"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3641"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3647"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3659"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3672"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3693"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3718"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3733"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3754"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3778"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3789"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3802"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3813"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3826"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3836"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4302"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4335"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4362"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4435"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4446"/>
-        <source>FET information</source>
-        <translation>Informação - FET</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="768"/>
-        <source>Constraint is not enabled. To use this type of constraint you must enable it from the Settings-&gt;Advanced menu.</source>
-        <translation>Restrição não habilitada. Para usar este tipo de restrição você deve habilitá-la a partir do menu Configurações-&gt;Avançado.</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="770"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3151"/>
-        <source>Explanation:</source>
-        <translation>Esclarecimento:</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="774"/>
-        <source>For some situations, the generation of the timetable may take too long or be impossible.</source>
-        <translation>Para algumas situações, a geração do horário pode demorar muito ou ser impossível.</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="776"/>
-        <source>Use with caution.</source>
-        <translation>Use com cautela.</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1038"/>
-        <source>FET - exiting</source>
-        <translation>FET - Saindo</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4133"/>
-        <source>&amp;Yes</source>
-        <translation>&amp;Sim</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4133"/>
-        <source>&amp;No</source>
-        <translation>&amp;Não</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4374"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4395"/>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Cancelar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1098"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1159"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1171"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1243"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1479"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1488"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1497"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1506"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1521"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1530"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1539"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1860"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1873"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1886"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1899"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1912"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1932"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1952"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1965"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1978"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1991"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2170"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2183"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2196"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2209"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2222"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2235"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2248"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2261"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2274"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2287"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2300"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2313"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2326"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2339"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2352"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2365"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2378"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2391"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2404"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2417"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2430"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2443"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2456"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2469"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2482"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2495"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2508"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2521"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2534"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2547"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2560"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2574"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2587"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2601"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2614"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2628"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2641"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2654"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2667"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2680"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2693"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2706"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2718"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2731"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2744"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2757"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2770"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2783"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2796"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2809"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2822"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2835"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2848"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2861"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2874"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2887"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2900"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2913"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2926"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2939"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2952"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2965"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1545"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1550"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1555"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1684"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1759"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1772"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1785"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1798"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1811"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1831"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1851"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1864"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1877"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1890"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2016"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2069"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2082"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2095"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2108"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2121"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2134"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2147"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2160"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2173"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2186"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2199"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2212"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2225"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2238"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2251"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2264"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2277"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2290"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2303"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2316"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2329"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2342"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2355"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2368"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2381"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2394"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2407"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2420"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2433"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2446"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2459"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2473"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2486"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2500"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2513"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2527"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2540"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2553"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2566"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2579"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2592"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2605"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2617"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2630"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2643"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2656"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2669"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2682"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2695"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2708"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2721"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2734"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2747"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2760"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2773"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2786"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2799"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2812"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2825"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2838"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2851"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2864"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2877"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2890"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2903"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2916"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2929"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2942"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2960"/>
         <location filename="../src/interface/fetmainform.cpp" line="2978"/>
         <location filename="../src/interface/fetmainform.cpp" line="2991"/>
         <location filename="../src/interface/fetmainform.cpp" line="3004"/>
         <location filename="../src/interface/fetmainform.cpp" line="3017"/>
         <location filename="../src/interface/fetmainform.cpp" line="3030"/>
         <location filename="../src/interface/fetmainform.cpp" line="3043"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3061"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3079"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3092"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3105"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3118"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3131"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3144"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3055"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3068"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3086"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3104"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3117"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3130"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3143"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3156"/>
         <location filename="../src/interface/fetmainform.cpp" line="3169"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3187"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3205"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3218"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3231"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3244"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3257"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3270"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3283"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3182"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3195"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3208"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3221"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3234"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3247"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3260"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3278"/>
         <location filename="../src/interface/fetmainform.cpp" line="3296"/>
         <location filename="../src/interface/fetmainform.cpp" line="3309"/>
         <location filename="../src/interface/fetmainform.cpp" line="3322"/>
         <location filename="../src/interface/fetmainform.cpp" line="3335"/>
         <location filename="../src/interface/fetmainform.cpp" line="3348"/>
         <location filename="../src/interface/fetmainform.cpp" line="3361"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3379"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3397"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3410"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3423"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3436"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3449"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3462"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3475"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3488"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3502"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3374"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3387"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3401"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3415"/>
         <location filename="../src/interface/fetmainform.cpp" line="3516"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3617"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3642"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4303"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4336"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4363"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4436"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4447"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3528"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3541"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3547"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3559"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3572"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3593"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3618"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3633"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3654"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3678"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3689"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3702"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3713"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3726"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3736"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4184"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4217"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4244"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4317"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4328"/>
+        <source>FET information</source>
+        <translation>Informação - FET</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="732"/>
+        <source>Constraint is not enabled. To use this type of constraint you must enable it from the Settings-&gt;Advanced menu.</source>
+        <translation>Restrição não habilitada. Para usá-la, você deve habilitá-la no menu Configurações-&gt;Avançado.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="734"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3051"/>
+        <source>Explanation:</source>
+        <translation>Esclarecimento:</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="738"/>
+        <source>For some situations, the generation of the timetable may take too long or be impossible.</source>
+        <translation>Para algumas situações, a geração do horário pode demorar muito ou ser impossível.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="740"/>
+        <source>Use with caution.</source>
+        <translation>Use com cautela.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="938"/>
+        <source>FET - exiting</source>
+        <translation>FET - Saindo</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4033"/>
+        <source>&amp;Yes</source>
+        <translation>&amp;Sim</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4033"/>
+        <source>&amp;No</source>
+        <translation>&amp;Não</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4256"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4277"/>
+        <source>&amp;Cancel</source>
+        <translation>&amp;Cancelar</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="846"/>
+        <location filename="../src/interface/fetmainform.cpp" line="998"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1059"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1071"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1143"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1379"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1388"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1397"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1406"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1421"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1430"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1439"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1760"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1773"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1786"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1799"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1812"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1832"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1852"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1865"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1878"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1891"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2070"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2083"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2096"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2109"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2122"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2135"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2148"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2161"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2174"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2187"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2200"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2213"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2226"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2239"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2252"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2265"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2278"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2291"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2304"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2317"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2330"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2343"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2356"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2369"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2382"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2395"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2408"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2421"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2434"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2447"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2460"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2474"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2487"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2501"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2514"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2528"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2541"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2554"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2567"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2580"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2593"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2606"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2618"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2631"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2644"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2657"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2670"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2683"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2696"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2709"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2722"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2735"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2748"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2761"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2774"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2787"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2800"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2813"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2826"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2839"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2852"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2865"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2878"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2891"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2904"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2917"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2930"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2943"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2961"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2979"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2992"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3005"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3018"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3031"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3044"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3069"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3087"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3105"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3118"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3131"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3144"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3157"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3170"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3183"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3196"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3209"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3222"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3235"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3248"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3261"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3279"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3297"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3310"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3323"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3336"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3349"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3362"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3375"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3388"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3402"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3416"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3517"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3542"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4185"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4218"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4245"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4318"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4329"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>Alocação em curso.
-Por favor, pare de simulação antes.</translation>
+Por favor, pare a simulação antes.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="759"/>
+        <location filename="../src/interface/fetmainform.cpp" line="723"/>
         <source>Chinese Simplified</source>
         <translation>Chinês simplificado</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="796"/>
+        <location filename="../src/interface/fetmainform.cpp" line="760"/>
         <source>Note: if you disable this option, you will not be able to add/modify constraints for subgroups, and you will not be able to make filters using a particular subgroup, when selecting activities.</source>
         <translation type="unfinished">Nota: se você desativar esta opção, você não será capaz de inserir/alterar as restrições para os subgrupos, e você não poderá usar filtros com um subgrupo específico, ao selecionar atividades.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="959"/>
+        <location filename="../src/interface/fetmainform.cpp" line="859"/>
         <source>Could not search for possible updates on the internet - error message is: %1.</source>
         <translation>Não foi possível buscar possíveis atualizações na internet - mensagem de erro: %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="963"/>
+        <location filename="../src/interface/fetmainform.cpp" line="863"/>
         <source>Possible actions: check your network connection, try again later, try to visit FET homepage: %1, or try to search for the new FET page on the internet (maybe it has changed).</source>
         <translation>Ações possíveis: verifique sua conexão de rede, tente novamente mais tarde, tente visitar página FET em %1, ou tente procurar a nova página FET na internet (talvez tenha mudado).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="978"/>
+        <location filename="../src/interface/fetmainform.cpp" line="878"/>
         <source>Maybe the FET homepage has some temporary problems, so try again later. Or maybe the current structure on FET homepage was changed. You may visit FET homepage: %1, and get latest version or, if it does not work, try to search for the new FET page on the internet (maybe it has changed).</source>
         <translation>Talvez a página FET esteja com problema temporário, portanto, tente novamente mais tarde. Ou talvez a estrutura atual da página inicial do FET tenha mudado. Você pode visitar a página FET em %1 e obter a versão mais recente ou, se isso não funcionar, tentas procurar a nova página FET na internet (talvez tenha mudado).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1009"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3540"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3550"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3560"/>
+        <location filename="../src/interface/fetmainform.cpp" line="909"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3440"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3450"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3460"/>
         <source>Could not start the default internet browser (trying to open the link %1). Maybe you can try to manually start your browser and open this link.</source>
         <translation>Não foi possível iniciar o navegador padrão de internet (tentando o endereço %1). Talvez você possa tenar reiniciar manualmente o navegador e abrir a este endereço.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1180"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1252"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1080"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1152"/>
         <source>FET application</source>
         <translation>FET aplicação</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1310"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1210"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Por favor, não use aspas (&quot;) no nome do arquivo, o código html css não funciona. Arquivo não foi carregado. Por favor, renomeá-lo, removendo os caracteres não permitidos e abri-lo depois que, com FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1316"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1216"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Por favor, não use ponto e vírgula; no nome do arquivo, o código html css não funciona. Arquivo não foi carregado. Por favor, renomeá-lo, removendo os caracteres não permitidos e abri-lo depois que, com FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1322"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1222"/>
         <source>Please do not use # in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Por favor, não use # no nome do arquivo, o código html css não funciona. Arquivo não foi carregado. Por favor, renomeá-lo, removendo os caracteres não permitidos e abri-lo depois que, com FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1333"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1233"/>
         <source>Loading...</source>
         <comment>This is a message in the status bar, that we are loading the file</comment>
-        <translation>Carregando ...</translation>
+        <translation>Carregando...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1383"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1283"/>
         <source>Choose a filename to save under</source>
         <translation>Escolha outro nome para seu arquivo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1396"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1616"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1296"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1516"/>
         <source>Please do not use a filename starting with white space(s), the html css code does not work.</source>
         <translation>Por favor, não use um nome de arquivo que começa com espaço(s) em branco, pois o código html css não funcionará.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1415"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1635"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1315"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1535"/>
         <source>Please do not use a filename ending with white space(s) before the &apos;.fet&apos; termination, problems might arise.</source>
         <translation>Por favor, você evitará problemas se não usar nome de arquivo terminando com espaço(s) em branco antes de &quot;.fet&quot;.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1425"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1645"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1325"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1545"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work</source>
         <translation>Por favor, não use aspas (&quot;) no nome do arquivo, pois o código html css não funcionará</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1430"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1650"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1330"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1550"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work</source>
         <translation>Por favor, não use ponto e vírgula ; no nome do arquivo, pois o código html css não funcionará</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1435"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1655"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1335"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1555"/>
         <source>Please do not use # in filename, the html css code does not work</source>
         <translation>Por favor, não use # no nome do arquivo, pois o código html css não funcionará</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1447"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1347"/>
         <source>FET</source>
         <translation>FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1448"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1348"/>
         <source>File %1 exists - are you sure you want to overwrite it?</source>
         <translation>Arquivo %1 já existe. Tem certeza que deseja substituí-lo?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1603"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1503"/>
         <source>Choose a filename for data and timetable</source>
         <translation>Escolha um nome para arquivo de dados e de horários</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1748"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1773"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1648"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1673"/>
         <source>Added to the saved file:</source>
         <comment>It refers to a constraint</comment>
         <translation>Adicionada ao arquivo salvo:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1750"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1775"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1650"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1675"/>
         <source>NOT added to the saved file (already existing):</source>
         <comment>It refers to a constraint</comment>
         <translation>NÃO adicionada ao arquivo salvo (já existente):</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1784"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1684"/>
         <source>Added %1 locking time constraints and %2 locking space constraints to saved file, ignored %3 activities which were already fixed in time and %4 activities which were already fixed in space.</source>
         <translation>Foram bloqueadas algumas restrições (%1 de tempo e %2 de espaço) ao salvar o arquivo. Foram ignoradas %3 atividades que já estavam com tempo fixo e %4 atividades que já estavam com espaço fixos.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1786"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1686"/>
         <source>Detailed information about each locking constraint which was added or not (if already existing) to the saved file:</source>
-        <translation>Informações detalhadas sobre cada restrição de bloqueio que foi adicionado ou não (se já existente) no arquivo salvo:</translation>
+        <translation>Informações detalhadas sobre cada bloqueio adicionado (ou não, se já existente) no arquivo salvo:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1787"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1687"/>
         <source>Your current data file remained untouched (no locking constraints were added), so you can save it also, or generate different timetables.</source>
         <translation>Seu arquivo de dados atual permaneceu intocado (não foram adicionadas restrições de bloqueio), de modo que você também pode guardá-lo, ou gerar diferentes horários.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2032"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1932"/>
         <source>Seed of random number generator: please read the help in the dialog of this option</source>
         <translation>Semente do gerador de números aleatórios: leia a ajuda no diálogo desta opção</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2035"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1935"/>
         <source>Interface - use colors: the places with colors in FET interface are in:</source>
         <translation>Interface - Use cores: os lugares com as cores na interface FET está em:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2042"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1942"/>
         <source>activities and subactivities dialogs, the inactive activities will have a distinctive background color</source>
         <translation>janelas de atividades e subatividades, as atividades inativas terão uma cor de fundo distinta</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2045"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1945"/>
         <source>all time constraints and all space constraints dialogs, the inactive constraints will have a distinctive background color</source>
         <translation>todas as janelas de restrições de tempo e de restrições de espaço, as restrições inativas terão uma cor de fundo diferente</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2048"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1948"/>
         <source>group activities in initial order items, the inactive items will have a distinctive background color</source>
         <translation>agrupar atividades em ordem inicial de itens, os itens inativos terão cor de fundo distinta</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2051"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1951"/>
         <source>the three timetable view dialogs</source>
         <translation>as 3 janelas de vizualização de horários</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2054"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1954"/>
         <source>Enable activity tag max hours daily:</source>
         <translation>Ativar marcador de atividade com máximo de horas diárias:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2056"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1956"/>
         <source>This will enable the menu for 4 constraints: teacher(s) or students (set) activity tag max hours daily. These 4 constraints are good, but not perfect and may bring slow down of generation or impossible timetables if used unproperly. Select only if you know what you&apos;re doing.</source>
         <translation type="unfinished">Isso habilitará o menu para 4 restrições: marcador de atividade para professor(es) ou turma com máx horas diária. Estas 4 restrições são boas, mas não são perfeitas e podem trazer desaceleração da geração ou horários impossíveis, se usadas de forma inadequada. Selecione somente se você sabe o que está fazendo.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2059"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1959"/>
         <source>Enable students max gaps per day:</source>
         <translation>Habilitar máx de lacunas por dia para turma:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2061"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1961"/>
         <source>This will enable the menu for 2 constraints: students (set) max gaps per day. These 2 constraints are good, but not perfect and may bring slow down of generation or impossible timetables if used unproperly. Select only if you know what you&apos;re doing.</source>
         <translation type="unfinished">Isso permitirá que o menu para 2 restrições: máx lacunas por dia para turma. Estas 2 restrições são boas, mas não são perfeitas e podem atrasar a geração ou levar a horários impossíveis, se usados de forma inadequada. Selecione somente se você souber o que está fazendo.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2065"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1965"/>
         <source>Warn if using not perfect constraints:</source>
         <comment>this is a warning if user uses not perfect constraints</comment>
         <translation>Alerta ao usar restrições imperfeitas:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2071"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1971"/>
         <source>Enable students min hours daily with empty days:</source>
         <translation>Ativar mínima jornada com horas vagas para alunos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2073"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1973"/>
         <source>This will enable you to modify the students min hours daily constraints, to allow empty days. It is IMPERATIVE (for performance reasons) to allow empty days for students min hours daily only if your institution allows empty days for students and if a solution with empty days is possible. Select only if you know what you&apos;re doing.</source>
         <translation type="unfinished">Isto permitirá que você altere as restrições de mín horas diárias (jornada) para alunos, permitindo dias vagos. É imperativo (por motivos de desempenho) para permitir dias vagos para alunos mín de horas por dia se a sua instituição permite dias vagos para os alunos e se uma solução com dias vagos é possível. Selecione somente se você souber o que está fazendo.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2077"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1977"/>
         <source>Warn if using students min hours daily with empty days:</source>
         <comment>this is a warning if user has constraints min hours daily for students with allowed empty days</comment>
         <translation type="unfinished">Alerta ao usar jornada mínima para alunos com dias vagos:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2079"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1979"/>
         <source>If you use constraints students min hours daily with allowed empty days, you&apos;ll get a warning before generating. Uncheck this option to get rid of that warning (it is recommended to keep the warning).</source>
         <translation type="unfinished">Se você usar restrições de jornada mínima com dias vagos permitidos, você receberá um alerta antes de gerar. Desmarque essa opção para se livrar desse aviso (recomenda-se mantê-lo).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2084"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1984"/>
         <source>Confirmations: unselect the corresponding check boxes if you want to skip introduction and confirmation to various advanced dialogs.</source>
         <translation>Confirmações: selecione as caixas correspondentes se você quiser pular a introdução e a confirmação de vários diálogos avançados.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2088"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1988"/>
         <source>Duplicate vertical headers to the right (in timetable settings) - select this if you want the timetables to duplicate the table left vertical headers to the right part of the tables</source>
-        <translation type="unfinished">Duplicar cabeçalhos verticais à direita (em configurações de grade de horário). Selecione esta opção se você deseja exibir duas vezes no lado direito dos cabeçalhos de linha (na primeira coluna da tabela à esquerda).</translation>
+        <translation type="unfinished">Duplicar cabeçalhos verticais à direita (em configurações de grade de horário). Selecione esta opção se você deseja exibir duas vezes no lado direito dos cabeçalhos de linha (na primeira coluna da tabela à esquerda)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2123"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2023"/>
         <source>You will find in the statistics only active activities count. The inactive ones are not counted.</source>
         <translation>Você encontrará nas estatísticas apenas as atividades ativas. As inativas não são contadas.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2127"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2027"/>
         <source>Statistics for students might be the most difficult to understand. If you are using divisions of years: probably the most relevant statistics are the ones for each subgroup (so you may check only subgroups check box). You may see more hours for the years or groups, but these are not significant, please ignore them, because each year or group will count also activities of all contained subgroups.
 
 Each subgroup should have a number of hours per week close to the average of all subgroups and close to the normal number of working hours of each students set. If a subgroup has a much lower value, maybe you used incorrectly the years/groups/subgroups for activities.
@@ -29239,1224 +29257,1224 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2156"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2056"/>
         <source>Activities rooms statistics: this menu will show the activities which may be scheduled in an unspecified room, if they are referred to by space constraints with weight under 100.0%, and the activities which will certainly be scheduled in an unspecified room, if they are not referred to by any space constraints. Remember that home rooms constraints are effective only on activities which have only the exact specified teacher or students set (activities with more teachers or students sets are not affected by home rooms constraints, you need to have preferred rooms constraints for such activities to ensure they will not end up in an unspecified room).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2163"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2063"/>
         <source>FET - information about statistics</source>
         <translation>FET - informações sobre estatisticas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3149"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3049"/>
         <source>Feature is not enabled. To use this type of feature you must enable it from the Settings-&gt;Advanced menu.</source>
         <translation>Recurso não está habilitado. Para usar este tipo de recurso, é necessário habilitá-lo no menu Configurações -&gt; Avançado</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3153"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3053"/>
         <source>The feature must be used with caution, by experienced users.</source>
         <translation>O recurso deve ser usado com cautela, por usuários experientes.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3570"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3470"/>
         <source>FET homepage: %1</source>
         <comment>%1 is FET homepage, begins with http://...</comment>
         <translation>FET homepage: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3574"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3474"/>
         <source>Forum: %1</source>
         <comment>%1 is web page of FET forum, begins with http://...</comment>
         <translation>Fórum: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3576"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3476"/>
         <source>Additionally, you may find on the FET homepage other contact information.</source>
         <translation type="unfinished">Além disso, você pode encontrar outra informação de contato na página do FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3648"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3548"/>
         <source>Your current data has no name. Please save it as a file with a certain name before proceeding.</source>
         <translation>Seus dados atuais não têm nome. Por favor, salve-o como um arquivo com um certo nome antes de prosseguir.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3789"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3813"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3689"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3713"/>
         <source>The timetable is not generated, but anyway FET will proceed now</source>
         <translation>Não há grade horária gerada. Ainda assim, FET executará essa ação agora</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3851"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3751"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="750"/>
+        <location filename="../src/interface/fetmainform.cpp" line="714"/>
         <source>Danish</source>
         <translation>Dinamarquês</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="751"/>
+        <location filename="../src/interface/fetmainform.cpp" line="715"/>
         <source>Sinhala</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="752"/>
+        <location filename="../src/interface/fetmainform.cpp" line="716"/>
         <source>Slovak</source>
         <translation>Eslovaco</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="753"/>
+        <location filename="../src/interface/fetmainform.cpp" line="717"/>
         <source>Hebrew</source>
         <translation>Hebraico</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="754"/>
+        <location filename="../src/interface/fetmainform.cpp" line="718"/>
         <source>Serbian</source>
         <translation type="unfinished">Sérvio</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="755"/>
+        <location filename="../src/interface/fetmainform.cpp" line="719"/>
         <source>Galician</source>
         <translation>Galego</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="756"/>
+        <location filename="../src/interface/fetmainform.cpp" line="720"/>
         <source>Vietnamese</source>
         <translation>Vietnamita</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="757"/>
+        <location filename="../src/interface/fetmainform.cpp" line="721"/>
         <source>Uzbek</source>
         <translation>Usbeque</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="758"/>
+        <location filename="../src/interface/fetmainform.cpp" line="722"/>
         <source>Albanian</source>
         <translation>Albanês</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="760"/>
+        <location filename="../src/interface/fetmainform.cpp" line="724"/>
         <source>Chinese Traditional</source>
         <translation>Chinês tradicional</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="761"/>
+        <location filename="../src/interface/fetmainform.cpp" line="725"/>
         <source>Basque</source>
         <translation>Basco</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="762"/>
+        <location filename="../src/interface/fetmainform.cpp" line="726"/>
         <source>Czech</source>
         <translation type="unfinished">Tcheco</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="817"/>
+        <location filename="../src/interface/fetmainform.cpp" line="781"/>
         <source>Note: if you disable this option, you will not be able to view activities for subgroups in the activity planning dialog.</source>
         <translation>Nota: se você desativar esta opção, você não será capaz de ver as atividades para os subgrupos na janela de planejamento de atividade.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1397"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1416"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1420"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1426"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1431"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1436"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1617"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1636"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1640"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1646"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1651"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1656"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1297"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1316"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1320"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1326"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1331"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1336"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1517"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1536"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1540"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1546"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1551"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1556"/>
         <source>File was not saved.</source>
         <translation>Arquivo não foi salvo.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1419"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1639"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1319"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1539"/>
         <source>Please do not use a filename ending with white space(s), problems might arise.</source>
-        <translation type="unfinished">Por favor, não use um nome de arquivo terminando com espaço(s) em branco. Podem surgir problemas.</translation>
+        <translation>Por favor, não use um nome de arquivo terminando com espaço(s) em branco. Podem surgir problemas.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2093"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1993"/>
         <source>If you have many subgroups and you don&apos;t explicitly use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se você tiver muitos subgrupos e não os utilizará explicitamente, recomenda-se usar as três configurações globais: esconder subgrupos em caixas de combinação, ocultar subgrupos em planejamento de atividades, e não escrever subgrupos horários no disco rígido.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2096"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1996"/>
         <source>Note that using the global menu setting to hide subgroups in activity planning is a different thing from the check box in the activity planning dialog, and the global setting works better and faster.</source>
-        <translation type="unfinished"></translation>
+        <translation>Observe que usar a configuração do menu global para esconder subgrupos em planejamento de atividades é uma coisa diferente da caixa de seleção na janela de planejamento de atividade, e a configuração global funciona melhor e mais rápido.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2099"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1999"/>
         <source>If you hide subgroups in combo boxes, the affected dialogs (like the activities dialog or the add constraint students set not available times dialog) will load much faster if you have many subgroups.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se você ocultar os subgrupos em caixas de combinação, os diálogos afetados (como a janela de atividades ou a janela inserir restrição de horários indisponíveis para turmas) irá carregar muito mais rápido se você tiver muitos subgrupos.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2104"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2004"/>
         <source>If you are only working on a timetable, and you do not need to publish it, you may want to disable writing some categories of timetables on the hard disk, for operativity (the generation speed is not affected, only the overhead to write the partial/complete timetables when stopping/finishing the simulation). The timetables taking the longest time are the subgroups, groups AND years ones.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se você estiver trabalhando com um horário sem intenção de publicá-lo (na web), você pode querer desativar a gravação de alguns arquivos, para a operatividade (a velocidade de geração não é modificada, apenas a sobrecarga para escrever horário parcial/completo quando ele finaliza (ou para) a simulação). Os arquivos de horário que tomam mais tempo são os de subgrupos, grupos e turmas (aulas).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2108"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2008"/>
         <source>(Also the conflicts timetable might take long to write, if the file is large.)</source>
-        <translation type="unfinished">(Além disso, os conflitos de horário podem levar muito tempo para serem gravados, se o arquivo for grande.)</translation>
+        <translation>(Além disso, os conflitos de horário podem levar muito tempo para serem gravados, se o arquivo for grande.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2110"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2010"/>
         <source>After that, you can re-enable writing of the timetables and re-generate.</source>
-        <translation type="unfinished">Após isso, você pode reativar a escrita de grade de horário e gerá-la novamente.</translation>
+        <translation>Quando tiver um horário definitivo, você pode reativar a gravação de grades de horário e gerar novamente.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2113"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2013"/>
         <source>Show tool tips for constraints with tables: in the add/modify constraint dialogs which use tables, like the &apos;not available times&apos; ones, each table cell will have a tool tip to show the current day/hour (column/row name).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Exibir dicas de ferramentas para restrições com tabelas: nas janelas de incluir/alterar restrição que usam tabelas, como os &quot;horários indisponíveis&quot;, cada célula da tabela terá uma dica de ferramenta para mostrar o dia/hora (nome da coluna/linha).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3966"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3866"/>
         <source>The geometry and any other saved settings of all the windows and dialogs will be reset to default</source>
-        <translation type="unfinished"></translation>
+        <translation>A geometria e quaisquer outras configurações salvas de todas as janelas e diálogos serão redefinidas para o padrão</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3966"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3866"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3969"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3869"/>
         <source>Show shortcut buttons in main window will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation type="unfinished">Exibir botões de atalho na janela principal será %1</translation>
+        <translation>Exibir botões de atalho na janela principal será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3969"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3869"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3972"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3872"/>
         <source>In the shortcuts tab from the main window, the first section will be selected/shown</source>
         <comment>Option refers to the main window tab widget for shortcuts, which currently contains 5 tabs: File, Data, Time, Space, Timetable (so it will select/show File tab).</comment>
-        <translation type="unfinished"></translation>
+        <translation>Nas abas de atalhos da janela principal, a primeira seção será selecionada/mostrada</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3972"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3872"/>
         <source>3</source>
-        <translation type="unfinished">3</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3976"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3876"/>
         <source>4</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3979"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3879"/>
         <source>5</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3983"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4004"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3883"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3904"/>
         <source>Language will be %1</source>
         <comment>%1 is the default language</comment>
         <translation>O idioma será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3983"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4004"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3883"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3904"/>
         <source>6</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4008"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3908"/>
         <source>The list of recently used files will be cleared</source>
         <translation>A lista de arquivos usados recentemente será apagada</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4008"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3908"/>
         <source>7</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4011"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3911"/>
         <source>8</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4014"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3914"/>
         <source>9</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4017"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3917"/>
         <source>10</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4020"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3920"/>
         <source>11</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4023"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3923"/>
         <source>12</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4026"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3926"/>
         <source>13</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4029"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3929"/>
         <source>14</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4032"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3932"/>
         <source>15</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4035"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3935"/>
         <source>16</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4038"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3938"/>
         <source>Print activities tags will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished">Imprimir marcadores de atividades será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4038"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3938"/>
         <source>17</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4041"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3941"/>
         <source>18</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4044"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3944"/>
         <source>19</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4047"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3947"/>
         <source>20</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4050"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3950"/>
         <source>21</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4053"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3953"/>
         <source>Warn if using constraints students min hours daily with empty days will be %1</source>
         <comment>%1 is true or false. This is a warning if user uses a nonstandard constraint students min hours daily with allowed empty days</comment>
         <translation>Avisar ao usar restrições de jornada mínima para alunos com dias vagos será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4053"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3953"/>
         <source>22</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4058"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3958"/>
         <source>Confirm activity planning will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished">Confirmar planejamento de atividades será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4058"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3958"/>
         <source>23</source>
         <translation>23</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4060"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3960"/>
         <source>Confirm spread activities over the week will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished">Confirmar distribuir atividades pela semana será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4060"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3960"/>
         <source>24</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4062"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3962"/>
         <source>Confirm remove redundant constraints will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished">Confirmar remover restrições redundantes será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4062"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3962"/>
         <source>25</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4064"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3964"/>
         <source>26</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4068"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3968"/>
         <source>Enable group activities in the initial order of generation will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished">Habilitar grupo de atividades na ordem inicial de geração será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4068"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3968"/>
         <source>27</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4070"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3970"/>
         <source>Warn if using group activities in the initial order of generation will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation type="unfinished"></translation>
+        <translation>Alertar ao usar grupo de atividades na ordem inicial de geração será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4070"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3970"/>
         <source>28</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4074"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3974"/>
         <source>29</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4074"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3974"/>
         <source>Show subgroups in combo boxes will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished">Exibir subgrupos em caixas combo será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4076"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3976"/>
         <source>30</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4076"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3976"/>
         <source>Show subgroups in activity planning will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar subgrupos no planejamento de atividades será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4080"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3980"/>
         <source>31</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4080"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3980"/>
         <source>Write on disk the %1 timetable will be %2</source>
         <comment>%1 is a category of timetables, like conflicts, %2 is true or false</comment>
-        <translation type="unfinished"></translation>
+        <translation>Gravar em disco (ou outra mídia) o horário %1 será %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4081"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3981"/>
         <source>conflicts</source>
         <translation type="unfinished">conflitos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4084"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4087"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4090"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4093"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4096"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4099"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4103"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4106"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4109"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4112"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4115"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4118"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4121"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4124"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3984"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3987"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3990"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3993"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3996"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3999"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4003"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4006"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4009"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4012"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4015"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4018"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4021"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4024"/>
         <source>Write on disk the %1 timetables will be %2</source>
         <comment>%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false</comment>
-        <translation type="unfinished"></translation>
+        <translation>Gravar em disco (ou outra mídia) os horários %1 será %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4085"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3985"/>
         <source>statistics</source>
         <translation>estatísticas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4088"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3988"/>
         <source>XML</source>
         <translation type="unfinished">XML</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4084"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3984"/>
         <source>32</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4091"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3991"/>
         <source>days horizontal</source>
         <translation type="unfinished">dias na horizontal</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4087"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3987"/>
         <source>33</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4094"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3994"/>
         <source>days vertical</source>
         <translation type="unfinished">dias na vertical</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4090"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3990"/>
         <source>34</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4097"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3997"/>
         <source>time horizontal</source>
         <translation type="unfinished">horário na horizontal</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4093"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3993"/>
         <source>35</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4100"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4000"/>
         <source>time vertical</source>
         <translation type="unfinished">horário na vertical</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4096"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3996"/>
         <source>36</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4104"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4004"/>
         <source>subgroups</source>
         <translation type="unfinished">subgrupos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4099"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3999"/>
         <source>37</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4107"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4007"/>
         <source>groups</source>
         <translation type="unfinished">grupos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4103"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4003"/>
         <source>38</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4110"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4010"/>
         <source>years</source>
         <translation type="unfinished">turmas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4106"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4006"/>
         <source>39</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4113"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4013"/>
         <source>teachers</source>
         <translation type="unfinished">professores</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4109"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4009"/>
         <source>40</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4116"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4016"/>
         <source>teachers free periods</source>
         <translation type="unfinished">horários livres dos docentes</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4112"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4012"/>
         <source>41</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4119"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4019"/>
         <source>rooms</source>
         <translation type="unfinished">salas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4115"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4015"/>
         <source>42</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4122"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4022"/>
         <source>subjects</source>
         <translation type="unfinished">disciplinas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4118"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4018"/>
         <source>43</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4125"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4025"/>
         <source>activities</source>
         <translation type="unfinished">atividades</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4631"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4513"/>
         <source>This kind of constraint is good, but only in the right case. Adding such constraints in the wrong circumstance may make your timetable solve too slow or even impossible.</source>
         <translation>Esse tipo de restrição é boa, mas apenas quando bem usada. A inclusão dessas restrições em circunstância errada pode tornar lenta a resolução do horário ou até mesmo impossível.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4634"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4516"/>
         <source>Please use such constraints only if you are sure that there exists a timetable with empty days for students. If your instution requires each day for the students to be not empty, or if there does not exist a solution with empty days for students, it is IMPERATIVE (for performance reasons) that you use the standard constraint which does not allow empty days. Otherwise, the timetable may be impossible to find.</source>
-        <translation type="unfinished"></translation>
+        <translation>Favor usar tais restrições apenas se tiver a certeza de que não existe um horário com os dias vagos para estudantes. Se a sua instituição exige que cada dia dos estudantes não tenham vacâncias, ou se não existe uma solução com dias vagos para os alunos, é imperativo (por motivos de desempenho) que você use a restrição padrão que não permite dias vagos. Caso contrário, o horário pode ser impossível de resolver.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4679"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4561"/>
         <source>This kind of option is good, but only in the right case. Adding such an option in the wrong circumstance may make your timetable solve too slow or even impossible.</source>
         <translation>Esse tipo de opção é interessante, mas apenas quando bem usada. A inclusão de tal opção em circunstância errada pode tornar lenta a resolução do horário ou até mesmo impossível.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3672"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3693"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3718"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3733"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3754"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3778"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3802"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3826"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3836"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3572"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3593"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3618"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3633"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3654"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3678"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3702"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3726"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3736"/>
         <source>Please generate, firstly</source>
         <translation>Por favor, gere antes</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3677"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3698"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3738"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3759"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3577"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3598"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3638"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3659"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Não é possível mostrar o horário, pois você removeu ou adicionou algumas salas. Por favor, restaure o horário para vê-lo novamente</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3702"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3763"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3602"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3663"/>
         <source>Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Não é possível mostrar o horário, pois você removeu ou adicionou alguns docentes. Por favor, restaure o horário para vê-lo novamente</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3963"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3863"/>
         <source>That means:</source>
         <translation>Isso quer dizer que:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3969"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4023"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4026"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4038"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4047"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4054"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4058"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4060"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4062"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4064"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4070"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4074"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4076"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4081"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4085"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4088"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4091"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4094"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4097"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4100"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4104"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4107"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4110"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4113"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4116"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4119"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4122"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4125"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4129"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3869"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3923"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3926"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3938"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3947"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3954"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3958"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3960"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3962"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3964"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3970"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3974"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3976"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3981"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3985"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3988"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3991"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3994"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3997"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4000"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4004"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4007"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4010"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4013"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4016"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4019"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4022"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4025"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4029"/>
         <source>true</source>
         <translation>verdadeiro</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4528"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4558"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4410"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4440"/>
         <source>These kinds of constraints are good, but not perfectly optimized. Adding such constraints may make your timetable solve too slow or even impossible.</source>
         <translation>Esses tipos de restrições são bons, mas não perfeitamente otimizados. Adicionando essas restrições pode tornar muito lento ou até mesmo impossível o processo de resolver o horário.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4531"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4561"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4413"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4443"/>
         <source>It is recommended to use such constraints only at the end, after you generated successfully with all the other constraints.</source>
         <translation>Recomenda-se usar tais restrições apenas no final, depois de ter gerado com sucesso e com todas as outras restrições.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4533"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4563"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4415"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4445"/>
         <source>If your timetable is too difficult, it may be from these kinds of constraints, so you may need to remove them and retry.</source>
         <translation>Se o seu horário estiver muito difícil, pode ser devido a esses tipos de restrições, de modo que você pode precisar removê-los e tentar novamente.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4535"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4565"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4639"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4682"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4417"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4447"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4521"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4564"/>
         <source>Continue only if you know what you are doing.</source>
         <translation>Continue somente se você souber o que está fazendo.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4586"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4608"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4657"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4702"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4468"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4490"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4539"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4584"/>
         <source>It is recommended to keep this warning active, but if you really want, you can disable it.</source>
         <translation>Recomenda-se manter esta advertência ativa, mas se você realmente quiser, você pode desativá-la.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4588"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4610"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4659"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4704"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4470"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4492"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4541"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4586"/>
         <source>Disable it only if you know what you are doing.</source>
         <translation>Desative-o somente se você souber o que está fazendo.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4590"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4612"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4661"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4706"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4472"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4494"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4543"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4588"/>
         <source>Are you sure you want to disable it?</source>
         <translation>Tem certeza de que quer desativá-lo?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3628"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3528"/>
         <source>Please input at least one active activity before generating</source>
         <translation>Por favor, insira ao menos uma atividade ativa antes de gerar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3659"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3559"/>
         <source>Please input at least one active activity before generating multiple</source>
         <translation>Por favor, insira ao menos uma atividade ativa antes de gerar múltiplos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1549"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1559"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1567"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1449"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1459"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1467"/>
         <source>FET - Warning</source>
         <translation>Alerta - FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1549"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1449"/>
         <source>You have not yet generated a timetable - please generate firstly</source>
         <translation>Você precisa gerar uma grade horária antes de usar esse recurso</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1559"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1567"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1459"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1467"/>
         <source>It seems that you have an incomplete timetable. Saving of timetable does not work for incomplete timetables. Please generate a complete timetable</source>
         <translation>Parece que você tem um horário incompleto. Esse recurso de salvar não funciona para horários incompletos. Favor gerar um horário completo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1667"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1567"/>
         <source>File exists</source>
         <translation>Arquivo já existe</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1669"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1569"/>
         <source>For safety (so you don&apos;t lose work), it is not allowed to overwrite an existing file with locking and saving a current data+timetable</source>
-        <translation type="unfinished"></translation>
+        <translation>Para assegurar que você não perca um trabalho anterior, não é permitido sobreescrever esse arquivo com dados+horários bloqueados</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1672"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1572"/>
         <source>Please choose a non-existing name</source>
         <translation>Favor escolher um nome diferente</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3960"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3860"/>
         <source>Are you sure you want to reset all settings to defaults?</source>
         <translation>Tem certeza que deseja retornar às configurações originais?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1223"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1123"/>
         <source>New file generated</source>
         <translation>Novo arquivo gerado</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1349"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1249"/>
         <source>File opened</source>
         <translation>Arquivo aberto</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1461"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1842"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1361"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1742"/>
         <source>File saved</source>
         <translation>Arquivo salvo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2067"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1967"/>
         <source>If you use a not perfect constraint (activity tag max hours daily or students max gaps per day), you&apos;ll get a warning before generating. Uncheck this option to get rid of that warning (it is recommended to keep the warning).</source>
-        <translation type="unfinished"></translation>
+        <translation>Se você usar uma restrição imperfeita (marcador de atividade &quot;máx jornada&quot; ou &quot;máx lacunas por dia para alunos&quot;), você receberá um aviso antes de gerar. Desmarque a opção para se livrar desse aviso (recomenda-se mantê-lo).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4369"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4251"/>
         <source>You have more than 6 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation>Você tem mais de 6 dias por semana, ou seja, provavelmente não precisará desse recurso. Ainda assim deseja continuar?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4372"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4393"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4254"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4275"/>
         <source>FET question</source>
         <translation>Pergunta - FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4374"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4395"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4256"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4277"/>
         <source>&amp;Continue</source>
         <translation>&amp;Continue</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4390"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4272"/>
         <source>You have less than 5 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation>Você tem menos de 5 dias por semana, ou seja, provavelmente não precisará desse recurso. Ainda assim deseja continuar?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1277"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1385"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1605"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1177"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1285"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1505"/>
         <source>All files</source>
         <translation>Todos os arquivos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="772"/>
+        <location filename="../src/interface/fetmainform.cpp" line="736"/>
         <source>Constraints of this type are good, working, but they are not perfectly optimized.</source>
         <translation>Restrições desse tipo são boas, funcionais, mas não perfeitamente otimizadas.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="996"/>
+        <location filename="../src/interface/fetmainform.cpp" line="896"/>
         <source>Another version: %1, is available on the FET homepage: %2</source>
         <comment>%1 is new version, %2 is FET homepage</comment>
         <translation>A nova versão %1 está disponível na página do FET: %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="998"/>
+        <location filename="../src/interface/fetmainform.cpp" line="898"/>
         <source>You may need to hit Refresh in your web browser.</source>
-        <translation type="unfinished"></translation>
+        <translation>Você precisa usar o botão Atualizar em seu navegador</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="998"/>
+        <location filename="../src/interface/fetmainform.cpp" line="898"/>
         <source>Would you like to open the FET homepage now?</source>
         <translation>Deseja abrir a página do FET agora?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1039"/>
+        <location filename="../src/interface/fetmainform.cpp" line="939"/>
         <source>Your data file has been modified - do you want to save it?</source>
         <translation>Seu arquivo foi alterado - deseja salvá-lo?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1181"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1081"/>
         <source>Your current data file has been modified. Are you sure you want to reset to new empty data?</source>
-        <translation>&gt;Seu arquivo de dados foi alterado. Tem certeza de que deseja redefini-lo como um novo arquivo vazio?</translation>
+        <translation>Seu arquivo de dados foi alterado. Tem certeza de que deseja redefini-lo como um novo arquivo vazio?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1253"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1153"/>
         <source>Your current data file has been modified. Are you sure you want to open another data file?</source>
         <translation>Seu arquivo de dados foi alterado. Tem certeza que deseja abrir outro?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1274"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1174"/>
         <source>Choose a file to open</source>
         <translation>Escolha qual arquivo abrir</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1276"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1384"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1604"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1176"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1284"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1504"/>
         <source>FET XML files</source>
         <comment>Instructions for translators: FET XML is a type of file format (using text mode). So this field means files in the FET XML format</comment>
         <translation>Arquivo FET XML</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2038"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1938"/>
         <source>add/modify constraints break, not available, preferred starting times or time slots, occupy max time slots from selection or max simultaneous in selected time slots (the table cells will have green or red colors).</source>
-        <translation type="unfinished"></translation>
+        <translation>incluir/alterar restrições de pausa, indisponível, horários preferidos de início ou janelas de tempo, ocupam máx janelas de tempo da seleção ou máx simultâneas em janelas d etempo selecionadas (a células da tabela ficará com cor verde ou vermelha.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3568"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3468"/>
         <source>In case the Help/Online menus do not function, please write down these addresses and open them in an internet browser:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Caso os atalhos no menu Ajuda/Online não funcionem, por favor, anote estes endereços e abra-os em um navegador de internet:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3572"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3472"/>
         <source>Documentation (online help contents): %1</source>
         <comment>%1 is web page of FET Doc(umentation), which is the contents of the online help, it begins with http://...</comment>
         <translation>Documentação (conteúdo da ajuda on-line): %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3578"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3478"/>
         <source>In case these addresses do not function, maybe the FET webpage has temporary problems, so try again later. Or maybe the FET webpage has changed, so search for the new page on the internet.</source>
-        <translation type="unfinished"></translation>
+        <translation>No caso destes endereços não funcionarem, talvez a página FET esteja com problemas temporários, portanto, tente novamente mais tarde. Ou, talvez, a página da web FET mudou, por isso procurar a nova página na internet.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3580"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3480"/>
         <source>FET web addresses</source>
-        <translation>Endereços web FET</translation>
+        <translation>Endereços FET na web</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3846"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3889"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3746"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3789"/>
         <source>Please select FET language</source>
         <translation>Favor selecionar idioma</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3850"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3750"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="730"/>
+        <location filename="../src/interface/fetmainform.cpp" line="694"/>
         <source>Arabic</source>
         <translation>Árabe</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="731"/>
+        <location filename="../src/interface/fetmainform.cpp" line="695"/>
         <source>Catalan</source>
         <translation>Catalão</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="732"/>
+        <location filename="../src/interface/fetmainform.cpp" line="696"/>
         <source>German</source>
         <translation>Alemão</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="733"/>
+        <location filename="../src/interface/fetmainform.cpp" line="697"/>
         <source>Greek</source>
         <translation>Grego</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="734"/>
+        <location filename="../src/interface/fetmainform.cpp" line="698"/>
         <source>Spanish</source>
         <translation>Espanhol</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="735"/>
+        <location filename="../src/interface/fetmainform.cpp" line="699"/>
         <source>French</source>
         <translation>Francês</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="736"/>
+        <location filename="../src/interface/fetmainform.cpp" line="700"/>
         <source>Hungarian</source>
         <translation>Húngaro</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="737"/>
+        <location filename="../src/interface/fetmainform.cpp" line="701"/>
         <source>Indonesian</source>
         <translation>Indonésio</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="738"/>
+        <location filename="../src/interface/fetmainform.cpp" line="702"/>
         <source>Italian</source>
         <translation>Italiano</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="739"/>
+        <location filename="../src/interface/fetmainform.cpp" line="703"/>
         <source>Lithuanian</source>
         <translation>Lituano</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="740"/>
+        <location filename="../src/interface/fetmainform.cpp" line="704"/>
         <source>Macedonian</source>
         <translation>Macedônio</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="741"/>
+        <location filename="../src/interface/fetmainform.cpp" line="705"/>
         <source>Malay</source>
         <translation>Malaio</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="742"/>
+        <location filename="../src/interface/fetmainform.cpp" line="706"/>
         <source>Dutch</source>
         <translation>Holandês</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="743"/>
+        <location filename="../src/interface/fetmainform.cpp" line="707"/>
         <source>Polish</source>
         <translation>Polonês</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="744"/>
+        <location filename="../src/interface/fetmainform.cpp" line="708"/>
         <source>Romanian</source>
         <translation>Romeno</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="745"/>
+        <location filename="../src/interface/fetmainform.cpp" line="709"/>
         <source>Turkish</source>
         <translation>Turco</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="748"/>
+        <location filename="../src/interface/fetmainform.cpp" line="712"/>
         <source>Ukrainian</source>
         <translation>Ucraniano</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="749"/>
+        <location filename="../src/interface/fetmainform.cpp" line="713"/>
         <source>Brazilian Portuguese</source>
         <translation>Português Brasil</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="746"/>
+        <location filename="../src/interface/fetmainform.cpp" line="710"/>
         <source>Russian</source>
         <translation>Russo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="747"/>
+        <location filename="../src/interface/fetmainform.cpp" line="711"/>
         <source>Persian</source>
         <translation>Persa</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4478"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4360"/>
         <source>Choose results (output) directory</source>
         <translation>Escolha pasta de saída (resultados)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4487"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4369"/>
         <source>You don&apos;t have write permissions in this directory</source>
         <translation type="unfinished">Você não possui permissões de escrita nessa pasta</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2149"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2049"/>
         <source>Students&apos; statistics form contains a check box named &apos;%1&apos;. This has effect only if you have overlapping groups/years, and means that FET will show the complete tree structure, even if that means that some subgroups/groups will appear twice or more in the table, with the same information. For instance, if you have year Y1, groups G1 and G2, subgroups S1, S2, S3, with structure: Y1 (G1 (S1, S2), G2 (S1, S3)), S1 will appear twice in the table</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A lista de estatísticas dos alunos contém uma caixa de seleção com o nome &quot;%1&quot;. Isso tem efeito apenas se você tiver que se sobrepor grupos/ano, e significa que FET vai mostrar a estrutura de árvore completa, mesmo que isso signifique que alguns subgrupos/grupos apareçam duas ou mais vezes na tabela, com a mesma informação. Por exemplo, se você tem ano A1, grupos G1 e G2, os subgrupos S1, S2, S3, com a estrutura: A1 (G1 (S1, S2), G2 (S1, S3)), S1 será exibido duas vezes na tabela</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2153"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2053"/>
         <source>Show duplicates</source>
         <translation>Mostrar repetidos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="961"/>
+        <location filename="../src/interface/fetmainform.cpp" line="861"/>
         <source>Searching for file %1.</source>
         <translation>Procurando arquivo %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="976"/>
+        <location filename="../src/interface/fetmainform.cpp" line="876"/>
         <source>The file %1 from the FET homepage, indicating the current FET version, is incorrect.</source>
         <translation>O arquivo %1 da página FET, indicando a versão FET atual, está incorreto.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1001"/>
+        <location filename="../src/interface/fetmainform.cpp" line="901"/>
         <source>Additional comments: %1</source>
         <translation>Comentários adicionais: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1127"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1027"/>
         <source>%1[*] - FET</source>
         <comment>The title of the main window, %1 is the name of the current file. Please keep the string [*] unmodified (three characters) - it is used to make the difference between modified files and unmodified files.</comment>
         <translation>%1[*] - FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="729"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3983"/>
+        <location filename="../src/interface/fetmainform.cpp" line="693"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3883"/>
         <source>US English</source>
         <translation>Inglês EUA</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1289"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1189"/>
         <source>Please do not use a filename starting with white space(s), the html css code does not work. File was not loaded. Please rename it, removing the white space(s) from the beginning and open it after that with FET.</source>
         <translation>Por favor, não use um nome de arquivo começando com espaço(s) em branco, o código html css não funciona. Arquivo não foi carregado. Por favor, renomeie-o, removendo o(s) espaço(s) em branco desde o início e abra-o depois disso com FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1302"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1202"/>
         <source>Please do not use a filename ending with white space(s) before the &apos;.fet&apos; termination or at the end of the filename, problems might arise. File was not loaded. Please rename it, removing the white space(s) at the end and open it after that with FET.</source>
-        <translation type="unfinished"></translation>
+        <translation>Por favor, evite problemas: não use um nome de arquivo terminando com espaço(s) em branco antes do término &quot;.fet&quot; ou no final do nome do arquivo. Arquivo não foi carregado. Favor renomeá-lo removendo todos esses espaços em branco e, só depois, abra-o com FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3883"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3783"/>
         <source>Invalid current language - making it en_US (US English)</source>
         <translation>Idioma atual inválido - mudando para en_US (Inglês dos EUA)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3940"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3840"/>
         <source>Invalid language selected - making it en_US (US English)</source>
         <translation>Idioma escolhido é inválido - mudando para en_US (Inglês dos EUA)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3976"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3979"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4029"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4032"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4035"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4041"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4044"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4050"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4068"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4127"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3876"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3879"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3929"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3932"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3935"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3941"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3944"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3950"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3968"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4027"/>
         <source>false</source>
         <translation>falso</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3976"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3876"/>
         <source>Check for updates at startup will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Verificar atualizações ao iniciar será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3979"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3879"/>
         <source>Use colors in FET graphical user interface will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Usar cores na interface gráfica do usuário FET será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4011"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3911"/>
         <source>Working directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>Pasta de trabalho será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4014"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3914"/>
         <source>Output directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>Pasta de saída será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4017"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3917"/>
         <source>Import directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>Pasta de importação será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4020"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3920"/>
         <source>Html level of the timetables will be %1</source>
         <comment>%1 is default html level</comment>
         <translation>Nível do HTML será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4023"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3923"/>
         <source>Mark not available slots with -x- in timetables will be %1</source>
         <comment>%1 is true or false. Lowercase -x-</comment>
-        <translation type="unfinished"></translation>
+        <translation>Marcar com -x- as janelas indisponíveis no horário será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4026"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3926"/>
         <source>Mark break slots with -X- in timetables will be %1</source>
         <comment>%1 is true or false. Uppercase -X-</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Marcar com -X- as janelas de pausas no horário será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4029"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3929"/>
         <source>Divide html timetables with time-axis by days will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation>Separa grade horária html com eixode tempo por dias será %1</translation>
+        <translation>Separar grade horária html com eixo de tempo por dias será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4032"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3932"/>
         <source>Duplicate vertical headers to the right will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Duplicar cabeçalhos à direita será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4035"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3935"/>
         <source>Print activities with same starting time will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Imprimir atividades com mesmo horário de início será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4041"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3941"/>
         <source>Enable activity tag max hours daily will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished">Ativar marcador máx jornada será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4044"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3944"/>
         <source>Enable students max gaps per day will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Habilitar alunos máximo de intervalos por dia da turma será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4047"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3947"/>
         <source>Warn if using not perfect constraints will be %1</source>
         <comment>%1 is true or false. This is a warning if user uses not perfect constraints</comment>
         <translation>Alerta se usar restrições imperfeitas será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4050"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3950"/>
         <source>Enable constraints students min hours daily with empty days will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Ativar restrições mín jornada para turma com dias vagos será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4064"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3964"/>
         <source>Confirm save data and timetable as will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Confirmar salvar dados e grade de horários será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4121"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4021"/>
         <source>44</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4124"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4024"/>
         <source>45</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4127"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4027"/>
         <source>Show tool tips for constraints with tables will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Exibir dicas nas restrições com tabelas será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4127"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4027"/>
         <source>46</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4129"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4029"/>
         <source>Show warning for subgroups with the same activities will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alerta de subgrupos com mesmasatividades será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4129"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4029"/>
         <source>47</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4132"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4032"/>
         <source>FET confirmation</source>
         <translation>Confirmação - FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2027"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1927"/>
         <source>Option &apos;Print activities with same starting time in timetables&apos;: selecting it means that the html timetables will contain for each slot all the activities which have the same starting time (fact specified by your constraints) as the activity(ies) which are normally shown in this slot. If you don&apos;t use constraints activities same starting time, this option has no effect for you.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2020"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1920"/>
         <source>Option &apos;Divide html timetables with time-axis by days&apos;: This means simply that the html timetables of type &apos;time horizontal&apos; or &apos;time vertical&apos; (see the generated html timetables) should be or not divided according to the days.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opção &quot;Separar grade horária html com eixo de tempo por dias&quot;: Isto significa simplesmente que os horários html do tipo &quot;Tempo na horizontal&quot; ou &quot;Tempo na vertical&quot; (veja os horários HTML gerados) devem ser (ou não) divididos de acordo com os dias.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2024"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1924"/>
         <source>If the &apos;time horizontal&apos; or &apos;time vertical&apos; html timetables are too large for you, then you might need to select this option</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Se os arquivos html para horários com &quot;Tempo na horizontal&quot; ou &quot;Tempo na vertical&quot; forem grandes demais para você, então você pode precisar selecionar esta opção</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2018"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1918"/>
         <source>Probably some settings which are more difficult to understand are these ones:</source>
         <translation>Provavelmente sejam mais difíceis de entender essas configurações:</translation>
     </message>
@@ -30483,7 +30501,6 @@ Having a subgroup with too little working hours per week means that you inputted
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="959"/>
-        <location filename="../src/interface/fetmainform_template.ui" line="2624"/>
         <source>Statistics</source>
         <translation>Estatísticas</translation>
     </message>
@@ -30499,13 +30516,13 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Configurações</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2049"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2026"/>
         <source>Language</source>
         <extracomment>Please translate in your language and also add the original English term, like: &apos;Idioma/Language&apos;. This is to ensure that people mistakingly selecting an unknown language do not become stuck with it (so that they can find this setting description also in English).</extracomment>
         <translation>Idioma/Language</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1339"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1316"/>
         <source>&amp;New</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different</extracomment>
         <translation>&amp;Novo</translation>
@@ -30527,42 +30544,42 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Grade Horária</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1342"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1319"/>
         <source>Ctrl+N</source>
         <extracomment>This is the shortcut for menu item File-&gt;New. It is recommended to translate with Ctrl+N, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write &apos;Ctrl&apos;. It will work OK on all platforms. Even if you are on German keyboard, write &apos;Ctrl&apos; as in English). Maybe it would be good to translate with &apos;Ctrl+N&apos;, the same as the English original, to keep things standard.</extracomment>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1347"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1324"/>
         <source>&amp;Open...</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different</extracomment>
         <translation>&amp;Abrir...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1350"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1327"/>
         <source>Ctrl+O</source>
         <extracomment>This is the shortcut for menu item File-&gt;Open. It is recommended to translate with Ctrl+O, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write &apos;Ctrl&apos;. It will work OK on all platforms. Even if you are on German keyboard, write &apos;Ctrl&apos; as in English). Maybe it would be good to translate with &apos;Ctrl+O&apos;, the same as the English original, to keep things standard.</extracomment>
         <translation>Ctrl+A</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1355"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1332"/>
         <source>&amp;Save</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different</extracomment>
         <translation>&amp;Salvar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1358"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1335"/>
         <source>Ctrl+S</source>
         <extracomment>This is the shortcut for menu item File-&gt;Save. It is recommended to translate with Ctrl+S, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write &apos;Ctrl&apos;. It will work OK on all platforms. Even if you are on German keyboard, write &apos;Ctrl&apos; as in English). Maybe it would be good to translate with &apos;Ctrl+S&apos;, the same as the English original, to keep things standard.</extracomment>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1379"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1356"/>
         <source>Frequently asked questions</source>
         <translation>Perguntas frequentes</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1395"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1372"/>
         <source>&amp;Teachers</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>P&amp;rofessores</translation>
@@ -30570,36 +30587,34 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="989"/>
         <location filename="../src/interface/fetmainform_template.ui" line="1142"/>
-        <location filename="../src/interface/fetmainform_template.ui" line="2536"/>
         <source>Teachers</source>
         <translation>Professores</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1400"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1377"/>
         <source>&amp;Subjects</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>&amp;Disciplinas</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1113"/>
-        <location filename="../src/interface/fetmainform_template.ui" line="2569"/>
         <source>Subjects</source>
         <translation>Disciplinas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1405"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1382"/>
         <source>&amp;Years (forms, classes)</source>
         <extracomment>Accelerator key (letter after ampersand) must be different for &amp;Years, &amp;Groups, &amp;Subgroups</extracomment>
         <translation>&amp;Classes (turmas, anos)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1410"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1387"/>
         <source>&amp;Groups</source>
         <extracomment>Accelerator key (letter after ampersand) must be different for &amp;Years, &amp;Groups, &amp;Subgroups</extracomment>
         <translation>&amp;Grupos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1420"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1397"/>
         <source>&amp;Activities</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>&amp;Atividades</translation>
@@ -30607,7 +30622,6 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1045"/>
         <location filename="../src/interface/fetmainform_template.ui" line="1103"/>
-        <location filename="../src/interface/fetmainform_template.ui" line="2580"/>
         <source>Activities</source>
         <translation>Atividades</translation>
     </message>
@@ -30623,115 +30637,114 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Marcadores de disciplinas e atividades</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1425"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1402"/>
         <source>&amp;Generate new</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different</extracomment>
         <translation>&amp;Gerar nova grade de horários</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1428"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1405"/>
         <source>Ctrl+G</source>
         <extracomment>This is the shortcut for menu item Timetable-&gt;Generate. It is recommended to translate with Ctrl+G, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write &apos;Ctrl&apos;. It will work OK on all platforms. Even if you are on German keyboard, write &apos;Ctrl&apos; as in English). Maybe it would be good to translate with &apos;Ctrl+G&apos;, the same as the English original, to keep things standard.</extracomment>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1433"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1410"/>
         <source>View (&amp;students)</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different</extracomment>
         <translation>&amp;Alunos (ver horário)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1438"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1415"/>
         <source>View (&amp;teachers)</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different</extracomment>
         <translation>&amp;Professores (ver horário)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1448"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1425"/>
         <source>&amp;Days per week</source>
         <extracomment>Accelerators (letters after &amp; - ampersand) for &amp;Days per week and &amp;Hours (periods) per day must be different</extracomment>
         <translation>&amp;Dias por semana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1453"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1430"/>
         <source>&amp;Hours (periods) per day</source>
         <extracomment>Accelerators (letters after &amp; - ampersand) for &amp;Days per week and &amp;Hours (periods) per day must be different</extracomment>
         <translation>&amp;Períodos (horário de aulas)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1461"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1438"/>
         <source>&amp;Rooms</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>&amp;Salas</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1097"/>
-        <location filename="../src/interface/fetmainform_template.ui" line="2558"/>
         <source>Rooms</source>
         <translation>Salas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2111"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2088"/>
         <source>Min days per week for a teacher</source>
         <translation>Mín de dias por semana para um professor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2116"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2093"/>
         <source>Min days per week for all teachers</source>
         <translation>Mín de dias por semana para todos os professores</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2121"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2098"/>
         <source>Seed of random number generator</source>
         <translation>Semente do gerador de números aleatórios</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2132"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2109"/>
         <source>Use colors in interface</source>
         <translation>Usar cores na interface</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2140"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2117"/>
         <source>Max hours daily with an activity tag for a teacher</source>
         <translation>Máx de horas diárias com um marcador de atividade para um professor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2148"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2125"/>
         <source>Max hours daily with an activity tag for all teachers</source>
         <translation>Máx de horas diárias com um marcador de atividade para todos os professores</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2156"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2133"/>
         <source>Max hours daily with an activity tag for a students set</source>
         <translation>Máx de horas diárias com um marcador de atividade para uma turma</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2164"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2141"/>
         <source>Max hours daily with an activity tag for all students</source>
         <translation>Máx de horas diárias com um marcador de atividade para todas as turmas </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2172"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2149"/>
         <source>Max gaps per day for a students set</source>
         <translation>Máx de intervalos por dia para uma turma</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2180"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2157"/>
         <source>Max gaps per day for all students</source>
         <translation>Máx de intervalos por dia para todas as turmas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2191"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2168"/>
         <source>Enable students max gaps per day</source>
         <translation>Habilitar o máximo de intervalos por dia para alunos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2202"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2179"/>
         <source>Enable activity tag max hours daily</source>
         <translation>Habilitar o máximo de horas diárias para um marcador de atividade</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2213"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2190"/>
         <source>Warn if using not perfect constraints</source>
         <extracomment>This is an option, which can be selected or deselected. It means warn before generating, if user uses not perfect constraints</extracomment>
         <translation>Alertar sobre restrições inconsistentes (imperfeitas)</translation>
@@ -30742,38 +30755,38 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Restrições de tempo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1479"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1456"/>
         <source>A set of activities has same starting time (day+hour)</source>
         <translation>Um conjunto de atividades tem a mesma hora de início (dia + hora)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1494"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1471"/>
         <source>All t&amp;ime constraints</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>&amp;Tempo (todas as restrições)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1504"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1481"/>
         <source>Basic compulsory time constraints</source>
         <translation>Restrições básicas obrigatórias de tempo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1519"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1496"/>
         <source>Max days per week for a teacher</source>
         <translation>Máx de dias por semana para um professor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1524"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1501"/>
         <source>Max hours daily for all teachers</source>
         <translation>Máx de horas diárias para todos os professores</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1549"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1526"/>
         <source>A set of activities are not overlapping</source>
         <translation>Um conjunto de atividades não se sobrepõem</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1562"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1539"/>
         <source>All s&amp;pace constraints</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>&amp;Espaço (todas as restrições)</translation>
@@ -30784,144 +30797,144 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Restrições de espaço</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1567"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1544"/>
         <source>Basic compulsory space constraints</source>
         <translation>Restrições básicas obrigatórias de espaço</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1577"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1554"/>
         <source>An activity has a preferred room</source>
         <translation>Uma atividade tem uma sala preferencial</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1582"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1559"/>
         <source>A set of activities has same starting hour (any days)</source>
         <translation>Um conjunto de atividades tem a mesma hora de início (qualquer dia)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1592"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1569"/>
         <source>I&amp;nstitution name</source>
         <extracomment>Accelerators (letters after &amp; - ampersand) for I&amp;nstitution name and &amp;Comments must be different</extracomment>
         <translation>Nome da i&amp;nstituição</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1597"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1574"/>
         <source>&amp;Comments</source>
         <extracomment>Accelerators (letters after &amp; - ampersand) for I&amp;nstitution name and &amp;Comments must be different</extracomment>
         <translation>&amp;Comentários</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1602"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1579"/>
         <source>An activity has a set of preferred rooms</source>
         <translation>Uma atividade tem um conjunto de salas preferenciais</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1743"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1720"/>
         <source>A subject has a preferred room</source>
         <translation>Uma disciplina tem uma sala preferencial</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1748"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1725"/>
         <source>A subject has a set of preferred rooms</source>
         <translation>Uma disciplina tem um conjunto de salas preferenciais</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1617"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1594"/>
         <source>Teachers statistics</source>
         <translation>Professores</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1622"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1599"/>
         <source>Students statistics</source>
         <translation>Alunos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1627"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1604"/>
         <source>Subjects statistics</source>
         <translation>Disciplinas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1632"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1609"/>
         <source>Max gaps per week for all teachers</source>
         <translation>Máx de intervalos por semana para todos os professores </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1637"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1614"/>
         <source>Max gaps per week for a teacher</source>
         <translation>Máx de intervalos por semana para um professor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1647"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1624"/>
         <source>Max hours daily for a teacher</source>
         <translation>Máx de horas diárias para um professor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1652"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1629"/>
         <source>Max hours daily for a students set</source>
         <translation>Máx de horas diárias para uma turma</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1657"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1634"/>
         <source>Max hours daily for all students</source>
         <translation>Máx de horas diárias para todas as turmas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1662"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1639"/>
         <source>Instructions</source>
         <translation>Instruções</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1673"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1650"/>
         <source>Search for updates on startup</source>
         <translation>Procurar atualizações ao iniciar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1678"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1655"/>
         <source>Min hours daily for all students</source>
         <translation>Mín de horas diárias para todas as turmas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1683"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1660"/>
         <source>Min hours daily for a students set</source>
         <translation>Mín de horas diárias para uma turma</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1698"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1675"/>
         <source>An activity ends students day</source>
         <translation>Uma atividade no final do dia dos alunos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1703"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1680"/>
         <source>Restore default settings</source>
         <translation>Restaurar configurações originais</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1713"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1690"/>
         <source>Min hours daily for all teachers</source>
-        <translation>Mín de horas diárias para todos os professores</translation>
+        <translation>Mín jornada para todos os professores</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1718"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1695"/>
         <source>Min hours daily for a teacher</source>
-        <translation>Mínino de horas diárias para um professor</translation>
+        <translation>Mín jornada para um professor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1723"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1700"/>
         <source>Help on statistics</source>
         <translation>Ajuda nas estatísticas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1534"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1511"/>
         <source>Max gaps per week for a students set</source>
         <translation>Máx de intervalos por semana para uma turma</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1539"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1516"/>
         <source>Max gaps per week for all students</source>
         <translation>Máx de intervalos por semana para todas as turmas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1544"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1521"/>
         <source>All students begin early (max beginnings at second hour)</source>
         <translation>Todos os alunos iniciam cedo (número máximo de início na segunda hora)</translation>
     </message>
@@ -30931,22 +30944,22 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Marcadores de atividade</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1642"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1619"/>
         <source>A students set begins early (max beginnings at second hour)</source>
         <translation>Uma turma inicia cedo (máx de inícios na segunda hora)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1728"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1705"/>
         <source>Max gaps per day for all teachers</source>
         <translation>Máx de lacunas por dia para todos os professores</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1733"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1710"/>
         <source>Max gaps per day for a teacher</source>
         <translation>Máx de lacunas por dia para um professor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1499"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1476"/>
         <source>A teacher&apos;s not available times</source>
         <translation>Horários indisponíveis do professor</translation>
     </message>
@@ -31009,423 +31022,374 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>&amp;Recentes</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1255"/>
-        <source>Enable writing on disk</source>
-        <translation>Escolha o que gravar em disco</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1291"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1268"/>
         <source>Confirmations</source>
         <comment>This is a submenu, contains these settings: if a user wants to deactivate/activate a confirmation (instructions) dialog that appears before an advanced dialog</comment>
         <translation>Confirmações</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1363"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1340"/>
         <source>Save &amp;as...</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different</extracomment>
         <translation>Salvar &amp;como...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1489"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1466"/>
         <source>Max simultaneous activities from a set in selected time slots</source>
         <extracomment>It refers to a time constraint. It means: user chooses a set of activities, a set of time slots and a maximum number of activities from those selected which can be simultaneous in each selected time slot</extracomment>
         <translation>Máx de atividades simultâneas numa janela de tempo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1509"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1486"/>
         <source>A students set&apos;s not available times</source>
         <translation>Horários indisponíveis para uma turma</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1514"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1491"/>
         <source>Break times (all teachers+all students not available)</source>
         <translation>Horários de intervalo (todos os professores e alunos indisponíveis)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1554"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1531"/>
         <source>Min days between a set of activities</source>
         <translation>Mín de dias entre um conjunto de atividades</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1572"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1549"/>
         <source>A room&apos;s not available times</source>
         <translation>Horários indisponíveis de uma sala</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1607"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1584"/>
         <source>A set of students has a home room</source>
-        <translation>Uma turma tem uma sala pré-definida</translation>
+        <translation>Uma turma tem uma sala principal</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1612"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1589"/>
         <source>A set of students has a set of home rooms</source>
-        <translation>Uma turma tem salas pré-definidas</translation>
+        <translation>Uma turma tem salas principais</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1708"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1685"/>
         <source>HTML level for generated timetables</source>
         <translation>Nível do HTML para horários criados</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1753"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1730"/>
         <source>A subject+an activity tag have a preferred room</source>
         <translation>Disciplina e marcador de atividade têm sala reservada</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1758"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1735"/>
         <source>A subject+an activity tag have a set of preferred rooms</source>
         <translation>Disciplina e marcador de atividade têm conjunto de salas reservadas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1763"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1740"/>
         <source>A teacher has a home room</source>
-        <translation>Um professor tem uma sala pré-definida</translation>
+        <translation>Um professor tem uma sala principal</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1768"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1745"/>
         <source>A teacher has a set of home rooms</source>
-        <translation>Um professor tem um conjunto de salas pré-definidas</translation>
+        <translation>Um professor tem um conjunto de salas principais</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1773"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1750"/>
         <source>Max building changes per day for a students set</source>
         <translation>Máx de mudança diárias de edifício para uma turma</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1778"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1755"/>
         <source>Max building changes per day for all students</source>
         <translation>Máx de mudança diárias de edifício para todas as turmas </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1783"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1760"/>
         <source>Max building changes per week for a students set</source>
         <translation>Máx de mudanças semanais de edifício para uma turma</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1788"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1765"/>
         <source>Max building changes per week for all students</source>
         <translation>Máx de mudanças semanais de edifício para todas as turmas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1793"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1770"/>
         <source>Min gaps between building changes for a students set</source>
         <translation>Mín de intervalo entre mudanças de edifício para uma turma</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1798"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1775"/>
         <source>Min gaps between building changes for all students</source>
         <translation>Mín de intervalo entre mudanças de edificio para todas as turmas </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1803"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1780"/>
         <source>Max building changes per day for a teacher</source>
         <translation>Máx de mudanças diárias de edifício para um professor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1808"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1785"/>
         <source>Max building changes per day for all teachers</source>
         <translation>Máx de mudanças diárias de edifício para todos os professores</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1813"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1790"/>
         <source>Max building changes per week for a teacher</source>
         <translation>Máx de mudanças semanais de edifício para um professor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1818"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1795"/>
         <source>Max building changes per week for all teachers</source>
         <translation>Máx de mudanças semanais de edifício para todos os professores</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1823"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1800"/>
         <source>Min gaps between building changes for a teacher</source>
         <translation>Mín de intervalo entre mundanças de edificio para um professor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1828"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1805"/>
         <source>Min gaps between building changes for all teachers</source>
         <translation>Mín de intervalo entre mundanças de edificio para todos os professores</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1833"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1810"/>
         <source>A set of activities has same starting day (any hours)</source>
         <translation>Um conjunto de atividades iniciam no mesmo dia (qualquer hora)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1848"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1825"/>
         <source>Max hours continuously for all teachers</source>
         <translation>Máx de horas contínuas para todos os professores</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1853"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1830"/>
         <source>Max hours continuously for a teacher</source>
         <translation>Máx de horas contínuas para um professor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1858"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1835"/>
         <source>Max hours continuously for a students set</source>
         <translation>Máx de horas contínuas para uma turma</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1863"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1840"/>
         <source>Max hours continuously for all students</source>
         <translation>Máx de horas contínuas para todas as turmas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1868"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1845"/>
         <source>Important tips</source>
         <translation>Dicas importantes</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1969"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1946"/>
         <source>Mark not available slots with -x- in timetables</source>
         <comment>It means to mark the slots which are not available in the timetable. Lowercase -x-</comment>
         <translation>Marcar horários indisponíveis com -x- na grade de horários</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2044"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2021"/>
         <source>&amp;Modify subactivities</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>&amp;Subatividades</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2060"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2037"/>
         <source>Divide HTML timetables with time-axis by days</source>
         <translation>Dividir horários HTML com eixo tempo por dias</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2221"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2198"/>
         <source>Help contents</source>
         <extracomment>menu Help-&gt;Online-&gt;Help contents, opens the webpage of FET documentation</extracomment>
         <translation>Conteúdo de ajuda</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2231"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2208"/>
         <source>Web addresses</source>
         <extracomment>menu Help-&gt;Online-&gt;Web addresses, shows the web addresses of FET homepage, documentation and forum</extracomment>
         <translation>Endereços web</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2236"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2213"/>
         <source>Homepage</source>
         <extracomment>menu Help-&gt;Online-&gt;Homepage, opens the homepage of FET</extracomment>
         <translation>Homepage</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2247"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2224"/>
         <source>Show shortcut buttons in main window</source>
         <translation>Mostrar botões de atalho na janela principal</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2269"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2246"/>
         <source>Enable students min hours daily with empty days</source>
         <translation>Habilitar jornada mínima para alunos com dias vagos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2280"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2257"/>
         <source>Warn if using students min hours daily with empty days</source>
         <translation>Avisar ao usar jornada mínima com dias vagos para alunos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2285"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2262"/>
         <source>Activity planning</source>
         <translation>Planejar atividades</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2296"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2273"/>
         <source>Confirm activity planning</source>
         <comment>This is a setting - a check box: if a user wants to deactivate/activate the confirmation (instructions) dialog that appears before activity planning dialog</comment>
         <translation>Confirmar planejamento de atividades </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2307"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2284"/>
         <source>Confirm spread activities over the week</source>
         <comment>This is a setting - a check box: if a user wants to deactivate/activate the confirmation (instructions) dialog that appears before spreading the activities over the week dialog</comment>
         <translation>Confirmar distribuição de atividades na semana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2318"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2295"/>
         <source>Confirm remove redundant constraints</source>
         <comment>This is a setting - a check box: if a user wants to deactivate/activate the confirmation (instructions) dialog that appears before removing redundant constraints dialog</comment>
         <translation>Confirmar remoção de restrições redundantes</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2334"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2311"/>
         <source>&amp;Clear list</source>
         <extracomment>It means clearing the list of recently opened files</extracomment>
         <translation>&amp;Limpar lista</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2339"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2316"/>
         <source>Activities rooms statistics</source>
         <extracomment>It refers to the statistics of each activity&apos;s possible room(s)</extracomment>
         <translation>Atividades das salas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2344"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2321"/>
         <source>&amp;Print</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different</extracomment>
         <translation>Im&amp;primir</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2347"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2324"/>
         <source>Ctrl+P</source>
         <extracomment>This is the shortcut for menu item Timetable-&gt;Print. It is recommended to translate with Ctrl+P, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write &apos;Ctrl&apos;. It will work OK on all platforms. Even if you are on German keyboard, write &apos;Ctrl&apos; as in English). Maybe it would be good to translate with &apos;Ctrl+P&apos;, the same as the English original, to keep things standard.</extracomment>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2352"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2329"/>
         <source>A set of activities occupies max different rooms</source>
         <translation>Um conjunto de atividades alocadas ao máximo em diferentes salas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2357"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2334"/>
         <source>A set of activities are in the same room if they are consecutive</source>
         <translation>Um conjunto de atividades na mesma sala caso sejam consecutivas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2362"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2339"/>
         <source>Max days per week for a students set</source>
         <translation>Máx de dias por semana para uma turma</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2367"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2344"/>
         <source>Max days per week for all students</source>
         <translation>Máx de dias por semana para todas as turmas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2372"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2349"/>
         <source>Print activity tags in timetables</source>
         <translation>Mostrar marcadores de atividade na grade de horários</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2377"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2354"/>
         <source>Print advanced statistics</source>
         <translation>Imprimir</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2388"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2365"/>
         <source>Duplicate vertical headers to the right</source>
         <translation>Cabeçalhos verticais repetidos para a direita</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2393"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2370"/>
         <source>Group activities in the initial order of generation</source>
         <translation>Agrupar atividades pela ordem inicial de criação</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2404"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2381"/>
         <source>Enable group activities in initial order</source>
         <translation>Grupo atividades pela ordem inicial</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2415"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2392"/>
         <source>Warn if using group activities in initial order</source>
         <translation>Alertar ao usar grupo de atividades pela ordem inicial</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2426"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2403"/>
         <source>Show subgroups in combo boxes</source>
         <translation>Exibir subgrupos em caixas combo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2437"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2414"/>
         <source>Show subgroups in activity planning</source>
         <translation>Exibir subgrupos no planejamento de atividade</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2448"/>
-        <source>XML</source>
-        <translation>XML</translation>
+        <location filename="../src/interface/fetmainform_template.ui" line="2441"/>
+        <source>Categories of timetables to be written on disk</source>
+        <comment>It means that the user selects the categories of timetables to be written on disk after the generation (soft conflicts, XML, days horizontal, time vertical, subgroups, teachers, etc.)</comment>
+        <translation>Tipos de horários a gravar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2459"/>
-        <source>Days horizontal</source>
-        <translation>Dias na horizontal</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2470"/>
-        <source>Days vertical</source>
-        <translation>Dias na vertical</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2481"/>
-        <source>Time horizontal</source>
-        <translation>Tempo na horizontal</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2492"/>
-        <source>Time vertical</source>
-        <translation>Tempo na vertical</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2503"/>
-        <source>Subgroups</source>
-        <translation>Subgrupos</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2514"/>
-        <source>Groups</source>
-        <translation>Grupos</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2525"/>
-        <source>Years</source>
-        <translation>Turmas</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2547"/>
-        <source>Teachers free periods</source>
-        <translation>Tempos livres dos professores</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2591"/>
-        <source>Soft conflicts</source>
-        <translation>Conflitos leves</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2602"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2425"/>
         <source>Show tool tips for constraints with tables</source>
         <translation>Exibir dicas nas restrições organizadas em tabelas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2613"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2436"/>
         <source>Warn subgroups with the same activities</source>
         <translation>Alertar subgrupos com mesmas atividades</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2226"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2203"/>
         <source>Forum</source>
         <extracomment>menu Help-&gt;Forum, opens the webpage of FET forum</extracomment>
         <translation>Fórum</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1529"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1506"/>
         <source>An activity has a preferred starting time</source>
         <translation>Uma atividade tem um horário de início preferido</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1873"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1850"/>
         <source>A set of activities has a set of preferred starting times</source>
         <translation>Um conjunto de atividades tem horários de início preferenciais</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1883"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1860"/>
         <source>An activity has a set of preferred starting times</source>
         <translation>Uma atividade tem horários de início preferenciais</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1474"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1451"/>
         <source>A set of activities has a set of preferred time slots</source>
         <translation>Um conjunto de atividades tem janelas de horários preferenciais</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1878"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1855"/>
         <source>An activity has a set of preferred time slots</source>
         <translation>Uma atividade tem janelas de horários preferenciais</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1888"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1865"/>
         <source>Min gaps (hours) between a set of activities</source>
         <translation>Mín de intervalos (horas) entre um conjunto de atividades</translation>
     </message>
@@ -31580,147 +31544,147 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Al&amp;unos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1371"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1348"/>
         <source>&amp;Quit</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different</extracomment>
         <translation>Sai&amp;r</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1374"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1351"/>
         <source>Ctrl+Q</source>
         <extracomment>This is the shortcut for menu item File-&gt;Quit. It is recommended to translate with Ctrl+Q, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write &apos;Ctrl&apos;. It will work OK on all platforms. Even if you are on German keyboard, write &apos;Ctrl&apos; as in English). Maybe it would be good to translate with &apos;Ctrl+Q&apos;, the same as the English original, to keep things standard.</extracomment>
         <translation>Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1387"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1364"/>
         <source>About...</source>
         <translation>Sobre...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1415"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1392"/>
         <source>&amp;Subgroups</source>
         <extracomment>Accelerator key (letter after ampersand) must be different for &amp;Years, &amp;Groups, &amp;Subgroups</extracomment>
         <translation>&amp;Subgrupos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1443"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1420"/>
         <source>Show soft &amp;conflicts</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different</extracomment>
         <translation>&amp;Conflitos leves (ver)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1469"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1446"/>
         <source>View (&amp;rooms)</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different</extracomment>
         <translation>&amp;Salas (ver horário)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1484"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1461"/>
         <source>A set of activities occupies max time slots from selection</source>
         <extracomment>It refers to a time constraint. It means: user chooses a set of activities, a set of time slots and a maximum number of slots from those selected which can be occupied by the selected activities</extracomment>
         <translation>Um conjunto de atividades ocupa o máximo de janelas de horário de uma seleção</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1587"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1564"/>
         <source>Activity ta&amp;gs</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>&amp;Marcadores de atividade</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1688"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1665"/>
         <source>Generate &amp;multiple</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different</extracomment>
         <translation>Gerar &amp;múltiplas grades</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1738"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1715"/>
         <source>&amp;Buildings</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>&amp;Prédios</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1838"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1815"/>
         <source>Save data and timetable as...</source>
         <translation>Salvar dados e grade de horários como...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1893"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1870"/>
         <source>Export comma separated values (text)</source>
         <translation>...valores separados por vírgula (texto)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1898"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1875"/>
         <source>Import activities from CSV file</source>
         <translation>Importar atividades de um arquivo CSV</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1903"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1880"/>
         <source>Import activity tags from CSV file</source>
         <translation>Importar marcadores de atividade de um arquivo CSV</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1908"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1885"/>
         <source>Import rooms and buildings from CSV file</source>
         <translation>Importar salas e prédios de um arquivo CSV</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1913"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1890"/>
         <source>Import subjects from CSV file</source>
         <translation>Importar disciplinas de um arquivo CSV</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1918"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1895"/>
         <source>Import teachers from CSV file</source>
         <translation>Importar professores de um arquivo CSV</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1923"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1900"/>
         <source>Import years, groups and subgroups from CSV file</source>
         <translation>Importar turmas, grupos e subgrupos de um arquivo CSV</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1928"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1905"/>
         <source>A set of subactivities has a set of preferred time slots</source>
         <translation>Um conjunto de subatividades tem um conjunto de janelas preferenciais</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1933"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1910"/>
         <source>A set of subactivities has a set of preferred starting times</source>
         <translation>Um conjunto de subatividades tem um conjunto de horários de início preferenciais</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1938"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1915"/>
         <source>A teacher works in an hourly interval max days per week</source>
         <translation>Um professor trabalha numa faixa horária um máximo de dias na semana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1943"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1920"/>
         <source>All teachers work in an hourly interval max days per week</source>
         <translation>Todos os professores trabalham numa faixa horária um máximo de dias na semana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1948"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1925"/>
         <source>A students set works in an hourly interval max days per week</source>
         <translation>Uma turma estuda numa faixa horária um máximo de dias na semana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1953"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1930"/>
         <source>All students work in an hourly interval max days per week</source>
         <translation>Todos os alunos estudam numa faixa horária um máximo de dias na semana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1958"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1935"/>
         <source>A set of activities end students day</source>
         <translation>Um conjunto de atividades no final da aula</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2258"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2235"/>
         <source>Mark break slots with -X- in timetables</source>
         <comment>It means to show or not the slots which are break slots, in the timetable, with an -X-. Uppercase -X-</comment>
         <translation>Marcar intervalos com -X- na grade de horários</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2329"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2306"/>
         <source>Confirm save data and timetable as</source>
         <translation>Confirmar &quot;salvar como&quot; para dados e grade de horários</translation>
     </message>
@@ -31728,22 +31692,22 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform_template.ui" line="444"/>
         <location filename="../src/interface/fetmainform_template.ui" line="747"/>
         <location filename="../src/interface/fetmainform_template.ui" line="1220"/>
-        <location filename="../src/interface/fetmainform_template.ui" line="1318"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1295"/>
         <source>Advanced</source>
         <translation>Avançado</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1974"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1951"/>
         <source>Spread the activities evenly over the week</source>
         <translation>Distribuir uniformente as atividades na semana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1979"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1956"/>
         <source>Export advanced statistics to disk</source>
         <translation>Exportar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1984"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1961"/>
         <source>Remove redundant constraints</source>
         <translation>Remover restrições redundantes</translation>
     </message>
@@ -31753,52 +31717,52 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Bloqueio/desbloqueio avançado</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1994"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1971"/>
         <source>Lock all activities of a specified day</source>
         <translation>Bloquear todas as atividades de um determinado dia</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1999"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1976"/>
         <source>Unlock all activities of a specified day</source>
         <translation>Desbloquear todas as atividades de um determinado dia</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2004"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1981"/>
         <source>Lock all activities which end students day</source>
         <translation>Bloquear todas as atividades que encerram um dia de aula</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2009"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1986"/>
         <source>Unlock all activities which end students day</source>
         <translation>Desbloquear todas as atividades que encerram um dia de aula</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2014"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1991"/>
         <source>Lock all activities of the current timetable</source>
         <translation>Bloquear todas as atividades da grade de horários atual</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2019"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1996"/>
         <source>Unlock all activities of the current timetable</source>
         <translation>Desbloquear todas as atividades da grade de horários atual</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2024"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2001"/>
         <source>Max hours continuously with an activity tag for a students set</source>
         <translation>Máx de horas contínuas com um marcador de atividade para uma turma</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2029"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2006"/>
         <source>Max hours continuously with an activity tag for all students</source>
         <translation>Máx de horas contínuas com um marcador de atividade para todas as turmas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2034"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2011"/>
         <source>Max hours continuously with an activity tag for a teacher</source>
         <translation>Máx de horas contínuas com um marcador de atividade para um professor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2039"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2016"/>
         <source>Max hours continuously with an activity tag for all teachers</source>
         <translation>Máx de horas contínuas com um marcador de atividade para todos os professores</translation>
     </message>
@@ -31819,57 +31783,57 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Alunos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2065"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2042"/>
         <source>Help on settings</source>
         <translation>Ajuda nas configurações</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2070"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2047"/>
         <source>An activity tag has a preferred room</source>
         <translation>Um marcador de atividade tem uma sala preferencial</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2075"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2052"/>
         <source>An activity tag has a set of preferred rooms</source>
         <translation>Um marcador de atividade tem um conjunto de salas preferenciais</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2080"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2057"/>
         <source>Select output directory</source>
         <translation>Selecionar a pasta de saída</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2085"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2062"/>
         <source>Max days per week for all teachers</source>
         <translation>Máx de dias por semana para todos os professores</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2096"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2073"/>
         <source>Print activities with same starting time in timetables</source>
         <translation>Imprimir atividades com mesma hora de início na grade</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2106"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2083"/>
         <source>Max days between a set of activities</source>
         <translation>Máx de dias entre um conjunto de atividades</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1693"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1670"/>
         <source>Two activities are consecutive</source>
         <translation>Duas atividades são consecutivas (no mesmo dia)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1843"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1820"/>
         <source>Two activities are ordered</source>
         <translation>Duas atividades são sequenciais (na semana)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1989"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1966"/>
         <source>Two activities are grouped</source>
         <translation>Duas atividades agrupadas (no mesmo dia)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2101"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2078"/>
         <source>Three activities are grouped</source>
         <translation>Três atividades agrupadas (no mesmo dia)</translation>
     </message>
@@ -31896,7 +31860,7 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/fet.cpp" line="777"/>
         <source>To start FET in interface mode, please do not give any command-line parameters to the FET executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Para iniciar FET no modo de interface, por favor, não dê qualquer parâmetros de linha de comando para o executável FET</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="1057"/>
@@ -31906,7 +31870,7 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/fet.cpp" line="1256"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see initial order of placing the activities in the corresponding output file. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
-        <translation type="unfinished"></translation>
+        <translation>FET conseguiu alocar corretamente as primeiros %1 atividades mais difíceis. Você pode ver a ordem inicial de alocação das atividades no arquivo de saída correspondente. A atividade que pode causar problemas pode ser a próxima atividade na ordem inicial de avaliação. Esta atividade é listada abaixo:</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="1263"/>
@@ -31933,12 +31897,12 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/fet.cpp" line="738"/>
         <source>Cannot create or use %1 directory (where the results should be stored) - you can continue operation, but you might not be able to work with FET. Maybe you can try to change the output directory from the &apos;Settings&apos; menu. If this is a bug - please report it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Não foi possível criar ou usar a pasta %1 (onde os resultados deveriam ser armazenados) - você pode continuar a operação, mas você pode não conseguir trabalhar com FET. Talvez você possa tentar mudar a pasta de saída no menu &quot;Configurações&quot;. Se for um bug, favor relatá-lo.</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="747"/>
         <source>You don&apos;t have write permissions in the output directory (FET cannot open or create file %1) - you might not be able to work correctly with FET. Maybe you can try to change the output directory from the &apos;Settings&apos; menu. If this is a bug - please report it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Você não possui permissão de escrita na pasta de saída (FET não pôde abrir ou criar arquivo %1) - talvez você pode não consiga trabalhar corretamente com FET. Talvez você possa tentar mudar a pasta de saída no menu &quot;Configurações&quot;. Se for um bug, favor relatá-lo.</translation>
     </message>
 </context>
 <context>
@@ -31947,7 +31911,7 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/engine/generate.cpp" line="3112"/>
         <source>At time %1 h %2 m %3 s, FET reached %4 activities placed</source>
         <comment>h=hours, m=minutes, s=seconds. Please leave spaces between &apos;time&apos;, %1, h, %2, m, %3, s, so they are visible</comment>
-        <translation>Em %1 h %2 min %3 s, o FET alocou %4 atividades</translation>
+        <translation>Em %1 h %2 min %3 s, FET alocou %4 atividades</translation>
     </message>
 </context>
 <context>
@@ -31955,7 +31919,7 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="104"/>
         <source>Timetable impossible to generate</source>
-        <translation>Grade de horários não pode ser gerada</translation>
+        <translation>Horário impossível de resolver</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="109"/>
@@ -32399,7 +32363,7 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/engine/generate_pre.cpp" line="1299"/>
         <location filename="../src/engine/generate_pre.cpp" line="1317"/>
         <source>Cannot optimize for subgroup %1, because there is a constraint of type max %2 hours continuously which cannot be respected because of activity with id %3 (which has duration %4).</source>
-        <translation type="unfinished"></translation>
+        <translation>Não foi possível otimizar para o subgrupo %1, pois há uma restrição do tipo máx %2 horas contínuas que não puderam ser respeitadas por causa da atividade com id %3 (com %4 períodos).</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1412"/>
@@ -32415,29 +32379,29 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/engine/generate_pre.cpp" line="1545"/>
         <source>Cannot optimize for subgroup %1, because there is a constraint activity tag %2 max %3 hours daily for it with weight 100% which cannot be satisfied, considering the number of available slots (%4) and total duration of activities with this activity tag (%5). Please correct and try again.</source>
         <comment>%2 is the activity tag for this constraint, %3 is the max number of hours daily for this constraint</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Não foi possível otimizar para o subgrupo %1, pois há uma restrição para marcador de atividade %2 máx %3 horas diárias com peso de 100%, o que não pode ser atendida, considerando o número de janelas disponíveis (%4) e duração total de atividades com este marcador de atividade (%5). Corrija e tente novamente.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1950"/>
         <source>Cannot optimize, because you have constraint students min %1 hours daily for subgroup %2 (the constraint allows empty days). This subgroup has in total only %3 hours per week, so impossible constraint. Please correct and try again</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Não é possível otimizar, pois você tem restrição mín %1 horas por dia para alunos no subgrupo %2 (a restrição permite dias vazios). Esta cumprir essa restrição com o subgrupo tendo apenas %3 horas por semana no total. Corrija e tente novamente</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1968"/>
         <source>Cannot optimize, because you have constraint students min %1 hours daily for subgroup %2 and the constraint allows empty days. The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again</source>
-        <translation>Não foi possível otimizar, pois há restrição para alunos com mín %1 h diárias para subgrupo %2 e restrição permite dias vagos. O mínimo de horas diárias deveria ser ao menos 2, para  não ser uma restrição trivial. Por favor, corrija e tente de novo</translation>
+        <translation>Não foi possível otimizar, pois há restrição para alunos com mín %1 h diárias para subgrupo %2 e restrição permite dias vagos. O mínimo de horas diárias (jornada) deveria ser ao menos 2, para  não ser uma restrição trivial. Por favor, corrija e tente de novo</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2169"/>
         <location filename="../src/engine/generate_pre.cpp" line="2232"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não foi possível otimizar para docente %1, pois há uma restrição do tipo máx %2 horas por dia, com peso de 100%, o que não pode ser respeitado por causa do número de dias por semana, o número de horas por dia, máx dias por semana para ele(a), docente indisponível e/ou pausas. O número total de horas para esse(a) docente é %3 e o número de janelas disponíveis é %4, considerando máx jornada e todas as outras restrições.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2370"/>
         <location filename="../src/engine/generate_pre.cpp" line="2388"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours continuously which cannot be respected because of activity with id %3 (which has duration %4).</source>
-        <translation>Não foi possível otimizar para docente %1 pois há restrição do tipo máx %2 horas contínuas que não podem ser respeitadas devido à atividade com id %3 (com duração %4).</translation>
+        <translation>Não foi possível otimizar para docente %1 pois há restrição do tipo máx %2 horas contínuas que não podem ser respeitadas devido à atividade com id %3 (com %4 períodos).</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2483"/>
@@ -32458,47 +32422,47 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2832"/>
         <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>Não foi possível otimizar, pois você tem restrição mín jornada para docente %1 com peso percentual abaixo de 100. A partir da versão 5.4.0 só é possível usar peso 100% para tais restrições. Por favor, coloque peso de 100% e tente novamente</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2849"/>
         <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with %2 min hours daily, and the number of working hours per day is only %3. Please correct and try again</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Não é possível otimizar, pois você tem restrição mín de horas diárias (jornada) para docente %1 com %2 mín horas diárias, e a jornada de trabalho é de apenas %3. Corrija e tente novamente</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2875"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível otimizar, pois você tem restrição mín jornada para professores com peso percentual abaixo de 100. Desde a versão 5.4.0, FET usa apenas o peso 100% para tais restrições. Por favor, use peso 100% e tente novamente</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2891"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily with %1 min hours daily, and the number of working hours per day is only %2. Please correct and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível otimizar, pois você tem restrição mín jornada para professores com mín %1 horas diárias (jornada), e o número de horas de trabalho por dia é de apenas %2. Corrija e tente novamente</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2972"/>
         <source>Cannot optimize, because you have constraint teacher min days per week for teacher %1 with weight (percentage) below 100. Please make weight 100% and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível otimizar, pois você tem restrição mín dias por semana para docente %1 com peso percentual abaixo de 100. Por favor, coloque peso 100 e tente novamente</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2988"/>
         <source>Cannot optimize, because you have constraint teacher min days per week for teacher %1 with %2 min days per week, and the number of working days per week is only %3. Please correct and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>ão é possível otimizar, pois você tem restrição mín dias por semana para docente %1 com %2 mín dias por semana, e o número de dias trabalhdos por semana é de apenas %3. Favor corrigi-la tentar novamente</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="3014"/>
         <source>Cannot optimize, because you have constraint teachers min days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>ão é possível otimizar, pois você tem restrição mín dias por semana com peso abaixo de 100%. Favor colocar peso 100% e tentar novamente</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="3029"/>
         <source>Cannot optimize, because you have constraint teachers min days per week with %1 min days per week, and the number of working days per week is only %2. Please correct and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível otimizar, pois você tem restrição mín dias por semana para docente com %1 mín dias por semana, e o número de dias de trabalho por semana é de apenas %2. Favor corrigi-la e tentar de novo</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="3056"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 and he has only %3 activities - impossible. Please correct and try again.</source>
-        <translation>Não foi possível otimizar porque para docente %1 há mín %2 dias por semana e há apenas %3 atividades. Impossível. Por favor, corrija e tente de novo.</translation>
+        <translation>Não foi possível otimizar para docente %1 pois há mín %2 dias por semana e ele(a) tem apenas %3 atividades. Impossível. Por favor, corrija e tente de novo.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="3076"/>
@@ -32523,12 +32487,12 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="3225"/>
         <source>The constraint is impossible to respect, because there are the activities with id-s %1 and %2 which conflict one with another, because they have common students sets or teachers or must be not overlapping. FET will allow you to continue, because the weight of this constraint is below 100.0%, but anyway most probably you have made a mistake in this constraint, so it is recommended to modify it.</source>
-        <translation type="unfinished"></translation>
+        <translation>A restrição é impossível de respeitar: as atividades com id %1 e id %2 estão em conflito entre si, pois têm turmas ou professores em comum ou não devem se sobrepor. FET lhe permitirá continuar, pois o peso dessa restrição está abaixo de 100%, mas de qualquer maneira, muito provavelmente, você cometeu um erro nesta restrição, por isso é recomendado modificá-lo.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="3245"/>
         <source>The constraint is impossible to respect, because there are the activities with id-s %1 and %2 which conflict one with another, because they have common students sets or teachers or must be not overlapping. The weight of this constraint is 100.0%, so your timetable is impossible. Please correct this constraint.</source>
-        <translation type="unfinished"></translation>
+        <translation>A restrição é impossível de respeitar: as atividades com id %1 e id %2 estão em conflito entre si, pois têm turmas ou professores em comum ou não devem se sobrepor. É impossível resolver seu horário enquanto o peso desta restrição for 100,0%. Por favor, corrija essa restrição.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="3347"/>
@@ -32594,7 +32558,7 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="5090"/>
         <source>You can add this constraint from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
-        <translation type="unfinished"></translation>
+        <translation>Você pode adicionar essa restrição a partir do menu Dados -&gt; Diversos -&gt; Restrições básicas obrigatórias de tempo.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="5092"/>
@@ -32606,19 +32570,19 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/engine/generate_pre.cpp" line="5094"/>
         <location filename="../src/engine/generate_pre.cpp" line="6264"/>
         <source>Each time you create a new file, it contains an automatically added constraint of this type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cada vez que você cria um novo arquivo, ele contém uma restrição automática desse tipo.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="5096"/>
         <location filename="../src/engine/generate_pre.cpp" line="6266"/>
         <source>For complete flexibility, you are allowed to remove it (even if this is a wrong idea).</source>
-        <translation type="unfinished"></translation>
+        <translation>Para flexibilidade completa, é permitido que você a remova (mesmo que isso seja uma péssima ideia).</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="5098"/>
         <location filename="../src/engine/generate_pre.cpp" line="6268"/>
         <source>Maybe you removed it by mistake from your file.</source>
-        <translation>Talvez tenha removido por enganode seu arquivo.</translation>
+        <translation>Talvez tenha removido de seu arquivo por engano.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="5100"/>
@@ -32761,7 +32725,7 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="911"/>
         <source>This option is nonstandard. It is recommended only if you know what you are doing, otherwise the solution might be impossible for FET to find.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta opção não é padrão. Recomenda-se somente se você souber o que está fazendo, caso contrário, pode ser impossível para FET encontrar uma solução.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="914"/>
@@ -33067,23 +33031,23 @@ Please modify your data correspondingly and try again</source>
         <location filename="../src/engine/generate_pre.cpp" line="6338"/>
         <location filename="../src/engine/generate_pre.cpp" line="6376"/>
         <source>Cannot generate timetable, because you have more than one constraint of type students set home room(s) for students set %1. Please leave only one of them</source>
-        <translation type="unfinished">Não foi possível gerar horário, pois você tem mais de uma restrição do tipo &quot;sala pré-definida&quot; para a turma %1. Por favor, deixe apenas uma delas</translation>
+        <translation type="unfinished">Não foi possível gerar horário, pois você tem mais de uma restrição do tipo &quot;sala principal&quot; para a turma %1. Por favor, deixe apenas uma delas</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6421"/>
         <location filename="../src/engine/generate_pre.cpp" line="6459"/>
         <source>Cannot generate timetable, because you have more than one constraint of type teacher home room(s) for teacher %1. Please leave only one of them</source>
-        <translation type="unfinished">Não foi possível gerar horário, pois você tem mais de uma restrição do tipo &quot;sala pré-definida&quot; para a docente %1. Por favor, deixe apenas uma delas</translation>
+        <translation type="unfinished">Não foi possível gerar horário, pois você tem mais de uma restrição do tipo &quot;sala principal&quot; para a docente %1. Por favor, deixe apenas uma delas</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="7014"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
-        <translation type="unfinished">Não foi possível gerar horário, pois atividade id=%1 não possui &quot;sala pré-definida&quot; (revise suas restrições de alocação de salas para alunos e professores)</translation>
+        <translation type="unfinished">Não foi possível gerar horário, pois atividade id=%1 não possui &quot;sala principal&quot; (revise suas restrições de alocação de salas para alunos e professores)</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="7037"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from preferred room(s) constraints).</source>
-        <translation type="unfinished">Não foi possível gerar horário, pois atividade id=%1 não possui &quot;sala(s) alocada(s)&quot; (revise suas restrições de reserva de salas para alunos e professores)</translation>
+        <translation type="unfinished">Não foi possível gerar horário, pois atividade id==%1 não possui &quot;sala(s) alocada(s)&quot; (revise suas restrições de reserva de salas para alunos e professores).</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="7058"/>
@@ -33093,7 +33057,7 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="7108"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from the allowed number of students)</source>
-        <translation type="unfinished">Não foi possível gerar horário, pois atividade id=%1 não possui &quot;sala pré-definida&quot; (revise suas restrições de alocação de salas e número de alunos)</translation>
+        <translation type="unfinished">Não foi possível gerar horário, pois atividade id=%1 não possui &quot;sala principal&quot; (revise suas restrições de alocação de salas e número de alunos)</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="7142"/>
@@ -33235,7 +33199,7 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="8550"/>
         <source>End - the order of activities (id-s)</source>
-        <translation>Fim (atividades ordenadas por id)</translation>
+        <translation>Fim da ordem das atividades e suas ids</translation>
     </message>
 </context>
 <context>
@@ -33667,6 +33631,24 @@ Please modify your data correspondingly and try again</source>
         <translation>Sobre</translation>
     </message>
     <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="48"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2016 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.29.1 (April 2016).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="112"/>
         <source>Translators</source>
         <translation>Tradutores</translation>
@@ -33816,24 +33798,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/interface/helpaboutform_template.ui" line="69"/>
         <source>Authors</source>
         <translation>Autores</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="48"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2016 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.29.0 (March 2016).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="90"/>
@@ -34432,12 +34396,16 @@ Another possible approach: you may choose to define students into sections (see 
 A: FET can automatically divide years by categories of options.
 
 Add years and the option &apos;Divide ...&apos; in the years dialog is the easiest way. You can also add manually years, groups and subgroups.</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: Como colocar os alunos em seções?
+
+R: FET pode dividir automaticamente anos (turmas) por categorias de opções.
+
+Incluir os anos e a opção &quot;Dividir turma... &quot; na janela que abre ao clicar no botão Alunos é a maneira mais fácil. Você também pode adicionar manualmente classes (turmas, anos), grupos e subgrupos.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="161"/>
         <source>Important: you must consider that each year contains groups which contain independent subgroups. Subgroups should have all the activities of the year and group plus additional optional activities. Please check menu statistics/students for subgroups, each subgroup should have a reasonable number of working hours per week, close to the average of hours per week for all subgroups.</source>
-        <translation type="unfinished"></translation>
+        <translation>Importante: você deve considerar que cada ano contém grupos que, por sua vez, contêm subgrupos independentes. Subgrupos devem ter todas as atividades do ano e do grupo mais atividades extras opcionais. Por favor, verifique no menu Estatísticas/Alunos para subgrupos, cada subgrupo deve ter um número razoável de horas de trabalho por semana, perto da média de horas por semana para todos os subgrupos.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="165"/>
@@ -34447,7 +34415,7 @@ Add years and the option &apos;Divide ...&apos; in the years dialog is the easie
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="177"/>
         <source>Another possibility: you can see that each activity has allowed more teachers/students sets. If you need to split year Y according to Language1 (with teachers T1 and T2), you might not split Y and add an activity with Y and teachers T1 and T2 and subject &apos;Language1&apos;. This is a small trick, which might be easier to use than to divide a year.</source>
-        <translation type="unfinished"></translation>
+        <translation>Outra possibilidade: você pode ver que cada atividade permite mais de um professor ou turma. Se você precisa dividir o ano Y de acordo com a Língua 1 (com professores P1 e P2), você não pode dividir Y e adicionar uma atividade com Y e professores P1 e P2 e disciplina &quot;Língua 1v. Este é um pequeno truque, o que pode ser mais fácil de usar do que dividir um ano.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="185"/>
@@ -34458,7 +34426,13 @@ A: FET was designed to allow any school structure:
 - independent subgroups (non-overlapping);
 
 - overlapping groups (several subgroups) and years (several groups).</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: Qual é a estrutura de alunos que FET pode lidar?
+
+R: FET foi projetado para permitir qualquer estrutura escolar:
+
+- subgrupos independentes (sem sobreposição);
+
+- grupos sobrepostos (vários subgrupos) e anos (diversos grupos).</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="194"/>
@@ -34483,7 +34457,9 @@ NEW: the thing is automatic now. Just select year-&gt;divide in the years dialog
         <source>Q: Can you add more students sets or teachers to a single activity?
 
 A: Yes, you can add several students sets (subgroups, groups or years) and several teachers per activity.</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: Posso adicionar mais turmas ou professores para uma única atividade?
+
+R: Sim, você pode adicionar várias turmas (subgrupos, grupos ou anos) e vários professores para cada atividade.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="244"/>
@@ -34504,7 +34480,9 @@ Anyway, when you add a compulsory ConstraintActivityPreferredStartingTime, it me
         <source>Q: I added an activity with min days constraint. But I cannot see the min days value in modify activity dialog
 
 A: Min days is a time constraint. You can see it in the time constraints dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: Adicionei uma atividade com restrição de mínimo de dias. Mas não consigo ver o valor de mín dias na janela de alterar atividade
+
+A: Mín dias é uma restrição de tempo. Você pode vê-la na janela de restrições de tempo</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="293"/>
@@ -34569,14 +34547,19 @@ There is only a small problem: A2 cannot be put in the last period. To correct t
 A: Time slots is more restrictive, means all hours of an activity must be in the allowed intervals.
 
 Example: Preferred times Monday 8,9 and 10. If activity A has duration 2, then starting means that activity A can start at 8, 9 or 10 on Monday, while time slots means that activity A can start on Monday at 8 or 9 (10 is not allowed, because the last hour of activity is not allowed there).</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: Qual é a diferença entre os horários preferidos de início e as janelas de tempo preferidas?
+
+R: Janelas de tempo são mais restritivas, significa que todas os períodos (aulas) de uma atividade devem estar dentro do intervalo permitido.
+
+Exemplo: Horários preferidos de início: &quot;segunda-feira 8, 9 e 10 h&quot;. Se a atividade A dura 2 períodos, então ela poderá iniciar às 8, 9 ou 10 h na segunda-feira; enquanto que, se fosse como janela de tempo, a atividade A poderia começar na segunda-feira às 8 ou às 9 h (10 h não seria permitido, pois o último período da atividade não poderia ocorrer fora da janela de tempo).</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="557"/>
         <source>Q: What type of files uses FET?
 
 A: FET uses text files, xml or html or txt or csv (comma separated values - for import/export). The used encoding is UTF-8.</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: Que tipo de arquivos FET usa?
+R: FET usa arquivos de texto, XML ou HTML ou txt ou CSV (valores separados por vírgula - para importar/exportar). A codificação usada é UTF-8.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="564"/>
@@ -34615,12 +34598,20 @@ Hour 11:00 Break
 Hour 12:00 Math (second hour of act. 100)?
 
 A: No, the activity must respect the break, so it is before or after the break with all the hours of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: Tenho uma atividade com dupla duração (dois períodos seguidos). É possível que esses dois períodos fiquem separadps por uma pausa (intervalo), como no exemplo abaixo?
+
+Atividade Matemática, períodos: 2, id 100
+
+Hora 9h30min Matemática (primeiro período da atividade 100)
+Hora 10h15min Intervalo
+Hora 10h30min Matemática (segundo período da atividade 100)
+
+R: Não, a atividade deve respeitar o intervalo, por isso, os dois períodos dessa atividade serão alocados antes ou depois do intervalo.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="629"/>
         <source>Alternative solutions: either you can split that activity into two subactivities with duration 1 (without a min days constraint between them), and add a two activities consecutive constraint, or you can choose to not add the break constraint in your file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Soluções alternativas: você tanto pode dividir essa atividade em duas subatividades com duração de 1 período (sem restrição mínimo de dias entre elas) e adicionar uma restrição duas atividades consecutivas; como também pode escolher para não adicionar a restrição de pausa no seu arquivo.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="662"/>
@@ -34633,7 +34624,11 @@ Any other ideas...?
 A: I have another idea: choose 2 activities of this teacher which clearly cannot be on the same day, and add constraint min days between activities, 2 days, 100%.
 
 Or add a dummy activity for this teacher, split into 2 per week, min days = 2, with 100%. You just need to take care that this teacher has place for these dummy activities (enough slots in the day) and to consider these dummy activities as possible gaps, so if teacher has max gaps 2 then make max gaps for him 0.</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: (de Horatiu Halmajan) Eu encontrei uma situação: uma professora pede para trabalhar no máximo 2 dias da semana, mas estes dias não devem ser consecutivos. Existe uma maneira de implementá-lo em .fet?
+A única maneira (manual) que eu consegui imaginar foi definir a professora como indisponível às terças e quintas-feiras, deixando-a disponível na segunda, quarta e sexta-feira (quaisquer dois destes são não consecutivos).
+Alguma outra ideia ...?
+R: Tenho uma outra ideia: escolha 2 atividades desta professora que claramente não podem ser no mesmo dia, e adicione uma restrição &quot;mín de dias entre as atividades&quot; de 2 dias e peso 100%.
+Ou adicione uma atividade fictícia para esta professora, dividida em 2 por semana, mínimo de dias = 2, com 100%. Você só precisa tomar cuidado para que essa professora tenha lugar para essas atividades fictícias (vagas suficientes no dia) e de considerar essas atividades fictícias como possíveis lacunas, por isso, se a professora tiver máx lacunas 2, então coloque máx lacunas igual a 0 para ela.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="743"/>
@@ -34680,12 +34675,12 @@ Practical solution to case 2)? Reduce weights of constraints which have weight b
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="839"/>
         <source>Q: A trick to deal with fortnightly activities (my institution has a lot of fortnightly activities):</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: Um truque para lidar com atividades quinzenais (minha instituição tem um monte de atividades quinzenais):</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="841"/>
         <source>A: I divided hours in two, the first half (8.00 to 8.30, 9.00 to 9.30, ...) represents week A, the second half (8.30 to 9.00, 9.30 to 10.00, ...) represents week B, fortnightly activities have duration 1, weekly activities have duration 2.</source>
-        <translation type="unfinished"></translation>
+        <translation>R: Eu divido as horas em duas, a primeira metade (8h~8h30, 9h~9h30, ...) representa semana A, a segunda metade (8h30~9h, 9h30~10h, ...) representa semana B, atividades quinzenais têm duração 1 (1 período), atividades semanais têm duração 2 (2 períodos).</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="845"/>
@@ -34695,7 +34690,7 @@ Practical solution to case 2)? Reduce weights of constraints which have weight b
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="859"/>
         <source>Q: I need to add a split activity with total duration 4, which can be either 2+2 or 2+1+1 (two hours in a day and two hours in another day, or two hours in a day, one hour in another day and one hour in another day).</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: Preciso adicionar uma atividade dividida com duração total de 4 períodos, que pode ser 2+2 ou 2+1+1 (duas aulas em um dia e duas aulas no outro; ou duas aulas em um dia e as outras 2 separadas em outros dias diferentes).</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="862"/>
@@ -34704,32 +34699,36 @@ Practical solution to case 2)? Reduce weights of constraints which have weight b
 Add two constraints min 1 day between activities with id-s 1 and 2 and between activities with id-s 1 and 3, 100% weight percentage.
 
 Add another constraint: min 1 day between activities with id-s 2 and 3, consecutive if same day = yes, 0% weight percentage.</source>
-        <translation type="unfinished"></translation>
+        <translation>:R: Adicione 3 atividades (vamos supor que sua ids sejam 1, 2 e 3), com durações (períodos), respectivamente, 2, 1 e 1. É preferível adicioná-los como 3 atividades individuais/independentes (ver nota abaixo).
+
+Adicionar duas restrições mín 1 dia entre as atividades com ids 1 e 2 e entre as atividades com ids 1 e 3, usando peso 100%.
+
+Adicionar outra restrição: mín 1 dia entre as atividades com ids 2 e 3, (marcar &quot;consecutivas, se no mesmo dia&quot; = sim), e peso percentual de 0%.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="867"/>
         <source>Note: It is advisable to add the 3 activities as single/independent ones (not a larger split activity with 3 components). The reason is that if you want to apply spreading of activities over the week, this operation won&apos;t add/remove constraints of type min days between activities for these 3 activities. Also, if you add a split activity, you need to take care not to add a default constraint min days between the 3 components.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: É aconselhável acrescentar as 3 atividades como isoladas/independentes (não uma atividade maior dividida em 3 itens). A razão é que se você deseja distribuir as atividades ao longo da semana, esta operação não incluirá/removerá restrições do tipo mín dias entre as atividades para estas 3 atividades. Além disso, se você adicionar uma atividade dividida, é preciso tomar cuidado para não adicionar uma restrição padrão mín dias entre os 3 itens.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="877"/>
         <source>Q: I would like to specify that a teacher should have activities in certain time slots, no matter which activities.</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: Gostaria de especificar que um professor deva ter atividades em certas janelas (intervalos) de tempo, não importa quais atividades.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="879"/>
         <source>A: Please use constraint activities occupy max time slots from selection (the exact menu entry is &apos;A set of activities occupies max time slots from selection&apos;. See that constraint&apos;s Help button for more details.</source>
-        <translation type="unfinished"></translation>
+        <translation>R: Por favor, utilize restrição atividades ocupam máx janelas de tempo da seleção (a entrada de menu exata é &quot;Um conjunto de atividades ocupa o máximo de janelas de horário de uma seleção&quot;. Veja mais detalhes no botão Ajuda daquela restrição.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="886"/>
         <source>Q: How to easily find the activities with unspecified room in the timetable (after the timetable was generated)?</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: Agora que gerei o horário, como encontrar facilmente as atividades sem sala especificada?</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="888"/>
         <source>A: A trick is this: open the file representing the activities timetable in XML form (this file can be found in the results directory, with a name like: file_activities.xml) with a text editor, and search for the text &lt;Room&gt;&lt;/Room&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>R: Um truque é o seguinte: abra o arquivo que representa o horário de atividades no formato XML (este arquivo pode ser encontrado na pasta de resultados, com um nome como: file_activities.xml) com um editor de texto e procure o texto &lt;Room&gt;&lt;/Room&gt;</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="895"/>
@@ -34744,47 +34743,47 @@ Add another constraint: min 1 day between activities with id-s 2 and 3, consecut
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="909"/>
         <source>Q: How can I add a comment to a (sub)activity or to a constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: Como posso incluir um comentário a uma (sub)atividade ou a uma restrição?</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="911"/>
         <source>A: You can add a comment to a (sub)activity by clicking the &apos;Comments&apos; button in the (sub)activities dialog. You can add a comment to a constraint by clicking the &apos;Comments&apos; button in the all time/space constraints dialogs.</source>
-        <translation type="unfinished"></translation>
+        <translation>A: Você pode adicionar um comentário a uma (sub)atividade, clicando no botão &quot;Comentários&quot; na caixa de diálogo (sub)atividades. Você pode adicionar um comentário a uma restrição clicando no botão &quot;Comentários&quot; em qualquer uma das janelas de restrição de tempo/espaço.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="918"/>
         <source>Q: How can I activate/deactivate a constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: Como posso ativar/desativar uma restrição?</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="920"/>
         <source>A: You can activate/deactivate a constraint by clicking the &apos;Activate&apos;/&apos;Deactivate&apos; buttons in the all time/space constraints dialogs.</source>
-        <translation type="unfinished"></translation>
+        <translation>R: Você pode ativar/desativar uma restrição clicando nos botões &quot;Ativar&quot;/&quot;Desativar&quot; que aparecem na janela de restrição de Tempos/Espaços ao clicar no botão &quot;Todos&quot;.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="937"/>
         <source>Q: How can I specify that some activities must be in the same room (at different time slots, of course, because a single room can hold a single activity in a certain time slot)? This is needed for instance to constrain the Physics activities of a certain students set to take place in the same room, be it Lab-1 or Lab-2</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: Como posso especificar que algumas atividades devam estar na mesma sala (em diferentes janelas de tempo, é claro, porque uma sala individual pode conter uma única atividade em uma determinada janela de tempo)? Isso é necessário, por exemplo, para restringir as atividades de Física de certa turma que acontecerá na mesma sala, seja no Lab-1 ou no Lab-2</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="941"/>
         <source>A: You can use the constraint activities occupy max different rooms, with max different rooms = 1.</source>
-        <translation type="unfinished"></translation>
+        <translation>R: Você pode usar restrição atividades ocupam máx salas diferentes, com máx de sala diferentes = 1.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="947"/>
         <source>Q: How can I backup/restore the FET settings on a computer, or share them between different computers?</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: Como posso fazer backup ou restaurar as configurações do FET em um computador, ou partilhá-las entre computadores diferentes?</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="949"/>
         <source>A: GNU/Linux: Usually, in your %1 directory you will find a directory &quot;%2&quot; containing the file &quot;%3&quot;. If you copy this file to another computer, the FET settings will be copied. You can also make a backup of this file and copy it on the same computer, later, to restore the previous settings. If you remove this file, all FET settings on this computer will be reset to defaults.</source>
-        <translation type="unfinished"></translation>
+        <translation>R: GNU/Linux: Geralmente, em sua pasta %1 você encontrará a pasta &quot;%2&quot; contendo o arquivo &quot;%3&quot;. Se você copiar esse arquivo para outro computador, as configurações do FET estarão copiadas. Você também pode fazer um backup desse arquivo e copiá-lo no mesmo compputador, depois, restaurar as configurações prévias. Se você remover esse arquivo, o FET iniciará com todas as configurações padrão.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="955"/>
         <source>Mac OS X: It seems that the configuration file might be %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Mac OS X: Parece que o arquivo com as configurações fica em %1</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="957"/>
@@ -34794,7 +34793,7 @@ Add another constraint: min 1 day between activities with id-s 2 and 3, consecut
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="965"/>
         <source>Q: I have many subgroups and I don&apos;t explicitly use them. Can I hide them in the combo boxes, to add easier the constraints? Also, can I make the FET interface work faster?</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: Tenho muitos subgrupos e não os utilizo explicitamente. Eu posso escondê-los nas caixas de combinação, para incluir as restrições mais facilmente? Além disso, eu consigo fazer o FET trabalhar mais rápido?</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="968"/>
@@ -34802,27 +34801,27 @@ Add another constraint: min 1 day between activities with id-s 2 and 3, consecut
         <location filename="../src/interface/helpfaqform.cpp" line="1019"/>
         <source>A:</source>
         <comment>Answer</comment>
-        <translation type="unfinished"></translation>
+        <translation>R:</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="970"/>
         <source>If you have many subgroups and you don&apos;t explicitly use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se você tiver muitos subgrupos e você não os utiliza explicitamente, recomenda-se usar as três configurações globais: ocultar subgrupos em caixas combo, ocultar subgrupos em planejamento de atividades, e não escrever horários de subgrupos no disco rígido.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="973"/>
         <source>Note that using the global menu setting to hide subgroups in activity planning is a different thing from the check box in the activity planning dialog, and the global setting works better and faster.</source>
-        <translation type="unfinished"></translation>
+        <translation>Observe que usar o menu global de configuração para ocultar subgrupos em planejamento de atividades é uma coisa diferente da caixa de seleção na janela de planejamento de atividade, e a configuração global é melhor e mais rápida.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="976"/>
         <source>If you hide subgroups in combo boxes, the affected dialogs (like the activities dialog or the add constraint students set not available times dialog) will load much faster if you have many subgroups.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se você ocultar os subgrupos em caixas combo, as janelas afetadas (como as janelas de &quot;atividades&quot; ou de incluir &quot;restrição de horários indisponíveis da turma&quot;) carregará muito mais rápido se você tiver muitos subgrupos.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="981"/>
         <source>If you are only working on a timetable, and you do not need to publish it, you may want to disable writing some categories of timetables on the hard disk, for operativity (the generation speed is not affected, only the overhead to write the partial/complete timetables when stopping/finishing the simulation). The timetables taking the longest time are the subgroups, groups AND years ones.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se você estiver trabalhando com um horário sem intenção de publicá-lo (na web), você pode querer desativar a gravação de alguns arquivos, para a operatividade (a velocidade de geração não é modificada, apenas a sobrecarga para escrever horário parcial/completo quando ele finaliza (ou para) a simulação). Os arquivos de horário que tomam mais tempo são os de subgrupos, grupos e turmas (aulas).</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="985"/>
@@ -34832,47 +34831,47 @@ Add another constraint: min 1 day between activities with id-s 2 and 3, consecut
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="987"/>
         <source>After that, you can re-enable writing of the timetables and re-generate.</source>
-        <translation type="unfinished">Após isso, você pode reativar a escrita de grade de horário e gerá-la novamente.</translation>
+        <translation>Quando tiver um horário definitivo, você pode reativar a gravação de grades de horário e gerar novamente.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="993"/>
         <source>Q: How about dividing a students year automatically into many subgroups?</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: Queria saber mais dividir uma turma autmoaticamente em vários subgrupos.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="997"/>
         <source>About using a large number of categories, divisions per category and subgroups: it is highly recommended to keep these to a minimum, especially the number of categories, by using any kind of tricks. Otherwise the timetable might become impossible (taking too much time to generate).</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobre o uso de um grande número de categorias, divisões por categoria e subgrupos: é altamente recomendável mantê-los a um mínimo, especialmente o número de categorias, usando qualquer tipo de truque. Caso contrário, o horário pode se tornar impossível (levando muito tempo para gerar).</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="1001"/>
         <source>Maybe a reasonable number of categories could be 2, 3 or maximum 4. The divide year dialog allows much higher values, but these are not at all recommended.</source>
-        <translation type="unfinished"></translation>
+        <translation>Talvez um número razoável de categorias poderia ser 2, 3 ou (no máximo) 4. A janela para dividir ano permite valores bem mais elevados, mas estes não são de todo recomendáveis.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="1004"/>
         <source>Maybe an alternative to dividing a year into many categories/subgroups would be to enter individual students as FET subgroups and add into each group the corresponding subgroups. But this is hard to do from the FET interface - maybe a solution would be to use an automatic tool to convert your instition data into a file in .fet format.</source>
-        <translation type="unfinished"></translation>
+        <translation>Talvez uma alternativa para dividir um ano em muitas categorias/subgrupos seria colocar alunos individuais como subgrupos FET e incluir em cada grupo os subgrupos correspondentes. Mas isso é difícil de fazer a partir da interface FET - talvez uma solução seria a utilização de uma ferramenta automática para converter os dados de sua instituição em um arquivo no formato .fet.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="1008"/>
         <source>Or you might use the FET feature to import students sets from comma separated values (CSV) files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ou você pode usar o recurso de FET para importar turmas de arquivos de valores separados por vírgulas (CSV).</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="1010"/>
         <source>In such cases (individual students as FET subgroups), remember that a smaller number of total subgroups means faster generation time, so you might want to consider a single subgroup for two or more students who have the exact same activities and constraints.</source>
-        <translation type="unfinished"></translation>
+        <translation>Em tais casos (alunos individuais como subgrupos FET), lembre-se que um número menor que o total de subgrupos significa uma geração mais rápida de horário, de modo que você pode querer considerar um único subgrupo de dois ou mais alunos que tenham exatamente as mesmas atividades e restrições.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="850"/>
         <source>Add time constraint: activities with all teachers, all students, all subjects, activity tag = &apos;Start hour&apos; have a set of preferred starting times: Monday 8.00, Monday 9.00, ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar restrição de tempo: atividades com todos os professores, todos os alunos, todas as disciplinas, marcador de atividade = &quot;Hora de início&quot; tem um conjunto de tempos de início preferidos: segunda 8 h; segunda 9 h, ...</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="47"/>
         <source>Frequently asked questions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Perguntas frequentes</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="837"/>
@@ -34882,24 +34881,26 @@ Add another constraint: min 1 day between activities with id-s 2 and 3, consecut
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="853"/>
         <source>It works fine and I got good timetables with strong teachers time constraints.</source>
-        <translation type="unfinished"></translation>
+        <translation>Funciona muito bem e eu tenho bons horários com fortes restrições para professores e de tempo.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="871"/>
         <source>There may be other solutions possible, but this one seems perfect with respect to efficiency.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pode haver outras soluções possíveis, mas esta parece perfeita no que diz respeito à eficiência.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="323"/>
         <source>Q: I have a sports room which allows more than 1 activity simultaneously in it. How to make the preferred room constraints? Can FET accept more than one activity at the same time in a single room?
 
 A: Each room can host a single activity at the same time. How to implement what you need? You can add more rooms (sport1, sport2, sport3) and instead of a single preferred room add more preferred rooms.</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: Eu tenho uma sala de desporto ou canchas no pátio, que permite que mais de uma atividade ao mesmo tempo na mesma. Como colocá-las nas restrições de sala preferida? FET aceita mais de uma atividade ao mesmo tempo em uma única sala?
+		
+R: Cada sala pode acomodar apenas uma atividade de cada vez. Como implementar o que você precisa? Você as coloca como várias &quot;salas&quot; (cancha1, cancha2, cancha3) e, em vez de restringir como uma única sala preferida, adiciona mais salas preferidas.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="49"/>
         <source>Last modified on %1.</source>
-        <translation type="unfinished">Atualizado em %1.</translation>
+        <translation>Atualizado em %1.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="55"/>
@@ -34913,7 +34914,7 @@ A: - Students - organized into sets (years (or forms, or classes), containing gr
 - Buildings.
 - Activities: a coupling of one or more teachers, a subject and one or more students set. This is usually named a course, a lecture, a laboratory and so on. An activity can have optionally an activity tag, to help you with some constraints.
 - Constraints. They can be: time constraints (referring to the allocated day and hour) or space constraints (referring to rooms allocation). They have a weight percentage, from 0.0% to 100.0%. 100% means that the constraint will always be respected and if this constraint is impossible, FET will not be able to generate a timetable.</source>
-        <translation>Q: Qual é a organização dos dados de entrada no FET?
+        <translation>Q: Qual a organização dos dados de entrada no FET?
 
 R: - Alunos - organizados em turma (ou anos ou classes), organizados hierarquicamente em grupos de alunos e seus subgrupos.
 - Professores.
@@ -35137,9 +35138,9 @@ R: Incluir diretamente um contêiner de atividade com mais divisões do que o n�
 
 A melhor maneira de adicionar as atividades seria:
 
-1. Se você marcar para forçar consecutivas, se no mesmo dia; então junte atividades extras aos pares para obter um número de atividades igual ao número de dias por semana. Exemplo: Para 7 atividades com duração 1 em 5 dias por semana, coloque-as como 5 atividades com durações: 2,2,1,1,1 e adicione um único contêiner para a atividade com estes 5 itens (possivelmente elevando o peso da restrição de mínimo de dias de entre as atividades até 100%)
+1. Se você marcar para forçar consecutivas, se no mesmo dia; então junte atividades extras aos pares para obter um número de atividades igual ao número de dias por semana. Exemplo: Para 7 atividades com duração 1 em 5 dias por semana, coloque-as como 5 atividades com durações (períodos): 2,2,1,1,1 e adicione um único contêiner para a atividade com estes 5 itens (possivelmente elevando o peso da restrição de mínimo de dias de entre as atividades até 100%)
 
-2. Se você não marcar para forçar consecutivas, se no mesmo dia; então, adicione uma atividade maior dividida em uma série de atividades com o número de dias por semana e os itens restantes em outra atividade. Por exemplo, suponha que você precisa adicionar 7 atividades, cada uma com duração 1, em 5 dias por semana. Adicione-as em 2 grandes contêiners de atividades. No primeiro, divida em 5 atividades com duração 1; no segundo, as duas atividades restantes com duração 1 cada (possivelmente, elevando até 100% o peso das restrições do mínimo de dias entre as atividades em cada um dos contêiners)</translation>
+2. Se você não marcar para forçar consecutivas, se no mesmo dia; então, adicione uma atividade maior dividida em uma série de atividades com o número de dias por semana e os itens restantes em outra atividade. Por exemplo, suponha que você precisa adicionar 7 atividades, cada uma com duração 1, em 5 dias por semana. Adicione-as em 2 grandes contêiners de atividades. No primeiro, divida em 5 atividades com duração 1; no segundo, as duas atividades restantes com 1 período cada (possivelmente, elevando até 100% o peso das restrições do mínimo de dias entre as atividades em cada um dos contêiners)</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="544"/>
@@ -35189,7 +35190,8 @@ A: If you have activities which you want to put in the last slots of a day (like
         <source>Q: What about the automatic search for updates? Should I enable it?
 
 A: It is recommended to enable automatic search for updates. I didn&apos;t set it as default because people might be annoyed if I release too fast new versions. But if you can cope with that, it is recommended to always have the latest version and enable searching for updates at startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: E sobre &quot;Procurar atualizações ao iniciar&quot;? Devo ativar?
+A: É recomendado para permitir a procura automática de atualizações. Ela não está ativda por padrão porque as pessoas podem se sentir incomodadas se eu lançar muitas novas versões seguidas. Mas, se você não se importar com isso, recomenda-se ter sempre a versão mais recente e permitir procurar por atualizações ao iniciar.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="281"/>
@@ -35280,17 +35282,17 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="759"/>
         <source>Q: Why the constraints activity tag max hours daily and students max gaps per day are disabled in the FET menu?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Q: Por que as restrições máx horas diárias para marcador de atividade e máx intervalos por dia para alunos estão desativados no menu FET?</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="761"/>
         <source>A: These 6 constraints (4 for activity tag and 2 for students max gaps per day) are the only ones which are not perfectly optimized in FET. For some combinations of constraints, they may slow down the generation or even make the timetable impossible. That is why they are not enabled by default. You need to activate them from the advanced settings menu. It is recommended to add such constraints at the end of your work, after you added all the other constraints and verified that your timetable is possible.</source>
-        <translation type="unfinished"></translation>
+        <translation>A: Essas 6 restrições (4 para marcador de atividade e 2 de máx lacunas diárias para alunos) ainda não estão bem desenvolvidas no FET. Para algumas combinações de restrições, elas podem tornar muito lentas a geração de horário ou impossível de resolver. É por isso que não se encontram habilitadas. Você precisa ativá-los a partir do menu de configurações avançadas. Recomenda-se adicionar essas restrições, no final do seu trabalho, depois de ter adicionado todas as outras restrições e verificou que o seu horário é possível.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="766"/>
         <source>If these constraints are disabled, they have an icon attached in the menu to signify that. If they are enabled, they have another icon attached to them, to signify that they are enabled, but must be used with caution.</source>
-        <translation type="unfinished">Quando desabilitadas, estas restrições mostram um ícone anexado no menu. Se elas estiverem habilitadas, outro ícone será mostrado, mas use com cautela.</translation>
+        <translation>Quando desabilitadas, estas restrições mostram um ícone de cadeado no menu. Se elas estiverem habilitadas, outro ícone será mostrado, mas use com cautela.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="769"/>
@@ -35300,7 +35302,7 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="775"/>
         <source>Q: Why don&apos;t you implement the not perfect constraints (activity tag max hours daily and students max gaps per day) in a perfect way?</source>
-        <translation type="unfinished"></translation>
+        <translation>Q: Por que você não implementa as restrições imperfeitas (marcador de atividade máx jornada e máx lacunas diárias para alunos) de modo a serem perfeitas?</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="777"/>
@@ -35457,7 +35459,7 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="114"/>
         <source>4) Constraint students (set) early: if you input only partial data, you might get impossible timetables (see FAQ for details).</source>
-        <translation type="unfinished">4) Restrição de turma mais cedo: se você entrar apenas dados parciais, você pode obter horários impossíveis (ver &quot;Perguntas Frequentes&quot; para mais detalhes)</translation>
+        <translation type="unfinished">4) Restrição de turma mais cedo: se você entrar apenas dados parciais, você pode obter horários impossíveis (ver &quot;Perguntas Frequentes&quot; para mais detalhes).</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="116"/>
@@ -35467,7 +35469,7 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="120"/>
         <source>6) Rooms: You might firstly try to generate a timetable without rooms, to see if it is possible, then add rooms and rooms related constraints.</source>
-        <translation type="unfinished"></translation>
+        <translation>6) Salas: Você pode primeiramente tentar gerar um horário sem salas, para ver se é possível, em seguida, adicioná-las, bem como criar restrições com elas.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="126"/>
@@ -35559,7 +35561,7 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/interface/helponimperfectconstraints.cpp" line="54"/>
         <source>Read FAQ question 1/25 September 2009 for some more details about activity tag max hours daily constraint.</source>
-        <translation>Leia Perguntas Frequentes, questão 1/25 September 2009 para mais detalhes sobre marcador de atividade com restrição de máx horas diárias.</translation>
+        <translation>Leia Perguntas Frequentes, questão 1/25 September 2009 para mais detalhes sobre marcador de atividade com restrição de máx jornada (horas diárias).</translation>
     </message>
     <message>
         <location filename="../src/interface/helponimperfectconstraints.cpp" line="56"/>
@@ -35680,7 +35682,7 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="49"/>
         <source>19 August 2009</source>
-        <translation type="unfinished">19.agosto.2009</translation>
+        <translation>19.agosto.2009</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="49"/>
@@ -36132,7 +36134,7 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/engine/import.cpp" line="120"/>
         <source>Total Duration</source>
-        <translation>Duração Total</translation>
+        <translation>Número Total de Períodos</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="121"/>
@@ -36230,12 +36232,12 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/engine/import.cpp" line="672"/>
         <source>Please specify the used text quote of text fields:</source>
-        <translation type="unfinished"></translation>
+        <translation>Favor indicar o tipo de aspas usadas nos campos de texto:</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="679"/>
         <source>Used textquote:</source>
-        <translation type="unfinished"></translation>
+        <translation>Aspas usadas:</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="688"/>
@@ -36264,17 +36266,17 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/engine/import.cpp" line="122"/>
         <source>Min Days</source>
-        <translation type="unfinished">Mín Dias</translation>
+        <translation>Mín Dias</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="123"/>
         <source>Min Days Weight</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Peso Mín Dias</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="124"/>
         <source>Min Days Consecutive</source>
-        <translation type="unfinished"></translation>
+        <translation>Mín Dias Consecutivos</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="838"/>
@@ -36294,7 +36296,7 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
         <location filename="../src/engine/import.cpp" line="2414"/>
         <source>Importing</source>
         <comment>Title of a progress dialog</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A importar</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="852"/>
@@ -36309,12 +36311,12 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/engine/import.cpp" line="1145"/>
         <source>FET import %1 question</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET importou %1 pergunta</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1181"/>
         <source>Following data found in the file:</source>
-        <translation>Seguintes dados encontrados no arquivo:</translation>
+        <translation>Esses dados foram encontrados no arquivo:</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1183"/>
@@ -36324,7 +36326,7 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/engine/import.cpp" line="1195"/>
         <source>%1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1221"/>
@@ -36412,32 +36414,32 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/engine/import.cpp" line="1790"/>
         <source>Can&apos;t import group %1. Name is already taken for a year.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível importar grupo %1. Esse nome já está em uso por algum ano.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1792"/>
         <source>Can&apos;t import subgroup %1. Name is already taken for a year.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível importar subgrupo %1. Esse nome já está em uso por algum ano.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1804"/>
         <source>Can&apos;t import year %1. Name is already taken for a group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível importar ano %1. Esse nome já está em uso por algum grupo.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1808"/>
         <source>Can&apos;t import subgroup %1. Name is already taken for a group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível importar subgrupo %1. Esse nome já está em uso por algum grupo.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1821"/>
         <source>Can&apos;t import year %1. Name is already taken for a subgroup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível importar ano %1. Esse nome já está em uso por algum subgrupo.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1823"/>
         <source>Can&apos;t import group %1. Name is taken for a subgroup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível importar grupo %1. Esse nome já está em uso por algum subgrupo.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1846"/>
@@ -36448,12 +36450,12 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
         <location filename="../src/engine/import.cpp" line="1870"/>
         <location filename="../src/engine/import.cpp" line="2425"/>
         <source>Importing data canceled by user.</source>
-        <translation>Importar dados cancelado pelo usuário.</translation>
+        <translation>Importação de dados cancelada pelo usuário.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="2110"/>
         <source>FET needs to know %1 or %2 if you import %3.</source>
-        <translation>FET precisa saber %1 ou %2 para  importar %3.</translation>
+        <translation>FET precisa saber %1 ou %2 ao importar %3.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="2415"/>
@@ -36463,17 +36465,17 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/engine/import.cpp" line="2449"/>
         <source>Line %1: Activity contains duplicate teacher %2 - please correct that</source>
-        <translation type="unfinished"></translation>
+        <translation>Linha %1: Atividade contém docente %2 repetido(a) - favor corrigi-la</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="2467"/>
         <source>Line %1: Activity contains duplicate activity tag %2 - please correct that</source>
-        <translation type="unfinished"></translation>
+        <translation>Linha %1: Atividade contém marcador de atividade %2 repetido - favor corrigi-la</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="2484"/>
         <source>Line %1: Activity contains duplicate students set %2 - please correct that</source>
-        <translation type="unfinished"></translation>
+        <translation>Linha %1: Atividade contém turma %2 repetida - favor corrigi-la</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="2522"/>
@@ -36493,32 +36495,32 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/engine/import.cpp" line="686"/>
         <source>Please specify the contents of the first line:</source>
-        <translation type="unfinished">Favor indicar o que fazer com a primeira linha:</translation>
+        <translation>Favor indicar o conteúdo da primeira linha:</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="780"/>
         <source>Missing field separator or text quote in first line. Import might be incorrect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Falta separador de campo ou aspas na primeira linha. A importação poderá falhar.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="789"/>
         <source>Missing closing text quote in first line. Import might be incorrect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Falta fechar aspas na primeira linha. A importação poderá falhar.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="893"/>
         <source>Warning: FET expected field separator or text separator in line %1. Import might be incorrect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alerta: FET esperava separador de campo ou de texto na linha %1. A importação poderá falhar.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="901"/>
         <source>Warning: FET expected closing text separator in line %1. Import might be incorrect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alerta: FET esperava separador de texto fechado na linha %1. A importação poderá falhar.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="927"/>
         <source>Skipped line %1: FET expected %2 fields but found %3 fields.</source>
-        <translation type="unfinished"></translation>
+        <translation>Linha %1 ignorada: FET esperava %2 campos mas encontrou %3.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="936"/>
@@ -36532,91 +36534,91 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
         <location filename="../src/engine/import.cpp" line="1549"/>
         <location filename="../src/engine/import.cpp" line="1625"/>
         <source>Skipped line %1: Field &apos;%2&apos; is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Linha %1 ignorada: Campo &quot;%2&quot; está vazio.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1005"/>
         <location filename="../src/engine/import.cpp" line="1029"/>
         <location filename="../src/engine/import.cpp" line="1040"/>
         <source>Skipped line %1: Field &apos;%2&apos; doesn&apos;t contain an integer value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Linha %1 ignorada: Campo &quot;%2&quot; não contém um valor inteiro.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1023"/>
         <source>Warning in line %1: Field with building name doesn&apos;t affect to a room</source>
-        <translation type="unfinished"></translation>
+        <translation>Alerta na linha %1: Campo com nome do prédio não afeta uma sala</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1068"/>
         <source>Skipped line %1: Field &apos;%2&apos; contain an unknown value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Linha %1 ignorada: Campo &quot;%2&quot; contém um valor desconhecido.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1087"/>
         <source>Skipped line %1: Data was already in a previous line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Linha %1 ignorada: Dados já estavam em linha anterior.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1103"/>
         <source>Line %1 is: %2</source>
-        <translation type="unfinished">Linha %1 é: %2</translation>
+        <translation>Linha %1 é: %2</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1411"/>
         <location filename="../src/engine/import.cpp" line="1420"/>
         <source>Skipped line %1: Field &apos;%2&apos; is already in a previous line.</source>
-        <translation type="unfinished">Pulada a linha %1. Campos &quot;%2&quot; já se encontra em linha anterior.</translation>
+        <translation>Linha %1 ignorada. Campo &quot;%2&quot; já se encontra em linha anterior.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1508"/>
         <source>%1 buildings added. Please check buildings form.</source>
-        <translation type="unfinished">%1 prédios adicionados. Favor verficar a lista de prédios.</translation>
+        <translation>%1 prédios adicionados. Favor verficar a lista de prédios.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1749"/>
         <source>Problem in line %1: Year name %2 is taken for a group - please consider another name</source>
-        <translation type="unfinished">Problema na linha %1: Nome da turma %2 está com um grupo - favor escolher outro nome</translation>
+        <translation>Problema na linha %1: Nome do ano %2 está em uso por um grupo - favor escolher outro nome</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1757"/>
         <source>Problem in line %1: Subgroup name %2 is taken for a year - please consider another name</source>
-        <translation type="unfinished">Problema na linha %1: Subgrupo %2 está com uma turma - favor escolher outro nome</translation>
+        <translation type="unfinished">Problema na linha %1: Nome do subgrupo %2 está com uma turma - favor escolher outro nome</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1759"/>
         <source>Problem in line %1: Subgroup name %2 is taken for a group - please consider another name</source>
-        <translation type="unfinished">Problema na linha %1: Subgrupo %2 está com um grupo - favor escolher outro nome</translation>
+        <translation>Problema na linha %1: Nome do subgrupo %2 está com um grupo - favor escolher outro nome</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1761"/>
         <source>Problem in line %1: Group name %2 is taken for a subgroup - please consider another name</source>
-        <translation type="unfinished">Problema na linha %1: Grupo %2 está com um subgrupo - favor escolher outro nome</translation>
+        <translation>Problema na linha %1: Nome do grupo %2 está com um subgrupo - favor escolher outro nome</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1763"/>
         <source>Problem in line %1: Year name %2 is taken for a subgroup - please consider another name</source>
-        <translation type="unfinished">Problema na linha %1: Nome da turma %2 está com um subgrupo - favor escolher outro nome</translation>
+        <translation>Problema na linha %1: Nome da turma %2 está com um subgrupo - favor escolher outro nome</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1806"/>
         <source>Group name %1 is already in FET data (in the same or in another year).</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome do grupo %1 já se encontra nos dados do FET (nesse ano ou em outro).</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1825"/>
         <source>Subgroup name %1 is already in FET data (in the same or in another group).</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome do subgrupo %1 já se encontra nos dados do FET (nesse grupo ou em outro).</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1952"/>
         <location filename="../src/engine/import.cpp" line="1955"/>
         <source>Group name %1 exists in another year. It means that some years share the same group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome do grupo %1 já existe em outro ano. Isso quer dizer que alguns anos partilham o mesmo grupo.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="2008"/>
         <source>Subgroup name %1 exists in another group. It means that some groups share the same subgroup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome do subgrupo %1 já existe em outro grupo. Isso quer dizer que alguns grupos partilham o mesmo subgrupo.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="2053"/>
@@ -36627,23 +36629,23 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/engine/import.cpp" line="2054"/>
         <source>%1 subgroups added. Please check subgroups form.</source>
-        <translation type="unfinished">%1 subgrupos adicionados. Favor verificar lista de subgrupos.</translation>
+        <translation>%1 subgrupos adicionados. Favor verificar lista de subgrupos.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="2055"/>
         <source>%1 groups added. Please check groups form.</source>
-        <translation type="unfinished">%1 grupos adicionados. Favor verificar lista de grupos.</translation>
+        <translation>%1 grupos adicionados. Favor verificar lista de grupos.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="2056"/>
         <source>%1 years added. Please check years form.</source>
-        <translation type="unfinished">%1 turmas adicionadas. Favor verificar a lista de turmas.</translation>
+        <translation type="unfinished">%1 anos adicionados. Favor verificar a lista de anos.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1365"/>
         <location filename="../src/engine/import.cpp" line="2400"/>
         <source>%1 activity tags added. Please check activity tags form.</source>
-        <translation type="unfinished">%1 marcadores de atividade adicionados. Favor verificar lista de marcadores.</translation>
+        <translation>%1 marcadores de atividade adicionados. Favor verificar lista de marcadores.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="2584"/>
@@ -36653,12 +36655,12 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/engine/import.cpp" line="1012"/>
         <source>Skipped line %1: Fields &apos;%2&apos; and &apos;%3&apos; haven&apos;t the same value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorada linha %1: Campos &quot;%2&quot; e &quot;%3&quot; não têm mesmo valor.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1747"/>
         <source>Problem in line %1: Group name %2 is taken for a year - please consider another name</source>
-        <translation type="unfinished"></translation>
+        <translation>Problema na linha %1: Grupo com nome %2 está em uso por um ano (turma). Favor escolher outro nome</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="2239"/>
@@ -36784,7 +36786,7 @@ is:</source>
     <message>
         <location filename="../src/engine/import.cpp" line="515"/>
         <source>no textquote</source>
-        <translation type="unfinished"></translation>
+        <translation>sem aspas</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="696"/>
@@ -36794,7 +36796,7 @@ is:</source>
     <message>
         <location filename="../src/engine/import.cpp" line="988"/>
         <source>Skipped line %1: Field &apos;%2&apos; contain incorrect data.</source>
-        <translation>Linha %1 ignorada: Campo &apos;%2&apos; contém dados incorretos.</translation>
+        <translation>Linha %1 ignorada: Campo &quot;%2&quot; contém dados incorretos.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="531"/>
@@ -36856,7 +36858,7 @@ Por favor, primeiro encerre a simulação</translation>
         <location filename="../src/engine/export.cpp" line="405"/>
         <source>FET - export comment</source>
         <comment>The comment of the exporting operation</comment>
-        <translation>FET - exportat comentário</translation>
+        <translation>FET - exportar comentário</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="416"/>
@@ -36893,7 +36895,7 @@ Por favor, primeiro encerre a simulação</translation>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="447"/>
         <source>Do you really want to have the activity without teacher(s)?</source>
-        <translation>Confirma a atividade sem professor(es)?</translation>
+        <translation>Confirma a atividade sem docente(s)?</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="467"/>
@@ -36928,7 +36930,7 @@ Por favor, primeiro encerre a simulação</translation>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="565"/>
         <source>The &apos;Duration&apos; spin box and the &apos;Active&apos; check box refer to each component of current activity, you can change them for each component, separately, by selecting the corresponding tab in the tab widget.</source>
-        <translation type="unfinished">As caixas &quot;Duração&quot; e &quot;Ativa&quot; referem-se a cada item da atividade atual. Você pode mudá-las para cada item, separadamente, ao selecionar a respectiva guia.</translation>
+        <translation type="unfinished">As caixas &quot;Período(s)&quot; e &quot;Ativa&quot; referem-se a cada item da atividade atual. Você pode mudá-las para cada item, separadamente, ao selecionar a respectiva guia.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="571"/>
@@ -36997,7 +36999,7 @@ Por favor, primeiro encerre a simulação</translation>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2411"/>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2475"/>
         <source>Duration</source>
-        <translation>Duração</translation>
+        <translation>Período(s)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="352"/>
@@ -37428,7 +37430,7 @@ Por favor, primeiro encerre a simulação</translation>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="14"/>
         <source>Modify activities max simultaneous in selected time slots</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar máx atividades simultâneas nas janelas de tempo selecionadas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="24"/>
@@ -37567,7 +37569,7 @@ Por favor, primeiro encerre a simulação</translation>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="14"/>
         <source>Modify activities not overlapping</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar atividades sem sobreposição</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="72"/>
@@ -37738,7 +37740,7 @@ Por favor, primeiro encerre a simulação</translation>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="14"/>
         <source>Modify activities occupy max time slots from selection</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar atividades que ocupam máx janelas de tempo da seleção</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="24"/>
@@ -37920,7 +37922,7 @@ Se você precisa de peso inferior a 100%, então você pode usar esta restriçã
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="78"/>
         <source>Duration</source>
-        <translation>Duração</translation>
+        <translation>Período(s)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="101"/>
@@ -38051,7 +38053,7 @@ Se você precisa de peso inferior a 100%, então você pode usar esta restriçã
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="78"/>
         <source>Duration</source>
-        <translation>Duração</translation>
+        <translation>Período(s)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="101"/>
@@ -38229,7 +38231,7 @@ Se você precisa de peso inferior a 100%, então você pode usar esta restriçã
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="14"/>
         <source>Modify activities same starting day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar atividades com mesmo dia de início</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="56"/>
@@ -38325,7 +38327,7 @@ Se você precisa de peso inferior a 100%, então você pode usar esta restriçã
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="14"/>
         <source>Modify activities same starting hour</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar atividades com mesmo horário de início</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="56"/>
@@ -38421,7 +38423,7 @@ Se você precisa de peso inferior a 100%, então você pode usar esta restriçã
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="14"/>
         <source>Modify activities same starting time</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar atividades com mesmo horário de início</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="56"/>
@@ -38592,7 +38594,7 @@ Se você precisa de peso inferior a 100%, então você pode usar esta restriçã
         <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="14"/>
         <source>Modify activity preferred room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar atividade com sala preferida</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="55"/>
@@ -39411,27 +39413,27 @@ Se você precisa de peso inferior a 100%, então você pode usar esta restriçã
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="215"/>
         <source>You want to add a constraint min days between activities for more activities than the number of days per week. This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).</source>
-        <translation type="unfinished">Você quer adicionar uma restrição min de dias  entre as atividades para  mais  atividades  do que o número de dias por semana. Esta é uma prática muito ruim da forma como o algoritmo de  geração trabalha (que diminui a produção e torna mais difícil encontrar uma solução).</translation>
+        <translation>Você quer adicionar uma restrição &quot;mín de dias entre as atividades&quot; quando há mais aulas do que o número de dias na semana. Esta é uma prática muito ruim para a forma como o algoritmo trabalha (que diminui a produção e torna mais difícil encontrar uma solução).</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="218"/>
         <source>The best way to add the activities would be:</source>
-        <translation type="unfinished">A melhor forma de adicionar as atividades seria:</translation>
+        <translation>A melhor forma de adicionar as atividades seria:</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="221"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min days between activities up to 100%)</source>
-        <translation>1. Se você marcar para forçar consecutivas, se no mesmo dia; então junte atividades extras aos pares para obter um número de atividades igual ao número de dias por semana. Exemplo: Para 7 atividades com duração 1 em 5 dias por semana, coloque-as como 5 atividades com durações: 2,2,1,1,1 e adicione um único contêiner para a atividade com estes 5 itens (possivelmente elevando o peso da restrição de mínimo de dias de entre as atividades até 100%)</translation>
+        <translation>1. Se você marcar para &quot;forçar consecutivas, se no mesmo dia&quot;; então junte atividades extras aos pares para obter um número de atividades igual ao número de dias por semana. Exemplo: Para 7 atividades com duração 1 em 5 dias por semana, coloque-as como 5 atividades com durações (períodos): 2,2,1,1,1 e adicione um único contêiner para a atividade com estes 5 itens (possivelmente elevando o peso da restrição de mínimo de dias de entre as atividades até 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="227"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity split into a number of activities equal with the number of days per week and the remaining components into other larger split activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one split into 5 activities with duration 1 and second one split into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
-        <translation type="unfinished">2. Se você não marcar para forçar consecutivas, se no mesmo dia; então, adicione uma atividade maior dividida em uma série de atividades com o número de dias por semana e os itens restantes em outra atividade. Por exemplo, suponha que você precisa adicionar 7 atividades com duração 1 em 5 dias por semana. Adicione-as em 2 grandes contêiners de atividades. No primeiro, divida em 5 atividades com duração 1; no segundo, as duas atividades restantes com duração 1 cada (possivelmente, elevando até 100% o peso das restrições do mínimo de dias entre as atividades em cada um dos contêiners)</translation>
+        <translation type="unfinished">2. Se você não marcar para forçar consecutivas, se no mesmo dia; então, adicione uma atividade maior dividida em uma série de atividades com o número de dias por semana e os itens restantes em outra atividade. Por exemplo, suponha que você precisa adicionar 7 atividades com duração 1 em 5 dias por semana. Adicione-as em 2 grandes contêiners de atividades. No primeiro, divida em 5 atividades com 1 período cada; no segundo, as duas atividades restantes com duração 1 cada (possivelmente, elevando até 100% o peso das restrições do mínimo de dias entre as atividades em cada um dos contêiners)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="234"/>
         <source>Do you want to add current constraint as it is now (not recommended) or cancel and edit as instructed?</source>
-        <translation type="unfinished">Deseja adicionar essa restrição como está (não recomendado) ou cancelar e editá-la como sugerido?</translation>
+        <translation>Deseja adicionar essa restrição como está (não recomendado) ou cancelar e editá-la como sugerido?</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="236"/>
@@ -39580,7 +39582,7 @@ mesmo dia, forçar consecutivas</translation>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="14"/>
         <source>Modify min gaps between activities</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar mín lacunas entre atividades</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="56"/>
@@ -39656,7 +39658,7 @@ mesmo dia, forçar consecutivas</translation>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="14"/>
         <source>Modify room not available times</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar horários indisponíveis de sala</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="28"/>
@@ -39733,12 +39735,12 @@ mesmo dia, forçar consecutivas</translation>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify students activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar marcador de atividade máx horas contínuas para alunos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="121"/>
         <source>Max hours continuously</source>
-        <translation>Max de horas contínuas</translation>
+        <translation>Máx de horas contínuas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -39778,7 +39780,7 @@ mesmo dia, forçar consecutivas</translation>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify students activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar marcador de atividade máx horas diárias para alunos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="28"/>
@@ -39795,7 +39797,7 @@ mesmo dia, forçar consecutivas</translation>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="121"/>
         <source>Max hours daily</source>
-        <translation>Max de horas diárias</translation>
+        <translation>Máx jornada</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="151"/>
@@ -39847,24 +39849,25 @@ mesmo dia, forçar consecutivas</translation>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="103"/>
         <source>Max beginnings at second hour (per week)</source>
-        <translation type="unfinished">Máx inícios na segunda hora (por semana)</translation>
+        <translation type="unfinished">Máx início na segunda hora (por semana)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="14"/>
         <source>Modify students early max beginnings at second hour</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar máx inícios mais cedo na segunda hora para alunos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="70"/>
         <source>You have to use weight percentage 100%, because otherwise you will get poor timetables. Currently, the algorithm only accepts 100% weight percentage for this constraint (or no constraint).
 Note: students set not available and break are not counted as gaps (early gaps).</source>
-        <translation type="unfinished"></translation>
+        <translation>Você tem que usar peso 100% para não gerar horários ruins. Atualmente, o algoritmo aceita somente peso 100% para esta restrição (ou retire a restrição).
+Nota: turmas não disponíveis e intervalos não são contados como lacunas (intervalos antecipados).</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="32"/>
         <source>This represents the maximum allowed beginnings at the second available hour (in a week). You might want to allow your students to begin in some days later, at the second available hour, so you might put &quot;max beginnings at second hour&quot; greater than 0 (the timetable will be easier for FET). You might want to choose a greater value and lower it as you find new timetables</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Isso representa o máximo permitido de inícios na segunda hora disponível (na semana). Você pode querer permitir que seus alunos iniciem mais tarde em alguns dias, na segunda hora disponível, de modo que você deve colocar &quot;máx inícios na segundo hora&quot; maior que 0 (facilita o trabalho do FET). À medida que resolver o horário, você poderá querer aumentar ou diminuir esse valor</translation>
     </message>
 </context>
 <context>
@@ -39967,7 +39970,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Modify students max building changes per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>Alterar máximo de trocas de prédio por dia para alunos</translation>
+        <translation>Alterar máximo de troca diária de prédio para alunos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="50"/>
@@ -39982,7 +39985,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="68"/>
         <source>Max building changes per day</source>
-        <translation>Máx trocas de prédio por dia</translation>
+        <translation>Máx troca diária de prédio</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="28"/>
@@ -40011,7 +40014,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Modify students max building changes per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>Alterar máx trocas de prédio por semana da turma</translation>
+        <translation>Alterar máx troca semanal de prédio da turma</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="28"/>
@@ -40031,7 +40034,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="67"/>
         <source>Max building changes per week</source>
-        <translation>Máx trocas prédio por semana</translation>
+        <translation>Máx troca semanal de prédio</translation>
     </message>
 </context>
 <context>
@@ -40166,7 +40169,7 @@ IMPORTANTE: se não deseja lacunas, recomenda-se enfaticamente NÃO utilizar est
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="14"/>
         <source>Modify students max gaps per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Altera máx lacunas por semana para alunos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="105"/>
@@ -40230,7 +40233,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas.</tr
         <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify constraint students max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar restrição máx horas contínuas para alunos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -40269,12 +40272,12 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas.</tr
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify students max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar máx jornada para alunos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="56"/>
         <source>Max hours daily</source>
-        <translation>Max de horas diárias</translation>
+        <translation>Máx jornada</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="28"/>
@@ -40303,7 +40306,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas.</tr
         <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Modify students min gaps between building changes</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar mín lacunas entre trocas de prédio para alunos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="28"/>
@@ -40323,8 +40326,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas.</tr
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="67"/>
         <source>Min gaps between building changes</source>
-        <translation type="unfinished">Intervalos min entre
-torcas de prédio</translation>
+        <translation>Mín intervalo mín entre trocas de prédio</translation>
     </message>
 </context>
 <context>
@@ -40386,7 +40388,7 @@ torcas de prédio</translation>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="113"/>
         <source>Explanation: only select this option if your institution allows empty days for students and a timetable is possible with empty days for students. Otherwise, it is IMPERATIVE (for performance reasons) to not select this option (or FET may not be able to find a timetable).</source>
-        <translation type="unfinished"></translation>
+        <translation>Explicação: somente selecione esta opção se a sua instituição permitir dias vagos para os alunos e se for possível um horário com dias vagos para eles. Caso contrário, é IMPERATIVO (por motivos de desempenho) não selecionar essa opção (ou FET pode não ser capaz de encontrar um horário).</translation>
     </message>
 </context>
 <context>
@@ -40474,7 +40476,7 @@ torcas de prédio</translation>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify students set activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar marcador de atividade máx horas contínuas da turma</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="60"/>
@@ -40520,7 +40522,7 @@ torcas de prédio</translation>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify students set activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar marcador de atividade máx jornada da turma</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="28"/>
@@ -40542,7 +40544,7 @@ torcas de prédio</translation>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="153"/>
         <source>Max hours daily</source>
-        <translation>Máx de horas diárias</translation>
+        <translation>Máx jornada</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="183"/>
@@ -40596,7 +40598,7 @@ torcas de prédio</translation>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="14"/>
         <source>Modify students set early max beginnings at second hour</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar máx inícios mais cedo na segunda hora para turma</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="173"/>
@@ -40611,18 +40613,19 @@ torcas de prédio</translation>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="103"/>
         <source>Max beginnings at second hour (per week)</source>
-        <translation>Máx inícios na segunda hora (por semana)</translation>
+        <translation>Máx início na segunda hora (por semana)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="70"/>
         <source>You have to use weight percentage 100%, because otherwise you will get poor timetables. Currently, the algorithm only accepts 100% weight percentage for this constraint (or no constraint).
 Note: students set not available and break are not counted as gaps (early gaps).</source>
-        <translation type="unfinished"></translation>
+        <translation>Você tem que usar peso 100% para não gerar horários ruins. Atualmente, o algoritmo aceita somente peso 100% para esta restrição (ou retire a restrição).
+Nota: turmas não disponíveis e intervalos não são contados como lacunas (intervalos antecipados).</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="32"/>
         <source>This represents the maximum allowed beginnings at the second available hour (in a week). You might want to allow your students to begin in some days later, at the second available hour, so you might put &quot;max beginnings at second hour&quot; greater than 0 (the timetable will be easier for FET). You might want to choose a greater value and lower it as you find new timetables</source>
-        <translation type="unfinished"></translation>
+        <translation>Isso representa o máximo permitido de inícios na segunda hora disponível (na semana). Você pode querer permitir que seus alunos iniciem mais tarde em alguns dias, na segunda hora disponível, de modo que você deve colocar &quot;máx inícios na segundo hora&quot; maior que 0 (facilita o trabalho do FET). À medida que resolver o horário, você poderá querer aumentar ou diminuir esse valor</translation>
     </message>
 </context>
 <context>
@@ -40650,7 +40653,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssethomeroomform_template.ui" line="14"/>
         <source>Modify students set home room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>Alterar sala pré-definida para turma</translation>
+        <translation>Alterar sala principal para turma</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomform_template.ui" line="20"/>
@@ -40718,7 +40721,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="14"/>
         <source>Modify students set home rooms</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>Alterar salas pré-definidas para turma</translation>
+        <translation>Alterar salas principais para turma</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="41"/>
@@ -40796,7 +40799,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Modify students set interval max days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar máx intervalo de dias por semana para turma</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="22"/>
@@ -40859,7 +40862,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Modify students set max building changes per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar máx trocas diárias de prédio para turma</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="28"/>
@@ -41110,7 +41113,7 @@ IMPORTANTE: se não deseja lacunas, recomenda-se enfaticamente NÃO utilizar est
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="14"/>
         <source>Modify students set max gaps per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar máx lacunas por semana para turma</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="124"/>
@@ -41234,7 +41237,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas.</tr
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="118"/>
         <source>Max hours daily</source>
-        <translation>Max de horas diárias</translation>
+        <translation>Máx jornada</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="77"/>
@@ -41269,7 +41272,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas.</tr
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Modify students set min gaps between building changes</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar mín lacunas entre trocas de prédio para turma</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="28"/>
@@ -41294,8 +41297,7 @@ Nota: turmas não disponíveis e intervalos não são contados como lacunas.</tr
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="119"/>
         <source>Min gaps between building changes</source>
-        <translation type="unfinished">Intervalos min entre
-torcas de prédio</translation>
+        <translation>Mín intervalo entre trocas de prédio</translation>
     </message>
 </context>
 <context>
@@ -41337,12 +41339,12 @@ torcas de prédio</translation>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="124"/>
         <source>Empty days for students min hours daily constraints are not enabled. You must enable them from the Settings-&gt;Advanced menu.</source>
-        <translation type="unfinished">Não são permitidos dias vazios para alunos com restrições de mínimo de horas diárias. Você deve ativá-las no menu Configurações -&gt; Avançado.</translation>
+        <translation type="unfinished">Não são permitidos dias vazios para alunos com restrições de mínima jornada (horas diárias). Você deve ativá-las no menu Configurações -&gt; Avançado.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="129"/>
         <source>If you allow empty days, the min hours must be at least 2 (to make it a non-trivial constraint)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ao permitir dias vagos, o mín horas deverá ser pelo menos 2 (para evitar uma restrição trivial)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="137"/>
@@ -41363,7 +41365,7 @@ torcas de prédio</translation>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="167"/>
         <source>Explanation: only select this option if your institution allows empty days for students and a timetable is possible with empty days for students. Otherwise, it is IMPERATIVE (for performance reasons) to not select this option (or FET may not be able to find a timetable).</source>
-        <translation type="unfinished"></translation>
+        <translation>Explicação: somente selecione esta opção se a sua instituição permitir dias vagos para os alunos e se for possível um horário com dias vagos para eles. Caso contrário, é IMPERATIVO (por motivos de desempenho) não selecionar essa opção (ou FET pode não ser capaz de encontrar um horário).</translation>
     </message>
 </context>
 <context>
@@ -41427,7 +41429,7 @@ torcas de prédio</translation>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="266"/>
         <source>A constraint of this type exists for the same students set - cannot proceed</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível continuar, pois há uma restrição desse tipo para essa turma</translation>
     </message>
 </context>
 <context>
@@ -41474,12 +41476,12 @@ torcas de prédio</translation>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="14"/>
         <source>Modify students set not available times</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar horários indisponíveis da turma</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="26"/>
         <source>This constraint does not induce gaps (or early not respected) for students. If a students set has lessons before and after this not available period, there will be no gaps counted</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta restrição não induz lacunas (ou início não respeitado) para alunos. Se uma turma tiver aulas antes e após este período indisponível, não haverá lacunas contadas</translation>
     </message>
 </context>
 <context>
@@ -41724,7 +41726,7 @@ torcas de prédio</translation>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform_template.ui" line="14"/>
         <source>Modify subject activity tag preferred room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar marcador de atividade de sala preferida para disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform_template.ui" line="48"/>
@@ -41789,7 +41791,7 @@ torcas de prédio</translation>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="14"/>
         <source>Modify subject activity tag preferred rooms</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Alterar marcador de atividade de salas preferidas para disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="33"/>
@@ -42069,7 +42071,7 @@ torcas de prédio</translation>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="153"/>
         <source>Max hours daily</source>
-        <translation>Máx de horas diárias</translation>
+        <translation>Máx jornada</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="183"/>
@@ -42107,7 +42109,7 @@ torcas de prédio</translation>
         <location filename="../src/interface/modifyconstraintteacherhomeroomform_template.ui" line="14"/>
         <source>Modify teacher home room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>Alterar sala pré-definida para docente</translation>
+        <translation>Alterar sala principal para docente</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomform_template.ui" line="20"/>
@@ -42175,7 +42177,7 @@ torcas de prédio</translation>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="14"/>
         <source>Modify teacher home rooms</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>Alterar salas pré-definidas para docente</translation>
+        <translation>Alterar salas principais para docente</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="41"/>
@@ -42316,7 +42318,7 @@ torcas de prédio</translation>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Modify teacher max building changes per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>Alterar troca máx de prédio por dia para docente</translation>
+        <translation>Alterar troca máx diária de prédio para docente</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="28"/>
@@ -42341,7 +42343,7 @@ torcas de prédio</translation>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="119"/>
         <source>Max building changes per day</source>
-        <translation>Máx de trocas de prédio por dia</translation>
+        <translation>Máx de troca diária de prédio</translation>
     </message>
 </context>
 <context>
@@ -42394,7 +42396,7 @@ torcas de prédio</translation>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="119"/>
         <source>Max building changes per week</source>
-        <translation>Máx de trocas de prédio por semana</translation>
+        <translation>Máx de troca semanal de prédio</translation>
     </message>
 </context>
 <context>
@@ -42681,7 +42683,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="118"/>
         <source>Max hours daily</source>
-        <translation>Máx de horas diárias</translation>
+        <translation>Máx jornada</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="28"/>
@@ -42804,8 +42806,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="119"/>
         <source>Min gaps between building changes</source>
-        <translation>Mín de intervalo entre 
-trocas de prédio</translation>
+        <translation>Mín intervalo entre trocas de prédio</translation>
     </message>
 </context>
 <context>
@@ -42850,7 +42851,7 @@ trocas de prédio</translation>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="116"/>
         <source>Min hours daily</source>
-        <translation>Mín de horas diárias</translation>
+        <translation>Mín jornada</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="148"/>
@@ -43070,7 +43071,7 @@ trocas de prédio</translation>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="121"/>
         <source>Max hours daily</source>
-        <translation>Máx de horas diárias</translation>
+        <translation>Máx jornada</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="151"/>
@@ -43198,8 +43199,7 @@ trocas de prédio</translation>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperdayform_template.ui" line="68"/>
         <source>Max building changes per day</source>
-        <translation>Máx de trocas diárias 
-de prédio</translation>
+        <translation>Máx troca diária de prédio</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperdayform_template.ui" line="28"/>
@@ -43227,7 +43227,7 @@ de prédio</translation>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Modify teachers max building changes per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>Alterar máx de trocas semanais de prédios para docentes</translation>
+        <translation>Alterar máx de troca semanal de prédios para docentes</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform_template.ui" line="50"/>
@@ -43242,8 +43242,7 @@ de prédio</translation>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform_template.ui" line="68"/>
         <source>Max building changes per week</source>
-        <translation>Máx de trocas semanais 
-de prédio</translation>
+        <translation>Máx troca semanal de prédio</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform_template.ui" line="28"/>
@@ -43487,7 +43486,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="56"/>
         <source>Max hours daily</source>
-        <translation>Máx de horas diárias</translation>
+        <translation>Máx jornada</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="28"/>
@@ -43585,7 +43584,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="67"/>
         <source>Min gaps between building changes</source>
-        <translation>Mín de intervalos entre trocas de prédio</translation>
+        <translation>Mín intervalos entre trocas de prédio</translation>
     </message>
 </context>
 <context>
@@ -43624,7 +43623,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="84"/>
         <source>Min hours daily</source>
-        <translation>Mín de horas diárias</translation>
+        <translation>Mín jornada</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="14"/>
@@ -44225,17 +44224,17 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifystudentsyearform.cpp" line="163"/>
         <source>The following groups and subgroups of other years won&apos;t be renamed, even if they start with the same year name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Os seguintes grupos e subgrupos de outros anos não serão renomeados, mesmo se iniciarem com o mesmo nome do ano:</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform.cpp" line="167"/>
         <source>The following groups and subgroups of this year won&apos;t be renamed, because they don&apos;t start with the year name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Os seguintes grupos e subgrupos de outros anos não serão renomeados, pois não iniciam com o mesmo nome do ano:</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform.cpp" line="171"/>
         <source>The following groups and subgroups of this year won&apos;t be renamed, because their computed new name already exists:</source>
-        <translation type="unfinished"></translation>
+        <translation>Os seguintes grupos e subgrupos de outros anos não serão renomeados, pois computaram novo nome que já existe:</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform.cpp" line="175"/>
@@ -44255,7 +44254,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifystudentsyearform.cpp" line="230"/>
         <source>FET question</source>
-        <translation type="unfinished">Pergunta FET</translation>
+        <translation>Pergunta FET</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform.cpp" line="230"/>
@@ -44460,7 +44459,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="272"/>
         <source>Duration</source>
-        <translation>Duração</translation>
+        <translation>Período(s)</translation>
     </message>
 </context>
 <context>
@@ -44589,121 +44588,121 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>RandomSeedDialog</name>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="341"/>
-        <location filename="../src/interface/fetmainform.cpp" line="342"/>
+        <location filename="../src/interface/fetmainform.cpp" line="343"/>
+        <location filename="../src/interface/fetmainform.cpp" line="344"/>
         <source>Allowed minimum %1 to maximum %2</source>
         <translation>Permitido mínimo %1 até máximo %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="330"/>
+        <location filename="../src/interface/fetmainform.cpp" line="332"/>
         <source>Random seed</source>
         <translation>Semente aleatória</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="332"/>
+        <location filename="../src/interface/fetmainform.cpp" line="334"/>
         <source>Random seed X component:</source>
         <comment>Means the X component of the random seed (random seed has 2 components, X and Y). Please keep translation short</comment>
         <translation>Item X da semente aleatória:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="334"/>
+        <location filename="../src/interface/fetmainform.cpp" line="336"/>
         <source>Random seed Y component:</source>
         <comment>Means the Y component of the random seed (random seed has 2 components, X and Y). Please keep translation short</comment>
         <translation>Item Y da semente aleatória:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="336"/>
+        <location filename="../src/interface/fetmainform.cpp" line="338"/>
         <source>OK</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="338"/>
+        <location filename="../src/interface/fetmainform.cpp" line="340"/>
         <source>Help</source>
         <translation>Ajuda</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="339"/>
+        <location filename="../src/interface/fetmainform.cpp" line="341"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="389"/>
+        <location filename="../src/interface/fetmainform.cpp" line="391"/>
         <source>FET information</source>
         <translation>Informação - FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="390"/>
+        <location filename="../src/interface/fetmainform.cpp" line="392"/>
         <source>You can control the random behaviour of FET with this function</source>
         <translation>Você pode controlar o comportamento aleatório do FET com essa função</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="391"/>
+        <location filename="../src/interface/fetmainform.cpp" line="393"/>
         <source>The random seed is the state of the random number generator.</source>
         <translation>A semente aleatória é o estado do gerador de número aleatório.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="392"/>
+        <location filename="../src/interface/fetmainform.cpp" line="394"/>
         <source>It has two components, X and Y.</source>
         <translation>Possui dois itens, X e Y.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="393"/>
+        <location filename="../src/interface/fetmainform.cpp" line="395"/>
         <source>X is a value at least %1 and at most %2.</source>
         <translation>X é um valor de %1 até %2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="394"/>
+        <location filename="../src/interface/fetmainform.cpp" line="396"/>
         <source>Y is a value at least %1 and at most %2.</source>
         <translation>Y é um valor de %1 até %2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="395"/>
+        <location filename="../src/interface/fetmainform.cpp" line="397"/>
         <source>The random seed before the generation of a timetable (the X and Y components) is saved on disk in the corresponding timetables directory, so that you can simulate again the same generation after that.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="397"/>
+        <location filename="../src/interface/fetmainform.cpp" line="399"/>
         <source>Mode of operation: to obtain the same timetable twice, give the random seed two values (say X=1234, Y=12345), then generate single, then make it again the same values (X=1234 and Y=12345), then generate single again. The timetables will be the same. If you generate multiple instead of single, the first set of timetables will be the same as the second set (if you generate the same number of timetables) but of course timetables inside each set will be different. If you enter the same random seed (X and Y) on different computers (but using the same FET version, see note below) and generate single, the timetables will be the same (if you generate multiple, the sets of timetables will correspond, the first timetable from simulation 1 with first timetable from simulation 2, etc.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="406"/>
+        <location filename="../src/interface/fetmainform.cpp" line="408"/>
         <source>Note: of course you need exactly the same conditions to duplicate the same simulations (so, you need exactly the same data - activities, constraints, etc.).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="408"/>
+        <location filename="../src/interface/fetmainform.cpp" line="410"/>
         <source>Note: for different versions of FET, the behavior of generation may be totally different, even for the same data and the same random seed (same X and same Y), due to possible changes in the algorithm. You need to consider this as a precaution.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="411"/>
+        <location filename="../src/interface/fetmainform.cpp" line="413"/>
         <source>Note: when you start FET, each time, the random seed X is the number of seconds elapsed since 1 January 1970 and the random seed Y is the next number in the Y series, after the number of seconds elapsed since 1 January 1970</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="414"/>
+        <location filename="../src/interface/fetmainform.cpp" line="416"/>
         <source>After you generate (even partially), the random seed (X and Y components) will change (each call of the random number generator updates the random seed components to the next numbers in the sequence, and there are many calls to this random generating routine in the generate function)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="417"/>
+        <location filename="../src/interface/fetmainform.cpp" line="419"/>
         <source>This setting is useful for more things, maybe one thing is bug report: send you file along with the random seed at the start of generating (the two components, X and Y, are saved in the timetable directory at the start of generation)</source>
-        <translation type="unfinished"></translation>
+        <translation>Essa configuração é útil para mais coisas, talvez uma delas seja relatar um bug: Envie seu arquivo com os valores aleatórios (os dois componentes de semente aleatória X e Y, que são armazenados na sua pasta de horários).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="426"/>
+        <location filename="../src/interface/fetmainform.cpp" line="428"/>
         <source>The random seed X component must be at least %1 and at most %2</source>
         <translation>O componente de semente aleatória X deve ser de pelo menos %1 e no máximo %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="432"/>
+        <location filename="../src/interface/fetmainform.cpp" line="434"/>
         <source>The random seed Y component must be at least %1 and at most %2</source>
         <translation>O componente de semente aleatória Y deve ser de pelo menos %1 e no máximo %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="426"/>
-        <location filename="../src/interface/fetmainform.cpp" line="432"/>
+        <location filename="../src/interface/fetmainform.cpp" line="428"/>
+        <location filename="../src/interface/fetmainform.cpp" line="434"/>
         <source>FET warning</source>
         <translation>Alerta - FET</translation>
     </message>
@@ -44718,17 +44717,17 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/removeredundantconfirmationform.cpp" line="43"/>
         <source>This function is intended to be used after you inputted all data or after you used the advanced function of spreading the activities over the week. This function will automatically remove the redundant constraints of type min days between activities, so that your data is more correct and the timetable easier for FET to find</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta função serve para depois de introduzidos todos os dados ou depois que você usou a função avançada de distribuir as atividades ao longo da semana. Esta função irá remover automaticamente as restrições redundantes do tipo mínimo de dias entre as atividades, de modo que seus dados fiquem mais corretos e seja mais fácil para FET elaborar um horário</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantconfirmationform.cpp" line="47"/>
         <source>Removing means making their weight percentage 0.0%. This is done so you can still activate them again, if needed, and also for you to be able to see when they are broken, in the soft conflicts list</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover significa colocar pesos percentuais como 0%. Isto é feito para que você ainda possa ativá-los novamente, se necessário, e também para que você seja capaz de ver quando eles não são atendidos, na lista de conflitos leves</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantconfirmationform.cpp" line="50"/>
         <source>This function might be usable if you have constraints of type activities same starting time and/or constraints activities same starting day</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta função pode ser útil se você tiver restrições de atividades do tipo mesmo horário de início e/ou restrições de atividades com mesmo dia de início</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantconfirmationform.cpp" line="53"/>
@@ -44769,7 +44768,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/removeredundantform.cpp" line="217"/>
         <source>Operations that will be done:</source>
-        <translation type="unfinished">Operações que serão realizadas:</translation>
+        <translation>Operações que serão efetuadas:</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform.cpp" line="220"/>
@@ -44837,7 +44836,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="42"/>
         <source>Explanation: If you use constraints activities same starting time and/or constraints activities same starting days, maybe you will obtain redundant constraints min days between activities, which are not good (your timetable is more difficult to find, or even impossible). This menu enables you to remove these redundant min days between activities constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Explicação: Ao usar restrições de atividades com mesmo horário de início e/ou restrições de atividades com mesmos dias de início, talvez você fique com restrições redundantes mín dias entre as atividades, que não são boas (fica mais difícil de resolver o horário, ou mesmo impossível). Este menu permite que você remova essas restrições redundantes de &quot;mínimo de dias entre atividades&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="58"/>
@@ -45297,12 +45296,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="4529"/>
         <source>File does not have a corresponding beginning tag - it should be %1 or %2. File is incorrect...it cannot be opened</source>
-        <translation type="unfinished"></translation>
+        <translation>O arquivo não possui um marcador (tag) de início correspondente - deveria ser %1 ou %2. Arquivo está incorreto... não poderá ser aberto</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4548"/>
         <source>Opening a file generated with a newer version than your current FET software ... file will be opened but it is recommended to update your FET software to the latest version</source>
-        <translation type="unfinished">Você está abrindo um arquivo gerado com uma versão mais recente do que o seu... O arquivo será aberto, mas é recomendado atualizar seu software FET para a última versão</translation>
+        <translation>Você está abrindo um arquivo gerado com uma versão mais recente do que o seu... O arquivo será aberto, mas é recomendado atualizar seu software FET para a última versão</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4549"/>
@@ -45388,7 +45387,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="4877"/>
         <source>Your file contains subject tags list, which is named in versions&gt;=5.5.0 activity tags list</source>
-        <translation type="unfinished"></translation>
+        <translation>Seu arquivo contém lista de marcadores de disciplina, que é nomeada em lista de marcadores de atividade em versões&gt;=5.5.0</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4902"/>
@@ -45549,7 +45548,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="2812"/>
         <source>Activities with group_Id=%1 contain %2 duplicate teachers - please correct that</source>
-        <translation>Atividade com grupo Id=%1 contém %2 docentes repetidos - Favor corrijir</translation>
+        <translation>Atividade com group_Id=%1 contém %2 docentes repetidos - Favor corrijir</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2817"/>
@@ -45559,7 +45558,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="2822"/>
         <source>Activities with group_Id=%1 contain %2 duplicate activity tags - please correct that</source>
-        <translation>Atividade com grupo Id=%1 contém %2 marcadores de atividade repetidos - Favor corrijir</translation>
+        <translation>Atividade com group_Id=%1 contém %2 marcadores de atividade repetidos - Favor corrijir</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4536"/>
@@ -45633,30 +45632,30 @@ Por favor, note que o peso percentual padrão de restrições mín dias entre as
     <message>
         <location filename="../src/engine/rules.cpp" line="5849"/>
         <source>File contains constraint teacher not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint teacher not available times (a matrix).</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo contém restrição antiga para professor indisponível (que foi melhorada a partir do FET 5.5.0), e será convertida para uma restrição equivalente, restrição de horários indisponíveis do professor (uma matriz que, na janela, aparece como uma &quot;tabela&quot;).</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5896"/>
         <source>File contains constraint students set not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set not available times (a matrix).</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo contém restrição antiga para turma indisponível (que foi melhorada a partir do FET 5.5.0), e será convertida para uma restrição equivalente, restrição de horários indisponíveis do professor (uma matriz que, na janela, aparece como uma &quot;tabela&quot;).</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5968"/>
         <source>File contains deprecated constraint teachers subgroups max hours daily - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo contém restrição obsoleta de máx jornada para subgrupo de professores - será ignorada</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5979"/>
         <source>File contains deprecated constraint students n hours daily - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo contém restrição obsoleta de n horas diárias (jornada) para alunos - será ignorada</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5990"/>
         <source>File contains deprecated constraint students set n hours daily - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo contém restrição obsoleta de n horas diárias (jornada) para turma - será ignorada</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6034"/>
@@ -45667,7 +45666,7 @@ Por favor, note que o peso percentual padrão de restrições mín dias entre as
         <location filename="../src/engine/rules.cpp" line="6084"/>
         <source>File contains deprecated constraint activity ends day - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo contém restrição obsoleta de atividade no fim do dia - será ignorada</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6096"/>
@@ -45708,13 +45707,13 @@ Por favor, note que o peso percentual padrão de restrições mín dias entre as
         <location filename="../src/engine/rules.cpp" line="6261"/>
         <source>File contains deprecated constraint teachers subject tags max hours continuously - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo contém restrição obsoleta de máx horas contínuas para marcadores de disciplina para professores - será ignorada</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6272"/>
         <source>File contains deprecated constraint teachers subject tag max hours continuously - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo contém restrição obsoleta de máx horas contínuas para disciplina para professores - será ignorada</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6294"/>
@@ -45735,73 +45734,73 @@ não foi adicionada - deve estar duplicada</translation>
         <location filename="../src/engine/rules.cpp" line="6343"/>
         <source>File contains deprecated constraint room type not allowed subjects - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo contém restrição obsoleta para tipo de sala não permitida para disciplinas - será ignorada</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6355"/>
         <source>File contains deprecated constraint subject requires equipments - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo contém restrição obsoleta para disciplina requer recursos (equipamentos) - será ignorada</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6368"/>
         <source>File contains deprecated constraint subject tag requires equipments - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo contém restrição obsoleta para marcador de disciplina requer recursos (equipamentos) - será ignorada</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6380"/>
         <source>File contains deprecated constraint teacher requires room - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo contém restrição obsoleta para professor requer sala - será ignorada</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6392"/>
         <source>File contains deprecated constraint teacher subject require room - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo contém restrição obsoleta para disciplina para professor requer sala - será ignorada</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6404"/>
         <source>File contains deprecated constraint minimize number of rooms for students - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo contém restrição obsoleta para minimizar números de salas para alunos - será ignorada</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6416"/>
         <source>File contains deprecated constraint minimize number of rooms for teachers - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo contém restrição obsoleta para minimizar números de salas para professores - será ignorada</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6434"/>
         <source>File contains deprecated constraint activities same room - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo contém restrição obsoleta para atividades na mesma sala - será ignorada</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6483"/>
         <source>File contains deprecated constraint max building changes per day for teachers - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo contém restrição obsoleta de máx trocas de prédios por dia para professores - será ignorada</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6495"/>
         <source>File contains deprecated constraint max building changes per day for students - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo contém restrição obsoleta de máx troca diária de prédio para alunos - será ignorada</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6507"/>
         <source>File contains deprecated constraint max room changes per day for teachers - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo contém restrição obsoleta de máx trocas de sala por dia para professores - será ignorada</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6519"/>
         <source>File contains deprecated constraint max room changes per day for students - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo contém restrição obsoleta de máx trocas de sala por dia para alunos - será ignorada</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6644"/>
@@ -45962,32 +45961,32 @@ não foi adicionada - deve estar duplicada</translation>
     <message>
         <location filename="../src/engine/rules.cpp" line="7675"/>
         <source>Constraint TeacherIntervalMaxDaysPerWeek max days corrupt for teacher %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição máx dias TeacherIntervalMaxDaysPerWeek corrompida para docente %1, máx dias %2 &gt;nDaysPerWeek, restrição adicionada, favor corrigi-la</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="7791"/>
         <source>Constraint TeachersIntervalMaxDaysPerWeek max days corrupt, max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição máx dias TeacherIntervalMaxDaysPerWeek corrompida, máx dias %1 &gt;nDaysPerWeek, restrição adicionada, favor corrigi-la</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="7886"/>
         <source>Constraint StudentsSetMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição máx dias StudentsSetMaxDaysPerWeek corrompida para turma %1, máx dias %2 &gt;nDaysPerWeek, restrição adicionada, favor corrigi-la</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="7926"/>
         <source>Constraint StudentsMaxDaysPerWeek max days corrupt, max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição máx dias StudentsMaxDaysPerWeek corrompida, máx dias %1 &gt;nDaysPerWeek, restrição adicionada, favor corrigi-la</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="8108"/>
         <source>Constraint StudentsIntervalMaxDaysPerWeek max days corrupt: max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição máx dias StudentsIntervalMaxDaysPerWeek corrompida, máx dias %1 &gt;nDaysPerWeek, restrição adicionada, favor corrigi-la</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="7992"/>
         <source>Constraint StudentsSetIntervalMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Restrição máx dias StudentsIntervalMaxDaysPerWeek corrompida para turma %1, máx dias %2 &gt;nDaysPerWeek, restrição adicionada, favor corrigi-la</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="742"/>
@@ -46010,13 +46009,13 @@ não foi adicionada - deve estar duplicada</translation>
         <location filename="../src/engine/rules.cpp" line="9541"/>
         <source>Found constraint teachers min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
-        <translation type="unfinished"></translation>
+        <translation>Encontrada restrição mín horas diárias (jornada) para professores com marcador que permite dias vagos que não são &quot;true&quot;, &quot;false&quot;, &quot;sim&quot;, &quot;não&quot;, &quot;1&quot; ou &quot;0&quot;. O marcador será considerado falso</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="9618"/>
         <source>Found constraint teacher min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
-        <translation type="unfinished"></translation>
+        <translation>Encontrada restrição mín horas diárias (jornada) para professor com marcador que permite dias vagos que não são &quot;true&quot;, &quot;false&quot;, &quot;sim&quot;, &quot;não&quot;, &quot;1&quot; ou &quot;0&quot;. O marcador será considerado falso</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4672"/>
@@ -46115,7 +46114,7 @@ não foi adicionada - deve estar duplicada</translation>
     <message>
         <location filename="../src/interface/savetimetableconfirmationform.cpp" line="58"/>
         <source>Current data file will not be affected by anything, locking constraints will only be added to the file you select to save (you can save current datafile and open saved timetable file after that to check it)</source>
-        <translation type="unfinished">Arquivo de dados atual não será afetado de maneira alguma, as restrições de bloqueio só serão adicionadas ao arquivo que você escolheu salvar agora (você pode salvar o arquivo de dados atual e abrir o arquivo de horário salvo depois para verificá-lo)</translation>
+        <translation>Arquivo de dados atual não será afetado de maneira alguma, as restrições de bloqueio só serão adicionadas ao arquivo que você escolheu salvar agora (você pode salvar o arquivo de dados atual e abrir o arquivo de horário salvo depois para verificá-lo)</translation>
     </message>
 </context>
 <context>
@@ -46171,7 +46170,7 @@ não foi adicionada - deve estar duplicada</translation>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="459"/>
         <source>You selected min days between activities %1 (above 1) and weight %2 (under 100.0). Would you like to add also a second constraint to ensure that almost certainly the distance between activities is at least %3 (%1-1) days? If yes, please select weight (recommended 95.0%-100.0%) and click Yes. If no, please click No (only one constraint will be added)</source>
-        <translation type="unfinished"></translation>
+        <translation>Você selecionou mín %1 dias entre as atividades (acima de 1) e peso %2 (menos de 100). Gostaria de acrescentar também uma segunda restrição para garantir que quase certamente a distância entre as atividades será, no mínimo, %3 (%1-1) dias? Se sim, por favor, selecione o peso (recomendado 95-100%) e clique em Sim. Se não, por favor, clique Não (será adicionada apenas uma restrição)</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="475"/>
@@ -46181,7 +46180,7 @@ não foi adicionada - deve estar duplicada</translation>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="464"/>
         <source>(Yes means to add an additional constraint min %1 days between activities, weight 0.0%-100.0%. If you say Yes, you will have 2 constraints min days added for current activities. Adding the second constraint might lead to impossible timetables if the condition is too tight, but you can remove the second constraint at any time).</source>
-        <translation type="unfinished">(Sim significa adicionar uma restrição adicional mín %1 dias entre as atividades, peso 0,0%-100,0%. Se você disser Sim, você terá 2 restrições mín de dias adicionados para as atividades atuais. Adicionando a segunda restrição pode levar a horários impossíveis, se o condição for muito exigente, mas você pode remover a segunda restrição a qualquer momento).</translation>
+        <translation>(Sim significa adicionar uma restrição adicional mín %1 dias entre as atividades, peso 0,0%-100,0%. Se você disser Sim, você terá 2 restrições mín de dias adicionados para as atividades atuais. Adicionando a segunda restrição pode levar a horários impossíveis, se o condição for muito exigente, mas você pode remover a segunda restrição a qualquer momento).</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="469"/>
@@ -46209,7 +46208,7 @@ não foi adicionada - deve estar duplicada</translation>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform.cpp" line="88"/>
         <source>This level might generate very large timetables, maybe 1 MB per file and 20 MB for all files of a timetable or even more. Are you sure you have enough disk space?</source>
-        <translation type="unfinished"></translation>
+        <translation>Esse nível poderá levar a arquivos muito grandes, talvez com 1 MB cada e 20 MB ou mais no total. Clique em Sim se deseja continuar e tiver certeza de haver espaço suficiente para gravar.</translation>
     </message>
 </context>
 <context>
@@ -46227,7 +46226,7 @@ não foi adicionada - deve estar duplicada</translation>
 (needs JavaScript - just move mouse over a word and wait a little bit)</source>
         <translation>Nível 5 - JavaScript
 - todos os recursos do nível 4 e arquivos cerca de 3,5 vezes maiores que nível 2
-- marca texto para mesmas disicplinas, salas, etc
+- marca texto para mesmas disciplinas, salas, etc
 (requer javascript e o destaque aparece ao mover o ponteiro do mouse sobre a palavra)</translation>
     </message>
     <message>
@@ -46497,17 +46496,17 @@ não foi adicionada - deve estar duplicada</translation>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="739"/>
         <source>About using a large number of categories, divisions per category and subgroups: it is highly recommended to keep these to a minimum, especially the number of categories, by using any kind of tricks. Otherwise the timetable might become impossible (taking too much time to generate).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sobre o uso de um grande número de categorias, divisões por categoria e subgrupos: é altamente recomendável mantê-los a um mínimo, especialmente o número de categorias, usando qualquer tipo de truque. Caso contrário, o horário pode se tornar impossível (levando muito tempo para gerar).</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="750"/>
         <source>Or you might use the FET feature to import students sets from comma separated values (CSV) files.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ou você pode usar o recurso de FET para importar turmas de arquivos de valores separados por vírgulas (CSV).</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="752"/>
         <source>In such cases (individual students as FET subgroups), remember that a smaller number of total subgroups means faster generation time, so you might want to consider a single subgroup for two or more students who have the exact same activities and constraints.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Em tais casos (alunos individuais como subgrupos FET), lembre-se que um número menor que o total de subgrupos significa uma geração mais rápida de horário, de modo que você pode querer considerar um único subgrupo de dois ou mais alunos que tenham exatamente as mesmas atividades e restrições.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="784"/>
@@ -46553,7 +46552,7 @@ não foi adicionada - deve estar duplicada</translation>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="290"/>
         <source>You want to divide the year by %1 categories. The recommended number of categories is 2, 3 or maximum 4 (to ensure the timetable generation speed and feasibility). Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>Você quer dividir o ano em %1 categorias. O número recomendado de categorias é 2, 3 ou (no máximo) 4 para garantir rapidez e viabilidade da resolução do horário. Você tem certeza?</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="390"/>
@@ -46563,12 +46562,12 @@ não foi adicionada - deve estar duplicada</translation>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="417"/>
         <source>Cannot add group %1, because a set with the same name exists. Please choose another name or remove the old set</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível inserir o grupo %1, pois um conjunto com o mesmo nome existe. Por favor, escolha outro nome ou remova o antigo conjunto</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="437"/>
         <source>Cannot add subgroup %1, because a set with the same name exists. Please choose another name or remove the old set</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível inserir o subgrupo %1, pois um conjunto com o mesmo nome existe. Por favor, escolha outro nome ou remova o antigo conjunto</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="513"/>
@@ -46593,17 +46592,17 @@ não foi adicionada - deve estar duplicada</translation>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="641"/>
         <source>There were removed %1 activities, %2 time constraints and %3 space constraints.</source>
-        <translation>Foram removidas %1 atividades, %2 restrições de tempo e %3 espaço.</translation>
+        <translation>Foram removidas %1 atividades, %2 restrições de tempo e %3 de espaço.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="657"/>
         <source>Split of the year complete, please check the groups and subgroups of the year to make sure that everything is OK.</source>
-        <translation>A divisão da turma (ano) concluída. Favor verficar os grupos e subgrupos para ter certeza que tudo está OK.</translation>
+        <translation>A divisão da turma (ano) concluída. Favor verificar grupos e subgrupos para ter certeza que tudo está OK.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="708"/>
         <source>Please note that the dialog here will keep the last configuration of the last divided year, it will not remember the values for a specific year you need to modify.</source>
-        <translation type="unfinished"></translation>
+        <translation>Por favor, note que essa janela manterá a última configuração do último ano dividido, ela não lembrará os valores para um determinado ano, é necessário modificar.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="723"/>
@@ -46618,17 +46617,17 @@ não foi adicionada - deve estar duplicada</translation>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="743"/>
         <source>Maybe a reasonable number of categories could be 2, 3 or maximum 4. The divide year dialog allows much higher values, but these are not at all recommended.</source>
-        <translation type="unfinished"></translation>
+        <translation>Talvez um número razoável de categorias poderia ser 2, 3 ou (no máximo) 4. A janela para dividir ano permite valores bem mais elevados, mas estes não são de todo recomendáveis.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="746"/>
         <source>Maybe an alternative to dividing a year into many categories/subgroups would be to enter individual students as FET subgroups and add into each group the corresponding subgroups. But this is hard to do from the FET interface - maybe a solution would be to use an automatic tool to convert your instition data into a file in .fet format.</source>
-        <translation type="unfinished"></translation>
+        <translation>Talvez uma alternativa para dividir um ano em muitas categorias/subgrupos seria colocar alunos individuais como subgrupos FET e incluir em cada grupo os subgrupos correspondentes. Mas isso é difícil de fazer a partir da interface FET - talvez uma solução seria a utilização de uma ferramenta automática para converter os dados de sua instituição em um arquivo no formato .fet.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="758"/>
         <source>FET - help on dividing a year</source>
-        <translation type="unfinished">Ajuda ao dividir uma ano - FET</translation>
+        <translation>Ajuda ao dividir um ano - FET</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="764"/>
@@ -46641,7 +46640,7 @@ não foi adicionada - deve estar duplicada</translation>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="14"/>
         <source>Split year dialog</source>
-        <translation>Janela dividir ano</translation>
+        <translation>Janela para dividir ano</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="42"/>
@@ -46701,7 +46700,7 @@ não foi adicionada - deve estar duplicada</translation>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="163"/>
         <source>11</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="173"/>
@@ -46726,7 +46725,7 @@ não foi adicionada - deve estar duplicada</translation>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="215"/>
         <source>Remove</source>
-        <translation type="unfinished">Remover</translation>
+        <translation>Remover</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="229"/>
@@ -46757,7 +46756,7 @@ não foi adicionada - deve estar duplicada</translation>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="445"/>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="452"/>
@@ -46772,7 +46771,7 @@ não foi adicionada - deve estar duplicada</translation>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="26"/>
         <source>VERY IMPORTANT: For generation feasibility, keep the number of categories and the number of subgroups to a minimum! It is recommended that no more than 2, 3 or maximum 4 categories to be used. Press Help for details.</source>
-        <translation type="unfinished"></translation>
+        <translation>MUITO IMPORTANTE: Para viabilidade da geração do horário, mantenha o número de categorias e o número de subgrupos no mínimo! Recomenda-se que não mais do que 2, 3 ou (máximo) 4 categorias sejam utilizadas. Pressione Ajuda para detalhes.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="269"/>
@@ -46792,7 +46791,7 @@ não foi adicionada - deve estar duplicada</translation>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="431"/>
         <source>Reset</source>
-        <translation type="unfinished">Reiniciar</translation>
+        <translation>Reiniciar</translation>
     </message>
 </context>
 <context>
@@ -46888,7 +46887,7 @@ não foi adicionada - deve estar duplicada</translation>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="101"/>
         <source>You found a probable bug in FET - min 1 day should be selected automatically for all split activities. Please report error. FET will now abort current operation</source>
-        <translation type="unfinished"></translation>
+        <translation>Você encontrou um provável bug no FET - mín 1 dia deveria ser selecionado automaticamente para todas as atividades divididas. Por favor, relate o erro. FET abortará a operação atual</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="172"/>
@@ -46896,7 +46895,10 @@ não foi adicionada - deve estar duplicada</translation>
 contains invalid activity id %2
 
 Please report error. FET will now abort current operation</source>
-        <translation type="unfinished"></translation>
+        <translation>Você encontrou um provável bug no FET - restrição %1
+contém atividade inválida id %2
+
+Por favor, relate o erro. FET abortará a operação atual</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="241"/>
@@ -46966,7 +46968,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="433"/>
         <source>Weights (percentages) of newly added constraints min days between activities - recommended between 95.0%-100.0% (maybe lower on those split into 3). Make weights 100.0% if the constraints need to be respected all the time. It is recommended to enable the check boxes for activities split into 2 or 3 components (not to be in consecutive days), if your data is still possible to solve. You may use a progressive approach. Example of weights: 90.0%, 95.0%, 99.0%, 99.75%, 100.0%.</source>
-        <translation type="unfinished">Pesos percentuais de restrições recentemente adicionadas para mín dias entre as atividades - recomenda-se entre 95,0% -100,0% (talvez menos para aquelas divididas em 3 itens). Adicione pesos 100,0% se as retrições necessitam ser respeitadas o tempo todo. Recomenda-se permitir que as caixas de seleção para as atividades divididas em 2 ou 3 itens (a não ser em dias consecutivos), se os dados ainda possam ser resolvidos. Você pode usar uma abordagem progressiva. Exemplo de pesos: 90,0%, 95,0%, 99,0%, 99,75%, 100,0%</translation>
+        <translation type="unfinished">Pesos percentuais de restrições recentemente adicionadas para mín dias entre as atividades - recomenda-se entre 95,0% -100,0% (talvez menos para aquelas divididas em 3 itens). Adicione pesos 100,0% se as retrições necessitam ser respeitadas o tempo todo. Recomenda-se permitir que as caixas de seleção para as atividades divididas em 2 ou 3 itens (a não ser em dias consecutivos), se os dados ainda possam ser resolvidos. Você pode usar uma abordagem progressiva. Exemplo de pesos: 90,0%, 95,0%, 99,0%, 99,75%, 100,0%.</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="438"/>
@@ -47036,7 +47038,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="140"/>
         <source>Select this so the activities will not be in 2 consecutive days. There will be added 1 additional constraint to accomplish this</source>
-        <translation type="unfinished">Selecione isso para que as atividades não fiquem em 2 dias consecutivos. Para atingir esse objetivo, será adicionada 1 restrição.</translation>
+        <translation type="unfinished">Selecione isso para que as atividades não fiquem em 2 dias consecutivos. Para atingir esse objetivo, será adicionada 1 restrição</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="181"/>
@@ -47061,17 +47063,17 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="257"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="273"/>
         <source>3</source>
-        <translation type="unfinished">3</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="286"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="299"/>
@@ -47196,7 +47198,7 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/statisticsexport.cpp" line="1750"/>
         <location filename="../src/engine/statisticsexport.cpp" line="2024"/>
         <source>Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
+        <translation>Houve um erro ao gravar %1 (código do erro %2), que comprometeu o salvamento. Favor conferir se há espaço livre em disco (ou a outra mídia que está sendo usada).</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="532"/>
@@ -47554,37 +47556,37 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/statisticsprintform.cpp" line="205"/>
         <source>B2</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished">B2</translation>
+        <translation>B2</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="206"/>
         <source>B3</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished">B3</translation>
+        <translation>B3</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="207"/>
         <source>B4</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished">B4</translation>
+        <translation>B4</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="208"/>
         <source>B5</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished">B5</translation>
+        <translation>B5</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="209"/>
         <source>B6</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="210"/>
         <source>B7</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="211"/>
@@ -47614,19 +47616,19 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/statisticsprintform.cpp" line="215"/>
         <source>Comm10E</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="216"/>
         <source>DLE</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="217"/>
         <source>Executive</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="218"/>
@@ -47638,13 +47640,13 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/statisticsprintform.cpp" line="219"/>
         <source>Ledger</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="220"/>
         <source>Legal</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="221"/>
@@ -47788,7 +47790,7 @@ Base: %4</translation>
         <location filename="../src/engine/studentsset.cpp" line="185"/>
         <source>NoS:%1</source>
         <comment>Number of students</comment>
-        <translation>NºA:%1</translation>
+        <translation>NºAl:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="193"/>
@@ -47831,7 +47833,7 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="374"/>
         <source>Duration</source>
-        <translation>Duração</translation>
+        <translation>Período(s)</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="472"/>
@@ -47856,7 +47858,7 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="462"/>
         <source>The check boxes &apos;%1&apos;, &apos;%2&apos; and &apos;%3&apos;: they permit you to show/hide information related to years, groups or subgroups</source>
-        <translation type="unfinished">As caixas de marcação &quot;%1&quot;, &quot;%2&quot; e &quot;%3&quot;, permitem que você exibir/ocultar informações relacionadas a anos (turmas), grupos ou subgrupos</translation>
+        <translation>As caixas de marcação &quot;%1&quot;, &quot;%2&quot; e &quot;%3&quot;, permitem você exibir/ocultar informações relacionadas a anos (turmas), grupos ou subgrupos</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="121"/>
@@ -47866,12 +47868,12 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="125"/>
         <source>FET warning</source>
-        <translation type="unfinished">Alerta FET</translation>
+        <translation>Alerta FET</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="469"/>
         <source>The check box &apos;%1&apos;: it has effect only if you have overlapping groups/years, and means that FET will show the complete tree structure, even if that means that some subgroups/groups will appear twice or more in the table, with the same information. For instance, if you have year Y1, groups G1 and G2, subgroups S1, S2, S3, with structure: Y1 (G1 (S1, S2), G2 (S1, S3)), S1 will appear twice in the table with the same information attached</source>
-        <translation type="unfinished"></translation>
+        <translation>A caixa de marcação &quot;%1&quot;: tem efeito apenas se você tiver grupos/anos sobrepostos, e quer dizer que FET mostrará a estrutura de árvore completa, mesmo quando alguns subgrupos/grupos aparecerem duas ou mais vezes na tabela, com a mesma informação. Por exemplo, se você tiver ano T1, grupos G1 e G2, subgrupos S1, S2, S3, com a estrutura:  T1 (G1 (S1, S2), G2 (S1, S3)), S1 aparecerá duas vezes na tabela acompanhado pelas mesmas informações</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="463"/>
@@ -47884,12 +47886,12 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="49"/>
         <source>Show subgroups</source>
-        <translation type="unfinished">Mostrar subgrupos</translation>
+        <translation>Mostrar subgrupos</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="39"/>
         <source>Show groups</source>
-        <translation type="unfinished">Mostrar grupos</translation>
+        <translation>Mostrar grupos</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="14"/>
@@ -47900,7 +47902,7 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="29"/>
         <source>Show years</source>
-        <translation type="unfinished">Mostrar anos (turmas)</translation>
+        <translation>Mostrar anos (turmas)</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="117"/>
@@ -47910,7 +47912,7 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="23"/>
         <source>Options</source>
-        <translation type="unfinished">Opções</translation>
+        <translation>Opções</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="66"/>
@@ -47935,7 +47937,7 @@ Base: %4</translation>
         <location filename="../src/engine/studentsset.cpp" line="262"/>
         <source>NoS:%1</source>
         <comment>Number of students</comment>
-        <translation>NºA:%1</translation>
+        <translation>NºAl:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="270"/>
@@ -48009,13 +48011,13 @@ Base: %4</translation>
         <location filename="../src/interface/subactivitiesform.cpp" line="318"/>
         <source>No: %1 / %2</source>
         <comment>No means number, %1 is the number of active activities, %2 is the number of total activities.Please leave space between fields, so that they are better visible</comment>
-        <translation>Nº: %1 / %2</translation>
+        <translation>Ativ: %1 / %2</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="320"/>
         <source>Dur: %1 / %2</source>
         <comment>Dur means duration, %1 is the duration of active activities, %2 is the duration of total activities.Please leave space between fields, so that they are better visible</comment>
-        <translation>Dur: %1 / %2</translation>
+        <translation>Aulas: %1 / %2</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="333"/>
@@ -48037,17 +48039,17 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="396"/>
         <source>Above the (sub)activities list, we have 2 labels, containing 4 numbers. The first label contains text: No: a / b. The first number a is the number of active (sub)activities (we number each individual subactivity as 1), while the second number b is the number of total (sub)activities. The second label contains text: Dur: c / d. The third number c is the duration of active (sub)activities, in periods (or FET hours), while the fourth number d is the duration of total (sub)activities, in periods (or FET hours). So, No means number and Dur means duration.</source>
-        <translation type="unfinished">Acima da lista de (sub)atividades nós temos 2 róotulos contendo 4 núumeros. O primeiro rótulo contém o texto: Nº: a / b. O primeiro número a é o número de (sub)atividades ativas (numeraremos cada subatividade individual como 1), enquando o segundo número b é o número total de (sub)atividades. O segundo rótulo contém o texto: Dur: c / d. O terceiro número c é a duração das (sub)atividades ativas, em períodos (ou horas FET), enquanto o quarto número é a duração total das (sub)atividades, em períodos (ou horas FET). Então, Núm significa número e Dur significa duração.</translation>
+        <translation>Acima da lista de (sub)atividades nós temos 2 róotulos contendo 4 núumeros. O primeiro rótulo contém o texto: Nº: a / b. O primeiro número a é o número de (sub)atividades ativas (numeraremos cada subatividade individual como 1), enquando o segundo número b é o número total de (sub)atividades. O segundo rótulo contém o texto: Aulas: c / d. O terceiro número c é a duração das (sub)atividades ativas, em períodos (ou horas FET), enquanto o quarto número é a duração total das (sub)atividades, em períodos (ou horas FET). Então, Núm significa número e Per significa número de períodos (duração da aula).</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="402"/>
         <source>Example: No: 100 / 102, Dur: 114 / 117. They represent: 100 - the number of active (sub)activities, then 102 - the number of total (sub)activities, 114 - the duration of active activities (in periods or FET hours) and 117 - the duration of total activities (in periods or FET hours). In this example we have 2 inactive activities with their combined duration being 3 periods.</source>
-        <translation type="unfinished">Por exemplo: Nº: 100 / 102, Dur: 114 / 117. Representa: 100 - número de atividades ativas, então 102 - número total de (sub)atividades, 114 - duração das atividades ativas (em períodos de horas FET) e 117 - duração do total de atividades (em períodos de horas FET). Neste exemplo temos 2 atividades inativas que combinadas duram 3 períodos.</translation>
+        <translation type="unfinished">Por exemplo: Ativ: 100 / 102, Aulas: 114 / 117. Representa: 100 - número de atividades ativas, então 102 - número total de (sub)atividades, 114 - duração (período) das atividades ativas (em períodos de horas FET) e 117 - duração do total de atividades (em períodos de horas FET). Neste exemplo temos 2 atividades inativas que combinadas duram 3 períodos.</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="408"/>
         <source>Explanation of the short description of an activity: first comes the id. If the activity is inactive, an X follows. Then the duration. Then, if the activity is split, a slash and the total duration. Then teachers, subject, activity tag (if it is not void) and students. Then the number of students (if specified).</source>
-        <translation type="unfinished">Explicação da descrição de uma atividade: primeiro vem a id. Se a atividade está inativa, aparece um X. Depois, sua duração. Se a atividade estiver dividida, uma barra e a duração total. Em seguida, professores, matéria, atividade (se não estiver vaga) e estudantes. Por fim, o número de estudantes (quando indicada).</translation>
+        <translation>Explicação da descrição de uma atividade: primeiro vem a id. Se a atividade está inativa, aparece um X. Depois, sua duração. Se a atividade estiver dividida, uma barra e a duração total. Em seguida, professores, matéria, atividade (se não estiver vaga) e estudantes. Por fim, o número de estudantes (quando indicada).</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="415"/>
@@ -48122,7 +48124,7 @@ Base: %4</translation>
         <location filename="../src/interface/subactivitiesform_template.ui" line="91"/>
         <source>Students</source>
         <comment>It refers to students sets, but I want to keep the string short</comment>
-        <translation>Alunos</translation>
+        <translation>Turma</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="110"/>
@@ -48379,7 +48381,7 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="95"/>
         <source>Please enter subject&apos;s name</source>
-        <translation>Por favor, informe o nome da disciplina</translation>
+        <translation>Favor informar o nome da disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="95"/>
@@ -48395,7 +48397,7 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="102"/>
         <source>Could not insert item. Must be a duplicate</source>
-        <translation>Não é possível inserir o item. Deve estar repetido</translation>
+        <translation>Não foi possível inserir o item. Deve estar repetido</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="112"/>
@@ -48433,7 +48435,7 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="134"/>
         <source>Are you sure you want to delete this subject and all related activities and constraints?</source>
-        <translation>Você tem certeza que deseja apagar esta disciplina e todas as atividades e restrições relacionadas ?</translation>
+        <translation>Você tem certeza que deseja apagar esta disciplina e todas as atividades e restrições relacionadas?</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="135"/>
@@ -48463,12 +48465,12 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="284"/>
         <source>Activated a number of %1 activities</source>
-        <translation>Ativado um número de %1 atividades</translation>
+        <translation>%1 atividades ativadas</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="297"/>
         <source>De-activated a number of %1 activities</source>
-        <translation>Desativado um número de %1 atividades</translation>
+        <translation>%1 atividades desativadas</translation>
     </message>
 </context>
 <context>
@@ -48497,7 +48499,7 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="67"/>
         <source>Deactivate all activities for selected subject</source>
-        <translation>Desativar todas atividades para a disciplina selecionada</translation>
+        <translation>Desativar todas atividades da disciplina selecionada</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="90"/>
@@ -48512,7 +48514,7 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="60"/>
         <source>Activate all activities for selected subject</source>
-        <translation>Ativar todas atividades para a disciplina selecionada</translation>
+        <translation>Ativar todas atividades da disciplina selecionada</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="76"/>
@@ -48542,7 +48544,7 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/subjectsstatisticsform.cpp" line="55"/>
         <source>Duration</source>
-        <translation>Duração</translation>
+        <translation>Período(s)</translation>
     </message>
 </context>
 <context>
@@ -48676,12 +48678,12 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/teachersform.cpp" line="280"/>
         <source>Activated a number of %1 activities</source>
-        <translation>Ativado um número de %1 atividades</translation>
+        <translation>%1 atividades ativadas</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform.cpp" line="292"/>
         <source>De-activated a number of %1 activities</source>
-        <translation>Desativado um número de %1 atividades</translation>
+        <translation>%1 atividades desativadas</translation>
     </message>
 </context>
 <context>
@@ -48755,7 +48757,7 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/teachersstatisticsform.cpp" line="55"/>
         <source>Duration</source>
-        <translation>Duração</translation>
+        <translation>Período(s)</translation>
     </message>
 </context>
 <context>
@@ -48845,7 +48847,7 @@ Base: %4</translation>
         <location filename="../src/engine/timetableexport.cpp" line="4412"/>
         <location filename="../src/engine/timetableexport.cpp" line="4448"/>
         <source>Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
-        <translation type="unfinished">Não foi possível abrir arquivo %1 para escrita (ou substituí-lo). Favor verficiar se há espaço em disco ou se o arquivo está protegido. O novo arquivo não foi salvo.</translation>
+        <translation>Não foi possível abrir arquivo %1 para escrita (ou substituí-lo). Favor verficiar se há espaço em disco ou se o arquivo está protegido. O novo arquivo não foi salvo.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1649"/>
@@ -48922,7 +48924,7 @@ Base: %4</translation>
         <location filename="../src/engine/timetableexport.cpp" line="4427"/>
         <location filename="../src/engine/timetableexport.cpp" line="4463"/>
         <source>Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
+        <translation>Houve um erro ao gravar %1 (código do erro %2), que comprometeu o salvamento. Favor conferir se há espaço livre em disco (ou a outra mídia que está sendo usada).</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="4782"/>
@@ -48938,7 +48940,7 @@ Base: %4</translation>
         <location filename="../src/engine/timetableexport.cpp" line="2230"/>
         <source>To do a page-break only after every second timetable, delete &quot;page-break-before: always;&quot; in &quot;table.even_table&quot;.</source>
         <comment>Please keep fields in quotes as they are, untranslated.</comment>
-        <translation type="unfinished">Para que as páginas sejam separadas a cada duas tabelas, delete &quot;page-break-before: always;&quot; em &quot;table.even_table&quot;. </translation>
+        <translation>Para que as páginas sejam separadas a cada duas tabelas, delete &quot;page-break-before: always;&quot; em &quot;table.even_table&quot;. </translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2232"/>
@@ -49039,7 +49041,7 @@ Base: %4</translation>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2408"/>
         <source>Style the teachers free periods</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Completar as horas livres dos professores</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="822"/>
@@ -49051,7 +49053,7 @@ Base: %4</translation>
         <location filename="../src/engine/timetableexport.cpp" line="826"/>
         <location filename="../src/engine/timetableexport.cpp" line="834"/>
         <source>This file was automatically generated by FET %1.</source>
-        <translation type="unfinished">Esse arquivo foi gerado automaticamente por FET %1.</translation>
+        <translation>Esse arquivo foi gerado automaticamente por FET %1.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="830"/>
@@ -49063,7 +49065,7 @@ Base: %4</translation>
         <location filename="../src/engine/timetableexport.cpp" line="832"/>
         <source>Random seed at the end of generation is: X=%1, Y=%2</source>
         <comment>The random seed has two components, X and Y</comment>
-        <translation>Semente randômica no fim da geração é:  X=%1, Y=%2</translation>
+        <translation>Semente randômica no fim da geração é: X=%1, Y=%2</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1641"/>
@@ -49319,7 +49321,7 @@ Base: %4</translation>
         <location filename="../src/engine/timetableexport.cpp" line="4310"/>
         <location filename="../src/engine/timetableexport.cpp" line="4368"/>
         <source>Teacher has a border gap</source>
-        <translation type="unfinished"></translation>
+        <translation>Docente tem uma lacuna limite</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="4311"/>
@@ -49373,13 +49375,13 @@ Base: %4</translation>
         <location filename="../src/engine/timetableexport.cpp" line="8358"/>
         <location filename="../src/engine/timetableexport.cpp" line="8469"/>
         <source>Border gap</source>
-        <translation type="unfinished"></translation>
+        <translation>Lacuna limite</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8359"/>
         <location filename="../src/engine/timetableexport.cpp" line="8470"/>
         <source>Big gap</source>
-        <translation>Grande lacuna</translation>
+        <translation>Lacuna grande</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8360"/>
@@ -49799,7 +49801,7 @@ Base: %4</translation>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1970"/>
         <source>Subgroups</source>
-        <translation>SubGrupos</translation>
+        <translation>Subgrupos</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1973"/>
@@ -50125,7 +50127,7 @@ Base: %4</translation>
         <location filename="../src/interface/timetablegenerateform.cpp" line="242"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="522"/>
         <source>The partial results were saved in the directory %1</source>
-        <translation>Esse trabalho não finalizado foi salvo na pasta %1</translation>
+        <translation>Os resultados parciais foram salvos na pasta %1</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="247"/>
@@ -50193,12 +50195,12 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="908"/>
         <source>FET - information about difficult activities</source>
-        <translation>FET - informação sobre as atividades difíceis</translation>
+        <translation>FET - informação sobre dificuldade das atividades</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="940"/>
         <source>FET - information about initial order of evaluation of activities</source>
-        <translation>FET - informação sobre a ordem inicial de avaliação das atividades</translation>
+        <translation>FET - informação sobre ordem inicial de avaliação das atividades</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="750"/>
@@ -50220,7 +50222,7 @@ Base: %4</translation>
         <location filename="../src/interface/timetablegenerateform.cpp" line="271"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="422"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
-        <translation type="unfinished">Atividade difícil não pode ser calculada. Por favor, relate possível bug</translation>
+        <translation>Atividade difícil não pôde ser calculada. Por favor, relate possível bug</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="257"/>
@@ -50231,7 +50233,7 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="506"/>
         <source>Simulation impossible! Maybe you can consider lowering the constraints.</source>
-        <translation>Impossível simular! Talvez queira considerar diminuir as restrições (regras).</translation>
+        <translation>Impossível simular! Seria bom diminuir as restrições (regras).</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="732"/>
@@ -50297,12 +50299,12 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/timetablegenerateform_template.ui" line="78"/>
         <source>View initial order of placing the activities</source>
-        <translation>Visualizar a ordem inicial de alocação das atividades</translation>
+        <translation>Visualizar ordem inicial de alocação das atividades</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform_template.ui" line="88"/>
         <source>View difficult activities</source>
-        <translation>Visualizar as atividades complexas</translation>
+        <translation>Visualizar ordem de complexidade</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform_template.ui" line="118"/>
@@ -50521,7 +50523,7 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="1289"/>
         <source>Print timetable</source>
-        <translation>Imprimir grade de horários</translation>
+        <translation>Imprimir horários</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="167"/>
@@ -50531,7 +50533,7 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="160"/>
         <source>Print timetable dialog</source>
-        <translation>Janela de impressão da grade de horários</translation>
+        <translation>Janela de impressão de horários</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="168"/>
@@ -50610,12 +50612,12 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="175"/>
         <source>Students Statistics</source>
-        <translation>Estatística discente</translation>
+        <translation>Estatística Discente</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="176"/>
         <source>Teachers Statistics</source>
-        <translation>Estatística docente</translation>
+        <translation>Estatística Docente</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="186"/>
@@ -50815,7 +50817,7 @@ Base: %4</translation>
         <location filename="../src/interface/timetableprintform.cpp" line="283"/>
         <source>Executive</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Executivo</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="284"/>
@@ -50827,7 +50829,7 @@ Base: %4</translation>
         <location filename="../src/interface/timetableprintform.cpp" line="285"/>
         <source>Ledger</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="286"/>
@@ -51064,14 +51066,14 @@ Base: %4</translation>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="880"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="778"/>
         <source>No locking constraints added or removed.</source>
-        <translation>Nenhum bloqueio foi adicionado ou removido.</translation>
+        <translation>Nenhum bloqueio foi inserido ou removido.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="809"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="913"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="811"/>
         <source>Lock/unlock: you can select one or more activities in the table and toggle lock/unlock in time, space or both.</source>
-        <translation>Bloquear/Desbloquear: você pode escolher uma ou mais atividades na tabela e bloquear (ou desbloquear) seu horário, espaço ou ambos.</translation>
+        <translation>Bloquear/Desbloquear: você pode escolher uma ou mais atividades na tabela e bloquear (ou desbloquear) tempo, espaço ou ambos.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="811"/>
@@ -51217,7 +51219,7 @@ Base: %4</translation>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="510"/>
         <source>Break with weight 100% in this slot</source>
-        <translation>Interromper com peso 100 % nessa vaga</translation>
+        <translation>Interromper com peso 100% nessa janela</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="506"/>
@@ -51286,13 +51288,13 @@ Por favor, pare a simulação antes.</translation>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="693"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="705"/>
         <source>Please report possible bug</source>
-        <translation type="unfinished">Por favor, relate possível bug</translation>
+        <translation>Por favor, relate possível bug</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="642"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="715"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
-        <translation type="unfinished">Você poderá estar com um problema, pois FET esperava deletar 1 restrição, mas deletará %1 restrições</translation>
+        <translation>Você pode ter um problema, pois FET esperava deletar 1 restrição, mas deletará %1 restrições</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="691"/>
@@ -51491,7 +51493,7 @@ Por favor, pare a simulação antes.</translation>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="795"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="807"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
-        <translation>Um problema possível pode ser a sincronização. Se for isso, feche a janela de horário e reabra</translation>
+        <translation>Um possível problema é a sincronização. Se for isso, feche a janela de horário e reabra</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="720"/>
@@ -51863,6 +51865,99 @@ Por favor, pare a simulação antes.</translation>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="112"/>
         <source>Teacher&apos;s name</source>
         <translation>Nome do Professor</translation>
+    </message>
+</context>
+<context>
+    <name>TimetablesToWriteOnDiskForm_template</name>
+    <message>
+        <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="14"/>
+        <source>Select the categories of timetables to be written on disk</source>
+        <translation type="unfinished">Escolha o que salvar no computador</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="31"/>
+        <source>Soft conflicts</source>
+        <translation>Conflitos leves</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="53"/>
+        <source>Subgroups</source>
+        <translation>Subgrupos</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="63"/>
+        <source>Groups</source>
+        <translation>Grupos</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="73"/>
+        <source>Years</source>
+        <translation>Turmas</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="83"/>
+        <source>Teachers</source>
+        <translation type="unfinished">Professores</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="93"/>
+        <source>Teachers free periods</source>
+        <translation>Tempos livres dos professores</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="103"/>
+        <source>Rooms</source>
+        <translation type="unfinished">Salas</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="113"/>
+        <source>Subjects</source>
+        <translation type="unfinished">Disciplinas</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="123"/>
+        <source>Activities</source>
+        <translation>Atividades</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="145"/>
+        <source>Statistics</source>
+        <translation>Estatísticas</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="155"/>
+        <source>XML</source>
+        <translation>XML</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="165"/>
+        <source>Days horizontal</source>
+        <translation>Dias na horizontal</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="175"/>
+        <source>Days vertical</source>
+        <translation>Dias na vertical</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="185"/>
+        <source>Time horizontal</source>
+        <translation>Tempo na horizontal</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="195"/>
+        <source>Time vertical</source>
+        <translation>Tempo na vertical</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="238"/>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="245"/>
+        <source>OK</source>
+        <translation type="unfinished">OK</translation>
     </message>
 </context>
 <context>
