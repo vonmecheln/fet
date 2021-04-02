@@ -38,6 +38,8 @@ private:
 	static bool checkSetSeparator(const QString& str, const QString setSeparator);
 	static QString protectCSV(const QString& str);
 
+	static bool isActivityNotManualyEdited(const int activityIndex, bool& diffTeachers, bool& diffSubject, bool& diffActivityTags, bool& diffStudents, bool& diffCompNStud, bool& diffNStud);
+
 	static bool selectSeparatorAndTextquote(QString& textquote, QString& fieldSeparator, bool& head);
 
 	static bool exportCSVActivities(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head);

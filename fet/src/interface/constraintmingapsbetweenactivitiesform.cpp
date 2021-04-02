@@ -126,7 +126,8 @@ bool ConstraintMinGapsBetweenActivitiesForm::filterOk(TimeConstraint* ctr)
 				foundSubject=true;
 		
 			//activity tag
-			if(sbtn!="" && sbtn!=act->activityTagName)
+//			if(sbtn!="" && sbtn!=act->activityTagName)
+			if(sbtn!="" && !act->activityTagsNames.contains(sbtn))
 				;
 			else
 				//found=false;

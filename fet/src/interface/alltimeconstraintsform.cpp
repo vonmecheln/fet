@@ -56,6 +56,9 @@
 #include "modifyconstraintteachersminhoursdailyform.h"
 #include "modifyconstraintteacherminhoursdailyform.h"
 
+#include "modifyconstraintteachersactivitytagmaxhourscontinuouslyform.h"
+#include "modifyconstraintteacheractivitytagmaxhourscontinuouslyform.h"
+
 #include "modifyconstraintstudentssetnotavailabletimesform.h"
 #include "modifyconstraintstudentssetmaxgapsperweekform.h"
 #include "modifyconstraintstudentsmaxgapsperweekform.h"
@@ -67,6 +70,9 @@
 #include "modifyconstraintstudentsmaxhourscontinuouslyform.h"
 #include "modifyconstraintstudentssetminhoursdailyform.h"
 #include "modifyconstraintstudentsminhoursdailyform.h"
+
+#include "modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform.h"
+#include "modifyconstraintstudentsactivitytagmaxhourscontinuouslyform.h"
 
 #include "modifyconstraintteacherintervalmaxdaysperweekform.h"
 #include "modifyconstraintteachersintervalmaxdaysperweekform.h"
@@ -450,6 +456,30 @@ void AllTimeConstraintsForm::modifyConstraint()
 	else if(ctr->type==CONSTRAINT_2_ACTIVITIES_GROUPED){
 		ModifyConstraint2ActivitiesGroupedForm* form=
 		 new ModifyConstraint2ActivitiesGroupedForm((Constraint2ActivitiesGrouped*)ctr);
+		form->exec();
+	}
+	//48
+	else if(ctr->type==CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+		ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm* form=
+		 new ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm((ConstraintTeachersActivityTagMaxHoursContinuously*)ctr);
+		form->exec();
+	}
+	//49
+	else if(ctr->type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+		ModifyConstraintTeacherActivityTagMaxHoursContinuouslyForm* form=
+		 new ModifyConstraintTeacherActivityTagMaxHoursContinuouslyForm((ConstraintTeacherActivityTagMaxHoursContinuously*)ctr);
+		form->exec();
+	}
+	//50
+	else if(ctr->type==CONSTRAINT_STUDENTS_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+		ModifyConstraintStudentsActivityTagMaxHoursContinuouslyForm* form=
+		 new ModifyConstraintStudentsActivityTagMaxHoursContinuouslyForm((ConstraintStudentsActivityTagMaxHoursContinuously*)ctr);
+		form->exec();
+	}
+	//51
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+		ModifyConstraintStudentsSetActivityTagMaxHoursContinuouslyForm* form=
+		 new ModifyConstraintStudentsSetActivityTagMaxHoursContinuouslyForm((ConstraintStudentsSetActivityTagMaxHoursContinuously*)ctr);
 		form->exec();
 	}
 	else{

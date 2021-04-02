@@ -31,6 +31,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 #include <QString>
 #include <QList>
+#include <QSet>
 #include <QStringList>
 
 class Rules;
@@ -74,7 +75,8 @@ public:
 	/**
 	The name of the activity tag.
 	*/
-	QString activityTagName;
+	//QString activityTagName;
+	QStringList activityTagsNames;
 
 	/**
 	The names of the sets of students involved in this activity (years, groups or subgroups).
@@ -159,7 +161,8 @@ public:
 	/**
 	The index of the activity tag.
 	*/
-	int activityTagIndex;
+	QSet<int> iActivityTagsSet;
+	//int activityTagIndex;
 
 	/**
 	The number of subgroups implied in this activity.
@@ -193,7 +196,7 @@ public:
 		int _activityGroupId,
 		const QStringList& _teachersNames,
 		const QString& _subjectName,
-		const QString& _activityTagName,
+		const QStringList& _activityTagsNames,
 		const QStringList& _studentsNames,
 		int _duration,
 		int _totalDuration,

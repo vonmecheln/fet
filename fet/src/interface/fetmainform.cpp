@@ -44,6 +44,7 @@ using namespace std;
 #include "subgroupsform.h"
 #include "studentsstatisticsform.h"
 #include "activitiesform.h"
+#include "subactivitiesform.h"
 #include "roomsform.h"
 #include "buildingsform.h"
 #include "alltimeconstraintsform.h"
@@ -87,6 +88,10 @@ using namespace std;
 #include "constraintteachersmaxhoursdailyform.h"
 #include "constraintteachermaxhourscontinuouslyform.h"
 #include "constraintteachersmaxhourscontinuouslyform.h"
+
+#include "constraintteacheractivitytagmaxhourscontinuouslyform.h"
+#include "constraintteachersactivitytagmaxhourscontinuouslyform.h"
+
 #include "constraintteacherminhoursdailyform.h"
 #include "constraintteachersminhoursdailyform.h"
 #include "constraintactivitypreferredstartingtimeform.h"
@@ -102,6 +107,10 @@ using namespace std;
 #include "constraintstudentsmaxhoursdailyform.h"
 #include "constraintstudentssetmaxhourscontinuouslyform.h"
 #include "constraintstudentsmaxhourscontinuouslyform.h"
+
+#include "constraintstudentssetactivitytagmaxhourscontinuouslyform.h"
+#include "constraintstudentsactivitytagmaxhourscontinuouslyform.h"
+
 #include "constraintstudentssetminhoursdailyform.h"
 #include "constraintstudentsminhoursdailyform.h"
 #include "constraintactivitiesnotoverlappingform.h"
@@ -157,6 +166,8 @@ using namespace std;
 
 #include <QStatusBar>
 
+#include <QMap>
+
 #include "httpget.h"
 
 #include "spreadminndaysconstraints5daysform.h"
@@ -191,7 +202,7 @@ const QString COMPANY="fet";
 const QString PROGRAM="fettimetabling";
 
 //English has to be counted also
-const int NUMBER_OF_LANGUAGES=17;
+/*const int NUMBER_OF_LANGUAGES=17;
 
 const int LANGUAGE_EN_GB_POSITION=0;
 const int LANGUAGE_AR_POSITION=1;
@@ -210,7 +221,7 @@ const int LANGUAGE_NL_POSITION=13;
 const int LANGUAGE_PL_POSITION=14;
 const int LANGUAGE_RO_POSITION=15;
 const int LANGUAGE_TR_POSITION=16;
-
+*/
 
 const int STATUS_BAR_MILLISECONDS=2500;
 
@@ -252,7 +263,7 @@ FetMainForm::FetMainForm()
 		resize(rect.size());
 	}
 
-	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
+/*	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
 		languageMenu->setItemChecked(languageMenu->idAt(i), false);
 	
 	if(FET_LANGUAGE=="en_GB")
@@ -288,7 +299,7 @@ FetMainForm::FetMainForm()
 	else if(FET_LANGUAGE=="it")
 		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_IT_POSITION), true);
 	else if(FET_LANGUAGE=="lt")
-		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_LT_POSITION), true);
+		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_LT_POSITION), true);*/
 
 	//new data
 	if(gt.rules.initialized)
@@ -304,7 +315,7 @@ FetMainForm::FetMainForm()
 	teachers_schedule_ready=false;
 	rooms_schedule_ready=false;
 	
-	languageMenu->setCheckable(true);
+	//languageMenu->setCheckable(true);
 	
 	checkForUpdatesAction->setCheckable(true);
 	checkForUpdatesAction->setChecked(checkForUpdates);
@@ -1151,6 +1162,18 @@ void FetMainForm::on_dataActivitiesAction_activated()
 	form->exec();
 }
 
+void FetMainForm::on_dataSubactivitiesAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	SubactivitiesForm* form=new SubactivitiesForm();
+	form->exec();
+}
+
 void FetMainForm::on_dataRoomsAction_activated()
 {
 	if(simulation_running){
@@ -1787,6 +1810,30 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxHoursContinuouslyAction_activa
 	form->exec();
 }
 
+void FetMainForm::on_dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersActivityTagMaxHoursContinuouslyForm* form=new ConstraintTeachersActivityTagMaxHoursContinuouslyForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherActivityTagMaxHoursContinuouslyForm* form=new ConstraintTeacherActivityTagMaxHoursContinuouslyForm();
+	form->exec();
+}
+
 void FetMainForm::on_dataTimeConstraintsTeachersMinHoursDailyAction_activated()
 {
 	if(simulation_running){
@@ -1964,6 +2011,30 @@ void FetMainForm::on_dataTimeConstraintsStudentsMaxHoursContinuouslyAction_activ
 	}
 
 	ConstraintStudentsMaxHoursContinuouslyForm* form=new ConstraintStudentsMaxHoursContinuouslyForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm* form=new ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsActivityTagMaxHoursContinuouslyForm* form=new ConstraintStudentsActivityTagMaxHoursContinuouslyForm();
 	form->exec();
 }
 
@@ -2369,7 +2440,131 @@ void FetMainForm::on_timetableUnlockActivitiesEndStudentsDayAction_activated()
 	LockUnlock::unlockEndStudentsDay();
 }
 
+void FetMainForm::on_languageAction_activated()
+{
+	QDialog dialog(this);
+	dialog.setWindowTitle(tr("Please select FET language"));
+	
+	QVBoxLayout* taMainLayout=new QVBoxLayout(&dialog);
 
+	QPushButton* tapb1=new QPushButton(tr("Cancel"));
+	QPushButton* tapb2=new QPushButton(tr("OK"));
+				
+	QHBoxLayout* buttons=new QHBoxLayout();
+	buttons->addStretch();
+	buttons->addWidget(tapb1);
+	buttons->addWidget(tapb2);
+	
+	QComboBox* languagesComboBox=new QComboBox();
+	
+	/*const int N_LANGUAGES=17;
+	
+	QString shortLang[N_LANGUAGES]={"en_GB", "ar", "ca", "de", "el", 
+		"es", "fr", "hu", "id", "it", 
+		"lt", "mk", "ms", "nl", "pl", 
+		"ro", "tr"};
+	QString longLang[N_LANGUAGES]={tr("British English"), tr("Arabic"), tr("Catalan"), tr("German"), tr("Greek"),
+		tr("Spanish"), tr("French"), tr("Hungarian"), tr("Indonesian"), tr("Italian"),
+		tr("Lithuanian"), tr("Macedonian"), tr("Malay"), tr("Dutch"), tr("Polish"),
+		tr("Romanian"), tr("Turkish")};*/
+		
+	QMap<QString, QString> languagesMap;
+	languagesMap.insert("en_GB", tr("British English"));
+	languagesMap.insert("ar", tr("Arabic"));
+	languagesMap.insert("ca", tr("Catalan"));
+	languagesMap.insert("de", tr("German"));
+	languagesMap.insert("el", tr("Greek"));
+	languagesMap.insert("es", tr("Spanish"));
+	languagesMap.insert("fr", tr("French"));
+	languagesMap.insert("hu", tr("Hungarian"));
+	languagesMap.insert("id", tr("Indonesian"));
+	languagesMap.insert("it", tr("Italian"));
+	languagesMap.insert("lt", tr("Lithuanian"));
+	languagesMap.insert("mk", tr("Macedonian"));
+	languagesMap.insert("ms", tr("Malay"));
+	languagesMap.insert("nl", tr("Dutch"));
+	languagesMap.insert("pl", tr("Polish"));
+	languagesMap.insert("ro", tr("Romanian"));
+	languagesMap.insert("tr", tr("Turkish"));
+	
+	//assert(languagesMap.count()==N_LANGUAGES);
+	
+	QMapIterator<QString, QString> it(languagesMap);
+	int i=0;
+	int j=-1;
+	int eng=-1;
+	while(it.hasNext()){
+		it.next();
+		languagesComboBox->insertItem( it.key() + " (" + it.value() + ")" );
+		if(it.key()==FET_LANGUAGE)
+			j=i;
+		if(it.key()=="en_GB")
+			eng=i;
+		i++;
+	}
+	assert(eng>=0);
+	if(j==-1){
+		QMessageBox::warning(this, tr("FET warning"), tr("Invalid current language - making it en_GB (British English)"));
+		FET_LANGUAGE="en_GB";
+		j=eng;
+	}
+	languagesComboBox->setCurrentItem(j);
+	
+	QLabel* label=new QLabel(tr("Please select FET language"));
+	
+	QHBoxLayout* languagesLayout=new QHBoxLayout();
+	languagesLayout->addWidget(languagesComboBox);
+	//languagesLayout->addStretch();
+	
+	taMainLayout->addStretch();
+	taMainLayout->addWidget(label);
+	//taMainLayout->addWidget(languagesComboBox);
+	taMainLayout->addLayout(languagesLayout);
+	taMainLayout->addStretch();
+	taMainLayout->addLayout(buttons);
+
+	QObject::connect(tapb2, SIGNAL(clicked()), &dialog, SLOT(accept()));
+	QObject::connect(tapb1, SIGNAL(clicked()), &dialog, SLOT(reject()));
+	
+	tapb2->setDefault(true);
+	tapb2->setFocus();
+
+	int w=dialog.sizeHint().width();
+	if(w<250)
+		w=250;
+	int h=dialog.sizeHint().height();
+	if(h<150)
+		h=150;
+	dialog.setGeometry(0,0,w,h);
+	centerWidgetOnScreen(&dialog);
+					
+	bool ok=dialog.exec();
+	if(!ok)
+		return;
+		
+	//QString newLang=languagesComboBox->currentText();
+	int k=languagesComboBox->currentItem();
+	i=0;
+	bool found=false;
+	QMapIterator<QString, QString> it2(languagesMap);
+	while(it2.hasNext()){
+		it2.next();
+		if(i==k){
+			FET_LANGUAGE=it2.key();
+			found=true;
+		}
+		i++;
+	}
+	if(!found){
+		QMessageBox::warning(this, tr("FET warning"), tr("Invalid language selected - making it en_GB (British English)"));
+		FET_LANGUAGE="en_GB";
+	}
+
+	QMessageBox::information(this, tr("FET information"), tr("Language %1 selected").arg( FET_LANGUAGE+" ("+languagesMap.value(FET_LANGUAGE)+")" )+"\n\n"+
+	 tr("Please exit and restart FET to activate language change"));
+}
+
+/*
 void FetMainForm::on_languageEnglishAction_activated()
 {
 	QMessageBox::information(this, tr("FET information"), 
@@ -2572,7 +2767,7 @@ void FetMainForm::on_languageLithuanianAction_activated()
 	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
 		languageMenu->setItemChecked(languageMenu->idAt(i), false);
 	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_LT_POSITION), true);
-}
+}*/
 
 void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 {
@@ -2610,9 +2805,9 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);
 
-	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
+	/*for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
 		languageMenu->setItemChecked(languageMenu->idAt(i), false);
-	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_EN_GB_POSITION), true);
+	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_EN_GB_POSITION), true);*/
 	FET_LANGUAGE="en_GB";
 	
 	checkForUpdatesAction->setChecked(false);

@@ -673,6 +673,7 @@ void Solution::getRoomsTimetable(
 	}
 }
 
+/*
 void Solution::getSubgroupsBuildingsTimetable(Rules& r, qint8 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY])
 {
 	assert(r.initialized);
@@ -738,3 +739,4 @@ void Solution::getTeachersBuildingsTimetable(Rules& r, qint8 a[MAX_TEACHERS][MAX
 			}
 		}
 }
+*/

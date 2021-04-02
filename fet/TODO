@@ -1,18 +1,96 @@
-From Hatim Alahmadi:
+From Horatiu Halmajan:
 
-Proposed to add a constraint to prevent the succession of hard subjects or subjects science as much as possible. 
- Such as: 
- 1 - Mathematics - 2 - playing - 3 - Physics - 4 - History  5 - chemistry. 
-but not like: 
- 1 - Mathematics(hard) 2 - 3 Physics(hard) - Chemistry(hard) 4 - History  5 - Biology.
+Students max gaps per day
 
-Answer from George Miliotis:
+Students set max days per week
 
-Maybe add a tag ("hard") to those activites and create a new rule type
-"activities of this tag should not be consecutive"? Maybe this will be a
-way to implement it?
+Max gaps constraints with weight under 100% (this is very difficult)
 
-Or a rule "Max number of consecutive activities for a tag"?
+---------------------------------------------------------------
+
+From George Miliotis:
+
+I want to propose a feature: notes attached to each rule. If I can
+attach a small text snippet to rules I can put in there when and who
+asked for the rule. This makes "fixing" locked timetables easier cause i
+know what rules to remove. Also, I can make notes to myself when i use
+'tricks'. EG. set lab1+lab2 for an activity: 'all teacher's courses are
+labs but students won't fit in lab 3 so i had to exclude it here'
+
+---------------------------------------------------------------
+
+From Horatiu Halmajan:
+
+Horatiu:
+> > I met a situation: a teacher asks for maximum 2 working days, but these
+> > days should not be consecutive.
+> >
+> > Is there a way to implement it in .fet?
+> >
+> > The only (manual) way I could think of, is to set the teacher as
+> > unavailable on Tuesdays and Thursdays, thus leaving him available on
+> > Monday, Wednesday and Friday (any two of these are unconsecutive).
+> >
+> > Any other ideas...?
+>
+
+Liviu:
+> I have another idea: add a dummy activity for this teacher, split into 2
+> per
+> week, min n days = 2, with 100%. You just need to take care that this
+> teacher
+> has place for these dummy activities (enough slots in the day) and to
+> consider
+> these dummy activities as possible gaps, so if teacher has max gaps 2 then
+> make max gaps for him 0.
+>
+
+Horatiu:
+For my case, the second idea worked perfectly, as my teacher does not accept
+gaps.
+
+I have also "played" with the first with the first idea, as it seems to be
+the most un-restrictive one. It also worked. I tried it three times, and in
+all three situations at least one of the dummy activities was the first or
+the last activity for the teacher's day. So, there is a chance that the
+teacher would end up with only one gap.
+
+Which leads me to a suggestion: An activity end (or starts) a teacher's day.
+Similar to "an activity ends students's day)
+
+---------------------------------------------------------------
+
+From daviodan:
+
+in Romanian (see below for English translation):
+
+Voi face referire la sample_Brazil_more_difficult_max_2_gaps_for_teachers.fet
+
+1. In fereastra FET activities exista mai multe filtre dupa numele prof,clasa,etc.
+Daca de exemplu alegem la Subject "Matematica" si facem filtrarea si dupa numele 
+profesorului atunci lista filtrului ar trebui sa contina doar numele :Bruna,Silvania,Wellington 
+deoarece doar acestia predau matematica .In momentul de fata filtrul contine lista tuturor profesorilor.
+Analog pentru celelalte filtre.
+
+2. In fereastra All time constraints s-ar putea aduga sus un filtru dupa tipul de constrangere ?
+
+3. In fereastra Teachers statistics cand se da click pe numele unui profesor sa apara in dreapta 
+intr-o casuta toate constrangerile pentru acel profesor introduse pana in acel moment.
+
+in English:
+
+I will refer to sample_Brazil_more_difficult_max_2_gaps_for_teachers.fet
+
+1. In the FET activities dialog there exist more filters after the teacher, group, etc.
+If we choose for instance the subject "Math" and we do the filtering also after the name of 
+the teacher, then the list of the filter should contain only the name: Bruna,Silvania,Wellington,
+because only these teache Maths. In the present moment the filter contains the list of all teachers.
+The same for all the other filters.
+
+2. In the window of all time constraints, could we add a filter after the type of constraint?
+
+3. In the teachers' statistics dialog, when we click a teacher, there should appear in the right
+in a box all the constraints for this teacher inputted by that moment.
 
 ---------------------------------------------------------------
 

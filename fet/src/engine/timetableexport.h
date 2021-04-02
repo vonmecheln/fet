@@ -252,6 +252,15 @@ public:
 	Days vertical version
 	*/
 	static void writeTeachersFreePeriodsTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+	
+private:
+	static QString writeHead(const bool java, const int placedActivities, const bool printInstitution);
+	static QString writeSubjectAndActivityTags(const Activity* act, const QString startTag, const QString startTagAttribute, const bool activityTagsOnly);
+	static QString writeStudents(const Activity* act, const QString startTag, const QString startTagAttribute);
+	static QString writeTeachers(const Activity* act, const QString startTag, const QString startTagAttribute);
+	static QString writeRoom(const int ai, const QString startTag, const QString startTagAttribute);
+	static QString writeNotAvailable(const QString weight);
+	static QString writeEmpty();
 };
 
 #endif

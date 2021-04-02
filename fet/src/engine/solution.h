@@ -205,8 +205,8 @@ public:
 	void getRoomsTimetable(Rules& r, qint16 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
 	//return value is the number of conflicts, must be 0
 	
-	void getTeachersBuildingsTimetable(Rules& r, qint8 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
-	void getSubgroupsBuildingsTimetable(Rules& r, qint8 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	//void getTeachersBuildingsTimetable(Rules& r, qint8 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	//void getSubgroupsBuildingsTimetable(Rules& r, qint8 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
 };
 
 #endif

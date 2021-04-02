@@ -1936,8 +1936,11 @@ void Import::importCSVActivities(){
 			int duration=fieldList[FIELD_TOTAL_DURATION][i].toInt(&ok2, 10);
 			assert(ok2);
 			bool active=true;
-
-			Activity a(gt.rules, activityid, 0, teachers_names, subject_name, activity_tag_name, students_names, duration, duration, active, true, -1);
+			//workaround only. Please rethink. (start)
+			QStringList activity_tag_names;
+			activity_tag_names<<activity_tag_name;
+			//workaround only. Please rethink. (end)
+			Activity a(gt.rules, activityid, 0, teachers_names, subject_name, activity_tag_names, students_names, duration, duration, active, true, -1);
 	
 			bool already_existing=false;
 			for(int i=0; i<gt.rules.activitiesList.size(); i++){
@@ -1948,7 +1951,7 @@ void Import::importCSVActivities(){
 			if(already_existing){
 				lastWarning+=Import::tr("Activity %1 already exists. A duplicate activity is imported. Please check the dataset!").arg(activityid)+"\n";
 			}
-			bool tmp=gt.rules.addSimpleActivity(activityid, 0, teachers_names, subject_name, activity_tag_name,
+			bool tmp=gt.rules.addSimpleActivity(activityid, 0, teachers_names, subject_name, activity_tag_names,
 				students_names,	duration, duration, active, true, -1);
 			activityid++;
 			if(tmp){
@@ -1981,8 +1984,12 @@ void Import::importCSVActivities(){
 			else if(fieldList[FIELD_MIN_N_DAYS_CONSECUTIVE][i]=="no")
 				force=false;
 			else assert(0==1);
+			//workaround only. Please rethink. (start)
+			QStringList activity_tag_names;
+			activity_tag_names<<activity_tag_name;
+			//workaround only. Please rethink. (end)
 			bool tmp=gt.rules.addSplitActivity(activityid, activityid,
-				teachers_names, subject_name, activity_tag_name, students_names,
+				teachers_names, subject_name, activity_tag_names, students_names,
 				nsplit, totalduration, durations,
 				active, minD, weight, force, true, -1);
 			activityid+=nsplit;

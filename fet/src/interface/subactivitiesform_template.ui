@@ -1,0 +1,255 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>SubactivitiesForm_template</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>SubactivitiesForm_template</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>804</width>
+            <height>539</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>FET - the individual subactivities</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget" row="0" column="0">
+            <property name="name">
+                <cstring>layout6</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout5</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout2</cstring>
+                            </property>
+                            <vbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>activitiesTextLabel</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Subactivities (dbl. click edits)</string>
+                                    </property>
+                                </widget>
+                                <widget class="QListBox">
+                                    <item>
+                                        <property name="text">
+                                            <string>New Item</string>
+                                        </property>
+                                    </item>
+                                    <property name="name">
+                                        <cstring>subactivitiesListBox</cstring>
+                                    </property>
+                                </widget>
+                            </vbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout4</cstring>
+                            </property>
+                            <vbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLayoutWidget">
+                                    <property name="name">
+                                        <cstring>layout1</cstring>
+                                    </property>
+                                    <vbox>
+                                        <property name="name">
+                                            <cstring>unnamed</cstring>
+                                        </property>
+                                        <widget class="QLabel">
+                                            <property name="name">
+                                                <cstring>activityDescriptionTextLabel</cstring>
+                                            </property>
+                                            <property name="text">
+                                                <string>Current subactivity's description</string>
+                                            </property>
+                                        </widget>
+                                        <widget class="QTextEdit">
+                                            <property name="name">
+                                                <cstring>currentSubactivityTextEdit</cstring>
+                                            </property>
+                                            <property name="readOnly">
+                                                <bool>true</bool>
+                                            </property>
+                                        </widget>
+                                    </vbox>
+                                </widget>
+                                <widget class="QGroupBox">
+                                    <property name="name">
+                                        <cstring>filterGroupBox</cstring>
+                                    </property>
+                                    <property name="title">
+                                        <string>Filter</string>
+                                    </property>
+                                    <vbox>
+                                        <property name="name">
+                                            <cstring>unnamed</cstring>
+                                        </property>
+                                        <widget class="QLabel">
+                                            <property name="name">
+                                                <cstring>teachersTextLabel</cstring>
+                                            </property>
+                                            <property name="text">
+                                                <string>Teacher</string>
+                                            </property>
+                                        </widget>
+                                        <widget class="QComboBox">
+                                            <property name="name">
+                                                <cstring>teachersComboBox</cstring>
+                                            </property>
+                                        </widget>
+                                        <widget class="QLabel">
+                                            <property name="name">
+                                                <cstring>studentsTextLabel</cstring>
+                                            </property>
+                                            <property name="text">
+                                                <string>Students set</string>
+                                            </property>
+                                        </widget>
+                                        <widget class="QComboBox">
+                                            <property name="name">
+                                                <cstring>studentsComboBox</cstring>
+                                            </property>
+                                        </widget>
+                                        <widget class="QLabel">
+                                            <property name="name">
+                                                <cstring>subjectsTextLabel</cstring>
+                                            </property>
+                                            <property name="text">
+                                                <string>Subject</string>
+                                            </property>
+                                        </widget>
+                                        <widget class="QComboBox">
+                                            <property name="name">
+                                                <cstring>subjectsComboBox</cstring>
+                                            </property>
+                                        </widget>
+                                        <widget class="QLabel">
+                                            <property name="name">
+                                                <cstring>ActivityTagsTextLabel</cstring>
+                                            </property>
+                                            <property name="text">
+                                                <string>Activity tag</string>
+                                            </property>
+                                        </widget>
+                                        <widget class="QComboBox">
+                                            <property name="name">
+                                                <cstring>activityTagsComboBox</cstring>
+                                            </property>
+                                        </widget>
+                                    </vbox>
+                                </widget>
+                            </vbox>
+                        </widget>
+                    </hbox>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout3</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>modifySubactivityPushButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Modify</string>
+                            </property>
+                        </widget>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>closePushButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Close</string>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </vbox>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>subactivitiesListBox</sender>
+        <signal>highlighted(int)</signal>
+        <receiver>SubactivitiesForm_template</receiver>
+        <slot>subactivityChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>closePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>SubactivitiesForm_template</receiver>
+        <slot>close()</slot>
+    </connection>
+    <connection>
+        <sender>teachersComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>SubactivitiesForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>studentsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>SubactivitiesForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>subjectsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>SubactivitiesForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>modifySubactivityPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>SubactivitiesForm_template</receiver>
+        <slot>modifySubactivity()</slot>
+    </connection>
+    <connection>
+        <sender>activityTagsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>SubactivitiesForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>subactivitiesListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>SubactivitiesForm_template</receiver>
+        <slot>modifySubactivity()</slot>
+    </connection>
+</connections>
+<slots>
+    <slot>subactivityChanged( int )</slot>
+    <slot>filterChanged()</slot>
+    <slot>modifySubactivity()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

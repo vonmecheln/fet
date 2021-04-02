@@ -75,6 +75,7 @@ public slots:
 	void on_dataStudentsStatisticsAction_activated();
 	void on_dataHelpOnStatisticsAction_activated();
 	void on_dataActivitiesAction_activated();
+	void on_dataSubactivitiesAction_activated();
 	void on_dataRoomsAction_activated();
 	void on_dataBuildingsAction_activated();
 	void on_dataAllTimeConstraintsAction_activated();
@@ -140,6 +141,10 @@ public slots:
 	void on_dataTimeConstraintsTeacherMaxHoursDailyAction_activated();
 	void on_dataTimeConstraintsTeachersMaxHoursContinuouslyAction_activated();
 	void on_dataTimeConstraintsTeacherMaxHoursContinuouslyAction_activated();
+
+	void on_dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction_activated();
+	void on_dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction_activated();
+
 	void on_dataTimeConstraintsTeachersMinHoursDailyAction_activated();
 	void on_dataTimeConstraintsTeacherMinHoursDailyAction_activated();
 	void on_dataTimeConstraintsTeachersMaxGapsPerWeekAction_activated();
@@ -161,6 +166,10 @@ public slots:
 	void on_dataTimeConstraintsStudentsSetMaxHoursDailyAction_activated();
 	void on_dataTimeConstraintsStudentsMaxHoursContinuouslyAction_activated();
 	void on_dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction_activated();
+
+	void on_dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction_activated();
+	void on_dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction_activated();
+
 	void on_dataTimeConstraintsStudentsMinHoursDailyAction_activated();
 	void on_dataTimeConstraintsStudentsSetMinHoursDailyAction_activated();
 
@@ -191,7 +200,7 @@ public slots:
 
 	void on_timetableSaveTimetableAsAction_activated();
 	
-	void on_languageEnglishAction_activated();
+/*	void on_languageEnglishAction_activated();
 	void on_languageFrenchAction_activated();
 	void on_languageCatalanAction_activated();
 	void on_languageRomanianAction_activated();
@@ -207,7 +216,8 @@ public slots:
 	void on_languageArabicAction_activated();
 	void on_languageIndonesianAction_activated();
 	void on_languageItalianAction_activated();
-	void on_languageLithuanianAction_activated();
+	void on_languageLithuanianAction_activated();*/
+	void on_languageAction_activated();
 	
 	void on_checkForUpdatesAction_toggled();
 

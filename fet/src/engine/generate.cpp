@@ -2885,6 +2885,9 @@ again_if_impossible_activity:
 		bool okteachersmaxhourscontinuously;
 		bool okteachersminhoursdaily;
 		bool okmingapsbetweenactivities;
+
+		bool okteachersactivitytagmaxhourscontinuously;
+		bool okstudentsactivitytagmaxhourscontinuously;
 		
 		if(c.times[ai]!=UNALLOCATED_TIME)
 			goto skip_here_if_already_allocated_in_time;
@@ -4696,6 +4699,212 @@ impossiblestudentsmaxhourscontinuously:
 				
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+		//allowed from students activity tag max hours continuously
+		
+		okstudentsactivitytagmaxhourscontinuously=true;
+		
+		if(haveStudentsActivityTagMaxHoursContinuously){
+	
+			foreach(int sbg, act->iSubgroupsList){
+				for(int cnt=0; cnt<subgroupsActivityTagMaxHoursContinuouslyMaxHours[sbg].count(); cnt++){
+					int activityTag=subgroupsActivityTagMaxHoursContinuouslyActivityTag[sbg].at(cnt);
+				
+					//if(gt.rules.internalActivitiesList[ai].activityTagIndex!=activityTag)
+					//	continue;
+					if(!gt.rules.internalActivitiesList[ai].iActivityTagsSet.contains(activityTag))
+						continue;
+
+					int limitHoursCont=subgroupsActivityTagMaxHoursContinuouslyMaxHours[sbg].at(cnt);
+					double percentage=subgroupsActivityTagMaxHoursContinuouslyPercentage[sbg].at(cnt);
+
+					assert(limitHoursCont>=0);
+					assert(percentage>=0);
+					assert(activityTag>=0 /*&& activityTag<gt.rules.nInternalActivityTags*/);
+
+					bool increased;
+					int h2;
+					for(h2=h; h2<h+act->duration; h2++){
+						assert(h2<gt.rules.nHoursPerDay);
+						if(subgroupsTimetable[sbg][d][h2]==-1)
+							break;
+						int ai2=subgroupsTimetable[sbg][d][h2];
+						assert(ai2>=0);
+						//if(gt.rules.internalActivitiesList[ai2].activityTagIndex!=activityTag)
+						//	break;
+						if(!gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(activityTag))
+							break;
+					}
+					if(h2<h+act->duration)
+						increased=true;
+					else
+						increased=false;
+					
+					QList<int> removableActs;
+						
+					int nc=act->duration;
+					for(h2=h-1; h2>=0; h2--){
+						int ai2=subgroupsTimetable[sbg][d][h2];
+						assert(ai2==newSubgroupsTimetable[sbg][d][h2]);
+						assert(ai2!=ai);
+						if(ai2<0)
+							break;
+						if(ai2>=0 && !conflActivities[newtime].contains(ai2) && 
+						 //gt.rules.internalActivitiesList[ai2].activityTagIndex==activityTag){
+						 gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(activityTag)){
+							nc++;
+							
+							if(!removableActs.contains(ai2) && !fixedTimeActivity[ai2] && !swappedActivities[ai2])
+								removableActs.append(ai2);
+						}
+						else
+							break;
+					}				
+					for(h2=h+act->duration; h2<gt.rules.nHoursPerDay; h2++){
+						int ai2=subgroupsTimetable[sbg][d][h2];
+						assert(ai2==newSubgroupsTimetable[sbg][d][h2]);
+						assert(ai2!=ai);
+						if(ai2<0)
+							break;
+						if(ai2>=0 && !conflActivities[newtime].contains(ai2) && 
+						 //gt.rules.internalActivitiesList[ai2].activityTagIndex==activityTag){
+						 gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(activityTag)){
+							nc++;
+							
+							if(!removableActs.contains(ai2) && !fixedTimeActivity[ai2] && !swappedActivities[ai2])
+								removableActs.append(ai2);
+						}
+						else
+							break;
+					}
+										
+					if(!increased && percentage==100.0)
+						assert(nc<=limitHoursCont);
+					
+					if(!increased || nc<=limitHoursCont) //OK
+						continue;
+						
+					assert(limitHoursCont>=0);
+	
+					if(!skipRandom(percentage) && increased){
+						if(act->duration>limitHoursCont){
+							okstudentsactivitytagmaxhourscontinuously=false;
+							goto impossiblestudentsactivitytagmaxhourscontinuously;
+						}
+					
+						if(level>=LEVEL_STOP_CONFLICTS_CALCULATION){
+							okstudentsactivitytagmaxhourscontinuously=false;
+							goto impossiblestudentsactivitytagmaxhourscontinuously;
+						}
+					
+						while(true){
+							if(removableActs.count()==0){
+								okstudentsactivitytagmaxhourscontinuously=false;
+								goto impossiblestudentsactivitytagmaxhourscontinuously;
+							}
+							
+							int j=-1;
+						
+							if(level==0){
+								int optMinWrong=INF;
+				
+								QList<int> tl;
+	
+								for(int q=0; q<removableActs.count(); q++){
+									int ai2=removableActs.at(q);
+									if(optMinWrong>triedRemovals[ai2][c.times[ai2]]){
+									 	optMinWrong=triedRemovals[ai2][c.times[ai2]];
+									}
+								}
+				
+								for(int q=0; q<removableActs.count(); q++){
+									int ai2=removableActs.at(q);
+									if(optMinWrong==triedRemovals[ai2][c.times[ai2]])
+										tl.append(q);
+								}
+				
+								assert(tl.size()>=1);
+								j=tl.at(randomKnuth()%tl.size());
+				
+								assert(j>=0 && j<removableActs.count());
+							}
+							else{
+								j=randomKnuth()%removableActs.count();
+							}
+						
+							assert(j>=0);
+							
+							int ai2=removableActs.at(j);
+							
+							int t=removableActs.removeAll(ai2);
+							assert(t==1);
+						
+							assert(!conflActivities[newtime].contains(ai2));
+							conflActivities[newtime].append(ai2);
+							nConflActivities[newtime]++;
+							assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+							
+							////////////
+							removableActs.clear();
+							
+							int nc=act->duration;
+							int h2;
+							for(h2=h-1; h2>=0; h2--){
+								int ai2=subgroupsTimetable[sbg][d][h2];
+								assert(ai2==newSubgroupsTimetable[sbg][d][h2]);
+								assert(ai2!=ai);
+								if(ai2<0)
+									break;
+								if(ai2>=0 && !conflActivities[newtime].contains(ai2) && 
+								 //gt.rules.internalActivitiesList[ai2].activityTagIndex==activityTag){
+								 gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(activityTag)){
+									nc++;
+								
+									if(!removableActs.contains(ai2) && !fixedTimeActivity[ai2] && !swappedActivities[ai2])
+										removableActs.append(ai2);
+								}
+								else
+									break;
+							}				
+							for(h2=h+act->duration; h2<gt.rules.nHoursPerDay; h2++){
+								int ai2=subgroupsTimetable[sbg][d][h2];
+								assert(ai2==newSubgroupsTimetable[sbg][d][h2]);
+								assert(ai2!=ai);
+								if(ai2<0)
+									break;
+								if(ai2>=0 && !conflActivities[newtime].contains(ai2) &&
+								 //gt.rules.internalActivitiesList[ai2].activityTagIndex==activityTag){
+								 gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(activityTag)){
+									nc++;
+							
+									if(!removableActs.contains(ai2) && !fixedTimeActivity[ai2] && !swappedActivities[ai2])
+										removableActs.append(ai2);
+								}
+								else		
+									break;
+							}
+											
+							if(nc<=limitHoursCont) //OK
+								break;
+							////////////
+						}
+					}
+				}
+			}
+			
+		}
+		
+impossiblestudentsactivitytagmaxhourscontinuously:
+		if(!okstudentsactivitytagmaxhourscontinuously){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+				
+/////////////////////////////////////////////////////////////////////////////////////////////
+
 		/////////begin students min hours daily
 		
 		okstudentsminhoursdaily=true;
@@ -5917,6 +6126,210 @@ impossibleteachersmaxhoursdaily:
 		
 impossibleteachersmaxhourscontinuously:
 		if(!okteachersmaxhourscontinuously){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+				
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//allowed from teachers activity tag max hours continuously
+		okteachersactivitytagmaxhourscontinuously=true;
+		
+		if(haveTeachersActivityTagMaxHoursContinuously){
+		
+			foreach(int tch, act->iTeachersList){
+				for(int cnt=0; cnt<teachersActivityTagMaxHoursContinuouslyMaxHours[tch].count(); cnt++){
+					int activityTag=teachersActivityTagMaxHoursContinuouslyActivityTag[tch].at(cnt);
+					
+					//if(gt.rules.internalActivitiesList[ai].activityTagIndex!=activityTag)
+					//	continue;
+					if(!gt.rules.internalActivitiesList[ai].iActivityTagsSet.contains(activityTag))
+						continue;
+
+					int limitHoursCont=teachersActivityTagMaxHoursContinuouslyMaxHours[tch].at(cnt);
+					double percentage=teachersActivityTagMaxHoursContinuouslyPercentage[tch].at(cnt);
+
+					assert(limitHoursCont>=0);
+					assert(percentage>=0);
+					assert(activityTag>=0/* && activityTag<gt.rules.nInternalActivityTags*/);
+					
+					bool increased;
+					int h2;
+					for(h2=h; h2<h+act->duration; h2++){
+						assert(h2<gt.rules.nHoursPerDay);
+						if(teachersTimetable[tch][d][h2]==-1)
+							break;
+						int ai2=teachersTimetable[tch][d][h2];
+						//if(gt.rules.internalActivitiesList[ai2].activityTagIndex!=activityTag)
+						//	break;
+						if(!gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(activityTag))
+							break;
+					}
+					if(h2<h+act->duration)
+						increased=true;
+					else
+						increased=false;
+					
+					QList<int> removableActs;
+					
+					int nc=act->duration;
+					for(h2=h-1; h2>=0; h2--){
+						int ai2=teachersTimetable[tch][d][h2];
+						assert(ai2==newTeachersTimetable[tch][d][h2]);
+						assert(ai2!=ai);
+						if(ai2<0)
+							break;
+						if(ai2>=0 && !conflActivities[newtime].contains(ai2) &&
+						 //gt.rules.internalActivitiesList[ai2].activityTagIndex==activityTag){
+						 gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(activityTag)){
+							nc++;
+							
+							if(!removableActs.contains(ai2) && !fixedTimeActivity[ai2] && !swappedActivities[ai2])
+								removableActs.append(ai2);
+						}
+						else
+							break;
+					}				
+					for(h2=h+act->duration; h2<gt.rules.nHoursPerDay; h2++){
+						int ai2=teachersTimetable[tch][d][h2];
+						assert(ai2==newTeachersTimetable[tch][d][h2]);
+						assert(ai2!=ai);
+						if(ai2<0)
+							break;
+						if(ai2>=0 && !conflActivities[newtime].contains(ai2) &&
+						 //gt.rules.internalActivitiesList[ai2].activityTagIndex==activityTag){
+						 gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(activityTag)){
+							nc++;
+						
+							if(!removableActs.contains(ai2) && !fixedTimeActivity[ai2] && !swappedActivities[ai2])
+								removableActs.append(ai2);
+						}
+						else
+							break;
+					}
+										
+					if(!increased && percentage==100.0)
+						assert(nc<=limitHoursCont);
+					
+					if(!increased || nc<=limitHoursCont) //OK
+						continue;
+					
+					assert(limitHoursCont>=0);
+
+					if(!skipRandom(percentage) && increased){
+						if(act->duration>limitHoursCont){
+							okteachersactivitytagmaxhourscontinuously=false;
+							goto impossibleteachersactivitytagmaxhourscontinuously;
+						}
+					
+						if(level>=LEVEL_STOP_CONFLICTS_CALCULATION){
+							okteachersactivitytagmaxhourscontinuously=false;
+							goto impossibleteachersactivitytagmaxhourscontinuously;
+						}
+						
+						while(true){
+							if(removableActs.count()==0){
+								okteachersactivitytagmaxhourscontinuously=false;
+								goto impossibleteachersactivitytagmaxhourscontinuously;
+							}
+							
+							int j=-1;
+					
+							if(level==0){
+								int optMinWrong=INF;
+				
+								QList<int> tl;
+
+								for(int q=0; q<removableActs.count(); q++){
+									int ai2=removableActs.at(q);
+									if(optMinWrong>triedRemovals[ai2][c.times[ai2]]){
+									 	optMinWrong=triedRemovals[ai2][c.times[ai2]];
+									}
+								}
+					
+								for(int q=0; q<removableActs.count(); q++){
+									int ai2=removableActs.at(q);
+									if(optMinWrong==triedRemovals[ai2][c.times[ai2]])
+										tl.append(q);
+								}
+				
+								assert(tl.size()>=1);
+								j=tl.at(randomKnuth()%tl.size());
+			
+								assert(j>=0 && j<removableActs.count());
+							}
+							else{
+								j=randomKnuth()%removableActs.count();
+							}
+							
+							assert(j>=0);
+							
+							int ai2=removableActs.at(j);
+							
+							int t=removableActs.removeAll(ai2);
+							assert(t==1);
+						
+							assert(!conflActivities[newtime].contains(ai2));
+							conflActivities[newtime].append(ai2);
+							nConflActivities[newtime]++;
+							assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+						
+							////////////
+							removableActs.clear();
+						
+							int nc=act->duration;
+							int h2;
+							for(h2=h-1; h2>=0; h2--){
+								int ai2=teachersTimetable[tch][d][h2];
+								assert(ai2==newTeachersTimetable[tch][d][h2]);
+								assert(ai2!=ai);
+								if(ai2<0)
+									break;
+								if(ai2>=0 && !conflActivities[newtime].contains(ai2) &&
+								// gt.rules.internalActivitiesList[ai2].activityTagIndex==activityTag){
+								 gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(activityTag)){
+									nc++;
+							
+									if(!removableActs.contains(ai2) && !fixedTimeActivity[ai2] && !swappedActivities[ai2])
+										removableActs.append(ai2);
+								}
+								else
+									break;
+							}				
+							for(h2=h+act->duration; h2<gt.rules.nHoursPerDay; h2++){
+								int ai2=teachersTimetable[tch][d][h2];
+								assert(ai2==newTeachersTimetable[tch][d][h2]);
+								assert(ai2!=ai);
+								if(ai2<0)
+									break;
+								if(ai2>=0 && !conflActivities[newtime].contains(ai2) &&
+								// gt.rules.internalActivitiesList[ai2].activityTagIndex==activityTag){
+								 gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(activityTag)){
+									nc++;
+							
+									if(!removableActs.contains(ai2) && !fixedTimeActivity[ai2] && !swappedActivities[ai2])
+										removableActs.append(ai2);
+								}
+								else		
+									break;
+							}
+										
+							if(nc<=limitHoursCont) //OK
+								break;
+							////////////
+						}
+					}
+				}
+			}
+			
+		}
+		
+impossibleteachersactivitytagmaxhourscontinuously:
+		if(!okteachersactivitytagmaxhourscontinuously){
 			if(updateSubgroups || updateTeachers)
 				removeAiFromNewTimetable(ai, act, d, h);
 			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);

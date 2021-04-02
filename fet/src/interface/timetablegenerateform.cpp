@@ -238,8 +238,8 @@ void TimetableGenerateForm::stop()
 		s+=", ";
 		s+=TimetableGenerateForm::tr("SN: %1", "Subject name").arg(gt.rules.internalActivitiesList[ai].subjectName);
 		s+=", ";
-		if(gt.rules.internalActivitiesList[ai].activityTagName!=""){
-			s+=TimetableGenerateForm::tr("AT: %1", "Activity tag").arg(gt.rules.internalActivitiesList[ai].activityTagName);
+		if(gt.rules.internalActivitiesList[ai].activityTagsNames.count()>0){
+			s+=TimetableGenerateForm::tr("AT: %1", "Activity tags").arg(gt.rules.internalActivitiesList[ai].activityTagsNames.join(","));
 			s+=", ";
 		}
 		first=true;
@@ -284,8 +284,8 @@ void TimetableGenerateForm::stop()
 		s+=", ";
 		s+=TimetableGenerateForm::tr("SN: %1").arg(gt.rules.internalActivitiesList[ai].subjectName);
 		s+=", ";
-		if(gt.rules.internalActivitiesList[ai].activityTagName!=""){
-			s+=TimetableGenerateForm::tr("AT: %1", "Activity tag").arg(gt.rules.internalActivitiesList[ai].activityTagName);
+		if(gt.rules.internalActivitiesList[ai].activityTagsNames.count()>0){
+			s+=TimetableGenerateForm::tr("AT: %1", "Activity tags").arg(gt.rules.internalActivitiesList[ai].activityTagsNames.join(","));
 			s+=", ";
 		}
 		first=true;
@@ -410,8 +410,8 @@ void TimetableGenerateForm::impossibleToSolve()
 		s+=", ";
 		s+=TimetableGenerateForm::tr("SN: %1").arg(gt.rules.internalActivitiesList[ai].subjectName);
 		s+=", ";
-		if(gt.rules.internalActivitiesList[ai].activityTagName!=""){
-			s+=TimetableGenerateForm::tr("AT: %1", "Activity tag").arg(gt.rules.internalActivitiesList[ai].activityTagName);
+		if(gt.rules.internalActivitiesList[ai].activityTagsNames.count()>0){
+			s+=TimetableGenerateForm::tr("AT: %1", "Activity tags").arg(gt.rules.internalActivitiesList[ai].activityTagsNames.join(","));
 			s+=", ";
 		}
 		first=true;
@@ -640,8 +640,8 @@ void TimetableGenerateForm::seeImpossible()
 		s+=", ";
 		s+=TimetableGenerateForm::tr("SN: %1", "Subject name").arg(gt.rules.internalActivitiesList[ai].subjectName);
 		s+=", ";
-		if(gt.rules.internalActivitiesList[ai].activityTagName!=""){
-			s+=TimetableGenerateForm::tr("AT: %1", "Activity tag").arg(gt.rules.internalActivitiesList[ai].activityTagName);
+		if(gt.rules.internalActivitiesList[ai].activityTagsNames.count()>0){
+			s+=TimetableGenerateForm::tr("AT: %1", "Activity tags").arg(gt.rules.internalActivitiesList[ai].activityTagsNames.join(","));
 			s+=", ";
 		}
 		first=true;

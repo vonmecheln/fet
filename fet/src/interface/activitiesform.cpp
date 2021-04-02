@@ -107,7 +107,8 @@ bool ActivitiesForm::filterOk(Activity* act)
 		ok=false;
 		
 	//activity tag
-	if(sbtn!="" && sbtn!=act->activityTagName)
+	//if(sbtn!="" && sbtn!=act->activityTagName)
+	if(sbtn!="" && !act->activityTagsNames.contains(sbtn))
 		ok=false;
 		
 	//students
@@ -204,18 +205,78 @@ void ActivitiesForm::modifyActivity()
 	Activity* act=visibleActivitiesList[ind];
 	assert(act!=NULL);
 	
+	QStringList teachers=act->teachersNames;
+	bool diffTeachers=false;
+	
+	QString subject=act->subjectName;
+	bool diffSubject=false;
+	
+	QStringList activityTags=act->activityTagsNames;
+	bool diffActivityTags=false;
+	
+	QStringList students=act->studentsNames;
+	bool diffStudents=false;
+	
+	int nTotalStudents=act->nTotalStudents;
+	bool diffNTotalStudents=false;
+	
+	bool computeNTotalStudents=act->computeNTotalStudents;
+	bool diffComputeNTotalStudents=false;
+	
 	if(act->isSplit()){
 		int nSplit=0;
 		for(int i=0; i<gt.rules.activitiesList.size(); i++){
 			Activity* act2=gt.rules.activitiesList[i];
-			if(act2->activityGroupId==act->activityGroupId)
+			if(act2->activityGroupId==act->activityGroupId){
 				nSplit++;
+				
+				if(teachers!=act2->teachersNames)
+					diffTeachers=true;
+				if(subject!=act2->subjectName)
+					diffSubject=true;
+				if(activityTags!=act2->activityTagsNames)
+					diffActivityTags=true;
+				if(students!=act2->studentsNames)
+					diffStudents=true;
+				if( /* !computeNTotalStudents && !act2->computeNTotalStudents && */ nTotalStudents!=act2->nTotalStudents )
+					diffNTotalStudents=true;
+				if(computeNTotalStudents!=act2->computeNTotalStudents)
+					diffComputeNTotalStudents=true;
+			}
 			if(nSplit>10){
 				QMessageBox::warning(this, QObject::tr("FET information"),
-					QObject::tr("Cannot modify this large activity, because it contains more than activities.\n"
-					"If you really need that, please talk to the author\n"));
+					QObject::tr("Cannot modify this large activity, because it contains more than %1 activities.\n"
+					"If you really need that, please talk to the author\n").arg(10));
 				return;
 			}
+		}
+		
+		if(diffTeachers || diffSubject || diffActivityTags || diffStudents || diffNTotalStudents || diffComputeNTotalStudents){
+			QStringList s;
+			if(diffTeachers)
+				s.append(QObject::tr("different teachers"));
+			if(diffSubject)
+				s.append(QObject::tr("different subject"));
+			if(diffActivityTags)
+				s.append(QObject::tr("different activity tags"));
+			if(diffStudents)
+				s.append(QObject::tr("different students"));
+			if(diffComputeNTotalStudents)
+				s.append(QObject::tr("different boolean variable 'must compute n total students'"));
+			if(diffNTotalStudents)
+				s.append(QObject::tr("different number of students"));
+				
+			QString s2;
+			s2+=QObject::tr("The current split activity has subactivities which were individually modified. It is recommended to abort now"
+			 " and modify individual subactivities from the corresponding menu. Otherwise you will modify the fields for all the subactivities"
+			 " from this larger split activity.");
+			s2+="\n\n";
+			s2+=QObject::tr("The fields which are different are: %1").arg(s.join(", "));
+				
+			int t=QMessageBox::warning(this, QObject::tr("FET warning"), s2, QObject::tr("Abort"), QObject::tr("Continue"), QString(), 1, 0);
+			
+			if(t==0)
+				return;
 		}
 	}
 	

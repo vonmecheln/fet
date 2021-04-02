@@ -1298,7 +1298,7 @@ Versions 5.7.0 - 5.7.7
 	- Minor improvements (the settings are now saved in a file which does not contain spaces under GNU/Linux,
 	added a better #define Q_OS_WIN for detecting Windows in compilation).
 ---------------------------------------------------------------------------------
-Versions 5.8.0 - 5.8.x
+Versions 5.8.0 - 5.8.1
 - Version 5.8.0
 	- Added the possibility to view locked activities in the timetables and toggle lock/unlock activities in the timetable
 	(suggested by Azu Boba, implemented by Liviu Lalescu and Volker Dirr).
@@ -1326,4 +1326,17 @@ Versions 5.8.0 - 5.8.x
 	- Minor improvements in the Italian, Arabic and Spanish translations.
 	- Added a sample file from Azu Boba.
 	- The index.html links now open in the same window (suggested by daviodan).
+---------------------------------------------------------------------------------
+Versions 5.9.0 - 5.9.x
+- Version 5.9.0
+	- Added multiple activity tags for a single activity.
+	- It is now possible to edit a single subactivity.
+	- Added constraints teacher(s) or students (set) activity tag max hours continuously (to specify that
+	a teacher or a students set must have maximum n hours continuously for an activity tag) - suggested by Hatim Ali,
+	George Miliotis and Volker Dirr.
+	- Improved a bit the memory consumption.
+	- To avoid Windows problems with very large filenames, the sample file names were shortened.
+	- Minor html timetables corrections (cosmetic).
+	- Updates in Spanish, Arabic, Romanian and Italian translations.
+	- Minor improvements.
 	

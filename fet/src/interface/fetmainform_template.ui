@@ -155,6 +155,8 @@
       <addaction name="separator" />
       <addaction name="dataTimeConstraintsTeacherMaxHoursContinuouslyAction" />
       <addaction name="dataTimeConstraintsTeachersMaxHoursContinuouslyAction" />
+      <addaction name="dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction" />
+      <addaction name="dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction" />
       <addaction name="separator" />
       <addaction name="dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction" />
       <addaction name="dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction" />
@@ -177,6 +179,8 @@
       <addaction name="separator" />
       <addaction name="dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction" />
       <addaction name="dataTimeConstraintsStudentsMaxHoursContinuouslyAction" />
+      <addaction name="dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction" />
+      <addaction name="dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction" />
       <addaction name="separator" />
       <addaction name="dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction" />
       <addaction name="dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction" />
@@ -291,23 +295,39 @@
      <addaction name="menuSubjects_and_activity_tags_space_constraints" />
      <addaction name="menuActivities_space_constraints" />
     </widget>
-    <addaction name="dataInstitutionNameAction" />
-    <addaction name="dataCommentsAction" />
+    <widget class="QMenu" name="menuInstitution_information" >
+     <property name="title" >
+      <string>Institution information</string>
+     </property>
+     <addaction name="dataInstitutionNameAction" />
+     <addaction name="dataCommentsAction" />
+    </widget>
+    <widget class="QMenu" name="menuDays_and_hours" >
+     <property name="title" >
+      <string>Days and hours</string>
+     </property>
+     <addaction name="dataDaysAction" />
+     <addaction name="dataHoursAction" />
+    </widget>
+    <widget class="QMenu" name="menuStudents" >
+     <property name="title" >
+      <string>Students</string>
+     </property>
+     <addaction name="dataYearsAction" />
+     <addaction name="dataGroupsAction" />
+     <addaction name="dataSubgroupsAction" />
+    </widget>
+    <addaction name="menuInstitution_information" />
     <addaction name="separator" />
-    <addaction name="dataDaysAction" />
-    <addaction name="dataHoursAction" />
+    <addaction name="menuDays_and_hours" />
     <addaction name="separator" />
     <addaction name="dataSubjectsAction" />
-    <addaction name="separator" />
     <addaction name="dataActivityTagsAction" />
-    <addaction name="separator" />
     <addaction name="dataTeachersAction" />
-    <addaction name="separator" />
-    <addaction name="dataYearsAction" />
-    <addaction name="dataGroupsAction" />
-    <addaction name="dataSubgroupsAction" />
+    <addaction name="menuStudents" />
     <addaction name="separator" />
     <addaction name="dataActivitiesAction" />
+    <addaction name="dataSubactivitiesAction" />
     <addaction name="separator" />
     <addaction name="dataBuildingsAction" />
     <addaction name="dataRoomsAction" />
@@ -322,30 +342,8 @@
     <property name="title" >
      <string>Settings</string>
     </property>
-    <widget class="QMenu" name="languageMenu" >
-     <property name="title" >
-      <string>Language</string>
-     </property>
-     <addaction name="languageEnglishAction" />
-     <addaction name="languageArabicAction" />
-     <addaction name="languageCatalanAction" />
-     <addaction name="languageGermanAction" />
-     <addaction name="languageGreekAction" />
-     <addaction name="languageSpanishAction" />
-     <addaction name="languageFrenchAction" />
-     <addaction name="languageHungarianAction" />
-     <addaction name="languageIndonesianAction" />
-     <addaction name="languageItalianAction" />
-     <addaction name="languageLithuanianAction" />
-     <addaction name="languageMacedonianAction" />
-     <addaction name="languageMalayAction" />
-     <addaction name="languageDutchAction" />
-     <addaction name="languagePolishAction" />
-     <addaction name="languageRomanianAction" />
-     <addaction name="languageTurkishAction" />
-    </widget>
     <addaction name="checkForUpdatesAction" />
-    <addaction name="languageMenu" />
+    <addaction name="languageAction" />
     <addaction name="separator" />
     <addaction name="settingsPrintNotAvailableSlotsAction" />
     <addaction name="settingsTimetableHtmlLevelAction" />
@@ -1446,6 +1444,36 @@
   <action name="timetableUnlockAllActivitiesAction" >
    <property name="text" >
     <string>Unlock all activities of the current timetable</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction" >
+   <property name="text" >
+    <string>Max hours continuously with an activity tag for a students set</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction" >
+   <property name="text" >
+    <string>Max hours continuously with an activity tag for all students</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction" >
+   <property name="text" >
+    <string>Max hours continuously with an activity tag for a teacher</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction" >
+   <property name="text" >
+    <string>Max hours continuously with an activity tag for all teachers</string>
+   </property>
+  </action>
+  <action name="dataSubactivitiesAction" >
+   <property name="text" >
+    <string>Modify subactivities</string>
+   </property>
+  </action>
+  <action name="languageAction" >
+   <property name="text" >
+    <string>Language</string>
    </property>
   </action>
  </widget>

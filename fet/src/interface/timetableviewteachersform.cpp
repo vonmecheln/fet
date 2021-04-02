@@ -177,7 +177,12 @@ void TimetableViewTeachersForm::updateTeachersTimetableTable(){
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
 					assert(act!=NULL);
-					s += act->subjectName+" "+act->activityTagName+"\n"; //added in version 3_9_16, on 16 Oct. 2004; suggested by Nicholas Robinson
+					
+					QString ats="";
+					foreach(QString crt, act->activityTagsNames)
+						ats+=" "+crt;
+					
+					s += act->subjectName+ats/*+" "+act->activityTagName*/+"\n"; //added in version 3_9_16, on 16 Oct. 2004; suggested by Nicholas Robinson
 					for(QStringList::Iterator it=act->studentsNames.begin(); it!=act->studentsNames.end(); it++)
 						s += (*it) + " ";
 

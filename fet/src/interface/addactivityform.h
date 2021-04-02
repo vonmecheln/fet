@@ -46,7 +46,7 @@ public:
 	void updateStudentsListBox();
 	void updateTeachersListBox();
 	void updateSubjectsComboBox();
-	void updateActivityTagsComboBox();
+	void updateActivityTagsListBox();
 	void updatePreferredDaysComboBox();
 	void updatePreferredHoursComboBox();
 
@@ -55,7 +55,10 @@ public:
 	void addStudents();
 	void removeStudents();
 	void subjectChanged(const QString& dummy);
-	void activityTagChanged(const QString& dummy);
+
+	void addActivityTag();
+	void removeActivityTag();
+
 	void hourChanged();
 	void dayChanged();
 	void parityChanged();
@@ -65,6 +68,7 @@ public:
 	
 	void clearTeachers();
 	void clearStudents();
+	void clearActivityTags();
 	
 	void showYearsChanged();
 	void showGroupsChanged();

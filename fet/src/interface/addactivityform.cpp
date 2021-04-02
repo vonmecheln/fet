@@ -69,7 +69,7 @@ AddActivityForm::AddActivityForm()
 	updateStudentsListBox();
 	updateTeachersListBox();
 	updateSubjectsComboBox();
-	updateActivityTagsComboBox();
+	updateActivityTagsListBox();
 
 	minDayDistanceSpinBox->setMaxValue(gt.rules.nDaysPerWeek);
 	minDayDistanceSpinBox->setMinValue(0);
@@ -163,6 +163,32 @@ void AddActivityForm::removeStudents()
 	activityChanged();
 }
 
+void AddActivityForm::addActivityTag()
+{
+	if(allActivityTagsListBox->currentItem()<0 || (uint)(allActivityTagsListBox->currentItem())>=allActivityTagsListBox->count())
+		return;
+	
+	for(uint i=0; i<selectedActivityTagsListBox->count(); i++)
+		if(selectedActivityTagsListBox->text(i)==allActivityTagsListBox->currentText())
+			return;
+			
+	selectedActivityTagsListBox->insertItem(allActivityTagsListBox->currentText());
+
+	activityChanged();
+}
+
+void AddActivityForm::removeActivityTag()
+{
+	if(selectedActivityTagsListBox->count()<=0 || selectedActivityTagsListBox->currentItem()<0 ||
+	 (uint)(selectedActivityTagsListBox->currentItem())>=selectedActivityTagsListBox->count())
+		return;
+		
+	selectedActivityTagsListBox->removeItem(selectedActivityTagsListBox->currentItem());
+
+	activityChanged();
+}
+
+
 void AddActivityForm::updateSubjectsComboBox()
 {
 	subjectsComboBox->clear();
@@ -174,9 +200,19 @@ void AddActivityForm::updateSubjectsComboBox()
 	subjectChanged(subjectsComboBox->currentText());
 }
 
-void AddActivityForm::updateActivityTagsComboBox()
+void AddActivityForm::updateActivityTagsListBox()
 {
-	activityTagsComboBox->clear();
+	allActivityTagsListBox->clear();
+	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
+		ActivityTag* at=gt.rules.activityTagsList[i];
+		allActivityTagsListBox->insertItem(at->name);
+	}
+		
+	selectedActivityTagsListBox->clear();
+
+	activityChanged();
+
+/*	activityTagsComboBox->clear();
 	activityTagsComboBox->insertItem("");
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* sbt=gt.rules.activityTagsList[i];
@@ -185,7 +221,7 @@ void AddActivityForm::updateActivityTagsComboBox()
 		
 	activityTagsComboBox->setCurrentItem(0);
 
-	activityTagChanged(activityTagsComboBox->currentText());
+	activityTagChanged(activityTagsComboBox->currentText());*/
 }
 
 void AddActivityForm::showYearsChanged()
@@ -260,14 +296,14 @@ void AddActivityForm::subjectChanged(const QString& dummy)
 	activityChanged();
 }
 
-void AddActivityForm::activityTagChanged(const QString& dummy)
+/*void AddActivityForm::activityTagChanged(const QString& dummy)
 {
 	Q_UNUSED(dummy);
 	//if(dummy=="")
 	//	;
 
 	activityChanged();
-}
+}*/
 
 void AddActivityForm::splitChanged()
 {
@@ -275,11 +311,11 @@ void AddActivityForm::splitChanged()
 	
 	if(nSplit>=2){
 		addActivityPushButton->setText(tr("Add current activities"));
-		currentActivityTextLabel->setText(tr("Current activities"));
+		//currentActivityTextLabel->setText(tr("Current activities"));
 	}
 	else{
 		addActivityPushButton->setText(tr("Add current activity"));
-		currentActivityTextLabel->setText(tr("Current activity"));
+		//currentActivityTextLabel->setText(tr("Current activity"));
 	}
 
 	minDayDistanceTextLabel->setEnabled(nSplit>=2);
@@ -303,7 +339,7 @@ void AddActivityForm::splitChanged()
 
 void AddActivityForm::activityChanged()
 {
-	QString s;
+/*	QString s;
 	//s+=tr("Current activity:");s+="\n";
 	if(selectedTeachersListBox->count()==0){
 		if(splitSpinBox->value()==1)
@@ -406,7 +442,7 @@ void AddActivityForm::activityChanged()
 		}
 	}
 
-	currentActivityTextEdit->setText(s);
+	currentActivityTextEdit->setText(s);*/
 }
 
 SecondMinDaysDialog::SecondMinDaysDialog(QWidget* p, int minD, double w) :QDialog(p)
@@ -503,13 +539,6 @@ void AddActivityForm::addActivity()
 		if(t==QMessageBox::Cancel)
 			return;
 	}
-	/*else if(selectedTeachersListBox->count()>(uint)(MAX_TEACHERS_PER_ACTIVITY)){
-		QMessageBox::warning(this, tr("FET information"),
-			tr("Too many teachers for an activity. The current maximum is %1.\n"
-			"If you really need more teachers per activity, please talk to the author").
-			arg(MAX_TEACHERS_PER_ACTIVITY));
-		return;
-	}*/
 	else{
 		for(uint i=0; i<selectedTeachersListBox->count(); i++){
 			assert(gt.rules.searchTeacher(selectedTeachersListBox->text(i))>=0);
@@ -526,13 +555,18 @@ void AddActivityForm::addActivity()
 		return;
 	}
 
-	//activity tag
-	QString activity_tag_name=activityTagsComboBox->currentText();
+	//activity tags
+	/*QString activity_tag_name=activityTagsComboBox->currentText();
 	int activity_tag_index=gt.rules.searchActivityTag(activity_tag_name);
 	if(activity_tag_index<0 && activity_tag_name!=""){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid activity tag"));
 		return;
+	}*/
+	QStringList activity_tags_names;
+	for(uint i=0; i<selectedActivityTagsListBox->count(); i++){
+		assert(gt.rules.searchActivityTag(selectedActivityTagsListBox->text(i))>=0);
+		activity_tags_names.append(selectedActivityTagsListBox->text(i));
 	}
 
 	//students
@@ -571,7 +605,7 @@ void AddActivityForm::addActivity()
 				activityid = act->id;
 		}
 		activityid++;
-		Activity a(gt.rules, activityid, 0, teachers_names, subject_name, activity_tag_name, students_names,
+		Activity a(gt.rules, activityid, 0, teachers_names, subject_name, activity_tags_names, students_names,
 			duration, duration, /*parity,*/ active, (nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
 
 		bool already_existing=false;
@@ -593,7 +627,7 @@ void AddActivityForm::addActivity()
 				return;
 		}
 
-		bool tmp=gt.rules.addSimpleActivity(activityid, 0, teachers_names, subject_name, activity_tag_name,
+		bool tmp=gt.rules.addSimpleActivity(activityid, 0, teachers_names, subject_name, activity_tags_names,
 			students_names,	duration, duration, /*parity,*/ active, /*preferred_day, preferred_hour,*/
 			(nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
 		if(tmp)
@@ -662,7 +696,7 @@ void AddActivityForm::addActivity()
 
 		int minD=minDayDistanceSpinBox->value();
 		bool tmp=gt.rules.addSplitActivity(firstactivityid, firstactivityid,
-			teachers_names, subject_name, activity_tag_name, students_names,
+			teachers_names, subject_name, activity_tags_names, students_names,
 			nsplit, totalduration, durations,
 			/*parities,*/ active, minD, /*percentageSpinBox->value()*/weight, forceAdjacentCheckBox->isChecked(), /*preferred_days, preferred_hours,*/
 			(nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
@@ -748,6 +782,12 @@ void AddActivityForm::clearTeachers()
 void AddActivityForm::clearStudents()
 {
 	selectedStudentsListBox->clear();
+	activityChanged();
+}
+
+void AddActivityForm::clearActivityTags()
+{
+	selectedActivityTagsListBox->clear();
 	activityChanged();
 }
 

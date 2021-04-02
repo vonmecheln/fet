@@ -12,7 +12,7 @@ Program description:
 Requirements:
 
 	FET is created in the following environment: openSUSE 11.1 GNU/Linux distribution,
-	Midnight Commander 4.6.2-pre1, Qt 4.4.3, gcc 4.3.2, Linux 2.6.27, other great free tools.
+	Midnight Commander 4.6.2-pre1, Qt 4.4.3, gcc 4.3.2, Linux 2.6.27, KDiff3 0.9.92, other great free tools.
 	FET can be run on any platform supported by the free software Qt (GNU/Linux, Windows, Mac OS X).
 
 	GNU/Linux, Mac OS X and similar OS's:

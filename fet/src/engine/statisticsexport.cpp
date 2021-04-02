@@ -30,6 +30,11 @@
 #include <QTime>
 #include <QDate>
 #include <QHash>
+#include <QMap>
+
+#include <QApplication>
+#include <QProgressDialog>
+extern QApplication* pqapplication;
 
 extern Timetable gt;
 
@@ -144,52 +149,50 @@ void StatisticsExport::exportStatistics(){
 	teachersActivities.clear();
 
 	Activity* act;
+	
+	//QProgressDialog progress(NULL);
+	//progress.setLabelText(tr("Processing activities...please wait"));
+	//progress.setRange(0,gt.rules.activitiesList.count());
+	//progress.setModal(true);
+	
 	for(int ai=0; ai<gt.rules.activitiesList.size(); ai++){
+	
+		//progress.setValue(ai);
+		//pqapplication->processEvents();
+		
 		act=gt.rules.activitiesList[ai];
-		if(act->active)
-			if((act->activityGroupId==act->id)||(act->activityGroupId==0)){
+		if(act->active){
 				subjectsActivities.insert(act->subjectName, ai);
-				int tmp=subjectsTotalNumberOfHours.value(act->subjectName)+act->totalDuration;
+				int tmp=subjectsTotalNumberOfHours.value(act->subjectName)+act->duration;
 				subjectsTotalNumberOfHours.insert(act->subjectName, tmp);						// (1) so teamlearning-teaching is not counted twice!
 				foreach(QString t, act->teachersNames){
 					teachersActivities.insert(t, ai);
-					tmp=teachersTotalNumberOfHours.value(t)+act->totalDuration;
+					tmp=teachersTotalNumberOfHours.value(t)+act->duration;
 					teachersTotalNumberOfHours.insert(t, tmp);							// (3)
-					//subjectstTotalNumberOfHours2[act->subjectIndex]+=act->totalDuration;				// (1) so teamteaching is counted twice!
+					//subjectstTotalNumberOfHours2[act->subjectIndex]+=duration;				// (1) so teamteaching is counted twice!
 				}
 				foreach(QString st, act->studentsNames){
 					studentsActivities.insert(st, ai);
-					tmp=studentsTotalNumberOfHours.value(st)+act->totalDuration;
+					tmp=studentsTotalNumberOfHours.value(st)+act->duration;
 					studentsTotalNumberOfHours.insert(st, tmp);							// (2)
-					//subjectstTotalNumberOfHours3[act->subjectIndex]+=act->totalDuration;				// (1) so teamlearning is counted twice!
+					//subjectstTotalNumberOfHours3[act->subjectIndex]+=duration;				// (1) so teamlearning is counted twice!
 				}
-				/* old code
-				foreach(QString t, act->teachersNames){
-					foreach(QString st, act->studentsNames){
-						tmp=studentsTotalNumberOfHours2.value(st)+act->totalDuration;
-						studentsTotalNumberOfHours2.insert(st, tmp);						// (2)
-						tmp=teachersTotalNumberOfHours2.value(t)+act->totalDuration;
-						teachersTotalNumberOfHours2.insert(t, tmp);						// (3)
-						tmp=subjectsTotalNumberOfHours4.value(act->subjectName)+act->totalDuration;
-						subjectsTotalNumberOfHours4.insert(act->subjectName, tmp);				// (1) so teamlearning-teaching is counted twice!
-					}
-				}*/
-				//new code
 				foreach(QString t, act->teachersNames){
 					tmp=teachersTotalNumberOfHours2.value(t);
-					tmp += act->totalDuration * act->studentsNames.count();
-					teachersTotalNumberOfHours2.insert(t, tmp);
+					tmp += act->duration * act->studentsNames.count();
+					teachersTotalNumberOfHours2.insert(t, tmp);						// (3)
 				}
 				foreach(QString st, act->studentsNames){
 					tmp=studentsTotalNumberOfHours2.value(st);
-					tmp += act->totalDuration * act->teachersNames.count();
-					studentsTotalNumberOfHours2.insert(st, tmp);
+					tmp += act->duration * act->teachersNames.count();
+					studentsTotalNumberOfHours2.insert(st, tmp);					// (2)
 				}
 				tmp=subjectsTotalNumberOfHours4.value(act->subjectName);
-				tmp += act->totalDuration * act->studentsNames.count() * act->teachersNames.count();
-				subjectsTotalNumberOfHours4.insert(act->subjectName, tmp);
+				tmp += act->duration * act->studentsNames.count() * act->teachersNames.count();
+				subjectsTotalNumberOfHours4.insert(act->subjectName, tmp);			// (1) so teamlearning-teaching is counted twice!
 			}
 	}
+	//progress.setValue(gt.rules.activitiesList.count());
 	QStringList tmp;
 	tmp.clear();
 	foreach(QString students, allStudentsNames){
@@ -246,7 +249,7 @@ void StatisticsExport::exportStatistics(){
 		QMessageBox::information(NULL, QObject::tr("FET Information"),
 		 StatisticsExport::tr("Statistic files were exported to directory %1 as html files.").arg(QDir::toNativeSeparators(DIRECTORY_STATISTICS)));
 	} else {
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::warning(NULL, QObject::tr("FET warning"),
 		 StatisticsExport::tr("Statistic export incomplete")+"\n");
 	}
 	teachersTotalNumberOfHours.clear();
@@ -518,7 +521,23 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QString saveTime){
 	//workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
+	
+	QProgressDialog progress(NULL);
+	progress.setLabelText(tr("Processing teachers with subjects...please wait"));
+	progress.setRange(0, allSubjectsNames.count());
+	progress.setModal(true);
+	
+	int ttt=0;
+	
 	foreach(QString subjects, allSubjectsNames){
+		progress.setValue(ttt);
+		pqapplication->processEvents();
+		if(progress.wasCanceled()){
+			QMessageBox::warning(NULL, tr("FET warning"), tr("Canceled"));
+			return false;
+		}
+		ttt++;
+	
 		QList<int> tmpSubjects;
 		QMultiHash<QString, int> tmpTeachers;
 		tmpSubjects.clear();
@@ -548,6 +567,26 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QString saveTime){
 					default: tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
 				}
 			} else {
+				QMap<QString, int> tmpStudentDuration;	//not QHash, because i need the correct order of the activities
+				foreach(int tmpAct, tmpActivities){
+					Activity* act=gt.rules.activitiesList[tmpAct];
+					int tmpD=act->duration;
+					QString tmpSt;
+					if(act->studentsNames.size()>0){
+						for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
+							switch(TIMETABLE_HTML_LEVEL){
+								case 4 : tmpSt+="<span class=\"student_"+protect2id(*st)+"\">"+protect2(*st)+"</span>"; break;
+								case 5 : tmpSt+="<span class=\"student_"+protect2id(*st)+"\" onmouseover=\"highlight('student_"+protect2java(*st)+"')\">"+protect2(*st)+"</span>"; break;
+								default: tmpSt+=protect2(*st); break;
+								}
+							if(st!=act->studentsNames.end()-1)
+								tmpSt+=", ";
+						}
+					} else
+						tmpSt=" ";
+					tmpD+=tmpStudentDuration.value(tmpSt);
+					tmpStudentDuration.insert(tmpSt, tmpD);
+				}
 				if(TIMETABLE_HTML_LEVEL>=1)
 					tos<<"          <td><table class=\"detailed\">";
 				else
@@ -555,41 +594,27 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QString saveTime){
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"duration line1\">";
 				else	tos<<"<tr>";
-				foreach(int ai, tmpActivities){
-					Activity* act=gt.rules.activitiesList[ai];
+				QMapIterator<QString, int> it(tmpStudentDuration);
+				while(it.hasNext()){
+					it.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					switch(TIMETABLE_HTML_LEVEL){
-						case 4 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\">"<<QString::number(act->totalDuration)<<"</span>"; break;
-						case 5 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\" onmouseover=\"highlight('duration_"<<QString::number(act->totalDuration)<<"')\">"<<QString::number(act->totalDuration)<<"</span>"; break;
-						default: tos<<QString::number(act->totalDuration); break;
-					}
-					tos<<"</td>";	
+					tos<<it.value()<<"</td>";	
 				}
 				tos<<"</tr>";
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"student line2\">";
 				else	tos<<"<tr>";
-				foreach(int ai, tmpActivities){
-					Activity* act=gt.rules.activitiesList[ai];
+				QMapIterator<QString, int> it2(tmpStudentDuration);	//do it with the same iterator
+				while(it2.hasNext()){
+					it2.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					if(act->studentsNames.size()>0){
-						for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
-							switch(TIMETABLE_HTML_LEVEL){
-								case 4 : tos<<"<span class=\"student_"<<protect2id(*st)<<"\">"<<protect2(*st)<<"</span>"; break;
-								case 5 : tos<<"<span class=\"student_"<<protect2id(*st)<<"\" onmouseover=\"highlight('student_"<<protect2java(*st)<<"')\">"<<protect2(*st)<<"</span>"; break;
-								default: tos<<protect2(*st); break;
-								}
-							if(st!=act->studentsNames.end()-1)
-								tos<<", ";
-						}
-					}
-					tos<<"</td>";	
+					tos<<it2.key()<<"</td>";	
 				}
 				tos<<"</tr>";
 				tos<<"</table></td>\n";
@@ -602,6 +627,9 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QString saveTime){
 		tos<<"</th>\n";
 		tos<<"        </tr>\n";
 	}
+	
+	progress.setValue(allSubjectsNames.count());
+	
 	tos<<"        <tr>\n";
 	if(TIMETABLE_HTML_LEVEL>=2)
 		tos<<"          <th class=\"xAxis\">";
@@ -701,7 +729,23 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QString saveTime){
 	//workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
+	
+	QProgressDialog progress(NULL);
+	progress.setLabelText(tr("Processing subject with teachers...please wait"));
+	progress.setRange(0, allTeachersNames.count());
+	progress.setModal(true);
+	
+	int ttt=0;
+	
 	foreach(QString teachers, allTeachersNames){
+		progress.setValue(ttt);
+		pqapplication->processEvents();
+		if(progress.wasCanceled()){
+			QMessageBox::warning(NULL, tr("FET warning"), tr("Canceled"));
+			return false;
+		}
+		ttt++;
+	
 		QList<int> tmpTeachers;
 		QMultiHash<QString, int> tmpSubjects;
 		tmpTeachers.clear();
@@ -729,6 +773,26 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QString saveTime){
 					default: tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
 				}
 			} else {
+				QMap<QString, int> tmpStudentDuration;	//not QHash, because i need the correct order of the activities
+				foreach(int tmpAct, tmpActivities){
+					Activity* act=gt.rules.activitiesList[tmpAct];
+					int tmpD=act->duration;
+					QString tmpSt;
+					if(act->studentsNames.size()>0){
+						for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
+							switch(TIMETABLE_HTML_LEVEL){
+								case 4 : tmpSt+="<span class=\"student_"+protect2id(*st)+"\">"+protect2(*st)+"</span>"; break;
+								case 5 : tmpSt+="<span class=\"student_"+protect2id(*st)+"\" onmouseover=\"highlight('student_"+protect2java(*st)+"')\">"+protect2(*st)+"</span>"; break;
+								default: tmpSt+=protect2(*st); break;
+								}
+							if(st!=act->studentsNames.end()-1)
+								tmpSt+=", ";
+						}
+					} else
+						tmpSt=" ";
+					tmpD+=tmpStudentDuration.value(tmpSt);
+					tmpStudentDuration.insert(tmpSt, tmpD);
+				}
 				if(TIMETABLE_HTML_LEVEL>=1)
 					tos<<"          <td><table class=\"detailed\">";
 				else
@@ -736,41 +800,27 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QString saveTime){
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"duration line1\">";
 				else	tos<<"<tr>";
-				foreach(int ai, tmpActivities){
-					Activity* act=gt.rules.activitiesList[ai];
+				QMapIterator<QString, int> it(tmpStudentDuration);
+				while(it.hasNext()){
+					it.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					switch(TIMETABLE_HTML_LEVEL){
-						case 4 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\">"<<QString::number(act->totalDuration)<<"</span>"; break;
-						case 5 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\" onmouseover=\"highlight('duration_"<<QString::number(act->totalDuration)<<"')\">"<<QString::number(act->totalDuration)<<"</span>"; break;
-						default: tos<<QString::number(act->totalDuration); break;
-					}
-					tos<<"</td>";	
+					tos<<it.value()<<"</td>";	
 				}
 				tos<<"</tr>";
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"student line2\">";
 				else	tos<<"<tr>";
-				foreach(int ai, tmpActivities){
-					Activity* act=gt.rules.activitiesList[ai];
+				QMapIterator<QString, int> it2(tmpStudentDuration);	//do it with the same iterator
+				while(it2.hasNext()){
+					it2.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					if(act->studentsNames.size()>0){
-						for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
-							switch(TIMETABLE_HTML_LEVEL){
-								case 4 : tos<<"<span class=\"student_"<<protect2id(*st)<<"\">"<<protect2(*st)<<"</span>"; break;
-								case 5 : tos<<"<span class=\"student_"<<protect2id(*st)<<"\" onmouseover=\"highlight('student_"<<protect2java(*st)<<"')\">"<<protect2(*st)<<"</span>"; break;
-								default: tos<<protect2(*st); break;
-								}
-							if(st!=act->studentsNames.end()-1)
-								tos<<", ";
-						}
-					}
-					tos<<"</td>";	
+					tos<<it2.key()<<"</td>";	
 				}
 				tos<<"</tr>";
 				tos<<"</table></td>\n";
@@ -783,6 +833,9 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QString saveTime){
 		tos<<"</th>\n";
 		tos<<"        </tr>\n";
 	}
+	
+	progress.setValue(allTeachersNames.count());
+	
 	tos<<"        <tr>\n";
 	if(TIMETABLE_HTML_LEVEL>=2)
 		tos<<"          <th class=\"xAxis\">";
@@ -882,7 +935,23 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QString saveTime){
 	//*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
+	
+	QProgressDialog progress(NULL);
+	progress.setLabelText(tr("Processing teachers with students...please wait"));
+	progress.setRange(0, allStudentsNames.count());
+	progress.setModal(true);
+	
+	int ttt=0;
+	
 	foreach(QString students, allStudentsNames){
+		progress.setValue(ttt);
+		pqapplication->processEvents();
+		if(progress.wasCanceled()){
+			QMessageBox::warning(NULL, tr("FET warning"), tr("Canceled"));
+			return false;
+		}
+		ttt++;
+	
 		QList<int> tmpStudents;
 		QMultiHash<QString, int> tmpTeachers;
 		tmpStudents.clear();
@@ -912,6 +981,34 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QString saveTime){
 					default: tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
 				}
 			} else {
+				QMap<QString, int> tmpSubjectDuration;	//not QHash, because i need the correct order of the activities
+				foreach(int tmpAct, tmpActivities){
+					Activity* act=gt.rules.activitiesList[tmpAct];
+					int tmpD=act->duration;
+					QString tmpS;
+					if(act->subjectName.size()>0||act->activityTagsNames.size()>0){
+						if(act->subjectName.size()>0)
+							switch(TIMETABLE_HTML_LEVEL){
+								case 3 : tmpS+="<span class=\"subject\">"+protect2(act->subjectName)+"</span>"; break;
+								case 4 : tmpS+="<span class=\"subject\"><span class=\"subject_"+protect2id(act->subjectName)+"\">"+protect2(act->subjectName)+"</span></span>"; break;
+								case 5 : tmpS+="<span class=\"subject\"><span class=\"subject_"+protect2id(act->subjectName)+"\" onmouseover=\"highlight('subject_"+protect2java(act->subjectName)+"')\">"+protect2(act->subjectName)+"</span></span>"; break;
+								default: tmpS+=protect2(act->subjectName); break;
+							}
+						for(QStringList::Iterator atn=act->activityTagsNames.begin(); atn!=act->activityTagsNames.end(); atn++){
+							switch(TIMETABLE_HTML_LEVEL){
+								case 3 : tmpS+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
+								case 4 : tmpS+=" <span class=\"activitytag\"><span class=\"activitytag_"+protect2id(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
+								case 5 : tmpS+=" <span class=\"activitytag\"><span class=\"activitytag_"+protect2id(*atn)+"\" onmouseover=\"highlight('activitytag_"+protect2java(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
+								default: tmpS+=" "+protect2(*atn); break;
+							}
+							if(atn!=act->activityTagsNames.end()-1)
+								tmpS+=", ";
+						}
+					} else
+						tmpS=" ";
+					tmpD+=tmpSubjectDuration.value(tmpS);
+					tmpSubjectDuration.insert(tmpS, tmpD);
+				}
 				if(TIMETABLE_HTML_LEVEL>=1)
 					tos<<"          <td><table class=\"detailed\">";
 				else
@@ -919,46 +1016,27 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QString saveTime){
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"duration line1\">";
 				else	tos<<"<tr>";
-				foreach(int ai, tmpActivities){
-					Activity* act=gt.rules.activitiesList[ai];
+				QMapIterator<QString, int> it(tmpSubjectDuration);
+				while(it.hasNext()){
+					it.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					switch(TIMETABLE_HTML_LEVEL){
-						case 4 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\">"<<QString::number(act->totalDuration)<<"</span>"; break;
-						case 5 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\" onmouseover=\"highlight('duration_"<<QString::number(act->totalDuration)<<"')\">"<<QString::number(act->totalDuration)<<"</span>"; break;
-						default: tos<<QString::number(act->totalDuration); break;
-					}
-					tos<<"</td>";	
+					tos<<it.value()<<"</td>";	
 				}
 				tos<<"</tr>";
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"subject line2\">";
 				else	tos<<"<tr>";
-				foreach(int ai, tmpActivities){
-					Activity* act=gt.rules.activitiesList[ai];
+				QMapIterator<QString, int> it2(tmpSubjectDuration);	//do it with the same iterator
+				while(it2.hasNext()){
+					it2.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					if(act->subjectName.size()>0||act->activityTagName.size()>0){
-						if(act->subjectName.size()>0)
-							switch(TIMETABLE_HTML_LEVEL){
-								case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
-								case 4 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\">"<<protect2(act->subjectName)<<"</span></span>"; break;
-								case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2java(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
-								default: tos<<protect2(act->subjectName); break;
-							}
-						if(act->activityTagName.size()>0)
-							switch(TIMETABLE_HTML_LEVEL){
-								case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
-								case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
-								case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2java(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
-								default: tos<<" "<<protect2(act->activityTagName); break;
-							}
-						}
-					tos<<"</td>";
+					tos<<it2.key()<<"</td>";	
 				}
 				tos<<"</tr>";
 				tos<<"</table></td>\n";
@@ -971,6 +1049,9 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QString saveTime){
 		tos<<"</th>\n";
 		tos<<"        </tr>\n";
 	}
+	
+	progress.setValue(allStudentsNames.count());
+	
 	tos<<"        <tr>\n";
 	if(TIMETABLE_HTML_LEVEL>=2)
 		tos<<"          <th class=\"xAxis\">";
@@ -1070,7 +1151,23 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QString saveTime){
 	//workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<numberOfStudentsNames+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
+	
+	QProgressDialog progress(NULL);
+	progress.setLabelText(tr("Processing students with teachers...please wait"));
+	progress.setRange(0, allTeachersNames.count());
+	progress.setModal(true);
+	
+	int ttt=0;
+	
 	foreach(QString teachers, allTeachersNames){
+		progress.setValue(ttt);
+		pqapplication->processEvents();
+		if(progress.wasCanceled()){
+			QMessageBox::warning(NULL, tr("FET warning"), tr("Canceled"));
+			return false;
+		}
+		ttt++;
+	
 		QList<int> tmpTeachers;
 		QMultiHash<QString, int> tmpStudents;
 		tmpTeachers.clear();
@@ -1100,6 +1197,34 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QString saveTime){
 					default: tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
 				}
 			} else {
+				QMap<QString, int> tmpSubjectDuration;	//not QHash, because i need the correct order of the activities
+				foreach(int tmpAct, tmpActivities){
+					Activity* act=gt.rules.activitiesList[tmpAct];
+					int tmpD=act->duration;
+					QString tmpS;
+					if(act->subjectName.size()>0||act->activityTagsNames.size()>0){
+						if(act->subjectName.size()>0)
+							switch(TIMETABLE_HTML_LEVEL){
+								case 3 : tmpS+="<span class=\"subject\">"+protect2(act->subjectName)+"</span>"; break;
+								case 4 : tmpS+="<span class=\"subject\"><span class=\"subject_"+protect2id(act->subjectName)+"\">"+protect2(act->subjectName)+"</span></span>"; break;
+								case 5 : tmpS+="<span class=\"subject\"><span class=\"subject_"+protect2id(act->subjectName)+"\" onmouseover=\"highlight('subject_"+protect2java(act->subjectName)+"')\">"+protect2(act->subjectName)+"</span></span>"; break;
+								default: tmpS+=protect2(act->subjectName); break;
+							}
+						for(QStringList::Iterator atn=act->activityTagsNames.begin(); atn!=act->activityTagsNames.end(); atn++){
+							switch(TIMETABLE_HTML_LEVEL){
+								case 3 : tmpS+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
+								case 4 : tmpS+=" <span class=\"activitytag\"><span class=\"activitytag_"+protect2id(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
+								case 5 : tmpS+=" <span class=\"activitytag\"><span class=\"activitytag_"+protect2id(*atn)+"\" onmouseover=\"highlight('activitytag_"+protect2java(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
+								default: tmpS+=" "+protect2(*atn); break;
+							}
+							if(atn!=act->activityTagsNames.end()-1)
+								tmpS+=", ";
+						}
+					} else
+						tmpS=" ";
+					tmpD+=tmpSubjectDuration.value(tmpS);
+					tmpSubjectDuration.insert(tmpS, tmpD);
+				}
 				if(TIMETABLE_HTML_LEVEL>=1)
 					tos<<"          <td><table class=\"detailed\">";
 				else
@@ -1107,46 +1232,27 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QString saveTime){
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"duration line1\">";
 				else	tos<<"<tr>";
-				foreach(int ai, tmpActivities){
-					Activity* act=gt.rules.activitiesList[ai];
+				QMapIterator<QString, int> it(tmpSubjectDuration);
+				while(it.hasNext()){
+					it.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					switch(TIMETABLE_HTML_LEVEL){
-						case 4 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\">"<<QString::number(act->totalDuration)<<"</span>"; break;
-						case 5 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\" onmouseover=\"highlight('duration_"<<QString::number(act->totalDuration)<<"')\">"<<QString::number(act->totalDuration)<<"</span>"; break;
-						default: tos<<QString::number(act->totalDuration); break;
-					}
-					tos<<"</td>";	
+					tos<<it.value()<<"</td>";	
 				}
 				tos<<"</tr>";
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"subject line2\">";
 				else	tos<<"<tr>";
-				foreach(int ai, tmpActivities){
-					Activity* act=gt.rules.activitiesList[ai];
+				QMapIterator<QString, int> it2(tmpSubjectDuration);	//do it with the same iterator
+				while(it2.hasNext()){
+					it2.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					if(act->subjectName.size()>0||act->activityTagName.size()>0){
-						if(act->subjectName.size()>0)
-							switch(TIMETABLE_HTML_LEVEL){
-								case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
-								case 4 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\">"<<protect2(act->subjectName)<<"</span></span>"; break;
-								case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2java(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
-								default: tos<<protect2(act->subjectName); break;
-							}
-						if(act->activityTagName.size()>0)
-							switch(TIMETABLE_HTML_LEVEL){
-								case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
-								case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
-								case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2java(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
-								default: tos<<" "<<protect2(act->activityTagName); break;
-							}
-						}
-					tos<<"</td>";
+					tos<<it2.key()<<"</td>";	
 				}
 				tos<<"</tr>";
 				tos<<"</table></td>\n";
@@ -1159,6 +1265,9 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QString saveTime){
 		tos<<"</th>\n";
 		tos<<"        </tr>\n";
 	}
+	
+	progress.setValue(allTeachersNames.count());
+	
 	tos<<"        <tr>\n";
 	if(TIMETABLE_HTML_LEVEL>=2)
 		tos<<"          <th class=\"xAxis\">";
@@ -1258,7 +1367,23 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QString saveTime){
 	//workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
+	
+	QProgressDialog progress(NULL);
+	progress.setLabelText(tr("Processing subjects with students...please wait"));
+	progress.setRange(0, allStudentsNames.count());
+	progress.setModal(true);
+	
+	int ttt=0;
+	
 	foreach(QString students, allStudentsNames){
+		progress.setValue(ttt);
+		pqapplication->processEvents();
+		if(progress.wasCanceled()){
+			QMessageBox::warning(NULL, tr("FET warning"), tr("Canceled"));
+			return false;
+		}
+		ttt++;
+	
 		QList<int> tmpStudents;
 		QMultiHash<QString, int> tmpSubjects;
 		tmpStudents.clear();
@@ -1286,6 +1411,26 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QString saveTime){
 					default: tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
 				}
 			} else {
+				QMap<QString, int> tmpTeacherDuration;	//not QHash, because i need the correct order of the activities
+				foreach(int tmpAct, tmpActivities){
+					Activity* act=gt.rules.activitiesList[tmpAct];
+					int tmpD=act->duration;
+					QString tmpT;
+					if(act->teachersNames.size()>0){
+						for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
+							switch(TIMETABLE_HTML_LEVEL){
+								case 4 : tmpT+="<span class=\"teacher_"+protect2id(*it)+"\">"+protect2(*it)+"</span>"; break;
+								case 5 : tmpT+="<span class=\"teacher_"+protect2id(*it)+"\" onmouseover=\"highlight('teacher_"+protect2java(*it)+"')\">"+protect2(*it)+"</span>"; break;
+								default: tmpT+=protect2(*it); break;
+							}
+							if(it!=act->teachersNames.end()-1)
+								tmpT+=", ";
+						}
+					} else
+						tmpT=" ";
+					tmpD+=tmpTeacherDuration.value(tmpT);
+					tmpTeacherDuration.insert(tmpT, tmpD);
+				}
 				if(TIMETABLE_HTML_LEVEL>=1)
 					tos<<"          <td><table class=\"detailed\">";
 				else
@@ -1293,41 +1438,27 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QString saveTime){
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"duration line1\">";
 				else	tos<<"<tr>";
-				foreach(int ai, tmpActivities){
-					Activity* act=gt.rules.activitiesList[ai];
+				QMapIterator<QString, int> it(tmpTeacherDuration);
+				while(it.hasNext()){
+					it.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					switch(TIMETABLE_HTML_LEVEL){
-						case 4 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\">"<<QString::number(act->totalDuration)<<"</span>"; break;
-						case 5 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\" onmouseover=\"highlight('duration_"<<QString::number(act->totalDuration)<<"')\">"<<QString::number(act->totalDuration)<<"</span>"; break;
-						default: tos<<QString::number(act->totalDuration); break;
-					}
-					tos<<"</td>";	
+					tos<<it.value()<<"</td>";	
 				}
 				tos<<"</tr>";
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"teacher line2\">";
 				else	tos<<"<tr>";
-				foreach(int ai, tmpActivities){
-					Activity* act=gt.rules.activitiesList[ai];
+				QMapIterator<QString, int> it2(tmpTeacherDuration);	//do it with the same iterator
+				while(it2.hasNext()){
+					it2.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					if(act->teachersNames.size()>0){
-						for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
-							switch(TIMETABLE_HTML_LEVEL){
-								case 4 : tos<<"<span class=\"teacher_"<<protect2id(*it)<<"\">"<<protect2(*it)<<"</span>"; break;
-								case 5 : tos<<"<span class=\"teacher_"<<protect2id(*it)<<"\" onmouseover=\"highlight('teacher_"<<protect2java(*it)<<"')\">"<<protect2(*it)<<"</span>"; break;
-								default: tos<<protect2(*it); break;
-							}
-							if(it!=act->teachersNames.end()-1)
-								tos<<", ";
-						}
-					}
-					tos<<"</td>";
+					tos<<it2.key()<<"</td>";	
 				}
 				tos<<"</tr>";
 				tos<<"</table></td>\n";
@@ -1340,6 +1471,9 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QString saveTime){
 		tos<<"</th>\n";
 		tos<<"        </tr>\n";
 	}
+	
+	progress.setValue(allStudentsNames.count());
+
 	tos<<"        <tr>\n";
 	if(TIMETABLE_HTML_LEVEL>=2)
 		tos<<"          <th class=\"xAxis\">";
@@ -1439,7 +1573,23 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QString saveTime){
 	//workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<numberOfStudentsNames+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
+	
+	QProgressDialog progress(NULL);
+	progress.setLabelText(tr("Processing students with subjects...please wait"));
+	progress.setRange(0, allSubjectsNames.count());
+	progress.setModal(true);
+	
+	int ttt=0;
+	
 	foreach(QString subjects, allSubjectsNames){
+		progress.setValue(ttt);
+		pqapplication->processEvents();
+		if(progress.wasCanceled()){
+			QMessageBox::warning(NULL, tr("FET warning"), tr("Canceled"));
+			return false;
+		}
+		ttt++;
+	
 		QList<int> tmpSubjects;
 		QMultiHash<QString, int> tmpStudents;
 		tmpSubjects.clear();
@@ -1469,6 +1619,26 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QString saveTime){
 					default: tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
 				}
 			} else {
+				QMap<QString, int> tmpTeacherDuration;	//not QHash, because i need the correct order of the activities
+				foreach(int tmpAct, tmpActivities){
+					Activity* act=gt.rules.activitiesList[tmpAct];
+					int tmpD=act->duration;
+					QString tmpT;
+					if(act->teachersNames.size()>0){
+						for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
+							switch(TIMETABLE_HTML_LEVEL){
+								case 4 : tmpT+="<span class=\"teacher_"+protect2id(*it)+"\">"+protect2(*it)+"</span>"; break;
+								case 5 : tmpT+="<span class=\"teacher_"+protect2id(*it)+"\" onmouseover=\"highlight('teacher_"+protect2java(*it)+"')\">"+protect2(*it)+"</span>"; break;
+								default: tmpT+=protect2(*it); break;
+							}
+							if(it!=act->teachersNames.end()-1)
+								tmpT+=", ";
+						}
+					} else
+						tmpT=" ";
+					tmpD+=tmpTeacherDuration.value(tmpT);
+					tmpTeacherDuration.insert(tmpT, tmpD);
+				}
 				if(TIMETABLE_HTML_LEVEL>=1)
 					tos<<"          <td><table class=\"detailed\">";
 				else
@@ -1476,41 +1646,27 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QString saveTime){
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"duration line1\">";
 				else	tos<<"<tr>";
-				foreach(int ai, tmpActivities){
-					Activity* act=gt.rules.activitiesList[ai];
+				QMapIterator<QString, int> it(tmpTeacherDuration);
+				while(it.hasNext()){
+					it.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					switch(TIMETABLE_HTML_LEVEL){
-						case 4 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\">"<<QString::number(act->totalDuration)<<"</span>"; break;
-						case 5 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\" onmouseover=\"highlight('duration_"<<QString::number(act->totalDuration)<<"')\">"<<QString::number(act->totalDuration)<<"</span>"; break;
-						default: tos<<QString::number(act->totalDuration); break;
-					}
-					tos<<"</td>";	
+					tos<<it.value()<<"</td>";	
 				}
 				tos<<"</tr>";
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"teacher line2\">";
 				else	tos<<"<tr>";
-				foreach(int ai, tmpActivities){
-					Activity* act=gt.rules.activitiesList[ai];
+				QMapIterator<QString, int> it2(tmpTeacherDuration);	//do it with the same iterator
+				while(it2.hasNext()){
+					it2.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					if(act->teachersNames.size()>0){
-						for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
-							switch(TIMETABLE_HTML_LEVEL){
-								case 4 : tos<<"<span class=\"teacher_"<<protect2id(*it)<<"\">"<<protect2(*it)<<"</span>"; break;
-								case 5 : tos<<"<span class=\"teacher_"<<protect2id(*it)<<"\" onmouseover=\"highlight('teacher_"<<protect2java(*it)<<"')\">"<<protect2(*it)<<"</span>"; break;
-								default: tos<<protect2(*it); break;
-							}
-							if(it!=act->teachersNames.end()-1)
-								tos<<", ";
-						}
-					}
-					tos<<"</td>";
+					tos<<it2.key()<<"</td>";	
 				}
 				tos<<"</tr>";
 				tos<<"</table></td>\n";
@@ -1523,6 +1679,9 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QString saveTime){
 		tos<<"</th>\n";
 		tos<<"        </tr>\n";
 	}
+	
+	progress.setValue(allSubjectsNames.count());
+
 	tos<<"        <tr>\n";
 	if(TIMETABLE_HTML_LEVEL>=2)
 		tos<<"          <th class=\"xAxis\">";

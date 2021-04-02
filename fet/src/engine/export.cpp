@@ -133,6 +133,62 @@ bool Export::checkSetSeparator(const QString& str, const QString setSeparator){
 	return true;
 }
 
+bool Export::isActivityNotManualyEdited(const int activityIndex, bool& diffTeachers, bool& diffSubject, bool& diffActivityTags, bool& diffStudents, bool& diffCompNStud, bool& diffNStud){ //similar to ActivitiesForm::modifyActivity() by Liviu Lalescu
+	diffTeachers=diffSubject=diffActivityTags=diffStudents=diffCompNStud=diffNStud=false;
+
+	assert(activityIndex>=0);
+	assert(activityIndex<gt.rules.activitiesList.size());
+
+	Activity* act=gt.rules.activitiesList[activityIndex];
+	assert(act!=NULL);
+	
+	QStringList teachers=act->teachersNames;
+	QString subject=act->subjectName;
+	QStringList activityTags=act->activityTagsNames;
+	QStringList students=act->studentsNames;
+	
+	int nTotalStudents=act->nTotalStudents;
+	
+	bool computeNTotalStudents=act->computeNTotalStudents;
+
+	if(act->isSplit()){
+		for(int i=activityIndex; i<gt.rules.activitiesList.size(); i++){	//possible speed improvement: not i=0. do i=act->activityGroupId
+			Activity* act2=gt.rules.activitiesList[i];			//possible speed improvement: if(act2->activityGroupId changed) break;
+			if(act2->activityGroupId!=0 && act2->activityGroupId==act->activityGroupId){
+				if(teachers!=act2->teachersNames){
+					//return false;
+					diffTeachers=true;
+				}
+				if(subject!=act2->subjectName){
+					//return false;
+					diffSubject=true;
+				}
+				if(activityTags!=act2->activityTagsNames){
+					diffActivityTags=true;
+					//return false;
+				}
+				if(students!=act2->studentsNames){
+					diffStudents=true;
+					//return false;
+				}
+				if( /* !computeNTotalStudents && !act2->computeNTotalStudents && */ nTotalStudents!=act2->nTotalStudents){
+					diffNStud=true;
+					//return false;
+				}
+				if(computeNTotalStudents!=act2->computeNTotalStudents){
+					diffCompNStud=true;
+					//return false;
+				}
+			}
+			else
+				i=gt.rules.activitiesList.size();
+		}
+	}
+	if(!diffTeachers && !diffSubject && !diffActivityTags && !diffStudents && !diffCompNStud && !diffNStud)
+		return true;
+	else
+		return false;
+}
 
 
 bool Export::selectSeparatorAndTextquote(QString& textquote, QString& fieldSeparator, bool& head){
@@ -586,127 +642,121 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString textquote,
 		}
 	}
 	//code by Liviu Lalescu (end)
+	
+	bool manuallyEdited=false;
 
 	Activity* acti;
 	Activity* actiNext;
+	int countExportedActivities=0;
 	for(int ai=0; ai<gt.rules.activitiesList.size(); ai++){
 		acti=gt.rules.activitiesList[ai];
 		if(acti->active){
 			if((acti->activityGroupId==acti->id)||(acti->activityGroupId==0)){
-				//if((acti->studentsNames.size()>0) && (acti->teachersNames.size()>0) ){
-					//students set
-					tosExport<<textquote;
-					for(int s=0; s<acti->studentsNames.size(); s++){
-						if(s!=0)
+				bool diffTeachers, diffSubject, diffActivityTag, diffStudents, diffCompNStud, diffNStud;
+				if(isActivityNotManualyEdited(ai, diffTeachers, diffSubject, diffActivityTag, diffStudents, diffCompNStud, diffNStud)){
+				}
+				else{
+					QStringList s;
+					if(diffTeachers)
+						s.append(tr("different teachers"));
+					if(diffSubject)
+						s.append(tr("different subject"));
+					if(diffActivityTag)
+						s.append(tr("different activity tags"));
+					if(diffStudents)
+						s.append(tr("different students"));
+					if(diffCompNStud)
+						s.append(tr("different boolean variable 'must compute n total students'"));
+					if(diffNStud)
+						s.append(tr("different number of students"));
+					
+					manuallyEdited=true;
+					
+					lastWarnings+=tr("Subactivities with activity group id %1 are different between themselves (they were separately edited),"
+						" so the export will not be very accurate. The fields which are different will be considered those of the representative subactivity. Fields which were"
+						" different are: %2").arg(QString::number(acti->activityGroupId)).arg(s.join(", "))+"\n";
+				}
+				
+				countExportedActivities++;
+				//students set
+				tosExport<<textquote;
+				for(int s=0; s<acti->studentsNames.size(); s++){
+					if(s!=0)
+						tosExport<<"+";
+					tosExport<<protectCSV(acti->studentsNames[s]);
+				}
+				tosExport<<textquote<<fieldSeparator<<textquote;
+				//subject
+				tosExport<<protectCSV(acti->subjectName);
+				tosExport<<textquote<<fieldSeparator<<textquote;
+				//teachers
+				for(int t=0; t<acti->teachersNames.size(); t++){
+					if(t!=0)
+						tosExport<<"+";
+					tosExport<<protectCSV(acti->teachersNames[t]);
+				}
+				tosExport<<textquote<<fieldSeparator<<textquote;
+				//activity tags
+				for(int s=0; s<acti->activityTagsNames.size(); s++){
+					if(s!=0)
+						tosExport<<"+";
+					tosExport<<protectCSV(acti->activityTagsNames[s]);
+				}
+				tosExport<<textquote<<fieldSeparator;
+				//total duration
+				tosExport<<qPrintable(QString::number(acti->totalDuration));
+				tosExport<<fieldSeparator<<textquote;
+				//split duration
+				for(int aiNext=ai; aiNext<gt.rules.activitiesList.size(); aiNext++){
+					actiNext=gt.rules.activitiesList[aiNext];
+					if(acti->activityGroupId!=0&&actiNext->activityGroupId==acti->activityGroupId){
+						if(aiNext!=ai)
 							tosExport<<"+";
-						tosExport<<protectCSV(acti->studentsNames[s]);
-					}
-					tosExport<<textquote<<fieldSeparator<<textquote;
-					//subject
-					tosExport<<protectCSV(acti->subjectName);
-					tosExport<<textquote<<fieldSeparator<<textquote;
-					//teachers
-					for(int t=0; t<acti->teachersNames.size(); t++){
-						if(t!=0)
-							tosExport<<"+";
-						tosExport<<protectCSV(acti->teachersNames[t]);
-					}
-					tosExport<<textquote<<fieldSeparator<<textquote;
-					//activity tag
-					tosExport<<protectCSV(acti->activityTagName);
-					tosExport<<textquote<<fieldSeparator;
-					//total duration
-					tosExport<<qPrintable(QString::number(acti->totalDuration));
-					tosExport<<fieldSeparator<<textquote;
-					//split duration
-					//start old code by Volker Dirr. useless now, because of Livius min n day detection
-					/*bool careAboutMinDay=false;
-					QList<int> affected_tcIDs;
-					TimeConstraint* tc;
-					tc=NULL;
-					for(int tcID=0; tcID<gt.rules.timeConstraintsList.size(); tcID++){
-						tc=gt.rules.timeConstraintsList[tcID];
-						if(tc->type==CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES)
-							if(tc->isRelatedToActivity(acti))
-								affected_tcIDs<<tcID;
-					}
-					if(affected_tcIDs.size()>1){
-						QMessageBox::critical(NULL, QObject::tr("FET critical"),
-						Export::tr("Please check the min n day constraint of the export file of activity %1.").arg(ai));
-					}
-					if(affected_tcIDs.size()==1){
+						tosExport<<actiNext->duration;
+					} else {
+						if(acti->activityGroupId==0&&actiNext->activityGroupId==acti->activityGroupId){
+							assert(ai==aiNext);
+							assert(actiNext->duration==actiNext->totalDuration);
+							if(actiNext->duration>1)
+								tosExport<<actiNext->duration;
+						}	
+						aiNext=gt.rules.activitiesList.size();
+					}	
+				}
+				tosExport<<textquote<<fieldSeparator;
+				//min n days
+				//start new code, because of Livius detection
+				bool careAboutMinDay=false;
+				ConstraintMinNDaysBetweenActivities* tcmd=activitiesConstraints.value(acti->id, NULL);
+				if(acti->id==acti->activityGroupId){
+					if(tcmd!=NULL){
 						careAboutMinDay=true;
-						tc=gt.rules.timeConstraintsList[affected_tcIDs[0]];
 					}
-					ConstraintMinNDaysBetweenActivities* tcmd;
-					tcmd=(ConstraintMinNDaysBetweenActivities*)tc;
-					for(int aiNext=ai; aiNext<gt.rules.activitiesList.size(); aiNext++){
-						actiNext=gt.rules.activitiesList[aiNext];
-						if(acti->activityGroupId!=0&&actiNext->activityGroupId==acti->activityGroupId){
-							if(aiNext!=ai)
-								tosExport<<"+";
-							tosExport<<actiNext->duration;
-							if(affected_tcIDs.size()==1){
-								if(!tcmd->isRelatedToActivity(actiNext))
-									careAboutMinDay=false;
-							}
-						} else {
-							if(acti->activityGroupId==0&&actiNext->activityGroupId==acti->activityGroupId){
-								assert(ai==aiNext);
-								assert(actiNext->duration==actiNext->totalDuration);
-								if(actiNext->duration>1)
-									tosExport<<actiNext->duration;
-							}	
-							aiNext=gt.rules.activitiesList.size();
-						}	
-					}*/
-					//end old code by Volker Dirr
-					for(int aiNext=ai; aiNext<gt.rules.activitiesList.size(); aiNext++){
-						actiNext=gt.rules.activitiesList[aiNext];
-						if(acti->activityGroupId!=0&&actiNext->activityGroupId==acti->activityGroupId){
-							if(aiNext!=ai)
-								tosExport<<"+";
-							tosExport<<actiNext->duration;
-						} else {
-							if(acti->activityGroupId==0&&actiNext->activityGroupId==acti->activityGroupId){
-								assert(ai==aiNext);
-								assert(actiNext->duration==actiNext->totalDuration);
-								if(actiNext->duration>1)
-									tosExport<<actiNext->duration;
-							}	
-							aiNext=gt.rules.activitiesList.size();
-						}	
-					}
-					tosExport<<textquote<<fieldSeparator;
-					//min n days
-					//start new code, because of Livius detection
-					bool careAboutMinDay=false;
-					ConstraintMinNDaysBetweenActivities* tcmd=activitiesConstraints.value(acti->id, NULL);
-					if(acti->id==acti->activityGroupId){
-							if(tcmd!=NULL){
-								careAboutMinDay=true;
-							}
-					}
-					//end new code
-					if(careAboutMinDay){
-						assert(tcmd->type==CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES);
-						tosExport<<qPrintable(QString::number(tcmd->minDays));
-					}
-					tosExport<<fieldSeparator;
-					//min n days weight
-					if(careAboutMinDay)
-						tosExport<<qPrintable(QString::number(tcmd->weightPercentage));
-					tosExport<<fieldSeparator;
-					//min n days consecutive
-					if(careAboutMinDay)
-						tosExport<<tcmd->consecutiveIfSameDay;
-					tosExport<<endl;
-				//}
+				}
+				//end new code
+				if(careAboutMinDay){
+					assert(tcmd->type==CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES);
+					tosExport<<qPrintable(QString::number(tcmd->minDays));
+				}
+				tosExport<<fieldSeparator;
+				//min n days weight
+				if(careAboutMinDay)
+					tosExport<<qPrintable(QString::number(tcmd->weightPercentage));
+				tosExport<<fieldSeparator;
+				//min n days consecutive
+				if(careAboutMinDay)
+					tosExport<<tcmd->consecutiveIfSameDay;
+				tosExport<<endl;
 			}
 		}
 	}
+	
+	if(manuallyEdited){
+		QMessageBox::warning(NULL, tr("FET warning"), tr("There are subactivities which were modified separately - so the "
+			"components had different values for subject, activity tags, teachers, students or number of students from the representative subactivity. The export was done, but it is not very accurate."));
+	}
 
-	lastWarnings+=Export::tr("%1 activities exported.").arg(gt.rules.activitiesList.size())+"\n";
+	lastWarnings+=Export::tr("%1 activities exported.").arg(countExportedActivities)+"\n";
 	if(fileExport.error()>0){
 		lastWarnings+=Export::tr("FET critical. Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(file).arg(fileExport.error())+"\n";
 		return false;
@@ -774,8 +824,13 @@ bool Export::exportCSVTimetable(QString& lastWarnings, const QString textquote, 
 						tosExport<<protectCSV(act->teachersNames[t]);
 					}
 					tosExport<<textquote<<fieldSeparator<<textquote;
-					//Activity Tag
-					tosExport<<protectCSV(act->activityTagName)<<textquote<<fieldSeparator;
+					//Activity Tags
+					for(int s=0; s<act->activityTagsNames.size(); s++){
+						if(s!=0)
+							tosExport<<"+";
+						tosExport<<protectCSV(act->activityTagsNames[s]);
+					}
+					tosExport<<textquote<<fieldSeparator;
 					//Room
 					if(best_solution.rooms[i] != UNSPECIFIED_ROOM && best_solution.rooms[i] != UNALLOCATED_SPACE){
 						assert(best_solution.rooms[i]>=0 && best_solution.rooms[i]<gt.rules.nInternalRooms);
@@ -975,7 +1030,8 @@ bool Export::exportSchILD(QString& lastWarnings){
 							else tosK<<"J";
 							tosK<<endl;
 						}
-						if(acti->activityTagName.size()==3 && (acti->teachersNames.size()>0)){
+						//rethink, because of multible activity tags
+						/*if(acti->activityTagName.size()==3 && (acti->teachersNames.size()>0)){
 							if((acti->activityTagName.at(0)>='0')&&(acti->activityTagName.at(0)<='9')
 							&&(acti->activityTagName.at(1)>='0')&&(acti->activityTagName.at(1)<='9')
 							&&(acti->activityTagName.at(2)>='0')&&(acti->activityTagName.at(2)<='9')){
@@ -996,7 +1052,7 @@ bool Export::exportSchILD(QString& lastWarnings){
 									tosLS<<endl;
 								}
 							}
-						}
+						}*/
 						if((acti->studentsNames.size()>0) && (acti->teachersNames.size()==0) ){	//TODO: care about that activities!
 							//added=true;
 							tosE<<"Warnung: Aktivität "<<acti->id<<" wurde nicht hinzugefügt."<<" Schülerkopplung?"<<endl;

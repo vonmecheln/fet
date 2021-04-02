@@ -118,7 +118,8 @@ bool ConstraintActivityPreferredStartingTimeForm::filterOk(TimeConstraint* ctr)
 			found=false;
 	
 		//activity tag
-		if(sbtn!="" && sbtn!=act->activityTagName)
+//		if(sbtn!="" && sbtn!=act->activityTagName)
+		if(sbtn!="" && !act->activityTagsNames.contains(sbtn))
 			found=false;
 	
 		//students

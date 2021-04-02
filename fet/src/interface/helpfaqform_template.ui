@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 18 January 2009 (new additions are written with date, most are at the end)
+this documentation by Liviu Lalescu, reviewed and modified - 11 February 2009 (new additions are written with date, most are at the end)
 
 --------
 
@@ -759,7 +759,35 @@ cover first and last hour! I had 16  teachers in total for that day but their r
 difficult to look through it). So this specific teacher (because of the restrictions on the other teachers and the loose restrictions on 
 himself) had to teach 6 hours with 1 gap so that he could cover a first and a last hour! 
 
-...Not that I will fall again for it but based on the difficulty to diagnose on my part it will help others that might face the same problem.</string>
+...Not that I will fall again for it but based on the difficulty to diagnose on my part it will help others that might face the same problem.
+
+---------------------------------------------------------------------------------
+
+Q: I want to define hard subjects (Math, Physics and Chemistry) and I want students not to have more than 1 (or another variant 2) difficult subjects in a row.
+
+A: Define activity tag "Difficult" and add it to all MA, PH and CH lessons. Then add constraint maximum 1 (or 2) hours continuously for all students and an activity tag "Difficult". Please take care if you may have double lessons.
+
+---------------------------------------------------------------------------------
+
+Q: (by Horatiu Halmajan)  I met a situation: a teacher asks for maximum 2 working days, but these days should not be consecutive. Is there a way to implement it in .fet?
+
+The only (manual) way I could think of, is to set the teacher as unavailable on Tuesdays and Thursdays, thus leaving him available on Monday, Wednesday and Friday (any two of these are unconsecutive).
+
+Any other ideas...?
+
+A: I have another idea: choose 2 activities of this teacher which clearly cannot be on the same day, and add constraint min n days between activities, 2 days, 100%.
+
+Or add a dummy activity for this teacher, split into 2 per week, min n days = 2, with 100%. You just need to take care that this teacher has place for these dummy activities (enough slots in the day) and to consider these dummy activities as possible gaps, so if teacher has max gaps 2 then make max gaps for him 0.
+
+---------------------------------------------------------------------------------
+
+Q: (by Horatiu Halmajan) The students must have max 4 gaps per week, maximum 2 per day, continuous gaps. How to solve this?
+
+A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, duration 1, min n days between activities 1, weight 0%, select consecutive if same day. FET will never put more than 2 of these dummy activities in a day. Add max gaps for students = 0 per week.
+
+---------------------------------------------------------------------------------
+
+Advice: to treat gaps for students or teachers, if FET constraints are not enough, you can use dummy activities. For instance, if a students set can have maximum 3 gaps, add an activity split into 3 per week, with no teachers.</string>
             </property>
         </widget>
     </grid>

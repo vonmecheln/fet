@@ -267,7 +267,12 @@ void TimetableViewStudentsForm::updateStudentsTimetableTable(){
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
 				assert(act!=NULL);
-				s+=act->subjectName + " " + act->activityTagName;
+				
+				QString ats="";
+				foreach(QString crt, act->activityTagsNames)
+					ats+=" "+crt;
+				
+				s+=act->subjectName + ats; // + " " + act->activityTagName;
 				
 				//int r=rooms_timetable_weekly[i][k][j];
 				int r=best_solution.rooms[ai];

@@ -472,7 +472,7 @@ public:
 		int _activityGroupId,
 		const QStringList& _teachersNames,
 		const QString& _subjectName,
-		const QString& _activityTagName,
+		const QStringList& _activityTagsNames,
 		const QStringList& _studentsNames,
 		int _duration, /*duration, in hours*/
 		int _totalDuration,
@@ -496,7 +496,7 @@ public:
 		int _activityGroupId,
 		const QStringList& _teachersNames,
 		const QString& _subjectName,
-		const QString& _activityTagName,
+		const QStringList& _activityTagsNames,
 		const QStringList& _studentsNames,
 		int _nSplits,
 		int _totalDuration,
@@ -534,7 +534,7 @@ public:
 		int _activityGroupId, 
 		const QStringList& _teachersNames,
 		const QString& _subjectName, 
-		const QString& _activityTagName, 
+		const QStringList& _activityTagsNames, 
 		const QStringList& _studentsNames,
 		//int _nTotalStudents,
 	 	int _nSplits,
@@ -542,6 +542,18 @@ public:
 		int _durations[],
 		//int _parities[],
 		bool _active[],
+		bool _computeNTotalStudents,
+		int nTotalStudents);
+
+	void modifySubactivity(
+		int _id, 
+		int _activityGroupId, 
+		const QStringList& _teachersNames,
+		const QString& _subjectName, 
+		const QStringList& _activityTagsNames, 
+		const QStringList& _studentsNames,
+		int _duration,
+		bool _active,
 		bool _computeNTotalStudents,
 		int nTotalStudents);
 

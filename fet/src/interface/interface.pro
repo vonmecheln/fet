@@ -11,6 +11,10 @@ SOURCES += fet.cpp \
            activitiesform.cpp \
            addactivityform.cpp \
            modifyactivityform.cpp \
+\
+           subactivitiesform.cpp \
+           modifysubactivityform.cpp \
+\
            addroomform.cpp \
            modifyroomform.cpp \
            addbuildingform.cpp \
@@ -211,6 +215,13 @@ SOURCES += fet.cpp \
 		   addconstraintteachermaxhourscontinuouslyform.cpp \
 		   modifyconstraintteachermaxhourscontinuouslyform.cpp \
 \
+		   constraintteachersactivitytagmaxhourscontinuouslyform.cpp \
+		   addconstraintteachersactivitytagmaxhourscontinuouslyform.cpp \
+		   modifyconstraintteachersactivitytagmaxhourscontinuouslyform.cpp \
+		   constraintteacheractivitytagmaxhourscontinuouslyform.cpp \
+		   addconstraintteacheractivitytagmaxhourscontinuouslyform.cpp \
+		   modifyconstraintteacheractivitytagmaxhourscontinuouslyform.cpp \
+\
 		   constraintteachersminhoursdailyform.cpp \
 		   addconstraintteachersminhoursdailyform.cpp \
 		   modifyconstraintteachersminhoursdailyform.cpp \
@@ -266,6 +277,13 @@ SOURCES += fet.cpp \
 		   constraintstudentsmaxhourscontinuouslyform.cpp \
 		   addconstraintstudentsmaxhourscontinuouslyform.cpp \
 		   modifyconstraintstudentsmaxhourscontinuouslyform.cpp \
+\
+		   constraintstudentssetactivitytagmaxhourscontinuouslyform.cpp \
+		   addconstraintstudentssetactivitytagmaxhourscontinuouslyform.cpp \
+		   modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform.cpp \
+		   constraintstudentsactivitytagmaxhourscontinuouslyform.cpp \
+		   addconstraintstudentsactivitytagmaxhourscontinuouslyform.cpp \
+		   modifyconstraintstudentsactivitytagmaxhourscontinuouslyform.cpp \
 \
 		   constraintstudentssetminhoursdailyform.cpp \
 		   addconstraintstudentssetminhoursdailyform.cpp \
@@ -325,6 +343,10 @@ HEADERS += fet.h \
            activitiesform.h \
            addactivityform.h \
            modifyactivityform.h \
+\
+           subactivitiesform.h \
+           modifysubactivityform.h \
+\
            addroomform.h \
            modifyroomform.h \
            addbuildingform.h \
@@ -523,6 +545,13 @@ HEADERS += fet.h \
 		   addconstraintteachermaxhourscontinuouslyform.h \
 		   modifyconstraintteachermaxhourscontinuouslyform.h \
 \
+		   constraintteachersactivitytagmaxhourscontinuouslyform.h \
+		   addconstraintteachersactivitytagmaxhourscontinuouslyform.h \
+		   modifyconstraintteachersactivitytagmaxhourscontinuouslyform.h \
+		   constraintteacheractivitytagmaxhourscontinuouslyform.h \
+		   addconstraintteacheractivitytagmaxhourscontinuouslyform.h \
+		   modifyconstraintteacheractivitytagmaxhourscontinuouslyform.h \
+\
 		   constraintteachersminhoursdailyform.h \
 		   addconstraintteachersminhoursdailyform.h \
 		   modifyconstraintteachersminhoursdailyform.h \
@@ -578,6 +607,13 @@ HEADERS += fet.h \
 		   constraintstudentsmaxhourscontinuouslyform.h \
 		   addconstraintstudentsmaxhourscontinuouslyform.h \
 		   modifyconstraintstudentsmaxhourscontinuouslyform.h \
+\
+		   constraintstudentssetactivitytagmaxhourscontinuouslyform.h \
+		   addconstraintstudentssetactivitytagmaxhourscontinuouslyform.h \
+		   modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform.h \
+		   constraintstudentsactivitytagmaxhourscontinuouslyform.h \
+		   addconstraintstudentsactivitytagmaxhourscontinuouslyform.h \
+		   modifyconstraintstudentsactivitytagmaxhourscontinuouslyform.h \
 \
 		   constraintstudentssetminhoursdailyform.h \
 		   addconstraintstudentssetminhoursdailyform.h \
@@ -669,6 +705,10 @@ FORMS3 += helpfaqform_template.ui \
          activitiesform_template.ui \
          addactivityform_template.ui \
          modifyactivityform_template.ui \
+\
+         subactivitiesform_template.ui \
+         modifysubactivityform_template.ui \
+\
          addroomform_template.ui \
          modifyroomform_template.ui \
          addbuildingform_template.ui \
@@ -845,6 +885,13 @@ FORMS3 += helpfaqform_template.ui \
 		   addconstraintteachermaxhourscontinuouslyform_template.ui \
 		   modifyconstraintteachermaxhourscontinuouslyform_template.ui \
 \
+		   constraintteachersactivitytagmaxhourscontinuouslyform_template.ui \
+		   addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui \
+		   modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui \
+		   constraintteacheractivitytagmaxhourscontinuouslyform_template.ui \
+		   addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui \
+		   modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui \
+\
 		   constraintteachersminhoursdailyform_template.ui \
 		   addconstraintteachersminhoursdailyform_template.ui \
 		   modifyconstraintteachersminhoursdailyform_template.ui \
@@ -900,6 +947,13 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintstudentsmaxhourscontinuouslyform_template.ui \
 		   addconstraintstudentsmaxhourscontinuouslyform_template.ui \
 		   modifyconstraintstudentsmaxhourscontinuouslyform_template.ui \
+\
+		   constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui \
+		   addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui \
+		   modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui \
+		   constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui \
+		   addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui \
+		   modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui \
 \
 		   constraintstudentssetminhoursdailyform_template.ui \
 		   addconstraintstudentssetminhoursdailyform_template.ui \

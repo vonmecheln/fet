@@ -792,6 +792,19 @@ bool Rules::removeTeacher(const QString& teacherName)
 
 	for(int i=0; i<this->timeConstraintsList.size(); ){
 		TimeConstraint* ctr=this->timeConstraintsList[i];
+		if(ctr->type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintTeacherActivityTagMaxHoursContinuously* crt_constraint=(ConstraintTeacherActivityTagMaxHoursContinuously*)ctr;
+			if(teacherName==crt_constraint->teacherName)
+				this->removeTimeConstraint(ctr); //single constraint removal
+			else
+				i++;
+		}
+		else
+			i++;
+	}
+
+	for(int i=0; i<this->timeConstraintsList.size(); ){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
 		if(ctr->type==CONSTRAINT_TEACHER_MIN_HOURS_DAILY){
 			ConstraintTeacherMinHoursDaily* crt_constraint=(ConstraintTeacherMinHoursDaily*)ctr;
 			if(teacherName==crt_constraint->teacherName)
@@ -1027,6 +1040,16 @@ bool Rules::modifyTeacher(const QString& initialTeacherName, const QString& fina
 
 		if(ctr->type==CONSTRAINT_TEACHER_MAX_HOURS_CONTINUOUSLY){
 			ConstraintTeacherMaxHoursContinuously* crt_constraint=(ConstraintTeacherMaxHoursContinuously*)ctr;
+			if(initialTeacherName == crt_constraint->teacherName)
+				crt_constraint->teacherName=finalTeacherName;
+		}
+	}
+
+	for(int i=0; i<this->timeConstraintsList.size(); i++){
+		TimeConstraint* ctr=this->timeConstraintsList[i];	
+
+		if(ctr->type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintTeacherActivityTagMaxHoursContinuously* crt_constraint=(ConstraintTeacherActivityTagMaxHoursContinuously*)ctr;
 			if(initialTeacherName == crt_constraint->teacherName)
 				crt_constraint->teacherName=finalTeacherName;
 		}
@@ -1494,10 +1517,69 @@ bool Rules::removeActivityTag(const QString& activityTagName)
 	for(int i=0; i<this->activitiesList.size(); i++){
 		Activity* act=this->activitiesList[i];
 
-		if( act->activityTagName == activityTagName)
-			act->activityTagName="";
+		//if( act->activityTagName == activityTagName)
+		//	act->activityTagName="";
+		if( act->activityTagsNames.contains(activityTagName) )
+			act->activityTagsNames.removeAll(activityTagName);
 	}
 	
+	//delete the time constraints related to this activity tag
+	for(int i=0; i<this->timeConstraintsList.size(); ){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
+		
+		if(ctr->type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintTeacherActivityTagMaxHoursContinuously* crt_constraint=(ConstraintTeacherActivityTagMaxHoursContinuously*)ctr;
+			if(activityTagName == crt_constraint->activityTagName)
+				this->removeTimeConstraint(ctr); //single constraint removal
+			else
+				i++;
+		}
+		else
+			i++;
+	}
+	//delete the time constraints related to this activity tag
+	for(int i=0; i<this->timeConstraintsList.size(); ){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
+		
+		if(ctr->type==CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintTeachersActivityTagMaxHoursContinuously* crt_constraint=(ConstraintTeachersActivityTagMaxHoursContinuously*)ctr;
+			if(activityTagName == crt_constraint->activityTagName)
+				this->removeTimeConstraint(ctr); //single constraint removal
+			else
+				i++;
+		}
+		else
+			i++;
+	}
+	//delete the time constraints related to this activity tag
+	for(int i=0; i<this->timeConstraintsList.size(); ){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
+		
+		if(ctr->type==CONSTRAINT_STUDENTS_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsActivityTagMaxHoursContinuously* crt_constraint=(ConstraintStudentsActivityTagMaxHoursContinuously*)ctr;
+			if(activityTagName == crt_constraint->activityTagName)
+				this->removeTimeConstraint(ctr); //single constraint removal
+			else
+				i++;
+		}
+		else
+			i++;
+	}
+	//delete the time constraints related to this activity tag
+	for(int i=0; i<this->timeConstraintsList.size(); ){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
+		
+		if(ctr->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsSetActivityTagMaxHoursContinuously* crt_constraint=(ConstraintStudentsSetActivityTagMaxHoursContinuously*)ctr;
+			if(activityTagName == crt_constraint->activityTagName)
+				this->removeTimeConstraint(ctr); //single constraint removal
+			else
+				i++;
+		}
+		else
+			i++;
+	}
+
 	//delete the time constraints related to this activity tag
 	for(int i=0; i<this->timeConstraintsList.size(); ){
 		TimeConstraint* ctr=this->timeConstraintsList[i];
@@ -1620,10 +1702,51 @@ bool Rules::modifyActivityTag(const QString& initialActivityTagName, const QStri
 	for(int i=0; i<this->activitiesList.size(); i++){
 		Activity* act=this->activitiesList[i];
 
-		if( act->activityTagName == initialActivityTagName)
-			act->activityTagName=finalActivityTagName;
+		//if( act->activityTagName == initialActivityTagName)
+		//	act->activityTagName=finalActivityTagName;
+		for(int kk=0; kk<act->activityTagsNames.count(); kk++)
+			if(act->activityTagsNames.at(kk)==initialActivityTagName)
+				act->activityTagsNames[kk]=finalActivityTagName;
 	}
 	
+	//modify the constraints related to this activity tag
+	for(int i=0; i<this->timeConstraintsList.size(); i++){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
+	
+		if(ctr->type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintTeacherActivityTagMaxHoursContinuously* crt_constraint=(ConstraintTeacherActivityTagMaxHoursContinuously*)ctr;
+			if(initialActivityTagName == crt_constraint->activityTagName)
+				crt_constraint->activityTagName=finalActivityTagName;
+		}
+	}
+	for(int i=0; i<this->timeConstraintsList.size(); i++){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
+	
+		if(ctr->type==CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintTeachersActivityTagMaxHoursContinuously* crt_constraint=(ConstraintTeachersActivityTagMaxHoursContinuously*)ctr;
+			if(initialActivityTagName == crt_constraint->activityTagName)
+				crt_constraint->activityTagName=finalActivityTagName;
+		}
+	}
+	for(int i=0; i<this->timeConstraintsList.size(); i++){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
+	
+		if(ctr->type==CONSTRAINT_STUDENTS_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsActivityTagMaxHoursContinuously* crt_constraint=(ConstraintStudentsActivityTagMaxHoursContinuously*)ctr;
+			if(initialActivityTagName == crt_constraint->activityTagName)
+				crt_constraint->activityTagName=finalActivityTagName;
+		}
+	}
+	for(int i=0; i<this->timeConstraintsList.size(); i++){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
+	
+		if(ctr->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsSetActivityTagMaxHoursContinuously* crt_constraint=(ConstraintStudentsSetActivityTagMaxHoursContinuously*)ctr;
+			if(initialActivityTagName == crt_constraint->activityTagName)
+				crt_constraint->activityTagName=finalActivityTagName;
+		}
+	}
+
 	//modify the constraints related to this activity tag
 	for(int i=0; i<this->timeConstraintsList.size(); i++){
 		TimeConstraint* ctr=this->timeConstraintsList[i];
@@ -1962,6 +2085,13 @@ bool Rules::removeYear(const QString& yearName)
 				erased=true;
 			}
 		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsSetActivityTagMaxHoursContinuously* crt_constraint=(ConstraintStudentsSetActivityTagMaxHoursContinuously*)ctr;
+			if(yearName == crt_constraint->students){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY){
 			ConstraintStudentsSetMinHoursDaily* crt_constraint=(ConstraintStudentsSetMinHoursDaily*)ctr;
 			if(yearName == crt_constraint->students){
@@ -2129,6 +2259,11 @@ bool Rules::modifyYear(const QString& initialYearName, const QString& finalYearN
 		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_CONTINUOUSLY){
 			ConstraintStudentsSetMaxHoursContinuously* crt_constraint=(ConstraintStudentsSetMaxHoursContinuously*)ctr;
+			if(_initialYearName == crt_constraint->students)
+				crt_constraint->students=finalYearName;
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsSetActivityTagMaxHoursContinuously* crt_constraint=(ConstraintStudentsSetActivityTagMaxHoursContinuously*)ctr;
 			if(_initialYearName == crt_constraint->students)
 				crt_constraint->students=finalYearName;
 		}
@@ -2342,6 +2477,13 @@ bool Rules::removeGroup(const QString& yearName, const QString& groupName)
 				erased=true;
 			}
 		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsSetActivityTagMaxHoursContinuously* crt_constraint=(ConstraintStudentsSetActivityTagMaxHoursContinuously*)ctr;
+			if(groupName == crt_constraint->students){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY){
 			ConstraintStudentsSetMinHoursDaily* crt_constraint=(ConstraintStudentsSetMinHoursDaily*)ctr;
 			if(groupName == crt_constraint->students){
@@ -2529,6 +2671,11 @@ bool Rules::modifyGroup(const QString& yearName, const QString& initialGroupName
 			if(_initialGroupName == crt_constraint->students)
 				crt_constraint->students=finalGroupName;
 		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsSetActivityTagMaxHoursContinuously* crt_constraint=(ConstraintStudentsSetActivityTagMaxHoursContinuously*)ctr;
+			if(_initialGroupName == crt_constraint->students)
+				crt_constraint->students=finalGroupName;
+		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY){
 			ConstraintStudentsSetMinHoursDaily* crt_constraint=(ConstraintStudentsSetMinHoursDaily*)ctr;
 			if(_initialGroupName == crt_constraint->students)
@@ -2704,6 +2851,13 @@ bool Rules::removeSubgroup(const QString& yearName, const QString& groupName, co
 		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_CONTINUOUSLY){
 			ConstraintStudentsSetMaxHoursContinuously* crt_constraint=(ConstraintStudentsSetMaxHoursContinuously*)ctr;
+			if(subgroupName == crt_constraint->students){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsSetActivityTagMaxHoursContinuously* crt_constraint=(ConstraintStudentsSetActivityTagMaxHoursContinuously*)ctr;
 			if(subgroupName == crt_constraint->students){
 				this->removeTimeConstraint(ctr);
 				erased=true;
@@ -2896,6 +3050,11 @@ bool Rules::modifySubgroup(const QString& yearName, const QString& groupName, co
 			if(_initialSubgroupName == crt_constraint->students)
 				crt_constraint->students=finalSubgroupName;
 		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsSetActivityTagMaxHoursContinuously* crt_constraint=(ConstraintStudentsSetActivityTagMaxHoursContinuously*)ctr;
+			if(_initialSubgroupName == crt_constraint->students)
+				crt_constraint->students=finalSubgroupName;
+		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY){
 			ConstraintStudentsSetMinHoursDaily* crt_constraint=(ConstraintStudentsSetMinHoursDaily*)ctr;
 			if(_initialSubgroupName == crt_constraint->students)
@@ -2990,7 +3149,7 @@ bool Rules::addSimpleActivity(
 	int _activityGroupId,
 	const QStringList& _teachersNames,
 	const QString& _subjectName,
-	const QString& _activityTagName,
+	const QStringList& _activityTagsNames,
 	const QStringList& _studentsNames,
 	int _duration, /*duration, in hours*/
 	int _totalDuration,
@@ -3003,7 +3162,7 @@ bool Rules::addSimpleActivity(
 {
 	//assert(_parity==PARITY_WEEKLY || _parity==PARITY_FORTNIGHTLY); //weekly or fortnightly
 
-	Activity *act=new Activity(*this, _id, _activityGroupId, _teachersNames, _subjectName, _activityTagName,
+	Activity *act=new Activity(*this, _id, _activityGroupId, _teachersNames, _subjectName, _activityTagsNames,
 		_studentsNames, _duration, _totalDuration, /*_parity,*/ _active, _computeNTotalStudents, _nTotalStudents);
 
 	this->activitiesList << act; //append
@@ -3024,7 +3183,7 @@ bool Rules::addSplitActivity(
 	int _activityGroupId,
 	const QStringList& _teachersNames,
 	const QString& _subjectName,
-	const QString& _activityTagName,
+	const QStringList& _activityTagsNames,
 	const QStringList& _studentsNames,
 	int _nSplits,
 	int _totalDuration,
@@ -3051,11 +3210,11 @@ bool Rules::addSplitActivity(
 		Activity *act;
 		if(i==0)
 			act=new Activity(*this, _firstActivityId+i, _activityGroupId,
-				_teachersNames, _subjectName, _activityTagName, _studentsNames,
+				_teachersNames, _subjectName, _activityTagsNames, _studentsNames,
 				_durations[i], _totalDuration, /*_parities[i],*/ _active[i], _computeNTotalStudents, _nTotalStudents);
 		else
 			act=new Activity(*this, _firstActivityId+i, _activityGroupId,
-				_teachersNames, _subjectName, _activityTagName, _studentsNames,
+				_teachersNames, _subjectName, _activityTagsNames, _studentsNames,
 				_durations[i], _totalDuration, /*_parities[i],*/ _active[i], _computeNTotalStudents, _nTotalStudents);
 
 		this->activitiesList << act; //append
@@ -3560,7 +3719,7 @@ void Rules::modifyActivity(
 	int _activityGroupId,
 	const QStringList& _teachersNames,
 	const QString& _subjectName,
-	const QString& _activityTagName,
+	const QStringList& _activityTagsNames,
 	const QStringList& _studentsNames,
 	//int _nTotalStudents,
 	int _nSplits,
@@ -3577,7 +3736,7 @@ void Rules::modifyActivity(
 		if((_activityGroupId==0 && act->id==_id) || (_activityGroupId!=0 && act->activityGroupId==_activityGroupId)){
 			act->teachersNames=_teachersNames;
 			act->subjectName=_subjectName;
-			act->activityTagName=_activityTagName;
+			act->activityTagsNames=_activityTagsNames;
 			act->studentsNames=_studentsNames;
 			act->duration=_durations[i];
 			//act->parity=_parities[i];
@@ -3590,6 +3749,53 @@ void Rules::modifyActivity(
 	}
 		
 	assert(i==_nSplits);
+	
+	this->internalStructureComputed=false;
+}
+
+void Rules::modifySubactivity(
+	int _id,
+	int _activityGroupId,
+	const QStringList& _teachersNames,
+	const QString& _subjectName,
+	const QStringList& _activityTagsNames,
+	const QStringList& _studentsNames,
+	int _duration,
+	bool _active,
+	bool _computeNTotalStudents,
+	int _nTotalStudents)
+{
+	QList<Activity*> actsList;
+	Activity* crtAct=NULL;
+	
+	foreach(Activity* act, this->activitiesList){
+		if(act->id==_id && act->activityGroupId==_activityGroupId){
+			crtAct=act;
+			//actsList.append(act);
+		}
+		else if(act->activityGroupId!=0 && _activityGroupId!=0 && act->activityGroupId==_activityGroupId){
+			actsList.append(act);
+		}
+	}
+	
+	assert(crtAct!=NULL);
+	
+	int td=0;
+	foreach(Activity* act, actsList)
+		td+=act->duration;
+	td+=_duration; //crtAct->duration;
+	foreach(Activity* act, actsList)
+		act->totalDuration=td;
+
+	crtAct->teachersNames=_teachersNames;
+	crtAct->subjectName=_subjectName;
+	crtAct->activityTagsNames=_activityTagsNames;
+	crtAct->studentsNames=_studentsNames;
+	crtAct->duration=_duration;
+	crtAct->totalDuration=td;
+	crtAct->active=_active;
+	crtAct->computeNTotalStudents=_computeNTotalStudents;
+	crtAct->nTotalStudents=_nTotalStudents;
 	
 	this->internalStructureComputed=false;
 }
@@ -4796,7 +5002,8 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 					QString tn="";
 					QStringList tl;
 					QString sjn="";
-					QString stgn="";
+					QString atn="";
+					QStringList atl;
 					QString stn="";
 					QStringList stl;
 					//int p=PARITY_NOT_INITIALIZED;
@@ -4861,15 +5068,19 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 								correct=false;
 						}
 						else if(elem4.tagName()=="Subject_Tag"){
-							stgn=elem4.text();
-							xmlReadingLog+="    Crt. activity activity_tag="+stgn+"\n";
-							if(this->searchActivityTag(stgn)<0 && stgn!="")
+							atn=elem4.text();
+							xmlReadingLog+="    Crt. activity activity_tag="+atn+"\n";
+							if(atn!="")
+								atl.append(atn);
+							if(atn!="" && this->searchActivityTag(atn)<0)
 								correct=false;
 						}
 						else if(elem4.tagName()=="Activity_Tag"){
-							stgn=elem4.text();
-							xmlReadingLog+="    Crt. activity activity_tag="+stgn+"\n";
-							if(this->searchActivityTag(stgn)<0 && stgn!="")
+							atn=elem4.text();
+							xmlReadingLog+="    Crt. activity activity_tag="+atn+"\n";
+							if(atn!="")
+								atl.append(atn);
+							if(atn!="" && this->searchActivityTag(atn)<0)
 								correct=false;
 						}
 						else if(elem4.tagName()=="Students"){
@@ -4906,7 +5117,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						assert(d>0);
 						if(td<0)
 							td=d;
-						this->addSimpleActivity(id, gid, tl, sjn, stgn, stl,
+						this->addSimpleActivity(id, gid, tl, sjn, atl, stl,
 							d, td, /*p,*/ ac, /*-1, -1,*/ cnos, nos);
 						na++;
 						xmlReadingLog+="   Added the activity\n";
@@ -6392,6 +6603,58 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 					}
 					crt_constraint=cn;
 				}
+				else if(elem3.tagName()=="ConstraintTeacherActivityTagMaxHoursContinuously"){
+					ConstraintTeacherActivityTagMaxHoursContinuously* cn=new ConstraintTeacherActivityTagMaxHoursContinuously();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
+							cn->maxHoursContinuously=elem4.text().toInt();
+							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
+						}
+						else if(elem4.tagName()=="Teacher_Name"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag_Name"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+						}
+					}
+					crt_constraint=cn;
+				}
+				else if(elem3.tagName()=="ConstraintTeachersActivityTagMaxHoursContinuously"){
+					ConstraintTeachersActivityTagMaxHoursContinuously* cn=new ConstraintTeachersActivityTagMaxHoursContinuously();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
+							cn->maxHoursContinuously=elem4.text().toInt();
+							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag_Name"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+						}
+					}
+					crt_constraint=cn;
+				}
 				else if(elem3.tagName()=="ConstraintTeachersMinHoursDaily"){
 					ConstraintTeachersMinHoursDaily* cn=new ConstraintTeachersMinHoursDaily();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -6782,6 +7045,62 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						else if(elem4.tagName()=="Students"){
 							cn->students=elem4.text();
 							xmlReadingLog+="    Read students name="+cn->students+"\n";
+						}
+					}
+					assert(cn->maxHoursContinuously>=0);
+					crt_constraint=cn;
+				}
+				else if(elem3.tagName()=="ConstraintStudentsSetActivityTagMaxHoursContinuously"){
+					ConstraintStudentsSetActivityTagMaxHoursContinuously* cn=new ConstraintStudentsSetActivityTagMaxHoursContinuously();
+					cn->maxHoursContinuously=-1;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
+							cn->maxHoursContinuously=elem4.text().toInt();
+							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
+						}
+						else if(elem4.tagName()=="Students"){
+							cn->students=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->students+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+						}
+					}
+					assert(cn->maxHoursContinuously>=0);
+					crt_constraint=cn;
+				}
+				else if(elem3.tagName()=="ConstraintStudentsActivityTagMaxHoursContinuously"){
+					ConstraintStudentsActivityTagMaxHoursContinuously* cn=new ConstraintStudentsActivityTagMaxHoursContinuously();
+					cn->maxHoursContinuously=-1;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
+							cn->maxHoursContinuously=elem4.text().toInt();
+							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 						}
 					}
 					assert(cn->maxHoursContinuously>=0);
@@ -11305,7 +11624,8 @@ int Rules::activateActivityTag(const QString& activityTagName)
 	int count=0;
 	for(int i=0; i<this->activitiesList.size(); i++){
 		Activity* act=this->activitiesList[i];
-		if(act->activityTagName==activityTagName){
+		//if(act->activityTagName==activityTagName){
+		if(act->activityTagsNames.contains(activityTagName)){
 			if(!act->active)
 				count++;
 			act->active=true;
@@ -11398,7 +11718,8 @@ int Rules::deactivateActivityTag(const QString& activityTagName)
 	int count=0;
 	for(int i=0; i<this->activitiesList.size(); i++){
 		Activity* act=this->activitiesList[i];
-		if(act->activityTagName==activityTagName){
+		//if(act->activityTagName==activityTagName){
+		if(act->activityTagsNames.contains(activityTagName)){
 			if(act->active)
 				count++;
 			act->active=false;

@@ -121,7 +121,8 @@ bool ModifyConstraintActivityPreferredStartingTimeForm::filterOk(Activity* act)
 		ok=false;
 		
 	//activity tag
-	if(sbtn!="" && sbtn!=act->activityTagName)
+//	if(sbtn!="" && sbtn!=act->activityTagName)
+	if(sbtn!="" && !act->activityTagsNames.contains(sbtn))
 		ok=false;
 		
 	//students

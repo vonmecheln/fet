@@ -67,7 +67,7 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 			
 	this->_teachers=this->_activity->teachersNames;
 	this->_subject = this->_activity->subjectName;
-	this->_activityTag = this->_activity->activityTagName;
+	this->_activityTags = this->_activity->activityTagsNames;
 	this->_students=this->_activity->studentsNames;
 	
 	int nSplit;
@@ -78,6 +78,9 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 			Activity* act=gt.rules.activitiesList[i];
 			if(act->activityGroupId==this->_activityGroupId){
 				if(nSplit>=10){
+					//QMessageBox::warning(this, tr("FET warning"), tr("FET has met a problem - the activity is split into more than %1 components. "
+					//	"FET will continue operation, so that you can work with your file").arg(10));
+					//return;
 					assert(0);
 				}
 				else{
@@ -102,11 +105,11 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 	splitSpinBox->setMaxValue(nSplit);	
 	splitSpinBox->setValue(nSplit);	
 	
-	if(nSplit==1)
+/*	if(nSplit==1)
 		currentActivityTextLabel->setText(tr("Current activity"));
 	else
 		currentActivityTextLabel->setText(tr("Current activities"));
-	
+*/	
 	nStudentsSpinBox->setMinValue(-1);
 	nStudentsSpinBox->setMaxValue(MAX_ROOM_CAPACITY);
 	nStudentsSpinBox->setValue(-1);
@@ -117,7 +120,7 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 	updateStudentsListBox();
 	updateTeachersListBox();
 	updateSubjectsComboBox();
-	updateActivityTagsComboBox();
+	updateActivityTagsListBox();
 
 	for(int i=0; i<10; i++)
 		if(i<nSplit)
@@ -161,9 +164,9 @@ void ModifyActivityForm::updateSubjectsComboBox()
 	subjectChanged("");
 }
 
-void ModifyActivityForm::updateActivityTagsComboBox()
+void ModifyActivityForm::updateActivityTagsListBox()
 {
-	int i=0, j=-1;
+/*	int i=0, j=-1;
 	activityTagsComboBox->clear();
 	activityTagsComboBox->insertItem("");
 	if(this->_activityTag=="")
@@ -178,7 +181,19 @@ void ModifyActivityForm::updateActivityTagsComboBox()
 	assert(j!=-1);
 	activityTagsComboBox->setCurrentItem(j);
 
-	activityTagChanged("");
+	activityTagChanged("");*/
+	
+	allActivityTagsListBox->clear();
+	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
+		ActivityTag* at=gt.rules.activityTagsList[i];
+		allActivityTagsListBox->insertItem(at->name);
+	}
+		
+	selectedActivityTagsListBox->clear();
+	for(QStringList::Iterator it=this->_activityTags.begin(); it!=this->_activityTags.end(); it++)
+		selectedActivityTagsListBox->insertItem(*it);
+		
+	activityChanged();
 }
 
 void ModifyActivityForm::updateStudentsListBox()
@@ -229,6 +244,31 @@ void ModifyActivityForm::removeTeacher()
 	activityChanged();
 }
 
+void ModifyActivityForm::addActivityTag()
+{
+	if(allActivityTagsListBox->currentItem()<0 || (uint)(allActivityTagsListBox->currentItem())>=allActivityTagsListBox->count())
+		return;
+	
+	for(uint i=0; i<selectedActivityTagsListBox->count(); i++)
+		if(selectedActivityTagsListBox->text(i)==allActivityTagsListBox->currentText())
+			return;
+			
+	selectedActivityTagsListBox->insertItem(allActivityTagsListBox->currentText());
+
+	activityChanged();
+}
+
+void ModifyActivityForm::removeActivityTag()
+{
+	if(selectedActivityTagsListBox->count()<=0 || selectedActivityTagsListBox->currentItem()<0 ||
+	 (uint)(selectedActivityTagsListBox->currentItem())>=selectedActivityTagsListBox->count())
+		return;
+		
+	selectedActivityTagsListBox->removeItem(selectedActivityTagsListBox->currentItem());
+
+	activityChanged();
+}
+
 void ModifyActivityForm::addStudents()
 {
 	if(allStudentsListBox->currentItem()<0 || (uint)(allStudentsListBox->currentItem())>=allStudentsListBox->count())
@@ -263,18 +303,9 @@ void ModifyActivityForm::subjectChanged(const QString& dummy)
 	activityChanged();
 }
 
-void ModifyActivityForm::activityTagChanged(const QString& dummy)
-{
-	Q_UNUSED(dummy);
-	//if(dummy=="")
-	//	;
-
-	activityChanged();
-}
-
 void ModifyActivityForm::activityChanged()
 {
-	QString s;
+/*	QString s;
 	//s+=tr("Current activity:");
 	//s+="\n";
 	
@@ -320,10 +351,6 @@ void ModifyActivityForm::activityChanged()
 	if(splitSpinBox->value()==1){
 		s+=tr("Duration=%1").arg(dur(0)->value());
 		s+="\n";
-		/*if(par(0)->isChecked()){
-			s+=tr("Fortnightly activity");
-			s+="\n";
-		}*/
 		
 		if(activ(0)->isChecked()){
 			s+=tr("Active activity");
@@ -344,10 +371,6 @@ void ModifyActivityForm::activityChanged()
 			s+="\n";
 			s+=tr("Duration=%1").arg(dur(i)->value());
 			s+="\n";
-			/*if(par(i)->isChecked()){
-				s+=tr("Fortnightly activity");
-				s+="\n";
-			}*/
 			if(activ(i)->isChecked()){
 				s+=tr("Active activity");
 				s+="\n";
@@ -361,6 +384,7 @@ void ModifyActivityForm::activityChanged()
 	}
 
 	currentActivityTextEdit->setText(s);
+	*/
 }
 
 void ModifyActivityForm::cancel()
@@ -404,12 +428,17 @@ void ModifyActivityForm::ok()
 	}
 
 	//activity tag
-	QString activity_tag_name=activityTagsComboBox->currentText();
+	QStringList activity_tags_names;
+	/*
 	int activity_tag_index=gt.rules.searchActivityTag(activity_tag_name);
 	if(activity_tag_index<0 && activity_tag_name!=""){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid activity tag"));
 		return;
+	}*/
+	for(uint i=0; i<selectedActivityTagsListBox->count(); i++){
+		assert(gt.rules.searchActivityTag(selectedActivityTagsListBox->text(i))>=0);
+		activity_tags_names.append(selectedActivityTagsListBox->text(i));
 	}
 
 	//students
@@ -454,12 +483,12 @@ void ModifyActivityForm::ok()
 
 	if(nStudentsSpinBox->value()==-1){
 		gt.rules.modifyActivity(this->_id, this->_activityGroupId, teachers_names, subject_name,
-		 activity_tag_name,students_names, nsplit, totalduration, durations, /*parities,*/ active,
+		 activity_tags_names,students_names, nsplit, totalduration, durations, /*parities,*/ active,
 		 (nStudentsSpinBox->value()==-1), total_number_of_students);
 	}
 	else{
 		gt.rules.modifyActivity(this->_id, this->_activityGroupId, teachers_names, subject_name,
-		 activity_tag_name,students_names, nsplit, totalduration, durations, /*parities,*/ active,
+		 activity_tags_names,students_names, nsplit, totalduration, durations, /*parities,*/ active,
 		 (nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
 	}
 	
@@ -475,6 +504,12 @@ void ModifyActivityForm::clearTeachers()
 void ModifyActivityForm::clearStudents()
 {
 	selectedStudentsListBox->clear();
+	activityChanged();
+}
+
+void ModifyActivityForm::clearActivityTags()
+{
+	selectedActivityTagsListBox->clear();
 	activityChanged();
 }
 
