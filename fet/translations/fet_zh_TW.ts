@@ -220,7 +220,7 @@
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="139"/>
         <source>Add</source>
-        <translation>添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="146"/>
@@ -283,7 +283,7 @@
         <location filename="../src/interface/activitiesroomsstatisticsform.cpp" line="305"/>
         <source>You do not have activities which might end up in an unspecified room (not considering those which will certainly end up in an unspecified room).</source>
         <comment>Instructions for translators: take care, it is &apos;might&apos;, so it is only a possibility.</comment>
-        <translation>你沒有教學班可能會在未指定的教室（不考慮那些肯定會在未指定的房間）。</translation>
+        <translation>你沒有設定教學活動，可能會導致未指定的教室（不考慮那些肯定會在未指定的教室）。</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesroomsstatisticsform.cpp" line="313"/>
@@ -541,13 +541,13 @@
         <location filename="../src/interface/activityplanningform.cpp" line="235"/>
         <source>Add activity</source>
         <comment>Please keep translation short</comment>
-        <translation>添加教學班</translation>
+        <translation>增加教學班</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningform.cpp" line="236"/>
         <source>Modify activity</source>
         <comment>Please keep translation short</comment>
-        <translation>編輯教學班</translation>
+        <translation>編輯教學活動</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningform.cpp" line="237"/>
@@ -896,7 +896,7 @@
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="93"/>
         <source>Add activity tag</source>
-        <translation>添加一個教學班標籤</translation>
+        <translation>增加一個教學班標籤</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="99"/>
@@ -1004,7 +1004,7 @@
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="39"/>
         <source>Add</source>
-        <translation>添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="46"/>
@@ -1096,12 +1096,12 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="685"/>
         <source>Activity added</source>
-        <translation>教學班已添加</translation>
+        <translation>教學班已增加</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="687"/>
         <source>Activity NOT added - please report error</source>
-        <translation>教學班沒有添加-請報告一個錯誤</translation>
+        <translation>教學班沒有增加-請回報錯誤</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="693"/>
@@ -1111,7 +1111,8 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="698"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min days between activities up to 100%)</source>
-        <translation>1.如果添加&apos;強制連續如果同一天，然後在雙對額外的活動，以獲得一個數字等於每週的天數的活動。例如：7活動，持續時間1在5天一周，然後轉換成5活動持續時間：2,2,1,1,1，並與這5個組件添加一個容器活動（可能提高加約束最小天的重量活動之間高達100％）</translation>
+        <translation>1.如果添加&apos;強制連續如果同一天，然後在雙對額外的活動，以獲得一個數字等於每週的天數的活動。例如：7活動，持續時間1在5天一周，然後轉換成5活動持續時間：2,2,1,1,1，並與這5個組件添加一個容器活動（可能提高加約束最小天的重量活動之間高達100％）
+</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="702"/>
@@ -1126,7 +1127,7 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="770"/>
         <source>Split activity NOT added - error???</source>
-        <translation>拆離教學班活動沒有添加，是否錯誤?</translation>
+        <translation>拆離教學班活動沒有增加，是否錯誤?</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="795"/>
@@ -1206,7 +1207,8 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="840"/>
         <source>If you have for instance an activity with 2 lessons per week and you want to spread them to at least 2 days distance, you can add a constraint min days with min days = 2 and weight 95% (or higher). If you want also to ensure that activities will be separated by at least one day, you can use this feature: add a constraint min days with minimum days 2 and weight 95% or lower, and after that you&apos;ll get the possibility to add another constraint with min 1 days and weight 95% or higher. It works if you first select in the dialog the min days &gt;= 2 and click Add activities. Or you can add manually the constraints (difficult this way). Important: it is best practice to consider both constraints to have 95% weight. The combination assures that the resultant is 99.75% weight</source>
-        <translation>如果你有，例如，每週兩節課的活動，並要他們蔓延到至少2天的間距，你可以增加一個約束最小天，分天上課=2，權重95％（或更高）。如果你想同時確保活動將至少有一天會分開上課，你可以使用此功能：增加一個約束最小天最小2天，權重95％或更低，之後你會得到的可能性增加另一個制約因素與分1天，權重95％或更高。它的工作原理，如果你在對話框中先選擇最小天數&gt;=2，然後單擊添加活動。或者您也可以手動添加約束（很難通過這種方式）。重要的是：它要同時考慮約束，有95％的權量的最佳實踐。的組合保證了所得為99.75％權重</translation>
+        <translation type="unfinished">如果你有，例如，每週兩節課的活動，並要他們蔓延到至少2天的間距，你可以增加一個約束最小天，分天上課=2，權重95％（或更高）。如果你想同時確保活動將至少有一天會分開上課，你可以使用此功能：增加一個約束最小天最小2天，權重95％或更低，之後你會得到的可能性增加另一個制約因素與分1天，權重95％或更高。它的工作原理，如果你在對話框中先選擇最小天數&gt;=2，然後單擊添加活動。或者您也可以手動添加約束（很難通過這種方式）。重要的是：它要同時考慮約束，有95％的權量的最佳實踐。的組合保證了所得為99.75％權重
+</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="853"/>
@@ -1217,9 +1219,10 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="859"/>
         <source>If you choose a value greater or equal with 1 for min days, a time constraint min days between activities will be added automatically (you can see this constraint in the time constraints list or you can see this constraint in the detailed description of the activity). You can select a weight percentage for this constraint. If you select 100%, the constraint must be respected all the time. If you select 95%, there is a small chance that the timetable will not respect this constraint. Recommended values are 95.0%-100.0% (maybe you could try with 95%, then 99.75%, or even 100.0%, but the generation time might be larger). Generally, 99.75% might be a good value. Note: if you put a value less than 100% and the constraint is too tough, FET is able to find that this constraint is impossible and will break it. 99.75% might be better than 95% but possibly slower. The percentage is subjective (if you put 95% you may get 6 soft conflicts and if you put 99.75% you may get 3 soft conflicts). Starting with FET-5.3.6, it is possible to change this value for all constraints in one click, in constraint min days between activities dialog.</source>
-        <translation>如果您選擇的最小天數的值大於或等於1，在兩個教學活動之間會自動添加（你可以看到在時間上的限制列表此約束，也可以看到這種約束在活動的詳細說明） 。您可以選擇的權量百分比此約束。如果您選擇了100％，約束必須得到尊重所有的時間。如果選擇95％，有一個小的機會，時間表不會尊重這個約束。推薦值是95.0％-100.0％（也許可以嘗試用95％，然後99.75％，或甚至100.0％，但產生時間可能會更大）。一般情況下，99.75％的可能一個很好的設定值。
+        <translation type="unfinished">如果您選擇的最小天數的值大於或等於1，在兩個教學活動之間會自動添加（你可以看到在時間上的限制列表此約束，也可以看到這種約束在活動的詳細說明） 。您可以選擇的權量百分比此約束。如果您選擇了100％，約束必須得到尊重所有的時間。如果選擇95％，有一個小的機會，時間表不會尊重這個約束。推薦值是95.0％-100.0％（也許可以嘗試用95％，然後99.75％，或甚至100.0％，但產生時間可能會更大）。一般情況下，99.75％的可能一個很好的設定值。
 
-注意：如果你把一個值小於100％這樣的約束限制是太過強悍了，FET是不可能解決這個約束限制的，並會打破它。 99.75％的可能大於95％更好，但可能較慢。該比例是主觀的（如果你把95％，你可能會得到6項軟衝突，如果你把99.75％，你可能會得到3軟衝突）。具有FET-5.3.6開始，有可能改變在點擊該值對於所有的限制，在活動對話之間約束分鐘天。</translation>
+注意：如果你把一個值小於100％這樣的約束限制是太過強悍了，FET是不可能解決這個約束限制的，並會打破它。 99.75％的可能大於95％更好，但可能較慢。該比例是主觀的（如果你把95％，你可能會得到6項軟衝突，如果你把99.75％，你可能會得到3軟衝突）。具有FET-5.3.6開始，有可能改變在點擊該值對於所有的限制，在活動對話之間約束分鐘天。
+</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="873"/>
@@ -1314,7 +1317,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addactivityform_template.ui" line="14"/>
         <source>Add activity</source>
         <extracomment>This is the title of the add activity dialog</extracomment>
-        <translation>添加 教學班</translation>
+        <translation>增加 教學班</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="71"/>
@@ -1577,7 +1580,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="2143"/>
         <source>30</source>
-        <translation>3-</translation>
+        <translation>30</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="2207"/>
@@ -1652,7 +1655,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="2609"/>
         <source>Add</source>
-        <translation>添加</translation>
+        <translation>增加</translation>
     </message>
 </context>
 <context>
@@ -1685,7 +1688,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addbuildingform.cpp" line="55"/>
         <source>Building added</source>
-        <translation>該大樓已添加</translation>
+        <translation>該棟大樓已增加</translation>
     </message>
 </context>
 <context>
@@ -1703,7 +1706,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addbuildingform_template.ui" line="39"/>
         <source>Add</source>
-        <translation>添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/addbuildingform_template.ui" line="49"/>
@@ -1882,7 +1885,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="124"/>
         <source>Time slots</source>
-        <translation>課表插入</translation>
+        <translation>課表時間插槽</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="137"/>
@@ -2080,7 +2083,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="14"/>
         <source>Add activities occupy max different rooms</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>添加之教學活動佔據最大不同的房間</translation>
+        <translation>增加之教學活動佔據最大不同的教室</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="20"/>
@@ -2121,7 +2124,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="115"/>
         <source>Max different rooms</source>
-        <translation>最大不同的房間</translation>
+        <translation>最大不同的教室</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="135"/>
@@ -2228,7 +2231,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="124"/>
         <source>Time slots</source>
-        <translation>課表插入</translation>
+        <translation>課表時間插槽</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="137"/>
@@ -2403,7 +2406,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="145"/>
         <source>Add</source>
-        <translation>添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="152"/>
@@ -2528,7 +2531,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="14"/>
         <source>Add activities preferred time slots</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>添加首選活動時隙</translation>
+        <translation>增加首選活動時隙</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="38"/>
@@ -2565,7 +2568,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="145"/>
         <source>Add</source>
-        <translation>添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="26"/>
@@ -2950,7 +2953,8 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="429"/>
         <source>Add multiple constraints: this is a check box. Select this if you want to input only the representatives of sub-activities and FET to add multiple constraints, for all sub-activities from the same components, in turn, respectively. There will be added more constraints activities same starting time, one for each corresponding tuple. The number of sub-activities must match for the representants and be careful to the order, to be what you need</source>
-        <translation>添加多個約束：這是一個複選框。如果你想輸入的子活動和FET，添加多個約束，所有的子活動，由相同的組件，依次分別僅代表選擇此項。有將被添加更多的約束的活動相同的起始時間，每一個相應元組。子活動的數量必須為representants匹配，並且要小心的順序，是你需要什麼</translation>
+        <translation>增加多個約束：這是一個複選框。如果你想輸入的子活動和FET，添加多個約束，所有的子活動，由相同的組件，依次分別僅代表選擇此項。有將被添加更多的約束的活動相同的起始時間，每一個相應元組。子活動的數量必須為representants匹配，並且要小心的順序，什麼是你需要的。
+</translation>
     </message>
 </context>
 <context>
@@ -3560,7 +3564,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="167"/>
         <source>Add</source>
-        <translation>添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="174"/>
@@ -3673,7 +3677,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="167"/>
         <source>Add</source>
-        <translation>添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="174"/>
@@ -3684,7 +3688,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="14"/>
         <source>Add activity preferred time slots</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>添加首選活動時隙</translation>
+        <translation>增加首選活動時隙</translation>
     </message>
 </context>
 <context>
@@ -4005,7 +4009,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="89"/>
         <source>Add</source>
-        <translation>添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="96"/>
@@ -4178,7 +4182,8 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform.cpp" line="210"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min days between activities up to 100%)</source>
-        <translation>1.如果添加&apos;強制連續如果同一天，然後在雙對額外的活動，以獲得一個數字等於每週的天數的活動。例如：7活動，持續時間1在5天一周，然後轉換成5活動持續時間：2,2,1,1,1，並與這5個組件添加一個容器活動（可能提高加約束最小天的重量活動之間高達100％）</translation>
+        <translation>1.如果添加&apos;強制連續如果同一天，然後在雙對額外的活動，以獲得一個數字等於每週的天數的活動。例如：7活動，持續時間1在5天一周，然後轉換成5活動持續時間：2,2,1,1,1，並與這5個組件添加一個容器活動（可能提高加約束最小天的重量活動之間高達100％）
+</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform.cpp" line="216"/>
@@ -4463,7 +4468,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="116"/>
         <source>Add</source>
-        <translation>添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="123"/>
@@ -5250,7 +5255,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="50"/>
         <source>Min gaps between building changes</source>
-        <translation>換教學大樓上課時，最小的休習間隔節次</translation>
+        <translation>換教學大樓上課時，最小的休息間隔節次</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="67"/>
@@ -6418,7 +6423,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="103"/>
         <source>Min gaps between building changes</source>
-        <translation>換教學大樓上課時，最小的休習間隔節次</translation>
+        <translation>換教學大樓上課時，最小的休息間隔節次</translation>
     </message>
 </context>
 <context>
@@ -8230,7 +8235,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="103"/>
         <source>Min gaps between building changes</source>
-        <translation>換教學大樓上課時，最小的休習間隔節次</translation>
+        <translation>換教學大樓上課時，最小的休息間隔節次</translation>
     </message>
 </context>
 <context>
@@ -9187,7 +9192,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="67"/>
         <source>Min gaps between building changes</source>
-        <translation>換教學大樓上課時，最小的休習間隔節次</translation>
+        <translation>換教學大樓上課時，最小的休息間隔節次</translation>
     </message>
 </context>
 <context>
@@ -11461,6 +11466,11 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="313"/>
+        <source>Note that if you have activities with two or more teachers, you might need to use a trick for that: add one (or more) dummy activities, no teachers/no students, same starting time with the initial activity.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="316"/>
         <source>FET help</source>
         <translation>FET 幫助</translation>
     </message>
@@ -11858,7 +11868,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="302"/>
         <source>To use this constraint, you need to specify a set of activities and the maximum number of different rooms which can be occupied by these activities. Note that each activity can take place in a single room, and a single room can hold a single activity at a certain moment. This constraint may be used for instance to constrain all activities of type Physics of a certain students set to be in the same room throughout the week, by adding all Physics activities for this students set and making max different rooms = 1.</source>
-        <translation>要使用此約束，你需要指定一組活動和可以通過這些活動佔用不同的教室的最大數量。請注意，每個活動可以發生在一個單間教室，和一個單間，可以在某一個時刻舉行一個教學活動。這種約束可以用於實例來約束設定為在整週在同一教室的所有活動，通過將所有物理活動這個學生設置，使最大不同的房間=1。</translation>
+        <translation>要使用此約束，你需要指定一組活動和可以通過這些活動佔用不同的教室的最大數量。請注意，每個活動可以發生在一個單間教室，和一個單間，可以在某一個時刻舉行一個教學活動。這種約束可以用於實例來約束設定為在整週在同一教室的所有活動，通過將所有物理活動這個學生設置，使最大不同的教室=1。</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="307"/>
@@ -14134,7 +14144,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8952"/>
         <source>Day=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>星期</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8860"/>
@@ -18086,7 +18096,8 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6871"/>
         <source>Time constraint students max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4</source>
-        <translation>次級分組：%1打破了每週學生班級課表上課的最大節次限制，次級群組:%2  星期%3，衝突增加為:%4</translation>
+        <translation>次級分組：%1打破了每週學生班級課表上課的最大節次限制，次級群組:%2  星期3%，衝突增加為:%4 。
+</translation>
     </message>
 </context>
 <context>
@@ -20620,7 +20631,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7018"/>
         <source>A students set must respect the maximum number of hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>學生班級必須遵守的每天可上課節次的最大值</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7019"/>
@@ -20657,13 +20668,13 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/engine/timeconstraint.cpp" line="7042"/>
         <source>Constraint students set max hours daily is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
-        <translation type="unfinished">設定的約束學生每天最大上課時數錯誤，因為它指向的是不存在的學生班級設定。請更正它（刪除它可能是一個解決方案）。請報告潛在的bug。約束是：
+        <translation>設定的約束學生每天最大上課時數錯誤，因為它指向的是不存在的學生班級設定。請更正它（刪除它可能是一個解決方案）。請報告潛在的bug。約束是：
 %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7125"/>
         <source>Time constraint students set max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4</source>
-        <translation type="unfinished"></translation>
+        <translation>時間約束學生每天最大上課節次被打破了，次級分組：%1，星期：%2，長度=%3，衝突增加=%4</translation>
     </message>
 </context>
 <context>
@@ -20756,7 +20767,8 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/engine/spaceconstraint.cpp" line="4898"/>
         <source>Constraint students set min gaps between building changes is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>設定學生班級更換大樓上課的最小課間休息時隙節次錯誤，因為它指的是不存在的設置學生。請更正它（刪除它可能是一個解決方案）。請報告潛在的bug。約束是：
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4975"/>
@@ -21005,7 +21017,8 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/engine/timeconstraint.cpp" line="8641"/>
         <source>Constraint students set min hours daily is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>設定學生每天最小上課節次錯誤，因為它指的是不存在的學生班級。請更正它（刪除它可能是一個解決方案）。請報告潛在的bug。約束是：
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8728"/>
@@ -21059,7 +21072,8 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="26"/>
         <source>IMPORTANT: allow empty days for students is a nonstandard option. Only select it if your institution permits that and if a timetable with empty days for students exists. Otherwise do not select it, for a good performance of generation. Press Help button for more information.</source>
-        <translation type="unfinished"></translation>
+        <translation>重要提示：允許學生班級整天不排課的空天是一個非標準的選項。只有在您的學校或機構允許的情形下才選擇這個功能，如果，如果空天排課時間表學生存在。否則不要選擇它，要生成一個不錯的排課表。可按下幫助按鈕獲取更多信息。
+</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="44"/>
@@ -21261,7 +21275,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform_template.ui" line="14"/>
         <source>Constraints students set not available times</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>學生班級時間節次限制條件設定</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform_template.ui" line="28"/>
@@ -21312,19 +21326,26 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/engine/timeconstraint.cpp" line="11223"/>
         <source>Constraint subactivities preferred starting times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>限制次級教學活動偏好的起始時間是錯誤的，因為它指向的是已移除的一天。請更正，然後重試。校正裝置編輯約束和更新信息。約束條件是：
+%1
+</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11230"/>
         <source>Constraint subactivities preferred starting times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>次級教學活動偏好的起始時間是錯誤的，因為一個偏好的時間節次太晚了（已排在最後一個可以接受的上課slots插槽之後）。請更正，然後重試。校正裝置編輯約束和更新信息。約束是：
+%1
+
+</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11237"/>
         <source>Constraint subactivities preferred starting times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>次級教學活動偏好的起始時間是錯誤的，因為它指向的是已移除的時間節次。請更正，然後重試。校正裝置編輯約束和更新信息。約束限制條件是：
+%1
+</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11248"/>
@@ -21389,7 +21410,9 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/engine/timeconstraint.cpp" line="11366"/>
         <source>Subactivities with %1, %2, %3, %4, %5, have a set of preferred starting times:</source>
         <comment>%1...%5 are conditions for the subactivities</comment>
-        <translation type="unfinished"></translation>
+        <translation>次級教學活動:
+%1, %2, %3, %4, %5, 有一組偏好的開始節次
+</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11367"/>
@@ -21527,27 +21550,37 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform.cpp" line="182"/>
         <source>This constraint is used to specify that for some components of a type of activities, for instance for Mathematics activities, you need that from say 4-5 per week, at least the first 2 to start early (say in the first 4 hours).</source>
-        <translation type="unfinished"></translation>
+        <translation>這個約束是用於指定一種類型的教學活動，例如:用於數學課活動，則每週至少上需要4-5節，先上前兩個時段（比方說4小時）。
+
+</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform.cpp" line="187"/>
         <source>This is simple: just add 2 constraints of this type, with the component number 1, (then 2) and the corresponding subject (you can also define teacher, students set and activity tag, of course).</source>
-        <translation type="unfinished"></translation>
+        <translation>這很簡單：只需增加2項這種類型的約束條件，與組件數量1，（那麼2）和相應的學科（當然你還可以定義:老師，學生班級和活動標籤等）。
+</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform.cpp" line="192"/>
         <source>Note: if you have Maths with 4 and 5 splits and want to constrain 2 subactivities for those with 4 per week and 3 subactivities for those with 5 per week, you can add constraints only for Maths with components 3, 4 and 5 (nice trick)</source>
-        <translation type="unfinished"></translation>
+        <translation>注意：如果你有數學課分別上4,5節課:
+設定成:
+2個次教學活動限制條件給每週4節課  ；3個次教學活動給每週5節課
+
+，添加約束組件3,4和5數學課的限制條件（好的技巧）
+</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform.cpp" line="195"/>
         <source>Note: if an activity does not belong to a larger group (is a single activity), it is considered to have component number 1. As an advice, if you have activities of say Biology splitted into 1 or 2 per week and want to constrain only one component if there are 2 per week, add a constraint for Biology with component number=2</source>
-        <translation type="unfinished"></translation>
+        <translation>注意：如果教學活動不屬於一個更大的教學群組（它是一個單一的活動），建議，如果你有生物學課程分成1或2次在每週的教學活動，並希望限制只有一個組成部分，組件分量數建議設:1，如果每週有2個，則添加約束生物學的組件數=2
+</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform.cpp" line="199"/>
         <source>Note: if a teacher or a students set cannot have lessons in some slots because of this constraint, gaps will be counted (if you have max gaps constraints). So be careful if you add this constraint for all sub-activities, for only a teacher or for only a students set</source>
-        <translation type="unfinished"></translation>
+        <translation>注：如果一個教師或學生班級課程，設定不能在某些排課插槽這方面的限制，因為，課間時隙差距則會被計算（如果你有設最大的課間休息時隙節次條件）。所以要小心，如果你添加此約束所有次級教學活動，設定只有一個老師或者只是一個學生班級
+</translation>
     </message>
 </context>
 <context>
@@ -21596,7 +21629,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="26"/>
         <source>This constraint is useful to constrain only the n-th component for activities. Please click Help button for details.</source>
-        <translation type="unfinished"></translation>
+        <translation>這個約束條件用於n個的教學活動限制是有用的。請點擊查看詳情幫助按鈕。</translation>
     </message>
 </context>
 <context>
@@ -21607,187 +21640,191 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/engine/timeconstraint.cpp" line="9973"/>
         <location filename="../src/engine/timeconstraint.cpp" line="9980"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9960"/>
         <source>Constraint subactivities preferred time slots is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>排課時間插槽slots的次級子活動是錯誤的，因為它指向的是已去除的排課天。請更正，然後重試。校正裝置編輯約束和更新信息。約束是：</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9967"/>
         <source>Constraint subactivities preferred time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>首選排課插槽的約束子活動是錯誤的，因為偏好的節次太晚了（已排在最後一個可以接受的排課插槽後）。請更正，然後重試。校正裝置編輯約束和更新信息。約束是：
+</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9974"/>
         <source>Constraint subactivities preferred time slots is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>首選排課插槽的約束子教學活動是錯誤的，因為它指向的是已去除的節次時間。請更正，然後重試。校正裝置編輯約束和更新信息。約束是：
+</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9981"/>
         <source>Constraint subactivities preferred time slots is wrong because hour or day is not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>首選時排課插槽的子教學活動條件是錯誤的，因為該節次或排課天不可指定插槽值（-1）。請更正，然後重試。校正裝置編輯約束和更新信息。設定的約束條件是：%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9992"/>
         <source>FET error in data</source>
-        <translation type="unfinished">FET信息-資料有誤</translation>
+        <translation>FET信息-資料有誤</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9993"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>下面的約束條件是錯誤的（指無教學活動）。請更正：
+%1
+</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10084"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished"></translation>
+        <translation>註釋: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10091"/>
         <source>teacher=%1</source>
-        <translation type="unfinished">老師=%1</translation>
+        <translation>老師=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10093"/>
         <source>all teachers</source>
-        <translation type="unfinished">全部教師</translation>
+        <translation>全部教師</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10096"/>
         <source>students=%1</source>
-        <translation type="unfinished">學生=%1</translation>
+        <translation>學生=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10098"/>
         <source>all students</source>
-        <translation type="unfinished">全部學生</translation>
+        <translation>全部學生</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10101"/>
         <source>subject=%1</source>
-        <translation type="unfinished">學科=%1</translation>
+        <translation>學科=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10103"/>
         <source>all subjects</source>
-        <translation type="unfinished">全部學科</translation>
+        <translation>全部學科</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10106"/>
         <source>activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>教學班 標籤=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10108"/>
         <source>all activity tags</source>
-        <translation type="unfinished">全部活動標籤</translation>
+        <translation>全部活動標籤</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10110"/>
         <source>Subactivities with %1, %2, %3, %4, %5, have a set of preferred time slots:</source>
         <comment>%1...%5 are conditions for the subactivities</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1, %2, %3, %4 次級教學活動有一組的首選上課時段時隙slots插槽：</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10111"/>
         <source>component number=%1</source>
-        <translation type="unfinished">內容編號=%1</translation>
+        <translation>內容編號=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10128"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished">權重:%1%</translation>
+        <translation>權重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10135"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>時間限制</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10136"/>
         <source>Subactivities with:</source>
-        <translation type="unfinished">次級教學活動:</translation>
+        <translation>次級教學活動:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10138"/>
         <source>Component number=%1</source>
-        <translation type="unfinished">內容編號=%1</translation>
+        <translation>內容編號=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10142"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished">老師=%1</translation>
+        <translation>老師=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10144"/>
         <source>All teachers</source>
-        <translation type="unfinished"></translation>
+        <translation>全部教師</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10148"/>
         <source>Students=%1</source>
-        <translation type="unfinished">學生=%1</translation>
+        <translation>學生=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10150"/>
         <source>All students</source>
-        <translation type="unfinished">全部學生</translation>
+        <translation>全部學生</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10154"/>
         <source>Subject=%1</source>
-        <translation type="unfinished">學科=%1</translation>
+        <translation>學科=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10156"/>
         <source>All subjects</source>
-        <translation type="unfinished">全部學科</translation>
+        <translation>全部學科</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10160"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished">教學班 標籤=%1</translation>
+        <translation>教學班 標籤=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10162"/>
         <source>All activity tags</source>
-        <translation type="unfinished">全部活動標籤</translation>
+        <translation>全部活動標籤</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10165"/>
         <source>have a set of preferred time slots (all hours of each affected subactivity must be in the allowed slots):</source>
-        <translation type="unfinished"></translation>
+        <translation>有一組首選的排課slots插槽（全部受影響節次的子活動的必須在允許的排課插槽內）：</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10180"/>
         <source>Weight (percentage)=%1</source>
-        <translation type="unfinished">權重百分比=%1</translation>
+        <translation>權重百分比=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10183"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">啟動=%1</translation>
+        <translation>啟動=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10187"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">注釋=%1</translation>
+        <translation>注釋=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10241"/>
         <source>Time constraint subactivities preferred time slots broken for activity with id=%1 (%2), component number %3, on %4 hours, increases conflicts total by %5</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
-        <translation type="unfinished"></translation>
+        <translation>次級教學活動的首選節次排課插槽子活動斷裂ID=%1（%2），組件數量%3，%4時間節次，因此增加衝突:%5</translation>
     </message>
 </context>
 <context>
@@ -21796,63 +21833,68 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="119"/>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="146"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="119"/>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="146"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>所選的限制條件無效</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="151"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="157"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="158"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="158"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="182"/>
         <source>FET help</source>
-        <translation type="unfinished">FET 幫助</translation>
+        <translation>FET 幫助</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="182"/>
         <source>This constraint is used to specify that for some components of a type of activities, for instance for Mathematics activities, you need that from say 4-5 per week, at least the first 2 to be early (say in the first 4 hours).</source>
-        <translation type="unfinished"></translation>
+        <translation>這個約束是用於指定教學活動的組成節次，例如用於數學活動節次的一些部件，則需要每週上課4-5節，至少要比前兩堂為早（比方說在前4節）。
+</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="187"/>
         <source>This is simple: just add 2 constraints of this type, with the component number 1, (then 2) and the corresponding subject (you can also define teacher, students set and activity tag, of course).</source>
-        <translation type="unfinished"></translation>
+        <translation>這很簡單：只需增加2項這種類型的約束條件，與組件數量1（那麼2）和相應的學科（當然你還可以定義:老師，學生班級和活動標籤等）。
+</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="193"/>
         <source>Note: if you have Maths with 4 and 5 splits and want to constrain 2 subactivities for those with 4 per week and 3 subactivities for those with 5 per week, you can add constraints only for Maths with components 3, 4 and 5 (nice trick)</source>
-        <translation type="unfinished"></translation>
+        <translation>注意：如果你有數學課每週4節次和5節次，要設定2項教學子活動給每週4節的；3項教學子活動給每週5節的，你只能添加約束條件與組件3,4和5項的教學活動（好的技巧）
+</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="196"/>
         <source>Note: if an activity does not belong to a larger group (is a single activity), it is considered to have component number 1. As an advice, if you have activities of say Biology splitted into 1 or 2 per week and want to constrain only one component if there are 2 per week, add a constraint for Biology with component number=2</source>
-        <translation type="unfinished"></translation>
+        <translation>注意：如果活動不屬於一個更大的群體（一個單一的活動），它被認為是有分量數1作為一個建議，如果你有說生物學分裂成每週1或2次的教學活動，並希望限制只有一個組成部分，如果有每週2次上課時間請為生物學設定 component number=2
+</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="200"/>
         <source>Note: if a teacher or a students set cannot have lessons in some slots because of this constraint, gaps will be counted (if you have max gaps constraints). So be careful if you add this constraint for all sub-activities, for only a teacher or for only a students set</source>
-        <translation type="unfinished"></translation>
+        <translation>注：如果一個教師或學生班級設定不能在某些排課插槽的限制，因為課間休息時隙會被計算算（如果你有最大的課間休息時隙約束）。所以要小心，如果你添加此約束所有子活動，只能有一個老師或者只是一個學生設置。
+</translation>
     </message>
 </context>
 <context>
@@ -21860,47 +21902,47 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="14"/>
         <source>Constraints subactivities preferred time slots</source>
-        <translation type="unfinished"></translation>
+        <translation>次級教學子活動的首選排課插槽</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="78"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>添加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="85"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="92"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="110"/>
         <source>Close</source>
-        <translation type="unfinished">關閉</translation>
+        <translation>關閉</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="103"/>
         <source>Help</source>
-        <translation type="unfinished">幫助</translation>
+        <translation>幫助</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="26"/>
         <source>This constraint is useful to constrain only the n-th component for activities. Please click Help button for details.</source>
-        <translation type="unfinished"></translation>
+        <translation>這個約束是有用的，用於教學活動限制成n個。請點擊查看詳情幫助按鈕。</translation>
     </message>
 </context>
 <context>
@@ -21908,18 +21950,18 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2937"/>
         <source>Room=%1</source>
-        <translation type="unfinished">教室=%1</translation>
+        <translation>教室=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2876"/>
         <source>FET error in data</source>
-        <translation type="unfinished">FET信息-資料有誤</translation>
+        <translation>FET信息-資料有誤</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2877"/>
         <source>Following constraint is wrong:
 %1</source>
-        <translation type="unfinished">下列的約束限制條件錯誤:
+        <translation>下列的約束限制條件錯誤:
 %1
 </translation>
     </message>
@@ -21927,79 +21969,79 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/engine/spaceconstraint.cpp" line="2918"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished"></translation>
+        <translation>註釋: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2920"/>
         <location filename="../src/engine/spaceconstraint.cpp" line="2933"/>
         <source>Subject activity tag preferred room</source>
-        <translation type="unfinished"></translation>
+        <translation>一個有首選教室的教學班標籤</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2921"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished">權重:%1%</translation>
+        <translation>權重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2922"/>
         <source>S:%1</source>
         <comment>Subject</comment>
-        <translation type="unfinished"></translation>
+        <translation>S(學科):%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2923"/>
         <source>AT:%1</source>
         <comment>Activity tag</comment>
-        <translation type="unfinished">AT(教學活動標籤):%1</translation>
+        <translation>AT(教學活動標籤):%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2924"/>
         <source>R:%1</source>
         <comment>Room</comment>
-        <translation type="unfinished">R(教室):%1</translation>
+        <translation>R(教室):%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2932"/>
         <source>Space constraint</source>
-        <translation type="unfinished">教室空間限制</translation>
+        <translation>教室空間限制</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2934"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished">權重百分比=%1</translation>
+        <translation>權重百分比=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2935"/>
         <source>Subject=%1</source>
-        <translation type="unfinished">學科=%1</translation>
+        <translation>學科=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2936"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished">教學班 標籤=%1</translation>
+        <translation>教學班 標籤=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2940"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">啟動=%1</translation>
+        <translation>啟動=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2944"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">注釋=%1</translation>
+        <translation>注釋=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2991"/>
         <source>Space constraint subject activity tag preferred room broken for activity with id %1 (%2) (activity tag of constraint=%3)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
-        <translation type="unfinished"></translation>
+        <translation>使教室空間學科活動標籤中斷的首選教室的教學活動ID%1（%2）（教學活動標籤=%3）</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2997"/>
         <source>This increases the conflicts total by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>這項因素增加的總衝突數量: %1</translation>
     </message>
 </context>
 <context>
@@ -22008,33 +22050,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform.cpp" line="147"/>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform.cpp" line="174"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform.cpp" line="147"/>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform.cpp" line="174"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform.cpp" line="179"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform.cpp" line="185"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform.cpp" line="186"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform.cpp" line="186"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -22043,42 +22085,42 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="14"/>
         <source>Constraints subject activity tag preferred room</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>約束主題活動標籤首選室</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="101"/>
         <source>Close</source>
-        <translation type="unfinished">關閉</translation>
+        <translation>關閉</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="80"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="94"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="87"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">過濾</translation>
+        <translation>過濾</translation>
     </message>
 </context>
 <context>
@@ -22086,13 +22128,13 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3123"/>
         <source>FET error in data</source>
-        <translation type="unfinished">FET信息-資料有誤</translation>
+        <translation>FET信息-資料有誤</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3124"/>
         <source>Following constraint is wrong:
 %1</source>
-        <translation type="unfinished">下列的約束限制條件錯誤:
+        <translation>下列的約束限制條件錯誤:
 %1
 </translation>
     </message>
@@ -22100,73 +22142,73 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/engine/spaceconstraint.cpp" line="3169"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished"></translation>
+        <translation>註釋: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3171"/>
         <location filename="../src/engine/spaceconstraint.cpp" line="3187"/>
         <source>Subject activity tag preferred rooms</source>
-        <translation type="unfinished"></translation>
+        <translation>學科教學活動標籤有一組首選教室</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3172"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished">權重:%1%</translation>
+        <translation>權重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3173"/>
         <source>S:%1</source>
         <comment>Subject</comment>
-        <translation type="unfinished"></translation>
+        <translation>S(學科):%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3174"/>
         <source>AT:%1</source>
         <comment>Activity tag</comment>
-        <translation type="unfinished">AT(教學活動標籤):%1</translation>
+        <translation>AT(教學活動標籤):%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3177"/>
         <source>R:%1</source>
         <comment>Room</comment>
-        <translation type="unfinished">R(教室):%1</translation>
+        <translation>R(教室):%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3186"/>
         <source>Space constraint</source>
-        <translation type="unfinished">教室空間限制</translation>
+        <translation>教室空間限制</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3188"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished">權重百分比=%1</translation>
+        <translation>權重百分比=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3189"/>
         <source>Subject=%1</source>
-        <translation type="unfinished">學科=%1</translation>
+        <translation>學科=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3190"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished">教學班 標籤=%1</translation>
+        <translation>教學班 標籤=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3192"/>
         <source>Room=%1</source>
-        <translation type="unfinished">教室=%1</translation>
+        <translation>教室=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3197"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">啟動=%1</translation>
+        <translation>啟動=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3201"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">注釋=%1</translation>
+        <translation>注釋=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3252"/>
@@ -22177,7 +22219,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3258"/>
         <source>This increases the conflicts total by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>因這項因素增加的總衝突數量: %1</translation>
     </message>
 </context>
 <context>
@@ -22186,33 +22228,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform.cpp" line="145"/>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform.cpp" line="172"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform.cpp" line="145"/>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform.cpp" line="172"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform.cpp" line="177"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform.cpp" line="183"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform.cpp" line="184"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform.cpp" line="184"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -22226,37 +22268,37 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform_template.ui" line="98"/>
         <source>Close</source>
-        <translation type="unfinished">關閉</translation>
+        <translation>關閉</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform_template.ui" line="77"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform_template.ui" line="91"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform_template.ui" line="84"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">過濾</translation>
+        <translation>過濾</translation>
     </message>
 </context>
 <context>
@@ -22264,18 +22306,18 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2442"/>
         <source>Room=%1</source>
-        <translation type="unfinished">教室=%1</translation>
+        <translation>教室=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2384"/>
         <source>FET error in data</source>
-        <translation type="unfinished">FET信息-資料有誤</translation>
+        <translation>FET信息-資料有誤</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2385"/>
         <source>Following constraint is wrong:
 %1</source>
-        <translation type="unfinished">下列的約束限制條件錯誤:
+        <translation>下列的約束限制條件錯誤:
 %1
 </translation>
     </message>
@@ -22283,57 +22325,57 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/engine/spaceconstraint.cpp" line="2425"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished"></translation>
+        <translation>註釋: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2427"/>
         <location filename="../src/engine/spaceconstraint.cpp" line="2439"/>
         <source>Subject preferred room</source>
-        <translation type="unfinished"></translation>
+        <translation>一個學科有首選的教室</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2428"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished">權重:%1%</translation>
+        <translation>權重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2429"/>
         <source>S:%1</source>
         <comment>Subject</comment>
-        <translation type="unfinished"></translation>
+        <translation>S(學科):%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2430"/>
         <source>R:%1</source>
         <comment>Room</comment>
-        <translation type="unfinished">R(教室):%1</translation>
+        <translation>R(教室):%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2438"/>
         <source>Space constraint</source>
-        <translation type="unfinished">教室空間限制</translation>
+        <translation>教室空間限制</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2440"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished">權重百分比=%1</translation>
+        <translation>權重百分比=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2441"/>
         <source>Subject=%1</source>
-        <translation type="unfinished">學科=%1</translation>
+        <translation>學科=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2445"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">啟動=%1</translation>
+        <translation>啟動=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2449"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">注釋=%1</translation>
+        <translation>注釋=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2496"/>
@@ -22344,7 +22386,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2501"/>
         <source>This increases the conflicts total by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>這項因素增加的總衝突數量: %1</translation>
     </message>
 </context>
 <context>
@@ -22353,33 +22395,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintsubjectpreferredroomform.cpp" line="135"/>
         <location filename="../src/interface/constraintsubjectpreferredroomform.cpp" line="162"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform.cpp" line="135"/>
         <location filename="../src/interface/constraintsubjectpreferredroomform.cpp" line="162"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform.cpp" line="167"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform.cpp" line="173"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform.cpp" line="174"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform.cpp" line="174"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -22388,22 +22430,22 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="14"/>
         <source>Constraints subject preferred room</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>教學活動有首選教室的限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="98"/>
         <source>Close</source>
-        <translation type="unfinished">關閉</translation>
+        <translation>關閉</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="77"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="45"/>
@@ -22463,7 +22505,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/engine/spaceconstraint.cpp" line="2671"/>
         <source>S:%1</source>
         <comment>Subject</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">S(學科):%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2674"/>
@@ -22520,33 +22562,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintsubjectpreferredroomsform.cpp" line="135"/>
         <location filename="../src/interface/constraintsubjectpreferredroomsform.cpp" line="162"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform.cpp" line="135"/>
         <location filename="../src/interface/constraintsubjectpreferredroomsform.cpp" line="162"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform.cpp" line="167"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform.cpp" line="173"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform.cpp" line="174"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform.cpp" line="174"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -22565,7 +22607,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="28"/>
@@ -22673,33 +22715,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="136"/>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="163"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="136"/>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="163"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="168"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="174"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="175"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="175"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -22712,7 +22754,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="93"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="61"/>
@@ -22834,33 +22876,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform.cpp" line="137"/>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform.cpp" line="164"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform.cpp" line="137"/>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform.cpp" line="164"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform.cpp" line="169"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform.cpp" line="175"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform.cpp" line="176"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform.cpp" line="176"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -22894,7 +22936,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform_template.ui" line="109"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform_template.ui" line="123"/>
@@ -23003,33 +23045,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteacherhomeroomform.cpp" line="133"/>
         <location filename="../src/interface/constraintteacherhomeroomform.cpp" line="160"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform.cpp" line="133"/>
         <location filename="../src/interface/constraintteacherhomeroomform.cpp" line="160"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform.cpp" line="165"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform.cpp" line="171"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform.cpp" line="172"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform.cpp" line="172"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -23048,12 +23090,12 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform_template.ui" line="93"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform_template.ui" line="107"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform_template.ui" line="100"/>
@@ -23175,33 +23217,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteacherhomeroomsform.cpp" line="142"/>
         <location filename="../src/interface/constraintteacherhomeroomsform.cpp" line="169"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform.cpp" line="142"/>
         <location filename="../src/interface/constraintteacherhomeroomsform.cpp" line="169"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform.cpp" line="174"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform.cpp" line="180"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform.cpp" line="181"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform.cpp" line="181"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -23220,32 +23262,32 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="93"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="107"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="100"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="76"/>
         <source>Filter</source>
-        <translation type="unfinished">過濾</translation>
+        <translation>過濾</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="26"/>
@@ -23392,33 +23434,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="126"/>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="126"/>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -23442,12 +23484,12 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="88"/>
@@ -23562,33 +23604,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform.cpp" line="124"/>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform.cpp" line="151"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform.cpp" line="124"/>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform.cpp" line="151"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform.cpp" line="156"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform.cpp" line="162"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform.cpp" line="163"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform.cpp" line="163"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -23612,12 +23654,12 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform_template.ui" line="88"/>
@@ -23730,33 +23772,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform.cpp" line="124"/>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform.cpp" line="151"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform.cpp" line="124"/>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform.cpp" line="151"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform.cpp" line="156"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform.cpp" line="162"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform.cpp" line="163"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform.cpp" line="163"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -23780,27 +23822,27 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform_template.ui" line="88"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform_template.ui" line="81"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">過濾</translation>
+        <translation>過濾</translation>
     </message>
 </context>
 <context>
@@ -23809,35 +23851,35 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/engine/timeconstraint.cpp" line="4219"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished"></translation>
+        <translation>註釋: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4221"/>
         <source>Teacher max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>老師每週最多上課天數</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4222"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished">權重:%1%</translation>
+        <translation>WP(權重):%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4223"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
-        <translation type="unfinished">T(教師):%1</translation>
+        <translation>T(教師):%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4224"/>
         <source>MD:%1</source>
         <comment>Max days (per week)</comment>
-        <translation type="unfinished"></translation>
+        <translation>MX(最大天數參數): %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4232"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>時間限制</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4233"/>
@@ -23887,33 +23929,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachermaxdaysperweekform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxdaysperweekform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxdaysperweekform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -23937,27 +23979,27 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="88"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="81"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">過濾</translation>
+        <translation>過濾</translation>
     </message>
 </context>
 <context>
@@ -24044,33 +24086,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachermaxgapsperdayform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxgapsperdayform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxgapsperdayform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -24094,27 +24136,27 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform_template.ui" line="88"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform_template.ui" line="81"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">過濾</translation>
+        <translation>過濾</translation>
     </message>
 </context>
 <context>
@@ -24123,76 +24165,76 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/engine/timeconstraint.cpp" line="4905"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished"></translation>
+        <translation>註釋: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4908"/>
         <source>Teacher max gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation>老師每星期最大課間休息時隙間隔</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4909"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished">權重:%1%</translation>
+        <translation>WP(權重):%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4910"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
-        <translation type="unfinished">T(教師):%1</translation>
+        <translation>T(教師):%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4911"/>
         <source>MG:%1</source>
         <comment>Max gaps (per week</comment>
-        <translation type="unfinished">MG(最大課間休息時隙參數): %1</translation>
+        <translation>MG(最大課間休息時隙參數): %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4919"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>時間限制</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4920"/>
         <source>A teacher must respect the maximum number of gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation>教師必須遵守的每週的課間休息時隙的最大值</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4921"/>
         <source>(breaks and teacher not available not counted)</source>
-        <translation type="unfinished">中斷且教師設定無效，不被計算。</translation>
+        <translation>中斷且教師設定無效，不被計算。</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4922"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished">權重百分比=%1</translation>
+        <translation>權重百分比=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4923"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished">老師=%1</translation>
+        <translation>老師=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4924"/>
         <source>Maximum gaps per week=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>每週課間休息節次的最大間隔值=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4927"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">啟動=%1</translation>
+        <translation>啟動=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4931"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">注釋=%1</translation>
+        <translation>注釋=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4980"/>
         <source>Time constraint teacher max gaps per week broken for teacher: %1, conflicts factor increase=%2</source>
-        <translation type="unfinished"></translation>
+        <translation>教師的每週最大課間休息時隙的課表時間節次約束條件被教師：%1所打破，衝突增加=%2</translation>
     </message>
 </context>
 <context>
@@ -24201,33 +24243,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachermaxgapsperweekform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxgapsperweekform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxgapsperweekform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -24251,7 +24293,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="45"/>
@@ -24360,33 +24402,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -24405,32 +24447,32 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="88"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="81"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">過濾</translation>
+        <translation>過濾</translation>
     </message>
 </context>
 <context>
@@ -24439,29 +24481,29 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/engine/timeconstraint.cpp" line="3011"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished"></translation>
+        <translation>註釋: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3014"/>
         <source>Teacher max hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>老師每天最大上課節次</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3015"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished">權重:%1%</translation>
+        <translation>WP(權重):%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3017"/>
         <source>MH:%1</source>
         <comment>Maximum hours (daily)</comment>
-        <translation type="unfinished">MH(最大節次參數): %1</translation>
+        <translation>MH(最大節次參數): %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3025"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>時間限制</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3026"/>
@@ -24517,33 +24559,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachermaxhoursdailyform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxhoursdailyform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxhoursdailyform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -24562,32 +24604,32 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="88"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="81"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">過濾</translation>
+        <translation>過濾</translation>
     </message>
 </context>
 <context>
@@ -24596,35 +24638,35 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/engine/timeconstraint.cpp" line="14169"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
-        <translation type="unfinished">T(教師):%1</translation>
+        <translation>T(教師):%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14167"/>
         <source>Teacher min days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>老師每週最小上課天數</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14164"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished"></translation>
+        <translation>註釋: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14168"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished">權重:%1%</translation>
+        <translation>WP(權重):%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14170"/>
         <source>mD:%1</source>
         <comment>Minimum days per week</comment>
-        <translation type="unfinished">mX(最小天數參數): %1</translation>
+        <translation>mX(最小天數參數): %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14178"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>時間限制</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14179"/>
@@ -24674,33 +24716,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachermindaysperweekform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermindaysperweekform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermindaysperweekform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -24724,7 +24766,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform_template.ui" line="45"/>
@@ -24842,33 +24884,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform.cpp" line="124"/>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform.cpp" line="151"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform.cpp" line="124"/>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform.cpp" line="151"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform.cpp" line="156"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform.cpp" line="162"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform.cpp" line="163"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform.cpp" line="163"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -24892,7 +24934,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform_template.ui" line="45"/>
@@ -25025,33 +25067,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteacherminhoursdailyform.cpp" line="126"/>
         <location filename="../src/interface/constraintteacherminhoursdailyform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform.cpp" line="126"/>
         <location filename="../src/interface/constraintteacherminhoursdailyform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -25070,7 +25112,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="45"/>
@@ -25217,33 +25259,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>是否要移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -25267,27 +25309,27 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform_template.ui" line="88"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform_template.ui" line="81"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">過濾</translation>
+        <translation>過濾</translation>
     </message>
 </context>
 <context>
@@ -25365,33 +25407,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="125"/>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="152"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="125"/>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="152"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="157"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="163"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="164"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="164"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -25399,7 +25441,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="111"/>
         <source>Close</source>
-        <translation type="unfinished">關閉</translation>
+        <translation>關閉</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
@@ -25410,32 +25452,32 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="90"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="104"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="97"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="76"/>
         <source>Filter</source>
-        <translation type="unfinished">過濾</translation>
+        <translation>過濾</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="26"/>
@@ -25521,33 +25563,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform.cpp" line="128"/>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform.cpp" line="155"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform.cpp" line="128"/>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform.cpp" line="155"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform.cpp" line="160"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform.cpp" line="166"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform.cpp" line="167"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform.cpp" line="167"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -25581,32 +25623,32 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="106"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="120"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="113"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="92"/>
         <source>Filter</source>
-        <translation type="unfinished">過濾</translation>
+        <translation>過濾</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="60"/>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="77"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
 </context>
 <context>
@@ -25616,7 +25658,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/engine/timeconstraint.cpp" line="14799"/>
         <location filename="../src/engine/timeconstraint.cpp" line="14806"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET 警告</translation>
+        <translation>FET 警告</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14793"/>
@@ -25737,33 +25779,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="116"/>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="143"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="116"/>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="143"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="148"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="154"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="155"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="155"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -25772,37 +25814,37 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints teachers interval max days per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>教師每週教學活動的最大的間隔天數</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">關閉</translation>
+        <translation>關閉</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
 </context>
 <context>
@@ -25878,33 +25920,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform.cpp" line="115"/>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform.cpp" line="142"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform.cpp" line="115"/>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform.cpp" line="142"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform.cpp" line="147"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform.cpp" line="153"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform.cpp" line="154"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform.cpp" line="154"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -25913,37 +25955,37 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Constraints teachers max building changes per day</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>教師每天最大教學樓棟變化</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">關閉</translation>
+        <translation>關閉</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
 </context>
 <context>
@@ -26019,33 +26061,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform.cpp" line="115"/>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform.cpp" line="142"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform.cpp" line="115"/>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform.cpp" line="142"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform.cpp" line="147"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform.cpp" line="153"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform.cpp" line="154"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform.cpp" line="154"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -26054,37 +26096,37 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Constraints teachers max building changes per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>教師每週最大教學樓棟變化</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">關閉</translation>
+        <translation>關閉</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
 </context>
 <context>
@@ -26160,33 +26202,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -26195,37 +26237,37 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints teachers max days per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>教師每週最大的上課天數</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">關閉</translation>
+        <translation>關閉</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
 </context>
 <context>
@@ -26292,7 +26334,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5180"/>
         <source>Time constraint teachers max gaps per day broken for teacher: %1, day: %2, conflicts factor increase=%3</source>
-        <translation>教師的每週最大課間休息時隙的課表時間節次約束條件被教師：%1所打破，星期: %2，衝突增加=%3</translation>
+        <translation>教師的每天最大課間休息時隙的課表時間節次約束條件被教師：%1所打破，星期: %2，衝突增加=%3</translation>
     </message>
 </context>
 <context>
@@ -26301,33 +26343,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -26336,37 +26378,37 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform_template.ui" line="14"/>
         <source>Constraints teachers max gaps per day</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>老師每天的最大課間休息時隙限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">關閉</translation>
+        <translation>關閉</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
 </context>
 <context>
@@ -26375,65 +26417,65 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/engine/timeconstraint.cpp" line="4697"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished"></translation>
+        <translation>註釋: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4700"/>
         <source>Teachers max gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation>老師每星期最大課間休息時隙間隔</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4701"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished">權重:%1%</translation>
+        <translation>WP(權重):%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4702"/>
         <source>MG:%1</source>
         <comment>Max gaps (per week)</comment>
-        <translation type="unfinished">MG(最大課間休息時隙參數): %1</translation>
+        <translation>MG(最大課間休息時隙參數): %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4710"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>課表時間限制條件</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4711"/>
         <source>All teachers must respect the maximum number of gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation>全體教師必須遵守的每週的課間休息時隙的最大值</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4712"/>
         <source>(breaks and teacher not available not counted)</source>
-        <translation type="unfinished">中斷且教師設定無效，不被計算。</translation>
+        <translation>中斷且教師設定無效，不被計算。</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4714"/>
         <source>Maximum gaps per week=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>每週課間休息節次的最大間隔值=1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4713"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished">權重百分比=%1</translation>
+        <translation>權重百分比=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4717"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">啟動=%1</translation>
+        <translation>啟動=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4721"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">注釋=%1</translation>
+        <translation>注釋=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4768"/>
         <source>Time constraint teachers max gaps per week broken for teacher: %1, conflicts factor increase=%2</source>
-        <translation type="unfinished"></translation>
+        <translation>教師的每週最大課間休息時隙的課表時間節次約束條件被教師：%1所打破，在星期: %2，衝突增加=%3</translation>
     </message>
 </context>
 <context>
@@ -26442,33 +26484,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -26477,37 +26519,37 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="14"/>
         <source>Constraints teachers max gaps per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>老師每週上課最大課間休息節次間距</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">關閉</translation>
+        <translation>關閉</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
 </context>
 <context>
@@ -26585,33 +26627,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -26620,37 +26662,37 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Constraints teachers max hours continuously</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>老師的最大連續上課節次</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">關閉</translation>
+        <translation>關閉</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>限制條件</translation>
     </message>
 </context>
 <context>
@@ -26726,33 +26768,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -26761,37 +26803,37 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="14"/>
         <source>Constraints teachers max hours daily</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>老師每天可上課的最大節次</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">關閉</translation>
+        <translation>關閉</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>限制條件</translation>
     </message>
 </context>
 <context>
@@ -26867,33 +26909,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersmindaysperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmindaysperweekform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmindaysperweekform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -26902,7 +26944,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersmindaysperweekform_template.ui" line="14"/>
         <source>Constraints teachers min days per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">教師每週最小大的上課天數</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform_template.ui" line="28"/>
@@ -26917,22 +26959,22 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
 </context>
 <context>
@@ -26941,7 +26983,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/engine/spaceconstraint.cpp" line="6714"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished"></translation>
+        <translation>註釋: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6716"/>
@@ -27008,33 +27050,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform.cpp" line="115"/>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform.cpp" line="142"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform.cpp" line="115"/>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform.cpp" line="142"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform.cpp" line="147"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform.cpp" line="153"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform.cpp" line="154"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform.cpp" line="154"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -27058,22 +27100,22 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
 </context>
 <context>
@@ -27175,33 +27217,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -27220,7 +27262,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="45"/>
@@ -27359,33 +27401,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform.cpp" line="114"/>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform.cpp" line="139"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform.cpp" line="114"/>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform.cpp" line="139"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform.cpp" line="144"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform.cpp" line="150"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform.cpp" line="151"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform.cpp" line="151"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -27404,22 +27446,22 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="94"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="108"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="101"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="77"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="42"/>
@@ -27539,33 +27581,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform.cpp" line="114"/>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform.cpp" line="139"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform.cpp" line="114"/>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform.cpp" line="139"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform.cpp" line="144"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform.cpp" line="150"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform.cpp" line="151"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform.cpp" line="151"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -27578,22 +27620,22 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="94"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="108"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="101"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="77"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="42"/>
@@ -27719,33 +27761,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform.cpp" line="114"/>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform.cpp" line="139"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform.cpp" line="114"/>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform.cpp" line="139"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform.cpp" line="144"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform.cpp" line="150"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform.cpp" line="151"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform.cpp" line="151"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -27758,22 +27800,22 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="94"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="108"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="101"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="77"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="42"/>
@@ -27899,33 +27941,33 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
         <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="114"/>
         <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="139"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="114"/>
         <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="139"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的選擇約束</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="144"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>移除限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="150"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="151"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="151"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -27944,27 +27986,27 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="78"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="92"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="85"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>約束限制條件</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="26"/>
@@ -28563,557 +28605,558 @@ Import of data will be easier with these settings.</source>
 <context>
     <name>FetMainForm</name>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="794"/>
-        <location filename="../src/interface/fetmainform.cpp" line="815"/>
-        <location filename="../src/interface/fetmainform.cpp" line="954"/>
-        <location filename="../src/interface/fetmainform.cpp" line="971"/>
-        <location filename="../src/interface/fetmainform.cpp" line="997"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1572"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3435"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3445"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3455"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3572"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3593"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3597"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3633"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3654"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3658"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3778"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3835"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4375"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4425"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4455"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4480"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4502"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4529"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4551"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4572"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4596"/>
+        <location filename="../src/interface/fetmainform.cpp" line="797"/>
+        <location filename="../src/interface/fetmainform.cpp" line="818"/>
+        <location filename="../src/interface/fetmainform.cpp" line="962"/>
+        <location filename="../src/interface/fetmainform.cpp" line="979"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1005"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1580"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3443"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3453"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3463"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3580"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3601"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3605"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3641"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3662"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3666"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3786"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3843"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4388"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4438"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4468"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4493"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4515"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4542"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4564"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4585"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4609"/>
         <source>FET warning</source>
         <translation>FET 警告</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="773"/>
-        <location filename="../src/interface/fetmainform.cpp" line="992"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1085"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1146"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1158"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1230"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1275"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1281"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1287"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1360"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1364"/>
+        <location filename="../src/interface/fetmainform.cpp" line="776"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1000"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1093"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1154"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1166"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1238"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1283"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1289"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1295"/>
         <location filename="../src/interface/fetmainform.cpp" line="1368"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1410"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1419"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1428"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1437"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1452"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1461"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1470"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1546"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1550"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1372"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1376"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1418"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1427"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1436"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1445"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1460"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1469"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1478"/>
         <location filename="../src/interface/fetmainform.cpp" line="1554"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1682"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1757"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1770"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1783"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1796"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1809"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1829"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1849"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1862"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1875"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1888"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2011"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2064"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2077"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2090"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2103"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2116"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2129"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2142"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2155"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2168"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2181"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2194"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2207"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2220"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2233"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2246"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2259"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2272"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2285"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2298"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2311"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2324"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2337"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2350"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2363"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2376"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2389"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2402"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2415"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2428"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2441"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2454"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2468"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2481"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2495"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2508"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2522"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2535"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2548"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2561"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2574"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2587"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2600"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2612"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2625"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2638"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2651"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2664"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2677"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2690"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2703"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2716"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2729"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2742"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2755"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2768"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2781"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2794"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2807"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2820"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2833"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2846"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2859"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2872"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2885"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2898"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2911"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2924"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2937"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2955"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2973"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2986"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2999"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3012"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3025"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3038"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3050"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3063"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3081"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3099"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3112"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3125"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3138"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3151"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3164"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3177"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3190"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3203"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3216"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3229"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3242"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3255"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3273"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3291"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3304"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3317"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3330"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3343"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3356"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3369"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3382"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3396"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3410"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3511"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3523"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3536"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3542"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3554"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3567"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3588"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3613"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3628"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3649"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3673"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3684"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3697"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3708"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3721"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3731"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4190"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4223"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4250"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4323"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4334"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1558"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1562"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1690"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1765"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1778"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1791"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1804"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1817"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1837"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1857"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1870"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1883"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1896"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2019"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2072"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2085"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2098"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2111"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2124"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2137"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2150"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2163"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2176"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2189"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2202"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2215"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2228"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2241"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2254"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2267"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2280"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2293"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2306"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2319"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2332"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2345"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2358"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2371"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2384"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2397"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2410"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2423"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2436"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2449"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2462"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2476"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2489"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2503"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2516"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2530"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2543"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2556"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2569"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2582"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2595"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2608"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2620"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2633"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2646"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2659"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2672"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2685"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2698"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2711"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2724"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2737"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2750"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2763"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2776"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2789"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2802"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2815"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2828"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2841"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2854"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2867"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2880"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2893"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2906"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2919"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2932"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2945"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2963"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2981"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2994"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3007"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3020"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3033"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3046"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3058"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3071"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3089"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3107"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3120"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3133"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3146"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3159"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3172"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3185"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3198"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3211"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3224"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3237"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3250"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3263"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3281"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3299"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3312"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3325"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3338"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3351"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3364"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3377"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3390"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3404"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3418"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3519"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3531"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3544"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3550"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3562"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3575"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3596"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3621"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3636"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3657"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3681"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3692"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3705"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3716"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3729"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3739"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4203"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4236"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4263"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4336"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4347"/>
         <source>FET information</source>
         <translation>FET信息</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="763"/>
+        <location filename="../src/interface/fetmainform.cpp" line="766"/>
         <source>Constraint is not enabled. To use this type of constraint you must enable it from the Settings-&gt;Advanced menu.</source>
         <translation>限制條件無法建立。使用該限制條件您必須先至-&gt;設定選項-&gt;高級選項，於此做好設定才能執行。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="765"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3046"/>
+        <location filename="../src/interface/fetmainform.cpp" line="768"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3054"/>
         <source>Explanation:</source>
         <translation>說明:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="769"/>
+        <location filename="../src/interface/fetmainform.cpp" line="772"/>
         <source>For some situations, the generation of the timetable may take too long or be impossible.</source>
         <translation>由於某些情況下，課程時間表的生成可能需要時間過長或不可能生成。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="771"/>
+        <location filename="../src/interface/fetmainform.cpp" line="774"/>
         <source>Use with caution.</source>
         <translation>請謹慎使用。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1026"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1034"/>
         <source>FET - exiting</source>
         <translation>FET-已經存在。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4025"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4036"/>
         <source>&amp;Yes</source>
         <translation>&amp;是</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4025"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4036"/>
         <source>&amp;No</source>
         <translation>&amp;否</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4262"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4283"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4275"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4296"/>
         <source>&amp;Cancel</source>
         <translation>&amp;取消</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1086"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1147"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1159"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1231"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1411"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1420"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1429"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1438"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1453"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1462"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1471"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1758"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1771"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1784"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1797"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1810"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1830"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1850"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1863"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1876"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1889"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2065"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2078"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2091"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2104"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2117"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2130"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2143"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2156"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2169"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2182"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2195"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2208"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2221"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2234"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2247"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2260"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2273"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2286"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2299"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2312"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2325"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2338"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2351"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2364"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2377"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2390"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2403"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2416"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2429"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2442"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2455"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2469"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2482"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2496"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2509"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2523"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2536"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2549"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2562"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2575"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2588"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2601"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2613"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2626"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2639"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2652"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2665"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2678"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2691"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2704"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2717"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2730"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2743"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2756"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2769"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2782"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2795"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2808"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2821"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2834"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2847"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2860"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2873"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2886"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2899"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2912"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2925"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2938"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2956"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2974"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2987"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3000"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3013"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3026"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3039"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3064"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3082"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3100"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3113"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3126"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3139"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3152"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3165"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3178"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3191"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3204"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3217"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3230"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3243"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3256"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3274"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3292"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3305"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3318"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3331"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3344"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3357"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3370"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3383"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3397"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3411"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3512"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3537"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4191"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4224"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4251"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4324"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4335"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1094"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1155"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1167"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1239"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1419"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1428"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1437"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1446"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1461"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1470"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1479"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1766"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1779"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1792"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1805"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1818"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1838"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1858"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1871"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1884"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1897"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2073"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2086"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2099"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2112"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2125"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2138"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2151"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2164"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2177"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2190"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2203"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2216"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2229"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2242"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2255"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2268"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2281"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2294"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2307"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2320"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2333"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2346"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2359"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2372"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2385"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2398"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2411"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2424"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2437"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2450"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2463"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2477"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2490"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2504"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2517"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2531"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2544"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2557"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2570"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2583"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2596"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2609"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2621"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2634"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2647"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2660"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2673"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2686"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2699"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2712"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2725"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2738"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2751"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2764"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2777"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2790"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2803"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2816"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2829"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2842"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2855"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2868"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2881"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2894"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2907"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2920"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2933"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2946"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2964"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2982"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2995"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3008"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3021"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3034"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3047"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3072"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3090"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3108"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3121"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3134"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3147"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3160"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3173"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3186"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3199"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3212"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3225"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3238"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3251"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3264"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3282"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3300"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3313"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3326"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3339"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3352"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3365"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3378"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3391"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3405"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3419"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3520"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3545"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4204"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4237"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4264"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4337"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4348"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>分配過程。
 在此之前，請停止模擬。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="789"/>
+        <location filename="../src/interface/fetmainform.cpp" line="792"/>
         <source>Note: if you disable this option, you will not be able to add/modify constraints for subgroups, and you will not be able to make filters using a particular subgroup, when selecting activities.</source>
-        <translation>注意：如果禁用此選項，選擇教學活動時；您將無法添加/修改約束分組，你不能夠使用特定的分組，，過濾器。</translation>
+        <translation>注意：如果禁用此選項，選擇教學活動時；您將無法添加/修改約束教學分組，你也不能夠使用特定的教學次級分組來過濾條件。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1115"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1123"/>
         <source>%1[*] - FET</source>
         <comment>The title of the main window, %1 is the name of the current file. Please keep the string [*] unmodified (three characters) - it is used to make the difference between modified files and unmodified files.</comment>
-        <translation></translation>
+        <translation>%1[*] - FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1168"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1240"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1176"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1248"/>
         <source>FET application</source>
         <translation>FET應用程式</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1276"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1284"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>請不要在文件名引號“的HTML CSS代碼不能正常工作。未加載文件，請重命名，刪除不允許的字符，之後用FET打開。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1282"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1290"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>請不要用分號;在文件名中，HTML CSS代碼不起作用。文件未加載。請重命名，刪除不允許的字符，之後用FET打開。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1288"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1296"/>
         <source>Please do not use # in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>請不要使用＃在文件名中，HTML CSS代碼不起作用。文件未加載。請重命名，刪除不允許的字符，之後用FET打開。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1299"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1307"/>
         <source>Loading...</source>
         <comment>This is a message in the status bar, that we are loading the file</comment>
         <translation>載入中...請稍候</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1349"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1357"/>
         <source>Choose a filename to save under</source>
         <translation>選擇一個文件名儲存</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1360"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1546"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1368"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1554"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work</source>
         <translation>請不要在文件名使用引號“，在HTML CSS代碼程式無法起作用</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1364"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1550"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1372"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1558"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work</source>
         <translation>請不要用分號;在文件名中，HTML CSS代碼不起作用</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1368"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1554"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1376"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1562"/>
         <source>Please do not use # in filename, the html css code does not work</source>
         <translation>請不要使用＃在文件名中，在HTML CSS程式代碼無法起作用</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1379"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1387"/>
         <source>FET</source>
         <translation>FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1380"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1388"/>
         <source>File %1 exists - are you sure you want to overwrite it?</source>
         <translation>你的資料檔案%1已存在，您確定要覆蓋麼?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1535"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1543"/>
         <source>Choose a filename for data and timetable</source>
         <translation>給您的數據和時間表，選擇一個文件名稱</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1646"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1671"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1654"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1679"/>
         <source>Added to the saved file:</source>
         <comment>It refers to a constraint</comment>
         <translation>新增到已儲存的檔案中</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1648"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1673"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1656"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1681"/>
         <source>NOT added to the saved file (already existing):</source>
         <comment>It refers to a constraint</comment>
         <translation>無法新增到已儲存的檔案，(檔案已經存在!)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1682"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1690"/>
         <source>Added %1 locking time constraints and %2 locking space constraints to saved file, ignored %3 activities which were already fixed in time and %4 activities which were already fixed in space.</source>
         <translation>已增加%1鎖定時間節次限制和%2鎖定空間限制來儲存文件，忽略%3教學活動，已經及時修改節次%4教學活動，已經固定在教室空間。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1684"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1692"/>
         <source>Detailed information about each locking constraint which was added or not (if already existing) to the saved file:</source>
         <translation>儲存是否已增（如果已經存在）來保存文件中的每個鎖定限制的詳細信息：</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1685"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1693"/>
         <source>Your current data file remained untouched (no locking constraints were added), so you can save it also, or generate different timetables.</source>
         <translation>您當前的資料檔案保持不變（沒有鎖定限制），所以可以將其保存，或產生不同的時間表。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1930"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1938"/>
         <source>Seed of random number generator: please read the help in the dialog of this option</source>
         <translation>亂數產生器的種子：請仔細閱讀此選項對話方塊中的説明</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1933"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1941"/>
         <source>Interface - use colors: the places with colors in FET interface are in:</source>
-        <translation type="unfinished"></translation>
+        <translation>操作介面 - 使用顏色：FET操作介面的顏色的是：</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1940"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1948"/>
         <source>activities and subactivities dialogs, the inactive activities will have a distinctive background color</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1943"/>
-        <source>all time constraints and all space constraints dialogs, the inactive constraints will have a distinctive background color</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1949"/>
-        <source>Enable activity tag max hours daily:</source>
-        <translation type="unfinished"></translation>
+        <translation>教學活動和子教學活動的對話視窗，不啟用的教學活動將有一個獨特的背景顏色</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="1951"/>
+        <source>all time constraints and all space constraints dialogs, the inactive constraints will have a distinctive background color</source>
+        <translation>所有的時間節次和空間教室的限制對話框，無效約束將有一個獨特的背景顏色</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="1957"/>
+        <source>Enable activity tag max hours daily:</source>
+        <translation>開啟教學活動標籤每天最大上課時間節次</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="1959"/>
         <source>This will enable the menu for 4 constraints: teacher(s) or students (set) activity tag max hours daily. These 4 constraints are good, but not perfect and may bring slow down of generation or impossible timetables if used unproperly. Select only if you know what you&apos;re doing.</source>
         <translation>這個允許4個約束，老師和學生，教學班標籤，每天最大學時，這些約束很好，但是會影響課表的生成性能如果不合適的使用，選擇“只有當你知道你在做什麼”。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1954"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1962"/>
         <source>Enable students max gaps per day:</source>
-        <translation type="unfinished"></translation>
+        <translation>允許學生每天有課間休息時隙間隔</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1956"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1964"/>
         <source>This will enable the menu for 2 constraints: students (set) max gaps per day. These 2 constraints are good, but not perfect and may bring slow down of generation or impossible timetables if used unproperly. Select only if you know what you&apos;re doing.</source>
         <translation>這個允許2個約束，學生每天最大間隙，這些約束很好，但是會影響課表的生成性能如果不合適的使用，選擇“只有當你知道你在做什麼”。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1960"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1968"/>
         <source>Warn if using not perfect constraints:</source>
         <comment>this is a warning if user uses not perfect constraints</comment>
         <translation>警告，如果使用不完美的約束：</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1966"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1974"/>
         <source>Enable students min hours daily with empty days:</source>
-        <translation type="unfinished"></translation>
+        <translation>允許學生班級全部不排課空天合計的最小節次</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1968"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1976"/>
         <source>This will enable you to modify the students min hours daily constraints, to allow empty days. It is IMPERATIVE (for performance reasons) to allow empty days for students min hours daily only if your institution allows empty days for students and if a solution with empty days is possible. Select only if you know what you&apos;re doing.</source>
         <translation>這個允許修改每天最小課時，去允許不上課天，這個是必要的，如果你的機構允許，選擇“只有當你知道你在做什麼”。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1972"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1980"/>
         <source>Warn if using students min hours daily with empty days:</source>
         <comment>this is a warning if user has constraints min hours daily for students with allowed empty days</comment>
         <translation>如果學生的每天最小學時一個空閒天發出警告：</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1974"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1982"/>
         <source>If you use constraints students min hours daily with allowed empty days, you&apos;ll get a warning before generating. Uncheck this option to get rid of that warning (it is recommended to keep the warning).</source>
-        <translation type="unfinished"></translation>
+        <translation>如果您的學生班級使用每天有設定最小節次和允許整天不排課的空天設定，產生排課表之前你會得到一個警告訊息。取消該選取此項，您可擺脫此警告再出現（建議保持警告）。
+</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1979"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1987"/>
         <source>Confirmations: unselect the corresponding check boxes if you want to skip introduction and confirmation to various advanced dialogs.</source>
-        <translation type="unfinished"></translation>
+        <translation>確認：如果您想跳過介紹，請&apos;取消選擇&apos;相應的複選框。並確認各種進階設定的對話框。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2018"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2026"/>
         <source>You will find in the statistics only active activities count. The inactive ones are not counted.</source>
         <translation>你會發現在只有啟動的教學班總數的統計。不活躍的不計算在內。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2022"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2030"/>
         <source>Statistics for students might be the most difficult to understand. If you are using divisions of years: probably the most relevant statistics are the ones for each subgroup (so you may check only subgroups check box). You may see more hours for the years or groups, but these are not significant, please ignore them, because each year or group will count also activities of all contained subgroups.
 
 Each subgroup should have a number of hours per week close to the average of all subgroups and close to the normal number of working hours of each students set. If a subgroup has a much lower value, maybe you used incorrectly the years/groups/subgroups for activities.
@@ -29121,1207 +29164,1230 @@ Each subgroup should have a number of hours per week close to the average of all
 Please read FAQ for detailed description on how divisions work. The key is that the subgroups are independent and represent the smallest unit of students. Each subgroup receives the activities of the parent year and parent group and of itself.
 
 Having a subgroup with too little working hours per week means that you inputted activities in a wrong manner, and also that some constraints like no gaps, early or min hours daily for this subgroup are interpreted in a wrong manner (if subgroup has only 2 activities, then these must be placed in the first hours, which is too hard and wrong).</source>
-        <translation>對的統計學生可能是最難以理解的。如果您使用的是以年區劃，可能是最相關的統計資料是每個子組的（所以你可以勾選只檢查子組“核取方塊）。您可能會看到更多的學時對於年或組，但這些
+        <translation>對統計學生班級可能是最難以理解的。如果您使用的是以年級區劃，可能是最相關的統計資料是每個次級子教學組的（所以你可以勾選只檢查子組“核取方塊）。您可能會看到更多的學時對於年或組，但這些
 是不顯著的，請忽略他們，因為每年或組將統計學時，也包含的所有子組的教學計畫。每個學生設置的每個子組每週應該有大量的學時去接近的所有分組的平均數量和接近普通數量的工作時間
-。如果分組有低得多的價值，也許你使用不當年/組/子組對於教學班。請閱讀FAQ，分隔工作是如何工作的。最關鍵的是，子組是獨立的，代表學生的最小單位。每個子群接收父年度與父組以及本身的教學活動。有一個子組，每週工作時間太少，意味著你在一個錯誤的方式輸入教學活動，也希望一些制約因素，如無間隙，早一點或每天最小學時為這個子組是在一個錯誤的方式解釋（如果子組只有2活動，那麼這些必須被放置在第一個小時，這是太硬，是錯誤的）。</translation>
+。如果分組有低得多的價值，也許你使用不當年/組/子組對於教學班。請閱讀FAQ，分隔工作是如何工作的。最關鍵的是，子組是獨立的，代表學生的最小單位。每個子群接收父年度年級與父組以及本身的教學活動。有一個子組，每週工作時間太少，意味著你在一個錯誤的方式輸入教學活動，也希望一些制約因素，如無間隙，早一點或每天最小學時為這個子組是在一個錯誤的方式解釋（如果子組只有2活動，那麼這些必須被放置在第一個小時，這是太硬，是錯誤的）。
+</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2051"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2059"/>
         <source>Activities rooms statistics: this menu will show the activities which may be scheduled in an unspecified room, if they are referred to by space constraints with weight under 100.0%, and the activities which will certainly be scheduled in an unspecified room, if they are not referred to by any space constraints. Remember that home rooms constraints are effective only on activities which have only the exact specified teacher or students set (activities with more teachers or students sets are not affected by home rooms constraints, you need to have preferred rooms constraints for such activities to ensure they will not end up in an unspecified room).</source>
-        <translation type="unfinished"></translation>
+        <translation>教學活動教室的統計數據：這個選單會顯示這可能被安排在一個不確定的教室，如果他們空間的限制與權重的教學活動，設成100.0％，這肯定會安排在未指定教室的活動，如果他們不任何空間的限制引用。請記住，主教室的約束是有效的只有上只有確切的指定教師或學生班級設定（教學活動，更多的老師和學生組不受主教室的限制，你需要有最好的教室約束這類活動，以確保他們會活動最終不會在未指定的教室）。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2058"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2066"/>
         <source>FET - information about statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - 有關統計訊息</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3465"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3473"/>
         <source>FET homepage: %1</source>
         <comment>%1 is FET homepage, begins with http://...</comment>
-        <translation type="unfinished"></translation>
+        <translation>FET組織的主網頁:%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3469"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3477"/>
         <source>Forum: %1</source>
         <comment>%1 is web page of FET forum, begins with http://...</comment>
-        <translation type="unfinished"></translation>
+        <translation>FET 論壇:%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3471"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3479"/>
         <source>Additionally, you may find on the FET homepage other contact information.</source>
-        <translation type="unfinished"></translation>
+        <translation>此外，您可在FET主網頁找到其他聯繫信息。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3543"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3551"/>
         <source>Your current data has no name. Please save it as a file with a certain name before proceeding.</source>
         <translation>你當前資料沒有名稱。請保存它為一個有特定名稱的檔在處理它之前。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3746"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3754"/>
         <source>OK</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="747"/>
+        <location filename="../src/interface/fetmainform.cpp" line="750"/>
         <source>Danish</source>
-        <translation type="unfinished"></translation>
+        <translation>丹麥</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="748"/>
+        <location filename="../src/interface/fetmainform.cpp" line="751"/>
         <source>Sinhala</source>
         <translation>僧伽羅語</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="749"/>
+        <location filename="../src/interface/fetmainform.cpp" line="752"/>
         <source>Slovak</source>
         <translation>斯洛伐克</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="750"/>
+        <location filename="../src/interface/fetmainform.cpp" line="753"/>
         <source>Hebrew</source>
-        <translation type="unfinished"></translation>
+        <translation>希伯來語</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="751"/>
+        <location filename="../src/interface/fetmainform.cpp" line="754"/>
         <source>Serbian</source>
         <translation>塞爾維亞</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="752"/>
+        <location filename="../src/interface/fetmainform.cpp" line="755"/>
         <source>Galician</source>
-        <translation type="unfinished"></translation>
+        <translation>加利西亞</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="753"/>
+        <location filename="../src/interface/fetmainform.cpp" line="756"/>
         <source>Vietnamese</source>
         <translation>越南的</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="754"/>
+        <location filename="../src/interface/fetmainform.cpp" line="757"/>
         <source>Uzbek</source>
         <translation>烏茲別克</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3861"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3869"/>
         <source>The geometry and any other saved settings of all the windows and dialogs will be reset to default</source>
         <translation>幾何形狀和任何其他的所有視窗和對話方塊，保存的設置將被重置為預設值</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3903"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3911"/>
         <source>The list of recently used files will be cleared</source>
         <translation>最近使用的檔列表將被清除</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3948"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3956"/>
         <source>Warn if using constraints students min hours daily with empty days will be %1</source>
         <comment>%1 is true or false. This is a warning if user uses a nonstandard constraint students min hours daily with allowed empty days</comment>
         <translation>如果學生的每天最小學時是一個空閒天發出警告將是 %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3953"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3961"/>
         <source>Confirm activity planning will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation type="unfinished"></translation>
+        <translation>確認教學活動計畫將是:%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3955"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3963"/>
         <source>Confirm spread activities over the week will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation type="unfinished"></translation>
+        <translation>確認教學活動分開超過一週將是:%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3957"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3965"/>
         <source>Confirm remove redundant constraints will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation type="unfinished"></translation>
+        <translation>確認，刪除的多餘條件將會是:%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4016"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4024"/>
         <source>44</source>
-        <translation type="unfinished"></translation>
+        <translation>44</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4019"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4027"/>
         <source>45</source>
-        <translation type="unfinished"></translation>
+        <translation>45</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4019"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4030"/>
         <source>Show tool tips for constraints with tables will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation type="unfinished"></translation>
+        <translation>顯示提示與課表約束條件工具:%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4021"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4030"/>
         <source>46</source>
-        <translation type="unfinished"></translation>
+        <translation>46</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4021"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4032"/>
         <source>Show warning for subgroups with the same activities will be %1</source>
         <comment>%1 is true or false</comment>
+        <translation>顯示警告; 相同的次級教學活動:%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4032"/>
+        <source>47</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4519"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4532"/>
         <source>This kind of constraint is good, but only in the right case. Adding such constraints in the wrong circumstance may make your timetable solve too slow or even impossible.</source>
         <translation>這種約束是好的，但只有在正確的情況下。添加這樣的限制在錯誤的情況下，可以讓你的時間表解決過於緩慢，甚至是不可能的。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4522"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4535"/>
         <source>Please use such constraints only if you are sure that there exists a timetable with empty days for students. If your instution requires each day for the students to be not empty, or if there does not exist a solution with empty days for students, it is IMPERATIVE (for performance reasons) that you use the standard constraint which does not allow empty days. Otherwise, the timetable may be impossible to find.</source>
-        <translation type="unfinished"></translation>
+        <translation>只有當你確信存在與學生班級整天不排課空天排課時間表時，再使用這樣的約束限制。如果您instution需要每天為學生們是不是空的，或者如果不存在與學生空天解決，當務之急是（出於性能原因），您使用標準的約束不允許空天。否則，該時間表可以是不可能找到。
+</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="949"/>
+        <location filename="../src/interface/fetmainform.cpp" line="957"/>
         <source>Searching for file %1.</source>
         <translation>搜索文件%1。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="964"/>
+        <location filename="../src/interface/fetmainform.cpp" line="972"/>
         <source>The file %1 from the FET homepage, indicating the current FET version, is incorrect.</source>
-        <translation>％1的檔從的FET網頁，表示目前的FET版本，是不正確的.</translation>
+        <translation>從的FET網頁得知%1的檔，目前的FET版本，是不正確的.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="989"/>
+        <location filename="../src/interface/fetmainform.cpp" line="997"/>
         <source>Additional comments: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>補充意見：%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3567"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3588"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3613"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3628"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3649"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3673"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3697"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3721"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3731"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3575"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3596"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3621"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3636"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3657"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3681"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3705"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3729"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3739"/>
         <source>Please generate, firstly</source>
-        <translation type="unfinished"></translation>
+        <translation>請先產製生成排課表</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3572"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3593"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3633"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3654"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3580"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3601"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3641"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3662"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
-        <translation type="unfinished">無法顯示的排課時間表，因為您添加或刪除一些教室。請重新生成時間表，然後查看</translation>
+        <translation>無法顯示的排課時間表，因為您已增加或刪除一些教室。請重新生成排課時間表，然後查看。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3597"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3658"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3605"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3666"/>
         <source>Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it</source>
-        <translation type="unfinished">無法顯示的排課時間表，因為您添加或刪除一些老師。請重新生成時間表，然後查看</translation>
+        <translation>無法顯示的排課時間表，因為您添加或刪除一些老師。請重新生成時間表，然後再查看。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="726"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3878"/>
+        <location filename="../src/interface/fetmainform.cpp" line="729"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3886"/>
         <source>US English</source>
         <translation>美國英語</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3778"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3786"/>
         <source>Invalid current language - making it en_US (US English)</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的語言無效 - 請使EN_US（美國英語）</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3835"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3843"/>
         <source>Invalid language selected - making it en_US (US English)</source>
-        <translation type="unfinished"></translation>
+        <translation>所選的語系無效 - 請使EN_US（美國英語）</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3858"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3866"/>
         <source>That means:</source>
         <translation>這意味著：</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3864"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3918"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3921"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3933"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3942"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3949"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3953"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3955"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3872"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3926"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3929"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3941"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3950"/>
         <location filename="../src/interface/fetmainform.cpp" line="3957"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3959"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3961"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3963"/>
         <location filename="../src/interface/fetmainform.cpp" line="3965"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3969"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3971"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3976"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3980"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3983"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3986"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3989"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3992"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3996"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3999"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4002"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4005"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4008"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4011"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4014"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4017"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4021"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3967"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3973"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3977"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3979"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3984"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3988"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3991"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3994"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3997"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4000"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4003"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4007"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4010"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4013"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4016"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4019"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4022"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4025"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4028"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4032"/>
         <source>true</source>
-        <translation></translation>
+        <translation>確定為真</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3874"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3882"/>
         <source>Use colors in FET graphical user interface will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>使用在FET的圖形化使用者介面的顏色將是%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3942"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3950"/>
         <source>Warn if using not perfect constraints will be %1</source>
         <comment>%1 is true or false. This is a warning if user uses not perfect constraints</comment>
         <translation>警告，如果使用不完美的約束將是%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3959"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3967"/>
         <source>Confirm save data and timetable as will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation type="unfinished"></translation>
+        <translation>所確認要保存的資料和排課表為:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4416"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4446"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4429"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4459"/>
         <source>These kinds of constraints are good, but not perfectly optimized. Adding such constraints may make your timetable solve too slow or even impossible.</source>
         <translation>這些類型的約束是好的，但不完全優化。這樣的限制可能使你的時間表解決速度太慢，甚至是不可能的。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4419"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4449"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4432"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4462"/>
         <source>It is recommended to use such constraints only at the end, after you generated successfully with all the other constraints.</source>
-        <translation type="unfinished"></translation>
+        <translation>建議只在您與所有其他約束成功生成排課表後，最後才用這樣的限制條件。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4421"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4451"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4434"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4464"/>
         <source>If your timetable is too difficult, it may be from these kinds of constraints, so you may need to remove them and retry.</source>
-        <translation type="unfinished"></translation>
+        <translation>如果您的排課時間表太難排了，也可能是從這些種類的限制限制造成，所以您可能需要將其刪除，然後重試。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4423"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4453"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4527"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4570"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4436"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4466"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4540"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4583"/>
         <source>Continue only if you know what you are doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>建議您只有在確認知道您目前正在做的是什麼時，再選擇繼續執行。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4474"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4496"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4545"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4590"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4487"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4509"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4558"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4603"/>
         <source>It is recommended to keep this warning active, but if you really want, you can disable it.</source>
-        <translation type="unfinished"></translation>
+        <translation>建議保持此警告顯示，但如果你真的想要取消警示，您可以設其停止出現。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4476"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4498"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4547"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4592"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4489"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4511"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4560"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4605"/>
         <source>Disable it only if you know what you are doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>禁用它只有當您知道你在做什麼時。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4478"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4500"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4549"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4594"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4491"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4513"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4562"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4607"/>
         <source>Are you sure you want to disable it?</source>
-        <translation type="unfinished"></translation>
+        <translation>您確定要禁用它？</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3523"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3531"/>
         <source>Please input at least one active activity before generating</source>
-        <translation type="unfinished"></translation>
+        <translation>課表產製前，請至少輸入啟用一種的教學活動</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3554"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3562"/>
         <source>Please input at least one active activity before generating multiple</source>
-        <translation type="unfinished"></translation>
+        <translation>產生多重的排課表前，請至少輸入啟用一個教學活動</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1481"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1491"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1489"/>
         <location filename="../src/interface/fetmainform.cpp" line="1499"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1507"/>
         <source>FET - Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 警告</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1481"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1489"/>
         <source>You have not yet generated a timetable - please generate firstly</source>
         <translation>您還沒有產生一個時間表 - 請首先產生</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1491"/>
         <location filename="../src/interface/fetmainform.cpp" line="1499"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1507"/>
         <source>It seems that you have an incomplete timetable. Saving of timetable does not work for incomplete timetables. Please generate a complete timetable</source>
-        <translation type="unfinished"></translation>
+        <translation>看來你有一個尚不完整的排課時間表。所儲存的排時間表不不完整無法使用。請生成一個完整的時間表
+</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1565"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1573"/>
         <source>File exists</source>
-        <translation type="unfinished"></translation>
+        <translation>FET-已經存在。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1567"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1575"/>
         <source>For safety (so you don&apos;t lose work), it is not allowed to overwrite an existing file with locking and saving a current data+timetable</source>
-        <translation type="unfinished"></translation>
+        <translation>為了安全（這樣你就不會失去先前的作業），這鎖定功能是不允許覆蓋現有文件檔案，並保存當前資料+時間表</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1570"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1578"/>
         <source>Please choose a non-existing name</source>
-        <translation type="unfinished"></translation>
+        <translation>請另選一個沒有被使用的名稱。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3855"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3863"/>
         <source>Are you sure you want to reset all settings to defaults?</source>
-        <translation type="unfinished"></translation>
+        <translation>你確定你想要將所有設定恢復到預設值？</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1211"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1219"/>
         <source>New file generated</source>
-        <translation type="unfinished"></translation>
+        <translation>新課表檔案已生成</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="755"/>
+        <location filename="../src/interface/fetmainform.cpp" line="758"/>
         <source>Albanian</source>
-        <translation type="unfinished"></translation>
+        <translation>阿爾巴尼亞人</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="756"/>
+        <location filename="../src/interface/fetmainform.cpp" line="759"/>
         <source>Chinese Simplified</source>
-        <translation type="unfinished"></translation>
+        <translation>簡體字型</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="757"/>
+        <location filename="../src/interface/fetmainform.cpp" line="760"/>
         <source>Chinese Traditional</source>
-        <translation type="unfinished"></translation>
+        <translation>正體字型</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="810"/>
+        <location filename="../src/interface/fetmainform.cpp" line="813"/>
         <source>Note: if you disable this option, you will not be able to view activities for subgroups in the activity planning dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>注意：如果停用此選項，您將無法查看次級教學活動分組活動的教學計劃的對話框。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="947"/>
+        <location filename="../src/interface/fetmainform.cpp" line="955"/>
         <source>Could not search for possible updates on the internet - error message is: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>無法搜詢網路上的更新 - 錯誤信息：%1。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="951"/>
+        <location filename="../src/interface/fetmainform.cpp" line="959"/>
         <source>Possible actions: check your network connection, try again later, try to visit FET homepage: %1, or try to search for the new FET page on the internet (maybe it has changed).</source>
-        <translation type="unfinished"></translation>
+        <translation>操作建議：請檢查您的網絡連接，稍後再試，嘗試拜訪FET官網頁：%1，或嘗試搜索網路上的FET的新首頁頁面（也許它已經改變）。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="966"/>
+        <location filename="../src/interface/fetmainform.cpp" line="974"/>
         <source>Maybe the FET homepage has some temporary problems, so try again later. Or maybe the current structure on FET homepage was changed. You may visit FET homepage: %1, and get latest version or, if it does not work, try to search for the new FET page on the internet (maybe it has changed).</source>
-        <translation type="unfinished"></translation>
+        <translation>目前FET官網頁暫時有一些問題，所以請稍後再試。或者，也許在FET主頁上的現有結構發生了變化。您可以訪問FET網頁：1％，並獲得最新的版本，或者，如果它不能正常工作，嘗試搜索網上的新的FET頁面網址（也許它已經改變）。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="997"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3435"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3445"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3455"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1005"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3443"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3453"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3463"/>
         <source>Could not start the default internet browser (trying to open the link %1). Maybe you can try to manually start your browser and open this link.</source>
-        <translation type="unfinished"></translation>
+        <translation>無法啟動預設的Internet瀏覽器（試圖打開網址鏈結: %1）。也許你可以嘗試手動啟動瀏覽器並打開這個鏈結。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1315"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1323"/>
         <source>File opened</source>
-        <translation type="unfinished"></translation>
+        <translation>檔案已打開</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1393"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1740"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1401"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1748"/>
         <source>File saved</source>
-        <translation type="unfinished"></translation>
+        <translation>檔案已儲存</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1936"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1944"/>
         <source>add/modify constraints break, not available, preferred starting times or time slots, occupy max time slots from selection or max simultaneous in selected time slots (the table cells will have green or red colors).</source>
-        <translation type="unfinished"></translation>
+        <translation>增加/修改限制條件已中斷無法使用，偏好的上課起始時間或時間排課插槽，佔據從選擇或最大同時在已選定時段最大排課時隙（表格單元格將有綠色或紅色）。
+</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1946"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1954"/>
         <source>group activities in initial order items, the inactive items will have a distinctive background color</source>
-        <translation type="unfinished"></translation>
+        <translation>啟用最初教學群體活動，設定為&apos;不啟動&apos;的項目將有一個特別的背景顏色</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1962"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1970"/>
         <source>If you use a not perfect constraint (activity tag max hours daily or students max gaps per day), you&apos;ll get a warning before generating. Uncheck this option to get rid of that warning (it is recommended to keep the warning).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1983"/>
-        <source>Duplicate vertical headers to the right (in timetable settings) - select this if you want the timetables to duplicate the table left vertical headers to the right part of the tables</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1988"/>
-        <source>If you have many subgroups and you don&apos;t explicitely use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
-        <translation type="unfinished"></translation>
+        <translation>如果您使用了不完美的約束條件（每天教學活動最大的教學標籤數或學生班級每天最大的的課間休息時隙差距），你會在產生排課表之前，得到一個警告。取消選中此選項可擺脫警告訊息（建議保持警告）。
+</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="1991"/>
-        <source>Note that using the global menu setting to hide subgroups in activity planning is a different thing from the check box in the activity planning dialog, and the global setting works better and faster.</source>
-        <translation type="unfinished"></translation>
+        <source>Duplicate vertical headers to the right (in timetable settings) - select this if you want the timetables to duplicate the table left vertical headers to the right part of the tables</source>
+        <translation>複製垂直標題欄位放在右側（在時間表設置） - 如果你想時間表複製左縱標頭表的右側部分表中選擇此</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1994"/>
-        <source>If you hide subgroups in combo boxes, the affected dialogs (like the activities dialog or the add constraint students set not available times dialog) will load much faster if you have many subgroups.</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/fetmainform.cpp" line="1996"/>
+        <source>If you have many subgroups and you don&apos;t explicitely use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
+        <translation>如果你有很多次級教學子群，你使用它們的方式不明確，建議您使用三個global settings：隱藏組合框分組，隱藏在教學活動計畫，並且次級教學群組計畫排課時間表不寫入硬碟。
+</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="1999"/>
+        <source>Note that using the global menu setting to hide subgroups in activity planning is a different thing from the check box in the activity planning dialog, and the global setting works better and faster.</source>
+        <translation>注意，使用global選單的設置隱藏教學活動計畫的次級亞組是從教學活動計畫對話框中的複選框不同的東西，以及global選單的設置工作得更好，更快。
+</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="2002"/>
+        <source>If you hide subgroups in combo boxes, the affected dialogs (like the activities dialog or the add constraint students set not available times dialog) will load much faster if you have many subgroups.</source>
+        <translation>如果隱藏在組合框分組，受影響的對話框（如活動對話框或添加約束學生班級設置不適對話）加載會快很多，如果你有很多次級教學群組。</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="2007"/>
         <source>If you are only working on a timetable, and you do not need to publish it, you may want to disable writing some categories of timetables on the hard disk, for operativity (the generation speed is not affected, only the overhead to write the partial/complete timetables when stopping/finishing the simulation). The timetables taking the longest time are the subgroups, groups AND years ones.</source>
-        <translation type="unfinished"></translation>
+        <translation>如果你只是試排排課時間表，你不需要發布它，你可能要禁用寫一些類別的時間表在硬蝶上，對於操作性（產生速度不受影響，只有開銷寫的部分/停止時/完成模擬完整的時間表）。佔用排課時間最長的是:次級教學分組，教學分組和年級。
+</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2003"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2011"/>
         <source>(Also the conflicts timetable might take long to write, if the file is large.)</source>
-        <translation type="unfinished"></translation>
+        <translation>（也許衝突的時間表可能要很長時間來寫入，如果文件很大。）</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2005"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2013"/>
         <source>After that, you can re-enable writing of the timetables and re-generate.</source>
-        <translation type="unfinished"></translation>
+        <translation>在此之後，你可以重新啟用寫入排課時間表並且重新生成。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2008"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2016"/>
         <source>Show tool tips for constraints with tables: in the add/modify constraint dialogs which use tables, like the &apos;not available times&apos; ones, each table cell will have a tool tip to show the current day/hour (column/row name).</source>
-        <translation type="unfinished"></translation>
+        <translation>顯示工具提示使用表約束：在增加/修改排課使用表，如“不可用時間”那些約束的對話框中，每個單元格將有一個工具提示，顯示當前的日期/小時（列/行名稱）。
+</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3044"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3052"/>
         <source>Feature is not enabled. To use this type of feature you must enable it from the Settings-&gt;Advanced menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>功能未啟用。欲使用這種類型的功能，你必須從設置 - &gt;進階選單啟用它。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3048"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3056"/>
         <source>The feature must be used with caution, by experienced users.</source>
-        <translation type="unfinished"></translation>
+        <translation>該功能必須謹慎使用，由有經驗的用戶。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3463"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3471"/>
         <source>In case the Help/Online menus do not function, please write down these addresses and open them in an internet browser:</source>
-        <translation type="unfinished"></translation>
+        <translation>如果幫助/在線選單沒有的功能，請記下這些地址，並在網頁瀏覽器中打開它們：</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3473"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3481"/>
         <source>In case these addresses do not function, maybe the FET webpage has temporary problems, so try again later. Or maybe the FET webpage has changed, so search for the new page on the internet.</source>
-        <translation type="unfinished"></translation>
+        <translation>如果這些網址連不到，也許FET官網頁有暫時的問題，所以請稍後再試。或者，也許FET的官網頁發生了變化，可以到網上搜尋新網址。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3684"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3708"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3692"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3716"/>
         <source>The timetable is not generated, but anyway FET will proceed now</source>
-        <translation type="unfinished"></translation>
+        <translation>排課時間表還沒有產製，但無論如何FET現在將開始進行處理</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3861"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3869"/>
         <source>1</source>
-        <translation type="unfinished">1</translation>
+        <translation>1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3864"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3872"/>
         <source>Show shortcut buttons in main window will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation>顯示在主視窗中的快捷按鈕，將%1</translation>
+        <translation>顯示主視窗快捷按鈕:%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3864"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3872"/>
         <source>2</source>
-        <translation type="unfinished">2</translation>
+        <translation>2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3867"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3875"/>
         <source>In the shortcuts tab from the main window, the first section will be selected/shown</source>
         <comment>Option refers to the main window tab widget for shortcuts, which currently contains 5 tabs: File, Data, Time, Space, Timetable (so it will select/show File tab).</comment>
-        <translation type="unfinished"></translation>
+        <translation>從主視窗的快捷方式選項中，第一節將被選中/顯示</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3867"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3875"/>
         <source>3</source>
-        <translation type="unfinished">3</translation>
+        <translation>3</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3871"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3879"/>
         <source>Check for updates at startup will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation type="unfinished"></translation>
+        <translation>在啟動時檢查更新:%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3871"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3879"/>
         <source>4</source>
-        <translation type="unfinished">4</translation>
+        <translation>4</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3874"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3882"/>
         <source>5</source>
-        <translation type="unfinished">5</translation>
+        <translation>5</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3878"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3899"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3886"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3907"/>
         <source>Language will be %1</source>
         <comment>%1 is the default language</comment>
-        <translation type="unfinished"></translation>
+        <translation>語系是:%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3878"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3899"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3886"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3907"/>
         <source>6</source>
-        <translation type="unfinished">6</translation>
+        <translation>6</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3903"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3911"/>
         <source>7</source>
-        <translation type="unfinished">6</translation>
+        <translation>7</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3906"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3914"/>
         <source>Working directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>工作目錄將是%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3906"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3914"/>
         <source>8</source>
-        <translation type="unfinished">8</translation>
+        <translation>8</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3909"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3917"/>
         <source>Output directory will be %1</source>
         <comment>%1 is the directory</comment>
-        <translation type="unfinished"></translation>
+        <translation>輸出的目錄將是%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3909"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3917"/>
         <source>9</source>
-        <translation type="unfinished">9</translation>
+        <translation>9</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3912"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3920"/>
         <source>Import directory will be %1</source>
         <comment>%1 is the directory</comment>
-        <translation type="unfinished"></translation>
+        <translation>匯入的目錄將是%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3912"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3920"/>
         <source>10</source>
-        <translation type="unfinished">10</translation>
+        <translation>10</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3915"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3923"/>
         <source>Html level of the timetables will be %1</source>
         <comment>%1 is default html level</comment>
-        <translation type="unfinished"></translation>
+        <translation>Html檔level的排課表是:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3915"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3923"/>
         <source>11</source>
-        <translation type="unfinished">11</translation>
+        <translation>11</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3918"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3926"/>
         <source>Mark not available slots with -x- in timetables will be %1</source>
         <comment>%1 is true or false. Lowercase -x-</comment>
-        <translation type="unfinished"></translation>
+        <translation>-X-軸中的時間表中所圈選到的排課插槽無效:%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3918"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3926"/>
         <source>12</source>
-        <translation type="unfinished">12</translation>
+        <translation>12</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3921"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3929"/>
         <source>Mark break slots with -X- in timetables will be %1</source>
         <comment>%1 is true or false. Uppercase -X-</comment>
-        <translation type="unfinished"></translation>
+        <translation>-X-軸所圈選的無效排課時間插槽是%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3921"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3929"/>
         <source>13</source>
-        <translation type="unfinished">13</translation>
+        <translation>13</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3924"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3932"/>
         <source>Divide html timetables with time-axis by days will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation type="unfinished"></translation>
+        <translation>輸出HTML排課時間表與排課天的時間軸將是:%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3924"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3932"/>
         <source>14</source>
-        <translation type="unfinished">14</translation>
+        <translation>14</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3927"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3935"/>
         <source>Duplicate vertical headers to the right will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation type="unfinished"></translation>
+        <translation>重複垂直表頭欄到右邊:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3927"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3935"/>
         <source>15</source>
-        <translation type="unfinished">15</translation>
+        <translation>15</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3930"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3938"/>
         <source>Print activities with same starting time will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>列印活動具有相同的開始時間為%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3930"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3938"/>
         <source>16</source>
-        <translation type="unfinished">17</translation>
+        <translation>16</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3933"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3941"/>
         <source>Print activities tags will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation type="unfinished"></translation>
+        <translation>列印教學活動標籤:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3933"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3941"/>
         <source>17</source>
-        <translation type="unfinished">18</translation>
+        <translation>17</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3936"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3944"/>
         <source>Enable activity tag max hours daily will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation type="unfinished"></translation>
+        <translation>啟用限制每天教學活動標籤的最大節次%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3936"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3944"/>
         <source>18</source>
-        <translation type="unfinished">19</translation>
+        <translation>18</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3939"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3947"/>
         <source>Enable students max gaps per day will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation type="unfinished"></translation>
+        <translation>學生班級每天最大的課間休息時隙將是%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3939"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3947"/>
         <source>19</source>
-        <translation type="unfinished">20</translation>
+        <translation>19</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3942"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3950"/>
         <source>20</source>
-        <translation type="unfinished">20</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3945"/>
-        <source>Enable constraints students min hours daily with empty days will be %1</source>
-        <comment>%1 is true or false</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3945"/>
-        <source>21</source>
-        <translation type="unfinished">21</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3948"/>
-        <source>22</source>
-        <translation type="unfinished">22</translation>
+        <translation>20</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3953"/>
+        <source>Enable constraints students min hours daily with empty days will be %1</source>
+        <comment>%1 is true or false</comment>
+        <translation>啟用約束學生班級每天最小節次與不排課空天%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="3953"/>
+        <source>21</source>
+        <translation>21</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="3956"/>
+        <source>22</source>
+        <translation>22</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="3961"/>
         <source>23</source>
-        <translation type="unfinished">23</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3955"/>
-        <source>24</source>
-        <translation type="unfinished">24</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3957"/>
-        <source>25</source>
-        <translation type="unfinished">25</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3959"/>
-        <source>26</source>
-        <translation type="unfinished">226</translation>
+        <translation>23</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3963"/>
+        <source>24</source>
+        <translation>24</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="3965"/>
+        <source>25</source>
+        <translation>25</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="3967"/>
+        <source>26</source>
+        <translation>226</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="3971"/>
         <source>Enable group activities in the initial order of generation will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation type="unfinished"></translation>
+        <translation>啟用在產製初始的系所群組教學活動是:%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3963"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3971"/>
         <source>27</source>
-        <translation type="unfinished">27</translation>
+        <translation>27</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3965"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3973"/>
         <source>Warn if using group activities in the initial order of generation will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation type="unfinished"></translation>
+        <translation>警告:如果生成產製初始教學活動群組將是%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3965"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3973"/>
         <source>28</source>
-        <translation type="unfinished">28</translation>
+        <translation>28</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3969"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3977"/>
         <source>29</source>
-        <translation type="unfinished">29</translation>
+        <translation>29</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3969"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3977"/>
         <source>Show subgroups in combo boxes will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation type="unfinished"></translation>
+        <translation>顯示次級教學系所組別群組組合框將是%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3971"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3979"/>
         <source>30</source>
-        <translation type="unfinished">3-</translation>
+        <translation>30</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3971"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3979"/>
         <source>Show subgroups in activity planning will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3975"/>
-        <source>31</source>
-        <translation type="unfinished">31</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3975"/>
-        <source>Write on disk the %1 timetable will be %2</source>
-        <comment>%1 is a category of timetables, like conflicts, %2 is true or false</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3976"/>
-        <source>conflicts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3979"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3982"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3985"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3988"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3991"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3995"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3998"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4001"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4004"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4007"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4010"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4013"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4016"/>
-        <source>Write on disk the %1 timetables will be %2</source>
-        <comment>%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3980"/>
-        <source>XML</source>
-        <translation type="unfinished">XML格式</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3979"/>
-        <source>32</source>
-        <translation type="unfinished">32</translation>
+        <translation>顯示次級教學系所組別中的教學計劃將是%1</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3983"/>
-        <source>days horizontal</source>
-        <translation type="unfinished"></translation>
+        <source>31</source>
+        <translation>31</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3982"/>
-        <source>33</source>
-        <translation type="unfinished">33</translation>
+        <location filename="../src/interface/fetmainform.cpp" line="3983"/>
+        <source>Write on disk the %1 timetable will be %2</source>
+        <comment>%1 is a category of timetables, like conflicts, %2 is true or false</comment>
+        <translation>寫在硬碟上的%1的課表將是%2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3986"/>
-        <source>days vertical</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/fetmainform.cpp" line="3984"/>
+        <source>conflicts</source>
+        <translation>衝突</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3985"/>
-        <source>34</source>
-        <translation type="unfinished">34</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3989"/>
-        <source>time horizontal</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/fetmainform.cpp" line="3987"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3990"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3993"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3996"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3999"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4002"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4006"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4009"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4012"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4015"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4018"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4021"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4024"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4027"/>
+        <source>Write on disk the %1 timetables will be %2</source>
+        <comment>%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false</comment>
+        <translation>寫在硬碟上的%1的課表將是%2</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3988"/>
-        <source>35</source>
-        <translation type="unfinished">35</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3992"/>
-        <source>time vertical</source>
+        <source>statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3991"/>
-        <source>36</source>
-        <translation type="unfinished"></translation>
+        <source>XML</source>
+        <translation>XML格式</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="3987"/>
+        <source>32</source>
+        <translation>32</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="3994"/>
+        <source>days horizontal</source>
+        <translation>水平軸以星期顯示</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="3990"/>
+        <source>33</source>
+        <translation>33</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="3997"/>
+        <source>days vertical</source>
+        <translation>垂直軸以星期顯示</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="3993"/>
+        <source>34</source>
+        <translation>34</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4000"/>
+        <source>time horizontal</source>
+        <translation>時間節次以水平軸顯示</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3996"/>
-        <source>subgroups</source>
-        <translation type="unfinished"></translation>
+        <source>35</source>
+        <translation>35</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3995"/>
-        <source>37</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/fetmainform.cpp" line="4003"/>
+        <source>time vertical</source>
+        <translation>時間節次以垂直軸顯示</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3999"/>
-        <source>groups</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3998"/>
-        <source>38</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4002"/>
-        <source>years</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4001"/>
-        <source>39</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4005"/>
-        <source>teachers</source>
-        <translation type="unfinished">老師</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4004"/>
-        <source>40</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4008"/>
-        <source>teachers free periods</source>
-        <translation type="unfinished"></translation>
+        <source>36</source>
+        <translation>36</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="4007"/>
-        <source>41</source>
-        <translation type="unfinished"></translation>
+        <source>subgroups</source>
+        <translation>子組</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4011"/>
-        <source>rooms</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/fetmainform.cpp" line="4002"/>
+        <source>37</source>
+        <translation>37</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="4010"/>
-        <source>42</source>
-        <translation type="unfinished"></translation>
+        <source>groups</source>
+        <translation>組</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4014"/>
-        <source>subjects</source>
-        <translation type="unfinished">學科</translation>
+        <location filename="../src/interface/fetmainform.cpp" line="4006"/>
+        <source>38</source>
+        <translation>38</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="4013"/>
+        <source>years</source>
+        <translation>年級</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4009"/>
+        <source>39</source>
+        <translation>39</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4016"/>
+        <source>teachers</source>
+        <translation>老師</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4012"/>
+        <source>40</source>
+        <translation>40</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4019"/>
+        <source>teachers free periods</source>
+        <translation>教師方便時段</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4015"/>
+        <source>41</source>
+        <translation>41</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4022"/>
+        <source>rooms</source>
+        <translation>教室</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4018"/>
+        <source>42</source>
+        <translation>42</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4025"/>
+        <source>subjects</source>
+        <translation>學科</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4021"/>
         <source>43</source>
-        <translation type="unfinished"></translation>
+        <translation>43</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4017"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4028"/>
         <source>activities</source>
-        <translation type="unfinished">教學活動</translation>
+        <translation>教學活動</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4257"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4270"/>
         <source>You have more than 6 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation>你必須每週工作6天以上，所以可能你會需要這個功能。你仍然要繼續嗎？</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4260"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4281"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4273"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4294"/>
         <source>FET question</source>
-        <translation type="unfinished">FET 問題</translation>
+        <translation>FET 問題</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4262"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4283"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4275"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4296"/>
         <source>&amp;Continue</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;繼續</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4278"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4291"/>
         <source>You have less than 5 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation>你必須每週不少於5天，所以也許你會需要這個功能。你仍然要繼續嗎？</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4567"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4580"/>
         <source>This kind of option is good, but only in the right case. Adding such an option in the wrong circumstance may make your timetable solve too slow or even impossible.</source>
-        <translation type="unfinished"></translation>
+        <translation>這種選擇是好的，但只有在正確的情況下去增加，若在錯誤的情況下增加這樣的選擇，會讓您的排課時間表，產製時過於緩慢，甚至是不可能產產製成功。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1265"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1351"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1537"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1273"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1359"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1545"/>
         <source>All files</source>
-        <translation type="unfinished"></translation>
+        <translation>全部的檔案</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="767"/>
+        <location filename="../src/interface/fetmainform.cpp" line="770"/>
         <source>Constraints of this type are good, working, but they are not perfectly optimized.</source>
-        <translation type="unfinished"></translation>
+        <translation>這種類型的約束是好的，工作，但它們並不是最佳化。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="984"/>
+        <location filename="../src/interface/fetmainform.cpp" line="992"/>
         <source>Another version: %1, is available on the FET homepage: %2</source>
         <comment>%1 is new version, %2 is FET homepage</comment>
-        <translation type="unfinished"></translation>
+        <translation>下載另一個新版本：%1，可在FET官網：%2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="986"/>
+        <location filename="../src/interface/fetmainform.cpp" line="994"/>
         <source>You may need to hit Refresh in your web browser.</source>
         <translation>您可能需要在你的網頁流覽器，點擊刷新。</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="986"/>
+        <location filename="../src/interface/fetmainform.cpp" line="994"/>
         <source>Would you like to open the FET homepage now?</source>
         <translation>你想現在打開FET網頁？</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1027"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1035"/>
         <source>Your data file has been modified - do you want to save it?</source>
         <translation>你的資料檔案已經修改了，保存麼?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1169"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1177"/>
         <source>Your current data file has been modified. Are you sure you want to reset to new empty data?</source>
         <translation>您當前的資料檔案已經被修改。你確定要重置為新的空資料?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1241"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1249"/>
         <source>Your current data file has been modified. Are you sure you want to open another data file?</source>
         <translation>您當前的資料檔案已經被修改。你確定你要打開另一個資料檔案嗎?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1262"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1270"/>
         <source>Choose a file to open</source>
-        <translation type="unfinished"></translation>
+        <translation>選擇一個檔案文件開啟</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1264"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1350"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1536"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1272"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1358"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1544"/>
         <source>FET XML files</source>
         <comment>Instructions for translators: FET XML is a type of file format (using text mode). So this field means files in the FET XML format</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3467"/>
-        <source>Documentation (online help contents): %1</source>
-        <comment>%1 is web page of FET Doc(umentation), which is the contents of the online help, it begins with http://...</comment>
-        <translation type="unfinished"></translation>
+        <translation>FET的XML檔案格式</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3475"/>
+        <source>Documentation (online help contents): %1</source>
+        <comment>%1 is web page of FET Doc(umentation), which is the contents of the online help, it begins with http://...</comment>
+        <translation>文件檔（Online幫助的內容）：%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="3483"/>
         <source>FET web addresses</source>
-        <translation type="unfinished"></translation>
+        <translation>FET官網網址</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3741"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3784"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3749"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3792"/>
         <source>Please select FET language</source>
-        <translation type="unfinished"></translation>
+        <translation>請為FET介面，選擇一個語系</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3745"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3753"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="727"/>
-        <source>Arabic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="728"/>
-        <source>Catalan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="729"/>
-        <source>German</source>
-        <translation type="unfinished"></translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="730"/>
-        <source>Greek</source>
-        <translation type="unfinished"></translation>
+        <source>Arabic</source>
+        <translation>阿拉伯語</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="731"/>
+        <source>Catalan</source>
+        <translation>加泰羅尼亞</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="732"/>
+        <source>German</source>
+        <translation>德國</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="733"/>
+        <source>Greek</source>
+        <translation>希臘</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="734"/>
         <source>Spanish</source>
         <translation>西班牙</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="732"/>
-        <source>French</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="733"/>
-        <source>Hungarian</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="734"/>
-        <source>Indonesian</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform.cpp" line="735"/>
-        <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <source>French</source>
+        <translation>法國</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="736"/>
-        <source>Lithuanian</source>
-        <translation type="unfinished"></translation>
+        <source>Hungarian</source>
+        <translation>匈牙利</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="737"/>
-        <source>Macedonian</source>
-        <translation type="unfinished"></translation>
+        <source>Indonesian</source>
+        <translation>印度尼西亞</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="738"/>
-        <source>Malay</source>
-        <translation type="unfinished"></translation>
+        <source>Italian</source>
+        <translation>意大利</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="739"/>
-        <source>Dutch</source>
-        <translation type="unfinished"></translation>
+        <source>Lithuanian</source>
+        <translation>立陶宛</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="740"/>
-        <source>Polish</source>
-        <translation type="unfinished"></translation>
+        <source>Macedonian</source>
+        <translation>馬其頓</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="741"/>
+        <source>Malay</source>
+        <translation>馬來</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="742"/>
+        <source>Dutch</source>
+        <translation>荷蘭</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="743"/>
+        <source>Polish</source>
+        <translation>波蘭</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="744"/>
         <source>Romanian</source>
         <translation>羅馬尼亞</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="742"/>
+        <location filename="../src/interface/fetmainform.cpp" line="745"/>
         <source>Turkish</source>
         <translation>土耳其</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="745"/>
+        <location filename="../src/interface/fetmainform.cpp" line="748"/>
         <source>Ukrainian</source>
         <translation>烏克蘭</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="746"/>
+        <location filename="../src/interface/fetmainform.cpp" line="749"/>
         <source>Brazilian Portuguese</source>
-        <translation type="unfinished"></translation>
+        <translation>巴西葡萄牙語</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="743"/>
+        <location filename="../src/interface/fetmainform.cpp" line="746"/>
         <source>Russian</source>
         <translation>俄國</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="744"/>
+        <location filename="../src/interface/fetmainform.cpp" line="747"/>
         <source>Persian</source>
-        <translation type="unfinished"></translation>
+        <translation>波斯語</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4366"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4379"/>
         <source>Choose results (output) directory</source>
-        <translation type="unfinished"></translation>
+        <translation>選擇的結果（產出）目錄</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4375"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4388"/>
         <source>You don&apos;t have write permissions in this directory</source>
         <translation>您沒有在此目錄的寫許可權，</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2044"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2052"/>
         <source>Students&apos; statistics form contains a check box named &apos;%1&apos;. This has effect only if you have overlapping groups/years, and means that FET will show the complete tree structure, even if that means that some subgroups/groups will appear twice or more in the table, with the same information. For instance, if you have year Y1, groups G1 and G2, subgroups S1, S2, S3, with structure: Y1 (G1 (S1, S2), G2 (S1, S3)), S1 will appear twice in the table</source>
-        <translation>學生的統計表格包含一個核取方塊，命名為“％1”。這有效果，如果你有重疊的組/年，意味著FET將顯示完整的樹狀結構，即使這意味著，一些分組/小組將在表中出現兩次或兩次以上，具有相同的資訊。比如，如果你有年Y1，組G1和G2，子組S1，S2，S3中，與結構：Y1（G1（S1，S2），G2（S1，S3）），S1將出現兩次在表中</translation>
+        <translation>學生的統計表格包含一個核取方塊，命名為“%1”。這有效果，如果你有重疊的組/年，意味著FET將顯示完整的樹狀結構，即使這意味著，一些分組/小組將在表中出現兩次或兩次以上，具有相同的資訊。比如，如果你有年Y1，組G1和G2，子組S1，S2，S3中，與結構：Y1（G1（S1，S2），G2（S1，S3）），S1將出現兩次在表中</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2048"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2056"/>
         <source>Show duplicates</source>
         <translation>顯示重複</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3871"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3874"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3924"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3927"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3930"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3936"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3939"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3945"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3963"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4019"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3879"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3882"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3932"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3935"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3938"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3944"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3947"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3953"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3971"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4030"/>
         <source>false</source>
-        <translation type="unfinished"></translation>
+        <translation>錯誤的</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4024"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4035"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET 確認</translation>
+        <translation>FET 確認</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1925"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1933"/>
         <source>Option &apos;Print activities with same starting time in timetables&apos;: selecting it means that the html timetables will contain for each slot all the activities which have the same starting time (fact specified by your constraints) as the activity(ies) which are normally shown in this slot. If you don&apos;t use constraints activities same starting time, this option has no effect for you.</source>
-        <translation type="unfinished"></translation>
+        <translation>選項“列印排課時間表內同一起跑線的節次教學活動”：選擇就意味著HTML時間表將包含每個插槽都具有相同的開始時間為活動（由您指定的限制實際上）（IES），它通常顯示的活動在此插槽。如果你不使用約束活動同一起跑線的時候，這個選項對你沒有任何影響。
+</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1918"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1926"/>
         <source>Option &apos;Divide html timetables with time-axis by days&apos;: This means simply that the html timetables of type &apos;time horizontal&apos; or &apos;time vertical&apos; (see the generated html timetables) should be or not divided according to the days.</source>
-        <translation type="unfinished"></translation>
+        <translation>選項&apos;劃分HTML排課時間表星期與節次：這意味著僅僅該類型的HTML時間表的水平節次“或”垂直節次“（見生成html時間表）應該是或者根據星期劃分。
+</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1922"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1930"/>
         <source>If the &apos;time horizontal&apos; or &apos;time vertical&apos; html timetables are too large for you, then you might need to select this option</source>
-        <translation type="unfinished"></translation>
+        <translation>如果“水平節次”或“垂直節次”的HTML排課時間表太大，那麼您可能需要選擇此選項</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1916"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1924"/>
         <source>Probably some settings which are more difficult to understand are these ones:</source>
         <translation>也許這是很難理解的一些設置的：</translation>
     </message>
@@ -30348,6 +30414,7 @@ Having a subgroup with too little working hours per week means that you inputted
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="959"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2624"/>
         <source>Statistics</source>
         <translation>統計</translation>
     </message>
@@ -30363,13 +30430,13 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>設置</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2048"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2049"/>
         <source>Language</source>
         <extracomment>Please translate in your language and also add the original English term, like: &apos;Idioma/Language&apos;. This is to ensure that people mistakingly selecting an unknown language do not become stuck with it (so that they can find this setting description also in English).</extracomment>
         <translation>語言/Language</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1338"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1339"/>
         <source>&amp;New</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different</extracomment>
         <translation>&amp;新建</translation>
@@ -30391,42 +30458,42 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>課表</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1341"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1342"/>
         <source>Ctrl+N</source>
         <extracomment>This is the shortcut for menu item File-&gt;New. It is recommended to translate with Ctrl+N, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write &apos;Ctrl&apos;. It will work OK on all platforms. Even if you are on German keyboard, write &apos;Ctrl&apos; as in English). Maybe it would be good to translate with &apos;Ctrl+N&apos;, the same as the English original, to keep things standard.</extracomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1346"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1347"/>
         <source>&amp;Open...</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different</extracomment>
         <translation>&amp;打開...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1349"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1350"/>
         <source>Ctrl+O</source>
         <extracomment>This is the shortcut for menu item File-&gt;Open. It is recommended to translate with Ctrl+O, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write &apos;Ctrl&apos;. It will work OK on all platforms. Even if you are on German keyboard, write &apos;Ctrl&apos; as in English). Maybe it would be good to translate with &apos;Ctrl+O&apos;, the same as the English original, to keep things standard.</extracomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1354"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1355"/>
         <source>&amp;Save</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different</extracomment>
         <translation>&amp;保存</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1357"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1358"/>
         <source>Ctrl+S</source>
         <extracomment>This is the shortcut for menu item File-&gt;Save. It is recommended to translate with Ctrl+S, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write &apos;Ctrl&apos;. It will work OK on all platforms. Even if you are on German keyboard, write &apos;Ctrl&apos; as in English). Maybe it would be good to translate with &apos;Ctrl+S&apos;, the same as the English original, to keep things standard.</extracomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1378"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1379"/>
         <source>Frequently asked questions</source>
         <translation>常見問題答疑</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1394"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1395"/>
         <source>&amp;Teachers</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>&amp;老師</translation>
@@ -30434,36 +30501,36 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="989"/>
         <location filename="../src/interface/fetmainform_template.ui" line="1142"/>
-        <location filename="../src/interface/fetmainform_template.ui" line="2535"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2536"/>
         <source>Teachers</source>
         <translation>老師</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1399"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1400"/>
         <source>&amp;Subjects</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>&amp;學科</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1113"/>
-        <location filename="../src/interface/fetmainform_template.ui" line="2568"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2569"/>
         <source>Subjects</source>
         <translation>學科</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1404"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1405"/>
         <source>&amp;Years (forms, classes)</source>
         <extracomment>Accelerator key (letter after ampersand) must be different for &amp;Years, &amp;Groups, &amp;Subgroups</extracomment>
         <translation>&amp;學年</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1409"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1410"/>
         <source>&amp;Groups</source>
         <extracomment>Accelerator key (letter after ampersand) must be different for &amp;Years, &amp;Groups, &amp;Subgroups</extracomment>
         <translation>&amp;組</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1419"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1420"/>
         <source>&amp;Activities</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>&amp;教學班</translation>
@@ -30471,7 +30538,7 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1045"/>
         <location filename="../src/interface/fetmainform_template.ui" line="1103"/>
-        <location filename="../src/interface/fetmainform_template.ui" line="2579"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2580"/>
         <source>Activities</source>
         <translation>教學班</translation>
     </message>
@@ -30487,121 +30554,121 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>學科 和 教學班</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1424"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1425"/>
         <source>&amp;Generate new</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different</extracomment>
         <translation>&amp;新生成</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1427"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1428"/>
         <source>Ctrl+G</source>
         <extracomment>This is the shortcut for menu item Timetable-&gt;Generate. It is recommended to translate with Ctrl+G, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write &apos;Ctrl&apos;. It will work OK on all platforms. Even if you are on German keyboard, write &apos;Ctrl&apos; as in English). Maybe it would be good to translate with &apos;Ctrl+G&apos;, the same as the English original, to keep things standard.</extracomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1432"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1433"/>
         <source>View (&amp;students)</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different</extracomment>
         <translation>查看 (&amp;學生)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1437"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1438"/>
         <source>View (&amp;teachers)</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different</extracomment>
         <translation>查看 (&amp;老師)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1447"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1448"/>
         <source>&amp;Days per week</source>
         <extracomment>Accelerators (letters after &amp; - ampersand) for &amp;Days per week and &amp;Hours (periods) per day must be different</extracomment>
         <translation>&amp;每星期幾天</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1452"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1453"/>
         <source>&amp;Hours (periods) per day</source>
         <extracomment>Accelerators (letters after &amp; - ampersand) for &amp;Days per week and &amp;Hours (periods) per day must be different</extracomment>
         <translation>&amp;每天課時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1460"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1461"/>
         <source>&amp;Rooms</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>&amp;教室</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1097"/>
-        <location filename="../src/interface/fetmainform_template.ui" line="2557"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2558"/>
         <source>Rooms</source>
         <translation>教室</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1968"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1969"/>
         <source>Mark not available slots with -x- in timetables</source>
         <comment>It means to mark the slots which are not available in the timetable. Lowercase -x-</comment>
         <translation>標記為不可用</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2110"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2111"/>
         <source>Min days per week for a teacher</source>
         <translation>一個老師每星期最少上課</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2115"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2116"/>
         <source>Min days per week for all teachers</source>
         <translation>所有老師每星期最少上課</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2120"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2121"/>
         <source>Seed of random number generator</source>
         <translation>生成一個亂數</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2131"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2132"/>
         <source>Use colors in interface</source>
         <translation>用不用的顏色在介面</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2139"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2140"/>
         <source>Max hours daily with an activity tag for a teacher</source>
         <translation>一個老師一個教學班每天最大課時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2147"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2148"/>
         <source>Max hours daily with an activity tag for all teachers</source>
         <translation>所有老師一個教學班每天最大課時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2155"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2156"/>
         <source>Max hours daily with an activity tag for a students set</source>
         <translation>一個學生一個教學班每天最大課時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2163"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2164"/>
         <source>Max hours daily with an activity tag for all students</source>
         <translation>所有學生一個教學班每天最大課時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2171"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2172"/>
         <source>Max gaps per day for a students set</source>
         <translation>一個學生每天最大差距</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2179"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2180"/>
         <source>Max gaps per day for all students</source>
         <translation>所有學生每天最大差距</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2190"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2191"/>
         <source>Enable students max gaps per day</source>
         <translation>允許學生每天有間隔</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2201"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2202"/>
         <source>Enable activity tag max hours daily</source>
         <translation>打開教學班每天最大課時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2212"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2213"/>
         <source>Warn if using not perfect constraints</source>
         <extracomment>This is an option, which can be selected or deselected. It means warn before generating, if user uses not perfect constraints</extracomment>
         <translation>如果不是完美的約束警告</translation>
@@ -30612,38 +30679,38 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>時間衝突</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1478"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1479"/>
         <source>A set of activities has same starting time (day+hour)</source>
         <translation>一組教學班有同樣的開始時間（學期+課時）</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1493"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1494"/>
         <source>All t&amp;ime constraints</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>所有 &amp;時間約束</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1503"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1504"/>
         <source>Basic compulsory time constraints</source>
         <translation>基礎義務教育時間約束</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1518"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1519"/>
         <source>Max days per week for a teacher</source>
         <translation>一個老師每週最多上課天數</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1523"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1524"/>
         <source>Max hours daily for all teachers</source>
         <translation>所有老師每天最多課時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1548"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1549"/>
         <source>A set of activities are not overlapping</source>
         <translation>一組教學班不重疊</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1561"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1562"/>
         <source>All s&amp;pace constraints</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>所有&amp;空間約束</translation>
@@ -30654,144 +30721,144 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>空間約束</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1566"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1567"/>
         <source>Basic compulsory space constraints</source>
         <translation>基礎義務教育空間約束</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1576"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1577"/>
         <source>An activity has a preferred room</source>
         <translation>教學班有首選教室</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1581"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1582"/>
         <source>A set of activities has same starting hour (any days)</source>
         <translation>一組教學班每天有同樣的開始上課時間</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1591"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1592"/>
         <source>I&amp;nstitution name</source>
         <extracomment>Accelerators (letters after &amp; - ampersand) for I&amp;nstitution name and &amp;Comments must be different</extracomment>
         <translation>機構&amp;名稱</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1596"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1597"/>
         <source>&amp;Comments</source>
         <extracomment>Accelerators (letters after &amp; - ampersand) for I&amp;nstitution name and &amp;Comments must be different</extracomment>
         <translation>&amp;注釋</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1601"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1602"/>
         <source>An activity has a set of preferred rooms</source>
         <translation>一個教學班有一組首選的教室</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1742"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1743"/>
         <source>A subject has a preferred room</source>
         <translation>一個學科有首選的教室</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1747"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1748"/>
         <source>A subject has a set of preferred rooms</source>
         <translation>一個學科有首選的一組教室</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1616"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1617"/>
         <source>Teachers statistics</source>
         <translation>老師統計</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1621"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1622"/>
         <source>Students statistics</source>
         <translation>學生統計</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1626"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1627"/>
         <source>Subjects statistics</source>
         <translation>學科統計</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1631"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1632"/>
         <source>Max gaps per week for all teachers</source>
         <translation>對於所有老師每週最大間隔</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1636"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1637"/>
         <source>Max gaps per week for a teacher</source>
         <translation>對於一個老師每週最大間隔</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1646"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1647"/>
         <source>Max hours daily for a teacher</source>
         <translation>對於一個老師每天最多課時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1651"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1652"/>
         <source>Max hours daily for a students set</source>
         <translation>對於一組學生每天最大課時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1656"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1657"/>
         <source>Max hours daily for all students</source>
         <translation>對於所有學生每天最大課時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1661"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1662"/>
         <source>Instructions</source>
         <translation>指示</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1672"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1673"/>
         <source>Search for updates on startup</source>
         <translation>在啟動時搜索更新</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1677"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1678"/>
         <source>Min hours daily for all students</source>
         <translation>所有學生每天最小課時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1682"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1683"/>
         <source>Min hours daily for a students set</source>
         <translation>一組學生每天最小課時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1697"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1698"/>
         <source>An activity ends students day</source>
         <translation>教學班學生結束學期</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1702"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1703"/>
         <source>Restore default settings</source>
         <translation>還原預設值</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1712"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1713"/>
         <source>Min hours daily for all teachers</source>
         <translation>所有老師每天最小課時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1717"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1718"/>
         <source>Min hours daily for a teacher</source>
         <translation>對於一個老師每天最多課時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1722"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1723"/>
         <source>Help on statistics</source>
         <translation>統計幫助</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1533"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1534"/>
         <source>Max gaps per week for a students set</source>
         <translation>對於一組學生每週最大間隔</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1538"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1539"/>
         <source>Max gaps per week for all students</source>
         <translation>對於所有學生每週最大間隔</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1543"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1544"/>
         <source>All students begin early (max beginnings at second hour)</source>
         <translation>所有學生開始早點（最大值在第二個小時開始）</translation>
     </message>
@@ -30801,22 +30868,22 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>教學班標籤</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1641"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1642"/>
         <source>A students set begins early (max beginnings at second hour)</source>
         <translation>一個學生開始早點（最大值在第二個小時開始）</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1727"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1728"/>
         <source>Max gaps per day for all teachers</source>
         <translation>所有老師每天最大間隔</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1732"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1733"/>
         <source>Max gaps per day for a teacher</source>
         <translation>一個老師每天最大間隔</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1498"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1499"/>
         <source>A teacher&apos;s not available times</source>
         <translation>老師的不可用時間</translation>
     </message>
@@ -30890,412 +30957,412 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>開放寫入磁碟內</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1290"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1291"/>
         <source>Confirmations</source>
         <comment>This is a submenu, contains these settings: if a user wants to deactivate/activate a confirmation (instructions) dialog that appears before an advanced dialog</comment>
         <translation>確認</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1362"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1363"/>
         <source>Save &amp;as...</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different</extracomment>
         <translation>另 &amp;存為...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1488"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1489"/>
         <source>Max simultaneous activities from a set in selected time slots</source>
         <extracomment>It refers to a time constraint. It means: user chooses a set of activities, a set of time slots and a maximum number of activities from those selected which can be simultaneous in each selected time slot</extracomment>
         <translation>從一組在選定的時間間隔的最大同時教學班</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1508"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1509"/>
         <source>A students set&apos;s not available times</source>
         <translation>一組學生的不可用時間</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1513"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1514"/>
         <source>Break times (all teachers+all students not available)</source>
         <translation>休息時間（所有教師+學生不提供）</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1553"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1554"/>
         <source>Min days between a set of activities</source>
         <translation>一組教學班最小天數</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1571"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1572"/>
         <source>A room&apos;s not available times</source>
         <translation>教室的不可用時間</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1606"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1607"/>
         <source>A set of students has a home room</source>
         <translation>一組學生有一個主教室</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1611"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1612"/>
         <source>A set of students has a set of home rooms</source>
         <translation>一組學生有一組主教室</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1707"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1708"/>
         <source>HTML level for generated timetables</source>
         <translation>以HTML方式生成時間序課表</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1752"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1753"/>
         <source>A subject+an activity tag have a preferred room</source>
         <translation>一個學科和教學班有首選的教室</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1757"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1758"/>
         <source>A subject+an activity tag have a set of preferred rooms</source>
         <translation>一個學科和教學班有一組首選的教室</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1762"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1763"/>
         <source>A teacher has a home room</source>
         <translation>一個教師有主教室</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1767"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1768"/>
         <source>A teacher has a set of home rooms</source>
         <translation>一個教師有一組主教室</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1772"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1773"/>
         <source>Max building changes per day for a students set</source>
         <translation>對於一組學生每天最大樓棟變化</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1777"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1778"/>
         <source>Max building changes per day for all students</source>
         <translation>對於所有學生每天最大樓棟變化</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1782"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1783"/>
         <source>Max building changes per week for a students set</source>
         <translation>對於一組學生每週最大樓棟變化</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1787"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1788"/>
         <source>Max building changes per week for all students</source>
         <translation>對於所有學生每週最大樓棟變化</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1792"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1793"/>
         <source>Min gaps between building changes for a students set</source>
         <translation>對於一組學生最小樓棟間隔</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1797"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1798"/>
         <source>Min gaps between building changes for all students</source>
         <translation>對於所有學生最小樓棟間隔</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1802"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1803"/>
         <source>Max building changes per day for a teacher</source>
         <translation>對於一個老師每天最大樓棟變化</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1807"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1808"/>
         <source>Max building changes per day for all teachers</source>
         <translation>對於所有老師每天最大樓棟變化</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1812"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1813"/>
         <source>Max building changes per week for a teacher</source>
         <translation>對於一個老師每週最大樓棟變化</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1817"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1818"/>
         <source>Max building changes per week for all teachers</source>
         <translation>對於所有老師每週最大樓棟變化</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1822"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1823"/>
         <source>Min gaps between building changes for a teacher</source>
         <translation>對於一個老師最小樓棟間隔</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1827"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1828"/>
         <source>Min gaps between building changes for all teachers</source>
         <translation>對於所有老師最小樓棟間隔</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1832"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1833"/>
         <source>A set of activities has same starting day (any hours)</source>
         <translation>一組教學班有同樣的開始星期</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1847"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1848"/>
         <source>Max hours continuously for all teachers</source>
         <translation>所有老師最大連續上課時間</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1852"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1853"/>
         <source>Max hours continuously for a teacher</source>
         <translation>一個老師最大連續上課時間</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1857"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1858"/>
         <source>Max hours continuously for a students set</source>
         <translation>一組學生最大連續上課時間</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1862"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1863"/>
         <source>Max hours continuously for all students</source>
         <translation>所有學生最大連續上課時間</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1867"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1868"/>
         <source>Important tips</source>
         <translation>重要 提示</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2043"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2044"/>
         <source>&amp;Modify subactivities</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>&amp;編輯 子教學班</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2059"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2060"/>
         <source>Divide HTML timetables with time-axis by days</source>
         <translation>按星期時間軸分隔HTML課程時間表</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2220"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2221"/>
         <source>Help contents</source>
         <extracomment>menu Help-&gt;Online-&gt;Help contents, opens the webpage of FET documentation</extracomment>
         <translation>説明 內容</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2230"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2231"/>
         <source>Web addresses</source>
         <extracomment>menu Help-&gt;Online-&gt;Web addresses, shows the web addresses of FET homepage, documentation and forum</extracomment>
         <translation>Web 地址</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2235"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2236"/>
         <source>Homepage</source>
         <extracomment>menu Help-&gt;Online-&gt;Homepage, opens the homepage of FET</extracomment>
         <translation>主頁</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2246"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2247"/>
         <source>Show shortcut buttons in main window</source>
         <translation>在主視窗顯示快捷按鈕</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2268"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2269"/>
         <source>Enable students min hours daily with empty days</source>
         <translation>開啟空天每天最小課時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2279"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2280"/>
         <source>Warn if using students min hours daily with empty days</source>
         <translation>警告如果學生空天每天最小課時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2284"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2285"/>
         <source>Activity planning</source>
         <translation>教學計畫</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2295"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2296"/>
         <source>Confirm activity planning</source>
         <comment>This is a setting - a check box: if a user wants to deactivate/activate the confirmation (instructions) dialog that appears before activity planning dialog</comment>
         <translation>確認教學計畫</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2306"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2307"/>
         <source>Confirm spread activities over the week</source>
         <comment>This is a setting - a check box: if a user wants to deactivate/activate the confirmation (instructions) dialog that appears before spreading the activities over the week dialog</comment>
         <translation>確認過去一周教學安排</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2317"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2318"/>
         <source>Confirm remove redundant constraints</source>
         <comment>This is a setting - a check box: if a user wants to deactivate/activate the confirmation (instructions) dialog that appears before removing redundant constraints dialog</comment>
         <translation>確認刪除多餘的限制</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2333"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2334"/>
         <source>&amp;Clear list</source>
         <extracomment>It means clearing the list of recently opened files</extracomment>
         <translation>&amp;清除列表</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2338"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2339"/>
         <source>Activities rooms statistics</source>
         <extracomment>It refers to the statistics of each activity&apos;s possible room(s)</extracomment>
         <translation>教學班教室統計</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2343"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2344"/>
         <source>&amp;Print</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different</extracomment>
         <translation>&amp;列印</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2346"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2347"/>
         <source>Ctrl+P</source>
         <extracomment>This is the shortcut for menu item Timetable-&gt;Print. It is recommended to translate with Ctrl+P, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write &apos;Ctrl&apos;. It will work OK on all platforms. Even if you are on German keyboard, write &apos;Ctrl&apos; as in English). Maybe it would be good to translate with &apos;Ctrl+P&apos;, the same as the English original, to keep things standard.</extracomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2351"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2352"/>
         <source>A set of activities occupies max different rooms</source>
-        <translation>一組教學班佔用最大不同房間</translation>
+        <translation>一組教學班佔用最大不同教室</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2356"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2357"/>
         <source>A set of activities are in the same room if they are consecutive</source>
         <translation>一組教學班如果是連續的,則在同樣的教室</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2361"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2362"/>
         <source>Max days per week for a students set</source>
         <translation>對於一組學生每週最大間隔</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2366"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2367"/>
         <source>Max days per week for all students</source>
         <translation>對於所有學生每週最大間隔</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2371"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2372"/>
         <source>Print activity tags in timetables</source>
         <translation>列印課表的教學標籤</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2376"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2377"/>
         <source>Print advanced statistics</source>
         <translation>列印高級統計</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2387"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2388"/>
         <source>Duplicate vertical headers to the right</source>
         <translation>重複的垂直表頭向右</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2392"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2393"/>
         <source>Group activities in the initial order of generation</source>
         <translation>組教學班生成的初始順序</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2403"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2404"/>
         <source>Enable group activities in initial order</source>
         <translation>使組教學班初始有序</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2414"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2415"/>
         <source>Warn if using group activities in initial order</source>
         <translation>警告如果用組教學班初始有序</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2425"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2426"/>
         <source>Show subgroups in combo boxes</source>
         <translation>顯示子組的組合框</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2436"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2437"/>
         <source>Show subgroups in activity planning</source>
         <translation>顯示次群組的教學活動計畫</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2447"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2448"/>
         <source>XML</source>
         <translation>XML格式</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2458"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2459"/>
         <source>Days horizontal</source>
         <translation>水平軸以星期顯示</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2469"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2470"/>
         <source>Days vertical</source>
         <translation>垂直軸以星期顯示</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2480"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2481"/>
         <source>Time horizontal</source>
         <translation>時間節次以水平軸顯示</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2491"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2492"/>
         <source>Time vertical</source>
         <translation>時間節次以垂直軸顯示</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2502"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2503"/>
         <source>Subgroups</source>
         <translation>子組</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2513"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2514"/>
         <source>Groups</source>
         <translation>組</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2524"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2525"/>
         <source>Years</source>
         <translation>學年</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2546"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2547"/>
         <source>Teachers free periods</source>
         <translation>教師方便時段</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2590"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2591"/>
         <source>Soft conflicts</source>
         <translation>軟條件衝突</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2601"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2602"/>
         <source>Show tool tips for constraints with tables</source>
         <translation>顯示排課表的約束條件工具提示</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2612"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2613"/>
         <source>Warn subgroups with the same activities</source>
         <translation>警示:次級教學群組已有相同的教學活動</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2225"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2226"/>
         <source>Forum</source>
         <extracomment>menu Help-&gt;Forum, opens the webpage of FET forum</extracomment>
         <translation>論壇</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1528"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1529"/>
         <source>An activity has a preferred starting time</source>
         <translation>一個教學班有首選的開始課時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1872"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1873"/>
         <source>A set of activities has a set of preferred starting times</source>
         <translation>一組教學班有一組首選的開始課時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1882"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1883"/>
         <source>An activity has a set of preferred starting times</source>
         <translation>一個教學班有一組首選的開始課時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1473"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1474"/>
         <source>A set of activities has a set of preferred time slots</source>
         <translation>一組教學班有一組首選的課時間隔</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1877"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1878"/>
         <source>An activity has a set of preferred time slots</source>
         <translation>一個教學班有一組首選的課時間隔</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1887"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1888"/>
         <source>Min gaps (hours) between a set of activities</source>
         <translation>一組教學班最小間隔（學時）</translation>
     </message>
@@ -31390,7 +31457,7 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform_template.ui" line="354"/>
         <source>Time</source>
         <comment>It is a tab for shortcut buttons to time constraints, so it refers to time constraints, but we need to keep it short, that is why I don&apos;t add also &apos;constraints&apos;</comment>
-        <translation>課表</translation>
+        <translation>時間限制</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="409"/>
@@ -31444,147 +31511,147 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>學&amp;生</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1370"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1371"/>
         <source>&amp;Quit</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different</extracomment>
         <translation>&amp;退出</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1373"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1374"/>
         <source>Ctrl+Q</source>
         <extracomment>This is the shortcut for menu item File-&gt;Quit. It is recommended to translate with Ctrl+Q, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write &apos;Ctrl&apos;. It will work OK on all platforms. Even if you are on German keyboard, write &apos;Ctrl&apos; as in English). Maybe it would be good to translate with &apos;Ctrl+Q&apos;, the same as the English original, to keep things standard.</extracomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1386"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1387"/>
         <source>About...</source>
         <translation>關於...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1414"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1415"/>
         <source>&amp;Subgroups</source>
         <extracomment>Accelerator key (letter after ampersand) must be different for &amp;Years, &amp;Groups, &amp;Subgroups</extracomment>
         <translation>&amp;子組</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1442"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1443"/>
         <source>Show soft &amp;conflicts</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different</extracomment>
         <translation>顯示&amp;軟衝突</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1468"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1469"/>
         <source>View (&amp;rooms)</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different</extracomment>
         <translation>查看（&amp;教室）</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1483"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1484"/>
         <source>A set of activities occupies max time slots from selection</source>
         <extracomment>It refers to a time constraint. It means: user chooses a set of activities, a set of time slots and a maximum number of slots from those selected which can be occupied by the selected activities</extracomment>
         <translation>所選的一組教學班佔用最大間隔</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1586"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1587"/>
         <source>Activity ta&amp;gs</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>教學班 &amp;標籤</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1687"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1688"/>
         <source>Generate &amp;multiple</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different</extracomment>
         <translation>生成&amp;多個</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1737"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1738"/>
         <source>&amp;Buildings</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>&amp;樓棟</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1837"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1838"/>
         <source>Save data and timetable as...</source>
         <translation>保存資料並生成課表為...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1892"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1893"/>
         <source>Export comma separated values (text)</source>
         <translation>匯出逗號分隔的文本值</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1897"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1898"/>
         <source>Import activities from CSV file</source>
         <translation>從CSV文件導入教學班</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1902"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1903"/>
         <source>Import activity tags from CSV file</source>
         <translation>從CSV文件導入教學班標籤</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1907"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1908"/>
         <source>Import rooms and buildings from CSV file</source>
         <translation>從CSV文件導入教室和樓棟</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1912"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1913"/>
         <source>Import subjects from CSV file</source>
         <translation>從CSV文件導入學科</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1917"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1918"/>
         <source>Import teachers from CSV file</source>
         <translation>從CSV文件導入老師</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1922"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1923"/>
         <source>Import years, groups and subgroups from CSV file</source>
         <translation>從CSV檔導入學年，組合和子組</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1927"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1928"/>
         <source>A set of subactivities has a set of preferred time slots</source>
         <translation>一組子教學班有一組首選的課時間隔</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1932"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1933"/>
         <source>A set of subactivities has a set of preferred starting times</source>
         <translation>一組子教學班有一組首選的開始時間</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1937"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1938"/>
         <source>A teacher works in an hourly interval max days per week</source>
         <translation>一位老師每週每小時間隔最大</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1942"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1943"/>
         <source>All teachers work in an hourly interval max days per week</source>
         <translation>所有老師每週每小時間隔最大</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1947"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1948"/>
         <source>A students set works in an hourly interval max days per week</source>
         <translation>一組學生每週每小時間隔最大</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1952"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1953"/>
         <source>All students work in an hourly interval max days per week</source>
         <translation>所有的學生在一個小時的時間間隔的最大天每星期上課</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1957"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1958"/>
         <source>A set of activities end students day</source>
         <translation>一組教學班的學生一天結束</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2257"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2258"/>
         <source>Mark break slots with -X- in timetables</source>
         <comment>It means to show or not the slots which are break slots, in the timetable, with an -X-. Uppercase -X-</comment>
-        <translation>在課表中標記-X-間隔</translation>
+        <translation>在課表中標記-x-間隔</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2328"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2329"/>
         <source>Confirm save data and timetable as</source>
         <translation>確認保存資料和課表為</translation>
     </message>
@@ -31592,22 +31659,22 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform_template.ui" line="444"/>
         <location filename="../src/interface/fetmainform_template.ui" line="747"/>
         <location filename="../src/interface/fetmainform_template.ui" line="1220"/>
-        <location filename="../src/interface/fetmainform_template.ui" line="1317"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1318"/>
         <source>Advanced</source>
         <translation>高級</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1973"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1974"/>
         <source>Spread the activities evenly over the week</source>
         <translation>過去一周均勻的排教學班</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1978"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1979"/>
         <source>Export advanced statistics to disk</source>
         <translation>匯出高級統計到磁片</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1983"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1984"/>
         <source>Remove redundant constraints</source>
         <translation>刪除多餘的約束</translation>
     </message>
@@ -31617,52 +31684,52 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>高級 鎖定/解鎖</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1993"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1994"/>
         <source>Lock all activities of a specified day</source>
         <translation>在特殊一天鎖定的教學班</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1998"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1999"/>
         <source>Unlock all activities of a specified day</source>
         <translation>在特殊一天解鎖的教學班</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2003"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2004"/>
         <source>Lock all activities which end students day</source>
         <translation>在學期末鎖定所有教學班</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2008"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2009"/>
         <source>Unlock all activities which end students day</source>
         <translation>在學期末解鎖所有教學班</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2013"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2014"/>
         <source>Lock all activities of the current timetable</source>
         <translation>鎖定當前課表所有教學班</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2018"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2019"/>
         <source>Unlock all activities of the current timetable</source>
         <translation>解鎖當前課表所有教學班</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2023"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2024"/>
         <source>Max hours continuously with an activity tag for a students set</source>
         <translation>一組學生的教學班標籤的最大不間斷學時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2028"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2029"/>
         <source>Max hours continuously with an activity tag for all students</source>
         <translation>所有學生的教學班標籤的最大不間斷學時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2033"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2034"/>
         <source>Max hours continuously with an activity tag for a teacher</source>
         <translation>一個老師的教學班標籤的最大不間斷學時</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2038"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2039"/>
         <source>Max hours continuously with an activity tag for all teachers</source>
         <translation>所有老師的教學班標籤的最大不間斷學時</translation>
     </message>
@@ -31683,57 +31750,57 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>學生</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2064"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2065"/>
         <source>Help on settings</source>
         <translation>設置幫助</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2069"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2070"/>
         <source>An activity tag has a preferred room</source>
         <translation>一個教學班標籤有首選的教室</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2074"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2075"/>
         <source>An activity tag has a set of preferred rooms</source>
         <translation>一個教學班標籤有一組首選的教室</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2079"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2080"/>
         <source>Select output directory</source>
         <translation>選擇輸出目錄</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2084"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2085"/>
         <source>Max days per week for all teachers</source>
         <translation>所有老師每週最大上課天數</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2095"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2096"/>
         <source>Print activities with same starting time in timetables</source>
         <translation>列印在課表中同樣開始時間的教學班</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2105"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2106"/>
         <source>Max days between a set of activities</source>
         <translation>一組教學班最大上課天數</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1692"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1693"/>
         <source>Two activities are consecutive</source>
         <translation>兩個教學班是連續的</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1842"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1843"/>
         <source>Two activities are ordered</source>
         <translation>兩個活動是有序的</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1988"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1989"/>
         <source>Two activities are grouped</source>
         <translation>兩個活動是分組的</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2100"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2101"/>
         <source>Three activities are grouped</source>
         <translation>三個活動是分組的</translation>
     </message>
@@ -31741,66 +31808,66 @@ Having a subgroup with too little working hours per week means that you inputted
 <context>
     <name>FetTranslate</name>
     <message>
-        <location filename="../src/interface/fet.cpp" line="252"/>
-        <location filename="../src/interface/fet.cpp" line="739"/>
+        <location filename="../src/interface/fet.cpp" line="253"/>
+        <location filename="../src/interface/fet.cpp" line="742"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET 警告</translation>
+        <translation>FET 警告</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="252"/>
+        <location filename="../src/interface/fet.cpp" line="253"/>
         <source>Output directory %1 does not exist and cannot be created - output directory will be made the default value %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="700"/>
-        <location filename="../src/interface/fet.cpp" line="709"/>
+        <location filename="../src/interface/fet.cpp" line="703"/>
+        <location filename="../src/interface/fet.cpp" line="712"/>
         <source>FET critical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="739"/>
+        <location filename="../src/interface/fet.cpp" line="742"/>
         <source>To start FET in interface mode, please do not give any command-line parameters to the FET executable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1014"/>
+        <location filename="../src/interface/fet.cpp" line="1022"/>
         <source>This is the list of max placed activities, chronologically. If FET could reach maximum n-th activity, look at the n+1-st activity in the initial order of the activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1213"/>
+        <location filename="../src/interface/fet.cpp" line="1221"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see initial order of placing the activities in the corresponding output file. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1220"/>
-        <location filename="../src/interface/fet.cpp" line="1240"/>
+        <location filename="../src/interface/fet.cpp" line="1228"/>
+        <location filename="../src/interface/fet.cpp" line="1248"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1225"/>
+        <location filename="../src/interface/fet.cpp" line="1233"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1229"/>
+        <location filename="../src/interface/fet.cpp" line="1237"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1236"/>
+        <location filename="../src/interface/fet.cpp" line="1244"/>
         <source>No: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="700"/>
+        <location filename="../src/interface/fet.cpp" line="703"/>
         <source>Cannot create or use %1 directory (where the results should be stored) - you can continue operation, but you might not be able to work with FET. Maybe you can try to change the output directory from the &apos;Settings&apos; menu. If this is a bug - please report it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="709"/>
+        <location filename="../src/interface/fet.cpp" line="712"/>
         <source>You don&apos;t have write permissions in the output directory (FET cannot open or create file %1) - you might not be able to work correctly with FET. Maybe you can try to change the output directory from the &apos;Settings&apos; menu. If this is a bug - please report it.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -32129,7 +32196,7 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/engine/generate_pre.cpp" line="7799"/>
         <location filename="../src/engine/generate_pre.cpp" line="8254"/>
         <source>Skip rest</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">跳過重設</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="989"/>
@@ -32871,7 +32938,7 @@ Please modify your data correspondingly and try again</source>
         <location filename="../src/engine/generate_pre.cpp" line="5128"/>
         <location filename="../src/engine/generate_pre.cpp" line="5143"/>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">取消</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="5465"/>
@@ -33306,49 +33373,49 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="123"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="130"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="137"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="144"/>
         <source>Comments</source>
-        <translation type="unfinished">注釋</translation>
+        <translation>注釋</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="151"/>
         <source>Sort</source>
-        <translation type="unfinished">排序</translation>
+        <translation>排序</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="162"/>
         <source>Activate</source>
         <comment>Refers to activating a time constraint</comment>
-        <translation type="unfinished">生效</translation>
+        <translation>啟動</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="169"/>
         <source>Deactivate</source>
         <comment>Refers to deactivating a time constraint</comment>
-        <translation type="unfinished">停止生效</translation>
+        <translation>停止生效</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="176"/>
         <source>Help</source>
-        <translation type="unfinished">幫助</translation>
+        <translation>幫助</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="183"/>
         <source>Close</source>
-        <translation type="unfinished">關閉</translation>
+        <translation>關閉</translation>
     </message>
 </context>
 <context>
@@ -33369,7 +33436,7 @@ Please modify your data correspondingly and try again</source>
         <location filename="../src/interface/groupsform.cpp" line="379"/>
         <location filename="../src/interface/groupsform.cpp" line="385"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform.cpp" line="96"/>
@@ -33380,7 +33447,7 @@ Please modify your data correspondingly and try again</source>
         <location filename="../src/interface/groupsform.cpp" line="353"/>
         <location filename="../src/interface/groupsform.cpp" line="372"/>
         <source>Invalid selected year</source>
-        <translation type="unfinished">無效的年級</translation>
+        <translation>無效的年級</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform.cpp" line="124"/>
@@ -33389,7 +33456,7 @@ Please modify your data correspondingly and try again</source>
         <location filename="../src/interface/groupsform.cpp" line="360"/>
         <location filename="../src/interface/groupsform.cpp" line="379"/>
         <source>Invalid selected group</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的群組</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform.cpp" line="142"/>
@@ -33498,7 +33565,7 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="86"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="67"/>
@@ -33516,24 +33583,6 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="27"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="48"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2015 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.26.2 (March 2015).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -33563,6 +33612,169 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="256"/>
         <source>References</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="726"/>
+        <source>Close</source>
+        <translation type="unfinished">關閉</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="69"/>
+        <source>Authors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="48"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2015 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.27.0 (April 2015).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="133"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ar - Arabic translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Silver (to contact Silver visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Arabic translation, or contact forum user Silver)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ca - Catalan translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Sílvia Lag (to contact Sílvia visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Catalan translation, or contact forum user silvia)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;da - Danish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	David Lamhauge (davidlamhauge AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;de - German translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Volker Dirr (http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Robert Hairgrove (code AT roberthairgrove.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;el - Greek translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Dimitrios Ropokis (wamy80s AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Dimitris Kanatas (to contact Dimitris Kanatas visit&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Greek translation, or contact forum user Dimitris Kanatas)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;es - Spanish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	José César Fernández López (cesar.fernandez.lopez AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fa - Persian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Hamed SadeghiNeshat (ha_sadeghi AT ce.sharif.edu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: sally sat (soory63 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fr - French translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Jerome Durand (fetfr AT free.fr)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Patrick Fox (patrick.fox AT laposte.net)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Régis Bouguin (regis.bouguin AT laposte.net)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;gl - Galician translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Juan Marcos Filgueira Gomis (to contact marcos.filgueira, visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Galician translation, or contact forum user marcos.filgueira)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	this translation was based on the Spanish translation by José César Fernández López&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	as of April 2011 (see es - Spanish translation for more information)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;he - Hebrew translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Yotam Medini (yotam.medini AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;hu - Hungarian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ferenczi Viktor (cx AT cx.hu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;id - Indonesian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nirwan Yus (ny.unpar AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;it - Italian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Marco Barsotti (mbarsan AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;lt - Lithuanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Darius Staigys (darius AT e-servisas.lt)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mk - Macedonian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Zoran Zdravkovski (zoran AT pmf.ukim.edu.mk)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ms - Malay translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Abdul Hadi Kamel (hadikamel AT perlis.uitm.edu.my)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;nl - Dutch translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Niels Fikse (k.fikse AT student.utwente.nl)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pl - Polish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radoslaw Pasiok (zapala AT konto.pl)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pt_BR - Brazilian Portuguese translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Werner Bruns (werner.bruns AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Frank Mártin (drfarofa AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Cloves das Neves (clovesneves AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ro - Romanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Liviu Lalescu (http://lalescu.ro/liviu/)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ru - Russian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ilya V. Paramonov (ivparamonov AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;si - Sinhala translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Achini Duisna (duisna1012 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sk - Slovak translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ondrej Gregor (to contact Ondrej visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Slovak translation, or contact forum user Ondrej)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sq - Albanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Artur Lugu (ciaoartur AT yahoo.it)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sr - Serbian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ivan Starchevicy (ivanstar61 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radan Putnik (srastral AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;tr - Turkish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Mehmet Gezmisoglu (m_gezmisoglu AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Mahir Nacar (mahirnacar AT email.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uk - Ukrainian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Andriy Melnyk (melnyk.andriy AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uz - Uzbek translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Orzubek Eraliyev (o.eraliyev AT gmail.com, or visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Uzbek translation, or contact forum user sarkor)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;vi - Vietnamese translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nguyen Truong Thang (to contact Thang visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Vietnamese translation, or contact forum user NTThang)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;zh_CN - Chinese Simplified translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	orange (112260085 AT qq.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;zh_TW - Chinese Traditional translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	James (james AT cc.shu.edu.tw)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="277"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;You may find references for the algorithms and techniques used in this program on the FET documentation web page, &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/doc/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/doc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="290"/>
+        <source>Thanks to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -33959,151 +34171,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="726"/>
-        <source>Close</source>
-        <translation type="unfinished">關閉</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="69"/>
-        <source>Authors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="133"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ar - Arabic translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Silver (to contact Silver visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Arabic translation, or contact forum user Silver)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ca - Catalan translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Sílvia Lag (to contact Sílvia visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Catalan translation, or contact forum user silvia)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;da - Danish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	David Lamhauge (davidlamhauge AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;de - German translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Volker Dirr (http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Robert Hairgrove (code AT roberthairgrove.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;el - Greek translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Dimitrios Ropokis (wamy80s AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Dimitris Kanatas (to contact Dimitris Kanatas visit&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Greek translation, or contact forum user Dimitris Kanatas)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;es - Spanish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	José César Fernández López (cesar.fernandez.lopez AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fa - Persian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Hamed SadeghiNeshat (ha_sadeghi AT ce.sharif.edu)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: sally sat (soory63 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fr - French translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Jerome Durand (fetfr AT free.fr)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Patrick Fox (patrick.fox AT laposte.net)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Régis Bouguin (regis.bouguin AT laposte.net)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;gl - Galician translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Juan Marcos Filgueira Gomis (to contact marcos.filgueira, visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Galician translation, or contact forum user marcos.filgueira)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	this translation was based on the Spanish translation by José César Fernández López&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	as of April 2011 (see es - Spanish translation for more information)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;he - Hebrew translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Yotam Medini (yotam.medini AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;hu - Hungarian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ferenczi Viktor (cx AT cx.hu)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;id - Indonesian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nirwan Yus (ny.unpar AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;it - Italian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Marco Barsotti (mbarsan AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;lt - Lithuanian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Darius Staigys (darius AT e-servisas.lt)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mk - Macedonian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Zoran Zdravkovski (zoran AT pmf.ukim.edu.mk)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ms - Malay translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Abdul Hadi Kamel (hadikamel AT perlis.uitm.edu.my)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;nl - Dutch translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Niels Fikse (k.fikse AT student.utwente.nl)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pl - Polish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radoslaw Pasiok (zapala AT konto.pl)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pt_BR - Brazilian Portuguese translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Werner Bruns (werner.bruns AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Frank Mártin (drfarofa AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Cloves das Neves (clovesneves AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ro - Romanian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Liviu Lalescu (http://lalescu.ro/liviu/)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ru - Russian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ilya V. Paramonov (ivparamonov AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;si - Sinhala translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Achini Duisna (duisna1012 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sk - Slovak translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ondrej Gregor (to contact Ondrej visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Slovak translation, or contact forum user Ondrej)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sq - Albanian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Artur Lugu (ciaoartur AT yahoo.it)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sr - Serbian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ivan Starchevicy (ivanstar61 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radan Putnik (srastral AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;tr - Turkish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Mehmet Gezmisoglu (m_gezmisoglu AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Mahir Nacar (mahirnacar AT email.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uk - Ukrainian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Andriy Melnyk (melnyk.andriy AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uz - Uzbek translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Orzubek Eraliyev (o.eraliyev AT gmail.com, or visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Uzbek translation, or contact forum user sarkor)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;vi - Vietnamese translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nguyen Truong Thang (to contact Thang visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Vietnamese translation, or contact forum user NTThang)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;zh_CN - Chinese Simplified translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	orange (112260085 AT qq.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;zh_TW - Chinese Traditional translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	James (james AT cc.shu.edu.tw)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="277"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;You may find references for the algorithms and techniques used in this program on the FET documentation web page, &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/doc/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/doc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="290"/>
-        <source>Thanks to</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>HelpFaqForm</name>
@@ -34304,6 +34371,15 @@ A: You can use for the constraint min days the weight you want. It can be 95%, 9
 A: From the way the algorithm is conceived, the automatic generation is faster if you use students set (or teacher) not available and/or constraint activity(ies) preferred time slots or constraint activity preferred starting time to specify impossible slots, in addition to possible use of students (set) or teacher(s) max hours daily, whenever it is possible. For instance, if you know that year 5 will only have hours from 8:00 to 13:00, it is better to add students set not available in addition to students set max hours daily. So, if possible, try to follow this advice. This trick helps guide FET better towards a solution.
 
 Each constraint of type not available or preferred times which filters out impossible slots might bring an improvement in speed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="341"/>
+        <source>Q: Is it possible to work with 0 hour?
+
+A: A bit difficult. You have to choose a day for this 0 hour. Then add breaks or not available to prevent other activities in other days at hour 0, then add students set not available to prevent other students sets from having hours at this hour 0. Or variants of this.
+
+Zsolt Udvari used another trick: considered the last hour to be hour 0. But this is not always applicable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -34585,32 +34661,35 @@ Add another constraint: min 1 day between activities with id-s 2 and 3, consecut
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="970"/>
         <source>If you have many subgroups and you don&apos;t explicitely use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">如果你有很多次級教學子群，你使用它們的方式不明確，建議您使用三個global settings：隱藏組合框分組，隱藏在教學活動計畫，並且次級教學群組計畫排課時間表不寫入硬碟。
+</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="973"/>
         <source>Note that using the global menu setting to hide subgroups in activity planning is a different thing from the check box in the activity planning dialog, and the global setting works better and faster.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">注意，使用global選單的設置隱藏教學活動計畫的次級亞組是從教學活動計畫對話框中的複選框不同的東西，以及global選單的設置工作得更好，更快。
+</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="976"/>
         <source>If you hide subgroups in combo boxes, the affected dialogs (like the activities dialog or the add constraint students set not available times dialog) will load much faster if you have many subgroups.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">如果隱藏在組合框分組，受影響的對話框（如活動對話框或添加約束學生班級設置不適對話）加載會快很多，如果你有很多次級教學群組。</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="981"/>
         <source>If you are only working on a timetable, and you do not need to publish it, you may want to disable writing some categories of timetables on the hard disk, for operativity (the generation speed is not affected, only the overhead to write the partial/complete timetables when stopping/finishing the simulation). The timetables taking the longest time are the subgroups, groups AND years ones.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">如果你只是試排排課時間表，你不需要發布它，你可能要禁用寫一些類別的時間表在硬蝶上，對於操作性（產生速度不受影響，只有開銷寫的部分/停止時/完成模擬完整的時間表）。佔用排課時間最長的是:次級教學分組，教學分組和年級。
+</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="985"/>
         <source>(Also the conflicts timetable might take long to write, if the file is large.)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">（也許衝突的時間表可能要很長時間來寫入，如果文件很大。）</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="987"/>
         <source>After that, you can re-enable writing of the timetables and re-generate.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">在此之後，你可以重新啟用寫入排課時間表並且重新生成。</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="993"/>
@@ -34751,15 +34830,6 @@ You might get an impossible timetable with duplicates, so beware.</source>
         <source>Q: Is it possible to make a timetable where the students learn in two shifts? (for instance, the lowest forms in the morning and the highest forms in the afternoon)?
 
 A: Yes, you have to add more constraint students set not available accordingly (for the lowest forms not available Mon, Tue, Wed, Th, Fr each from middle hour to last hour and for highest forms from first hour to middle hour). The constraints no gaps and early work correctly with these not available: if not available, a students set will not have gaps or early broken for the period of non-availability.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="341"/>
-        <source>Q: Is it possible to work with 0 hour?
-
-A: A bit difficult. You have to choose a day for this 0 hour. Then add breaks or not available to prevent other activities in other days at hour 0, then add students set not available to prevent other students sets from having hours at this hour 0. Or variants of this.
-
-Zsolt Udvari used another trick: considered the last hour to be hour 0. But this is not always applicable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -36197,7 +36267,7 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/engine/import.cpp" line="2490"/>
         <source>Activity NOT added - please report error</source>
-        <translation type="unfinished">教學班沒有添加-請報告一個錯誤</translation>
+        <translation>教學班沒有增加-請回報錯誤</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="2544"/>
@@ -36892,58 +36962,58 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2144"/>
         <source>30</source>
-        <translation type="unfinished">3-</translation>
+        <translation>30</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2208"/>
         <source>31</source>
-        <translation type="unfinished">31</translation>
+        <translation>31</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2272"/>
         <source>32</source>
-        <translation type="unfinished">32</translation>
+        <translation>32</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2336"/>
         <source>33</source>
-        <translation type="unfinished">33</translation>
+        <translation>33</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2400"/>
         <source>34</source>
-        <translation type="unfinished">34</translation>
+        <translation>34</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2464"/>
         <source>35</source>
-        <translation type="unfinished">35</translation>
+        <translation>35</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2540"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2547"/>
         <source>Help</source>
-        <translation type="unfinished">幫助</translation>
+        <translation>幫助</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2554"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="26"/>
         <source>Teachers</source>
-        <translation type="unfinished">老師</translation>
+        <translation>老師</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="14"/>
         <source>Modify activity</source>
         <extracomment>This is the title of a dialog to modify an activity</extracomment>
-        <translation type="unfinished">編輯教學班</translation>
+        <translation>編輯教學活動</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="56"/>
@@ -37185,13 +37255,13 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="124"/>
         <source>Time slots</source>
-        <translation type="unfinished">課表插入</translation>
+        <translation>課表時間插槽</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="137"/>
         <source>X=selected, empty=not selected</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
-        <translation type="unfinished">[x]符號表示選擇該項，空白表示不選該項</translation>
+        <translation>[x]符號表示選擇該項，空白表示不選該項</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="144"/>
@@ -37400,7 +37470,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="115"/>
         <source>Max different rooms</source>
-        <translation type="unfinished">最大不同的房間</translation>
+        <translation>最大不同的教室</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="135"/>
@@ -37495,7 +37565,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="124"/>
         <source>Time slots</source>
-        <translation type="unfinished">課表插入</translation>
+        <translation>課表時間插槽</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="137"/>
@@ -38723,33 +38793,33 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomform_template.ui" line="50"/>
         <source>Room</source>
-        <translation type="unfinished">教室</translation>
+        <translation>教室</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomform_template.ui" line="72"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">權重百分比建議是: 0%-100%</translation>
+        <translation>權重百分比建議是: 0%-100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomform_template.ui" line="113"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomform_template.ui" line="106"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomform_template.ui" line="14"/>
         <source>Modify activity tag preferred room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改一個有首選教室的教學班</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>教學班 標籤</translation>
     </message>
 </context>
 <context>
@@ -39411,34 +39481,34 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="151"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="158"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify students activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修訂教學班標籤的最大可連續上課時間</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="121"/>
         <source>Max hours continuously</source>
-        <translation type="unfinished">最大連續上課節次</translation>
+        <translation>最大連續上課節次</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>教學班 標籤</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="80"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">權重百分比建議是: 0%-100%</translation>
+        <translation>權重百分比建議是: 0%-100%</translation>
     </message>
 </context>
 <context>
@@ -39466,33 +39536,33 @@ force activities consecutive</source>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify students activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改學生班級的每日最大教學節次的值</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>教學班 標籤</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="80"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">權重百分比建議是: 0%-100%</translation>
+        <translation>權重百分比建議是: 0%-100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="121"/>
         <source>Max hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>每日最大上課時數</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="151"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="158"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
 </context>
 <context>
@@ -39794,12 +39864,12 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperdayform_template.ui" line="14"/>
         <source>Modify students max gaps per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改學生每天課間休息時隙的最大值</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperdayform_template.ui" line="90"/>
         <source>Max gaps per day</source>
-        <translation type="unfinished"></translation>
+        <translation>每天課間休息時隙節次的最大間隔值</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperdayform_template.ui" line="32"/>
@@ -39807,7 +39877,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
 Note: students set not available and break are not counted as gaps.
 
 IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this constraint, but instead use the safer/better max gaps per week.</source>
-        <translation type="unfinished">您最好使用100%的權重設定
+        <translation>您最好使用100%的權重設定
 注意：學生班級設定無效，中間休息節次不計算為gaps。
 
 重要提示：如果您想設成&quot;0&quot;的總間隙，強烈建議不要使用此約束，而是使用更安全/更好的最大間隙每週。
@@ -39816,17 +39886,17 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperdayform_template.ui" line="69"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">權重百分比必須是100%</translation>
+        <translation>權重百分比必須是100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperdayform_template.ui" line="107"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperdayform_template.ui" line="114"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
 </context>
 <context>
@@ -39854,33 +39924,33 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="14"/>
         <source>Modify students max gaps per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改學生班級每天上課最大課間休息節次間距</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="105"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="112"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="88"/>
         <source>Max gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation>每週課間休息節次的最大值</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="67"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">權重百分比必須是100%</translation>
+        <translation>權重百分比必須是100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="32"/>
         <source>You have to use weight percentage 100%, because otherwise you will get poor timetables. Currently, the algorithm only accepts 100% weight percentage for this constraint (or no constraint).
 Note: students set not available and break are not counted as gaps.</source>
-        <translation type="unfinished">您最好使用100%的權重設定，否則您所得到的排課結果可能不會好，目前這個演算法只接受設定權重100%，否則您就不要設定。
+        <translation>您最好使用100%的權重設定，否則您所得到的排課結果可能不會好，目前這個演算法只接受設定權重100%，否則您就不要設定。
 注：學生班級設定無效，中間休息節次不計算為gaps（間隔節次）。</translation>
     </message>
 </context>
@@ -40079,33 +40149,33 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="39"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">權重百分比必須是100%</translation>
+        <translation>權重百分比必須是100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="14"/>
         <source>Modify students min hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改學生班級每天最小上課節次</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="62"/>
         <source>Min hours</source>
-        <translation type="unfinished">最小節次</translation>
+        <translation>最小節次</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="95"/>
         <source>Allow empty days</source>
-        <translation type="unfinished">允許整天不排課</translation>
+        <translation>允許整天空天都不排課</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="110"/>
         <source>OK</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="117"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
 </context>
 <context>
@@ -40334,32 +40404,32 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssethomeroomform_template.ui" line="14"/>
         <source>Modify students set home room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改學生班級有一組主教室</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomform_template.ui" line="20"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomform_template.ui" line="27"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomform_template.ui" line="40"/>
         <source>Room</source>
-        <translation type="unfinished">教室</translation>
+        <translation>教室</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomform_template.ui" line="69"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">權重百分比建議是: 0%-100%</translation>
+        <translation>權重百分比建議是: 0%-100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomform_template.ui" line="98"/>
         <source>Students set</source>
-        <translation type="unfinished">學生設定</translation>
+        <translation>學生設定</translation>
     </message>
 </context>
 <context>
@@ -40543,32 +40613,32 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Modify students set max building changes per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改學生班級每天最大教學樓棟變化</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="28"/>
         <source>Students</source>
-        <translation type="unfinished">學生</translation>
+        <translation>學生</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="80"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">權重百分比必須是100%</translation>
+        <translation>權重百分比必須是100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="101"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="108"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="119"/>
         <source>Max building changes per day</source>
-        <translation type="unfinished">對於每天最大樓棟變化</translation>
+        <translation>對於每天最大樓棟變化</translation>
     </message>
 </context>
 <context>
@@ -40596,32 +40666,32 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Modify students set max building changes per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改學生班級每週最大教學樓棟變化</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="28"/>
         <source>Students</source>
-        <translation type="unfinished">學生</translation>
+        <translation>學生</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="80"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">權重百分比必須是100%</translation>
+        <translation>權重百分比必須是100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="101"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="108"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="119"/>
         <source>Max building changes per week</source>
-        <translation type="unfinished"></translation>
+        <translation>對於每週最大樓棟變化</translation>
     </message>
 </context>
 <context>
@@ -40655,32 +40725,32 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="14"/>
         <source>Modify students set max days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改學生班級的每週最大上課天數</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="28"/>
         <source>Students set</source>
-        <translation type="unfinished">學生設定</translation>
+        <translation>學生設定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="64"/>
         <source>Max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>每週最大上課天數</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="81"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="88"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="137"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">權重百分比必須是100%</translation>
+        <translation>權重百分比必須是100%</translation>
     </message>
 </context>
 <context>
@@ -40844,34 +40914,34 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Students</source>
-        <translation type="unfinished">學生</translation>
+        <translation>學生</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify students set max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改學生班級最大連續上課時間</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="118"/>
         <source>Max hours continuously</source>
-        <translation type="unfinished">最大連續上課節次</translation>
+        <translation>最大連續上課節次</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="155"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="148"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="77"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">權重百分比建議是: 0%-100%</translation>
+        <translation>權重百分比建議是: 0%-100%</translation>
     </message>
 </context>
 <context>
@@ -40898,34 +40968,34 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="28"/>
         <source>Students</source>
-        <translation type="unfinished">學生</translation>
+        <translation>學生</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify students set max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改學生班級每天最大上課節次</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="155"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="148"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="118"/>
         <source>Max hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>每日最大上課時數</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="77"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">權重百分比建議是: 0%-100%</translation>
+        <translation>權重百分比建議是: 0%-100%</translation>
     </message>
 </context>
 <context>
@@ -40953,32 +41023,32 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Modify students set min gaps between building changes</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改學生班級當遇到課程變換教學大樓上課時的最小課間休息節次</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="28"/>
         <source>Students</source>
-        <translation type="unfinished">學生</translation>
+        <translation>學生班級</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="80"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">權重百分比必須是100%</translation>
+        <translation>權重百分比必須是100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="101"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="108"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="119"/>
         <source>Min gaps between building changes</source>
-        <translation type="unfinished"></translation>
+        <translation>換教學大樓上課時，最小的課間休息間隔節次</translation>
     </message>
 </context>
 <context>
@@ -41526,33 +41596,33 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="104"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="111"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="50"/>
         <source>Room</source>
-        <translation type="unfinished">教室</translation>
+        <translation>教室</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="14"/>
         <source>Modify subject preferred room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改學科有一首選教室</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="28"/>
         <source>Subject</source>
-        <translation type="unfinished"></translation>
+        <translation>學科</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="87"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">權重百分比建議是: 0%-100%</translation>
+        <translation>權重百分比建議是: 0%-100%</translation>
     </message>
 </context>
 <context>
@@ -41729,38 +41799,38 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify teacher activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改老師的每日最大教學節次的值</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>教學班 標籤</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="60"/>
         <source>Teacher</source>
-        <translation type="unfinished">老師</translation>
+        <translation>老師</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="112"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">權重百分比建議是: 0%-100%</translation>
+        <translation>權重百分比建議是: 0%-100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="153"/>
         <source>Max hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>每日最大上課時數</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="183"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="190"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
 </context>
 <context>
@@ -41788,32 +41858,32 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacherhomeroomform_template.ui" line="14"/>
         <source>Modify teacher home room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改一個教師的主教室</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomform_template.ui" line="20"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomform_template.ui" line="27"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomform_template.ui" line="40"/>
         <source>Room</source>
-        <translation type="unfinished">教室</translation>
+        <translation>教室</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomform_template.ui" line="69"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">權重百分比建議是: 0%-100%</translation>
+        <translation>權重百分比建議是: 0%-100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomform_template.ui" line="98"/>
         <source>Teacher</source>
-        <translation type="unfinished">老師</translation>
+        <translation>老師</translation>
     </message>
 </context>
 <context>
@@ -41997,32 +42067,32 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Modify teacher max building changes per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改老師每天最大教學樓棟變化</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="28"/>
         <source>Teacher</source>
-        <translation type="unfinished">老師</translation>
+        <translation>老師</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="80"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">權重百分比必須是100%</translation>
+        <translation>權重百分比必須是100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="101"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="108"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="119"/>
         <source>Max building changes per day</source>
-        <translation type="unfinished">對於每天最大樓棟變化</translation>
+        <translation>對於每天最大樓棟變化</translation>
     </message>
 </context>
 <context>
@@ -42050,32 +42120,32 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Modify teacher max building changes per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改老師每週最大教學樓棟變化</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="28"/>
         <source>Teacher</source>
-        <translation type="unfinished">老師</translation>
+        <translation>老師</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="80"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">權重百分比必須是100%</translation>
+        <translation>權重百分比必須是100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="101"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="108"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="119"/>
         <source>Max building changes per week</source>
-        <translation type="unfinished"></translation>
+        <translation>對於每週最大樓棟變化</translation>
     </message>
 </context>
 <context>
@@ -42108,33 +42178,33 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="147"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="154"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="14"/>
         <source>Modify teacher max days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改老師每週最多上課天數</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="28"/>
         <source>Teacher</source>
-        <translation type="unfinished">老師</translation>
+        <translation>老師</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="77"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">權重百分比必須是100%</translation>
+        <translation>權重百分比必須是100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="117"/>
         <source>Max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>每週最大上課天數</translation>
     </message>
 </context>
 <context>
@@ -42167,33 +42237,33 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="141"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="148"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="67"/>
         <source>Teacher</source>
-        <translation type="unfinished">老師</translation>
+        <translation>老師</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="14"/>
         <source>Modify teacher max gaps per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改老師每天最大課間休息時隙節次</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="120"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">權重百分比必須是100%</translation>
+        <translation>權重百分比必須是100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="97"/>
         <source>Max gaps per day</source>
-        <translation type="unfinished"></translation>
+        <translation>每天課間休息時隙節次的最大間隔</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="32"/>
@@ -42291,34 +42361,34 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="148"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="155"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify teacher max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改老師的最大可連續上課時間</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="118"/>
         <source>Max hours continuously</source>
-        <translation type="unfinished">最大連續上課節次</translation>
+        <translation>最大連續上課節次</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Teacher</source>
-        <translation type="unfinished">老師</translation>
+        <translation>老師</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="77"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">權重百分比建議是: 0%-100%</translation>
+        <translation>權重百分比建議是: 0%-100%</translation>
     </message>
 </context>
 <context>
@@ -42332,7 +42402,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform.cpp" line="83"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">無效的權重百分比</translation>
+        <translation>無效的權重百分比</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform.cpp" line="93"/>
@@ -42345,34 +42415,34 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="148"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="155"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="14"/>
         <source>Modify teacher max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改老師每天最大上課節次</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="118"/>
         <source>Max hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>每日最大上課時數</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="28"/>
         <source>Teacher</source>
-        <translation type="unfinished">老師</translation>
+        <translation>老師</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="77"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">權重百分比建議是: 0%-100%</translation>
+        <translation>權重百分比建議是: 0%-100%</translation>
     </message>
 </context>
 <context>
@@ -42406,32 +42476,32 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="14"/>
         <source>Modify teacher min days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改老師每週最少上課天數</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="26"/>
         <source>Teacher</source>
-        <translation type="unfinished">老師</translation>
+        <translation>老師</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="71"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">權重百分比必須是100%</translation>
+        <translation>權重百分比必須是100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="94"/>
         <source>Min days per week</source>
-        <translation type="unfinished">每週最小上課天數</translation>
+        <translation>每週最小上課天數</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="109"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="116"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
 </context>
 <context>
@@ -42459,32 +42529,32 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Modify teacher min gaps between building changes</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改老師當遇到課程換教學大樓上課時的間隔休息節次</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="28"/>
         <source>Teacher</source>
-        <translation type="unfinished">老師</translation>
+        <translation>老師</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="80"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">權重百分比必須是100%</translation>
+        <translation>權重百分比必須是100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="101"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="108"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="119"/>
         <source>Min gaps between building changes</source>
-        <translation type="unfinished"></translation>
+        <translation>換教學大樓上課時，最小的休息間隔節次</translation>
     </message>
 </context>
 <context>
@@ -42496,32 +42566,32 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform.cpp" line="105"/>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform.cpp" line="133"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform.cpp" line="85"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">無效的權重百分比</translation>
+        <translation>無效的權重百分比</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform.cpp" line="90"/>
         <source>Invalid weight (percentage) - must be 100%</source>
-        <translation type="unfinished">權重百分比必須是100%</translation>
+        <translation>權重百分比必須是100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform.cpp" line="95"/>
         <source>Allow empty days check box must be checked. If you need to not allow empty days for a teacher, please use the constraint teacher min days per week</source>
-        <translation type="unfinished">若要讓整天不排課的空天複選框生效必須進行檢查。如果不允許老師整天不排課的空天，請用約束教師每週的最小上課天數</translation>
+        <translation>若要讓整天不排課的空天複選框生效必須進行檢查。如果不允許老師整天不排課的空天，請用約束教師每週的最小上課天數</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform.cpp" line="106"/>
         <source>Invalid teacher</source>
-        <translation type="unfinished">無效的老師</translation>
+        <translation>無效的老師</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform.cpp" line="133"/>
         <source>This check box must remain checked. If you really need to not allow empty days for this teacher, please use constraint teacher min days per week</source>
-        <translation type="unfinished">此複選框必須保持選中狀態。如果你真的需要，不允許空天這位老師，請透過限制老師每週的最小上課節次</translation>
+        <translation>此複選框必須保持選中狀態。如果你真的需要，不允許這位老師有一天的空天不排課，請透過限制老師每週的最小上課節次</translation>
     </message>
 </context>
 <context>
@@ -42673,34 +42743,34 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="151"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="158"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="121"/>
         <source>Max hours continuously</source>
-        <translation type="unfinished">最大連續上課節次</translation>
+        <translation>最大連續上課節次</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify teachers activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修訂教師活動標籤連續的最大時間</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>教學班 標籤</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="80"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">權重百分比建議是: 0%-100%</translation>
+        <translation>權重百分比建議是: 0%-100%</translation>
     </message>
 </context>
 <context>
@@ -42732,33 +42802,33 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify teachers activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改老師的每日最大教學節次的值</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>教學班 標籤</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="80"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">權重百分比建議是: 0%-100%</translation>
+        <translation>權重百分比建議是: 0%-100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="121"/>
         <source>Max hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>每日最大上課時數節次</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="151"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="158"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
 </context>
 <context>
@@ -43002,27 +43072,27 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="14"/>
         <source>Modify teachers max gaps per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改老師每天最大課間休息時隙節次</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="105"/>
         <source>Ok</source>
-        <translation type="unfinished">確定</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="112"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="84"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">權重百分比必須是100%</translation>
+        <translation>權重百分比必須是100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="61"/>
         <source>Max gaps per day</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="32"/>
@@ -43056,7 +43126,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="14"/>
         <source>Modify teachers max gaps per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>修改老師每週最大課間休息時隙節次</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="105"/>
@@ -44075,47 +44145,47 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>QDialogButtonBox</name>
     <message>
-        <location filename="../src/interface/fet.cpp" line="634"/>
+        <location filename="../src/interface/fet.cpp" line="637"/>
         <source>&amp;OK</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation>&amp;確定</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="636"/>
+        <location filename="../src/interface/fet.cpp" line="639"/>
         <source>OK</source>
         <translation>確定</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="639"/>
+        <location filename="../src/interface/fet.cpp" line="642"/>
         <source>&amp;Cancel</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation>&amp;取消</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="641"/>
+        <location filename="../src/interface/fet.cpp" line="644"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="644"/>
+        <location filename="../src/interface/fet.cpp" line="647"/>
         <source>&amp;Yes</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation>&amp;是</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="646"/>
+        <location filename="../src/interface/fet.cpp" line="649"/>
         <source>Yes to &amp;All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation>&amp;以下全部皆確認為:&apos;是&apos;</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="650"/>
+        <location filename="../src/interface/fet.cpp" line="653"/>
         <source>N&amp;o to All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation>&amp;以下全部皆確認為:&apos;否&apos;</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="648"/>
+        <location filename="../src/interface/fet.cpp" line="651"/>
         <source>&amp;No</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation>&amp;否</translation>
@@ -44124,121 +44194,121 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>RandomSeedDialog</name>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="340"/>
         <location filename="../src/interface/fetmainform.cpp" line="341"/>
+        <location filename="../src/interface/fetmainform.cpp" line="342"/>
         <source>Allowed minimum %1 to maximum %2</source>
         <translation>允許的最小值為%1 到 最大值為 %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="329"/>
+        <location filename="../src/interface/fetmainform.cpp" line="330"/>
         <source>Random seed</source>
         <translation>亂數種子</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="331"/>
+        <location filename="../src/interface/fetmainform.cpp" line="332"/>
         <source>Random seed X component:</source>
         <comment>Means the X component of the random seed (random seed has 2 components, X and Y). Please keep translation short</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="333"/>
+        <location filename="../src/interface/fetmainform.cpp" line="334"/>
         <source>Random seed Y component:</source>
         <comment>Means the Y component of the random seed (random seed has 2 components, X and Y). Please keep translation short</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="335"/>
+        <location filename="../src/interface/fetmainform.cpp" line="336"/>
         <source>OK</source>
         <translation>確定</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="337"/>
+        <location filename="../src/interface/fetmainform.cpp" line="338"/>
         <source>Help</source>
         <translation>幫助</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="338"/>
+        <location filename="../src/interface/fetmainform.cpp" line="339"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="388"/>
+        <location filename="../src/interface/fetmainform.cpp" line="389"/>
         <source>FET information</source>
         <translation>FET信息</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="389"/>
+        <location filename="../src/interface/fetmainform.cpp" line="390"/>
         <source>You can control the random behaviour of FET with this function</source>
         <translation>您可以使用這個功能來控制FET的亂數產生行為</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="390"/>
+        <location filename="../src/interface/fetmainform.cpp" line="391"/>
         <source>The random seed is the state of the random number generator.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="391"/>
+        <location filename="../src/interface/fetmainform.cpp" line="392"/>
         <source>It has two components, X and Y.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="392"/>
+        <location filename="../src/interface/fetmainform.cpp" line="393"/>
         <source>X is a value at least %1 and at most %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="393"/>
+        <location filename="../src/interface/fetmainform.cpp" line="394"/>
         <source>Y is a value at least %1 and at most %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="394"/>
+        <location filename="../src/interface/fetmainform.cpp" line="395"/>
         <source>The random seed before the generation of a timetable (the X and Y components) is saved on disk in the corresponding timetables directory, so that you can simulate again the same generation after that.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="396"/>
+        <location filename="../src/interface/fetmainform.cpp" line="397"/>
         <source>Mode of operation: to obtain the same timetable twice, give the random seed two values (say X=1234, Y=12345), then generate single, then make it again the same values (X=1234 and Y=12345), then generate single again. The timetables will be the same. If you generate multiple instead of single, the first set of timetables will be the same as the second set (if you generate the same number of timetables) but of course timetables inside each set will be different. If you enter the same random seed (X and Y) on different computers (but using the same FET version, see note below) and generate single, the timetables will be the same (if you generate multiple, the sets of timetables will correspond, the first timetable from simulation 1 with first timetable from simulation 2, etc.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="405"/>
+        <location filename="../src/interface/fetmainform.cpp" line="406"/>
         <source>Note: of course you need exactly the same conditions to duplicate the same simulations (so, you need exactly the same data - activities, constraints, etc.).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="407"/>
+        <location filename="../src/interface/fetmainform.cpp" line="408"/>
         <source>Note: for different versions of FET, the behavior of generation may be totally different, even for the same data and the same random seed (same X and same Y), due to possible changes in the algorithm. You need to consider this as a precaution.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="410"/>
+        <location filename="../src/interface/fetmainform.cpp" line="411"/>
         <source>Note: when you start FET, each time, the random seed X is the number of seconds elapsed since 1 January 1970 and the random seed Y is the next number in the Y series, after the number of seconds elapsed since 1 January 1970</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="413"/>
+        <location filename="../src/interface/fetmainform.cpp" line="414"/>
         <source>After you generate (even partially), the random seed (X and Y components) will change (each call of the random number generator updates the random seed components to the next numbers in the sequence, and there are many calls to this random generating routine in the generate function)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="416"/>
+        <location filename="../src/interface/fetmainform.cpp" line="417"/>
         <source>This setting is useful for more things, maybe one thing is bug report: send you file along with the random seed at the start of generating (the two components, X and Y, are saved in the timetable directory at the start of generation)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="425"/>
+        <location filename="../src/interface/fetmainform.cpp" line="426"/>
         <source>The random seed X component must be at least %1 and at most %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="431"/>
+        <location filename="../src/interface/fetmainform.cpp" line="432"/>
         <source>The random seed Y component must be at least %1 and at most %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="425"/>
-        <location filename="../src/interface/fetmainform.cpp" line="431"/>
+        <location filename="../src/interface/fetmainform.cpp" line="426"/>
+        <location filename="../src/interface/fetmainform.cpp" line="432"/>
         <source>FET warning</source>
         <translation type="unfinished">FET 警告</translation>
     </message>
@@ -44466,27 +44536,27 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="58"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="65"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="83"/>
         <source>Sort</source>
-        <translation type="unfinished">排序</translation>
+        <translation>排序</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="92"/>
         <source>Close</source>
-        <translation type="unfinished">關閉</translation>
+        <translation>關閉</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="26"/>
@@ -44500,43 +44570,43 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/engine/rules.cpp" line="104"/>
         <location filename="../src/engine/rules.cpp" line="4420"/>
         <source>Monday</source>
-        <translation type="unfinished"></translation>
+        <translation>星期一</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="105"/>
         <location filename="../src/engine/rules.cpp" line="4421"/>
         <source>Tuesday</source>
-        <translation type="unfinished"></translation>
+        <translation>星期二</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="106"/>
         <location filename="../src/engine/rules.cpp" line="4422"/>
         <source>Wednesday</source>
-        <translation type="unfinished"></translation>
+        <translation>星期三</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="107"/>
         <location filename="../src/engine/rules.cpp" line="4423"/>
         <source>Thursday</source>
-        <translation type="unfinished"></translation>
+        <translation>星期四</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="108"/>
         <location filename="../src/engine/rules.cpp" line="4424"/>
         <source>Friday</source>
-        <translation type="unfinished"></translation>
+        <translation>星期五</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="100"/>
         <location filename="../src/engine/rules.cpp" line="4416"/>
         <source>Default institution</source>
-        <translation type="unfinished"></translation>
+        <translation>預設機構</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="101"/>
         <location filename="../src/engine/rules.cpp" line="4417"/>
         <source>Default comments</source>
-        <translation type="unfinished"></translation>
+        <translation>預設備註</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="160"/>
@@ -44578,7 +44648,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/engine/rules.cpp" line="10427"/>
         <location filename="../src/engine/rules.cpp" line="14093"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="459"/>
@@ -44590,7 +44660,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/engine/rules.cpp" line="612"/>
         <location filename="../src/engine/rules.cpp" line="694"/>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="580"/>
@@ -44635,7 +44705,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/engine/rules.cpp" line="10432"/>
         <location filename="../src/engine/rules.cpp" line="14108"/>
         <source>Skip rest</source>
-        <translation type="unfinished"></translation>
+        <translation>跳過重設</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="585"/>
@@ -45611,19 +45681,22 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/savetimetableconfirmationform.cpp" line="52"/>
         <source>The added constraints will have the &apos;permanently locked&apos; tag set to false, so you can also unlock the activities from the &apos;Timetable&apos; menu, without interfering with the initial constraints which are made by you &apos;permanently locked&apos;</source>
-        <translation>添加的約束將有“永久鎖定”標記設置為false，所以你也可以將從“時間表”選單中的教學活動解鎖，沒有與“永久鎖定”由你由最初的約束干擾
+        <translation>增加的約束將有“永久鎖定”標記設置為false，所以你也可以將從“時間表”選單中的教學活動解鎖，沒有與“永久鎖定”由你由最初的約束干擾
 
 </translation>
     </message>
     <message>
         <location filename="../src/interface/savetimetableconfirmationform.cpp" line="55"/>
         <source>This option is useful for institutions where you obtain a timetable, then some small changes appear, and you need to regenerate timetable, but respecting in a large proportion the old timetable</source>
-        <translation type="unfinished"></translation>
+        <translation>這個選項在協助您的學校機構取得一個排課時間表是很有用的!
+當您有異動少許的資料時，你就需要重新生成一個新的排課時間表。
+</translation>
     </message>
     <message>
         <location filename="../src/interface/savetimetableconfirmationform.cpp" line="58"/>
         <source>Current data file will not be affected by anything, locking constraints will only be added to the file you select to save (you can save current datafile and open saved timetable file after that to check it)</source>
-        <translation type="unfinished"></translation>
+        <translation>當前的數據文件不會受到任何影響，任何鎖定的限制條件將只被增加到您選擇的檔案保存（可以保存當前數據文件並打開保存文件的排課時間表之後，要檢查）文件
+</translation>
     </message>
 </context>
 <context>
@@ -45654,22 +45727,22 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="477"/>
         <source>Add a second constraint or not?</source>
-        <translation type="unfinished"></translation>
+        <translation>是否增加第二限制條件?</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="487"/>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="490"/>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="560"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET信息</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="561"/>
@@ -45971,7 +46044,8 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="727"/>
         <source>If you have many subgroups and you don&apos;t explicitely use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">如果你有很多次級教學子群，你使用它們的方式不明確，建議您使用三個global settings：隱藏組合框分組，隱藏在教學活動計畫，並且次級教學群組計畫排課時間表不寫入硬碟。
+</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="734"/>
@@ -46210,22 +46284,22 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="208"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="215"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="229"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="236"/>
         <source>Remove all</source>
-        <translation type="unfinished"></translation>
+        <translation>移除所有</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="292"/>
@@ -46582,12 +46656,12 @@ Please report error. FET will now abort current operation</source>
 <context>
     <name>StartTimetablePrint</name>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="145"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="146"/>
         <source>FET warning</source>
         <translation>FET 警告</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="146"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="147"/>
         <source>Printing is currently not possible, because you modified the dataset. Please generate a new timetable before printing.</source>
         <translation>現在無法進行列印，因為您已經修改過資料設定。重印前請先再生成一個新的排課時間表。</translation>
     </message>
@@ -46839,7 +46913,7 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/statisticsexport.cpp" line="1802"/>
         <location filename="../src/engine/statisticsexport.cpp" line="2076"/>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">取消</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="1241"/>
@@ -47285,7 +47359,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="373"/>
         <source>No. of activities</source>
-        <translation type="unfinished">缺少教學活動設定</translation>
+        <translation>No.教學活動設定</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="374"/>
@@ -47666,7 +47740,7 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/subgroupsform.cpp" line="442"/>
         <location filename="../src/interface/subgroupsform.cpp" line="470"/>
         <source>Invalid selected group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">無效的群組</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="147"/>
@@ -47757,17 +47831,17 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="103"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="110"/>
         <source>Modify</source>
-        <translation type="unfinished">修改</translation>
+        <translation>修改</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="149"/>
         <source>Sort</source>
-        <translation type="unfinished">排序</translation>
+        <translation>排序</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="133"/>
@@ -47929,17 +48003,17 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="39"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="46"/>
         <source>Rename</source>
-        <translation type="unfinished">重命名</translation>
+        <translation>重命名</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="53"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="69"/>
@@ -47972,7 +48046,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subjectsstatisticsform.cpp" line="54"/>
         <source>No. of activities</source>
-        <translation>缺少教學活動設定</translation>
+        <translation>No.教學活動設定</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsstatisticsform.cpp" line="55"/>
@@ -48130,17 +48204,17 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="39"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="46"/>
         <source>Rename</source>
-        <translation type="unfinished">重命名</translation>
+        <translation>重命名</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="53"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="69"/>
@@ -48173,7 +48247,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/teachersstatisticsform.cpp" line="54"/>
         <source>No. of activities</source>
-        <translation>缺少教學活動設定</translation>
+        <translation>No.教學活動設定</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersstatisticsform.cpp" line="55"/>
@@ -48213,927 +48287,1122 @@ Please report error. FET will now abort current operation</source>
 <context>
     <name>TimetableExport</name>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="722"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1238"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1523"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1582"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1648"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1712"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1788"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2123"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2290"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2346"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2403"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2440"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2477"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2518"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2559"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2618"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2677"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2720"/>
+        <location filename="../src/engine/timetableexport.cpp" line="770"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1291"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1583"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1642"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1708"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1772"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1830"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2165"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2332"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2388"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2445"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2482"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2519"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2560"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2601"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2660"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2719"/>
         <location filename="../src/engine/timetableexport.cpp" line="2762"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2808"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2856"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2910"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2964"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3007"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3050"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3096"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3144"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3178"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3212"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3248"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3284"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3323"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3366"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3413"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3459"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3494"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3529"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3569"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3610"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3660"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3712"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3752"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3793"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3838"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3886"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3934"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3981"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4017"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4054"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2804"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2850"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2898"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2952"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3006"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3049"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3092"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3138"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3186"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3220"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3254"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3290"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3326"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3365"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3408"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3455"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3501"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3536"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3571"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3611"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3652"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3702"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3754"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3794"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3835"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3880"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3928"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3976"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4023"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4059"/>
         <location filename="../src/engine/timetableexport.cpp" line="4096"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4137"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4195"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4138"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4179"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4237"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4296"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4332"/>
         <source>Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1542"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1557"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2265"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1602"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1617"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2307"/>
         <source>End of file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1548"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1608"/>
         <source>Conflicts of %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1550"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2138"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4443"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1610"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2180"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4557"/>
         <source>Warning! Only %1 out of %2 activities placed!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="753"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1251"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1562"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1628"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1692"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1754"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2073"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2269"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2325"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2382"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2419"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2456"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2497"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2537"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2597"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2656"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2699"/>
+        <location filename="../src/engine/timetableexport.cpp" line="801"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1304"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1622"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1688"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1752"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1814"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2133"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2311"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2367"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2424"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2461"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2498"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2539"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2579"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2639"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2698"/>
         <location filename="../src/engine/timetableexport.cpp" line="2741"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2787"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2833"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2889"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2943"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2986"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3029"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3075"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3121"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3157"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3191"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3227"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3263"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3302"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3343"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3392"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3438"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3473"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3508"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3548"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3589"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3639"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3691"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3731"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3772"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3817"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3863"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3913"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3960"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3996"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4033"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2783"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2829"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2875"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2931"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2985"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3028"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3071"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3117"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3163"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3199"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3233"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3269"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3305"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3344"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3385"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3434"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3480"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3515"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3550"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3590"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3631"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3681"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3733"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3773"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3814"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3859"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3905"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3955"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4002"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4038"/>
         <location filename="../src/engine/timetableexport.cpp" line="4075"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4116"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4174"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4233"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4117"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4158"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4216"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4275"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4311"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4347"/>
         <source>Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4445"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4559"/>
         <source>Institution name</source>
         <translation type="unfinished">學校機構名稱</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4446"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4560"/>
         <source>Comments</source>
         <translation type="unfinished">注釋</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2141"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2183"/>
         <source>To do a page-break only after every second timetable, delete &quot;page-break-before: always;&quot; in &quot;table.even_table&quot;.</source>
         <comment>Please keep fields in quotes as they are, untranslated.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2143"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2185"/>
         <source>To hide an element just write the following phrase into the element: %1 (without quotes).</source>
         <comment>%1 is a short phrase beginning and ending with quotes, and we want the user to be able to add it, but without quotes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2303"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2359"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2572"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2631"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2869"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2923"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2345"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2401"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2614"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2673"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2911"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2965"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8661"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8672"/>
         <source>Year</source>
         <translation type="unfinished">入學年</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2306"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2362"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2575"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2634"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2348"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2404"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2617"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2676"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8679"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8690"/>
         <source>Group</source>
         <translation type="unfinished">組</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2319"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2375"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2490"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2531"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2588"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2647"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2691"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2361"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2417"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2532"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2573"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2630"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2689"/>
         <location filename="../src/engine/timetableexport.cpp" line="2733"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2778"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2824"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2880"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2934"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2978"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3021"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3066"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3112"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3296"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3336"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3386"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3432"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3542"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3582"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3632"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3684"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3810"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3855"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3907"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3954"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4068"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2775"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2820"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2866"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2922"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2976"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3020"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3063"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3108"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3154"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3338"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3378"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3428"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3474"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3584"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3624"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3674"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3726"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3852"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3897"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3949"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3996"/>
         <location filename="../src/engine/timetableexport.cpp" line="4110"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4166"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4225"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4152"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4208"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4267"/>
         <source>back to the top</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2576"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2635"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2870"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2924"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4147"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4205"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4460"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7964"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8075"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2618"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2677"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2912"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2966"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4189"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4247"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4574"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8078"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8189"/>
         <source>Detailed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2577"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2636"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2871"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2925"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4148"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4206"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4462"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7965"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8076"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2619"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2678"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2913"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2967"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4190"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4248"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4576"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8079"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8190"/>
         <source>Less detailed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3898"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3946"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3940"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3988"/>
         <source>Subject</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2250"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2292"/>
         <source>Style the teachers free periods</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="735"/>
+        <location filename="../src/engine/timetableexport.cpp" line="783"/>
         <source>Generation started on: %1</source>
         <comment>%1 is the time</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="739"/>
-        <location filename="../src/engine/timetableexport.cpp" line="747"/>
+        <location filename="../src/engine/timetableexport.cpp" line="787"/>
+        <location filename="../src/engine/timetableexport.cpp" line="795"/>
         <source>This file was automatically generated by FET %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="743"/>
+        <location filename="../src/engine/timetableexport.cpp" line="791"/>
         <source>Generation ended on: %1</source>
         <comment>%1 is the time</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="745"/>
+        <location filename="../src/engine/timetableexport.cpp" line="793"/>
         <source>Random seed at the end of generation is: X=%1, Y=%2</source>
         <comment>The random seed has two components, X and Y</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1534"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1594"/>
         <source>Soft conflicts of %1</source>
         <comment>%1 is the file name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1536"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1551"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1596"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1611"/>
         <source>Generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is the date and time of generation</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1538"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1598"/>
         <source>Total soft conflicts:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1553"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1613"/>
         <source>Total conflicts:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1813"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1855"/>
         <source>No timetable was written, because from the settings you disabled writing any timetable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1814"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1856"/>
         <source>The exception is that after each successful (complete) timetable generation the %1 file will be written.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1818"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1860"/>
         <source>File generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is the date and time of generation</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1868"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1872"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1876"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1873"/>
+        <source>students</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1875"/>
+        <source>students - disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/engine/timetableexport.cpp" line="1880"/>
+        <source>teachers - disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/engine/timetableexport.cpp" line="1882"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1883"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1884"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1885"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1894"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1898"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1902"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1906"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1908"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1909"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1910"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1911"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1920"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1924"/>
+        <source>View statistics: %1, %2.</source>
+        <comment>%1 and %2 are two files in HTML format, to show statistics for students and teachers. The user can click on one file to view it</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/engine/timetableexport.cpp" line="1928"/>
         <location filename="../src/engine/timetableexport.cpp" line="1932"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1934"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1935"/>
         <location filename="../src/engine/timetableexport.cpp" line="1936"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1937"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1946"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1950"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1940"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1942"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1943"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1944"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1945"/>
         <location filename="../src/engine/timetableexport.cpp" line="1954"/>
         <location filename="../src/engine/timetableexport.cpp" line="1958"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1960"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1961"/>
         <location filename="../src/engine/timetableexport.cpp" line="1962"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1963"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1972"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1976"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1978"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1979"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1990"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1966"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1968"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1969"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1970"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1971"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1980"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1984"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1988"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1992"/>
         <location filename="../src/engine/timetableexport.cpp" line="1994"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1998"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2002"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2004"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2005"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1995"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1996"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1997"/>
         <location filename="../src/engine/timetableexport.cpp" line="2006"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2007"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2016"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2010"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2014"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2018"/>
         <location filename="../src/engine/timetableexport.cpp" line="2020"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2024"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2028"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2030"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2031"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2021"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2022"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2023"/>
         <location filename="../src/engine/timetableexport.cpp" line="2032"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2033"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2042"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2046"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2036"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2038"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2039"/>
         <location filename="../src/engine/timetableexport.cpp" line="2050"/>
         <location filename="../src/engine/timetableexport.cpp" line="2054"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2056"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2057"/>
         <location filename="../src/engine/timetableexport.cpp" line="2058"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2059"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2062"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2064"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2065"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2066"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2067"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2076"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2080"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2084"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2088"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2090"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2091"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2092"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2093"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2102"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2106"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2110"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2114"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2116"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2117"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2118"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2119"/>
         <source>disabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2063"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5059"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5117"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5184"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5247"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5312"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5374"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5445"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5516"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5597"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5677"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5756"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5832"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5906"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5982"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6069"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6154"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6241"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6322"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6373"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6424"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6475"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6532"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6583"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6637"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6696"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6757"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6823"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6885"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6950"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7012"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7071"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7131"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7197"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7260"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7326"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7387"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7479"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7572"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7665"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7763"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7851"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7946"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8057"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8167"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2123"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5173"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5231"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5298"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5361"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5426"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5488"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5559"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5630"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5711"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5791"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5870"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5946"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6020"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6096"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6183"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6268"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6355"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6436"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6487"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6538"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6589"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6646"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6697"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6751"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6810"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6871"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6937"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6999"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7064"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7126"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7185"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7245"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7311"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7374"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7440"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7501"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7593"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7686"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7779"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7877"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7965"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8060"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8171"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8281"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8433"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8458"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8622"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8652"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8782"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8787"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8813"/>
         <source>Timetable generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is the date and time of generation</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2135"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2177"/>
         <source>CSS Stylesheet of %1</source>
         <comment>%1 is the file name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2139"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2181"/>
         <source>Stylesheet generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is date and time</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2154"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2196"/>
         <source>Some programs import &quot;tfoot&quot; incorrectly. So we use &quot;tr.foot&quot; instead of &quot;tfoot&quot;.</source>
         <comment>Please keep tfoot and tr.foot untranslated, as they are in the original English phrase</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2219"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2261"/>
         <source>Be careful. You might get mutual and ambiguous styles. CSS means that the last definition will be used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2299"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2355"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2568"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2627"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2865"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2919"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3375"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3422"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3622"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3674"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3895"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3943"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4454"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2341"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2397"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2610"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2669"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2907"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2961"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3417"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3464"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3664"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3716"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3937"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3985"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4568"/>
         <source>Table of contents</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3620"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3672"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3722"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3762"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3662"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3714"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3764"/>
         <location filename="../src/engine/timetableexport.cpp" line="3804"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3849"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3846"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3891"/>
         <source>No rooms recorded in FET for %1.</source>
         <comment>%1 is the institution name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4147"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4148"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4205"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4206"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7964"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7965"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8075"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8076"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4189"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4190"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4247"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4248"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8078"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8079"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8189"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8190"/>
         <source>Teachers&apos; Free Periods</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4151"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4209"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4193"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4251"/>
         <source>Teacher has a single gap</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4152"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4210"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4194"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4252"/>
         <source>Teacher has a border gap</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4153"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4211"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4195"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4253"/>
         <source>Teacher has a big gap</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4154"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4212"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4196"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4254"/>
         <source>Teacher must come earlier</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4155"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4213"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4197"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4255"/>
         <source>Teacher must come much earlier</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4156"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4214"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4198"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4256"/>
         <source>Teacher must stay longer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4157"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4215"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4199"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4257"/>
         <source>Teacher must stay much longer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4158"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4216"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4200"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4258"/>
         <source>Teacher has a free day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4159"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4217"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4201"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4259"/>
         <source>Teacher is not available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="8003"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8114"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8117"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8228"/>
         <source>Single gap</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="8004"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8115"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8118"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8229"/>
         <source>Border gap</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="8005"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8116"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8119"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8230"/>
         <source>Big gap</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="8006"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8117"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8120"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8231"/>
         <source>Must come earlier</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="8007"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8118"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8121"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8232"/>
         <source>Must stay longer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="8008"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8119"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8122"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8233"/>
         <source>Must come much earlier</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="8009"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8120"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8123"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8234"/>
         <source>Must stay much longer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="8010"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8121"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8124"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8235"/>
         <source>Free day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="8011"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8125"/>
         <source>Not available</source>
         <comment>It refers to a teacher</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="8122"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8236"/>
         <source>Not available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1539"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8294"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8471"/>
+        <source>This is a teaser only. Values are not correct!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8298"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8475"/>
+        <source>This file doesn&apos;t list limits that are set by constraints. It contains statistics about the min and max values of the currently calculated solution.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8401"/>
+        <source>All teachers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8402"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8444"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8591"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8638"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8799"/>
+        <source>Free days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8403"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8592"/>
+        <source>Gaps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8404"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8593"/>
+        <source>Gaps per day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8405"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8594"/>
+        <source>Hours per day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8408"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8597"/>
+        <source>Sum</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8414"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8603"/>
+        <source>Average</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8420"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8609"/>
+        <source>Min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8426"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8615"/>
+        <source>Max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8443"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8452"/>
+        <source>Teacher</source>
+        <translation type="unfinished">老師</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8445"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8639"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8800"/>
+        <source>Total gaps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8446"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8640"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8668"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8686"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8801"/>
+        <source>Min gaps per day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8447"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8641"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8669"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8687"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8802"/>
+        <source>Max gaps per day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8448"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8642"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8664"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8682"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8803"/>
+        <source>Min hours per day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8449"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8643"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8665"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8683"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8804"/>
+        <source>Max hours per day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8590"/>
+        <source>All students</source>
+        <translation type="unfinished">全部學生</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8662"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8680"/>
+        <source>Min free days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8663"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8681"/>
+        <source>Max free days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8666"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8684"/>
+        <source>Min gaps per week</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8667"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8685"/>
+        <source>Max gaps per week</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="8637"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8646"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8798"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8807"/>
+        <source>Subgroup</source>
+        <translation type="unfinished">子組</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1599"/>
         <source>Soft conflicts list (in decreasing order):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1554"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1614"/>
         <source>Conflicts list (in decreasing order):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="760"/>
-        <location filename="../src/engine/timetableexport.cpp" line="770"/>
-        <location filename="../src/engine/timetableexport.cpp" line="776"/>
+        <location filename="../src/engine/timetableexport.cpp" line="808"/>
+        <location filename="../src/engine/timetableexport.cpp" line="818"/>
+        <location filename="../src/engine/timetableexport.cpp" line="824"/>
         <source>FET - Critical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="760"/>
+        <location filename="../src/engine/timetableexport.cpp" line="808"/>
         <source>Timetable not generated - cannot save it - this should not happen (please report bug)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="770"/>
-        <location filename="../src/engine/timetableexport.cpp" line="776"/>
+        <location filename="../src/engine/timetableexport.cpp" line="818"/>
+        <location filename="../src/engine/timetableexport.cpp" line="824"/>
         <source>Incomplete timetable - this should not happen - please report bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="848"/>
-        <location filename="../src/engine/timetableexport.cpp" line="882"/>
+        <location filename="../src/engine/timetableexport.cpp" line="896"/>
+        <location filename="../src/engine/timetableexport.cpp" line="930"/>
         <source>Added the following constraint to saved file:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="850"/>
-        <location filename="../src/engine/timetableexport.cpp" line="884"/>
+        <location filename="../src/engine/timetableexport.cpp" line="898"/>
+        <location filename="../src/engine/timetableexport.cpp" line="932"/>
         <source>Constraint
 %1 NOT added to saved file - duplicate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="721"/>
-        <location filename="../src/engine/timetableexport.cpp" line="752"/>
-        <location filename="../src/engine/timetableexport.cpp" line="944"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1237"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1250"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1522"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1561"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1581"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1627"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1647"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1691"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1711"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1753"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1787"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2072"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2122"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2268"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2289"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2324"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2345"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2381"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2402"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2418"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2439"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2455"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2476"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2496"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2517"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2536"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2558"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2596"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2617"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2655"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2676"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2698"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2719"/>
+        <location filename="../src/engine/timetableexport.cpp" line="769"/>
+        <location filename="../src/engine/timetableexport.cpp" line="800"/>
+        <location filename="../src/engine/timetableexport.cpp" line="992"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1290"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1303"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1582"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1621"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1641"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1687"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1707"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1751"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1771"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1813"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1829"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2132"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2164"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2310"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2331"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2366"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2387"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2423"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2444"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2460"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2481"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2497"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2518"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2538"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2559"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2578"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2600"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2638"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2659"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2697"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2718"/>
         <location filename="../src/engine/timetableexport.cpp" line="2740"/>
         <location filename="../src/engine/timetableexport.cpp" line="2761"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2786"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2807"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2832"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2855"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2888"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2909"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2942"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2963"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2985"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3006"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3028"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3049"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3074"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3095"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3120"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3143"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3156"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3177"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3190"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3211"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3226"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3247"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3262"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3283"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3301"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3322"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3342"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3365"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3391"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3412"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3437"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3458"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3472"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3493"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3507"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3528"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3547"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3568"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3588"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3609"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3638"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3659"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3690"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3711"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3730"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3751"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3771"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3792"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3816"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3837"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3862"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3885"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3912"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3933"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3959"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3980"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3995"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4016"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4032"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4053"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2782"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2803"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2828"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2849"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2874"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2897"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2930"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2951"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2984"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3005"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3027"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3048"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3070"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3091"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3116"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3137"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3162"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3185"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3198"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3219"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3232"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3253"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3268"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3289"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3304"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3325"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3343"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3364"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3384"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3407"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3433"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3454"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3479"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3500"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3514"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3535"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3549"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3570"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3589"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3610"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3630"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3651"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3680"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3701"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3732"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3753"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3772"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3793"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3813"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3834"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3858"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3879"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3904"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3927"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3954"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3975"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4001"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4022"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4037"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4058"/>
         <location filename="../src/engine/timetableexport.cpp" line="4074"/>
         <location filename="../src/engine/timetableexport.cpp" line="4095"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4115"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4136"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4173"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4194"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4232"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4116"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4137"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4157"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4178"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4215"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4236"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4274"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4295"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4310"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4331"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4346"/>
         <source>FET critical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="737"/>
+        <location filename="../src/engine/timetableexport.cpp" line="785"/>
         <source>Random seed at the start of generation is: X=%1, Y=%2</source>
         <comment>The random seed has two components, X and Y</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="944"/>
+        <location filename="../src/engine/timetableexport.cpp" line="992"/>
         <source>Could not save the data + timetable file on the hard disk - maybe hard disk is full</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1825"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1867"/>
         <source>Soft conflicts list - disabled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1833"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1893"/>
         <source>subgroups - disabled</source>
         <comment>It means the subgroups XML timetables are disabled</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1837"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1897"/>
         <source>teachers - disabled</source>
         <comment>It means the teachers XML timetables are disabled</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1841"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1901"/>
         <source>activities - disabled</source>
         <comment>It means the activities XML timetables are disabled</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1842"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1902"/>
         <source>View XML: %1, %2, %3.</source>
         <comment>%1, %2 and %3 are three files in XML format, subgroups, teachers and activities timetables. The user can click on one file to view it</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1851"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1911"/>
         <source>Timetables</source>
         <translation type="unfinished">課表</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1853"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1913"/>
         <source>Days Horizontal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1853"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1913"/>
         <source>Days Vertical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1853"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1913"/>
         <source>Time Horizontal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1853"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1913"/>
         <source>Time Vertical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1863"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1923"/>
         <source>Subgroups</source>
         <translation type="unfinished">子組</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1866"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1870"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1874"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1878"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1892"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1896"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1900"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1904"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1918"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1922"/>
         <location filename="../src/engine/timetableexport.cpp" line="1926"/>
         <location filename="../src/engine/timetableexport.cpp" line="1930"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1944"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1948"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1934"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1938"/>
         <location filename="../src/engine/timetableexport.cpp" line="1952"/>
         <location filename="../src/engine/timetableexport.cpp" line="1956"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1970"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1974"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1988"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1992"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1996"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2000"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2014"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2018"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2022"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2026"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2040"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2044"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1960"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1964"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1978"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1982"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1986"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1990"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2004"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2008"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2012"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2016"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2030"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2034"/>
         <location filename="../src/engine/timetableexport.cpp" line="2048"/>
         <location filename="../src/engine/timetableexport.cpp" line="2052"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2056"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2060"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2074"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2078"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2082"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2086"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2100"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2104"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2108"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2112"/>
         <source>view</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1889"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1949"/>
         <source>Groups</source>
         <translation type="unfinished">組</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1915"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1975"/>
         <source>Years</source>
         <translation type="unfinished">學年</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1941"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2001"/>
         <source>Teachers</source>
         <translation type="unfinished">老師</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1967"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2027"/>
         <source>Teachers Free Periods</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1985"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2045"/>
         <source>Rooms</source>
         <translation type="unfinished">教室</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2011"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2071"/>
         <source>Subjects</source>
         <translation type="unfinished">學科</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1823"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1865"/>
         <source>View the soft conflicts list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2037"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2097"/>
         <source>Activities</source>
         <translation type="unfinished">教學班</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6334"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6385"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6442"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6513"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6528"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6551"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6620"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6633"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6448"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6499"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6556"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6627"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6642"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6665"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6734"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6747"/>
         <source>All Activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1839"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1899"/>
         <source>activities</source>
         <translation type="unfinished">教學活動</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1835"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1878"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1895"/>
         <source>teachers</source>
         <translation type="unfinished">老師</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1831"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1891"/>
         <source>subgroups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">子組</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1533"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1547"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2134"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1593"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1607"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2176"/>
         <source>unnamed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -49746,433 +50015,445 @@ Please report error. FET will now abort current operation</source>
 <context>
     <name>TimetablePrintForm</name>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="1144"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1197"/>
         <source>Print timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="165"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="166"/>
         <source>Subgroups</source>
         <translation type="unfinished">子組</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="152"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="153"/>
         <source>Print timetable dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="166"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="167"/>
         <source>Groups</source>
         <translation type="unfinished">組</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="167"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="168"/>
         <source>Years</source>
         <translation type="unfinished">學年</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="168"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="169"/>
         <source>Teachers</source>
         <translation type="unfinished">老師</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="169"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="170"/>
         <source>Teachers Free Periods</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="170"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="171"/>
         <source>Rooms</source>
         <translation type="unfinished">教室</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="171"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="172"/>
         <source>Subjects</source>
         <translation type="unfinished">學科</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="172"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="811"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="173"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="822"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="838"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="857"/>
         <source>All activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="192"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="195"/>
         <source>Print</source>
         <translation type="unfinished">列印</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="194"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="197"/>
         <source>Days horizontal</source>
         <translation type="unfinished">水平軸以星期顯示</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="195"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="198"/>
         <source>Days vertical</source>
         <translation type="unfinished">垂直軸以星期顯示</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="196"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="199"/>
         <source>Time horizontal</source>
         <translation type="unfinished">時間節次以水平軸顯示</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="197"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="200"/>
         <source>Time vertical</source>
         <translation type="unfinished">時間節次以垂直軸顯示</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="215"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="218"/>
         <source>Options</source>
         <translation type="unfinished">選項</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="180"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="183"/>
         <source>All</source>
         <comment>Refers to a list of items, select all. Please keep translation short</comment>
         <translation type="unfinished">所有</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="182"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="174"/>
+        <source>Students Statistics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableprintform.cpp" line="175"/>
+        <source>Teachers Statistics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableprintform.cpp" line="185"/>
         <source>None</source>
         <comment>Refers to a list of items, select none. Please keep translation short</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="201"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="204"/>
         <source>Time horizontal per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="202"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="205"/>
         <source>Time vertical per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="220"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="223"/>
         <source>Page-break: none</source>
         <comment>No page-break between timetables. Please keep translation short</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="221"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="224"/>
         <source>Page-break: always</source>
         <comment>Page-break after each timetable. Please keep translation short</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="222"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="225"/>
         <source>Page-break: even</source>
         <comment>Page-break after each even timetable. Please keep translation short</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="236"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="239"/>
         <source>Portrait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="236"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="239"/>
         <source>Landscape</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="253"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="256"/>
         <source>Custom</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="255"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="258"/>
         <source>A0</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="256"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="259"/>
         <source>A1</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="257"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="260"/>
         <source>A2</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="258"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="261"/>
         <source>A3</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="259"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="262"/>
         <source>A4</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="260"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="263"/>
         <source>A5</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="261"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="264"/>
         <source>A6</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="262"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="265"/>
         <source>A7</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="263"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="266"/>
         <source>A8</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="264"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="267"/>
         <source>A9</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="265"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="268"/>
         <source>B0</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="266"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="269"/>
         <source>B1</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="267"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="270"/>
         <source>B2</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="268"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="271"/>
         <source>B3</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="269"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="272"/>
         <source>B4</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="270"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="273"/>
         <source>B5</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="271"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="274"/>
         <source>B6</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="272"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="275"/>
         <source>B7</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="273"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="276"/>
         <source>B8</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="274"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="277"/>
         <source>B9</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="275"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="278"/>
         <source>B10</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="276"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="279"/>
         <source>C5E</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="277"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="280"/>
         <source>Comm10E</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="278"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="281"/>
         <source>DLE</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="279"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="282"/>
         <source>Executive</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="280"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="283"/>
         <source>Folio</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="281"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="284"/>
         <source>Ledger</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="282"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="285"/>
         <source>Legal</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="283"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="286"/>
         <source>Letter</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="284"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="287"/>
         <source>Tabloid</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="304"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="307"/>
         <source>Detailed tables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="307"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="310"/>
         <source>Activity tags</source>
         <translation type="unfinished">教學班標籤</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="310"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="313"/>
         <source>Repeat vertical names</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="323"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="326"/>
         <source>Font size: %1 pt</source>
         <comment>pt means points for font size, when printing the timetable</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="347"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="350"/>
         <source>Activities padding: %1 px</source>
         <comment>px means pixels, when printing the timetable</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="370"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="373"/>
         <source>Space after table: +%1 px</source>
         <comment>px means pixels, when printing the timetable</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="393"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="396"/>
         <source>Split after: %1 names</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="416"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="419"/>
         <source>Left margin: %1 mm</source>
         <comment>mm means millimeters</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="439"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="442"/>
         <source>Top margin: %1 mm</source>
         <comment>mm means millimeters</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="462"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="465"/>
         <source>Right margin: %1 mm</source>
         <comment>mm means millimeters</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="485"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="488"/>
         <source>Bottom margin: %1 mm</source>
         <comment>mm means millimeters</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="499"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="502"/>
         <source>Teaser</source>
         <comment>Small print preview. Please keep translation short</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="500"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="503"/>
         <source>Preview</source>
         <comment>Full print preview. Please keep translation short</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="501"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="504"/>
         <source>Print</source>
         <comment>Please keep translation short</comment>
         <translation type="unfinished">列印</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="503"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="506"/>
         <source>Close</source>
         <comment>Please keep translation short</comment>
         <translation type="unfinished">關閉</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="764"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="769"/>
         <source>All teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="937"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="988"/>
         <source>Warning! Only %1 out of %2 activities placed!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="1128"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1156"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1183"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1192"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1219"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1181"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1209"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1236"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1245"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1272"/>
         <source>FET warning</source>
         <translation type="unfinished">FET 警告</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="1128"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1156"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1183"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1192"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1219"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1181"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1209"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1236"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1245"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1272"/>
         <source>FET is compiled without printer support - it is impossible to print from this dialog. Please open the HTML timetables from the results directory</source>
         <translation type="unfinished"></translation>
     </message>
@@ -50535,19 +50816,19 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="46"/>
         <source>Time</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished">課表</translation>
+        <translation>時間限制</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="53"/>
         <source>Space</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>空間限制</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="62"/>
         <source>Both</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>兩者</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="84"/>
@@ -50791,24 +51072,24 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="47"/>
         <source>Time</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished">課表</translation>
+        <translation>時間限制</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="54"/>
         <source>Space</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>空間限制</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="63"/>
         <source>Both</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>兩者</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="85"/>
         <source>Help</source>
-        <translation type="unfinished">幫助</translation>
+        <translation>幫助</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="117"/>
@@ -50946,7 +51227,7 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="642"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="654"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
-        <translation type="unfinished"></translation>
+        <translation>可能會同時發生問題，也許試著關閉這個課表檢視對話框，然後再次試著重新打開看看。</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="566"/>
@@ -50954,18 +51235,18 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="640"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="652"/>
         <source>Small problem detected</source>
-        <translation type="unfinished">偵測到一些小問題</translation>
+        <translation>偵測到一些小問題</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="430"/>
         <source>Room: %1</source>
-        <translation type="unfinished">教室=%1</translation>
+        <translation>教室=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="567"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="579"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
-        <translation type="unfinished"></translation>
+        <translation>一個可能的問題可能是你有2個或多個約束類型的教學活動偏好的起始時間與設成權重100％的相關教學活動ID%1，請您只保留其中一個</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="569"/>
@@ -50973,43 +51254,43 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="643"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="655"/>
         <source>Please report possible bug</source>
-        <translation type="unfinished">請回報錯誤</translation>
+        <translation>請回報錯誤</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="591"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="665"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
-        <translation type="unfinished">您可能有一個問題，因為FET期望刪除1個約束條件，但將會刪除%1 約束條件。</translation>
+        <translation>您可能有一個問題，因為FET期望刪除1個約束條件，但將會刪除%1 約束條件。</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="641"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="653"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
-        <translation type="unfinished"></translation>
+        <translation>一個可能的問題可能是:您有2個或多個約束類型的教學活動首選教室空間，被設成權重100％，相關教學活動ID%1，請您只保留其中一個。</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="228"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="519"/>
         <source>Invalid teacher - please close this dialog and open a new view teachers dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>該老師是無效的，請關閉此視窗然後新的老師視窗對話框</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="511"/>
         <source>Please select a teacher</source>
-        <translation type="unfinished"></translation>
+        <translation>請選擇一位老師</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="218"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="386"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="497"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable</source>
-        <translation type="unfinished"></translation>
+        <translation>查閱學老師課表對話框無法使用 - 請重新生成一個新的排課時間表</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="237"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="380"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable or close the timetable view teachers dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>查閱老師課表對話框無法使用 - 請重新生成一個新的時間表或關閉所查閱老師課表對話框。</translation>
     </message>
 </context>
 <context>
@@ -51030,29 +51311,29 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="46"/>
         <source>Time</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished">課表</translation>
+        <translation>時間限制</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="53"/>
         <source>Space</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>空間限制</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="62"/>
         <source>Both</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>兩者</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="84"/>
         <source>Help</source>
-        <translation type="unfinished">幫助</translation>
+        <translation>幫助</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="91"/>
         <source>Close</source>
-        <translation type="unfinished">關閉</translation>
+        <translation>關閉</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="112"/>
@@ -51072,24 +51353,27 @@ Please stop simulation before this.</source>
     <message>
         <location filename="../src/interface/centerwidgetonscreen.cpp" line="212"/>
         <source>Subgroups are invisible in combo boxes, by a global setting which you activated. The current constraint is referring to subgroup %1, so the constraint is displayed incorrectly with a void subgroup here.</source>
-        <translation type="unfinished"></translation>
+        <translation>目前教學分組是不可見的組合框，可透過&apos;啟動gobal&apos;設定設置開啟。當前的約束條件指向次級教學分組%1，因此該約束在此顯示了不正確的空白次級教學活動群組。
+</translation>
     </message>
     <message>
         <location filename="../src/interface/centerwidgetonscreen.cpp" line="216"/>
         <location filename="../src/interface/centerwidgetonscreen.cpp" line="229"/>
         <location filename="../src/interface/centerwidgetonscreen.cpp" line="242"/>
         <source>If you want, you can revert to the initial setting to show subgroups in combo boxes.</source>
-        <translation type="unfinished"></translation>
+        <translation>如果你願意，你可以恢復到初始設置顯示次級教學群組的組合框。</translation>
     </message>
     <message>
         <location filename="../src/interface/centerwidgetonscreen.cpp" line="225"/>
         <source>Subgroups are invisible in combo boxes, by a global setting which you activated. You are trying to modify a constraint, leaving it to refer to the original subgroup %1, which is invisible in the combo box - but this is impossible.</source>
-        <translation type="unfinished"></translation>
+        <translation>次級教學分組是不可見的組合框，通過&apos;啟動gobal&apos;來啟動。您正在試圖修改這些約束條件，離開它原來指向的原來次級教學群組%1， - 但這是不可能的。
+</translation>
     </message>
     <message>
         <location filename="../src/interface/centerwidgetonscreen.cpp" line="238"/>
         <source>Subgroups are invisible in combo boxes, by a global setting which you activated. The current activity is referring to subgroup %1, so the activity is displayed incorrectly with a void subgroup here.</source>
-        <translation type="unfinished"></translation>
+        <translation>此次級
+教學分組是不可見的組合框，課透過&apos;啟動gobal&apos;啟動。當前活動是指向次級教學群組%1，所以目前該教學活動指向該不正確的次級教學群組。</translation>
     </message>
 </context>
 <context>
@@ -51157,7 +51441,7 @@ Please stop simulation before this.</source>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="37"/>
         <source>Add</source>
-        <translation>添加</translation>
+        <translation>增加</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="83"/>
