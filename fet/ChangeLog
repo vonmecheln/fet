@@ -856,4 +856,6 @@ Versions 5.0.0 -
 - Version 5.0.0-preview15
 	- Romanian language update by Constantin Romulus and Liviu Lalescu
 	- Improved html timetables (suggested by L. W. Johnstone)
+- Version 5.0.0-preview16
+	- Crash bug fix in teacher max days per week (reported by Constantin Romulus)
 	

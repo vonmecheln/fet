@@ -2306,10 +2306,10 @@ void OptimizeTime::randomswap(int ai, int level){
 		//not breaking the teacher max days per week constraints
 		////////////////////////////BEGIN max days per week for teachers
 		//bool ok=true;
-		foreach(int t, teachersWithMaxDaysPerWeekForActivities[ai]){
+		foreach(int tc, teachersWithMaxDaysPerWeekForActivities[ai]){
 		//for(int i=0; i<act->nTeachers; i++){
 			//int t=act->teachers[i];
-			int maxDays=teachersMaxDaysPerWeekMaxDays[t];
+			int maxDays=teachersMaxDaysPerWeekMaxDays[tc];
 			assert(maxDays>=0); //the list contains real information
 			if(maxDays>=0){
 				assert(maxDays>0);
@@ -2325,12 +2325,12 @@ void OptimizeTime::randomswap(int ai, int level){
 				
 				int ndinitial=0;
 				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					if(teacherActivitiesOfTheDay[t][j].count()>0)
+					if(teacherActivitiesOfTheDay[tc][j].count()>0)
 						ndinitial++;
 				
 				int ndfinal=0;
 				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					if(teacherActivitiesOfTheDay[t][j].count()>0 || j==d)
+					if(teacherActivitiesOfTheDay[tc][j].count()>0 || j==d)
 						ndfinal++;
 				
 				assert(ndfinal>=ndinitial);
@@ -2338,50 +2338,60 @@ void OptimizeTime::randomswap(int ai, int level){
 				}
 				else if(ndfinal<=maxDays){
 				}
-				else if(skipRandom(teachersMaxDaysPerWeekWeightPercentages[t])){
+				else if(skipRandom(teachersMaxDaysPerWeekWeightPercentages[tc])){
 				}
 				else{
-					//ok=false;
-					/*foreach(int k, teacherActivitiesOfTheDay[t][mipos]){
-						conflActivities[newtime].append(k);
-					}*/
-					
-					///////////////////////////
-					int optNWrong=gt.rules.nInternalActivities;
-					int optNConfl=gt.rules.nInternalActivities;
-					QList<int> conflActs[MAX_DAYS_PER_WEEK];
 					int nWrong[MAX_DAYS_PER_WEEK];
-						
+					int minWrong[MAX_DAYS_PER_WEEK];
+
+					int optNWrong=INF;
+					int optMinWrong=INF;
+					int optNConflActs=gt.rules.nInternalActivities;
+					
+					QList<int> conflActs[MAX_DAYS_PER_WEEK];
+			
 					for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 						nWrong[d2]=-1;
-						if(d2!=d){
+						minWrong[d2]=-1;
+						if(d2!=d && teacherActivitiesOfTheDay[tc][d2].count()>0){
 							conflActs[d2].clear();
 							nWrong[d2]=0;
-							foreach(int a, teacherActivitiesOfTheDay[t][d2])
+							minWrong[d2]=INF;
+							foreach(int a, teacherActivitiesOfTheDay[tc][d2])
 								if(conflActs[d2].indexOf(a)==-1){
 									conflActs[d2].append(a);
 									nWrong[d2]+=triedRemovals[a][c.times[a]];
+									
+									if(minWrong[d2]>triedRemovals[a][c.times[a]])
+										minWrong[d2]=triedRemovals[a][c.times[a]];
 								}
-							
-							if(nWrong[d2]<optNWrong || nWrong[d2]==optNWrong && conflActs[d2].count()<optNConfl){
+
+							if(minWrong[d2]<optMinWrong
+							 || optNWrong>nWrong[d2] && minWrong[d2]==optMinWrong
+							 || optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs>conflActs[d2].count()){
 								optNWrong=nWrong[d2];
-								optNConfl=conflActs[d2].count();
+								optMinWrong=minWrong[d2];
+								optNConflActs=conflActs[d2].count();
 							}
 						}
-						else
-							continue;
 					}
-					assert(optNWrong<gt.rules.nInternalActivities);
+		
+					assert(optNWrong<INF);
 					assert(optNWrong>=0);
+
 					QList<int> optDays;
 					for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
-						if(nWrong[d2]==optNWrong && conflActs[d2].count()==optNConfl)
-							optDays.append(d2);
+						if(nWrong[d2]>=0)
+							if(optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs==conflActs[d2].count())
+								optDays.append(d2);
 					assert(optDays.count()>0);
 					int rnd=rand()%optDays.count();
 					int d2=optDays.at(rnd);
-							
+					assert(d2>=0);
+
+					bool ok=false;
 					foreach(int ai2, conflActs[d2]){
+						ok=true;
 						assert(ai2!=ai);
 						if(conflActivities[newtime].indexOf(ai2)==-1){
 							conflActivities[newtime].append(ai2);
@@ -2389,7 +2399,7 @@ void OptimizeTime::randomswap(int ai, int level){
 							assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 						}
 					}
-					///////////////////////////
+					assert(ok);
 				}
 				
 				//if(!ok)
@@ -2508,15 +2518,10 @@ void OptimizeTime::randomswap(int ai, int level){
 			//assert(0);
 		}
 		if(tim.count()>0){
-			/*int M=-1;
-			int Mpos=-1;*/
-			//int cnt=0;
 			foreach(int i, tim){ //if(!impossibleTimes[ai].contains(i)){
 				int cnt=0;
 				int m=gt.rules.nInternalActivities;
 				foreach(int aii, conflActivities[i]){
-					//if(triedRemovals[aii].contains(c.times[aii]))
-					//	cnt++;
 					if(triedRemovals[aii][c.times[aii]]>0)
 						cnt+=triedRemovals[aii][c.times[aii]];
 						
@@ -2524,21 +2529,12 @@ void OptimizeTime::randomswap(int ai, int level){
 						minWrong[i]=triedRemovals[aii][c.times[aii]];
 						
 					int j=invPermutation[aii];
-					/*for(j=0; j<gt.rules.nInternalActivities; j++)
-						if(permutation[j]==aii)
-							break;*/
 					assert(j<gt.rules.nInternalActivities);
 					if(m>j)
 						m=j;
 				}
-				/*if(M<m){
-					M=m;
-					Mpos=i;
-				}*/
 				minIndexAct[i]=m;
 				nWrong[i]=cnt;
-				
-				//cout<<"Possible slot: i=="<<i<<", cnt=="<<cnt<<endl;
 			}
 			
 			int optMinIndex=-1;
@@ -2548,10 +2544,6 @@ void OptimizeTime::randomswap(int ai, int level){
 			int j=-1;
 			foreach(int i, tim)
 				//choose a random time out of these with minimum number of wrongly replaced activities
-				//if(optNWrong>nWrong[i] || optNWrong==nWrong[i] && optNConflActs>nConflActivities[i]){
-				/*if(optNWrong>nWrong[i]
-				 || optNWrong==nWrong[i] && minWrong[i]<optMinWrong
-				 || optNWrong==nWrong[i] && minWrong[i]==optMinWrong && optNConflActs>nConflActivities[i]){*/
 				if(minWrong[i]<optMinWrong
 				 || optNWrong>nWrong[i] && minWrong[i]==optMinWrong
 				 || optNWrong==nWrong[i] && minWrong[i]==optMinWrong && optNConflActs>nConflActivities[i]){
@@ -2560,9 +2552,6 @@ void OptimizeTime::randomswap(int ai, int level){
 					optMinIndex=minIndexAct[i];
 					optNConflActs=nConflActivities[i];
 					j=i;
-					
-					//timeSlot=i;
-					//conflActivitiesTimeSlot=conflActivities[i];
 				}
 			assert(j>=0);
 			QList<int> tim2;
@@ -2572,37 +2561,10 @@ void OptimizeTime::randomswap(int ai, int level){
 			assert(tim2.count()>0);
 			int rnd=rand()%tim2.count();
 			j=tim2.at(rnd);
-			/*QList<int> candTime;
-			foreach(int i, tim)
-				if(optNFixedWrong==nFixedWrong[i])
-					candTime.append(i);
-			assert(candTime.count()>0);
-			int rnd=random()%candTime.count();
-			
-			timeSlot=candTime.at(rnd);*/
+
 			assert(j>=0);
 			timeSlot=j;
 			conflActivitiesTimeSlot=conflActivities[timeSlot];
-			
-			/*if(Mpos>=0){
-				conflActivitiesTimeSlot=conflActivities[Mpos];
-				timeSlot=Mpos;
-			}
-			else{
-				cout<<"Warning - optimizetime.cpp line 1566, all times are explored, choosing best one"<<endl;
-				assert(tim.count()>0);
-				int r=rand()%tim.count();
-				Mpos=tim.at(r);
-				
-				if(Mpos>=0){
-					conflActivitiesTimeSlot=conflActivities[Mpos];
-					timeSlot=Mpos;
-				}
-				else{
-					cout<<"Warning - optimizetime.cpp line 1576, Mpos==-1"<<endl;
-					assert(0);
-				}
-			}*/
 		}
 	}
 	

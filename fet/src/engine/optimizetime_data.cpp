@@ -903,6 +903,14 @@ bool computeMaxDaysPerWeekForTeachers()
 		}
 	}
 	
+	/*for(int i=0; i<gt.rules.nInternalTeachers; i++)
+		if(teachersMaxDaysPerWeekMaxDays[i]>=0){
+			cout<<"Teacher: "<<qPrintable(gt.rules.internalTeachersList[i]->name);
+			cout<<", max days: "<<teachersMaxDaysPerWeekMaxDays[i];
+			cout<<", percentage: "<<teachersMaxDaysPerWeekWeightPercentages[i];
+			cout<<endl;
+		}*/
+	
 	return ok;
 }
 
