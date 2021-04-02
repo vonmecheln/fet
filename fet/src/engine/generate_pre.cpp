@@ -243,6 +243,22 @@ bool computeSubgroupsMaxHoursDaily()
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_HOURS_DAILY){
 			ConstraintStudentsMaxHoursDaily* smd=(ConstraintStudentsMaxHoursDaily*)gt.rules.internalTimeConstraintsList[i];
 
+			//////////
+			if(smd->weightPercentage!=100){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize, because you have constraint students max hours daily with"
+				 " weight (percentage) below 100. Starting with FET version 5.3.0 it is only possible"
+				 " to use 100% weight for such constraints. Please make weight 100% and try again"),
+				 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			//////////
+
 			for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
 				if(subgroupsMaxHoursDailyMaxHours[sb]==-1 ||
 				 subgroupsMaxHoursDailyMaxHours[sb] >= smd->maxHoursDaily &&
@@ -275,6 +291,23 @@ bool computeSubgroupsMaxHoursDaily()
 		}
 		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
 			ConstraintStudentsSetMaxHoursDaily* smd=(ConstraintStudentsSetMaxHoursDaily*)gt.rules.internalTimeConstraintsList[i];
+
+			//////////
+			if(smd->weightPercentage!=100){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize, because you have constraint students set max hours daily for students set %1 with"
+				 " weight (percentage) below 100. Starting with FET version 5.3.0 it is only possible"
+				 " to use 100% weight for such constraints. Please make weight 100% and try again")
+				 .arg(smd->students),
+				 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			//////////
 
 			for(int q=0; q<smd->nSubgroups; q++){
 				int sb=smd->subgroups[q];
@@ -499,6 +532,23 @@ bool computeTeachersMaxHoursDaily()
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_HOURS_DAILY){
 			ConstraintTeacherMaxHoursDaily* tmd=(ConstraintTeacherMaxHoursDaily*)gt.rules.internalTimeConstraintsList[i];
 
+			//////////
+			if(tmd->weightPercentage!=100){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize, because you have constraint teacher max hours daily for teacher %1 with"
+				 " weight (percentage) below 100. Starting with FET version 5.3.0 it is only possible"
+				 " to use 100% weight for such constraints. Please make weight 100% and try again")
+				 .arg(tmd->teacherName),
+				 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			//////////
+
 			if(teachersMaxHoursDailyMaxHours[tmd->teacher_ID]==-1 ||
 			 teachersMaxHoursDailyMaxHours[tmd->teacher_ID] >= tmd->maxHoursDaily &&
 			 teachersMaxHoursDailyPercentages[tmd->teacher_ID] <= tmd->weightPercentage){
@@ -529,6 +579,22 @@ bool computeTeachersMaxHoursDaily()
 		}
 		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_HOURS_DAILY){
 			ConstraintTeachersMaxHoursDaily* tmd=(ConstraintTeachersMaxHoursDaily*)gt.rules.internalTimeConstraintsList[i];
+
+			//////////
+			if(tmd->weightPercentage!=100){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize, because you have constraint teachers max hours daily with"
+				 " weight (percentage) below 100. Starting with FET version 5.3.0 it is only possible"
+				 " to use 100% weight for such constraints. Please make weight 100% and try again"),
+				 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			//////////
 
 			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
 				if(teachersMaxHoursDailyMaxHours[tch]==-1 ||
@@ -1465,7 +1531,7 @@ bool computeActivitiesConflictingPercentage()
 		
 	if(!ok || m<100){
 		QMessageBox::warning(NULL, QObject::tr("FET warning"),
-		 QObject::tr("Cannot optimize, because you have no basic time constraints or weight lower than 100.0%. "
+		 QObject::tr("Cannot optimize, because you have no basic time constraints or its weight is lower than 100.0%. "
 		 "Please add a basic time constraint (100% weight)"));
 		return false;
 	}
@@ -1749,7 +1815,7 @@ bool computeBasicSpace()
 		
 	if(!ok || m<100){
 		QMessageBox::warning(NULL, QObject::tr("FET warning"),
-		 QObject::tr("Cannot optimize, because you have no basic space constraints or weight percentage lower than 100.0%. "
+		 QObject::tr("Cannot optimize, because you have no basic space constraints or its weight percentage is lower than 100.0%. "
 		 "Please add a basic space constraint with 100% weight"));
 		return false;
 	}

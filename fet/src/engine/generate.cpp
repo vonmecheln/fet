@@ -1824,7 +1824,6 @@ impossible2activitiesconsecutive:
 				}
 				if(subgroupsEarlyPercentage[sb]>=0)
 					initialGaps+=cnt;
-
 				//
 				for(j=gt.rules.nHoursPerDay-1; j>=0; j--)
 					if(subgroupsTimetable[sb][d][j]>=0 || j>=h && j<h+act->duration){
@@ -1848,36 +1847,123 @@ impossible2activitiesconsecutive:
 				}				
 				if(subgroupsEarlyPercentage[sb]>=0)
 					finalGaps+=cnt;
-			
-				if(subgroupsNoGapsPercentage[sb]==100){ //no gaps or early+no gaps 100%
-					if(finalNHours+finalGaps>subgroupsMaxHoursDailyMaxHours[sb]){
-						bool skip=skipRandom(subgroupsMaxHoursDailyPercentages[sb]);
-						if(!skip){
-							if(subgroupsMaxHoursDailyMaxHours[sb]<act->duration){
-								okstudentsmaxhoursdaily=false;
-								goto impossiblestudentsmaxhoursdaily;
-							}
-						
-							for(int j=0; j<gt.rules.nHoursPerDay; j++){
-								int ai2=subgroupsTimetable[sb][d][j];
-							
-								if(ai2>=0){
-									if(swappedActivities[ai2]){
-										okstudentsmaxhoursdaily=false;
-										goto impossiblestudentsmaxhoursdaily;
-									}
+				
+				//////////////speed improvement - added in 5.3.0
+				if(subgroupsNoGapsPercentage[sb]==100 && subgroupsEarlyPercentage[sb]==-1){ //only no gaps
+					int actAtEnd=-1;
+					for(j=gt.rules.nHoursPerDay-1; j>=0; j--) if(!breakDayHour[d][j] && !subgroupNotAvailableDayHour[sb][d][j]){
+						if(subgroupsTimetable[sb][d][j]==-1 && (j>=h && j<h+act->duration)){
+							actAtEnd=1;
+							break;
+						}
+						else if(subgroupsTimetable[sb][d][j]>=0)
+							break;
+					}
+					for(j=0; j<gt.rules.nHoursPerDay; j++) if(!breakDayHour[d][j] && !subgroupNotAvailableDayHour[sb][d][j]){
+						if(subgroupsTimetable[sb][d][j]==-1 && (j>=h && j<h+act->duration)){
+							actAtEnd=0;
+							break;
+						}
+						else if(subgroupsTimetable[sb][d][j]>=0)
+							break;
+					}
+					
+					if(actAtEnd==0 || actAtEnd==1){
+						if(finalNHours+finalGaps>subgroupsMaxHoursDailyMaxHours[sb]){
+							bool skip=skipRandom(subgroupsMaxHoursDailyPercentages[sb]);
+							if(!skip){
+								if(subgroupsMaxHoursDailyMaxHours[sb]<act->duration){
+									okstudentsmaxhoursdaily=false;
+									goto impossiblestudentsmaxhoursdaily;
+								}
+									
+								int rem=finalNHours+finalGaps-subgroupsMaxHoursDailyMaxHours[sb];
+								if(actAtEnd){
+									assert(rem>0);
+									for(j=0; j<gt.rules.nHoursPerDay; j++) if(!breakDayHour[d][j] && !subgroupNotAvailableDayHour[sb][d][j])
+										if(subgroupsTimetable[sb][d][j]>=0){
+											assert ( ! (j>=h && j<h+act->duration) );
+											break;
+										}
+									for(; j<gt.rules.nHoursPerDay; j++) if(!breakDayHour[d][j] && !subgroupNotAvailableDayHour[sb][d][j]){
+										assert ( ! (j>=h && j<h+act->duration) );
+										int ai2=subgroupsTimetable[sb][d][j];
 								
-									if(conflActivities[newtime].indexOf(ai2)==-1){
-										conflActivities[newtime].append(ai2);
-										nConflActivities[newtime]++;
-										assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+										if(ai2>=0){
+											if(swappedActivities[ai2]){
+												okstudentsmaxhoursdaily=false;
+												goto impossiblestudentsmaxhoursdaily;
+											}
+										
+											if(conflActivities[newtime].indexOf(ai2)==-1){
+												conflActivities[newtime].append(ai2);
+												nConflActivities[newtime]++;
+												assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+											}
+										}
+										
+										rem--;
+										if(rem==0)
+											break;
 									}
+									assert(j<gt.rules.nHoursPerDay);
+								}
+								else{ //!actAtEnd <=> act at beginning
+									assert(rem>0);
+									for(j=gt.rules.nHoursPerDay-1; j>=0; j--) if(!breakDayHour[d][j] && !subgroupNotAvailableDayHour[sb][d][j])
+										if(subgroupsTimetable[sb][d][j]>=0){
+											assert ( ! (j>=h && j<h+act->duration) );
+											break;
+										}
+									for(; j>=0; j--) if(!breakDayHour[d][j] && !subgroupNotAvailableDayHour[sb][d][j]){
+										assert ( ! (j>=h && j<h+act->duration) );
+										int ai2=subgroupsTimetable[sb][d][j];
+								
+										if(ai2>=0){
+											if(swappedActivities[ai2]){
+												okstudentsmaxhoursdaily=false;
+												goto impossiblestudentsmaxhoursdaily;
+											}
+										
+											if(conflActivities[newtime].indexOf(ai2)==-1){
+												conflActivities[newtime].append(ai2);
+												nConflActivities[newtime]++;
+												assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+											}
+										}
+										
+										rem--;
+										if(rem==0)
+											break;
+									}
+									assert(j>=0);
 								}
 							}
 						}
 					}
+					////for under 100% it does not work
+					else{
+						/*if(finalNHours+finalGaps>subgroupsMaxHoursDailyMaxHours[sb]){
+							cout<<"h=="<<h<<", dur="<<act->duration<<endl;
+							for(int j=0; j<gt.rules.nHoursPerDay; j++)
+								cout<<"h"<<j<<", act.="<<subgroupsTimetable[sb][d][j]<<endl;
+						}*/
+						assert(finalNHours+finalGaps<=subgroupsMaxHoursDailyMaxHours[sb]);
+					}
 				}
-				else{
+				//////////////
+				else if(subgroupsNoGapsPercentage[sb]==100 && subgroupsEarlyPercentage[sb]==100){ //early+no gaps 100%
+					if(finalNHours+finalGaps>subgroupsMaxHoursDailyMaxHours[sb]){
+						bool skip=skipRandom(subgroupsMaxHoursDailyPercentages[sb]);
+						if(!skip){
+							if(h+act->duration > subgroupsMaxHoursDailyMaxHours[sb]){
+								okstudentsmaxhoursdaily=false;
+								goto impossiblestudentsmaxhoursdaily;
+							}
+						}
+					}
+				}
+				else{ //no "early" or "no gaps" constraints
 					if(finalNHours>subgroupsMaxHoursDailyMaxHours[sb]){
 						bool skip=skipRandom(subgroupsMaxHoursDailyPercentages[sb]);
 						if(!skip){
@@ -1885,22 +1971,52 @@ impossible2activitiesconsecutive:
 								okstudentsmaxhoursdaily=false;
 								goto impossiblestudentsmaxhoursdaily;
 							}
-						
-							for(int j=0; j<gt.rules.nHoursPerDay; j++){
-								int ai2=subgroupsTimetable[sb][d][j];
 							
-								if(ai2>=0){
-									if(swappedActivities[ai2]){
-										okstudentsmaxhoursdaily=false;
-										goto impossiblestudentsmaxhoursdaily;
-									}
-								
-									if(conflActivities[newtime].indexOf(ai2)==-1){
-										conflActivities[newtime].append(ai2);
-										nConflActivities[newtime]++;
-										assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+							int rem=finalNHours-subgroupsMaxHoursDailyMaxHours[sb];
+							
+							//int possibleHoursToRemove[MAX_HOURS_PER_DAY];
+							//int nPossibleHoursToRemove=0;
+							QList<int> possibleActivitiesToRemove;
+							for(j=0; j<gt.rules.nHoursPerDay; j++)
+								if(!breakDayHour[d][j] && !subgroupNotAvailableDayHour[sb][d][j])
+									if(subgroupsTimetable[sb][d][j]>=0 && !(j>=h && j<h+act->duration))
+										//possibleHoursToRemove[nPossibleHoursToRemove++]=j;
+										if(!possibleActivitiesToRemove.contains(subgroupsTimetable[sb][d][j]))
+											possibleActivitiesToRemove.append(subgroupsTimetable[sb][d][j]);
+											
+							//shuffle - CLR method
+							for(j=0; j<possibleActivitiesToRemove.count(); j++){
+								int t=possibleActivitiesToRemove[j];
+								int r=randomKnuth()%(possibleActivitiesToRemove.count()-j);
+								possibleActivitiesToRemove[j]=possibleActivitiesToRemove[j+r];
+								possibleActivitiesToRemove[j+r]=t;
+							}
+							
+							assert(rem>0);
+							foreach(int ai2, possibleActivitiesToRemove){
+								if(swappedActivities[ai2])
+									continue;
+							
+								bool decreased=false;
+								for(int hh=c.times[ai2]/gt.rules.nDaysPerWeek; hh<c.times[ai2]/gt.rules.nDaysPerWeek+gt.rules.internalActivitiesList[ai2].duration; hh++){
+									assert(!breakDayHour[d][j] && !subgroupNotAvailableDayHour[sb][d][j]);
+									if(!(hh>=h && hh<h+act->duration)){
+										rem--;
+										decreased=true;
 									}
 								}
+								if(decreased && conflActivities[newtime].indexOf(ai2)==-1){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+									assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+								}
+								if(rem<=0)
+									break;
+							}
+						
+							if(rem>0){
+								okstudentsmaxhoursdaily=false;
+								goto impossiblestudentsmaxhoursdaily;
 							}
 						}
 					}
@@ -2116,12 +2232,6 @@ impossiblestudentsmaxhoursdaily:
 									nRem[d2]=nHoursScheduledForSubgroupForDay[sb][d2]-subgroupsMinHoursDailyMinHours[sb];
 								else{
 									nRem[d2]=nhday-subgroupsMinHoursDailyMinHours[sb]/*-act->duration*/;
-
-									//commented line below in version 5.2.18 - crash bug fix
-									//test is not true if using breaks or not available
-									//assert(nRem[d2]==dayEnd[d2]-dayStart[d2]+1-subgroupsMinHoursDailyMinHours[sb]/*-act->duration*/);
-
-									//cout<<"nRem[d]=="<<nRem[d]<<endl;
 								}
 							}
 							
@@ -2486,8 +2596,55 @@ impossiblestudentsminhoursdaily:
 								okteachersmaxhoursdaily=false;
 								goto impossibleteachersmaxhoursdaily;
 							}
+							
+							//////////////added in version 5.3.0
+							int rem=finalNHours-teachersMaxHoursDailyMaxHours[i];
+							
+							QList<int> possibleActivitiesToRemove;
+							for(j=0; j<gt.rules.nHoursPerDay; j++)
+								if(!breakDayHour[d][j] && !teacherNotAvailableDayHour[i][d][j])
+									if(teachersTimetable[i][d][j]>=0 && !(j>=h && j<h+act->duration))
+										if(!possibleActivitiesToRemove.contains(teachersTimetable[i][d][j]))
+											possibleActivitiesToRemove.append(teachersTimetable[i][d][j]);
+											
+							//shuffle - CLR method
+							for(j=0; j<possibleActivitiesToRemove.count(); j++){
+								int t=possibleActivitiesToRemove[j];
+								int r=randomKnuth()%(possibleActivitiesToRemove.count()-j);
+								possibleActivitiesToRemove[j]=possibleActivitiesToRemove[j+r];
+								possibleActivitiesToRemove[j+r]=t;
+							}
+							
+							assert(rem>0);
+							foreach(int ai2, possibleActivitiesToRemove){
+								if(swappedActivities[ai2])
+									continue;
+									
+								bool decreased=false;
+								
+								for(int hh=c.times[ai2]/gt.rules.nDaysPerWeek; hh<c.times[ai2]/gt.rules.nDaysPerWeek+gt.rules.internalActivitiesList[ai2].duration; hh++){
+									assert(!breakDayHour[d][hh] && !teacherNotAvailableDayHour[i][d][hh]);
+									if(!(hh>=h && hh<h+act->duration)){
+										rem--;
+										decreased=true;
+									}
+								}
+								if(decreased && conflActivities[newtime].indexOf(ai2)==-1){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+									assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+								}
+								if(rem<=0)
+									break;
+							}
+							
+							if(rem>0){
+								okteachersmaxhoursdaily=false;
+								goto impossibleteachersmaxhoursdaily;
+							}
+							//////////////
 
-							for(int j=0; j<gt.rules.nHoursPerDay; j++){
+							/*for(int j=0; j<gt.rules.nHoursPerDay; j++){
 								int ai2=teachersTimetable[i][d][j];
 							
 								if(ai2>=0){
@@ -2502,11 +2659,11 @@ impossiblestudentsminhoursdaily:
 										assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 									}
 								}
-							}
+							}*/
 						}
 					}
 				}
-				else{
+				else{ //we have teachers max gaps constraint
 					int nrg=teachersMaxGapsMaxGaps[i]; //number remaining gaps
 					for(int q=0; q<gt.rules.nDaysPerWeek; q++)
 						if(q!=d)
@@ -2525,8 +2682,148 @@ impossiblestudentsminhoursdaily:
 								okteachersmaxhoursdaily=false;
 								goto impossibleteachersmaxhoursdaily;
 							}
+							
+							/////////////////added in 5.3.0
+							int actAtEnd=-1;
+							for(j=gt.rules.nHoursPerDay-1; j>=0; j--) if(!breakDayHour[d][j] && !teacherNotAvailableDayHour[i][d][j]){
+								if(teachersTimetable[i][d][j]==-1 && (j>=h && j<h+act->duration)){
+									actAtEnd=1;
+									break;
+								}
+								else if(teachersTimetable[i][d][j]>=0)
+									break;
+							}
+							for(j=0; j<gt.rules.nHoursPerDay; j++) if(!breakDayHour[d][j] && !teacherNotAvailableDayHour[i][d][j]){
+								if(teachersTimetable[i][d][j]==-1 && (j>=h && j<h+act->duration)){
+									actAtEnd=0;
+									break;
+								}
+								else if(teachersTimetable[i][d][j]>=0)
+									break;
+							}
+							
+							if(actAtEnd==0 || actAtEnd==1){
+								int remHours=finalNHours-teachersMaxHoursDailyMaxHours[i];
+								int remTotal=finalNHours+finalGaps-teachersMaxHoursDailyMaxHours[i]-nrg;
+									
+								if(actAtEnd){
+									assert(remHours>0 || remTotal>0);
+									for(j=0; j<gt.rules.nHoursPerDay; j++) if(!breakDayHour[d][j] && !teacherNotAvailableDayHour[i][d][j])
+										if(teachersTimetable[i][d][j]>=0){
+											assert(! (j>=h && j<h+act->duration) );
+											break;
+										}
+										
+									for(; j<gt.rules.nHoursPerDay; j++) if(!breakDayHour[d][j] && !teacherNotAvailableDayHour[i][d][j]){
+										assert(!(j>=h && j<h+act->duration));
+										int ai2=teachersTimetable[i][d][j];
+										
+										if(ai2>=0){
+											if(swappedActivities[ai2]){
+												okteachersmaxhoursdaily=false;
+												goto impossibleteachersmaxhoursdaily;
+											}
+											if(conflActivities[newtime].indexOf(ai2)==-1){
+												conflActivities[newtime].append(ai2);
+												nConflActivities[newtime]++;
+												assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+											}
+										}
+										
+										if(ai2>=0)
+											remHours--;
+										remTotal--;
+										
+										if(remHours<=0 && remTotal<=0)
+											break;
+									}
+									assert(j<gt.rules.nHoursPerDay);
+								}
+								else{ //actAtEnd==0 <=> act is at beginning
+									assert(remHours>0 || remTotal>0);
+									for(j=gt.rules.nHoursPerDay-1; j>=0; j--) if(!breakDayHour[d][j] && !teacherNotAvailableDayHour[i][d][j])
+										if(teachersTimetable[i][d][j]>=0){
+											assert(! (j>=h && j<h+act->duration) );
+											break;
+										}
+										
+									for(; j>=0; j--) if(!breakDayHour[d][j] && !teacherNotAvailableDayHour[i][d][j]){
+										assert(!(j>=h && j<h+act->duration));
+										int ai2=teachersTimetable[i][d][j];
+										
+										if(ai2>=0){
+											if(swappedActivities[ai2]){
+												okteachersmaxhoursdaily=false;
+												goto impossibleteachersmaxhoursdaily;
+											}
+											if(conflActivities[newtime].indexOf(ai2)==-1){
+												conflActivities[newtime].append(ai2);
+												nConflActivities[newtime]++;
+												assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+											}
+										}
+										
+										if(ai2>=0)
+											remHours--;
+										remTotal--;
+										
+										if(remHours<=0 && remTotal<=0)
+											break;
+									}
+									assert(j<gt.rules.nHoursPerDay);
+								}
+							}
+							else{
+								//activity does not increase span
+								//code similar to no gaps
+								int rem=finalNHours-teachersMaxHoursDailyMaxHours[i];
+								
+								QList<int> possibleActivitiesToRemove;
+								for(j=0; j<gt.rules.nHoursPerDay; j++)
+									if(!breakDayHour[d][j] && !teacherNotAvailableDayHour[i][d][j])
+										if(teachersTimetable[i][d][j]>=0 && !(j>=h && j<h+act->duration))
+											if(!possibleActivitiesToRemove.contains(teachersTimetable[i][d][j]))
+												possibleActivitiesToRemove.append(teachersTimetable[i][d][j]);
+											
+								//shuffle - CLR method
+								for(j=0; j<possibleActivitiesToRemove.count(); j++){
+									int t=possibleActivitiesToRemove[j];
+									int r=randomKnuth()%(possibleActivitiesToRemove.count()-j);
+									possibleActivitiesToRemove[j]=possibleActivitiesToRemove[j+r];
+									possibleActivitiesToRemove[j+r]=t;
+								}
+							
+								assert(rem>0);
+								foreach(int ai2, possibleActivitiesToRemove){
+									if(swappedActivities[ai2])
+										continue;
+										
+									bool decreased=false;
+									
+									for(int hh=c.times[ai2]/gt.rules.nDaysPerWeek; hh<c.times[ai2]/gt.rules.nDaysPerWeek+gt.rules.internalActivitiesList[ai2].duration; hh++){
+										assert(!breakDayHour[d][hh] && !teacherNotAvailableDayHour[i][d][hh]);
+										if(!(hh>=h && hh<h+act->duration)){
+											rem--;
+											decreased=true;
+										}
+									}
+									if(decreased && conflActivities[newtime].indexOf(ai2)==-1){
+										conflActivities[newtime].append(ai2);
+										nConflActivities[newtime]++;
+										assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+									}
+									if(rem<=0)
+										break;
+								}
+								
+								if(rem>0){
+									okteachersmaxhoursdaily=false;
+									goto impossibleteachersmaxhoursdaily;
+								}								
+							}
+							/////////////////
 
-							for(int j=0; j<gt.rules.nHoursPerDay; j++){
+							/*for(int j=0; j<gt.rules.nHoursPerDay; j++){
 								int ai2=teachersTimetable[i][d][j];
 							
 								if(ai2>=0){
@@ -2541,7 +2838,7 @@ impossiblestudentsminhoursdaily:
 										assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 									}
 								}
-							}
+							}*/
 						}
 					}
 				}
@@ -2610,8 +2907,6 @@ impossibleteachersmaxhoursdaily:
 				else if(skipRandom(teachersMaxGapsPercentage[tc])){
 				}
 				else{ //illegal
-
-
 					/////////////////////////////////////////////////////////////////////////////////////////
 					//added in 5.0.0-preview22
 					int excessHours=nHoursScheduledForTeacher[tc]+cntfinal-nHoursPerTeacher[tc]-teachersMaxGapsMaxGaps[tc];

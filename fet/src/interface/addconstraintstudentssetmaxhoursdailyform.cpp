@@ -109,6 +109,11 @@ void AddConstraintStudentsSetMaxHoursDailyForm::addCurrentConstraint()
 			QObject::tr("Invalid weight"));
 		return;
 	}
+	if(weight!=100.0){
+		QMessageBox::warning(this, QObject::tr("FET information"),
+			QObject::tr("Invalid weight - must be 100%"));
+		return;
+	}
 
 	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
