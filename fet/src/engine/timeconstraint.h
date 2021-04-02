@@ -99,6 +99,8 @@ const int CONSTRAINT_STUDENTS_INTERVAL_MAX_DAYS_PER_WEEK				=45;
 
 const int CONSTRAINT_ACTIVITIES_END_STUDENTS_DAY						=46;
 
+const int CONSTRAINT_2_ACTIVITIES_GROUPED								=47;
+
 /**
 This class represents a time constraint
 */
@@ -2032,6 +2034,56 @@ public:
 	Constraint2ActivitiesConsecutive();
 
 	Constraint2ActivitiesConsecutive(double wp, int firstActId, int secondActId);
+
+	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class Constraint2ActivitiesGrouped: public TimeConstraint{
+public:
+	/**
+	First activity id
+	*/
+	int firstActivityId;
+
+	/**
+	Second activity id
+	*/
+	int secondActivityId;
+
+	//internal variables
+	/**
+	The index of the first activity in the rules (from 0 to rules.nActivities-1) - it is not the id of the activity
+	*/
+	int firstActivityIndex;
+
+	/**
+	The index of the second activity in the rules (from 0 to rules.nActivities-1) - it is not the id of the activity
+	*/
+	int secondActivityIndex;
+
+	Constraint2ActivitiesGrouped();
+
+	Constraint2ActivitiesGrouped(double wp, int firstActId, int secondActId);
 
 	bool computeInternalStructure(Rules& r);
 

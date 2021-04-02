@@ -1,3 +1,13 @@
+From Marco Barsotti:
+
+The only thing that I would like to find in a future version of FET is the
+ability 1) to find when a combination of constraints is impossible to
+respect. 2) to recognize which constraints generate a bottleneck, where FET
+stand by searching the little hole where to pass and go on, placing
+activities.
+
+--------------------------------------------------------------------------------
+
 From Saad:
 
 Manual improvements of the timetable - see forum link: http://lalescu.ro/liviu/fet/forum/YaBB.pl?num=1225143755/7#7

@@ -137,7 +137,7 @@ bool computeTeachersMaxGapsPerDayPercentage();
 ////////BEGIN activities same starting time
 extern QList<int> activitiesSameStartingTimeActivities[MAX_ACTIVITIES];
 extern QList<double> activitiesSameStartingTimePercentages[MAX_ACTIVITIES];
-void computeActivitiesSameStartingTime();
+bool computeActivitiesSameStartingTime();
 ////////END   activities same starting time
 
 
@@ -236,6 +236,13 @@ void computeConstr2ActivitiesConsecutive();
 extern QList<double> inverseConstr2ActivitiesConsecutivePercentages[MAX_ACTIVITIES];
 extern QList<int> inverseConstr2ActivitiesConsecutiveActivities[MAX_ACTIVITIES];
 //////////////END   2 activities consecutive
+
+
+//////////////BEGIN 2 activities grouped
+//index represents the first activity, value in array represents the second activity
+extern QList<double> constr2ActivitiesGroupedPercentages[MAX_ACTIVITIES];
+extern QList<int> constr2ActivitiesGroupedActivities[MAX_ACTIVITIES];
+void computeConstr2ActivitiesGrouped();
 
 
 //////////////BEGIN 2 activities ordered

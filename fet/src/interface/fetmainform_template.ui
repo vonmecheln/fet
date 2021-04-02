@@ -192,6 +192,7 @@
       <addaction name="dataTimeConstraints2ActivitiesOrderedAction" />
       <addaction name="separator" />
       <addaction name="dataTimeConstraints2ActivitiesConsecutiveAction" />
+      <addaction name="dataTimeConstraints2ActivitiesGroupedAction" />
       <addaction name="separator" />
       <addaction name="dataTimeConstraintsActivitiesNotOverlappingAction" />
       <addaction name="separator" />
@@ -1395,6 +1396,11 @@
   <action name="helpManualAction" >
    <property name="text" >
     <string>A user's manual</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraints2ActivitiesGroupedAction" >
+   <property name="text" >
+    <string>2 activities are grouped</string>
    </property>
   </action>
  </widget>

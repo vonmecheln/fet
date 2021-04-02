@@ -3120,6 +3120,25 @@ void Rules::removeActivity(int _id)
 				else
 					j++;
 			}
+			//removing Constraint2ActivitiesGrouped-s referring to this activity
+			for(int j=0; j<this->timeConstraintsList.size(); ){
+				TimeConstraint* ctr=this->timeConstraintsList[j];
+				if(ctr->type==CONSTRAINT_2_ACTIVITIES_GROUPED){
+					Constraint2ActivitiesGrouped *apt=(Constraint2ActivitiesGrouped*)ctr;
+					if(apt->firstActivityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else if(apt->secondActivityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else
+						j++;
+				}
+				else
+					j++;
+			}
 			//removing Constraint2ActivitiesOrdered-s referring to this activity
 			for(int j=0; j<this->timeConstraintsList.size(); ){
 				TimeConstraint* ctr=this->timeConstraintsList[j];
@@ -3325,6 +3344,25 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 				TimeConstraint* ctr=this->timeConstraintsList[j];
 				if(ctr->type==CONSTRAINT_2_ACTIVITIES_CONSECUTIVE){
 					Constraint2ActivitiesConsecutive *apt=(Constraint2ActivitiesConsecutive*)ctr;
+					if(apt->firstActivityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else if(apt->secondActivityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else
+						j++;
+				}
+				else
+					j++;
+			}
+			//removing Constraint2ActivitiesGrouped-s referring to this activity
+			for(int j=0; j<this->timeConstraintsList.size(); ){
+				TimeConstraint* ctr=this->timeConstraintsList[j];
+				if(ctr->type==CONSTRAINT_2_ACTIVITIES_GROUPED){
+					Constraint2ActivitiesGrouped *apt=(Constraint2ActivitiesGrouped*)ctr;
 					if(apt->firstActivityId==act->id){
 						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
@@ -7038,6 +7076,47 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 					}
 					crt_constraint=cn;
 				}
+				else if(elem3.tagName()=="Constraint2ActivitiesGrouped"){
+					Constraint2ActivitiesGrouped* cn=new Constraint2ActivitiesGrouped();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="First_Activity_Id"){
+							cn->firstActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read first activity id="+QString::number(cn->firstActivityId)+"\n";
+						}
+						else if(elem4.tagName()=="Second_Activity_Id"){
+							cn->secondActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read second activity id="+QString::number(cn->secondActivityId)+"\n";
+						}
+					}
+					crt_constraint=cn;
+				}
 				else if(elem3.tagName()=="Constraint2ActivitiesOrdered"){
 					Constraint2ActivitiesOrdered* cn=new Constraint2ActivitiesOrdered();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -8258,6 +8337,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 					crt_constraint=cn;
 					assert(cn->maxBeginningsAtSecondHour>=0);
 				}
+#if 0
 				else if(elem3.tagName()=="Constraint2ActivitiesGrouped" && !skipDeprecatedConstraints){
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint 2 activities grouped - will be ignored\n"),
@@ -8309,6 +8389,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 					*/
 					crt_constraint=NULL;
 				}
+#endif
 				else if(elem3.tagName()=="ConstraintActivitiesPreferredTimes"){
 					if(reportActivitiesPreferredTimesChange){
 						int t=QMessageBox::information(NULL, QObject::tr("FET information"),

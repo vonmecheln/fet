@@ -171,6 +171,11 @@ QList<double> inverseConstr2ActivitiesConsecutivePercentages[MAX_ACTIVITIES];
 QList<int> inverseConstr2ActivitiesConsecutiveActivities[MAX_ACTIVITIES];
 // 2 activities consecutive
 
+// 2 activities grouped
+//index represents the first activity, value in array represents the second activity
+QList<double> constr2ActivitiesGroupedPercentages[MAX_ACTIVITIES];
+QList<int> constr2ActivitiesGroupedActivities[MAX_ACTIVITIES];
+
 // 2 activities ordered
 //index represents the first activity, value in array represents the second activity
 QList<double> constr2ActivitiesOrderedPercentages[MAX_ACTIVITIES];
@@ -331,7 +336,10 @@ bool processTimeConstraints()
 		return false;
 	//////////////////////////////////
 	
-	computeActivitiesSameStartingTime();
+	//must be AFTER basic time constraints (computeActivitiesConflictingPercentage)
+	t=computeActivitiesSameStartingTime();
+	if(!t)
+		return false;
 
 	computeActivitiesSameStartingHour();
 	
@@ -367,6 +375,8 @@ bool processTimeConstraints()
 		return false;
 		
 	computeConstr2ActivitiesConsecutive();
+	
+	computeConstr2ActivitiesGrouped();
 	
 	computeConstr2ActivitiesOrdered();
 	
@@ -1603,8 +1613,13 @@ void computeActivitiesNotOverlapping()
 		}
 }
 
-void computeActivitiesSameStartingTime()
+bool computeActivitiesSameStartingTime()
 {
+	bool reportunder100=true;
+	bool report100=true;
+	
+	bool oktocontinue=true;
+
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
 		activitiesSameStartingTimeActivities[i].clear();
 		activitiesSameStartingTimePercentages[i].clear();
@@ -1613,6 +1628,55 @@ void computeActivitiesSameStartingTime()
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME){
 			ConstraintActivitiesSameStartingTime* sst=(ConstraintActivitiesSameStartingTime*)gt.rules.internalTimeConstraintsList[i];
+
+			for(int j=0; j<sst->_n_activities; j++){
+				int ai1=sst->_activities[j];
+				for(int k=j+1; k<sst->_n_activities; k++){
+					int ai2=sst->_activities[k];
+					
+					if(sst->weightPercentage==100.0 && activitiesConflictingPercentage[ai1][ai2]==100)
+						oktocontinue=false;
+					
+					if(sst->weightPercentage<100.0 && reportunder100 && activitiesConflictingPercentage[ai1][ai2]==100){
+						QString s;
+						
+						s+=sst->getDetailedDescription(gt.rules);
+						s+="\n";
+						s+=QObject::tr("The constraint is impossible to respect, because there are the activities with id-s %1 and %2 which "
+						 "conflict one with another, because they have common students sets or teachers. FET will allow you to continue, "
+						 "because the weight of this constraint is below 100.0%, "
+						 "but anyway most probably you have made a mistake in this constraint, "
+						 "so it is recommended to modify it.")
+						 .arg(gt.rules.internalActivitiesList[ai1].id)
+						 .arg(gt.rules.internalActivitiesList[ai2].id);
+					
+						int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+						 s, QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+						 1, 0 );
+				 	
+						if(t==0)
+							reportunder100=false;
+					}
+					else if(sst->weightPercentage==100.0 && report100 && activitiesConflictingPercentage[ai1][ai2]==100){
+						QString s;
+						
+						s+=sst->getDetailedDescription(gt.rules);
+						s+="\n";
+						s+=QObject::tr("The constraint is impossible to respect, because there are the activities with id-s %1 and %2 which "
+						 "conflict one with another, because they have common students sets or teachers. The weight of this constraint is 100.0%, "
+						 "so your timetable is impossible. Please correct this constraint.")
+						 .arg(gt.rules.internalActivitiesList[ai1].id)
+						 .arg(gt.rules.internalActivitiesList[ai2].id);
+					
+						int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+						 s, QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+						 1, 0 );
+				 	
+						if(t==0)
+							report100=false;
+					}
+				}
+			}
 			
 			for(int j=0; j<sst->_n_activities; j++){
 				int ai1=sst->_activities[j];
@@ -1626,15 +1690,20 @@ void computeActivitiesSameStartingTime()
 							assert(perc>=0 && perc<=100);
 						}
 						
-						if(t==-1 || perc<sst->weightPercentage){
+						if(t==-1 /*|| perc<sst->weightPercentage*/){
 							activitiesSameStartingTimeActivities[ai1].append(ai2);
 							activitiesSameStartingTimePercentages[ai1].append(sst->weightPercentage);
 							assert(activitiesSameStartingTimeActivities[ai1].count()==activitiesSameStartingTimePercentages[ai1].count());
+						}
+						else if(t>=0 && perc<sst->weightPercentage){
+							activitiesSameStartingTimePercentages[ai1][t]=sst->weightPercentage;
 						}
 					}
 				}
 			}
 		}
+		
+	return oktocontinue;
 }
 
 void computeActivitiesSameStartingHour()
@@ -1660,10 +1729,13 @@ void computeActivitiesSameStartingHour()
 							assert(perc>=0 && perc<=100);
 						}
 						
-						if(t==-1 || perc<sst->weightPercentage){
+						if(t==-1 /*|| perc<sst->weightPercentage*/){
 							activitiesSameStartingHourActivities[ai1].append(ai2);
 							activitiesSameStartingHourPercentages[ai1].append(sst->weightPercentage);
 							assert(activitiesSameStartingHourActivities[ai1].count()==activitiesSameStartingHourPercentages[ai1].count());
+						}
+						else if(t>=0 && perc<sst->weightPercentage){
+							activitiesSameStartingHourPercentages[ai1][t]=sst->weightPercentage;
 						}
 					}
 				}
@@ -1694,10 +1766,13 @@ void computeActivitiesSameStartingDay()
 							assert(perc>=0 && perc<=100);
 						}
 						
-						if(t==-1 || perc<sst->weightPercentage){
+						if(t==-1 /*|| perc<sst->weightPercentage*/){
 							activitiesSameStartingDayActivities[ai1].append(ai2);
 							activitiesSameStartingDayPercentages[ai1].append(sst->weightPercentage);
 							assert(activitiesSameStartingDayActivities[ai1].count()==activitiesSameStartingDayPercentages[ai1].count());
+						}
+						else if(t>=0 && perc<sst->weightPercentage){
+							activitiesSameStartingDayPercentages[ai1][t]=sst->weightPercentage;
 						}
 					}
 				}
@@ -3123,6 +3198,42 @@ void computeConstr2ActivitiesConsecutive()
 			}
 			else if(j>=0 && inverseConstr2ActivitiesConsecutivePercentages[sai].at(j)<c2->weightPercentage){
 				inverseConstr2ActivitiesConsecutivePercentages[sai][j]=c2->weightPercentage;
+			}
+		}
+}
+
+void computeConstr2ActivitiesGrouped()
+{
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		constr2ActivitiesGroupedPercentages[i].clear();
+		constr2ActivitiesGroupedActivities[i].clear();
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_2_ACTIVITIES_GROUPED){
+			Constraint2ActivitiesGrouped* c2=(Constraint2ActivitiesGrouped*)gt.rules.internalTimeConstraintsList[i];
+			
+			int fai=c2->firstActivityIndex;
+			int sai=c2->secondActivityIndex;
+			
+			//direct
+			int j=constr2ActivitiesGroupedActivities[fai].indexOf(sai); 
+			if(j==-1){
+				constr2ActivitiesGroupedActivities[fai].append(sai);
+				constr2ActivitiesGroupedPercentages[fai].append(c2->weightPercentage);
+			}
+			else if(j>=0 && constr2ActivitiesGroupedPercentages[fai].at(j)<c2->weightPercentage){
+				constr2ActivitiesGroupedPercentages[fai][j]=c2->weightPercentage;
+			}
+
+			//inverse
+			j=constr2ActivitiesGroupedActivities[sai].indexOf(fai); 
+			if(j==-1){
+				constr2ActivitiesGroupedActivities[sai].append(fai);
+				constr2ActivitiesGroupedPercentages[sai].append(c2->weightPercentage);
+			}
+			else if(j>=0 && constr2ActivitiesGroupedPercentages[sai].at(j)<c2->weightPercentage){
+				constr2ActivitiesGroupedPercentages[sai][j]=c2->weightPercentage;
 			}
 		}
 }

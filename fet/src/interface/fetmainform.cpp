@@ -58,6 +58,7 @@ using namespace std;
 #include "constraintactivityendsstudentsdayform.h"
 #include "constraintactivitiesendstudentsdayform.h"
 #include "constraint2activitiesconsecutiveform.h"
+#include "constraint2activitiesgroupedform.h"
 #include "constraint2activitiesorderedform.h"
 #include "constraintactivitiespreferredtimeslotsform.h"
 #include "constraintactivitiespreferredstartingtimesform.h"
@@ -1149,6 +1150,18 @@ void FetMainForm::on_dataTimeConstraints2ActivitiesConsecutiveAction_activated()
 	}
 
 	Constraint2ActivitiesConsecutiveForm* form=new Constraint2ActivitiesConsecutiveForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraints2ActivitiesGroupedAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	Constraint2ActivitiesGroupedForm* form=new Constraint2ActivitiesGroupedForm();
 	form->exec();
 }
 

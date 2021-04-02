@@ -280,6 +280,10 @@ SOURCES += fet.cpp \
 		   addconstraint2activitiesconsecutiveform.cpp \
 		   modifyconstraint2activitiesconsecutiveform.cpp \
 \
+		   constraint2activitiesgroupedform.cpp \
+		   addconstraint2activitiesgroupedform.cpp \
+		   modifyconstraint2activitiesgroupedform.cpp \
+\
 		   constraint2activitiesorderedform.cpp \
 		   addconstraint2activitiesorderedform.cpp \
 		   modifyconstraint2activitiesorderedform.cpp \
@@ -586,6 +590,10 @@ HEADERS += fet.h \
 		   constraint2activitiesconsecutiveform.h \
 		   addconstraint2activitiesconsecutiveform.h \
 		   modifyconstraint2activitiesconsecutiveform.h \
+\
+		   constraint2activitiesgroupedform.h \
+		   addconstraint2activitiesgroupedform.h \
+		   modifyconstraint2activitiesgroupedform.h \
 \
 		   constraint2activitiesorderedform.h \
 		   addconstraint2activitiesorderedform.h \
@@ -902,6 +910,10 @@ FORMS3 += helpfaqform_template.ui \
 		   constraint2activitiesconsecutiveform_template.ui \
 		   addconstraint2activitiesconsecutiveform_template.ui \
 		   modifyconstraint2activitiesconsecutiveform_template.ui \
+\
+		   constraint2activitiesgroupedform_template.ui \
+		   addconstraint2activitiesgroupedform_template.ui \
+		   modifyconstraint2activitiesgroupedform_template.ui \
 \
 		   constraint2activitiesorderedform_template.ui \
 		   addconstraint2activitiesorderedform_template.ui \

@@ -23,6 +23,7 @@
 #include "modifyconstraintactivitypreferredtimeslotsform.h"
 #include "modifyconstraintactivitypreferredstartingtimesform.h"
 #include "modifyconstraint2activitiesconsecutiveform.h"
+#include "modifyconstraint2activitiesgroupedform.h"
 #include "modifyconstraint2activitiesorderedform.h"
 
 #include "modifyconstraintactivitiespreferredtimeslotsform.h"
@@ -426,6 +427,12 @@ void AllTimeConstraintsForm::modifyConstraint()
 	else if(ctr->type==CONSTRAINT_ACTIVITIES_END_STUDENTS_DAY){
 		ModifyConstraintActivitiesEndStudentsDayForm* form=
 		 new ModifyConstraintActivitiesEndStudentsDayForm((ConstraintActivitiesEndStudentsDay*)ctr);
+		form->exec();
+	}
+	//47
+	else if(ctr->type==CONSTRAINT_2_ACTIVITIES_GROUPED){
+		ModifyConstraint2ActivitiesGroupedForm* form=
+		 new ModifyConstraint2ActivitiesGroupedForm((Constraint2ActivitiesGrouped*)ctr);
 		form->exec();
 	}
 	else{

@@ -108,6 +108,7 @@ public slots:
 	void on_dataTimeConstraintsBreakTimesAction_activated();
 
 	void on_dataTimeConstraints2ActivitiesConsecutiveAction_activated();
+	void on_dataTimeConstraints2ActivitiesGroupedAction_activated();
 	void on_dataTimeConstraints2ActivitiesOrderedAction_activated();
 	void on_dataTimeConstraintsActivityPreferredStartingTimeAction_activated();
 	void on_dataTimeConstraintsActivityPreferredTimeSlotsAction_activated();

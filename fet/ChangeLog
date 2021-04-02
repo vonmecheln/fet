@@ -1282,3 +1282,10 @@ Versions 5.7.0 - 5.7.x
 	- Added a user's manual by Volker Dirr
 	- Spanish translation update by Jose Cesar Fernandez Lopez
 	- Added an additional sample file by Horatiu Halmajan (Faculty of Economics, Timisoara, Romania)
+- Version 5.7.5
+	- Added constraint 2 activities grouped, which is the non-oriented version of constraint 2 activities consecutive
+	(the activities can be placed in any order, but one near the other) (suggested by sherman)
+	- Added an additional test to ensure that constraints same starting time are not impossible
+	- Very minor bug fixes (when working with redundant constraints same starting time/day/hour). This bug
+	is most probably unnoticed.
+	- Added an additional sample file by Zsolt Udvari (Bethlen, Hungary).

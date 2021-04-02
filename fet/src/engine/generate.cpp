@@ -2868,6 +2868,7 @@ again_if_impossible_activity:
 		bool oksamestartingday;
 		bool oknotoverlapping;
 		bool ok2activitiesconsecutive;
+		bool ok2activitiesgrouped;
 		bool ok2activitiesordered;
 		bool okactivityendsstudentsday;
 		bool okstudentsearlymaxbeginningsatsecondhour;
@@ -3391,6 +3392,78 @@ impossiblenotoverlapping:
 		
 impossible2activitiesconsecutive:
 		if(!ok2activitiesconsecutive){
+			//if(updateSubgroups || updateTeachers)
+			//	removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
+		/*foreach(int ai2, conflActivities[newtime])
+			assert(!swappedActivities[ai2]);*/
+		
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//allowed from 2 activities grouped
+		ok2activitiesgrouped=true;
+		
+		for(int i=0; i<constr2ActivitiesGroupedActivities[ai].count(); i++){
+			//direct
+			int ai2=constr2ActivitiesGroupedActivities[ai].at(i);
+			double perc=constr2ActivitiesGroupedPercentages[ai].at(i);
+			if(c.times[ai2]!=UNALLOCATED_TIME){
+				int d2=c.times[ai2]%gt.rules.nDaysPerWeek;
+				int h2=c.times[ai2]/gt.rules.nDaysPerWeek;				
+				bool ok=true;
+				
+				if(d2!=d){
+					ok=false;
+				}
+				else if(d==d2 && h2+gt.rules.internalActivitiesList[ai2].duration <= h){
+					int kk;
+					for(kk=h2+gt.rules.internalActivitiesList[ai2].duration; kk<gt.rules.nHoursPerDay; kk++)
+						if(!breakDayHour[d2][kk])
+							break;
+					assert(kk<=h);
+					if(kk!=h)
+						ok=false;
+				}
+				else if(d==d2 && h+act->duration <= h2){
+					int kk;
+					for(kk=h+act->duration; kk<gt.rules.nHoursPerDay; kk++)
+						if(!breakDayHour[d][kk])
+							break;
+					assert(kk<=h2);
+					if(kk!=h2)
+						ok=false;
+				}
+				else
+					ok=false;
+				
+				if(!ok && !skipRandom(perc)){
+					assert(ai2!=ai);
+					
+					if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+						ok2activitiesgrouped=false;
+						goto impossible2activitiesgrouped;
+					}
+					
+					if(!conflActivities[newtime].contains(ai2)){
+					//if(conflActivities[newtime].indexOf(ai2)==-1){
+
+						conflActivities[newtime].append(ai2);
+						//conflActivities[newtime].append(ai2);
+						nConflActivities[newtime]++;
+						assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+						//addConflActivity(conflActivities[newtime], nConflActivities[newtime], ai2, &gt.rules.internalActivitiesList[ai2]);
+					}
+				}
+			}
+		}
+
+impossible2activitiesgrouped:
+		if(!ok2activitiesgrouped){
 			//if(updateSubgroups || updateTeachers)
 			//	removeAiFromNewTimetable(ai, act, d, h);
 			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
