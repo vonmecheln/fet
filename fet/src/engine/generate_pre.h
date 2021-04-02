@@ -45,7 +45,7 @@ extern qint8 activitiesConflictingPercentage[MAX_ACTIVITIES][MAX_ACTIVITIES]; //
 bool computeActivitiesConflictingPercentage();
 //void computeActivitiesConflicting();
 
-void sortActivities(const QHash<int, int>& repr);
+void sortActivities(const QHash<int, int> & reprSameStartingTime, const QHash<int, QSet<int> > & reprSameActivitiesSet);
 ////////END   BASIC TIME CONSTRAINTS
 
 
@@ -138,7 +138,7 @@ bool computeTeachersMaxGapsPerDayPercentage();
 ////////BEGIN activities same starting time
 extern QList<int> activitiesSameStartingTimeActivities[MAX_ACTIVITIES];
 extern QList<double> activitiesSameStartingTimePercentages[MAX_ACTIVITIES];
-bool computeActivitiesSameStartingTime(QHash<int, int>& repr);
+bool computeActivitiesSameStartingTime(QHash<int, int> & reprSameStartingTime, QHash<int, QSet<int> > & reprSameActivitiesSet);
 ////////END   activities same starting time
 
 

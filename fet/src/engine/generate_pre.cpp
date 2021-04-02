@@ -297,6 +297,9 @@ bool fixedSpaceActivity[MAX_ACTIVITIES];
 bool processTimeConstraints()
 {
 	assert(gt.rules.internalStructureComputed);
+	
+	QHash<int, int> reprSameStartingTime;
+	QHash<int, QSet<int> > reprSameActivitiesSet;
 
 	/////1. BASIC TIME CONSTRAINTS
 	bool t=computeActivitiesConflictingPercentage();
@@ -352,8 +355,7 @@ bool processTimeConstraints()
 	//////////////////////////////////
 	
 	//must be AFTER basic time constraints (computeActivitiesConflictingPercentage)
-	QHash<int, int> repr;
-	t=computeActivitiesSameStartingTime(repr);
+	t=computeActivitiesSameStartingTime(reprSameStartingTime, reprSameActivitiesSet);
 	if(!t)
 		return false;
 
@@ -472,7 +474,7 @@ bool processTimeConstraints()
 		return false;
 	
 	//must have here repr computed correctly
-	sortActivities(repr);
+	sortActivities(reprSameStartingTime, reprSameActivitiesSet);
 	
 	bool ok=true;
 	
@@ -2049,7 +2051,7 @@ void computeActivitiesNotOverlapping()
 		}
 }
 
-bool computeActivitiesSameStartingTime(QHash<int, int>& repr)
+bool computeActivitiesSameStartingTime(QHash<int, int> & reprSameStartingTime, QHash<int, QSet<int> > & reprSameActivitiesSet)
 {
 	bool reportunder100=true;
 	bool report100=true;
@@ -2079,7 +2081,7 @@ bool computeActivitiesSameStartingTime(QHash<int, int>& repr)
 						s+=sst->getDetailedDescription(gt.rules);
 						s+="\n";
 						s+=QObject::tr("The constraint is impossible to respect, because there are the activities with id-s %1 and %2 which "
-						 "conflict one with another, because they have common students sets or teachers. FET will allow you to continue, "
+						 "conflict one with another, because they have common students sets or teachers or must be not overlapping. FET will allow you to continue, "
 						 "because the weight of this constraint is below 100.0%, "
 						 "but anyway most probably you have made a mistake in this constraint, "
 						 "so it is recommended to modify it.")
@@ -2099,7 +2101,7 @@ bool computeActivitiesSameStartingTime(QHash<int, int>& repr)
 						s+=sst->getDetailedDescription(gt.rules);
 						s+="\n";
 						s+=QObject::tr("The constraint is impossible to respect, because there are the activities with id-s %1 and %2 which "
-						 "conflict one with another, because they have common students sets or teachers. The weight of this constraint is 100.0%, "
+						 "conflict one with another, because they have common students sets or teachers or must be not overlapping. The weight of this constraint is 100.0%, "
 						 "so your timetable is impossible. Please correct this constraint.")
 						 .arg(gt.rules.internalActivitiesList[ai1].id)
 						 .arg(gt.rules.internalActivitiesList[ai2].id);
@@ -2145,7 +2147,7 @@ bool computeActivitiesSameStartingTime(QHash<int, int>& repr)
 	
 	QMultiHash<int, int> adjMatrix;
 	
-	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME
 		 &&gt.rules.internalTimeConstraintsList[i]->weightPercentage==100.0){
 			ConstraintActivitiesSameStartingTime* sst=(ConstraintActivitiesSameStartingTime*)gt.rules.internalTimeConstraintsList[i];
@@ -2155,9 +2157,10 @@ bool computeActivitiesSameStartingTime(QHash<int, int>& repr)
 				adjMatrix.insert(sst->_activities[i], sst->_activities[0]);
 			}
 		}
+	}
 		
-	//QHash<int, int> repr;
-	repr.clear();
+	QHash<int, int> repr;
+	//repr.clear();
 	
 	QQueue<int> queue;
 	
@@ -2194,7 +2197,7 @@ bool computeActivitiesSameStartingTime(QHash<int, int>& repr)
 						QString s=QObject::tr("You have a set of impossible constraints activities same starting time, considering all the indirect links between"
 						 " activities same starting time constraints");
 						s+="\n\n";
-						s+=QObject::tr("The activities with ids %1 and %2 must be simultaneous (request determined indirectly), but they have common teachers and/or students sets")
+						s+=QObject::tr("The activities with ids %1 and %2 must be simultaneous (request determined indirectly), but they have common teachers and/or students sets or must be not overlapping")
 						 .arg(gt.rules.internalActivitiesList[i].id).arg(gt.rules.internalActivitiesList[j].id);
 					
 						int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
@@ -2207,6 +2210,22 @@ bool computeActivitiesSameStartingTime(QHash<int, int>& repr)
 				}
 			}
 	///////////end added 5.10.0, June 2009
+	
+	QHash<int, QSet<int> > hashSet;
+	
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		assert(repr.contains(i));
+		int r=repr.value(i);
+		hashSet[r].insert(i); //faster
+		/*QSet<int> s;
+		if(hashSet.contains(r))
+			s=hashSet.value(r);
+		s.insert(i);
+		hashSet.insert(r, s);*/
+	}
+	
+	reprSameStartingTime=repr;
+	reprSameActivitiesSet=hashSet;
 
 	return oktocontinue;
 }
@@ -3027,9 +3046,22 @@ bool computeNotAllowedTimesPercentages()
 			for(int k=0; k<gt.rules.nHoursPerDay; k++)
 				teacherNotAvailableDayHour[i][j][k]=false;	
 	
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
+	//old code:
+	/*for(int i=0; i<gt.rules.nInternalActivities; i++)
 		for(int j=0; j<gt.rules.nHoursPerWeek; j++)
-			notAllowedTimesPercentages[i][j]=-1;
+			notAllowedTimesPercentages[i][j]=-1;*/
+			
+	//improvement by Volker Dirr (late activities):
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		Activity* act=&gt.rules.internalActivitiesList[i];
+		for(int j=0; j<gt.rules.nHoursPerWeek; j++){
+			int h=j/gt.rules.nDaysPerWeek;
+			if(h+act->duration <= gt.rules.nHoursPerDay)
+				notAllowedTimesPercentages[i][j]=-1;
+			else
+				notAllowedTimesPercentages[i][j]=100;
+		}
+	}
 
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 			//TEACHER not available
@@ -3615,6 +3647,41 @@ bool computeActivitiesConflictingPercentage()
 
 	progress.setValue(gt.rules.nInternalTeachers+gt.rules.nInternalSubgroups);
 	
+	//new volker (start)
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		TimeConstraint* tc=gt.rules.internalTimeConstraintsList[i];
+		if(tc->type==CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING){
+			if(tc->weightPercentage==100.0){
+				ConstraintActivitiesNotOverlapping* cno=(ConstraintActivitiesNotOverlapping*) tc;
+				
+				for(int a=0; a<cno->_n_activities; a++){
+					for(int b=0; b<cno->_n_activities; b++){
+						if(cno->_activities[a]!=cno->_activities[b]){
+							activitiesConflictingPercentage[cno->_activities[a]][cno->_activities[b]]=100;
+						}
+					}
+				}
+			}
+			else{
+				ConstraintActivitiesNotOverlapping* cno=(ConstraintActivitiesNotOverlapping*) tc;
+				
+				int ww=int(cno->weightPercentage);
+				if(ww>100)
+					ww=100;
+			
+				for(int a=0; a<cno->_n_activities; a++){
+					for(int b=0; b<cno->_n_activities; b++){
+						if(cno->_activities[a]!=cno->_activities[b]){
+							if(activitiesConflictingPercentage[cno->_activities[a]][cno->_activities[b]] < ww)
+								activitiesConflictingPercentage[cno->_activities[a]][cno->_activities[b]]=ww;
+						}
+					}
+				}
+			}
+		}
+	}
+	//new volker (end)
+
 	return true;
 }
 
@@ -5910,7 +5977,7 @@ bool homeRoomsAreOk()
 }
 
 
-void sortActivities(const QHash<int, int>& repr)
+void sortActivities(const QHash<int, int> & reprSameStartingTime, const QHash<int, QSet<int> > & reprSameActivitiesSet)
 {
 //	const int INF  = 2000000000;
 	const int INF  = 1500000000; //INF and INF2 values of variables may be increased, so they should be INF2>>INF and INF2<<MAXINT(2147.........)
@@ -5963,16 +6030,71 @@ void sortActivities(const QHash<int, int>& repr)
 		}
 	}
 	
+	
+	//make those with same starting time have conflicts
+	//for instance, if A1 simultaneous with A2 and A2 conflicts with A3. then A1 conflicts with A3
+	//also, A1 will conflict with A2, but this conflict is not counted
+	//idea of Volker Dirr, implementation of Liviu
+	
+	QSet<int> allRepresentants;
+	foreach(int r, reprSameStartingTime) //only values, which are representants
+		allRepresentants.insert(r);
+	
+	foreach(int r, allRepresentants){
+		assert(reprSameActivitiesSet.contains(r));
+		QSet<int> s=reprSameActivitiesSet.value(r);
+		
+		assert(s.count()>=1);
+		if(s.count()>=2){
+			qint8 crth[MAX_ACTIVITIES];
+			qint8 crtv[MAX_ACTIVITIES];
+
+			for(int i=0; i<gt.rules.nInternalActivities; i++){
+				crth[i]=-1; //horizontal
+				crtv[i]=-1; //vertical
+			}
+		
+			foreach(int j, s){
+				for(int i=0; i<gt.rules.nInternalActivities; i++){
+					if(crth[i]<activitiesConflictingPercentage[j][i])
+						crth[i]=activitiesConflictingPercentage[j][i];
+					if(crtv[i]<activitiesConflictingPercentage[i][j])
+						crtv[i]=activitiesConflictingPercentage[i][j];
+				}
+			}
+
+			for(int i=0; i<gt.rules.nInternalActivities; i++)
+				assert(crth[i]==crtv[i]);
+		
+			foreach(int j, s){
+				for(int i=0; i<gt.rules.nInternalActivities; i++){
+					assert(activitiesConflictingPercentage[j][i]<=crth[i]);
+					activitiesConflictingPercentage[j][i]=crth[i];
+
+					assert(activitiesConflictingPercentage[i][j]<=crtv[i]);
+					activitiesConflictingPercentage[i][j]=crtv[i];
+				}
+			}
+		}
+	}
+	//end same starting time
 
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
 		nIncompatible[i]=0;
 		
+		assert(reprSameStartingTime.contains(i));
+		
 		//basic
-		for(int j=0; j<gt.rules.nInternalActivities; j++)
-			if(i!=j && activitiesConflictingPercentage[i][j]>=THRESHOLD){
-				assert(activitiesConflictingPercentage[i][j]==100);
-				nIncompatible[i]+=gt.rules.internalActivitiesList[j].duration;
+		for(int j=0; j<gt.rules.nInternalActivities; j++){
+			assert(reprSameStartingTime.contains(j));
+			
+			if(reprSameStartingTime.value(i)!=reprSameStartingTime.value(j)){
+				if(i!=j && activitiesConflictingPercentage[i][j]>=THRESHOLD){
+					//assert(activitiesConflictingPercentage[i][j]==100);
+					nIncompatible[i]+=gt.rules.internalActivitiesList[j].duration;
+				}
 			}
+		}
 				
 		//not available, break, preferred time(s)
 		for(int j=0; j<gt.rules.nHoursPerWeek; j++)
@@ -6043,6 +6165,59 @@ void sortActivities(const QHash<int, int>& repr)
 	//IT IS POSSIBLE TO SORT ABOUT SAME STARTING TIME, see below, idea of Volker Dirr. It is much faster for some data sets.
 	//(for some data sets, it is 7 times faster)
 	
+	//compute repr:
+	/////////////////
+	QMultiHash<int, int> adjMatrix;
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME
+		 &&gt.rules.internalTimeConstraintsList[i]->weightPercentage==100.0){
+			ConstraintActivitiesSameStartingTime* sst=(ConstraintActivitiesSameStartingTime*)gt.rules.internalTimeConstraintsList[i];
+			
+			for(int i=1; i<sst->_n_activities; i++){
+				adjMatrix.insert(sst->_activities[0], sst->_activities[i]);
+				adjMatrix.insert(sst->_activities[i], sst->_activities[0]);
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_2_ACTIVITIES_CONSECUTIVE
+		 && gt.rules.internalTimeConstraintsList[i]->weightPercentage==100.0){
+			Constraint2ActivitiesConsecutive* c2c=(Constraint2ActivitiesConsecutive*)gt.rules.internalTimeConstraintsList[i];
+			
+			adjMatrix.insert(c2c->firstActivityIndex, c2c->secondActivityIndex);
+			adjMatrix.insert(c2c->secondActivityIndex, c2c->firstActivityIndex);
+		}
+	}
+		
+	QHash<int, int> repr;
+	//repr.clear();
+	
+	QQueue<int> queue;
+	
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		int start=i;
+		
+		if(repr.value(start, -1)==-1){ //not visited
+			repr.insert(start, start);
+			queue.enqueue(start);
+			while(!queue.isEmpty()){
+				int crtHead=queue.dequeue();
+				assert(repr.value(crtHead, -1)==start);
+				QList<int> neighList=adjMatrix.values(crtHead);
+				foreach(int neigh, neighList){
+					if(repr.value(neigh, -1)==-1){
+						queue.enqueue(neigh);
+						repr.insert(neigh, start);
+					}
+					else{
+						assert(repr.value(neigh, -1)==start);
+					}
+				}
+			}
+		}
+	}
+
+	/////////////////
+	
 	//take care of chains of constraints with 100% weight
 	int reprNInc[MAX_ACTIVITIES];
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
@@ -6108,8 +6283,93 @@ void sortActivities(const QHash<int, int>& repr)
 				if(nIncompatible[c->_activities[a]]<MM)
 					nIncompatible[c->_activities[a]]=MM;
 		}
+		else if(tc->type==CONSTRAINT_2_ACTIVITIES_CONSECUTIVE && tc->weightPercentage>=THRESHOLD){
+			Constraint2ActivitiesConsecutive* c=(Constraint2ActivitiesConsecutive*) tc;
+			
+			int xx=nIncompatible[c->firstActivityIndex];
+			if(fixedTimeActivity[c->firstActivityIndex] && fixedSpaceActivity[c->firstActivityIndex]){
+				assert(xx>=INF2);
+				xx-=(INF2-INF);
+			}
+			assert(xx>=0);
+			assert(xx<INF2);
+			
+			int MM=xx;
+			
+			int yy=nIncompatible[c->secondActivityIndex];
+			if(fixedTimeActivity[c->secondActivityIndex] && fixedSpaceActivity[c->secondActivityIndex]){
+				assert(yy>=INF2);
+				yy-=(INF2-INF);
+			}
+			assert(yy>=0);
+			assert(yy<INF2);
+			
+			if(MM<yy)
+				MM=yy;
+				
+			if(nIncompatible[c->firstActivityIndex] < MM)
+				nIncompatible[c->firstActivityIndex] = MM;
+
+			if(nIncompatible[c->secondActivityIndex] < MM)
+				nIncompatible[c->secondActivityIndex] = MM;
+		}
+		else if(tc->type==CONSTRAINT_2_ACTIVITIES_GROUPED && tc->weightPercentage>=THRESHOLD){
+			Constraint2ActivitiesGrouped* c=(Constraint2ActivitiesGrouped*) tc;
+			
+			int xx=nIncompatible[c->firstActivityIndex];
+			if(fixedTimeActivity[c->firstActivityIndex] && fixedSpaceActivity[c->firstActivityIndex]){
+				assert(xx>=INF2);
+				xx-=(INF2-INF);
+			}
+			assert(xx>=0);
+			assert(xx<INF2);
+			
+			int MM=xx;
+			
+			int yy=nIncompatible[c->secondActivityIndex];
+			if(fixedTimeActivity[c->secondActivityIndex] && fixedSpaceActivity[c->secondActivityIndex]){
+				assert(yy>=INF2);
+				yy-=(INF2-INF);
+			}
+			assert(yy>=0);
+			assert(yy<INF2);
+			
+			if(MM<yy)
+				MM=yy;
+				
+			if(nIncompatible[c->firstActivityIndex] < MM)
+				nIncompatible[c->firstActivityIndex] = MM;
+
+			if(nIncompatible[c->secondActivityIndex] < MM)
+				nIncompatible[c->secondActivityIndex] = MM;
+		}
 	}
 	//new volker (end)
+	
+	
+	//this is to avoid an "impossible to generate" bug in fixed timetables - does not eliminate completely the bug, unfortunately
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		if(nIncompatible[i]>=INF && nIncompatible[i]<INF2){
+			if(fixedTimeActivity[i]){
+				nIncompatible[i]=INF;
+		
+				nIncompatible[i]+=gt.rules.internalActivitiesList[i].iSubgroupsList.count()+
+				 gt.rules.internalActivitiesList[i].iTeachersList.count();
+			 
+				assert(nIncompatible[i]>=INF);
+			}
+			else{
+				nIncompatible[i]=INF;
+			}
+		}
+		else if(nIncompatible[i]>=INF2){
+			assert(fixedTimeActivity[i] && fixedSpaceActivity[i]);
+		
+			int xx=nIncompatible[i]-INF2;
+			assert(xx==gt.rules.internalActivitiesList[i].iSubgroupsList.count()+
+			 gt.rules.internalActivitiesList[i].iTeachersList.count());
+		}
+	}
 	
 	
 	//Sort activities in in-creasing order of number of the other activities with which

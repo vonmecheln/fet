@@ -1403,4 +1403,10 @@ Versions 5.10.0 - 5.10.x
 	- Modified the main menu arrangement of constraints (suggested by Massimo Mancini).
 	- Crash bug fix (very rare, if user pressed cancel immediately after hitting generation start in timetable generate dialog).
 	- Added another sample file (by T. Renganathan).
+- Version 5.10.2
+	- Speed improvement if user has constraints activities same starting time, 2 activities consecutive and 2 activities ordered and
+	 activities not overlapping (idea and partial code by Volker Dirr). In some cases, the speed improvement is very high. This has to
+	 do with the initial ordering of the activities.
+	- Other minor speed improvements (idea and partial code by Volker Dirr).
+	- Added a Persian manual by Hamed SadeghiNeshat.
 	

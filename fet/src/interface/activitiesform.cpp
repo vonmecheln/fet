@@ -32,6 +32,8 @@
 
 #include <QDesktopWidget>
 
+#include "longtextmessagebox.h"
+
 ActivitiesForm::ActivitiesForm()
 {
 	//setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
@@ -251,15 +253,16 @@ void ActivitiesForm::removeActivity()
 		s=QObject::tr("Removing activity:");
 	else
 		s=QObject::tr("Removing sub-activity:");*/
-	s=QObject::tr("Removing:");
-	s+="\n";
-	s+=act->getDetailedDescription(gt.rules);
+	s=QObject::tr("Remove activity?");
 	s+="\n";
 	if(act->isSplit())
 		s+=QObject::tr("There will also be removed the related activities from the same larger split activity");
+	s+="\n\n";
+	s+=act->getDetailedDescription(gt.rules);
+	s+="\n";
 
-	switch( QMessageBox::warning( this, QObject::tr("FET warning"),
-	s, QObject::tr("OK"), QObject::tr("Cancel"), 0, 0, 1 ) ){
+	switch( LongTextMessageBox::confirmation( this, QObject::tr("FET confirmation"),
+	s, QObject::tr("Yes"), QObject::tr("No"), 0, 0, 1 ) ){
 	case 0: // The user clicked the OK button or pressed Enter
 		gt.rules.removeActivity(act->id, act->activityGroupId);
 		filterChanged();

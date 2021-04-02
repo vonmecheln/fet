@@ -6114,6 +6114,18 @@ void TimetableExport::computeActivitiesWithSameStartingTime(){		// by Volker Dir
 			if(tc->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME){ //not needed anymore:  && tc->weightPercentage==100
 				ConstraintActivitiesSameStartingTime* c=(ConstraintActivitiesSameStartingTime*) tc;
 				for(int a=0; a<c->_n_activities; a++){
+					//speed improvement
+					QList<int> & tmpList=activitiesWithSameStartingTime[c->_activities[a]];
+					for(int b=0; b<c->_n_activities; b++){
+						if(a!=b){
+							if(best_solution.times[c->_activities[a]]==best_solution.times[c->_activities[b]]){ 	//because constraint is maybe not with 100% weight and failed
+								if(!tmpList.contains(c->_activities[b])){
+									tmpList<<c->_activities[b];
+								}
+							}
+						}
+					}
+					/*
 					QList<int> tmpList;
 					if(activitiesWithSameStartingTime.contains(c->_activities[a]))
 						tmpList=activitiesWithSameStartingTime.value(c->_activities[a]);
@@ -6127,6 +6139,7 @@ void TimetableExport::computeActivitiesWithSameStartingTime(){		// by Volker Dir
 						}
 					}
 					activitiesWithSameStartingTime.insert(c->_activities[a], tmpList);
+					*/
 				}
 			}
 		}

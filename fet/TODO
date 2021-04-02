@@ -1206,3 +1206,24 @@ I thought about your proposal. I think it cannot be done and I know the reasons 
 a constraint activities preferred starting times has subject "" or specified. If it is "", then it is for 
 all subjects. So, I should write all constraints of this type with subject "" for each subject. But this 
 is not correct. A constraint might have a teacher which don't have this subject.
+
+30---------------------------------------------------------
+From Volker Dirr:
+
+>> by the way we should add a new tests before generating a timetable:
+>> if 2 activities are grouped, then turn of min n day constraint of that
+>> activities.
+>> if 2 activities are consecutive, turn of min n day.
+>> if 2 activitives have same starting time, turn of min n day.
+>>
+>> or the opposit, bedending on what has a higher weight.
+>>
+>> maybe instead of turning of maybe just warn the user that this two
+>> constraints are not acceptable at the same time and tell him he should
+>> care about that problem first of all (by removing or reducing weight to
+>> 0%).
+
+31---------------------------------------------------------
+
+Teachers and students min hours daily must be configurable to allow or not empty days
+(currently, teachers allow and students don't allow, for performance reasons).

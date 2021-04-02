@@ -2926,6 +2926,8 @@ again_if_impossible_activity:
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 		//not too late
+		//unneeded code, because notAllowedTimesPercentages[ai][newtime]==100 now
+		//you can comment this code, but you cannot put an assert failed, because the test is done in next section (see 13 lines below).
 		if(h+act->duration>gt.rules.nHoursPerDay){
 			//if(updateSubgroups || updateTeachers)
 			//	removeAiFromNewTimetable(ai, act, d, h);
@@ -2964,6 +2966,7 @@ again_if_impossible_activity:
 					int ai2=teachersTimetable[tch][d][h+dur];
 					assert(ai2!=ai);
 				
+					assert(activitiesConflictingPercentage[ai][ai2]==100);
 					if(!skipRandom(activitiesConflictingPercentage[ai][ai2])){
 						if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
 							okbasictime=false;
@@ -2993,6 +2996,7 @@ again_if_impossible_activity:
 					int ai2=subgroupsTimetable[sbg][d][h+dur];
 					assert(ai2!=ai);
 			
+					assert(activitiesConflictingPercentage[ai][ai2]==100);
 					if(!skipRandom(activitiesConflictingPercentage[ai][ai2])){
 						if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
 							okbasictime=false;

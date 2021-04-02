@@ -23,3 +23,7 @@ Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/)
 	Import and export of CSV files
 	
 	Export of advanced statistics
+	
+	Important suggestions and partial code for great speed improvements in some particular cases
+	(better computation for initial order of activities, which leads to much faster generation for some
+	particular cases of timetables).

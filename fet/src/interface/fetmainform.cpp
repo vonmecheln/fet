@@ -2366,6 +2366,8 @@ void FetMainForm::on_helpInOtherLanguagesAction_activated()
 	s+=tr("4. ro - Romanian - Import/Export Help");
 	s+="\n\n";	
 	s+=tr("5. ca - Catalan - Manual");
+	s+="\n\n";	
+	s+=tr("6. fa - Persian - Manual");
 
 	//show the message in a dialog
 	QDialog dialog;

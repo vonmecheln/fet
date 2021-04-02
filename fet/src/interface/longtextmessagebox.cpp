@@ -29,9 +29,9 @@
 
 #include <assert.h>
 
-const int MIN_WIDTH=437;  //golden ratio 1.618 for min dimensions :-)
+const int MIN_WIDTH=420;  //golden ratio 1.618 for min dimensions :-)
 const int MAX_WIDTH=1000;
-const int MIN_HEIGHT=270;
+const int MIN_HEIGHT=260;
 const int MAX_HEIGHT=650;
 
 const int LARGE_MIN_WIDTH=590;
