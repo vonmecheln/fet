@@ -1,30 +1,35 @@
-Free software for school administration/timetabling:
+LINKS (Free software for school administration/timetabling):
 
 
-Alternative timetabling algorithms and German FET support
-	available at http://www.timetabling.de/
-
-TABLIX:
-	http://www.tablix.org/
-	
-orario_elettronico:
-	http://orarelettr.sourceforge.net/
-
-SchoolTool:
-	http://www.schooltool.org/
-	
-intime
-	http://intime.sourceforge.net/
-	
-G-Tablix
-	http://gtablix.homelinux.org/wordpress/
-	
-FET in French
-	http://fetfr.free.fr/
-
-and, of course, FET :-)
+FET:
 	http://lalescu.ro/liviu/fet/
 
+Alternative timetabling algorithms and German FET support available at
+	http://www.timetabling.de/
 
+Orario_Elettronico - a graphical front/back-end / manual editor
+	http://orarelettr.sourceforge.net/
 
-Please send in other useful links!
+A link to the translation of FET into French. This site also contains tools (.xsl) 
+and the necessary instructions to translate the .xml results obtained with FET into 
+human readable .html files (you will find these .xsl files also in the directory results/ of FET)
+	http://fetfr.free.fr/
+
+TABLIX - a free software kernel for solving general timetabling problems
+	http://www.tablix.org/
+
+SchoolTool - a project to develop a common global school administration infrastructure 
+that is freely available under an Open Source licence
+	http://www.schooltool.org/
+
+intime - a free, open source program for editing school time tables
+	http://intime.sourceforge.net/
+
+G-Tablix - a graphical user interface (GUI) for Tablix
+	http://gtablix.homelinux.org/
+
+Open Admin for Schools - a web based school administration program written in perl and released under the GNU GPL
+	http://richtech.ca/openadmin/
+
+G-stpl - The Swing Timetable PLatform
+	http://gstpl.sourceforge.net/

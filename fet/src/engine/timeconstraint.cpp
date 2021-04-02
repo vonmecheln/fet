@@ -3114,7 +3114,7 @@ double ConstraintBreak::fitness(TimeChromosome& c, Rules& r, QList<double>& cl, 
 				int begintimeact=c.times[i];
 				int endtimeact=c.times[i]+r.nDaysPerWeek*r.internalActivitiesList[i].duration;
 			
-				if(!(endtimeact<=begintimebreak || begintimeact>endtimebreak)){ //they intersect
+				if(!(endtimeact<=begintimebreak || begintimeact>=endtimebreak)){ //they intersect
 					nbroken++;
 				}
 			}
@@ -3133,7 +3133,11 @@ double ConstraintBreak::fitness(TimeChromosome& c, Rules& r, QList<double>& cl, 
 				int begintimeact=c.times[i];
 				int endtimeact=c.times[i]+r.nDaysPerWeek*r.internalActivitiesList[i].duration;
 			
-				if(!(endtimeact<=begintimebreak || begintimeact>endtimebreak)){ //they intersect
+				if(!(endtimeact<=begintimebreak || begintimeact>=endtimebreak)){ //they intersect
+					/*cout<<"Activity with id=="<<r.internalActivitiesList[i].id<<", duration=="<<r.internalActivitiesList[i].duration
+					 <<" is scheduled on day "<<qPrintable(r.daysOfTheWeek[begintimeact%r.nDaysPerWeek])<<", hour "<<
+					 qPrintable(r.hoursOfTheDay[begintimeact/r.nDaysPerWeek])<<endl;*/
+				
 					nbroken++;
 
 					if(conflictsString!=NULL){

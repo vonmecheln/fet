@@ -827,3 +827,9 @@ Versions 5.0.0 -
 	- Improved saving xhtml timetables by Volker Dirr
 	- Removed the preferred time when adding an activity (useless)
 	- Removed not important time constraints which do not fit into new algorithm
+- Version 5.0.0-preview5
+	- Improvement in the optimization - optimizetime.cpp
+- Version 5.0.0-preview6
+	- Improvements in the optimization - optimizetime.cpp
+- Version 5.0.0-preview7
+	- Bug fix in ConstraintBreak
