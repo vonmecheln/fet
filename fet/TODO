@@ -126,6 +126,23 @@ share the same group (overlap)"
 shorten version:
 "Some years share this group if it´s inserted."
 
+15. and a maye other thing. example:
+view in fet-mainform.
+there is "Time contraints (techers)".
+and in this folder is for example "Teachers max gaps per Week".
+i recommend to write just "Max gaps per Week".
+Reason:
+- it´s shorter
+- it´s clear that it "teachers" contraint, because it´s in that folder
+
+the english version looks fine, because you are always possible to write
+first "teachers". (except on time view (Min days between activities. You
+are not able to write Activities first.)
+In german translation it is much more difficult the write "teacher" always
+first. even including the word teacher is a much longer phrases than in
+english. it will be much easyer and nice, if we don´t write teacher here.
+maybe the same porblem in other languages.
+
 ----------------------------------------------------------------------------------
 
 From Volker Dirr:

@@ -70,6 +70,9 @@ AddConstraintActivitiesSameStartingTimeForm::AddConstraintActivitiesSameStarting
 	}
 	studentsComboBox->setCurrentItem(0);
 	
+	simultaneousActivitiesListBox->clear();
+	this->simultaneousActivitiesList.clear();
+
 	updateActivitiesListBox();
 }
 
@@ -128,10 +131,10 @@ void AddConstraintActivitiesSameStartingTimeForm::filterChanged()
 void AddConstraintActivitiesSameStartingTimeForm::updateActivitiesListBox()
 {
 	activitiesListBox->clear();
-	simultaneousActivitiesListBox->clear();
+	//simultaneousActivitiesListBox->clear();
 
 	this->activitiesList.clear();
-	this->simultaneousActivitiesList.clear();
+	//this->simultaneousActivitiesList.clear();
 
 	if(blockCheckBox->isChecked())
 		//show only non-split activities and split activities which are the representatives
@@ -160,6 +163,9 @@ void AddConstraintActivitiesSameStartingTimeForm::updateActivitiesListBox()
 
 void AddConstraintActivitiesSameStartingTimeForm::blockChanged()
 {
+	simultaneousActivitiesListBox->clear();
+	this->simultaneousActivitiesList.clear();
+
 	this->updateActivitiesListBox();
 }
 

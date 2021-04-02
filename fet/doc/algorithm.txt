@@ -12,9 +12,9 @@ recursively replace them. I use a tabu list with size MAX_TABU to avoid cycles.
 
 The maximum depth (level) of recursion is 14.
 
-The maximum number of recursive calls is 1000.
+The maximum number of recursive calls is 2000 (modified 15 Aug. 2007).
 
-The recursion chooses only one variant from depth 7 above, then it returns.
+The recursion chooses only one variant from depth 5 (modified 15 Aug. 2007) above, then it returns.
 
 How to respect the students gaps (possible in combination with early)? Compute the number of
 total hours per week for each subgroup, then when generating, the total span of lessons

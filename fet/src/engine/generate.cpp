@@ -195,8 +195,8 @@ void Generate::optimize()
 	
 	//time_limit=0.25; //obsolete
 	
-	//2000 was before
-	limitcallsrandomswap=1000; //1600, 1500 also good values, 1000 too low???
+	//1000 was before
+	limitcallsrandomswap=2000; //1600, 1500 also good values, 1000 too low???
 	
 	//14 was before
 	level_limit=14; //20; //16
@@ -3856,8 +3856,8 @@ impossibleteachermaxdaysperweek:
 			int tmp_n_confl_acts;
 			
 			foreach(int rm, activitiesPreferredRoomsPreferredRooms[ai]){
-				if(unspecified_room)
-					break;
+				//if(unspecified_room)
+				//	break;
 			
 				int dur;
 				for(dur=0; dur<act->duration; dur++)
@@ -3872,11 +3872,12 @@ impossibleteachermaxdaysperweek:
 					tmp_list.clear();
 					
 					int dur2;
+					bool canSkip=skipRandom(activitiesPreferredRoomsPercentage[ai]);
 					for(dur2=0; dur2<act->duration; dur2++){
 						int ai2=roomsTimetable[rm][d][h+dur2];
 						if(ai2>=0){
 							if(conflActivities[newtime].indexOf(ai2)==-1){
-								if(skipRandom(activitiesPreferredRoomsPercentage[ai])){
+								if(canSkip){
 									unspecified_room=true;
 									break;
 								}
@@ -3917,7 +3918,7 @@ impossibleteachermaxdaysperweek:
 					tmp_n_confl_acts=MAX_ACTIVITIES;
 			}
 			
-			if(!unspecified_room){
+			if(!unspecified_room || optConflActivities==0){
 				if(optConflActivities==MAX_ACTIVITIES){
 					okroomnotavailable=false;
 					goto impossibleroomnotavailable;
@@ -4328,29 +4329,6 @@ impossibleroomnotavailable:
 				// " restored from time: "<<c.times[aii]<<" to time: "<<oldtime<<endl;
 				moveActivity(aii, c.times[aii], oldtime, c.rooms[aii], oldroom);
 				
-				
-				
-				/*
-				if(c.times[aii]!=UNALLOCATED_TIME){
-					triedRemovals[aii][c.times[aii]]++;
-				
-					int a=tabu_activities[crt_tabu_index];
-					int t=tabu_times[crt_tabu_index];
-					if(a>=0 && t>=0){
-						assert(triedRemovals[a][t]>0);
-						triedRemovals[a][t]--;
-						//cout<<"Removing activity with id=="<<gt.rules.internalActivitiesList[a].id<<", time=="<<t<<endl;
-					}
-					tabu_activities[crt_tabu_index]=aii;
-					tabu_times[crt_tabu_index]=c.times[aii];
-					//cout<<"Inserting activity with id=="<<gt.rules.internalActivitiesList[aii].id<<", time=="<<c.times[aii]<<endl;
-					crt_tabu_index=(crt_tabu_index+1)%MAX_TABU;
-				}
-				*/
-				
-				
-				
-
 				//cout<<"Level=="<<level<<", act. id=="<<gt.rules.internalActivitiesList[ai].id<<", restoring old time=="<<c.times[ai]<<endl;
 				
 				//assert(oldtime!=UNALLOCATED_TIME);
@@ -4367,7 +4345,7 @@ impossibleroomnotavailable:
 			
 			assert(!foundGoodSwap);
 			
-			if(level>=7) //7 originally
+			if(level>=5) //7 originally
 				return;
 		}
 	}

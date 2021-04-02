@@ -28,6 +28,10 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 #include <qmessagebox.h>
 
+#include <iostream>
+
+using namespace std;
+
 Activity::Activity()
 {
 }
@@ -202,7 +206,8 @@ void Activity::computeInternalStructure(Rules& r)
 				QString s;
 				s=QObject::tr(QString("Warning: activity with id=%1\ncontains duplicated subgroups. Automatically correcting..."))
 					.arg(this->id);
-				QMessageBox::warning(NULL, QObject::tr("FET information"), s, QObject::tr("&Ok"));
+				//QMessageBox::warning(NULL, QObject::tr("FET information"), s, QObject::tr("&Ok"));
+				cout<<qPrintable(s)<<endl;
 			}
 			else
 				this->subgroups[this->nSubgroups++]=tmp;
@@ -226,7 +231,8 @@ void Activity::computeInternalStructure(Rules& r)
 					QString s;
 					s=QObject::tr(QString("Warning: activity with id=%1\ncontains duplicated subgroups. Automatically correcting..."))
 						.arg(this->id);
-					QMessageBox::warning(NULL, QObject::tr("FET information"), s, QObject::tr("&Ok"));
+					//QMessageBox::warning(NULL, QObject::tr("FET information"), s, QObject::tr("&Ok"));
+					cout<<qPrintable(s)<<endl;
 				}
 				else
 					this->subgroups[this->nSubgroups++]=tmp;
@@ -253,7 +259,8 @@ void Activity::computeInternalStructure(Rules& r)
 						QString s;
 						s=QObject::tr(QString("Warning: activity with id=%1\ncontains duplicated subgroups. Automatically correcting..."))
 							.arg(this->id);
-						QMessageBox::warning(NULL, QObject::tr("FET information"), s, QObject::tr("&Ok"));
+						//QMessageBox::warning(NULL, QObject::tr("FET information"), s, QObject::tr("&Ok"));
+						cout<<qPrintable(s)<<endl;
 					}
 					else{
 						this->subgroups[this->nSubgroups++]=tmp;

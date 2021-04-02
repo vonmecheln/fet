@@ -942,4 +942,15 @@ Versions 5.1.0 -
 	- Improvement in automatic generation (cycles avoided better)
 - Version 5.1.7
 	- I hope improvements in automatic generation
+- Version 5.1.8
+	- Update in German translation by Volker Dirr
+	- Improvement: if activity contains duplicated subgroups, this is not reported to the user anymore
+	(suggested by Volker Dirr)
+	- Improvement in rooms allocation - if room free, activity is placed, even
+	if constraint subj (act) pref room(s) has low weight (suggested by Volker Dirr)
+	- Changes in automatic generation (I hope good ones)
+	- Improvement in adding constraint activities same starting time (filter change does
+	not remove activities any longer) (suggested by Volker Dirr)
+	- Improvement in adding constraint min n days between activities (filter) (suggested by
+	Volker Dirr)
 	

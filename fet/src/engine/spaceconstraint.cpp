@@ -1023,7 +1023,7 @@ QString ConstraintSubjectPreferredRoom::getDetailedDescription(Rules& r){
 
 	QString s=QObject::tr("Space constraint"); s+="\n";
 	s+=QObject::tr("Subject preferred room"); s+="\n";
-	s+=QObject::tr("Weight (percentage)=%1").arg(this->weightPercentage);s+="\n";
+	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 	s+=QObject::tr("Subject=%1").arg(this->subjectName);s+="\n";
 	s+=QObject::tr("Room name=%1").arg(this->roomName);s+="\n";
 
@@ -1209,7 +1209,7 @@ QString ConstraintSubjectPreferredRooms::getDescription(Rules& r){
 		;
 
 	QString s="Subject preferred rooms"; s+=", ";
-	s+=QObject::tr("WP:%1").arg(this->weightPercentage);s+=", ";
+	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	s+=QObject::tr("S:%1").arg(this->subjectName);
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
 		s+=", ";
