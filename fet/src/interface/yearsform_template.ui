@@ -158,6 +158,12 @@
         <receiver>YearsForm_template</receiver>
         <slot>divideYear()</slot>
     </connection>
+    <connection>
+        <sender>yearsListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>YearsForm_template</receiver>
+        <slot>modifyYear()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>yearsListBox</tabstop>

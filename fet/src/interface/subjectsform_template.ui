@@ -150,6 +150,12 @@
         <receiver>SubjectsForm_template</receiver>
         <slot>deactivateSubject()</slot>
     </connection>
+    <connection>
+        <sender>subjectsListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>SubjectsForm_template</receiver>
+        <slot>renameSubject()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>subjectsListBox</tabstop>

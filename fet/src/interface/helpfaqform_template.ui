@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 11 August 2007
+this documentation by Liviu Lalescu, reviewed and modified - 12 August 2007
 
 --------
 
@@ -209,6 +209,12 @@ Q: From Yush Yuen: Anyway, what i meant was, our teachers may have lunch at EITH
 
 A: From Volker Dirr: Just add a subject "lunch". Then add activities new activities. this activities must contain the teacher, subject lunch, split activity into number of working days of the teacher, set min n day = 100% and add NO studentsset. Then add constraint activities preferd time for this subject 5th and 6th hour weight = 100%.
 
+
+-------------------------------------------------------------------------------
+
+Q: Is it possible to make a timetable where the students learn in two shifts? (for instance, the lowest form in the morning and the highest forms in the afternoon)?
+
+A: Yes, you have to add more constraint students set not available accordingly (for the lowest forms not available Mon, Tue, Wed, Th, Fr each from middle hour to last hour and for highest forms from first hour to middle hour). The constraint students early does not work in this case for the highest forms, because early cannot be respected for them, so you must not enter constraint students sets early for these students sets or a general students early (If you really need early constraints for students who begin in the afternoon, I'll think about that - please email me).
 
 -------------------------------------------------------------------------------
 

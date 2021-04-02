@@ -125,6 +125,12 @@ home rooms are not needed (teachers' or students' rooms)</string>
         <receiver>RoomsForm_template</receiver>
         <slot>sortRooms()</slot>
     </connection>
+    <connection>
+        <sender>roomsListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>RoomsForm_template</receiver>
+        <slot>modifyRoom()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>addRoomPushButton</tabstop>

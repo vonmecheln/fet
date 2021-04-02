@@ -932,5 +932,7 @@ Versions 5.1.0 -
 	- Improvements in Romanian translation.
 	- Improvements in German translation by Volker Dirr.
 	- Small improvements in interface.
-	- The user can now double click in any constraints dialog.
-	
+	- The user can now double click in any constraints dialog to modify.
+- Version 5.1.5
+	- Improvements in interface (double click in Teachers, Subjects, etc. now modifies).
+	- German translation update by Volker Dirr.

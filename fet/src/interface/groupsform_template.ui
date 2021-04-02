@@ -190,6 +190,12 @@
         <receiver>GroupsForm_template</receiver>
         <slot>deactivateStudents()</slot>
     </connection>
+    <connection>
+        <sender>groupsListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>GroupsForm_template</receiver>
+        <slot>modifyGroup()</slot>
+    </connection>
 </connections>
 <slots>
     <slot>addGroup()</slot>

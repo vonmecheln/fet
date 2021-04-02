@@ -4617,11 +4617,11 @@ p, li { white-space: pre-wrap; }
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or faculty.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.1.4 (August 2007)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.1.5 (August 2007)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
@@ -4653,7 +4653,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/interface/helpfaqform_template.ui" line="41"/>
         <source>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 11 August 2007
+this documentation by Liviu Lalescu, reviewed and modified - 12 August 2007
 
 --------
 
@@ -4825,6 +4825,12 @@ A: From Volker Dirr: Just add a subject &quot;lunch&quot;. Then add activities n
 
 -------------------------------------------------------------------------------
 
+Q: Is it possible to make a timetable where the students learn in two shifts? (for instance, the lowest form in the morning and the highest forms in the afternoon)?
+
+A: Yes, you have to add more constraint students set not available accordingly (for the lowest forms not available Mon, Tue, Wed, Th, Fr each from middle hour to last hour and for highest forms from first hour to middle hour). The constraint students early does not work in this case for the highest forms, because early cannot be respected for them, so you must not enter constraint students sets early for these students sets or a general students early (If you really need early constraints for students who begin in the afternoon, I&apos;ll think about that - please email me).
+
+-------------------------------------------------------------------------------
+
 Q: How can you allow one gap (or more) for students?
 
 A: There is a small workaround: add for each SUBGROUP (careful, for each subgroup, not group or year) an activity with duration 1 (or more activities with duration 1), with no teachers. These are dummy activities which are to be considered gaps.</source>
@@ -4845,7 +4851,7 @@ A: There is a small workaround: add for each SUBGROUP (careful, for each subgrou
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform_template.ui" line="41"/>
-        <source>Updated: 1 August 2007
+        <source>Updated: 12 August 2007
 
 Instructions by Liviu Lalescu
 
@@ -4853,7 +4859,7 @@ These are some small instructions which you have to follow in order to input a s
 
 If FET cannot find a good timetable for your school, make sure to write to the author, as FET needs to be improved. Maybe small changes to your datafile can bring good solutions, or maybe there are aspects which have to be changed in FET.
 
-1) You can use for the constraint min n days the weight you want. It can be 100%, but please make sure your timetable is not too constrained. Please take care of the impossible constraints, they should have 0 weight (percentage). For instance, if a teacher teaches only two days per week and has 3 math lessons for a group, then it is clear that the constraint cannot be respected, so the correct way is to specify a 0 weight (percentage) for min n days constraints.
+1) You can use for the constraint min n days the weight you want. It can be 100%, but please make sure your timetable is not too constrained. Please take care of the impossible constraints, they should have 0 weight (percentage). For instance, if a teacher teaches only two days per week and has 3 math lessons for a group, then it is clear that the constraint cannot be respected, so the correct way is to specify a 0 weight (percentage) for the corresponding min n days constraint.
 
 2) It is advisable to restrict the number of hours and days to the needed value, not larger. The reason is to guide FET to obtain a good solution. It is not as good to add a large number of hours per day and add constraint teachers/students max hours daily, as I observed in practice.
 
@@ -4861,9 +4867,11 @@ If FET cannot find a good timetable for your school, make sure to write to the a
 
 4) If you have a course lesson with say 4 activities per week, difficult lessons, which you would like to schedule in the beginning of the day (say 3 out of 4 need to be in the first half of the day), you can add constraint activity preferred times for the first three activities, with preferred times in the first half of the day. This approach worked with the sample German high-school data.
 
-5) You can input non integer weights, like 96.75%. It should work, although I didn&apos;t test enough floating point weights.
+5) You can input non integer weights, like 96.75%. It should work, although I didn&apos;t test enough the floating point weights.
 
-6) Please only input the special rooms with constraints. Home rooms are not necessary (teachers&apos; or students&apos; rooms). You might firstly try to generate a timetable without rooms, to see if it is possible, then add rooms and rooms related constraints.</source>
+6) Please only input the special rooms with constraints. Home rooms are not necessary (teachers&apos; or students&apos; rooms). You might firstly try to generate a timetable without rooms, to see if it is possible, then add rooms and rooms related constraints.
+
+7) It is possible to work with institutions in which the students work in shifts (for instance, lowest forms in the morning and highest forms in the afternoon). Please see the Help/Frequently Asked Questions the solution to how to do that (the essence is to add corresponding constraints students set not available and not to use students early for students sets which begin later).</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

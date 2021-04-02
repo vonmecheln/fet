@@ -43,8 +43,78 @@ S:%1".
 
 5. maybe "start" should be "generate" in the generateform.
 
+6. more TODO for english phrases:
+- if you wrote one or more sentences, please always end with ., ! or ?.
+- the head of a dialoge always start with "FET - ..." but sometimes you
+wrote "... dialoge".
+- sometimes you wrote "students subgroups", i think you just need to write
+"subgroups", because teachers have no subgroups.
+- all "add", "modify", and "remove", "close" phrases should only contain
+this word. no more words like "current" or "group". maybe wrote them with
+QObject, because nearly every dialoge have this 4 phrases.
+
+7. phrases like that are not very good:
+"NEW: Divide year automatically by selecting categories"
+
+i think we should remove NEW:
+
+and some phrases starts with a new line.
+
+sometimes you write a sentences, then do a new line and then (in the new
+line) close the sentence with "."
+
+8. one time you wrote "abort". all other times you wrote "cancel".
+
+9. i think we should think and write a small definition note for english
+phrases.
+
+it looks like in a few times this terms are not always used same/correct:
+hour
+duration
+periode
+lesson
+activity
+
+when we write a small definition note, then we have to care about this:
+words must also be correct for schools that don´t use "hours" as one time
+hour.
+in germany one schoolhour is 45 minutes. but that´s no problem. we use the
+same words for that.
+but i remember a letter in the maillinglist. that guy wrote that he has 60
+minutes hours and 90 minutes hours. so he defined 30 minutes "hours" and
+set duration == 2 or duration == 3 to the activities.
+so the definiton and use of hour, duration, periode and lesson must also
+match to this.
+
+please let us friste a small definistion not for this terms:
+hour, duration, periode, lesson, activity
+this will help if we add new or modify old english phrases and it will
+also help translaters.
+
+10. maybe TODO: no brackets in "view (students)", "view (teachers)", and "view
+(rooms)".
+
+11. and it looks like we shouldn´t use the word "lesson".
+in the most phases it´s better to replace "lessons" by "subactivities"
+
 ----------------------------------------------------------------------------------
 
+From Volker Dirr:
+
+how about this:
+if you go to data->activities
+the you have 4 different filters where you can choose something.
+
+for example i choose filter subject "DE". now can see all "DE" activities
+at the left side. so it is ok like it is, or i see a missing one. if i see
+a missing one, then of course i want to add a subject "DE". so this
+subject should be default if i press add.
+
+so the function should have four parameters (the four filters),
+defaultsetting in the data->activities->add screen should have be the
+filters of data->activities.
+
+----------------------------------------------------------------------------------
 
 long time goals:
 

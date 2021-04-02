@@ -150,6 +150,12 @@
         <receiver>TeachersForm_template</receiver>
         <slot>deactivateTeacher()</slot>
     </connection>
+    <connection>
+        <sender>teachersListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>TeachersForm_template</receiver>
+        <slot>renameTeacher()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>teachersListBox</tabstop>

@@ -60,7 +60,7 @@
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="155"/>
         <source>Subject tag</source>
-        <translation>Unterrichtsart</translation>
+        <translation>Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="51"/>
@@ -78,17 +78,17 @@
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="281"/>
         <source>Show years</source>
-        <translation>Zeige Jahrgangstufen</translation>
+        <translation>Zeige Jahrgänge</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="292"/>
         <source>Show groups</source>
-        <translation>Zeige Klassen</translation>
+        <translation>Zeige Gruppen</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="303"/>
         <source>Show subgroups</source>
-        <translation>Zeige Untergruppen</translation>
+        <translation>Zeige Teilgruppen</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="332"/>
@@ -178,7 +178,7 @@
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="162"/>
         <source>Subject tag</source>
-        <translation>Unterrichtsart</translation>
+        <translation>Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="359"/>
@@ -259,7 +259,7 @@ gleichen Tag stattfinden können?</translation>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="16"/>
         <source>FET - Add new constraint activities not overlapping</source>
-        <translation>Hinzufügen von Einschränkungen für nicht überschneidene Aktivitäten</translation>
+        <translation>FET - Hinzufügen von Einschränkungen für nicht überschneidene Aktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="35"/>
@@ -314,7 +314,7 @@ werden</translation>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="16"/>
         <source>FET - Adding a new constraint activities preferred times</source>
-        <translation>Hinzufügen von Einschränkungen für bevorzugute Zeiten der Aktivitäten</translation>
+        <translation>FET - Hinzufügen von Einschränkungen für bevorzugute Zeiten der Aktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="27"/>
@@ -329,7 +329,7 @@ werden</translation>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="97"/>
         <source>Subject tag</source>
-        <translation>Unterrichtsart</translation>
+        <translation>Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="115"/>
@@ -362,7 +362,7 @@ werden</translation>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="16"/>
         <source>FET - Add new constraint activities same starting hour</source>
-        <translation>Hinzufügen von Einschränkungen für Aktivitäten, die zur selben Zeit anfangen</translation>
+        <translation>FET - Hinzufügen von Einschränkungen für Aktivitäten, die zur selben Zeit anfangen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="153"/>
@@ -433,7 +433,7 @@ tuple)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="109"/>
         <source>Subject tag</source>
-        <translation>Unterrichtsart</translation>
+        <translation>Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="127"/>
@@ -481,7 +481,7 @@ tuple)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="16"/>
         <source>FET - Add new constraint activity preferred room</source>
-        <translation>Hinzufügen von Einschränkungen für einen bevorzugten Raum einer Aktivität</translation>
+        <translation>FET- Hinzufügen von Einschränkungen für einen bevorzugten Raum einer Aktivität</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="49"/>
@@ -519,7 +519,7 @@ tuple)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="16"/>
         <source>FET - Add new constraint activity preferred rooms</source>
-        <translation>Hinzufügen von Einschränkungen für bevorzugte Räume einer Aktivität</translation>
+        <translation>FET - Hinzufügen von Einschränkungen für bevorzugte Räume einer Aktivität</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="67"/>
@@ -577,7 +577,7 @@ tuple)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="16"/>
         <source>FET - Add new constraint activity preferred time dialog</source>
-        <translation>Hinzufügen von Einschränkungen für eine bevorzugte Zeit einer Aktivität</translation>
+        <translation>FET - Hinzufügen von Einschränkungen für eine bevorzugte Zeit einer Aktivität</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="210"/>
@@ -655,7 +655,7 @@ tuple)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="16"/>
         <source>FET - Adding a new constraint activity preferred times</source>
-        <translation>Hinzufügen von Einschränkungen für bevorzugte Zeiten</translation>
+        <translation>FET - Hinzufügen von Einschränkungen für bevorzugte Zeiten</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="61"/>
@@ -713,7 +713,7 @@ tuple)</source>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform_template.ui" line="16"/>
         <source>FET - Add new constraint basic compulsory space dialog</source>
-        <translation>Hinzufügen von verpflichtenden Grundeinschränkungen für Räume</translation>
+        <translation>FET - Hinzufügen von verpflichtenden Grundeinschränkungen für Räume</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform_template.ui" line="27"/>
@@ -746,7 +746,7 @@ tuple)</source>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform_template.ui" line="16"/>
         <source>FET - Add new constraint basic compulsory time dialog</source>
-        <translation>Hinzufügen von verpflichtenden Grundeinschränkungen für Zeiten</translation>
+        <translation>FET - Hinzufügen von verpflichtenden Grundeinschränkungen für Zeiten</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform_template.ui" line="27"/>
@@ -839,7 +839,7 @@ oder Schüler</translation>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="16"/>
         <source>FET - Add new constraint min n days between activities</source>
-        <translation>Hinzufügen von Einschränkungen für die minimale Anzahl an Tagen zwischen Aktivitäten</translation>
+        <translation>FET - Hinzufügen von Einschränkungen für die minimale Anzahl an Tagen zwischen Aktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="81"/>
@@ -894,7 +894,7 @@ sie nicht am gleichen Tag stattfinden können</translation>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="16"/>
         <source>FET - Adding a new constraint room not available</source>
-        <translation>Hinzufügen von Einschränkungen für nicht verfügbare Räume</translation>
+        <translation>FET - Hinzufügen von Einschränkungen für nicht verfügbare Räume</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="27"/>
@@ -1303,7 +1303,7 @@ constraint).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="16"/>
         <source>FET - Add new constraint students set not available dialog</source>
-        <translation>Hinzufügen von Einschränkungen für nicht verfügbare Schülergruppen</translation>
+        <translation>FET - Hinzufügen von Einschränkungen für nicht verfügbare Schülergruppen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="27"/>
@@ -1361,7 +1361,7 @@ constraint).</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="16"/>
         <source>FET - Add new constraint subject preferred room</source>
-        <translation>Hinzufügen von Einschränkungen für einen bevorzugten Raum für ein Fach</translation>
+        <translation>FET - Hinzufügen von Einschränkungen für einen bevorzugten Raum für ein Fach</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="49"/>
@@ -1399,7 +1399,7 @@ constraint).</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="16"/>
         <source>FET - Add new constraint subject preferred rooms</source>
-        <translation>Hinzufügen von Einschränkungen für bevorzugte Räume für ein Fach</translation>
+        <translation>FET - Hinzufügen von Einschränkungen für bevorzugte Räume für ein Fach</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="67"/>
@@ -1457,7 +1457,7 @@ constraint).</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="16"/>
         <source>FET - Add new constraint teacher max days per week dialog</source>
-        <translation>Hinzufügen von Einschränkungen für die maximale Anzahl an Tagen pro Woche</translation>
+        <translation>FET - Hinzufügen von Einschränkungen für die maximale Anzahl an Tagen pro Woche</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="27"/>
@@ -1551,7 +1551,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="16"/>
         <source>FET - Add new constraint teacher max hours daily dialog</source>
-        <translation>Hinzufügen von Einschränkungen für die maximale Anzahl an Stunden pro Tag für einen Lehrer</translation>
+        <translation>FET - Hinzufügen von Einschränkungen für die maximale Anzahl an Stunden pro Tag für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="27"/>
@@ -1594,7 +1594,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="16"/>
         <source>FET - Add new constraint teacher not available dialog</source>
-        <translation>Hinzufügen von Einschränkungen für nicht verfügbare Lehrer</translation>
+        <translation>FET - Hinzufügen von Einschränkungen für nicht verfügbare Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="27"/>
@@ -1652,7 +1652,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="16"/>
         <source>FET - Add new constraint teachers max gaps per week dialog</source>
-        <translation>Hinzufügen von Einschränkungen für die maximale Anzahl an Freistunden pro Woche für einen Lehrer</translation>
+        <translation>FET - Hinzufügen von Einschränkungen für die maximale Anzahl an Freistunden pro Woche für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="27"/>
@@ -1700,7 +1700,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="16"/>
         <source>FET - Add new constraint teachers max hours daily dialog</source>
-        <translation>Hinzufügen von Einschränkungen für die maximale Anzahl an Stunden pro Tag für einen Lehrer</translation>
+        <translation>FET - Hinzufügen von Einschränkungen für die maximale Anzahl an Stunden pro Tag für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="27"/>
@@ -1796,7 +1796,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addstudentsgroupform_template.ui" line="73"/>
         <source>Year</source>
-        <translation>Jahrgangsstufe</translation>
+        <translation>Jahrgänge</translation>
     </message>
 </context>
 <context>
@@ -1804,12 +1804,12 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addstudentssubgroupform_template.ui" line="16"/>
         <source>Add Students Subgroup Dialog</source>
-        <translation>Hinzufügen von Schüleruntergruppen</translation>
+        <translation>Hinzufügen von Teilgruppen</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform_template.ui" line="27"/>
         <source>Year</source>
-        <translation>Jahrgangsstufe</translation>
+        <translation>Jahrgang</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform_template.ui" line="43"/>
@@ -1834,7 +1834,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addstudentssubgroupform_template.ui" line="102"/>
         <source>Group</source>
-        <translation>Klasse</translation>
+        <translation>Gruppe</translation>
     </message>
 </context>
 <context>
@@ -1842,7 +1842,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addstudentsyearform_template.ui" line="16"/>
         <source>Add Students Year Dialog</source>
-        <translation>Hinzufügen von Jahrgangsstufen</translation>
+        <translation>Hinzufügen von Jahrgängen</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsyearform_template.ui" line="27"/>
@@ -1870,7 +1870,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/allspaceconstraintsform_template.ui" line="16"/>
         <source>FET - All space constraints</source>
-        <translation>Alle Einschränkungen von Räumen</translation>
+        <translation>FET - Alle Einschränkungen von Räumen</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform_template.ui" line="35"/>
@@ -1908,7 +1908,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/alltimeconstraintsform_template.ui" line="16"/>
         <source>FET - All time constraints</source>
-        <translation>Alle Einschränkungen von Zeiten</translation>
+        <translation>FET - Alle Einschränkungen von Zeiten</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform_template.ui" line="25"/>
@@ -3567,27 +3567,27 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="295"/>
         <source>Years</source>
-        <translation>Jahrgangsstufen</translation>
+        <translation>Jahrgänge</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="300"/>
         <source>&amp;Groups</source>
-        <translation>&amp;Klassen</translation>
+        <translation>&amp;Gruppen</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="303"/>
         <source>Groups</source>
-        <translation>Klassen</translation>
+        <translation>Gruppen</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="308"/>
         <source>S&amp;ubgroups</source>
-        <translation>&amp;Untergruppes</translation>
+        <translation>&amp;Teilgruppen</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="311"/>
         <source>Subgroups</source>
-        <translation>Untergruppes</translation>
+        <translation>Teilgruppen</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="316"/>
@@ -3832,12 +3832,12 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="631"/>
         <source>Su&amp;bject tags</source>
-        <translation>&amp;Unterrichtsart</translation>
+        <translation>&amp;Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="634"/>
         <source>Subject tags</source>
-        <translation>Unterrichtsart</translation>
+        <translation>Unterrichtskennzeichnungen</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="639"/>
@@ -4065,32 +4065,32 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="61"/>
         <source>Year</source>
-        <translation>Jahrgangsstufe</translation>
+        <translation>Jahrgang</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="69"/>
         <source>Group</source>
-        <translation>Klasse</translation>
+        <translation>Gruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="77"/>
         <source>Add group</source>
-        <translation>Klasse hinzufügen</translation>
+        <translation>Hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="85"/>
         <source>Remove current</source>
-        <translation>Aktuelle Klasse löschen</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="93"/>
         <source>Modify current</source>
-        <translation>Aktuelle Klasse ändern</translation>
+        <translation>Ändern</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="101"/>
         <source>Sort current groups alphabetically</source>
-        <translation>Aktuelle Klassen alphabetisch sortieren</translation>
+        <translation>Sortiere alphabetisch</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="109"/>
@@ -4624,11 +4624,11 @@ p, li { white-space: pre-wrap; }
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or faculty.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.1.4 (August 2007)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.1.5 (August 2007)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
@@ -4660,7 +4660,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/interface/helpfaqform_template.ui" line="41"/>
         <source>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 11 August 2007
+this documentation by Liviu Lalescu, reviewed and modified - 12 August 2007
 
 --------
 
@@ -4832,6 +4832,12 @@ A: From Volker Dirr: Just add a subject &quot;lunch&quot;. Then add activities n
 
 -------------------------------------------------------------------------------
 
+Q: Is it possible to make a timetable where the students learn in two shifts? (for instance, the lowest form in the morning and the highest forms in the afternoon)?
+
+A: Yes, you have to add more constraint students set not available accordingly (for the lowest forms not available Mon, Tue, Wed, Th, Fr each from middle hour to last hour and for highest forms from first hour to middle hour). The constraint students early does not work in this case for the highest forms, because early cannot be respected for them, so you must not enter constraint students sets early for these students sets or a general students early (If you really need early constraints for students who begin in the afternoon, I&apos;ll think about that - please email me).
+
+-------------------------------------------------------------------------------
+
 Q: How can you allow one gap (or more) for students?
 
 A: There is a small workaround: add for each SUBGROUP (careful, for each subgroup, not group or year) an activity with duration 1 (or more activities with duration 1), with no teachers. These are dummy activities which are to be considered gaps.</source>
@@ -4852,7 +4858,7 @@ A: There is a small workaround: add for each SUBGROUP (careful, for each subgrou
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform_template.ui" line="41"/>
-        <source>Updated: 1 August 2007
+        <source>Updated: 12 August 2007
 
 Instructions by Liviu Lalescu
 
@@ -4860,7 +4866,7 @@ These are some small instructions which you have to follow in order to input a s
 
 If FET cannot find a good timetable for your school, make sure to write to the author, as FET needs to be improved. Maybe small changes to your datafile can bring good solutions, or maybe there are aspects which have to be changed in FET.
 
-1) You can use for the constraint min n days the weight you want. It can be 100%, but please make sure your timetable is not too constrained. Please take care of the impossible constraints, they should have 0 weight (percentage). For instance, if a teacher teaches only two days per week and has 3 math lessons for a group, then it is clear that the constraint cannot be respected, so the correct way is to specify a 0 weight (percentage) for min n days constraints.
+1) You can use for the constraint min n days the weight you want. It can be 100%, but please make sure your timetable is not too constrained. Please take care of the impossible constraints, they should have 0 weight (percentage). For instance, if a teacher teaches only two days per week and has 3 math lessons for a group, then it is clear that the constraint cannot be respected, so the correct way is to specify a 0 weight (percentage) for the corresponding min n days constraint.
 
 2) It is advisable to restrict the number of hours and days to the needed value, not larger. The reason is to guide FET to obtain a good solution. It is not as good to add a large number of hours per day and add constraint teachers/students max hours daily, as I observed in practice.
 
@@ -4868,9 +4874,11 @@ If FET cannot find a good timetable for your school, make sure to write to the a
 
 4) If you have a course lesson with say 4 activities per week, difficult lessons, which you would like to schedule in the beginning of the day (say 3 out of 4 need to be in the first half of the day), you can add constraint activity preferred times for the first three activities, with preferred times in the first half of the day. This approach worked with the sample German high-school data.
 
-5) You can input non integer weights, like 96.75%. It should work, although I didn&apos;t test enough floating point weights.
+5) You can input non integer weights, like 96.75%. It should work, although I didn&apos;t test enough the floating point weights.
 
-6) Please only input the special rooms with constraints. Home rooms are not necessary (teachers&apos; or students&apos; rooms). You might firstly try to generate a timetable without rooms, to see if it is possible, then add rooms and rooms related constraints.</source>
+6) Please only input the special rooms with constraints. Home rooms are not necessary (teachers&apos; or students&apos; rooms). You might firstly try to generate a timetable without rooms, to see if it is possible, then add rooms and rooms related constraints.
+
+7) It is possible to work with institutions in which the students work in shifts (for instance, lowest forms in the morning and highest forms in the afternoon). Please see the Help/Frequently Asked Questions the solution to how to do that (the essence is to add corresponding constraints students set not available and not to use students early for students sets which begin later).</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5104,7 +5112,7 @@ Es muss ein Name mehr angegeben werden</translation>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="782"/>
         <source>Subject tag</source>
-        <translation>Unterrichtsart</translation>
+        <translation>Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="128"/>
@@ -5286,7 +5294,7 @@ werden</translation>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="118"/>
         <source>Subject tag</source>
-        <translation>Unterrichtsart</translation>
+        <translation>Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="126"/>
@@ -5521,7 +5529,7 @@ werden</translation>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="192"/>
         <source>Period</source>
-        <translation type="unfinished"></translation>
+        <translation>Dauer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="203"/>
@@ -6701,7 +6709,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifystudentsgroupform_template.ui" line="41"/>
         <source>Year</source>
-        <translation>Jahrgangsstufe</translation>
+        <translation>Jahrgang</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsgroupform_template.ui" line="62"/>
@@ -6724,12 +6732,12 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="16"/>
         <source>Modify Students Subgroup Dialog</source>
-        <translation>Ändern der Untergruppen</translation>
+        <translation>Ändern der Teilgruppen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="27"/>
         <source>Year</source>
-        <translation>Jahrgangsstufe</translation>
+        <translation>Jahrgang</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="35"/>
@@ -6744,7 +6752,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="51"/>
         <source>Group</source>
-        <translation>Klasse</translation>
+        <translation>Gruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="94"/>
@@ -6762,7 +6770,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifystudentsyearform_template.ui" line="16"/>
         <source>Modify Students Year Dialog</source>
-        <translation>Ändern der Jahrgangsstufen</translation>
+        <translation>Ändern der Jahrgänge</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform_template.ui" line="27"/>
@@ -6816,22 +6824,22 @@ sub-activities from the same split activity</source>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="204"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET Warnung</translation>
+        <translation>FET Warnung</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="112"/>
         <source>OK</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="112"/>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="226"/>
         <source>Invalid activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültige Aktivität</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform.cpp" line="168"/>
@@ -6846,22 +6854,22 @@ sub-activities from the same split activity</source>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="340"/>
         <source>Active activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktive Aktivität</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="344"/>
         <source>Non-active activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Nicht aktive Aktivität</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="326"/>
         <source>This activity will be split into %1 lessons per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Aktivität wird in %1 Sunden pro Woche aufgeteilt</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="354"/>
         <source>The distance between any pair of subactivities must be at least %1 days</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimaler Abstand in Tagen zwischen zwei Teilaktivitäten muss mindestens %1 Tage betragen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="331"/>
@@ -6882,7 +6890,7 @@ If you really need more teachers per activity, please talk to the author</source
     <message>
         <location filename="../src/interface/subjecttagsform.cpp" line="160"/>
         <source>Invalid subject tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültige Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="479"/>
@@ -6902,22 +6910,22 @@ If you really need more teachers per activity, please talk to the author</source
     <message>
         <location filename="../src/interface/yearsform.cpp" line="78"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform.cpp" line="78"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>Nein</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="535"/>
         <source>Activity added</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivität hinzugefügt</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="537"/>
         <source>Activity NOT added - please report error</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivität NICHT hinzugefügt - Bitte teilen sie diesen Fehler mit</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="584"/>
@@ -6957,22 +6965,22 @@ If you really need more teachers per activity, please talk to the author</source
     <message>
         <location filename="../src/interface/addstudentsyearform.cpp" line="59"/>
         <source>Year insertion dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Jahrgang einfügen</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsyearform.cpp" line="60"/>
         <source>Year added</source>
-        <translation type="unfinished"></translation>
+        <translation>Jahrgang hinzugefügt</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsgroupform.cpp" line="88"/>
         <source>Group insertion dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppen einfügen</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsgroupform.cpp" line="53"/>
         <source>Could not insert item. Duplicate</source>
-        <translation type="unfinished"></translation>
+        <translation>Einfügen nicht möglich, da es schon vorhanden war</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform.cpp" line="62"/>
@@ -6982,7 +6990,7 @@ If you really need more teachers per activity, please talk to the author</source
     <message>
         <location filename="../src/interface/addstudentsgroupform.cpp" line="64"/>
         <source>This name is taken for a subgroup - please consider another name</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieser Name wird von einer Teilgruppe benutzt. Bitte benutze einen anderen Namen</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsgroupform.cpp" line="74"/>
@@ -6992,27 +7000,31 @@ means that some years share the same group (overlap)
 If you want to make a new group, independent,
 please abort now and give it another name
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Gruppe existiert schon in einem anderen Jahrgang
+Wenn diese Gruppe hinzugefügt wird, dann teilen sich
+verschiedene Jahrgänge diese Gruppe
+Wenn eine unabhängig Gruppe angelegt werden soll, dann
+breche ab und erteile einen anderen Namen</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform.cpp" line="78"/>
         <source>Add</source>
-        <translation type="unfinished">Hinzufügen</translation>
+        <translation>Hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform.cpp" line="78"/>
         <source>Abort</source>
-        <translation type="unfinished"></translation>
+        <translation>Abbruch</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsgroupform.cpp" line="89"/>
         <source>Group added</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe hinzugefügt</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform.cpp" line="90"/>
         <source>Subgroup insertion dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Teilgruppe einfügen</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform.cpp" line="67"/>
@@ -7027,17 +7039,21 @@ means that some groups share the same subgroup (overlap)
 If you want to make a new subgroup, independent,
 please abort now and give it another name
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Teilgruppe existiert in einer anderen Gruppe.
+Wenn diese Teilgruppe auch in the aktuelle Gruppe eingefügt wird, dann
+teilen sich die Gruppen diese Teilgruppe.
+Wenn eine neue unabhängige Teilgruppe erwünscht ist,
+dann breche jetzt ab und vergebe einen anderen Namen </translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform.cpp" line="91"/>
         <source>Subgroup added</source>
-        <translation type="unfinished"></translation>
+        <translation>Teilgruppe hinzugefügt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform.cpp" line="83"/>
         <source>Invalid weight</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültige Gewichtung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="250"/>
@@ -7067,44 +7083,46 @@ please abort now and give it another name
     <message>
         <location filename="../src/interface/roomsform.cpp" line="112"/>
         <source>Invalid room</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültiger Raum</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="160"/>
         <source>Invalid day</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültiger Tag</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="166"/>
         <source>Invalid start hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültige Anfangszeit</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="173"/>
         <source>Invalid end hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültige Endzeit</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="178"/>
         <source>End hour &lt;= start hour - impossible</source>
-        <translation type="unfinished"></translation>
+        <translation>Unmöglich, da die Endzeit kleiner ist als die Startzeit</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="102"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültige Einschrängung</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="107"/>
         <source>Removing constraint:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Entferne Einschränkung:
+</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="109"/>
         <source>
 Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Sind sie sicher?</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform.cpp" line="107"/>
@@ -7114,7 +7132,7 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/teachersform.cpp" line="156"/>
         <source>Invalid teacher</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültiger Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform.cpp" line="93"/>
@@ -7151,7 +7169,7 @@ MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOM must be increased (you have too many selec
     <message>
         <location filename="../src/interface/subjecttagsform.cpp" line="185"/>
         <source>Invalid selected subject tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültige Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform.cpp" line="89"/>
@@ -7168,12 +7186,12 @@ MAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOM must be increased (you have too many sele
     <message>
         <location filename="../src/interface/yearsform.cpp" line="156"/>
         <source>Invalid selected year</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültiger Jahrgang</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="279"/>
         <source>Invalid selected group</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültige Gruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform.cpp" line="90"/>
@@ -7185,7 +7203,8 @@ MAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOM must be increased (you have too many sele
         <location filename="../src/interface/groupsform.cpp" line="101"/>
         <source>This group still exists into another year
 The related subgroups, activities and constraints were not removed</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Gruppe existiert in einem anderen Jahrgang
+Die zugehörigen Teilgruppen, Aktivitäten und Einschränkungen wurden nicht verschoben</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform.cpp" line="138"/>
@@ -7200,13 +7219,13 @@ The related subgroups, activities and constraints were not removed</source>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="287"/>
         <source>Invalid selected subgroup</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültige Teilgruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="107"/>
         <source>Are you sure you want to delete this subgroup and all related activities and constraints?
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Soll die Teilgruppe mit allen zugehörigen Aktivitäten und Einschränkungen wirklich gelöscht werden?</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform.cpp" line="126"/>
@@ -7242,23 +7261,23 @@ The related subgroups, activities and constraints were not removed</source>
     <message>
         <location filename="../src/interface/subjecttagsform.cpp" line="62"/>
         <source>Please enter subject tag&apos;s name</source>
-        <translation type="unfinished"></translation>
+        <translation>Name der Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/subjecttagsform.cpp" line="136"/>
         <source>Subject tag insertion dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Unterrichtskennzeichnung einfügen</translation>
     </message>
     <message>
         <location filename="../src/interface/subjecttagsform.cpp" line="98"/>
         <source>Are you sure you want to delete this subject tag?
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Unterrichtskennzeichnung löschen?</translation>
     </message>
     <message>
         <location filename="../src/interface/subjecttagsform.cpp" line="130"/>
         <source>Please enter new subject tag&apos;s name</source>
-        <translation type="unfinished"></translation>
+        <translation>Name der Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform.cpp" line="59"/>
@@ -7402,7 +7421,7 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/yearsform.cpp" line="77"/>
         <source>Are you sure you want to delete this year and all related groups, subgroups, activities and constraints?
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Soll der Jahrgang mit allen zugehörigen Aktivitäten und Einschränkungen wirklich gelöscht werden?</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="108"/>
@@ -7533,7 +7552,7 @@ of old constraints using erased days
     <message>
         <location filename="../src/engine/activity.cpp" line="367"/>
         <source>Subject tag=</source>
-        <translation type="unfinished"></translation>
+        <translation>Unterrichtskennzeichnung=</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="372"/>
@@ -7590,92 +7609,99 @@ of old constraints using erased days
     <message>
         <location filename="../src/engine/rules.cpp" line="2407"/>
         <source>Monday</source>
-        <translation type="unfinished"></translation>
+        <translation>Montag</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2408"/>
         <source>Tuesday</source>
-        <translation type="unfinished"></translation>
+        <translation>Dienstag</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2409"/>
         <source>Wednesday</source>
-        <translation type="unfinished"></translation>
+        <translation>Mittwoch</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2410"/>
         <source>Thursday</source>
-        <translation type="unfinished"></translation>
+        <translation>Donnerstag</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2411"/>
         <source>Friday</source>
-        <translation type="unfinished"></translation>
+        <translation>Freitag</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2413"/>
         <source>Default institution</source>
-        <translation type="unfinished"></translation>
+        <translation>standardmäßige Institution</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2414"/>
         <source>Default comments</source>
-        <translation type="unfinished"></translation>
+        <translation>standardmäßige Kommentar</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="83"/>
         <source>You have too many teachers.
 Please talk to the author or increase variable MAX_TEACHERS</source>
-        <translation type="unfinished"></translation>
+        <translation>Zu viele Lehrer.
+Bitte kontaktiere den Author oder erhöhe die Varibale MAX_TEACHERS</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="88"/>
         <source>You have too many subjects.
 Please talk to the author or increase variable MAX_SUBJECTS</source>
-        <translation type="unfinished"></translation>
+        <translation>Zu viele Fächer.
+Bitte kontaktiere den Author oder erhöhe die Varibale MAX_SUBJECTS</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="95"/>
         <source>You have too many years.
 Please talk to the author or increase variable MAX_YEARS</source>
-        <translation type="unfinished"></translation>
+        <translation>Zu viele Jahrgänge.Bitte kontaktiere den Author oder erhöhe die Varibale MAX_YEARS</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="103"/>
         <source>You have too many groups per year.
 Please talk to the author or increase variable MAX_GROUPS_PER_YEAR</source>
-        <translation type="unfinished"></translation>
+        <translation>Zu viele Gruppen pro Jahrgang.
+Bitte kontaktiere den Author oder erhöhe die Varibale MAX_GROUPS_PER_YEAR</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="111"/>
         <source>You have too many subgroups per group.
 Please talk to the author or increase variable MAX_SUBGROUPS_PER_GROUP</source>
-        <translation type="unfinished"></translation>
+        <translation>Zu viele Teilgruppen pro Gruppe.Bitte kontaktiere den Author oder erhöhe die Varibale MAX_SUBGROUBS_PER_GROUP</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="119"/>
         <source>You have too many total subgroups.
 Please talk to the author or increase variable MAX_TOTAL_SUBGROUPS</source>
-        <translation type="unfinished"></translation>
+        <translation>Insgesamt zu viele Teilgruppen.Bitte kontaktiere den Author oder erhöhe die Varibale MAX_TOTAL_SUBGROUPS</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="131"/>
         <source>You have too many active activities.
 Please talk to the author or increase variable MAX_ACTIVITIES</source>
-        <translation type="unfinished"></translation>
+        <translation>Zu viele aktive Aktivitäten.
+Bitte kontaktiere den Author oder erhöhe die Varibale MAX_ACTIVITIES</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="137"/>
         <source>You have too many rooms.
 Please talk to the author or increase variable MAX_ROOMS</source>
-        <translation type="unfinished"></translation>
+        <translation>Zu viele Räume.
+Bitte kontaktiere den Author oder erhöhe die Varibale MAX_ROOMS</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2106"/>
         <source>The constraint
 %1 will be modified into constraint
 %2 because there is only one room left in the constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Einschränkung
+%1 wird in Einschränkung
+%2 umgwandelt, weil nur noch ein Raum enthalten ist</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2388"/>
@@ -7697,12 +7723,12 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform.cpp" line="27"/>
         <source>no</source>
-        <translation type="unfinished"></translation>
+        <translation>Nein</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform.cpp" line="27"/>
         <source>yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="124"/>
@@ -7772,12 +7798,12 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="359"/>
         <source>subgroup %1 has more than one allocated activity on day %2, hour %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Teilgruppe %1 hat mehr als eine zugeordnete Aktivität an Tag %2, Stunde %3</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="104"/>
         <source>Teacher not available</source>
-        <translation type="unfinished">Lehrer, die nicht verfügbar sind</translation>
+        <translation>Lehrer, die nicht verfügbar sind</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2541"/>
@@ -7857,7 +7883,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="910"/>
         <source>Activities same starting time</source>
-        <translation type="unfinished">ktivitäten mit gleicher Startzeit</translation>
+        <translation>Aktivitäten mit gleicher Startzeit</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5594"/>
@@ -8103,12 +8129,12 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5279"/>
         <source>subject tag=%1, </source>
-        <translation type="unfinished"></translation>
+        <translation>Unterrichtskennzeichnung=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5281"/>
         <source>all subject tags, </source>
-        <translation type="unfinished"></translation>
+        <translation>alle Unterrichtskennzeichnungen, </translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5305"/>
@@ -8155,13 +8181,15 @@ not added - must be a duplicate</source>
         <location filename="../src/engine/timeconstraint.cpp" line="5320"/>
         <source>Subject tag=%1
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Unterrichtskennzeichnung=%1
+</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5322"/>
         <source>All subject tags
 </source>
-        <translation type="unfinished"></translation>
+        <translation>alle Unterrichtskennzeichnungen
+</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5591"/>
@@ -8239,7 +8267,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="288"/>
         <source>Subject tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Unterrichtskennzeichnung=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="823"/>
@@ -8319,7 +8347,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="193"/>
         <source>Students set - group</source>
-        <translation type="unfinished"></translation>
+        <translation>Schülergruppe - Gruppe</translation>
     </message>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="195"/>
@@ -8344,7 +8372,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="272"/>
         <source>Students set - subgroup</source>
-        <translation type="unfinished"></translation>
+        <translation>Schülergruppe - Teilgruppe</translation>
     </message>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="274"/>
@@ -8399,7 +8427,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/subjecttag.cpp" line="35"/>
         <source>Subject tag</source>
-        <translation type="unfinished">Unterrichtsart</translation>
+        <translation>Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/engine/subjecttag.cpp" line="48"/>
@@ -8409,7 +8437,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/subjecttag.cpp" line="59"/>
         <source>Space constraints directly related to this subject tag:</source>
-        <translation type="unfinished"></translation>
+        <translation>Raumeinschränkungen beziehen sich auf diese Unterrichtskennzeichnung:</translation>
     </message>
     <message>
         <location filename="../src/engine/room.cpp" line="51"/>
@@ -9585,37 +9613,39 @@ You can choose to disable automatic search for updates in the Settings menu</sou
     <message>
         <location filename="../src/interface/splityearform.cpp" line="66"/>
         <source>Splitting year: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Aufteilung von Jahrgang: %1</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="353"/>
         <source>Empty names not allowed</source>
-        <translation type="unfinished"></translation>
+        <translation>Leere Namen sind nicht erlaubt</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="371"/>
         <source>Year %1 is not empty and it will be emptied before adding the divisions you selected. Do you agree?</source>
-        <translation type="unfinished"></translation>
+        <translation>Jahrgang %1 ist nicht leer and er wird geleert bevor die neue Einteilung erstellt wird.
+ Sind sie damit einverstanden?</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="405"/>
         <source>Duplicate names not allowed</source>
-        <translation type="unfinished"></translation>
+        <translation>Doppelte Namen sind nicht erlaubt</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="575"/>
         <source>Cannot add group %1, because a set with same name exists. Please choose another name or remove old group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe %1 kann nicht hinzugefügt werden, weil der Name schon existiert.
+Bitte einen anderen Namen erteilen oder die andere Gruppe löschen</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="523"/>
         <source>Cannot add subgroup %1, because a set with same name exists. Please choose another name or remove old group</source>
-        <translation type="unfinished"></translation>
+        <translation>Teilgruppe %1 kann nicht hinzugefügt werden, weil der Name schon existiert.Bitte einen anderen Namen erteilen oder die andere Teilgruppe löschen</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="591"/>
         <source>Split of year complete, please check the groups and subgroups of year to make sure everything is OK</source>
-        <translation type="unfinished"></translation>
+        <translation>Einteilung des Jahrgangs abgeschlossen. Bitte überprüfe die Gruppen und Teilgruppen des Jahrgangs um sicherzustellen das alles funktioniert hat</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="633"/>
@@ -9668,7 +9698,7 @@ Separator character(s) is of your choice (default is space)</source>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="51"/>
         <source>Sort by name</source>
-        <translation>SOrtier nach Namen</translation>
+        <translation>Sortiere nach Namen</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="59"/>
@@ -9684,7 +9714,8 @@ Separator character(s) is of your choice (default is space)</source>
         <location filename="../src/interface/roomsform_template.ui" line="85"/>
         <source>It is advisable to only add special constrained rooms,
 home rooms are not needed (teachers&apos; or students&apos; rooms)</source>
-        <translation type="unfinished"></translation>
+        <translation>Es ist ratsam nur Fachräume hinzuzufügen.
+Klassenräume müssen nicht eingegeben werden</translation>
     </message>
 </context>
 <context>
@@ -9692,57 +9723,57 @@ home rooms are not needed (teachers&apos; or students&apos; rooms)</source>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="16"/>
         <source>FET - Split year</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Jahrgang aufteilen</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="35"/>
         <source>Number of categories</source>
-        <translation type="unfinished"></translation>
+        <translation>Anzahl von Kategorien</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="419"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="427"/>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="365"/>
         <source>Splitting year:</source>
-        <translation type="unfinished"></translation>
+        <translation>Aufteilung von Jahrgang:</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="115"/>
         <source>Category 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategorie 1</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="187"/>
         <source>Category 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategorie 2</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="259"/>
         <source>Category 3</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategorie 3</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="373"/>
         <source>Separator character(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Trennungszeichen</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="435"/>
         <source>Help</source>
-        <translation type="unfinished">Hilfe</translation>
+        <translation>Hilfe</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="443"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Zurücksetzen</translation>
     </message>
 </context>
 <context>
@@ -9788,12 +9819,12 @@ home rooms are not needed (teachers&apos; or students&apos; rooms)</source>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="33"/>
         <source>Year</source>
-        <translation>Jahrgangsstufe</translation>
+        <translation>Jahrgang</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="41"/>
         <source>Group</source>
-        <translation>Klasse</translation>
+        <translation>Gruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="83"/>
@@ -9803,7 +9834,7 @@ home rooms are not needed (teachers&apos; or students&apos; rooms)</source>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="69"/>
         <source>Add subgroup</source>
-        <translation>Untergruppe hinzufügen</translation>
+        <translation>Hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="77"/>
@@ -9818,7 +9849,7 @@ home rooms are not needed (teachers&apos; or students&apos; rooms)</source>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="103"/>
         <source>Subgroup</source>
-        <translation>Untergruppe</translation>
+        <translation>Teilgruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="111"/>
@@ -9828,17 +9859,17 @@ home rooms are not needed (teachers&apos; or students&apos; rooms)</source>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="127"/>
         <source>Activate all activities for selected students subgroup</source>
-        <translation>Aktiviere alle Aktivitäten für die ausgewählten Schüleruntergruppe</translation>
+        <translation>Aktiviere alle Aktivitäten für die ausgewählten Teilgruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="135"/>
         <source>De-activate all activities for selected students subgroup</source>
-        <translation>Deaktiviere alle Aktivitäten für die ausgewählten Schüleruntergruppe</translation>
+        <translation>Deaktiviere alle Aktivitäten für die ausgewählten Teilgruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="143"/>
         <source>Sort current subgroups</source>
-        <translation>Sortiere aktuelle Untergruppen</translation>
+        <translation>Sortiere aktuelle Teilgruppen</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="151"/>
@@ -9851,7 +9882,7 @@ home rooms are not needed (teachers&apos; or students&apos; rooms)</source>
     <message>
         <location filename="../src/interface/subjecttagsform_template.ui" line="16"/>
         <source>FET - subject tags</source>
-        <translation>Unterrichtsarten</translation>
+        <translation>FET - Unterrichtskennzeichnungen</translation>
     </message>
     <message>
         <location filename="../src/interface/subjecttagsform_template.ui" line="33"/>
@@ -9871,7 +9902,7 @@ home rooms are not needed (teachers&apos; or students&apos; rooms)</source>
     <message>
         <location filename="../src/interface/subjecttagsform_template.ui" line="67"/>
         <source>Add subject tag</source>
-        <translation>Hinzufügen einer Unterrichtsart</translation>
+        <translation>Hinzufügen einer Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/subjecttagsform_template.ui" line="75"/>
@@ -9886,12 +9917,12 @@ home rooms are not needed (teachers&apos; or students&apos; rooms)</source>
     <message>
         <location filename="../src/interface/subjecttagsform_template.ui" line="91"/>
         <source>Activate all activities for selected subject tag</source>
-        <translation>Aktiviere alle Aktivitäten für das ausgewählte Unterrichtsart</translation>
+        <translation>Aktiviere alle Aktivitäten für die ausgewählte Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/subjecttagsform_template.ui" line="99"/>
         <source>De-activate all activities for selected subject tag</source>
-        <translation>Deaktiviere alle Aktivitäten für die ausgewählte Unterrichtsart</translation>
+        <translation>Deaktiviere alle Aktivitäten für die ausgewählte Unterrichtskennzeichnung</translation>
     </message>
 </context>
 <context>
@@ -10124,7 +10155,7 @@ For more information you can join the mailing list or write to author</source>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="423"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="328"/>
@@ -10217,7 +10248,7 @@ Simulation results should be now written. You may check now Timetable/View. The 
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="908"/>
         <source>To do a page-break only after every second timetiable, cut line %1 and paste it into line %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um einen Seitenumbruch nur nach jeder zweiten Seite zu machen, schneide Zeile %1 aus und füge sie in Zeile %2 ein.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="2134"/>
@@ -10232,12 +10263,12 @@ Simulation results should be now written. You may check now Timetable/View. The 
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="1090"/>
         <source>Year</source>
-        <translation type="unfinished">Jahrgangsstufe</translation>
+        <translation>Jahrgang</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="1093"/>
         <source>Group</source>
-        <translation type="unfinished">Klasse</translation>
+        <translation>Gruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="2153"/>
@@ -10247,7 +10278,7 @@ Simulation results should be now written. You may check now Timetable/View. The 
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="1999"/>
         <source>back to the top</source>
-        <translation type="unfinished"></translation>
+        <translation>zurück nach oben</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="2137"/>
@@ -10312,12 +10343,12 @@ obwohl die Berechnung noch weiterläuft</translation>
     <message>
         <location filename="../src/interface/timetableshowconflictsform_template.ui" line="16"/>
         <source>FET - showing the timetable conflicts</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Anzeig der Konflikte</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableshowconflictsform_template.ui" line="41"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
@@ -10383,17 +10414,17 @@ obwohl die Berechnung noch weiterläuft</translation>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="33"/>
         <source>Year</source>
-        <translation>Jahrgangsstufe</translation>
+        <translation>Jahrgang</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="41"/>
         <source>Group</source>
-        <translation>Klasse</translation>
+        <translation>Gruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="49"/>
         <source>Subgroup</source>
-        <translation>Untergruppe</translation>
+        <translation>Teilgruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="83"/>
@@ -10510,17 +10541,17 @@ obwohl die Berechnung noch weiterläuft</translation>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="16"/>
         <source>Years (forms, classes) of students</source>
-        <translation type="unfinished"></translation>
+        <translation>Jahrgang</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="61"/>
         <source>Add year (form, class)</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen eines Jahrgangs</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="93"/>
         <source>NEW: Divide year automatically by selecting categories</source>
-        <translation type="unfinished"></translation>
+        <translation>Teile den Jahrgang autmomatisch in Kategorien ein</translation>
     </message>
 </context>
 </TS>
