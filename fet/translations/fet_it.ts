@@ -2369,7 +2369,7 @@ Se occorre un peso sotto il 100%, allora si può far uso di questo vincolo, ma a
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="78"/>
         <source>Duration</source>
-        <translation type="unfinished">Durata</translation>
+        <translation>Durata</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="101"/>
@@ -2542,7 +2542,7 @@ Se occorre un peso sotto il 100%, allora si può far uso di questo vincolo, ma a
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="78"/>
         <source>Duration</source>
-        <translation type="unfinished">Durata</translation>
+        <translation>Durata</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="122"/>
@@ -10283,7 +10283,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/advancedlockunlockform.cpp" line="648"/>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1195"/>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Blocca</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="115"/>
@@ -10295,7 +10295,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1713"/>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="2004"/>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Tempo</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="118"/>
@@ -10307,7 +10307,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1716"/>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="2007"/>
         <source>Space</source>
-        <translation type="unfinished"></translation>
+        <translation>Spazio</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="248"/>
@@ -10393,7 +10393,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1707"/>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1998"/>
         <source>Unlock</source>
-        <translation type="unfinished"></translation>
+        <translation>Sblocca</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="541"/>
@@ -11491,7 +11491,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="313"/>
         <source>Note that if you have activities with two or more teachers, you might need to use a trick for that: add one (or more) dummy activities, no teachers/no students, same starting time with the initial activity.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota. Se hai attività con due o più insegnanti, potresti aver bisogno di un trucco per questo: aggiungi una (o più) attività fittizie, nessun insegnante/ nessuno studente, stessa ora di inizio dell&apos;attività iniziale.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="316"/>
@@ -12312,18 +12312,18 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10937"/>
         <source>duration=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>durata=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10939"/>
         <source>all durations</source>
-        <translation type="unfinished"></translation>
+        <translation>tutte le durate</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10941"/>
         <source>Activities with %1, %2, %3, %4, %5, have a set of preferred starting times:</source>
         <comment>%1...%5 are conditions for the activities</comment>
-        <translation type="unfinished"></translation>
+        <translation>Attività con %1, %2, %3, %4, %5 hanno un insieme di ore di inizio preferenziali:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10957"/>
@@ -12384,12 +12384,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10992"/>
         <source>Duration=%1</source>
-        <translation type="unfinished">Durata=%1</translation>
+        <translation>Durata=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10994"/>
         <source>All durations</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutte le durate</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11012"/>
@@ -12592,18 +12592,18 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9643"/>
         <source>duration=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>durata=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9645"/>
         <source>all durations</source>
-        <translation type="unfinished"></translation>
+        <translation>tutte le durate</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9647"/>
         <source>Activities with %1, %2, %3, %4, %5, have a set of preferred time slots:</source>
         <comment>%1...%5 are conditions for the activities</comment>
-        <translation type="unfinished"></translation>
+        <translation>Attività con %1, %2, %3, %4, %5 hanno un insieme di ore preferenziali:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9662"/>
@@ -12664,12 +12664,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9694"/>
         <source>Duration=%1</source>
-        <translation type="unfinished">Durata=%1</translation>
+        <translation>Durata=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9696"/>
         <source>All durations</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutte le durate</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9714"/>
@@ -16867,7 +16867,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6287"/>
         <source>All students must begin their activities early, respecting maximum %1 later arrivals, at second hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutti gli studenti devono iniziare le loro attività presto, rispettando il numero massimo di %1 arrivi in ritardo, alla seconda ora</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6289"/>
@@ -18873,7 +18873,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6581"/>
         <source>A students set must begin its activities early, respecting a maximum number of later arrivals, at second hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Un insieme di studenti deve iniziare le sue attività presto, rispettando un numero massimo di arrivi in ritardo, alla seconda ora</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6582"/>
@@ -28867,7 +28867,7 @@ Importare i dati sarà più semplice con questi valori.</translation>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="4034"/>
         <source>47</source>
-        <translation type="unfinished"></translation>
+        <translation>47</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="4038"/>
@@ -29509,7 +29509,7 @@ Se hai un sottogruppo con poche ore di lavoro alla settimana significa che hai i
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3990"/>
         <source>statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>statistiche</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3993"/>
@@ -30049,17 +30049,17 @@ Se hai un sottogruppo con poche ore di lavoro alla settimana significa che hai i
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="760"/>
         <source>Chinese Traditional</source>
-        <translation type="unfinished"></translation>
+        <translation>Cinese tradizionale</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="761"/>
         <source>Basque</source>
-        <translation type="unfinished"></translation>
+        <translation>Basco</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="762"/>
         <source>Czech</source>
-        <translation type="unfinished"></translation>
+        <translation>Ceco</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="815"/>
@@ -30989,7 +30989,7 @@ Se hai un sottogruppo con poche ore di lavoro alla settimana significa che hai i
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1534"/>
         <source>Max gaps per week for a students set</source>
-        <translation>Numero massimo di ore buche asettimana per un insieme di studenti</translation>
+        <translation>Numero massimo di ore buche a settimana per un insieme di studenti</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1539"/>
@@ -32624,12 +32624,12 @@ Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="502"/>
         <source>Optimization tip:</source>
-        <translation type="unfinished"></translation>
+        <translation>Suggerimenti di ottimizzazione:</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="504"/>
         <source>There are %1 subgroups (from the total of %2 subgroups) which have the same activities as other subgroups. They are listed below. If the constraints relating to these subgroups are also the same, you can make the generation (directly proportional) faster by completely removing the subgroups which are equivalent to other subgroups (leaving only one representant for each equivalence set). (The generation algorithm will not completely remove the equivalent subgroups automatically.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ci sono%1 sottogruppi (dal totale di %2 sottogruppi) che hanno le stesse attività di altri sottogruppi. Essi sono elencati di seguito. Se i vincoli relativi a tali sottogruppi sono anche gli stessi, è possibile effettuare la generazione (direttamente proporzionale) più veloce , eliminando completamente i sottogruppi equivalenti ad altri sottogruppi (lasciando solo un representant per ogni set equivalente) . ( L&apos;algoritmo di generazione non rimuoverà completamente i sottogruppi equivalenti automaticamente)</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="512"/>
@@ -34048,11 +34048,15 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;adso - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;locutusofborg - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Maouhoub - suggestion.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;flauta - Italian translation typos reported.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="759"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="763"/>
         <source>Close</source>
         <translation>Chiudi</translation>
     </message>
@@ -34071,7 +34075,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2015 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.27.9 (September 2015).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.28.0 (September 2015).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
@@ -37746,7 +37750,7 @@ Interrompi la simulazione prima di riprovare</translation>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="78"/>
         <source>Duration</source>
-        <translation type="unfinished">Durata</translation>
+        <translation>Durata</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="101"/>
@@ -37877,7 +37881,7 @@ Interrompi la simulazione prima di riprovare</translation>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="78"/>
         <source>Duration</source>
-        <translation type="unfinished">Durata</translation>
+        <translation>Durata</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="101"/>
@@ -38519,6 +38523,7 @@ Interrompi la simulazione prima di riprovare</translation>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform.cpp" line="218"/>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform.cpp" line="224"/>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform.cpp" line="233"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform.cpp" line="260"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
@@ -38541,6 +38546,11 @@ Interrompi la simulazione prima di riprovare</translation>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform.cpp" line="234"/>
         <source>Invalid activity</source>
         <translation>Attività non valida</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform.cpp" line="260"/>
+        <source>Cannot proceed, current constraint is equal to another one (it is duplicated)</source>
+        <translation>Impossibile procedere. Il vincolo corrente è identico ad un&apos;altro (è un duplicato)</translation>
     </message>
 </context>
 <context>
@@ -44282,7 +44292,7 @@ Nota: insegnanti non disponibili e interruzioni non sono ore buche.</translation
     <message>
         <location filename="../src/interface/fet.cpp" line="659"/>
         <source>Help</source>
-        <translation type="unfinished">Aiuto</translation>
+        <translation>Aiuto</translation>
     </message>
 </context>
 <context>
@@ -44291,13 +44301,13 @@ Nota: insegnanti non disponibili e interruzioni non sono ore buche.</translation
         <location filename="../src/interface/fet.cpp" line="685"/>
         <source>&amp;OK</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
-        <translation type="unfinished">&amp;OK</translation>
+        <translation>&amp;OK</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="687"/>
         <source>&amp;Cancel</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
-        <translation type="unfinished">&amp;Annulla</translation>
+        <translation>&amp;Annulla</translation>
     </message>
 </context>
 <context>
@@ -44306,52 +44316,52 @@ Nota: insegnanti non disponibili e interruzioni non sono ore buche.</translation
         <location filename="../src/interface/fet.cpp" line="663"/>
         <source>&amp;OK</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
-        <translation type="unfinished">&amp;OK</translation>
+        <translation>&amp;OK</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="665"/>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="668"/>
         <source>&amp;Cancel</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
-        <translation type="unfinished">&amp;Annulla</translation>
+        <translation>&amp;Annulla</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="670"/>
         <source>Cancel</source>
-        <translation type="unfinished">Annulla</translation>
+        <translation>Annulla</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="673"/>
         <source>&amp;Yes</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
-        <translation type="unfinished">&amp;Si</translation>
+        <translation>&amp;Si</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="675"/>
         <source>Yes to &amp;All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
-        <translation type="unfinished">Si s&amp;empre</translation>
+        <translation>Si s&amp;empre</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="677"/>
         <source>&amp;No</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
-        <translation type="unfinished">&amp;No</translation>
+        <translation>&amp;No</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="679"/>
         <source>N&amp;o to All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
-        <translation type="unfinished">No se&amp;mpre</translation>
+        <translation>No se&amp;mpre</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="682"/>
         <source>Help</source>
-        <translation type="unfinished">Aiuto</translation>
+        <translation>Aiuto</translation>
     </message>
 </context>
 <context>
@@ -44580,12 +44590,12 @@ Nota: insegnanti non disponibili e interruzioni non sono ore buche.</translation
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="84"/>
         <source>Cancel</source>
-        <translation type="unfinished">Annulla</translation>
+        <translation>Annulla</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="91"/>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="104"/>
@@ -46850,17 +46860,17 @@ Riferisci l&apos;informazione all&apos;autore. FET ora interromperà l&apos;oper
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="299"/>
         <source>Help</source>
-        <translation type="unfinished">Aiuto</translation>
+        <translation>Aiuto</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="319"/>
         <source>Cancel</source>
-        <translation type="unfinished">Annulla</translation>
+        <translation>Annulla</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="326"/>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -47473,7 +47483,11 @@ Left: %1
 Right: %2
 Top: %3
 Bottom: %4</source>
-        <translation type="unfinished"></translation>
+        <translation>Nessun margine impostato, perchè almeno un valore è troppo piccolo. Occorre impostare almeno:
+Sinnistra %1
+Destra %2
+Sopra %3
+Sotto %4</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="891"/>
@@ -47501,7 +47515,7 @@ Bottom: %4</source>
         <location filename="../src/interface/statisticsprintform.cpp" line="397"/>
         <source>Right margin: %1 mm</source>
         <comment>mm means millimeters</comment>
-        <translation>Marginew destro: %1 mm</translation>
+        <translation>Margine destro: %1 mm</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="420"/>
@@ -48854,23 +48868,23 @@ Bottom: %4</source>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1873"/>
         <source>students</source>
-        <translation type="unfinished"></translation>
+        <translation>studenti</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1875"/>
         <source>students - disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>studenti - disabilitato</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1880"/>
         <source>teachers - disabled</source>
-        <translation type="unfinished">insegnanti - disabilitato</translation>
+        <translation>insegnanti - disabilitato</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1882"/>
         <source>View statistics: %1, %2.</source>
         <comment>%1 and %2 are two files in HTML format, to show statistics for students and teachers. The user can click on one file to view it</comment>
-        <translation type="unfinished"></translation>
+        <translation>Vedi statistiche: %1, %2.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1928"/>
@@ -49150,18 +49164,18 @@ Bottom: %4</source>
         <location filename="../src/engine/timetableexport.cpp" line="8294"/>
         <location filename="../src/engine/timetableexport.cpp" line="8471"/>
         <source>This is a teaser only. Values are not correct!</source>
-        <translation type="unfinished"></translation>
+        <translation>Questo è solo un falso problema. I valori non sono corretti!</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8298"/>
         <location filename="../src/engine/timetableexport.cpp" line="8475"/>
         <source>This file doesn&apos;t list limits that are set by constraints. It contains statistics about the min and max values of the currently calculated solution.</source>
-        <translation type="unfinished"></translation>
+        <translation>Questo file non riporta i limiti impostati dai vincoli. Esso contiene statistiche circa i valori minimi e massimi della soluzione attualmente elaborata.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8401"/>
         <source>All teachers</source>
-        <translation type="unfinished">Tutti gli insegnanti</translation>
+        <translation>Tutti gli insegnanti</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8402"/>
@@ -49170,62 +49184,62 @@ Bottom: %4</source>
         <location filename="../src/engine/timetableexport.cpp" line="8638"/>
         <location filename="../src/engine/timetableexport.cpp" line="8799"/>
         <source>Free days</source>
-        <translation type="unfinished"></translation>
+        <translation>Giorni liberi</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8403"/>
         <location filename="../src/engine/timetableexport.cpp" line="8592"/>
         <source>Gaps</source>
-        <translation type="unfinished"></translation>
+        <translation>ore buche</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8404"/>
         <location filename="../src/engine/timetableexport.cpp" line="8593"/>
         <source>Gaps per day</source>
-        <translation type="unfinished"></translation>
+        <translation>Ore buche al giorno</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8405"/>
         <location filename="../src/engine/timetableexport.cpp" line="8594"/>
         <source>Hours per day</source>
-        <translation type="unfinished"></translation>
+        <translation>Ore al giorno</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8408"/>
         <location filename="../src/engine/timetableexport.cpp" line="8597"/>
         <source>Sum</source>
-        <translation type="unfinished">Somma</translation>
+        <translation>Somma</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8414"/>
         <location filename="../src/engine/timetableexport.cpp" line="8603"/>
         <source>Average</source>
-        <translation type="unfinished"></translation>
+        <translation>Media</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8420"/>
         <location filename="../src/engine/timetableexport.cpp" line="8609"/>
         <source>Min</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimo</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8426"/>
         <location filename="../src/engine/timetableexport.cpp" line="8615"/>
         <source>Max</source>
-        <translation type="unfinished"></translation>
+        <translation>Massimo</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8443"/>
         <location filename="../src/engine/timetableexport.cpp" line="8452"/>
         <source>Teacher</source>
-        <translation type="unfinished">Insegnante</translation>
+        <translation>Insegnante</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8445"/>
         <location filename="../src/engine/timetableexport.cpp" line="8639"/>
         <location filename="../src/engine/timetableexport.cpp" line="8800"/>
         <source>Total gaps</source>
-        <translation type="unfinished"></translation>
+        <translation>Ore buche totali</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8446"/>
@@ -49234,7 +49248,7 @@ Bottom: %4</source>
         <location filename="../src/engine/timetableexport.cpp" line="8686"/>
         <location filename="../src/engine/timetableexport.cpp" line="8801"/>
         <source>Min gaps per day</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero minimo di ore buche al giorno</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8447"/>
@@ -49243,7 +49257,7 @@ Bottom: %4</source>
         <location filename="../src/engine/timetableexport.cpp" line="8687"/>
         <location filename="../src/engine/timetableexport.cpp" line="8802"/>
         <source>Max gaps per day</source>
-        <translation type="unfinished">Numero massimo di ore buche al giorno</translation>
+        <translation>Numero massimo di ore buche al giorno</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8448"/>
@@ -49252,7 +49266,7 @@ Bottom: %4</source>
         <location filename="../src/engine/timetableexport.cpp" line="8682"/>
         <location filename="../src/engine/timetableexport.cpp" line="8803"/>
         <source>Min hours per day</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero minimo di ore al giorno</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8449"/>
@@ -49261,36 +49275,36 @@ Bottom: %4</source>
         <location filename="../src/engine/timetableexport.cpp" line="8683"/>
         <location filename="../src/engine/timetableexport.cpp" line="8804"/>
         <source>Max hours per day</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero massimo di ore al giorno</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8590"/>
         <source>All students</source>
-        <translation type="unfinished">Tutti gli studenti</translation>
+        <translation>Tutti gli studenti</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8662"/>
         <location filename="../src/engine/timetableexport.cpp" line="8680"/>
         <source>Min free days</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero minimo di giorni liberi</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8663"/>
         <location filename="../src/engine/timetableexport.cpp" line="8681"/>
         <source>Max free days</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero massimo di giorni liberi</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8666"/>
         <location filename="../src/engine/timetableexport.cpp" line="8684"/>
         <source>Min gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero minimo di ore buche a settimana</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8667"/>
         <location filename="../src/engine/timetableexport.cpp" line="8685"/>
         <source>Max gaps per week</source>
-        <translation type="unfinished">Numero massimo di ore buche a settimana</translation>
+        <translation>Numero massimo di ore buche a settimana</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8637"/>
@@ -49298,7 +49312,7 @@ Bottom: %4</source>
         <location filename="../src/engine/timetableexport.cpp" line="8798"/>
         <location filename="../src/engine/timetableexport.cpp" line="8807"/>
         <source>Subgroup</source>
-        <translation type="unfinished">Sottogruppo</translation>
+        <translation>Sottogruppo</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1598"/>
@@ -50354,12 +50368,12 @@ Bottom: %4</source>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="168"/>
         <source>Students Statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Statistica studenti</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="169"/>
         <source>Teachers Statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Statistica insegnanti</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="179"/>
@@ -50594,7 +50608,7 @@ Bottom: %4</source>
         <location filename="../src/interface/timetableprintform.cpp" line="367"/>
         <source>Space after table: +%1 px</source>
         <comment>px means pixels, when printing the timetable</comment>
-        <translation>Spatio dopo la tabella oraria: +%1 px</translation>
+        <translation>Spazio dopo la tabella oraria: +%1 px</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="390"/>
@@ -50617,7 +50631,7 @@ Bottom: %4</source>
         <location filename="../src/interface/timetableprintform.cpp" line="459"/>
         <source>Right margin: %1 mm</source>
         <comment>mm means millimeters</comment>
-        <translation>Marginew destro: %1 mm</translation>
+        <translation>Margine destro: %1 mm</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="482"/>
@@ -50646,7 +50660,11 @@ Left: %1
 Right: %2
 Top: %3
 Bottom: %4</source>
-        <translation type="unfinished"></translation>
+        <translation>Nessun margine impostato, perchè almeno un valore è troppo piccolo. Occorre impostare almeno:
+Sinnistra %1
+Destra %2
+Sopra %3
+Sotto %4</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="217"/>
