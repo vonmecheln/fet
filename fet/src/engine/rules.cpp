@@ -5481,7 +5481,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 		 "You are adviced to make a backup of your old file before saving in new format.\n\n"
 		 "Please note that the default weight percentage of constraints min days between activities "
 		 "will be 95% (mainly satisfied, not always) and 'force consecutive if same day' will be set to true "
-		 "(meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity)"
+		 "(meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity). "
 		 "If you want, you can modify this percent to be 100%, manually in the fet input file "
 		 "or from the interface"));
 	}
@@ -7862,7 +7862,7 @@ TimeConstraint* Rules::readTeacherMaxDaysPerWeek(QWidget* parent, const QDomElem
 			cn->maxDaysPerWeek=elem4.text().toInt();
 			if(cn->maxDaysPerWeek<=0 || cn->maxDaysPerWeek>this->nDaysPerWeek){
 				RulesReconcilableMessage::information(parent, tr("FET information"), 
-					tr("Constraint TeacherMaxDaysPerWeek day corrupt for teacher %1, max days %2 <= 0 or >nDaysPerWeek, ignoring constraint")
+					tr("Constraint TeacherMaxDaysPerWeek max days corrupt for teacher %1, max days %2 <= 0 or >nDaysPerWeek, ignoring constraint")
 					.arg(cn->teacherName)
 					.arg(elem4.text()));
 				delete cn;
@@ -7903,7 +7903,7 @@ TimeConstraint* Rules::readTeachersMaxDaysPerWeek(QWidget* parent, const QDomEle
 			cn->maxDaysPerWeek=elem4.text().toInt();
 			if(cn->maxDaysPerWeek<=0 || cn->maxDaysPerWeek>this->nDaysPerWeek){
 				RulesReconcilableMessage::information(parent, tr("FET information"), 
-					tr("Constraint TeachersMaxDaysPerWeek day corrupt, max days %1 <= 0 or >nDaysPerWeek, ignoring constraint")
+					tr("Constraint TeachersMaxDaysPerWeek max days corrupt, max days %1 <= 0 or >nDaysPerWeek, ignoring constraint")
 					.arg(elem4.text()));
 				delete cn;
 				cn=NULL;
@@ -7948,7 +7948,7 @@ TimeConstraint* Rules::readTeacherMinDaysPerWeek(QWidget* parent, const QDomElem
 			cn->minDaysPerWeek=elem4.text().toInt();
 			if(cn->minDaysPerWeek<=0 || cn->minDaysPerWeek>this->nDaysPerWeek){
 				RulesReconcilableMessage::information(parent, tr("FET information"), 
-					tr("Constraint TeacherMinDaysPerWeek day corrupt for teacher %1, min days %2 <= 0 or >nDaysPerWeek, ignoring constraint")
+					tr("Constraint TeacherMinDaysPerWeek min days corrupt for teacher %1, min days %2 <= 0 or >nDaysPerWeek, ignoring constraint")
 					.arg(cn->teacherName)
 					.arg(elem4.text()));
 				delete cn;
@@ -7989,7 +7989,7 @@ TimeConstraint* Rules::readTeachersMinDaysPerWeek(QWidget* parent, const QDomEle
 			cn->minDaysPerWeek=elem4.text().toInt();
 			if(cn->minDaysPerWeek<=0 || cn->minDaysPerWeek>this->nDaysPerWeek){
 				RulesReconcilableMessage::information(parent, tr("FET information"), 
-					tr("Constraint TeachersMinDaysPerWeek day corrupt, min days %1 <= 0 or >nDaysPerWeek, ignoring constraint")
+					tr("Constraint TeachersMinDaysPerWeek min days corrupt, min days %1 <= 0 or >nDaysPerWeek, ignoring constraint")
 					.arg(elem4.text()));
 				delete cn;
 				cn=NULL;
@@ -8160,7 +8160,7 @@ TimeConstraint* Rules::readTeachersIntervalMaxDaysPerWeek(QWidget* parent, const
 			cn->maxDaysPerWeek=elem4.text().toInt();
 			if(cn->maxDaysPerWeek>this->nDaysPerWeek){
 				RulesReconcilableMessage::information(parent, tr("FET information"), 
-					tr("Constraint TeachersIntervalMaxDaysPerWeek max days corrupt, max days %2 >nDaysPerWeek, constraint added, please correct constraint")
+					tr("Constraint TeachersIntervalMaxDaysPerWeek max days corrupt, max days %1 >nDaysPerWeek, constraint added, please correct constraint")
 					//.arg(cn->teacherName)
 					.arg(elem4.text()));
 				/*delete cn;
@@ -8176,7 +8176,7 @@ TimeConstraint* Rules::readTeachersIntervalMaxDaysPerWeek(QWidget* parent, const
 					break;
 			if(h1>=this->nHoursPerDay){
 				RulesReconcilableMessage::information(parent, tr("FET information"), 
-					tr("Constraint Teachers interval max days per week start hour corrupt because hour %2 is inexistent ... ignoring constraint")
+					tr("Constraint Teachers interval max days per week start hour corrupt because hour %1 is inexistent ... ignoring constraint")
 					//.arg(cn->teacherName)
 					.arg(elem4.text()));
 				delete cn;
@@ -8199,7 +8199,7 @@ TimeConstraint* Rules::readTeachersIntervalMaxDaysPerWeek(QWidget* parent, const
 						break;
 				if(h2>=this->nHoursPerDay){
 					RulesReconcilableMessage::information(parent, tr("FET information"), 
-						tr("Constraint Teachers interval max days per week end hour corrupt because hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint")
+						tr("Constraint Teachers interval max days per week end hour corrupt because hour %1 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint")
 						//.arg(cn->teacherName)
 						.arg(elem4.text()));
 					delete cn;
@@ -8374,7 +8374,7 @@ TimeConstraint* Rules::readStudentsIntervalMaxDaysPerWeek(QWidget* parent, const
 			cn->maxDaysPerWeek=elem4.text().toInt();
 			if(cn->maxDaysPerWeek>this->nDaysPerWeek){
 				RulesReconcilableMessage::information(parent, tr("FET information"), 
-					tr("Constraint StudentsIntervalMaxDaysPerWeek max days corrupt: max days %2 >nDaysPerWeek, constraint added, please correct constraint")
+					tr("Constraint StudentsIntervalMaxDaysPerWeek max days corrupt: max days %1 >nDaysPerWeek, constraint added, please correct constraint")
 					.arg(elem4.text()));
 				/*delete cn;
 				cn=NULL;
@@ -8389,7 +8389,7 @@ TimeConstraint* Rules::readStudentsIntervalMaxDaysPerWeek(QWidget* parent, const
 					break;
 			if(h1>=this->nHoursPerDay){
 				RulesReconcilableMessage::information(parent, tr("FET information"), 
-					tr("Constraint Students interval max days per week start hour corrupt: hour %2 is inexistent ... ignoring constraint")
+					tr("Constraint Students interval max days per week start hour corrupt: hour %1 is inexistent ... ignoring constraint")
 					//.arg(cn->students)
 					.arg(elem4.text()));
 				delete cn;
@@ -8412,7 +8412,7 @@ TimeConstraint* Rules::readStudentsIntervalMaxDaysPerWeek(QWidget* parent, const
 						break;
 				if(h2>=this->nHoursPerDay){
 					RulesReconcilableMessage::information(parent, tr("FET information"), 
-						tr("Constraint Students interval max days per week end hour corrupt: hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint")
+						tr("Constraint Students interval max days per week end hour corrupt: hour %1 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint")
 						//.arg(cn->students)
 						.arg(elem4.text()));
 					delete cn;

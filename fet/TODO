@@ -1571,11 +1571,8 @@ making it unusually wide(or tall) and the subgroup names do not actually reflect
 instead of Mwaniki-CRE-4 CRE1 or Mwaniki-CRE-4. This means i edit the timetable manually after every generation to make this changes. I suggest adding a displayname
 tag to the activity which defaults to the current display name (without the activityID) and using this to determine what is displayed for the activity.
 
-The other thing is can i get a subject color propagated to the entire activity td so that i can color the timetable depending on the subject only.
-So that every activity of the Subject will have one color and not just the subject span only while the student set, location and teacher spans remain uncolored.
-
-Lastly, for activities with same starting time is it possible to have the in one column/row so that the number of rows/columns is fixed to the either the number
-of days or lessons (depending on the selected timetable). This way it is easier to print.
+Another thing, for activities with same starting time, is it possible to have them in one column/row so that the number of rows/columns is fixed to the either the number
+of days or lessons (depending on the selected timetable)? This way it is easier to print.
 
 95---------------------------------------------------------
 From Volker Dirr:
@@ -2475,3 +2472,26 @@ hours of the teachers (in clock hours). Today, I take the statistics and make a 
 
 I think that something like a relationship between FET and clock hours should be interesting to add in future versions, so the teachers statistics could
 be shown in terms of number of activities (as it is today) and clock hours in a quick way, right from the FET interface.
+
+154---------------------------------------------------------
+From Leandro Bueno:
+
+Always (or never) use span in the HTML timetables if an activity has
+duration larger than 1.
+
+155---------------------------------------------------------
+From Leandro Bueno:
+
+Another suggestion for a future release is the option to only
+"print" to HTML the hours that the students have. In my case, I have
+students divided in turns (morning, afternoon and evening) and each
+turn only have activities in that specific turn. When I generate the
+tables, the morning students' table have the afternoon and evening
+hours as not available (there are restrictions for this in the .fet
+file). The same occurs in the afternoon and evening students. I
+suggest that these not available hours of the students don't end up
+in the final HTML table.
+
+Amendment by Volker Dirr:
+
+Should be generalised from "hours" to "hours or days or both".

@@ -3037,7 +3037,7 @@ bool computeActivitiesSameStartingTime(QWidget* parent, QHash<int, int> & reprSa
 						 .arg(gt.rules.internalActivitiesList[ai1].id)
 						 .arg(gt.rules.internalActivitiesList[ai2].id);
 					
-						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+						int t=GeneratePreReconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 						 s, GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 						 1, 0 );
 				 	
@@ -5100,7 +5100,7 @@ bool computeActivityEndsStudentsDayPercentages(QWidget* parent)
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
-				 "activity activities end students day with weight percentage under 100%. "
+				 "activities end students day with weight percentage under 100%. "
 				 "Constraint activities end students day can only have weight percentage 100%. "
 				 "Please modify your data accordingly (remove or edit constraint) and try again."),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),

@@ -1907,9 +1907,9 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& htmlfil
 		tos<<"span.break {\n  color: gray;\n}\n\n";
 		tos<<"td.break {\n  border-color:silver;\n  border-right-style:none;\n  border-bottom-style:none;\n  border-left-style:dotted;\n  border-top-style:dotted;\n}\n\n";
 
-		tos<<"td.student, div.student {\n\n}\n\n";
-		tos<<"td.teacher, div.teacher {\n\n}\n\n";
-		tos<<"td.room, div.room {\n\n}\n\n";
+		tos<<"tr.studentsset, div.studentsset {\n\n}\n\n";
+		tos<<"tr.teacher, div.teacher {\n\n}\n\n";
+		tos<<"tr.room, div.room {\n\n}\n\n";
 		tos<<"tr.line0 {\n  font-size: smaller;\n}\n\n";
 		tos<<"tr.line1, div.line1 {\n\n}\n\n";
 		tos<<"tr.line2, div.line2 {\n  font-size: smaller;\n  color: gray;\n}\n\n";
@@ -4149,7 +4149,7 @@ QString TimetableExport::writeActivitiesStudents(int htmlLevel, const QList<int>
 	else
 		tmp+="          <td><table>";
 	if(htmlLevel>=3)
-		tmp+="<tr class=\"student line0\">";
+		tmp+="<tr class=\"studentsset line0\">";
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
@@ -4205,7 +4205,7 @@ QString TimetableExport::writeActivityTeacher(int htmlLevel, int teacher, int da
 		if(best_solution.times[ai]==currentTime){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
 			tmp+=writeStartTagTDofActivities(htmlLevel, act, false, colspan, rowspan);
-			tmp+=writeStudents(htmlLevel, act, "div", " class=\"student line1\"");
+			tmp+=writeStudents(htmlLevel, act, "div", " class=\"studentsset line1\"");
 			tmp+=writeSubjectAndActivityTags(htmlLevel, act, "div", " class=\"line2\"", false, printActivityTags);
 			tmp+=writeRoom(htmlLevel, ai, "div", " class=\"room line3\"");
 			tmp+="</td>\n";
@@ -4244,7 +4244,7 @@ QString TimetableExport::writeActivitiesTeachers(int htmlLevel, const QList<int>
 	}
 	tmp+="</tr>";
 	if(htmlLevel>=3)
-		tmp+="<tr class=\"student line1\">";
+		tmp+="<tr class=\"studentsset line1\">";
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
@@ -4290,7 +4290,7 @@ QString TimetableExport::writeActivityRoom(int htmlLevel, int room, int day, int
 		if(best_solution.times[ai]==currentTime){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
 			tmp+=writeStartTagTDofActivities(htmlLevel, act, false, colspan, rowspan);
-			tmp+=writeStudents(htmlLevel, act, "div", " class=\"student line1\"");
+			tmp+=writeStudents(htmlLevel, act, "div", " class=\"studentsset line1\"");
 			tmp+=writeTeachers(htmlLevel, act, "div", " class=\"teacher line2\"");
 			tmp+=writeSubjectAndActivityTags(htmlLevel, act, "div", " class=\"line3\"", false, printActivityTags);
 			tmp+="</td>\n";
@@ -4329,7 +4329,7 @@ QString TimetableExport::writeActivitiesRooms(int htmlLevel, const QList<int>& a
 	}
 	tmp+="</tr>";
 	if(htmlLevel>=3)
-		tmp+="<tr class=\"student line1\">";
+		tmp+="<tr class=\"studentsset line1\">";
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
@@ -4387,7 +4387,7 @@ QString TimetableExport::writeActivitiesSubjects(int htmlLevel, const QList<int>
 			tmp+="</tr>";
 		}
 		if(htmlLevel>=3)
-			tmp+="<tr class=\"student line1\">";
+			tmp+="<tr class=\"studentsset line1\">";
 		else	tmp+="<tr>";
 		for(int a=0; a<allActivities.size(); a++){
 			Activity* act=&gt.rules.internalActivitiesList[allActivities[a]];

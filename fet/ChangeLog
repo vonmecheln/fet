@@ -1647,3 +1647,8 @@ Versions 5.19.0 - 5.19.v
 	- Updated the Romanian translation (by Liviu Lalescu). Now it uses diacritics.
 	- Updated the Ukrainian translation (by Andriy Melnyk).
 	- Added a new sample file, by geaplanet.
+- Version 5.19.2
+	- Minor bugs corrected (formatting in the HTML timetables), by Volker Dirr.
+	- Corrected some minor string problems.
+	- Updated the Romanian translation (by Liviu Lalescu). It is now complete.
+	

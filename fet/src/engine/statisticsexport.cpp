@@ -57,8 +57,8 @@ static QHash<QString, QString> hashSubjectIDsStatistics;
 static QHash<QString, QString> hashActivityTagIDsStatistics;
 static QHash<QString, QString> hashStudentIDsStatistics;
 static QHash<QString, QString> hashTeacherIDsStatistics;
-static QHash<QString, QString> hashRoomIDsStatistics;
-static QHash<QString, QString> hashDayIDsStatistics;
+//static QHash<QString, QString> hashRoomIDsStatistics;
+//static QHash<QString, QString> hashDayIDsStatistics;
 
 //extern bool simulation_running;	//needed?
 
@@ -286,7 +286,7 @@ void StatisticsExport::exportStatistics(QWidget* parent){
 		 StatisticsExport::tr("Statistic files were exported to directory %1 as html files.").arg(QDir::toNativeSeparators(DIRECTORY_STATISTICS)));
 	} else {
 		QMessageBox::warning(parent, tr("FET warning"),
-		 StatisticsExport::tr("Statistic export incomplete")+"\n");
+		 StatisticsExport::tr("Statistics export incomplete")+"\n");
 	}
 	teachersTotalNumberOfHours.clear();
 	teachersTotalNumberOfHours2.clear();
@@ -305,8 +305,8 @@ void StatisticsExport::exportStatistics(QWidget* parent){
 	hashActivityTagIDsStatistics.clear();
 	hashStudentIDsStatistics.clear();
 	hashTeacherIDsStatistics.clear();
-	hashRoomIDsStatistics.clear();
-	hashDayIDsStatistics.clear();
+	//hashRoomIDsStatistics.clear();
+	//hashDayIDsStatistics.clear();
 }
 
 void StatisticsExport::computeHashForIDsStatistics(){		// by Volker Dirr
@@ -349,14 +349,14 @@ void StatisticsExport::computeHashForIDsStatistics(){		// by Volker Dirr
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		hashTeacherIDsStatistics.insert(gt.rules.teachersList[i]->name, CustomFETString::number(i+1));
 	}
-	hashRoomIDsStatistics.clear();
+	/*hashRoomIDsStatistics.clear();
 	for(int room=0; room<gt.rules.roomsList.size(); room++){
 		hashRoomIDsStatistics.insert(gt.rules.roomsList[room]->name, CustomFETString::number(room+1));
-	}
-	hashDayIDsStatistics.clear();
+	}*/
+	/*hashDayIDsStatistics.clear();
 	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 		hashDayIDsStatistics.insert(gt.rules.daysOfTheWeek[k], CustomFETString::number(k+1));
-	}
+	}*/
 }
 
 bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, QString saveTime){
@@ -453,24 +453,25 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, QString sa
 		for(int i=0; i<gt.rules.teachersList.size(); i++){
 			tos << "span.t_"<<hashTeacherIDsStatistics.value(gt.rules.teachersList[i]->name)<<" { /* teacher "<<gt.rules.teachersList[i]->name<<" */\n\n}\n\n";
 		}
-		for(int room=0; room<gt.rules.roomsList.size(); room++){
-			tos << "span.r_"<<hashRoomIDsStatistics.value(gt.rules.roomsList[room]->name)<<" { /* room "<<gt.rules.roomsList[room]->name<<" */\n\n}\n\n";
-		}
+		//for(int room=0; room<gt.rules.roomsList.size(); room++){
+		//	tos << "span.r_"<<hashRoomIDsStatistics.value(gt.rules.roomsList[room]->name)<<" { /* room "<<gt.rules.roomsList[room]->name<<" */\n\n}\n\n";
+		//}
 	}
 	if(TIMETABLE_HTML_LEVEL>=3){
 		tos<<"span.subject {\n\n}\n\n";
 		tos<<"span.activitytag {\n\n}\n\n";
 		tos<<"span.empty {\n  color: gray;\n}\n\n";
 		tos<<"td.empty {\n  border-color:silver;\n  border-right-style:none;\n  border-bottom-style:none;\n  border-left-style:dotted;\n  border-top-style:dotted;\n}\n\n";
-		tos<<"span.notAvailable {\n  color: gray;\n}\n\n";
-		tos<<"td.notAvailable {\n  border-color:silver;\n  border-right-style:none;\n  border-bottom-style:none;\n  border-left-style:dotted;\n  border-top-style:dotted;\n}\n\n";
-		tos<<"td.student, div.student {\n\n}\n\n";
-		tos<<"td.teacher, div.teacher {\n\n}\n\n";
-		tos<<"td.room, div.room {\n\n}\n\n";
-		tos<<"tr.line0 {\n  font-size: smaller;\n}\n\n";
-		tos<<"tr.line1, div.line1 {\n\n}\n\n";
-		tos<<"tr.line2, div.line2 {\n  font-size: smaller;\n  color: gray;\n}\n\n";
-		tos<<"tr.line3, div.line3 {\n  font-size: smaller;\n  color: silver;\n}\n\n";
+		//tos<<"span.notAvailable {\n  color: gray;\n}\n\n";
+		//tos<<"td.notAvailable {\n  border-color:silver;\n  border-right-style:none;\n  border-bottom-style:none;\n  border-left-style:dotted;\n  border-top-style:dotted;\n}\n\n";
+		tos<<"tr.studentsset {\n\n}\n\n";
+		tos<<"tr.teacher {\n\n}\n\n";
+		//tos<<"td.room, div.room {\n\n}\n\n";
+		tos<<"tr.duration {\n\n}\n\n";
+		//tos<<"tr.line0 {\n  font-size: smaller;\n}\n\n";
+		tos<<"tr.line1 {\n\n}\n\n";
+		tos<<"tr.line2 {\n  font-size: smaller;\n  color: gray;\n}\n\n";
+		//tos<<"tr.line3, div.line3 {\n  font-size: smaller;\n  color: silver;\n}\n\n";
 	}
 	
 	tos<<"/* "<<StatisticsExport::tr("End of file.")<<" */\n";
@@ -769,7 +770,7 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, QString
 				}
 				tos<<"</tr>";
 				if(TIMETABLE_HTML_LEVEL>=3)
-					tos<<"<tr class=\"student line2\">";
+					tos<<"<tr class=\"studentsset line2\">";
 				else	tos<<"<tr>";
 				QMapIterator<QString, int> it2(tmpStudentDuration);	//do it with the same iterator
 				while(it2.hasNext()){
@@ -911,7 +912,7 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, QString
 	
 	QProgressDialog progress(parent);
 	progress.setWindowTitle(tr("Exporting statistics", "Title of a progress dialog"));
-	progress.setLabelText(tr("Processing subject with teachers...please wait"));
+	progress.setLabelText(tr("Processing subjects with teachers...please wait"));
 	progress.setRange(0, allTeachersNames.count());
 	progress.setModal(true);
 	
@@ -993,7 +994,7 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, QString
 				}
 				tos<<"</tr>";
 				if(TIMETABLE_HTML_LEVEL>=3)
-					tos<<"<tr class=\"student line2\">";
+					tos<<"<tr class=\"studentsset line2\">";
 				else	tos<<"<tr>";
 				QMapIterator<QString, int> it2(tmpStudentDuration);	//do it with the same iterator
 				while(it2.hasNext()){

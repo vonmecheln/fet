@@ -120,7 +120,7 @@ void HelpInstructionsForm::setText()
 	s+=tr("6) Rooms: You might firstly try to generate a timetable without rooms, to see if it is possible, then add rooms and rooms related constraints.");
 	s+="\n\n";
 	s+=tr("7) It is possible to work with institutions in which the students work in shifts (for instance, lowest forms in the morning and "
-		"highest forms in the afternoon). Please see the Help/Frequently Asked Questions the solution to how to do that "
+		"highest forms in the afternoon). Please see in the Help/Frequently Asked Questions the solution to how to do that "
 		"(the essence is to add corresponding constraints students set not available).");
 	s+="\n\n";
 	s+=tr("8) The new algorithm (after version 5.0.0) does not accept fortnightly activities. But you might apply a trick."
@@ -157,7 +157,7 @@ void HelpInstructionsForm::setText()
 	s+=tr("17) If you have activities split into 3 activities per week and need them to be not "
 		"in 3 consecutive days, there is an entry in the FAQ explaining how to specify this (question Q1-5-September-2008).");
 	s+="\n\n";
-	s+=tr("18) If you use the not perfect constraints activity tag max hours daily or students max gaps per week (there are 4+2"
+	s+=tr("18) If you use the not perfect constraints activity tag max hours daily or students max gaps per day (there are 4+2"
 		" types of constraints in this category), use them with caution not to obtain an impossible timetable. If the timetable is impossible, it may be because of them."
 		" You are advised to add such constraints only in the end, after you are sure that the other constraints are good and the timetable is possible.");
 		

@@ -31367,11 +31367,6 @@ Silakan ubah data anda dan dicoba lagi</translation>
         <translation>Tidak dapat optimasi, karena anda mempunyai batasan jenis kegiatan akhiri hari siswa untuk kegiatan dengan id=%1 dengan persentase bobot dibawah 100%. Batasan kegiatan akhiri hari siswa hanya boleh mempunyai persentase bobot 100%. Silahkan ubah data anda( hapus atau sunting batasan) dan dicoba lagi.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5102"/>
-        <source>Cannot optimize, because you have constraints of type activity activities end students day with weight percentage under 100%. Constraint activities end students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
-        <translation>Tidak bisa mengoptimalkan, karena Anda memiliki kendala jenis kegiatan kegiatan hari akhir siswa dengan persentase berat dibawah 100%. Kendala kegiatan hari akhir siswa hanya dapat memiliki persentase berat 100%. Silakan memodifikasi data yang sesuai (menghapus atau mengedit kendala) dan coba lagi.</translation>
-    </message>
-    <message>
         <location filename="../src/engine/generate_pre.cpp" line="5427"/>
         <source>Cannot optimize, because you have constraint teacher interval max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Tidak bisa mengoptimalkan, karena Anda memiliki kendala hari guru interval maks per minggu dengan bobot (persentase) di bawah 100 untuk guru %1. Dimulai dengan versi 5.6.2 FET hanya mungkin untuk menggunakan bobot 100% untuk kendala tersebut. Silakan membuat berat badan 100% dan coba lagi</translation>
@@ -31449,6 +31444,11 @@ Silakan ubah data anda dan dicoba lagi</translation>
         <location filename="../src/engine/generate_pre.cpp" line="6510"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from the allowed number of students)</source>
         <translation>Tidak dapat keluarkan jadwal karena untuk kegiatan dengan id==%1 anda tidak mempunyai ruang khusus (dari jumlah siswa yang diperbolehkan)</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="5102"/>
+        <source>Cannot optimize, because you have constraints of type activities end students day with weight percentage under 100%. Constraint activities end students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="5776"/>
@@ -31743,7 +31743,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2013 Liviu Lalescu, Volker Dirr&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.19.1 (May 2013).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.19.2 (June 2013).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under GNU GPL v2 or later.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
@@ -32228,6 +32228,7 @@ A: - Students - organized into sets (years (or forms, or classes), containing gr
 - Subjects (the names of the possible courses, eg. Maths, Physics, etc.).
 - Activity tags (you can use them or not, option is yours: the type of activity: lab, course, seminary, or any other information attached to an activity).
 - Rooms (classrooms).
+- Buildings.
 - Activities: a coupling of one or more teachers, a subject and one or more students set. This is usually named a course, a lecture, a laboratory and so on. An activity can have optionally an activity tag, to help you with some constraints.
 - Constraints. They can be: time constraints (referring to the allocated day and hour) or space constraints (referring to rooms allocation). They have a weight percentage, from 0.0% to 100.0%. 100% means that the constraint will always be respected and if this constraint is impossible, FET will not be able to generate a timetable.</source>
         <translation>]P: Apa adalah organisasi data input FET?
@@ -32237,71 +32238,72 @@ J: - Mahasiswa - diatur dalam set (tahun (atau bentuk, atau kelas), mengandung k
 - Subjek (nama kursus mungkin, misalnya Matematika,. Fisika, dll).
 - Kegiatan tag (Anda dapat menggunakannya atau tidak, adalah pilihan Anda: jenis kegiatan: lab, kursus, seminari, atau informasi lainnya yang melekat pada kegiatan).
 - Kamar (ruang kelas).
+- Gedung.
 - Kegiatan: sebuah kopling satu atau lebih guru, subjek dan satu atau lebih siswa ditetapkan. Ini biasanya disebut kursus, kuliah, laboratorium dan sebagainya. Aktivitas opsional dapat memiliki tag aktivitas, untuk membantu Anda dengan beberapa kendala.
 - Kendala. Mereka dapat: kendala waktu (mengacu pada hari dialokasikan dan jam) atau ruang kendala (merujuk ke kamar alokasi). Mereka memiliki persentase berat badan, dari 0,0% menjadi 100,0%. 100% berarti bahwa kendala akan selalu dihormati dan jika kendala ini tidak mungkin, FET tidak akan dapat menghasilkan jadwal.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="77"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="79"/>
         <source>Q: What are the maximum limits FET can handle?</source>
         <translation>P: Apa batas maksimum FET bisa mengatasinya?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="79"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="81"/>
         <source>A: There are indeed maximum limits for the generation algorithm (all these limits can be increased on demand, as a custom version, because this requires a bit more memory).</source>
         <translation>J: Ada memang batas maksimum untuk algoritma generasi (semua batas-batas ini dapat ditingkatkan pada permintaan, sebagai versi kustom, karena ini memerlukan memori lebih sedikit).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="81"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="83"/>
         <source>These limits are:</source>
         <translation>Batasan nya adalah:</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="84"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="86"/>
         <source>Maximum total number of hours (periods) per day: %1</source>
         <translation>Maksimal total jumlah jam (periode) per hari: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="86"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="88"/>
         <source>Maximum number of working days per week: %1</source>
         <translation>Maksimum jumlah hari kerja per minggu:%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="88"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="90"/>
         <source>Maximum total number of teachers: %1</source>
         <translation>Total maksimum jumlah guru:%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="90"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="92"/>
         <source>Maximum total number of sets of students: %1</source>
         <translation>Total maksimum jumlah kelas paralel: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="94"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="96"/>
         <source>Virtually unlimited number of activity tags</source>
         <translation>Hampir tak terbatas jumlah tag aktivitas</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="96"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="98"/>
         <source>Maximum number of activities: %1</source>
         <translation>Jumlah maksimum kegiatan:%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="98"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="100"/>
         <source>Maximum number of rooms: %1</source>
         <translation>Maksimum jumlah kamar:%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="100"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="102"/>
         <source>Maximum number of buildings: %1</source>
         <translation>Maksimum jumlah bangunan:%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="102"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="104"/>
         <source>Virtually unlimited number of teachers and students sets for each activity</source>
         <translation>Hampir tak terbatas jumlah guru dan siswa set untuk setiap kegiatan</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="112"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="114"/>
         <source>Q: Why some activities appear indented while others not?
 
 A: The activities are indented for easier visualization. The non-indented ones are the representatives of a larger split activity (their id is the group id of the larger split activity), while indented ones are the other components of this larger split activity.</source>
@@ -32310,7 +32312,7 @@ A: The activities are indented for easier visualization. The non-indented ones a
 J: Kegiatan yang menjorok untuk visualisasi lebih mudah. Yang non-indentasi adalah wakil-wakil dari aktivitas split yang lebih besar (id mereka adalah kelompok id dari aktivitas split yang lebih besar), sementara yang menjorok adalah komponen lain dari kegiatan ini split lebih besar.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="130"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="132"/>
         <source>Q: Help on ConstraintStudentsEarlyMaxBeginningsAtSecondHour.
 
 A: You can specify the maximum number of beginnings at second available hour (arrivals at third hour not possible).
@@ -32323,7 +32325,7 @@ J: Anda dapat menentukan jumlah maksimum dari awal pada jam tersedia kedua (keda
 Jika Anda input data hanya parsial, silakan gunakan dengan hati-hati. Jika Anda menambahkan kendala dengan max 0 awal pada jam kedua: Anda mungkin misalnya input hanya 4 +4 kegiatan per jam matematika dengan guru yang sama untuk set siswa 2 (masing-masing kelompok dari 4 kegiatan harus ballanced - di hari yang berbeda). Maka jelas bahwa Anda tidak dapat menempatkan semua 8 kegiatan dalam seminggu 5 hari tanpa melanggar kendala awal siswa, sehingga Anda tidak akan mendapatkan jadwal mungkin.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="141"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="143"/>
         <source>Q: How about optional subjects or students sets which are divided according to options?
 
 A: One possible approach: in FET you can have each activity with more teachers and students sets. If you have for instance students set S which must attend subject Language1, English (with teacher TE) or French (teacher TF), you might choose not divide S and add an activity with Language1, S and TE and TF. The drawback: each activity can take place in a single room, you cannot tell FET that this activity should be in 2 or more rooms at the same time, and from here derive other problems: if some room is not available, if capacity of room is too low for the number of students in S FET cannot find timetable, and maybe others.
@@ -32334,28 +32336,28 @@ Another possible approach: you may choose to define students into sections (see 
 J: Salah satu pendekatan yang mungkin: di FET Anda dapat memiliki masing-masing kegiatan dengan lebih banyak guru dan siswa set. Jika Anda memiliki bagi siswa misalnya himpunan yang harus menghadiri Language1 subjek, Bahasa Inggris (dengan guru TE) atau Prancis (guru TF), Anda mungkin memilih untuk tidak membagi S dan menambahkan kegiatan dengan Language1, S dan TE dan TF. Kelemahan: setiap aktivitas dapat terjadi dalam satu kamar, Anda tidak dapat kirim FET bahwa kegiatan ini harus dalam 2 atau lebih kamar pada saat yang sama, dan dari sini masalah lain berasal: jika ruang yang tidak tersedia, jika kapasitas ruang terlalu rendah untuk jumlah siswa di S FET tidak dapat menemukan jadwal, dan mungkin orang lain.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="166"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="168"/>
         <source>Important: you must consider that each year contains groups which contain independent subgroups. Subgroups should have all the activities of the year and group plus additional optional activities. Please check menu statistics/students for subgroups, each subgroup should have a reasonable number of working hours per week, close to the average of hours per week for all subgroups.</source>
         <translation>Q: Bagaimana menentukan siswa menjadi beberapa bagian?
 Penting: Anda harus mempertimbangkan bahwa setiap tahun berisi kelompok yang berisi subkelompok independen. Subkelompok harus memiliki semua kegiatan tahun dan kelompok ditambah kegiatan tambahan opsional. Silakan periksa statistik menu / siswa untuk subkelompok, subkelompok masing-masing harus memiliki jumlah yang wajar kerja jam per minggu, dekat dengan rata-rata jam per minggu untuk semua subkelompok.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="170"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="172"/>
         <source>An impossible timetable might be caused by incorrect years division. Please check statistics/students for all subgroups, each subgroup should have the necessary hours, not less. If you have for instance some subgroups with less than say 20 hours per week you might get an impossible timetable, probably because of incorrect division of years and incorrectly added activities. All the subgroups are independent. If you have a subgroup with only 2 hours per week and constraint early, then these 2 activities must be placed in the first hours of the day, which is probably much too hard (wrong).</source>
         <translation>Sebuah jadwal mustahil mungkin disebabkan oleh pembagian tahun salah. Harap periksa statistik / siswa untuk semua subkelompok, subkelompok masing-masing harus memiliki jam diperlukan, tidak kurang. Jika Anda memiliki misalnya beberapa subkelompok dengan mengatakan kurang dari 20 jam per minggu Anda bisa mendapatkan jadwal mustahil, mungkin karena salah pembagian tahun dan tidak benar menambah aktivitas. Semua subkelompok adalah independen. Jika Anda memiliki subkelompok dengan hanya 2 jam per minggu dan kendala awal, maka kegiatan ini 2 harus ditempatkan dalam jam pertama hari itu, yang mungkin terlalu keras (salah).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="176"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="178"/>
         <source>Important note: please do the correct division of a year from the beginning. Each time you divide a year, the corresponding activities and constraints referring to year&apos;s groups and subgroups will be removed, along with groups and subgroups. This is not elegant, I know, I will try to find a better solution in the future. If you already inputted a lot of constraints and activities referring to a year&apos;s groups/subgroups, you might want to manually change the division of a year by the groups/subgroups menus.</source>
         <translation>Catatan penting: silahkan lakukan pembagian tahun yang benar dari awal. Setiap kali Anda membagi satu tahun, kegiatan yang sesuai dan kendala merujuk kepada kelompok-kelompok dan subkelompok tahun akan dihapus, bersama dengan kelompok-kelompok dan subkelompok. Ini tidak elegan, aku tahu, aku akan mencoba untuk menemukan solusi yang lebih baik di masa depan. Jika Anda sudah diinput banyak kendala dan kegiatan merujuk kepada kelompok-kelompok satu tahun / subkelompok, Anda mungkin ingin mengubah secara manual pembagian setahun oleh kelompok / subkelompok menu.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="182"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="184"/>
         <source>Another possibility: you can see that each activity has allowed more teachers/students sets. If you need to split year Y according to Language1 (with teachers T1 and T2), you might not split Y and add an activity with Y and teachers T1 and T2 and subject &apos;Language1&apos;. This is a small trick, which might be easier to use than to divide a year.</source>
         <translation>Kemungkinan lain: Anda dapat melihat bahwa setiap kegiatan telah memungkinkan lebih banyak guru / set siswa. Jika Anda perlu dibagi tahun Y menurut Language1 (dengan guru T1 dan T2), Anda tidak mungkin split Y dan menambahkan kegiatan dengan Y dan guru T1 dan T2 dan subjek &apos;Language1&apos;. Ini adalah trik kecil, yang mungkin lebih mudah digunakan daripada untuk membagi setahun.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="190"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="192"/>
         <source>Q: What is the structure of the students FET can handle?
 
 A: FET was designed to allow any school structure:
@@ -32372,7 +32374,7 @@ J: FET ini dirancang untuk memungkinkan setiap struktur sekolah:
 - Kelompok yang saling tumpang tindih (beberapa sub) dan tahun (beberapa kelompok).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="199"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="201"/>
         <source>Q: How can one work with overlapping structures of students?
 
 A: If you have overlapping groups, then you must define the smallest independent subgroup, which does not overlap with any other subgroup. Example: you have 1 group, subject sport (which must be taught to boys and girls separately) and subject physics, which is an optional subject and only some students would like to have this course (yes, FET can manage optional subjects). Then, you must define the subgroups: boys who want physics, boys who do not want physics, girls who want physics, girls who do not want physics. Now, it is very easy. Just define
@@ -32403,7 +32405,7 @@ Activity3: C guru, fisika kelompok, subjek opsional fisika.
 BARU: masalahnya sekarang otomatis. Hanya tahun-&gt; membagi pilih dalam dialog tahun. Silakan lihat di atas entri di FAQ.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="218"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="220"/>
         <source>Q: Can you add more students sets or teachers to a single activity?
 
 A: Yes, you can add several students sets (subgroups, groups or years) and several teachers per activity.</source>
@@ -32412,10 +32414,10 @@ A: Yes, you can add several students sets (subgroups, groups or years) and sever
 A: Ya, Anda dapat menambahkan beberapa set siswa (subkelompok, kelompok atau tahun) dan beberapa guru per kegiatan.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="225"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="227"/>
         <source>Q: Help on ConstraintMinDaysBetweenActivities.
 
-A: It refers to a set of activities and involves a constant, N. For every pair of activities in the set, it does not allow the distance(in days) between them to be less than N. If you specify N=1, then this constraint means that no two activities can be scheduled in the same day. N=2 means that each two activities must be separated by at least one day
+A: It refers to a set of activities and involves a constant, N. For every pair of activities in the set, it does not allow the distance (in days) between them to be less than N. If you specify N=1, then this constraint means that no two activities can be scheduled in the same day. N=2 means that each two activities must be separated by at least one day
 
 Example: 3 activities and N=2. Then, one can place them on Monday, Wednesday and Friday (5 days week).
 
@@ -32441,7 +32443,7 @@ Anda dapat menentukan hari yang sama jika berturut-turut. Harap berhati-hati, ba
 Saat ini FET dapat menempatkan paling banyak 2 kegiatan di hari yang sama jika &apos;berturut-turut jika hari yang sama adalah benar. FET tidak dapat menempatkan 3 atau lebih kegiatan di hari yang sama jika &apos;berturut-turut jika hari yang sama adalah benar.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="241"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="243"/>
         <source>Important: please do not input unnecessary duplicates. If you input for instance 2 constraints:
 
 1. Activities 1 and 2, min days 1, consecutive if same day=true, weight=95%
@@ -32451,7 +32453,7 @@ then the outcome of these 2 constraints will be a constraint:
 
 Activities 1 and 2, min days 1, consecutive if same day=true, weight=100%-5%*5%=99.75%, very high. This is because of FET algorithm.
 
-You may however add 2 constraints for the same activities if you want 100% with min 2 days and 95% with min 1 day. These are not duplicates.
+You may however add 2 constraints for the same activities if you want 95% with min 2 days and 100% with min 1 day. These are not duplicates.
 
 You might get an impossible timetable with duplicates, so beware.</source>
         <translation>Penting: harap duplikat melakukan input tidak perlu. Jika Anda masukan misalnya 2 kendala:
@@ -32463,17 +32465,17 @@ maka hasil ini akan menjadi 2 kendala kendala:
 
 Kegiatan 1 dan 2, min hari 1, berturut-turut jika berat hari yang sama = true, = 100% -5% * 5% = 99,75%, sangat tinggi. Hal ini karena algoritma FET.
 
-Namun Anda dapat menambahkan 2 kendala untuk kegiatan yang sama jika Anda ingin 100% dengan min 2 hari dan 95% dengan min 1 hari. Ini tidak duplikat.
+Namun Anda dapat menambahkan 2 kendala untuk kegiatan yang sama jika Anda ingin 95% dengan min 2 hari dan 100% dengan min 1 hari. Ini tidak duplikat.
 
 Anda mungkin mendapatkan jadwal mustahil dengan duplikat, jadi berhati-hatilah.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="249"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="251"/>
         <source>If you need to balance 3 activities in a 5 days week, you can add, in the new version 5.5.8 and higher, directly from the add activity dialog, 2 constraints. You just have to input min days 2, and FET will ask if you want to add a second constraint with min days 1. This way, you can ensure that the activities are balanced better (at least one day apart, usually 2 days apart)</source>
         <translation>Jika Anda perlu menyeimbangkan 3 kegiatan dalam seminggu 5 hari, Anda dapat menambahkan, dalam versi baru 5.5.8 dan yang lebih tinggi, langsung dari dialog tambah kegiatan, 2 kendala. Anda hanya perlu hari min masukan 2, dan FET akan menanyakan apakah Anda ingin menambahkan kendala kedua dengan hari min 1. Dengan cara ini, Anda dapat memastikan bahwa kegiatan yang seimbang baik (setidaknya satu hari terpisah, biasanya 2 hari terpisah)</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="258"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="260"/>
         <source>Q: Can I use FET to do interactive timetabling?
 
 A: Yes, but this is not easy. All the part regarding data representation and gradually construction of the solution is working, only the interface has to be updated.
@@ -32486,16 +32488,7 @@ A: Ya, tapi ini tidak mudah. Semua bagian data mengenai representasi dan konstru
 Lagi pula, bila Anda menambahkan ConstraintActivityPreferredStartingTime wajib, itu berarti bahwa Anda tetap yang kegiatan. Anda dapat menggunakan fitur ini untuk timetabling semi-otomatis atau bahkan manual, tetapi tidak begitu nyaman.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="268"/>
-        <source>Q: Is it possible to make a timetable where the students learn in two shifts? (for instance, the lowest form in the morning and the highest forms in the afternoon)?
-
-A: Yes, you have to add more constraint students set not available accordingly (for the lowest forms not available Mon, Tue, Wed, Th, Fr each from middle hour to last hour and for highest forms from first hour to middle hour). The constraints no gaps and early work correctly with these not available: if not available, a students set will not have gaps or early broken for the period of non-availability.</source>
-        <translation>Q: Apakah mungkin untuk membuat jadwal di mana siswa belajar dalam dua shift? (Misalnya, bentuk terendah di pagi hari dan bentuk tertinggi pada siang hari)?
-
-A: Ya, Anda harus menambahkan kendala siswa lebih tetapkan tidak tersedia sesuai (untuk bentuk terendah tidak tersedia Senin, Selasa, Rabu, Th, Fr masing-masing dari tengah jam ke jam terakhir dan untuk bentuk tertinggi dari jam pertama jam tengah). Hambatan tidak ada kesenjangan dan bekerja dengan benar dengan awal tidak tersedia: jika tidak tersedia, siswa tetapkan tidak akan memiliki kesenjangan atau awal dibuka untuk periode non-ketersediaan.</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="279"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="281"/>
         <source>Q: I added an activity with min days constraint. But I cannot see the min days value in modify activity dialog
 
 A: Min days is a time constraint. You can see it in the time constraints dialog</source>
@@ -32504,7 +32497,7 @@ A: Min days is a time constraint. You can see it in the time constraints dialog<
 A: hari Min adalah kendala waktu. Anda dapat melihatnya dalam kendala waktu dialog</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="286"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="288"/>
         <source>Q: Can I work with fortnightly activities like in older FET versions?
 
 A: You have to use some tricks. It would be difficult to consider fortnightly activities into the new FET algorithm (from 5.0.0 up). But I think you can apply this: for instance, I suppose that you would like the first week to have activity A1 (teacher T1, student S1) and A2 (T2, S2), and second week A3 (T1, S2) and A4 (T2, S1) (simultaneously). You could define a weekly activity A (T1, T2, S1, S2). If you need 2 rooms for A, then you can define dummy A&apos; (no teachers, no students) and constraint activities same starting time A and A&apos; and add rooms for A and A&apos; .</source>
@@ -32513,7 +32506,7 @@ A: You have to use some tricks. It would be difficult to consider fortnightly ac
 J: Anda harus menggunakan beberapa trik. Akan sulit untuk mempertimbangkan setiap dua minggu kegiatan ke algoritma FET baru (dari 5.0.0 ke atas). Tapi saya rasa Anda bisa menerapkan ini: misalnya, aku mengira bahwa kamu akan seperti minggu pertama yang memiliki aktivitas A1 (T1 guru, siswa S1) dan A2 (T2, S2), dan A3 minggu kedua (T1, S2), dan A4 (T2, S1) (secara simultan). Anda bisa menentukan aktivitas mingguan A (T1, T2, S1, S2). Jika Anda memerlukan 2 ruang untuk A, maka Anda dapat menentukan A dummy &apos;(tidak ada guru, tidak ada siswa) dan kendala waktu mulai kegiatan yang sama A dan A&apos; dan menambahkan ruang untuk A dan A &apos;.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="298"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="300"/>
         <source>Q: How to choose the weight percentage of constraint min days between activities?
 
 A: You can use for the constraint min days the weight you want. It can be 95%, 99%, 99.75% or even 100%, but please make sure your timetable is not too constrained. Please take care of the impossible constraints, they should have under 100% weight (percentage) - best would be 0%. For instance, if a teacher teaches only two days per week and has 3 math lessons for a group, then it is clear that the constraint cannot be respected, so the correct way is to specify under 100% weight (percentage) for the corresponding min days constraint - best would be 0%.</source>
@@ -32522,17 +32515,17 @@ A: You can use for the constraint min days the weight you want. It can be 95%, 9
 J: Anda dapat menggunakan untuk min kendala hari berat yang Anda inginkan. Hal ini dapat 95%, 99%, 99,75% atau bahkan 100%, tapi pastikan jadwal Anda tidak terlalu dibatasi. Harap berhati-hati dari kendala mustahil, mereka harus memiliki berat di bawah 100% (persentase) - terbaik adalah 0%. Misalnya, jika guru mengajar hanya dua hari per minggu dan memiliki pelajaran matematika 3 untuk kelompok, maka jelas bahwa kendala yang tidak dapat dihormati, sehingga cara yang benar adalah untuk menentukan di bawah 100 berat% (persentase) untuk min terkait hari kendala - terbaik akan 0%.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="305"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="307"/>
         <source>You could try at first the 95% minimum recommended value, then highten the weight percentage up to maybe 100%. I am not sure here, I have not enough sample files (please contribute with advice). If you would like to change the 95% for another value for all constraints of this type, the easiest way is in Data/Time constraints/Min days between activities dialog, where starting with version 5.3.6 there is a simple command for that.</source>
         <translation>You could try at first the 95% minimum recommended value, then highten the weight percentage up to maybe 100%. I am not sure here, I have not enough sample files (please contribute with advice). If you would like to change the 95% for another value for all constraints of this type, the easiest way is in Data/Time constraints/Min days between activities dialog, where starting with version 5.3.6 there is a simple command for that.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="310"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="312"/>
         <source>You might want to choose different weights for different constraint min days (for instance, higher on subjects with less activities per week)</source>
         <translation>Anda mungkin ingin memilih bobot yang berbeda untuk hari min kendala berbeda (misalnya, yang lebih tinggi pada subyek dengan aktivitas kurang per minggu)</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="316"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="318"/>
         <source>Q: Are some constraints more efficient in speed of generation than other constraints, even if they give the same result?
 
 A: From the way the algorithm is conceived, the automatic generation is faster if you use students set (or teacher) not available and/or constraint activity(ies) preferred time slots or constraint activity preferred starting time to specify impossible slots, in addition to possible use of students (set) or teacher(s) max hours daily, whenever it is possible. For instance, if you know that year 5 will only have hours from 8:00 to 13:00, it is better to add students set not available in addition to students set max hours daily. So, if possible, try to follow this advice. This trick helps guide FET better towards a solution.
@@ -32545,7 +32538,7 @@ J: Dari cara algoritma dipahami, generasi otomatis lebih cepat jika Anda menggun
 Setiap kendala jenis tidak tersedia atau kali pilihan yang menyaring slot mungkin bisa membawa perbaikan dalam hal kecepatan.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="328"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="330"/>
         <source>Q: Is it allowed to use non-integer weights?
 
 A: If a constraint is allowed values under 100%, you can use any weight, even fractional numbers like 99.75%. It might help in constraints like min days, preferred rooms or max hours daily.</source>
@@ -32554,7 +32547,63 @@ A: If a constraint is allowed values under 100%, you can use any weight, even fr
 J: Jika kendala diperkenankan nilai dibawah 100%, Anda dapat menggunakan bobot apapun, bahkan nomor fraksional seperti 99,75%. Ini mungkin membantu dalam kendala seperti hari min, kamar pilihan atau max jam setiap hari.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="786"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="385"/>
+        <source>Q: Help on constraint activities preferred starting or preferred time slots (a set of activities has a set of preferred starting or time slots)
+
+A: You can specify a set of activities by selecting a teacher (if empty - all teachers), a students set (if empty - all students), a subject (if empty - all subjects) and an activity tag (if empty, all activity tags) and a set of allowed time slots.
+
+Starting means that an activity may only start at these periods.
+
+Time slots means more restrictive, that activity may only start and end and take place in these intervals (if activity has duration 2 and on Monday is allowed 8:00, 9:00 and 10:00, then activity can only start at 8:00 or 9:00).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="509"/>
+        <source>Q: What I need is a way to make the following constraint:
+
+If Activity1 comes first, then Activity2 can be consecutive. But, if Activity2 comes first, then Activity1 must have at least 1 period in between.
+
+For example, if the algorithm places Dance in 1st hour, then Wrestling can be placed in 2nd hour, but if Wrestling is placed in 1st hour, then Dance must be at least in 3rd hour, if not farther away.
+
+A simpler, but less useful solution could be a constraint that says:
+
+Activity1 and Activity2 will not be consecutive.
+
+A: I have a very good solution for you, but it is a bit complicated to add.
+
+Suppose you have activities A1 and A2. Add dummy A3, with duration 1, no teachers and no students. Add constraint two activities consecutive, A2 and A3 (A2 followed by A3). Add constraint activities not overlapping, A1 and A3.
+
+There is only a small problem: A2 cannot be put in the last period. To correct that: increase the number of hours with 1 and constraint all the real activities (without A3) to take place in the first periods. You can do that by adding an activity tag to A1 and A2 named Early and an activity tag to A3 named Any, and constraint activities preferred time slots for activity tag Early to be in the first n-1 slots of each day.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="528"/>
+        <source>Q: What is the difference between preferred starting times and preferred time slots?
+
+A: Time slots is more restrictive, means all hours of an activity must be in the allowed intervals.
+
+Example: Preferred times Monday 8,9 and 10. If activity A has duration 2, then starting means that activity A can start at 8, 9 or 10 on Monday, while time slots means that activity A can start on Monday at 8 or 9 (10 is not allowed, because the last hour of activity is not allowed there).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="558"/>
+        <source>Q: Help on constraint subactivities preferred starting or preferred time slots (a set of subactivities has a set of preferred starting or time slots)
+
+A: You select the component number of certain activities (say, if you have an activity split into 5 activities per week, you have components 1, 2, 3, 4 or 5). Only the selected number of this split activity (the corresponding component activity) will be constrained.
+
+You will also specify the set of subactivities by selecting a teacher (if empty - all teachers), a students set (if empty - all students), a subject (if empty - all subjects) and an activity tag (if empty, all activity tags) and a set of allowed time slots.
+
+Starting times means that an activity may only start at these periods.
+
+Time slots means more restrictive, that activity may only start and end and take place in these intervals (if activity has duration 2 and on Monday is allowed 8:00, 9:00 and 10:00, then activity can only start at 8:00 or 9:00).
+
+This is useful if you need for instance, if Maths lessons are 4-5 per week, to constrain that the first component and the second component must be early. You will add 2 constraints for that, with component number 1 and 2, both with subject Maths. Or, if you want for activities split into 4 that 2 lessons are early and for activities split into 5 that 3 activities are early, add constraint Maths with split number 3, 4 and 5 (nice trick).
+
+Another thing: if you have 1 or 2 lessons per week for a subject, say biology, and want to constrain one of the components if there are 2 per week, and none if there is only 1, you can add such a constraint for component number=2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="788"/>
         <source>Q: This is a problem that probably will never appear in practice, but it is possible. Say the user generates a timetable successfully, locks a few activities, then tries to generate again, but FET stops at a certain activity and reports impossible timetable.
 
 A: Indeed, this is a potential problem in FET (but probably will never show up in practice). It may happen if you have constraints with weight under 100%, which may be broken when you generate the timetable.
@@ -32589,12 +32638,12 @@ Berikut adalah contoh untuk menjelaskan hal ini (ini adalah sebuah contoh prakti
 Solusi praktis untuk kasus 2)? Mengurangi berat kendala yang berat di bawah 100% atau mengunci (ke slot yang sesuai) aktivitas yang berhubungan dengan A1 dalam data file.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="820"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="822"/>
         <source>Q: I tried to work on a fixed timetable, to move an activity to another time slot. Now I got stuck - FET says: impossible to generate.</source>
         <translation>T: Saya mencoba untuk bekerja pada jadwal tetap, untuk memindahkan kegiatan ke slot waktu lain. Sekarang saya terjebak - FET mengatakan: mustahil untuk menghasilkan.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="822"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="824"/>
         <source>A: There is this potential problem. Suppose you have max hours daily for students = 4 hours, 99%. You generated successfully (maybe you got some days with more than 4 hours, it does not matter for our discussion). Now, if you have a day with 4 hours and try to move another activity to this day, some students will have 5 hours in this day. If in this day all activities have more students sets, FET may report an impossible timetable. Why? Because if you have an activity with say 4 subgroups, 99% is assumed for each subgroup, resulting in a very strong constraint for this activity. (100%-(1%^4)). Even if FET retries more times for each activity, it is not enough.
 
  A solution: lower the weight of this constraint from 99% to 90% or less.</source>
@@ -32603,27 +32652,27 @@ Solusi praktis untuk kasus 2)? Mengurangi berat kendala yang berat di bawah 100%
  Solusi: menurunkan berat kendala ini dari 99% sampai 90% atau kurang.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="836"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="838"/>
         <source>Q: A trick to deal with fortnightly activities (my institution has a lot of fortnightly activities):</source>
         <translation>T: Sebuah trik untuk menangani kegiatan setiap dua minggu (lembaga saya memiliki banyak kegiatan setiap dua minggu):</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="838"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="840"/>
         <source>A: I divided hours in two, the first half (8.00 to 8.30, 9.00 to 9.30, ...) represents week A, the second half (8.30 to 9.00, 9.30 to 10.00, ...) represents week B, fortnightly activities have duration 1, weekly activities have duration 2.</source>
         <translation>J: Saya dibagi dalam dua jam, semester pertama (8,00-8,30, 9,00-9,30, ...) mewakili Seminggu, paruh kedua (8,30-9,00, 9,30-10,00, ...) mewakili B minggu, dua minggu kegiatan memiliki durasi 1, kegiatan mingguan memiliki durasi 2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="842"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="844"/>
         <source>I created an activity tag &apos;Start hour&apos;. It should be added to each weekly activity to make sure they start at the same time (same day + same hour) on each week. Otherwise, an activity with duration 2 can start on a second half of hour in the timetable, so this activity is placed on a certain day and at a certain hour on week A, and on the same day but at the next hour on week B.</source>
         <translation>Aku menciptakan &apos;jam Mulai&apos; tag kegiatan. Ini harus ditambahkan untuk setiap aktivitas mingguan untuk memastikan mereka mulai pada waktu yang sama (hari yang sama + jam yang sama) pada setiap minggu. Jika tidak, suatu kegiatan dengan durasi 2 dapat mulai pada setengah jam kedua dalam jadwal tersebut, sehingga kegiatan ini ditempatkan pada hari tertentu dan pada jam tertentu pada minggu A, dan pada hari yang sama tetapi pada jam berikutnya pada minggu B .</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="856"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="858"/>
         <source>Q: I need to add a split activity with total duration 4, which can be either 2+2 or 2+1+1 (two hours in a day and two hours in another day, or two hours in a day, one hour in another day and one hour in another day).</source>
         <translation>T: Saya perlu menambahkan aktivitas split dengan durasi, total 4 yang dapat berupa 2 +2 +1 +1 atau 2 (dua jam dalam sehari dan dua jam di hari lain, atau dua jam dalam sehari, satu jam di satu hari dan satu jam di hari lain).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="859"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="861"/>
         <source>A: Add 3 activities (let us assume that their id-s are 1, 2 and 3), with durations respectively 2, 1 and 1. It is preferable to add them as 3 single/independent activities (see note below).
 
 Add two constraints min 1 day between activities with id-s 1 and 2 and between activities with id-s 1 and 3, 100% weight percentage.
@@ -32639,82 +32688,82 @@ Tambahkan kendala lain: min 1 hari antara kegiatan dengan id-s 2 dan 3, berturut
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="864"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="866"/>
         <source>Note: It is advisable to add the 3 activities as single/independent ones (not a larger split activity with 3 components). The reason is that if you want to apply spreading of activities over the week, this operation won&apos;t add/remove constraints of type min days between activities for these 3 activities. Also, if you add a split activity, you need to take care not to add a default constraint min days between the 3 components.</source>
         <translation>Catatan: Dianjurkan untuk menambahkan 3 kegiatan sebagai yang tunggal / independen (bukan merupakan kegiatan perpecahan yang lebih besar dengan 3 komponen). Alasannya adalah bahwa jika Anda ingin menerapkan penyebaran kegiatan selama seminggu, operasi ini tidak akan menambahkan / menghapus batasan hari min jenis antara kegiatan untuk kegiatan ini 3. Juga, jika Anda menambahkan aktivitas split, Anda perlu berhati-hati untuk tidak menambahkan hari kendala default menit antara 3 komponen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="874"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="876"/>
         <source>Q: I would like to specify that a teacher should have activities in certain time slots, no matter which activities.</source>
         <translation>T: Saya ingin untuk menentukan bahwa seorang guru harus memiliki aktivitas di dalam slot waktu tertentu, tidak peduli yang kegiatan.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="876"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="878"/>
         <source>A: Please use constraint activities occupy max time slots from selection (the exact menu entry is &apos;A set of activities occupies max time slots from selection&apos;. See that constraint&apos;s Help button for more details.</source>
         <translation>J: Silakan gunakan kegiatan kendala menempati slot waktu maks dari pilihan (entri menu yang tepat adalah &apos;Satu set aktivitas menempati slot waktu max dari pilihan&apos; Lihat tombol Bantuan yang kendala untuk rincian lebih lanjut.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="883"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="885"/>
         <source>Q: How to easily find the activities with unspecified room in the timetable (after the timetable was generated)?</source>
         <translation>P: Bagaimana dengan mudah menemukan kegiatan dengan ruang tidak ditentukan dalam jadwal (setelah jadwal itu dihasilkan)?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="885"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="887"/>
         <source>A: A trick is this: open the file representing the activities timetable in XML form (this file can be found in the results directory, with a name like: file_activities.xml) with a text editor, and search for the text &lt;Room&gt;&lt;/Room&gt;</source>
         <translation>J: trik adalah ini: buka file mewakili jadwal kegiatan dalam bentuk XML (file ini dapat ditemukan di direktori hasil, dengan nama seperti: file_activities.xml) dengan editor teks, dan mencari teks &lt;Room&gt; &lt;/ Ruang&gt;</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="892"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="894"/>
         <source>Q: The students and/or teachers should have in each day some activities without interruption, then some continuous gaps, then again some activities without interruption. This situation can appear in these cases: schools in Morocco and Algeria, which have morning and afternoon shifts, and also in some universities in which students would prefer to have at most a single cluster of gaps, no matter how long, in each day. How to treat such situations in FET?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="898"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="900"/>
         <source>A: A nice way to treat such situations would be to consider the number of FET days = 2 * the number of real days. Each real day corresponds to two FET days, one for the morning and one for the afternoon. Then, add constraints max zero gaps, and maybe min two hours daily with allow empty days true. You may need to devise some other tricks, in addition.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="906"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="908"/>
         <source>Q: How can I add a comment to a (sub)activity or to a constraint?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="908"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="910"/>
         <source>A: You can add a comment to a (sub)activity by clicking the &apos;Comments&apos; button in the (sub)activities dialog. You can add a comment to a constraint by clicking the &apos;Comments&apos; button in the all time/space constraints dialogs.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="915"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="917"/>
         <source>Q: How can I activate/deactivate a constraint?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="917"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="919"/>
         <source>A: You can activate/deactivate a constraint by clicking the &apos;Activate&apos;/&apos;Deactivate&apos; buttons in the all time/space constraints dialogs.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="924"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="926"/>
         <source>Q: How can I sort the constraints?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="926"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="928"/>
         <source>A: You can sort the constraints in the all time/space constraints dialogs. Sorting is done ascending, according to each constraints&apos; comments. You can add suitable comments to obtain a desired order, like: &apos;rank #1 ... other comments&apos; and &apos;rank #2 ... other different comments&apos;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="934"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="936"/>
         <source>Q: How can I specify that some activities must be in the same room (at different time slots, of course, because a single room can hold a single activity in a certain time slot)? This is needed for instance to constrain the Physics activities of a certain students set to take place in the same room, be it Lab-1 or Lab-2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="938"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="940"/>
         <source>A: You can use the constraint activities occupy max different rooms, with max different rooms = 1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="847"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="849"/>
         <source>Add time constraint: activities with all teachers, all students, all subjects, activity tag = &apos;Start hour&apos; have a set of preferred starting times: Monday 8.00, Monday 9.00, ...</source>
         <translation>Tambahkan batasan waktu: kegiatan dengan semua guru, semua siswa, semua mata pelajaran, kegiatan tag = &apos;Mulai jam&apos; memiliki satu set waktu mulai disukai: Senin 8.00, Senin 9.00, ...</translation>
     </message>
@@ -32724,22 +32773,22 @@ Tambahkan kendala lain: min 1 hari antara kegiatan dengan id-s 2 dan 3, berturut
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="834"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="836"/>
         <source>-- This entry by Regis Bouguin --</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="850"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="852"/>
         <source>It works fine and I got good timetables with strong teachers time constraints.</source>
         <translation>Ia bekerja baik dan saya mendapat jadwal yang baik dengan batasan waktu guru yang kuat.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="868"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="870"/>
         <source>There may be other solutions possible, but this one seems perfect with respect to efficiency.</source>
         <translation>Mungkin ada solusi lain mungkin, tapi yang satu ini tampak sempurna sehubungan dengan efisiensi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="337"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="339"/>
         <source>Q: I have a sports room which allows more than 1 activity simultaneously in it. How to make the preferred room constraints? Can FET accept more than one activity at the same time in a single room?
 
 A: Each room can host a single activity at the same time. How to implement what you need? You can add more rooms (sport1, sport2, sport3) and instead of a single preferred room add more preferred rooms.</source>
@@ -32753,22 +32802,27 @@ J: Masing-masing kamar dapat meng-host aktivitas tunggal pada waktu yang sama. B
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="92"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="49"/>
+        <source>1 June 2013</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="94"/>
         <source>Virtually unlimited number of subjects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="104"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="106"/>
         <source>Virtually unlimited number of time constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="106"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="108"/>
         <source>Virtually unlimited number of space constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="121"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="123"/>
         <source>Q: Is it possible to use non-integer weights for constraints?
 
 A: Yes. Using values like 99.75% might be good sometimes. The precision in FET is limited to %1 decimal digits after the decimal point, but probably nobody will use such a fine precision</source>
@@ -32777,7 +32831,7 @@ A: Yes. Using values like 99.75% might be good sometimes. The precision in FET i
 J: Ya. Menggunakan nilai-nilai seperti 99,75% mungkin baik kadang-kadang. Presisi dalam FET terbatas pada%1 digit setelah titik desimal desimal, tapi mungkin tidak ada yang akan menggunakan seperti presisi halus</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="154"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="156"/>
         <source>Q: How to define the students into sections?
 
 A: FET can automatically divide years by at most 4 categories of options. If you need to divide a year into 5 categories, you can use a small trick (see below).
@@ -32788,7 +32842,14 @@ If each year (for instance 9) is divided by at most 4 categories, you can add ye
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="346"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="270"/>
+        <source>Q: Is it possible to make a timetable where the students learn in two shifts? (for instance, the lowest forms in the morning and the highest forms in the afternoon)?
+
+A: Yes, you have to add more constraint students set not available accordingly (for the lowest forms not available Mon, Tue, Wed, Th, Fr each from middle hour to last hour and for highest forms from first hour to middle hour). The constraints no gaps and early work correctly with these not available: if not available, a students set will not have gaps or early broken for the period of non-availability.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="348"/>
         <source>Q: I got an impossible to solve timetable!
 
 A: If you get an impossible timetable, maybe the constraints students (set) early are too difficult. Maybe you can allow more arrivals at second hour. Also teachers&apos; min hours daily might be too strong. Please also check the statistics to be correct. Remove other constraints until you get a possible timetable.</source>
@@ -32797,7 +32858,7 @@ A: If you get an impossible timetable, maybe the constraints students (set) earl
 J: Jika Anda mendapat jadwal mustahil, mungkin siswa kendala (set) dini terlalu sulit. Mungkin Anda dapat memungkinkan kedatangan lebih pada jam kedua. Juga jam min guru &apos;sehari-hari mungkin terlalu kuat. Silakan juga periksa statistik benar. Hapus lain kendala sampai Anda mendapatkan jadwal mungkin.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="355"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="357"/>
         <source>Q: Is it possible to work with 0 hour?
 
 A: A bit difficult. You have to choose a day for this 0 hour. Then add breaks or not available to prevent other activities in other days at hour 0, then add students set not available to prevent other students set from having hours at this hour 0. Or variants of this.
@@ -32810,7 +32871,7 @@ J: Sedikit sulit. Anda harus memilih hari ini jam 0. Kemudian tambahkan istiraha
 Mr Zsolt Udvari menggunakan trik lain: menganggap jam terakhir menjadi jam 0. Tapi ini tidak selalu berlaku.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="365"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="367"/>
         <source>Q: How does FET care about weights. What do they mean?
 
 A: The weights under 100% are subjective, because FET can skip them if necessary.
@@ -32819,13 +32880,13 @@ Volker Dirr tried to express how FET considers under 100% weights, but his words
 
 Here is a comment from Volker Dirr:
 
-weight = 50% means: In average FET retries two times to place an activity without a conflict. If it isn&apos;t able to place the activity without a conflict after avarage 2 times it keeps the conflict and tries to place the next activity.
-weight = 75% means: In average FET retries four times to place an activity without a conflict. If it isn&apos;t able to place the activity without a conflict after avarage 4 times it keeps the conflict and tries to place the next activity.
-weight = 99% means: In average FET retries 100 times to place an activity without a conflict. If it isn&apos;t able to place the activity without a conflict after avarage 100 times it keeps the conflict and tries to place the next activity.
-weight = 99.99% means: In average FET retries 10000 times to place an activity without a conflict. If it isn&apos;t able to place the activity without a conflict after avarage 10000 times it keeps the conflict and tries to place the next activity.
+weight = 50% means: In average FET retries two times to place an activity without a conflict. If it isn&apos;t able to place the activity without a conflict after average 2 times it keeps the conflict and tries to place the next activity.
+weight = 75% means: In average FET retries four times to place an activity without a conflict. If it isn&apos;t able to place the activity without a conflict after average 4 times it keeps the conflict and tries to place the next activity.
+weight = 99% means: In average FET retries 100 times to place an activity without a conflict. If it isn&apos;t able to place the activity without a conflict after average 100 times it keeps the conflict and tries to place the next activity.
+weight = 99.99% means: In average FET retries 10000 times to place an activity without a conflict. If it isn&apos;t able to place the activity without a conflict after average 10000 times it keeps the conflict and tries to place the next activity.
 
 This is not 100% correct. Activities might get unallocated, and cycle reopened.</source>
-        <translation>Q: Bagaimana cara FET peduli berat. Apa maksudnya?
+        <translation type="unfinished">Q: Bagaimana cara FET peduli berat. Apa maksudnya?
 
 J: berat dibawah 100% adalah subyektif, karena FET dapat melewati mereka jika diperlukan.
 
@@ -32841,24 +32902,7 @@ berat = 99,99% artinya: Dalam FET retries rata-rata 10.000 kali ke tempat aktivi
 Ini tidak 100% benar. Kegiatan mungkin akan dialokasikan, dan siklus dibuka kembali.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="383"/>
-        <source>Q: Help on constraint activities preferred starting or preferred time slots (a set of activities has a set of preferred starting or time slots)
-
-A: You can specify a set of activities by selecting a teacher (if empty - all teachers), a students set (if empty - all students), a subject (if empty - all subjects) and an activity tag (if empty, all activity tags) and a set of allowed days.
-
-Starting means that an activity may only start at these periods.
-
-Time slots means more restrictive, that activity may only start and end and take place in these intervals (if activity has duration 2 and on Monday is allowed 8:00, 9:00 and 10:00, then activity can only start at 8:00 or 9:00).</source>
-        <translation>Q: Bantuan pada kegiatan pilihan kendala memulai atau slot waktu yang diinginkan (serangkaian kegiatan memiliki seperangkat mulai disukai atau waktu slot)
-
-J: Anda dapat menentukan serangkaian kegiatan dengan memilih seorang guru (jika kosong - semua guru), seorang siswa set (jika kosong - semua siswa), subjek (jika kosong - semua mata pelajaran) dan sebuah tag aktivitas (jika kosong, semua Aktivitas tag) dan hari yang ditetapkan, diperbolehkan.
-
-Mulai berarti bahwa suatu kegiatan hanya dapat mulai dari periode ini.
-
-slot Sisa berarti lebih ketat, aktivitas yang mungkin hanya awal dan akhir dan berlangsung dalam interval (jika kegiatan memiliki durasi 2 dan pada hari Senin diperbolehkan 8:00, 09:00 dan 10:00, maka kegiatan hanya bisa mulai dari 8: 00 atau 09:00).</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="394"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="396"/>
         <source>Q: Help on statistics menu
 
 A: The statistics are important to check your data before generating.
@@ -32871,7 +32915,7 @@ J: statistik penting artinya untuk memeriksa data Anda sebelum menghasilkan.
 Ketika melihat statistik siswa, mungkin yang paling berguna adalah untuk subkelompok. Setiap subkelompok harus memiliki jumlah yang wajar jam, dan jika Anda mengalami subkelompok dengan jam terlalu sedikit, seperti 2 per minggu, notasi FET mungkin Anda salah paham. Setiap subkelompok independen dari orang lain dan harus memiliki jumlah jam per minggu dekat dengan rata-rata semua subkelompok. Jangan subkelompok input kosong dengan hanya beberapa kegiatan.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="405"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="407"/>
         <source>Q: What if I enter accidentally duplicate constraints?
 
 A: It is not a good practice to allow unnecessary duplicate constraints. For min days between activities and other constraints, the combined weight becomes very high. For instance, if you have 2 constraints with weight 95%, the outcome is a constraint with weight 100%-5%*5%=99.75%, very high. You might get an impossible timetable with duplicates, so beware. For constraint activity(ies) preferred (starting time(s) or time slots) the chosen weight is the largest value, so you can use more constraints of this type for same activities.</source>
@@ -32880,7 +32924,7 @@ A: It is not a good practice to allow unnecessary duplicate constraints. For min
 J: Ini bukan praktik yang baik untuk memungkinkan duplikat yang tidak perlu kendala. Untuk hari min antara kegiatan dan kendala lainnya, dengan kombinasi berat menjadi sangat tinggi. Misalnya, jika Anda memiliki 2 kendala dengan berat 95%, hasilnya adalah kendala dengan berat 100% -5% * 5% = 99,75%, sangat tinggi. Anda mungkin mendapatkan jadwal mustahil dengan duplikat, jadi berhati-hatilah. Untuk kegiatan kendala (ies) pilihan (waktu mulai (s) atau waktu slot) berat yang dipilih adalah nilai terbesar, sehingga Anda dapat menggunakan lebih banyak kendala jenis ini untuk kegiatan yang sama.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="416"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="418"/>
         <source>Q: More information about students&apos; structure
 
 A: The students&apos; structure is very flexible and permits any institution structure.
@@ -33051,7 +33095,7 @@ You will have the possibility to add any activity, for a year or group
 Currently, the interface for students is difficult to use. I am thinking of that. Maybe it is more simple for you if you try to work on the xml .fet file.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="484"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="486"/>
         <source>Q: Example: I have 7 hours of Maths per 5 days week (7 is larger than 5). How to add correctly this split activity?
 
 Complete Question: I have a large container activity split into more activities than the number of days per week. How to add it and constraint min days between activities?
@@ -33076,53 +33120,7 @@ Cara terbaik untuk menambahkan kegiatan akan menjadi:
 2. Jika Anda tidak menambahkan &quot;kekuatan berturut-turut jika hari yang sama&quot;, kemudian menambahkan aktivitas yang lebih besar splitted menjadi beberapa kegiatan yang sama dengan jumlah hari per minggu dan komponen yang tersisa dalam aktivitas pemecahan yang lebih besar. Misalnya, Anda harus menambahkan 7 aktivitas dengan durasi 1 hari dalam seminggu 5. Tambahkan 2 kegiatan wadah yang lebih besar, yang pertama splitted menjadi 5 kegiatan dengan durasi 1 dan kedua satu splitted menjadi 2 kegiatan dengan durasi 1 (mungkin menaikkan berat min kendala hari antara kegiatan ditambahkan untuk masing-masing 2 kontainer hingga 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="507"/>
-        <source>Q: What I need is a way to make the following constraint:
-
-If Activity1 comes first, then Activity2 can be consecutive. But, if Activity2 comes first, then Activity1 must have at least 1 period in between.
-
-For example, if the algorithm places Dance in 1st hour, then Wrestling can be placed in 2nd hour, but if Wrestling is placed in 1st hour, then Dance must be at least in 3rd hour, if not farther away.
-
-A simpler, but less useful solution could be a constraint that says:
-
-Activity1 and Activity2 will not be consecutive.
-
-A: I have a very good solution for you, but it is a bit complicated to add.
-
-Suppose you have activities A1 and A2. Add dummy A3, with duration 1, no teachers and no students. Add constraint two activities consecutive, A2 and A3 (A2 followed by A3). Add constraint activities not overlapping, A1 and A3.
-
-There is only a small problem: A2 cannot be put in the last period. To correct that: increase the number of hours with 1 and constraint all the real activities (without A3) to take place in the first periods. You can do that by adding a subject tag to A1 and A2 named Early and a subject tag to A3 named Any, and constraint activities preferred time slots for subject tag Early to be in the first n-1 slots of each day.</source>
-        <translation>Q: Apa yang saya butuhkan adalah cara untuk membuat kendala berikut:
-
-Jika Activity1 datang pertama, maka dapat Activity2 berturut-turut. Tapi, jika Activity2 datang pertama, kemudian Activity1 harus memiliki minimal 1 periode di antara.
-
-Sebagai contoh, jika algoritma Dance di tempat 1 jam, kemudian Gulat dapat ditempatkan dalam 2 jam, tetapi jika Gulat ditempatkan dalam 1 jam, kemudian Tari harus setidaknya dalam 3 jam, jika tidak lebih jauh.
-
-Seorang sederhana, tetapi solusi kurang berguna bisa menjadi kendala yang mengatakan:
-
-Activity1 dan Activity2 tidak akan berturut-turut.
-
-J: Saya memiliki solusi yang sangat baik bagi Anda, tetapi sedikit rumit untuk menambahkan.
-
-Misalnya Anda memiliki kegiatan A1 dan A2. Tambahkan A3 dummy, dengan durasi 1, tidak ada guru dan tidak ada siswa. Tambahkan kendala dua kegiatan berturut-turut, A2 dan A3 (A2 diikuti oleh A3). Tambahkan kendala kegiatan tidak tumpang tindih, A1 dan A3.
-
-Hanya ada masalah kecil: A2 tidak dapat dimasukkan ke dalam periode terakhir. Untuk yang benar bahwa: meningkatkan jumlah jam dengan 1 dan kendala semua kegiatan nyata (tanpa A3) berlangsung pada periode pertama. Anda dapat melakukannya dengan menambahkan tag tunduk pada A1 dan A2 bernama awal dan tag tunduk pada A3 bernama Any, dan kegiatan kendala slot waktu yang diinginkan untuk tag awal subjek berada di slot n-1 pertama setiap hari.</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="526"/>
-        <source>Q: What is the difference between preferred starting times and preferred time slots?
-
-A: Time slots is more restrictive, means all hours of an activity must be in the allowed intervals.
-
-Example: Preferred times Monday 8,9 and 10. If activity A has duration 2, then starting means that activity A can start at 8, 9 or 10 on Monday, while overall means that activity A can start on Monday at 8 or 9 (10 is not allowed, because the last hour of activity is not allowed there).</source>
-        <translation>Q: Apa perbedaan antara waktu mulai pilihan dan slot waktu yang diinginkan?
-
-A: slot Waktu adalah lebih ketat, berarti semua jam dari suatu kegiatan harus dalam interval yang diperbolehkan.
-
-Contoh: kali dipilih Senin 8,9 dan 10. Jika kegiatan A memiliki durasi 2, lalu mulai berarti bahwa kegiatan A dapat mulai dari 8, 9 atau 10 pada hari Senin, sementara secara keseluruhan berarti bahwa kegiatan A dapat mulai pada hari Senin sebesar 8 atau 9 (10 tidak diperbolehkan, karena jam terakhir aktivitas tidak diperbolehkan ada).</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="536"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="538"/>
         <source>Q: What means constraint min gaps (hours) between a set of activities?
 
 A: I had many users wanting to put a gap between activities of same teachers or between activities with same teacher and subject, if they are on the same day. This constraint does that. If you want for instance to make teacher John to have at least one gap between all his activities, select filter &apos;John&apos; and add all his activities to a constraint of this type. If you want to make teacher John to have at least one gap between all his Math activities, select filter &apos;John&apos; and &apos;Math&apos; and add all these activities to a constraint of this type.
@@ -33135,43 +33133,14 @@ A: Saya telah banyak pengguna yang ingin menempatkan kesenjangan antara kegiatan
 Harap berhati-hati bahwa kegiatan yang dipilih berturut-turut tidak dipaksa oleh kendala dua kegiatan hari berturut-turut atau dengan kendala min antara kegiatan yang telah berturut-turut jika hari yang sama dipilih.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="549"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="551"/>
         <source>Q: What type of files uses FET?
 
 A: FET uses text files, xml or html or txt or csv (comma separated values - for import/export). The used encoding is UTF-8.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="556"/>
-        <source>Q: Help on constraint subactivities preferred starting or preferred time slots (a set of subactivities has a set of preferred starting or time slots)
-
-A: You select the component number of certain activities (say, if you have an activity split into 5 activities per week, you have components 1, 2, 3, 4 or 5). Only the selected number of this split activity (the corresponding component activity) will be constrained.
-
-You will also specify the set of subactivities by selecting a teacher (if empty - all teachers), a students set (if empty - all students), a subject (if empty - all subjects) and an activity tag (if empty, all activity tags) and a set of allowed days.
-
-Starting times means that an activity may only start at these periods.
-
-Time slots means more restrictive, that activity may only start and end and take place in these intervals (if activity has duration 2 and on Monday is allowed 8:00, 9:00 and 10:00, then activity can only start at 8:00 or 9:00).
-
-This is useful if you need for instance, if Maths lessons are 4-5 per week, to constrain that the first component and the second component must be early. You will add 2 constraints for that, with component number 1 and 2, both with subject Maths. Or, if you want for activities split into 4 that 2 lessons are early and for activities split into 5 that 3 activities are early, add constraint Maths with split number 3, 4 and 5 (nice trick).
-
-Another thing: if you have 1 or 2 lessons per week for a subject, say biology, and want to constrain one of the components if there are 2 per week, and none if there is only 1, you can add such a constraint for component number=2.</source>
-        <translation>Q: Bantuan pada pilihan subactivities kendala memulai atau slot waktu yang diinginkan (satu set subactivities memiliki seperangkat mulai disukai atau waktu slot)
-
-J: Anda pilih jumlah komponen kegiatan tertentu (misalnya, jika Anda memiliki aktivitas terpecah menjadi 5 kegiatan per minggu, Anda memiliki komponen 1, 2, 3, 4 atau 5). Hanya nomor yang dipilih dari kegiatan ini split (aktivitas komponen terkait) akan dibatasi.
-
-Anda juga akan menentukan set subactivities dengan memilih seorang guru (jika kosong - semua guru), seorang siswa set (jika kosong - semua siswa), subjek (jika kosong - semua mata pelajaran) dan sebuah tag aktivitas (jika kosong, semua aktivitas tag) dan hari yang ditetapkan, diperbolehkan.
-
-Mulai kali berarti bahwa suatu kegiatan hanya dapat mulai dari periode ini.
-
-slot Sisa berarti lebih ketat, aktivitas yang mungkin hanya awal dan akhir dan berlangsung dalam interval (jika kegiatan memiliki durasi 2 dan pada hari Senin diperbolehkan 8:00, 09:00 dan 10:00, maka kegiatan hanya bisa mulai dari 8: 00 atau 09:00).
-
-Ini berguna jika Anda perlu misalnya, jika pelajaran Matematika 4-5 per minggu, untuk membatasi bahwa komponen komponen pertama dan kedua harus lebih awal. Anda akan menambahkan 2 kendala untuk itu, dengan komponen nomor 1 dan 2, baik dengan Matematika subjek. Atau, jika Anda ingin untuk kegiatan dibagi menjadi 4 yang 2 pelajaran lebih awal dan untuk kegiatan dibagi menjadi 5 bahwa 3 kegiatan awal, tambahkan Matematika kendala dengan nomor, split 3 4 dan 5 (trik yang bagus).
-
-Satu hal: jika Anda memiliki 1 atau 2 pelajaran per minggu untuk subjek, misalnya biologi, dan ingin membatasi salah satu komponen jika ada 2 per minggu, dan tidak ada jika hanya ada 1, Anda dapat menambahkan kendala seperti untuk komponen nomor = 2.</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="575"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="577"/>
         <source>Q: Help on constraints teacher(s) or students (set) hourly interval max days per week
 
 A: This is a constraint suggested by users, to allow you to specify an hourly interval for students or teachers, and to say that in this interval they must work at most max days per week. This is useful if for instance you want teachers not to have more than 2 days per week activities in the last 2 hours of the day.</source>
@@ -33180,7 +33149,7 @@ A: This is a constraint suggested by users, to allow you to specify an hourly in
 J: Ini adalah kendala diusulkan oleh pengguna, untuk memungkinkan Anda untuk menentukan interval jam untuk siswa atau guru, dan mengatakan bahwa dalam selang waktu ini mereka harus bekerja pada sebagian besar hari maksimum seminggu. Hal ini berguna jika misalnya Anda ingin guru tidak memiliki lebih dari 2 hari per minggu kegiatan dalam 2 jam terakhir hari itu.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="584"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="586"/>
         <source>Q: Help on constraint activities end students day (or activity ends students day).
 
 A: If you have activities which you want to put in the last slots of a day (like say the meetings with the class master), please use the new constraint a set of activities end students day (or singular activity ends students day). This constraint can have weight only 100%, because of the way the algorithm works.</source>
@@ -33189,35 +33158,35 @@ A: If you have activities which you want to put in the last slots of a day (like
 J: Ini adalah kendala diusulkan oleh pengguna, untuk memungkinkan Anda untuk menentukan interval jam untuk siswa atau guru, dan mengatakan bahwa dalam selang waktu ini mereka harus bekerja pada sebagian besar hari maksimum seminggu. Hal ini berguna jika misalnya Anda ingin guru tidak memiliki lebih dari 2 hari per minggu kegiatan dalam 2 jam terakhir hari itu.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="593"/>
-        <source>Q: At our school there are a lot of teachers which work only a few hours a week. Of course it is really nasty to drive for one our to the school. So we set the constraint, that every teacher should work at least 2 hours a day. Unfortunately we have this year a teacher which only works 1h a week. As a result of this FET doesn&apos;t start to create a timetable. Any suggestions how to fix the problem without defining a constraint for every singular teacher?
+        <location filename="../src/interface/helpfaqform.cpp" line="595"/>
+        <source>Q: At our school there are a lot of teachers which work only a few hours a week. Of course it is really nasty to drive for one our to the school. So we set the constraint that every teacher should work at least 2 hours a day. Unfortunately we have this year a teacher which only works 1h a week. As a result of this FET doesn&apos;t start to create a timetable. Any suggestions how to fix the problem without defining a constraint for every singular teacher?
 
 A: I have a nice trick: add a dummy activity, 1 hour duration, with only this teacher (no students sets, any subject), additional to the real activity.
 
 This trick just passed through my mind as I was trying to write you that you have to do it the hard way (add constraints for each teacher)</source>
-        <translation>T: Di sekolah kami ada banyak guru yang bekerja hanya beberapa jam seminggu. Tentu saja itu benar-benar buruk untuk drive untuk satu kita ke sekolah. Jadi kita tetapkan kendala itu, bahwa setiap guru harus bekerja minimal 2 jam sehari. Sayangnya kita tahun ini guru yang hanya bekerja 1h seminggu. Sebagai hasil dari FET ini tidak mulai untuk membuat jadwal. Ada saran bagaimana untuk memperbaiki masalah tanpa mendefinisikan kendala bagi setiap guru tunggal?
+        <translation type="unfinished">T: Di sekolah kami ada banyak guru yang bekerja hanya beberapa jam seminggu. Tentu saja itu benar-benar buruk untuk drive untuk satu kita ke sekolah. Jadi kita tetapkan kendala itu bahwa setiap guru harus bekerja minimal 2 jam sehari. Sayangnya kita tahun ini guru yang hanya bekerja 1h seminggu. Sebagai hasil dari FET ini tidak mulai untuk membuat jadwal. Ada saran bagaimana untuk memperbaiki masalah tanpa mendefinisikan kendala bagi setiap guru tunggal?
 
 J: Saya memiliki trik yang bagus: menambahkan aktivitas dummy, 1 durasi jam, dengan hanya ini guru (tidak ada set siswa, subjek ada), tambahan untuk aktivitas yang nyata.
 
 Trik ini hanya melewati pikiran saya ketika saya mencoba menulis Anda bahwa Anda harus melakukannya dengan cara yang keras (menambahkan kendala untuk guru masing-masing)</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="784"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="786"/>
         <source>This is an advanced question which probably will never appear in practice, you may skip it at first reading.</source>
         <translation>Ini merupakan pertanyaan lanjutan yang mungkin tidak pernah akan muncul dalam praktek, Anda dapat melewatkan membaca pertama.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="812"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="814"/>
         <source>Q: I need constraint students (set) max days per week, similar to existing teacher(s) max days per week constraint.</source>
         <translation>Q: Saya perlu siswa kendala (set) max hari per minggu, sama dengan guru yang ada (s) max kendala hari per minggu.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="814"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="816"/>
         <source>A: Maybe it will be implemented in the future. Until then, please use constraint students (set) interval max days per week, interval = whole day.</source>
         <translation>J: Mungkin akan diimplementasikan di masa depan. Sampai saat itu, silakan gunakan siswa kendala (set) hari maks interval per minggu, interval = sepanjang hari.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="605"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="607"/>
         <source>Q: What about the automatic search for updates? Should I enable it?
 
 A: It is recommended to enable automatic search for updates. I didn&apos;t set it as default because people might be annoyed if I release too fast new versions. But if you can cope with that, it is recommended to always have the latest version and enable searching for updates at startup.</source>
@@ -33226,31 +33195,26 @@ A: It is recommended to enable automatic search for updates. I didn&apos;t set i
 A: Dianjurkan untuk mengaktifkan pencarian otomatis untuk update. Aku tidak ditetapkan sebagai default karena orang mungkin terganggu jika saya rilis versi baru terlalu cepat. Tapi jika Anda dapat mengatasi dengan itu, dianjurkan untuk selalu memiliki versi terbaru dan memungkinkan mencari update pada saat startup.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="49"/>
-        <source>13 January 2013</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="482"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="484"/>
         <source>Q-1-27-March-2008</source>
         <comment>Mnemonic name for a particular question in the FAQ</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="505"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="507"/>
         <source>Q-1-6-June-2008</source>
         <comment>Mnemonic name for a particular question in the FAQ</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="614"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="616"/>
         <source>Q: I have a double duration activity. Is it possible that it is spread over the break period, like:
 
 Activity Math, duration 2, id say 100
 
 Hour 10:00 Math (first hour of act. 100)
 Hour 11:00 Break
-Hour 12:00 Math (second hour of act. 100)
+Hour 12:00 Math (second hour of act. 100)?
 
 A: No, the activity must respect the break, so it is before or after the break with all the hours of it.</source>
         <translation>Q: Saya memiliki durasi aktivitas ganda. Apakah mungkin bahwa ia dihamparkan selama periode istirahat, seperti:
@@ -33259,12 +33223,12 @@ Kegiatan Matematika, durasi 2, id mengatakan 100
 
 Jam 10:00 Matematika (jam pertama bertindak. 100)
 Jam 11:00 Break
-Jam 12:00 Matematika (jam kedua bertindak. 100)
+Jam 12:00 Matematika (jam kedua bertindak. 100)?
 
 A: Tidak, kegiatan tersebut harus menghormati istirahat, sehingga sebelum atau setelah jeda dengan semua jam itu.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="625"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="627"/>
         <source>Q and A From Anestis Vovos: A very difficult to diagnose unresolved case
 
 Since I started working on our school&apos;s timetable I had a problem with a specific day and teacher. No matter what I tried in FET I couldn&apos;t reduce the in-school hours for this specific teacher and day down from 7 (7 hours is the full school day, so he had 6 teaching hours and 1 gap). It was too much (other teachers have 5 teaching hours max) but he didn&apos;t mind so we kept FET solution.Just a month ago this teacher had some major operation and couldn&apos;t teach so much hours in one day anymore. So I started again to experiment with the timetable and what was wrong. After a LOT of test and failures the idea hit me just as I was waking up to go to school; I hadn&apos;t enough teachers for early and late hours! I checked and it was true! Let me explain. We have 6 classes in total and every class has 7 hours per day. This means that I need 6 teachers for the first hour and 6 teachers for the 7th hour, a total of 12 teachers. But I only had 11 teachers to cover first and last hour! I had 16 teachers in total for that day but their restrictions prevented 6 of them to teach first and last hours (and it wasn&apos;t just cases of teacher not available but usually restrictions on teaching on specific hours and max gaps, so it was very difficult to look through it). So this specific teacher (because of the restrictions on the other teachers and the loose restrictions on himself) had to teach 6 hours with 1 gap so that he could cover a first and a last hour!
@@ -33277,7 +33241,7 @@ Sejak saya mulai bekerja pada jadwal sekolah kami, aku punya masalah dengan hari
 ... Bukannya aku akan jatuh lagi untuk itu namun berdasarkan kesulitan untuk mendiagnosis pada bagian saya akan membantu orang lain yang mungkin menghadapi masalah yang sama.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="643"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="645"/>
         <source>Q: I want to define hard subjects (Math, Physics and Chemistry) and I want students not to have more than 1 (or another variant 2) difficult subjects in a row.
 
 A: Define activity tag &apos;Difficult&apos; and add it to all MA, PH and CH lessons. Then add constraint maximum 1 (or 2) hours continuously for all students and an activity tag &apos;Difficult&apos;. Please take care if you may have double lessons.</source>
@@ -33286,19 +33250,19 @@ A: Define activity tag &apos;Difficult&apos; and add it to all MA, PH and CH les
 J: Tentukan Aktivitas tag &apos;Sulit&apos; dan menambahkannya ke semua MA, PH dan pelajaran CH. Kemudian tambahkan batasan jam kerja maksimum 1 (atau 2) terus untuk semua mahasiswa dan aktivitas tag &apos;Sulit&apos;. Harap berhati-hati jika Anda mungkin pelajaran ganda.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="651"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="653"/>
         <source>Q: (by Horatiu Halmajan) I met a situation: a teacher asks for maximum 2 working days, but these days should not be consecutive. Is there a way to implement it in .fet?
 
-The only (manual) way I could think of, is to set the teacher as unavailable on Tuesdays and Thursdays, thus leaving him available on Monday, Wednesday and Friday (any two of these are unconsecutive).
+The only (manual) way I could think of is to set the teacher as unavailable on Tuesdays and Thursdays, thus leaving him available on Monday, Wednesday and Friday (any two of these are unconsecutive).
 
 Any other ideas...?
 
 A: I have another idea: choose 2 activities of this teacher which clearly cannot be on the same day, and add constraint min days between activities, 2 days, 100%.
 
 Or add a dummy activity for this teacher, split into 2 per week, min days = 2, with 100%. You just need to take care that this teacher has place for these dummy activities (enough slots in the day) and to consider these dummy activities as possible gaps, so if teacher has max gaps 2 then make max gaps for him 0.</source>
-        <translation>T: (oleh Horatiu Halmajan) saya bertemu dengan situasi: seorang guru meminta maksimal 2 hari kerja, tetapi hari-hari ini tidak boleh berturut-turut. Apakah ada cara untuk menerapkannya dalam. FET?
+        <translation type="unfinished">T: (oleh Horatiu Halmajan) saya bertemu dengan situasi: seorang guru meminta maksimal 2 hari kerja, tetapi hari-hari ini tidak boleh berturut-turut. Apakah ada cara untuk menerapkannya dalam. FET?
 
-Satu-satunya (manual) cara saya bisa memikirkan, adalah untuk mengatur guru sebagai tidak tersedia pada hari Selasa dan Kamis, sehingga meninggalkan dia tersedia pada hari Senin, Rabu dan Jumat (setiap dua di antaranya unconsecutive).
+Satu-satunya (manual) cara saya bisa memikirkan adalah untuk mengatur guru sebagai tidak tersedia pada hari Selasa dan Kamis, sehingga meninggalkan dia tersedia pada hari Senin, Rabu dan Jumat (setiap dua di antaranya unconsecutive).
 
 Ada ide lain ...?
 
@@ -33307,7 +33271,7 @@ J: Saya punya ide lain: memilih 2 kegiatan ini guru yang jelas tidak bisa pada h
 Atau menambahkan aktivitas dummy untuk guru ini, dibagi menjadi 2 per minggu, hari min = 2, dengan 100%. Anda hanya perlu berhati-hati bahwa guru ini memiliki tempat untuk kegiatan-kegiatan dummy (slot cukup pada siang hari) dan untuk mempertimbangkan kegiatan dummy sebagai kesenjangan mungkin, jadi jika guru memiliki kesenjangan maks 2 kemudian membuat celah maks untuknya 0.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="667"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="669"/>
         <source>Q: (by Horatiu Halmajan) The students must have max 4 gaps per week, maximum 2 per day, continuous gaps. How to solve this?
 
 A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, duration 1, min days between activities 1, weight 0%, select consecutive if same day. FET will never put more than 2 of these dummy activities in a day. Add max gaps for students = 0 per week.</source>
@@ -33316,12 +33280,12 @@ A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, d
 A: Tambahkan untuk setiap subgrup aktivitas dummy (tidak ada guru) dibagi menjadi 4 per minggu, durasi 1, min hari antara kegiatan 1, bobot 0%, pilih hari berturut-turut jika yang sama. FET tidak akan pernah memasukkan lebih dari 2 kegiatan ini boneka dalam sehari. Tambahkan kesenjangan maks untuk siswa = 0 per minggu.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="676"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="678"/>
         <source>Advice: to treat gaps for students or teachers, if FET constraints are not enough, you can use dummy activities. For instance, if a students set can have maximum 3 gaps, add an activity split into 3 per week, with no teachers.</source>
         <translation>Saran: untuk mengobati celah untuk siswa atau guru, jika kendala FET tidak cukup, Anda dapat menggunakan aktivitas dummy. Misalnya, jika seorang siswa ditetapkan dapat memiliki maksimal 3 kesenjangan, tambahkan aktivitas split menjadi 3 per minggu, tanpa guru.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="683"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="685"/>
         <source>Question 1/16 August 2009: How to add constraint two activities grouped, two activities consecutive and three activities grouped if the activities are constrained not to be in the same day by constraints min days between activities?
 
 If A1 and A2 are constrained not to be in the same day with 95% weight or any other weight, it is a bad practice to add a constraint grouped or consecutive to them. If they are constrained with weight 100% not to be in the same day, the timetable is impossible; if the weight is under 100%, the timetable is more difficult to find than using the correct way.
@@ -33334,7 +33298,7 @@ Jika A1 dan A2 yang dibatasi tidak berada di hari yang sama dengan 95% berat ata
 Cara yang benar mungkin akan mempertimbangkan A1 dan A2 = a A12 aktivitas tunggal &apos;, atau untuk mengubah hari min kendala terkait antara kegiatan. Atau mungkin Anda dapat menemukan cara lain.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="696"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="698"/>
         <source>Question 1/25 September 2009: An observation for constraint teacher(s) or students (set) activity tag max hours daily:
 
 This constraint is implemented correctly and is working good, but it is not perfect, which means that in unusual, extreme cases the time needed to generate a timetable might be longer or much longer than really necessary. You should give FET a hand in these extreme situations.
@@ -33371,62 +33335,62 @@ Jadi, adalah ide yang sangat buruk untuk membuat semua kegiatan (dari seorang gu
 Mungkin, dalam prakteknya masalah ini tidak akan muncul dan Anda tidak perlu khawatir. Tapi secara teoritis itu ada.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="730"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="732"/>
         <source>3 hints from an anonymous Polish user, who uses FET for very large data:</source>
         <translation>3 petunjuk dari seorang pengguna anonim Polandia, yang menggunakan FET untuk data yang sangat besar:</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="732"/>
-        <source>The first hint for other users is to start with minimum number of constraints and if FET would generate the plan than thinking about adding the next ones.</source>
-        <translation>Petunjuk pertama untuk pengguna lain adalah mulai dengan jumlah minimum kendala dan jika FET akan menghasilkan rencana daripada memikirkan menambahkan yang berikutnya.</translation>
+        <location filename="../src/interface/helpfaqform.cpp" line="734"/>
+        <source>The first hint for other users is to start with minimum number of constraints and if FET would generate the plan then thinking about adding the next ones.</source>
+        <translation type="unfinished">Petunjuk pertama untuk pengguna lain adalah mulai dengan jumlah minimum kendala dan jika FET akan menghasilkan rencana daripada memikirkan menambahkan yang berikutnya.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="735"/>
-        <source>The second hint is not to change too many constraints in one simulation as it may lead to impossible timetable and than it is difficult to say which particular constraint was too much.</source>
-        <translation>Petunjuk kedua adalah tidak mengubah terlalu banyak kendala dalam satu simulasi karena dapat mengakibatkan jadwal mustahil dan daripada sulit untuk mengatakan kendala tertentu yang terlalu banyak.</translation>
+        <location filename="../src/interface/helpfaqform.cpp" line="737"/>
+        <source>The second hint is not to change too many constraints in one simulation as it may lead to impossible timetable and then it is difficult to say which particular constraint was too much.</source>
+        <translation type="unfinished">Petunjuk kedua adalah tidak mengubah terlalu banyak kendala dalam satu simulasi karena dapat mengakibatkan jadwal mustahil dan daripada sulit untuk mengatakan kendala tertentu yang terlalu banyak.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="738"/>
-        <source>For instance even when two consecutive activities are placed at one day (the same group and the same teacher) sometimes there are placed at different rooms what would force them to needless changing room. I guess that FET is focused on fulfilling constrains but not on optimizing timetable. Sometimes simple changing of two activities makes plan better both for students and teachers. I think that manually improving generated plan is faster than creating many many more constraints and repeating simulations. And this is the third hint.</source>
-        <translation>Misalnya bahkan ketika dua kegiatan berturut-turut ditempatkan pada satu hari (kelompok yang sama dan guru yang sama) kadang-kadang ada ditempatkan pada ruangan yang berbeda apa yang akan memaksa mereka untuk ruang ganti perlu. Saya menduga bahwa FET difokuskan pada pemenuhan kendala tetapi tidak pada mengoptimalkan jadwal. Kadang-kadang sederhana berubah dari dua kegiatan membuat rancangan yang lebih baik bagi siswa dan guru. Saya berpikir bahwa rencana perbaikan yang dihasilkan secara manual lebih cepat daripada menciptakan banyak kendala lebih banyak dan simulasi berulang. Dan ini adalah petunjuk ketiga.</translation>
+        <location filename="../src/interface/helpfaqform.cpp" line="740"/>
+        <source>For instance even when two consecutive activities are placed at one day (the same group and the same teacher) sometimes they are placed at different rooms what would force them to needless changing room. I guess that FET is focused on fulfilling constraints but not on optimizing timetable. Sometimes simple changing of two activities makes plan better both for students and teachers. I think that manually improving generated plan is faster than creating many many more constraints and repeating simulations. And this is the third hint.</source>
+        <translation type="unfinished">Misalnya bahkan ketika dua kegiatan berturut-turut ditempatkan pada satu hari (kelompok yang sama dan guru yang sama) kadang-kadang ada ditempatkan pada ruangan yang berbeda apa yang akan memaksa mereka untuk ruang ganti perlu. Saya menduga bahwa FET difokuskan pada pemenuhan kendala tetapi tidak pada mengoptimalkan jadwal. Kadang-kadang sederhana berubah dari dua kegiatan membuat rancangan yang lebih baik bagi siswa dan guru. Saya berpikir bahwa rencana perbaikan yang dihasilkan secara manual lebih cepat daripada menciptakan banyak kendala lebih banyak dan simulasi berulang. Dan ini adalah petunjuk ketiga.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="748"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="750"/>
         <source>Q: Why the constraints activity tag max hours daily and students max gaps per day are disabled in the FET menu?</source>
         <translation>T: Mengapa jam kendala tag maks sehari-hari dan aktivitas mahasiswa kesenjangan maks per hari dinon-aktifkan dalam menu FET?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="750"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="752"/>
         <source>A: These 6 constraints (4 for activity tag and 2 for students max gaps per day) are the only ones which are not perfectly optimized in FET. For some combinations of constraints, they may slow down the generation or even make the timetable impossible. That is why they are not enabled by default. You need to activate them from the advanced settings menu. It is recommended to add such constraints at the end of your work, after you added all the other constraints and verified that your timetable is possible.</source>
         <translation>A: ini 6 kendala (4 untuk tag aktivitas dan 2 untuk siswa maks kesenjangan per hari) adalah satu-satunya yang tidak sempurna dioptimalkan di FET. Untuk beberapa kombinasi kendala, mereka dapat memperlambat atau bahkan generasi membuat jadwal yang mustahil. Itulah mengapa mereka tidak diaktifkan secara default. Anda perlu mengaktifkannya dari menu pengaturan lanjutan. Dianjurkan untuk menambahkan kendala tersebut pada akhir pekerjaan Anda, setelah Anda menambahkan semua kendala lain dan memverifikasi bahwa jadwal Anda mungkin.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="755"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="757"/>
         <source>If these constraints are disabled, they have an icon attached in the menu to signify that. If they are enabled, they have another icon attached to them, to signify that they are enabled, but must be used with caution.</source>
         <translation>Jika kendala ini tidak aktif, mereka memiliki ikon yang menempel pada menu untuk menunjukkan bahwa. Jika diaktifkan, mereka memiliki ikon lain yang menyertainya, untuk menandakan bahwa mereka akan diaktifkan, tapi harus digunakan dengan hati-hati.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="758"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="760"/>
         <source>Use these constraints with caution, not to obtain impossible timetables.</source>
         <translation>Gunakan kendala ini dengan hati-hati, bukan untuk mendapatkan jadwal mustahil.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="764"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="766"/>
         <source>Q: Why don&apos;t you implement the not perfect constraints (activity tag max hours daily and students max gaps per day) in a perfect way?</source>
         <translation>T: Mengapa tidak Anda menerapkan batasan tidak sempurna (jam maks tag aktivitas sehari-hari dan siswa maks kesenjangan per hari) dengan cara yang sempurna?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="766"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="768"/>
         <source>A: Activity tag max hours daily cannot be implemented perfectly, generation would take too much (because of complexity of checks). Students max gaps per day can be implemented perfectly, but it would change the algorithm for students a lot and I am afraid to change something that is working well. Very much testing would be needed, and I have not enough sample files. While changing the algorithm, it would be easy to make critical bugs and some files may not solve anymore.</source>
         <translation>A: jam tag maks Aktivitas sehari-hari tidak dapat diterapkan dengan sempurna, generasi akan mengambil terlalu banyak (karena kompleksitas cek). Siswa maks kesenjangan per hari dapat diimplementasikan dengan sempurna, tetapi akan mengubah algoritma untuk banyak siswa dan saya takut untuk mengubah sesuatu yang bekerja dengan baik. Sangat banyak pengujian yang diperlukan, dan aku belum cukup sampel file. Saat mengganti algoritma, akan mudah untuk membuat bug kritis dan beberapa file tidak dapat mengatasi lagi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="777"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="779"/>
         <source>A: More users asked for shortcut buttons for the most commonly used functions. It is possible to show such buttons, if you select the corresponding option from the Settings-&gt;Interface menu (shortcuts are shown, by default).</source>
         <translation>A: Lebih banyak pengguna meminta tombol pintas untuk fungsi yang paling umum digunakan. Hal ini dimungkinkan untuk menampilkan tombol tersebut, jika Anda memilih opsi yang sesuai dari menu Interface Setting-&gt; (pintas yang ditampilkan, secara default).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="775"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="777"/>
         <source>Q: Help on shortcut buttons in the main form.</source>
         <translation>P: Bantuan pada tombol pintas dalam bentuk utama.</translation>
     </message>
@@ -33544,8 +33508,8 @@ Mungkin, dalam prakteknya masalah ini tidak akan muncul dan Anda tidak perlu kha
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="122"/>
-        <source>7) It is possible to work with institutions in which the students work in shifts (for instance, lowest forms in the morning and highest forms in the afternoon). Please see the Help/Frequently Asked Questions the solution to how to do that (the essence is to add corresponding constraints students set not available).</source>
-        <translation>7) Hal ini dimungkinkan untuk bekerja sama dengan lembaga di mana siswa bekerja dalam shift (misalnya, bentuk terendah di pagi hari dan bentuk tertinggi pada sore hari). Silakan lihat Bantuan / Pertanyaan yang Sering Diajukan solusi untuk bagaimana untuk melakukan itu (esensinya adalah untuk menambahkan siswa yang terkait kendala tetapkan tidak tersedia).</translation>
+        <source>7) It is possible to work with institutions in which the students work in shifts (for instance, lowest forms in the morning and highest forms in the afternoon). Please see in the Help/Frequently Asked Questions the solution to how to do that (the essence is to add corresponding constraints students set not available).</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="126"/>
@@ -33599,8 +33563,8 @@ Mungkin, dalam prakteknya masalah ini tidak akan muncul dan Anda tidak perlu kha
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="160"/>
-        <source>18) If you use the not perfect constraints activity tag max hours daily or students max gaps per week (there are 4+2 types of constraints in this category), use them with caution not to obtain an impossible timetable. If the timetable is impossible, it may be because of them. You are advised to add such constraints only in the end, after you are sure that the other constraints are good and the timetable is possible.</source>
-        <translation>18) Jika Anda menggunakan jam tidak sempurna kendala tag aktivitas sehari-hari atau siswa maks maks kesenjangan per minggu (ada 4 +2 jenis kendala dalam kategori ini), gunakan dengan hati-hati mereka tidak akan didapat mustahil jadwal. Jika jadwal tidak mungkin, mungkin karena mereka. Anda disarankan untuk menambahkan kendala seperti itu hanya pada akhirnya, setelah Anda yakin bahwa kendala lain adalah baik dan jadwal yang mungkin.</translation>
+        <source>18) If you use the not perfect constraints activity tag max hours daily or students max gaps per day (there are 4+2 types of constraints in this category), use them with caution not to obtain an impossible timetable. If the timetable is impossible, it may be because of them. You are advised to add such constraints only in the end, after you are sure that the other constraints are good and the timetable is possible.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -43125,7 +43089,7 @@ CATATAN: setiap kamar dapat mengadakan aktivitas tunggal pada waktu yang sama (A
         <location filename="../src/engine/rules.cpp" line="5479"/>
         <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are adviced to make a backup of your old file before saving in new format.
 
-Please note that the default weight percentage of constraints min days between activities will be 95% (mainly satisfied, not always) and &apos;force consecutive if same day&apos; will be set to true (meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity)If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
+Please note that the default weight percentage of constraints min days between activities will be 95% (mainly satisfied, not always) and &apos;force consecutive if same day&apos; will be set to true (meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity). If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
         <translation>Membuka file lama - akan dikonversi ke format terbaru, secara otomatis akan memberi persentase bobot ke batasa dan menghapus paritas kegiatan. Anda diminta untuk backup file lama sebelum disimpan pada format baru
 
 Silakan dicatat persentase bobot dari batasan min n hari antar kegiatan biasanya 95% (biasanya memuaskan) dan &apos;paksakan berurutan jika hari yang sama&apos; akan diatur menjadi true (artinya jika kegiatan pada hari yang sama, akan ditempatkan berurutan, jika sebuah kegiatan dengan durasi lebih lama). Jika anda mau, anda dapat mengubahnya menjadi 100%, secara manual di file input fet atau dari antarmuka</translation>
@@ -43575,23 +43539,23 @@ tidak ditambah - duplikasi</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="7865"/>
-        <source>Constraint TeacherMaxDaysPerWeek day corrupt for teacher %1, max days %2 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
-        <translation>Batasan hari mulai GuruMaksHariPerMinggu corrupt untuk guru %1, hari maks%2&lt;=0 atau &gt;nHariPerMinggu...abaikan batasan</translation>
+        <source>Constraint TeacherMaxDaysPerWeek max days corrupt for teacher %1, max days %2 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="7906"/>
-        <source>Constraint TeachersMaxDaysPerWeek day corrupt, max days %1 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
-        <translation>Batasan GuruMaksHariPerMinggu hari gagal, maks hari %1  &lt;= 0 or &gt;nDaysPerWeek, abaikan batasan</translation>
+        <source>Constraint TeachersMaxDaysPerWeek max days corrupt, max days %1 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="7951"/>
-        <source>Constraint TeacherMinDaysPerWeek day corrupt for teacher %1, min days %2 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
-        <translation>Kendala TeacherMinDaysPerWeek hari guru yang korup untuk%1, min hari%2 &lt;= 0 atau&gt; nDaysPerWeek, mengabaikan batasan</translation>
+        <source>Constraint TeacherMinDaysPerWeek min days corrupt for teacher %1, min days %2 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="7992"/>
-        <source>Constraint TeachersMinDaysPerWeek day corrupt, min days %1 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
-        <translation>Kendala TeachersMinDaysPerWeek hari korup, min hari%1 &lt;= 0 atau&gt; nDaysPerWeek, mengabaikan batasan</translation>
+        <source>Constraint TeachersMinDaysPerWeek min days corrupt, min days %1 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="8056"/>
@@ -43610,18 +43574,33 @@ tidak ditambah - duplikasi</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="8163"/>
-        <source>Constraint TeachersIntervalMaxDaysPerWeek max days corrupt, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
-        <translation>Kendala hari max TeachersIntervalMaxDaysPerWeek korup, maks hari %2&gt; nDaysPerWeek, kendala menambahkan, silahkan kendala yang benar</translation>
+        <source>Constraint TeachersIntervalMaxDaysPerWeek max days corrupt, max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="8179"/>
-        <source>Constraint Teachers interval max days per week start hour corrupt because hour %2 is inexistent ... ignoring constraint</source>
-        <translation>Kendala Guru interval maks hari seminggu mulai jam korup karena %2 jam  adalah inexistent ... mengabaikan kendala</translation>
+        <source>Constraint Teachers interval max days per week start hour corrupt because hour %1 is inexistent ... ignoring constraint</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="8202"/>
-        <source>Constraint Teachers interval max days per week end hour corrupt because hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
-        <translation>Kendala Guru interval maks hari minggu jam per akhir korup karena jam %2 adalah inexistent (hal ini juga tidak kosong, untuk menentukan hari akhir) ... mengabaikan kendala</translation>
+        <source>Constraint Teachers interval max days per week end hour corrupt because hour %1 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="8377"/>
+        <source>Constraint StudentsIntervalMaxDaysPerWeek max days corrupt: max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="8392"/>
+        <source>Constraint Students interval max days per week start hour corrupt: hour %1 is inexistent ... ignoring constraint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="8415"/>
+        <source>Constraint Students interval max days per week end hour corrupt: hour %1 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="8270"/>
@@ -43637,21 +43616,6 @@ tidak ditambah - duplikasi</translation>
         <location filename="../src/engine/rules.cpp" line="8309"/>
         <source>Constraint Students set interval max days per week end hour corrupt for students %1, hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
         <translation>Kendala Siswa mengatur interval maks hari minggu jam per akhir mahasiswa korup untuk%1, jam %2 adalah inexistent (hal ini juga tidak kosong, untuk menentukan hari akhir) ... mengabaikan kendala</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="8377"/>
-        <source>Constraint StudentsIntervalMaxDaysPerWeek max days corrupt: max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
-        <translation>Kendala StudentsIntervalMaxDaysPerWeek hari maks rusak: maks hari %2&gt; nDaysPerWeek, kendala ditambahkan, harap benar kendala</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="8392"/>
-        <source>Constraint Students interval max days per week start hour corrupt: hour %2 is inexistent ... ignoring constraint</source>
-        <translation>Kendala Siswa interval maks hari seminggu mulai jam korup:%2 jam  adalah inexistent ... mengabaikan kendala</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="8415"/>
-        <source>Constraint Students interval max days per week end hour corrupt: hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
-        <translation>Siswa Kendala hari maks interval per akhir minggu korup jam:%2 jam 2 adalah inexistent (itu juga tidak batal, untuk menentukan hari akhir) ... mengabaikan kendala</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="8468"/>
@@ -44706,39 +44670,34 @@ paksakan berurutan</translation>
         <translation>Statistik file diekspor ke direktori %1 sebagai file html.</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="289"/>
-        <source>Statistic export incomplete</source>
-        <translation>Ekspor statistik tidak lengkap</translation>
-    </message>
-    <message>
         <location filename="../src/engine/statisticsexport.cpp" line="381"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="479"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="505"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="593"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="619"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="818"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="845"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1042"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1069"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1277"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1304"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1512"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1539"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1736"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1763"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1962"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="480"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="506"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="594"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="620"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="819"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="846"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1043"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1070"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1278"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1305"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1513"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1540"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1737"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1764"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1963"/>
         <source>FET critical</source>
         <translation>Kritis FET</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="382"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="506"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="620"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="846"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1070"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1305"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1540"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1764"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="507"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="621"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="847"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1071"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1306"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1541"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1765"/>
         <source>Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
         <translation>Tidak dapat membuka file %1 untuk ditulis. Silahkan periksa ruang kosong disk anda. Penyimpanan %1 dibatalkan.</translation>
     </message>
@@ -44760,97 +44719,102 @@ paksakan berurutan</translation>
         <translation>To hide an element just write the following phrase into the element: %1 (without quotes).</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="476"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="477"/>
         <source>End of file.</source>
         <translation>Akhir file.</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="480"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="594"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="819"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1043"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1278"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1513"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1737"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1963"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="481"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="595"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="820"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1044"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1279"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1514"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1738"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1964"/>
         <source>Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation>Penulisan %1 memberi kode kesalahan %2, yang artinya penyimpanan gagal. Silahkan periksa ruang kosong pada disk anda.</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="554"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="555"/>
         <source>Institution name</source>
         <translation>Nama Institusi</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="555"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="556"/>
         <source>Comments</source>
         <translation>Komentar</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="561"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="562"/>
         <source>Statistics</source>
         <translation>Statistik</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="563"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="568"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="564"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="569"/>
         <source>Teachers</source>
         <translation>Guru</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="563"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="574"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="564"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="575"/>
         <source>Students</source>
         <translation>Siswa</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="563"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="580"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="564"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="581"/>
         <source>Subjects</source>
         <translation>Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="570"/>
         <location filename="../src/engine/statisticsexport.cpp" line="571"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="575"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="577"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="581"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="572"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="576"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="578"/>
         <location filename="../src/engine/statisticsexport.cpp" line="582"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="583"/>
         <source>view</source>
         <translation>lihat</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="668"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="669"/>
         <source>Teachers - Subjects Matrix</source>
         <translation>Matriks Guru - Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="894"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="895"/>
         <source>Subjects - Teachers Matrix</source>
         <translation>Matriks Mata Pelajaran - Guru</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1118"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="915"/>
+        <source>Processing subjects with teachers...please wait</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/statisticsexport.cpp" line="1119"/>
         <source>Teachers - Students Matrix</source>
         <translation>Matriks guru - siswa</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1353"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1354"/>
         <source>Students -Teachers Matrix</source>
         <translation>Matriks siswa-guru</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1588"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1589"/>
         <source>Subjects - Students Matrix</source>
         <translation>Matriks mata pelajaran - siswa</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1811"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1812"/>
         <source>Students -Subjects Matrix</source>
         <translation>Matriks siswa-mata pelajaran</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="688"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="689"/>
         <source>Processing teachers with subjects...please wait</source>
         <translation>Proses guru dengan mata pelajaran.. silakan tunggu</translation>
     </message>
@@ -44861,14 +44825,19 @@ paksakan berurutan</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="288"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="698"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="924"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1148"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1383"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1618"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1842"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="699"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="925"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1149"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1384"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1619"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1843"/>
         <source>FET warning</source>
         <translation>Peringatan FET</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/statisticsexport.cpp" line="289"/>
+        <source>Statistics export incomplete</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="408"/>
@@ -44883,77 +44852,72 @@ paksakan berurutan</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="586"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="811"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1035"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1270"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1505"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1729"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1955"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="587"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="812"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1036"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1271"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1506"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1730"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1956"/>
         <source>Timetable generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is the date and time of generation</comment>
         <translation>Jadwal dihasilkan dengan FET %1 pada %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="681"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="802"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="907"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1026"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1131"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1261"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1366"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1496"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1601"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1720"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1825"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1946"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="682"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="803"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="908"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1027"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1132"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1262"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1367"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1497"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1602"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1721"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1826"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1947"/>
         <source>Sum</source>
         <comment>This means the sum of more values, the total</comment>
         <translation>Jum</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="687"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="913"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1137"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1372"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1607"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1831"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="688"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="914"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1138"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1373"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1608"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1832"/>
         <source>Exporting statistics</source>
         <comment>Title of a progress dialog</comment>
         <translation>Ekpor statistik</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="698"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="924"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1148"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1383"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1618"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1842"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="699"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="925"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1149"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1384"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1619"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1843"/>
         <source>Canceled</source>
         <translation>Dibatalkan</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="914"/>
-        <source>Processing subject with teachers...please wait</source>
-        <translation>Proses mata pelajaran dengan guru.. silakan tunggu</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1138"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1139"/>
         <source>Processing teachers with students...please wait</source>
         <translation>Proses guru dengan siswa.. silakan tunggu</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1373"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1374"/>
         <source>Processing students with teachers...please wait</source>
         <translation>Proses siswa dengan guru.. silakan tunggu</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1608"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1609"/>
         <source>Processing subjects with students...please wait</source>
         <translation>Proses mata pelajaran dengan siswa.. silakan tunggu</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1832"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1833"/>
         <source>Processing students with subjects...please wait</source>
         <translation>Proses siswa dengan mata pelajaran.. silakan tunggu</translation>
     </message>
