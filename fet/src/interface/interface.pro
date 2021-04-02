@@ -106,6 +106,12 @@ SOURCES += fet.cpp \
 		   constraintteachermaxhoursdailyform.cpp \
 		   addconstraintteachermaxhoursdailyform.cpp \
 		   modifyconstraintteachermaxhoursdailyform.cpp \
+		   constraintteachersminhoursdailyform.cpp \
+		   addconstraintteachersminhoursdailyform.cpp \
+		   modifyconstraintteachersminhoursdailyform.cpp \
+		   constraintteacherminhoursdailyform.cpp \
+		   addconstraintteacherminhoursdailyform.cpp \
+		   modifyconstraintteacherminhoursdailyform.cpp \
 		   constraintactivitypreferredtimeform.cpp \
 		   addconstraintactivitypreferredtimeform.cpp \
 		   modifyconstraintactivitypreferredtimeform.cpp \
@@ -263,6 +269,12 @@ HEADERS += fet.h \
 		   constraintteachermaxhoursdailyform.h \
 		   addconstraintteachermaxhoursdailyform.h \
 		   modifyconstraintteachermaxhoursdailyform.h \
+		   constraintteachersminhoursdailyform.h \
+		   addconstraintteachersminhoursdailyform.h \
+		   modifyconstraintteachersminhoursdailyform.h \
+		   constraintteacherminhoursdailyform.h \
+		   addconstraintteacherminhoursdailyform.h \
+		   modifyconstraintteacherminhoursdailyform.h \
 		   constraintactivitypreferredtimeform.h \
 		   addconstraintactivitypreferredtimeform.h \
 		   modifyconstraintactivitypreferredtimeform.h \
@@ -420,6 +432,12 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintteachermaxhoursdailyform_template.ui \
 		   addconstraintteachermaxhoursdailyform_template.ui \
 		   modifyconstraintteachermaxhoursdailyform_template.ui \
+		   constraintteachersminhoursdailyform_template.ui \
+		   addconstraintteachersminhoursdailyform_template.ui \
+		   modifyconstraintteachersminhoursdailyform_template.ui \
+		   constraintteacherminhoursdailyform_template.ui \
+		   addconstraintteacherminhoursdailyform_template.ui \
+		   modifyconstraintteacherminhoursdailyform_template.ui \
 		   constraintactivitypreferredtimeform_template.ui \
 		   addconstraintactivitypreferredtimeform_template.ui \
 		   modifyconstraintactivitypreferredtimeform_template.ui \

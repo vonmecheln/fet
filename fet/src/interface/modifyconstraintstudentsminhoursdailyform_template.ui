@@ -60,7 +60,7 @@
                 <enum>Plain</enum>
             </property>
             <property name="text">
-                <string>Weight percentage (needed: 100%)</string>
+                <string>Weight percentage (necessary: 100%)</string>
             </property>
         </widget>
         <widget class="QLabel" row="4" column="0">

@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 18 September 2007
+this documentation by Liviu Lalescu, reviewed and modified - 21 September 2007
 
 --------
 
@@ -81,7 +81,9 @@ Important note: please do the correct division of a year from the beginning. Eac
 
 Q: Help on ConstraintStudentsEarly.
 
-A: It is a constraint that imposes the condition that all the students must begin their courses as early as possible. The possible hours are the hours allowed from students not available and break. You have to be careful with this constraint: if any set of students begins the classes later than the first possible hour in a certain day, you will get a conflict.
+A: Constraint students (set) early: this constraint is a very restrictive/difficult one, saying that the students MUST have hours beginning at the first free slot (possible from breaks and students set not available constraints). You might get an impossible timetable if using this constraint. In the case that early is too strong, you might have to use constraints students set not available or other constraints instead.
+
+For instance, if students X are not available on Monday from 8 to 9 and available in rest and you add students set early X, they MUST begin each day (without Monday) at 8 and Monday at 9, not even a bit later. If this constraint is too heavy, you will get an impossible timetable. It is recommended in this case to make use of other constraints instead (students set not available might help).
 
 If you input only partial data, please use with caution. You might for instance input only 4+4 hourly activities of math with the same teacher for 2 students sets (each group of 4 activities must be ballanced - in different days). Then it is clear that you cannot place all 8 activities in a 5 days week without breaking the students early constraint, so you will get no possible timetable.
 
@@ -204,6 +206,7 @@ The weight is recommended to be between 95.0%-100.0%. The best might be 99.75% o
 
 You can specify consecutive if same day. Please be careful, even if constraint min n days between activities has 0% weight, if you select this consecutive if same day, this consecutive will be forced. You will not be able to find a timetable with the two activities in the same day, separated by break, not available or other activities, even if the constraint has weight 0%, if you select consecutive if same day.
 
+Currently FET can put at most 2 activities in the same day if "consecutive if same day" is true. FET cannot put 3 or more subactivities in the same day if "consecutive if same day" is true.
 
 ------------------------------------------------------------------------------
 
@@ -287,7 +290,63 @@ Q: Are some constraints more efficient in speed of generation than other constra
 
 A: From the way the algorithm is conceived, the automatic generation is faster if you use students set (or teacher) not available and/or constraint activity(ies) preferred times to specify impossible slots, in addition to possible use of students (set) or teacher(s) max hours daily, whenever it is possible. For instance, if you know that year 5 will only have hours from 8:00 to 13:00, it is better to add students set not available in addition to students set max hours daily. So, if possible, try to follow this advice. This trick helps guide FET better towards a solution.
 
-Each constraint of type not available or preferred times which filters out impossible slots might bring an improvement in speed.</string>
+Each constraint of type not available or preferred times which filters out impossible slots might bring an improvement in speed.
+
+-------------------------------------------------------------------------------
+
+Q: Is it allowed to use non-interger weights?
+
+A: If a constraint is allowed values under 100%, you can use any weight, even fractional numbers like 99.75%. It might help in constraints like min n days, preferred rooms or max hours daily.
+
+-------------------------------------------------------------------------------
+
+Q: With max 5 hours per day and 2 max gaps per week, in 4 cases it resulted 3 lesson+2  gaps + 2 lesson that is not acceptable, cause other day only 2 lesson, I mean I don't want gaps on same day, and gaps only in extra cases extend the hours, how can I keep the balance in this?
+
+A: Then you have to add 2 extra activities for a teacher, each with duration 1 and students empty and dummy subject, and max gaps for this teacher 0.
+
+-------------------------------------------------------------------------------
+
+Q: I have a sports room which allows more than 1 activity simultaneously in it. How to make the preferred room constraints? Can FET accept more than one activity at the same time in a single room?
+
+A: Each room can host a single activity at the same time. How to implement what you need? You can add more rooms (sport1, sport2, sport3) and instead of a single preferred room add more preferred rooms.
+
+-------------------------------------------------------------------------------
+
+Q: Help me! I got an impossible to solve timetable
+
+A: If you get an impossible timetable, maybe removing some/all of the constraints students (set) early and/or replacing them with others (students set not available or break) might help you. Also teachers' min hours daily might be too strong. Please also check the statistics to be correct. Remove other constraints until you get a possible timetable.
+
+-------------------------------------------------------------------------------
+
+Q: Is it possible to work with 0 hour?
+
+A: A bit difficult. You have to choose a day for this 0 hour. Then add breaks or not available to prevent other activities in other days at hour 0, then add students set not available to prevent other students set from having hours at this hour 0. Or variants of this.
+
+Mr. Zsolt Udvari used another trick: considered the last hour to be hour 0. But this is not always applicable.
+
+-------------------------------------------------------------------------------
+
+Q: What is constraint teacher(s) min hours daily?
+
+A: If teachers are getting days with only one hour of work, you might want to add constraint teacher(s) min hours daily (probably with 2 hours), but please make sure your timetable is possible. This constraint is smart, it only considers non-empty days.
+
+-------------------------------------------------------------------------------
+
+Q: How does FET care about weights. What do they mean?
+
+A: The weights under 100% are subjective, because FET can skip them if necessary.
+
+Mr Volker Dirr tried to express how FET considers under 100% weights, but his words are not completely reflecting the fact:
+
+Here is a comment from Mr. Volker Dirr:
+weight = 50% means: In average FET retries two times to place an activity without a conflict. If it isn´t able to place the activity without a conflict after avarage 2 times it keeps the conflict and tries to place the next activity.
+weight = 75% means: In average FET retries four times to place an activity without a conflict. If it isn´t able to place the activity without a conflict after avarage 4 times it keeps the conflict and tries to place the next activity.
+weight = 99% means: In average FET retries 100 times to place an activity without a conflict. If it isn´t able to place the activity without a conflict after avarage 100 times it keeps the conflict and tries to place the next activity.
+weight = 99.99% means: In average FET retries 10000 times to place an activity without a conflict. If it isn´t able to place the activity without a conflict after avarage 10000 times it keeps the conflict and tries to place the next activity.
+
+This is not 100% correct. Activities might get unallocated, and cycle reopened.
+
+-------------------------------------------------------------------------------</string>
             </property>
         </widget>
     </grid>

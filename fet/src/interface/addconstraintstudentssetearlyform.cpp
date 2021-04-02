@@ -118,7 +118,9 @@ void AddConstraintStudentsSetEarlyForm::addCurrentConstraint()
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)
 		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Constraint added"));
+			QObject::tr("Constraint added.\n\nWARNING: this constraint is very strong."
+			 " It means that students MUST have hours at the very first available hour."
+			 " If you get impossible timetables, you might want to use a combination of students set not available or other constraints instead"));
 	else{
 		QMessageBox::warning(this, QObject::tr("FET information"),
 			QObject::tr("Constraint NOT added - please report error"));

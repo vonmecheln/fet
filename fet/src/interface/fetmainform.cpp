@@ -65,6 +65,8 @@ using namespace std;
 #include "constraintteachermaxdaysperweekform.h"
 #include "constraintteachermaxhoursdailyform.h"
 #include "constraintteachersmaxhoursdailyform.h"
+#include "constraintteacherminhoursdailyform.h"
+#include "constraintteachersminhoursdailyform.h"
 #include "constraintactivitypreferredtimeform.h"
 #include "constraintstudentssetnogapsform.h"
 #include "constraintstudentsnogapsform.h"
@@ -248,7 +250,7 @@ void FetMainForm::closeEvent(QCloseEvent* event)
 		;
 
 	switch(QMessageBox::information( this, QObject::tr("FET - exiting"),
-	 QObject::tr("File not saved - do you want to save it?"),
+	 QObject::tr("File might have been changed - do you want to save it?"),
 	 QObject::tr("&Yes"), QObject::tr("&No"), QObject::tr("&Cancel"), 0 , 2 )){
 	 	case 0: 
 			this->on_fileSaveAction_activated();
@@ -289,10 +291,6 @@ void FetMainForm::on_fileNewAction_activated()
 		return;
 	}
 
-	INPUT_FILENAME_XML="";
-	
-	setWindowTitle(QObject::tr("FET - a free evolutionary timetabling program"));
-
 	int confirm=0;
 	switch( QMessageBox::information( this, QObject::tr("FET application"),
 	 QObject::tr("Are you sure you want to load new data (rules) ?"),
@@ -306,6 +304,10 @@ void FetMainForm::on_fileNewAction_activated()
 	}
 
 	if(confirm){
+		INPUT_FILENAME_XML="";
+	
+		setWindowTitle(QObject::tr("FET - a free evolutionary timetabling program"));
+
 		if(gt.rules.initialized)
 			gt.rules.kill();
 		gt.rules.init();
@@ -812,6 +814,30 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxHoursDailyAction_activated()
 	}
 
 	ConstraintTeacherMaxHoursDailyForm* form=new ConstraintTeacherMaxHoursDailyForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsTeachersMinHoursDailyAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, QObject::tr("FET information"),
+			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMinHoursDailyForm* form=new ConstraintTeachersMinHoursDailyForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsTeacherMinHoursDailyAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, QObject::tr("FET information"),
+			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMinHoursDailyForm* form=new ConstraintTeacherMinHoursDailyForm();
 	form->exec();
 }
 

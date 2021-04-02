@@ -36,6 +36,8 @@
 #include "modifyconstraintteachermaxdaysperweekform.h"
 #include "modifyconstraintteachersmaxhoursdailyform.h"
 #include "modifyconstraintteachermaxhoursdailyform.h"
+#include "modifyconstraintteachersminhoursdailyform.h"
+#include "modifyconstraintteacherminhoursdailyform.h"
 
 #include "modifyconstraintstudentssetnotavailableform.h"
 #include "modifyconstraintstudentssetnogapsform.h"
@@ -183,6 +185,16 @@ void AllTimeConstraintsForm::modifyConstraint()
 	else if(ctr->type==CONSTRAINT_TEACHER_MAX_HOURS_DAILY){
 		ModifyConstraintTeacherMaxHoursDailyForm* form=
 		 new ModifyConstraintTeacherMaxHoursDailyForm((ConstraintTeacherMaxHoursDaily*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_HOURS_DAILY){
+		ModifyConstraintTeachersMinHoursDailyForm* form=
+		 new ModifyConstraintTeachersMinHoursDailyForm((ConstraintTeachersMinHoursDaily*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_TEACHER_MIN_HOURS_DAILY){
+		ModifyConstraintTeacherMinHoursDailyForm* form=
+		 new ModifyConstraintTeacherMinHoursDailyForm((ConstraintTeacherMinHoursDaily*)ctr);
 		form->exec();
 	}
 	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK){

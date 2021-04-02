@@ -141,18 +141,36 @@ void computeActivitiesNotOverlapping();
 
 
 ////////BEGIN teacher(s) max hours daily
-extern double teachersMaxHoursDailyPercentages[MAX_TEACHERS];
-extern int teachersMaxHoursDailyMaxHours[MAX_TEACHERS];
 extern int teachersGapsPerDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
-extern int teachersRealGapsPerDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
 extern int teachersNHoursPerDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
+
+extern double teachersMaxHoursDailyPercentages1[MAX_TEACHERS];
+extern int teachersMaxHoursDailyMaxHours1[MAX_TEACHERS];
+extern int teachersRealGapsPerDay1[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
+
+extern double teachersMaxHoursDailyPercentages2[MAX_TEACHERS];
+extern int teachersMaxHoursDailyMaxHours2[MAX_TEACHERS];
+extern int teachersRealGapsPerDay2[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
+
 bool computeTeachersMaxHoursDaily();
 ////////END   teacher(s) max hours daily
 
 
+////////BEGIN teacher(s) min hours daily
+extern double teachersMinHoursDailyPercentages[MAX_TEACHERS];
+extern int teachersMinHoursDailyMinHours[MAX_TEACHERS];
+
+bool computeTeachersMinHoursDaily();
+////////END   teacher(s) min hours daily
+
+
 ////////BEGIN students (set) max hours daily
-extern double subgroupsMaxHoursDailyPercentages[MAX_TOTAL_SUBGROUPS];
-extern int subgroupsMaxHoursDailyMaxHours[MAX_TOTAL_SUBGROUPS];
+extern double subgroupsMaxHoursDailyPercentages1[MAX_TOTAL_SUBGROUPS];
+extern int subgroupsMaxHoursDailyMaxHours1[MAX_TOTAL_SUBGROUPS];
+
+extern double subgroupsMaxHoursDailyPercentages2[MAX_TOTAL_SUBGROUPS];
+extern int subgroupsMaxHoursDailyMaxHours2[MAX_TOTAL_SUBGROUPS];
+
 bool computeSubgroupsMaxHoursDaily();
 ////////END   students (set) max hours daily
 
@@ -183,6 +201,7 @@ bool computeActivityEndsStudentsDayPercentages();
 
 
 bool checkMinNDays100Percent();
+bool checkMinNDaysConsecutiveIfSameDay();
 
 
 ////////BEGIN rooms

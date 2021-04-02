@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>533</width>
-            <height>510</height>
+            <height>505</height>
         </rect>
     </property>
     <property name="caption">
@@ -83,7 +83,9 @@
             </property>
             <property name="text">
                 <string>It is advisable to only add special constrained rooms,
-home rooms are not needed (teachers' or students' rooms)</string>
+home rooms are not needed (teachers' or students' rooms)
+Note: each room can hold a single activity at the same time
+(you can add more rooms representing a very large room)</string>
             </property>
         </widget>
     </grid>

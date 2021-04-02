@@ -104,15 +104,27 @@ QList<int> activitiesNotOverlappingActivities[MAX_ACTIVITIES];
 QList<double> activitiesNotOverlappingPercentages[MAX_ACTIVITIES];
 
 //teacher(s) max hours daily
-double teachersMaxHoursDailyPercentages[MAX_TEACHERS];
-int teachersMaxHoursDailyMaxHours[MAX_TEACHERS];
 int teachersGapsPerDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
-int teachersRealGapsPerDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
 int teachersNHoursPerDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
 
+double teachersMaxHoursDailyPercentages1[MAX_TEACHERS];
+int teachersMaxHoursDailyMaxHours1[MAX_TEACHERS];
+int teachersRealGapsPerDay1[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
+
+double teachersMaxHoursDailyPercentages2[MAX_TEACHERS];
+int teachersMaxHoursDailyMaxHours2[MAX_TEACHERS];
+int teachersRealGapsPerDay2[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
+
+//teacher(s) min hours daily
+double teachersMinHoursDailyPercentages[MAX_TEACHERS];
+int teachersMinHoursDailyMinHours[MAX_TEACHERS];
+
 //students (set) max hours daily
-double subgroupsMaxHoursDailyPercentages[MAX_TOTAL_SUBGROUPS];
-int subgroupsMaxHoursDailyMaxHours[MAX_TOTAL_SUBGROUPS];
+double subgroupsMaxHoursDailyPercentages1[MAX_TOTAL_SUBGROUPS];
+int subgroupsMaxHoursDailyMaxHours1[MAX_TOTAL_SUBGROUPS];
+
+double subgroupsMaxHoursDailyPercentages2[MAX_TOTAL_SUBGROUPS];
+int subgroupsMaxHoursDailyMaxHours2[MAX_TOTAL_SUBGROUPS];
 
 //students (set) min hours daily
 double subgroupsMinHoursDailyPercentages[MAX_TOTAL_SUBGROUPS];
@@ -188,11 +200,6 @@ bool processTimeConstraints()
 		return false;
 	//////////////////////////////////
 	
-	//students (set) n hours daily
-	/*t=computeStudentsNHoursDaily();
-	if(!t)
-		return false;*/
-		
 	computeActivitiesSameStartingTime();
 
 	computeActivitiesSameStartingHour();
@@ -201,6 +208,11 @@ bool processTimeConstraints()
 
 	//must be after allowed times, after n hours per teacher and after max days per week
 	t=computeTeachersMaxHoursDaily();
+	if(!t)
+		return false;
+
+	//must be after n hours per teacher
+	t=computeTeachersMinHoursDaily();
 	if(!t)
 		return false;
 	
@@ -221,6 +233,9 @@ bool processTimeConstraints()
 		
 	//check for impossible min n days
 	t=checkMinNDays100Percent();
+	if(!t)
+		return false;
+	t=checkMinNDaysConsecutiveIfSameDay();
 	if(!t)
 		return false;
 		
@@ -249,8 +264,11 @@ bool computeSubgroupsMaxHoursDaily()
 	bool ok=true;
 	
 	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
-		subgroupsMaxHoursDailyMaxHours[i]=-1;
-		subgroupsMaxHoursDailyPercentages[i]=-1;
+		subgroupsMaxHoursDailyMaxHours1[i]=-1;
+		subgroupsMaxHoursDailyPercentages1[i]=-1;
+
+		subgroupsMaxHoursDailyMaxHours2[i]=-1;
+		subgroupsMaxHoursDailyPercentages2[i]=-1;
 	}
 	
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
@@ -258,7 +276,7 @@ bool computeSubgroupsMaxHoursDaily()
 			ConstraintStudentsMaxHoursDaily* smd=(ConstraintStudentsMaxHoursDaily*)gt.rules.internalTimeConstraintsList[i];
 
 			//////////
-			if(smd->weightPercentage!=100){
+			/*if(smd->weightPercentage!=100){
 				ok=false;
 
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
@@ -270,36 +288,53 @@ bool computeSubgroupsMaxHoursDaily()
 			 	
 				if(t==0)
 					return false;
-			}
+			}*/
 			//////////
 
 			for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
-				if(subgroupsMaxHoursDailyMaxHours[sb]==-1 ||
-				 subgroupsMaxHoursDailyMaxHours[sb] >= smd->maxHoursDaily &&
-				 subgroupsMaxHoursDailyPercentages[sb] <= smd->weightPercentage){
-				 	subgroupsMaxHoursDailyMaxHours[sb] = smd->maxHoursDaily;
-					subgroupsMaxHoursDailyPercentages[sb] = smd->weightPercentage;
+				if(subgroupsMaxHoursDailyMaxHours1[sb]==-1 ||
+				 subgroupsMaxHoursDailyMaxHours1[sb] >= smd->maxHoursDaily &&
+				 subgroupsMaxHoursDailyPercentages1[sb] <= smd->weightPercentage){
+				 	subgroupsMaxHoursDailyMaxHours1[sb] = smd->maxHoursDaily;
+					subgroupsMaxHoursDailyPercentages1[sb] = smd->weightPercentage;
 					}
-				else if(subgroupsMaxHoursDailyMaxHours[sb] <= smd->maxHoursDaily &&
-				 subgroupsMaxHoursDailyPercentages[sb] >= smd->weightPercentage){
+				else if(subgroupsMaxHoursDailyMaxHours1[sb] <= smd->maxHoursDaily &&
+				 subgroupsMaxHoursDailyPercentages1[sb] >= smd->weightPercentage){
 				 	//nothing
 				}
-				else{ //cannot proceed
-					ok=false;
-	
-					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
-					 QObject::tr("Cannot optimize for subgroup %1, because there are two constraints"
-					 " of type max hours daily relating to him, and the weight percentage is higher on the constraint"
-					 " with more hours daily allowed. You are allowed only to have for each subgroup"
-					 " the most important constraint with maximum weight percentage and lowest maximum hours daily allowed"
-					 ". Please modify your data accordingly and try again"
-					 ". For more details, join the mailing list or email the author")
-					 .arg(gt.rules.internalSubgroupsList[sb]->name),
-					 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
-					 1, 0 );
+				else{
+					if(subgroupsMaxHoursDailyMaxHours2[sb]==-1 ||
+					 subgroupsMaxHoursDailyMaxHours2[sb] >= smd->maxHoursDaily &&
+					 subgroupsMaxHoursDailyPercentages2[sb] <= smd->weightPercentage){
+					 	subgroupsMaxHoursDailyMaxHours2[sb] = smd->maxHoursDaily;
+						subgroupsMaxHoursDailyPercentages2[sb] = smd->weightPercentage;
+						}
+					else if(subgroupsMaxHoursDailyMaxHours2[sb] <= smd->maxHoursDaily &&
+					 subgroupsMaxHoursDailyPercentages2[sb] >= smd->weightPercentage){
+					 	//nothing
+					}
+					else{				
+						 //cannot proceed
+						ok=false;
+		
+						int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+						 QObject::tr("Cannot optimize for subgroup %1, because there are too many constraints"
+						 " of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type."
+						 " Two constraints max hours can be compressed into a single one if the max hours are lower"
+						 " in the first one and the weight percentage is higher on the first one."
+						 " It is possible to use any number of such constraints for a subgroup, but their resultant must"
+						 " be maximum 2 constraints of type max hours daily.\n\n"
+						 " Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%,"
+						 " which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%\n\n"
+						 " Please modify your data accordingly and try again.\n\n"
+						 " For more details, join the mailing list or email the author")
+						 .arg(gt.rules.internalSubgroupsList[sb]->name),
+						 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+						 1, 0 );
 				 	
-					if(t==0)
-						return false;
+						if(t==0)
+							return false;
+					}
 				}
 			}
 		}
@@ -307,7 +342,7 @@ bool computeSubgroupsMaxHoursDaily()
 			ConstraintStudentsSetMaxHoursDaily* smd=(ConstraintStudentsSetMaxHoursDaily*)gt.rules.internalTimeConstraintsList[i];
 
 			//////////
-			if(smd->weightPercentage!=100){
+			/*if(smd->weightPercentage!=100){
 				ok=false;
 
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
@@ -320,52 +355,69 @@ bool computeSubgroupsMaxHoursDaily()
 			 	
 				if(t==0)
 					return false;
-			}
+			}*/
 			//////////
 
 			for(int q=0; q<smd->nSubgroups; q++){
 				int sb=smd->subgroups[q];
 			//for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
-				if(subgroupsMaxHoursDailyMaxHours[sb]==-1 ||
-				 subgroupsMaxHoursDailyMaxHours[sb] >= smd->maxHoursDaily &&
-				 subgroupsMaxHoursDailyPercentages[sb] <= smd->weightPercentage){
-				 	subgroupsMaxHoursDailyMaxHours[sb] = smd->maxHoursDaily;
-					subgroupsMaxHoursDailyPercentages[sb] = smd->weightPercentage;
+				if(subgroupsMaxHoursDailyMaxHours1[sb]==-1 ||
+				 subgroupsMaxHoursDailyMaxHours1[sb] >= smd->maxHoursDaily &&
+				 subgroupsMaxHoursDailyPercentages1[sb] <= smd->weightPercentage){
+				 	subgroupsMaxHoursDailyMaxHours1[sb] = smd->maxHoursDaily;
+					subgroupsMaxHoursDailyPercentages1[sb] = smd->weightPercentage;
 					}
-				else if(subgroupsMaxHoursDailyMaxHours[sb] <= smd->maxHoursDaily &&
-				 subgroupsMaxHoursDailyPercentages[sb] >= smd->weightPercentage){
+				else if(subgroupsMaxHoursDailyMaxHours1[sb] <= smd->maxHoursDaily &&
+				 subgroupsMaxHoursDailyPercentages1[sb] >= smd->weightPercentage){
 				 	//nothing
 				}
-				else{ //cannot proceed
-					ok=false;
+				else{
+					if(subgroupsMaxHoursDailyMaxHours2[sb]==-1 ||
+					 subgroupsMaxHoursDailyMaxHours2[sb] >= smd->maxHoursDaily &&
+					 subgroupsMaxHoursDailyPercentages2[sb] <= smd->weightPercentage){
+					 	subgroupsMaxHoursDailyMaxHours2[sb] = smd->maxHoursDaily;
+						subgroupsMaxHoursDailyPercentages2[sb] = smd->weightPercentage;
+						}
+					else if(subgroupsMaxHoursDailyMaxHours2[sb] <= smd->maxHoursDaily &&
+					 subgroupsMaxHoursDailyPercentages2[sb] >= smd->weightPercentage){
+					 	//nothing
+					}
+					else{
+						//cannot proceed
+						ok=false;
 	
-					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
-					 QObject::tr("Cannot optimize for subgroup %1, because there are two constraints"
-					 " of type max hours daily relating to him, and the weight percentage is higher on the constraint"
-					 " with more hours daily allowed. You are allowed only to have for each subgroup"
-					 " the most important constraint with maximum weight percentage and lowest maximum hours daily allowed"
-					 ". Please modify your data accordingly and try again"
-					 ". For more details, join the mailing list or email the author")
-					 .arg(gt.rules.internalSubgroupsList[sb]->name),
-					 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
-					 1, 0 );
-				 	
-					if(t==0)
-						return false;
+						int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+						 QObject::tr("Cannot optimize for subgroup %1, because there are too many constraints"
+						 " of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type."
+						 " Two constraints max hours can be compressed into a single one if the max hours are lower"
+						 " in the first one and the weight percentage is higher on the first one."
+						 " It is possible to use any number of such constraints for a subgroup, but their resultant must"
+						 " be maximum 2 constraints of type max hours daily.\n\n"
+						 " Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%,"
+						 " which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%\n\n"
+						 " Please modify your data accordingly and try again."
+						 " For more details, join the mailing list or email the author")
+						 .arg(gt.rules.internalSubgroupsList[sb]->name),
+						 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+						 1, 0 );
+
+						if(t==0)
+							return false;
+					}
 				}
 			}
 		}
 	}
 	
 	for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
-		if(subgroupsMaxHoursDailyPercentages[sb]==100){
+		if(subgroupsMaxHoursDailyPercentages1[sb]==100){
 			int nAllowedSlotsPerDay[MAX_DAYS_PER_WEEK];
 			for(int d=0; d<gt.rules.nDaysPerWeek; d++){
 				nAllowedSlotsPerDay[d]=0;
 				for(int h=0; h<gt.rules.nHoursPerDay; h++)
 					if(!breakDayHour[d][h] && !subgroupNotAvailableDayHour[sb][d][h])
 						nAllowedSlotsPerDay[d]++;
-				nAllowedSlotsPerDay[d]=min(nAllowedSlotsPerDay[d],subgroupsMaxHoursDailyMaxHours[sb]);
+				nAllowedSlotsPerDay[d]=min(nAllowedSlotsPerDay[d],subgroupsMaxHoursDailyMaxHours1[sb]);
 			}
 			int total=0;
 			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
@@ -379,7 +431,46 @@ bool computeSubgroupsMaxHoursDaily()
 				 " number of hours per day, students set not available and/or breaks. The number of total hours for this subgroup is"
 				 " %3 and the number of available slots is, considering max hours daily and all other constraints, %4.")
 				 .arg(gt.rules.internalSubgroupsList[sb]->name)
-				 .arg(subgroupsMaxHoursDailyMaxHours[sb])
+				 .arg(subgroupsMaxHoursDailyMaxHours1[sb])
+				 .arg(nHoursPerSubgroup[sb])
+				 .arg(total);
+				s+="\n\n";
+				s+=QObject::tr("Please modify your data accordingly and try again"
+				 ". For more details, join the mailing list or email the author");
+	
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s,
+				 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+		}
+	}
+
+	for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
+		if(subgroupsMaxHoursDailyPercentages2[sb]==100){
+			int nAllowedSlotsPerDay[MAX_DAYS_PER_WEEK];
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+				nAllowedSlotsPerDay[d]=0;
+				for(int h=0; h<gt.rules.nHoursPerDay; h++)
+					if(!breakDayHour[d][h] && !subgroupNotAvailableDayHour[sb][d][h])
+						nAllowedSlotsPerDay[d]++;
+				nAllowedSlotsPerDay[d]=min(nAllowedSlotsPerDay[d],subgroupsMaxHoursDailyMaxHours2[sb]);
+			}
+			int total=0;
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+				total+=nAllowedSlotsPerDay[d];
+			if(total<nHoursPerSubgroup[sb]){
+				ok=false;
+				
+				QString s;
+				s=QObject::tr("Cannot optimize for subgroup %1, because there is a constraint of type"
+				 " max %2 hours daily with 100% weight which cannot be respected because of number of days per week,"
+				 " number of hours per day, students set not available and/or breaks. The number of total hours for this subgroup is"
+				 " %3 and the number of available slots is, considering max hours daily and all other constraints, %4.")
+				 .arg(gt.rules.internalSubgroupsList[sb]->name)
+				 .arg(subgroupsMaxHoursDailyMaxHours2[sb])
 				 .arg(nHoursPerSubgroup[sb])
 				 .arg(total);
 				s+="\n\n";
@@ -577,8 +668,11 @@ bool computeTeachersMaxHoursDaily()
 	bool ok=true;
 	
 	for(int i=0; i<gt.rules.nInternalTeachers; i++){
-		teachersMaxHoursDailyMaxHours[i]=-1;
-		teachersMaxHoursDailyPercentages[i]=-1;
+		teachersMaxHoursDailyMaxHours1[i]=-1;
+		teachersMaxHoursDailyPercentages1[i]=-1;
+
+		teachersMaxHoursDailyMaxHours2[i]=-1;
+		teachersMaxHoursDailyPercentages2[i]=-1;
 	}
 	
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
@@ -586,7 +680,7 @@ bool computeTeachersMaxHoursDaily()
 			ConstraintTeacherMaxHoursDaily* tmd=(ConstraintTeacherMaxHoursDaily*)gt.rules.internalTimeConstraintsList[i];
 
 			//////////
-			if(tmd->weightPercentage!=100){
+			/*if(tmd->weightPercentage!=100){
 				ok=false;
 
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
@@ -599,42 +693,58 @@ bool computeTeachersMaxHoursDaily()
 			 	
 				if(t==0)
 					return false;
-			}
+			}*/
 			//////////
 
-			if(teachersMaxHoursDailyMaxHours[tmd->teacher_ID]==-1 ||
-			 teachersMaxHoursDailyMaxHours[tmd->teacher_ID] >= tmd->maxHoursDaily &&
-			 teachersMaxHoursDailyPercentages[tmd->teacher_ID] <= tmd->weightPercentage){
-			 	teachersMaxHoursDailyMaxHours[tmd->teacher_ID] = tmd->maxHoursDaily;
-				teachersMaxHoursDailyPercentages[tmd->teacher_ID] = tmd->weightPercentage;
+			if(teachersMaxHoursDailyMaxHours1[tmd->teacher_ID]==-1 ||
+			 teachersMaxHoursDailyMaxHours1[tmd->teacher_ID] >= tmd->maxHoursDaily &&
+			 teachersMaxHoursDailyPercentages1[tmd->teacher_ID] <= tmd->weightPercentage){
+			 	teachersMaxHoursDailyMaxHours1[tmd->teacher_ID] = tmd->maxHoursDaily;
+				teachersMaxHoursDailyPercentages1[tmd->teacher_ID] = tmd->weightPercentage;
 			}
-			else if(teachersMaxHoursDailyMaxHours[tmd->teacher_ID] <= tmd->maxHoursDaily &&
-			 teachersMaxHoursDailyPercentages[tmd->teacher_ID] >= tmd->weightPercentage){
+			else if(teachersMaxHoursDailyMaxHours1[tmd->teacher_ID] <= tmd->maxHoursDaily &&
+			 teachersMaxHoursDailyPercentages1[tmd->teacher_ID] >= tmd->weightPercentage){
 			 	//nothing
 			}
-			else{ //cannot proceed
-				ok=false;
+			else{
+				if(teachersMaxHoursDailyMaxHours2[tmd->teacher_ID]==-1 ||
+				 teachersMaxHoursDailyMaxHours2[tmd->teacher_ID] >= tmd->maxHoursDaily &&
+				 teachersMaxHoursDailyPercentages2[tmd->teacher_ID] <= tmd->weightPercentage){
+				 	teachersMaxHoursDailyMaxHours2[tmd->teacher_ID] = tmd->maxHoursDaily;
+					teachersMaxHoursDailyPercentages2[tmd->teacher_ID] = tmd->weightPercentage;
+				}
+				else if(teachersMaxHoursDailyMaxHours2[tmd->teacher_ID] <= tmd->maxHoursDaily &&
+				 teachersMaxHoursDailyPercentages2[tmd->teacher_ID] >= tmd->weightPercentage){
+				 	//nothing
+				}
+				else{ //cannot proceed
+					ok=false;
 
-				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
-				 QObject::tr("Cannot optimize for teacher %1, because there are two constraints"
-				 " of type max hours daily relating to him, and the weight percentage is higher on the constraint"
-				 " with more hours daily allowed. You are allowed only to have for each teacher"
-				 " the most important constraint with maximum weight percentage and minimum hours daily allowed allowed"
-				 ". Please modify your data accordingly and try again"
-				 ". For more details, join the mailing list or email the author")
-				 .arg(gt.rules.internalTeachersList[tmd->teacher_ID]->name),
-				 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
-				 1, 0 );
-			 	
-				if(t==0)
-					return false;
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("Cannot optimize for teacher %1, because there are too many constraints"
+					 " of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type."
+					 " Two constraints max hours can be compressed into a single one if the max hours are lower"
+					 " in the first one and the weight percentage is higher on the first one."
+					 " It is possible to use any number of such constraints for a teacher, but their resultant must"
+					 " be maximum 2 constraints of type max hours daily.\n\n"
+					 " Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%,"
+					 " which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%\n\n"
+					 " Please modify your data accordingly and try again."
+					 " For more details, join the mailing list or email the author")
+					 .arg(gt.rules.internalTeachersList[tmd->teacher_ID]->name),
+					 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+					 1, 0 );
+				 	
+					if(t==0)
+						return false;
+				}
 			}
 		}
 		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_HOURS_DAILY){
 			ConstraintTeachersMaxHoursDaily* tmd=(ConstraintTeachersMaxHoursDaily*)gt.rules.internalTimeConstraintsList[i];
 
 			//////////
-			if(tmd->weightPercentage!=100){
+			/*if(tmd->weightPercentage!=100){
 				ok=false;
 
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
@@ -646,50 +756,66 @@ bool computeTeachersMaxHoursDaily()
 			 	
 				if(t==0)
 					return false;
-			}
+			}*/
 			//////////
 
 			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
-				if(teachersMaxHoursDailyMaxHours[tch]==-1 ||
-				 teachersMaxHoursDailyMaxHours[tch] >= tmd->maxHoursDaily &&
-				 teachersMaxHoursDailyPercentages[tch] <= tmd->weightPercentage){
-				 	teachersMaxHoursDailyMaxHours[tch] = tmd->maxHoursDaily;
-					teachersMaxHoursDailyPercentages[tch] = tmd->weightPercentage;
+				if(teachersMaxHoursDailyMaxHours1[tch]==-1 ||
+				 teachersMaxHoursDailyMaxHours1[tch] >= tmd->maxHoursDaily &&
+				 teachersMaxHoursDailyPercentages1[tch] <= tmd->weightPercentage){
+				 	teachersMaxHoursDailyMaxHours1[tch] = tmd->maxHoursDaily;
+					teachersMaxHoursDailyPercentages1[tch] = tmd->weightPercentage;
 					}
-				else if(teachersMaxHoursDailyMaxHours[tch] <= tmd->maxHoursDaily &&
-				 teachersMaxHoursDailyPercentages[tch] >= tmd->weightPercentage){
+				else if(teachersMaxHoursDailyMaxHours1[tch] <= tmd->maxHoursDaily &&
+				 teachersMaxHoursDailyPercentages1[tch] >= tmd->weightPercentage){
 				 	//nothing
 				}
-				else{ //cannot proceed
-					ok=false;
-	
-					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
-					 QObject::tr("Cannot optimize for teacher %1, because there are two constraints"
-					 " of type max hours daily relating to him, and the weight percentage is higher on the constraint"
-					 " with more hours daily allowed. You are allowed only to have for each teacher"
-					 " the most important constraint with maximum weight percentage and minimum hours daily allowed allowed"
-					 ". Please modify your data accordingly and try again"
-					 ". For more details, join the mailing list or email the author")
-					 .arg(gt.rules.internalTeachersList[tch]->name),
-					 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
-					 1, 0 );
-				 	
-					if(t==0)
-						return false;
+				else{
+					if(teachersMaxHoursDailyMaxHours2[tch]==-1 ||
+					 teachersMaxHoursDailyMaxHours2[tch] >= tmd->maxHoursDaily &&
+					 teachersMaxHoursDailyPercentages2[tch] <= tmd->weightPercentage){
+					 	teachersMaxHoursDailyMaxHours2[tch] = tmd->maxHoursDaily;
+						teachersMaxHoursDailyPercentages2[tch] = tmd->weightPercentage;
+						}
+					else if(teachersMaxHoursDailyMaxHours2[tch] <= tmd->maxHoursDaily &&
+					 teachersMaxHoursDailyPercentages2[tch] >= tmd->weightPercentage){
+				 	//nothing
+					}
+					else{ //cannot proceed
+						ok=false;
+
+						int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+						 QObject::tr("Cannot optimize for teacher %1, because there are too many constraints"
+						 " of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type."
+						 " Two constraints max hours can be compressed into a single one if the max hours are lower"
+						 " in the first one and the weight percentage is higher on the first one."
+						 " It is possible to use any number of such constraints for a teacher, but their resultant must"
+						 " be maximum 2 constraints of type max hours daily.\n\n"
+						 " Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%,"
+						 " which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%\n\n"
+						 " Please modify your data accordingly and try again."
+						 " For more details, join the mailing list or email the author")
+						 .arg(gt.rules.internalTeachersList[tch]->name),
+						 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+						 1, 0 );
+
+						if(t==0)
+							return false;
+					}
 				}
 			}
 		}
 	}
 	
 	for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
-		if(teachersMaxHoursDailyPercentages[tc]==100){
+		if(teachersMaxHoursDailyPercentages1[tc]==100){
 			int nAllowedSlotsPerDay[MAX_DAYS_PER_WEEK];
 			for(int d=0; d<gt.rules.nDaysPerWeek; d++){
 				nAllowedSlotsPerDay[d]=0;
 				for(int h=0; h<gt.rules.nHoursPerDay; h++)
 					if(!breakDayHour[d][h] && !teacherNotAvailableDayHour[tc][d][h])
 						nAllowedSlotsPerDay[d]++;
-				nAllowedSlotsPerDay[d]=min(nAllowedSlotsPerDay[d],teachersMaxHoursDailyMaxHours[tc]);
+				nAllowedSlotsPerDay[d]=min(nAllowedSlotsPerDay[d],teachersMaxHoursDailyMaxHours1[tc]);
 			}
 			
 			int dayAvailable[MAX_DAYS_PER_WEEK];
@@ -728,7 +854,7 @@ bool computeTeachersMaxHoursDaily()
 				 " The number of total hours for this teacher is"
 				 " %3 and the number of available slots is, considering max hours daily and all other constraints, %4.")
 				 .arg(gt.rules.internalTeachersList[tc]->name)
-				 .arg(teachersMaxHoursDailyMaxHours[tc])
+				 .arg(teachersMaxHoursDailyMaxHours1[tc])
 				 .arg(nHoursPerTeacher[tc])
 				 .arg(total);
 				s+="\n\n";
@@ -739,6 +865,175 @@ bool computeTeachersMaxHoursDaily()
 				 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
 				 1, 0 );
 				 	
+				if(t==0)
+					return false;
+			}
+		}
+	}
+
+	for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
+		if(teachersMaxHoursDailyPercentages2[tc]==100){
+			int nAllowedSlotsPerDay[MAX_DAYS_PER_WEEK];
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+				nAllowedSlotsPerDay[d]=0;
+				for(int h=0; h<gt.rules.nHoursPerDay; h++)
+					if(!breakDayHour[d][h] && !teacherNotAvailableDayHour[tc][d][h])
+						nAllowedSlotsPerDay[d]++;
+				nAllowedSlotsPerDay[d]=min(nAllowedSlotsPerDay[d],teachersMaxHoursDailyMaxHours2[tc]);
+			}
+			
+			int dayAvailable[MAX_DAYS_PER_WEEK];
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+				dayAvailable[d]=1;
+			if(teachersMaxDaysPerWeekMaxDays[tc]>=0){
+				//n days per week has 100% weight
+				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+					dayAvailable[d]=0;
+				assert(teachersMaxDaysPerWeekMaxDays[tc]<=gt.rules.nDaysPerWeek);
+				for(int k=0; k<teachersMaxDaysPerWeekMaxDays[tc]; k++){
+					int maxPos=-1, maxVal=-1;
+					for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+						if(dayAvailable[d]==0)
+							if(maxVal<nAllowedSlotsPerDay[d]){
+								maxVal=nAllowedSlotsPerDay[d];
+								maxPos=d;
+							}
+					assert(maxPos>=0);
+					assert(dayAvailable[maxPos]==0);
+					dayAvailable[maxPos]=1;
+				}
+			}
+			
+			int total=0;
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+				if(dayAvailable[d]==1)
+					total+=nAllowedSlotsPerDay[d];
+			if(total<nHoursPerTeacher[tc]){
+				ok=false;
+				
+				QString s;
+				s=QObject::tr("Cannot optimize for teacher %1, because there is a constraint of type"
+				 " max %2 hours daily with 100% weight which cannot be respected because of number of days per week,"
+				 " number of hours per day, teacher max days per week, teacher not available and/or breaks."
+				 " The number of total hours for this teacher is"
+				 " %3 and the number of available slots is, considering max hours daily and all other constraints, %4.")
+				 .arg(gt.rules.internalTeachersList[tc]->name)
+				 .arg(teachersMaxHoursDailyMaxHours2[tc])
+				 .arg(nHoursPerTeacher[tc])
+				 .arg(total);
+				s+="\n\n";
+				s+=QObject::tr("Please modify your data accordingly and try again"
+				 ". For more details, join the mailing list or email the author");
+	
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s,
+				 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+		}
+	}
+
+	return ok;
+}
+
+//must be after n hours per teacher
+bool computeTeachersMinHoursDaily()
+{
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalTeachers; i++){
+		teachersMinHoursDailyMinHours[i]=-1;
+		teachersMinHoursDailyPercentages[i]=-1;
+	}
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MIN_HOURS_DAILY){
+			ConstraintTeacherMinHoursDaily* tmd=(ConstraintTeacherMinHoursDaily*)gt.rules.internalTimeConstraintsList[i];
+
+			//////////
+			if(tmd->weightPercentage!=100){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with"
+				 " weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible"
+				 " to use 100% weight for such constraints. Please make weight 100% and try again")
+				 .arg(tmd->teacherName),
+				 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			//////////
+
+			if(teachersMinHoursDailyMinHours[tmd->teacher_ID]==-1 || teachersMinHoursDailyMinHours[tmd->teacher_ID]<tmd->minHoursDaily){
+				teachersMinHoursDailyMinHours[tmd->teacher_ID]=tmd->minHoursDaily;
+				teachersMinHoursDailyPercentages[tmd->teacher_ID]=100;
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MIN_HOURS_DAILY){
+			ConstraintTeachersMinHoursDaily* tmd=(ConstraintTeachersMinHoursDaily*)gt.rules.internalTimeConstraintsList[i];
+
+			//////////
+			if(tmd->weightPercentage!=100){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize, because you have constraint teachers min hours daily with"
+				 " weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible"
+				 " to use 100% weight for such constraints. Please make weight 100% and try again"),
+				 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			//////////
+
+			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
+				if(teachersMinHoursDailyMinHours[tch]==-1 || teachersMinHoursDailyMinHours[tch]<tmd->minHoursDaily)
+					teachersMinHoursDailyMinHours[tch]=tmd->minHoursDaily;
+					teachersMinHoursDailyPercentages[tch]=100;
+			}
+		}
+	}
+	
+	for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
+		if(teachersMinHoursDailyPercentages[tc]==100){
+			assert(teachersMinHoursDailyMinHours[tc]>=0);
+			if(teachersMinHoursDailyMinHours[tc]>nHoursPerTeacher[tc]){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize, because you have constraint teacher min %1 hours daily for teacher"
+				 " %2. This teacher has in total only %3 hours per week, so impossible constraint."
+				 " Please correct and try again")
+				 .arg(teachersMinHoursDailyMinHours[tc])
+				 .arg(gt.rules.internalTeachersList[tc]->name)
+				 .arg(nHoursPerTeacher[tc])
+				 ,
+				 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+
+			if(teachersMinHoursDailyMinHours[tc]<2){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize, because you have constraint teacher min %1 hours daily for teacher"
+				 " %2. The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again")
+				 .arg(teachersMinHoursDailyMinHours[tc])
+				 .arg(gt.rules.internalTeachersList[tc]->name)
+				 ,
+				 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
+				 1, 0 );
+			 	
 				if(t==0)
 					return false;
 			}
@@ -1872,8 +2167,10 @@ bool checkMinNDays100Percent()
 				daysTeacherIsAvailable[tc]++;
 		}
 			
-		if(teachersMaxDaysPerWeekMaxDays[tc]>=0)
+		if(teachersMaxDaysPerWeekMaxDays[tc]>=0){ //it has compulsory 100% weight
+			assert(teachersMaxDaysPerWeekWeightPercentages[tc]==100);
 			daysTeacherIsAvailable[tc]=min(daysTeacherIsAvailable[tc], teachersMaxDaysPerWeekMaxDays[tc]);
+		}
 	}
 
 	int daysSubgroupIsAvailable[MAX_TOTAL_SUBGROUPS];
@@ -1963,6 +2260,133 @@ bool checkMinNDays100Percent()
 						if(t==0)
 							return ok;
 					}
+			}
+		}
+	}
+	
+	return ok;
+}
+	
+bool checkMinNDaysConsecutiveIfSameDay()
+{
+	bool ok=true;
+	
+	int daysTeacherIsAvailable[MAX_TEACHERS];
+
+	for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
+		daysTeacherIsAvailable[tc]=0;
+
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+			bool dayAvailable=false;
+			for(int h=0; h<gt.rules.nHoursPerDay; h++)
+				if(!breakDayHour[d][h] && !teacherNotAvailableDayHour[tc][d][h]){
+					dayAvailable=true;
+					break;
+				}
+				
+			if(dayAvailable)
+				daysTeacherIsAvailable[tc]++;
+		}
+			
+		if(teachersMaxDaysPerWeekMaxDays[tc]>=0){ //it has compulsory 100% weight
+			assert(teachersMaxDaysPerWeekWeightPercentages[tc]==100);
+			daysTeacherIsAvailable[tc]=min(daysTeacherIsAvailable[tc], teachersMaxDaysPerWeekMaxDays[tc]);
+		}
+	}
+
+	int daysSubgroupIsAvailable[MAX_TOTAL_SUBGROUPS];
+
+	for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
+		daysSubgroupIsAvailable[sb]=0;
+
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+			bool dayAvailable=false;
+			for(int h=0; h<gt.rules.nHoursPerDay; h++)
+				if(!breakDayHour[d][h] && !subgroupNotAvailableDayHour[sb][d][h]){
+					dayAvailable=true;
+					break;
+				}
+				
+			if(dayAvailable)
+				daysSubgroupIsAvailable[sb]++;
+		}
+	}
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES){
+			ConstraintMinNDaysBetweenActivities* md=(ConstraintMinNDaysBetweenActivities*)gt.rules.internalTimeConstraintsList[i];
+			if(md->consecutiveIfSameDay){
+				int nReqForTeacher[MAX_TEACHERS];				
+				for(int tc=0; tc<gt.rules.nInternalTeachers; tc++)
+					nReqForTeacher[tc]=0;
+				for(int j=0; j<md->_n_activities; j++){
+					int ai=md->_activities[j];
+					for(int k=0; k<gt.rules.internalActivitiesList[ai].nTeachers; k++){
+						int tc=gt.rules.internalActivitiesList[ai].teachers[k];
+						nReqForTeacher[tc]++;
+					}
+				}			
+			
+				for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
+					if(2*daysTeacherIsAvailable[tc] < nReqForTeacher[tc]){
+						ok=false;
+						
+						QString s=QObject::tr("Constraint %1 cannot be respected because teacher %2 has at most"
+						 " %3 free days. You specified for this constraint consecutive if same day=true."
+						 " Currently FET cannot put more than 2 subactivities in the same day"
+						 " is consecutive if same day is true. You have 2*free days<number of subactivities in this constraint."
+						 " This is a very unlikely situation, that is why I didn't care too much about it."
+						 " If you encounter it, please please modify your file (uncheck consecutive if same day"
+						 " or add other activities with larger duration) or contact author/mailing list."
+						)
+						 .arg(md->getDetailedDescription(gt.rules))
+						 .arg(gt.rules.internalTeachersList[tc]->name)
+						 .arg(daysTeacherIsAvailable[tc]);
+	
+						int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s, 
+						 QObject::tr("Skip rest of min n days problems"), QObject::tr("See next incorrect constraint"), QString(),
+						 1, 0 );
+						
+						if(t==0)
+							return ok;
+					}	
+				}
+
+				int nReqForSubgroup[MAX_TOTAL_SUBGROUPS];				
+				for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++)
+					nReqForSubgroup[sb]=0;
+				for(int j=0; j<md->_n_activities; j++){
+					int ai=md->_activities[j];
+					for(int k=0; k<gt.rules.internalActivitiesList[ai].nSubgroups; k++){
+						int sb=gt.rules.internalActivitiesList[ai].subgroups[k];
+						nReqForSubgroup[sb]++;
+					}
+				}			
+			
+				for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
+					if(2*daysSubgroupIsAvailable[sb] < nReqForSubgroup[sb]){
+						ok=false;
+						
+						QString s=QObject::tr("Constraint %1 cannot be respected because subgroup %2 has at most"
+						 " %3 free days. You specified for this constraint consecutive if same day=true."
+						 " Currently FET cannot put more than 2 subactivities in the same day"
+						 " is consecutive if same day is true. You have 2*free days<number of subactivities in this constraint."
+						 " This is a very unlikely situation, that is why I didn't care too much about it."
+						 " If you encounter it, please modify your file (uncheck consecutive if same day"
+						 " or add other activities with larger duration) or contact author/mailing list."
+						)
+						 .arg(md->getDetailedDescription(gt.rules))
+						 .arg(gt.rules.internalSubgroupsList[sb]->name)
+						 .arg(daysSubgroupIsAvailable[sb]);
+
+						int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s, 
+						 QObject::tr("Skip rest of min n days problems"), QObject::tr("See next incorrect constraint"), QString(),
+						 1, 0 );
+					
+						if(t==0)
+							return ok;
+					}
+				}
 			}
 		}
 	}

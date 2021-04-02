@@ -135,9 +135,11 @@
      <addaction name="dataTimeConstraintsTeacherMaxDaysPerWeekAction" />
      <addaction name="dataTimeConstraintsTeacherMaxGapsPerWeekAction" />
      <addaction name="dataTimeConstraintsTeacherMaxHoursDailyAction" />
+     <addaction name="dataTimeConstraintsTeacherMinHoursDailyAction" />
      <addaction name="dataTimeConstraintsTeacherNotAvailableAction" />
      <addaction name="dataTimeConstraintsTeachersMaxGapsPerWeekAction" />
      <addaction name="dataTimeConstraintsTeachersMaxHoursDailyAction" />
+     <addaction name="dataTimeConstraintsTeachersMinHoursDailyAction" />
     </widget>
     <addaction name="dataInstitutionNameAction" />
     <addaction name="dataCommentsAction" />
@@ -879,6 +881,16 @@
   <action name="settingsTimetableHtmlLevelAction" >
    <property name="text" >
     <string>Timetable html level</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeachersMinHoursDailyAction" >
+   <property name="text" >
+    <string>Teachers min hours daily</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeacherMinHoursDailyAction" >
+   <property name="text" >
+    <string>Teacher min hours daily</string>
    </property>
   </action>
  </widget>

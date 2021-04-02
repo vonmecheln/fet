@@ -1027,7 +1027,7 @@ Versions 5.2.0 - 5.2.19
 - Version 5.2.19
 	- Added information to avoid min hours daily situation when students have a day off, help by Volker Dirr
 ---------------------------------------------------------------------------------
-Versions 5.3.0 - 5.3.
+Versions 5.3.0 - 5.3.6
 - Version 5.3.0
 	- Improved constraint students (set) max hours daily (important speed bug fix)
 	- Constraint students (set) or teacher max hours daily has now compulsory 100% weight
@@ -1053,4 +1053,13 @@ Versions 5.3.0 - 5.3.
 	fields when moving mouse over text)
 	- Added additional tests to check for impossible constraint min n days between activities
 	- Added possibility to change all min n days constraints' weight by a single command
+---------------------------------------------------------------------------------
+- Version 5.4.0
+	- Improvement in Spanish translation by Jose Cesar Fernandez Lopez
+	- Now the max hours daily for teachers and students has any weight percentage allowed, again
+	(suggested by Dimitrios Ropokis), allowing also combinations (not really any combination, but nobody needs
+	more than what is possible in FET, I think)
+	- Additional checking the min n days for impossible situations
+	- Constraint teacher(s) min hours daily, suggested by Daniel Chiriac
+	- Crash bug fix when using teachers max gaps for only some of the teachers (reported by Volker Dirr)
 	

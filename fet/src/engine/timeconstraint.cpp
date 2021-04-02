@@ -2047,13 +2047,16 @@ double ConstraintTeachersMaxHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 
 					if(conflictsString!=NULL){
 						QString s=(QObject::tr(
-						 "Time constraint teacher max %1 hours daily broken for teacher %2, on day %3.")
+						 "Time constraint teachers max %1 hours daily broken for teacher %2, on day %3, length=%4.")
 						 .arg(QString::number(this->maxHoursDaily))
 						 .arg(r.internalTeachersList[i]->name)
 						 .arg(r.daysOfTheWeek[d])
+						 .arg(n_hours_daily)
 						 )
 						 +
-						 (QObject::tr(". This increases the conflicts total by %1").arg(QString::number(weightPercentage/100)));
+						 " "
+						 +
+						 (QObject::tr("This increases the conflicts total by %1").arg(QString::number(weightPercentage/100)));
 						
 						dl.append(s);
 						cl.append(weightPercentage/100);
@@ -2228,13 +2231,15 @@ double ConstraintTeacherMaxHoursDaily::fitness(Solution& c, Rules& r, QList<doub
 
 				if(conflictsString!=NULL){
 					QString s=(QObject::tr(
-					 "Time constraint teacher max %1 hours daily broken for teacher %2, on day %3.")
+					 "Time constraint teacher max %1 hours daily broken for teacher %2, on day %3, length=%4.")
 					 .arg(QString::number(this->maxHoursDaily))
 					 .arg(r.internalTeachersList[i]->name)
 					 .arg(r.daysOfTheWeek[d])
+					 .arg(n_hours_daily)
 					 )
+					 +" "
 					 +
-					 (QObject::tr(". This increases the conflicts total by %1").arg(QString::number(weightPercentage/100)));
+					 (QObject::tr("This increases the conflicts total by %1").arg(QString::number(weightPercentage/100)));
 						
 					dl.append(s);
 					cl.append(weightPercentage/100);
@@ -3504,6 +3509,12 @@ QString ConstraintStudentsEarly::getDetailedDescription(Rules& r)
 	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 	s+=QObject::tr("Please note that for each subgroup, you must have: 1. only no gaps or 2. no gaps and early, with the same weight percentage");
 	s+="\n";
+
+	s+=QObject::tr("WARNING: Strong constraint. If you get impossible timetables, you might need to remove it and add other constraints, like students set not available.");
+	s+=" ";
+	s+=QObject::tr("For instance, if students X are available all the time, they MUST begin their activities at first hour, not a bit later. This might be sometimes too strong");
+	s+="\n";
+
 	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
 
 	return s;
@@ -3710,9 +3721,14 @@ QString ConstraintStudentsSetEarly::getDetailedDescription(Rules& r)
 	s+=QObject::tr("Students set=%1").arg(this->students); s+="\n";
 	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 	s+=QObject::tr("Please note that for each subgroup, you must have: 1. only no gaps or 2. no gaps and early, with the same weight percentage");
-	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
 	s+="\n";
 
+	s+=QObject::tr("WARNING: Strong constraint. If you get impossible timetables, you might need to remove it and add other constraints, like students set not available.");
+	s+=" ";
+	s+=QObject::tr("For instance, if students X are available all the time, they MUST begin their activities at first hour, not a bit later. This might be sometimes too strong");
+	s+="\n";
+
+	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
 	return s;
 }
 
@@ -6512,6 +6528,361 @@ bool ConstraintActivityEndsStudentsDay::isRelatedToStudentsSet(Rules& r, Student
 	if(&r)
 		;
 		
+	return false;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeachersMinHoursDaily::ConstraintTeachersMinHoursDaily()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_TEACHERS_MIN_HOURS_DAILY;
+}
+
+ConstraintTeachersMinHoursDaily::ConstraintTeachersMinHoursDaily(double wp, int minhours)
+ : TimeConstraint(wp)
+ {
+	assert(minhours>0);
+	this->minHoursDaily=minhours;
+
+	this->type=CONSTRAINT_TEACHERS_MIN_HOURS_DAILY;
+}
+
+bool ConstraintTeachersMinHoursDaily::computeInternalStructure(Rules& r)
+{
+	if(&r!=NULL)
+		;
+	return true;
+}
+
+QString ConstraintTeachersMinHoursDaily::getXmlDescription(Rules& r){
+	if(&r!=NULL)
+		;
+
+	QString s="<ConstraintTeachersMinHoursDaily>\n";
+	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Minimum_Hours_Daily>"+QString::number(this->minHoursDaily)+"</Minimum_Hours_Daily>\n";
+	s+="</ConstraintTeachersMinHoursDaily>\n";
+	return s;
+}
+
+QString ConstraintTeachersMinHoursDaily::getDescription(Rules& r){
+	if(&r!=NULL)
+		;
+
+	QString s;
+	s+=(QObject::tr("Teachers min %1 hours daily").arg(this->minHoursDaily));s+=", ";
+	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));
+
+	return s;
+}
+
+QString ConstraintTeachersMinHoursDaily::getDetailedDescription(Rules& r){
+	if(&r!=NULL)
+		;
+
+	QString s=QObject::tr("Time constraint");s+="\n";
+	s+=(QObject::tr("Teachers must not have less than %1 hours daily").arg(this->minHoursDaily));s+="\n";
+	s+=(QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage));s+="\n";
+	s+=QObject::tr("Note: FET is smart enough to use this constraint only on working days of the teachers");
+	s+="\n";
+
+	return s;
+}
+
+double ConstraintTeachersMinHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		//crt_chrom=&c;
+		//crt_rules=&r;
+		
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken;
+
+	//without logging
+	if(conflictsString==NULL){
+		nbroken=0;
+		for(int i=0; i<r.nInternalTeachers; i++){
+			for(int d=0; d<r.nDaysPerWeek; d++){
+				int n_hours_daily=0;
+				for(int h=0; h<r.nHoursPerDay; h++)
+					if(teachersMatrix[i][d][h]>0)
+						n_hours_daily++;
+
+				if(n_hours_daily>0 && n_hours_daily<this->minHoursDaily){
+					nbroken++;
+				}
+			}
+		}
+	}
+	//with logging
+	else{
+		nbroken=0;
+		for(int i=0; i<r.nInternalTeachers; i++){
+			for(int d=0; d<r.nDaysPerWeek; d++){
+				int n_hours_daily=0;
+				for(int h=0; h<r.nHoursPerDay; h++)
+					if(teachersMatrix[i][d][h]>0)
+						n_hours_daily++;
+
+				if(n_hours_daily>0 && n_hours_daily<this->minHoursDaily){
+					nbroken++;
+
+					if(conflictsString!=NULL){
+						QString s=(QObject::tr(
+						 "Time constraint teachers min %1 hours daily broken for teacher %2, on day %3, length=%4.")
+						 .arg(QString::number(this->minHoursDaily))
+						 .arg(r.internalTeachersList[i]->name)
+						 .arg(r.daysOfTheWeek[d])
+						 .arg(n_hours_daily)
+						 )
+						 +
+						 " "
+						 +
+						 (QObject::tr("This increases the conflicts total by %1").arg(QString::number(weightPercentage/100)));
+						
+						dl.append(s);
+						cl.append(weightPercentage/100);
+					
+						*conflictsString+= s+"\n";
+					}
+				}
+			}
+		}
+	}
+
+	//does not work for partial solutions
+	/*if(weightPercentage==100)	
+		assert(nbroken==0);*/
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintTeachersMinHoursDaily::isRelatedToActivity(Activity* a)
+{
+	if(a)
+		;
+
+	return false;
+}
+
+bool ConstraintTeachersMinHoursDaily::isRelatedToTeacher(Teacher* t)
+{
+	if(t)
+		;
+
+	return true;
+}
+
+bool ConstraintTeachersMinHoursDaily::isRelatedToSubject(Subject* s)
+{
+	if(s)
+		;
+
+	return false;
+}
+
+bool ConstraintTeachersMinHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
+{
+	if(s)
+		;
+
+	return false;
+}
+
+bool ConstraintTeachersMinHoursDaily::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	if(s)
+		;
+	if(&r)
+		;
+
+	return false;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeacherMinHoursDaily::ConstraintTeacherMinHoursDaily()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_TEACHER_MIN_HOURS_DAILY;
+}
+
+ConstraintTeacherMinHoursDaily::ConstraintTeacherMinHoursDaily(double wp, int minhours, const QString& teacher)
+ : TimeConstraint(wp)
+ {
+	assert(minhours>0);
+	this->minHoursDaily=minhours;
+	this->teacherName=teacher;
+
+	this->type=CONSTRAINT_TEACHER_MIN_HOURS_DAILY;
+}
+
+bool ConstraintTeacherMinHoursDaily::computeInternalStructure(Rules& r)
+{
+	this->teacher_ID=r.searchTeacher(this->teacherName);
+	assert(this->teacher_ID>=0);
+	return true;
+}
+
+QString ConstraintTeacherMinHoursDaily::getXmlDescription(Rules& r){
+	if(&r!=NULL)
+		;
+
+	QString s="<ConstraintTeacherMinHoursDaily>\n";
+	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Minimum_Hours_Daily>"+QString::number(this->minHoursDaily)+"</Minimum_Hours_Daily>\n";
+	s+="</ConstraintTeacherMinHoursDaily>\n";
+	return s;
+}
+
+QString ConstraintTeacherMinHoursDaily::getDescription(Rules& r){
+	if(&r!=NULL)
+		;
+
+	QString s;
+	s+=(QObject::tr("Teacher min %1 hours daily").arg(this->minHoursDaily));s+=", ";
+	s+=QObject::tr("TN:%1").arg(this->teacherName);s+=", ";
+	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));
+
+	return s;
+}
+
+QString ConstraintTeacherMinHoursDaily::getDetailedDescription(Rules& r){
+	if(&r!=NULL)
+		;
+
+	QString s=QObject::tr("Time constraint");s+="\n";
+	s+=QObject::tr("Teacher %1 must not have less than %2 hours daily").arg(this->teacherName).arg(this->minHoursDaily);s+="\n";
+	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=QObject::tr("Note: FET is smart enough to use this constraint only on working days of the teacher");
+	s+="\n";
+
+	return s;
+}
+
+double ConstraintTeacherMinHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		//crt_chrom=&c;
+		//crt_rules=&r;
+		
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken;
+
+	//without logging
+	if(conflictsString==NULL){
+		nbroken=0;
+		int i=this->teacher_ID;
+		for(int d=0; d<r.nDaysPerWeek; d++){
+			int n_hours_daily=0;
+			for(int h=0; h<r.nHoursPerDay; h++)
+				if(teachersMatrix[i][d][h]>0)
+					n_hours_daily++;
+
+			if(n_hours_daily>0 && n_hours_daily<this->minHoursDaily){
+				nbroken++;
+			}
+		}
+	}
+	//with logging
+	else{
+		nbroken=0;
+		int i=this->teacher_ID;
+		for(int d=0; d<r.nDaysPerWeek; d++){
+			int n_hours_daily=0;
+			for(int h=0; h<r.nHoursPerDay; h++)
+				if(teachersMatrix[i][d][h]>0)
+					n_hours_daily++;
+
+			if(n_hours_daily>0 && n_hours_daily<this->minHoursDaily){
+				nbroken++;
+
+				if(conflictsString!=NULL){
+					QString s=(QObject::tr(
+					 "Time constraint teacher min %1 hours daily broken for teacher %2, on day %3, length=%4.")
+					 .arg(QString::number(this->minHoursDaily))
+					 .arg(r.internalTeachersList[i]->name)
+					 .arg(r.daysOfTheWeek[d])
+					 .arg(n_hours_daily)
+					 )
+					 +" "
+					 +
+					 (QObject::tr("This increases the conflicts total by %1").arg(QString::number(weightPercentage/100)));
+						
+					dl.append(s);
+					cl.append(weightPercentage/100);
+				
+					*conflictsString+= s+"\n";
+				}
+			}
+		}
+	}
+
+	//does not work for partial solutions
+	/*if(weightPercentage==100)
+		assert(nbroken==0);*/
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintTeacherMinHoursDaily::isRelatedToActivity(Activity* a)
+{
+	if(a)
+		;
+
+	return false;
+}
+
+bool ConstraintTeacherMinHoursDaily::isRelatedToTeacher(Teacher* t)
+{
+	if(this->teacherName==t->name)
+		return true;
+	return false;
+}
+
+bool ConstraintTeacherMinHoursDaily::isRelatedToSubject(Subject* s)
+{
+	if(s)
+		;
+
+	return false;
+}
+
+bool ConstraintTeacherMinHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
+{
+	if(s)
+		;
+
+	return false;
+}
+
+bool ConstraintTeacherMinHoursDaily::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	if(s)
+		;
+	if(&r)
+		;
+
 	return false;
 }
 

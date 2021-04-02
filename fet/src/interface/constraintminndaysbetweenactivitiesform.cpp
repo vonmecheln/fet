@@ -130,8 +130,8 @@ void ConstraintMinNDaysBetweenActivitiesForm::changeAllWeights()
 	bool ok = FALSE;
 	QString s;
 	s = QInputDialog::getText( QObject::tr("Modifying all weights for min n days"), QObject::tr("Warning: all min n days weights will be\n"
-	 " changed to selected value. Are you sure?\n If yes, please enter weight for all constraints of\n"
-	 " type min n days between activities") ,
+	 " changed to selected value. Are you sure?\n If yes, please enter weight percentage for all constraints of\n"
+	 " type min n days between activities (any integer/fractional\nnumber between 0.0 and 100.0, recommended 95.0 at least)") ,
      QLineEdit::Normal, QString::null, &ok, this );
 
 	if ( ok && !s.isEmpty() ){
@@ -139,7 +139,7 @@ void ConstraintMinNDaysBetweenActivitiesForm::changeAllWeights()
 		sscanf(s, "%lf", &weight);
 		if(weight<0.0 || weight>100.0){
 			QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+			QObject::tr("Invalid weight (percentage) - has to be >=0.0 and <=100.0"));
 			return;
 		}
 
