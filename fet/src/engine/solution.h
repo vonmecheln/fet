@@ -93,33 +93,6 @@ public:
 	void makeUnallocated(Rules& r);
 
 	/**
-	Randomizes the starting time of all the activities.
-	*/
-	void makeRandom(Rules& r);
-
-	/**
-	Reads this solution from the disk (reads a saved solution).
-	Returns false on failure, true on success.
-	*/
-	bool read(Rules& r, const QString &filename);
-
-	/**
-	Reads this solution from the disk (reads a saved solution).
-	Returns false on failure, true on success.
-	*/
-	bool read(Rules& r, QTextStream &tis);
-
-	/**
-	Saves this solution to the disk (saves this solution).
-	*/
-	void write(Rules& r, const QString &filename);
-
-	/**
-	Saves this solution to the disk (saves this solution).
-	*/
-	void write(Rules &r, QTextStream &tos);
-
-	/**
 	ATTENTION: if the rules change, the user has to reset _fitness to -1
 	<p>
 	If conflictsString is not null, then this function will
@@ -128,13 +101,13 @@ public:
 	double fitness(Rules& r, QString* conflictsString=NULL);
 
 	void getTeachersTimetable(Rules& r, Matrix3D<qint16>& a, Matrix3D<QList<qint16> >& b);
-	//return value is the number of conflicts, must be 0
+	//return value is the number of conflicts, which must be 0
 
 	void getSubgroupsTimetable(Rules& r, Matrix3D<qint16>& a);
-	//return value is the number of conflicts, must be 0
+	//return value is the number of conflicts, which must be 0
 
 	void getRoomsTimetable(Rules& r, Matrix3D<qint16>& a);
-	//return value is the number of conflicts, must be 0
+	//return value is the number of conflicts, which must be 0
 
 	int getSubgroupsMatrix(Rules& r, Matrix3D<qint8>& a);
 

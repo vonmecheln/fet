@@ -1604,9 +1604,21 @@ Versions 5.16.0 - 5.16.1
 	- Minor bug fix in HTML timetables, by Volker Dirr.
 	- Minor interface bug fixes.
 ---------------------------------------------------------------------------------
-Versions 5.17.0 - 5.17.x
+Version 5.17.0
 - Version 5.17.0
 	- Printing of the timetables (directly from the interface), by Volker Dirr (suggested by Bobby Wise, Anwarul Alam, daviodan and maybe other users).
 	- Updated to Qt 4.8.1.
 	- Minor interface improvements and bug fixes.
 	- Added a new Greek sample file, by Petros Nouvakis.
+---------------------------------------------------------------------------------
+Versions 5.18.0 - 5.18.v
+- Version 5.18.0
+	- Very serious old bug fix. This was found trying to implement the new constraint (see below) in such a way to solve a more complicated file
+	by Yush Yuen. Since nobody complained, it seems that until now the bug was not critical (but might have slowed down some timetables which have
+	rooms and preferred/home rooms constraints). Bug exists from the start of the implementation of the space allocation in FET, probably.
+	A big 'Thank you!' to Yush Yuen, who was very helpful in finding the problem.
+	- Added a new constraint, activities occupy max different rooms (which can, for example, constrain some activities to be in the same room
+	(in different time slots, of course) if max different rooms = 1). Suggested by Yush Yuen, nomad, Volker Dirr and maybe others.
+	- Safe saving of .fet files (save with .fet.tmp name, then remove old .fet file, then rename .fet.tmp to .fet).
+	- Saving of the random seed after the end of the generation (in addition to saving it at the beginning).
+	- Added an Uzbek translation, by Orzubek Eraliyev.

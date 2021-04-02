@@ -1,4 +1,4 @@
-This is FET version 5.17.0
+This is FET version 5.18.0
 
 
 Program description:
@@ -14,15 +14,15 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE 12.1 GNU/Linux distribution, Linux 3.1.9, Xfce 4.8,
-	Midnight Commander 4.7.5.3, KDiff3 0.9.96, Qt 4.8.1, gcc 4.6.2, g++ 4.6.2, make 3.82, Valgrind 3.6.1, other great free tools.
+	FET is created in the following environment: openSUSE 12.1 GNU/Linux distribution, Linux 3.1.10, Xfce 4.10,
+	Midnight Commander 4.7.5.3, KDiff3 0.9.96, Qt 4.8.1, gcc 4.7.0, g++ 4.7.0, make 3.82, Valgrind 3.6.1, other great free tools.
 	FET can be run on any platform supported by the free software Qt (GNU/Linux, Windows, Mac OS X).
 
 	GNU/Linux, Mac OS X:
 	Software:
 		make 3.82 or similar (GNU Make)
-		gcc 4.6.2 or similar
-		g++ 4.6.2 or similar (or gcc-g++, or gcc-c++, the name may vary. This program may be included in the gcc package)
+		gcc 4.7.0 or similar
+		g++ 4.7.0 or similar (or gcc-g++, or gcc-c++, the name may vary. This program may be included in the gcc package)
 		Qt 4.8.1 or compatible
 
 	Windows:
@@ -207,7 +207,7 @@ Running FET:
 			y is integer (seconds) (default 2000000000, which is practically infinite).
 			z is integer from 0 to 6 and represents the detail level for the generated html timetables
 				(default 2, larger values have more details/facilities and larger file sizes).
-			t is one of en_US, ar, ca, da, de, el, es, fa, fr, gl, he, hu, id, it, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sr, tr, uk, vi (default en_US).
+			t is one of en_US, ar, ca, da, de, el, es, fa, fr, gl, he, hu, id, it, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sr, tr, uk, uz, vi (default en_US).
 			u is either "true" or "false" and represents if you want -x- (for true) or --- (for false) in the generated timetables for the
 				not available slots (default true).
 			b is either "true" or "false" and represents if you want -X- (for true) or --- (for false) in the generated timetables for the

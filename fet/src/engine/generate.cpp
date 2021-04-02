@@ -517,7 +517,7 @@ inline bool Generate::teacherRemoveAnActivityFromBeginOrEnd(int tch, int level, 
 		}
 	}
 						
-	bool possibleBeginOrEnd=true;						
+	bool possibleBeginOrEnd=true;
 	if(possibleDays.count()==0)
 		possibleBeginOrEnd=false;
 				
@@ -1154,7 +1154,7 @@ inline bool Generate::subgroupRemoveAnActivityFromBegin(int sbg, int level, int 
 		}
 	}
 						
-	bool possibleBegin=true;						
+	bool possibleBegin=true;
 	if(possibleDays.count()==0)
 		possibleBegin=false;
 				
@@ -1279,7 +1279,7 @@ inline bool Generate::subgroupRemoveAnActivityFromEnd(int sbg, int level, int ai
 		}
 	}
 						
-	bool possibleEnd=true;						
+	bool possibleEnd=true;
 	if(possibleDays.count()==0)
 		possibleEnd=false;
 				
@@ -1802,7 +1802,7 @@ inline bool Generate::checkBuildingChanges(int sbg, int tch, const QList<int>& g
 						if(crt_building!=buildings[h2]){
 							if(crt_building!=-1)
 								n_changes++;
-								crt_building=buildings[h2];
+							crt_building=buildings[h2];
 						}
 					}
 			
@@ -1938,14 +1938,14 @@ inline bool Generate::checkBuildingChanges(int sbg, int tch, const QList<int>& g
 			}
 						
 			int n_changes=0;
-			for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){				
+			for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 				int crt_building=-1;
 				for(int h2=0; h2<gt.rules.nHoursPerDay; h2++)
 					if(weekBuildings[d2][h2]!=-1){
 						if(crt_building!=weekBuildings[d2][h2]){
 							if(crt_building!=-1)
 								n_changes++;
-								crt_building=weekBuildings[d2][h2];
+							crt_building=weekBuildings[d2][h2];
 						}
 					}
 			}
@@ -1953,6 +1953,193 @@ inline bool Generate::checkBuildingChanges(int sbg, int tch, const QList<int>& g
 			if(n_changes<=mc){ //OK
 				break;
 			}
+		}
+	}
+	
+	return true;
+}
+
+//2012-04-29
+inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& globalConflActivities, int rm, int level, int ai, QList<int>& tmp_list)
+{
+	foreach(ActivitiesOccupyMaxDifferentRooms_item* item, aomdrListForActivity[ai]){
+		//preliminary
+		QSet<int> occupiedRoomsSet;
+		foreach(int ai2, item->activitiesList)
+			if(ai2!=ai && !globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
+				int rm2=c.rooms[ai2];
+				if(rm2!=UNALLOCATED_SPACE && rm2!=UNSPECIFIED_ROOM)
+					if(!occupiedRoomsSet.contains(rm2)){
+						occupiedRoomsSet.insert(rm2);
+						if(occupiedRoomsSet.count()==item->maxDifferentRooms) //no further testing needed
+							break;
+					}
+			}
+			
+		if(!globalConflActivities.contains(ai) && !tmp_list.contains(ai)) //should be always true
+			if(rm!=UNALLOCATED_SPACE && rm!=UNSPECIFIED_ROOM) //should be always true
+				if(!occupiedRoomsSet.contains(rm))
+					occupiedRoomsSet.insert(rm);
+			
+		if(occupiedRoomsSet.count()<=item->maxDifferentRooms)
+			continue;
+
+		//correction needed
+		QList<QSet<int> > activitiesInRoom;
+		occupiedRoomsSet.clear();
+		QList<int> occupiedRoomsList;
+		QHash<int, int> roomIndexInOccupiedRoomsList;
+		QList<bool> canEmptyRoom;
+		
+		foreach(int ai2, item->activitiesList)
+			if(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
+				int rm2;
+				if(ai2==ai)
+					rm2=rm;
+				else
+					rm2=c.rooms[ai2];
+				if(rm2!=UNALLOCATED_SPACE && rm2!=UNSPECIFIED_ROOM){
+					int ind;
+					if(!occupiedRoomsSet.contains(rm2)){
+						occupiedRoomsSet.insert(rm2);
+						occupiedRoomsList.append(rm2);
+						canEmptyRoom.append(true);
+						
+						QSet<int> tl;
+						tl.insert(ai2);
+						activitiesInRoom.append(tl);
+						
+						ind=activitiesInRoom.count()-1;
+						roomIndexInOccupiedRoomsList.insert(rm2, ind);
+					}
+					else{
+						assert(roomIndexInOccupiedRoomsList.contains(rm2));
+						ind=roomIndexInOccupiedRoomsList.value(rm2);
+						assert(ind>=0 && ind<activitiesInRoom.count());
+						activitiesInRoom[ind].insert(ai2);
+					}
+					
+					if(ai2==ai || fixedTimeActivity[ai2] || swappedActivities[ai2])
+						if(canEmptyRoom[ind]==true)
+							canEmptyRoom[ind]=false;
+				}
+			}
+			
+		assert(occupiedRoomsSet.count()==item->maxDifferentRooms+1);
+			
+		QList<int> candidates;
+		foreach(int rm2, occupiedRoomsList){
+			assert(roomIndexInOccupiedRoomsList.contains(rm2));
+			int ind=roomIndexInOccupiedRoomsList.value(rm2);
+			if(canEmptyRoom.at(ind)==true)
+				candidates.append(ind);
+		}
+
+		if(level==0){
+			QList<int> finalCandidates;
+			
+			int optConflActivities=MAX_ACTIVITIES;
+			int optMinWrong=INF;
+			int optNWrong=INF;
+			int optMinIndexAct=gt.rules.nInternalActivities;
+
+			//phase 1
+			foreach(int ind, candidates){
+				QSet<int> activitiesForCandidate=activitiesInRoom.at(ind);
+				
+				int tmp_n_confl_acts=activitiesForCandidate.count();
+				int tmp_minWrong=INF;
+				int tmp_nWrong=0;
+				int tmp_minIndexAct=gt.rules.nInternalActivities;
+				
+				if(activitiesForCandidate.count()>0){
+					foreach(int ai2, activitiesForCandidate){
+						tmp_minWrong=min(tmp_minWrong, triedRemovals(ai2,c.times[ai2]));
+						tmp_nWrong+=triedRemovals(ai2,c.times[ai2]);
+						tmp_minIndexAct=min(tmp_minIndexAct, invPermutation[ai2]);
+					}
+				}
+				else{
+					assert(0);
+					tmp_minWrong=0;
+					tmp_nWrong=0;
+					tmp_minIndexAct=-1;
+				}
+		
+				if(optMinWrong>tmp_minWrong ||
+				  (optMinWrong==tmp_minWrong && optNWrong>tmp_nWrong) ||
+				  (optMinWrong==tmp_minWrong && optNWrong==tmp_nWrong && optConflActivities>tmp_n_confl_acts) ||
+				  (optMinWrong==tmp_minWrong && optNWrong==tmp_nWrong && optConflActivities==tmp_n_confl_acts && optMinIndexAct>tmp_minIndexAct)){
+					optConflActivities=tmp_n_confl_acts;
+					optMinWrong=tmp_minWrong;
+					optNWrong=tmp_nWrong;
+					optMinIndexAct=tmp_minIndexAct;
+				}
+			}
+
+			//phase 2
+			foreach(int ind, candidates){
+				QSet<int> activitiesForCandidate=activitiesInRoom.at(ind);
+				
+				int tmp_n_confl_acts=activitiesForCandidate.count();
+				int tmp_minWrong=INF;
+				int tmp_nWrong=0;
+				int tmp_minIndexAct=gt.rules.nInternalActivities;
+				
+				if(activitiesForCandidate.count()>0){
+					foreach(int ai2, activitiesForCandidate){
+						tmp_minWrong=min(tmp_minWrong, triedRemovals(ai2,c.times[ai2]));
+						tmp_nWrong+=triedRemovals(ai2,c.times[ai2]);
+						tmp_minIndexAct=min(tmp_minIndexAct, invPermutation[ai2]);
+					}
+				}
+				else{
+					assert(0);
+					tmp_minWrong=0;
+					tmp_nWrong=0;
+					tmp_minIndexAct=-1;
+				}
+		
+				if(optMinWrong==tmp_minWrong && optNWrong==tmp_nWrong && optConflActivities==tmp_n_confl_acts && optMinIndexAct==tmp_minIndexAct){
+					finalCandidates.append(ind);
+				}
+			}
+			
+			//phase 3
+			if(candidates.count()>0)
+				assert(finalCandidates.count()>0);
+			candidates=finalCandidates;
+		}
+		else{ //if(level>0)
+			QList<int> finalCandidates;
+			
+			int optConflActivities=MAX_ACTIVITIES;
+
+			foreach(int ind, candidates){
+				if(activitiesInRoom.at(ind).count()<optConflActivities){
+					optConflActivities=activitiesInRoom.at(ind).count();
+					finalCandidates.clear();
+					finalCandidates.append(ind);
+				}
+				else if(activitiesInRoom.at(ind).count()==optConflActivities){
+					finalCandidates.append(ind);
+				}
+			}
+			
+			if(candidates.count()>0)
+				assert(finalCandidates.count()>0);
+			candidates=finalCandidates;
+		}
+		
+		if(candidates.count()==0)
+			return false;
+		
+		int indexToRemove=candidates.at(randomKnuth(candidates.count()));
+		assert(canEmptyRoom.at(indexToRemove)==true);
+		foreach(int ai2, activitiesInRoom.at(indexToRemove)){
+			assert(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2));
+			assert(ai2!=ai && !fixedTimeActivity[ai2] && !swappedActivities[ai2]);
+			tmp_list.append(ai2);
 		}
 	}
 	
@@ -1968,6 +2155,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 	int optConflActivities=MAX_ACTIVITIES;
 	int optMinWrong=INF;
 	int optNWrong=INF;
+	int optMinIndexAct=gt.rules.nInternalActivities;
 	
 	QList<QList<int> > conflActivitiesRooms;
 	QList<int> nConflActivitiesRooms;
@@ -1981,6 +2169,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 	int tmp_n_confl_acts;
 	int tmp_minWrong;
 	int tmp_nWrong;
+	int tmp_minIndexAct;
 	
 	int newtime=d+h*gt.rules.nDaysPerWeek;
 			
@@ -2028,6 +2217,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 				if(!ok)
 					continue;
 			
+				//building changes for teachers
 				foreach(int tch, act->iTeachersList){
 					if(minGapsBetweenBuildingChangesForTeachersPercentages[tch]>=0 || maxBuildingChangesPerDayForTeachersPercentages[tch]>=0
 					  || maxBuildingChangesPerWeekForTeachersPercentages[tch]>=0){
@@ -2040,17 +2230,34 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 				if(!ok)
 					continue;
 			
+				//max occupied rooms for a set of activities - 2012-04-29
+				if(aomdrListForActivity[ai].count()>0)
+					ok=checkActivitiesOccupyMaxDifferentRooms(globalConflActivities, rm, level, ai, tmp_list);
+				
+				if(!ok)
+					continue;
+					
 				tmp_n_confl_acts=0;
 				
 				tmp_minWrong=INF;
 				tmp_nWrong=0;
 				
+				tmp_minIndexAct=gt.rules.nInternalActivities;
+				
 				tmp_n_confl_acts=tmp_list.count();
 				
 				if(level==0){
-					foreach(int ai2, tmp_list){
-						tmp_minWrong=min(tmp_minWrong, triedRemovals(ai2,c.times[ai2]));
-						tmp_nWrong+=triedRemovals(ai2,c.times[ai2]);
+					if(tmp_list.count()>0){ //serious bug corrected on 2012-05-02, but it seems that it didn't affect people until now
+						foreach(int ai2, tmp_list){
+							tmp_minWrong=min(tmp_minWrong, triedRemovals(ai2,c.times[ai2]));
+							tmp_nWrong+=triedRemovals(ai2,c.times[ai2]);
+							tmp_minIndexAct=min(tmp_minIndexAct, invPermutation[ai2]);
+						}
+					}
+					else{
+						tmp_minWrong=0;
+						tmp_nWrong=0;
+						tmp_minIndexAct=-1;
 					}
 				}
 				
@@ -2065,13 +2272,16 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 				else{ // if(level==0)
 					minWrong.append(tmp_minWrong);
 					nWrong.append(tmp_nWrong);
+					minIndexAct.append(tmp_minIndexAct);
 	
-					if(optMinWrong>tmp_minWrong || 
+					if(optMinWrong>tmp_minWrong ||
 					  (optMinWrong==tmp_minWrong && optNWrong>tmp_nWrong) ||
-					  (optMinWrong==tmp_minWrong && optNWrong==tmp_nWrong && optConflActivities>tmp_n_confl_acts)){
+					  (optMinWrong==tmp_minWrong && optNWrong==tmp_nWrong && optConflActivities>tmp_n_confl_acts) ||
+					  (optMinWrong==tmp_minWrong && optNWrong==tmp_nWrong && optConflActivities==tmp_n_confl_acts && optMinIndexAct>tmp_minIndexAct)){
 						optConflActivities=tmp_n_confl_acts;
 						optMinWrong=tmp_minWrong;
 						optNWrong=tmp_nWrong;
+						optMinIndexAct=tmp_minIndexAct;
 					}
 				}
 			}
@@ -2099,7 +2309,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 	}
 	else{
 		for(int q=0; q<listedRooms.count(); q++){
-			if(optMinWrong==minWrong.at(q) && optNWrong==nWrong.at(q) && nConflActivitiesRooms.at(q)==optConflActivities){
+			if(optMinWrong==minWrong.at(q) && optNWrong==nWrong.at(q) && optConflActivities==nConflActivitiesRooms.at(q) && optMinIndexAct==minIndexAct.at(q)){
 				allowedRoomsIndex.append(q);
 			}
 		}
@@ -2844,20 +3054,9 @@ if(threaded){
 		}
 
 if(threaded){
-		mutex.unlock();	
+		mutex.unlock();
 }
 	}
-
-/*
-if(threaded){
-	mutex.lock();
-}
-	
-	//c.write(gt.rules, "chromo.dat");
-	
-if(threaded){
-	mutex.unlock();
-}*/
 
 	time_t end_time;
 	time(&end_time);
@@ -4616,7 +4815,7 @@ impossibleactivityendsstudentsday:
 											canEmptyIntervalDay[d2]=false;
 										else if(!_activitiesForIntervalDay[d2].contains(ai2)){
 											_minWrong[d2] = min (_minWrong[d2], triedRemovals(ai2,c.times[ai2]));
-											_minIndexAct[d2]=min(_minIndexAct[d2], invPermutation[ai2]);					
+											_minIndexAct[d2]=min(_minIndexAct[d2], invPermutation[ai2]);
 											_nWrong[d2]+=triedRemovals(ai2,c.times[ai2]);
 											_nConflActivities[d2]++;
 											_activitiesForIntervalDay[d2].append(ai2);
@@ -6457,7 +6656,7 @@ impossiblestudentsminhoursdaily:
 									canEmptyDay[d2]=false;
 								else if(!_activitiesForDay[d2].contains(ai2)){
 									_minWrong[d2] = min (_minWrong[d2], triedRemovals(ai2,c.times[ai2]));
-									_minIndexAct[d2]=min(_minIndexAct[d2], invPermutation[ai2]);					
+									_minIndexAct[d2]=min(_minIndexAct[d2], invPermutation[ai2]);
 									_nWrong[d2]+=triedRemovals(ai2,c.times[ai2]);
 									_nConflActivities[d2]++;
 									_activitiesForDay[d2].append(ai2);
@@ -6692,7 +6891,7 @@ impossibleteachermaxdaysperweek:
 											canEmptyIntervalDay[d2]=false;
 										else if(!_activitiesForIntervalDay[d2].contains(ai2)){
 											_minWrong[d2] = min (_minWrong[d2], triedRemovals(ai2,c.times[ai2]));
-											_minIndexAct[d2]=min(_minIndexAct[d2], invPermutation[ai2]);					
+											_minIndexAct[d2]=min(_minIndexAct[d2], invPermutation[ai2]);
 											_nWrong[d2]+=triedRemovals(ai2,c.times[ai2]);
 											_nConflActivities[d2]++;
 											_activitiesForIntervalDay[d2].append(ai2);

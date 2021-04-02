@@ -4158,6 +4158,19 @@ void Rules::removeActivity(int _id)
 			i++;
 	}
 	
+	for(int i=0; i<this->spaceConstraintsList.size(); ){
+		SpaceConstraint* ctr=this->spaceConstraintsList[i];
+		if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_DIFFERENT_ROOMS){
+			((ConstraintActivitiesOccupyMaxDifferentRooms*)ctr)->removeUseless(*this);
+			if(((ConstraintActivitiesOccupyMaxDifferentRooms*)ctr)->activitiesIds.count()<2)
+				this->removeSpaceConstraint(ctr);
+			else
+				i++;
+		}
+		else
+			i++;
+	}
+
 	if(recomputeTime){
 		LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
 	}
@@ -4468,6 +4481,19 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 			((ConstraintActivitiesNotOverlapping*)ctr)->removeUseless(*this);
 			if(((ConstraintActivitiesNotOverlapping*)ctr)->n_activities<2)
 				this->removeTimeConstraint(ctr);
+			else
+				i++;
+		}
+		else
+			i++;
+	}
+
+	for(int i=0; i<this->spaceConstraintsList.size(); ){
+		SpaceConstraint* ctr=this->spaceConstraintsList[i];
+		if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_DIFFERENT_ROOMS){
+			((ConstraintActivitiesOccupyMaxDifferentRooms*)ctr)->removeUseless(*this);
+			if(((ConstraintActivitiesOccupyMaxDifferentRooms*)ctr)->activitiesIds.count()<2)
+				this->removeSpaceConstraint(ctr);
 			else
 				i++;
 		}
@@ -7118,6 +7144,11 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				else if(elem3.tagName()=="ConstraintStudentsMinGapsBetweenBuildingChanges"){
 					crt_constraint=readStudentsMinGapsBetweenBuildingChanges(elem3, xmlReadingLog);
 				}
+////////////////2012-04-29
+				else if(elem3.tagName()=="ConstraintActivitiesOccupyMaxDifferentRooms"){
+					crt_constraint=readActivitiesOccupyMaxDifferentRooms(elem3, xmlReadingLog);
+				}
+////////////////
 
 //corruptConstraintSpace:
 				//here we skip invalid constraint or add valid one
@@ -7170,11 +7201,33 @@ bool Rules::write(QWidget* parent, const QString& filename)
 	assert(this->initialized);
 
 	QString s;
+	
+	bool exists=false;
+	QString filenameTmp=filename;
+	if(QFile::exists(filenameTmp)){
+		exists=true;
 
-	QFile file(filename);
-	if(!file.open(QIODevice::WriteOnly)){
+		filenameTmp.append(QString(".tmp"));
+		
+		if(QFile::exists(filenameTmp)){
+			int i=1;
+			for(;;){
+				QString t2=filenameTmp+CustomFETString::number(i);
+				if(!QFile::exists(t2)){
+					filenameTmp=t2;
+					break;
+				}
+				i++;
+			}
+		}
+	}
+
+	assert(!QFile::exists(filenameTmp));
+
+	QFile file(filenameTmp);
+	if(!file.open(QIODevice::WriteOnly | QIODevice::Truncate)){
 		QMessageBox::critical(parent, tr("FET critical"),
-		 tr("Cannot open filename for writing ... please check write permissions of the selected directory or your disk free space. Saving of file aborted"));
+		 tr("Cannot open %1 for writing ... please check write permissions of the selected directory or your disk free space. Saving of file aborted").arg(QFileInfo(filenameTmp).fileName()));
 		
 		return false;
 	}
@@ -7292,6 +7345,14 @@ bool Rules::write(QWidget* parent, const QString& filename)
 	}
 	
 	file.close();
+	
+	if(exists){
+		bool tf=QFile::remove(filename);
+		assert(tf);
+		tf=QFile::rename(filenameTmp, filename);
+		assert(tf);
+	}
+	
 	return true;
 }
 
@@ -13110,7 +13171,7 @@ TimeConstraint* Rules::readActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget*
 							
 					if(cn->selectedDays[i]>=this->nDaysPerWeek){
 						QMessageBox::information(parent, tr("FET information"), 
-							tr("Constraint ActivitiesOccupyMaxTimeSlotsFromSelection day corrupt, day %1 is inexistent ... ignoring constraint")
+							tr("Constraint ActivitiesMaxSimultaneousInSelectedTimeSlots day corrupt, day %1 is inexistent ... ignoring constraint")
 							.arg(elem5.text()));
 						delete cn;
 						cn=NULL;
@@ -13130,7 +13191,7 @@ TimeConstraint* Rules::readActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget*
 							
 					if(cn->selectedHours[i]>=this->nHoursPerDay){
 						QMessageBox::information(parent, tr("FET information"), 
-							tr(" Constraint ActivitiesOccupyMaxTimeSlotsFromSelection hour corrupt, hour %1 is inexistent ... ignoring constraint")
+							tr(" Constraint ActivitiesMaxSimultaneousInSelectedTimeSlots hour corrupt, hour %1 is inexistent ... ignoring constraint")
 							.arg(elem5.text()));
 						delete cn;
 						cn=NULL;
@@ -14576,3 +14637,51 @@ SpaceConstraint* Rules::readStudentsMinGapsBetweenBuildingChanges(const QDomElem
 	}
 	return cn;
 }
+
+//2012-04-29
+SpaceConstraint* Rules::readActivitiesOccupyMaxDifferentRooms(const QDomElement& elem3, FakeString& xmlReadingLog){
+	assert(elem3.tagName()=="ConstraintActivitiesOccupyMaxDifferentRooms");
+	ConstraintActivitiesOccupyMaxDifferentRooms* cn=new ConstraintActivitiesOccupyMaxDifferentRooms();
+	
+	int ac=0;
+	
+	for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+		QDomElement elem4=node4.toElement();
+		if(elem4.isNull()){
+			xmlReadingLog+="    Null node here\n";
+			continue;
+		}
+		xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+
+		if(elem4.tagName()=="Weight_Percentage"){
+			cn->weightPercentage=customFETStrToDouble(elem4.text());
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
+		else if(elem4.tagName()=="Number_of_Activities"){
+			ac=elem4.text().toInt();
+			xmlReadingLog+="    Read number of activities="+CustomFETString::number(ac)+"\n";
+		}
+		else if(elem4.tagName()=="Activity_Id"){
+			cn->activitiesIds.append(elem4.text().toInt());
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[cn->activitiesIds.count()-1])+"\n";
+		}
+		else if(elem4.tagName()=="Max_Number_of_Different_Rooms"){
+			cn->maxDifferentRooms=elem4.text().toInt();
+			xmlReadingLog+="    Read max number of different rooms="+CustomFETString::number(cn->maxDifferentRooms)+"\n";
+		}
+	}
+	
+	assert(ac==cn->activitiesIds.count());
+	
+	return cn;
+}
+
+////////////////

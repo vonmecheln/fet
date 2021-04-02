@@ -346,6 +346,10 @@ SOURCES += \
 	interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp \
 	interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp \
 	\
+	interface/constraintactivitiesoccupymaxdifferentroomsform.cpp \
+	interface/addconstraintactivitiesoccupymaxdifferentroomsform.cpp \
+	interface/modifyconstraintactivitiesoccupymaxdifferentroomsform.cpp \
+	\
 	interface/constrainttwoactivitiesconsecutiveform.cpp \
 	interface/addconstrainttwoactivitiesconsecutiveform.cpp \
 	interface/modifyconstrainttwoactivitiesconsecutiveform.cpp \
@@ -757,6 +761,10 @@ HEADERS += \
 	interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.h \
 	interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.h \
 	\
+	interface/constraintactivitiesoccupymaxdifferentroomsform.h \
+	interface/addconstraintactivitiesoccupymaxdifferentroomsform.h \
+	interface/modifyconstraintactivitiesoccupymaxdifferentroomsform.h \
+	\
 	interface/constrainttwoactivitiesconsecutiveform.h \
 	interface/addconstrainttwoactivitiesconsecutiveform.h \
 	interface/modifyconstrainttwoactivitiesconsecutiveform.h \
@@ -1159,6 +1167,10 @@ FORMS += \
 	interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui \
 	interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui \
 	\
+	interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui \
+	interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui \
+	interface/modifyconstraintactivitiesoccupymaxdifferentroomsform_template.ui \
+	\
 	interface/constrainttwoactivitiesconsecutiveform_template.ui \
 	interface/addconstrainttwoactivitiesconsecutiveform_template.ui \
 	interface/modifyconstrainttwoactivitiesconsecutiveform_template.ui \
@@ -1227,6 +1239,7 @@ TRANSLATIONS += \
 	../translations/fet_tr.ts \
 	../translations/fet_uk.ts \
 	../translations/fet_untranslated.ts \
+	../translations/fet_uz.ts \
 	../translations/fet_vi.ts
 
 TEMPLATE = app

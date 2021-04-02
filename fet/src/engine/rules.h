@@ -810,6 +810,8 @@ private:
 	SpaceConstraint* readStudentsMaxBuildingChangesPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog);
 	SpaceConstraint* readStudentsSetMinGapsBetweenBuildingChanges(const QDomElement& elem3, FakeString& xmlReadingLog);
 	SpaceConstraint* readStudentsMinGapsBetweenBuildingChanges(const QDomElement& elem3, FakeString& xmlReadingLog);
+
+	SpaceConstraint* readActivitiesOccupyMaxDifferentRooms(const QDomElement& elem3, FakeString& xmlReadingLog);
 };
 
 #endif

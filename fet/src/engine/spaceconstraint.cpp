@@ -6785,3 +6785,268 @@ bool ConstraintTeachersMinGapsBetweenBuildingChanges::repairWrongDayOrHour(Rules
 
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintActivitiesOccupyMaxDifferentRooms::ConstraintActivitiesOccupyMaxDifferentRooms()
+	: SpaceConstraint()
+{
+	this->type = CONSTRAINT_ACTIVITIES_OCCUPY_MAX_DIFFERENT_ROOMS;
+}
+
+ConstraintActivitiesOccupyMaxDifferentRooms::ConstraintActivitiesOccupyMaxDifferentRooms(double wp,
+	QList<int> a_L, int max_different_rooms)
+	: SpaceConstraint(wp)
+{
+	this->activitiesIds=a_L;
+	this->maxDifferentRooms=max_different_rooms;
+	
+	this->type=CONSTRAINT_ACTIVITIES_OCCUPY_MAX_DIFFERENT_ROOMS;
+}
+
+bool ConstraintActivitiesOccupyMaxDifferentRooms::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	this->_activitiesIndices.clear();
+	
+	QSet<int> req=this->activitiesIds.toSet();
+	assert(req.count()==this->activitiesIds.count());
+	
+	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
+	int i;
+	for(i=0; i<r.nInternalActivities; i++)
+		if(req.contains(r.internalActivitiesList[i].id))
+			this->_activitiesIndices.append(i);
+			
+	///////////////////////
+	
+	if(this->_activitiesIndices.count()<2){
+		QMessageBox::warning(parent, tr("FET error in data"),
+			tr("Following constraint is wrong (refers to less than two activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
+	else{
+		assert(this->_activitiesIndices.count()>=2);
+		return true;
+	}
+}
+
+bool ConstraintActivitiesOccupyMaxDifferentRooms::hasInactiveActivities(Rules& r)
+{
+	//returns true if all or all but one activities are inactive
+	
+	int cnt=0;
+	foreach(int aid, this->activitiesIds)
+		if(r.inactiveActivities.contains(aid))
+			cnt++;
+			
+	if(this->activitiesIds.count()>=2 && (cnt==this->activitiesIds.count() || cnt==this->activitiesIds.count()-1) )
+		return true;
+	else
+		return false;
+}
+
+QString ConstraintActivitiesOccupyMaxDifferentRooms::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintActivitiesOccupyMaxDifferentRooms>\n";
+	
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	
+	s+="	<Number_of_Activities>"+CustomFETString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
+	foreach(int aid, this->activitiesIds)
+		s+="	<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
+	
+	s+="	<Max_Number_of_Different_Rooms>"+CustomFETString::number(this->maxDifferentRooms)+"</Max_Number_of_Different_Rooms>\n";
+	
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintActivitiesOccupyMaxDifferentRooms>\n";
+	return s;
+}
+
+QString ConstraintActivitiesOccupyMaxDifferentRooms::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString actids=QString("");
+	foreach(int aid, this->activitiesIds)
+		actids+=CustomFETString::number(aid)+QString(", ");
+	actids.chop(2);
+		
+	QString s=tr("Activities occupy max different rooms, WP:%1, NA:%2, A: %3, MDR:%4", "Constraint description. WP means weight percentage, "
+	 "NA means the number of activities, A means activities list, MDR means max different rooms")
+	 .arg(CustomFETString::number(this->weightPercentage))
+	 .arg(CustomFETString::number(this->activitiesIds.count()))
+	 .arg(actids)
+	 .arg(CustomFETString::number(this->maxDifferentRooms));
+	
+	return begin+s+end;
+}
+
+QString ConstraintActivitiesOccupyMaxDifferentRooms::getDetailedDescription(Rules& r)
+{
+	QString actids=QString("");
+	foreach(int aid, this->activitiesIds)
+		actids+=CustomFETString::number(aid)+QString(", ");
+	actids.chop(2);
+		
+	QString s=tr("Space constraint"); s+="\n";
+	s+=tr("Activities occupy max different rooms"); s+="\n";
+	s+=tr("Weight (percentage)=%1").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
+	s+=tr("Number of activities=%1").arg(CustomFETString::number(this->activitiesIds.count())); s+="\n";
+	foreach(int id, this->activitiesIds){
+		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+		 .arg(id)
+		 .arg(getActivityDetailedDescription(r, id));
+		s+="\n";
+	}
+	s+=tr("Maximum number of different rooms=%1").arg(CustomFETString::number(this->maxDifferentRooms)); s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+	
+	return s;
+}
+
+double ConstraintActivitiesOccupyMaxDifferentRooms::fitness(
+	Solution& c,
+	Rules& r,
+	QList<double>& cl,
+	QList<QString>& dl,
+	QString* conflictsString)
+{
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	//Calculates the number of conflicts
+
+	int nbroken=0;
+	
+	QSet<int> usedRooms;
+	
+	foreach(int ai, this->_activitiesIndices){
+		if(c.rooms[ai]!=UNALLOCATED_SPACE && c.rooms[ai]!=UNSPECIFIED_ROOM)
+			if(!usedRooms.contains(c.rooms[ai]))
+				usedRooms.insert(c.rooms[ai]);
+	}
+	
+	if(usedRooms.count() > this->maxDifferentRooms){
+		nbroken=1;
+
+		if(conflictsString!=NULL){
+			QString s=tr("Space constraint activities occupy max different rooms broken");
+			s += QString(". ");
+			s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(nbroken*weightPercentage/100));
+	
+			dl.append(s);
+			cl.append(nbroken*weightPercentage/100);
+		
+			*conflictsString += s+"\n";
+		}
+	}
+	
+	if(this->weightPercentage==100)
+		assert(nbroken==0);
+
+	return nbroken*weightPercentage/100;
+}
+
+void ConstraintActivitiesOccupyMaxDifferentRooms::removeUseless(Rules& r)
+{
+	QSet<int> validActs;
+	
+	foreach(Activity* act, r.activitiesList)
+		validActs.insert(act->id);
+		
+	QList<int> newActs;
+	
+	foreach(int aid, activitiesIds)
+		if(validActs.contains(aid))
+			newActs.append(aid);
+			
+	activitiesIds=newActs;
+}
+
+bool ConstraintActivitiesOccupyMaxDifferentRooms::isRelatedToActivity(Activity* a)
+{
+	return this->activitiesIds.contains(a->id);
+}
+
+bool ConstraintActivitiesOccupyMaxDifferentRooms::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintActivitiesOccupyMaxDifferentRooms::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivitiesOccupyMaxDifferentRooms::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivitiesOccupyMaxDifferentRooms::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	
+	return false;
+}
+
+bool ConstraintActivitiesOccupyMaxDifferentRooms::isRelatedToRoom(Room* r)
+{
+	Q_UNUSED(r);
+	
+	return false;
+}
+
+bool ConstraintActivitiesOccupyMaxDifferentRooms::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintActivitiesOccupyMaxDifferentRooms::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+
+	return true;
+}
+
+bool ConstraintActivitiesOccupyMaxDifferentRooms::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////

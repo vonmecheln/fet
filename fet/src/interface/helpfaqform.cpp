@@ -46,7 +46,7 @@ void HelpFaqForm::setText()
 	
 	s+=tr("Frequently asked questions.");
 	s+="\n\n";
-	s+=tr("Last modified on %1.").arg(tr("21 October 2011"));
+	s+=tr("Last modified on %1.").arg(tr("30 April 2012"));
 	
 	s+="\n\n";
 	s+="--------------------";
@@ -925,6 +925,16 @@ void HelpFaqForm::setText()
 	s+=tr("A: You can sort the constraints in the all time/space constraints dialogs. Sorting is done ascending, according to each"
 	 " constraints' comments. You can add suitable comments to obtain a desired order, like: 'rank #1 ... other comments' and"
 	 " 'rank #2 ... other different comments'.");
+
+	s+="\n\n";
+	s+="--------------------";
+	s+="\n\n";
+
+	s+=tr("Q: How can I specify that some activities must be in the same room (at different time slots, of course, because a single room"
+	 " can hold a single activity in a certain time slot)? This is needed for instance to constrain the Physics activities of a certain"
+	 " students set to take place in the same room, be it Lab-1 or Lab-2");
+	s+="\n\n";
+	s+=tr("A: You can use the constraint activities occupy max different rooms, with max different rooms = 1.");
 
 	plainTextEdit->setPlainText(s);
 }

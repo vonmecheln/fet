@@ -68,6 +68,7 @@ AddConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::AddConstraintActi
 
 	maxSimultaneousSpinBox->setMinimum(0);
 	maxSimultaneousSpinBox->setMaximum(MAX_ACTIVITIES);
+	maxSimultaneousSpinBox->setValue(0);
 
 	selectedTimesTable->setRowCount(gt.rules.nHoursPerDay);
 	selectedTimesTable->setColumnCount(gt.rules.nDaysPerWeek);

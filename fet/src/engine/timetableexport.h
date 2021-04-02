@@ -46,10 +46,10 @@ public:
 	static void writeSimulationResults(QWidget* parent, int n); //write in a directory with number n (for multiple generation)
 	static void writeSimulationResultsCommandLine(QWidget* parent, const QString& outputDirectory);
 	
-	static void writeRandomSeed(QWidget* parent);
-	static void writeRandomSeed(QWidget* parent, int n); //write in a directory with number n (for multiple generation)
-	static void writeRandomSeedCommandLine(QWidget* parent, const QString& outputDirectory);
-	static void writeRandomSeedFile(QWidget* parent, const QString& filename);
+	static void writeRandomSeed(QWidget* parent, bool before);
+	static void writeRandomSeed(QWidget* parent, int n, bool before); //write in a directory with number n (for multiple generation)
+	static void writeRandomSeedCommandLine(QWidget* parent, const QString& outputDirectory, bool before);
+	static void writeRandomSeedFile(QWidget* parent, const QString& filename, bool before);
 	
 	static void writeTimetableDataFile(QWidget* parent, const QString& filename);
 	

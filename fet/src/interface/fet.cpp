@@ -164,7 +164,7 @@ void usage(QTextStream& out, const QString& error)
 		"y is integer (seconds) (default 2000000000, which is practically infinite).\n"
 		"z is integer from 0 to 6 and represents the detail level for the generated html timetables "
 		"(default 2, larger values have more details/facilities and larger file sizes).\n"
-		"t is one of en_US, ar, ca, da, de, el, es, fa, fr, gl, he, hu, id, it, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sr, tr, uk, vi (default en_US).\n"
+		"t is one of en_US, ar, ca, da, de, el, es, fa, fr, gl, he, hu, id, it, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sr, tr, uk, uz, vi (default en_US).\n"
 		"u is either \"true\" or \"false\" and represents if you want -x- (for true) or --- (for false) in the generated timetables for the "
 		"not available slots (default true).\n"
 		"b is either \"true\" or \"false\" and represents if you want -X- (for true) or --- (for false) in the generated timetables for the "
@@ -329,7 +329,7 @@ void setLanguage(QApplication& qapplication, QWidget* parent)
 	 || FET_LANGUAGE=="tr" || FET_LANGUAGE=="id" || FET_LANGUAGE=="it" || FET_LANGUAGE=="lt"
 	 || FET_LANGUAGE=="ru" || FET_LANGUAGE=="fa" || FET_LANGUAGE=="uk" || FET_LANGUAGE=="pt_BR"
 	 || FET_LANGUAGE=="da" || FET_LANGUAGE=="si" || FET_LANGUAGE=="sk" || FET_LANGUAGE=="he"
-	 || FET_LANGUAGE=="sr" || FET_LANGUAGE=="gl" || FET_LANGUAGE=="vi"){
+	 || FET_LANGUAGE=="sr" || FET_LANGUAGE=="gl" || FET_LANGUAGE=="vi" || FET_LANGUAGE=="uz"){
 
 		translation_loaded=translator.load("fet_"+FET_LANGUAGE, qapplication.applicationDirPath());
 		if(!translation_loaded){
@@ -862,7 +862,7 @@ int main(int argc, char **argv)
 		cout<<"secondsLimit=="<<secondsLimit<<endl;
 		//out<<"secondsLimit=="<<secondsLimit<<endl;
 				
-		TimetableExport::writeRandomSeedCommandLine(NULL, outputDirectory);
+		TimetableExport::writeRandomSeedCommandLine(NULL, outputDirectory, true); //true represents 'before' state
 
 		gen.generate(secondsLimit, impossible, timeExceeded, false, &maxPlacedActivityStream); //false means no thread
 		
@@ -995,6 +995,8 @@ int main(int argc, char **argv)
 			cout<<"Simulation successful"<<endl;
 			out<<"Simulation successful"<<endl;
 		
+			TimetableExport::writeRandomSeedCommandLine(NULL, outputDirectory, false); //false represents 'before' state
+
 			Solution& c=gen.c;
 
 			//needed to find the conflicts strings

@@ -1,8 +1,8 @@
 /***************************************************************************
-                          addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp  -  description
+                          modifyconstraintactivitiesoccupymaxdifferentroomsform.cpp  -  description
                              -------------------
-    begin                : Sept 26, 2011
-    copyright            : (C) 2011 by Lalescu Liviu
+    begin                : Apr 29, 2012
+    copyright            : (C) 2012 by Lalescu Liviu
     email                : Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
  ***************************************************************************/
 
@@ -17,41 +17,26 @@
 
 #include <QMessageBox>
 
-#include "tablewidgetupdatebug.h"
-
 #include "longtextmessagebox.h"
 
-#include "addconstraintactivitiesoccupymaxtimeslotsfromselectionform.h"
-#include "timeconstraint.h"
-
-#include <QHeaderView>
-#include <QTableWidget>
-#include <QTableWidgetItem>
+#include "modifyconstraintactivitiesoccupymaxdifferentroomsform.h"
+#include "spaceconstraint.h"
 
 #include <QListWidget>
 #include <QAbstractItemView>
 #include <QScrollBar>
 
-#include <QBrush>
-#include <QColor>
-
-#define YES	(QString("X"))
-#define NO	(QString(" "))
-
-AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm(QWidget* parent): QDialog(parent)
+ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm::ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm(QWidget* parent, ConstraintActivitiesOccupyMaxDifferentRooms* ctr): QDialog(parent)
 {
 	setupUi(this);
 
-	addConstraintPushButton->setDefault(true);
+	okPushButton->setDefault(true);
 	
 	allActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	selectedActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(selectedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-	connect(setAllUnselectedPushButton, SIGNAL(clicked()), this, SLOT(setAllUnselected()));
-	connect(setAllSelectedPushButton, SIGNAL(clicked()), this, SLOT(setAllSelected()));
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
 	connect(allActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivity()));
 	connect(addAllActivitiesPushButton, SIGNAL(clicked()), this, SLOT(addAllActivities()));
 	connect(selectedActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivity()));
@@ -63,46 +48,15 @@ AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::AddConstraintActivit
 	
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-							
-	tabWidget->setCurrentIndex(0);
-
-	maxOccupiedSpinBox->setMinimum(0);
-	maxOccupiedSpinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
-	maxOccupiedSpinBox->setValue(0);
-
-	selectedTimesTable->setRowCount(gt.rules.nHoursPerDay);
-	selectedTimesTable->setColumnCount(gt.rules.nDaysPerWeek);
-
-	for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-		QTableWidgetItem* item=new QTableWidgetItem(gt.rules.daysOfTheWeek[j]);
-		selectedTimesTable->setHorizontalHeaderItem(j, item);
-	}
-	for(int i=0; i<gt.rules.nHoursPerDay; i++){
-		QTableWidgetItem* item=new QTableWidgetItem(gt.rules.hoursOfTheDay[i]);
-		selectedTimesTable->setVerticalHeaderItem(i, item);
-	}
-
-	for(int i=0; i<gt.rules.nHoursPerDay; i++)
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-			QTableWidgetItem* item=new QTableWidgetItem(NO);
-			item->setTextAlignment(Qt::AlignCenter);
-			item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-			colorItem(item);
-			selectedTimesTable->setItem(i, j, item);
-		}
-		
-	selectedTimesTable->resizeRowsToContents();
-	//selectedTimesTable->resizeColumnsToContents();
-
-	connect(selectedTimesTable->horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(horizontalHeaderClicked(int)));
-	connect(selectedTimesTable->verticalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(verticalHeaderClicked(int)));
-
-	selectedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 	
-	tableWidgetUpdateBug(selectedTimesTable);
+	this->_ctr=ctr;
 	
-	setStretchAvailabilityTableNicely(selectedTimesTable);
+	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 	
+	maxDifferentRoomsSpinBox->setMinimum(1);
+	maxDifferentRoomsSpinBox->setMaximum(MAX_ROOMS);
+	maxDifferentRoomsSpinBox->setValue(ctr->maxDifferentRooms);
+
 	//activities
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
@@ -112,6 +66,21 @@ AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::AddConstraintActivit
 	Q_UNUSED(tmp3);
 	QSize tmp4=activityTagsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp4);
+	
+	selectedActivitiesList.clear();
+	selectedActivitiesListWidget->clear();
+	for(int i=0; i<ctr->activitiesIds.count(); i++){
+		int actId=ctr->activitiesIds.at(i);
+		this->selectedActivitiesList.append(actId);
+		Activity* act=NULL;
+		for(int k=0; k<gt.rules.activitiesList.size(); k++){
+			act=gt.rules.activitiesList[k];
+			if(act->id==actId)
+				break;
+		}
+		assert(act);
+		this->selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+	}
 
 	teachersComboBox->addItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
@@ -149,105 +118,16 @@ AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::AddConstraintActivit
 	}
 	studentsComboBox->setCurrentIndex(0);
 
-	selectedActivitiesListWidget->clear();
-	selectedActivitiesList.clear();
-
 	filterChanged();
 }
 
-AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::~AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm()
+ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm::~ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm()
 {
 	saveFETDialogGeometry(this);
 }
 
-void AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::colorItem(QTableWidgetItem* item)
+void ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm::ok()
 {
-	if(USE_GUI_COLORS){
-		if(item->text()==NO)
-			item->setBackground(QBrush(Qt::darkGreen));
-		else
-			item->setBackground(QBrush(Qt::darkRed));
-		item->setForeground(QBrush(Qt::lightGray));
-	}
-}
-
-void AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::horizontalHeaderClicked(int col)
-{
-	if(col>=0 && col<gt.rules.nDaysPerWeek){
-		QString s=selectedTimesTable->item(0, col)->text();
-		if(s==YES)
-			s=NO;
-		else{
-			assert(s==NO);
-			s=YES;
-		}
-
-		for(int row=0; row<gt.rules.nHoursPerDay; row++){
-			selectedTimesTable->item(row, col)->setText(s);
-			colorItem(selectedTimesTable->item(row,col));
-		}
-		tableWidgetUpdateBug(selectedTimesTable);
-	}
-}
-
-void AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::verticalHeaderClicked(int row)
-{
-	if(row>=0 && row<gt.rules.nHoursPerDay){
-		QString s=selectedTimesTable->item(row, 0)->text();
-		if(s==YES)
-			s=NO;
-		else{
-			assert(s==NO);
-			s=YES;
-		}
-	
-		for(int col=0; col<gt.rules.nDaysPerWeek; col++){
-			selectedTimesTable->item(row, col)->setText(s);
-			colorItem(selectedTimesTable->item(row,col));
-		}
-		tableWidgetUpdateBug(selectedTimesTable);
-	}
-}
-
-void AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::setAllUnselected()
-{
-	for(int i=0; i<gt.rules.nHoursPerDay; i++)
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-			selectedTimesTable->item(i, j)->setText(NO);
-			colorItem(selectedTimesTable->item(i,j));
-		}
-	tableWidgetUpdateBug(selectedTimesTable);
-}
-
-void AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::setAllSelected()
-{
-	for(int i=0; i<gt.rules.nHoursPerDay; i++)
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-			selectedTimesTable->item(i, j)->setText(YES);
-			colorItem(selectedTimesTable->item(i,j));
-		}
-	tableWidgetUpdateBug(selectedTimesTable);
-}
-
-void AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::itemClicked(QTableWidgetItem* item)
-{
-	QString s=item->text();
-	if(s==YES)
-		s=NO;
-	else{
-		assert(s==NO);
-		s=YES;
-	}
-	item->setText(s);
-	colorItem(item);
-	
-	tableWidgetUpdateBug(selectedTimesTable);
-}
-
-void AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::addCurrentConstraint()
-{
-	TimeConstraint *ctr=NULL;
-
 	double weight;
 	QString tmp=weightLineEdit->text();
 	weight_sscanf(tmp, "%lf", &weight);
@@ -256,52 +136,39 @@ void AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::addCurrentConst
 			tr("Invalid weight (percentage). It has to be 100"));
 		return;
 	}
+	
+	this->_ctr->weightPercentage=weight;
 
-	QList<int> days;
-	QList<int> hours;
-	for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-		for(int i=0; i<gt.rules.nHoursPerDay; i++)
-			if(selectedTimesTable->item(i, j)->text()==YES){
-				days.append(j);
-				hours.append(i);
-			}
-			
-	int maxOccupiedSlots=maxOccupiedSpinBox->value();
+	int maxDifferentRooms=maxDifferentRoomsSpinBox->value();
 	
-	if(maxOccupiedSlots==0){
-		QMessageBox::warning(this, tr("FET information"), tr("You specified max occupied time slots to be 0. This is "
-		 "not perfect from efficiency point of view, because you can use instead constraint activity(ies) preferred time slots, "
-		 "and help FET to find a timetable easier and faster, with an equivalent result. Please correct."));
-		return;
-	}
-	
+	this->_ctr->maxDifferentRooms=maxDifferentRooms;
+
 	if(this->selectedActivitiesList.count()==0){
 		QMessageBox::warning(this, tr("FET information"),
 		 tr("Empty list of activities"));
 		return;
 	}
-	//we allow even only one activity
-	/*if(this->selectedActivitiesList.count()==1){
+	if(this->selectedActivitiesList.count()==1){
 		QMessageBox::warning(this, tr("FET information"),
 		 tr("Only one selected activity"));
 		return;
-	}*/
-
-	ctr=new ConstraintActivitiesOccupyMaxTimeSlotsFromSelection(weight, selectedActivitiesList, days, hours, maxOccupiedSlots);
-
-	bool tmp2=gt.rules.addTimeConstraint(ctr);
-	if(tmp2)
-		LongTextMessageBox::information(this, tr("FET information"),
-			tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
-	else{
-		QMessageBox::warning(this, tr("FET information"),
-			tr("Constraint NOT added - please report error"));
-		delete ctr;
 	}
+	
+	this->_ctr->activitiesIds=selectedActivitiesList;
+	
+	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
+	
+	this->close();
+}
+
+void ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm::cancel()
+{
+	this->close();
 }
 
 //activities
-bool AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::filterOk(Activity* act)
+bool ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm::filterOk(Activity* act)
 {
 	QString tn=teachersComboBox->currentText();
 	QString stn=studentsComboBox->currentText();
@@ -344,12 +211,12 @@ bool AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::filterOk(Activi
 	return ok;
 }
 
-void AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::filterChanged()
+void ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm::filterChanged()
 {
 	this->updateActivitiesListWidget();
 }
 
-void AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::updateActivitiesListWidget()
+void ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm::updateActivitiesListWidget()
 {
 	allActivitiesListWidget->clear();
 	this->activitiesList.clear();
@@ -366,7 +233,7 @@ void AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::updateActivitie
 	allActivitiesListWidget->verticalScrollBar()->setValue(q);
 }
 
-void AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::addActivity()
+void ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm::addActivity()
 {
 	if(allActivitiesListWidget->currentRow()<0)
 		return;
@@ -388,7 +255,7 @@ void AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::addActivity()
 	this->selectedActivitiesList.append(_id);
 }
 
-void AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::addAllActivities()
+void ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm::addAllActivities()
 {
 	for(int tmp=0; tmp<allActivitiesListWidget->count(); tmp++){
 		//int tmp=allActivitiesListWidget->currentRow();
@@ -413,11 +280,11 @@ void AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::addAllActivitie
 		selectedActivitiesListWidget->addItem(actName);
 		this->selectedActivitiesList.append(_id);
 	}
-	
+
 	selectedActivitiesListWidget->setCurrentRow(selectedActivitiesListWidget->count()-1);
 }
 
-void AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::removeActivity()
+void ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm::removeActivity()
 {
 	if(selectedActivitiesListWidget->currentRow()<0 || selectedActivitiesListWidget->count()<=0)
 		return;
@@ -434,7 +301,7 @@ void AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::removeActivity(
 		selectedActivitiesListWidget->setCurrentRow(selectedActivitiesListWidget->count()-1);
 }
 
-void AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::clear()
+void ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm::clear()
 {
 	selectedActivitiesListWidget->clear();
 	selectedActivitiesList.clear();

@@ -314,13 +314,15 @@ void TimetableGenerateMultipleForm::start(){
 
 void TimetableGenerateMultipleForm::timetableStarted(int timetable)
 {
-	TimetableExport::writeRandomSeed(this, timetable);
+	TimetableExport::writeRandomSeed(this, timetable, true); //true represents 'before' state
 	
 	semaphoreTimetableStarted.release();
 }
 
 void TimetableGenerateMultipleForm::timetableGenerated(int timetable, const QString& description, bool ok)
 {
+	TimetableExport::writeRandomSeed(this, timetable, false); //false represents 'before' state
+
 	QString s=QString("");
 	s+=tr("Timetable no: %1 => %2").arg(timetable).arg(description);
 	currentResultsTextEdit->appendPlainText(s);

@@ -196,6 +196,8 @@ public slots:
 	void on_dataSpaceConstraintsActivityTagPreferredRoomAction_activated();
 	void on_dataSpaceConstraintsActivityTagPreferredRoomsAction_activated();
 
+	void on_dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction_activated();
+
 	void on_dataTimeConstraintsBasicCompulsoryTimeAction_activated();
 	void on_dataTimeConstraintsBreakTimesAction_activated();
 

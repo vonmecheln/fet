@@ -500,8 +500,23 @@ bool computeActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget* parent);
 
 extern bool haveActivitiesOccupyOrSimultaneousConstraints;
 
-/////////////////////////////////////////////////////////////////////////
+//2012-04-29 - Constraint activities occupy max different rooms
 
+class ActivitiesOccupyMaxDifferentRooms_item
+{
+public:
+	//double weight; -> must be 100.0%
+	QList<int> activitiesList;
+	QSet<int> activitiesSet;
+	int maxDifferentRooms;
+};
+
+extern QList<ActivitiesOccupyMaxDifferentRooms_item> aomdrList;
+extern Matrix1D<QList<ActivitiesOccupyMaxDifferentRooms_item*> > aomdrListForActivity;
+
+bool computeActivitiesOccupyMaxDifferentRooms(QWidget* parent);
+
+/////////////////////////////////////////////////////////////////////////
 
 extern bool fixedTimeActivity[MAX_ACTIVITIES];
 extern bool fixedSpaceActivity[MAX_ACTIVITIES];

@@ -1035,6 +1035,8 @@
       </property>
       <addaction name="dataSpaceConstraintsActivityPreferredRoomAction"/>
       <addaction name="dataSpaceConstraintsActivityPreferredRoomsAction"/>
+      <addaction name="separator"/>
+      <addaction name="dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction"/>
      </widget>
      <widget class="QMenu" name="menuSubjects_space_constraints">
       <property name="title">
@@ -2234,6 +2236,11 @@
    </property>
    <property name="shortcut">
     <string extracomment="This is the shortcut for menu item Timetable-&gt;Print. It is recommended to translate with Ctrl+P, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+P', the same as the English original, to keep things standard.">Ctrl+P</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction">
+   <property name="text">
+    <string>A set of activities occupies max different rooms</string>
    </property>
   </action>
  </widget>

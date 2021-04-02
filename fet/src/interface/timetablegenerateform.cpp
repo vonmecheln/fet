@@ -180,7 +180,7 @@ void TimetableGenerateForm::start(){
 	
 	gen.c.makeUnallocated(gt.rules);
 	
-	TimetableExport::writeRandomSeed(this);
+	TimetableExport::writeRandomSeed(this, true); //true represents 'before' state
 
 	generateThread.start();
 }
@@ -593,6 +593,8 @@ void TimetableGenerateForm::simulationFinished()
 	simulation_running=false;
 
 	finishedSemaphore.acquire();
+
+	TimetableExport::writeRandomSeed(this, false); //false represents 'before' state
 
 	Solution& c=gen.c;
 

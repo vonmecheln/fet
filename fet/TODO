@@ -1281,13 +1281,6 @@ Default settings per subject:
 Is there any chance to make it? In my school the all "English" subject is 4 per week (and there are more similar subjects). So it would be nice, when I don't should set these settings (activities per week, tags).
 
 77---------------------------------------------------------
-From nomad (on forum):
-
-Constraint a set of activities have the same room (he wants to use it to schedule the timetable for two weeks, with fortnightly activities).
-
-Liviu: can be added, but it would be tricky, as the users may overuse the constraint or use it incorrectly, and get an impossible timetable.
-
-78---------------------------------------------------------
 From Chafik Graiguer (on forum):
 
 Save button on Activity Planing Window:
@@ -1296,7 +1289,7 @@ For users working with activity planning window, they will probably spend most o
 But this window is lacking a save button, so users have to close it from time to time to get access to FET main window to save work
 Can a save button be added to activity planning window?
 
-79---------------------------------------------------------
+78---------------------------------------------------------
 From Chafik Graiguer (on forum):
 
 About constraint min gaps between a set of activities:
@@ -1308,7 +1301,7 @@ How it is easy/possible to add: min gaps between a set of activites with a tag?
 or better:
 Min gaps between two subjects/tag
 
-80---------------------------------------------------------
+79---------------------------------------------------------
 From Chafik Graiguer (on forum):
 
 Filter for modify multiple constraints at once:
@@ -1318,7 +1311,7 @@ there is an option for: Modify multiple constraints at once
 Is it possible to add a standard filter: teacher, student set, subject, tag ?
 So I can multi-change only those activities with a given subject or teacher... etc?
 
-81---------------------------------------------------------
+80---------------------------------------------------------
 From Chafik Graiguer (on forum):
 
 Filter teachers:
@@ -1341,7 +1334,7 @@ or
 - team teachers,
 -..etc
 
-82---------------------------------------------------------
+81---------------------------------------------------------
 From Chafik Graiguer (on forum):
 
 More statistics after generation:
@@ -1355,14 +1348,14 @@ What about adding statistics after generation accessible from statistics menu
 
 Because the quality of a timetable depends on overall total of free days and gap
 
-83---------------------------------------------------------
+82---------------------------------------------------------
 From Valdo (on forum):
 
 Conclusion: he has many teachers, and almost all should have max 2 gaps per week, with 2 exceptions, who may have more gaps. He
 does not want to add manually that many constraints. So, he suggests that FET should add constraints for all teachers,
 with a selected number of max gaps per week, and then the user can modify each one by hand.
 
-84---------------------------------------------------------
+83---------------------------------------------------------
 From Massimo Mancini:
 
 1. Constraint not available time slots for a teacher
@@ -1371,7 +1364,7 @@ that teacher
 3. Then I press Add. I expect the teacher field filled with the name I used in
 filter... but currently FET propose always the first teacher in list.
 
-85---------------------------------------------------------
+84---------------------------------------------------------
 From Massimo Mancini and Chafik Graiguer:
 
 Consider this:
@@ -1417,7 +1410,7 @@ This concept is already used in FET in two places:
 - Set all available, set all not available
 - subject has a set of prefered rooms 
 
-86---------------------------------------------------------
+85---------------------------------------------------------
 From Massimo Mancini:
 
 Consider the form that lists the constraint "teacher non available":
@@ -1431,13 +1424,13 @@ I know the problem of translation (you may omit the description at all, it is
 useful only when you display ALL constraints), but I think that a code is less boring
 than a long and incomplete description repeated at beginning of all lines.
 
-87---------------------------------------------------------
+86---------------------------------------------------------
 From Andres Chandia (on forum):
 
 Is there a way to tag teachers, for different purposes like, a group of teachers can only work in the morning, or an activity can only be given by a
 teacher of certain group, etc.
 
-88---------------------------------------------------------
+87---------------------------------------------------------
 From Massimo Mancini:
 
 a problem that we discussed in the past is about the description of
@@ -1490,7 +1483,7 @@ VT: Num.min.gg, tra attiv.: id.521 (I:LUZZ, M:EAZ, S:IGE_5 A) / id.517 (I:LUZZ, 
 VT: Num.min.gg, tra attiv.: id.617 (I:xAZ2, M:EAZ, S:IGE_3 B) / id.615 (I:xAZ2, M:EAZ, S:IGE_3 B): +1 Sab-Sab : +0.95
 VT: Num.min.gg, tra attiv.: id.718 (I:CARU, M:COS_DIS, S:GEO_3 A) / id.715 (I:CARU, M:COS_DIS, ChA:info4, S:GEO_3 A): +1 Sab-Sab : +0.95
 
-89---------------------------------------------------------
+88---------------------------------------------------------
 From Volker Dirr:
 
 students set max gaps per week
@@ -1504,7 +1497,7 @@ difficult to find the years.
 
 that filter is also useful for students set not available.
 
-90---------------------------------------------------------
+89---------------------------------------------------------
 From Paolo (on forum):
 
 Well, for me it would be very very (very) important thinking over the constraints while fet is working.
@@ -1513,12 +1506,12 @@ So i ask, kindly, if it is possible getting a print function of all constraints 
 
 Liviu: A temporary solution would be to open two FET programs simultaneously :-)
 
-91---------------------------------------------------------
+90---------------------------------------------------------
 From daviodan:
 
 Possibility to edit the timetable after generation, drag-drop of activities.
 
-92---------------------------------------------------------
+91---------------------------------------------------------
 From Yush Yuen:
 
 Sometimes we have 3 teachers available to teach the same "kind" of
@@ -1548,7 +1541,7 @@ However, also add an "same room/teacher" option. That is, room/teacher
 may be selected from list of preferred rooms/teachers, however, the
 same room/teachers must be assigned to the same activities.
 
-93---------------------------------------------------------
+92---------------------------------------------------------
 From Silver (on forum):
 
 Constraint "Min gaps between activites in the day for teacher".
@@ -1556,7 +1549,7 @@ I mean like this :
 when I select Min gaps = 2
 Saturday: activity - gap - gap - activity - gap - gap - activity
 
-94---------------------------------------------------------
+93---------------------------------------------------------
 From George Miliotis (on forum):
 
 I think the ability to renumber the IDs of the activities starting from a specific ID would be very useful in other XML-related work, too.
@@ -1569,7 +1562,7 @@ This would get all rules and activities, wouldn't it?
 
 But maybe we could use XSL for this.
 
-95---------------------------------------------------------
+94---------------------------------------------------------
 From aang (on forum):
 
 I have a problem though in the formatting of the html files and consequently the printing. Now, an activity will be printed with six subgroups on the timetable
@@ -1584,7 +1577,7 @@ So that every activity of the Subject will have one color and not just the subje
 Lastly, for activities with same starting time is it possible to have the in one column/row so that the number of rows/columns is fixed to the either the number
 of days or lessons (depending on the selected timetable). This way it is easier to print.
 
-96---------------------------------------------------------
+95---------------------------------------------------------
 From Volker Dirr:
 
 Activities preferred times constraints need also need "duration".
@@ -1592,13 +1585,13 @@ Activities preferred times constraints need also need "duration".
 times. by this new feature it will be very easy to add (just one
 constraint - instead of adding a tag to every activity with duration 2).
 
-97---------------------------------------------------------
+96---------------------------------------------------------
 From liquid (on forum):
 
 Consider a split activity 2/5 - 1/5 - 1/5 - 1/5. FET places my 2 hour activity part in the same room. However in case of soft conflict when FET cannot place other 3 hours separately, it places them consecutively but not in the same room.
 I might agree with FET in some cases when it cannot do desired split but if FET must join some activities consecutively let it do this in the same room. How to tell it to do in such way in case of soft conflict?
 
-98---------------------------------------------------------
+97---------------------------------------------------------
 From liquid (on forum):
 
 Based on what I experience while creating not an easy timetable I would do suggest to enable more categories than 3. Max number of categories I need years to split to is 7. I do it manually at the moment but it is time and mind consuming. I know it might seem unusual however requirements for the timetable are indeed real not theoretical.
@@ -1607,7 +1600,7 @@ Liviu: Too many categories might slow down the generation and consume too much m
 
 liquid: I'd like to mention something that might be worth to consider. As we said earlier we can always make our own division of the year to groups and subgroups which are going to be most suitable to one's needs. It would be good to have the possibility to delete unused (empty) subgroups from all groups. Now, FET kindly informs us that a subgroup belongs to another group and you have to delete it again and again from every other group. 
 
-99---------------------------------------------------------
+98---------------------------------------------------------
 From Juan Marcos Filgueira Gomis:
 
 One question, the update dialog shows buttons '&No' and '&Yes' that I
@@ -1616,7 +1609,7 @@ couldn't find in fet_gl.ts. How could I translate them?
 Liviu: These strings are in the Qt translation. It is a bit difficult to manage also the Qt translations.
 (we need some other files, qt_gl.ts, which complicate things). I'll think of some solution maybe in the future.
 
-100--------------------------------------------------------
+99---------------------------------------------------------
 From Yush Yuen (in collaboration with Liviu Lalescu):
 
 Feature: Allow user to customize the initial order of activities for the
@@ -1648,7 +1641,7 @@ on or off the feature. It's useful for cases where I have added a lot of
 custom put order, then want to see how it work with or without it. Probably
 a setting check/uncheck under the menu.
 
-101---------------------------------------------------------
+100---------------------------------------------------------
 From Chafik Graiguer (on forum):
 
 I spent much time striving to solve an impossible timetable
@@ -1672,7 +1665,7 @@ This leads to yet another impossible timetable
 
 My question: can FET automatically report it impossible then abort?
 
-102---------------------------------------------------------
+101---------------------------------------------------------
 From drew:
 
 Actually the biggest problem was with teacher T1, who was mistakenly scheduled for 7 activities with activity AT1. But, there are only 6 timeslots available for AT1. FET needs a way to detect and report on this kind of error. This is not the first time I made that kind of mistake.
@@ -1685,7 +1678,7 @@ The problem with activity id 2 was a variation on this problem. T2 had 5 activit
 
 You do similar checking for student groups which have too many activities for the available time slots 
 
-103---------------------------------------------------------
+102---------------------------------------------------------
 From Christian Kemmer:
 
 I have another suggestion which would make things easier for me.
@@ -1697,17 +1690,17 @@ If I choose a group and activate that checkbox, all subgroups of that group are 
 So if I choose "year 05" and subject "physics", all activities with subject "physics" in all subgroups like "class 05A", "class 05B", ... of group "year 05" are shown.
 If I only choose the group and activate that checkbox while leaving the other comboboxes blank, all activities of all subgroups of that group are shown.
 
-104---------------------------------------------------------
+103---------------------------------------------------------
 From Silver (on forum):
 
 He needs a constraint to ensure that all activities of each teacher are hosted in different rooms (for exam scheduling).
 
-105---------------------------------------------------------
+104---------------------------------------------------------
 From Davide G. M. Salvetti (on forum):
 
 Would it be possible to sort on comments the activities list (like sorting the constraints)?
 
-106---------------------------------------------------------
+105---------------------------------------------------------
 From Davide G. M. Salvetti (on forum):
 
 I wonder if it's sensible to write a .fet file with all placed activities time and space constraints spelled out (i.e., just like the usual
@@ -1715,18 +1708,18 @@ _data_and_timetable.fet, where each activity is (non permanently) blocked in tim
 if it completes succesfully.  I think it could be useful, because that file could then be reused as a start, maybe manually deleting or adding
 some constraint.
 
-107---------------------------------------------------------
+106---------------------------------------------------------
 From Silver (on forum):
 
 He needs "teachers_rooms.html" in the statistics folder, he thinks it would be useful for the examination timetable.
 
-108---------------------------------------------------------
+107---------------------------------------------------------
 From Horatiu Halmajan:
 
 He suggests the possibility of selecting more constraints in the all time/space constraints dialogs and
 de(activate) them in a single operation.
 
-109---------------------------------------------------------
+108---------------------------------------------------------
 From skinkone (on forum):
 
 What I realized is that FET won't allocate your students for you, so I will do that by hand. I can only suspect that such a problem increases the
@@ -1735,7 +1728,7 @@ feature where students can have "tag preferences". The user would set "minimum o
 then be an optimization problem to try to get the most students with their preferences. Essentially FET would form student groups as an output
 rather than as an input.
 
-110---------------------------------------------------------
+109---------------------------------------------------------
 From Jonathan Block (on forum):
 
 It would be nice to have a fourth dimension.
@@ -1743,14 +1736,14 @@ It would be nice to have a fourth dimension.
 Explanation from Liviu Lalescu: He considers students (1), teachers (2) and rooms (3) as three dimensions. He would like to allocate activities
 to teachers (4) (and these teachers should be the fourth dimension, different in concept from the second dimension, but similar to the third dimension).
 
-111---------------------------------------------------------
+110---------------------------------------------------------
 From Liviu Lalescu:
 
 Possibility (check box, default checked) of safe saving for File/Save and Save as. Maybe even for Timetable/Save data and timetable as.
 
 Safe saving means: create a temporary file (make sure it is truncated), write the data to it, remove the original file and rename the temporary file to the original file.
 
-112---------------------------------------------------------
+111---------------------------------------------------------
 From kdrosos (bug report on forum):
 
 When working with dual screen, i.e. one extra screen is connected to the main computer, and when choosing the "A teacher's not available time" in the "Teachers" tab under the "Time" tab I had moved the pop up window in the second display.
@@ -1769,12 +1762,12 @@ Thus, I imagine that there might be a bug in the handling of multiple screens. M
 
 Liviu: Maybe a solution would be in restoring geometry, to test if the geometry would be on an invalid screen, and correct this (add a better test than "if(rect.isValid())" in function "restoreFETDialogGeometry(...)" in file centerwidgetonscreen.cpp).
 
-113---------------------------------------------------------
+112---------------------------------------------------------
 From murad:
 
 Create please, in QComboBox, auto-complete. With a large number of students and teachers it is very difficult to find the necessary students or teachers.
 
-114---------------------------------------------------------
+113---------------------------------------------------------
 From kdrosos:
 
 In FET there is "School's name", where the school' s name appears in the final .html files.
@@ -1787,16 +1780,14 @@ This can also allow a "School's name field" as:
 
 Liviu's note: I think that kdrosos refers to the Greek FET. In the English FET, the string is "Institution name".
 
-115---------------------------------------------------------
+114---------------------------------------------------------
 From Volker Dirr:
 
-1. Implement constraint "Activities need the same room". (This constraint should be added optionally with an activity, similar to the min days constraint.)
-
-2. Implement constraint "Activity needs several rooms". (I am not 100% sure if it is enough to have a constraint that adds all selected rooms to a
+Implement constraint "Activity needs several rooms". (I am not 100% sure if it is enough to have a constraint that adds all selected rooms to a
 single activity or if it is also needed to get only some rooms from (a larger) selection. So maybe all current "roomS" constraints "just" need an
 option "number of used rooms from the selection". Currently it is always 1. It is needed to increase this number.)
 
-116---------------------------------------------------------
+115---------------------------------------------------------
 From nouvakis:
 
 I've seen that with html files you save a "xxx_data_and_timetable.fet" file.
@@ -1809,7 +1800,7 @@ So, you could add an option (for example autosave) saving each generated timetab
 
 This file could easily be loaded from a user just to be able to preview the generated timetable inside FET.
 
-117---------------------------------------------------------
+116---------------------------------------------------------
 From nouvakis:
 
 I would like to suggest an extra optional field to entities of FET program.
@@ -1828,9 +1819,80 @@ there should be a more accurate way to associate an FET entity with my database 
 
 If you add the id field (as an optional field) there should be no problem to users already using FET ...
 
-118---------------------------------------------------------
+117---------------------------------------------------------
 From mma:
 
 When adding a constraint, a useful feature would be to check if an identical constraint exists already, and thus not adding the constraint. I just tried to add the same constraint repeatedly (just kept pressing 'Add'), and it kept adding. When there are many constraints it can be difficult to keep track of them all.
 
 Removing identical constraints reduces the clutter, and perhaps also speeds up the timetable generation?
+
+118---------------------------------------------------------
+From k1aas:
+
+The new printing feature in 5.17.0 is very nice. Here are a few requests:
+
+1. I can't find a selection to center the text in the boxes. It would be nice to have the text displayed as on the screen in the 'View students/teachers timetable'.
+
+2. Schedules are much easier to read if they are colour-coded. How about a range of selectable colours per teacher or per subject, and having these colours then inserted in the print file? See my attachment.
+
+Klaas
+
+Answer by Volker Dirr, on the first point:
+
+1. It's already included in the FET sources. Sadly it is a Qt bug.
+
+119---------------------------------------------------------
+From Yush Yuen:
+
+For printing: It would nice if I can specify a custom css file for the style.
+
+120---------------------------------------------------------
+From Yush Yuen:
+
+I find that while the fixed max-room contraint works well, I notice
+something with my situation:
+
+I have a teacher, teacher A, uses room A and teaches year 6 classes. Unlike
+the more senior years, which are heavily blocked (lots of constraints with
+activities with same start time), year 6 classes are pretty free floating.
+Therefore, the year 6 classes always appear at the end of the order of
+allocation.
+
+I have included room A as one of the available rooms for the preferred room
+list for another teacher. room A is almost always chosen. But the problem
+is, teacher A and room A become very difficult toward the end of the
+allocation. My timetable has about 1280 activities, and most of the year 6
+classes are toward the end of the list. The generation always got stuck
+toward the end, like 1250, with teacher A not being able to get the right
+allocation.
+
+I don't think this is a bug. This is easily solved by removing room A from
+the preferredRooms list for that other teacher. But I just want to point
+that out to you.
+
+Answer Liviu Lalescu:
+
+I could improve the algorithm to take care of situations like that. So
+it will know that in room A there can be only one type of activity
+(one type of look-ahead). Or that in room A there can be only teacher A
+(another type of look-ahead). But there are contrary reasons:
+
+1) Will make other timetables slower, by the additional look-ahead.
+
+2) Each look-ahead is to be avoided, because of possible new critical
+bugs and general slowdown. There are many look-aheads in FET, but they
+are necessary and not very time-consuming.
+
+3) The user is advised to help FET towards a solution. The user needs
+to collaborate with FET. (Of course, not necessarily us. We want to
+push its limits :-)
+
+4) This is the most important reason. Say I solve this problem for a
+single preferred room for teacher A. But this is not everything. A user
+may invent two preferred rooms for teacher A and go into the same
+situation, which now becomes more complicated to manage. I cannot
+forecast all situations similar to yours.
+
+Please tell me what you think, I might need to treat situation like
+these - I am still thinking. Because I did many look-aheads which are
+necessary.

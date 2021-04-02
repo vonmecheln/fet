@@ -84,71 +84,6 @@ void Solution::init(Rules& r){
 	this->changedForMatrixCalculation=true;
 }
 
-bool Solution::read(Rules& r, const QString& filename){
-	assert(0);
-
-	assert(r.initialized);
-
-	QFile file(filename);
-	if(!file.open(QIODevice::ReadOnly))
-		assert(0);
-	QTextStream tis(&file);
-	this->read(r, tis);
-	file.close();
-
-	return true;
-}
-
-bool Solution::read(Rules &r, QTextStream &tis){
-	assert(0);
-
-	assert(r.initialized);
-	assert(r.internalStructureComputed);
-
-	for(int i=0; i<r.nInternalActivities; i++){
-		tis>>this->times[i];
-		if(tis.atEnd()){
-			//The rules and the solution do not match (1)
-			return false;
-		}
-
-		if(this->times[i]>=r.nHoursPerWeek && this->times[i]!=UNALLOCATED_TIME){
-			//The rules and the solution do not match (2)
-			return false;
-		}
-	}
-	
-	this->_fitness=-1;
-	
-	this->changedForMatrixCalculation=true;
-
-	return true;
-}
-
-void Solution::write(Rules& r, const QString &filename){
-	assert(0);
-
-	assert(r.initialized);
-
-	QFile file(filename);
-	if(!file.open(QIODevice::WriteOnly))
-		assert(0);
-	QTextStream tos(&file);
-	this->write(r, tos);
-	file.close();
-}
-
-void Solution::write(Rules& r, QTextStream &tos){
-	assert(0);
-
-	assert(r.initialized);
-	assert(r.internalStructureComputed);
-
-	for(int i=0; i<r.nInternalActivities; i++){
-		tos<<this->times[i]<<endl;
-	}
-}
-
 void Solution::makeUnallocated(Rules& r){
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
@@ -162,23 +97,6 @@ void Solution::makeUnallocated(Rules& r){
 
 	this->changedForMatrixCalculation=true;
 }
-
-void Solution::makeRandom(Rules& r){
-	assert(0);
-
-	assert(r.initialized);
-	assert(r.internalStructureComputed);
-
-	for(int i=0; i<r.nInternalActivities; i++){
-		this->times[i] = randomKnuth(r.nHoursPerWeek);
-		//don't forget about rooms
-	}
-
-	this->_fitness = -1;
-
-	this->changedForMatrixCalculation=true;
-}
-
 
 double Solution::fitness(Rules& r, QString* conflictsString){
 	assert(r.initialized);

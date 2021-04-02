@@ -350,6 +350,11 @@ Matrix1D<QList<ActivitiesMaxSimultaneousInSelectedTimeSlots_item*> > amsistsList
 
 bool haveActivitiesOccupyOrSimultaneousConstraints;
 
+//2011-09-25 - Constraint activities occupy max different rooms
+QList<ActivitiesOccupyMaxDifferentRooms_item> aomdrList;
+Matrix1D<QList<ActivitiesOccupyMaxDifferentRooms_item*> > aomdrListForActivity;
+//bool computeActivitiesOccupyMaxDifferentRooms(QWidget* parent);
+
 
 extern QString initialOrderOfActivities;
 
@@ -496,6 +501,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	aomtsListForActivity.resize(gt.rules.nInternalActivities);
 	//2011-09-30
 	amsistsListForActivity.resize(gt.rules.nInternalActivities);
+
+	//2011-09-25
+	aomdrListForActivity.resize(gt.rules.nInternalActivities);
 
 	//////////////////end resizing - new feature
 	
@@ -666,6 +674,13 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	t=computeActivitiesMaxSimultaneousInSelectedTimeSlots(parent);
 	if(!t)
 		return false;
+	////////////////
+
+	//2011-09-25
+	t=computeActivitiesOccupyMaxDifferentRooms(parent);
+	if(!t)
+		return false;
+	
 	////////////////
 	
 	/////////////rooms
@@ -5717,6 +5732,48 @@ bool computeActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget* parent)
 			ActivitiesMaxSimultaneousInSelectedTimeSlots_item* p_item=&amsistsList[amsistsList.count()-1];
 			foreach(int ai, cn->_activitiesIndices)
 				amsistsListForActivity[ai].append(p_item);
+		}
+	}
+	
+	return ok;
+}
+
+//2012-04-29
+bool computeActivitiesOccupyMaxDifferentRooms(QWidget* parent)
+{
+	bool ok=true;
+	
+	aomdrList.clear();
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		aomdrListForActivity[i].clear();
+
+	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
+		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_DIFFERENT_ROOMS){
+			ConstraintActivitiesOccupyMaxDifferentRooms* cn=(ConstraintActivitiesOccupyMaxDifferentRooms*)gt.rules.internalSpaceConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'activities occupy max different rooms'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			ActivitiesOccupyMaxDifferentRooms_item item;
+			item.activitiesList=cn->_activitiesIndices;
+			item.activitiesSet=item.activitiesList.toSet();
+			item.maxDifferentRooms=cn->maxDifferentRooms;
+			
+			aomdrList.append(item);
+			ActivitiesOccupyMaxDifferentRooms_item* p_item=&aomdrList[aomdrList.count()-1];
+			foreach(int ai, cn->_activitiesIndices)
+				aomdrListForActivity[ai].append(p_item);
 		}
 	}
 	

@@ -52,6 +52,8 @@
 #include "modifyconstraintactivitytagpreferredroomform.h"
 #include "modifyconstraintactivitytagpreferredroomsform.h"
 
+#include "modifyconstraintactivitiesoccupymaxdifferentroomsform.h"
+
 #include "lockunlock.h"
 
 #include "advancedfilterform.h"
@@ -441,6 +443,12 @@ void AllSpaceConstraintsForm::modifyConstraint()
 	//26
 	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
 		ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm form(this, (ConstraintTeachersMinGapsBetweenBuildingChanges*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//27
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_DIFFERENT_ROOMS){
+		ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm form(this, (ConstraintActivitiesOccupyMaxDifferentRooms*)ctr);
 		setParentAndOtherThings(&form, this);
 		form.exec();
 	}

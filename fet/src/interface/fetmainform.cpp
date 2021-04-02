@@ -177,6 +177,8 @@ using namespace std;
 #include "constraintactivitytagpreferredroomform.h"
 #include "constraintactivitytagpreferredroomsform.h"
 
+#include "constraintactivitiesoccupymaxdifferentroomsform.h"
+
 #include "settingstimetablehtmllevelform.h"
 
 #include "activityplanningconfirmationform.h"
@@ -2970,6 +2972,20 @@ void FetMainForm::on_dataTimeConstraintsActivityPreferredStartingTimesAction_act
 	form.exec();
 }
 
+//2012-04-29
+void FetMainForm::on_dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintActivitiesOccupyMaxDifferentRoomsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
 void FetMainForm::on_helpAboutAction_activated()
 {
 	HelpAboutForm* form=new HelpAboutForm(this);
@@ -3325,6 +3341,7 @@ void FetMainForm::on_languageAction_activated()
 	languagesMap.insert("sr", tr("Serbian"));
 	languagesMap.insert("gl", tr("Galician"));
 	languagesMap.insert("vi", tr("Vietnamese"));
+	languagesMap.insert("uz", tr("Uzbek"));
 	
 	//assert(languagesMap.count()==N_LANGUAGES);
 	

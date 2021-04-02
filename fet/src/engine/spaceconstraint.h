@@ -85,6 +85,8 @@ const int CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_BUILDING_CHANGES			=1024;
 const int CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM						=1025;
 const int CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS						=1026;
 
+const int CONSTRAINT_ACTIVITIES_OCCUPY_MAX_DIFFERENT_ROOMS				=1027;
+
 /**
 This class represents a space constraint
 */
@@ -1413,6 +1415,52 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
 	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintActivitiesOccupyMaxDifferentRooms: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivitiesOccupyMaxDifferentRooms)
+
+public:
+	QList<int> activitiesIds;
+	
+	int maxDifferentRooms;
+
+	//internal variables
+	QList<int> _activitiesIndices;
+
+	ConstraintActivitiesOccupyMaxDifferentRooms();
+
+	ConstraintActivitiesOccupyMaxDifferentRooms(double wp, QList<int> a_L, int max_rooms);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	void removeUseless(Rules& r);
+
 	bool isRelatedToActivity(Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
