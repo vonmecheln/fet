@@ -190,6 +190,8 @@
      <addaction name="languageSpanishAction" />
      <addaction name="languageFrenchAction" />
      <addaction name="languageHungarianAction" />
+     <addaction name="languageIndonesianAction" />
+     <addaction name="languageItalianAction" />
      <addaction name="languageMacedonianAction" />
      <addaction name="languageMalayAction" />
      <addaction name="languageDutchAction" />
@@ -937,7 +939,7 @@
   </action>
   <action name="settingsTimetableHtmlLevelAction" >
    <property name="text" >
-    <string>Timetable html level</string>
+    <string>Html level for generated timetables</string>
    </property>
   </action>
   <action name="dataTimeConstraintsTeachersMinHoursDailyAction" >
@@ -974,6 +976,22 @@
    </property>
    <property name="text" >
     <string>&amp;ar (Arabic)</string>
+   </property>
+  </action>
+  <action name="languageIndonesianAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>&amp;id (Indonesian)</string>
+   </property>
+  </action>
+  <action name="languageItalianAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>it (Italian)</string>
    </property>
   </action>
  </widget>

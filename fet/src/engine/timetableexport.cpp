@@ -565,7 +565,12 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, QString sa
 	tos<<"table.detailed {\n  margin-left:auto; margin-right:auto;\n  text-align: center;\n  border: 0px;\n}\n\n";
 	tos<<"caption {\n\n}\n\n";
 	tos<<"thead {\n\n}\n\n";
-	tos<<"tfoot {\n\n}\n\n";
+	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	tos<<"/* OpenOffice import the tfoot incorrect. So I used tr.foot instead of tfoot.\n";
+	tos<<"   compare http://www.openoffice.org/issues/show_bug.cgi?id=82600\n";
+	tos<<"tfoot {\n\n}*/\n\n";
+	tos<<"tr.foot {\n\n}\n\n";
+	//workaround end
 	tos<<"tbody {\n\n}\n\n";
 	tos<<"th {\n\n}\n\n";
 	tos<<"td {\n\n}\n\n";
@@ -721,8 +726,9 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(const QString& h
 		}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-
+		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		*/
 		tos<<"      <tbody>\n";
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
 			tos<<"        <tr>\n";
@@ -756,7 +762,7 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(const QString& h
 									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									default: tos<<protect2(act->subjectTagName); break;
+									default: tos<<" "<<protect2(act->subjectTagName); break;
 								}
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"</div>";
@@ -800,6 +806,9 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(const QString& h
 			}
 			tos<<"        </tr>\n";
 		}
+		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		//workaround end.
 		tos<<"      </tbody>\n";
 		if(subgroup!=gt.rules.nInternalSubgroups-1){
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
@@ -924,8 +933,9 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(const QString& htm
 		}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-
+		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		*/
 		tos<<"      <tbody>\n";
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 			tos<<"        <tr>\n";
@@ -960,7 +970,7 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(const QString& htm
 									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									default: tos<<protect2(act->subjectTagName); break;
+									default: tos<<" "<<protect2(act->subjectTagName); break;
 								}
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"</div>";
@@ -1005,6 +1015,9 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(const QString& htm
 			}
 			tos<<"        </tr>\n";
 		}
+		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		//workaround end.
 		tos<<"      </tbody>\n";
 		if(subgroup!=gt.rules.nInternalSubgroups-1){
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
@@ -1102,8 +1115,9 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(const QString& htm
 		tos << gt.rules.internalSubgroupsList[i]->name << "</th>";
 	}
 	tos<<"</tr>\n      </thead>\n";
-
+	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	*/
 	tos<<"      <tbody>\n";
 	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -1142,7 +1156,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(const QString& htm
 									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									default: tos<<protect2(act->subjectTagName); break;
+									default: tos<<" "<<protect2(act->subjectTagName); break;
 								}
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"</div>";
@@ -1187,6 +1201,9 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(const QString& htm
 			tos<<"        </tr>\n";
 		}
 	}
+	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	//workaround end.
 	tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
 
@@ -1279,8 +1296,9 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(const QString& h
 		}
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
-
+	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	*/
 	tos<<"      <tbody>\n";
 	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
 		tos << "        <tr>\n";
@@ -1315,7 +1333,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(const QString& h
 									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									default: tos<<protect2(act->subjectTagName); break;
+									default: tos<<" "<<protect2(act->subjectTagName); break;
 								}
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"</div>";
@@ -1360,6 +1378,9 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(const QString& h
 		}
 		tos<<"        </tr>\n";
 	}
+	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	//workaround end.
 	tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
 
@@ -1480,8 +1501,9 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 				}
 				tos<<"        </tr>\n";
 				tos<<"      </thead>\n";
-
+				/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 				tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+				*/
 				tos<<"      <tbody>\n";
 				for(int j=0; j<gt.rules.nHoursPerDay; j++){
 					tos<<"        <tr>\n";
@@ -1528,7 +1550,7 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 												case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 												case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 												case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												default: tos<<protect2(act->subjectTagName); break;
+												default: tos<<" "<<protect2(act->subjectTagName); break;
 											}
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"</div>";
@@ -1618,7 +1640,7 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 													case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 													case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 													case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													default: tos<<protect2(act->subjectTagName); break;
+													default: tos<<" "<<protect2(act->subjectTagName); break;
 												}
 										}
 										tos<<"</td>";
@@ -1675,6 +1697,9 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 					}
 					tos<<"        </tr>\n";
 				}
+				//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+				tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+				//workaround end.
 				tos<<"      </tbody>\n";
 				if(((i!=gt.rules.yearsList.size()-1) && (g!=sty->groupsList.size())) || (PRINT_DETAILED==true)){
 					tos<<"    </table>\n    <p>&nbsp;</p>\n";
@@ -1808,8 +1833,9 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 				}
 				tos<<"        </tr>\n";
 				tos<<"      </thead>\n";
-
+				/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 				tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+				*/
 				tos<<"      <tbody>\n";
 				for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 					tos<<"        <tr>\n";
@@ -1856,7 +1882,7 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 												case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 												case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 												case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												default: tos<<protect2(act->subjectTagName); break;
+												default: tos<<" "<<protect2(act->subjectTagName); break;
 											}
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"</div>";
@@ -1946,7 +1972,7 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 													case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 													case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 													case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													default: tos<<protect2(act->subjectTagName); break;
+													default: tos<<" "<<protect2(act->subjectTagName); break;
 												}
 										}
 										tos<<"</td>";
@@ -2003,6 +2029,9 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 					}
 					tos<<"        </tr>\n";
 				}
+				//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+				tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+				//workaround end.
 				tos<<"      </tbody>\n";
 				if(((i!=gt.rules.yearsList.size()-1) && (g!=sty->groupsList.size())) || (PRINT_DETAILED==true)){
 					tos<<"    </table>\n    <p>&nbsp;</p>\n";
@@ -2114,7 +2143,9 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 		}
 		
 		tos<<"</tr>\n      </thead>\n";
+		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		*/
 		tos<<"      <tbody>\n";
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -2169,7 +2200,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 												case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 												case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 												case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												default: tos<<protect2(act->subjectTagName); break;
+												default: tos<<" "<<protect2(act->subjectTagName); break;
 											}
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"</div>";
@@ -2259,7 +2290,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 													case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 													case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 													case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													default: tos<<protect2(act->subjectTagName); break;
+													default: tos<<" "<<protect2(act->subjectTagName); break;
 												}
 										}
 										tos<<"</td>";
@@ -2319,6 +2350,9 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 				tos<<"        </tr>\n";
 			}
 		}
+		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		//workaround end.
 		tos<<"      </tbody>\n";
 		if(PRINT_DETAILED==true){
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
@@ -2331,7 +2365,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
 	} while(PRINT_DETAILED!=true);
-	tos << "      </tbody>\n    </table>\n";
+	//tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
@@ -2427,8 +2461,9 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 			}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-		
+		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		*/
 		tos<<"      <tbody>\n";
 		
 		int group=0;
@@ -2481,7 +2516,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 												case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 												case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 												case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												default: tos<<protect2(act->subjectTagName); break;
+												default: tos<<" "<<protect2(act->subjectTagName); break;
 											}
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"</div>";
@@ -2571,7 +2606,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 													case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 													case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 													case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													default: tos<<protect2(act->subjectTagName); break;
+													default: tos<<" "<<protect2(act->subjectTagName); break;
 												}
 										}
 										tos<<"</td>";
@@ -2631,6 +2666,9 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 				group++;
 			}
 		}
+		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		//workaround end.
 		tos<<"      </tbody>\n";
 		if(PRINT_DETAILED==true){
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
@@ -2643,7 +2681,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
 	} while(PRINT_DETAILED!=true);
-	tos << "      </tbody>\n    </table>\n";
+	//tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
@@ -2755,8 +2793,9 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 				}
 				tos<<"        </tr>\n";
 				tos<<"      </thead>\n";
-
+				/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 				tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+				*/
 				tos<<"      <tbody>\n";
 				for(int j=0; j<gt.rules.nHoursPerDay; j++){
 					tos<<"        <tr>\n";
@@ -2806,7 +2845,7 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 												case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 												case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 												case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												default: tos<<protect2(act->subjectTagName); break;
+												default: tos<<" "<<protect2(act->subjectTagName); break;
 											}
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"</div>";
@@ -2896,7 +2935,7 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 													case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 													case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 													case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													default: tos<<protect2(act->subjectTagName); break;
+													default: tos<<" "<<protect2(act->subjectTagName); break;
 												}
 										}
 										tos<<"</td>";
@@ -2953,6 +2992,9 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 					}
 					tos<<"        </tr>\n";
 				}
+				//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+				tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+				//workaround end.
 				tos<<"      </tbody>\n";
 				if((year!=gt.rules.yearsList.size()-1) || (PRINT_DETAILED==true)){
 					tos<<"    </table>\n    <p>&nbsp;</p>\n";
@@ -3076,8 +3118,9 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 				}
 				tos<<"        </tr>\n";
 				tos<<"      </thead>\n";
-
+				/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 				tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+				*/
 				tos<<"      <tbody>\n";
 				for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 					tos<<"        <tr>\n";
@@ -3128,7 +3171,7 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 												case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 												case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 												case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												default: tos<<protect2(act->subjectTagName); break;
+												default: tos<<" "<<protect2(act->subjectTagName); break;
 											}
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"</div>";
@@ -3218,7 +3261,7 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 													case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 													case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 													case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													default: tos<<protect2(act->subjectTagName); break;
+													default: tos<<" "<<protect2(act->subjectTagName); break;
 												}
 										}
 										tos<<"</td>";
@@ -3275,6 +3318,9 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 					}
 					tos<<"        </tr>\n";
 				}
+				//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+				tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+				//workaround end.
 				tos<<"      </tbody>\n";
 				if((year!=gt.rules.yearsList.size()-1) &&  (PRINT_DETAILED==true)){
 					tos<<"    </table>\n    <p>&nbsp;</p>\n";
@@ -3382,7 +3428,9 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 		}
 		
 		tos<<"</tr>\n      </thead>\n";
+		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		*/
 		tos<<"      <tbody>\n";
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -3437,7 +3485,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 												case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 												case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 												case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												default: tos<<protect2(act->subjectTagName); break;
+												default: tos<<" "<<protect2(act->subjectTagName); break;
 											}
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"</div>";
@@ -3527,7 +3575,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 													case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 													case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 													case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													default: tos<<protect2(act->subjectTagName); break;
+													default: tos<<" "<<protect2(act->subjectTagName); break;
 												}
 										}
 										tos<<"</td>";
@@ -3585,6 +3633,9 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 				tos<<"        </tr>\n";
 			}
 		}
+		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		//workaround end.
 		tos<<"      </tbody>\n";
 		if(PRINT_DETAILED==true){
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
@@ -3597,7 +3648,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
 	} while(PRINT_DETAILED!=true);
-	tos << "      </tbody>\n    </table>\n";
+	//tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
@@ -3693,8 +3744,9 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 			}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-		
+		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		*/
 		tos<<"      <tbody>\n";
 		
 		for(int year=0; year<gt.rules.yearsList.size(); year++){
@@ -3747,7 +3799,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 												case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 												case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 												case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												default: tos<<protect2(act->subjectTagName); break;
+												default: tos<<" "<<protect2(act->subjectTagName); break;
 											}
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"</div>";
@@ -3837,7 +3889,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 													case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 													case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 													case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													default: tos<<protect2(act->subjectTagName); break;
+													default: tos<<" "<<protect2(act->subjectTagName); break;
 												}
 										}
 										tos<<"</td>";
@@ -3896,6 +3948,9 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 				}
 				tos<<"        </tr>\n";
 		}
+		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		//workaround end.
 		tos<<"      </tbody>\n";
 		if(PRINT_DETAILED==true){
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
@@ -3908,7 +3963,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
 	} while(PRINT_DETAILED!=true);
-	tos << "      </tbody>\n    </table>\n";
+	//tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
@@ -4014,8 +4069,9 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 		}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-
+		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		*/
 		tos<<"      <tbody>\n";
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
 			tos<<"        <tr>\n";
@@ -4065,7 +4121,7 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									default: tos<<protect2(act->subjectTagName); break;
+									default: tos<<" "<<protect2(act->subjectTagName); break;
 								}
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"</div>";
@@ -4093,6 +4149,9 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 			}
 			tos<<"        </tr>\n";
 		}
+		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		//workaround end.
 		tos<<"      </tbody>\n";
 		if(teacher!=gt.rules.nInternalTeachers-1){
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
@@ -4207,8 +4266,9 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 		}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-
+		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		*/
 		tos<<"      <tbody>\n";
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 			tos<<"        <tr>\n";
@@ -4258,7 +4318,7 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									default: tos<<protect2(act->subjectTagName); break;
+									default: tos<<" "<<protect2(act->subjectTagName); break;
 								}
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"</div>";
@@ -4287,6 +4347,9 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 			}
 			tos<<"        </tr>\n";
 		}
+		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		//workaround end.
 		tos<<"      </tbody>\n";
 		if(teacher!=gt.rules.nInternalTeachers-1){
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
@@ -4381,8 +4444,9 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(const QString& html
 		tos << gt.rules.internalTeachersList[i]->name << "</th>";
 	}
 	tos<<"</tr>\n      </thead>\n";
-
+	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	*/
 	tos<<"      <tbody>\n";
 	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -4436,7 +4500,7 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(const QString& html
 									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									default: tos<<protect2(act->subjectTagName); break;
+									default: tos<<" "<<protect2(act->subjectTagName); break;
 								}
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"</div>";
@@ -4465,6 +4529,9 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(const QString& html
 			tos<<"        </tr>\n";
 		}
 	}
+	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	//workaround end.
 	tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
 
@@ -4557,8 +4624,9 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& ht
 		}
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
-
+	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	*/
 	tos<<"      <tbody>\n";
 	for(int i=0; i<gt.rules.nInternalTeachers; i++){
 		tos << "        <tr>\n";
@@ -4609,7 +4677,7 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& ht
 									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									default: tos<<protect2(act->subjectTagName); break;
+									default: tos<<" "<<protect2(act->subjectTagName); break;
 								}
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"</div>";
@@ -4638,6 +4706,9 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& ht
 		}
 		tos<<"        </tr>\n";
 	}
+	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	//workaround end.
 	tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
 
@@ -4743,8 +4814,9 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 			}
 			tos<<"        </tr>\n";
 			tos<<"      </thead>\n";
-
+			/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+			*/
 			tos<<"      <tbody>\n";
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
 				tos<<"        <tr>\n";
@@ -4810,7 +4882,7 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 										case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 										case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 										case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-										default: tos<<protect2(act->subjectTagName); break;
+										default: tos<<" "<<protect2(act->subjectTagName); break;
 									}
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"</div>";
@@ -4824,6 +4896,9 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 				}
 				tos<<"        </tr>\n";
 			}
+			//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+			tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+			//workaround end.
 			tos<<"      </tbody>\n";
 			if(room!=gt.rules.nInternalRooms-1){
 				tos<<"    </table>\n    <p>&nbsp;</p>\n";
@@ -4940,8 +5015,9 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 			}
 			tos<<"        </tr>\n";
 			tos<<"      </thead>\n";
-
+			/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+			*/
 			tos<<"      <tbody>\n";
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 				tos<<"        <tr>\n";
@@ -5007,7 +5083,7 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 										case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 										case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 										case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-										default: tos<<protect2(act->subjectTagName); break;
+										default: tos<<" "<<protect2(act->subjectTagName); break;
 									}
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"</div>";
@@ -5022,6 +5098,9 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 				}
 				tos<<"        </tr>\n";
 			}
+			//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+			tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+			//workaround end.
 			tos<<"      </tbody>\n";
 			if(room!=gt.rules.nInternalRooms-1){
 				tos<<"    </table>\n    <p>&nbsp;</p>\n";
@@ -5119,8 +5198,9 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfil
 			tos << gt.rules.internalRoomsList[i]->name << "</th>";
 		}
 		tos<<"</tr>\n      </thead>\n";
-
+		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		*/
 		tos<<"      <tbody>\n";
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -5190,7 +5270,7 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfil
 										case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 										case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 										case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-										default: tos<<protect2(act->subjectTagName); break;
+										default: tos<<" "<<protect2(act->subjectTagName); break;
 									}
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"</div>";
@@ -5205,6 +5285,9 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfil
 				tos<<"        </tr>\n";
 			}
 		}
+		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		//workaround end.
 		tos << "      </tbody>\n    </table>\n";
 	}
 	tos << "  </body>\n</html>\n\n";
@@ -5300,8 +5383,9 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlf
 			}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-
+		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		*/
 		tos<<"      <tbody>\n";
 		for(int i=0; i<gt.rules.nInternalRooms; i++){
 			tos << "        <tr>\n";
@@ -5368,7 +5452,7 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlf
 										case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
 										case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
 										case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-										default: tos<<protect2(act->subjectTagName); break;
+										default: tos<<" "<<protect2(act->subjectTagName); break;
 									}
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"</div>";
@@ -5383,6 +5467,9 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlf
 			}
 			tos<<"        </tr>\n";
 		}
+		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		//workaround end.
 		tos << "      </tbody>\n    </table>\n";
 	}
 	tos << "  </body>\n</html>\n\n";

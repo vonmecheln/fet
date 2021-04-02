@@ -1110,4 +1110,9 @@ Versions 5.4.0 - 5.4.
 	- Arabic translation update by Hatim Ali
 	- Code cleanup
 	- Switched to Qt 4.3.2
+- Version 5.4.13
+	- Small bug fixes in html generated timetable by Volker Dirr
+	- Indonesian translation by Nirwan Yus
+	- Italian translation by Marco Barsotti
+	- Arabic translation update by Hatim Ali
 	

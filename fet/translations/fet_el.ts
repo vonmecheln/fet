@@ -479,9 +479,12 @@ added constraint
 activities constraint)
 Recommended:
 95.0%-100.0%</source>
-        <translation>% πιθανότητα εμφάνισης 
-ενδιάμεσων ημερών.
-Συνιστώμενο 95%-100%</translation>
+        <translation>Πιθανότητα εμφάνισης 
+προστιθέμενου όρου
+ (ελάχ. ημέρες μεταξύ 
+εργασιών όρος)
+Συνιστώμενο:
+ 95.0%-100.0%</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="989"/>
@@ -494,7 +497,7 @@ Recommended:
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="16"/>
         <source>FET - Add new constraint 2 activities consecutive dialog</source>
-        <translation>FET -Πρόσθεση όρου 2 συνεχόμενων εργασιών</translation>
+        <translation>FET - Πρόσθεση όρου 2 συνεχόμενων εργασιών</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="35"/>
@@ -1356,7 +1359,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 95.0%-100.0%)</source>
-        <translation>% επιλογή (συνιστώμενο: 95%-100%)</translation>
+        <translation>Βάρος επιλογής (συνιστώμενο: 95.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="126"/>
@@ -4647,12 +4650,12 @@ but they might be too large and you might get a impossible timetable.</source>
 <context>
     <name>FetMainForm</name>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="595"/>
+        <location filename="../src/interface/fetmainform.cpp" line="601"/>
         <source>This help by Liviu Lalescu, modified 1 October 2007</source>
         <translation>Η βοήθεια αυτή έγινε από τον  Liviu Lalescu, στις 1 Οκτωβρίου 2007</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="618"/>
+        <location filename="../src/interface/fetmainform.cpp" line="624"/>
         <source>Statistics for students might be the most difficult to understand. If you are using divisions of years: probably the most relevant statistics are the ones for each subgroup (so you may check only subgroups check box). You may see more hours for the years or groups, but these are not significant, please ignore them, because each year or group will count also activities of all contained subgroups.
 
 Each subgroup should have a number of hours per week close to the average of all subgroups and close to the normal number of working hours of each students set. If a subgroup has a much lower value, maybe you used incorrectly the years/groups/subgroups for activities.
@@ -4666,55 +4669,55 @@ Having a subgroup with too little working hours per week means that you inputted
 Κάθε τμήμα λαμβάνει τις δραστηριότητες του έτους γονέων και της τάξεως γονέων  του. Η κατοχή τμήματος με τις πάρα πολύ μικρές ώρες απασχόλησης την εβδομάδα σημαίνει ότι εισαγάγατε τις δραστηριότητες κατά τρόπο λανθασμένο, και επίσης ότι μερικοί περιορισμοί όπως κανένα χάσμα, νωρίς ή οι ελάχιστες ώρες καθημερινά για αυτήν το τμήμα ερμηνεύονται κατά τρόπο λανθασμένο (εάν το τμήμα αναπτύσσει μόνο 2 δραστηριότητες, κατόπιν αυτές πρέπει να τοποθετηθούν στις πρώτες ώρες, ο οποίος περιορισμός εδώ είναι πολύ σκληρός και λάθος).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="639"/>
+        <location filename="../src/interface/fetmainform.cpp" line="645"/>
         <source>FET - information about statistics</source>
         <translation>FET - πληροφορίες για τα στατιστικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1180"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1186"/>
         <source>OK</source>
         <translation>ΟΚ</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1164"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1170"/>
         <source>You can see help translated into other languages in the directory doc/ of FET</source>
         <translation>Βλέπετε βοήθεια μεταφρασμένη σε άλλες γλώσσες στον κατάλογο doc/ του FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1166"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1172"/>
         <source>Currently (4 Oct. 2007), there are:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1168"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1174"/>
         <source>1. es - Spanish - Instructions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1173"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1179"/>
         <source>FET - help in other languages</source>
         <translation>FET - Βοήθεια σε άλλες γλώσσες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="235"/>
+        <location filename="../src/interface/fetmainform.cpp" line="241"/>
         <source>FET warning</source>
         <translation>FET προειδοποίηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="243"/>
+        <location filename="../src/interface/fetmainform.cpp" line="249"/>
         <source>Could not search for possible updates on internet - error message is: %1. I am searching for the file http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt . Maybe the current structure on web page was changed. Please visit FET web page http://www.lalescu.ro/liviu/fet/ and get latest version or, if the web page does not work, try to search for the new FET page on the internet. You can contact the author. Also, sometimes lalescu.ro might have temporary problems, try again later
 
 If you want, you can turn off automatic search for updates in Settings menu</source>
-        <translation type="unfinished">Δεν θα μπορούσε να ψάξει για τις πιθανές αναπροσαρμογές στο διαδίκτυο - το μήνυμα λάθους είναι: %1, ψάχνω για το αρχείο http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt. Ίσως η δομή ιστοσελίδας άλλαξε. Παρακαλώ επισκεφτείτε την ιστοσελίδα FET http://www.lalescu.ro/liviu/fet/ και πάρτε την πιό πρόσφατη έκδοση ή, εάν η ιστοσελίδα δεν λειτουργεί, να προσπαθήσετε να ψάξετε για τη νέα σελίδα FET στο διαδίκτυο. Μπορείτε να έρθετε σε επαφή με το συντάκτη. Επίσης, μερικές φορές στο lalescu.ro έχει προσωρινά προβλήματα, προσπαθήστε πάλι αργότερα
-Εάν θέλετε, μπορείτε να κλείσετε την αυτόματη αναζήτηση των αναπροσαρμογών στις επιλογές ρυθμίσεων</translation>
+        <translation>Δεν θα μπορούσε να ψάξει για τις νέες εκδόσεις στο διαδίκτυο - το μήνυμα λάθους είναι: %1, ψάχνω για το αρχείο http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt. Ίσως η δομή ιστοσελίδας άλλαξε. Παρακαλώ επισκεφτείτε την ιστοσελίδα FET http://www.lalescu.ro/liviu/fet/ και πάρτε την πιό πρόσφατη έκδοση ή, εάν η ιστοσελίδα δεν λειτουργεί,προσπαθήστε να ψάξετε για τη νέα σελίδα FET στο διαδίκτυο. Μπορείτε να έρθετε σε επαφή με το συντάκτη. Επίσης, μερικές φορές το lalescu.ro έχει προσωρινά προβλήματα, προσπαθήστε πάλι αργότερα
+Εάν θέλετε, μπορείτε να ακυρώσετε την αυτόματη αναζήτηση των αναπροσαρμογών στις Επιλογές Ρυθμίσεων</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1515"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1545"/>
         <source>FET information</source>
         <translation>FET πληροφορίες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="260"/>
+        <location filename="../src/interface/fetmainform.cpp" line="266"/>
         <source>Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/
 
 You have to manually download and install (open the FET webpage in an internet browser). Please read the information on web page regarding the newer version and choose whether to keep your current version or upgrade (the recommended option is to upgrade). You might need to hit Refresh in your web browser if links do not work
@@ -4725,159 +4728,159 @@ You can choose to disable automatic search for updates in the Settings menu</sou
 Μπορείτε να επιλέξετε να θέσετε εκτός λειτουργίας την αυτόματης αναζήτηση των νέων εκδόσεων στις επιλογές ρυθμίσεων</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="275"/>
+        <location filename="../src/interface/fetmainform.cpp" line="281"/>
         <source>FET - exiting</source>
         <translation>FET - έξοδος</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="276"/>
+        <location filename="../src/interface/fetmainform.cpp" line="282"/>
         <source>File might have been changed - do you want to save it?</source>
         <translation>Το αρχείο ίσως έχει αλλάξει - θέλετε να το σώσετε;</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1477"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1507"/>
         <source>&amp;Yes</source>
         <translation>&amp;Ναι</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1477"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1507"/>
         <source>&amp;No</source>
         <translation>&amp;Όχι</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="277"/>
+        <location filename="../src/interface/fetmainform.cpp" line="283"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Άκυρο</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1516"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1546"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>Πρόγραμμα σε λειτουργία.
 Σταματήστε τον καταμερισμό πριν προχωρήσετε.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1476"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1506"/>
         <source>FET application</source>
         <translation>FET εφαρμογή</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="319"/>
+        <location filename="../src/interface/fetmainform.cpp" line="325"/>
         <source>Are you sure you want to load new data (rules) ?</source>
         <translation>Σίγουρα θέλετε να προσθέσετε νέα δεδομένα (κανόνες);</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="332"/>
+        <location filename="../src/interface/fetmainform.cpp" line="338"/>
         <source>FET - a free evolutionary timetabling program</source>
         <translation>FET - ένα ελεύθερο εθελοντικό πρόγραμμα χρονοδιαγράμματος</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="361"/>
+        <location filename="../src/interface/fetmainform.cpp" line="367"/>
         <source>open file dialog</source>
         <translation>άνοιξε φάκελο διάλογος</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="361"/>
+        <location filename="../src/interface/fetmainform.cpp" line="367"/>
         <source>Choose a file</source>
         <translation>Επιλέξτε αρχείο</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="430"/>
+        <location filename="../src/interface/fetmainform.cpp" line="436"/>
         <source>FET info</source>
         <translation>FET ενημέρωση</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="371"/>
+        <location filename="../src/interface/fetmainform.cpp" line="377"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Παρακαλώ μην χρησιμοποιήσετε τα εισαγωγικά &quot; στο όνομα αρχείου, ο κώδικας HTML css δεν λειτουργεί. Το αρχείο δεν φορτώθηκε. Παρακαλώ μετονομάστε, και ανοίξτε μετά με το FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="377"/>
+        <location filename="../src/interface/fetmainform.cpp" line="383"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Παρακαλώ μην χρησιμοποιήστε  ; στο όνομα αρχείου, ο κώδικας HTML css δεν λειτουργεί. Το αρχείο δεν φορτώθηκε. Παρακαλώ μετονομάστε, και ανοίξτε μετά με το FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="383"/>
+        <location filename="../src/interface/fetmainform.cpp" line="389"/>
         <source>Please do not use # in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Παρακαλώ μην χρησιμοποιήσετε # στο όνομα αρχείου, ο κώδικας HTML css δεν λειτουργεί. Το αρχείο δεν φορτώθηκε. Παρακαλώ μετονομάστε, και ανοίξτε μετά με το FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="399"/>
+        <location filename="../src/interface/fetmainform.cpp" line="405"/>
         <source>Invalid file</source>
         <translation>Άκυρο αρχείο</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="399"/>
+        <location filename="../src/interface/fetmainform.cpp" line="405"/>
         <source>&amp;OK</source>
         <translation>&amp;ΟΚ</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="452"/>
+        <location filename="../src/interface/fetmainform.cpp" line="458"/>
         <source>FET - %1</source>
         <translation>FET - %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="414"/>
+        <location filename="../src/interface/fetmainform.cpp" line="420"/>
         <source>Save file dialog</source>
         <translation>Σώσε αρχεία διάλογος</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="414"/>
+        <location filename="../src/interface/fetmainform.cpp" line="420"/>
         <source>Choose a filename to save under</source>
         <translation>Επιλέξτε όνομα αρχείου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="422"/>
+        <location filename="../src/interface/fetmainform.cpp" line="428"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work</source>
         <translation>Μην χρησιμοποιείτε &quot; στα ονόματα αρχείων, ο κώδικας html css δεν δουλεύει</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="426"/>
+        <location filename="../src/interface/fetmainform.cpp" line="432"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work</source>
         <translation>Μην χρησιμοποιείτε ; στα ονόματα αρχείων, ο κώδικας html css δεν δουλεύει</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="430"/>
+        <location filename="../src/interface/fetmainform.cpp" line="436"/>
         <source>Please do not use # in filename, the html css code does not work</source>
         <translation>Μην χρησιμοποιείτε # στα ονόματα αρχείων, ο κώδικας html css δεν δουλεύει</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="445"/>
+        <location filename="../src/interface/fetmainform.cpp" line="451"/>
         <source>FET</source>
         <translation>FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="446"/>
+        <location filename="../src/interface/fetmainform.cpp" line="452"/>
         <source>File exists - are you sure you want to overwrite existing file?</source>
         <translation>Αρχείο υπάρχει - σίγουρα να εγγραφεί πάνω στο υπάρχον;</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1216"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1222"/>
         <source>Please input at least two active activities before generating</source>
         <translation>Εισάγετε τουλάχιστον δύο ενεργές εργασίες πριν προχωρήσετε</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1233"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1239"/>
         <source>Current file (data) has no name. Please save file under a certain name before proceeding</source>
         <translation>Τρέχον αρχείο χωρίς όνομα. Σώστε το αρχείο  με κάποιο όνομα πριν συνεχίσετε</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1246"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1252"/>
         <source>Please input at least two active activities before generating multiple</source>
         <translation>Εισάγετε τουλάχιστον δύο ενεργές εργασίες πριν προχωρήσετε</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1289"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1295"/>
         <source>Please generate, firstly</source>
         <translation>Παρακαλούμε επιλέξτε γέννεσις προγράμματος, πρώτα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1456"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1486"/>
         <source>Please exit and restart FET to activate language change</source>
         <translation>Κλείστε και επανεκινείστε το FET  για να γίνει η αλλαγή γλώσσας</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1467"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1497"/>
         <source>Are you sure you want to reset all settings to defaults?
 
 </source>
@@ -4885,7 +4888,7 @@ Please stop simulation before this.</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1474"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1504"/>
         <source>(these are:
 1. Mainform geometry will be reset to default
 2. Check for updates at startup will be disabled
@@ -4895,24 +4898,24 @@ Please stop simulation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="360"/>
+        <location filename="../src/interface/fetmainform.cpp" line="366"/>
         <source>FET xml files (*.fet);;Old FET xml files (*.xml);;All files (*)</source>
         <comment>Comment for translators (do not translate this comment): This field is for File/Open dialog. Please keep ;; without spaces before, between and after (it is a separator), and consider that the first must be *.fet. In special right to left languages, you might need to leave this field untranslated</comment>
-        <translation type="unfinished">FET xml files (*.fet);;Old FET xml files (*.xml);;All files (*)</translation>
+        <translation>FET xml αρχεία (*.fet);;Παλαιά FET xml αρχεία (*.xml);;Όλα τα αρχεία (*)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="413"/>
+        <location filename="../src/interface/fetmainform.cpp" line="419"/>
         <source>FET xml files (*.fet);;All files (*)</source>
         <comment>Comment for translators (do not translate this comment): This field is for File/Save as dialog. Please keep ;; without spaces before, between and after (it is a separator), and consider that the first must be *.fet. In special right to left languages, you might need to leave this field untranslated</comment>
-        <translation type="unfinished">FET xml αρχεία (*.fet);;Όλα τα αρχεία (*)</translation>
+        <translation>FET xml αρχεία (*.fet);;Όλα τα αρχεία (*)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="629"/>
+        <location filename="../src/interface/fetmainform.cpp" line="635"/>
         <source>If you started simulation before inputting all the necessary students structure, FET might have added special groups/subgroups, ending in WHOLE_YEAR or WHOLE_GROUP. These special groups/subgroups are needed if the year/group contains only them and otherwise would be empty, but not needed when year/group contains other groups/subgroups. It is highly recommended to remove them if your year/group contain other groups/subgroups. If a special subgroup named for instance 5_WHOLE_YEAR_WHOLE_GROUP has only 2 hours per day, you might get an impossible timetable, because early and no gaps must be respected for this subgroup also,, which might be impossible</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="632"/>
+        <location filename="../src/interface/fetmainform.cpp" line="638"/>
         <source>The idea is that you have to delete unnecessary groups/subgroups containing WHOLE_YEAR or WHOLE_GROUP (unnecessary means that they are not the only one group/subgroup of higher year/group</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4950,32 +4953,32 @@ Please stop simulation before this.</source>
         <translation>&amp;Δεδομένα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="636"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="638"/>
         <source>Space constraints (misc)</source>
         <translation>Περιορισμοί χώρων (διάφορα)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="668"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="670"/>
         <source>Space constraints (rooms)</source>
         <translation>Περιορισμοί χώρων (αίθουσες)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="553"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="555"/>
         <source>Time constraints (misc)</source>
         <translation>Περιορισμοί χρόνου (διάφορα)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="537"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="539"/>
         <source>Time constraints (students)</source>
         <translation>Περιορισμοί χρόνου (μαθητές)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="545"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="547"/>
         <source>Time constraints (activities)</source>
         <translation>Περιορισμοί χρόνου (εργασίες)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="529"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="531"/>
         <source>Time constraints (teachers)</source>
         <translation>Περιορισμοί χρόνου (καθηγητές)</translation>
     </message>
@@ -4990,649 +4993,664 @@ Please stop simulation before this.</source>
         <translation>Language/Γλώσσα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="215"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="217"/>
         <source>&amp;New</source>
         <translation>&amp;Νέο</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="218"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="220"/>
         <source>New</source>
         <translation>Νέο</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="221"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="223"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="226"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="228"/>
         <source>&amp;Open...</source>
         <translation>&amp;Άνοιξε...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="229"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="231"/>
         <source>Open</source>
         <translation>Άνοιξε</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="232"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="234"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="237"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="239"/>
         <source>&amp;Save</source>
         <translation>&amp;Σώσε</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="240"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="242"/>
         <source>Save</source>
         <translation>Σώσε</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="243"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="245"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="248"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="250"/>
         <source>Save &amp;As...</source>
         <translation>Σώσε &amp;ως...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="251"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="253"/>
         <source>Save As</source>
         <translation>Σώσε ως</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="259"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="261"/>
         <source>E&amp;xit</source>
         <translation>E&amp;xit</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="262"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="264"/>
         <source>Exit</source>
         <translation>Έξοδος</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="270"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="272"/>
         <source>&amp;Frequently asked questions</source>
         <translation>&amp;Συνηθισμένες ερωτήσεις</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="273"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="275"/>
         <source>Frequently asked questions</source>
         <translation>Συνηθισμένες ερωτήσεις</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="281"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="283"/>
         <source>&amp;About...</source>
         <translation>&amp;Περί...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="284"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="286"/>
         <source>About</source>
         <translation>Περί</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="292"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="294"/>
         <source>&amp;Teachers</source>
         <translation>&amp;Καθηγητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="295"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="297"/>
         <source>Teachers</source>
         <translation>Καθηγητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="300"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="302"/>
         <source>&amp;Subjects</source>
         <translation>&amp;Μαθήματα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="303"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="305"/>
         <source>Subjects</source>
         <translation>Μαθήματα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="308"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="310"/>
         <source>&amp;Years (forms, classes)</source>
         <translation>&amp;Έτη (τμήματα, τάξεις)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="311"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="313"/>
         <source>Years</source>
         <translation>Έτη</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="316"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="318"/>
         <source>&amp;Groups</source>
         <translation>&amp;Τάξεις</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="319"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="321"/>
         <source>Groups</source>
         <translation>Τάξεις</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="324"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="326"/>
         <source>S&amp;ubgroups</source>
         <translation>Τ&amp;μήματα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="327"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="329"/>
         <source>Subgroups</source>
         <translation>Τμήματα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="332"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="334"/>
         <source>&amp;Activities</source>
         <translation>&amp;Εργασίες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="335"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="337"/>
         <source>Activities</source>
         <translation>Εργασίες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="340"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="342"/>
         <source>&amp;Generate new</source>
         <translation>&amp;Γένεσις νέου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="343"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="345"/>
         <source>Generate new</source>
         <translation>Γένεσις νέου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="348"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="350"/>
         <source>View (&amp;students)</source>
         <translation>Δες (&amp;μαθητές)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="351"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="353"/>
         <source>View (students)</source>
         <translation>Έλεγχος (μαθητές)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="356"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="358"/>
         <source>View (&amp;teachers)</source>
         <translation>Δες (&amp;καθηγητές)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="359"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="361"/>
         <source>View (teachers)</source>
         <translation>Έλεγχος (καθηγητές)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="364"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="366"/>
         <source>Show soft conflicts</source>
         <translation>Δείξε συγκρούσεις</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="367"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="369"/>
         <source>Show conflicts (time)</source>
         <translation>Δείξε συγκρούσεις (χρόνου)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="372"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="374"/>
         <source>&amp;Days per week</source>
         <translation>&amp;Ημέρες την εβδομάδα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="375"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="377"/>
         <source>Days per week</source>
         <translation>Ημέρες την εβδομάδα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="383"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="385"/>
         <source>Hours per day</source>
         <translation>Ώρες την ημέρα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="391"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="393"/>
         <source>&amp;Rooms</source>
         <translation>&amp;Αίθουσες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="394"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="396"/>
         <source>Rooms</source>
         <translation>Αίθουσες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="402"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="404"/>
         <source>View (r&amp;ooms)</source>
         <translation>Δες (α&amp;ίθουσες)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="405"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="407"/>
         <source>View (rooms)</source>
         <translation>Δες (αίθουσες)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="413"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="415"/>
         <source>&amp;en_GB (British English)</source>
         <translation>&amp;en_GB (British English)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="416"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="418"/>
         <source>en_GB (British English)</source>
         <translation>en_GB (British English)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="424"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="426"/>
         <source>&amp;ro (Romanian)</source>
         <translation>&amp;ro (Romanian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="427"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="429"/>
         <source>ro (Romanian)</source>
         <translation>ro (Romanian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="432"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="434"/>
         <source>T&amp;ime constraints</source>
         <translation>Ώ&amp;ρες όροι</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="435"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="437"/>
         <source>Time constraints</source>
         <translation>Ώρας όροι</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="451"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="453"/>
         <source>&amp;fr (French)</source>
         <translation>&amp;fr (French)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="454"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="456"/>
         <source>fr (French)</source>
         <translation>fr (French)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="470"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="472"/>
         <source>View (st&amp;udents-with rooms)</source>
         <translation>Δες (μ&amp;αθητές-με αίθουσες)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="473"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="475"/>
         <source>View (students-with rooms)</source>
         <translation>Δες (μαθητές-με αίθουσες)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="478"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="480"/>
         <source>All t&amp;ime constraints</source>
         <translation>Όλοι οι όροι ώ&amp;ρας</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="481"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="483"/>
         <source>All time constraints</source>
         <translation>Όλοι οι όροι ώρας</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="497"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="499"/>
         <source>Basic compulsory time constraints</source>
         <translation>Βασικοί συνδυασμοί περιορισμών χρόνου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="625"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="627"/>
         <source>All s&amp;pace constraints</source>
         <translation>Όλοι οι όροι χ&amp;ώρου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="628"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="630"/>
         <source>All space constraints</source>
         <translation>Όλοι οι όροι χώρου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="644"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="646"/>
         <source>Space constraints</source>
         <translation>Χώρου όροι</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="689"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="691"/>
         <source>Su&amp;bject tags</source>
         <translation>Μά&amp;θημα χαρακτηρισμός</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="692"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="694"/>
         <source>Subject tags</source>
         <translation>Μάθημα συντομεύσεις</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="697"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="699"/>
         <source>I&amp;nstitution name</source>
         <translation>Ί&amp;δρυμα όνομα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="700"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="702"/>
         <source>Institution name</source>
         <translation>Ίδρυμα όνομα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="705"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="707"/>
         <source>&amp;Comments</source>
         <translation>&amp;Παρατηρήσεις</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="708"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="710"/>
         <source>Comments</source>
         <translation>Παρατηρήσεις</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="724"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="726"/>
         <source>&amp;ca (Catalan)</source>
         <translation>&amp;ca (Catalan)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="727"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="729"/>
         <source>ca (Catalan)</source>
         <translation>ca (Catalan)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="735"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="737"/>
         <source>&amp;ms (Malay)</source>
         <translation>&amp;ms (Malay)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="738"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="740"/>
         <source>ms (Malay)</source>
         <translation>ms (Malay)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="762"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="764"/>
         <source>&amp;pl (Polish)</source>
         <translation>&amp;pl (Polish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="765"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="767"/>
         <source>pl (Polish)</source>
         <translation>pl (Polish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="773"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="775"/>
         <source>&amp;tr (Turkish)</source>
         <translation>&amp;tr (Turkish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="776"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="778"/>
         <source>tr (Turkish)</source>
         <translation>tr (Turkish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="784"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="786"/>
         <source>&amp;nl (Dutch)</source>
         <translation>&amp;nl (Dutch)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="787"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="789"/>
         <source>nl (Dutch)</source>
         <translation>nl (Dutch)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="795"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="797"/>
         <source>&amp;de (German)</source>
         <translation>&amp;de (German)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="800"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="802"/>
         <source>Teachers statistics</source>
         <translation>Καθηγητές στατιστικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="811"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="813"/>
         <source>Students statistics</source>
         <translation>Μαθητές στατιστικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="816"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="818"/>
         <source>Subjects statistics</source>
         <translation>Μαθήματα στατιστικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="824"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="826"/>
         <source>&amp;hu (Hungarian)</source>
         <translation>&amp;hu (Hungarian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="832"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="834"/>
         <source>m&amp;k (Macedonian)</source>
         <translation>m&amp;k (F.Y.R.O.M.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="873"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="875"/>
         <source>Instructions</source>
         <translation>Οδηγίες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="884"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="886"/>
         <source>Search for updates on startup</source>
         <translation>Ψάξε για νέες εκδόσεις κατά την έναρξη</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="909"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="911"/>
         <source>Generate &amp;multiple variants</source>
         <translation>Γένεσις &amp;πολλαπλών βαριάντων</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="912"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="914"/>
         <source>Generate multiple variants</source>
         <translation>Γένεσις πολλαπλών βαριάντων</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="930"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="932"/>
         <source>e&amp;s (Spanish)</source>
         <translation>e&amp;s (Spanish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="489"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="491"/>
         <source>A teacher is not available</source>
         <translation>Ένας καθηγητής όχι εύκαιρος</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="505"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="507"/>
         <source>A students set is not available</source>
         <translation>Ένα τμήμα δεν είναι εύκαιρο</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="513"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="515"/>
         <source>Break (all teachers+all students not available)</source>
         <translation>Διάλλειμα (όλοι &apos;καθηγητές + μαθητές&apos; δεν είναι εύκαιροι)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="521"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="523"/>
         <source>Max days per week for a teacher</source>
         <translation>Μέγιστες ημέρες την εβδομάδα για ένα καθηγητή</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="561"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="563"/>
         <source>Max hours daily for all teachers</source>
         <translation>Μέγιστες ώρες ημερησίως για όλους τους καθηγητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="577"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="579"/>
         <source>No gaps for a students set</source>
         <translation>Όχι κενά για ένα τμήμα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="585"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="587"/>
         <source>No gaps for all students</source>
         <translation>Όχι κενά για όλους τους μαθητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="593"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="595"/>
         <source>All students begin early</source>
         <translation>Όλοι οι μαθητές αρχίζουν νωρίς</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="652"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="654"/>
         <source>Basic compulsory space constraints</source>
         <translation>Βασικοί συνδυασμοί περιορισμών χώρου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="660"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="662"/>
         <source>A room is not available</source>
         <translation>Αίθουσα όχι διαθέσιμη</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="843"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="845"/>
         <source>Max gaps per week for all teachers</source>
         <translation>Μέγιστα κενά την εβδομάδα για όλους τους καθηγητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="848"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="850"/>
         <source>Max gaps per week for a teacher</source>
         <translation>Μέγιστα κενά την εβδομάδα για έναν καθηγητή</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="853"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="855"/>
         <source>A students set begins early</source>
         <translation>Ένα τμήμα αρχίζει νωρίς</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="858"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="860"/>
         <source>Max hours daily for a teacher</source>
         <translation>Μέγιστες ώρες την ημέρα για ένα καθηγητή</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="863"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="865"/>
         <source>Max hours daily for a students set</source>
         <translation>Μέγιστες ώρες την ημέρα για ένα τμήμα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="868"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="870"/>
         <source>Max hours daily for all students</source>
         <translation>Μέγιστες ώρες την ημέρα για όλους τους μαθητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="889"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="891"/>
         <source>Min hours daily for all students</source>
         <translation>Ελάχιστες ώρες την ημέρα για όλους τους μαθητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="894"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="896"/>
         <source>Min hours daily for a students set</source>
         <translation>Ελάχιστες ώρες την ημέρα για ένα τμήμα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="917"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="919"/>
         <source>2 activities are consecutive</source>
         <translation>2 εργασίες είναι συνεχόμενες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="922"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="924"/>
         <source>An activity ends students day</source>
         <translation>Μία εργασία είναι τελευταία ώρα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="935"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="937"/>
         <source>Restore default settings</source>
         <translation>Επανέφερε αρχικές ρυθμίσεις</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="940"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="941"/>
         <source>Timetable html level</source>
-        <translation>Χρονοδιάγραμμα σε html</translation>
+        <translation type="obsolete">Χρονοδιάγραμμα σε html</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="945"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="947"/>
         <source>Min hours daily for all teachers</source>
         <translation>Ελάχιστες ώρες την ημέρα για όλους τους καθηγητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="950"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="952"/>
         <source>Min hours daily for a teacher</source>
         <translation>Ελάχιστες ώρες την ημέρα για ένα καθηγητή</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="380"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="382"/>
         <source>&amp;Hours (periods) per day</source>
         <translation>&amp;Ώρες (περίοδοι) την ημέρα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="443"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="445"/>
         <source>A set of activities has a set of preferred times</source>
         <translation>Σετ εργασιών έχει σετ προτιμητέων ωρών</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="462"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="464"/>
         <source>A set of activities has same starting time (day+hour)</source>
         <translation>Σετ εργασιών έχει ίδια ώρα έναρξης (ημέρα+ώρα)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="569"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="571"/>
         <source>An activity has a preferred time</source>
         <translation>Εργασία έχει προτιμητέα ώρα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="601"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="603"/>
         <source>A set of activities are not overlapping</source>
         <translation>Ένα σετ εργασιών δεν επικαλύπτονται</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="609"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="611"/>
         <source>Min n days between a set of activities</source>
         <translation>Ελάχιστος αρ. ημερών ενδιάμεσα των εργασιών</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="617"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="619"/>
         <source>An activity has a set of preferred times</source>
         <translation>Εργασία έχει σετ προτιμητέες ώρες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="676"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="678"/>
         <source>An activity has a preferred room</source>
         <translation>Μια εργασία έχει προτιμητέα αίθουσα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="684"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="686"/>
         <source>A set of activities has same starting hour (any days)</source>
         <translation>Σετ εργασιών έχει ίδια ώρα έναρξης (οποιαδήποτε ημέρα)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="716"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="718"/>
         <source>An activity has a set of preferred rooms</source>
         <translation>Εργασία έχει σετ προτιμητέες αίθουσες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="746"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="748"/>
         <source>A subject has a preferred room</source>
         <translation>Μάθημα έχει προτιμητέα αίθουσα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="754"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="756"/>
         <source>A subject has a set of preferred rooms</source>
         <translation>Μάθημα έχει σετ προτιμητέες αίθουσες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="899"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="901"/>
         <source>A subject+subject tag have a preferred room</source>
         <translation>Μάθημα+χαρ/σμός έχει προτιμητέα αίθουσα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="904"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="906"/>
         <source>A subject+subject tag have a set of preferred rooms</source>
         <translation>Μάθημα+χαρ/σμός έχει προτιμητέες αίθουσες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="955"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="957"/>
         <source>Help on statistics</source>
         <translation>Βοήθεια στα στατιστικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="960"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="962"/>
         <source>Help in other languages than English</source>
         <translation>Βοήθεια σε άλλες γλώσσες εκτός της Αγγλικής</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="968"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="970"/>
         <source>e&amp;l (Greek)</source>
         <translation>ε&amp;λ (Ελληνικά)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="976"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="978"/>
         <source>&amp;ar (Arabic)</source>
+        <translation>&amp;ar (Arabic)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="986"/>
+        <source>&amp;id (Indonesian)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="994"/>
+        <source>it (Italian)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="942"/>
+        <source>Html level for generated timetables</source>
+        <translation>Επίπεδο html παραχθέντων χρονοδιαγραμμάτων</translation>
     </message>
 </context>
 <context>
@@ -5650,7 +5668,7 @@ Please stop simulation before this.</source>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="111"/>
         <source>Timetable has %1 soft conflicts factor and was generated in %2 hours, %3 minutes and %4 seconds</source>
-        <translation>Το πρόγραμμα έχει %1 συντελεστή μικρών συκρούσεων και έγινε σε %2 ώρες, %3 λεπτά και %4 δεύτερα</translation>
+        <translation>Το πρόγραμμα έχει %1 συντελεστή συγκρούσεων και έγινε σε %2 ώρες, %3 λεπτά και %4 δεύτερα</translation>
     </message>
 </context>
 <context>
@@ -5739,12 +5757,12 @@ Please stop simulation before this.</source>
         <translation>Μεταφραστές</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="221"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="227"/>
         <source>References</source>
         <translation>Αναφορές</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="245"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="251"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -5777,22 +5795,22 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="281"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="287"/>
         <source>Thanks to</source>
         <translation>Ευχαριστίες</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="424"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="434"/>
         <source>Guestbook</source>
         <translation>Βιβλίο επισκεπτών</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="775"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="806"/>
         <source>Sponsors</source>
         <translation>Σπόνσορες</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="781"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="812"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -5834,7 +5852,87 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="305"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.4.13 (October 2007)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="168"/>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ar - Arabic translation&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Hatim Ali (dr.hatim AT hotmail.com)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ca - Catalan translation&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Miguel Gea Milvaques (debian AT miguelgea.com)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;de - German translation&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;el - Greek translation&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Dimitrios Ropokis (wamy80s AT gmail.com)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;es - Spanish translation&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Jose Cesar Fernandez Lopez (cesar.fernandez.lopez AT gmail.com)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;fr - French translation &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Jerome Durand (fetfr AT free.fr, http://fetfr.free.fr/).&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>updated by Patrick Fox (patrick.fox AT laposte.net)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;hu - Hungarian translation&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Ferenczi Viktor (cx AT cx.hu)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;id - Indonesian translation&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Nirwan Yus (ny.unpar AT gmail.com)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;it - Italian translation&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Marco Barsotti (mbarsan AT gmail.com)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;mk - Macedonian translation&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Zoran Zdravkovski (zoran AT pmf.ukim.edu.mk)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ms - Malay translation&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Abdul Hadi Kamel (hadikamel AT perlis.uitm.edu.my)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;nl - Dutch translation&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Niels Fikse (k.fikse AT student.utwente.nl)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;pl - Polish translation&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Radoslaw Pasiok (zapala AT konto.pl)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ro - Romanian translation&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Liviu Lalescu (Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu,&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>in particular you can find here the e-mail address).&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>small improvements by Constantin Romulus (daviodan AT yahoo.com)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;tr - Turkish translation&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>initial translator - Mehmet Gezmisoglu (m_gezmisoglu AT hotmail.com)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>updates and many improvements - Mahir Nacar (mahirnacar AT email.com)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="311"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -5946,64 +6044,39 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Danail - suggestions.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Peter Ambroz - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="168"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ar - Arabic translation&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Hatim Ali (dr.hatim AT hotmail.com)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ca - Catalan translation&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Miguel Gea Milvaques (debian AT miguelgea.com)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Nirwan Yus - Indonesian translation.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;de - German translation&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;el - Greek translation&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Dimitrios Ropokis (wamy80s AT gmail.com)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;es - Spanish translation&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Jose Cesar Fernandez Lopez (cesar.fernandez.lopez AT gmail.com)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;fr - French translation &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Jerome Durand (fetfr AT free.fr, http://fetfr.free.fr/).&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>updated by Patrick Fox (patrick.fox AT laposte.net)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;hu - Hungarian translation&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Ferenczi Viktor (cx AT cx.hu)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;mk - Macedonian translation&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Zoran Zdravkovski (zoran AT pmf.ukim.edu.mk)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ms - Malay translation&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Abdul Hadi Kamel (hadikamel AT perlis.uitm.edu.my)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;nl - Dutch translation&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Niels Fikse (k.fikse AT student.utwente.nl)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;pl - Polish translation&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Radoslaw Pasiok (zapala AT konto.pl)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ro - Romanian translation&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Liviu Lalescu (Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu,&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>in particular you can find here the e-mail address).&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>small improvements by Constantin Romulus (daviodan AT yahoo.com)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;tr - Turkish translation&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>initial translator - Mehmet Gezmisoglu (m_gezmisoglu AT hotmail.com)&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>updates and many improvements - Mahir Nacar (mahirnacar AT email.com)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Marco Barsotti - Italian translation.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../src/interface/helpaboutform_template.ui" line="448"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="458"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tom Hosty&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Location&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;United Kingdom&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Posted: 19.10.2007 01:06&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;It&apos;s 2 years since I discovered FET. It was brilliant then, and free! Its speed has improved &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;a lot in the meantime and it is easier to use. And it&apos;s still free!&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;---------------------------------------------------------------------&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;davio&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Posted: 18.10.2007 19:26&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is one of the best programs of creating the school schedule.This school year , we have &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;used for creating the schedule for the school from Lanurile ,city of Braila, Romania, this &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;wonderful program. Thank you for offering for free this program.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;---------------------------------------------------------------------&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;خالد بن الولي�&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Location&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Saudi Arabia&lt;/p&gt;
@@ -6321,30 +6394,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Eraldo Paulesu (eraldo.paulesu@unimib.it)   (2004-11-15 03:19:34+02)&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;It looks an excellent software for schools of all grades but not for universities&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.4.12 (October 2007)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7120,7 +7169,7 @@ If you really need more teachers per activity, please talk to the author</source
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="406"/>
         <source>Invalid subject tag</source>
-        <translation>Αδύνατος χαρακτηρισμός μαθήματος</translation>
+        <translation>Άκυρος χαρ/σμός μαθήματος</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="414"/>
@@ -9278,7 +9327,7 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform.cpp" line="109"/>
         <source>Invalid selected activity</source>
-        <translation>Ανύπαρκτη επιλεγμένη εργασία</translation>
+        <translation>Άκυρη επιλεγμένη εργασία</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="169"/>
@@ -9298,7 +9347,7 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="228"/>
         <source>Invalid activity</source>
-        <translation>Αδύνατη εργασία</translation>
+        <translation>Άκυρη εργασία</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="106"/>
@@ -9328,12 +9377,12 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="159"/>
         <source>Invalid subject</source>
-        <translation>Αδύνατο μάθημα</translation>
+        <translation>Άκυρο μάθημα</translation>
     </message>
     <message>
         <location filename="../src/interface/subjecttagsform.cpp" line="160"/>
         <source>Invalid subject tag</source>
-        <translation>Αδύνατος χαρακτηρισμός μαθήματος</translation>
+        <translation>Άκυρος χαρ/σμός μαθήματος</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform.cpp" line="78"/>
@@ -9363,7 +9412,7 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="167"/>
         <source>Invalid first activity</source>
-        <translation>Αδύνατη πρώτη εργασία</translation>
+        <translation>Άκυρη πρώτη εργασία</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="130"/>
@@ -9373,7 +9422,7 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="177"/>
         <source>Invalid second activity</source>
-        <translation>Αδύνατη δεύτερη εργασία</translation>
+        <translation>Άκυρη δεύτερη εργασία</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="144"/>
@@ -9472,7 +9521,8 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR πρέπει να αυξηθεί (�
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="201"/>
         <source>Too many activities - please report error
 (CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME too little)</source>
-        <translation>Too many activities - please report error(CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME too little)</translation>
+        <translation>Πολλές εργασίες - αναφέρερετε το λάθος
+(CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME too little)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="237"/>
@@ -9508,7 +9558,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR πρέπει να αυξηθεί (�
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="89"/>
         <source>Invalid weight (percentage) - must be 100%</source>
-        <translation>Αδύνατη βαρύτης (%) επιλογή - (απαιτούμενο: 100%)</translation>
+        <translation>Άκυρη βαρύτης (%) επιλογή - (απαιτούμενο: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform.cpp" line="212"/>
@@ -9753,7 +9803,8 @@ MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES πρέπει να αυξηθεί (�
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform.cpp" line="94"/>
         <source>Please report error to the author
 MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOMS must be increased (you have too many selected rooms)</source>
-        <translation>Please report error to the authorMAX_CONSTRAINT_SUBJECT_PREFERRED_ROOMS must be increased (you have too many selected rooms)</translation>
+        <translation>Αναφέρετε το λάθος στον συγγραφέα
+MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOMS πρέπει να αυξηθεί (έχετε πολλές επιλεγμένες αίθουσες)</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="185"/>
@@ -10247,7 +10298,7 @@ MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOM πρέπει να αυξηθεί (έχετ
     <message>
         <location filename="../src/interface/teachersform.cpp" line="181"/>
         <source>Invalid selected teacher</source>
-        <translation>Ακυρος επιλεγμένος καθηγητής</translation>
+        <translation>Άκυρος επιλεγμένος καθηγητής</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform.cpp" line="95"/>
@@ -10306,7 +10357,7 @@ MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOM πρέπει να αυξηθεί (έχετ
         <location filename="../src/interface/timetableviewteachersform.cpp" line="108"/>
         <source>The teacher&apos;s timetable cannot be printed,
 because the teacher is invalid</source>
-        <translation>Το χρονοδιάγραμμα του καθηγητή δεν μπορεί να εξαχθεί,
+        <translation>Το χρονοδιάγραμμα καθηγητή δεν μπορεί να εξαχθεί,
 διότι ο καθηγητής αυτός έχει άκυρη εγγραφή</translation>
     </message>
     <message>
@@ -10379,7 +10430,7 @@ because the teacher is invalid</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="627"/>
         <source>For subgroup %1 you have too little activities to respect the constraint of type min hours daily. Please modify your data accordingly and try again. A possible situation is that you have unneeded groups like &apos;year1 WHOLE YEAR&apos; and subgroups with name like &apos;year1 WHOLE YEAR WHOLE GROUP&apos;. You might need to remove such dummy groups and subgroups (they are generated if you start allocation with incomplete students data). FET cannot automatically remove such dummy groups and subgroups. For more details, join the mailing list or email the author</source>
-        <translation type="unfinished"></translation>
+        <translation>Για το τμήμα %1 έχετε πολύ λίγες εργασίες για να σεβαστείτε τον περιορισμό των ελάχιστων ωρών τύπων καθημερινά. Παρακαλώ τροποποιήστε τα στοιχεία σας αναλόγως και προσπαθήστε πάλι. Μια πιθανή κατάσταση είναι ότι έχετε τις αχρείαστες τάξεις όπως &apos;έτος1 WHOLE YEAR&apos; και τα τμήματα με το όνομα όπως &apos;έτος1 WHOLE YEAR WHOLE GROUP&apos;. Πρέπει να αφαιρέσετε τέτοιες πλαστές τάξεις και τμήματα (παράγονται εάν αρχίζετε την κατανομή με  ελλιπή στοιχεία σπουδαστών). Το FET δεν μπορεί αυτόματα να αφαιρέσει τέτοιες πλαστές τάξεις και τμήματα. Για περισσότερες λεπτομέρειες, δείτε την λίστα ταχυδρομείου ή στείλετε μήνυμα με το ηλεκτρονικό ταχυδρομείο στον συντάκτη</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="651"/>
@@ -10751,7 +10802,9 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <source>The constraint
 %1 will be modified into constraint
 %2 because there is only one room left in the constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο όρος
+%1 θα μετατραπεί σε όρο
+%2 διότι μόνο μια αίθουσα έμεινε στον όρο</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2547"/>
@@ -11064,7 +11117,8 @@ not added - must be a duplicate</source>
         <location filename="../src/engine/spaceconstraint.cpp" line="136"/>
         <source>- activities with more students than the capacity of the room
 </source>
-        <translation type="unfinished"></translation>
+        <translation>- εργασίες με περισσότερους μαθητές από την χωρητικότητα αίθουσας
+</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="242"/>
@@ -11336,12 +11390,12 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="210"/>
         <source>Time constraints directly related to this students group:</source>
-        <translation type="unfinished"></translation>
+        <translation>Οι χρονικοί περιορισμοί αφορούσαν άμεσα αυτήν την τάξη:</translation>
     </message>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="221"/>
         <source>Space constraints directly related to this students group:</source>
-        <translation type="unfinished"></translation>
+        <translation>Οι χώρου περιορισμοί αφορούσαν άμεσα αυτήν την τάξη:</translation>
     </message>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="260"/>
@@ -11351,7 +11405,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="272"/>
         <source>Students set - subgroup</source>
-        <translation>Μαθητές σετ -τμήμα</translation>
+        <translation>Μαθητές σετ - τμήμα</translation>
     </message>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="274"/>
@@ -11361,12 +11415,12 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="289"/>
         <source>Time constraints directly related to this students subgroup:</source>
-        <translation type="unfinished"></translation>
+        <translation>Οι χρονικοί περιορισμοί αφορούσαν άμεσα αυτό το τμήμα:</translation>
     </message>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="300"/>
         <source>Space constraints directly related to this students subgroup:</source>
-        <translation type="unfinished"></translation>
+        <translation>Οι χώρου περιορισμοί αφορούσαν άμεσα αυτό το τμήμα:</translation>
     </message>
     <message>
         <location filename="../src/engine/teacher.cpp" line="37"/>
@@ -11439,7 +11493,8 @@ not added - must be a duplicate</source>
         <location filename="../src/engine/timeconstraint.cpp" line="152"/>
         <source>- students assigned to more than one activity simultaneously
 </source>
-        <translation type="unfinished"></translation>
+        <translation>- μαθητές διορίζονται σε περισσότερες από μια εργασίες ταυτόχρονα
+</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="365"/>
@@ -11464,7 +11519,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="368"/>
         <source>subgroup %1 has more than one allocated activity on day %2, hour %3</source>
-        <translation type="unfinished"></translation>
+        <translation>τμήμα %1 έχει πάνω από μια εργασία σε εκκρεμότητα σε ημ. %2, ώρα %3</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2809"/>
@@ -11618,7 +11673,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6174"/>
         <source>conflicts factor increase=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>συγκρούσεις αυξάνονται=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1320"/>
@@ -11638,7 +11693,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1500"/>
         <source>Time constraint activities not overlapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρονικός περιορισμός εργασίες όχι ταυτόχρονες</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1871"/>
@@ -11703,7 +11758,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1929"/>
         <source>The activities are placed consecutively in the timetable, because you selected this option in case the activities are in the same day</source>
-        <translation type="unfinished"></translation>
+        <translation>Οι εργασίες τοποθετήθηκαν συνεχόμενες στο χρονοδιάγραμμα, διότι το επιλέξατε για την περίπτωση που αυτές θα ήταν ίδια ημέρα</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2041"/>
@@ -11768,7 +11823,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2697"/>
         <source>Time constraint teachers max gaps per week broken: teacher: %1, conflicts factor increase=%2</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρόνου όρος καθηγητές μέγιστα κενά την εβδομάδα σπάει: καθ. %1, συγκρούσεις αυξάνονται=%2</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2824"/>
@@ -11783,7 +11838,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2879"/>
         <source>Time constraint teacher max gaps per week broken: teacher: %1, conflicts factor increase=%2</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρόνου όρος καθηγητής μέγιστα κενά την εβδομάδα σπάει: καθ. %1, συγκρούσεις αυξάνονται=%2</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3002"/>
@@ -11817,7 +11872,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3104"/>
         <source>This increases the conflicts total by</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτό αυξάνει τις συγκρούσεις συνολικά κατά</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3232"/>
@@ -12029,7 +12084,8 @@ not added - must be a duplicate</source>
         <location filename="../src/engine/timeconstraint.cpp" line="5595"/>
         <source>Constraint activities preferred times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Όρος εργασίες σε προτιμητέες ώρες είναι λάθος επειδή αναφέρεται σε αφαιρούμενη ημέρα. Παρακαλώ διορθώστε και προσπαθήστε πάλι. Η διόρθωση σημαίνει αλλαγή όρου και πληροφοριών. Ο περιορισμός είναι:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5602"/>
@@ -12047,7 +12103,8 @@ not added - must be a duplicate</source>
         <location filename="../src/engine/timeconstraint.cpp" line="5620"/>
         <source>Following constraint is wrong (refers to no activities. Please correct it):
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Επόμενος όρος είναι λάθος (δεν περιέχει εργασίες. Διορθώστε):
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5664"/>
@@ -12383,7 +12440,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6872"/>
         <source>Note: FET is smart enough to use this constraint only on working days of the teachers</source>
-        <translation type="unfinished"></translation>
+        <translation>Σημ.: FET εξελίσσεται να χρησιμοποιεί τον όρο μόνο τις εργάσιμες ημέρες καθηγητών</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6928"/>
@@ -12403,7 +12460,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7062"/>
         <source>Note: FET is smart enough to use this constraint only on working days of the teacher</source>
-        <translation type="unfinished"></translation>
+        <translation>Σημ.: FET εξελίσσεται να χρησιμοποιεί τον όρο μόνο τις εργάσιμες ημέρες καθηγητή</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7117"/>
@@ -12444,7 +12501,11 @@ Note: this constraint is strong. It means that students must have hours beginnin
  If yes, please enter weight percentage for all constraints of
  type min n days between activities (any integer/fractional
 number between 0.0 and 100.0, recommended 95.0 at least)</source>
-        <translation type="unfinished">Προειδοποίηση: όλα τα ελάχιστα βάρη ημερών ν θα αλλάξουν στην επιλεγμένη αξία. Είστε βέβαιοι; Εάν ναι, παρακαλώ εισάγετε το ποσοστό βάρους για όλους τους περιορισμούς των ελάχιστων n ημερών τύπων μεταξύ των δραστηριοτήτων (οποιοσδήποτε ακέραιος αριθμός/κλασματικός αριθμός μεταξύ 0,0 και 100,0, συστημένος 95,0 τουλάχιστον)</translation>
+        <translation>Προειδοποίηση: όλα τα ελάχιστα βάρη ημερών ν
+θα αλλάξουν στην επιλεγμένη αξία. Είστε βέβαιοι;
+Εάν ναι, παρακαλώ εισάγετε το ποσοστό βάρους για όλους τους
+όρους των ελάχιστων n ημερών τύπων μεταξύ των εργασιών
+ (οποιοσδήποτε  αριθμός μεταξύ 0.0 και 100.0, 95.0 τουλάχιστον)</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="260"/>
@@ -12464,12 +12525,12 @@ number between 0.0 and 100.0, recommended 95.0 at least)</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2376"/>
         <source>Constraint %1 cannot be respected because teacher %2 has at most %3 free days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*free days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
-        <translation type="unfinished">Ο περιορισμός %1 δεν μπορεί να γίνει σεβόμενος επειδή ο δάσκαλος %2 έχει το πολύ-πολύ τις περισσότερες ελεύθερες ημέρες %3. Διευκρινίσατε για αυτόν τον περιορισμό διαδοχικό εάν ίδιο day=true. Αυτήν την περίοδο το FET δεν μπορεί να βάλει περισσότερες από 2 δραστηριότητες σε την ίδια μέρα εάν διαδοχικό εάν η ίδια ημέρα είναι αληθινή. Έχετε τις ημέρες</translation>
+        <translation type="unfinished">Ο περιορισμός %1 δεν μπορεί να γίνει σεβόμενος επειδή ο δάσκαλος %2 έχει το πολύ %3 ελεύθερες ημέρες . Διευκρινίσατε για αυτόν τον περιορισμό εάν διαδοχικό  ίδια ημέρα=αληθές. Αυτήν την περίοδο το FET δεν μπορεί να βάλει περισσότερες από 2 δραστηριότητες σε την ίδια μέρα διαδοχικές αν είναι την ίδια ημέρα. Αυτή είναι σπάνια περίπτωση, γι&apos; αυτό δεν πολυ-ασχολήθηκα με αυτό. Εάν πρέπει, αλλάξτε το αρχείο σας (μην επιτρέπετε συνεχόμενα αν σε ίδια ημέρα ή προσθέστε εργασίες μεγαλύτερης διάρκειας) ή επικοινωνήστε με συντάκτη/λίστα-ταχυδρομείου.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2412"/>
         <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 free days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*free days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
-        <translation type="unfinished">Constraint %1 cannot be respected because subgroup %2 has at most %3 free days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*free days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</translation>
+        <translation type="unfinished">Ο περιορισμός %1 δεν μπορεί να γίνει σεβόμενος επειδή ο δάσκαλος %2 έχει το πολύ %3 ελεύθερες ημέρες . Διευκρινίσατε για αυτόν τον περιορισμό εάν διαδοχικό  ίδια ημέρα=αληθές. Αυτήν την περίοδο το FET δεν μπορεί να βάλει περισσότερες από 2 δραστηριότητες σε την ίδια μέρα διαδοχικές αν είναι την ίδια ημέρα. Αυτή είναι σπάνια περίπτωση, γι&apos; αυτό δεν πολυ-ασχολήθηκα με αυτό. Εάν πρέπει, αλλάξτε το αρχείο σας (μην επιτρέπετε συνεχόμενα αν σε ίδια ημέρα ή προσθέστε εργασίες μεγαλύτερης διάρκειας) ή επικοινωνήστε με συντάκτη/λίστα-ταχυδρομείου.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2557"/>
@@ -12604,207 +12665,207 @@ If you really need that, please talk to the author
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="614"/>
+        <location filename="../src/engine/timetableexport.cpp" line="619"/>
         <source>Writing css style file gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="637"/>
+        <location filename="../src/engine/timetableexport.cpp" line="642"/>
         <source>Cannot open file to write subgroups timetable html days horizontal. Please check your disk&apos;s free space. Saving of html subgroups timetable aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="818"/>
+        <location filename="../src/engine/timetableexport.cpp" line="827"/>
         <source>Writing subgroups timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="840"/>
+        <location filename="../src/engine/timetableexport.cpp" line="849"/>
         <source>Cannot open file to write subgroups timetable html days vertical. Please check your disk&apos;s free space. Saving of html subgroups timetable aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1024"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1037"/>
         <source>Writing subgroups timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1046"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1059"/>
         <source>Cannot open file to write subgroups timetable html time vertical. Please check your disk&apos;s free space. Saving of html subgroups timetable aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1196"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1213"/>
         <source>Writing subgroups timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1217"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1234"/>
         <source>Cannot open file to write subgroups timetable html time horizontal. Please check your disk&apos;s free space. Saving of html subgroups timetable aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1369"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1390"/>
         <source>Writing students timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1391"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1412"/>
         <source>Cannot open file to write groups timetable html days horizontal. Please check your disk&apos;s free space. Saving of html groups timetable aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1698"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1723"/>
         <source>Writing groups timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1719"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1744"/>
         <source>Cannot open file to write groups timetable html days vertical. Please check your disk&apos;s free space. Saving of html groups timetable aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2026"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2055"/>
         <source>Writing groups timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2048"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2077"/>
         <source>Cannot open file to write groups timetable html time vertical. Please check your disk&apos;s free space. Saving of html groups timetable aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2340"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2374"/>
         <source>Writing groups timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2360"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2394"/>
         <source>Cannot open file to write groups timetable html time horizontal. Please check your disk&apos;s free space. Saving of html groups timetable aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2652"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2690"/>
         <source>Writing groups timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2674"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2712"/>
         <source>Cannot open file to write years timetable html days horizontal. Please check your disk&apos;s free space. Saving of html years timetable aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2975"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3017"/>
         <source>Writing years timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2995"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3037"/>
         <source>Cannot open file to write years timetable html days vertical. Please check your disk&apos;s free space. Saving of html years timetable aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3297"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3343"/>
         <source>Writing years timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3319"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3365"/>
         <source>Cannot open file to write years timetable html time vertical. Please check your disk&apos;s free space. Saving of html years timetable aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3606"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3657"/>
         <source>Writing years timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3626"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3677"/>
         <source>Cannot open file to write years timetable html time horizontal. Please check your disk&apos;s free space. Saving of html years timetable aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3917"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3972"/>
         <source>Writing years timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3940"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3995"/>
         <source>Cannot open file to write teachers timetable html days horizontal. Please check your disk&apos;s free space. Saving of html teachers timetable aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4111"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4170"/>
         <source>Writing teachers timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4132"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4191"/>
         <source>Cannot open file to write teachers timetable html days vertical. Please check your disk&apos;s free space. Saving of html teachers timetable aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4305"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4368"/>
         <source>Writing teachers timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4325"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4388"/>
         <source>Cannot open file to write teachers timetable html time vertical. Please check your disk&apos;s free space. Saving of html teachers timetable aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4474"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4541"/>
         <source>Writing teachers timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4495"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4562"/>
         <source>Cannot open file to write teachers timetable html time horizontal. Please check your disk&apos;s free space. Saving of html teachers timetable aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4647"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4718"/>
         <source>Writing teachers timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4666"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4737"/>
         <source>Cannot open file to write rooms timetable html days horizontal. Please check your disk&apos;s free space. Saving of html rooms timetable aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4843"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4918"/>
         <source>Writing rooms timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4862"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4937"/>
         <source>Cannot open file to write rooms timetable html days vertical. Please check your disk&apos;s free space. Saving of html rooms timetable aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5041"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5120"/>
         <source>Writing rooms timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5061"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5140"/>
         <source>Cannot open file to write rooms timetable html time vertical. Please check your disk&apos;s free space. Saving of html rooms timetable aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5215"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5298"/>
         <source>Writing rooms timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5235"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5318"/>
         <source>Cannot open file to write rooms timetable html time horizontal. Please check your disk&apos;s free space. Saving of html rooms timetable aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5393"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5480"/>
         <source>Writing rooms timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12821,62 +12882,62 @@ If you really need that, please talk to the author
     <message>
         <location filename="../src/engine/activity.cpp" line="540"/>
         <source>Activity:</source>
-        <translation type="unfinished"></translation>
+        <translation>Εργασία:</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="546"/>
         <source>No teachers for this activity</source>
-        <translation type="unfinished">Όχι καθηγητές για την εργασία</translation>
+        <translation>Όχι καθηγητές για την εργασία</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="561"/>
         <source>No students sets for this activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Όχι σετ μαθητών για την εργασία</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="570"/>
         <source>Id=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Id=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="573"/>
         <source>Activity group id=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Εργασίες ομάς id=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="577"/>
         <source>Duration=%1</source>
-        <translation type="unfinished">Διάρκεια=%1</translation>
+        <translation>Διάρκεια=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="580"/>
         <source>Total duration=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Συνολική διάρκεια=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="585"/>
         <source>Active: yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ενεργό: ναι</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="589"/>
         <source>Active: no</source>
-        <translation type="unfinished"></translation>
+        <translation>Ενεργό: όχι</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="170"/>
         <source>Translation for specified language not loaded - this is an error, maybe translation file is missing - making language en_GB (English)</source>
-        <translation type="unfinished"></translation>
+        <translation>Μετάφραση επιλέγμένης γλώσσας δεν φορτώθηκε - είναι σφάλμα, πιθανώς το αρχείο μετάφρασης να λείπει - θα χρησιμοποιηθεί en_GB (Αγγλικά)</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="323"/>
         <source>no teachers</source>
-        <translation type="unfinished"></translation>
+        <translation>όχι καθηγητές</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="341"/>
         <source>no students</source>
-        <translation type="unfinished"></translation>
+        <translation>όχι μαθητές</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="387"/>
@@ -13115,7 +13176,7 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/splityearform.cpp" line="479"/>
         <source>Year %1 is not empty and it will be emptied before adding the divisions you selected. This means that all the activities and constraints for the groups and subgroups in this year will be removed. It is strongly recommended to save your file before continuing. You might also want, as an alternative, to modify manually the groups/subgroups from the corresponding menu, so that you will not lose constraints and activities referring to them. Do you really want to empty year?</source>
-        <translation type="unfinished"></translation>
+        <translation>Το έτος %1 δεν είναι κενό και θα εκκενωθεί πρίν προσθέτει τα τμήματα που επιλέξατε. Αυτό σημαίνει ότι όλοι οι δραστηριότητες και οι περιορισμοί για τάξεις και τμήματα σε αυτό το έτος θα αρθούν. Συστήνεται να σωθεί το αρχείο σας πρίν συνεχίσετε. Επίσης  ως εναλλακτική λύση, μπορείτε να τροποποιήσετε με το χέρι τάξεις/τμήματα από τις αντίστοιχες επιλογές, έτσι ώστε δεν θα χάσετε τους περιορισμούς και τις δραστηριότητες που αναφέρονται σε αυτά. Θέλετε πραγματικά το κενό έτος;</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="485"/>
@@ -13125,7 +13186,7 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/splityearform.cpp" line="487"/>
         <source>Year %1 will be emptied. This means that all constraints and activities referring to groups/subgroups in year %1 will be removed. Are you absolutely sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>Έτοα %1 θα εκκενωθεί. δηλαδή όλοι οι περιορισμοί και εργασίες που αναφέρονται σε τάξεις/τμήματα του έτους %1 θα αφαιρεθούν. Είστε σίγουρος;</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="521"/>
@@ -13135,12 +13196,12 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/splityearform.cpp" line="691"/>
         <source>Cannot add group %1, because a set with same name exists. Please choose another name or remove old group</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν μπορεί να προστεθεί τάξη %1, διότι το όνομα χρησιμοποιείται. Επιλέξτε διαφορετικό ή αφαιρέστε την παλαιά τάξη</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="639"/>
         <source>Cannot add subgroup %1, because a set with same name exists. Please choose another name or remove old group</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν μπορεί να προστεθεί τμήμα %1, διότι το όνομα χρησιμοποιείται. Επιλέξτε διαφορετικό ή αφαιρέστε το παλιό τμήμα</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="707"/>
@@ -13545,7 +13606,7 @@ Note: each room can hold a single activity at the same time
         <translation>Δημιουργήθηκε με  FET %1 σε %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="609"/>
+        <location filename="../src/engine/timetableexport.cpp" line="614"/>
         <source>End of file.</source>
         <translation>Τέλος Αρχείου.</translation>
     </message>
@@ -13555,7 +13616,7 @@ Note: each room can hold a single activity at the same time
         <translation>Συγκρούσεις του %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5280"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5363"/>
         <source>Warning! Only %1 out of %2 activities placed!</source>
         <translation>Προειδοποίηση! Μόνο %1 από  %2 εργασίες τοποθετήθηκαν!</translation>
     </message>
@@ -13575,32 +13636,32 @@ Note: each room can hold a single activity at the same time
         <translation>To do a page-break only after every second timetable, cut line %1 and paste it into line %2.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4915"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4990"/>
         <source>Table of content</source>
         <translation>Πίνακας περιεχομένων</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3049"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3091"/>
         <source>Year</source>
         <translation>Έτος</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1776"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1801"/>
         <source>Group</source>
         <translation>Τάξη</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5304"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5471"/>
         <source>Timetable generated with FET %1 on %2</source>
         <translation>Το χρονοδιάγραμμα δημιουργήθηκε με  FET %1 σε %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5032"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5111"/>
         <source>back to the top</source>
         <translation>πίσω στην αρχή</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5283"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5366"/>
         <source>No rooms recorded in fet for %1.</source>
         <translation>Δεν καταγράφηκαν αίθουσες στο fet για %1.</translation>
     </message>
@@ -13610,22 +13671,22 @@ Note: each room can hold a single activity at the same time
         <translation>Για να κρύψετε ένα στοιχείο γράψτε ακριβώς την ακόλουθη φράση στο στοιχείο</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4909"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4984"/>
         <source>Institution name</source>
         <translation>Ίδρυμα όνομα</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4910"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4985"/>
         <source>Comments</source>
         <translation>Παρατηρήσεις</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3050"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3092"/>
         <source>Detailed</source>
         <translation>Αναλυτικά</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3051"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3093"/>
         <source>Less detailed</source>
         <translation>Περιφραστικά</translation>
     </message>
@@ -13681,7 +13742,7 @@ For more information you can join the mailing list or write to author</source>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="190"/>
         <source>Simulation interrupted. FET could not find a perfect timetable. Maybe you can consider lowering the constraints.</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσομοίωση διακόπηκε. FET δεν βρήκε τέλειο χρονοδιάγραμμα. Ίσως πρέπει να μειώσετε τους περιορισμούς. </translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="323"/>
@@ -13693,7 +13754,9 @@ For more information you can join the mailing list or write to author</source>
         <source>Additional information relating impossible to schedule activities:
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Επιπλέον πληροφορίες σχετικάμε την αδυναμία προγραμματισμού εργασιών:
+
+</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="201"/>
@@ -13742,7 +13805,7 @@ For more information you can join the mailing list or write to author</source>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="318"/>
         <source>FET could not find a timetable. Maybe you can consider lowering the constraints.</source>
-        <translation type="unfinished"></translation>
+        <translation>FET δεν εξήγαγε χρονοδιάγραμμα. Ίσως μπορείτε να μειώσετε τους περιορισμούς.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="329"/>
@@ -13773,7 +13836,7 @@ Simulation results should be now written. You may check now Timetable/View. The 
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="462"/>
         <source>Elapsed time:</source>
-        <translation>Χρόνος:</translation>
+        <translation>Διάρκεια εργασίας:</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="466"/>
@@ -13799,22 +13862,22 @@ Simulation results should be now written. You may check now Timetable/View. The 
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="487"/>
         <source>Activities are placed in order, most difficult ones first</source>
-        <translation type="unfinished"></translation>
+        <translation>Εργασίες τοποθετούνται σε διάταξη, δυσκολότερες πρώτα</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="489"/>
         <source>The process of searching is semi-randomized, which means that you will get different timetables and running times each time. You can choose the best timetable from several runs</source>
-        <translation type="unfinished"></translation>
+        <translation>Η διαδικασία ημι-τυχαιοποιείται, το οποίο σημαίνει ότι θα πάρετε διαφορετικά χρονοδιαγράμματα και χρόνους εργασίας κάθε φορά. Μπορείτε να επιλέξετε το καλύτερο χρονοδιάγραμμα από διάφορα τρεξίματα</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="492"/>
         <source>Usually, there is no need to stop and restart the search, even if the algorithm seems stucked. Please report to author contrary cases</source>
-        <translation type="unfinished">Συνήθως, δεν υπάρχει καμία ανάγκη να σταματηθεί και να ξαναξεκινηθεί η αναζήτηση, ακόμα κι αν ο αλγόριθμος φαίνεται. Παρακαλώ υποβάλτε έκθεση στις αντίθετες περιπτώσεις στον συντάκτη</translation>
+        <translation>Συνήθως δεν απαιτείται να σταματήσετε και επανεκινήσετε ψάξιμο, ακόμα κι αν μοιάζει σταματημένο. Αναφέρετε αντίθετες περιπτώσεις</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="495"/>
         <source>It is recommended to strengthen the constraints step by step (for intance min n days or teacher(s) max gaps), as you obtain feasible timetables.</source>
-        <translation type="unfinished"></translation>
+        <translation>Συνιστάται να βάζετε πιό πολλούς περιορισμούς σταδιακά (π.χ. ελάχ. αρ.ημερών ή καθηγ. μέγιστα κενά), εφόσον έχετε καλά χρονοδιαγράμματα.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="497"/>
@@ -13891,7 +13954,7 @@ Please note that, for large data, each timetable might occupy more megabytes of 
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="187"/>
         <source>Directory %1 exists and might not be empty, (it might contain old files). You need to manually remove all contents of this directory AND the directory itself (or rename it) and then you can generate multiple timetables</source>
-        <translation>Ο κατάλογος %1 υπάρχει και δεν είναι κενός, (περιέχει τα παλαιά αρχεία). Πρέπει να αφαιρέσετε όλο το περιεχόμενο αυτού του καταλόγου ΚΑΙ τον ίδιο τον κατάλογο (ή να το μετονομάσετε) και έπειτα εσείς μπορεί να παραγάγετε πολλαπλά χρονοδιαγράμματα</translation>
+        <translation>Ο κατάλογος %1 υπάρχει και δεν είναι κενός, (ίσως περιέχει παλαιά αρχεία). Πρέπει να αφαιρέσετε όλο το περιεχόμενο του καταλόγου ΚΑΙ τον ίδιο τον κατάλογο (ή να τον μετονομάσετε) και έπειτα μπορείτε να παραγάγετε πολλαπλά χρονοδιαγράμματα</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="194"/>
@@ -13965,7 +14028,7 @@ For more information you can join the mailing list or write to author</source>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="27"/>
         <source>Time limit for each timetable (minutes)</source>
-        <translation>Όριο χρόνο επεξεργασίας για κάθε ένα</translation>
+        <translation>Όριο χρόνου επεξεργασίας για κάθε ένα (σε λεπτά)</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="54"/>

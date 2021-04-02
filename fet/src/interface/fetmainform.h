@@ -128,6 +128,8 @@ public slots:
 	void on_languageSpanishAction_activated();
 	void on_languageGreekAction_activated();
 	void on_languageArabicAction_activated();
+	void on_languageIndonesianAction_activated();
+	void on_languageItalianAction_activated();
 	
 	void on_checkForUpdatesAction_toggled();
 

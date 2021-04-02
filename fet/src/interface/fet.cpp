@@ -147,7 +147,7 @@ int main(int argc, char **argv){
 	
 	if(FET_LANGUAGE=="ar" || FET_LANGUAGE=="ca" || FET_LANGUAGE=="de" || FET_LANGUAGE=="es" || FET_LANGUAGE=="el" || FET_LANGUAGE=="fr"
 	 || FET_LANGUAGE=="hu" || FET_LANGUAGE=="mk" || FET_LANGUAGE=="ms" || FET_LANGUAGE=="nl" || FET_LANGUAGE=="pl" || FET_LANGUAGE=="ro"
-	 || FET_LANGUAGE=="tr"){
+	 || FET_LANGUAGE=="tr" || FET_LANGUAGE=="id" || FET_LANGUAGE=="it"){
 		if(d.exists())
 			translation_loaded=translator.load("fet_"+FET_LANGUAGE, "/usr/share/fet/translations");
 		else

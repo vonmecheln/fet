@@ -1,3 +1,31 @@
+----------------------------------------------------------------------------------
+
+From Maciej Deorowicz:
+
+Buildings for rooms and constraint students max building changes per day
+and constraint students min gaps between building changes.
+
+ConstraintActivitiesPreferredRoom(s) (like acts. pref. times)
+
+
+Maybe similar request with min gaps between building changes, from Marco Barsotti:
+
+>    - I have more teachers with some activity in some classes at a *first
+>    address* (subject tag 1). They have also some activity with some *other
+>    classes* at a *second address* (subject tag 2). When I define an
+>    activity and I add a subject tag, I would like to be able (select)
+> impose a gap after that activity IF (and only IF) *next activity (for
+> teacher*) has a different subject tag. Can you plan to add a such
+> constraint? - 
+
+
+Maybe similar request from Horatiu Halmajan:
+
+Students moving between buildings - we have classrooms in 5 different
+locations and we are trying to limit the number of daily movements for
+students
+
+----------------------------------------------------------------------------------
 
 From Peter Ambroz:
 
@@ -49,26 +77,6 @@ for printing it with different html level, or for viewing it.
 6.Ability to show free teachers for every position in students and 
 teachers timetable - very useful if you want to find somebody to replace you
 
-
-----------------------------------------------------------------------------------
-
-From Maciej Deorowicz:
-
-Buildings for rooms and constraint students max building changes per day
-and constraint students min gaps between building changes.
-
-ConstraintActivitiesPreferredRoom(s) (like acts. pref. times)
-
-
-Maybe similar request with min gaps between building changes, from Marco Barsotti:
-
->    - I have more teachers with some activity in some classes at a *first
->    address* (subject tag 1). They have also some activity with some *other
->    classes* at a *second address* (subject tag 2). When I define an
->    activity and I add a subject tag, I would like to be able (select)
-> impose a gap after that activity IF (and only IF) *next activity (for
-> teacher*) has a different subject tag. Can you plan to add a such
-> constraint? - 
 
 ----------------------------------------------------------------------------------
 
