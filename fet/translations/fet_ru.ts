@@ -176,10 +176,6 @@
 <context>
     <name>ActivitiesForm_template</name>
     <message>
-        <source>Current activity&apos;s description</source>
-        <translation type="obsolete">Описание текущего занятия</translation>
-    </message>
-    <message>
         <location filename="../src/interface/activitiesform_template.ui" line="70"/>
         <source>Filter</source>
         <translation>Фильтр</translation>
@@ -616,10 +612,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>these are all the activities for this subject, possibly including activities for this subject which are not visible in the current view</source>
-        <translation type="obsolete">в их число входят все занятия по данной дисциплине, в т. ч. не отображаемые в данном представлении</translation>
-    </message>
-    <message>
         <location filename="../src/interface/activityplanningform.cpp" line="690"/>
         <location filename="../src/interface/activityplanningform.cpp" line="822"/>
         <source>There are activities affecting other subjects. Should the related activities also be deleted?</source>
@@ -679,10 +671,6 @@
         <translation>Удалить %1 занятий преподавателя %2?</translation>
     </message>
     <message>
-        <source>Are you sure you want to remove ALL activities and related constraints?</source>
-        <translation type="obsolete">Вы действительно хотите удалить ВСЕ занятия и связанные с ними ограничения?</translation>
-    </message>
-    <message>
         <location filename="../src/interface/activityplanningform.cpp" line="1872"/>
         <source>Are you absolutely sure you want to remove ALL activities and related constraints from your data?</source>
         <translation>Вы абсолютно уверены в том, что хотите удалить ВСЕ занятия и связанные с ними ограничения?</translation>
@@ -712,10 +700,6 @@
         <translation>Удалить несколько?</translation>
     </message>
     <message>
-        <source>There are activities affecting also other students sets. Should the related activities also be deleted?</source>
-        <translation type="obsolete">В данной ячейке содержатся занятия, относящиеся к другим группам. Удалить такие занятия?</translation>
-    </message>
-    <message>
         <location filename="../src/interface/activityplanningform.cpp" line="999"/>
         <source>FET information</source>
         <translation>FET - Информация</translation>
@@ -724,46 +708,6 @@
         <location filename="../src/interface/activityplanningform.cpp" line="1000"/>
         <source>Cannot modify this large activity, because it contains more than %1 activities. If you really need that, please talk to the author</source>
         <translation>Невозможно изменить занятие, поскольку оно содержит более %1 подзанятий. Если это необходимо, сообщите автору</translation>
-    </message>
-    <message>
-        <source>different teachers</source>
-        <translation type="obsolete">различные преподаватели</translation>
-    </message>
-    <message>
-        <source>different subject</source>
-        <translation type="obsolete">различные дисциплины</translation>
-    </message>
-    <message>
-        <source>different activity tags</source>
-        <translation type="obsolete">различные виды занятий</translation>
-    </message>
-    <message>
-        <source>different students</source>
-        <translation type="obsolete">различные студенты</translation>
-    </message>
-    <message>
-        <source>different number of students</source>
-        <translation type="obsolete">различное количество студентов</translation>
-    </message>
-    <message>
-        <source>The current split activity has subactivities which were individually modified. It is recommended to abort now and modify individual subactivities from the corresponding menu. Otherwise you will modify the fields for all the subactivities from this larger split activity.</source>
-        <translation type="obsolete">Данное занятие содержит подзанятия с индивидуально установленными параметрами. Рекомендуется прервать процесс и внести изменения в такие подзанятия в окне &quot;Изменение подзанятий&quot;. Иначе внесённые здесь изменения будут относиться ко всем подзанятиям.</translation>
-    </message>
-    <message>
-        <source>The fields which are different are: %1</source>
-        <translation type="obsolete">Поля с различающимся содержимым: %1</translation>
-    </message>
-    <message>
-        <source>FET warning</source>
-        <translation type="obsolete">FET - Предупреждение</translation>
-    </message>
-    <message>
-        <source>Abort</source>
-        <translation type="obsolete">Прервать</translation>
-    </message>
-    <message>
-        <source>Continue</source>
-        <translation type="obsolete">Продолжить</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningform.cpp" line="1127"/>
@@ -775,10 +719,6 @@
         <location filename="../src/interface/activityplanningform.cpp" line="1171"/>
         <source>This cell contains activities that relate to other students. Should the related activities also be deleted?</source>
         <translation>В данной ячейке содержатся занятия, относящиеся к другим студентам. Удалить такие занятия?</translation>
-    </message>
-    <message>
-        <source>There are activities affecting also other teachers. Should the related activities also be deleted?</source>
-        <translation type="obsolete">В данной ячейке содержатся занятия, относящиеся к другим преподавателям. Удалить такие занятия?</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningform.cpp" line="1312"/>
@@ -953,10 +893,6 @@
         <translation>Изменение невозможно из-за повторения</translation>
     </message>
     <message>
-        <source>Invalid activity tag</source>
-        <translation type="obsolete">Вид занятий не выбран</translation>
-    </message>
-    <message>
         <location filename="../src/interface/activitytagsform.cpp" line="190"/>
         <source>Activated a number of %1 activities</source>
         <translation>Активировано %1 занятий</translation>
@@ -980,26 +916,9 @@
 <context>
     <name>ActivityTagsForm_template</name>
     <message>
-        <source>List of activity tags</source>
-        <extracomment>This is the title of the activity tags dialog</extracomment>
-        <translation type="obsolete">Виды занятий</translation>
-    </message>
-    <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="21"/>
         <source>New Item</source>
         <translation>Новый элемент</translation>
-    </message>
-    <message>
-        <source>Add activity tag</source>
-        <translation type="obsolete">Добавить</translation>
-    </message>
-    <message>
-        <source>Remove current</source>
-        <translation type="obsolete">Удалить</translation>
-    </message>
-    <message>
-        <source>Rename current</source>
-        <translation type="obsolete">Переименовать</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="79"/>
@@ -1280,13 +1199,6 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <translation>Новый элемент</translation>
     </message>
     <message>
-        <source>Selected</source>
-        <extracomment>It refers to a list of selected students sets
-----------
-It refers to a list of selected activity tags</extracomment>
-        <translation type="obsolete">Выбраны</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addactivityform_template.ui" line="70"/>
         <location filename="../src/interface/addactivityform_template.ui" line="161"/>
         <location filename="../src/interface/addactivityform_template.ui" line="262"/>
@@ -1476,11 +1388,6 @@ consecutive?</source>
         <translation>Выбраны</translation>
     </message>
     <message>
-        <source>Selected</source>
-        <comment>It refers to a list of selected students (sets)</comment>
-        <translation type="obsolete">Выбраны</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addactivityform_template.ui" line="241"/>
         <source>Selected</source>
         <comment>It refers to a list of selected activity tags</comment>
@@ -1668,12 +1575,6 @@ consecutive?</source>
         <translation>Только одно занятие выбрано</translation>
     </message>
     <message>
-        <source>Please report error to the author
-MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING must be increased (you have too many activities)</source>
-        <translation type="obsolete">Пожалуйста, сообщите автору об ошибке
-Константа MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING должна быть увеличена (слишком много занятий)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform.cpp" line="225"/>
         <source>Constraint added:</source>
         <translation>Добавлено ограничение:</translation>
@@ -1749,11 +1650,6 @@ MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING must be increased (you have too many a
         <translation>Выбраны</translation>
     </message>
     <message>
-        <source>Selected</source>
-        <extracomment>It refers to a list of selected activities</extracomment>
-        <translation type="obsolete">Выбраны</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="202"/>
         <source>Clear</source>
         <translation>Очистить</translation>
@@ -1768,14 +1664,6 @@ MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING must be increased (you have too many a
         <source> Add activities not overlapping</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
         <translation>Добавление: Занятия не перекрываются по времени</translation>
-    </message>
-    <message>
-        <source>All activities (dbl. click)</source>
-        <translation type="obsolete">Все занятия (дв. щелчок)</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click)</source>
-        <translation type="obsolete">Выбраны (дв. щелчок)</translation>
     </message>
 </context>
 <context>
@@ -2145,12 +2033,6 @@ MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING must be increased (you have too many a
         <translation>Только одно занятие выбрано - невозможно</translation>
     </message>
     <message>
-        <source>Too many activities - please report error
-(CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY too little)</source>
-        <translation type="obsolete">Слишком много занятий. Сообщите автору об ошибке
-(значение CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY слишком мало)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform.cpp" line="223"/>
         <source>Constraint added:</source>
         <translation>Добавлено ограничение:</translation>
@@ -2231,18 +2113,10 @@ MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING must be increased (you have too many a
         <translation>Преподаватель</translation>
     </message>
     <message>
-        <source>All activities (dbl. click)</source>
-        <translation type="obsolete">Все занятия (дв. щелчок)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="14"/>
         <source>Add activities same starting day</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
         <translation>Добавление: Занятия, проводящиеся в один и тот же день</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click)</source>
-        <translation type="obsolete">Выбраны (дв. щелчок)</translation>
     </message>
 </context>
 <context>
@@ -2270,12 +2144,6 @@ MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING must be increased (you have too many a
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform.cpp" line="196"/>
         <source>Only one selected activity</source>
         <translation>Только одно занятие выбрано</translation>
-    </message>
-    <message>
-        <source>Please report error to the author
-MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too many activities)</source>
-        <translation type="obsolete">Пожалуйста, сообщите автору об ошибке
-Константа MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR должна быть увеличена (слишком много занятий)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform.cpp" line="219"/>
@@ -2363,14 +2231,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too man
         <source>Clear</source>
         <translation>Очистить</translation>
     </message>
-    <message>
-        <source>All activities (dbl. click)</source>
-        <translation type="obsolete">Все занятия (дв. щелчок)</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click)</source>
-        <translation type="obsolete">Выбраны (дв. щелчок)</translation>
-    </message>
 </context>
 <context>
     <name>AddConstraintActivitiesSameStartingTimeForm</name>
@@ -2415,12 +2275,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too man
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="269"/>
         <source>2. Current (sub)activity has id=%1 and represents %2 sub-activities</source>
         <translation>2. Текущее (под)занятие имеет id=%1 и содержит %2 подзанятиий</translation>
-    </message>
-    <message>
-        <source>Too many activities - please report error
-(CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME too little)</source>
-        <translation type="obsolete">Слишком много занятий. Сообщите автору об ошибке
-(значение CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME слишком мало)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="338"/>
@@ -2529,14 +2383,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too man
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="160"/>
         <source>Add multiple constraints</source>
         <translation>Добавить несколько ограничений</translation>
-    </message>
-    <message>
-        <source>All activities (dbl. click)</source>
-        <translation type="obsolete">Все занятия (дв. щелчок)</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click)</source>
-        <translation type="obsolete">Выбраны (дв. щелчок)</translation>
     </message>
 </context>
 <context>
@@ -2812,18 +2658,10 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too man
         <translation>Закрыть</translation>
     </message>
     <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Все аудитории (выбор двойным щелчком)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="120"/>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="149"/>
         <source>New Item</source>
         <translation>Новый элемент</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Выбранные аудитории (удаление двойным щелчком)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="81"/>
@@ -3411,10 +3249,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too man
         <translation>Закрыть</translation>
     </message>
     <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Все аудитории (добавление двойным щелчком)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="14"/>
         <source>Add activity tag preferred rooms</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -3430,10 +3264,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too man
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="81"/>
         <source>New Item</source>
         <translation>Новый элемент</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Выбранные аудитории (удаление двойным щелчком)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="20"/>
@@ -3481,10 +3311,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too man
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform.cpp" line="97"/>
         <source>Constraint NOT added - there must be another constraint of this type. Please edit that one</source>
         <translation>Ограничение НЕ добавлено. Существует другое ограничение такого же типа</translation>
-    </message>
-    <message>
-        <source>Constraint NOT added - please report error</source>
-        <translation type="obsolete">Ограничение НЕ добавлено. Пожалуйста, сообщите автору об ошибке</translation>
     </message>
 </context>
 <context>
@@ -3547,10 +3373,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too man
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform.cpp" line="97"/>
         <source>Constraint NOT added - there must be another constraint of this type. Please edit that one</source>
         <translation>Ограничение НЕ добавлено. Существует другое ограничение такого же типа</translation>
-    </message>
-    <message>
-        <source>Constraint NOT added - please report error</source>
-        <translation type="obsolete">Ограничение НЕ добавлено. Пожалуйста, сообщите автору об ошибке</translation>
     </message>
 </context>
 <context>
@@ -3687,12 +3509,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too man
         <translation>Только одно занятие выбрано</translation>
     </message>
     <message>
-        <source>Please report error to the author
-MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES must be increased (you have too many activities)</source>
-        <translation type="obsolete">Пожалуйста, сообщите автору об ошибке
-Константа MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES должна быть увеличена (слишком много занятий)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform.cpp" line="228"/>
         <source>Constraint added:</source>
         <translation>Добавлено ограничение:</translation>
@@ -3724,10 +3540,6 @@ MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES must be increased (you have too many 
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="56"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Max days</source>
-        <translation type="obsolete">Максимум дней</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="76"/>
@@ -3783,18 +3595,10 @@ MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES must be increased (you have too many 
         <translation>Очистить</translation>
     </message>
     <message>
-        <source>All activities (dbl. click)</source>
-        <translation type="obsolete">Все занятия (дв. щелчок)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="14"/>
         <source>Add max days between activities</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
         <translation>Добавление: Максимум дней между занятиями</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click)</source>
-        <translation type="obsolete">Выбраны (дв. щелчок)</translation>
     </message>
 </context>
 <context>
@@ -3822,12 +3626,6 @@ MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES must be increased (you have too many 
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform.cpp" line="205"/>
         <source>Only one selected activity</source>
         <translation>Только одно занятие выбрано</translation>
-    </message>
-    <message>
-        <source>Please report error to the author
-MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES must be increased (you have too many activities)</source>
-        <translation type="obsolete">Пожалуйста, сообщите автору об ошибке
-Константа MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES должна быть увеличена (слишком много занятий)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform.cpp" line="216"/>
@@ -3929,33 +3727,15 @@ force activities consecutive</source>
 то должны￼ идти подряд</translation>
     </message>
     <message>
-        <source>All activities (dbl. click)</source>
-        <translation type="obsolete">Все занятия (дв. щелчок)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="106"/>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="135"/>
         <source>New Item</source>
         <translation>Новый элемент</translation>
     </message>
     <message>
-        <source>Selected (dbl. click)</source>
-        <translation type="obsolete">Выбраны (дв. щелчок)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="143"/>
         <source>Clear</source>
         <translation>Очистить</translation>
-    </message>
-    <message>
-        <source>Min days</source>
-        <translation type="obsolete">Минимум дней</translation>
-    </message>
-    <message>
-        <source>If activities on same day,
-force activities consecutive</source>
-        <translation type="obsolete">Если занятия окажутся в один￼ и тот же день,
-то они должны￼ идти подряд</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="226"/>
@@ -4038,10 +3818,6 @@ force activities consecutive</source>
         <translation>100</translation>
     </message>
     <message>
-        <source>Min gaps</source>
-        <translation type="obsolete">Минимум окон</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="76"/>
         <source>Min gaps</source>
         <comment>(Min gaps between a set of activities)</comment>
@@ -4095,18 +3871,10 @@ force activities consecutive</source>
         <translation>Очистить</translation>
     </message>
     <message>
-        <source>All activities (dbl. click)</source>
-        <translation type="obsolete">Все занятия (дв. щелчок)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="14"/>
         <source>Add min gaps between activities</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
         <translation>Добавление: Минимум пар между занятиями</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click)</source>
-        <translation type="obsolete">Выбраны (дв. щелчок)</translation>
     </message>
 </context>
 <context>
@@ -5082,10 +4850,6 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation>Добавление: Минимум пар в день для всех студентов</translation>
     </message>
     <message>
-        <source>Note: every day should have the minimum hours daily (so this constraint is not flexible to allow empty days for students)</source>
-        <translation type="obsolete">Примечание: данное ограничение распространяется на все дни без исключения (тем самым запрещая выходные дни для студентов)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="39"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Вес (должен быть 100%)</translation>
@@ -5483,10 +5247,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <translation>Закрыть</translation>
     </message>
     <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Все аудитории (выбор двойным щелчком)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssethomeroomsform_template.ui" line="14"/>
         <source>Add students set home rooms</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -5502,10 +5262,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/addconstraintstudentssethomeroomsform_template.ui" line="81"/>
         <source>New Item</source>
         <translation>Новый элемент</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Выбранные аудитории (удаление двойным щелчком)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssethomeroomsform_template.ui" line="20"/>
@@ -6276,10 +6032,6 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation>Минимум пар</translation>
     </message>
     <message>
-        <source>Note: every day should have the minimum hours daily (so this constraint is not flexible to allow empty days for students)</source>
-        <translation type="obsolete">Примечание: данное ограничение распространяется на все дни без исключения (тем самым запрещая выходные дни для студентов)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="136"/>
         <source>Add constraint</source>
         <translation>Добавить ограничение</translation>
@@ -6823,18 +6575,10 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation>Добавление: Предпочтительные аудитории для дисциплины с учётом вида занятий</translation>
     </message>
     <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Все аудитории (выбор двойным щелчком)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="65"/>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="94"/>
         <source>New Item</source>
         <translation>Новый элемент</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Выбранные аудитории (удаление двойным щелчком)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="33"/>
@@ -7000,18 +6744,10 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation>Закрыть</translation>
     </message>
     <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Все аудитории (выбор двойным щелчком)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="52"/>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="81"/>
         <source>New Item</source>
         <translation>Новый элемент</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Выбранные аудитории (удаление двойным щелчком)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="20"/>
@@ -7345,18 +7081,10 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation>Закрыть</translation>
     </message>
     <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Все аудитории (выбор двойным щелчком)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteacherhomeroomsform_template.ui" line="52"/>
         <location filename="../src/interface/addconstraintteacherhomeroomsform_template.ui" line="81"/>
         <source>New Item</source>
         <translation>Новый элемент</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Выбранные аудитории (удаление двойным щелчком)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherhomeroomsform_template.ui" line="20"/>
@@ -8267,10 +7995,6 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="61"/>
         <source>Teacher</source>
         <translation>Преподаватель</translation>
-    </message>
-    <message>
-        <source>Note: FET is smart enough to use this constraint only on working days for this teacher (so it is a flexible constraint). Please be careful with this constraint, not to get impossible timetables. It is recommended to start with 2 min hours and highten them as you find new timetables</source>
-        <translation type="obsolete">Примечание: данное ограничение применяется только к рабочим дням преподавателя. При его использовании рекомендуется начинать с минимума, равного 2 парам в день, и увеличивать значение, пока удаётся получать расписания</translation>
     </message>
 </context>
 <context>
@@ -9288,10 +9012,6 @@ Note: teacher not available and break are not counted as gaps.</source>
         <source>Allow empty days</source>
         <translation>Разрешить выходные</translation>
     </message>
-    <message>
-        <source>Note: FET is smart enough to use this constraint only on working days for this teacher (so it is a flexible constraint). Please be careful with this constraint, not to get impossible timetables. It is recommended to start with 2 min hours. Maybe you could try higher values after that, but they might be too large and you might get a impossible timetable.</source>
-        <translation type="obsolete">Данное ограничение применяется только к рабочим дням преподавателя. При его использовании рекомендуется начинать с минимума, равного 2 парам в день, и увеличивать значение, пока удаётся получать расписания.</translation>
-    </message>
 </context>
 <context>
     <name>AddConstraintThreeActivitiesGroupedForm</name>
@@ -9860,20 +9580,6 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>This group already exists, but in another year
-If you insert current group to current year, that
-means that some years share the same group (overlap)
-If you want to make a new group, independent,
-please abort now and give it another name
-</source>
-        <translation type="obsolete">Группа с введённым названием уже существует,
-и относится к другому потоку. Добавление группы
-возможно, но это приведёт к тому, что два потока
-будут содержать разные группы с одинаковыми названиями
-Если это вам не подходит, прервите процесс добавления
-и выберите другое название</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addstudentsgroupform.cpp" line="87"/>
         <source>Add</source>
         <translation>Добавить</translation>
@@ -9972,20 +9678,6 @@ please abort now and give it another name
         <location filename="../src/interface/addstudentssubgroupform.cpp" line="86"/>
         <source>Note: the number of students for the added subgroup will be the number of students of the already existing subgroup (you can modify the number of students in the modify subgroup dialog).</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>This subgroup already exists, but in another group
-If you insert current subgroup to current group, that
-means that some groups share the same subgroup (overlap)
-If you want to make a new subgroup, independent,
-please abort now and give it another name
-</source>
-        <translation type="obsolete">Подгруппа с введённым названием уже существует,
-и относится к другой группе. Добавление подгруппы
-возможно, но это приведёт к тому, что две группы
-будут содержать разные подгруппы с одинаковыми названиями
-Если это вам не подходит, прервите процесс добавления
-и выберите другое название</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform.cpp" line="88"/>
@@ -10626,11 +10318,6 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>Building</name>
     <message>
-        <source>N:%1</source>
-        <comment>Name of the building</comment>
-        <translation type="obsolete">Н:%1</translation>
-    </message>
-    <message>
         <location filename="../src/engine/building.cpp" line="39"/>
         <source>Building</source>
         <translation>Здание</translation>
@@ -10676,10 +10363,6 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <source>No</source>
         <translation>Нет</translation>
     </message>
-    <message>
-        <source>Invalid building</source>
-        <translation type="obsolete">Здание не выбрано</translation>
-    </message>
 </context>
 <context>
     <name>BuildingsForm_template</name>
@@ -10688,14 +10371,6 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <source>Buildings</source>
         <extracomment>The dialog to list all buildings</extracomment>
         <translation>Здания</translation>
-    </message>
-    <message>
-        <source>Add building</source>
-        <translation type="obsolete">Добавить</translation>
-    </message>
-    <message>
-        <source>Remove current</source>
-        <translation type="obsolete">Удалить</translation>
     </message>
     <message>
         <location filename="../src/interface/buildingsform_template.ui" line="20"/>
@@ -10721,10 +10396,6 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/buildingsform_template.ui" line="48"/>
         <source>Modify</source>
         <translation>Изменить</translation>
-    </message>
-    <message>
-        <source>Modify current</source>
-        <translation type="obsolete">Изменить</translation>
     </message>
     <message>
         <location filename="../src/interface/buildingsform_template.ui" line="56"/>
@@ -22062,11 +21733,6 @@ Please stop simulation before this</source>
         <translation>Вес:%1%</translation>
     </message>
     <message>
-        <source>TN:%1</source>
-        <comment>Teacher name</comment>
-        <translation type="obsolete">Пр:%1</translation>
-    </message>
-    <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3091"/>
         <source>MH:%1</source>
         <comment>Maximum hours continuously</comment>
@@ -22214,11 +21880,6 @@ Please stop simulation before this</source>
         <translation>Вес:%1%</translation>
     </message>
     <message>
-        <source>TN:%1</source>
-        <comment>Teacher name</comment>
-        <translation type="obsolete">Пр:%1</translation>
-    </message>
-    <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2704"/>
         <source>MH:%1</source>
         <comment>Maximum hours (daily)</comment>
@@ -22362,11 +22023,6 @@ Please stop simulation before this</source>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>Вес:%1%</translation>
-    </message>
-    <message>
-        <source>TN:%1</source>
-        <comment>Teacher name</comment>
-        <translation type="obsolete">Пр:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12992"/>
@@ -22670,11 +22326,6 @@ Please stop simulation before this</source>
         <translation>Вес:%1%</translation>
     </message>
     <message>
-        <source>TN:%1</source>
-        <comment>Teacher name</comment>
-        <translation type="obsolete">Пр:%1</translation>
-    </message>
-    <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12753"/>
         <source>Cannot generate a timetable with a constraint teacher min hours daily with allow empty days=false. Please modify it, so that it allows empty days. If you need a facility like that, please use constraint teacher min days per week</source>
         <translation type="unfinished"></translation>
@@ -22730,10 +22381,6 @@ Please stop simulation before this</source>
         <location filename="../src/engine/timeconstraint.cpp" line="12807"/>
         <source>Allow empty days=%1</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Note: FET is smart enough to use this constraint only on working days of the teacher</source>
-        <translation type="obsolete">Примечание: данное ограничение применяется только к рабочим дням преподавателя</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12862"/>
@@ -24722,10 +24369,6 @@ Please stop simulation before this</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Note: FET is smart enough to use this constraint only on working days of the teachers</source>
-        <translation type="obsolete">Примечание: данное ограничение применяется только к рабочим дням преподавателя</translation>
-    </message>
-    <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12642"/>
         <source>Time constraint teachers min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation type="unfinished"></translation>
@@ -26039,14 +25682,14 @@ Import of data will be easier with these settings.</source>
         <location filename="../src/interface/fetmainform.cpp" line="2965"/>
         <location filename="../src/interface/fetmainform.cpp" line="2969"/>
         <location filename="../src/interface/fetmainform.cpp" line="3000"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3134"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3186"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3536"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3576"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3606"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3631"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3658"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3680"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3135"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3187"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3537"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3577"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3607"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3632"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3659"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3681"/>
         <source>FET warning</source>
         <translation>FET - Предупреждение</translation>
     </message>
@@ -26188,12 +25831,12 @@ Import of data will be easier with these settings.</source>
         <location filename="../src/interface/fetmainform.cpp" line="3044"/>
         <location filename="../src/interface/fetmainform.cpp" line="3054"/>
         <location filename="../src/interface/fetmainform.cpp" line="3064"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3190"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3373"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3400"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3423"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3490"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3501"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3191"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3374"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3401"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3424"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3491"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3502"/>
         <source>FET information</source>
         <translation>FET - Информация</translation>
     </message>
@@ -26243,7 +25886,7 @@ Import of data will be easier with these settings.</source>
         <location filename="../src/interface/fetmainform.cpp" line="646"/>
         <location filename="../src/interface/fetmainform.cpp" line="708"/>
         <location filename="../src/interface/fetmainform.cpp" line="870"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3278"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3279"/>
         <source>&amp;Yes</source>
         <translation>&amp;Да</translation>
     </message>
@@ -26251,14 +25894,14 @@ Import of data will be easier with these settings.</source>
         <location filename="../src/interface/fetmainform.cpp" line="646"/>
         <location filename="../src/interface/fetmainform.cpp" line="708"/>
         <location filename="../src/interface/fetmainform.cpp" line="870"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3278"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3279"/>
         <source>&amp;No</source>
         <translation>&amp;Нет</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="646"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3435"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3456"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3436"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3457"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Отмена</translation>
     </message>
@@ -26379,11 +26022,11 @@ Import of data will be easier with these settings.</source>
         <location filename="../src/interface/fetmainform.cpp" line="2664"/>
         <location filename="../src/interface/fetmainform.cpp" line="2883"/>
         <location filename="../src/interface/fetmainform.cpp" line="2910"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3374"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3401"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3424"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3491"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3502"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3375"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3402"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3425"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3492"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3503"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>Выполняются вычисления.
@@ -26398,10 +26041,6 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/fetmainform.cpp" line="707"/>
         <source>Are you sure you want to load new data (rules) ?</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose a file</source>
-        <translation type="obsolete">Выберите файл</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="768"/>
@@ -26441,10 +26080,6 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/fetmainform.cpp" line="810"/>
         <source>&amp;OK</source>
         <translation>&amp;OK</translation>
-    </message>
-    <message>
-        <source>FET - %1</source>
-        <translation type="obsolete">FET - %1</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="830"/>
@@ -26575,10 +26210,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>OK</translation>
     </message>
     <message>
-        <source>FET - help in other languages</source>
-        <translation type="obsolete">FET - Справка на других языках</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform.cpp" line="2916"/>
         <source>Current file (data) has no name. Please save file under a certain name before proceeding</source>
         <translation>Текущий файл не сохранён. Пожалуйста, сохраните файл до составления расписаний</translation>
@@ -26611,100 +26242,100 @@ Having a subgroup with too little working hours per week means that you inputted
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3093"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3225"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3226"/>
         <source>US English</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3134"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3135"/>
         <source>Invalid current language - making it en_US (US English)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3186"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3187"/>
         <source>Invalid language selected - making it en_US (US English)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3191"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3192"/>
         <source>Please exit and restart FET to activate language change</source>
         <translation>Пожалуйста перезапустите FET для активации настроек языка</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3206"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3207"/>
         <source>That means:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3222"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3223"/>
         <source>Use colors in FET graphical user interface will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3225"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3226"/>
         <source>Language will be %1 (restart needed to activate language change)</source>
         <comment>%1 is the default language</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3258"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3259"/>
         <source>Warn if using not perfect constraints will be %1</source>
         <comment>%1 is true or false. This is a warning if user uses not perfect constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3261"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3262"/>
         <source>Enable constraints students min hours daily with empty days will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3264"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3265"/>
         <source>Warn if using constraints students min hours daily with empty days will be %1</source>
         <comment>%1 is true or false. This is a warning if user uses a non-standard constraint students min hours daily with allowed empty days</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3567"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3597"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3568"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3598"/>
         <source>These kinds of constraints are good, but not perfectly optimized. Adding such constraints may make your timetable solve too slow or even impossible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3570"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3600"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3571"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3601"/>
         <source>It is recommended to use such constraints only at the end, after you generated successfully with all the other constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3572"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3602"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3573"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3603"/>
         <source>If your timetable is too difficult, it may be from these kinds of constraints, so you may need to remove them and retry.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3574"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3604"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3656"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3575"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3605"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3657"/>
         <source>Continue only if you know what you are doing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3625"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3674"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3626"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3675"/>
         <source>It is recommended to keep this warning active, but if you really want, you can disable it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3627"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3676"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3628"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3677"/>
         <source>Disable it only if you know what you are doing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3629"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3678"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3630"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3679"/>
         <source>Are you sure you want to disable it?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -26717,10 +26348,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform.cpp" line="2929"/>
         <source>Please input at least one active activity before generating multiple</source>
         <translation>Пожалуйста, добавьте хотя бы одно занятие перед составлением нескольких вариантов расписания</translation>
-    </message>
-    <message>
-        <source>FET - a free timetabling program</source>
-        <translation type="obsolete">FET - Свободная программа для составления расписаний</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="963"/>
@@ -26821,7 +26448,7 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3203"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3204"/>
         <source>Are you sure you want to reset all settings to defaults?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -26842,41 +26469,41 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Файл сохранён</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3209"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3210"/>
         <source>Mainform geometry will be reset to default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3212"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3240"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3243"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3258"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3265"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3269"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3271"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3273"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3213"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3241"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3244"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3259"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3266"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3270"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3272"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3274"/>
         <source>true</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3430"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3431"/>
         <source>You have more than 6 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation>Вы используете более 6 дней в неделю, поэтому, вероятно, эта возможность вам не требуется. Вы действительно хотите продолжить?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3433"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3454"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3434"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3455"/>
         <source>FET question</source>
         <translation>FET - Вопрос</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3435"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3456"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3436"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3457"/>
         <source>&amp;Continue</source>
         <translation>&amp;Продолжить</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3451"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3452"/>
         <source>You have less than 5 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation>Вы используете менее 5 дней в неделю, поэтому, вероятно, эта возможность вам не требуется. Вы действительно хотите продолжить?</translation>
     </message>
@@ -26896,11 +26523,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform.cpp" line="1028"/>
         <source>All files</source>
         <translation>Все файлы</translation>
-    </message>
-    <message>
-        <source>FET - %1</source>
-        <comment>The title of the main form, %1 is the name of the current file</comment>
-        <translation type="obsolete">FET - %1</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="533"/>
@@ -27001,7 +26623,7 @@ Having a subgroup with too little working hours per week means that you inputted
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3074"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3140"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3141"/>
         <source>Please select FET language</source>
         <translation type="unfinished"></translation>
     </message>
@@ -27111,35 +26733,40 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3190"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3116"/>
+        <source>Slovak</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="3191"/>
         <source>Language %1 selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3269"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3270"/>
         <source>Confirm activity planning will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3271"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3272"/>
         <source>Confirm spread activities over the week will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3273"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3274"/>
         <source>Confirm remove redundant constraints will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3648"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3649"/>
         <source>This kind of constraint is good, but only in the right case. Adding such constraints in the wrong circumstance may make your timetable solve too slow or even impossible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3651"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3652"/>
         <source>Please use such constraints only if you are sure that there exists a timetable with empty days for students. If your instution requires each day for the students to be not empty, or if there does not exist a solution with empty days for students, it is IMPERATIVE (for performance reasons) that you use the standard constraint which does not allow empty days. Otherwise, the timetable may be impossible to find.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -27159,90 +26786,90 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3212"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3213"/>
         <source>Show shortcut buttons in main window will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3215"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3216"/>
         <source>In the shortcuts tab from the main window, the first section will be selected/shown</source>
         <comment>Option refers to the main window tab widget for shortcuts, which currently contains 5 tabs: File, Data, Time, Space, Timetable (so it will select/show File tab).</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3219"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3220"/>
         <source>Check for updates at startup will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3228"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3229"/>
         <source>Working directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3231"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3232"/>
         <source>Output directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3234"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3235"/>
         <source>Import directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3237"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3238"/>
         <source>Html level of the timetables will be %1</source>
         <comment>%1 is default html level</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3240"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3241"/>
         <source>Mark not available slots with -x- in timetables will be %1</source>
         <comment>%1 is true or false. Lowercase -x-</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3243"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3244"/>
         <source>Mark break slots with -X- in timetables will be %1</source>
         <comment>%1 is true or false. Uppercase -X-</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3246"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3247"/>
         <source>Divide html timetables with time-axis by days will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3249"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3250"/>
         <source>Print activities with same starting time will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3252"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3253"/>
         <source>Enable activity tag max hours daily will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3255"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3256"/>
         <source>Enable students max gaps per day will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3527"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3528"/>
         <source>Choose results (output) directory</source>
         <translation>Выбор каталога для сохранения результатов</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3536"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3537"/>
         <source>You don&apos;t have write permissions in this directory</source>
         <translation>У вас нет прав на запись в данный каталог</translation>
     </message>
@@ -27262,18 +26889,18 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3219"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3222"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3246"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3249"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3252"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3255"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3261"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3220"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3223"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3247"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3250"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3253"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3256"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3262"/>
         <source>false</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3277"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3278"/>
         <source>FET confirmation</source>
         <translation>FET - Подтверждение</translation>
     </message>
@@ -27430,31 +27057,10 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Сохранить как</translation>
     </message>
     <message>
-        <source>E&amp;xit</source>
-        <extracomment>Accelerator key (letter after ampersand) for &amp;New, &amp;Open, &amp;Save, Save &amp;As, E&amp;xit must be different</extracomment>
-        <translation type="obsolete">В&amp;ыход</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation type="obsolete">Выход</translation>
-    </message>
-    <message>
-        <source>&amp;Frequently asked questions</source>
-        <translation type="obsolete">&amp;Часто задаваемые вопросы</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1262"/>
         <location filename="../src/interface/fetmainform_template.ui" line="1265"/>
         <source>Frequently asked questions</source>
         <translation>Часто задаваемые вопросы</translation>
-    </message>
-    <message>
-        <source>&amp;About...</source>
-        <translation type="obsolete">&amp;О программе...</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="obsolete">О программе</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1287"/>
@@ -27502,10 +27108,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform_template.ui" line="1314"/>
         <source>Groups</source>
         <translation>Группы</translation>
-    </message>
-    <message>
-        <source>S&amp;ubgroups</source>
-        <translation type="obsolete">Подгр&amp;уппы</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1322"/>
@@ -27611,10 +27213,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform_template.ui" line="1392"/>
         <source>Rooms</source>
         <translation>Аудитории</translation>
-    </message>
-    <message>
-        <source>View (r&amp;ooms)</source>
-        <translation type="obsolete">Просмотр (по &amp;аудиториям)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1403"/>
@@ -27894,10 +27492,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Минимум пар в день для множества студентов</translation>
     </message>
     <message>
-        <source>Generate &amp;multiple variants</source>
-        <translation type="obsolete">Составить &amp;несколько вариантов</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1699"/>
         <source>Generate multiple variants</source>
         <translation>Составить несколько вариантов</translation>
@@ -27931,10 +27525,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform_template.ui" line="1734"/>
         <source>Help on statistics</source>
         <translation>Справка по статистике</translation>
-    </message>
-    <message>
-        <source>Help in other languages than English</source>
-        <translation type="obsolete">Справка на других языках (не английском)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1488"/>
@@ -27981,16 +27571,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Доступность преподавателей</translation>
     </message>
     <message>
-        <source>All</source>
-        <comment>It refers to all time constraints (it is the text of a button for activating all time constraints dialog on the main form)</comment>
-        <translation type="obsolete">Все</translation>
-    </message>
-    <message>
-        <source>All</source>
-        <comment>It refers to all space constraints (it is the text of a button for activating all space constraints dialog on the main form)</comment>
-        <translation type="obsolete">Все</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1448"/>
         <source>A students set&apos;s not available times</source>
         <translation>Доступность студентов</translation>
@@ -28020,10 +27600,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform_template.ui" line="1608"/>
         <source>A set of students has a set of home rooms</source>
         <translation>За множеством студентов закреплено несколько аудиторий</translation>
-    </message>
-    <message>
-        <source>Buildings</source>
-        <translation type="obsolete">Здания</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="177"/>
@@ -28158,11 +27734,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Полезные советы</translation>
     </message>
     <message>
-        <source>Mark not available slots with -x- in timetables</source>
-        <comment>Careful: lowercase -x-</comment>
-        <translation type="obsolete">Обозначить знаком -x- недоступные ячейки расписания</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2058"/>
         <source>&amp;Modify subactivities</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
@@ -28295,11 +27866,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <source>Tags</source>
         <comment>It means activity tags, but I want to keep it short. It is on the shortcuts tab buttons, so keep translation short</comment>
         <translation>Виды занятий</translation>
-    </message>
-    <message>
-        <source>Buildings</source>
-        <comment>It is on the shortcuts tab buttons, so keep translation short</comment>
-        <translation type="obsolete">Здания</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="265"/>
@@ -28571,14 +28137,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Подтверждать удаление избыточных ограничений</translation>
     </message>
     <message>
-        <source>Forum webpage</source>
-        <translation type="obsolete">Форум</translation>
-    </message>
-    <message>
-        <source>Mark not available slots with -x- in timetables</source>
-        <translation type="obsolete">Обозначить знаком -x- недоступные ячейки расписания</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform_template.ui" line="413"/>
         <location filename="../src/interface/fetmainform_template.ui" line="1129"/>
         <location filename="../src/interface/fetmainform_template.ui" line="1188"/>
@@ -28599,10 +28157,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform_template.ui" line="1998"/>
         <source>Remove redundant constraints</source>
         <translation>Удалить избыточные ограничения</translation>
-    </message>
-    <message>
-        <source>A user&apos;s manual</source>
-        <translation type="obsolete">Руководство пользователя</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="853"/>
@@ -28674,10 +28228,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform_template.ui" line="1036"/>
         <source>Students</source>
         <translation>Студенты</translation>
-    </message>
-    <message>
-        <source>Modify subactivities</source>
-        <translation type="obsolete">Изменение подзанятий</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2074"/>
@@ -30045,10 +29595,6 @@ Please modify your data correspondingly and try again</source>
         <translation>Группа</translation>
     </message>
     <message>
-        <source>Add group</source>
-        <translation type="obsolete">Добавить</translation>
-    </message>
-    <message>
         <location filename="../src/interface/groupsform_template.ui" line="86"/>
         <source>Remove</source>
         <translation>Удалить</translation>
@@ -30097,8 +29643,13 @@ Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="69"/>
+        <source>Contributors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="30"/>
-        <source>Author</source>
+        <source>Authors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -30111,13 +29662,13 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Copyright (C) 2002-2010 Liviu Lalescu&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Version: 5.13.3 (May 2010)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Version: 5.13.4 (June 2010)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Licensed under GNU GPL.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Author: Liviu Lalescu (timetable generation algorithm, data structures). Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Author: Liviu Lalescu (timetable generation algorithm, data structures). Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the e-mail address).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Please see also Contributors and Translators tabs&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Please see also Contributors and Translators tabs.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -30126,57 +29677,201 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="69"/>
-        <source>Contributors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="120"/>
-        <source>Translators</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message utf8="true">
-        <location filename="../src/interface/helpaboutform_template.ui" line="261"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="81"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;(chronologically)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;--------------------&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Lots of helping with testing, bug reports, suggestions, comparisons&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Costin Badica	- my teacher. He actually made me begin this project and provided me with documentation and advices.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	XHTML generation code modified by Volker Dirr from old HTML generation code&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	(old code by Liviu Lalescu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	added features: - XHTML 1.0 strict valid&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- use colspan and rowspan&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- times vertical&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- table of contents with hyperlinks&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- css and JavaScript support&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print rooms timetable&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- level of HTML for timetables&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print groups and years timetable&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print subjects timetable&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print teachers&apos; free periods timetable&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print activities timetable&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- index HTML file&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print daily timetable&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print activities with same starting time&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Import and export of CSV files&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Export of advanced statistics&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Important suggestions and partial code for great speed improvements in some particular cases&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	(better computation for initial order of activities, which leads to much faster generation for some&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	particular cases of timetables).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Idea and partial code for locking the activities.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Activity planning dialog.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="124"/>
+        <source>Translators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="../src/interface/helpaboutform_template.ui" line="136"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ar - Arabic translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Hatim Alahmadi (dr.hatim AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ca - Catalan translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Sílvia Lag (to contact Sílvia visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Catalan translation, or contact forum user silvia)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;da - Danish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	David Lamhauge (davidlamhauge AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;de - German translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;el - Greek translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Dimitrios Ropokis (wamy80s AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;es - Spanish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Jose Cesar Fernandez Lopez (cesar.fernandez.lopez AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fa - Persian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Hamed SadeghiNeshat (ha_sadeghi AT ce.sharif.edu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by: sally sat (soory63 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fr - French translation &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Jerome Durand (fetfr AT free.fr).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by: Patrick Fox (patrick.fox AT laposte.net)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;hu - Hungarian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ferenczi Viktor (cx AT cx.hu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;id - Indonesian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nirwan Yus (ny.unpar AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;it - Italian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Marco Barsotti (mbarsan AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;lt - Lithuanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Darius Staigys (darius AT e-servisas.lt)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mk - Macedonian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Zoran Zdravkovski (zoran AT pmf.ukim.edu.mk)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ms - Malay translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Abdul Hadi Kamel (hadikamel AT perlis.uitm.edu.my)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;nl - Dutch translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Niels Fikse (k.fikse AT student.utwente.nl)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pl - Polish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radoslaw Pasiok (zapala AT konto.pl)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pt_BR - Brazilian Portuguese translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Werner Bruns (werner.bruns AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Frank Mártin (drfarofa AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ro - Romanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Liviu Lalescu (Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	in particular you can find here the e-mail address).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ru - Russian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ilya V. Paramonov (ivparamonov AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;si - Sinhala translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Achini Duisna (duisna1012 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sk - Slovak translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ondrej Gregor (to contact Ondrej visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Slovak translation, or contact forum user Ondrej)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;tr - Turkish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Mehmet Gezmisoglu (m_gezmisoglu AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by: Mahir Nacar (mahirnacar AT email.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uk - Ukrainian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Andriy Melnyk (melnyk.andriy AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="223"/>
+        <source>References</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="235"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Ideas for the backtracking swapping algorithm:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;[1] Michael Marte - Models And Algorithms For School Timetabling - A Constraint Programming Approach - 2 July 2002 (free, on the internet) - Section 2.2.5 - Manual Timetabling - pages 23-24.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;[2] Jantien Hartog - Timetabling on Dutch High-Schools - Satisfiability versus gp-Untis - March 2007 (free, on the internet) - Section 5.2 - page 27.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;You may find more information on the FET documentation web page, &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/doc/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/doc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="254"/>
+        <source>Thanks to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="../src/interface/helpaboutform_template.ui" line="266"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;(chronologically):&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Costin Badica - he advised Liviu Lalescu to begin this project, offered suggestions and provided him with documentation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Carsten Niehaus - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Imre Nagy 	- e-mail list (does not work anymore), suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Imre Nagy - e-mail list (does not work anymore), suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Sajith V. K. 	- suggestions&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Sajith V. K. - suggestions&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Michael Towers	- lots of bugs reported, sample files, suggestions, front/back-end.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Michael Towers - lots of bugs reported, sample files, suggestions, front/back-end.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Antti Leppik	- sample file, suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Antti Leppik - sample file, suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Ian Fantom	- sample file, suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Ian Fantom - sample file, suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Simon Ghetti	- sample files, suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Simon Ghetti - sample files, suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Gibbon Tamba - sample file, bug reported.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Jerome Durand - bug reported, French translation (fetfr@free.fr, please also see http://fetfr.free.fr/).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Jerome Durand - bug reported, French translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Marek Jaszuk - bugs reported, suggestions, sample file.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Ramanathan Srinivasan - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Ramanathan Srinivasan - suggested Constraint2ActivitiesConsecutive and Constraint2ActivitiesGrouped.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Vimal Joseph - suggestions, a script to convert the .xml results into .tex.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Cristian Gherman - bug reported, suggestions.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;				&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Cristian Gherman - bugs reported, suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Nicholas Robinson - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Radu Spineanu 	- Debian package.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Radu Spineanu - Debian package.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Morten Piil	- bug reported, sample file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Morten Piil - bug reported, sample file.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Sebastian Canagaratna - lots of suggestions, bugs reported, sample files.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -30184,7 +29879,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Miguel Gea Milvaques - Catalan translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Frank de Bruijn - bug reported.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Frans de Bruijn - bug reported.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Radoslaw Pasiok - Polish translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -30198,7 +29893,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Daniel S. - suggestions, help files for the constraints.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Gianluca Salvo - suggested ConstraintTwoActivitiesOrdered.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Gianluca Salvo - suggested Constraint2ActivitiesOrdered.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Sebastian O&apos;Halloran - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -30212,11 +29907,11 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Volker Dirr - German translation, bug reports, suggestions, 2-point and uniform crossover implementation and testing.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Les Richardson - update of the FAQ.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Les Richardson - Update of the FAQ.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Gabi Danon - instructions on how to compile/run FET on Mac OS X.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Gabi Danon - instructions on how to compile/run FET on Mac OS X&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Manolo Par - suggested ConstraintTeachersMinHoursDaily&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Manolo Par - suggested ConstraintTeachersMinHoursDaily.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Viktor Ferenczi - bug report, Hungarian translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -30254,8 +29949,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Marco Barsotti - Italian translation, testing.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Romeu Veloso - suggestions.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Hatim Alahmadi - Arabic translation, sample file.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;kdsayang - suggestions.&lt;/span&gt;&lt;/p&gt;
@@ -30272,9 +29965,9 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Darius Staigys - Lithuanian translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;George Miliotis [Ionio] - suggestions&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;George Miliotis [Ionio] - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Silvia - suggestions, sample file&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Silvia - suggestions, sample file.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;alfaromeo - suggestions, testing.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -30282,7 +29975,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Cristian Balint - sample files.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sherman - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sherman - suggestion.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Azu Boba - suggestion.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -30347,152 +30040,9 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;murad - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Achini Duisna - Sinhala translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Ondrej Gregor - Slovak translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="215"/>
-        <source>References</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="81"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Volker Dirr ( to contact Volker Dirr visit http://www.timetabling.de/ )&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Lots of helping with testing, bug reports, suggestions, comparisons&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	XHTML generation code modified by Volker Dirr from old HTML generation code&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	(old code by Liviu Lalescu)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	added features: - XHTML 1.0 strict valid&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- use colspan and rowspan&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- times vertical&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- table of contents with hyperlinks&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- css and JavaScript support&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print rooms timetable&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- level of HTML for timetables&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print groups and years timetable&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print subjects timetable&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print teachers&apos; free periods timetable&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print activities timetable&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- index HTML file&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print daily timetable&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print activities with same starting time&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Import and export of CSV files&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Export of advanced statistics&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Important suggestions and partial code for great speed improvements in some particular cases&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	(better computation for initial order of activities, which leads to much faster generation for some particular cases of timetables).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Idea and partial code for locking the activities.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Activity planning dialog.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message utf8="true">
-        <location filename="../src/interface/helpaboutform_template.ui" line="132"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ar - Arabic translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Hatim Alahmadi (dr.hatim AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ca - Catalan translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Sílvia Lag (to contact Sílvia visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Catalan translation, or contact forum user silvia)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;da - Danish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	David Lamhauge (davidlamhauge AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;de - German translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;el - Greek translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Dimitrios Ropokis (wamy80s AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;es - Spanish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Jose Cesar Fernandez Lopez (cesar.fernandez.lopez AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fa - Persian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Hamed SadeghiNeshat (ha_sadeghi AT ce.sharif.edu)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updates and many improvements - sally sat (soory63 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fr - French translation &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Jerome Durand (fetfr AT free.fr, http://fetfr.free.fr/).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by Patrick Fox (patrick.fox AT laposte.net)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;hu - Hungarian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ferenczi Viktor (cx AT cx.hu)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;id - Indonesian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nirwan Yus (ny.unpar AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;it - Italian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Marco Barsotti (mbarsan AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;lt - Lithuanian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Darius Staigys (darius AT e-servisas.lt)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mk - Macedonian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Zoran Zdravkovski (zoran AT pmf.ukim.edu.mk)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ms - Malay translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Abdul Hadi Kamel (hadikamel AT perlis.uitm.edu.my)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;nl - Dutch translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Niels Fikse (k.fikse AT student.utwente.nl)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pl - Polish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radoslaw Pasiok (zapala AT konto.pl)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pt_BR - Brazilian Portuguese translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Werner Bruns (werner.bruns AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Frank Mártin (drfarofa AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ro - Romanian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Liviu Lalescu (Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	in particular you can find here the e-mail address).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ru - Russian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ilya V. Paramonov (ivparamonov AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;si - Sinhala translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Achini Duisna (duisna1012 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;tr - Turkish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator - Mehmet Gezmisoglu (m_gezmisoglu AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updates and many improvements - Mahir Nacar (mahirnacar AT email.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uk - Ukrainian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Andriy Melnyk (melnyk.andriy AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="227"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Bibliography:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;-------------&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Ideas for the backtracking swapping algorithm:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;[1] Michael Marte - Models And Algorithms For School Timetabling - A Constraint Programming Approach - 2 July 2002 (free, on the internet) - Section 2.2.5 - Manual Timetabling - pages 23-24.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;[2] Jantien Hartog - Timetabling on Dutch High-Schools - Satisfiability versus gp-Untis - March 2007 (free, on the internet) - Section 5.2 - page 27.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;You may find more information on the FET documentation web page, &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/doc/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/doc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="249"/>
-        <source>Thanks to</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -31479,10 +31029,6 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
 <context>
     <name>HelpFaqForm_template</name>
     <message>
-        <source>FET - Frequently asked questions dialog</source>
-        <translation type="obsolete">FET - Ответы на часто задаваемые вопросы</translation>
-    </message>
-    <message>
         <location filename="../src/interface/helpfaqform_template.ui" line="14"/>
         <source>Frequently asked questions</source>
         <extracomment>Thjs is the title of the dialog for FAQ help</extracomment>
@@ -31857,10 +31403,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>HelpTipsForm_template</name>
-    <message>
-        <source>FET - important tips dialog</source>
-        <translation type="obsolete">FET - Полезные советы</translation>
-    </message>
     <message>
         <location filename="../src/interface/helptipsform_template.ui" line="14"/>
         <source>Important tips</source>
@@ -32987,11 +32529,6 @@ Please stop simulation before this</source>
         <translation>FET - Импорт комментария %1</translation>
     </message>
     <message>
-        <source>FET - import %1 comment</source>
-        <comment>The comment of importing of category named %1</comment>
-        <translation type="obsolete">FET - Импорт комментария %1</translation>
-    </message>
-    <message>
         <location filename="../src/engine/import.cpp" line="442"/>
         <source>&amp;OK</source>
         <translation>&amp;OK</translation>
@@ -33004,11 +32541,6 @@ Please stop simulation before this</source>
         <source>FET - export comment</source>
         <comment>The comment of the exporting operation</comment>
         <translation>FET - Экспорт комментария</translation>
-    </message>
-    <message>
-        <source>FET - export comment</source>
-        <comment>The comment of exporting operation</comment>
-        <translation type="obsolete">FET - Экспорт комментария</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="398"/>
@@ -33195,10 +32727,6 @@ activities and add a new split activity</source>
         <translation>Новый элемент</translation>
     </message>
     <message>
-        <source>Selected</source>
-        <translation type="obsolete">Выбраны</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="70"/>
         <location filename="../src/interface/modifyactivityform_template.ui" line="161"/>
         <location filename="../src/interface/modifyactivityform_template.ui" line="259"/>
@@ -33214,11 +32742,6 @@ activities and add a new split activity</source>
         <location filename="../src/interface/modifyactivityform_template.ui" line="117"/>
         <source>Students</source>
         <translation>Студенты</translation>
-    </message>
-    <message>
-        <source>Selected</source>
-        <comment>It refers to a list of selected students sets</comment>
-        <translation type="obsolete">Выбраны</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="238"/>
@@ -33247,11 +32770,6 @@ activities and add a new split activity</source>
         <source>Selected</source>
         <comment>It refers to a list of selected teachers</comment>
         <translation>Выбраны</translation>
-    </message>
-    <message>
-        <source>Selected</source>
-        <comment>It refers to a list of selected students (sets)</comment>
-        <translation type="obsolete">Выбраны</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="186"/>
@@ -33400,12 +32918,6 @@ activities and add a new split activity</source>
         <source>Only one selected activity</source>
         <translation>Только одно занятие выбрано</translation>
     </message>
-    <message>
-        <source>Please report error to the author
-MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING must be increased (you have too many activities)</source>
-        <translation type="obsolete">Пожалуйста, сообщите автору об ошибке
-Константа MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING должна быть увеличена (слишком много занятий)</translation>
-    </message>
 </context>
 <context>
     <name>ModifyConstraintActivitiesNotOverlappingForm_template</name>
@@ -33486,14 +32998,6 @@ MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING must be increased (you have too many a
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="26"/>
         <source>This constraint means that the activities should not be placed in common timeslots. You don&apos;t need to add this constraint for activities sharing a teacher or students set.</source>
         <translation>Данное ограничение запрещает перекрытие занятий по времени. Оно не требуется для занятий, которые проводятся одним и тем же преподавателем или для одной и той же группы.</translation>
-    </message>
-    <message>
-        <source>All activities (dbl. click)</source>
-        <translation type="obsolete">Все занятия (дв. щелчок)</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click)</source>
-        <translation type="obsolete">Выбраны (дв. щелчок)</translation>
     </message>
 </context>
 <context>
@@ -33826,12 +33330,6 @@ MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING must be increased (you have too many a
         <source>Only one selected activity</source>
         <translation>Только одно занятие выбрано</translation>
     </message>
-    <message>
-        <source>Please report error to the author
-MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many activities)</source>
-        <translation type="obsolete">Пожалуйста, сообщите автору об ошибке
-Константа MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY должна быть увеличена (слишком много занятий)</translation>
-    </message>
 </context>
 <context>
     <name>ModifyConstraintActivitiesSameStartingDayForm_template</name>
@@ -33908,14 +33406,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <source>Clear</source>
         <translation>Очистить</translation>
     </message>
-    <message>
-        <source>All activities (dbl. click)</source>
-        <translation type="obsolete">Все занятия (дв. щелчок)</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click)</source>
-        <translation type="obsolete">Выбраны (дв. щелчок)</translation>
-    </message>
 </context>
 <context>
     <name>ModifyConstraintActivitiesSameStartingHourForm</name>
@@ -33940,12 +33430,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform.cpp" line="216"/>
         <source>Only one selected activity</source>
         <translation>Только одно занятие выбрано</translation>
-    </message>
-    <message>
-        <source>Please report error to the author
-MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too many activities)</source>
-        <translation type="obsolete">Пожалуйста, сообщите автору об ошибке
-Константа MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR должна быть увеличена (слишком много занятий)</translation>
     </message>
 </context>
 <context>
@@ -34023,14 +33507,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too man
         <source>Clear</source>
         <translation>Очистить</translation>
     </message>
-    <message>
-        <source>All activities (dbl. click)</source>
-        <translation type="obsolete">Все занятия (дв. щелчок)</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click)</source>
-        <translation type="obsolete">Выбраны (дв. щелчок)</translation>
-    </message>
 </context>
 <context>
     <name>ModifyConstraintActivitiesSameStartingTimeForm</name>
@@ -34055,12 +33531,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too man
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform.cpp" line="207"/>
         <source>Only one selected activity</source>
         <translation>Только одно занятие выбрано</translation>
-    </message>
-    <message>
-        <source>Please report error to the author
-MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME must be increased (you have too many activities)</source>
-        <translation type="obsolete">Пожалуйста, сообщите автору об ошибке
-Константа MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME должна быть увеличена (слишком много занятий)</translation>
     </message>
 </context>
 <context>
@@ -34137,14 +33607,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME must be increased (you have too man
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="141"/>
         <source>Clear</source>
         <translation>Очистить</translation>
-    </message>
-    <message>
-        <source>All activities (dbl. click)</source>
-        <translation type="obsolete">Все занятия (дв. щелчок)</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click)</source>
-        <translation type="obsolete">Выбраны (дв. щелчок)</translation>
     </message>
 </context>
 <context>
@@ -34367,10 +33829,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME must be increased (you have too man
         <translation>Отмена</translation>
     </message>
     <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Все аудитории (выбор двойным щелчком)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="14"/>
         <source>Modify activity preferred rooms</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
@@ -34386,10 +33844,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME must be increased (you have too man
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="88"/>
         <source>New Item</source>
         <translation>Новый элемент</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Выбранные аудитории (удаление двойным щелчком)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="20"/>
@@ -34875,10 +34329,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME must be increased (you have too man
         <translation>Отмена</translation>
     </message>
     <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Все аудитории (выбор двойным щелчком)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="14"/>
         <source>Modify activity tag preferred rooms</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
@@ -34894,10 +34344,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME must be increased (you have too man
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="81"/>
         <source>New Item</source>
         <translation>Новый элемент</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Выбранные аудитории (удаление двойным щелчком)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="20"/>
@@ -35103,19 +34549,9 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME must be increased (you have too man
         <source>Only one selected activity</source>
         <translation>Только одно занятие выбрано</translation>
     </message>
-    <message>
-        <source>Please report error to the author
-MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES must be increased (you have too many activities)</source>
-        <translation type="obsolete">Пожалуйста, сообщите автору об ошибке
-Константа MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES должна быть увеличена (слишком много занятий)</translation>
-    </message>
 </context>
 <context>
     <name>ModifyConstraintMaxDaysBetweenActivitiesForm_template</name>
-    <message>
-        <source>Max days</source>
-        <translation type="obsolete">Максимум дней</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="181"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
@@ -35191,14 +34627,6 @@ MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES must be increased (you have too many 
         <translation>Максимум дней</translation>
     </message>
     <message>
-        <source>All activities (dbl. click)</source>
-        <translation type="obsolete">Все занятия (дв. щелчок)</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click)</source>
-        <translation type="obsolete">Выбраны (дв. щелчок)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="141"/>
         <source>Clear</source>
         <translation>Очистить</translation>
@@ -35228,12 +34656,6 @@ MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES must be increased (you have too many 
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="212"/>
         <source>Only one selected activity</source>
         <translation>Только одно занятие выбрано</translation>
-    </message>
-    <message>
-        <source>Please report error to the author
-MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES must be increased (you have too many activities)</source>
-        <translation type="obsolete">Пожалуйста, сообщите автору об ошибке
-Константа MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES должна быть увеличена (слишком много занятий)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="223"/>
@@ -35330,33 +34752,15 @@ force activities consecutive</source>
 то они должны￼ идти подряд</translation>
     </message>
     <message>
-        <source>All activities (dbl. click)</source>
-        <translation type="obsolete">Все занятия (дв. щелчок)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="106"/>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="135"/>
         <source>New Item</source>
         <translation>Новый элемент</translation>
     </message>
     <message>
-        <source>Selected (dbl. click)</source>
-        <translation type="obsolete">Выбраны (дв. щелчок)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="143"/>
         <source>Clear</source>
         <translation>Очистить</translation>
-    </message>
-    <message>
-        <source>Min days</source>
-        <translation type="obsolete">Минимум дней</translation>
-    </message>
-    <message>
-        <source>If activities on same day,
-force activities consecutive</source>
-        <translation type="obsolete">Если занятия окажутся в один￼ и тот же день,
-то они должны￼ идти подряд</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="226"/>
@@ -35406,10 +34810,6 @@ force activities consecutive</source>
 </context>
 <context>
     <name>ModifyConstraintMinGapsBetweenActivitiesForm_template</name>
-    <message>
-        <source>Min gaps</source>
-        <translation type="obsolete">Минимум окон</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="181"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
@@ -35488,14 +34888,6 @@ force activities consecutive</source>
         <source>Min gaps</source>
         <comment>It refers to the minimum number of gaps between a set of activities</comment>
         <translation type="unfinished">Минимум окон</translation>
-    </message>
-    <message>
-        <source>All activities (dbl. click)</source>
-        <translation type="obsolete">Все занятия (дв. щелчок)</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click)</source>
-        <translation type="obsolete">Выбраны (дв. щелчок)</translation>
     </message>
 </context>
 <context>
@@ -36305,14 +35697,6 @@ Note: students set not available and break are not counted as gaps.</source>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
-    <message>
-        <source>Ok</source>
-        <translation type="obsolete">OK</translation>
-    </message>
-    <message>
-        <source>Note: every day should have the minimum hours daily (so this constraint is not flexible to allow empty days for students)</source>
-        <translation type="obsolete">Примечание: данное ограничение распространяется на все дни без исключения (тем самым запрещая выходные дни для студентов)</translation>
-    </message>
 </context>
 <context>
     <name>ModifyConstraintStudentsSetActivityTagMaxHoursContinuouslyForm</name>
@@ -36638,10 +36022,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <translation>Отмена</translation>
     </message>
     <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Все аудитории (выбор двойным щелчком)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="14"/>
         <source>Modify students set home rooms</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
@@ -36657,10 +36037,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="81"/>
         <source>New Item</source>
         <translation>Новый элемент</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Выбранные аудитории (удаление двойным щелчком)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="20"/>
@@ -37327,14 +36703,6 @@ Note: students set not available and break are not counted as gaps.</source>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
-    <message>
-        <source>Ok</source>
-        <translation type="obsolete">OK</translation>
-    </message>
-    <message>
-        <source>Note: every day should have the minimum hours daily (so this constraint is not flexible to allow empty days for students)</source>
-        <translation type="obsolete">Примечание: данное ограничение распространяется на все дни без исключения (тем самым запрещая выходные дни для студентов)</translation>
-    </message>
 </context>
 <context>
     <name>ModifyConstraintStudentsSetNotAvailableTimesForm</name>
@@ -37780,18 +37148,10 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation>Изменение: Предпочтительные аудитории для дисциплины с учётом вида занятий</translation>
     </message>
     <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Все аудитории (выбор двойным щелчком)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="65"/>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="94"/>
         <source>New Item</source>
         <translation>Новый элемент</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Выбранные аудитории (удаление двойным щелчком)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="33"/>
@@ -37933,10 +37293,6 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation>Отмена</translation>
     </message>
     <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Все аудитории (выбор двойным щелчком)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="14"/>
         <source>Modify subject preferred rooms</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
@@ -37952,10 +37308,6 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="81"/>
         <source>New Item</source>
         <translation>Новый элемент</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Выбранные аудитории (удаление двойным щелчком)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="20"/>
@@ -38230,10 +37582,6 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation>Отмена</translation>
     </message>
     <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Все аудитории (выбор двойным щелчком)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="14"/>
         <source>Modify teacher home rooms</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
@@ -38249,10 +37597,6 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="81"/>
         <source>New Item</source>
         <translation>Новый элемент</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Выбранные аудитории (удаление двойным щелчком)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="20"/>
@@ -38982,10 +38326,6 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation>Минимум пар в день</translation>
     </message>
     <message>
-        <source>Ok</source>
-        <translation type="obsolete">OK</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="148"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
@@ -39020,10 +38360,6 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="141"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
-    </message>
-    <message>
-        <source>Note: FET is smart enough to use this constraint only on working days for this teacher (so it is a flexible constraint). Please be careful with this constraint, not to get impossible timetables. It is recommended to start with 2 min hours and highten them as you find new timetables</source>
-        <translation type="obsolete">Примечание: данное ограничение применяется только к рабочим дням преподавателя. При его использовании рекомендуется начинать с минимума, равного 2 парам в день, и увеличивать значение, пока удаётся получать расписания</translation>
     </message>
 </context>
 <context>
@@ -39827,10 +39163,6 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintTeachersMinHoursDailyForm_template</name>
     <message>
-        <source>Ok</source>
-        <translation type="obsolete">OK</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="84"/>
         <source>Min hours daily</source>
         <translation>Минимум пар в день</translation>
@@ -39870,10 +39202,6 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="71"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Note: FET is smart enough to use this constraint only on working days for this teacher (so it is a flexible constraint). Please be careful with this constraint, not to get impossible timetables. It is recommended to start with 2 min hours. Maybe you could try higher values after that, but they might be too large and you might get a impossible timetable.</source>
-        <translation type="obsolete">Данное ограничение применяется только к рабочим дням преподавателя. При его использовании рекомендуется начинать с минимума, равного 2 парам в день, и увеличивать значение, пока удаётся получать расписания.</translation>
     </message>
 </context>
 <context>
@@ -40449,10 +39777,6 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation>Новый элемент</translation>
     </message>
     <message>
-        <source>Selected</source>
-        <translation type="obsolete">Выбраны</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="70"/>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="161"/>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="259"/>
@@ -40468,11 +39792,6 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="117"/>
         <source>Students</source>
         <translation>Студенты</translation>
-    </message>
-    <message>
-        <source>Selected</source>
-        <comment>It refers to a list of selected students (sets)</comment>
-        <translation type="obsolete">Выбраны</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="384"/>
@@ -40500,11 +39819,6 @@ Note: teacher not available and break are not counted as gaps.</source>
         <source>Selected</source>
         <comment>It refers to a list of selected teachers</comment>
         <translation>Выбраны</translation>
-    </message>
-    <message>
-        <source>Selected</source>
-        <comment>It refers to a list of selected students sets</comment>
-        <translation type="obsolete">Выбраны</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="238"/>
@@ -40846,10 +40160,6 @@ The current data applies only to this subactivity</source>
         <source>No</source>
         <translation>Нет</translation>
     </message>
-    <message>
-        <source>Invalid room</source>
-        <translation type="obsolete">Аудитория не выбрана</translation>
-    </message>
 </context>
 <context>
     <name>RoomsForm_template</name>
@@ -40858,14 +40168,6 @@ The current data applies only to this subactivity</source>
         <source>Rooms</source>
         <extracomment>The name of the rooms dialog</extracomment>
         <translation>Аудитории</translation>
-    </message>
-    <message>
-        <source>Add room</source>
-        <translation type="obsolete">Добавить</translation>
-    </message>
-    <message>
-        <source>Remove current</source>
-        <translation type="obsolete">Удалить</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="20"/>
@@ -40891,10 +40193,6 @@ The current data applies only to this subactivity</source>
         <location filename="../src/interface/roomsform_template.ui" line="48"/>
         <source>Modify</source>
         <translation>Изменить</translation>
-    </message>
-    <message>
-        <source>Modify current</source>
-        <translation type="obsolete">Изменить</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="56"/>
@@ -41108,16 +40406,6 @@ Please talk to the author or increase variable MAX_TIME_CONSTRAINTS</source>
 Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation>Слишком много ограничений на размещение.￼
 Сообщите автору программы или увеличьте значение переменной MAX_SPACE_CONSTRAINTS</translation>
-    </message>
-    <message>
-        <source>Automatic Group</source>
-        <comment>Please keep this translation short. It is when year contains no groups and an automatic group is added in the year, in the timetable</comment>
-        <translation type="obsolete">Автогруппа</translation>
-    </message>
-    <message>
-        <source>Automatic Subgroup</source>
-        <comment>Please keep this translation short. It is when group contains no subgroups and an automatic subgroup is added in the group, in the timetable</comment>
-        <translation type="obsolete">Автоподгруппа</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="438"/>
@@ -41465,10 +40753,6 @@ Please note that the default weight percentage of constraints min days between a
         <source>Automatic Subgroup</source>
         <comment>Please keep the translation short. It is used when a group contains no subgroups and an automatic subgroup is added in the group, in the timetable (when viewing the students timetable from FET and also in the html timetables for students subgroups). In the empty group there will be added a subgroup with name = groupName+a space character+your translation of &apos;Automatic Subgroup&apos;.</comment>
         <translation type="unfinished">Автоподгруппа</translation>
-    </message>
-    <message>
-        <source>Loading activities ... please wait</source>
-        <translation type="obsolete">Загрузка занятий... Пожалуйста, подождите</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="437"/>
@@ -43337,10 +42621,6 @@ Please report error. FET will now abort current operation</source>
 <context>
     <name>SubactivitiesForm_template</name>
     <message>
-        <source>Current subactivity&apos;s description</source>
-        <translation type="obsolete">Описание текущего подзанятия</translation>
-    </message>
-    <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="70"/>
         <source>Filter</source>
         <translation>Фильтр</translation>
@@ -43522,10 +42802,6 @@ Please report error. FET will now abort current operation</source>
         <translation>Новый элемент</translation>
     </message>
     <message>
-        <source>Add subgroup</source>
-        <translation type="obsolete">Добавить</translation>
-    </message>
-    <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="40"/>
         <source>Subgroup</source>
         <translation>Подгруппа</translation>
@@ -43672,10 +42948,6 @@ Please report error. FET will now abort current operation</source>
         <translation>Изменение невозможно из-за повторения</translation>
     </message>
     <message>
-        <source>Invalid subject</source>
-        <translation type="obsolete">Дисциплина не выбрана</translation>
-    </message>
-    <message>
         <location filename="../src/interface/subjectsform.cpp" line="190"/>
         <source>Activated a number of %1 activities</source>
         <translation>Активировано %1 занятий</translation>
@@ -43693,18 +42965,6 @@ Please report error. FET will now abort current operation</source>
         <source>Subjects</source>
         <extracomment>Title of dialog</extracomment>
         <translation>Дисциплины</translation>
-    </message>
-    <message>
-        <source>Remove current</source>
-        <translation type="obsolete">Удалить</translation>
-    </message>
-    <message>
-        <source>Add subject</source>
-        <translation type="obsolete">Добавить</translation>
-    </message>
-    <message>
-        <source>Rename current</source>
-        <translation type="obsolete">Переименовать</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="79"/>
@@ -43884,10 +43144,6 @@ Please report error. FET will now abort current operation</source>
         <translation>Изменение невозможно из-за повторения</translation>
     </message>
     <message>
-        <source>Invalid teacher</source>
-        <translation type="obsolete">Преподаватель не выбран</translation>
-    </message>
-    <message>
         <location filename="../src/interface/teachersform.cpp" line="185"/>
         <source>Activated a number of %1 activities</source>
         <translation>Активировано %1 занятий</translation>
@@ -43905,14 +43161,6 @@ Please report error. FET will now abort current operation</source>
         <source>Teachers</source>
         <extracomment>Title of dialog</extracomment>
         <translation>Преподаватели</translation>
-    </message>
-    <message>
-        <source>Add teacher</source>
-        <translation type="obsolete">Добавить</translation>
-    </message>
-    <message>
-        <source>Remove current</source>
-        <translation type="obsolete">Удалить</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="79"/>
@@ -43943,10 +43191,6 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/teachersform_template.ui" line="86"/>
         <source>Close</source>
         <translation>Закрыть</translation>
-    </message>
-    <message>
-        <source>Rename current</source>
-        <translation type="obsolete">Переименовать</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="63"/>
@@ -44144,14 +43388,6 @@ Please report error. FET will now abort current operation</source>
         <translation>Просмотр в формате XML: %1, %2, %3.</translation>
     </message>
     <message>
-        <source>To do a page-break only after every second timetable, cut line %1 and paste it into line %2.</source>
-        <translation type="obsolete">Для добавления разрыва страницы после каждого второго расписания вырежьте содержимое строки %1 и вставьте его в строку %2.</translation>
-    </message>
-    <message>
-        <source>To hide an element just write the following phrase into the element</source>
-        <translation type="obsolete">Для сокрытия элемента вставьте следующую строку внутрь элемента</translation>
-    </message>
-    <message>
         <location filename="../src/engine/timetableexport.cpp" line="6631"/>
         <source>Institution name</source>
         <translation>Название учебного заведения</translation>
@@ -44275,10 +43511,6 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/timetableexport.cpp" line="6649"/>
         <source>Less detailed</source>
         <translation>Менее детально</translation>
-    </message>
-    <message>
-        <source>No rooms recorded in FET for %1.</source>
-        <translation type="obsolete">Не определено аудиторий для учебного заведения %1.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="5421"/>
@@ -45174,11 +44406,6 @@ Simulation results should be now written. You may check now Timetable/View. The 
 <context>
     <name>TimetableGenerateForm_template</name>
     <message>
-        <source>Automatically generate</source>
-        <extracomment>Title of dialog of generation of a new timetable</extracomment>
-        <translation type="obsolete">Автоматическое составление</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetablegenerateform_template.ui" line="23"/>
         <source>Current stage:</source>
         <translation>Текущая стадия:</translation>
@@ -45384,11 +44611,6 @@ For more information you can join the mailing list or write to author</source>
 <context>
     <name>TimetableGenerateMultipleForm_template</name>
     <message>
-        <source>Automatically generate multiple timetables</source>
-        <extracomment>Title of dialog</extracomment>
-        <translation type="obsolete">Автоматическое составление нескольких расписаний</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="39"/>
         <source>Limit for each timetable</source>
         <extracomment>In fact this is the time limit for search of each timetable, but I keep length short</extracomment>
@@ -45439,11 +44661,6 @@ For more information you can join the mailing list or write to author</source>
 </context>
 <context>
     <name>TimetableShowConflictsForm_template</name>
-    <message>
-        <source>Showing the timetable soft conflicts</source>
-        <extracomment>Title of dialog</extracomment>
-        <translation type="obsolete">&quot;Мягкие&quot; конфликты расписания</translation>
-    </message>
     <message>
         <location filename="../src/interface/timetableshowconflictsform_template.ui" line="14"/>
         <source>Soft conflicts</source>
@@ -45698,22 +44915,6 @@ For more information you can join the mailing list or write to author</source>
         <translation>Невозможно отобразить расписание из-за того, что некоторые аудитории были добавлены или удалены. Составьте расписание заново и затем откройте данный диалог</translation>
     </message>
     <message>
-        <source>permanently locked time</source>
-        <translation type="obsolete">время заблокировано перманентно</translation>
-    </message>
-    <message>
-        <source>locked time</source>
-        <translation type="obsolete">время заблокировано</translation>
-    </message>
-    <message>
-        <source>permanently locked space</source>
-        <translation type="obsolete">размещение заблокировано перманентно</translation>
-    </message>
-    <message>
-        <source>locked space</source>
-        <translation type="obsolete">размещение заблокировано</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="457"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
@@ -45725,10 +44926,6 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="637"/>
         <source>You may have a problem, because FET expects to delete 1 constraint, but will delete %1 constraints</source>
         <translation>Возможная проблема: ожидается удаление 1 ограничения, но будет удалено %1 ограничений</translation>
-    </message>
-    <message>
-        <source>Added %1 locking constraints and deleted %2 locking constraints</source>
-        <translation type="obsolete">Добавлено %1 и удалено %2 блокирующих ограничений</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="746"/>
@@ -45947,22 +45144,6 @@ Please stop simulation before this.</source>
         <translation>Перерыв с весом 100% в данной ячейке</translation>
     </message>
     <message>
-        <source>permanently locked time</source>
-        <translation type="obsolete">время заблокировано перманентно</translation>
-    </message>
-    <message>
-        <source>locked time</source>
-        <translation type="obsolete">время заблокировано</translation>
-    </message>
-    <message>
-        <source>permanently locked space</source>
-        <translation type="obsolete">размещение заблокировано перманентно</translation>
-    </message>
-    <message>
-        <source>locked space</source>
-        <translation type="obsolete">размещение заблокировано</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="573"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
@@ -45974,10 +45155,6 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="768"/>
         <source>You may have a problem, because FET expects to delete 1 constraint, but will delete %1 constraints</source>
         <translation>Возможная проблема: ожидается удаление 1 ограничения, но будет удалено %1 ограничений</translation>
-    </message>
-    <message>
-        <source>Added %1 locking constraints and deleted %2 locking constraints</source>
-        <translation type="obsolete">Добавлено %1 и удалено %2 блокирующих ограничений</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="324"/>
@@ -46234,22 +45411,6 @@ Please stop simulation before this.</source>
         <translation>Перерыв с весом 100% в данной ячейке</translation>
     </message>
     <message>
-        <source>permanently locked time</source>
-        <translation type="obsolete">время заблокировано перманентно</translation>
-    </message>
-    <message>
-        <source>locked time</source>
-        <translation type="obsolete">время заблокировано</translation>
-    </message>
-    <message>
-        <source>permanently locked space</source>
-        <translation type="obsolete">размещение заблокировано перманентно</translation>
-    </message>
-    <message>
-        <source>locked space</source>
-        <translation type="obsolete">размещение заблокировано</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="382"/>
         <source>The teacher is invalid - please close this dialog and open a new view teachers timetable</source>
         <translation>Преподаватель задан неверно. Закройте данный диалог и откройте его снова</translation>
@@ -46266,10 +45427,6 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="640"/>
         <source>You may have a problem, because FET expects to delete 1 constraint, but will delete %1 constraints</source>
         <translation>Возможная проблема: ожидается удаление 1 ограничения, но будет удалено %1 ограничений</translation>
-    </message>
-    <message>
-        <source>Added %1 locking constraints and deleted %2 locking constraints</source>
-        <translation type="obsolete">Добавлено %1 и удалено %2 блокирующих ограничений</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="237"/>
@@ -46505,10 +45662,6 @@ Please stop simulation before this.</source>
         <translation>Деактивировать все занятия для потока</translation>
     </message>
     <message>
-        <source>Add year (form, class)</source>
-        <translation type="obsolete">Добавить</translation>
-    </message>
-    <message>
         <location filename="../src/interface/yearsform_template.ui" line="47"/>
         <source>Remove</source>
         <translation>Удалить</translation>
@@ -46532,53 +45685,6 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/yearsform_template.ui" line="81"/>
         <source>Activate all activities for selected students year</source>
         <translation>Активировать все занятия для потока</translation>
-    </message>
-</context>
-<context>
-    <name>chooseFieldsDialog</name>
-    <message>
-        <source>FET - Import from CSV file</source>
-        <translation type="obsolete">Импорт из CSV-файла</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation type="obsolete">OK</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Отмена</translation>
-    </message>
-</context>
-<context>
-    <name>lastWarningsDialog</name>
-    <message>
-        <source>FET - import %1 comment</source>
-        <comment>The comment of importing of category named %1</comment>
-        <translation type="obsolete">FET - Импорт комментария %1</translation>
-    </message>
-    <message>
-        <source>FET - import %1 comment</source>
-        <translation type="obsolete">FET - Импорт комментария %1</translation>
-    </message>
-    <message>
-        <source>&amp;OK</source>
-        <translation type="obsolete">&amp;OK</translation>
-    </message>
-</context>
-<context>
-    <name>lastWarningsDialogE</name>
-    <message>
-        <source>FET - export comment</source>
-        <comment>The comment of exporting operation</comment>
-        <translation type="obsolete">FET - Экспорт комментария</translation>
-    </message>
-    <message>
-        <source>FET - export comment</source>
-        <translation type="obsolete">FET - Экспорт комментария</translation>
-    </message>
-    <message>
-        <source>&amp;Ok</source>
-        <translation type="obsolete">&amp;OK</translation>
     </message>
 </context>
 </TS>

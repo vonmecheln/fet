@@ -42,11 +42,6 @@
         <translation type="unfinished">Ne</translation>
     </message>
     <message>
-        <source>%1 h</source>
-        <comment>%1 hours, the number of hours</comment>
-        <translation type="obsolete">%1 h</translation>
-    </message>
-    <message>
         <location filename="../src/interface/activitiesform.cpp" line="301"/>
         <source>No: %1 / %2</source>
         <comment>No means number, %1 is the number of active activities, %2 is the number of total activities. Please leave spaces between fields, so that they are better visible</comment>
@@ -181,22 +176,6 @@
 <context>
     <name>ActivitiesForm_template</name>
     <message>
-        <source>FET - the activities (lectures, courses, seminars, etc.)</source>
-        <translation type="obsolete">FET - veiklos (paskaitos, kursai, seminarai ir t.t.)</translation>
-    </message>
-    <message>
-        <source>Activities (dbl. click edits)</source>
-        <translation type="obsolete">Veiklos (norint taisyti klektelėkite 2 kartus)</translation>
-    </message>
-    <message>
-        <source>New Item</source>
-        <translation type="obsolete">Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Current activity&apos;s description</source>
-        <translation type="obsolete">Pasirinktos veiklos aprašymas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/activitiesform_template.ui" line="70"/>
         <source>Filter</source>
         <translation>Filtras</translation>
@@ -292,137 +271,6 @@
         <translation type="unfinished">ne</translation>
     </message>
     <message>
-        <source>Act: T:%1, S:%2, AT:%3, St:%4, Id:%5, AGId:%6, D:%7, TD:%8, A:%9, NSt:%10</source>
-        <comment>Comment for translators (do not translate this comment):
-This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)Please be careful and respect arrangement.
-Activity: Teacher, Subject, Activity Tags, Students, Id, Activity Group Id, Duration, Total Duration, Active (yes/no), Number of Students</comment>
-        <translation type="obsolete">Vkl: D:%1, T:%2, VŽ:%3, St:%4, Id:%5, VGId:%6, t:%7, Vt:%8, A:%9, NSt:%10</translation>
-    </message>
-    <message>
-        <source>Act: T:%1, S:%2, St:%3, Id:%4, AGId:%5, D:%6, TD:%7, A:%8, NSt:%9</source>
-        <comment>Comment for translators (do not translate this comment):
-This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)Please be careful and respect arrangement.
-Activity: Teacher, Subject, Students, Id, Activity Group Id, Duration, Total Duration, Active (yes/no), Number of Students</comment>
-        <translation type="obsolete">Vkl: D:%1, T:%2, St:%3, Id:%4, VGId:%5, t:%6, Vt:%7, A:%8, NSt:%9</translation>
-    </message>
-    <message>
-        <source>Act: T:%1, S:%2, AT:%3, St:%4, Id:%5, D:%6, A:%7, NSt:%8</source>
-        <comment>Comment for translators (do not translate this comment):
-This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)Please be careful and respect arrangement.
-Activity: Teacher, Subject, Activity Tags, Students, Id, Duration, Active (yes/no), Number of Students</comment>
-        <translation type="obsolete">Vkl: D:%1, T:%2, VŽ:%3, St:%4, Id:%5, t:%6, A:%7, NSt:%8</translation>
-    </message>
-    <message>
-        <source>Act: T:%1, S:%2, St:%3, Id:%4, D:%5, A:%6, NSt:%7</source>
-        <comment>Comment for translators (do not translate this comment):
-This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)Please be careful and respect arrangement.
-Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no), Number of Students</comment>
-        <translation type="obsolete">Vkl: D:%1, T:%2, St:%3, Id:%4, t:%5, A:%6, NSt:%7</translation>
-    </message>
-    <message>
-        <source>Act: T:%1, S:%2, AT:%3, St:%4, Id:%5, AGId:%6, D:%7, TD:%8, A:%9</source>
-        <comment>Comment for translators (do not translate this comment):
-This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)Please be careful and respect arrangement.
-Activity: Teacher, Subject, Activity Tags, Students, Id, Activity Group Id, Duration, Total Duration, Active (yes/no)</comment>
-        <translation type="obsolete">Vkl: D:%1, T:%2, VŽ:%3, St:%4, Id:%5, VGId:%6, t:%7, Vt:%8, A:%9</translation>
-    </message>
-    <message>
-        <source>Act: T:%1, S:%2, St:%3, Id:%4, AGId:%5, D:%6, TD:%7, A:%8</source>
-        <comment>Comment for translators (do not translate this comment):
-This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)Please be careful and respect arrangement.
-Activity: Teacher, Subject, Students, Id, Activity Group Id, Duration, Total Duration, Active (yes/no)</comment>
-        <translation type="obsolete">Vkl: D:%1, T:%2, St:%3, Id:%4, VGId:%5, t:%6, Vt:%7, A:%8</translation>
-    </message>
-    <message>
-        <source>Act: T:%1, S:%2, AT:%3, St:%4, Id:%5, D:%6, A:%7</source>
-        <comment>Comment for translators (do not translate this comment):
-This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)Please be careful and respect arrangement.
-Activity: Teacher, Subject, Activity Tags, Students, Id, Duration, Active (yes/no)</comment>
-        <translation type="obsolete">Vkl: D:%1, T:%2, VŽ:%3, St:%4, Id:%5, t:%6, A:%7</translation>
-    </message>
-    <message>
-        <source>Act: T:%1, S:%2, St:%3, Id:%4, D:%5, A:%6</source>
-        <comment>Comment for translators (do not translate this comment):
-This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)Please be careful and respect arrangement.
-Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no)</comment>
-        <translation type="obsolete">Vkl: D:%1, T:%2, St:%3, Id:%4, t:%5, A:%6</translation>
-    </message>
-    <message>
-        <source>T:%1</source>
-        <comment>Teachers</comment>
-        <translation type="obsolete">D:%1</translation>
-    </message>
-    <message>
-        <source>S:%1</source>
-        <comment>Subject</comment>
-        <translation type="obsolete">T:%1</translation>
-    </message>
-    <message>
-        <source>AT:%1</source>
-        <comment>Activity tags</comment>
-        <translation type="obsolete">VŽ: %1</translation>
-    </message>
-    <message>
-        <source>St:%1</source>
-        <comment>Students</comment>
-        <translation type="obsolete">St:%1</translation>
-    </message>
-    <message>
-        <source>A:%1</source>
-        <comment>Active: yes or no</comment>
-        <translation type="obsolete">V:%1</translation>
-    </message>
-    <message>
-        <source>T:%1</source>
-        <comment>Teachers. The initials for Teachers, Subject, Activity Tags, Students, Duration, Total Duration, Active, Number of students - must be different. If the initials are the same, add one or more letters (like in Romanian: Subject=D (Disciplina), Duration=Dur (Durata) )</comment>
-        <translation type="obsolete">D:%1</translation>
-    </message>
-    <message>
-        <source>S:%1</source>
-        <comment>Subject. The initials for Teachers, Subject, Activity Tags, Students, Duration, Total Duration, Active, Number of students - must be different. If the initials are the same, add one or more letters (like in Romanian: Subject=D (Disciplina), Duration=Dur (Durata) )</comment>
-        <translation type="obsolete">T:%1</translation>
-    </message>
-    <message>
-        <source>AT:%1</source>
-        <comment>Activity tags. The initials for Teachers, Subject, Activity Tags, Students, Duration, Total Duration, Active, Number of students - must be different. If the initials are the same, add one or more letters (like in Romanian: Subject=D (Disciplina), Duration=Dur (Durata) )</comment>
-        <translation type="obsolete">VŽ: %1</translation>
-    </message>
-    <message>
-        <source>St:%1</source>
-        <comment>Students. The initials for Teachers, Subject, Activity Tags, Students, Duration, Total Duration, Active, Number of students - must be different. If the initials are the same, add one or more letters (like in Romanian: Subject=D (Disciplina), Duration=Dur (Durata) )</comment>
-        <translation type="obsolete">St:%1</translation>
-    </message>
-    <message>
-        <source>A:%1</source>
-        <comment>Active: yes or no. The initials for Teachers, Subject, Activity Tags, Students, Duration, Total Duration, Active, Number of students - must be different. If the initials are the same, add one or more letters (like in Romanian: Subject=D (Disciplina), Duration=Dur (Durata) )</comment>
-        <translation type="obsolete">V:%1</translation>
-    </message>
-    <message>
-        <source>T:%1</source>
-        <comment>Teachers. Be careful: The initials for Teachers, Subject, Activity Tags, Students, Duration, Total Duration, Active, Number of students - must be different. If the initials are the same, add one or more letters (like in Romanian: Subject=D (Disciplina), Duration=Dur (Durata) )</comment>
-        <translation type="obsolete">D:%1</translation>
-    </message>
-    <message>
-        <source>S:%1</source>
-        <comment>Subject. Be careful: The initials for Teachers, Subject, Activity Tags, Students, Duration, Total Duration, Active, Number of students - must be different. If the initials are the same, add one or more letters (like in Romanian: Subject=D (Disciplina), Duration=Dur (Durata) )</comment>
-        <translation type="obsolete">T:%1</translation>
-    </message>
-    <message>
-        <source>AT:%1</source>
-        <comment>Activity tags. Be careful: The initials for Teachers, Subject, Activity Tags, Students, Duration, Total Duration, Active, Number of students - must be different. If the initials are the same, add one or more letters (like in Romanian: Subject=D (Disciplina), Duration=Dur (Durata) )</comment>
-        <translation type="obsolete">VŽ: %1</translation>
-    </message>
-    <message>
-        <source>St:%1</source>
-        <comment>Students. Be careful: The initials for Teachers, Subject, Activity Tags, Students, Duration, Total Duration, Active, Number of students - must be different. If the initials are the same, add one or more letters (like in Romanian: Subject=D (Disciplina), Duration=Dur (Durata) )</comment>
-        <translation type="obsolete">St:%1</translation>
-    </message>
-    <message>
-        <source>A:%1</source>
-        <comment>Active: yes or no. Be careful: The initials for Teachers, Subject, Activity Tags, Students, Duration, Total Duration, Active, Number of students - must be different. If the initials are the same, add one or more letters (like in Romanian: Subject=D (Disciplina), Duration=Dur (Durata) )</comment>
-        <translation type="obsolete">V:%1</translation>
-    </message>
-    <message>
         <location filename="../src/engine/activity.cpp" line="492"/>
         <source>Activity:</source>
         <translation type="unfinished">Veikla:</translation>
@@ -482,14 +330,6 @@ Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no)</comment>
         <location filename="../src/engine/activity.cpp" line="516"/>
         <source>Total duration=%1</source>
         <translation type="unfinished">Visa trukmė=%1</translation>
-    </message>
-    <message>
-        <source>Active: yes</source>
-        <translation type="obsolete">Aktyvi: taip</translation>
-    </message>
-    <message>
-        <source>Active: no</source>
-        <translation type="obsolete">Aktyvi: ne</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="555"/>
@@ -853,14 +693,6 @@ Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>FET warning</source>
-        <translation type="obsolete">FET įspėjimas</translation>
-    </message>
-    <message>
-        <source>Abort</source>
-        <translation type="obsolete">Nutraukti</translation>
-    </message>
-    <message>
         <location filename="../src/interface/activityplanningform.cpp" line="1127"/>
         <location filename="../src/interface/activityplanningform.cpp" line="1151"/>
         <source>Delete %1 activities from selected cell?</source>
@@ -1036,12 +868,6 @@ Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no)</comment>
         <translation type="unfinished">FET</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete this activity tag?
-</source>
-        <translation type="obsolete">Ar tikrai norite pašalinti šią veiklos žymę?
-</translation>
-    </message>
-    <message>
         <location filename="../src/interface/activitytagsform.cpp" line="108"/>
         <source>Are you sure you want to delete this activity tag?</source>
         <translation type="unfinished"></translation>
@@ -1067,10 +893,6 @@ Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no)</comment>
         <translation type="unfinished">Negalima koreguoti elemento. Naujas pavadinimas tikriausiai dublikatas</translation>
     </message>
     <message>
-        <source>Invalid activity tag</source>
-        <translation type="obsolete">Negaliojanti veiklos žymė</translation>
-    </message>
-    <message>
         <location filename="../src/interface/activitytagsform.cpp" line="190"/>
         <source>Activated a number of %1 activities</source>
         <translation type="unfinished">Aktyvuotas skaičius %1 veiklų</translation>
@@ -1094,25 +916,9 @@ Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no)</comment>
 <context>
     <name>ActivityTagsForm_template</name>
     <message>
-        <source>FET - activity tags</source>
-        <translation type="obsolete">FET - veiklos žymės (tags)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="21"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Add activity tag</source>
-        <translation type="obsolete">Pridėti veiklos žymę</translation>
-    </message>
-    <message>
-        <source>Remove current</source>
-        <translation type="obsolete">Šalinti pasirinktą</translation>
-    </message>
-    <message>
-        <source>Rename current</source>
-        <translation type="obsolete">Pervadinti pažymėtą</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="79"/>
@@ -1175,10 +981,6 @@ Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no)</comment>
         <translation>FET informacija</translation>
     </message>
     <message>
-        <source>Invalid weight (percentage) for added constraint min n days between activities</source>
-        <translation type="obsolete">Negaliojantis svoris (procentais) pridėtai apribojimo min n dienos tarp veiklų</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addactivityform.cpp" line="660"/>
         <source>Invalid weight (percentage) for added constraint min days between activities</source>
         <translation type="unfinished"></translation>
@@ -1191,17 +993,9 @@ Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no)</comment>
         <translation>FET klausimas</translation>
     </message>
     <message>
-        <source>Do you really want to add activity with no teacher(s)?</source>
-        <translation type="obsolete">Jūs iš tikrųjų norite pridėti veiklą be mokytojo(ų)?</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addactivityform.cpp" line="686"/>
         <source>Invalid subject</source>
         <translation>Negaliojanti tema</translation>
-    </message>
-    <message>
-        <source>Do you really want to add activity with no student set(s)?</source>
-        <translation type="obsolete">Jūs iš tikrųjų norite pridėti veiklą be studentų komplekto(ų)?</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="668"/>
@@ -1367,21 +1161,9 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <translation>Ar jūs norite pridėti einamąjį veiksmą, kadangi tai yra dabar (nerekomenduojama) ar atšaukite ir pataisykite juos kaip nurodyta?</translation>
     </message>
     <message>
-        <source>You want to add a container activity split into more than the number of days per week and also add a constraint min n days between activities. This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).</source>
-        <translation type="obsolete">Jūs norite pridėti konteinerinį veiklos skilimą į daugiau negu skaičius dienų per savaitę ir taip pat pridėti apribojimo min n dienos tarp veiksmo. Tai yra labai bloga praktikaiš generavimo darbų algoritmo (tai lėtina generavimą ir daro tai sunkiau, kad surastų sprendimą).</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addactivityform.cpp" line="777"/>
         <source>The best way to add the activities would be:</source>
         <translation>Geriausias būdas pridėti veiksmą būtų:</translation>
-    </message>
-    <message>
-        <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min n days between activities up to 100%)</source>
-        <translation type="obsolete">1. Jei jūs pridedate &apos;nuoseklią jėgą, jei ta pati diena&apos;, tada sujungia papildomą porų veiklą, kad gautų daug veiklų, lygių skaičiui dienų per savaitę. Pavyzdys: 7 veiklas su trukme 1, 5 dienų savaitę, paskui paverskite į 5 veiklas su trukme: 2,2,1,1,1 ir prideda vieną konteinerinę veiklą su šitais 5 komponentais (galbūt pakėlimas svorio pridėtos apribojimo min n dienos tarp veiksmo iki 100 %)</translation>
-    </message>
-    <message>
-        <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)</source>
-        <translation type="obsolete">2. Jei jūs nepridedate &apos;nuoseklios jėgos, jei ta pati diena&apos;, tada pridėkite didesnę veiklą suskaldytą į daug veiksmų, lygių su skaičiumi dienų per savaitę ir likusius komponentus į kitą didesnę suskaldytą veiklą. Pavyzdžiui, manykite, kad jūs turite pridėti 7 veiklas su trukme 1 per 5 dienų savaitę. Pridėkite 2 didesnes konteinerines veiklas, iš pradžių vieną suskaldykite į 5 veiklas su trukme 1 ir sekantį suskaldykite į 2 veiklas su trukme 1 (galbūt pakėlimas svorio pridėtos apribojimų min n dienos tarp veiksmo kiekvienam iš 2 konteinerių iki 100 %)</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="753"/>
@@ -1402,10 +1184,6 @@ You can choose the minimum distance in days between each pair of activities. Ple
 <context>
     <name>AddActivityForm_template</name>
     <message>
-        <source>FET - add new activity dialog</source>
-        <translation type="obsolete">FET - Nauja veikla</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addactivityform_template.ui" line="26"/>
         <source>Teachers</source>
         <translation>Dėstytojai</translation>
@@ -1419,13 +1197,6 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addactivityform_template.ui" line="252"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Selected</source>
-        <extracomment>It refers to a list of selected students sets
-----------
-It refers to a list of selected activity tags</extracomment>
-        <translation type="obsolete">Pažymėtas</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="70"/>
@@ -1613,11 +1384,6 @@ daryti nuoseklumą?</translation>
         <translation type="unfinished">Pažymėtas</translation>
     </message>
     <message>
-        <source>Selected</source>
-        <comment>It refers to a list of selected students (sets)</comment>
-        <translation type="obsolete">Pažymėtas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addactivityform_template.ui" line="241"/>
         <source>Selected</source>
         <comment>It refers to a list of selected activity tags</comment>
@@ -1675,10 +1441,6 @@ daryti nuoseklumą?</translation>
 <context>
     <name>AddBuildingForm_template</name>
     <message>
-        <source>Add Building Dialog</source>
-        <translation type="obsolete">Pastatų pridėjimo dialogas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addbuildingform_template.ui" line="22"/>
         <source>Name</source>
         <translation>Pavadinimas</translation>
@@ -1693,214 +1455,6 @@ daryti nuoseklumą?</translation>
         <location filename="../src/interface/addbuildingform_template.ui" line="49"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-</context>
-<context>
-    <name>AddConstraint2ActivitiesConsecutiveForm_template</name>
-    <message>
-        <source>FET - Add new constraint 2 activities consecutive dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (2 veiklų nuoseklumas)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Uždaryti</translation>
-    </message>
-    <message>
-        <source>Weight percentage
-(recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris
-(rekomenduojama: 0.0%-100%)</translation>
-    </message>
-    <message>
-        <source>100</source>
-        <translation type="obsolete">100</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>First activity</source>
-        <translation type="obsolete">Pirma veikla</translation>
-    </message>
-    <message>
-        <source>Second activity</source>
-        <translation type="obsolete">Antra veikla</translation>
-    </message>
-    <message>
-        <source>Filter</source>
-        <translation type="obsolete">Filtras</translation>
-    </message>
-    <message>
-        <source>Students set</source>
-        <translation type="obsolete">Studentų sąrašas</translation>
-    </message>
-    <message>
-        <source>Teacher</source>
-        <translation type="obsolete">Dėstytojas</translation>
-    </message>
-    <message>
-        <source>Subject</source>
-        <translation type="obsolete">Tema</translation>
-    </message>
-    <message>
-        <source>Activity tag</source>
-        <translation type="obsolete">Veiklos žymė (tag)</translation>
-    </message>
-</context>
-<context>
-    <name>AddConstraint2ActivitiesGroupedForm_template</name>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Uždaryti</translation>
-    </message>
-    <message>
-        <source>Weight percentage
-(recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris
-(rekomenduojama: 0.0%-100%)</translation>
-    </message>
-    <message>
-        <source>100</source>
-        <translation type="obsolete">100</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>First activity</source>
-        <translation type="obsolete">Pirma veikla</translation>
-    </message>
-    <message>
-        <source>Second activity</source>
-        <translation type="obsolete">Antra veikla</translation>
-    </message>
-    <message>
-        <source>Filter</source>
-        <translation type="obsolete">Filtras</translation>
-    </message>
-    <message>
-        <source>Students set</source>
-        <translation type="obsolete">Studentų sąrašas</translation>
-    </message>
-    <message>
-        <source>Teacher</source>
-        <translation type="obsolete">Dėstytojas</translation>
-    </message>
-    <message>
-        <source>Subject</source>
-        <translation type="obsolete">Tema</translation>
-    </message>
-    <message>
-        <source>Activity tag</source>
-        <translation type="obsolete">Veiklos žymė (tag)</translation>
-    </message>
-</context>
-<context>
-    <name>AddConstraint2ActivitiesOrderedForm_template</name>
-    <message>
-        <source>FET - Add new constraint 2 activities ordered dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (2 veiklų eiliškumas)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti pasirinktą apribojimą</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Uždaryti</translation>
-    </message>
-    <message>
-        <source>Weight percentage
-(recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris
-(rekomenduojama: 0.0%-100%)</translation>
-    </message>
-    <message>
-        <source>100</source>
-        <translation type="obsolete">100</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>First activity</source>
-        <translation type="obsolete">Pirma veikla</translation>
-    </message>
-    <message>
-        <source>Second activity</source>
-        <translation type="obsolete">Antra veikla</translation>
-    </message>
-    <message>
-        <source>Filter</source>
-        <translation type="obsolete">Filtras</translation>
-    </message>
-    <message>
-        <source>Students set</source>
-        <translation type="obsolete">Studentų sąrašas</translation>
-    </message>
-    <message>
-        <source>Teacher</source>
-        <translation type="obsolete">Dėstytojas</translation>
-    </message>
-    <message>
-        <source>Subject</source>
-        <translation type="obsolete">Tema</translation>
-    </message>
-    <message>
-        <source>Activity tag</source>
-        <translation type="obsolete">Veiklos žymė (tag)</translation>
-    </message>
-</context>
-<context>
-    <name>AddConstraint3ActivitiesGroupedForm_template</name>
-    <message>
-        <source>First activity</source>
-        <translation type="obsolete">Pirma veikla</translation>
-    </message>
-    <message>
-        <source>Second activity</source>
-        <translation type="obsolete">Antra veikla</translation>
-    </message>
-    <message>
-        <source>Filter</source>
-        <translation type="obsolete">Filtras</translation>
-    </message>
-    <message>
-        <source>Students set</source>
-        <translation type="obsolete">Studentų sąrašas</translation>
-    </message>
-    <message>
-        <source>Teacher</source>
-        <translation type="obsolete">Dėstytojas</translation>
-    </message>
-    <message>
-        <source>Subject</source>
-        <translation type="obsolete">Tema</translation>
-    </message>
-    <message>
-        <source>Activity tag</source>
-        <translation type="obsolete">Veiklos žymė (tag)</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Uždaryti</translation>
-    </message>
-    <message>
-        <source>Weight percentage
-(recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris
-(rekomenduojama: 0.0%-100%)</translation>
-    </message>
-    <message>
-        <source>100</source>
-        <translation type="obsolete">100</translation>
     </message>
 </context>
 <context>
@@ -1937,23 +1491,9 @@ daryti nuoseklumą?</translation>
 <context>
     <name>AddConstraintActivitiesEndStudentsDayForm_template</name>
     <message>
-        <source>FET - Adding a new constraint activities end students day</source>
-        <translation type="obsolete">FET - Naujas apribojimas (veikla, baigianti studentų dieną)</translation>
-    </message>
-    <message>
-        <source>Weight percentage (necessary: 100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (turi būti: 100%) {100.0%?}</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiesendstudentsdayform_template.ui" line="147"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Instructions: you can choose a set of activities with a certain teacher (or
-blank for all teachers), students set, subject and activity tag.</source>
-        <translation type="obsolete">Instrukcijos: jūs galite pasirinkti komplektą veiksmų su tam tikru mokytoju
-(ar tuščia vieta visiems mokytojams), studentų sąrašu, tema ir veiklos žyme.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesendstudentsdayform_template.ui" line="158"/>
@@ -1997,12 +1537,6 @@ blank for all teachers), students set, subject and activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Weight percentage
-(necessary: 100.0%)</source>
-        <translation type="obsolete">Procentinis svoris
-(turi būti: 100%) {100.0%?}</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiesendstudentsdayform_template.ui" line="136"/>
         <source>Weight percentage
 (necessary: 100%)</source>
@@ -2037,12 +1571,6 @@ blank for all teachers), students set, subject and activity tag.</source>
         <translation type="unfinished">Tik viena pasirinkta veikla</translation>
     </message>
     <message>
-        <source>Please report error to the author
-MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING must be increased (you have too many activities)</source>
-        <translation type="obsolete">Prašome pranešti apie klaidą autoriui
-MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING kintamasis turi būti padidintas (jūs turite per daug veiklų)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform.cpp" line="225"/>
         <source>Constraint added:</source>
         <translation type="unfinished">Pridėtas apribojimas:</translation>
@@ -2056,10 +1584,6 @@ MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING kintamasis turi būti padidintas (jūs
 <context>
     <name>AddConstraintActivitiesNotOverlappingForm_template</name>
     <message>
-        <source>FET - Add new constraint activities not overlapping</source>
-        <translation type="obsolete">FET - Naujas apribojimas (Veiklų nepersidengimai)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="22"/>
         <source>Add constraint</source>
         <translation>Pridėti apribojimą</translation>
@@ -2070,30 +1594,10 @@ MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING kintamasis turi būti padidintas (jūs
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>Selected (dbl. click or Enter to remove)</source>
-        <translation type="obsolete">Pasirinkti (dvig. sprakt. pašalins)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="100"/>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="194"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>This constraint means that the activities should not be placed in
-common timeslots. You don&apos;t need to add this constraint for
-activities sharing a teacher or students set. Only add this constraint
-if you really want the activities to be non-simultaneous. If FET fails to find
-a timetable, maybe you can try optimizing first without these constraints</source>
-        <translation type="obsolete">Šis apribojimas reiškia, kad veiksmas neturi būti padėtas bendrame laiko plyšyje.
-Jūs neturite pridėti šio apribojimo veiksmui, turinčiam mokytoją, ar studentų sąrašą.
-Tiktai pridėkite šį apribojimą, jei jūs iš tikrųjų norite, kad veiksmas būtų nevienalaikis.
-Jei FET nepajėgia surasti tvarkaraštį, galbūt jūs galite pabandyti optimizuoti
-iš pradžių be šitų apribojimų</translation>
-    </message>
-    <message>
-        <source>All activities (dbl. click or Enter to add)</source>
-        <translation type="obsolete">Visos veiklos (dvig. sprakt. prisidės)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="46"/>
@@ -2142,11 +1646,6 @@ iš pradžių be šitų apribojimų</translation>
         <translation type="unfinished">Pažymėtas</translation>
     </message>
     <message>
-        <source>Selected</source>
-        <extracomment>It refers to a list of selected activities</extracomment>
-        <translation type="obsolete">Pažymėtas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="202"/>
         <source>Clear</source>
         <translation type="unfinished">Išvalyti</translation>
@@ -2165,16 +1664,6 @@ iš pradžių be šitų apribojimų</translation>
 </context>
 <context>
     <name>AddConstraintActivitiesPreferredStartingTimesForm</name>
-    <message>
-        <source>Allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Leistina</translation>
-    </message>
-    <message>
-        <source>Not allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Neleistina</translation>
-    </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="260"/>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="349"/>
@@ -2276,10 +1765,6 @@ Jei jums reikia svorio mažiau kaip 100 %, tai jūs galite panaudoti šį apribo
 <context>
     <name>AddConstraintActivitiesPreferredStartingTimesForm_template</name>
     <message>
-        <source>FET - Adding a new constraint activities preferred starting times</source>
-        <translation type="obsolete">FET - Naujas apribojimas (veiklų privilegijuoti pradžios laikai)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="38"/>
         <source>Activity tag</source>
         <translation>Veiklos žymė (tag)</translation>
@@ -2321,12 +1806,6 @@ Jei jums reikia svorio mažiau kaip 100 %, tai jūs galite panaudoti šį apribo
         <translation type="unfinished">Pridėti</translation>
     </message>
     <message>
-        <source>Instructions: you can choose a set of activities with a certain teacher (or
-blank for all teachers), students set, subject and activity tag.</source>
-        <translation type="obsolete">Instrukcijos: jūs galite pasirinkti komplektą veiksmų su tam tikru mokytoju
-(ar tuščia vieta visiems mokytojams), studentų sąrašu, tema ir veiklos žyme.</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="14"/>
         <source>Add activities preferred starting times</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -2343,21 +1822,9 @@ blank for all teachers), students set, subject and activity tag.</source>
         <translation>100</translation>
     </message>
     <message>
-        <source>Add constraint</source>
-        <translation type="obsolete">Pridėti apribojimą</translation>
-    </message>
-    <message>
-        <source>Set all slots allowed</source>
-        <translation type="obsolete">Nustatyti visus leistus plyšius</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="152"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Set all slots not allowed</source>
-        <translation type="obsolete">Nustatyti visus neleistinus plyšius</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="26"/>
@@ -2367,16 +1834,6 @@ blank for all teachers), students set, subject and activity tag.</source>
 </context>
 <context>
     <name>AddConstraintActivitiesPreferredTimeSlotsForm</name>
-    <message>
-        <source>Allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Leistina</translation>
-    </message>
-    <message>
-        <source>Not allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Neleistina</translation>
-    </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="260"/>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="349"/>
@@ -2478,10 +1935,6 @@ Jei jums reikia svorio mažiau kaip 100 %, tai jūs galite panaudoti šį apribo
 <context>
     <name>AddConstraintActivitiesPreferredTimeSlotsForm_template</name>
     <message>
-        <source>FET - Adding a new constraint activities preferred time slots</source>
-        <translation type="obsolete">FET - Naujas apribojimas (veiklų privilegijuoti laikų plyšiai)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="14"/>
         <source>Add activities preferred time slots</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -2539,27 +1992,9 @@ Jei jums reikia svorio mažiau kaip 100 %, tai jūs galite panaudoti šį apribo
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Instructions: you can choose a set of activities with a certain teacher (or
-blank for all teachers), students set, subject and activity tag.</source>
-        <translation type="obsolete">Instrukcijos: jūs galite pasirinkti komplektą veiksmų su tam tikru mokytoju
-(ar tuščia vieta visiems mokytojams), studentų sąrašu, tema ir veiklos žyme.</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="152"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Add constraint</source>
-        <translation type="obsolete">Pridėti apribojimą</translation>
-    </message>
-    <message>
-        <source>Set all slots not allowed</source>
-        <translation type="obsolete">Nustatyti visus neleistinus plyšius</translation>
-    </message>
-    <message>
-        <source>Set all slots allowed</source>
-        <translation type="obsolete">Nustatyti visus leistus plyšius</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="26"/>
@@ -2607,10 +2042,6 @@ blank for all teachers), students set, subject and activity tag.</source>
 <context>
     <name>AddConstraintActivitiesSameStartingDayForm_template</name>
     <message>
-        <source>FET - Add new constraint activities same starting day</source>
-        <translation type="obsolete">FET - Naujas apribojimas (veiklos, kurios prasideda ta pačia dieną)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="22"/>
         <source>Add constraint</source>
         <translation>Pridėti apribojimą</translation>
@@ -2621,18 +2052,10 @@ blank for all teachers), students set, subject and activity tag.</source>
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>All activities (dbl. click adds)</source>
-        <translation type="obsolete">Visos veiklos (dvig. sprakt. prisidės)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="57"/>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="86"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click removes)</source>
-        <translation type="obsolete">Pasirinkti (dvig. sprakt. pašalins)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="46"/>
@@ -2719,12 +2142,6 @@ blank for all teachers), students set, subject and activity tag.</source>
         <translation type="unfinished">Tik viena pasirinkta veikla</translation>
     </message>
     <message>
-        <source>Please report error to the author
-MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too many activities)</source>
-        <translation type="obsolete">Prašome pranešti apie klaidą autoriui
-MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR kintamasis turi būti padidintas (jūs turite per daug veiklų)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform.cpp" line="219"/>
         <source>Constraint added:</source>
         <translation type="unfinished">Pridėtas apribojimas:</translation>
@@ -2738,22 +2155,10 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR kintamasis turi būti padidintas (j
 <context>
     <name>AddConstraintActivitiesSameStartingHourForm_template</name>
     <message>
-        <source>FET - Add new constraint activities same starting hour</source>
-        <translation type="obsolete">FET - Naujas apribojimas (veiklos, kurios prasideda tą pačią valandą)</translation>
-    </message>
-    <message>
-        <source>All activities (dbl. click adds)</source>
-        <translation type="obsolete">Visos veiklos (dvig. sprakt. prisidės)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="104"/>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="133"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click removes)</source>
-        <translation type="obsolete">Pasirinkti (dvig. sprakt. pašalins)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="158"/>
@@ -2853,12 +2258,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR kintamasis turi būti padidintas (j
         <translation type="unfinished">Tik viena pasirinkta veikla - neįmanoma</translation>
     </message>
     <message>
-        <source>Too many activities - please report error
-(CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME too little)</source>
-        <translation type="obsolete">Per daug veiklų - prašome pranešti apie klaidą
-(CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis per mažas)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="263"/>
         <source>Sub-activities do not correspond. Mistake:</source>
         <translation type="unfinished"></translation>
@@ -2872,24 +2271,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR kintamasis turi būti padidintas (j
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="269"/>
         <source>2. Current (sub)activity has id=%1 and represents %2 sub-activities</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Sub-activities do not correspond. Mistake:
-</source>
-        <translation type="obsolete">Sub-veiklos nesusiriša. Klaida:
-</translation>
-    </message>
-    <message>
-        <source>1. First (sub)activity has id=%1 and represents %2 sub-activities
-</source>
-        <translation type="obsolete">1. Pirma (sub)veikla id=%1 ir atstovauja %2 sub-veiklas
-</translation>
-    </message>
-    <message>
-        <source>2. Current (sub)activity has id=%1 and represents %2 sub-activities
-</source>
-        <translation type="obsolete">2. Dabartinė (sub)veikla id=%1 atstovauja %2 sub-veiklas
-</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="338"/>
@@ -2917,10 +2298,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR kintamasis turi būti padidintas (j
 <context>
     <name>AddConstraintActivitiesSameStartingTimeForm_template</name>
     <message>
-        <source>FET - Add new constraint activities same starting time</source>
-        <translation type="obsolete">FET - Naujas apribojimas (veiklos, kurios prasideda tuo pačiu laiku)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="199"/>
         <source>Add constraint</source>
         <translation>Pridėti apribojimą</translation>
@@ -2931,30 +2308,10 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR kintamasis turi būti padidintas (j
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>Block (please select this if you want to input only the
-representatives of sub-activities. There will be added more
-ConstraintActivitiesSameStartingTime-s, one for each corresponding
-tuple. But the number of sub-activities must match and please be 
-careful at the order, it might be different from what you need)</source>
-        <translation type="obsolete">Blokas (prašom išrinkti tai, jei jūs norite įvesti tiktai subveiklas.
-Ten bus pridėta daugiau veiklų, kurios prasideda tuo pačiu metu,
-apribojimų, vienas kiekvienam atitinkamam laiko tarpui. Bet subveiklų
-skaičius turi derėti ir prašom būti atsargus rūšiavime,
-tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
-    </message>
-    <message>
-        <source>All activities (dbl. click adds)</source>
-        <translation type="obsolete">Visos veiklos (dvig. sprakt. prisidės)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="104"/>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="133"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click removes)</source>
-        <translation type="obsolete">Pasirinkti (dvig. sprakt. pašalins)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="143"/>
@@ -3064,17 +2421,9 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
 <context>
     <name>AddConstraintActivityEndsStudentsDayForm_template</name>
     <message>
-        <source>FET - Add new constraint activity ends students day dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (veikla, kuri baigia studentu dieną)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="30"/>
         <source>Activity</source>
         <translation>Veikla</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="90"/>
@@ -3085,10 +2434,6 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="100"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti pasirinktą apribojimą</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="14"/>
@@ -3171,10 +2516,6 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
 </context>
 <context>
     <name>AddConstraintActivityPreferredRoomForm_template</name>
-    <message>
-        <source>FET - Add new constraint activity preferred room</source>
-        <translation type="obsolete">FET - Naujas apribojimas (veiklos privilegijuotas kambarys)</translation>
-    </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="164"/>
         <source>Close</source>
@@ -3293,18 +2634,6 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
 <context>
     <name>AddConstraintActivityPreferredRoomsForm_template</name>
     <message>
-        <source>FET - Add new constraint activity preferred rooms</source>
-        <translation type="obsolete">FET - Naujas apribojimas (veiklos privilegijuoti kambariai)</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation type="obsolete">Pridėti</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="obsolete">Šalinti</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="174"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
@@ -3325,18 +2654,10 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Visi kambariai (dvig. sprakt. prisidės)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="120"/>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="149"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Pasirinkti kambariai (dvig. sprakt. pašalins)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="81"/>
@@ -3437,17 +2758,9 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
 <context>
     <name>AddConstraintActivityPreferredStartingTimeForm_template</name>
     <message>
-        <source>FET - Add new constraint activity preferred starting time dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (veiklas privilegijuotas pradžios laikas)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="102"/>
         <source>Activity</source>
         <translation>Veikla</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="163"/>
@@ -3473,10 +2786,6 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="154"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="248"/>
@@ -3532,16 +2841,6 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
 </context>
 <context>
     <name>AddConstraintActivityPreferredStartingTimesForm</name>
-    <message>
-        <source>Allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Leistina</translation>
-    </message>
-    <message>
-        <source>Not allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Neleistina</translation>
-    </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="320"/>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="332"/>
@@ -3599,10 +2898,6 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
 </context>
 <context>
     <name>AddConstraintActivityPreferredStartingTimesForm_template</name>
-    <message>
-        <source>FET - Adding a new constraint activity preferred starting times</source>
-        <translation type="obsolete">FET - Naujas apribojimas (veiklos privilegijuoti pradžios laikai)</translation>
-    </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="14"/>
         <source>Add activity preferred starting times</source>
@@ -3671,35 +2966,13 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
         <translation type="unfinished">Pridėti</translation>
     </message>
     <message>
-        <source>Set all slots allowed</source>
-        <translation type="obsolete">Nustatyti visus leistus plyšius</translation>
-    </message>
-    <message>
-        <source>Add constraint</source>
-        <translation type="obsolete">Pridėti apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="181"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
     </message>
-    <message>
-        <source>Set all slots not allowed</source>
-        <translation type="obsolete">Nustatyti visus neleistinus plyšius</translation>
-    </message>
 </context>
 <context>
     <name>AddConstraintActivityPreferredTimeSlotsForm</name>
-    <message>
-        <source>Allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Leistina</translation>
-    </message>
-    <message>
-        <source>Not allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Neleistina</translation>
-    </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="319"/>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="331"/>
@@ -3758,10 +3031,6 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
 <context>
     <name>AddConstraintActivityPreferredTimeSlotsForm_template</name>
     <message>
-        <source>FET - Adding a new constraint activity preferred time slots</source>
-        <translation type="obsolete">FET - Naujas apribojimas (veiklos privilegijuoti laiko plyšiai)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="14"/>
         <source>Add activity preferred time slots</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -3819,10 +3088,6 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
         <translation type="unfinished">Pridėti</translation>
     </message>
     <message>
-        <source>Add constraint</source>
-        <translation type="obsolete">Pridėti apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="167"/>
         <source>Set all not allowed</source>
         <translation type="unfinished"></translation>
@@ -3831,14 +3096,6 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="153"/>
         <source>Set all allowed</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set all slots not allowed</source>
-        <translation type="obsolete">Nustatyti visus neleistinus plyšius</translation>
-    </message>
-    <message>
-        <source>Set all slots allowed</source>
-        <translation type="obsolete">Nustatyti visus leistus plyšius</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="181"/>
@@ -3988,10 +3245,6 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
         <translation type="unfinished">Uždaryti</translation>
     </message>
     <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Visi kambariai (dvig. sprakt. prisidės)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="14"/>
         <source>Add activity tag preferred rooms</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -4007,18 +3260,6 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="81"/>
         <source>New Item</source>
         <translation type="unfinished">Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation type="obsolete">Pridėti</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="obsolete">Šalinti</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Pasirinkti kambariai (dvig. sprakt. pašalins)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="20"/>
@@ -4071,14 +3312,6 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
 <context>
     <name>AddConstraintBasicCompulsorySpaceForm_template</name>
     <message>
-        <source>FET - Add new constraint basic compulsory space dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (pagrindinis privalomas vietos apribojimas)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti pasirinktą apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform_template.ui" line="14"/>
         <source>Add basic compulsory space</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -4090,17 +3323,9 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform_template.ui" line="39"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Weight percentage (needs to be: 100%)</source>
-        <translation type="obsolete">Procentinis svoris (turi būti: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform_template.ui" line="50"/>
@@ -4149,14 +3374,6 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
 <context>
     <name>AddConstraintBasicCompulsoryTimeForm_template</name>
     <message>
-        <source>FET - Add new constraint basic compulsory time dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (pagrindinis privalomas laiko apribojimas)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti pasirinktą apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform_template.ui" line="14"/>
         <source>Add basic compulsory time</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -4168,17 +3385,9 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform_template.ui" line="39"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Weight percentage (needs to be: 100%)</source>
-        <translation type="obsolete">Procentinis svoris (turi būti: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform_template.ui" line="50"/>
@@ -4195,16 +3404,6 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
 </context>
 <context>
     <name>AddConstraintBreakTimesForm</name>
-    <message>
-        <source>Break</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Pertrauka</translation>
-    </message>
-    <message>
-        <source>Allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Leistina</translation>
-    </message>
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform.cpp" line="200"/>
         <location filename="../src/interface/addconstraintbreaktimesform.cpp" line="218"/>
@@ -4230,16 +3429,6 @@ tai galėtų būti kitoks negu tai, ko jums reikia)</translation>
 </context>
 <context>
     <name>AddConstraintBreakTimesForm_template</name>
-    <message>
-        <source>FET - Add new constraint break times dialog</source>
-        <translation type="obsolete">FET - Naujas apribijimas (pertraukos)</translation>
-    </message>
-    <message>
-        <source>The important thing is that a break does not induce
-gaps for teachers or students</source>
-        <translation type="obsolete">Svarbus daiktas yra, kad plyšiai nekelia
-tarpų mokytojams ar studentams</translation>
-    </message>
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="44"/>
         <source>Weight percentage (necessary: 100%)</source>
@@ -4277,22 +3466,10 @@ tarpų mokytojams ar studentams</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Set all slots allowed</source>
-        <translation type="obsolete">Nustatyti visus leistus plyšius</translation>
-    </message>
-    <message>
-        <source>Set all slots break</source>
-        <translation type="obsolete">Nustatyti visus neleistinus plyšius</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="14"/>
         <source>Add break times</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add constraint</source>
-        <translation type="obsolete">Pridėti apribojimą</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="26"/>
@@ -4402,18 +3579,10 @@ tarpų mokytojams ar studentams</translation>
         <translation type="unfinished">Pažymėtas</translation>
     </message>
     <message>
-        <source>All activities (dbl. click adds)</source>
-        <translation type="obsolete">Visos veiklos (dvig. sprakt. prisidės)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="174"/>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="203"/>
         <source>New Item</source>
         <translation type="unfinished">Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click removes)</source>
-        <translation type="obsolete">Pasirinkti (dvig. sprakt. pašalins)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="211"/>
@@ -4461,7 +3630,7 @@ tarpų mokytojams ar studentams</translation>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform.cpp" line="219"/>
         <source>The best way to add the activities would be:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Geriausias būdas pridėti veiksmą būtų:</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform.cpp" line="222"/>
@@ -4564,16 +3733,6 @@ daryti nuoseklumą</translation>
         <translation type="unfinished">Išvalyti</translation>
     </message>
     <message>
-        <source>Min days</source>
-        <translation type="obsolete">Min dienų</translation>
-    </message>
-    <message>
-        <source>If activities on same day,
-force activities consecutive</source>
-        <translation type="obsolete">Jei veiklos tą pačią dieną,
-daryti nuoseklumą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="226"/>
         <source>Weight percentage (recommended 95.0% - 100.0%)</source>
         <translation type="unfinished"></translation>
@@ -4634,10 +3793,6 @@ daryti nuoseklumą</translation>
 <context>
     <name>AddConstraintMinGapsBetweenActivitiesForm_template</name>
     <message>
-        <source>FET - Add new constraint min gaps between activities</source>
-        <translation type="obsolete">FET - Naujas apribojimas (min tarpų tarp veiklų)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="22"/>
         <source>Add constraint</source>
         <translation>Pridėti apribojimą</translation>
@@ -4656,10 +3811,6 @@ daryti nuoseklumą</translation>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="56"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Min gaps</source>
-        <translation type="obsolete">Min tarpų</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="76"/>
@@ -4704,18 +3855,10 @@ daryti nuoseklumą</translation>
         <translation type="unfinished">Pažymėtas</translation>
     </message>
     <message>
-        <source>All activities (dbl. click adds)</source>
-        <translation type="obsolete">Visos veiklos (dvig. sprakt. prisidės)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="174"/>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="203"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click removes)</source>
-        <translation type="obsolete">Pasirinkti (dvig. sprakt. pašalins)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="211"/>
@@ -4730,113 +3873,7 @@ daryti nuoseklumą</translation>
     </message>
 </context>
 <context>
-    <name>AddConstraintMinNDaysBetweenActivitiesForm</name>
-    <message>
-        <source>You want to add a constraint min n days between activities for more activities than the number of days per week. This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).</source>
-        <translation type="obsolete">Jūs norite pridėti apribojimo min n dienas tarp veiklos daugiau veiklų negu skaičius dienų per savaitę. Tai yra labai bloga praktika algoritmo vykdyme (tai lėtina generavimą ir daro tai sunkiau, kad surastų sprendimą).</translation>
-    </message>
-    <message>
-        <source>The best way to add the activities would be:</source>
-        <translation type="obsolete">Geriausias būdas pridėti veiklas būtų:</translation>
-    </message>
-    <message>
-        <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min n days between activities up to 100%)</source>
-        <translation type="obsolete">1. Jei jūs pridedate &apos;vykdyti nuosekliai, jei ta pati diena&apos;, tada sujungia papildomą porą veiklų, kad gautų daugiau veiklų, lygių skaičiui dienų per savaitę. Pavyzdys: 7 veiklas su trukme 1 per 5 dienas per savaitę, paskui paverskite į 5 veiklas su trukme: 2,2,1,1,1 ir prideda vieną konteinerinę veiklą su šitais 5 komponentais (galbūt pakėlimas svorio pridėtos apribojimo min n dienos tarp veiklų iki 100 %)</translation>
-    </message>
-    <message>
-        <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)</source>
-        <translation type="obsolete">2. Jei jūs nepridedate &apos;vykdyti nuosekliai, jei ta pati diena&apos;, tada prideda didesnę veiklą suskaidytą į daugiau veiklų, lygių skaičiui dienų per savaitę ir likusius komponentus į kitą didesnę suskaidytą veiklą. Pavyzdžiui, manykite, kad jūs turite pridėti 7 veiklas su trukme 1 per 5 dienas per savaitę. Pridėkite 2 didesnį konteinerinę veiklą, iš pradžių viena suskaidyta į 5 veiklas su trukme 1 ir antra suskaidyta į 2 veiklas su trukme 1 (galbūt pakėlimas svorio pridėtos apribojimų min n dienos tarp veiksmo kiekvienam iš 2 konteinerių iki 100 %)</translation>
-    </message>
-    <message>
-        <source>Do you want to add current constraint as it is now (not recommended) or cancel and edit as instructed?</source>
-        <translation type="obsolete">Jūs norite pridėti einamąjį apribojimą, kadangi tai yra dabar (nerekomenduota) ar panaikinti ir redaguoti kaip instruktuotas?</translation>
-    </message>
-    <message>
-        <source>FET warning</source>
-        <translation type="obsolete">FET įspėjimas</translation>
-    </message>
-</context>
-<context>
-    <name>AddConstraintMinNDaysBetweenActivitiesForm_template</name>
-    <message>
-        <source>FET - Add new constraint min n days between activities</source>
-        <translation type="obsolete">FET - Naujas apribojimas (min N dienų tarp veiklų)</translation>
-    </message>
-    <message>
-        <source>If activities on same day,
-force activities consecutive</source>
-        <translation type="obsolete">Jei veiklos tą pačią dieną,
-daryti nuoseklumą</translation>
-    </message>
-    <message>
-        <source>Add constraint</source>
-        <translation type="obsolete">Pridėti apribojimą</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Uždaryti</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 95.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 95.0%-100%)</translation>
-    </message>
-    <message>
-        <source>95</source>
-        <translation type="obsolete">95</translation>
-    </message>
-    <message>
-        <source>Min days</source>
-        <translation type="obsolete">Min dienų</translation>
-    </message>
-    <message>
-        <source>Filter</source>
-        <translation type="obsolete">Filtras</translation>
-    </message>
-    <message>
-        <source>Students set</source>
-        <translation type="obsolete">Studentų sąrašas</translation>
-    </message>
-    <message>
-        <source>Subject</source>
-        <translation type="obsolete">Tema</translation>
-    </message>
-    <message>
-        <source>Teacher</source>
-        <translation type="obsolete">Dėstytojas</translation>
-    </message>
-    <message>
-        <source>All activities (dbl. click adds)</source>
-        <translation type="obsolete">Visos veiklos (dvig. sprakt. prisidės)</translation>
-    </message>
-    <message>
-        <source>New Item</source>
-        <translation type="obsolete">Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click removes)</source>
-        <translation type="obsolete">Pasirinkti (dvig. sprakt. pašalins)</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation type="obsolete">Išvalyti</translation>
-    </message>
-    <message>
-        <source>Activity tag</source>
-        <translation type="obsolete">Veiklos žymė (tag)</translation>
-    </message>
-</context>
-<context>
     <name>AddConstraintRoomNotAvailableTimesForm</name>
-    <message>
-        <source>Not available</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Neprieinama</translation>
-    </message>
-    <message>
-        <source>Available</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Prieinama</translation>
-    </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="215"/>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="222"/>
@@ -4869,17 +3906,9 @@ daryti nuoseklumą</translation>
 <context>
     <name>AddConstraintRoomNotAvailableTimesForm_template</name>
     <message>
-        <source>FET - Adding a new constraint room not available times</source>
-        <translation type="obsolete">FET - Naujas apribojimas (kambarių užimtumas (laikas))</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="47"/>
         <source>Room</source>
         <translation>Kambarys</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="81"/>
@@ -4890,10 +3919,6 @@ daryti nuoseklumą</translation>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="95"/>
         <source>Set all available</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add constraint</source>
-        <translation type="obsolete">Pridėti apribojimą</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="102"/>
@@ -4917,18 +3942,10 @@ daryti nuoseklumą</translation>
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>Set all slots available</source>
-        <translation type="obsolete">Nustatyti visus galimus plyšius</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="14"/>
         <source>Add room not available times</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set all slots not available</source>
-        <translation type="obsolete">Nustatyti visus negalimus plyšius</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="70"/>
@@ -4976,10 +3993,6 @@ daryti nuoseklumą</translation>
 <context>
     <name>AddConstraintStudentsActivityTagMaxHoursContinuouslyForm_template</name>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Add students activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -5004,10 +4017,6 @@ daryti nuoseklumą</translation>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="88"/>
         <source>100</source>
         <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="155"/>
@@ -5101,18 +4110,6 @@ daryti nuoseklumą</translation>
 <context>
     <name>AddConstraintStudentsEarlyMaxBeginningsAtSecondHourForm</name>
     <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Weight percentage=%1%</source>
-        <translation type="obsolete">Svoris (procentais)=%1%</translation>
-    </message>
-    <message>
-        <source>Students must begin activities early, with maximum %1 beginnings at the second available hour, per week (not available and break not counted)</source>
-        <translation type="obsolete">Studentai turi pradėti veiksmą anksti, su maksimaliomis %1 pradžiomis antrą pasiekiamą valandą, per savaitę (ne pasiekiamas ir lūžis, neįskaičiuotas)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="82"/>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="87"/>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="100"/>
@@ -5143,18 +4140,6 @@ daryti nuoseklumą</translation>
 </context>
 <context>
     <name>AddConstraintStudentsEarlyMaxBeginningsAtSecondHourForm_template</name>
-    <message>
-        <source>FET - Add new constraint students early max beginnings at second hour dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (stutentų artimiausios maksimalios pradžios nuo antros valandos)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="148"/>
         <source>Close</source>
@@ -5187,39 +4172,6 @@ daryti nuoseklumą</translation>
         <translation>Maksimalios pradžios nuo antros valandos (per savaitę)</translation>
     </message>
     <message>
-        <source>This represents the maximum allowed beginnings at the second
-available hour (in a week).
-You might want to allow your students to begin in some days later,
-at the second available hour, so you might put &quot;max beginnings at
-second hour&quot; greater than 0 (the timetable will be easier for FET).
-Default 0 is given for students which need to begin all classes at the
-first available hour. You might want to choose a greater value and
-lower it as you find new timetables</source>
-        <translation type="obsolete">Tai parodo maksimalias leistinas pradžias antrai pasiekiamai
-valandai (savaitėje).
-Jūs galite norėti savo studentams pradėti keliomis dienomis 
-vėliau, antrai pasiekiamai valandai, taigi jūs galite reikšmę 
-pakeisti &quot;maksimali pradžia iki antros valandos&quot; didesne negu 0
-(tvarkaraštis bus lengvesnis FET). Reikšmė 0 yra priskiriama
-studentams, kuriems reikia pradėti paskaitas nuo pirmos galimos
-valandos. Jūs galite pasirinkti didesnę ar mažėsnę reikšmę
-priklausomai nuo jūsų tvarkaraščio</translation>
-    </message>
-    <message>
-        <source>You have to use weight percentage 100%, because
-otherwise you will get poor timetables. Currently, the algorithm
-only accepts 100% weight percentage for this constraint (or no
-constraint).
-Note: students set not available and break are not counted as
-gaps (early gaps).</source>
-        <translation type="obsolete">Jūs turite panaudoti svorio procentinį dydį 100%, todėl,
-kad kitaip jūs gausite blogus tvarkaraščius. Šiuo metu,
-algoritmas tiktai priima 100% svorio procentinį dydį šiam apribojimui
-(ar jokiam apribojimui).
-Pastaba: studentų sąrašų nepasiekiamumas ir pertraukos nėra
-įskaičiuoti kaip tarpai.</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="32"/>
         <source>This represents the maximum allowed beginnings at the second available hour (in a week). You might want to allow your students to begin in some days later, at the second available hour, so you might put &quot;max beginnings at second hour&quot; greater than 0 (the timetable will be easier for FET). Default 0 is given for students which need to begin all classes at the first available hour. You might want to choose a greater value and lower it as you find new timetables</source>
         <translation type="unfinished"></translation>
@@ -5237,30 +4189,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="82"/>
         <source>End of day</source>
         <translation>Dienos pabaiga</translation>
-    </message>
-    <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Weight (percentage)=%1</source>
-        <translation type="obsolete">Svoris (procentais)=%1</translation>
-    </message>
-    <message>
-        <source>Students interval max days per week</source>
-        <translation type="obsolete">Studentų maks dienų intervalas per savaitę</translation>
-    </message>
-    <message>
-        <source>Interval start hour=%1</source>
-        <translation type="obsolete">Intervalo pradžios valanda=%1</translation>
-    </message>
-    <message>
-        <source>Interval end hour=%1</source>
-        <translation type="obsolete">Intervalo pabaigos valanda=%1</translation>
-    </message>
-    <message>
-        <source>Max days per week=%1</source>
-        <translation type="obsolete">Maks dienų per savaitę=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="125"/>
@@ -5312,30 +4240,14 @@ Note: students set not available and break are not counted as gaps (early gaps).
 <context>
     <name>AddConstraintStudentsIntervalMaxDaysPerWeekForm_template</name>
     <message>
-        <source>FET - Add new constraint students interval max days per week dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (studentų maksimalus dienų intervalas per savaitę)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui" line="29"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>Weight percentage (necessary: 100%)</source>
-        <translation type="obsolete">Procentinis svoris (turi būti: 100%)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui" line="57"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui" line="14"/>
@@ -5399,25 +4311,9 @@ Note: students set not available and break are not counted as gaps (early gaps).
 <context>
     <name>AddConstraintStudentsMaxBuildingChangesPerDayForm_template</name>
     <message>
-        <source>FET - Add new constraint students max building changes per day dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (studentų maksimalūs pastatų pakeitimai per dieną)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="29"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Weight percentage (necessary: 100%)</source>
-        <translation type="obsolete">Procentinis svoris (turi būti: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="14"/>
@@ -5476,25 +4372,9 @@ Note: students set not available and break are not counted as gaps (early gaps).
 <context>
     <name>AddConstraintStudentsMaxBuildingChangesPerWeekForm_template</name>
     <message>
-        <source>FET - Add new constraint students max building changes per week dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (studentų maksimalūs pastatų pakeitimai per savaitę)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="29"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Weight percentage (necessary: 100%)</source>
-        <translation type="obsolete">Procentinis svoris (turi būti: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="14"/>
@@ -5632,35 +4512,9 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
 <context>
     <name>AddConstraintStudentsMaxGapsPerWeekForm_template</name>
     <message>
-        <source>FET - Add new constraint students max gaps per week dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (studentų maksimalūs tarpai per savaitę)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsmaxgapsperweekform_template.ui" line="104"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>You have to use weight percentage 100%, because
-otherwise you will get poor timetables. Currently, the algorithm
-only accepts 100% weight percentage for this constraint (or no
-constraint).
-Note: students set not available and break are not counted as
-gaps.</source>
-        <translation type="obsolete">Jūs turite panaudoti svorio procentinį dydį 100 %, todėl,
-kad kitaip jūs gausite blogus tvarkaraščius. Šiuo metu, algoritmas
-tiktai priima 100 % svorio procentinį dydį šiam apribojimui
-(ar jokiam apribojimui).
-Pastaba: studentų sąrašai nepasiekiami, ir plyšiai nėra įskaičiuoti
-kaip tarpai.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxgapsperweekform_template.ui" line="65"/>
@@ -5688,12 +4542,6 @@ kaip tarpai.</translation>
         <source>You have to use weight percentage 100%, because otherwise you will get poor timetables. Currently, the algorithm only accepts 100% weight percentage for this constraint (or no constraint).
 Note: students set not available and break are not counted as gaps.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Weight percentage
-(necessary: 100%)</source>
-        <translation type="obsolete">Procentinis svoris
-(turi būti: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxgapsperweekform_template.ui" line="97"/>
@@ -5729,10 +4577,6 @@ Note: students set not available and break are not counted as gaps.</source>
 <context>
     <name>AddConstraintStudentsMaxHoursContinuouslyForm_template</name>
     <message>
-        <source>FET - Add new constraint students max hours continuously dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (studentų maksimalus valandų skaičius be tarpų)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Add students max hours continuously</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -5744,26 +4588,14 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation type="unfinished">Pridėti apribojimą</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="39"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="80"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="56"/>
@@ -5806,10 +4638,6 @@ Note: students set not available and break are not counted as gaps.</source>
 <context>
     <name>AddConstraintStudentsMaxHoursDailyForm_template</name>
     <message>
-        <source>FET - Add new constraint students max hours daily dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (studentų maksimalus valandų skaičius kasdien)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="14"/>
         <source>Add students max hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -5821,26 +4649,14 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation type="unfinished">Pridėti apribojimą</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="39"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="80"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="56"/>
@@ -5883,25 +4699,9 @@ Note: students set not available and break are not counted as gaps.</source>
 <context>
     <name>AddConstraintStudentsMinGapsBetweenBuildingChangesForm_template</name>
     <message>
-        <source>FET - Add new constraint students min gaps between building changes dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (studentų minimalūs tarpai tarp pastatų pasikeitimų)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="74"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Weight percentage (necessary: 100%)</source>
-        <translation type="obsolete">Procentinis svoris (turi būti: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="14"/>
@@ -6009,10 +4809,6 @@ Note: students set not available and break are not counted as gaps.</source>
 <context>
     <name>AddConstraintStudentsMinHoursDailyForm_template</name>
     <message>
-        <source>FET - Add new constraint students min hours daily dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (studentų min valandų kasdien)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="95"/>
         <source>Allow empty days</source>
         <translation type="unfinished"></translation>
@@ -6023,17 +4819,9 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation type="unfinished">Pridėti apribojimą</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="49"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="111"/>
@@ -6041,21 +4829,9 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>Weight percentage (needed: 100%)</source>
-        <translation type="obsolete">Procentinis svoris (turi būti: 100%)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="62"/>
         <source>Min hours</source>
         <translation>Min valandų</translation>
-    </message>
-    <message>
-        <source>Note: every day should have the minimum hours daily
-(so this constraint is not flexible to allow empty days for
-students)</source>
-        <translation type="obsolete">Pastaba: kiekviena diena turi turėti minimalias valandas kasdien
-(tokiu būdu šis apribojimas nėra lankstus, kad leistų tuščias dienas
-studentams)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="14"/>
@@ -6067,12 +4843,6 @@ studentams)</translation>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="39"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation type="unfinished">Procentinis svoris (turi būti: 100%)</translation>
-    </message>
-    <message>
-        <source>Weight percentage
-(necessary: 100%)</source>
-        <translation type="obsolete">Procentinis svoris
-(turi būti: 100%)</translation>
     </message>
 </context>
 <context>
@@ -6119,10 +4889,6 @@ studentams)</translation>
 <context>
     <name>AddConstraintStudentsSetActivityTagMaxHoursContinuouslyForm_template</name>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Add students set activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -6152,10 +4918,6 @@ studentams)</translation>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="123"/>
         <source>100</source>
         <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="196"/>
@@ -6260,22 +5022,6 @@ studentams)</translation>
 <context>
     <name>AddConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm</name>
     <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Students set=%1</source>
-        <translation type="obsolete">Studentų sąrašas=%1</translation>
-    </message>
-    <message>
-        <source>Weight percentage=%1%</source>
-        <translation type="obsolete">Svoris (procentais)=%1%</translation>
-    </message>
-    <message>
-        <source>Students set must begin activities early, with maximum %1 beginnings at the second available hour, per week (not available and break not counted)</source>
-        <translation type="obsolete">Studentų sąrašas turi pradėti veiksmą anksti, su maksimaliomis %1 pradžiomis antrą pasiekiamą valandą, per savaitę (ne pasiekiamas ir lūžis, neįskaičiuotas)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="104"/>
         <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="109"/>
         <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="117"/>
@@ -6313,54 +5059,9 @@ studentams)</translation>
 <context>
     <name>AddConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm_template</name>
     <message>
-        <source>FET - Add new constraint students set early max beginnings at second hour dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (stutentų artimiausios maksimalios pradžios nuo antros valandos)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>This represents the maximum allowed beginnings at the second
-available hour (in a week).
-You might want to allow your students to begin in some days later,
-at the second available hour, so you might put &quot;max beginnings at
-second hour&quot; greater than 0 (the timetable will be easier for FET).
-Default 0 is given for students which need to begin all classes at the
-first available hour. You might want to choose a greater value and
-lower it as you find new timetables</source>
-        <translation type="obsolete">Tai parodo maksimalias leistinas pradžias antrai pasiekiamai
-valandai (savaitėje).
-Jūs galite norėti savo studentams pradėti keliomis dienomis 
-vėliau, antrai pasiekiamai valandai, taigi jūs galite reikšmę 
-pakeisti &quot;maksimali pradžia iki antros valandos&quot; didesne negu 0
-(tvarkaraštis bus lengvesnis FET). Reikšmė 0 yra priskiriama
-studentams, kuriems reikia pradėti paskaitas nuo pirmos galimos
-valandos. Jūs galite pasirinkti didesnę ar mažėsnę reikšmę
-priklausomai nuo jūsų tvarkaraščio</translation>
-    </message>
-    <message>
-        <source>You have to use weight percentage 100%, because
-otherwise you will get poor timetables. Currently, the algorithm
-only accepts 100% weight percentage for this constraint (or no
-constraint).
-Note: students set not available and break are not counted as
-gaps (early gaps).</source>
-        <translation type="obsolete">Jūs turite panaudoti svorio procentinį dydį 100%, todėl,
-kad kitaip jūs gausite blogus tvarkaraščius. Šiuo metu,
-algoritmas tiktai priima 100% svorio procentinį dydį šiam apribojimui
-(ar jokiam apribojimui).
-Pastaba: studentų sąrašų nepasiekiamumas ir pertraukos nėra
-įskaičiuoti kaip tarpai.</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="122"/>
         <source>Students set</source>
         <translation>Studentų sąrašas</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="180"/>
@@ -6439,10 +5140,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
 <context>
     <name>AddConstraintStudentsSetHomeRoomForm_template</name>
     <message>
-        <source>FET - Add new constraint students set home room</source>
-        <translation type="obsolete">FET - Naujas apribojimas (studentų sąrašo namų kambarys)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssethomeroomform_template.ui" line="14"/>
         <source>Add students set home room</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -6519,10 +5216,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
 <context>
     <name>AddConstraintStudentsSetHomeRoomsForm_template</name>
     <message>
-        <source>FET - Add new constraint students set home rooms</source>
-        <translation type="obsolete">FET - Naujas apribojimas (studentų sąrašo namų kambariai)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssethomeroomsform_template.ui" line="106"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
@@ -6543,10 +5236,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Visi kambariai (dvig. sprakt. prisidės)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssethomeroomsform_template.ui" line="14"/>
         <source>Add students set home rooms</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -6562,18 +5251,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/addconstraintstudentssethomeroomsform_template.ui" line="81"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation type="obsolete">Pridėti</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="obsolete">Šalinti</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Pasirinkti kambariai (dvig. sprakt. pašalins)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssethomeroomsform_template.ui" line="20"/>
@@ -6598,34 +5275,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="105"/>
         <source>End of day</source>
         <translation>Dienos pabaiga</translation>
-    </message>
-    <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Weight (percentage)=%1</source>
-        <translation type="obsolete">Svoris (procentais)=%1</translation>
-    </message>
-    <message>
-        <source>Students set interval max days per week</source>
-        <translation type="obsolete">Studentų sąrašo maks dienų intervalas per savaitę</translation>
-    </message>
-    <message>
-        <source>Students set=%1</source>
-        <translation type="obsolete">Studentų sąrašas=%1</translation>
-    </message>
-    <message>
-        <source>Interval start hour=%1</source>
-        <translation type="obsolete">Intervalo pradžios valanda=%1</translation>
-    </message>
-    <message>
-        <source>Interval end hour=%1</source>
-        <translation type="obsolete">Intervalo pabaigos valanda=%1</translation>
-    </message>
-    <message>
-        <source>Max days per week=%1</source>
-        <translation type="obsolete">Maks dienų per savaitę=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="148"/>
@@ -6683,17 +5332,9 @@ Note: students set not available and break are not counted as gaps (early gaps).
 <context>
     <name>AddConstraintStudentsSetIntervalMaxDaysPerWeekForm_template</name>
     <message>
-        <source>FET - Add new constraint students set interval max days per week dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (studentų sąrašo maksimalus dienų intervalas per savaitę)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="28"/>
         <source>Students set</source>
         <translation>Studentų sąrašas</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="14"/>
@@ -6720,10 +5361,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="92"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="125"/>
@@ -6775,21 +5412,9 @@ Note: students set not available and break are not counted as gaps (early gaps).
 <context>
     <name>AddConstraintStudentsSetMaxBuildingChangesPerDayForm_template</name>
     <message>
-        <source>FET - Add new constraint students set max building changes per day dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (studentų sąrašų maksimalūs pastatų pakeitimai per dieną)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="29"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="14"/>
@@ -6857,21 +5482,9 @@ Note: students set not available and break are not counted as gaps (early gaps).
 <context>
     <name>AddConstraintStudentsSetMaxBuildingChangesPerWeekForm_template</name>
     <message>
-        <source>FET - Add new constraint students set max building changes per week dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (studentų sąrašų maksimalūs pastatų pakeitimai per savaitę)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="29"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="14"/>
@@ -7029,18 +5642,6 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
 <context>
     <name>AddConstraintStudentsSetMaxGapsPerWeekForm_template</name>
     <message>
-        <source>FET - Add new constraint students set max gaps per week dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (studentų sąrašų maksimalūs tarpai per savaitę)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetmaxgapsperweekform_template.ui" line="136"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
@@ -7049,19 +5650,6 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
         <location filename="../src/interface/addconstraintstudentssetmaxgapsperweekform_template.ui" line="114"/>
         <source>Max gaps per week</source>
         <translation>Maks tarpai per savaitę</translation>
-    </message>
-    <message>
-        <source>You have to use weight percentage 100%, because
-otherwise you will get poor timetables. Currently, the algorithm
-only accepts 100% weight percentage for this constraint (or no
-constraint).
-Note: students set not available and break are not counted as 
-gaps.</source>
-        <translation type="obsolete">Jūs turite panaudoti svorio procentinį dydį 100 %, todėl,
-kad kitaip jūs gausite blogus tvarkaraščius. Šiuo metu,
-algoritmas tiktai priima 100 % svorio procentinį dydį šiam apribojimui
-(ar jokiam apribojimui).
-Pastaba: studentų sąrašas nepasiekiamas, ir lūžis nėra įskaičiuoti kaip tarpai.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxgapsperweekform_template.ui" line="97"/>
@@ -7130,10 +5718,6 @@ Note: students set not available and break are not counted as gaps.</source>
 <context>
     <name>AddConstraintStudentsSetMaxHoursContinuouslyForm_template</name>
     <message>
-        <source>FET - Add new constraint students set max hours continuously dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (studentų sarašų maksimalus valandų skaičius be tarpų)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Add students set max hours continuously</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -7143,10 +5727,6 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="148"/>
         <source>Add constraint</source>
         <translation type="unfinished">Pridėti apribojimą</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="88"/>
@@ -7159,17 +5739,9 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation>Studentų sąrašas</translation>
     </message>
     <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="155"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="118"/>
@@ -7218,10 +5790,6 @@ Note: students set not available and break are not counted as gaps.</source>
 <context>
     <name>AddConstraintStudentsSetMaxHoursDailyForm_template</name>
     <message>
-        <source>FET - Add new constraint students set max hours daily dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (studentų sąrašų maksimalus valandų skaičius kasdien)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="14"/>
         <source>Add students set max hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -7231,10 +5799,6 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="148"/>
         <source>Add constraint</source>
         <translation type="unfinished">Pridėti apribojimą</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="88"/>
@@ -7247,17 +5811,9 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation>Studentų sąrašas</translation>
     </message>
     <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="155"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="118"/>
@@ -7306,21 +5862,9 @@ Note: students set not available and break are not counted as gaps.</source>
 <context>
     <name>AddConstraintStudentsSetMinGapsBetweenBuildingChangesForm_template</name>
     <message>
-        <source>FET - Add new constraint students set min gaps between building changes dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (studentų sąrašų minimalūs tarpai tarp pastatų pasikeitimų)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="29"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="14"/>
@@ -7437,14 +5981,6 @@ Note: students set not available and break are not counted as gaps.</source>
 <context>
     <name>AddConstraintStudentsSetMinHoursDailyForm_template</name>
     <message>
-        <source>FET - Add new constraint students set min hours daily dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (studentų sąrašų min valandų kasdien)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="81"/>
         <source>100</source>
         <translation>100</translation>
@@ -7453,10 +5989,6 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="39"/>
         <source>Students set</source>
         <translation>Studentų sąrašas</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="143"/>
@@ -7483,20 +6015,6 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="127"/>
         <source>Allow empty days</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Note: every day should have the minimum hours daily
-(so this constraint is not flexible to allow empty days for
-students)</source>
-        <translation type="obsolete">Pastaba: kiekviena diena turi turėti minimalias valandas kasdien
-(tokiu būdu šis apribojimas nėra lankstus, kad leistų tuščias dienas
-studentams)</translation>
-    </message>
-    <message>
-        <source>Weight percentage
-(necessary: 100%)</source>
-        <translation type="obsolete">Procentinis svoris
-(turi būti: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="136"/>
@@ -7545,16 +6063,6 @@ studentams)</translation>
         <translation>Jei jūs iš tikrųjų turite panaudoti svorį mažiau kaip 100 %, jūs galite panaudoti veiksmo laikus, kuriems teikiama pirmenybę, su tiktai apibrėžtu studentų komplektu, bet tai galėtų sukurti problemas, kadangi galimi tarpai bus įskaičiuoti, ir jūs galite gauti neįmanomą tvarkaraštį</translation>
     </message>
     <message>
-        <source>Not available</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Neprieinama</translation>
-    </message>
-    <message>
-        <source>Available</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Prieinama</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="249"/>
         <source>Constraint added:</source>
         <translation type="unfinished">Pridėtas apribojimas:</translation>
@@ -7562,14 +6070,6 @@ studentams)</translation>
 </context>
 <context>
     <name>AddConstraintStudentsSetNotAvailableTimesForm_template</name>
-    <message>
-        <source>FET - Add new constraint students set not available times dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (studentų sąrašo neprieinamų laikų apribojimas)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="148"/>
         <source>Close</source>
@@ -7608,10 +6108,6 @@ studentams)</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add constraint</source>
-        <translation type="obsolete">Pridėti apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="76"/>
         <source>Students set</source>
         <translation>Studentų sąrašas</translation>
@@ -7627,22 +6123,6 @@ studentams)</translation>
         <translation>Pagalba</translation>
     </message>
     <message>
-        <source>Note: this constraint does not induce gaps (or early not respected) 
-for students. If a students set has lessons before and after a
-not available period, there will be no gaps counted</source>
-        <translation type="obsolete">Pastaba: šis apribojimas nekelia tarpų (ar anksti negerbtas) studentams.
-Jei studentų komplektas, turi pamokas anksčiau ir po ne pasiekiamo periodo,
-nebus jokių įskaičiuotų tarpų</translation>
-    </message>
-    <message>
-        <source>Set all slots available</source>
-        <translation type="obsolete">Nustatyti visus galimus plyšius</translation>
-    </message>
-    <message>
-        <source>Set all slots not available</source>
-        <translation type="obsolete">Nustatyti visus negalimus plyšius</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="26"/>
         <source>Note: this constraint does not induce gaps (or early not respected) for students. If a students set has lessons before and after a not available period, there will be no gaps counted</source>
         <translation type="unfinished"></translation>
@@ -7650,16 +6130,6 @@ nebus jokių įskaičiuotų tarpų</translation>
 </context>
 <context>
     <name>AddConstraintSubactivitiesPreferredStartingTimesForm</name>
-    <message>
-        <source>Allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Leistina</translation>
-    </message>
-    <message>
-        <source>Not allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Neleistina</translation>
-    </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="262"/>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="330"/>
@@ -7712,31 +6182,15 @@ nebus jokių įskaičiuotų tarpų</translation>
 <context>
     <name>AddConstraintSubactivitiesPreferredStartingTimesForm_template</name>
     <message>
-        <source>FET - Adding a new constraint subactivities preferred starting times</source>
-        <translation type="obsolete">FET - Naujas apribojimas (subveiklų privilegijuoti pradžios laikai)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="14"/>
         <source>Add subactivities preferred starting times</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add constraint</source>
-        <translation type="obsolete">Pridėti apribojimą</translation>
-    </message>
-    <message>
-        <source>Set all slots allowed</source>
-        <translation type="obsolete">Nustatyti visus leistus plyšius</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="205"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Set all slots not allowed</source>
-        <translation type="obsolete">Nustatyti visus neleistinus plyšius</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="156"/>
@@ -7804,27 +6258,9 @@ nebus jokių įskaičiuotų tarpų</translation>
         <source>Choose the component number of the subactivities to be constrained.</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Please choose the teacher (blank=all), students set, subject, activity tag.</source>
-        <translation type="obsolete">Prašome pasirinkti dėstytoją (tuščias=visi), studentų sąrašą, temą, veiklos žymę.</translation>
-    </message>
-    <message>
-        <source>Please choose the component number of the subactivities to be constrained.</source>
-        <translation type="obsolete">Prašome pasirinkti subveiklos komponento skaičių, kuris bus apribotas.</translation>
-    </message>
 </context>
 <context>
     <name>AddConstraintSubactivitiesPreferredTimeSlotsForm</name>
-    <message>
-        <source>Allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Leistina</translation>
-    </message>
-    <message>
-        <source>Not allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Neleistina</translation>
-    </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="263"/>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="332"/>
@@ -7877,10 +6313,6 @@ nebus jokių įskaičiuotų tarpų</translation>
 <context>
     <name>AddConstraintSubactivitiesPreferredTimeSlotsForm_template</name>
     <message>
-        <source>FET - Adding a new constraint subactivities preferred time slots</source>
-        <translation type="obsolete">FET - Naujas apribojimas (subveiklų privilegijuoti laikų plyšiai)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="14"/>
         <source>Add subactivities preferred time slots</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -7895,18 +6327,6 @@ nebus jokių įskaičiuotų tarpų</translation>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="205"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Add constraint</source>
-        <translation type="obsolete">Pridėti apribojimą</translation>
-    </message>
-    <message>
-        <source>Set all slots not allowed</source>
-        <translation type="obsolete">Nustatyti visus neleistinus plyšius</translation>
-    </message>
-    <message>
-        <source>Set all slots allowed</source>
-        <translation type="obsolete">Nustatyti visus leistus plyšius</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="156"/>
@@ -7969,14 +6389,6 @@ nebus jokių įskaičiuotų tarpų</translation>
         <source>Choose the teacher (blank=all), students set, subject, activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Please choose the component number of the subactivities to be constrained.</source>
-        <translation type="obsolete">Prašome pasirinkti subveiklos komponento skaičių, kuris bus apribotas.</translation>
-    </message>
-    <message>
-        <source>Please choose the teacher (blank=all), students set, subject, activity tag.</source>
-        <translation type="obsolete">Prašome pasirinkti dėstytoją (tuščias=visi), studentų sąrašą, temą, veiklos žymę.</translation>
-    </message>
 </context>
 <context>
     <name>AddConstraintSubjectActivityTagPreferredRoomForm</name>
@@ -8023,10 +6435,6 @@ nebus jokių įskaičiuotų tarpų</translation>
 </context>
 <context>
     <name>AddConstraintSubjectActivityTagPreferredRoomForm_template</name>
-    <message>
-        <source>FET - Add new constraint subject activity tag preferred room</source>
-        <translation type="obsolete">FET - Naujas apribojimas (temos veiklos žymių privilegijuotas kambarys)</translation>
-    </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomform_template.ui" line="28"/>
         <source>Subject</source>
@@ -8121,10 +6529,6 @@ nebus jokių įskaičiuotų tarpų</translation>
 <context>
     <name>AddConstraintSubjectActivityTagPreferredRoomsForm_template</name>
     <message>
-        <source>FET - Add new constraint subject activity tag preferred rooms</source>
-        <translation type="obsolete">FET - Naujas apribojimas (temos veiklos žymės privilegijuoti kambariai)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="119"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
@@ -8156,26 +6560,10 @@ nebus jokių įskaičiuotų tarpų</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Visi kambariai (dvig. sprakt. prisidės)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="65"/>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="94"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation type="obsolete">Pridėti</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="obsolete">Šalinti</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Pasirinkti kambariai (dvig. sprakt. pašalins)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="33"/>
@@ -8238,10 +6626,6 @@ nebus jokių įskaičiuotų tarpų</translation>
 </context>
 <context>
     <name>AddConstraintSubjectPreferredRoomForm_template</name>
-    <message>
-        <source>FET - Add new constraint subject preferred room</source>
-        <translation type="obsolete">FET - Naujas apribojimas (temos privilegijuotas kambarys)</translation>
-    </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="99"/>
         <source>100</source>
@@ -8325,10 +6709,6 @@ nebus jokių įskaičiuotų tarpų</translation>
 <context>
     <name>AddConstraintSubjectPreferredRoomsForm_template</name>
     <message>
-        <source>FET - Add new constraint subject preferred rooms</source>
-        <translation type="obsolete">FET - Naujas apribojimas (temos privilegijuoti kambariai)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="106"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
@@ -8349,26 +6729,10 @@ nebus jokių įskaičiuotų tarpų</translation>
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>Add</source>
-        <translation type="obsolete">Pridėti</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="obsolete">Šalinti</translation>
-    </message>
-    <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Visi kambariai (dvig. sprakt. prisidės)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="52"/>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="81"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Pasirinkti kambariai (dvig. sprakt. pašalins)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="20"/>
@@ -8442,10 +6806,6 @@ nebus jokių įskaičiuotų tarpų</translation>
 <context>
     <name>AddConstraintTeacherActivityTagMaxHoursContinuouslyForm_template</name>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Add teacher activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -8465,10 +6825,6 @@ nebus jokių įskaičiuotų tarpų</translation>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="180"/>
         <source>Add constraint</source>
         <translation type="unfinished">Pridėti apribojimą</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -8649,10 +7005,6 @@ nebus jokių įskaičiuotų tarpų</translation>
         <source>Teacher</source>
         <translation>Dėstytojas</translation>
     </message>
-    <message>
-        <source>FET - Add new constraint teacher home room</source>
-        <translation type="obsolete">FET - Pridėti naują dėstytojo namų kambario apribojimą</translation>
-    </message>
 </context>
 <context>
     <name>AddConstraintTeacherHomeRoomsForm</name>
@@ -8694,10 +7046,6 @@ nebus jokių įskaičiuotų tarpų</translation>
 <context>
     <name>AddConstraintTeacherHomeRoomsForm_template</name>
     <message>
-        <source>FET - Add new constraint teacher home rooms</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojo namų kambarys)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteacherhomeroomsform_template.ui" line="106"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
@@ -8718,26 +7066,10 @@ nebus jokių įskaičiuotų tarpų</translation>
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Visi kambariai (dvig. sprakt. prisidės)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteacherhomeroomsform_template.ui" line="52"/>
         <location filename="../src/interface/addconstraintteacherhomeroomsform_template.ui" line="81"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation type="obsolete">Pridėti</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="obsolete">Šalinti</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Pasirinkti kambariai (dvig. sprakt. pašalins)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherhomeroomsform_template.ui" line="20"/>
@@ -8773,34 +7105,6 @@ nebus jokių įskaičiuotų tarpų</translation>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="97"/>
         <source>End of day</source>
         <translation>Dienos pabaiga</translation>
-    </message>
-    <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Weight (percentage)=%1</source>
-        <translation type="obsolete">Svoris (procentais)=%1</translation>
-    </message>
-    <message>
-        <source>Teacher interval max days per week</source>
-        <translation type="obsolete">Dėstytojo maks dienų intervalas per savaitę</translation>
-    </message>
-    <message>
-        <source>Teacher=%1</source>
-        <translation type="obsolete">Dėstytojas=%1</translation>
-    </message>
-    <message>
-        <source>Interval start hour=%1</source>
-        <translation type="obsolete">Intervalo pradžios valanda=%1</translation>
-    </message>
-    <message>
-        <source>Interval end hour=%1</source>
-        <translation type="obsolete">Intervalo pabaigos valanda=%1</translation>
-    </message>
-    <message>
-        <source>Max days per week=%1</source>
-        <translation type="obsolete">Maks dienų per savaitę=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="140"/>
@@ -8858,17 +7162,9 @@ nebus jokių įskaičiuotų tarpų</translation>
 <context>
     <name>AddConstraintTeacherIntervalMaxDaysPerWeekForm_template</name>
     <message>
-        <source>FET - Add new constraint teacher interval max days per week dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojo maksimalus dienų intervalas per savaitę)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="28"/>
         <source>Teacher</source>
         <translation>Dėstytojas</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="14"/>
@@ -8895,10 +7191,6 @@ nebus jokių įskaičiuotų tarpų</translation>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="92"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="125"/>
@@ -8950,21 +7242,9 @@ nebus jokių įskaičiuotų tarpų</translation>
 <context>
     <name>AddConstraintTeacherMaxBuildingChangesPerDayForm_template</name>
     <message>
-        <source>FET - Add new constraint teacher max building changes per day dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojo maksimalūs pastatų pakeitimai per dieną)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperdayform_template.ui" line="29"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperdayform_template.ui" line="14"/>
@@ -9032,21 +7312,9 @@ nebus jokių įskaičiuotų tarpų</translation>
 <context>
     <name>AddConstraintTeacherMaxBuildingChangesPerWeekForm_template</name>
     <message>
-        <source>FET - Add new constraint teacher max building changes per week dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojo maksimalūs pastatų pakeitimai per savaitę)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperweekform_template.ui" line="29"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperweekform_template.ui" line="14"/>
@@ -9120,10 +7388,6 @@ nebus jokių įskaičiuotų tarpų</translation>
 <context>
     <name>AddConstraintTeacherMaxDaysPerWeekForm_template</name>
     <message>
-        <source>FET - Add new constraint teacher max days per week dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojo maksimalus dienų skaičiaus per savaitę)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="14"/>
         <source>Add teacher max days per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -9135,17 +7399,9 @@ nebus jokių įskaičiuotų tarpų</translation>
         <translation type="unfinished">Pridėti apribojimą</translation>
     </message>
     <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="155"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="88"/>
@@ -9156,10 +7412,6 @@ nebus jokių įskaičiuotų tarpų</translation>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="28"/>
         <source>Teacher</source>
         <translation>Dėstytojas</translation>
-    </message>
-    <message>
-        <source>Weight percentage (necessary: 100%)</source>
-        <translation type="obsolete">Procentinis svoris (turi būti: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="118"/>
@@ -9214,40 +7466,9 @@ nebus jokių įskaičiuotų tarpų</translation>
 <context>
     <name>AddConstraintTeacherMaxGapsPerDayForm_template</name>
     <message>
-        <source>FET - Add new constraint teacher max gaps per day dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojo maks tarpai per dieną)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="136"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>You must use weight percentage 100%, because
-otherwise you will get poor timetables. Try to fix firstly
-a rather large value for max gaps per day and
-lower it as you find new timetables. The default 1 given
-here might be too low for your school, in which case you 
-need to use higher values. Note: teacher not 
-available and break are not counted as gaps.</source>
-        <translation type="obsolete">Jūs turite panaudoti svorio procentinį dydį 100 %, todėl,
-kad kitaip jūs gausite blogus tvarkaraščius. Pabandykite taisyti
-pirma gana didelę vertę maks tarpams per dieną ir nuleisti ją,
-kadangi jūs randate naujus tvarkaraščius. Pagal nutylėjimą 1 duotas
-čia galėtų būti per žemas jūsų mokyklai, kada jūs turite panaudoti
-aukštesnes vertes. Pastaba: mokytojas, ne pasiekiamas ir lūžis, nėra įskaičiuotas kaip tarpai.</translation>
-    </message>
-    <message>
-        <source>Weight (necessary: 100%)</source>
-        <translation type="obsolete">Svoris (reikalingas: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="120"/>
@@ -9327,40 +7548,9 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>AddConstraintTeacherMaxGapsPerWeekForm_template</name>
     <message>
-        <source>FET - Add new constraint teacher max gaps per week dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojo maks tarpai per savaitę)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="136"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>You must use weight percentage 100%, because
-otherwise you will get poor timetables. Try to fix firstly
-a rather large value for max gaps per week and
-lower it as you find new timetables. The default 3 given
-here might be too low for your school, in which case you 
-need to use higher values. Note: teacher not 
-available and break are not counted as gaps.</source>
-        <translation type="obsolete">Jūs turite panaudoti svorio procentinį dydį 100 %, todėl,
-kad kitaip jūs gausite blogus tvarkaraščius. Pabandykite taisyti
-pirma gana didelę vertę maks tarpams per dieną ir nuleisti ją,
-kadangi jūs randate naujus tvarkaraščius. Pagal nutylėjimą 3 duotas
-čia galėtų būti per žemas jūsų mokyklai, kada jūs turite panaudoti
-aukštesnes vertes. Pastaba: mokytojas, ne pasiekiamas ir lūžis, nėra įskaičiuotas kaip tarpai.</translation>
-    </message>
-    <message>
-        <source>Weight (necessary: 100%)</source>
-        <translation type="obsolete">Svoris (reikalingas: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="120"/>
@@ -9434,10 +7624,6 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>AddConstraintTeacherMaxHoursContinuouslyForm_template</name>
     <message>
-        <source>FET - Add new constraint teacher max hours continuously dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojo maksimalus valandų skaičius be tarpų)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Add teacher max hours continuously</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -9454,17 +7640,9 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="88"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="118"/>
@@ -9475,10 +7653,6 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Teacher</source>
         <translation>Dėstytojas</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="77"/>
@@ -9522,10 +7696,6 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>AddConstraintTeacherMaxHoursDailyForm_template</name>
     <message>
-        <source>FET - Add new constraint teacher max hours daily dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojo maksimalus valandų skaičius kasdien)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="14"/>
         <source>Add teacher max hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -9542,17 +7712,9 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="88"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="118"/>
@@ -9563,10 +7725,6 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="28"/>
         <source>Teacher</source>
         <translation>Dėstytojas</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="77"/>
@@ -9688,21 +7846,9 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>AddConstraintTeacherMinGapsBetweenBuildingChangesForm_template</name>
     <message>
-        <source>FET - Add new constraint teacher min gaps between building changes dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojo minimalūs tarpai tarp pastatų pasikeitimų)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="29"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="14"/>
@@ -9788,26 +7934,14 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>AddConstraintTeacherMinHoursDailyForm_template</name>
     <message>
-        <source>FET - Add new constraint teacher min hours daily dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojo min valandų kasdien)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="93"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Procentinis svoris (turi būti: 100%)</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="103"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="14"/>
@@ -9844,16 +7978,6 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="61"/>
         <source>Teacher</source>
         <translation>Dėstytojas</translation>
-    </message>
-    <message>
-        <source>Note: FET is smart enough to use this constraint only on working days
-for this teacher (so it is a flexible constraint). Please be careful with 
-this constraint, not to get impossible timetables. It is recommended
-to start with 2 min hours and highten them as you find new timetables</source>
-        <translation type="obsolete">Pastaba: FET pakankamai protingas, kad šį apribojimą panaudotų tik
-dėstytojo darbo dienomis (taigi šis apribojimas lankstus). Būkite atidūs
-su šiuo apribojimu, kad negautumėte neimanomo tvarkaraščio.
-Rekomenduojama pradėti nuo 2 ir daugiau valandų</translation>
     </message>
 </context>
 <context>
@@ -9897,16 +8021,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų</translation>
         <translation>Jei jūs iš tikrųjų turite panaudoti svorį mažiau kaip 100%, jūs galite panaudoti veiksmo laikus, kuriems teikiama pirmenybę, su tiktai apibrėžtu studentų komplektu, bet tai galėtų sukurti problemas, kadangi galimi tarpai bus įskaičiuoti, ir jūs galite gauti neįmanomą tvarkaraštį.</translation>
     </message>
     <message>
-        <source>Not available</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Neprieinama</translation>
-    </message>
-    <message>
-        <source>Available</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Prieinama</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="242"/>
         <source>Constraint added:</source>
         <translation type="unfinished">Pridėtas apribojimas:</translation>
@@ -9914,10 +8028,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų</translation>
 </context>
 <context>
     <name>AddConstraintTeacherNotAvailableTimesForm_template</name>
-    <message>
-        <source>FET - Add new constraint teacher not available times dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojo neprieinami laikai)</translation>
-    </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="78"/>
         <source>Teacher</source>
@@ -9950,10 +8060,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų</translation>
         <translation type="unfinished">Pridėti</translation>
     </message>
     <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="152"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
@@ -9964,29 +8070,9 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add constraint</source>
-        <translation type="obsolete">Pridėti apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="159"/>
         <source>Help</source>
         <translation>Pagalba</translation>
-    </message>
-    <message>
-        <source>Note: this constraint does not induce gaps for teachers.
-If a teacher has lessons before and after a not available
-period, there will be no gaps counted</source>
-        <translation type="obsolete">Pastaba: šis apribojimas nekelia tarpų dėstytojams.
-Jei dėstytojas turi paskaitas anksčiau ir vėliau 
-nepasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
-    </message>
-    <message>
-        <source>Set all slots available</source>
-        <translation type="obsolete">Nustatyti visus galimus plyšius</translation>
-    </message>
-    <message>
-        <source>Set all slots not available</source>
-        <translation type="obsolete">Nustatyti visus negalimus plyšius</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="14"/>
@@ -10038,10 +8124,6 @@ nepasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 <context>
     <name>AddConstraintTeachersActivityTagMaxHoursContinuouslyForm_template</name>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Add teachers activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -10061,10 +8143,6 @@ nepasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="151"/>
         <source>Add constraint</source>
         <translation type="unfinished">Pridėti apribojimą</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -10168,30 +8246,6 @@ nepasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
         <translation>Dienos pabaiga</translation>
     </message>
     <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Weight (percentage)=%1</source>
-        <translation type="obsolete">Svoris (procentais)=%1</translation>
-    </message>
-    <message>
-        <source>Teachers interval max days per week</source>
-        <translation type="obsolete">Dėstytojo maks dienų intervalas per savaitę</translation>
-    </message>
-    <message>
-        <source>Interval start hour=%1</source>
-        <translation type="obsolete">Intervalo pradžios valanda=%1</translation>
-    </message>
-    <message>
-        <source>Interval end hour=%1</source>
-        <translation type="obsolete">Intervalo pabaigos valanda=%1</translation>
-    </message>
-    <message>
-        <source>Max days per week=%1</source>
-        <translation type="obsolete">Maks dienų per savaitę=%1</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="124"/>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="129"/>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="143"/>
@@ -10241,14 +8295,6 @@ nepasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 <context>
     <name>AddConstraintTeachersIntervalMaxDaysPerWeekForm_template</name>
     <message>
-        <source>FET - Add new constraint teachers interval max days per week dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojų maksimalus dienų intervalas per savaitę)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Add teachers interval max days per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -10273,10 +8319,6 @@ nepasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="56"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="89"/>
@@ -10322,21 +8364,9 @@ nepasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 <context>
     <name>AddConstraintTeachersMaxBuildingChangesPerDayForm_template</name>
     <message>
-        <source>FET - Add new constraint teachers max building changes per day dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojų maksimalūs pastatų pakeitimai per dieną)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperdayform_template.ui" line="29"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperdayform_template.ui" line="14"/>
@@ -10393,21 +8423,9 @@ nepasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 <context>
     <name>AddConstraintTeachersMaxBuildingChangesPerWeekForm_template</name>
     <message>
-        <source>FET - Add new constraint teachers max building changes per week dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojų maksimalūs pastatų pakeitimai per savaitę)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperweekform_template.ui" line="29"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperweekform_template.ui" line="14"/>
@@ -10475,10 +8493,6 @@ nepasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
         <translation type="unfinished">Uždaryti</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachersmaxdaysperweekform_template.ui" line="38"/>
         <source>100</source>
         <translation type="unfinished">100</translation>
@@ -10539,48 +8553,14 @@ nepasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 <context>
     <name>AddConstraintTeachersMaxGapsPerDayForm_template</name>
     <message>
-        <source>FET - Add new constraint teachers max gaps per day dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojų maks tarpai per dieną)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperdayform_template.ui" line="29"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Weight (necessary: 100%)</source>
-        <translation type="obsolete">Svoris (reikalingas: 100%)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperdayform_template.ui" line="56"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>It is recommended to use only one constraint
-of this type. You must use weight percentage 100%,
-because otherwise you will get poor timetables. Try to 
-fix firstly a rather large value for max gaps per day and
-lower it as you find new timetables. The default given 
-here, 1, might be too low for your school and you might
-need to use higher values. Note: teacher not 
-available and break are not counted as gaps.</source>
-        <translation type="obsolete">Rekomenduojama naudoti tik vieną šio tipo
-apribojimą Jūs turite panaudoti svorio procentinį dydį 100%,
-todėl, kad kitaip jūs gausite blogus tvarkaraščius. Pabandykite taisyti
-pirma gana didelę vertę maks tarpams per dieną ir nuleisti ją,
-kadangi jūs randate naujus tvarkaraščius. Pagal nutylėjimą 1 duotas
-čia galėtų būti per žemas jūsų mokyklai, kada jūs turite panaudoti
-aukštesnes vertes. Pastaba: mokytojas, ne pasiekiamas ir lūžis,
-nėra įskaičiuotas kaip tarpai.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperdayform_template.ui" line="102"/>
@@ -10644,48 +8624,14 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>AddConstraintTeachersMaxGapsPerWeekForm_template</name>
     <message>
-        <source>FET - Add new constraint teachers max gaps per week dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojų maks tarpai per savaitę)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="29"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Weight (necessary: 100%)</source>
-        <translation type="obsolete">Svoris (reikalingas: 100%)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="56"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>It is recommended to use only one constraint
-of this type. You must use weight percentage 100%,
-because otherwise you will get poor timetables. Try to 
-fix firstly a rather large value for max gaps per week and
-lower it as you find new timetables. The default given 
-here, 3, might be too low for your school and you might
-need to use higher values. Note: teacher not 
-available and break are not counted as gaps.</source>
-        <translation type="obsolete">Rekomenduojama naudoti tik vieną šio tipo
-apribojimą Jūs turite panaudoti svorio procentinį dydį 100%,
-todėl, kad kitaip jūs gausite blogus tvarkaraščius. Pabandykite taisyti
-pirma gana didelę vertę maks tarpams per dieną ir nuleisti ją,
-kadangi jūs randate naujus tvarkaraščius. Pagal nutylėjimą 3 duotas
-čia galėtų būti per žemas jūsų mokyklai, kada jūs turite panaudoti
-aukštesnes vertes. Pastaba: mokytojas, ne pasiekiamas ir lūžis,
-nėra įskaičiuotas kaip tarpai.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="102"/>
@@ -10743,10 +8689,6 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>AddConstraintTeachersMaxHoursContinuouslyForm_template</name>
     <message>
-        <source>FET - Add new constraint teachers max hours continuously dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojų maksimalus valandų skaičius be tarpų)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Add teachers max hours continuously</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -10758,26 +8700,14 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation type="unfinished">Pridėti apribojimą</translation>
     </message>
     <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="80"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="39"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="56"/>
@@ -10820,10 +8750,6 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>AddConstraintTeachersMaxHoursDailyForm_template</name>
     <message>
-        <source>FET - Add new constraint teachers max hours daily dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojų maksimalus valandų skaičius kasdien)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="14"/>
         <source>Add teachers max hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -10835,26 +8761,14 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation type="unfinished">Pridėti apribojimą</translation>
     </message>
     <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="80"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="39"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="56"/>
@@ -10962,21 +8876,9 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>AddConstraintTeachersMinGapsBetweenBuildingChangesForm_template</name>
     <message>
-        <source>FET - Add new constraint teachers min gaps between building changes dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojų minimalūs tarpai tarp pastatų pasikeitimų)</translation>
-    </message>
-    <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="29"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="14"/>
@@ -11051,10 +8953,6 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>AddConstraintTeachersMinHoursDailyForm_template</name>
     <message>
-        <source>FET - Add new constraint teachers min hours daily dialog</source>
-        <translation type="obsolete">FET - Naujas apribojimas (dėstytojų min valandų kasdien)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="113"/>
         <source>Add constraint</source>
         <translation type="unfinished">Pridėti apribojimą</translation>
@@ -11091,28 +8989,9 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add current constraint</source>
-        <translation type="obsolete">Pridėti einamąjį apribojimą</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="71"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Note: FET is smart enough to use this constraint only on working days
-for this teacher (so it is a flexible constraint). Please be careful with 
-this constraint, not to get impossible timetables. It is recommended
-to start with 2 min hours. Maybe you could try higher values after that,
-but they might be too large and you might get a impossible timetable.</source>
-        <translation type="obsolete">Pastaba: FET pakankamai protingas, kad šį apribojimą panaudotų tik
-dėstytojo darbo dienomis (taigi šis apribojimas lankstus). Būkite atidūs
-su šiuo apribojimu, kad negautumėte neimanomo tvarkaraščio.
-Rekomenduojama pradėti nuo 2 ir daugiau valandų.</translation>
     </message>
 </context>
 <context>
@@ -11286,10 +9165,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų.</translation>
         <translation type="unfinished">100</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="14"/>
         <source>Add two activities consecutive</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -11393,10 +9268,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų.</translation>
         <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="57"/>
         <source>100</source>
         <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="14"/>
@@ -11504,10 +9375,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų.</translation>
         <translation type="unfinished">100</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="14"/>
         <source>Add two activities ordered</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
@@ -11603,10 +9470,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų.</translation>
         <source>FET - help on adding room(s)</source>
         <translation type="unfinished">FET - pagalba pridedant kambarius</translation>
     </message>
-    <message>
-        <source>OK</source>
-        <translation type="obsolete">Gerai</translation>
-    </message>
 </context>
 <context>
     <name>AddRoomForm_template</name>
@@ -11698,19 +9561,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>This group already exists, but in another year
-If you insert current group to current year, that
-means that some years share the same group (overlap)
-If you want to make a new group, independent,
-please abort now and give it another name
-</source>
-        <translation type="obsolete">Ši grupė jau egzistuoja, bet kituose metuose
-Jei jūs įterpsite šią grupę į šiuos metus, tai
-reikš, kad keli metai dalinsis ta pačia grupe (persidengimas)
-Jei jūs norite pridėti naują nepriklausomą grupę,
-nutraukite veiksmą dabar ir pasirinkite kitą pavadinimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addstudentsgroupform.cpp" line="87"/>
         <source>Add</source>
         <translation type="unfinished">Pridėti</translation>
@@ -11728,10 +9578,6 @@ nutraukite veiksmą dabar ir pasirinkite kitą pavadinimą</translation>
 </context>
 <context>
     <name>AddStudentsGroupForm_template</name>
-    <message>
-        <source>Add Students Group Dialog</source>
-        <translation type="obsolete">Studentų grupių pridėjimo dialogas</translation>
-    </message>
     <message>
         <location filename="../src/interface/addstudentsgroupform_template.ui" line="94"/>
         <source>Close</source>
@@ -11815,19 +9661,6 @@ nutraukite veiksmą dabar ir pasirinkite kitą pavadinimą</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>This subgroup already exists, but in another group
-If you insert current subgroup to current group, that
-means that some groups share the same subgroup (overlap)
-If you want to make a new subgroup, independent,
-please abort now and give it another name
-</source>
-        <translation type="obsolete">Šis pogrupis jau egzistuoja, bet kitoje grupėje
-Jei jūs įterpsite šį pogrupį į šią grupę, tai reikš,
-kad kelios grupės dalinsis tuo pačiu pogrupiu (persidengimas)
-Jei jūs norite pridėti naują nepriklausomą pogrupį,
-nutraukite veiksmą dabar ir pasirinkite kitą pavadinimą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addstudentssubgroupform.cpp" line="88"/>
         <source>Add</source>
         <translation type="unfinished">Pridėti</translation>
@@ -11845,10 +9678,6 @@ nutraukite veiksmą dabar ir pasirinkite kitą pavadinimą</translation>
 </context>
 <context>
     <name>AddStudentsSubgroupForm_template</name>
-    <message>
-        <source>Add Students Subgroup Dialog</source>
-        <translation type="obsolete">Studentų pogrupių pridėjimo dialogas</translation>
-    </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform_template.ui" line="22"/>
         <source>Year</source>
@@ -11939,10 +9768,6 @@ Svarbi pastaba: jei jūs planuojate naudori &quot;dalinimo&quot; funkciją, pra�
 </context>
 <context>
     <name>AddStudentsYearForm_template</name>
-    <message>
-        <source>Add Students Year Dialog</source>
-        <translation type="obsolete">Studentų metų pridėjimo dialogas</translation>
-    </message>
     <message>
         <location filename="../src/interface/addstudentsyearform_template.ui" line="14"/>
         <source>Add students year</source>
@@ -12301,10 +10126,6 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <translation type="unfinished">FET įspėjimas</translation>
     </message>
     <message>
-        <source>Invalid constraint</source>
-        <translation type="obsolete">Neteisingas apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="378"/>
         <source>Remove constraint?</source>
         <translation type="unfinished"></translation>
@@ -12328,21 +10149,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>AllSpaceConstraintsForm_template</name>
     <message>
-        <source>FET - All space constraints</source>
-        <translation type="obsolete">FET - Visi vietos apribojimai</translation>
-    </message>
-    <message>
-        <source>Constraints (dbl. click modifies)</source>
-        <translation type="obsolete">Apribojimai (norint taisyti klektelėkite 2 kartus)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/allspaceconstraintsform_template.ui" line="30"/>
         <source>Current constraint</source>
         <translation>Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>New Item</source>
-        <translation type="obsolete">Naujas elementas</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform_template.ui" line="71"/>
@@ -12428,10 +10237,6 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <translation type="unfinished">FET įspėjimas</translation>
     </message>
     <message>
-        <source>Invalid constraint</source>
-        <translation type="obsolete">Neteisingas apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="628"/>
         <source>Remove constraint?</source>
         <translation type="unfinished"></translation>
@@ -12454,18 +10259,6 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 </context>
 <context>
     <name>AllTimeConstraintsForm_template</name>
-    <message>
-        <source>FET - All time constraints</source>
-        <translation type="obsolete">FET - Visi laiko apribojimai</translation>
-    </message>
-    <message>
-        <source>New Item</source>
-        <translation type="obsolete">Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Constraints (dbl. click modifies)</source>
-        <translation type="obsolete">Apribojimai (norint taisyti klektelėkite 2 kartus)</translation>
-    </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform_template.ui" line="36"/>
         <source>Current constraint</source>
@@ -12542,12 +10335,6 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Are you sure you want to delete this building?
-</source>
-        <translation type="obsolete">Ar tikrai norite pašalinti šį pastatą?
-</translation>
-    </message>
-    <message>
         <location filename="../src/interface/buildingsform.cpp" line="111"/>
         <source>Yes</source>
         <translation type="unfinished">Taip</translation>
@@ -12557,10 +10344,6 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <source>No</source>
         <translation type="unfinished">Ne</translation>
     </message>
-    <message>
-        <source>Invalid building</source>
-        <translation type="obsolete">Neteisingas pastatas</translation>
-    </message>
 </context>
 <context>
     <name>BuildingsForm_template</name>
@@ -12569,14 +10352,6 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <source>Buildings</source>
         <extracomment>The dialog to list all buildings</extracomment>
         <translation>Pastatai</translation>
-    </message>
-    <message>
-        <source>Add building</source>
-        <translation type="obsolete">Pridėti pastatą</translation>
-    </message>
-    <message>
-        <source>Remove current</source>
-        <translation type="obsolete">Šalinti pasirinktą</translation>
     </message>
     <message>
         <location filename="../src/interface/buildingsform_template.ui" line="20"/>
@@ -12602,10 +10377,6 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/buildingsform_template.ui" line="48"/>
         <source>Modify</source>
         <translation type="unfinished">Koreguoti</translation>
-    </message>
-    <message>
-        <source>Modify current</source>
-        <translation type="obsolete">Koreguoti pasirinktą</translation>
     </message>
     <message>
         <location filename="../src/interface/buildingsform_template.ui" line="56"/>
@@ -12743,104 +10514,6 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
 </context>
 <context>
-    <name>ChangeMinNDaysSelectivelyForm</name>
-    <message>
-        <source>Any</source>
-        <translation type="obsolete">Bet kuris</translation>
-    </message>
-    <message>
-        <source>Yes</source>
-        <translation type="obsolete">Taip</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation type="obsolete">Ne</translation>
-    </message>
-    <message>
-        <source>No change</source>
-        <translation type="obsolete">Nėra jokių pakeitimų</translation>
-    </message>
-    <message>
-        <source>FET warning</source>
-        <translation type="obsolete">FET įspėjimas</translation>
-    </message>
-    <message>
-        <source>Old weight must be -1 or both &gt;=0 and &lt;=100</source>
-        <translation type="obsolete">Senas svoris turi būti -1 arba abu &gt;=0 ir &lt;=100</translation>
-    </message>
-    <message>
-        <source>New weight must be -1 or both &gt;=0 and &lt;=100</source>
-        <translation type="obsolete">Naujas svoris turi būti -1 arba abu &gt;=0 ir &lt;=100</translation>
-    </message>
-    <message>
-        <source>Old min n days must be -1 or both &gt;=1 and &lt;=n_days_per_week</source>
-        <translation type="obsolete">Senos min N dienos turi buti -1 arba abi &gt;=1 ir &lt;=n_days_per_week</translation>
-    </message>
-    <message>
-        <source>New min n days must be -1 or both &gt;=1 and &lt;=n_days_per_week</source>
-        <translation type="obsolete">Naujos min N dienos turi buti -1 arba abi &gt;=1 ir &lt;=n_days_per_week</translation>
-    </message>
-    <message>
-        <source>Old n_acts must be -1 or &gt;=1</source>
-        <translation type="obsolete">Senos n_acts turi būti -1 arba &gt;=1</translation>
-    </message>
-</context>
-<context>
-    <name>ChangeMinNDaysSelectivelyForm_template</name>
-    <message>
-        <source>Change more constraints min n days</source>
-        <translation type="obsolete">Pakeisti daugiau min N dienų apribojimų</translation>
-    </message>
-    <message>
-        <source>Please input old values (filters) and the new values. All old values (weight, min days and consecutive if same day) of corresponding constraints will be changed to the new ones. New weight is recommended at least 95.0 (or -1)</source>
-        <translation type="obsolete">Prašome iterpti senas reikšmes (filtras) ir naujas reišmes. Senos reikšmės (svoris, min dienos ir nuoseklumas, jei ta pati diena) atitinkamų apribojimų bus pakeistos į naujas. Rekomenduojamas naujas svoris mažiausiai 95.0 (arba -1)</translation>
-    </message>
-    <message>
-        <source>Old values (filter)</source>
-        <translation type="obsolete">Senos reikšmės (filtras)</translation>
-    </message>
-    <message>
-        <source>Weight (-1 = any)</source>
-        <translation type="obsolete">Svoris (-1 = bet koks)</translation>
-    </message>
-    <message>
-        <source>-1</source>
-        <translation type="obsolete">-1</translation>
-    </message>
-    <message>
-        <source>Min n days (-1 = any)</source>
-        <translation type="obsolete">Min n dienos (-1 = bet kuri)</translation>
-    </message>
-    <message>
-        <source>Consecutive if same day</source>
-        <translation type="obsolete">Nuosekliai, jei ta pati diena</translation>
-    </message>
-    <message>
-        <source>N activities (-1 = any)</source>
-        <translation type="obsolete">N veiklos (-1 = bet kuri)</translation>
-    </message>
-    <message>
-        <source>New values</source>
-        <translation type="obsolete">Naujos reikšmės</translation>
-    </message>
-    <message>
-        <source>Weight (0.0 to 100.0, -1 to leave unchanged)</source>
-        <translation type="obsolete">Svoris (0.0 - 100.0, -1 palikti nepakeistą)</translation>
-    </message>
-    <message>
-        <source>Min n days (-1 to leave unchanged)</source>
-        <translation type="obsolete">Min n dienos (-1 palikti nepakeistą)</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation type="obsolete">Gerai</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Atšaukti</translation>
-    </message>
-</context>
-<context>
     <name>ChooseFieldsDialog</name>
     <message>
         <location filename="../src/engine/import.cpp" line="137"/>
@@ -12876,10 +10549,6 @@ Prašome sustabdyti simuliacija prieštai</translation>
 <context>
     <name>CommentsForm_template</name>
     <message>
-        <source>FET - timetable data - comments</source>
-        <translation type="obsolete">FET - tvarkaraščio duomenys - komentarai</translation>
-    </message>
-    <message>
         <location filename="../src/interface/commentsform_template.ui" line="14"/>
         <source>Timetable data - comments</source>
         <extracomment>The title of the dialog to choose the comments</extracomment>
@@ -12894,150 +10563,6 @@ Prašome sustabdyti simuliacija prieštai</translation>
         <location filename="../src/interface/commentsform_template.ui" line="27"/>
         <source>Ok</source>
         <translation>Gerai</translation>
-    </message>
-</context>
-<context>
-    <name>Constraint2ActivitiesConsecutiveForm_template</name>
-    <message>
-        <source>FET - Time constraints 2 activies consecutive</source>
-        <translation type="obsolete">FET - Laiko apribojimai (2 veiklos nuoseklios)</translation>
-    </message>
-    <message>
-        <source>New Item</source>
-        <translation type="obsolete">Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Constraints</source>
-        <translation type="obsolete">Apribojimai</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Uždaryti</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation type="obsolete">Pridėti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="obsolete">Šalinti</translation>
-    </message>
-    <message>
-        <source>Modify</source>
-        <translation type="obsolete">Koreguoti</translation>
-    </message>
-    <message>
-        <source>This constraint forces 2 activities A1 and A2: A2 to be immediately
-after A1, same day, possibly separated by breaks</source>
-        <translation type="obsolete">Šis apribojimas priverčia 2 veiklas V1 ir V2: V2 buti iš karto po V1,
-tą pačią dieną, gali būti atskirti pertraukomis</translation>
-    </message>
-</context>
-<context>
-    <name>Constraint2ActivitiesGroupedForm_template</name>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Uždaryti</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation type="obsolete">Pridėti</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="obsolete">Šalinti</translation>
-    </message>
-    <message>
-        <source>Modify</source>
-        <translation type="obsolete">Koreguoti</translation>
-    </message>
-    <message>
-        <source>New Item</source>
-        <translation type="obsolete">Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Constraints</source>
-        <translation type="obsolete">Apribojimai</translation>
-    </message>
-</context>
-<context>
-    <name>Constraint2ActivitiesOrderedForm_template</name>
-    <message>
-        <source>FET - Time constraints 2 activies ordered</source>
-        <translation type="obsolete">FET - Laiko apribojimai (2 veiklos surūšiuotos)</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Uždaryti</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation type="obsolete">Pridėti</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="obsolete">Šalinti</translation>
-    </message>
-    <message>
-        <source>Modify</source>
-        <translation type="obsolete">Koreguoti</translation>
-    </message>
-    <message>
-        <source>New Item</source>
-        <translation type="obsolete">Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Constraints</source>
-        <translation type="obsolete">Apribojimai</translation>
-    </message>
-    <message>
-        <source>This constraint forces 2 activities A1 and A2: A2 to be after
-A1, separated by any time interval</source>
-        <translation type="obsolete">Šis apribojimas priverčia 2 veiklas V1 ir V2: V2 buti po V1,
-atskirtą bet kokio laiko intervalo</translation>
-    </message>
-</context>
-<context>
-    <name>Constraint3ActivitiesGroupedForm_template</name>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Uždaryti</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation type="obsolete">Pridėti</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="obsolete">Šalinti</translation>
-    </message>
-    <message>
-        <source>Modify</source>
-        <translation type="obsolete">Koreguoti</translation>
-    </message>
-    <message>
-        <source>New Item</source>
-        <translation type="obsolete">Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Constraints</source>
-        <translation type="obsolete">Apribojimai</translation>
     </message>
 </context>
 <context>
@@ -13210,10 +10735,6 @@ atskirtą bet kokio laiko intervalo</translation>
 <context>
     <name>ConstraintActivitiesEndStudentsDayForm_template</name>
     <message>
-        <source>FET - ConstraintActivitiesEndStudentsDay</source>
-        <translation type="obsolete">FET - Veiklų, kurios pabaigia studentų dieną, apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="14"/>
         <source>Constraints activities end students day</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -13367,10 +10888,6 @@ atskirtą bet kokio laiko intervalo</translation>
 </context>
 <context>
     <name>ConstraintActivitiesNotOverlappingForm_template</name>
-    <message>
-        <source>FET - Time constraints activities not overlapping</source>
-        <translation type="obsolete">FET - Laiko apribojimai, kur veiklos nepersidengia</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="47"/>
         <source>New Item</source>
@@ -13633,10 +11150,6 @@ atskirtą bet kokio laiko intervalo</translation>
 <context>
     <name>ConstraintActivitiesPreferredStartingTimesForm_template</name>
     <message>
-        <source>FET - ConstraintActivitiesPreferredStartingTimes</source>
-        <translation type="obsolete">FET - Veiklų su privilegijuotais pradžios laikais apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintactivitiespreferredstartingtimesform_template.ui" line="14"/>
         <source>Constraints activities preferred starting times</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -13880,10 +11393,6 @@ atskirtą bet kokio laiko intervalo</translation>
 <context>
     <name>ConstraintActivitiesPreferredTimeSlotsForm_template</name>
     <message>
-        <source>FET - ConstraintActivitiesPreferredTimeSlots</source>
-        <translation type="obsolete">FET - Veiklų privilegijuotų laiko plyšių apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="14"/>
         <source>Constraints activities preferred time slots</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -13923,14 +11432,6 @@ atskirtą bet kokio laiko intervalo</translation>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="80"/>
         <source>Current constraint</source>
         <translation>Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Each hour slot of each considered activity must be allowed
-by this constraint (more restrictive than preferred starting
-times for activities with duration greater than 1)</source>
-        <translation type="obsolete">Kiekvienas valandos plyšys kiekvienos vertinamos veiklos,
-turi buti leistina šio apribojimo (labiau apribotas nei privilegijuotas
-pradžios laikas su trukle didesne nei 1)</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="96"/>
@@ -14060,10 +11561,6 @@ pradžios laikas su trukle didesne nei 1)</translation>
 </context>
 <context>
     <name>ConstraintActivitiesSameStartingDayForm_template</name>
-    <message>
-        <source>FET - ConstraintActivitiesSameStartingDay</source>
-        <translation type="obsolete">FET - Veiklų su ta pačia pradžios diena apribojimas</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="83"/>
         <source>Close</source>
@@ -14229,10 +11726,6 @@ pradžios laikas su trukle didesne nei 1)</translation>
 <context>
     <name>ConstraintActivitiesSameStartingHourForm_template</name>
     <message>
-        <source>FET - ConstraintActivitiesSameStartingHour</source>
-        <translation type="obsolete">FET - Veiklų su ta pačia pradžios valanda apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform_template.ui" line="14"/>
         <source>Constraints activities same starting hour</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -14396,10 +11889,6 @@ pradžios laikas su trukle didesne nei 1)</translation>
 </context>
 <context>
     <name>ConstraintActivitiesSameStartingTimeForm_template</name>
-    <message>
-        <source>FET - ConstraintActivitiesSameStartingTime</source>
-        <translation type="obsolete">FET - Veiklų su tuo pačiu pradžios laiku apribojimas</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="166"/>
         <source>Close</source>
@@ -14568,10 +12057,6 @@ pradžios laikas su trukle didesne nei 1)</translation>
 </context>
 <context>
     <name>ConstraintActivityEndsStudentsDayForm_template</name>
-    <message>
-        <source>FET - Time constraints activity ends students day</source>
-        <translation type="obsolete">FET - Laiko apribojimas (veikla užbaigia studentų dieną)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="14"/>
         <source>Constraints activity ends students day</source>
@@ -14771,10 +12256,6 @@ pradžios laikas su trukle didesne nei 1)</translation>
 <context>
     <name>ConstraintActivityPreferredRoomForm_template</name>
     <message>
-        <source>FET - Space constraints activity preferred room</source>
-        <translation type="obsolete">FET - Vietos apribojimas (veiklos privilegijuotas kambarys)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="14"/>
         <source>Constraints activity preferred room</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -14961,10 +12442,6 @@ pradžios laikas su trukle didesne nei 1)</translation>
 </context>
 <context>
     <name>ConstraintActivityPreferredRoomsForm_template</name>
-    <message>
-        <source>FET - ConstraintActivityPreferredRooms</source>
-        <translation type="obsolete">FET - Veiklos privilegijuotų kambarių apribojimas</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="14"/>
         <source>Constraints activity preferred rooms</source>
@@ -15183,10 +12660,6 @@ pradžios laikas su trukle didesne nei 1)</translation>
 <context>
     <name>ConstraintActivityPreferredStartingTimeForm_template</name>
     <message>
-        <source>FET - Time constraints activity preferred starting time</source>
-        <translation type="obsolete">FET - Laiko apribojimas (veiklos privilegijuotas pradžios laikas)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="14"/>
         <source>Constraints activity preferred starting time</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -15375,10 +12848,6 @@ pradžios laikas su trukle didesne nei 1)</translation>
 </context>
 <context>
     <name>ConstraintActivityPreferredStartingTimesForm_template</name>
-    <message>
-        <source>FET - Time constraints activity preferred starting times</source>
-        <translation type="obsolete">FET - Laiko apribojimas (veiklos privilegijuoti pradžios laikai)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="14"/>
         <source>Constraints activity preferred starting times</source>
@@ -15580,10 +13049,6 @@ pradžios laikas su trukle didesne nei 1)</translation>
 <context>
     <name>ConstraintActivityPreferredTimeSlotsForm_template</name>
     <message>
-        <source>FET - Time constraints activity preferred time slots</source>
-        <translation type="obsolete">FET - Laiko apribojimas (veiklos privilegijuoti laiko plyšiai)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="14"/>
         <source>Constraints activity preferred time slots</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -15650,14 +13115,6 @@ pradžios laikas su trukle didesne nei 1)</translation>
         <translation>Apribojimai</translation>
     </message>
     <message>
-        <source>Each hour slot of each considered activity must be allowed
-by this constraint (more restrictive than preferred starting
-times for activities with duration greater than 1)</source>
-        <translation type="obsolete">Kiekvienas valandos plyšys kiekvienos vertinamos veiklos,
-turi buti leistina šio apribojimo (labiau apribotas nei privilegijuotas
-pradžios laikas su trukle didesne nei 1)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="160"/>
         <source>Each hour slot of each considered activity must be allowed by this constraint (more restrictive than preferred starting times for activities with duration greater than 1)</source>
         <translation type="unfinished"></translation>
@@ -15720,10 +13177,6 @@ pradžios laikas su trukle didesne nei 1)</translation>
         <location filename="../src/engine/spaceconstraint.cpp" line="3074"/>
         <source>Activity tag=%1</source>
         <translation type="unfinished">Veiklos žymė=%1</translation>
-    </message>
-    <message>
-        <source>Room name=%1</source>
-        <translation type="obsolete">Kambario pavadinimas=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3129"/>
@@ -16014,10 +13467,6 @@ pradžios laikas su trukle didesne nei 1)</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Space constraint basic compulsory: unallocated activity with id=%1</source>
-        <translation type="obsolete">Pagrindinis privalomas vietos apribojimas: nepaskirta veikla su id=%1</translation>
-    </message>
-    <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="277"/>
         <source>this increases the conflicts total by %1</source>
         <translation type="unfinished"></translation>
@@ -16108,10 +13557,6 @@ pradžios laikas su trukle didesne nei 1)</translation>
 <context>
     <name>ConstraintBasicCompulsorySpaceForm_template</name>
     <message>
-        <source>FET - Basic compulsory space constraints</source>
-        <translation type="obsolete">FET - Pagrindiniai privalomi vietos apribojimai</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="14"/>
         <source>Constraints basic compulsory space</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -16197,14 +13642,6 @@ pradžios laikas su trukle didesne nei 1)</translation>
         <location filename="../src/engine/timeconstraint.cpp" line="431"/>
         <source>Time constraint basic compulsory</source>
         <translation type="unfinished">Pagrindiniai privalomi laiko apribojimai</translation>
-    </message>
-    <message>
-        <source>unallocated activity with id=%1</source>
-        <translation type="obsolete">nepaskirstyta veikla su id=%1</translation>
-    </message>
-    <message>
-        <source> - this increases the conflicts total by %1</source>
-        <translation type="obsolete">- tai sukels viso konfliktų %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="372"/>
@@ -16297,10 +13734,6 @@ pradžios laikas su trukle didesne nei 1)</translation>
 </context>
 <context>
     <name>ConstraintBasicCompulsoryTimeForm_template</name>
-    <message>
-        <source>FET - Basic compulsory time constraints</source>
-        <translation type="obsolete">FET - Pagrindiniai privalomi laiko apribojimai</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="14"/>
         <source>Constraints basic compulsory time</source>
@@ -16444,10 +13877,6 @@ pradžios laikas su trukle didesne nei 1)</translation>
 </context>
 <context>
     <name>ConstraintBreakTimesForm_template</name>
-    <message>
-        <source>FET - Time constraints break times</source>
-        <translation type="obsolete">FET - Laiko apribojimai (pertraukos)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="14"/>
         <source>Constraints break times</source>
@@ -17128,10 +14557,6 @@ pradžios laikas su trukle didesne nei 1)</translation>
 <context>
     <name>ConstraintMinGapsBetweenActivitiesForm_template</name>
     <message>
-        <source>FET - Time constraints min gaps between activities</source>
-        <translation type="obsolete">FET - Laiko apribojimai (min tarpai tarp veiklų)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="185"/>
         <source>Close</source>
         <translation>Uždaryti</translation>
@@ -17198,12 +14623,6 @@ pradžios laikas su trukle didesne nei 1)</translation>
         <translation>Einamasis apribojimas</translation>
     </message>
     <message>
-        <source>This constraint ensures, for a set of activities: if any pair of activities is
-in the same day, they must be separated by at least min gaps (hours).</source>
-        <translation type="obsolete">Šis apribojimas užtikrina, veiklų sąrašui: jei nors viena veiklų pora yra
-tą pačią dieną, jos bus atskirtos minimaliais tarpais (valandos).</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="145"/>
         <source>Note: please click Help for important advice</source>
         <translation type="unfinished"></translation>
@@ -17217,80 +14636,6 @@ tą pačią dieną, jos bus atskirtos minimaliais tarpais (valandos).</translati
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="87"/>
         <source>This constraint ensures, for a set of activities: if any pair of activities is in the same day, they must be separated by at least min gaps (hours).</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConstraintMinNDaysBetweenActivitiesForm</name>
-    <message>
-        <source>Invalid constraint</source>
-        <translation type="obsolete">Neteisingas apribojimas</translation>
-    </message>
-    <message>
-        <source>FET information</source>
-        <translation type="obsolete">FET informacija</translation>
-    </message>
-    <message>
-        <source>There were inspected (and possibly modified) %1 constraints min n days between activities matching your criteria</source>
-        <translation type="obsolete">Buvo patikrintas (ir tikriausiai pakeistas) %1 min n dienų apribojimas tarp veiklų, kurios atitinka jūsų kriterijus</translation>
-    </message>
-</context>
-<context>
-    <name>ConstraintMinNDaysBetweenActivitiesForm_template</name>
-    <message>
-        <source>FET - Time constraints min n days between activities</source>
-        <translation type="obsolete">FET - Laiko apribojimai (min n dienos tarp veiklų)</translation>
-    </message>
-    <message>
-        <source>New Item</source>
-        <translation type="obsolete">Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Uždaryti</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="obsolete">Šalinti</translation>
-    </message>
-    <message>
-        <source>Modify</source>
-        <translation type="obsolete">Koreguoti</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation type="obsolete">Pridėti</translation>
-    </message>
-    <message>
-        <source>Constraints</source>
-        <translation type="obsolete">Apribojimai</translation>
-    </message>
-    <message>
-        <source>Filter</source>
-        <translation type="obsolete">Filtras</translation>
-    </message>
-    <message>
-        <source>Teacher</source>
-        <translation type="obsolete">Dėstytojas</translation>
-    </message>
-    <message>
-        <source>Subject</source>
-        <translation type="obsolete">Tema</translation>
-    </message>
-    <message>
-        <source>Students set</source>
-        <translation type="obsolete">Studentų sąrašas</translation>
-    </message>
-    <message>
-        <source>Activity tag</source>
-        <translation type="obsolete">Veiklos žymė (tag)</translation>
-    </message>
-    <message>
-        <source>Modify multiple constraints at once</source>
-        <translation type="obsolete">Koreguoti kelis apribojimus iš karto</translation>
     </message>
 </context>
 <context>
@@ -17416,10 +14761,6 @@ tą pačią dieną, jos bus atskirtos minimaliais tarpais (valandos).</translati
 </context>
 <context>
     <name>ConstraintRoomNotAvailableTimesForm_template</name>
-    <message>
-        <source>FET - Space constraints room not available times</source>
-        <translation type="obsolete">FET - Vietos apribojimai (kambarių užimtumo laikai)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform_template.ui" line="14"/>
         <source>Constraints room not available times</source>
@@ -17843,10 +15184,6 @@ tą pačią dieną, jos bus atskirtos minimaliais tarpais (valandos).</translati
 <context>
     <name>ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm_template</name>
     <message>
-        <source>FET - Time constraints students early max beginnings at second hour</source>
-        <translation type="obsolete">FET - Laiko apribojimai (stutentų artimiausios maksimalios pradžios nuo antros valandos)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="14"/>
         <source>Constraints students early max beginnings at second hour</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -18031,10 +15368,6 @@ tą pačią dieną, jos bus atskirtos minimaliais tarpais (valandos).</translati
 <context>
     <name>ConstraintStudentsIntervalMaxDaysPerWeekForm_template</name>
     <message>
-        <source>FET - Time constraints students interval max days per week</source>
-        <translation type="obsolete">FET - Laiko apribojimai (studentų maksimalūs tarpai per savaitę)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints students interval max days per week</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -18164,10 +15497,6 @@ tą pačią dieną, jos bus atskirtos minimaliais tarpais (valandos).</translati
 <context>
     <name>ConstraintStudentsMaxBuildingChangesPerDayForm_template</name>
     <message>
-        <source>FET - Space constraints students max building changes per day</source>
-        <translation type="obsolete">FET - Vietos apribojimai (studentų maksimalūs pastatų pakeitimai per dieną)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Constraints students max building changes per day</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -18296,10 +15625,6 @@ tą pačią dieną, jos bus atskirtos minimaliais tarpais (valandos).</translati
 </context>
 <context>
     <name>ConstraintStudentsMaxBuildingChangesPerWeekForm_template</name>
-    <message>
-        <source>FET - Space constraints students max building changes per week</source>
-        <translation type="obsolete">FET - Vietos apribojimai (studentų maksimalūs pastatų pakeitimai per savaitę)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Constraints students max building changes per week</source>
@@ -18575,10 +15900,6 @@ tą pačią dieną, jos bus atskirtos minimaliais tarpais (valandos).</translati
 <context>
     <name>ConstraintStudentsMaxGapsPerWeekForm_template</name>
     <message>
-        <source>FET - Time constraints students max gaps per week</source>
-        <translation type="obsolete">FET - Laiko apribojimai (studentų maksimalūs tarpai per savaitę)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="14"/>
         <source>Constraints students max gaps per week</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -18710,10 +16031,6 @@ tą pačią dieną, jos bus atskirtos minimaliais tarpais (valandos).</translati
 <context>
     <name>ConstraintStudentsMaxHoursContinuouslyForm_template</name>
     <message>
-        <source>FET - Time constraints students max hours continuously</source>
-        <translation type="obsolete">FET - Laiko apribojimai (studentų maksimalus valandų skaičius be tarpų)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Constraints students max hours continuously</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -18837,10 +16154,6 @@ tą pačią dieną, jos bus atskirtos minimaliais tarpais (valandos).</translati
 </context>
 <context>
     <name>ConstraintStudentsMaxHoursDailyForm_template</name>
-    <message>
-        <source>FET - Time constraints students max hours daily</source>
-        <translation type="obsolete">FET - Laiko apribojimai (studentų maksimalus valandų skaičius kasdien)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="14"/>
         <source>Constraints students max hours daily</source>
@@ -18970,10 +16283,6 @@ tą pačią dieną, jos bus atskirtos minimaliais tarpais (valandos).</translati
 </context>
 <context>
     <name>ConstraintStudentsMinGapsBetweenBuildingChangesForm_template</name>
-    <message>
-        <source>FET - Space constraints students min gaps between building changes</source>
-        <translation type="obsolete">FET - Vietos apribojimai (studentų minimalūs tarpai tarp pastatų pasikeitimų)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Constraints students min gaps between building changes</source>
@@ -19114,10 +16423,6 @@ tą pačią dieną, jos bus atskirtos minimaliais tarpais (valandos).</translati
 </context>
 <context>
     <name>ConstraintStudentsMinHoursDailyForm_template</name>
-    <message>
-        <source>FET - Time constraints students min hours daily</source>
-        <translation type="obsolete">FET - Laiko apribojimai (studentų minimalus valandų skaičius kasdien)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="14"/>
         <source>Constraints students min hours daily</source>
@@ -19605,10 +16910,6 @@ tą pačią dieną, jos bus atskirtos minimaliais tarpais (valandos).</translati
 <context>
     <name>ConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm_template</name>
     <message>
-        <source>FET - Time constraints students set early max beginnings at second hour</source>
-        <translation type="obsolete">FET - Laiko apribojimai (stutentų artimiausios maksimalios pradžios nuo antros valandos)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="14"/>
         <source>Constraints students set early max beginnings at second hour</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -19702,10 +17003,6 @@ tą pačią dieną, jos bus atskirtos minimaliais tarpais (valandos).</translati
         <translation type="unfinished">Studentai=%1</translation>
     </message>
     <message>
-        <source>Room name=%1</source>
-        <translation type="obsolete">Kambario pavadinimas=%1</translation>
-    </message>
-    <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1277"/>
         <source>Space constraint students set home room broken for activity with id %1 (%2)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
@@ -19755,10 +17052,6 @@ tą pačią dieną, jos bus atskirtos minimaliais tarpais (valandos).</translati
 <context>
     <name>ConstraintStudentsSetHomeRoomForm_template</name>
     <message>
-        <source>FET - Space constraints students set home room</source>
-        <translation type="obsolete">FET - Vietos apribojimai (studentų sąrašo namų kambarys)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="14"/>
         <source>Constraints students set home room</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -19798,18 +17091,6 @@ tą pačią dieną, jos bus atskirtos minimaliais tarpais (valandos).</translati
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="73"/>
         <source>Current constraint</source>
         <translation>Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Note: a home room for a students set means that every activity which
-has this and ONLY this students set will have this as home room (not other
-superior or inferior set). You can add home rooms for a group, for a year
-or for a subgroup, careful not to make impossible timetables. Preferred
-rooms override the home rooms.</source>
-        <translation type="obsolete">Pastaba: studentų sąrašo namų kambarys reiškia, kad veikla, kuri turi
-šitą ir tik šitą studentų sąrašą, bus namų kambarys (ne kitiems geresniems
-ar žemesniems sąrašams). Jūs galite pridėti namų kambarius grupėms, metams
-ar pogrupiams. tai daryti reikia atsargiai, kad nebūtų neimanomas tvarkaraštis.
-Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="106"/>
@@ -19930,10 +17211,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 <context>
     <name>ConstraintStudentsSetHomeRoomsForm_template</name>
     <message>
-        <source>FET - ConstraintStudentsSetHomeRooms</source>
-        <translation type="obsolete">FET - Vietos apribojimai (studentų sąrašo namų kambariai)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform_template.ui" line="14"/>
         <source>Constraints students set home rooms</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -19973,18 +17250,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
         <location filename="../src/interface/constraintstudentssethomeroomsform_template.ui" line="73"/>
         <source>Current constraint</source>
         <translation>Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Note: a home room for a students set means that every activity which
-has this and ONLY this students set will have these home rooms (not other
-superior or inferior set). You can add home rooms for a group, for a year
-or for a subgroup, careful not to make impossible timetables. Preferred
-rooms override the home rooms.</source>
-        <translation type="obsolete">Pastaba: studentų sąrašo namų kambarys reiškia, kad veikla, kuri turi
-šitą ir tik šitą studentų sąrašą, bus namų kambarys (ne kitiems geresniems
-ar žemesniems sąrašams). Jūs galite pridėti namų kambarius grupėms, metams
-ar pogrupiams. tai daryti reikia atsargiai, kad nebūtų neimanomas tvarkaraštis.
-Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform_template.ui" line="106"/>
@@ -20158,10 +17423,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 <context>
     <name>ConstraintStudentsSetIntervalMaxDaysPerWeekForm_template</name>
     <message>
-        <source>FET - Time constraints students set interval max days per week</source>
-        <translation type="obsolete">FET - Laiko apribojimai (studentų sąrašo maksimalūs dienų intervalai per savaitę)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints students set interval max days per week</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -20318,10 +17579,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 <context>
     <name>ConstraintStudentsSetMaxBuildingChangesPerDayForm_template</name>
     <message>
-        <source>FET - Space constraints students set max building changes per day</source>
-        <translation type="obsolete">FET - Vietos apribojimai (studentų sąrašo maksimalūs pastatų pakeitimai per dieną)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Constraints students set max building changes per day</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -20477,10 +17734,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 </context>
 <context>
     <name>ConstraintStudentsSetMaxBuildingChangesPerWeekForm_template</name>
-    <message>
-        <source>FET - Space constraints students set max building changes per week</source>
-        <translation type="obsolete">FET - Vietos apribojimai (studentų sąrašo maksimalūs pastatų pakeitimai per savaitę)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Constraints students set max building changes per week</source>
@@ -20810,10 +18063,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 <context>
     <name>ConstraintStudentsSetMaxGapsPerWeekForm_template</name>
     <message>
-        <source>FET - Time constraints students set max gaps per week</source>
-        <translation type="obsolete">FET - Laiko apribojimai (studentų sąrašo maksimalūs tarpai per savaitę)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperweekform_template.ui" line="14"/>
         <source>Constraints students set max gaps per week</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -20972,10 +18221,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 <context>
     <name>ConstraintStudentsSetMaxHoursContinuouslyForm_template</name>
     <message>
-        <source>FET - Time constraints students set max hours continuously</source>
-        <translation type="obsolete">FET - Laiko apribojimai (studentų sąrašo maksimalus valandų skaičius be tarpų)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Constraints students set max hours continuously</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -21126,10 +18371,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 </context>
 <context>
     <name>ConstraintStudentsSetMaxHoursDailyForm_template</name>
-    <message>
-        <source>FET - Time constraints students set max hours daily</source>
-        <translation type="obsolete">FET - Laiko apribojimai (studentų sąrašo maksimalus valandų skaičius kasdien)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="14"/>
         <source>Constraints students set max hours daily</source>
@@ -21286,10 +18527,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 </context>
 <context>
     <name>ConstraintStudentsSetMinGapsBetweenBuildingChangesForm_template</name>
-    <message>
-        <source>FET - Space constraints students set min gaps between building changes</source>
-        <translation type="obsolete">FET - Vietos apribojimai (studentų sąrašo minimalūs tarpai tarp pastatų pasikeitimų)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Constraints students set min gaps between building changes</source>
@@ -21457,10 +18694,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 </context>
 <context>
     <name>ConstraintStudentsSetMinHoursDailyForm_template</name>
-    <message>
-        <source>FET - Time constraints students set min hours daily</source>
-        <translation type="obsolete">FET - Laiko apribojimai (studentų sąrašo minimalus valandų skaičius kasdien)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="14"/>
         <source>Constraints students set min hours daily</source>
@@ -21651,10 +18884,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 </context>
 <context>
     <name>ConstraintStudentsSetNotAvailableTimesForm_template</name>
-    <message>
-        <source>FET - Time constraints students set not available times</source>
-        <translation type="obsolete">FET - Laiko apribojimai (studentų sąrašo neprieinamų laikų apribojimas)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform_template.ui" line="14"/>
         <source>Constraints students set not available times</source>
@@ -21937,10 +19166,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 <context>
     <name>ConstraintSubactivitiesPreferredStartingTimesForm_template</name>
     <message>
-        <source>FET - ConstraintSubactivitiesPreferredStartingTimes</source>
-        <translation type="obsolete">FET - subveiklų apribojimas (privilegijuotas pradžios laikas)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="14"/>
         <source>Constraints subactivities preferred starting times</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -21985,12 +19210,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="90"/>
         <source>Help</source>
         <translation>Pagalba</translation>
-    </message>
-    <message>
-        <source>This constraint is useful to constrain only the n-th component
-for activities. Please click Help button for details.</source>
-        <translation type="obsolete">Šis apribojimas naudingas apriboti tik n komponentus
-veikloms. Prašome paspausti pagalbos mygtuką.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="103"/>
@@ -22240,10 +19459,6 @@ veikloms. Prašome paspausti pagalbos mygtuką.</translation>
 <context>
     <name>ConstraintSubactivitiesPreferredTimeSlotsForm_template</name>
     <message>
-        <source>FET - ConstraintSubactivitiesPreferredTimeSlots</source>
-        <translation type="obsolete">FET - Subveiklų privilegijuotų laiko plyšių apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="14"/>
         <source>Constraints subactivities preferred time slots</source>
         <translation type="unfinished"></translation>
@@ -22287,12 +19502,6 @@ veikloms. Prašome paspausti pagalbos mygtuką.</translation>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="90"/>
         <source>Help</source>
         <translation>Pagalba</translation>
-    </message>
-    <message>
-        <source>This constraint is useful to constrain only the n-th component
-for activities. Please click Help button for details.</source>
-        <translation type="obsolete">Šis apribojimas naudingas apriboti tik n komponentus
-veikloms. Prašome paspausti pagalbos mygtuką.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="103"/>
@@ -22370,10 +19579,6 @@ veikloms. Prašome paspausti pagalbos mygtuką.</translation>
         <translation type="unfinished">Veiklos žymė=%1</translation>
     </message>
     <message>
-        <source>Room name=%1</source>
-        <translation type="obsolete">Kambario pavadinimas=%1</translation>
-    </message>
-    <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2676"/>
         <source>Space constraint subject activity tag preferred room broken for activity with id %1 (%2) (activity tag of constraint=%3)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
@@ -22422,10 +19627,6 @@ veikloms. Prašome paspausti pagalbos mygtuką.</translation>
 </context>
 <context>
     <name>ConstraintSubjectActivityTagPreferredRoomForm_template</name>
-    <message>
-        <source>FET - Space constraints subject activity tag preferred room</source>
-        <translation type="obsolete">FET - Vietos apribojimai (temos veiklos žymių privilegijuotas kambarys)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="14"/>
         <source>Constraints subject activity tag preferred room</source>
@@ -22592,10 +19793,6 @@ veikloms. Prašome paspausti pagalbos mygtuką.</translation>
 <context>
     <name>ConstraintSubjectActivityTagPreferredRoomsForm_template</name>
     <message>
-        <source>FET - ConstraintSubjectActivityTagPreferredRooms</source>
-        <translation type="obsolete">FET - Vietos apribojimas (temos veiklos žymės privilegijuoti kambariai)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform_template.ui" line="14"/>
         <source>Constraints subject activity tag preferred rooms</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -22701,10 +19898,6 @@ veikloms. Prašome paspausti pagalbos mygtuką.</translation>
         <translation type="unfinished">Tema=%1</translation>
     </message>
     <message>
-        <source>Room name=%1</source>
-        <translation type="obsolete">Kambario pavadinimas=%1</translation>
-    </message>
-    <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2217"/>
         <source>Space constraint subject preferred room broken for activity with id %1 (%2)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
@@ -22753,10 +19946,6 @@ veikloms. Prašome paspausti pagalbos mygtuką.</translation>
 </context>
 <context>
     <name>ConstraintSubjectPreferredRoomForm_template</name>
-    <message>
-        <source>FET - Space constraints subject preferred room</source>
-        <translation type="obsolete">FET - Vietos apribojimas (temos privilegijuotas kambarys)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="14"/>
         <source>Constraints subject preferred room</source>
@@ -22911,10 +20100,6 @@ veikloms. Prašome paspausti pagalbos mygtuką.</translation>
 </context>
 <context>
     <name>ConstraintSubjectPreferredRoomsForm_template</name>
-    <message>
-        <source>FET - ConstraintSubjectPreferredRooms</source>
-        <translation type="obsolete">FET - Vietos apribojimas (temos privilegijuoti kambariai)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="14"/>
         <source>Constraints subject preferred rooms</source>
@@ -23313,10 +20498,6 @@ veikloms. Prašome paspausti pagalbos mygtuką.</translation>
         <translation type="unfinished">Dėstytojas=%1</translation>
     </message>
     <message>
-        <source>Room name=%1</source>
-        <translation type="obsolete">Kambario pavadinimas=%1</translation>
-    </message>
-    <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1763"/>
         <source>Space constraint teacher home room broken for activity with id %1 (%2)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
@@ -23366,10 +20547,6 @@ veikloms. Prašome paspausti pagalbos mygtuką.</translation>
 <context>
     <name>ConstraintTeacherHomeRoomForm_template</name>
     <message>
-        <source>FET - Space constraints teacher home room</source>
-        <translation type="obsolete">FET - Vietos apribojimai (dėstytojo namų kambarys)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintteacherhomeroomform_template.ui" line="14"/>
         <source>Constraints teacher home room</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -23409,14 +20586,6 @@ veikloms. Prašome paspausti pagalbos mygtuką.</translation>
         <location filename="../src/interface/constraintteacherhomeroomform_template.ui" line="73"/>
         <source>Current constraint</source>
         <translation>Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Note: a home room for a teacher means that every activity which
-has this and ONLY this teacher will have this as home room. 
-Preferred rooms override the home rooms.</source>
-        <translation type="obsolete">Pastaba: dėstytojo namų kambarys reiškia, kad kiekviena veikla,
-kuri turi šitą ir tik šitą dėstytoją, bus namų kambarys.
-Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform_template.ui" line="106"/>
@@ -23537,10 +20706,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 <context>
     <name>ConstraintTeacherHomeRoomsForm_template</name>
     <message>
-        <source>FET - ConstraintTeacherHomeRooms</source>
-        <translation type="obsolete">FET - Vietos apribojimai (dėstytojo namų kambariai)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="14"/>
         <source>Constraints teacher home rooms</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -23585,14 +20750,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="106"/>
         <source>Filter</source>
         <translation>Filtras</translation>
-    </message>
-    <message>
-        <source>Note: home rooms for a teacher means that every activity which
-has this and ONLY this teacher will have these home rooms.
-Preferred rooms override the home rooms.</source>
-        <translation type="obsolete">Pastaba: dėstytojo namų kambariai reiškia, kad kiekviena veikla,
-kuri turi šitą ir tik šitą dėstytoją, bus namų kambariai.
-Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="89"/>
@@ -23754,10 +20911,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 <context>
     <name>ConstraintTeacherIntervalMaxDaysPerWeekForm_template</name>
     <message>
-        <source>FET - Time constraints teacher interval max days per week</source>
-        <translation type="obsolete">FET - Laiko apribojimai (dėstytojo maksimalūs dienų intervalai per savaitę)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints teacher interval max days per week</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
@@ -23913,10 +21066,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 </context>
 <context>
     <name>ConstraintTeacherMaxBuildingChangesPerDayForm_template</name>
-    <message>
-        <source>FET - Space constraints teacher max building changes per day</source>
-        <translation type="obsolete">FET - Vietos apribojimai (dėstytojo maksimalūs pastatų pakeitimai per dieną)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Constraints teacher max building changes per day</source>
@@ -24074,10 +21223,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 <context>
     <name>ConstraintTeacherMaxBuildingChangesPerWeekForm_template</name>
     <message>
-        <source>FET - Space constraints teacher max building changes per week</source>
-        <translation type="obsolete">FET - Vietos apribojimai (dėstytojo maksimalūs pastatų pakeitimai per savaitę)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Constraints teacher max building changes per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
@@ -24222,10 +21367,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 </context>
 <context>
     <name>ConstraintTeacherMaxDaysPerWeekForm_template</name>
-    <message>
-        <source>FET - Time constraints teacher max days per week</source>
-        <translation type="obsolete">FET - Laiko apribojimai (dėstytojo maksimalus dienų skaičiaus per savaitę)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints teacher max days per week</source>
@@ -24372,10 +21513,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 <context>
     <name>ConstraintTeacherMaxGapsPerDayForm_template</name>
     <message>
-        <source>FET - Time constraints teacher max gaps per day</source>
-        <translation type="obsolete">FET - Laiko apribojimai (dėstytojo maksimalūs tarpai per dieną)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform_template.ui" line="14"/>
         <source>Constraints teacher max gaps per day</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
@@ -24521,10 +21658,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 <context>
     <name>ConstraintTeacherMaxGapsPerWeekForm_template</name>
     <message>
-        <source>FET - Time constraints teacher max gaps per week</source>
-        <translation type="obsolete">FET - Laiko apribojimai (dėstytojo maksimalūs tarpai per savaitę)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="14"/>
         <source>Constraints teacher max gaps per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
@@ -24583,11 +21716,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished">SP:%1%</translation>
-    </message>
-    <message>
-        <source>TN:%1</source>
-        <comment>Teacher name</comment>
-        <translation type="obsolete">DV:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3091"/>
@@ -24677,10 +21805,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 <context>
     <name>ConstraintTeacherMaxHoursContinuouslyForm_template</name>
     <message>
-        <source>FET - Time constraints teacher max hours continuously</source>
-        <translation type="obsolete">FET - Laiko apribojimai (dėstytojo maksimalus valandų skaičius be tarpų)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Constraints teacher max hours continuously</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
@@ -24739,11 +21863,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished">SP:%1%</translation>
-    </message>
-    <message>
-        <source>TN:%1</source>
-        <comment>Teacher name</comment>
-        <translation type="obsolete">DV:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2704"/>
@@ -24831,10 +21950,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 <context>
     <name>ConstraintTeacherMaxHoursDailyForm_template</name>
     <message>
-        <source>FET - Time constraints teacher max hours daily</source>
-        <translation type="obsolete">FET - Laiko apribojimai (dėstytojo maksimalus valandų skaičius kasdien)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="14"/>
         <source>Constraints teacher max hours daily</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
@@ -24899,11 +22014,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished">SP:%1%</translation>
-    </message>
-    <message>
-        <source>TN:%1</source>
-        <comment>Teacher name</comment>
-        <translation type="obsolete">DV:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12992"/>
@@ -25141,10 +22251,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 <context>
     <name>ConstraintTeacherMinGapsBetweenBuildingChangesForm_template</name>
     <message>
-        <source>FET - Space constraints teacher min gaps between building changes</source>
-        <translation type="obsolete">FET - Vietos apribojimai (dėstytojo minimalūs tarpai tarp pastatų pasikeitimų)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Constraints teacher min gaps between building changes</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
@@ -25226,11 +22332,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
         <translation type="unfinished">SP:%1%</translation>
     </message>
     <message>
-        <source>TN:%1</source>
-        <comment>Teacher name</comment>
-        <translation type="obsolete">DV:%1</translation>
-    </message>
-    <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12793"/>
         <source>mH:%1</source>
         <comment>Minimum hours (daily)</comment>
@@ -25271,10 +22372,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
         <location filename="../src/engine/timeconstraint.cpp" line="12807"/>
         <source>Allow empty days=%1</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Note: FET is smart enough to use this constraint only on working days of the teacher</source>
-        <translation type="obsolete">Pastaba: FET pakankamai gudrus panaudoti apribojimą tik dėstytojo darbo dienomis</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12862"/>
@@ -25324,10 +22421,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 </context>
 <context>
     <name>ConstraintTeacherMinHoursDailyForm_template</name>
-    <message>
-        <source>FET - Time constraints teacher min hours daily</source>
-        <translation type="obsolete">FET - Laiko apribojimai (dėstytojo minimalus valandų skaičius kasdien)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="14"/>
         <source>Constraints teacher min hours daily</source>
@@ -25507,10 +22600,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 </context>
 <context>
     <name>ConstraintTeacherNotAvailableTimesForm_template</name>
-    <message>
-        <source>FET - Time constraints teacher not available times</source>
-        <translation type="obsolete">FET - Laiko apribojimai (dėstytojo neprieinamų laikų apribojimas)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform_template.ui" line="14"/>
         <source>Constraints teacher not available times</source>
@@ -25995,10 +23084,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 <context>
     <name>ConstraintTeachersIntervalMaxDaysPerWeekForm_template</name>
     <message>
-        <source>FET - Time constraints teachers interval max days per week</source>
-        <translation type="obsolete">FET - Laiko apribojimai (dėstytojų maksimalūs dienų intervalai per savaitę)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints teachers interval max days per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
@@ -26128,10 +23213,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 <context>
     <name>ConstraintTeachersMaxBuildingChangesPerDayForm_template</name>
     <message>
-        <source>FET - Space constraints teachers max building changes per day</source>
-        <translation type="obsolete">FET - Vietos apribojimai (dėstytojų maksimalūs pastatų pakeitimai per dieną)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Constraints teachers max building changes per day</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
@@ -26260,10 +23341,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 </context>
 <context>
     <name>ConstraintTeachersMaxBuildingChangesPerWeekForm_template</name>
-    <message>
-        <source>FET - Space constraints teachers max building changes per week</source>
-        <translation type="obsolete">FET - Vietos apribojimai (dėstytojų maksimalūs pastatų pakeitimai per savaitę)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Constraints teachers max building changes per week</source>
@@ -26523,10 +23600,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 <context>
     <name>ConstraintTeachersMaxGapsPerDayForm_template</name>
     <message>
-        <source>FET - Time constraints teachers max gaps per day</source>
-        <translation type="obsolete">FET - Laiko apribojimai (dėstytojų maksimalūs tarpai per dieną)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform_template.ui" line="14"/>
         <source>Constraints teachers max gaps per day</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
@@ -26655,10 +23728,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 </context>
 <context>
     <name>ConstraintTeachersMaxGapsPerWeekForm_template</name>
-    <message>
-        <source>FET - Time constraints teachers max gaps per week</source>
-        <translation type="obsolete">FET - Laiko apribojimai (dėstytojų maksimalūs tarpai per savaitę)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="14"/>
         <source>Constraints teachers max gaps per week</source>
@@ -26791,10 +23860,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 <context>
     <name>ConstraintTeachersMaxHoursContinuouslyForm_template</name>
     <message>
-        <source>FET - Time constraints teachers max hours continuously</source>
-        <translation type="obsolete">FET - Laiko apribojimai (dėstytojų maksimalus valandų skaičius be tarpų)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Constraints teachers max hours continuously</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
@@ -26923,10 +23988,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 </context>
 <context>
     <name>ConstraintTeachersMaxHoursDailyForm_template</name>
-    <message>
-        <source>FET - Time constraints teachers max hours daily</source>
-        <translation type="obsolete">FET - Laiko apribojimai (dėstytojų maksimalus valandų skaičius kasdien)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="14"/>
         <source>Constraints teachers max hours daily</source>
@@ -27186,10 +24247,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 <context>
     <name>ConstraintTeachersMinGapsBetweenBuildingChangesForm_template</name>
     <message>
-        <source>FET - Space constraints teachers min gaps between building changes</source>
-        <translation type="obsolete">FET - Vietos apribojimai (dėstytojų minimalūs tarpai tarp pastatų pasikeitimų)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Constraints teachers min gaps between building changes</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
@@ -27297,10 +24354,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Note: FET is smart enough to use this constraint only on working days of the teachers</source>
-        <translation type="obsolete">Pastaba: FET pakankamai gudrus panaudoti apribojimą tik dėstytojų darbo dienomis</translation>
-    </message>
-    <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12642"/>
         <source>Time constraint teachers min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation type="unfinished">Laiko apribojimas (dėstytojų min %1 valandų kasdien) sugadintas dėstytojui %2, diena %3, ilgis=%4.</translation>
@@ -27348,10 +24401,6 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
 </context>
 <context>
     <name>ConstraintTeachersMinHoursDailyForm_template</name>
-    <message>
-        <source>FET - Time constraints teachers min hours daily</source>
-        <translation type="obsolete">FET - Laiko apribojimai (dėstytojų minimalus valandų skaičius kasdien)</translation>
-    </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="14"/>
         <source>Constraints teachers min hours daily</source>
@@ -28103,39 +25152,13 @@ Privilegijuoti kambariai turi pirmenybę prieš namų kambarius.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Empty names not allowed
-</source>
-        <translation type="obsolete">Tušti pavadinimai neleistini
-</translation>
-    </message>
-    <message>
-        <source>Duplicates not allowed
-</source>
-        <translation type="obsolete">Pasikartojimai neleistini
-</translation>
-    </message>
-    <message>
         <location filename="../src/interface/daysform.cpp" line="135"/>
         <source>Please note that FET will NOT take care of old constraints using erased days (only renamed days will be handled correctly)</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Please note that FET will NOT take care
-of old constraints using erased days
-(only renamed days will be handled correctly)
-</source>
-        <translation type="obsolete">Prašome pastebėti, kad FET nieko nedarys su
-senais apribojimais, kuriuose yra ištrintos dienos
-(tik pervadintos dienos sutvarkytos teisingai)
-</translation>
-    </message>
 </context>
 <context>
     <name>DaysForm_template</name>
-    <message>
-        <source>FET - timetable data - the days of the week</source>
-        <translation type="obsolete">FET - tvarkaraščio duomenys - savaitės dienos</translation>
-    </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="180"/>
         <source>Day 10</source>
@@ -28547,10 +25570,6 @@ Duomenų importas bus paprastesnis.</translation>
         <translation>%1 veiklos eksportuotos.</translation>
     </message>
     <message>
-        <source>TODO: write content of file &quot;Exportprotokoll.log&quot; here.</source>
-        <translation type="obsolete">TODO: čia rodyti eksporto eigą.</translation>
-    </message>
-    <message>
         <location filename="../src/engine/export.cpp" line="1410"/>
         <source>FET information</source>
         <translation type="unfinished">FET informacija</translation>
@@ -28649,24 +25668,16 @@ Duomenų importas bus paprastesnis.</translation>
         <location filename="../src/interface/fetmainform.cpp" line="2965"/>
         <location filename="../src/interface/fetmainform.cpp" line="2969"/>
         <location filename="../src/interface/fetmainform.cpp" line="3000"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3134"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3186"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3536"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3576"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3606"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3631"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3658"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3680"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3135"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3187"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3537"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3577"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3607"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3632"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3659"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3681"/>
         <source>FET warning</source>
         <translation>FET įspėjimas</translation>
-    </message>
-    <message>
-        <source>Could not search for possible updates on internet - error message is: %1. I am searching for the file http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt . Maybe the current structure on web page was changed. Please visit FET web page http://www.lalescu.ro/liviu/fet/ and get latest version or, if the web page does not work, try to search for the new FET page on the internet. You can contact the author. Also, sometimes lalescu.ro might have temporary problems, try again later
-
-If you want, you can turn off automatic search for updates in Settings menu</source>
-        <translation type="obsolete">Negalėjo ieškoti galimo atnaujinimo internete - klaidos žinutė yra: %1. Aš ieškau rinkmenoje http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt. Galbūt einamoji struktūra tinklalapyje buvo pakeista. Prašom aplankyti FET tinklalapį http://www.lalescu.ro/liviu/fet/ ir gauti paskutinę versiją ar, jei tinklalapis nedirba, pabandykite ieškoti naują FET puslapį internete. Jūs galite susisiekti su autoriumi. Taip pat, kartais lalescu.ro galėtų turėti laikinas problemas, pabandyti dar kartą vėliau
-
-Jei jūs norite, jūs galite išjungti automatinę paiešką atnaujinimo meniu Nustatymai</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="472"/>
@@ -28806,12 +25817,12 @@ Jei jūs norite, jūs galite išjungti automatinę paiešką atnaujinimo meniu N
         <location filename="../src/interface/fetmainform.cpp" line="3044"/>
         <location filename="../src/interface/fetmainform.cpp" line="3054"/>
         <location filename="../src/interface/fetmainform.cpp" line="3064"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3190"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3373"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3400"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3423"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3490"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3501"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3191"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3374"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3401"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3424"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3491"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3502"/>
         <source>FET information</source>
         <translation>FET informacija</translation>
     </message>
@@ -28831,18 +25842,6 @@ Jei jūs norite, jūs galite išjungti automatinę paiešką atnaujinimo meniu N
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/
-
-You have to manually download and install (open the FET webpage in an internet browser). Please read the information on web page regarding the newer version and choose whether to keep your current version or upgrade (the recommended option is to upgrade). You might need to hit Refresh in your web browser if links do not work
-
-You can choose to disable automatic search for updates in the Settings menu</source>
-        <translation type="obsolete">Kita versija: %1, yra pasiekiama FET tinklapyje: http://www.lalescu.ro/liviu/fet/
-
-Jūs turite rankomis perkelti ir įdiegti (atidarykite FET tinklapį interneto naršyklėje). Prašom perskaityti informaciją apie tinklalapį dėl naujesnės versijos ir išsirinkti, ar palikti jūsų einamąją versiją, ar atnaujinti (rekomenduojamas pasirinkimas atnaujinti). Jūs galėtumėte turėti paspausti, Atnaujinti jūsų tinklo naršyklėje, jei sąsajos nedirba
-
-Jūs galite išjungti atnaujinimo automatinę paiešką meniu Nustatymai</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform.cpp" line="644"/>
         <source>FET - exiting</source>
         <translation>FET - išsijunge</translation>
@@ -28856,7 +25855,7 @@ Jūs galite išjungti atnaujinimo automatinę paiešką meniu Nustatymai</transl
         <location filename="../src/interface/fetmainform.cpp" line="646"/>
         <location filename="../src/interface/fetmainform.cpp" line="708"/>
         <location filename="../src/interface/fetmainform.cpp" line="870"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3278"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3279"/>
         <source>&amp;Yes</source>
         <translation>&amp;Taip</translation>
     </message>
@@ -28864,14 +25863,14 @@ Jūs galite išjungti atnaujinimo automatinę paiešką meniu Nustatymai</transl
         <location filename="../src/interface/fetmainform.cpp" line="646"/>
         <location filename="../src/interface/fetmainform.cpp" line="708"/>
         <location filename="../src/interface/fetmainform.cpp" line="870"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3278"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3279"/>
         <source>&amp;No</source>
         <translation>&amp;Ne</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="646"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3435"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3456"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3436"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3457"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Atšaukti</translation>
     </message>
@@ -28992,11 +25991,11 @@ Jūs galite išjungti atnaujinimo automatinę paiešką meniu Nustatymai</transl
         <location filename="../src/interface/fetmainform.cpp" line="2664"/>
         <location filename="../src/interface/fetmainform.cpp" line="2883"/>
         <location filename="../src/interface/fetmainform.cpp" line="2910"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3374"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3401"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3424"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3491"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3502"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3375"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3402"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3425"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3492"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3503"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>Paskyrimas kurse.
@@ -29011,10 +26010,6 @@ Prašom sustabdyti imitavimą prieš tai.</translation>
         <location filename="../src/interface/fetmainform.cpp" line="707"/>
         <source>Are you sure you want to load new data (rules) ?</source>
         <translation>Ar jūs esate įsitikinę, kad jūs norite pakrauti naujus duomenis (taisyklės)?</translation>
-    </message>
-    <message>
-        <source>Choose a file</source>
-        <translation type="obsolete">Pasirinkite rinkmeną</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="768"/>
@@ -29054,10 +26049,6 @@ Prašom sustabdyti imitavimą prieš tai.</translation>
         <location filename="../src/interface/fetmainform.cpp" line="810"/>
         <source>&amp;OK</source>
         <translation>&amp;Gerai</translation>
-    </message>
-    <message>
-        <source>FET - %1</source>
-        <translation type="obsolete">FET - %1</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="830"/>
@@ -29183,10 +26174,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Gerai</translation>
     </message>
     <message>
-        <source>FET - help in other languages</source>
-        <translation type="obsolete">FET - pagalba kitomis kalbomis</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform.cpp" line="2916"/>
         <source>Current file (data) has no name. Please save file under a certain name before proceeding</source>
         <translation>Einamoji rinkmena (duomenys) neturi jokio vardo. Prašom išsaugoti rinkmeną su tam tikru vardu prieš vyksmą</translation>
@@ -29219,106 +26206,102 @@ Having a subgroup with too little working hours per week means that you inputted
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3093"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3225"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3226"/>
         <source>US English</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3134"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3135"/>
         <source>Invalid current language - making it en_US (US English)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3186"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3187"/>
         <source>Invalid language selected - making it en_US (US English)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3191"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3192"/>
         <source>Please exit and restart FET to activate language change</source>
         <translation>Prašom išeiti ir paleisti iš naujo FET, kad aktyvintų kalbos pakeitimą</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3206"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3207"/>
         <source>That means:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3212"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3240"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3243"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3258"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3265"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3269"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3271"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3273"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3213"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3241"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3244"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3259"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3266"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3270"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3272"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3274"/>
         <source>true</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3222"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3223"/>
         <source>Use colors in FET graphical user interface will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3225"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3226"/>
         <source>Language will be %1 (restart needed to activate language change)</source>
         <comment>%1 is the default language</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3258"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3259"/>
         <source>Warn if using not perfect constraints will be %1</source>
         <comment>%1 is true or false. This is a warning if user uses not perfect constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3567"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3597"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3568"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3598"/>
         <source>These kinds of constraints are good, but not perfectly optimized. Adding such constraints may make your timetable solve too slow or even impossible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3570"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3600"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3571"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3601"/>
         <source>It is recommended to use such constraints only at the end, after you generated successfully with all the other constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3572"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3602"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3573"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3603"/>
         <source>If your timetable is too difficult, it may be from these kinds of constraints, so you may need to remove them and retry.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3574"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3604"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3656"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3575"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3605"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3657"/>
         <source>Continue only if you know what you are doing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3625"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3674"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3626"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3675"/>
         <source>It is recommended to keep this warning active, but if you really want, you can disable it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3627"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3676"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3628"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3677"/>
         <source>Disable it only if you know what you are doing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3629"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3678"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3630"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3679"/>
         <source>Are you sure you want to disable it?</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>This help by Liviu Lalescu, modified 7 November 2007</source>
-        <translation type="obsolete">Ši pagalba autoriaus Liviu Lalescu, paskutinis pakeistimas 2007 m. lapkričio 7-ąją</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="2896"/>
@@ -29329,10 +26312,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform.cpp" line="2929"/>
         <source>Please input at least one active activity before generating multiple</source>
         <translation>Prašom įvesti bent jau vieną aktyvią veiklą prieš daugialypį generavimą</translation>
-    </message>
-    <message>
-        <source>FET - a free timetabling program</source>
-        <translation type="obsolete">FET - tvarkaraščių sudarymo programa</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="963"/>
@@ -29366,10 +26345,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform.cpp" line="1013"/>
         <source>Current data file will not be affected by anything, locking constraints will only be added to the file you select to save (you can save current datafile and open saved timetable file after that to check it)</source>
         <translation>Einamasis duomenų failas nebus paveiktas nieko, apribojimų užrakinimas bus tiktai pridėtas prie rinkmenos, kurią jūs renkate, kad išsaugotumėte (jūs galite išsaugoti einamąjį duomenų failą ir atidaryti išsaugotą tvarkaraščio rinkmeną po to, patikrinkite tai)</translation>
-    </message>
-    <message>
-        <source>If you need more information, contact author or mailing list</source>
-        <translation type="obsolete">Jei jums reikia daugiau informacijos, susisiekite su autoriumi ar kitu atsakingu asmeniu</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="1021"/>
@@ -29442,53 +26417,9 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Currently (17 July 2008), there are:</source>
-        <translation type="obsolete">Šiuo metu yra:</translation>
-    </message>
-    <message>
-        <source>1. ar - Arabic - Manual</source>
-        <translation type="obsolete">1. ar - Arabų - Vadovas</translation>
-    </message>
-    <message>
-        <source>2. es - Spanish - Instructions</source>
-        <translation type="obsolete">2. es - Ispanų - Instrukcijos</translation>
-    </message>
-    <message>
-        <source>3. it - Italian - Instructions, FAQ</source>
-        <translation type="obsolete">3. it - Italų - Instrukcijos, DUK</translation>
-    </message>
-    <message>
-        <source>4. ro - Romanian - Import/Export Help</source>
-        <translation type="obsolete">4. ro - Rumunų - Importo/Eksporto pagalba</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3203"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3204"/>
         <source>Are you sure you want to reset all settings to defaults?</source>
         <translation>Jūs esate įsitikinęs, kad jūs norite vėl nustatyti visus nustatymus į numatytuosius?</translation>
-    </message>
-    <message>
-        <source>That means</source>
-        <translation type="obsolete">Tai reiškia</translation>
-    </message>
-    <message>
-        <source>1. Mainform geometry will be reset to default</source>
-        <translation type="obsolete">1. Pagrindinės formos geometrija bus atstatyta į pradinę padėtį</translation>
-    </message>
-    <message>
-        <source>2. Check for updates at startup will be disabled</source>
-        <translation type="obsolete">2. Atnaujinimų paieška bus neaktyvuota</translation>
-    </message>
-    <message>
-        <source>3. Language will be en_GB (restart needed to activate language change)</source>
-        <translation type="obsolete">3. Kalba bus en_GB (reikalingas perkrovimas, norint aktivuoti kalbos pakeitimus)</translation>
-    </message>
-    <message>
-        <source>5. Html level of the timetables will be 2</source>
-        <translation type="obsolete">5. Tvarkaraščių Html lygis bus 2</translation>
-    </message>
-    <message>
-        <source>6. Import directory will be %1</source>
-        <translation type="obsolete">6. Importo katalogas bus %1</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="738"/>
@@ -29521,119 +26452,119 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3209"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3210"/>
         <source>Mainform geometry will be reset to default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3212"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3213"/>
         <source>Show shortcut buttons in main window will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3215"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3216"/>
         <source>In the shortcuts tab from the main window, the first section will be selected/shown</source>
         <comment>Option refers to the main window tab widget for shortcuts, which currently contains 5 tabs: File, Data, Time, Space, Timetable (so it will select/show File tab).</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3219"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3220"/>
         <source>Check for updates at startup will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3228"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3229"/>
         <source>Working directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3231"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3232"/>
         <source>Output directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3234"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3235"/>
         <source>Import directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3237"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3238"/>
         <source>Html level of the timetables will be %1</source>
         <comment>%1 is default html level</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3240"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3241"/>
         <source>Mark not available slots with -x- in timetables will be %1</source>
         <comment>%1 is true or false. Lowercase -x-</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3243"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3244"/>
         <source>Mark break slots with -X- in timetables will be %1</source>
         <comment>%1 is true or false. Uppercase -X-</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3246"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3247"/>
         <source>Divide html timetables with time-axis by days will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3249"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3250"/>
         <source>Print activities with same starting time will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3252"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3253"/>
         <source>Enable activity tag max hours daily will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3255"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3256"/>
         <source>Enable students max gaps per day will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3261"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3262"/>
         <source>Enable constraints students min hours daily with empty days will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3264"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3265"/>
         <source>Warn if using constraints students min hours daily with empty days will be %1</source>
         <comment>%1 is true or false. This is a warning if user uses a non-standard constraint students min hours daily with allowed empty days</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3430"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3431"/>
         <source>You have more than 6 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3433"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3454"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3434"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3455"/>
         <source>FET question</source>
         <translation type="unfinished">FET klausimas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3435"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3456"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3436"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3457"/>
         <source>&amp;Continue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3451"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3452"/>
         <source>You have less than 5 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -29653,11 +26584,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform.cpp" line="1028"/>
         <source>All files</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>FET - %1</source>
-        <comment>The title of the main form, %1 is the name of the current file</comment>
-        <translation type="obsolete">FET - %1</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="533"/>
@@ -29766,7 +26692,7 @@ Having a subgroup with too little working hours per week means that you inputted
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3074"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3140"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3141"/>
         <source>Please select FET language</source>
         <translation type="unfinished"></translation>
     </message>
@@ -29876,35 +26802,40 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3190"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3116"/>
+        <source>Slovak</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="3191"/>
         <source>Language %1 selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3269"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3270"/>
         <source>Confirm activity planning will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3271"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3272"/>
         <source>Confirm spread activities over the week will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3273"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3274"/>
         <source>Confirm remove redundant constraints will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3648"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3649"/>
         <source>This kind of constraint is good, but only in the right case. Adding such constraints in the wrong circumstance may make your timetable solve too slow or even impossible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3651"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3652"/>
         <source>Please use such constraints only if you are sure that there exists a timetable with empty days for students. If your instution requires each day for the students to be not empty, or if there does not exist a solution with empty days for students, it is IMPERATIVE (for performance reasons) that you use the standard constraint which does not allow empty days. Otherwise, the timetable may be impossible to find.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -29919,12 +26850,12 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3527"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3528"/>
         <source>Choose results (output) directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3536"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3537"/>
         <source>You don&apos;t have write permissions in this directory</source>
         <translation type="unfinished"></translation>
     </message>
@@ -29944,18 +26875,18 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3219"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3222"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3246"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3249"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3252"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3255"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3261"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3220"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3223"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3247"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3250"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3253"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3256"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3262"/>
         <source>false</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3277"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3278"/>
         <source>FET confirmation</source>
         <translation type="unfinished"></translation>
     </message>
@@ -30016,30 +26947,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <source>&amp;Data</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;File, &amp;Data, &amp;Timetable, &amp;Help, must be different</extracomment>
         <translation>&amp;Duomenys</translation>
-    </message>
-    <message>
-        <source>Space constraints (misc)</source>
-        <translation type="obsolete">Vietos apribojimai (kiti)</translation>
-    </message>
-    <message>
-        <source>Space constraints (rooms)</source>
-        <translation type="obsolete">Vietos apribojimai (kambariai)</translation>
-    </message>
-    <message>
-        <source>Time constraints (misc)</source>
-        <translation type="obsolete">Laiko apribojimai (kiti)</translation>
-    </message>
-    <message>
-        <source>Time constraints (students)</source>
-        <translation type="obsolete">Laiko apribojimai (studentai)</translation>
-    </message>
-    <message>
-        <source>Time constraints (activities)</source>
-        <translation type="obsolete">Laiko apribojimai (veiklos)</translation>
-    </message>
-    <message>
-        <source>Time constraints (teachers)</source>
-        <translation type="obsolete">Laiko apribojimai (dėstytojai)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1125"/>
@@ -30117,11 +27024,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <source>Tags</source>
         <comment>It means activity tags, but I want to keep it short. It is on the shortcuts tab buttons, so keep translation short</comment>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Buildings</source>
-        <comment>It is on the shortcuts tab buttons, so keep translation short</comment>
-        <translation type="obsolete">Pastatai</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="265"/>
@@ -30259,31 +27161,10 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Saugoti Kaip</translation>
     </message>
     <message>
-        <source>E&amp;xit</source>
-        <extracomment>Accelerator key (letter after ampersand) for &amp;New, &amp;Open, &amp;Save, Save &amp;As, E&amp;xit must be different</extracomment>
-        <translation type="obsolete">&amp;Išeiti</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation type="obsolete">Išeiti</translation>
-    </message>
-    <message>
-        <source>&amp;Frequently asked questions</source>
-        <translation type="obsolete">&amp;Dažniausiai užduodami klausimai</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1262"/>
         <location filename="../src/interface/fetmainform_template.ui" line="1265"/>
         <source>Frequently asked questions</source>
         <translation>Dažniausiai užduodami klausimai</translation>
-    </message>
-    <message>
-        <source>&amp;About...</source>
-        <translation type="obsolete">&amp;Apie...</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="obsolete">Apie</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1287"/>
@@ -30333,10 +27214,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Grupės</translation>
     </message>
     <message>
-        <source>S&amp;ubgroups</source>
-        <translation type="obsolete">P&amp;ogrupiai</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1322"/>
         <source>Subgroups</source>
         <translation>Pogrupiai</translation>
@@ -30359,10 +27236,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform_template.ui" line="1003"/>
         <source>Miscellaneous</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Room</source>
-        <translation type="obsolete">Kambarys</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1029"/>
@@ -30446,10 +27319,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Kambariai</translation>
     </message>
     <message>
-        <source>View (r&amp;ooms)</source>
-        <translation type="obsolete">Peržiūrėti (&amp;kambarius)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1403"/>
         <source>View (rooms)</source>
         <translation>Peržiūrėti (kambarius)</translation>
@@ -30521,51 +27390,15 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;en_GB (British English)</source>
-        <translation type="obsolete">&amp;en_GB (Britų)</translation>
-    </message>
-    <message>
-        <source>en_GB (British English)</source>
-        <translation type="obsolete">en_GB (Britų)</translation>
-    </message>
-    <message>
-        <source>&amp;ro (Romanian)</source>
-        <translation type="obsolete">&amp;ro (Rumunų)</translation>
-    </message>
-    <message>
-        <source>ro (Romanian)</source>
-        <translation type="obsolete">ro (Rumunų)</translation>
-    </message>
-    <message>
-        <source>T&amp;ime constraints</source>
-        <translation type="obsolete">La&amp;iko apribojimai</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform_template.ui" line="895"/>
         <source>Time constraints</source>
         <translation>Laiko apribojimai</translation>
-    </message>
-    <message>
-        <source>&amp;fr (French)</source>
-        <translation type="obsolete">&amp;fr (Prancūzų)</translation>
-    </message>
-    <message>
-        <source>fr (French)</source>
-        <translation type="obsolete">fr (Prancūzų)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1416"/>
         <location filename="../src/interface/fetmainform_template.ui" line="1419"/>
         <source>A set of activities has same starting time (day+hour)</source>
         <translation>Veiklų komplektas turi tą patį pradinį laiką (diena+valanda)</translation>
-    </message>
-    <message>
-        <source>View (st&amp;udents-with rooms)</source>
-        <translation type="obsolete">Peržiūrėti (st&amp;udentus-su kambariais)</translation>
-    </message>
-    <message>
-        <source>View (students-with rooms)</source>
-        <translation type="obsolete">Peržiūrėti (studentus-su kambariais)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1424"/>
@@ -30616,10 +27449,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform_template.ui" line="1515"/>
         <source>A set of activities are not overlapping</source>
         <translation>Veiklų komplektas nepersidengia</translation>
-    </message>
-    <message>
-        <source>Min n days between a set of activities</source>
-        <translation type="obsolete">Min n dienų tarp veiklų komplekto</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1531"/>
@@ -30687,22 +27516,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Veikla turi privilegijuotų kambarių komplektą</translation>
     </message>
     <message>
-        <source>&amp;ca (Catalan)</source>
-        <translation type="obsolete">&amp;ca (Katalonų)</translation>
-    </message>
-    <message>
-        <source>ca (Catalan)</source>
-        <translation type="obsolete">ca (Katalonų)</translation>
-    </message>
-    <message>
-        <source>&amp;ms (Malay)</source>
-        <translation type="obsolete">&amp;ms (Malajų)</translation>
-    </message>
-    <message>
-        <source>ms (Malay)</source>
-        <translation type="obsolete">ms (Malajų)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1754"/>
         <source>A subject has a preferred room</source>
         <translation>Tema turi privilegijuotą kambarį</translation>
@@ -30711,34 +27524,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform_template.ui" line="1759"/>
         <source>A subject has a set of preferred rooms</source>
         <translation>Tema turi privilegijuotų kambarių komplektą</translation>
-    </message>
-    <message>
-        <source>&amp;pl (Polish)</source>
-        <translation type="obsolete">&amp;pl (Lenkų)</translation>
-    </message>
-    <message>
-        <source>pl (Polish)</source>
-        <translation type="obsolete">pl (Lenkų)</translation>
-    </message>
-    <message>
-        <source>&amp;tr (Turkish)</source>
-        <translation type="obsolete">&amp;tr (Turkiškai)</translation>
-    </message>
-    <message>
-        <source>tr (Turkish)</source>
-        <translation type="obsolete">tr (Turkiškai)</translation>
-    </message>
-    <message>
-        <source>&amp;nl (Dutch)</source>
-        <translation type="obsolete">&amp;nl (Olandų)</translation>
-    </message>
-    <message>
-        <source>nl (Dutch)</source>
-        <translation type="obsolete">nl (Olandų)</translation>
-    </message>
-    <message>
-        <source>&amp;de (German)</source>
-        <translation type="obsolete">&amp;de (Vokiečių)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1613"/>
@@ -30756,14 +27541,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform_template.ui" line="1629"/>
         <source>Subjects statistics</source>
         <translation>Temų statistika</translation>
-    </message>
-    <message>
-        <source>&amp;hu (Hungarian)</source>
-        <translation type="obsolete">&amp;hu (Vengrų)</translation>
-    </message>
-    <message>
-        <source>m&amp;k (Macedonian)</source>
-        <translation type="obsolete">m&amp;k (Makedoniečių)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1634"/>
@@ -30813,10 +27590,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Min valandų kasdien studentų sąrašui</translation>
     </message>
     <message>
-        <source>Generate &amp;multiple variants</source>
-        <translation type="obsolete">Generuoti &amp;daugialypius variantus</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1699"/>
         <source>Generate multiple variants</source>
         <translation>Generuoti daugialypius variantus</translation>
@@ -30825,10 +27598,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform_template.ui" line="1709"/>
         <source>An activity ends students day</source>
         <translation>Veikla baigia studentų dieną</translation>
-    </message>
-    <message>
-        <source>e&amp;s (Spanish)</source>
-        <translation type="obsolete">e&amp;s (Ispanų)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1714"/>
@@ -30854,26 +27623,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform_template.ui" line="1734"/>
         <source>Help on statistics</source>
         <translation>Pagalba su statistika</translation>
-    </message>
-    <message>
-        <source>Help in other languages than English</source>
-        <translation type="obsolete">Pagalba kitomis kalbomis</translation>
-    </message>
-    <message>
-        <source>e&amp;l (Greek)</source>
-        <translation type="obsolete">e&amp;l (Graikų)</translation>
-    </message>
-    <message>
-        <source>&amp;ar (Arabic)</source>
-        <translation type="obsolete">&amp;ar (Arabų)</translation>
-    </message>
-    <message>
-        <source>&amp;id (Indonesian)</source>
-        <translation type="obsolete">&amp;id (Indoneziečių)</translation>
-    </message>
-    <message>
-        <source>it (Italian)</source>
-        <translation type="obsolete">it (Italų)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1488"/>
@@ -30915,50 +27664,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation>Maks tarpai per dieną mokytojui</translation>
     </message>
     <message>
-        <source>Misc time constraints</source>
-        <translation type="obsolete">Kiti laiko apribojimai</translation>
-    </message>
-    <message>
-        <source>Teachers time constraints</source>
-        <translation type="obsolete">Dėstytojų laiko apribojimai</translation>
-    </message>
-    <message>
-        <source>Students time constraints</source>
-        <translation type="obsolete">Studentų laiko apribojimai</translation>
-    </message>
-    <message>
-        <source>Activities time constraints</source>
-        <translation type="obsolete">Veiklų laiko apribojimai</translation>
-    </message>
-    <message>
-        <source>Misc space constraints</source>
-        <translation type="obsolete">Kiti vietos apribojimai</translation>
-    </message>
-    <message>
-        <source>Rooms space constraints</source>
-        <translation type="obsolete">Kambarių vietos apribojimai</translation>
-    </message>
-    <message>
-        <source>Activities space constraints</source>
-        <translation type="obsolete">Veiklų vietos apribojimai</translation>
-    </message>
-    <message>
-        <source>Subjects space constraints</source>
-        <translation type="obsolete">Temų vietos apribojimai</translation>
-    </message>
-    <message>
-        <source>Subjects and activity tags space constraints</source>
-        <translation type="obsolete">Temų ir veiklų žymių vietos apribojimai</translation>
-    </message>
-    <message>
-        <source>Students space constraints</source>
-        <translation type="obsolete">Studentų vietos apribojimai</translation>
-    </message>
-    <message>
-        <source>Teachers space constraints</source>
-        <translation type="obsolete">Dėstytojų vietos apribojimai</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1432"/>
         <source>A teacher&apos;s not available times</source>
         <translation>Dėstytojo neprieinami laikai</translation>
@@ -30993,10 +27698,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform_template.ui" line="1608"/>
         <source>A set of students has a set of home rooms</source>
         <translation>Studentų sąrašas turi kelis namų kambarius</translation>
-    </message>
-    <message>
-        <source>Buildings</source>
-        <translation type="obsolete">Pastatai</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1764"/>
@@ -31106,10 +27807,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <source>Homepage</source>
         <extracomment>menu Help-&gt;Online-&gt;Homepage, opens the homepage of FET</extracomment>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Space constraints (activities)</source>
-        <translation type="obsolete">Vietos apribojimai (veiklos)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1849"/>
@@ -31426,10 +28123,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>lt (Lithuanian)</source>
-        <translation type="obsolete">lt (Lietuvių)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform_template.ui" line="413"/>
         <location filename="../src/interface/fetmainform_template.ui" line="1129"/>
         <location filename="../src/interface/fetmainform_template.ui" line="1188"/>
@@ -31650,14 +28343,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Specified language is incorrect - making it en_GB (English)</source>
-        <translation type="obsolete">Nurodyta kalba neteisinga - bus nustatyta en_GB (Anglų)</translation>
-    </message>
-    <message>
-        <source>Translation for specified language not loaded - this is an error, maybe translation file is missing - making language en_GB (English)</source>
-        <translation type="obsolete">Vertimas nurodytai kalbai neužkrautas - tai yra klaida, gal vertimų byla dingus - bus nustatyta en_GB (Anglų)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fet.cpp" line="465"/>
         <source>FET searched for translation file %1 in directories %2 and %3 (and %4 under UNIX like systems), but could not find it.</source>
         <translation type="unfinished"></translation>
@@ -31827,22 +28512,6 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/engine/generate_pre.cpp" line="7138"/>
         <source>FET warning</source>
         <translation type="unfinished">FET įspėjimas</translation>
-    </message>
-    <message>
-        <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours daily.
-
- Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
-
- Please modify your data accordingly and try again.
-
- For more details, join the mailing list or email the author</source>
-        <translation type="obsolete">Negalima optimizuoti pogrupio %1, nes yra perdaug apribojimų (maks valandų kasdien) paskirtų tam pogrupiui, kurie negali būti apjungti į 2 šio tipo apribojimus. Du apribojimai (maks valandų kasdien) gali būti sujungti į vieną, jeigu maks valandos yra mažesnės ir svoris yra didesnis pirmame apribojime. Yra įmanoma pridėti bet kiek tokio tipo apribojimų pogrupiui, bet jų bendras rezultatas turi būti maksimaliai 2 apribojimai tipo - maks valandų kasdien.
-
-Pavyzdys: jūs galite panaudoti 3 apribojimus: 6 valandos 95%, 7 valandos 100% ir 8 valandos 100%, kurie gali būti sujungti į du apribojimus: 6 valandos 95%, 7 valandos 100%
-
-Prašome atitinkamai pataisyti savo duomenis ir pabandyti dar kartą.
-
-Dėl daugiau informacijos, prisijunkite adresų sąrašo ar parašykite elektronini laišką autoriui</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="770"/>
@@ -32083,26 +28752,10 @@ Dėl daugiau informacijos, prisijunkite adresų sąrašo ar parašykite elektron
         <translation type="unfinished">Žiūrėti toliau</translation>
     </message>
     <message>
-        <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours daily.
-
- Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
-
- Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
-        <translation type="obsolete">Negalima optimizuoti pogrupio %1, nes yra perdaug apribojimų (maks valandų kasdien) paskirtų tam pogrupiui, kurie negali būti apjungti į 2 šio tipo apribojimus. Du apribojimai (maks valandų kasdien) gali būti sujungti į vieną, jeigu maks valandos yra mažesnės ir svoris yra didesnis pirmame apribojime. Yra įmanoma pridėti bet kiek tokio tipo apribojimų pogrupiui, bet jų bendras rezultatas turi būti maksimaliai 2 apribojimai tipo - maks valandų kasdien.
-
-Pavyzdys: jūs galite panaudoti 3 apribojimus: 6 valandos 95%, 7 valandos 100% ir 8 valandos 100%, kurie gali būti sujungti į du apribojimus: 6 valandos 95%, 7 valandos 100%
-
-Prašome atitinkamai pataisyti savo duomenis ir pabandyti dar kartą. Dėl daugiau informacijos, prisijunkite adresų sąrašo ar parašykite elektronini laišką autoriui</translation>
-    </message>
-    <message>
         <location filename="../src/engine/generate_pre.cpp" line="849"/>
         <location filename="../src/engine/generate_pre.cpp" line="887"/>
         <source>Cannot optimize for subgroup %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, students set not available and/or breaks. The number of total hours for this subgroup is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
         <translation type="unfinished">Negalima optimizuoti pogriupio %1, nes yra maks %2 valandų kasdien su 100% svoriu apsribojimas, kuris negali būti priimtas, dėl dienų skaičiaus per savaitę, valandų skaičiaus per dieną, studentų sąrašų nepasiekiamumo ir/ar pertraukų. Visas valandų skaičius pogrupiui yra %3 ir leistinų plyšių skaičius, atsižvelgiant į maks valandų kasdien ir kitus apribojimus, yra %4.</translation>
-    </message>
-    <message>
-        <source>Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
-        <translation type="obsolete">Prašom pakeisti savo duomenis atitinkamai ir prašom pabandyti dar kartą. Daugiau detalių, prisijunkite prie adresų sąrašo ar siųskite elektroniniu paštu autoriui</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1034"/>
@@ -32119,18 +28772,6 @@ Prašome atitinkamai pataisyti savo duomenis ir pabandyti dar kartą. Dėl daugi
 
  Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cannot optimize for students, because the constraint of type min hours daily relating to students has no 100% weight. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
-        <translation type="obsolete">Negalima optimizuoti studentų, nes apribojimas (min valandų kasdien) studentams neturi 100% svorio. Prašome pataisyti duomenis ir pabandyti dar katrą. Daugiau detalių, prisijunkite prie adresų sąrašo ar siųskite elektroniniu paštu autoriui</translation>
-    </message>
-    <message>
-        <source>Cannot optimize for students set %1, because the constraint of type min hours daily relating to him has no 100% weight. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
-        <translation type="obsolete">Negalima optimizuoti studentų sarašo %1, nes apribojimas (min valandų kasdien) studentams neturi 100% svorio. Prašome pataisyti duomenis ir pabandyti dar katrą. Daugiau detalių, prisijunkite prie adresų sąrašo ar siųskite elektroniniu paštu autoriui</translation>
-    </message>
-    <message>
-        <source>Cannot optimize for subgroup %1, because there are two constraints of type min hours daily relating to him, and the weight percentage is higher on the constraint with less minimum hours. You are allowed only to have for each subgroup the most important constraint with maximum weight percentage and largest minimum hours daily allowed. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
-        <translation type="obsolete">Negalima optimizuoti pogrupio %1, bes yra du jam skirti apribojimai (min valandų kasdien) ir svoris procentais aukštesnis nei kito apribojimo. Jūs galite turėti kiekvienam pogrupiui tik po vieną svarbiausią apribojimą su maksimaliu svoriu ir didžiausiu leistinu min valandų kasdien.  Prašome pataisyti duomenis ir pabandyti dar katrą. Daugiau detalių, prisijunkite prie adresų sąrašo ar siųskite elektroniniu paštu autoriui</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1904"/>
@@ -32890,12 +29531,6 @@ Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Are you sure you want to delete this group and all related subgroup, activities and constraints?
-</source>
-        <translation type="obsolete">Ar esate tikri, kad norite ištrinti šią grupę ir visus susijusius pogrupius, veiklas ir apribojimus?
-</translation>
-    </message>
-    <message>
         <location filename="../src/interface/groupsform.cpp" line="113"/>
         <source>Are you sure you want to delete group %1 and all related subgroups, activities and constraints?</source>
         <translation type="unfinished"></translation>
@@ -32909,12 +29544,6 @@ Please modify your data correspondingly and try again</source>
         <location filename="../src/interface/groupsform.cpp" line="114"/>
         <source>No</source>
         <translation type="unfinished">Ne</translation>
-    </message>
-    <message>
-        <source>This group still exists into another year
-The related subgroups, activities and constraints were not removed</source>
-        <translation type="obsolete">Ši grupė vis dar egzistuoje kituose metuose
-Susiję pogrupiai, veiklos ir apribojimai nepašalinti</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform.cpp" line="234"/>
@@ -32952,10 +29581,6 @@ Susiję pogrupiai, veiklos ir apribojimai nepašalinti</translation>
         <translation>Grupė</translation>
     </message>
     <message>
-        <source>Add group</source>
-        <translation type="obsolete">Pridėti grupę</translation>
-    </message>
-    <message>
         <location filename="../src/interface/groupsform_template.ui" line="86"/>
         <source>Remove</source>
         <translation type="unfinished">Šalinti</translation>
@@ -32964,14 +29589,6 @@ Susiję pogrupiai, veiklos ir apribojimai nepašalinti</translation>
         <location filename="../src/interface/groupsform_template.ui" line="93"/>
         <source>Modify</source>
         <translation type="unfinished">Koreguoti</translation>
-    </message>
-    <message>
-        <source>Remove current</source>
-        <translation type="obsolete">Šalinti pasirinktą</translation>
-    </message>
-    <message>
-        <source>Modify current</source>
-        <translation type="obsolete">Koreguoti pasirinktą</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="102"/>
@@ -33012,9 +29629,28 @@ Susiję pogrupiai, veiklos ir apribojimai nepašalinti</translation>
         <translation>Apie FET - tvarkaraščių sudarymo programa</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="30"/>
-        <source>Author</source>
-        <translation>Autorius</translation>
+        <location filename="../src/interface/helpaboutform_template.ui" line="42"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Copyright (C) 2002-2010 Liviu Lalescu&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Version: 5.13.4 (June 2010)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Licensed under GNU GPL.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Author: Liviu Lalescu (timetable generation algorithm, data structures). Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the e-mail address).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Please see also Contributors and Translators tabs.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="69"/>
@@ -33027,9 +29663,9 @@ Susiję pogrupiai, veiklos ir apribojimai nepašalinti</translation>
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Volker Dirr ( to contact Volker Dirr visit http://www.timetabling.de/ )&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Lots of helping with testing, bug reports, suggestions, comparisons&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	XHTML generation code modified by Volker Dirr from old HTML generation code&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	(old code by Liviu Lalescu)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	added features: - XHTML 1.0 strict valid&lt;/span&gt;&lt;/p&gt;
@@ -33046,10 +29682,14 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- index HTML file&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print daily timetable&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print activities with same starting time&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Import and export of CSV files&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Export of advanced statistics&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Important suggestions and partial code for great speed improvements in some particular cases&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	(better computation for initial order of activities, which leads to much faster generation for some particular cases of timetables).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	(better computation for initial order of activities, which leads to much faster generation for some&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	particular cases of timetables).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Idea and partial code for locking the activities.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -33058,132 +29698,62 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="120"/>
-        <source>Translators</source>
-        <translation>Vertėjai</translation>
-    </message>
-    <message utf8="true">
-        <location filename="../src/interface/helpaboutform_template.ui" line="132"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="235"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ar - Arabic translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Hatim Alahmadi (dr.hatim AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Ideas for the backtracking swapping algorithm:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ca - Catalan translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Sílvia Lag (to contact Sílvia visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Catalan translation, or contact forum user silvia)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;[1] Michael Marte - Models And Algorithms For School Timetabling - A Constraint Programming Approach - 2 July 2002 (free, on the internet) - Section 2.2.5 - Manual Timetabling - pages 23-24.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;da - Danish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	David Lamhauge (davidlamhauge AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;[2] Jantien Hartog - Timetabling on Dutch High-Schools - Satisfiability versus gp-Untis - March 2007 (free, on the internet) - Section 5.2 - page 27.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;de - German translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;el - Greek translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Dimitrios Ropokis (wamy80s AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;es - Spanish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Jose Cesar Fernandez Lopez (cesar.fernandez.lopez AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fa - Persian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Hamed SadeghiNeshat (ha_sadeghi AT ce.sharif.edu)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updates and many improvements - sally sat (soory63 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fr - French translation &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Jerome Durand (fetfr AT free.fr, http://fetfr.free.fr/).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by Patrick Fox (patrick.fox AT laposte.net)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;hu - Hungarian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ferenczi Viktor (cx AT cx.hu)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;id - Indonesian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nirwan Yus (ny.unpar AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;it - Italian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Marco Barsotti (mbarsan AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;lt - Lithuanian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Darius Staigys (darius AT e-servisas.lt)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mk - Macedonian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Zoran Zdravkovski (zoran AT pmf.ukim.edu.mk)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ms - Malay translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Abdul Hadi Kamel (hadikamel AT perlis.uitm.edu.my)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;nl - Dutch translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Niels Fikse (k.fikse AT student.utwente.nl)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pl - Polish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radoslaw Pasiok (zapala AT konto.pl)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pt_BR - Brazilian Portuguese translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Werner Bruns (werner.bruns AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Frank Mártin (drfarofa AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ro - Romanian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Liviu Lalescu (Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	in particular you can find here the e-mail address).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ru - Russian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ilya V. Paramonov (ivparamonov AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;si - Sinhala translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Achini Duisna (duisna1012 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;tr - Turkish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator - Mehmet Gezmisoglu (m_gezmisoglu AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updates and many improvements - Mahir Nacar (mahirnacar AT email.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uk - Ukrainian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Andriy Melnyk (melnyk.andriy AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;You may find more information on the FET documentation web page, &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/doc/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/doc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="../src/interface/helpaboutform_template.ui" line="261"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="266"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;(chronologically)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;--------------------&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;(chronologically):&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Costin Badica	- my teacher. He actually made me begin this project and provided me with documentation and advices.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Costin Badica - he advised Liviu Lalescu to begin this project, offered suggestions and provided him with documentation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Carsten Niehaus - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Imre Nagy 	- e-mail list (does not work anymore), suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Imre Nagy - e-mail list (does not work anymore), suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Sajith V. K. 	- suggestions&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Sajith V. K. - suggestions&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Michael Towers	- lots of bugs reported, sample files, suggestions, front/back-end.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Michael Towers - lots of bugs reported, sample files, suggestions, front/back-end.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Antti Leppik	- sample file, suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Antti Leppik - sample file, suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Ian Fantom	- sample file, suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Ian Fantom - sample file, suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Simon Ghetti	- sample files, suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Simon Ghetti - sample files, suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Gibbon Tamba - sample file, bug reported.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Jerome Durand - bug reported, French translation (fetfr@free.fr, please also see http://fetfr.free.fr/).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Jerome Durand - bug reported, French translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Marek Jaszuk - bugs reported, suggestions, sample file.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Ramanathan Srinivasan - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Ramanathan Srinivasan - suggested Constraint2ActivitiesConsecutive and Constraint2ActivitiesGrouped.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Vimal Joseph - suggestions, a script to convert the .xml results into .tex.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Cristian Gherman - bug reported, suggestions.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;				&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Cristian Gherman - bugs reported, suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Nicholas Robinson - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Radu Spineanu 	- Debian package.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Radu Spineanu - Debian package.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Morten Piil	- bug reported, sample file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Morten Piil - bug reported, sample file.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Sebastian Canagaratna - lots of suggestions, bugs reported, sample files.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -33191,7 +29761,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Miguel Gea Milvaques - Catalan translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Frank de Bruijn - bug reported.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Frans de Bruijn - bug reported.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Radoslaw Pasiok - Polish translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -33205,7 +29775,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Daniel S. - suggestions, help files for the constraints.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Gianluca Salvo - suggested ConstraintTwoActivitiesOrdered.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Gianluca Salvo - suggested Constraint2ActivitiesOrdered.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Sebastian O&apos;Halloran - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -33219,11 +29789,11 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Volker Dirr - German translation, bug reports, suggestions, 2-point and uniform crossover implementation and testing.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Les Richardson - update of the FAQ.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Les Richardson - Update of the FAQ.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Gabi Danon - instructions on how to compile/run FET on Mac OS X.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Gabi Danon - instructions on how to compile/run FET on Mac OS X&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Manolo Par - suggested ConstraintTeachersMinHoursDaily&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Manolo Par - suggested ConstraintTeachersMinHoursDaily.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Viktor Ferenczi - bug report, Hungarian translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -33261,8 +29831,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Marco Barsotti - Italian translation, testing.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Romeu Veloso - suggestions.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Hatim Alahmadi - Arabic translation, sample file.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;kdsayang - suggestions.&lt;/span&gt;&lt;/p&gt;
@@ -33279,9 +29847,9 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Darius Staigys - Lithuanian translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;George Miliotis [Ionio] - suggestions&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;George Miliotis [Ionio] - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Silvia - suggestions, sample file&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Silvia - suggestions, sample file.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;alfaromeo - suggestions, testing.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -33289,7 +29857,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Cristian Balint - sample files.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sherman - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sherman - suggestion.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Azu Boba - suggestion.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -33354,69 +29922,114 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;murad - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Achini Duisna - Sinhala translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Ondrej Gregor - Slovak translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="215"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="124"/>
+        <source>Translators</source>
+        <translation>Vertėjai</translation>
+    </message>
+    <message utf8="true">
+        <location filename="../src/interface/helpaboutform_template.ui" line="136"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ar - Arabic translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Hatim Alahmadi (dr.hatim AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ca - Catalan translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Sílvia Lag (to contact Sílvia visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Catalan translation, or contact forum user silvia)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;da - Danish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	David Lamhauge (davidlamhauge AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;de - German translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;el - Greek translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Dimitrios Ropokis (wamy80s AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;es - Spanish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Jose Cesar Fernandez Lopez (cesar.fernandez.lopez AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fa - Persian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Hamed SadeghiNeshat (ha_sadeghi AT ce.sharif.edu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by: sally sat (soory63 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fr - French translation &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Jerome Durand (fetfr AT free.fr).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by: Patrick Fox (patrick.fox AT laposte.net)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;hu - Hungarian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ferenczi Viktor (cx AT cx.hu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;id - Indonesian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nirwan Yus (ny.unpar AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;it - Italian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Marco Barsotti (mbarsan AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;lt - Lithuanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Darius Staigys (darius AT e-servisas.lt)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mk - Macedonian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Zoran Zdravkovski (zoran AT pmf.ukim.edu.mk)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ms - Malay translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Abdul Hadi Kamel (hadikamel AT perlis.uitm.edu.my)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;nl - Dutch translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Niels Fikse (k.fikse AT student.utwente.nl)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pl - Polish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radoslaw Pasiok (zapala AT konto.pl)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pt_BR - Brazilian Portuguese translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Werner Bruns (werner.bruns AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Frank Mártin (drfarofa AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ro - Romanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Liviu Lalescu (Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	in particular you can find here the e-mail address).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ru - Russian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ilya V. Paramonov (ivparamonov AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;si - Sinhala translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Achini Duisna (duisna1012 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sk - Slovak translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ondrej Gregor (to contact Ondrej visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Slovak translation, or contact forum user Ondrej)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;tr - Turkish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Mehmet Gezmisoglu (m_gezmisoglu AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by: Mahir Nacar (mahirnacar AT email.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uk - Ukrainian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Andriy Melnyk (melnyk.andriy AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="223"/>
         <source>References</source>
         <translation>Rekomendacijos</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="42"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Copyright (C) 2002-2010 Liviu Lalescu&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Version: 5.13.3 (May 2010)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Licensed under GNU GPL.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Author: Liviu Lalescu (timetable generation algorithm, data structures). Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Please see also Contributors and Translators tabs&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <location filename="../src/interface/helpaboutform_template.ui" line="30"/>
+        <source>Authors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="227"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Bibliography:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;-------------&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Ideas for the backtracking swapping algorithm:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;[1] Michael Marte - Models And Algorithms For School Timetabling - A Constraint Programming Approach - 2 July 2002 (free, on the internet) - Section 2.2.5 - Manual Timetabling - pages 23-24.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;[2] Jantien Hartog - Timetabling on Dutch High-Schools - Satisfiability versus gp-Untis - March 2007 (free, on the internet) - Section 5.2 - page 27.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;You may find more information on the FET documentation web page, &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/doc/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/doc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="249"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="254"/>
         <source>Thanks to</source>
         <translation>Padėka</translation>
-    </message>
-    <message>
-        <source>Guestbook</source>
-        <translation type="obsolete">Svečių knyga</translation>
-    </message>
-    <message>
-        <source>Sponsors</source>
-        <translation type="obsolete">Rėmėjai</translation>
     </message>
 </context>
 <context>
@@ -34402,10 +31015,6 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
 <context>
     <name>HelpFaqForm_template</name>
     <message>
-        <source>FET - Frequently asked questions</source>
-        <translation type="obsolete">FET - Dažniausiai užduodami klausimai</translation>
-    </message>
-    <message>
         <location filename="../src/interface/helpfaqform_template.ui" line="14"/>
         <source>Frequently asked questions</source>
         <extracomment>Thjs is the title of the dialog for FAQ help</extracomment>
@@ -34582,10 +31191,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>HelpInstructionsForm_template</name>
-    <message>
-        <source>FET - Instructions to input data such that FET can find a good timetable</source>
-        <translation type="obsolete">FET - Instrukcijos įvesti duomenis taip, kad FET galėtų surasti gerą tvarkaraštį</translation>
-    </message>
     <message>
         <location filename="../src/interface/helpinstructionsform_template.ui" line="14"/>
         <source>Instructions</source>
@@ -34785,10 +31390,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>HelpTipsForm_template</name>
     <message>
-        <source>FET - important tips</source>
-        <translation type="obsolete">FET - svarbūs patarimai</translation>
-    </message>
-    <message>
         <location filename="../src/interface/helptipsform_template.ui" line="14"/>
         <source>Important tips</source>
         <extracomment>This is the title of the dialog for tips</extracomment>
@@ -34830,39 +31431,13 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Empty names not allowed
-</source>
-        <translation type="obsolete">Tušti pavadinimai neleistini
-</translation>
-    </message>
-    <message>
-        <source>Duplicates not allowed
-</source>
-        <translation type="obsolete">Pasikartojimai neleistini
-</translation>
-    </message>
-    <message>
         <location filename="../src/interface/hoursform.cpp" line="161"/>
         <source>Please note that FET will NOT take care of old constraints using erased hours (only renamed hours will be handled correctly)</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Please note that FET will NOT take care
-of old constraints using erased hours
-(only renamed hours will be handled correctly)
-</source>
-        <translation type="obsolete">Prašome pastebėti, kad FET nieko nedarys su
-senais apribojimais, kuriuose yra ištrintos valandos
-(tik pervadintos valandos bus sutvarkytos teisingai)
-</translation>
-    </message>
 </context>
 <context>
     <name>HoursForm_template</name>
-    <message>
-        <source>FET - timetable data - the hours of the day</source>
-        <translation type="obsolete">FET - tvarkaraščio duomenys - valandos per dieną</translation>
-    </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="515"/>
         <source>Hour 22</source>
@@ -35271,18 +31846,6 @@ senais apribojimais, kuriuose yra ištrintos valandos
         <location filename="../src/engine/import.cpp" line="114"/>
         <source>Split Duration</source>
         <translation>Skaidyti trukmę</translation>
-    </message>
-    <message>
-        <source>Min N Days</source>
-        <translation type="obsolete">Min N dienų</translation>
-    </message>
-    <message>
-        <source>Min N Days Weight</source>
-        <translation type="obsolete">Min N dienų svoris</translation>
-    </message>
-    <message>
-        <source>Min N Days Consecutive</source>
-        <translation type="obsolete">Min N dienų nuoseklumas</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="125"/>
@@ -35825,10 +32388,6 @@ yra:</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>I recommend to import also teachers, rooms, buildings, subjects and activity tags before importing activities. It is not needed, because FET will automatically do it, but you can check the activity cvs file by that.</source>
-        <translation type="obsolete">Rekomenduojama prieš veiklų importavimą, importuoti dėstytojus, kambarius, pastatus, temas ir veiklos žymes. Tai nėra būtina, nes FET automatiškai tai padarys, bet jūs galite taip patikrinti veiklų bylą.</translation>
-    </message>
-    <message>
         <location filename="../src/engine/import.cpp" line="2039"/>
         <source>Student set %1 doesn&apos;t exist. You must add (or import) years, groups and subgroups first.</source>
         <translation>Studentų sąrašas %1 neegzistuoja. Jūs pirma turite pridėti (ar importuoti) metus, grupes ir pogrupius.</translation>
@@ -35935,10 +32494,6 @@ Prašome sustabdyti simuliacija prieštai</translation>
 <context>
     <name>InstitutionNameForm_template</name>
     <message>
-        <source>FET - timetable data - institution name</source>
-        <translation type="obsolete">FET - tvarkaraščio duomenys - įstaigos vardas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/institutionnameform_template.ui" line="14"/>
         <source>Timetable data - institution name</source>
         <extracomment>The title of the dialog to modify the institution name</extracomment>
@@ -35964,11 +32519,6 @@ Prašome sustabdyti simuliacija prieštai</translation>
         <translation type="unfinished">FET - importo %1 komentaras</translation>
     </message>
     <message>
-        <source>FET - import %1 comment</source>
-        <comment>The comment of importing of category named %1</comment>
-        <translation type="obsolete">FET - importo %1 komentaras</translation>
-    </message>
-    <message>
         <location filename="../src/engine/import.cpp" line="442"/>
         <source>&amp;OK</source>
         <translation type="unfinished">&amp;Gerai</translation>
@@ -35983,29 +32533,9 @@ Prašome sustabdyti simuliacija prieštai</translation>
         <translation type="unfinished">FET - eksporto komentaras</translation>
     </message>
     <message>
-        <source>FET - export comment</source>
-        <comment>The comment of exporting operation</comment>
-        <translation type="obsolete">FET - eksporto komentaras</translation>
-    </message>
-    <message>
         <location filename="../src/engine/export.cpp" line="398"/>
         <source>&amp;Ok</source>
         <translation type="unfinished">&amp;Gerai</translation>
-    </message>
-</context>
-<context>
-    <name>LockUnlock</name>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Atšaukti</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation type="obsolete">Gerai</translation>
-    </message>
-    <message>
-        <source>FET information</source>
-        <translation type="obsolete">FET informacija</translation>
     </message>
 </context>
 <context>
@@ -36035,10 +32565,6 @@ Prašome sustabdyti simuliacija prieštai</translation>
         <translation>FET klausimas</translation>
     </message>
     <message>
-        <source>Do you really want to have the activity with no teacher(s)?</source>
-        <translation type="obsolete">Jūs iš tikrųjų norite turėti veiklą be mokytojo(ų)?</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="470"/>
         <source>Do you really want to have the activity without teacher(s)?</source>
         <translation type="unfinished"></translation>
@@ -36058,17 +32584,9 @@ Prašome sustabdyti simuliacija prieštai</translation>
         <source>Do you really want to have the activity without student set(s)?</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Do you really want to have the activity with no student set(s)?</source>
-        <translation type="obsolete">Jūs iš tikrųjų norite turėti veiklą be studentų komplekto(ų)?</translation>
-    </message>
 </context>
 <context>
     <name>ModifyActivityForm_template</name>
-    <message>
-        <source>FET - modify activity dialog</source>
-        <translation type="obsolete">FET - Veiklos koregavimo dialogas</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="140"/>
         <source>Selected</source>
@@ -36199,10 +32717,6 @@ ir pridėkite naują suskaldytą veiklą</translation>
         <translation>Naujas elementas</translation>
     </message>
     <message>
-        <source>Selected</source>
-        <translation type="obsolete">Pažymėtas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="70"/>
         <location filename="../src/interface/modifyactivityform_template.ui" line="161"/>
         <location filename="../src/interface/modifyactivityform_template.ui" line="259"/>
@@ -36218,11 +32732,6 @@ ir pridėkite naują suskaldytą veiklą</translation>
         <location filename="../src/interface/modifyactivityform_template.ui" line="117"/>
         <source>Students</source>
         <translation>Studentai</translation>
-    </message>
-    <message>
-        <source>Selected</source>
-        <comment>It refers to a list of selected students sets</comment>
-        <translation type="obsolete">Pažymėtas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="238"/>
@@ -36250,11 +32759,6 @@ ir pridėkite naują suskaldytą veiklą</translation>
         <source>Selected</source>
         <comment>It refers to a list of selected teachers</comment>
         <translation type="unfinished">Pažymėtas</translation>
-    </message>
-    <message>
-        <source>Selected</source>
-        <comment>It refers to a list of selected students (sets)</comment>
-        <translation type="obsolete">Pažymėtas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="186"/>
@@ -36310,142 +32814,6 @@ ir pridėkite naują suskaldytą veiklą</translation>
     </message>
 </context>
 <context>
-    <name>ModifyConstraint2ActivitiesConsecutiveForm_template</name>
-    <message>
-        <source>FET - Modify constraint 2 activities consecutive dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (2 veiklų nuoseklumas)</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation type="obsolete">Gerai</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Atšaukti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Weight percentage
-(recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris
-(rekomenduojama: 0.0%-100%)</translation>
-    </message>
-    <message>
-        <source>100</source>
-        <translation type="obsolete">100</translation>
-    </message>
-    <message>
-        <source>First activity</source>
-        <translation type="obsolete">Pirma veikla</translation>
-    </message>
-    <message>
-        <source>Second activity</source>
-        <translation type="obsolete">Antra veikla</translation>
-    </message>
-</context>
-<context>
-    <name>ModifyConstraint2ActivitiesGroupedForm_template</name>
-    <message>
-        <source>Ok</source>
-        <translation type="obsolete">Gerai</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Atšaukti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Weight percentage
-(recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris
-(rekomenduojama: 0.0%-100%)</translation>
-    </message>
-    <message>
-        <source>100</source>
-        <translation type="obsolete">100</translation>
-    </message>
-    <message>
-        <source>First activity</source>
-        <translation type="obsolete">Pirma veikla</translation>
-    </message>
-    <message>
-        <source>Second activity</source>
-        <translation type="obsolete">Antra veikla</translation>
-    </message>
-</context>
-<context>
-    <name>ModifyConstraint2ActivitiesOrderedForm_template</name>
-    <message>
-        <source>FET - Modify constraint 2 activities ordered dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (2 veiklų eiliškumas)</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation type="obsolete">Gerai</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Atšaukti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Weight percentage
-(recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris
-(rekomenduojama: 0.0%-100%)</translation>
-    </message>
-    <message>
-        <source>100</source>
-        <translation type="obsolete">100</translation>
-    </message>
-    <message>
-        <source>First activity</source>
-        <translation type="obsolete">Pirma veikla</translation>
-    </message>
-    <message>
-        <source>Second activity</source>
-        <translation type="obsolete">Antra veikla</translation>
-    </message>
-</context>
-<context>
-    <name>ModifyConstraint3ActivitiesGroupedForm_template</name>
-    <message>
-        <source>Ok</source>
-        <translation type="obsolete">Gerai</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Atšaukti</translation>
-    </message>
-    <message>
-        <source>Weight percentage
-(recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris
-(rekomenduojama: 0.0%-100%)</translation>
-    </message>
-    <message>
-        <source>100</source>
-        <translation type="obsolete">100</translation>
-    </message>
-    <message>
-        <source>First activity</source>
-        <translation type="obsolete">Pirma veikla</translation>
-    </message>
-    <message>
-        <source>Second activity</source>
-        <translation type="obsolete">Antra veikla</translation>
-    </message>
-</context>
-<context>
     <name>ModifyConstraintActivitiesEndStudentsDayForm</name>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform.cpp" line="157"/>
@@ -36466,10 +32834,6 @@ ir pridėkite naują suskaldytą veiklą</translation>
 </context>
 <context>
     <name>ModifyConstraintActivitiesEndStudentsDayForm_template</name>
-    <message>
-        <source>FET - Modify constraint activities end students day</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (veikla, baigianti studentų dieną)</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="104"/>
         <source>Weight percentage (necessary: 100.0%)</source>
@@ -36541,19 +32905,9 @@ ir pridėkite naują suskaldytą veiklą</translation>
         <source>Only one selected activity</source>
         <translation type="unfinished">Tik viena pasirinkta veikla</translation>
     </message>
-    <message>
-        <source>Please report error to the author
-MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING must be increased (you have too many activities)</source>
-        <translation type="obsolete">Prašome pranešti apie klaidą autoriui
-MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING kintamasis turi būti padidintas (jūs turite per daug veiklų)</translation>
-    </message>
 </context>
 <context>
     <name>ModifyConstraintActivitiesNotOverlappingForm_template</name>
-    <message>
-        <source>FET - Modify constraint activities not overlapping</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (Veiklų nepersidengimai)</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="195"/>
         <source>Ok</source>
@@ -36565,30 +32919,10 @@ MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING kintamasis turi būti padidintas (jūs
         <translation>Atšaukti</translation>
     </message>
     <message>
-        <source>All activities (dbl. click or Enter to add)</source>
-        <translation type="obsolete">Visos veiklos (dvig. sprakt. prisidės)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="120"/>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="149"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click or Enter to remove)</source>
-        <translation type="obsolete">Pasirinkti (dvig. sprakt. pašalins)</translation>
-    </message>
-    <message>
-        <source>This constraint means that the activities should not be placed in
-common timeslots. You don&apos;t need to add this constraint for
-activities sharing a teacher or students set. Only add this constraint
-if you really want the activities to be non-simultaneous. If FET fails to find
-a timetable, maybe you can try optimizing first without these constraints</source>
-        <translation type="obsolete">Šis apribojimas reiškia, kad veiksmas neturi būti padėtas bendrame laiko plyšyje.
-Jūs neturite pridėti šio apribojimo veiksmui, turinčiam mokytoją, ar studentų sąrašą.
-Tiktai pridėkite šį apribojimą, jei jūs iš tikrųjų norite, kad veiksmas būtų nevienalaikis.
-Jei FET nepajėgia surasti tvarkaraštį, galbūt jūs galite pabandyti optimizuoti
-iš pradžių be šitų apribojimų</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="174"/>
@@ -36655,16 +32989,6 @@ iš pradžių be šitų apribojimų</translation>
 </context>
 <context>
     <name>ModifyConstraintActivitiesPreferredStartingTimesForm</name>
-    <message>
-        <source>Allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Leistina</translation>
-    </message>
-    <message>
-        <source>Not allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Neleistina</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="322"/>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="411"/>
@@ -36754,10 +33078,6 @@ Jei jums reikia svorio mažiau kaip 100 %, tai jūs galite panaudoti šį apribo
 <context>
     <name>ModifyConstraintActivitiesPreferredStartingTimesForm_template</name>
     <message>
-        <source>FET - Modify constraint activities preferred starting times</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (veiklų privilegijuoti pradžios laikai)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="14"/>
         <source>Modify activities preferred starting times</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
@@ -36810,14 +33130,6 @@ Jei jums reikia svorio mažiau kaip 100 %, tai jūs galite panaudoti šį apribo
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Set all slots not allowed</source>
-        <translation type="obsolete">Nustatyti visus neleistinus plyšius</translation>
-    </message>
-    <message>
-        <source>Set all slots allowed</source>
-        <translation type="obsolete">Nustatyti visus leistus plyšius</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="129"/>
         <source>Ok</source>
         <translation>Gerai</translation>
@@ -36830,16 +33142,6 @@ Jei jums reikia svorio mažiau kaip 100 %, tai jūs galite panaudoti šį apribo
 </context>
 <context>
     <name>ModifyConstraintActivitiesPreferredTimeSlotsForm</name>
-    <message>
-        <source>Allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Leistina</translation>
-    </message>
-    <message>
-        <source>Not allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Neleistina</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="321"/>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="410"/>
@@ -36929,10 +33231,6 @@ Jei jums reikia svorio mažiau kaip 100 %, tai jūs galite panaudoti šį apribo
 <context>
     <name>ModifyConstraintActivitiesPreferredTimeSlotsForm_template</name>
     <message>
-        <source>FET - Modify constraint activities preferred time slots</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (veiklų privilegijuoti laiko plyšiai)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="14"/>
         <source>Modify activities preferred time slots</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
@@ -36985,10 +33283,6 @@ Jei jums reikia svorio mažiau kaip 100 %, tai jūs galite panaudoti šį apribo
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Set all slots not allowed</source>
-        <translation type="obsolete">Nustatyti visus neleistinus plyšius</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="129"/>
         <source>Ok</source>
         <translation>Gerai</translation>
@@ -36997,10 +33291,6 @@ Jei jums reikia svorio mažiau kaip 100 %, tai jūs galite panaudoti šį apribo
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="136"/>
         <source>Cancel</source>
         <translation>Atšaukti</translation>
-    </message>
-    <message>
-        <source>Set all slots allowed</source>
-        <translation type="obsolete">Nustatyti visus leistus plyšius</translation>
     </message>
 </context>
 <context>
@@ -37031,22 +33321,10 @@ Jei jums reikia svorio mažiau kaip 100 %, tai jūs galite panaudoti šį apribo
 <context>
     <name>ModifyConstraintActivitiesSameStartingDayForm_template</name>
     <message>
-        <source>FET - Modify constraint activities same starting day</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (veiklų, kurios prasideda ta pačia dieną)</translation>
-    </message>
-    <message>
-        <source>All activities (dbl. click or Enter adds)</source>
-        <translation type="obsolete">Visos veiklos (dvig. sprakt. prisidės)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="104"/>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="133"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click or Enter removes)</source>
-        <translation type="obsolete">Pasirinkti (dvig. sprakt. pašalins)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="158"/>
@@ -37140,32 +33418,14 @@ Jei jums reikia svorio mažiau kaip 100 %, tai jūs galite panaudoti šį apribo
         <source>Only one selected activity</source>
         <translation type="unfinished">Tik viena pasirinkta veikla</translation>
     </message>
-    <message>
-        <source>Please report error to the author
-MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too many activities)</source>
-        <translation type="obsolete">Prašome pranešti apie klaidą autoriui
-MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR kintamasis turi būti padidintas (jūs turite per daug veiklų)</translation>
-    </message>
 </context>
 <context>
     <name>ModifyConstraintActivitiesSameStartingHourForm_template</name>
-    <message>
-        <source>FET - Modify constraint activities same starting hour</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (veiklų, kurios prasideda ta pačia valandą)</translation>
-    </message>
-    <message>
-        <source>All activities (dbl. click or Enter adds)</source>
-        <translation type="obsolete">Visos veiklos (dvig. sprakt. prisidės)</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="104"/>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="133"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click or Enter removes)</source>
-        <translation type="obsolete">Pasirinkti (dvig. sprakt. pašalins)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="158"/>
@@ -37259,19 +33519,9 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR kintamasis turi būti padidintas (j
         <source>Only one selected activity</source>
         <translation type="unfinished">Tik viena pasirinkta veikla</translation>
     </message>
-    <message>
-        <source>Please report error to the author
-MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME must be increased (you have too many activities)</source>
-        <translation type="obsolete">Prašome pranešti apie klaidą autoriui
-MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (jūs turite per daug veiklų)</translation>
-    </message>
 </context>
 <context>
     <name>ModifyConstraintActivitiesSameStartingTimeForm_template</name>
-    <message>
-        <source>FET - Modify constraint activities same starting time</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (veiklos, kurios prasideda tuo pačiu laiku)</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="158"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
@@ -37283,18 +33533,10 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
         <translation>100</translation>
     </message>
     <message>
-        <source>All activities (dbl. click or Enter removes)</source>
-        <translation type="obsolete">Visos veiklos (dvig. sprakt. pašalins)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="104"/>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="133"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click or Enter removes)</source>
-        <translation type="obsolete">Pasirinkti (dvig. sprakt. pašalins)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="179"/>
@@ -37382,10 +33624,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
 <context>
     <name>ModifyConstraintActivityEndsStudentsDayForm_template</name>
     <message>
-        <source>FET - Modify constraint activity ends students day dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (veikla, kuri baigia studentu dieną)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="14"/>
         <source>Modify activity ends students day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
@@ -37439,10 +33677,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
         <translation>100</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="65"/>
         <source>Activity tag</source>
         <translation>Veiklos žymė (tag)</translation>
@@ -37475,10 +33709,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
 </context>
 <context>
     <name>ModifyConstraintActivityPreferredRoomForm_template</name>
-    <message>
-        <source>FET - Modify constraint activity preferred room</source>
-        <translation type="obsolete">FET - Koreguoti veiklos apribojimui paruoštą kambarį</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="20"/>
         <source>-1</source>
@@ -37560,10 +33790,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
 <context>
     <name>ModifyConstraintActivityPreferredRoomsForm_template</name>
     <message>
-        <source>FET - Modify constraint activity preferred rooms</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (veiklos privilegijuoti kambariai)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="113"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
@@ -37574,14 +33800,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
         <translation>-1</translation>
     </message>
     <message>
-        <source>Add</source>
-        <translation type="obsolete">Pridėti</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="obsolete">Šalinti</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="134"/>
         <source>Ok</source>
         <translation>Gerai</translation>
@@ -37590,10 +33808,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="141"/>
         <source>Cancel</source>
         <translation>Atšaukti</translation>
-    </message>
-    <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Visi kambariai (dvig. sprakt. prisidės)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="14"/>
@@ -37617,10 +33831,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
         <source>Selected</source>
         <comment>It refers to a list of selected rooms</comment>
         <translation type="unfinished">Pažymėtas</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Pasirinkti kambariai (dvig. sprakt. pašalins)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="20"/>
@@ -37666,10 +33876,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
 </context>
 <context>
     <name>ModifyConstraintActivityPreferredStartingTimeForm_template</name>
-    <message>
-        <source>FET - Modify constraint activity preferred starting time dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (veiklas privilegijuotas pradžios laikas)</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="20"/>
         <source>Filter</source>
@@ -37732,10 +33938,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
         <translation>Pradžios valanda</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="154"/>
         <source>100</source>
         <translation>100</translation>
@@ -37758,16 +33960,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
 </context>
 <context>
     <name>ModifyConstraintActivityPreferredStartingTimesForm</name>
-    <message>
-        <source>Allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Leistina</translation>
-    </message>
-    <message>
-        <source>Not allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Neleistina</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform.cpp" line="351"/>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform.cpp" line="363"/>
@@ -37813,10 +34005,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
 </context>
 <context>
     <name>ModifyConstraintActivityPreferredStartingTimesForm_template</name>
-    <message>
-        <source>FET - Modify constraint activity preferred starting times</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (veiklos privilegijuoti pradžios laikai)</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="14"/>
         <source>Modify activity preferred starting times</source>
@@ -37889,27 +34077,9 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
         <source>Set all not allowed</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Set all slots allowed</source>
-        <translation type="obsolete">Nustatyti visus leistus plyšius</translation>
-    </message>
-    <message>
-        <source>Set all slots not allowed</source>
-        <translation type="obsolete">Nustatyti visus neleistinus plyšius</translation>
-    </message>
 </context>
 <context>
     <name>ModifyConstraintActivityPreferredTimeSlotsForm</name>
-    <message>
-        <source>Allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Leistina</translation>
-    </message>
-    <message>
-        <source>Not allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Neleistina</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform.cpp" line="351"/>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform.cpp" line="363"/>
@@ -37955,10 +34125,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
 </context>
 <context>
     <name>ModifyConstraintActivityPreferredTimeSlotsForm_template</name>
-    <message>
-        <source>FET - Modify constraint activity preferred time slots</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (veiklos privilegijuoti laiko plyšiai)</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="14"/>
         <source>Modify activity preferred time slots</source>
@@ -38025,14 +34191,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="167"/>
         <source>Set all not allowed</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set all slots allowed</source>
-        <translation type="obsolete">Nustatyti visus leistus plyšius</translation>
-    </message>
-    <message>
-        <source>Set all slots not allowed</source>
-        <translation type="obsolete">Nustatyti visus neleistinus plyšius</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="174"/>
@@ -38148,14 +34306,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
         <translation type="unfinished">-1</translation>
     </message>
     <message>
-        <source>Add</source>
-        <translation type="obsolete">Pridėti</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="obsolete">Šalinti</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="127"/>
         <source>Ok</source>
         <translation type="unfinished">Gerai</translation>
@@ -38164,10 +34314,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="134"/>
         <source>Cancel</source>
         <translation type="unfinished">Atšaukti</translation>
-    </message>
-    <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Visi kambariai (dvig. sprakt. prisidės)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="14"/>
@@ -38185,10 +34331,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="81"/>
         <source>New Item</source>
         <translation type="unfinished">Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Pasirinkti kambariai (dvig. sprakt. pašalins)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="20"/>
@@ -38229,10 +34371,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
 <context>
     <name>ModifyConstraintBasicCompulsorySpaceForm_template</name>
     <message>
-        <source>FET - Modify constraint basic compulsory space dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (pagrindinis privalomas vietos apribojimas)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsoryspaceform_template.ui" line="14"/>
         <source>Modify basic compulsory space</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
@@ -38249,17 +34387,9 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
         <translation>Atšaukti</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsoryspaceform_template.ui" line="39"/>
         <source>-1</source>
         <translation>-1</translation>
-    </message>
-    <message>
-        <source>Weight (needed: 100%)</source>
-        <translation type="obsolete">Svoris (reikalingas: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsoryspaceform_template.ui" line="28"/>
@@ -38291,10 +34421,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
 <context>
     <name>ModifyConstraintBasicCompulsoryTimeForm_template</name>
     <message>
-        <source>FET - Modify constraint basic compulsory time dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (pagrindinis privalomas laiko apribojimas)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsorytimeform_template.ui" line="14"/>
         <source>Modify basic compulsory time</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
@@ -38318,31 +34444,13 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
         <translation>Atšaukti</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsorytimeform_template.ui" line="39"/>
         <source>100</source>
         <translation>100</translation>
     </message>
-    <message>
-        <source>Weight (needed: 100%)</source>
-        <translation type="obsolete">Svoris (reikalingas: 100%)</translation>
-    </message>
 </context>
 <context>
     <name>ModifyConstraintBreakTimesForm</name>
-    <message>
-        <source>Break</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Pertrauka</translation>
-    </message>
-    <message>
-        <source>Allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Leistina</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform.cpp" line="222"/>
         <source>FET information</source>
@@ -38356,16 +34464,6 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (j
 </context>
 <context>
     <name>ModifyConstraintBreakTimesForm_template</name>
-    <message>
-        <source>FET - Modify constraint break times dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (pertraukos)</translation>
-    </message>
-    <message>
-        <source>The important thing is that a break does not induce
-gaps for teachers or students</source>
-        <translation type="obsolete">Svarbu yra, kad plyšiai nekelia
-tarpų mokytojams ar studentams</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="44"/>
         <source>Weight percentage (necessary: 100%)</source>
@@ -38401,14 +34499,6 @@ tarpų mokytojams ar studentams</translation>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="68"/>
         <source>Set all allowed</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set all slots allowed</source>
-        <translation type="obsolete">Nustatyti visus leistus plyšius</translation>
-    </message>
-    <message>
-        <source>Set all slots break</source>
-        <translation type="obsolete">Nustatyti visus neleistinus plyšius</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="14"/>
@@ -38518,18 +34608,10 @@ tarpų mokytojams ar studentams</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>All activities (dbl. click or Enter adds)</source>
-        <translation type="obsolete">Visos veiklos (dvig. sprakt. prisidės)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="104"/>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="133"/>
         <source>New Item</source>
         <translation type="unfinished">Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click or Enter removes)</source>
-        <translation type="obsolete">Pasirinkti (dvig. sprakt. pašalins)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="141"/>
@@ -38570,7 +34652,7 @@ tarpų mokytojams ar studentams</translation>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="226"/>
         <source>The best way to add the activities would be:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Geriausias būdas pridėti veiksmą būtų:</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="229"/>
@@ -38668,16 +34750,6 @@ daryti nuoseklumą</translation>
         <translation type="unfinished">Išvalyti</translation>
     </message>
     <message>
-        <source>Min days</source>
-        <translation type="obsolete">Min dienų</translation>
-    </message>
-    <message>
-        <source>If activities on same day,
-force activities consecutive</source>
-        <translation type="obsolete">Jei veiklos tą pačią dieną,
-daryti nuoseklumą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="226"/>
         <source>Weight percentage (recommended: 95.0% - 100.0%)</source>
         <translation type="unfinished"></translation>
@@ -38725,14 +34797,6 @@ daryti nuoseklumą</translation>
 </context>
 <context>
     <name>ModifyConstraintMinGapsBetweenActivitiesForm_template</name>
-    <message>
-        <source>FET - Modify constraint min gaps between activities</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (min tarpų tarp veiklų)</translation>
-    </message>
-    <message>
-        <source>Min gaps</source>
-        <translation type="obsolete">Min tarpų</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="181"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
@@ -38802,18 +34866,10 @@ daryti nuoseklumą</translation>
         <translation type="unfinished">Min tarpų</translation>
     </message>
     <message>
-        <source>All activities (dbl. click or Enter adds)</source>
-        <translation type="obsolete">Visos veiklos (dvig. sprakt. prisidės)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="104"/>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="133"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click or Enter removes)</source>
-        <translation type="obsolete">Pasirinkti (dvig. sprakt. pašalins)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="141"/>
@@ -38822,121 +34878,7 @@ daryti nuoseklumą</translation>
     </message>
 </context>
 <context>
-    <name>ModifyConstraintMinNDaysBetweenActivitiesForm</name>
-    <message>
-        <source>You want to add a constraint min n days between activities for more activities than the number of days per week. This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).</source>
-        <translation type="obsolete">Jūs norite pridėti apribojimo min n dienas tarp veiklos daugiau veiklų negu skaičius dienų per savaitę. Tai yra labai bloga praktika algoritmo vykdyme (tai lėtina generavimą ir daro tai sunkiau, kad surastų sprendimą).</translation>
-    </message>
-    <message>
-        <source>The best way to add the activities would be:</source>
-        <translation type="obsolete">Geriausias būdas pridėti veiksmą būtų:</translation>
-    </message>
-    <message>
-        <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min n days between activities up to 100%)</source>
-        <translation type="obsolete">1. Jei jūs pridedate &apos;nuoseklią jėgą, jei ta pati diena&apos;, tada sujungia papildomą porų veiklą, kad gautų daug veiklų, lygių skaičiui dienų per savaitę. Pavyzdys: 7 veiklas su trukme 1, 5 dienų savaitę, paskui paverskite į 5 veiklas su trukme: 2,2,1,1,1 ir prideda vieną konteinerinę veiklą su šitais 5 komponentais (galbūt pakėlimas svorio pridėtos apribojimo min n dienos tarp veiksmo iki 100 %)</translation>
-    </message>
-    <message>
-        <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)</source>
-        <translation type="obsolete">2. Jei jūs nepridedate &apos;nuoseklios jėgos, jei ta pati diena&apos;, tada pridėkite didesnę veiklą suskaldytą į daug veiksmų, lygių su skaičiumi dienų per savaitę ir likusius komponentus į kitą didesnę suskaldytą veiklą. Pavyzdžiui, manykite, kad jūs turite pridėti 7 veiklas su trukme 1 per 5 dienų savaitę. Pridėkite 2 didesnes konteinerines veiklas, iš pradžių vieną suskaldykite į 5 veiklas su trukme 1 ir sekantį suskaldykite į 2 veiklas su trukme 1 (galbūt pakėlimas svorio pridėtos apribojimų min n dienos tarp veiksmo kiekvienam iš 2 konteinerių iki 100 %)</translation>
-    </message>
-    <message>
-        <source>Do you want to add current constraint as it is now (not recommended) or cancel and edit as instructed?</source>
-        <translation type="obsolete">Jūs norite pridėti einamąjį apribojimą, kadangi tai yra dabar (nerekomenduota) ar panaikinti ir redaguoti kaip instruktuotas?</translation>
-    </message>
-    <message>
-        <source>FET warning</source>
-        <translation type="obsolete">FET įspėjimas</translation>
-    </message>
-    <message>
-        <source>FET information</source>
-        <translation type="obsolete">FET informacija</translation>
-    </message>
-    <message>
-        <source>Cannot proceed, current constraint is equal to another one (it is duplicated)</source>
-        <translation type="obsolete">Negalima testi, pasirinktas apribojimas yra lygus kitam (dublikatas)</translation>
-    </message>
-</context>
-<context>
-    <name>ModifyConstraintMinNDaysBetweenActivitiesForm_template</name>
-    <message>
-        <source>FET - Modify constraint min n days between activities</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (min N dienų tarp veiklų)</translation>
-    </message>
-    <message>
-        <source>All activities (dbl. click or Enter adds)</source>
-        <translation type="obsolete">Visos veiklos (dvig. sprakt. prisidės)</translation>
-    </message>
-    <message>
-        <source>New Item</source>
-        <translation type="obsolete">Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Selected (dbl. click or Enter removes)</source>
-        <translation type="obsolete">Pasirinkti (dvig. sprakt. pašalins)</translation>
-    </message>
-    <message>
-        <source>Min days</source>
-        <translation type="obsolete">Min dienų</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 95.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 95.0%-100%)</translation>
-    </message>
-    <message>
-        <source>95</source>
-        <translation type="obsolete">95</translation>
-    </message>
-    <message>
-        <source>If activities on same day,
-force activities consecutive</source>
-        <translation type="obsolete">Jei veiklos tą pačią dieną,
-daryti nuoseklumą</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation type="obsolete">Gerai</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Atšaukti</translation>
-    </message>
-    <message>
-        <source>Filter</source>
-        <translation type="obsolete">Filtras</translation>
-    </message>
-    <message>
-        <source>Activity tag</source>
-        <translation type="obsolete">Veiklos žymė (tag)</translation>
-    </message>
-    <message>
-        <source>Students set</source>
-        <translation type="obsolete">Studentų sąrašas</translation>
-    </message>
-    <message>
-        <source>Subject</source>
-        <translation type="obsolete">Tema</translation>
-    </message>
-    <message>
-        <source>Teacher</source>
-        <translation type="obsolete">Dėstytojas</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation type="obsolete">Išvalyti</translation>
-    </message>
-</context>
-<context>
     <name>ModifyConstraintRoomNotAvailableTimesForm</name>
-    <message>
-        <source>Not available</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Neprieinama</translation>
-    </message>
-    <message>
-        <source>Available</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Prieinama</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform.cpp" line="248"/>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform.cpp" line="255"/>
@@ -38957,17 +34899,9 @@ daryti nuoseklumą</translation>
 <context>
     <name>ModifyConstraintRoomNotAvailableTimesForm_template</name>
     <message>
-        <source>FET - Modifying constraint room not available times</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (kambarių užimtumas (laikas))</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="28"/>
         <source>Room</source>
         <translation>Kambarys</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="14"/>
@@ -39005,14 +34939,6 @@ daryti nuoseklumą</translation>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="123"/>
         <source>Cancel</source>
         <translation>Atšaukti</translation>
-    </message>
-    <message>
-        <source>Set all slots available</source>
-        <translation type="obsolete">Nustatyti visus galimus plyšius</translation>
-    </message>
-    <message>
-        <source>Set all slots not available</source>
-        <translation type="obsolete">Nustatyti visus negalimus plyšius</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="70"/>
@@ -39060,10 +34986,6 @@ daryti nuoseklumą</translation>
         <translation type="unfinished">Atšaukti</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="91"/>
         <source>100</source>
         <translation type="unfinished">100</translation>
@@ -39072,10 +34994,6 @@ daryti nuoseklumą</translation>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="121"/>
         <source>Max hours continuously</source>
         <translation type="unfinished">Maks valandos be tarpo</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -39153,18 +35071,6 @@ daryti nuoseklumą</translation>
 <context>
     <name>ModifyConstraintStudentsEarlyMaxBeginningsAtSecondHourForm</name>
     <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Weight (percentage)=%1</source>
-        <translation type="obsolete">Svoris (procentais)=%1</translation>
-    </message>
-    <message>
-        <source>Students must begin activities early, with maximum %1 beginnings at the second available hour, per week (not available and break not counted)</source>
-        <translation type="obsolete">Studentai turi pradėti veiksmą anksti, su maksimaliomis %1 pradžiomis antrą pasiekiamą valandą, per savaitę (ne pasiekiamas ir lūžis, neįskaičiuotas)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="82"/>
         <location filename="../src/interface/modifyconstraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="87"/>
         <source>FET information</source>
@@ -39184,33 +35090,6 @@ daryti nuoseklumą</translation>
 <context>
     <name>ModifyConstraintStudentsEarlyMaxBeginningsAtSecondHourForm_template</name>
     <message>
-        <source>FET - Modify constraint students early max beginnings at second hour dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (stutentų artimiausios maksimalios pradžios nuo antros valandos)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>This represents the maximum allowed beginnings at the second
-available hour (in a week).
-You might want to allow your students to begin in some days later,
-at the second available hour, so you might put &quot;max beginnings at
-second hour&quot; greater than 0 (the timetable will be easier for FET).
-Default 0 is given for students which need to begin all classes at the
-first available hour. You might want to choose a greater value and
-lower it as you find new timetables</source>
-        <translation type="obsolete">Tai parodo maksimalias leistinas pradžias antrai pasiekiamai
-valandai (savaitėje).
-Jūs galite norėti savo studentams pradėti keliomis dienomis 
-vėliau, antrai pasiekiamai valandai, taigi jūs galite reikšmę 
-pakeisti &quot;maksimali pradžia iki antros valandos&quot; didesne negu 0
-(tvarkaraštis bus lengvesnis FET). Reikšmė 0 yra priskiriama
-studentams, kuriems reikia pradėti paskaitas nuo pirmos galimos
-valandos. Jūs galite pasirinkti didesnę ar mažėsnę reikšmę
-priklausomai nuo jūsų tvarkaraščio</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="122"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Procentinis svoris (turi būti: 100%)</translation>
@@ -39229,20 +35108,6 @@ priklausomai nuo jūsų tvarkaraščio</translation>
         <location filename="../src/interface/modifyconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="148"/>
         <source>Cancel</source>
         <translation>Atšaukti</translation>
-    </message>
-    <message>
-        <source>You have to use weight percentage 100%, because
-otherwise you will get poor timetables. Currently, the algorithm
-only accepts 100% weight percentage for this constraint (or no
-constraint).
-Note: students set not available and break are not counted as
-gaps (early gaps).</source>
-        <translation type="obsolete">Jūs turite panaudoti svorio procentinį dydį 100%, todėl,
-kad kitaip jūs gausite blogus tvarkaraščius. Šiuo metu,
-algoritmas tiktai priima 100% svorio procentinį dydį šiam apribojimui
-(ar jokiam apribojimui).
-Pastaba: studentų sąrašų nepasiekiamumas ir pertraukos nėra
-įskaičiuoti kaip tarpai.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="103"/>
@@ -39273,30 +35138,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="68"/>
         <source>End of day</source>
         <translation>Dienos pabaiga</translation>
-    </message>
-    <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Weight (percentage)=%1%</source>
-        <translation type="obsolete">Svoris (procentais)=%1%</translation>
-    </message>
-    <message>
-        <source>Students interval max days per week</source>
-        <translation type="obsolete">Studentų maks dienų intervalas per savaitę</translation>
-    </message>
-    <message>
-        <source>Interval start hour=%1</source>
-        <translation type="obsolete">Intervalo pradžios valanda=%1</translation>
-    </message>
-    <message>
-        <source>Interval end hour=%1</source>
-        <translation type="obsolete">Intervalo pabaigos valanda=%1</translation>
-    </message>
-    <message>
-        <source>Max days per week=%1</source>
-        <translation type="obsolete">Maks dienų per savaitę=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="118"/>
@@ -39335,14 +35176,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
 </context>
 <context>
     <name>ModifyConstraintStudentsIntervalMaxDaysPerWeekForm_template</name>
-    <message>
-        <source>FET - Modify constraint students interval max days per week dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (studentų maksimalus dienų intervalas per savaitę)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Modify students interval max days per week</source>
@@ -39388,18 +35221,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
 <context>
     <name>ModifyConstraintStudentsMaxBuildingChangesPerDayForm</name>
     <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Students max building changes per day</source>
-        <translation type="obsolete">Studentų maksimalus pastatų pakeitimas per dieną</translation>
-    </message>
-    <message>
-        <source>Max building changes per day=%1</source>
-        <translation type="obsolete">Maksimalus paspatų pakeitimas per dieną=%1</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperdayform.cpp" line="85"/>
         <source>FET information</source>
         <translation>FET informacija</translation>
@@ -39412,18 +35233,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
 </context>
 <context>
     <name>ModifyConstraintStudentsMaxBuildingChangesPerDayForm_template</name>
-    <message>
-        <source>FET - Modify constraint students max building changes per day dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (studentų maksimalūs pastatų pakeitimai per dieną)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Weight percentage (necessary: 100%)</source>
-        <translation type="obsolete">Procentinis svoris (turi būti: 100%)</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Modify students max building changes per day</source>
@@ -39461,18 +35270,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
 <context>
     <name>ModifyConstraintStudentsMaxBuildingChangesPerWeekForm</name>
     <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Students max building changes per week</source>
-        <translation type="obsolete">Studentų maksimalus pastatų pakeitimas per savaitę</translation>
-    </message>
-    <message>
-        <source>Max building changes per week=%1</source>
-        <translation type="obsolete">Maksimalus paspatų pakeitimas per savaitę=%1</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperweekform.cpp" line="85"/>
         <source>FET information</source>
         <translation>FET informacija</translation>
@@ -39485,14 +35282,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
 </context>
 <context>
     <name>ModifyConstraintStudentsMaxBuildingChangesPerWeekForm_template</name>
-    <message>
-        <source>FET - Modify constraint students max building changes per week dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (studentų maksimalūs pastatų pakeitimai per savaitę)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Modify students max building changes per week</source>
@@ -39608,14 +35397,6 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
 <context>
     <name>ModifyConstraintStudentsMaxGapsPerWeekForm_template</name>
     <message>
-        <source>FET - Modify constraint students max gaps per week dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (studentų maksimalūs tarpai per savaitę)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="14"/>
         <source>Modify students max gaps per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
@@ -39635,20 +35416,6 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="25"/>
         <source>Max gaps per week</source>
         <translation>Maks tarpai per savaitę</translation>
-    </message>
-    <message>
-        <source>You have to use weight percentage 100%, because
-otherwise you will get poor timetables. Currently, the algorithm
-only accepts 100% weight percentage for this constraint (or no
-constraint).
-Note: students set not available and break are not counted as
-gaps.</source>
-        <translation type="obsolete">Jūs turite panaudoti svorio procentinį dydį 100%, todėl,
-kad kitaip jūs gausite blogus tvarkaraščius. Šiuo metu, algoritmas
-tiktai priima 100% svorio procentinį dydį šiam apribojimui
-(ar jokiam apribojimui).
-Pastaba: studentų sąrašai nepasiekiami, ir plyšiai nėra įskaičiuoti
-kaip tarpai.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="74"/>
@@ -39683,21 +35450,9 @@ Note: students set not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintStudentsMaxHoursContinuouslyForm_template</name>
     <message>
-        <source>FET - Modify constraint students max hours continuously dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (studentų maksimalus valandų skaičius be tarpų)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform_template.ui" line="39"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform_template.ui" line="56"/>
@@ -39744,21 +35499,9 @@ Note: students set not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintStudentsMaxHoursDailyForm_template</name>
     <message>
-        <source>FET - Modify constraint students max hours daily dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (studentų maksimalus valandų skaičius kasdien)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="39"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="80"/>
@@ -39792,18 +35535,6 @@ Note: students set not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm</name>
     <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Students min gaps between building changes</source>
-        <translation type="obsolete">Studentų minimalūs tarpai tarp pastatų pakeitimų</translation>
-    </message>
-    <message>
-        <source>Min gaps between building changes=%1</source>
-        <translation type="obsolete">Minimalūs tarpai tarp pastatų pakeitimų=%1</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenbuildingchangesform.cpp" line="85"/>
         <source>FET information</source>
         <translation>FET informacija</translation>
@@ -39816,14 +35547,6 @@ Note: students set not available and break are not counted as gaps.</source>
 </context>
 <context>
     <name>ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm_template</name>
-    <message>
-        <source>FET - Modify constraint students min gaps between building changes dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (studentų minimalūs tarpai tarp pastatų pasikeitimų)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Modify students min gaps between building changes</source>
@@ -39921,14 +35644,6 @@ Note: students set not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintStudentsMinHoursDailyForm_template</name>
     <message>
-        <source>FET - Modify constraint students min hours daily dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (studentų min valandų kasdien)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="49"/>
         <source>100</source>
         <translation>100</translation>
@@ -39963,18 +35678,6 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="117"/>
         <source>Cancel</source>
         <translation>Atšaukti</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation type="obsolete">Gerai</translation>
-    </message>
-    <message>
-        <source>Note: every day should have the minimum hours daily
-(so this constraint is not flexible to allow empty days for
-students)</source>
-        <translation type="obsolete">Pastaba: kiekviena diena turi turėti minimalias valandas kasdien
-(tokiu būdu šis apribojimas nėra lankstus, kad leistų tuščias dienas
-studentams)</translation>
     </message>
 </context>
 <context>
@@ -40015,10 +35718,6 @@ studentams)</translation>
         <translation type="unfinished">Atšaukti</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="123"/>
         <source>100</source>
         <translation type="unfinished">100</translation>
@@ -40027,10 +35726,6 @@ studentams)</translation>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="153"/>
         <source>Max hours continuously</source>
         <translation type="unfinished">Maks valandos be tarpo</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
@@ -40130,22 +35825,6 @@ studentams)</translation>
 <context>
     <name>ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm</name>
     <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Students set=%1</source>
-        <translation type="obsolete">Studentų sąrašas=%1</translation>
-    </message>
-    <message>
-        <source>Weight (percentage)=%1</source>
-        <translation type="obsolete">Svoris (procentais)=%1</translation>
-    </message>
-    <message>
-        <source>Students set must begin activities early, with maximum %1 beginnings at the second available hour, per week (not available and break not counted)</source>
-        <translation type="obsolete">Studentų sąrašas turi pradėti veiksmą anksti, su maksimaliomis %1 pradžiomis antrą pasiekiamą valandą, per savaitę (ne pasiekiamas ir lūžis, neįskaičiuotas)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="117"/>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="122"/>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="130"/>
@@ -40170,14 +35849,6 @@ studentams)</translation>
 </context>
 <context>
     <name>ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm_template</name>
-    <message>
-        <source>FET - Modify constraint students set early max beginnings at second hour dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (stutentų artimiausios maksimalios pradžios nuo antros valandos)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="154"/>
         <source>Weight percentage (necessary: 100%)</source>
@@ -40210,42 +35881,9 @@ studentams)</translation>
         <translation>Atšaukti</translation>
     </message>
     <message>
-        <source>You have to use weight percentage 100%, because
-otherwise you will get poor timetables. Currently, the algorithm
-only accepts 100% weight percentage for this constraint (or no
-constraint).
-Note: students set not available and break are not counted as
-gaps (early gaps).</source>
-        <translation type="obsolete">Jūs turite panaudoti svorio procentinį dydį 100%, todėl,
-kad kitaip jūs gausite blogus tvarkaraščius. Šiuo metu,
-algoritmas tiktai priima 100% svorio procentinį dydį šiam apribojimui
-(ar jokiam apribojimui).
-Pastaba: studentų sąrašų nepasiekiamumas ir pertraukos nėra
-įskaičiuoti kaip tarpai.</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="103"/>
         <source>Max beginnings at second hour (per week)</source>
         <translation>Maksimalios pradžios nuo antros valandos (per savaitę)</translation>
-    </message>
-    <message>
-        <source>This represents the maximum allowed beginnings at the second
-available hour (in a week).
-You might want to allow your students to begin in some days later,
-at the second available hour, so you might put &quot;max beginnings at
-second hour&quot; greater than 0 (the timetable will be easier for FET).
-Default 0 is given for students which need to begin all classes at the
-first available hour. You might want to choose a greater value and
-lower it as you find new timetables</source>
-        <translation type="obsolete">Tai parodo maksimalias leistinas pradžias antrai pasiekiamai
-valandai (savaitėje).
-Jūs galite norėti savo studentams pradėti keliomis dienomis 
-vėliau, antrai pasiekiamai valandai, taigi jūs galite reikšmę 
-pakeisti &quot;maksimali pradžia iki antros valandos&quot; didesne negu 0
-(tvarkaraštis bus lengvesnis FET). Reikšmė 0 yra priskiriama
-studentams, kuriems reikia pradėti paskaitas nuo pirmos galimos
-valandos. Jūs galite pasirinkti didesnę ar mažėsnę reikšmę
-priklausomai nuo jūsų tvarkaraščio</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="70"/>
@@ -40280,10 +35918,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
 </context>
 <context>
     <name>ModifyConstraintStudentsSetHomeRoomForm_template</name>
-    <message>
-        <source>FET - Modify constraint students set home room</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (studentų sąrašo namų kambarys)</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomform_template.ui" line="14"/>
         <source>Modify students set home room</source>
@@ -40359,14 +35993,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <translation>-1</translation>
     </message>
     <message>
-        <source>Add</source>
-        <translation type="obsolete">Pridėti</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="obsolete">Šalinti</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="127"/>
         <source>Ok</source>
         <translation>Gerai</translation>
@@ -40375,10 +36001,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="134"/>
         <source>Cancel</source>
         <translation>Atšaukti</translation>
-    </message>
-    <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Visi kambariai (dvig. sprakt. prisidės)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="14"/>
@@ -40404,17 +36026,9 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <translation type="unfinished">Pažymėtas</translation>
     </message>
     <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Pasirinkti kambariai (dvig. sprakt. pašalins)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="20"/>
         <source>Students set</source>
         <translation>Studentų sąrašas</translation>
-    </message>
-    <message>
-        <source>FET - Modify constraint students set home rooms</source>
-        <translation type="obsolete">FET -Studentų sąrašo namų kambarių apribojimo koregavimas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="89"/>
@@ -40428,34 +36042,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="72"/>
         <source>End of day</source>
         <translation>Dienos pabaiga</translation>
-    </message>
-    <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Weight (percentage)=%1%</source>
-        <translation type="obsolete">Svoris (procentais)=%1%</translation>
-    </message>
-    <message>
-        <source>Students set interval max days per week</source>
-        <translation type="obsolete">Studentų sąrašo maks dienų intervalas per savaitę</translation>
-    </message>
-    <message>
-        <source>Students set=%1</source>
-        <translation type="obsolete">Studentų sąrašas=%1</translation>
-    </message>
-    <message>
-        <source>Interval start hour=%1</source>
-        <translation type="obsolete">Intervalo pradžios valanda=%1</translation>
-    </message>
-    <message>
-        <source>Interval end hour=%1</source>
-        <translation type="obsolete">Intervalo pabaigos valanda=%1</translation>
-    </message>
-    <message>
-        <source>Max days per week=%1</source>
-        <translation type="obsolete">Maks dienų per savaitę=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="152"/>
@@ -40500,14 +36086,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
 </context>
 <context>
     <name>ModifyConstraintStudentsSetIntervalMaxDaysPerWeekForm_template</name>
-    <message>
-        <source>FET - Modify constraint students set interval max days per week dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (studentų sąrašo maksimalus dienų intervalas per savaitę)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Modify students set interval max days per week</source>
@@ -40558,22 +36136,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
 <context>
     <name>ModifyConstraintStudentsSetMaxBuildingChangesPerDayForm</name>
     <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Students set max building changes per day</source>
-        <translation type="obsolete">Studentų sąrašo maksimalus pastatų pakeitimas per dieną</translation>
-    </message>
-    <message>
-        <source>Students set=%1</source>
-        <translation type="obsolete">Studentų sąrašas=%1</translation>
-    </message>
-    <message>
-        <source>Max building changes per day=%1</source>
-        <translation type="obsolete">Maksimalus paspatų pakeitimas per dieną=%1</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform.cpp" line="123"/>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform.cpp" line="131"/>
         <source>FET information</source>
@@ -40593,17 +36155,9 @@ Note: students set not available and break are not counted as gaps (early gaps).
 <context>
     <name>ModifyConstraintStudentsSetMaxBuildingChangesPerDayForm_template</name>
     <message>
-        <source>FET - Modify constraint students set max building changes per day dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (studentų sąrašų maksimalūs pastatų pakeitimai per dieną)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="28"/>
         <source>Students</source>
         <translation>Studentai</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="14"/>
@@ -40640,22 +36194,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
 <context>
     <name>ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm</name>
     <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Students set max building changes per week</source>
-        <translation type="obsolete">Studentų sąrašo maksimalus pastatų pakeitimas per savaitę</translation>
-    </message>
-    <message>
-        <source>Students set=%1</source>
-        <translation type="obsolete">Studentų sąrašas=%1</translation>
-    </message>
-    <message>
-        <source>Max building changes per week=%1</source>
-        <translation type="obsolete">Maksimalus paspatų pakeitimas per savaitę=%1</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform.cpp" line="123"/>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform.cpp" line="131"/>
         <source>FET information</source>
@@ -40675,17 +36213,9 @@ Note: students set not available and break are not counted as gaps (early gaps).
 <context>
     <name>ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm_template</name>
     <message>
-        <source>FET - Modify constraint students set max building changes per week dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (studentų sąrašų maksimalūs pastatų pakeitimai per savaitę)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="28"/>
         <source>Students</source>
         <translation>Studentai</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="14"/>
@@ -40819,14 +36349,6 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
 <context>
     <name>ModifyConstraintStudentsSetMaxGapsPerWeekForm_template</name>
     <message>
-        <source>FET - Modify constraint students set max gaps per week dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (studentų sąrašų maksimalūs tarpai per savaitę)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="133"/>
         <source>Ok</source>
         <translation>Gerai</translation>
@@ -40840,20 +36362,6 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="22"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>You have to use weight percentage 100%, because
-otherwise you will get poor timetables. Currently, the algorithm
-only accepts 100% weight percentage for this constraint (or no
-constraint).
-Note: students set not available and break are not counted as
-gaps.</source>
-        <translation type="obsolete">Jūs turite panaudoti svorio procentinį dydį 100%, todėl,
-kad kitaip jūs gausite blogus tvarkaraščius. Šiuo metu, algoritmas
-tiktai priima 100% svorio procentinį dydį šiam apribojimui
-(ar jokiam apribojimui).
-Pastaba: studentų sąrašai nepasiekiami, ir plyšiai nėra įskaičiuoti
-kaip tarpai.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="14"/>
@@ -40905,21 +36413,9 @@ Note: students set not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintStudentsSetMaxHoursContinuouslyForm_template</name>
     <message>
-        <source>FET - Modify constraint students set max hours continuously dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (studentų sarašų maksimalus valandų skaičius be tarpų)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="88"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -40977,21 +36473,9 @@ Note: students set not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintStudentsSetMaxHoursDailyForm_template</name>
     <message>
-        <source>FET - Modify constraint students set max hours daily dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (studentų sąrašų maksimalus valandų skaičius kasdien)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="88"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="28"/>
@@ -41030,22 +36514,6 @@ Note: students set not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintStudentsSetMinGapsBetweenBuildingChangesForm</name>
     <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Students set min gaps between building changes</source>
-        <translation type="obsolete">Studentų sąrašų minimalūs tarpai tarp pastatų pakeitimų</translation>
-    </message>
-    <message>
-        <source>Students set=%1</source>
-        <translation type="obsolete">Studentų sąrašas=%1</translation>
-    </message>
-    <message>
-        <source>Min gaps between building changes=%1</source>
-        <translation type="obsolete">Minimalūs tarpai tarp pastatų pakeitimų=%1</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform.cpp" line="123"/>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform.cpp" line="131"/>
         <source>FET information</source>
@@ -41065,17 +36533,9 @@ Note: students set not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintStudentsSetMinGapsBetweenBuildingChangesForm_template</name>
     <message>
-        <source>FET - Modify constraint students set min gaps between building changes dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (studentų sąrašų minimalūs tarpai tarp pastatų pasikeitimų)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="28"/>
         <source>Students</source>
         <translation>Studentai</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="14"/>
@@ -41180,14 +36640,6 @@ Note: students set not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintStudentsSetMinHoursDailyForm_template</name>
     <message>
-        <source>FET - Modify constraint students set min hours daily dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (studentų sąrašų min valandų kasdien)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="50"/>
         <source>100</source>
         <translation>100</translation>
@@ -41228,31 +36680,9 @@ Note: students set not available and break are not counted as gaps.</source>
         <source>Cancel</source>
         <translation>Atšaukti</translation>
     </message>
-    <message>
-        <source>Ok</source>
-        <translation type="obsolete">Gerai</translation>
-    </message>
-    <message>
-        <source>Note: every day should have the minimum hours daily
-(so this constraint is not flexible to allow empty days for
-students)</source>
-        <translation type="obsolete">Pastaba: kiekviena diena turi turėti minimalias valandas kasdien
-(tokiu būdu šis apribojimas nėra lankstus, kad leistų tuščias dienas
-studentams)</translation>
-    </message>
 </context>
 <context>
     <name>ModifyConstraintStudentsSetNotAvailableTimesForm</name>
-    <message>
-        <source>Not available</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Neprieinama</translation>
-    </message>
-    <message>
-        <source>Available</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Prieinama</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="255"/>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="263"/>
@@ -41278,18 +36708,6 @@ studentams)</translation>
 </context>
 <context>
     <name>ModifyConstraintStudentsSetNotAvailableTimesForm_template</name>
-    <message>
-        <source>FET - Modify constraint students set not available times dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (studentų sąrašo neprieinamų laikų apribojimas)</translation>
-    </message>
-    <message>
-        <source>This constraint does not induce gaps (or early not respected) 
-for students. If a students set has lessons before and after this
-not available period, there will be no gaps counted</source>
-        <translation type="obsolete">Šis apribojimas nekelia tarpų (ar ankstyvų tarpų) studentams.
-Jei studentų komplektas turi pamokas anksčiau, negu ir po
-ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="76"/>
         <source>Students set</source>
@@ -41338,14 +36756,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Set all slots available</source>
-        <translation type="obsolete">Nustatyti visus galimus plyšius</translation>
-    </message>
-    <message>
-        <source>Set all slots not available</source>
-        <translation type="obsolete">Nustatyti visus negalimus plyšius</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="26"/>
         <source>This constraint does not induce gaps (or early not respected) for students. If a students set has lessons before and after this not available period, there will be no gaps counted</source>
         <translation type="unfinished"></translation>
@@ -41353,16 +36763,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 </context>
 <context>
     <name>ModifyConstraintSubactivitiesPreferredStartingTimesForm</name>
-    <message>
-        <source>Allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Leistina</translation>
-    </message>
-    <message>
-        <source>Not allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Neleistina</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="326"/>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="394"/>
@@ -41403,10 +36803,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 <context>
     <name>ModifyConstraintSubactivitiesPreferredStartingTimesForm_template</name>
     <message>
-        <source>FET - Modify constraint subactivities preferred starting times</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (subveiklų privilegijuoti pradžios laikai)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="14"/>
         <source>Modify subactivities preferred starting times</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
@@ -41421,14 +36817,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="134"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Set all slots not allowed</source>
-        <translation type="obsolete">Nustatyti visus neleistinus plyšius</translation>
-    </message>
-    <message>
-        <source>Set all slots allowed</source>
-        <translation type="obsolete">Nustatyti visus leistus plyšius</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="166"/>
@@ -41485,16 +36873,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 <context>
     <name>ModifyConstraintSubactivitiesPreferredTimeSlotsForm</name>
     <message>
-        <source>Allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Leistina</translation>
-    </message>
-    <message>
-        <source>Not allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Neleistina</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="326"/>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="394"/>
         <source>FET information</source>
@@ -41534,18 +36912,10 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 <context>
     <name>ModifyConstraintSubactivitiesPreferredTimeSlotsForm_template</name>
     <message>
-        <source>FET - Modify constraint subactivities preferred time slots</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (subveiklų privilegijuoti laiko plyšiai)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="14"/>
         <source>Modify subactivities preferred time slots</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set all slots not allowed</source>
-        <translation type="obsolete">Nustatyti visus neleistinus plyšius</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="166"/>
@@ -41556,10 +36926,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="173"/>
         <source>Cancel</source>
         <translation>Atšaukti</translation>
-    </message>
-    <message>
-        <source>Set all slots allowed</source>
-        <translation type="obsolete">Nustatyti visus leistus plyšius</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="124"/>
@@ -41647,10 +37013,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 <context>
     <name>ModifyConstraintSubjectActivityTagPreferredRoomForm_template</name>
     <message>
-        <source>FET - Modify constraint subject activity tag preferred room</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (temos veiklos žymių privilegijuotas kambarys)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform_template.ui" line="26"/>
         <source>Subject</source>
         <translation>Tema</translation>
@@ -41732,10 +37094,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 <context>
     <name>ModifyConstraintSubjectActivityTagPreferredRoomsForm_template</name>
     <message>
-        <source>FET - Modify constraint subject activity tag preferred rooms</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (temos veiklos žymės privilegijuoti kambariai)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="119"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
@@ -41744,14 +37102,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="129"/>
         <source>-1</source>
         <translation>-1</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation type="obsolete">Pridėti</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="obsolete">Šalinti</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="140"/>
@@ -41775,18 +37125,10 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Visi kambariai (dvig. sprakt. prisidės)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="65"/>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="94"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Pasirinkti kambariai (dvig. sprakt. pašalins)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="33"/>
@@ -41837,10 +37179,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 </context>
 <context>
     <name>ModifyConstraintSubjectPreferredRoomForm_template</name>
-    <message>
-        <source>FET - Modify constraint subject preferred room</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (temos privilegijuotas kambarys)</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="104"/>
         <source>Ok</source>
@@ -41912,10 +37250,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 <context>
     <name>ModifyConstraintSubjectPreferredRoomsForm_template</name>
     <message>
-        <source>FET - Modify constraint subject preferred rooms</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (temos privilegijuoti kambariai)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="106"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
@@ -41926,14 +37260,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
         <translation>-1</translation>
     </message>
     <message>
-        <source>Add</source>
-        <translation type="obsolete">Pridėti</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="obsolete">Šalinti</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="127"/>
         <source>Ok</source>
         <translation>Gerai</translation>
@@ -41942,10 +37268,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="134"/>
         <source>Cancel</source>
         <translation>Atšaukti</translation>
-    </message>
-    <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Visi kambariai (dvig. sprakt. prisidės)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="14"/>
@@ -41963,10 +37285,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="81"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Pasirinkti kambariai (dvig. sprakt. pašalins)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="20"/>
@@ -42025,14 +37343,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="190"/>
         <source>Cancel</source>
         <translation type="unfinished">Atšaukti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="153"/>
@@ -42165,10 +37475,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 <context>
     <name>ModifyConstraintTeacherHomeRoomForm_template</name>
     <message>
-        <source>FET - Modify constraint teacher home room</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojo namų kambarys)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomform_template.ui" line="14"/>
         <source>Modify teacher home room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
@@ -42243,14 +37549,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
         <translation>-1</translation>
     </message>
     <message>
-        <source>Add</source>
-        <translation type="obsolete">Pridėti</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="obsolete">Šalinti</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="127"/>
         <source>Ok</source>
         <translation>Gerai</translation>
@@ -42259,10 +37557,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="134"/>
         <source>Cancel</source>
         <translation>Atšaukti</translation>
-    </message>
-    <message>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="obsolete">Visi kambariai (dvig. sprakt. prisidės)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="14"/>
@@ -42288,17 +37582,9 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
         <translation type="unfinished">Pažymėtas</translation>
     </message>
     <message>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="obsolete">Pasirinkti kambariai (dvig. sprakt. pašalins)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="20"/>
         <source>Teacher</source>
         <translation>Dėstytojas</translation>
-    </message>
-    <message>
-        <source>FET - Modify constraint teacher home rooms</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojo namų kambariai)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="89"/>
@@ -42312,34 +37598,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="72"/>
         <source>End of day</source>
         <translation>Dienos pabaiga</translation>
-    </message>
-    <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Weight (percentage)=%1%</source>
-        <translation type="obsolete">Svoris (procentais)=%1%</translation>
-    </message>
-    <message>
-        <source>Teacher interval max days per week</source>
-        <translation type="obsolete">Dėstytojo maks dienų intervalas per savaitę</translation>
-    </message>
-    <message>
-        <source>Teacher=%1</source>
-        <translation type="obsolete">Dėstytojas=%1</translation>
-    </message>
-    <message>
-        <source>Interval start hour=%1</source>
-        <translation type="obsolete">Intervalo pradžios valanda=%1</translation>
-    </message>
-    <message>
-        <source>Interval end hour=%1</source>
-        <translation type="obsolete">Intervalo pabaigos valanda=%1</translation>
-    </message>
-    <message>
-        <source>Max days per week=%1</source>
-        <translation type="obsolete">Maks dienų per savaitę=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="137"/>
@@ -42384,14 +37642,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 </context>
 <context>
     <name>ModifyConstraintTeacherIntervalMaxDaysPerWeekForm_template</name>
-    <message>
-        <source>FET - Modify constraint teacher interval max days per week dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojo maksimalus dienų intervalas per savaitę)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Modify teacher interval max days per week</source>
@@ -42442,22 +37692,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 <context>
     <name>ModifyConstraintTeacherMaxBuildingChangesPerDayForm</name>
     <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Teacher max building changes per day</source>
-        <translation type="obsolete">Dėstytojų maksimalus pastatų pakeitimas per dieną</translation>
-    </message>
-    <message>
-        <source>Teacher=%1</source>
-        <translation type="obsolete">Dėstytojas=%1</translation>
-    </message>
-    <message>
-        <source>Max building changes per day=%1</source>
-        <translation type="obsolete">Maksimalus paspatų pakeitimas per dieną=%1</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform.cpp" line="109"/>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform.cpp" line="117"/>
         <source>FET information</source>
@@ -42477,17 +37711,9 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 <context>
     <name>ModifyConstraintTeacherMaxBuildingChangesPerDayForm_template</name>
     <message>
-        <source>FET - Modify constraint teacher max building changes per day dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojo maksimalūs pastatų pakeitimai per dieną)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="28"/>
         <source>Teacher</source>
         <translation>Dėstytojas</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="14"/>
@@ -42524,22 +37750,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 <context>
     <name>ModifyConstraintTeacherMaxBuildingChangesPerWeekForm</name>
     <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Teacher max building changes per week</source>
-        <translation type="obsolete">Dėstytojo maksimalus pastatų pakeitimas per savaitę</translation>
-    </message>
-    <message>
-        <source>Teacher=%1</source>
-        <translation type="obsolete">Dėstytojas=%1</translation>
-    </message>
-    <message>
-        <source>Max building changes per week=%1</source>
-        <translation type="obsolete">Maksimalus paspatų pakeitimas per savaitę=%1</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform.cpp" line="109"/>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform.cpp" line="117"/>
         <source>FET information</source>
@@ -42559,17 +37769,9 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 <context>
     <name>ModifyConstraintTeacherMaxBuildingChangesPerWeekForm_template</name>
     <message>
-        <source>FET - Modify constraint teacher max building changes per week dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojo maksimalūs pastatų pakeitimai per savaitę)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="28"/>
         <source>Teacher</source>
         <translation>Dėstytojas</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="14"/>
@@ -42631,10 +37833,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 <context>
     <name>ModifyConstraintTeacherMaxDaysPerWeekForm_template</name>
     <message>
-        <source>FET - Modify constraint teacher max days per week dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojo maksimalus dienų skaičiaus per savaitę)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="147"/>
         <source>Ok</source>
         <translation>Gerai</translation>
@@ -42643,10 +37841,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="154"/>
         <source>Cancel</source>
         <translation>Atšaukti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="87"/>
@@ -42703,10 +37897,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
 <context>
     <name>ModifyConstraintTeacherMaxGapsPerDayForm_template</name>
     <message>
-        <source>FET - Modify constraint teacher max gaps per day dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojo maks tarpai per dieną)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="129"/>
         <source>Ok</source>
         <translation>Gerai</translation>
@@ -42715,18 +37905,6 @@ ne pasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="136"/>
         <source>Cancel</source>
         <translation>Atšaukti</translation>
-    </message>
-    <message>
-        <source>You must use weight percentage 100%, because
-otherwise you will get poor timetables. Try to fix firstly
-a rather large value for max gaps per day and
-lower it as you find new timetables. Note: teacher not 
-available and break are not counted as gaps.</source>
-        <translation type="obsolete">Jūs turite panaudoti svorio procentinį dydį 100 %, todėl,
-kad kitaip jūs gausite blogus tvarkaraščius. Pabandykite pirma
-pataisyti į didesnę reikšmę, o po to į mažesnę, jei vis dar gaunate
-gerą tvarkaraštį. Pastaba: dėstytojo nepasiekiamumas, ir plyšiai
-nėra įskaičiuoti kaip tarpai.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="65"/>
@@ -42753,10 +37931,6 @@ nėra įskaičiuoti kaip tarpai.</translation>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="91"/>
         <source>Max gaps per day</source>
         <translation>Maks tarpai per dieną</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="32"/>
@@ -42793,10 +37967,6 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintTeacherMaxGapsPerWeekForm_template</name>
     <message>
-        <source>FET - Modify constraint teacher max gaps per week dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojo maks tarpai per savaitę)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="22"/>
         <source>Ok</source>
         <translation>Gerai</translation>
@@ -42805,18 +37975,6 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="29"/>
         <source>Cancel</source>
         <translation>Atšaukti</translation>
-    </message>
-    <message>
-        <source>You must use weight percentage 100%, because
-otherwise you will get poor timetables. Try to fix firstly
-a rather large value for max gaps per week and
-lower it as you find new timetables. Note: teacher not 
-available and break are not counted as gaps.</source>
-        <translation type="obsolete">Jūs turite panaudoti svorio procentinį dydį 100 %, todėl,
-kad kitaip jūs gausite blogus tvarkaraščius. Pabandykite pirma
-pataisyti į didesnę reikšmę, o po to į mažesnę, jei vis dar gaunate
-gerą tvarkaraštį. Pastaba: dėstytojo nepasiekiamumas, ir plyšiai
-nėra įskaičiuoti kaip tarpai.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="14"/>
@@ -42843,10 +38001,6 @@ nėra įskaičiuoti kaip tarpai.</translation>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="137"/>
         <source>Max gaps per week</source>
         <translation>Maks tarpai per savaitę</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="55"/>
@@ -42877,10 +38031,6 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintTeacherMaxHoursContinuouslyForm_template</name>
     <message>
-        <source>FET - Modify constraint teacher max hours continuously dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojo maksimalus valandų skaičius be tarpų)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="148"/>
         <source>Ok</source>
         <translation>Gerai</translation>
@@ -42891,17 +38041,9 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation>Atšaukti</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="88"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="118"/>
@@ -42949,10 +38091,6 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintTeacherMaxHoursDailyForm_template</name>
     <message>
-        <source>FET - Modify constraint teacher max hours daily dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojo maksimalus valandų skaičius kasdien)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="148"/>
         <source>Ok</source>
         <translation>Gerai</translation>
@@ -42963,17 +38101,9 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation>Atšaukti</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="88"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="118"/>
@@ -43066,22 +38196,6 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm</name>
     <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Teacher min gaps between building changes</source>
-        <translation type="obsolete">Dėstytojo minimalūs tarpai tarp pastatų pakeitimų</translation>
-    </message>
-    <message>
-        <source>Teacher=%1</source>
-        <translation type="obsolete">Dėstytojas=%1</translation>
-    </message>
-    <message>
-        <source>Min gaps between building changes=%1</source>
-        <translation type="obsolete">Minimalūs tarpai tarp pastatų pakeitimų=%1</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform.cpp" line="109"/>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform.cpp" line="117"/>
         <source>FET information</source>
@@ -43101,17 +38215,9 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm_template</name>
     <message>
-        <source>FET - Modify constraint teacher min gaps between building changes dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojo minimalūs tarpai tarp pastatų pasikeitimų)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="28"/>
         <source>Teacher</source>
         <translation>Dėstytojas</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="14"/>
@@ -43185,10 +38291,6 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintTeacherMinHoursDailyForm_template</name>
     <message>
-        <source>FET - Modify constraint teacher min hours daily dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojo min valandų kasdien)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="103"/>
         <source>100</source>
         <translation>100</translation>
@@ -43197,14 +38299,6 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="116"/>
         <source>Min hours daily</source>
         <translation>Maks valandų kasdien</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation type="obsolete">Gerai</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="148"/>
@@ -43242,29 +38336,9 @@ Note: teacher not available and break are not counted as gaps.</source>
         <source>OK</source>
         <translation type="unfinished">Gerai</translation>
     </message>
-    <message>
-        <source>Note: FET is smart enough to use this constraint only on working days
-for this teacher (so it is a flexible constraint). Please be careful with 
-this constraint, not to get impossible timetables. It is recommended
-to start with 2 min hours and highten them as you find new timetables</source>
-        <translation type="obsolete">Pastaba: FET pakankamai protingas, kad šį apribojimą panaudotų tik
-dėstytojo darbo dienomis (taigi šis apribojimas lankstus). Būkite atidūs
-su šiuo apribojimu, kad negautumėte neimanomo tvarkaraščio.
-Rekomenduojama pradėti nuo 2 ir daugiau valandų</translation>
-    </message>
 </context>
 <context>
     <name>ModifyConstraintTeacherNotAvailableTimesForm</name>
-    <message>
-        <source>Not available</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Neprieinama</translation>
-    </message>
-    <message>
-        <source>Available</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Prieinama</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="240"/>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="248"/>
@@ -43290,16 +38364,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų</translation>
 </context>
 <context>
     <name>ModifyConstraintTeacherNotAvailableTimesForm_template</name>
-    <message>
-        <source>FET - Modify constraint teacher not available times dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojo neprieinami laikai)</translation>
-    </message>
-    <message>
-        <source>This constraint does not induce gaps for teachers. If a teacher has lessons
-before and after this not available period, there will be no gaps counted</source>
-        <translation type="obsolete">Šis apribojimas nekelia tarpų dėstytojams. Jei dėstytojas turi paskaitas
-anksčiau ir vėliau nepasiekiamo periodo, tarpai nebus įskaičiuoti</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="76"/>
         <source>Teacher</source>
@@ -43342,18 +38406,10 @@ anksčiau ir vėliau nepasiekiamo periodo, tarpai nebus įskaičiuoti</translati
         <translation>Atšaukti</translation>
     </message>
     <message>
-        <source>Set all slots available</source>
-        <translation type="obsolete">Nustatyti visus galimus plyšius</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="14"/>
         <source>Modify teacher not available times</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set all slots not available</source>
-        <translation type="obsolete">Nustatyti visus negalimus plyšius</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="26"/>
@@ -43395,14 +38451,6 @@ anksčiau ir vėliau nepasiekiamo periodo, tarpai nebus įskaičiuoti</translati
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="158"/>
         <source>Cancel</source>
         <translation type="unfinished">Atšaukti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="121"/>
@@ -43505,30 +38553,6 @@ anksčiau ir vėliau nepasiekiamo periodo, tarpai nebus įskaičiuoti</translati
         <translation>Dienos pabaiga</translation>
     </message>
     <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Weight (percentage)=%1%</source>
-        <translation type="obsolete">Svoris (procentais)=%1%</translation>
-    </message>
-    <message>
-        <source>Teachers interval max days per week</source>
-        <translation type="obsolete">Dėstytojo maks dienų intervalas per savaitę</translation>
-    </message>
-    <message>
-        <source>Interval start hour=%1</source>
-        <translation type="obsolete">Intervalo pradžios valanda=%1</translation>
-    </message>
-    <message>
-        <source>Interval end hour=%1</source>
-        <translation type="obsolete">Intervalo pabaigos valanda=%1</translation>
-    </message>
-    <message>
-        <source>Max days per week=%1</source>
-        <translation type="obsolete">Maks dienų per savaitę=%1</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="114"/>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="119"/>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="133"/>
@@ -43565,14 +38589,6 @@ anksčiau ir vėliau nepasiekiamo periodo, tarpai nebus įskaičiuoti</translati
 </context>
 <context>
     <name>ModifyConstraintTeachersIntervalMaxDaysPerWeekForm_template</name>
-    <message>
-        <source>FET - Modify constraint teachers interval max days per week dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojų maksimalus dienų intervalas per savaitę)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Modify teachers interval max days per week</source>
@@ -43618,18 +38634,6 @@ anksčiau ir vėliau nepasiekiamo periodo, tarpai nebus įskaičiuoti</translati
 <context>
     <name>ModifyConstraintTeachersMaxBuildingChangesPerDayForm</name>
     <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Teachers max building changes per day</source>
-        <translation type="obsolete">Dėstytojų maksimalus pastatų pakeitimas per dieną</translation>
-    </message>
-    <message>
-        <source>Max building changes per day=%1</source>
-        <translation type="obsolete">Maksimalus paspatų pakeitimas per dieną=%1</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperdayform.cpp" line="85"/>
         <source>FET information</source>
         <translation>FET informacija</translation>
@@ -43642,18 +38646,6 @@ anksčiau ir vėliau nepasiekiamo periodo, tarpai nebus įskaičiuoti</translati
 </context>
 <context>
     <name>ModifyConstraintTeachersMaxBuildingChangesPerDayForm_template</name>
-    <message>
-        <source>FET - Modify constraint teachers max building changes per day dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojų maksimalūs pastatų pakeitimai per dieną)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Weight percentage (necessary: 100%)</source>
-        <translation type="obsolete">Procentinis svoris (turi būti: 100%)</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Modify teachers max building changes per day</source>
@@ -43691,18 +38683,6 @@ anksčiau ir vėliau nepasiekiamo periodo, tarpai nebus įskaičiuoti</translati
 <context>
     <name>ModifyConstraintTeachersMaxBuildingChangesPerWeekForm</name>
     <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Teachers max building changes per week</source>
-        <translation type="obsolete">Dėstytojų maksimalus pastatų pakeitimas per savaitę</translation>
-    </message>
-    <message>
-        <source>Max building changes per week=%1</source>
-        <translation type="obsolete">Maksimalus paspatų pakeitimas per savaitę=%1</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform.cpp" line="85"/>
         <source>FET information</source>
         <translation>FET informacija</translation>
@@ -43715,18 +38695,6 @@ anksčiau ir vėliau nepasiekiamo periodo, tarpai nebus įskaičiuoti</translati
 </context>
 <context>
     <name>ModifyConstraintTeachersMaxBuildingChangesPerWeekForm_template</name>
-    <message>
-        <source>FET - Modify constraint teachers max building changes per week dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojų maksimalūs pastatų pakeitimai per savaitę)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Weight percentage (necessary: 100%)</source>
-        <translation type="obsolete">Procentinis svoris (turi būti: 100%)</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Modify teachers max building changes per week</source>
@@ -43799,17 +38767,9 @@ anksčiau ir vėliau nepasiekiamo periodo, tarpai nebus įskaičiuoti</translati
         <translation type="unfinished">Atšaukti</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachersmaxdaysperweekform_template.ui" line="39"/>
         <source>100</source>
         <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <source>Weight percentage (necessary: 100%)</source>
-        <translation type="obsolete">Procentinis svoris (turi būti: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxdaysperweekform_template.ui" line="56"/>
@@ -43846,10 +38806,6 @@ anksčiau ir vėliau nepasiekiamo periodo, tarpai nebus įskaičiuoti</translati
 <context>
     <name>ModifyConstraintTeachersMaxGapsPerDayForm_template</name>
     <message>
-        <source>FET - Modify constraint teachers max gaps per day dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojų maks tarpai per dieną)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="22"/>
         <source>Ok</source>
         <translation>Gerai</translation>
@@ -43858,19 +38814,6 @@ anksčiau ir vėliau nepasiekiamo periodo, tarpai nebus įskaičiuoti</translati
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="29"/>
         <source>Cancel</source>
         <translation>Atšaukti</translation>
-    </message>
-    <message>
-        <source>It is recommended to use only one constraint
-of this type. You must use weight percentage 100%,
-because otherwise you will get poor timetables. Try to 
-fix firstly a rather large value for max gaps per day and
-lower it as you find new timetables. Note: teacher not 
-available and break are not counted as gaps.</source>
-        <translation type="obsolete">Jūs turite panaudoti svorio procentinį dydį 100 %, todėl,
-kad kitaip jūs gausite blogus tvarkaraščius. Pabandykite taisyti
-pirma gana didelę vertę maks tarpams per savaitę ir nuleisti ją,
-kadangi jūs randate naujus tvarkaraščius. Pastaba: dėstytojo
-nepasiekiamumas ir plyšys, nėra įskaičiuoti kaip tarpai.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="14"/>
@@ -43892,10 +38835,6 @@ nepasiekiamumas ir plyšys, nėra įskaičiuoti kaip tarpai.</translation>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="86"/>
         <source>Max gaps per day</source>
         <translation>Maks tarpai per dieną</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="52"/>
@@ -43926,10 +38865,6 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintTeachersMaxGapsPerWeekForm_template</name>
     <message>
-        <source>FET - Modify constraint teachers max gaps per week dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojų maks tarpai per savaitę)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="22"/>
         <source>Ok</source>
         <translation>Gerai</translation>
@@ -43938,19 +38873,6 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="29"/>
         <source>Cancel</source>
         <translation>Atšaukti</translation>
-    </message>
-    <message>
-        <source>It is recommended to use only one constraint
-of this type. You must use weight percentage 100%,
-because otherwise you will get poor timetables. Try to 
-fix firstly a rather large value for max gaps per week and
-lower it as you find new timetables. Note: teacher not 
-available and break are not counted as gaps.</source>
-        <translation type="obsolete">Jūs turite panaudoti svorio procentinį dydį 100 %, todėl,
-kad kitaip jūs gausite blogus tvarkaraščius. Pabandykite taisyti
-pirma gana didelę vertę maks tarpams per savaitę ir nuleisti ją,
-kadangi jūs randate naujus tvarkaraščius. Pastaba: dėstytojo
-nepasiekiamumas ir plyšys, nėra įskaičiuoti kaip tarpai.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="14"/>
@@ -43972,10 +38894,6 @@ nepasiekiamumas ir plyšys, nėra įskaičiuoti kaip tarpai.</translation>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="86"/>
         <source>Max gaps per week</source>
         <translation>Maks tarpai per savaitę</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="52"/>
@@ -44000,10 +38918,6 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintTeachersMaxHoursContinuouslyForm_template</name>
     <message>
-        <source>FET - Modify constraint teachers max hours continuously dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojų maksimalus valandų skaičius be tarpų)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify teachers max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
@@ -44020,17 +38934,9 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation>Atšaukti</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="39"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="56"/>
@@ -44061,10 +38967,6 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintTeachersMaxHoursDailyForm_template</name>
     <message>
-        <source>FET - Modify constraint teachers max hours daily dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojų maksimalus valandų skaičius kasdien)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify teachers max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
@@ -44081,17 +38983,9 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation>Atšaukti</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="39"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Procentinis svoris (rekomenduojama: 0.0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="56"/>
@@ -44164,18 +39058,6 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm</name>
     <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>Teachers min gaps between building changes</source>
-        <translation type="obsolete">Dėstytojų minimalūs tarpai tarp pastatų pakeitimų</translation>
-    </message>
-    <message>
-        <source>Min gaps between building changes=%1</source>
-        <translation type="obsolete">Minimalūs tarpai tarp pastatų pakeitimų=%1</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenbuildingchangesform.cpp" line="85"/>
         <source>FET information</source>
         <translation>FET informacija</translation>
@@ -44188,14 +39070,6 @@ Note: teacher not available and break are not counted as gaps.</source>
 </context>
 <context>
     <name>ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm_template</name>
-    <message>
-        <source>FET - Modify constraint teachers min gaps between building changes dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojų minimalūs tarpai tarp pastatų pasikeitimų)</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Modify teachers min gaps between building changes</source>
@@ -44262,14 +39136,6 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintTeachersMinHoursDailyForm_template</name>
     <message>
-        <source>FET - Modify constraint teachers min hours daily dialog</source>
-        <translation type="obsolete">FET - Apribojimo koregavimas (dėstytojų min valandų kasdien)</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation type="obsolete">Gerai</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="84"/>
         <source>Min hours daily</source>
         <translation>Maks valandų kasdien</translation>
@@ -44309,21 +39175,6 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="71"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
-        <source>Note: FET is smart enough to use this constraint only on working days
-for this teacher (so it is a flexible constraint). Please be careful with 
-this constraint, not to get impossible timetables. It is recommended
-to start with 2 min hours. Maybe you could try higher values after that,
-but they might be too large and you might get a impossible timetable.</source>
-        <translation type="obsolete">Pastaba: FET pakankamai protingas, kad šį apribojimą panaudotų tik
-dėstytojo darbo dienomis (taigi šis apribojimas lankstus). Būkite atidūs
-su šiuo apribojimu, kad negautumėte neimanomo tvarkaraščio.
-Rekomenduojama pradėti nuo 2 ir daugiau valandų.</translation>
     </message>
 </context>
 <context>
@@ -44453,10 +39304,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų.</translation>
         <translation type="unfinished">Atšaukti</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform_template.ui" line="14"/>
         <source>Modify two activities consecutive</source>
         <translation type="unfinished"></translation>
@@ -44526,10 +39373,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų.</translation>
         <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform_template.ui" line="29"/>
         <source>Cancel</source>
         <translation type="unfinished">Atšaukti</translation>
-    </message>
-    <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform_template.ui" line="14"/>
@@ -44604,10 +39447,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų.</translation>
         <translation type="unfinished">Atšaukti</translation>
     </message>
     <message>
-        <source>Current constraint</source>
-        <translation type="obsolete">Einamasis apribojimas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform_template.ui" line="14"/>
         <source>Modify two activities ordered</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
@@ -44664,10 +39503,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų.</translation>
 <context>
     <name>ModifyRoomForm_template</name>
     <message>
-        <source>Modify Room Dialog</source>
-        <translation type="obsolete">Kambarių koregavimo dialogas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyroomform_template.ui" line="84"/>
         <source>Name</source>
         <translation>Pavadinimas</translation>
@@ -44721,10 +39556,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų.</translation>
 <context>
     <name>ModifyStudentsGroupForm_template</name>
     <message>
-        <source>Modify Students Group Dialog</source>
-        <translation type="obsolete">Studentų grupių koregavimo dialogas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifystudentsgroupform_template.ui" line="49"/>
         <source>Name</source>
         <translation>Pavadinimas</translation>
@@ -44777,10 +39608,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų.</translation>
 </context>
 <context>
     <name>ModifyStudentsSubgroupForm_template</name>
-    <message>
-        <source>Modify Students Subgroup Dialog</source>
-        <translation type="obsolete">Studentų pogrupių koregavimo dialogas</translation>
-    </message>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="22"/>
         <source>Year</source>
@@ -44840,10 +39667,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų.</translation>
 <context>
     <name>ModifyStudentsYearForm_template</name>
     <message>
-        <source>Modify Students Year Dialog</source>
-        <translation type="obsolete">Studentų metų koregavimo dialogas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifystudentsyearform_template.ui" line="39"/>
         <source>Number of students</source>
         <translation>Studentų skaičius</translation>
@@ -44879,10 +39702,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų.</translation>
         <translation type="unfinished">FET klausimas</translation>
     </message>
     <message>
-        <source>Do you really want to have the activity with no teacher(s)?</source>
-        <translation type="obsolete">Jūs iš tikrųjų norite turėti veiklą be mokytojo(ų)?</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifysubactivityform.cpp" line="444"/>
         <source>Do you really want to have the subactivity without teacher(s)?</source>
         <translation type="unfinished"></translation>
@@ -44901,10 +39720,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų.</translation>
         <location filename="../src/interface/modifysubactivityform.cpp" line="491"/>
         <source>Do you really want to have the subactivity without student set(s)?</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Do you really want to have the activity with no student set(s)?</source>
-        <translation type="obsolete">Jūs iš tikrųjų norite turėti veiklą be studentų komplekto(ų)?</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform.cpp" line="82"/>
@@ -44935,10 +39750,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų.</translation>
         <translation type="unfinished">Naujas elementas</translation>
     </message>
     <message>
-        <source>Selected</source>
-        <translation type="obsolete">Pažymėtas</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="70"/>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="161"/>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="259"/>
@@ -44954,11 +39765,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų.</translation>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="117"/>
         <source>Students</source>
         <translation type="unfinished">Studentai</translation>
-    </message>
-    <message>
-        <source>Selected</source>
-        <comment>It refers to a list of selected students sets</comment>
-        <translation type="obsolete">Pažymėtas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="238"/>
@@ -44992,11 +39798,6 @@ Rekomenduojama pradėti nuo 2 ir daugiau valandų.</translation>
         <source>Selected</source>
         <comment>It refers to a list of selected teachers</comment>
         <translation type="unfinished">Pažymėtas</translation>
-    </message>
-    <message>
-        <source>Selected</source>
-        <comment>It refers to a list of selected students (sets)</comment>
-        <translation type="obsolete">Pažymėtas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="272"/>
@@ -45039,2596 +39840,6 @@ The current data applies only to this subactivity</source>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="196"/>
         <source>Show subgroups</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>QObject</name>
-    <message>
-        <source>no teachers</source>
-        <translation type="obsolete">nėra dėstytojų</translation>
-    </message>
-    <message>
-        <source>no students</source>
-        <translation type="obsolete">nėra studentų</translation>
-    </message>
-    <message>
-        <source>yes</source>
-        <translation type="obsolete">taip</translation>
-    </message>
-    <message>
-        <source>no</source>
-        <translation type="obsolete">ne</translation>
-    </message>
-    <message>
-        <source>Activity:</source>
-        <translation type="obsolete">Veikla:</translation>
-    </message>
-    <message>
-        <source>No teachers for this activity</source>
-        <translation type="obsolete">Nėra dėstytojų šiai veiklai</translation>
-    </message>
-    <message>
-        <source>Teacher=%1</source>
-        <translation type="obsolete">Dėstytojas=%1</translation>
-    </message>
-    <message>
-        <source>Subject=%1</source>
-        <translation type="obsolete">Tema=%1</translation>
-    </message>
-    <message>
-        <source>No students sets for this activity</source>
-        <translation type="obsolete">Nėra studentų sąrašų šiai veiklai</translation>
-    </message>
-    <message>
-        <source>Students=%1</source>
-        <translation type="obsolete">Studentai=%1</translation>
-    </message>
-    <message>
-        <source>Id=%1</source>
-        <translation type="obsolete">Id=%1</translation>
-    </message>
-    <message>
-        <source>Activity group id=%1</source>
-        <translation type="obsolete">Veiklos grupės id=%1</translation>
-    </message>
-    <message>
-        <source>Duration=%1</source>
-        <translation type="obsolete">Trukmė=%1</translation>
-    </message>
-    <message>
-        <source>Total duration=%1</source>
-        <translation type="obsolete">Visa trukmė=%1</translation>
-    </message>
-    <message>
-        <source>Active: yes</source>
-        <translation type="obsolete">Aktyvi: taip</translation>
-    </message>
-    <message>
-        <source>Active: no</source>
-        <translation type="obsolete">Aktyvi: ne</translation>
-    </message>
-    <message>
-        <source>Total number of students=%1</source>
-        <translation type="obsolete">Viso studentų=%1</translation>
-    </message>
-    <message>
-        <source>Time constraints directly related to this activity:</source>
-        <translation type="obsolete">Laiko apribojimai, tiesiogiai susieti su šia veikla:</translation>
-    </message>
-    <message>
-        <source>Space constraints directly related to this activity:</source>
-        <translation type="obsolete">Vietos apribojimai, tiesiogiai susieti su šia veikla:</translation>
-    </message>
-    <message>
-        <source>FET warning</source>
-        <translation type="obsolete">FET įspėjimas</translation>
-    </message>
-    <message>
-        <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours daily.
-
- Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
-
- Please modify your data accordingly and try again.
-
- For more details, join the mailing list or email the author</source>
-        <translation type="obsolete">Negalima optimizuoti pogrupio %1, nes yra perdaug apribojimų (maks valandų kasdien) paskirtų tam pogrupiui, kurie negali būti apjungti į 2 šio tipo apribojimus. Du apribojimai (maks valandų kasdien) gali būti sujungti į vieną, jeigu maks valandos yra mažesnės ir svoris yra didesnis pirmame apribojime. Yra įmanoma pridėti bet kiek tokio tipo apribojimų pogrupiui, bet jų bendras rezultatas turi būti maksimaliai 2 apribojimai tipo - maks valandų kasdien.
-
-Pavyzdys: jūs galite panaudoti 3 apribojimus: 6 valandos 95%, 7 valandos 100% ir 8 valandos 100%, kurie gali būti sujungti į du apribojimus: 6 valandos 95%, 7 valandos 100%
-
-Prašome atitinkamai pataisyti savo duomenis ir pabandyti dar kartą.
-
-Dėl daugiau informacijos, prisijunkite adresų sąrašo ar parašykite elektronini laišką autoriui</translation>
-    </message>
-    <message>
-        <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours daily.
-
- Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
-
- Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
-        <translation type="obsolete">Negalima optimizuoti pogrupio %1, nes yra perdaug apribojimų (maks valandų kasdien) paskirtų tam pogrupiui, kurie negali būti apjungti į 2 šio tipo apribojimus. Du apribojimai (maks valandų kasdien) gali būti sujungti į vieną, jeigu maks valandos yra mažesnės ir svoris yra didesnis pirmame apribojime. Yra įmanoma pridėti bet kiek tokio tipo apribojimų pogrupiui, bet jų bendras rezultatas turi būti maksimaliai 2 apribojimai tipo - maks valandų kasdien.
-
-Pavyzdys: jūs galite panaudoti 3 apribojimus: 6 valandos 95%, 7 valandos 100% ir 8 valandos 100%, kurie gali būti sujungti į du apribojimus: 6 valandos 95%, 7 valandos 100%
-
-Prašome atitinkamai pataisyti savo duomenis ir pabandyti dar kartą. Dėl daugiau informacijos, prisijunkite adresų sąrašo ar parašykite elektronini laišką autoriui</translation>
-    </message>
-    <message>
-        <source>Cannot optimize for subgroup %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, students set not available and/or breaks. The number of total hours for this subgroup is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
-        <translation type="obsolete">Negalima optimizuoti pogriupio %1, nes yra maks %2 valandų kasdien su 100% svoriu apsribojimas, kuris negali būti priimtas, dėl dienų skaičiaus per savaitę, valandų skaičiaus per dieną, studentų sąrašų nepasiekiamumo ir/ar pertraukų. Visas valandų skaičius pogrupiui yra %3 ir leistinų plyšių skaičius, atsižvelgiant į maks valandų kasdien ir kitus apribojimus, yra %4.</translation>
-    </message>
-    <message>
-        <source>Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
-        <translation type="obsolete">Prašom pakeisti savo duomenis atitinkamai ir prašom pabandyti dar kartą. Daugiau detalių, prisijunkite prie adresų sąrašo ar siųskite elektroniniu paštu autoriui</translation>
-    </message>
-    <message>
-        <source>Cannot optimize for students, because the constraint of type min hours daily relating to students has no 100% weight. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
-        <translation type="obsolete">Negalima optimizuoti studentų, nes apribojimas (min valandų kasdien) studentams neturi 100% svorio. Prašome pataisyti duomenis ir pabandyti dar katrą. Daugiau detalių, prisijunkite prie adresų sąrašo ar siųskite elektroniniu paštu autoriui</translation>
-    </message>
-    <message>
-        <source>Cannot optimize for students set %1, because the constraint of type min hours daily relating to him has no 100% weight. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
-        <translation type="obsolete">Negalima optimizuoti studentų sarašo %1, nes apribojimas (min valandų kasdien) studentams neturi 100% svorio. Prašome pataisyti duomenis ir pabandyti dar katrą. Daugiau detalių, prisijunkite prie adresų sąrašo ar siųskite elektroniniu paštu autoriui</translation>
-    </message>
-    <message>
-        <source>Cannot optimize for subgroup %1, because there are two constraints of type min hours daily relating to him, and the weight percentage is higher on the constraint with less minimum hours. You are allowed only to have for each subgroup the most important constraint with maximum weight percentage and largest minimum hours daily allowed. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
-        <translation type="obsolete">Negalima optimizuoti pogrupio %1, bes yra du jam skirti apribojimai (min valandų kasdien) ir svoris procentais aukštesnis nei kito apribojimo. Jūs galite turėti kiekvienam pogrupiui tik po vieną svarbiausią apribojimą su maksimaliu svoriu ir didžiausiu leistinu min valandų kasdien.  Prašome pataisyti duomenis ir pabandyti dar katrą. Daugiau detalių, prisijunkite prie adresų sąrašo ar siųskite elektroniniu paštu autoriui</translation>
-    </message>
-    <message>
-        <source>Precomputing ... please wait</source>
-        <translation type="obsolete">Perskaičiuojama ... prašome palaukti</translation>
-    </message>
-    <message>
-        <source>FET information</source>
-        <translation type="obsolete">FET informacija</translation>
-    </message>
-    <message>
-        <source>Canceled</source>
-        <translation type="obsolete">Atšaukta</translation>
-    </message>
-    <message>
-        <source>Space constraints directly related to this room:</source>
-        <translation type="obsolete">Vietos apribojimai, tiesiogiai susieti su šiuo kambariu:</translation>
-    </message>
-    <message>
-        <source>Monday</source>
-        <translation type="obsolete">Pirmadienis</translation>
-    </message>
-    <message>
-        <source>Tuesday</source>
-        <translation type="obsolete">Antradienis</translation>
-    </message>
-    <message>
-        <source>Wednesday</source>
-        <translation type="obsolete">Trečiadienis</translation>
-    </message>
-    <message>
-        <source>Thursday</source>
-        <translation type="obsolete">Ketvirtadienis</translation>
-    </message>
-    <message>
-        <source>Friday</source>
-        <translation type="obsolete">Penktadienis</translation>
-    </message>
-    <message>
-        <source>Default institution</source>
-        <translation type="obsolete">Numatyta įstaiga</translation>
-    </message>
-    <message>
-        <source>Default comments</source>
-        <translation type="obsolete">Numatyti komentarai</translation>
-    </message>
-    <message>
-        <source>You have too many teachers.
-Please talk to the author or increase variable MAX_TEACHERS</source>
-        <translation type="obsolete">Jūs turite per daug dėstytojų.
-Prašome susisiekti su autorium, kad padidintu MAX_TEACHERS kintamąjį</translation>
-    </message>
-    <message>
-        <source>You have too many subjects.
-Please talk to the author or increase variable MAX_SUBJECTS</source>
-        <translation type="obsolete">Jūs turite per daug temų.
-Prašome susisiekti su autorium, kad padidintu MAX_SUBJECTS kintamąjį</translation>
-    </message>
-    <message>
-        <source>You have too many total subgroups.
-Please talk to the author or increase variable MAX_TOTAL_SUBGROUPS. Currently MAX_TOTAL_SUBGROUPS=%1</source>
-        <translation type="obsolete">Jūs turite per daug pogrupių.
-Prašome susisiekti su autorium, kad padidintu MAX_TOTAL_SUBGROUPS kintamąjį. Šiuo metu MAX_TOTAL_SUBGROUPS=%1</translation>
-    </message>
-    <message>
-        <source>You have too many active activities.
-Please talk to the author or increase variable MAX_ACTIVITIES</source>
-        <translation type="obsolete">Jūs turite per daug aktivių veiklų.
-Prašome susisiekti su autorium, kad padidintu MAX_ACTIVITIES kintamąjį</translation>
-    </message>
-    <message>
-        <source>You have too many rooms.
-Please talk to the author or increase variable MAX_ROOMS</source>
-        <translation type="obsolete">Jūs turite per daug kambarių.
-Prašome susisiekti su autorium, kad padidintu MAX_ROOMS kintamąjį</translation>
-    </message>
-    <message>
-        <source>You have too many time constraints.
-Please talk to the author or increase variable MAX_TIME_CONSTRAINTS</source>
-        <translation type="obsolete">Jūs turite per daug laiko apribojimų.
-Prašome susisiekti su autorium, kad padidintu MAX_TIME_CONSTRAINTS kintamąjį</translation>
-    </message>
-    <message>
-        <source>You have too many space constraints.
-Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
-        <translation type="obsolete">Jūs turite per daug vietos apribojimų.
-Prašome susisiekti su autorium, kad padidintu MAX_SPACE_CONSTRAINTS kintamąjį</translation>
-    </message>
-    <message>
-        <source>Processing internally the activities ... please wait</source>
-        <translation type="obsolete">Vykdomas vidinis veiklų apdirbimas ... prašome palaukti</translation>
-    </message>
-    <message>
-        <source>Processing internally the time constraints ... please wait</source>
-        <translation type="obsolete">Vykdomas vidinis laiko apribojimų apdirbimas ... prašome palaukti</translation>
-    </message>
-    <message>
-        <source>Processing internally the space constraints ... please wait</source>
-        <translation type="obsolete">Vykdomas vidinis vietos apribojimų apdirbimas ... prašome palaukti</translation>
-    </message>
-    <message>
-        <source>The constraint
-%1 will be modified into constraint
-%2 because there is only one room left in the constraint</source>
-        <translation type="obsolete">Apribojimas
-%1 bus pakeistas į apribojimą
-%2, nes yra likęs tik vienas kambarys apribojime</translation>
-    </message>
-    <message>
-        <source>Cannot create or use directory %1 - cannot continue</source>
-        <translation type="obsolete">Negalima sukurti ar panaudoti katalogo %1 - negalima tęsti</translation>
-    </message>
-    <message>
-        <source>FET critical</source>
-        <translation type="obsolete">FET kritiškas</translation>
-    </message>
-    <message>
-        <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are adviced to make a backup of your old file before saving in new format.
-
-Please note that the default weight percentage of constraints min n days between activities will be 95% (mainly satisfied, not always) and &apos;force consecutive if same day&apos; will be set to true (meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity)If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
-        <translation type="obsolete">Atidaroma senos versijos byla - ji bus konvertuota į naujausią formatą, automatiškai priskirti procentiniai svoriai apribojimams ir išmotoma ligybė veikloms. patartima pasidaryti senos bylos kopiją prieš išsaugant nauju formatu.
-
-Prašome įsidėmėti, kad numatytas procentinis svoris apribojimo (min n dienos tarp veiklų) bus 95% (daugiausiai priimtinas, bet ne visada) ir &quot;vykdyti nuoseklumą jei ta pati diena&quot; bus nustatyta &quot;true&quot; (reiškia, kad jei veiklos vyksta tą pačią dieną, bus padėtos nuosekliai, į didesnės trukmės veiklą). Jei jūs norite, jūs galite pakeisti procentus į 100%, rankomis fet byloje arba iš fet programos</translation>
-    </message>
-    <message>
-        <source>Opening a newer FET version file ... file will be opened but it is recommended to update your FET software to the latest version</source>
-        <translation type="obsolete">Atidaroma naujasios FET versijos byla ... byla bus atidaryta, bet rekomenduojama atnaujinti FET programą į naujausią versiją</translation>
-    </message>
-    <message>
-        <source>Loading activities ... please wait</source>
-        <translation type="obsolete">Užkraunamos veiklos ... prašome palaukti</translation>
-    </message>
-    <message>
-        <source>Activity with id=%1 contains invalid data - skipping</source>
-        <translation type="obsolete">Veikla su id=%1 turi neteisingus duomenis - praleidžiama</translation>
-    </message>
-    <message>
-        <source>File contains deprecated equipments list - will be ignored
-</source>
-        <translation type="obsolete">Byloje yra nereikalingų duomenų sąrašą - bus ignoruojama
-</translation>
-    </message>
-    <message>
-        <source>Constraint TeacherNotAvailable day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint</source>
-        <translation type="obsolete">Apribojimas (dėstytojo užimtos dienos) sugadintas dėstytojui %1, diena %2 yra netiksli ... ignoruojamas apribojimas</translation>
-    </message>
-    <message>
-        <source>Constraint TeacherNotAvailable start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
-        <translation type="obsolete">Apribojimas (dėstytojo nerieinamumo pradžios valanda) sugadintas dėstytojui %1, valanda %2 yra netiksli ... ignoruojamas apribojimas</translation>
-    </message>
-    <message>
-        <source>Constraint TeacherNotAvailable end hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
-        <translation type="obsolete">Apribojimas (dėstytojo nerieinamumo pabaigos valanda) sugadintas dėstytojui %1, valanda %2 yra netiksli ... ignoruojamas apribojimas</translation>
-    </message>
-    <message>
-        <source>Constraint TeacherMaxDaysPerWeek day corrupt for teacher %1, max days %2 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
-        <translation type="obsolete">Apribojimas (dėstytojo maks dienos per savaitę) sugadintas dėstytojui %1, maks dienų %2 &lt;= 0 arba &gt; nDaysPerWeek yra netiksli ... ignoruojamas apribojimas</translation>
-    </message>
-    <message>
-        <source>Constraint StudentsSetNotAvailable day corrupt for students %1, day %2 is inexistent ... ignoring constraint</source>
-        <translation type="obsolete">Apribojimas (studentų užimtos dienos) sugadintas studentams %1, diena %2 yra netiksli ... ignoruojamas apribojimas</translation>
-    </message>
-    <message>
-        <source>Constraint StudentsSetNotAvailable start hour corrupt for students set %1, hour %2 is inexistent ... ignoring constraint</source>
-        <translation type="obsolete">Apribojimas (studentų nerieinamumo pradžios valanda) sugadintas studentams %1, valanda %2 yra netiksli ... ignoruojamas apribojimas</translation>
-    </message>
-    <message>
-        <source>Constraint StudentsSetNotAvailable end hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint</source>
-        <translation type="obsolete">Apribojimas (studentų nerieinamumo pabaigos valanda) sugadintas studentams %1, valanda %2 yra netiksli ... ignoruojamas apribojimas</translation>
-    </message>
-    <message>
-        <source>File contains deprecated constraint teachers subgroups max hours daily - will be ignored
-</source>
-        <translation type="obsolete">Byloje yra netinkamas apribojimas (dėstytojų pogrupių maks valandos kasdien) - bus ignoruojamas
-</translation>
-    </message>
-    <message>
-        <source>File contains deprecated constraint students n hours daily - will be ignored
-</source>
-        <translation type="obsolete">Byloje yra netinkamas apribojimas (studentų n valandos kasdien) - bus ignoruojamas
-</translation>
-    </message>
-    <message>
-        <source>File contains deprecated constraint students set n hours daily - will be ignored
-</source>
-        <translation type="obsolete">Byloje yra netinkamas apribojimas (studentų sąrašo n valandos kasdien) - bus ignoruojamas
-</translation>
-    </message>
-    <message>
-        <source>Constraint ActivityPreferredTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
-        <translation type="obsolete">Apribojimas (veiklos privilegijuota diena) sugadintas veiklai su id %1, diena %2 yra netiksli ... ignoruojamas apribojimas</translation>
-    </message>
-    <message>
-        <source>Constraint ActivityPreferredTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
-        <translation type="obsolete">Apribojimas (veiklos privilegijuota valanda) sugadintas veiklai su id %1, valanda %2 yra netiksli ... ignoruojamas apribojimas</translation>
-    </message>
-    <message>
-        <source>File contains deprecated constraint activity ends day - will be ignored
-</source>
-        <translation type="obsolete">Byloje yra netinkamas apribojimas (veiklos pabaigos diena) - bus ignoruojamas
-</translation>
-    </message>
-    <message>
-        <source>Constraint ActivityPreferredTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
-        <translation type="obsolete">Apribojimas (veiklos privilegijuotos dienos) sugadintas veiklai su id %1, diena %2 yra netiksli ... ignoruojamas apribojimas</translation>
-    </message>
-    <message>
-        <source>Constraint ActivityPreferredTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
-        <translation type="obsolete">Apribojimas (veiklos privilegijuotos valandos) sugadintas veiklai su id %1, valanda %2 yra netiksli ... ignoruojamas apribojimas</translation>
-    </message>
-    <message>
-        <source>File contains deprecated constraint teachers subject tags max hours continuously - will be ignored
-</source>
-        <translation type="obsolete">Byloje yra netinkamas apribojimas (dėstytojų temų žymių maks valandos kasdien) - bus ignoruojamas
-</translation>
-    </message>
-    <message>
-        <source>File contains deprecated constraint teachers subject tag max hours continuously - will be ignored
-</source>
-        <translation type="obsolete">Byloje yra netinkamas apribojimas (dėstytojų temų žymių maks valandos nuosekliai) - bus ignoruojamas
-</translation>
-    </message>
-    <message>
-        <source>Constraint
-%1
-not added - must be a duplicate</source>
-        <translation type="obsolete">Apribojimas
-%1
-nepridėtas - kartojasi</translation>
-    </message>
-    <message>
-        <source>Constraint RoomNotAvailable day corrupt for room %1, day %2 is inexistent ... ignoring constraint</source>
-        <translation type="obsolete">Apribojimas (kambarių užimtos dienos) sugadintas kambariui %1, diena %2 yra netiksli ... ignoruojamas apribojimas</translation>
-    </message>
-    <message>
-        <source>Constraint RoomNotAvailable start hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
-        <translation type="obsolete">Apribojimas (kambario nerieinamumo pradžios valanda) sugadintas kambariui %1, valanda %2 yra netiksli ... ignoruojamas apribojimas</translation>
-    </message>
-    <message>
-        <source>Constraint RoomNotAvailable end hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
-        <translation type="obsolete">Apribojimas (kambario nerieinamumo pabaigos valanda) sugadintas kambariui %1, valanda %2 yra netiksli ... ignoruojamas apribojimas</translation>
-    </message>
-    <message>
-        <source>File contains deprecated constraint room type not allowed subjects - will be ignored
-</source>
-        <translation type="obsolete">Byloje yra netinkamas apribojimas (kambario tipas neleistinas temoms) - bus ignoruojamas
-</translation>
-    </message>
-    <message>
-        <source>File contains deprecated constraint subject requires equipments - will be ignored
-</source>
-        <translation type="obsolete">Byloje yra netinkamas temos apribojimas - bus ignoruojamas
-</translation>
-    </message>
-    <message>
-        <source>File contains deprecated constraint subject tag requires equipments - will be ignored
-</source>
-        <translation type="obsolete">Byloje yra netinkamas temos žymės apribojimas - bus ignoruojamas
-</translation>
-    </message>
-    <message>
-        <source>File contains deprecated constraint teacher requires room - will be ignored
-</source>
-        <translation type="obsolete">Byloje yra netinkamas apribojimas (dėstytojo reikalaujamas kambarys) - bus ignoruojamas
-</translation>
-    </message>
-    <message>
-        <source>File contains deprecated constraint teacher subject require room - will be ignored
-</source>
-        <translation type="obsolete">Byloje yra netinkamas apribojimas (dėstytojo temos reikalaujamas kambarys) - bus ignoruojamas
-</translation>
-    </message>
-    <message>
-        <source>File contains deprecated constraint minimize number of rooms for students - will be ignored
-</source>
-        <translation type="obsolete">Byloje yra netinkamas apribojimas (sumažinti kambarių skaičių studentams) - bus ignoruojamas
-</translation>
-    </message>
-    <message>
-        <source>File contains deprecated constraint minimize number of rooms for teachers - will be ignored
-</source>
-        <translation type="obsolete">Byloje yra netinkamas apribojimas (sumažinti kambarių skaičių dėstytojams) - bus ignoruojamas
-</translation>
-    </message>
-    <message>
-        <source>File contains deprecated constraint activities same room - will be ignored
-</source>
-        <translation type="obsolete">Byloje yra netinkamas apribojimas (veiklų tas pats kambarys) - bus ignoruojamas
-</translation>
-    </message>
-    <message>
-        <source>File contains deprecated constraint max building changes per day for teachers - will be ignored
-</source>
-        <translation type="obsolete">Byloje yra netinkamas apribojimas (dėstytojų maks pastatų pasikeitimas per dieną) - bus ignoruojamas
-</translation>
-    </message>
-    <message>
-        <source>File contains deprecated constraint max building changes per day for students - will be ignored
-</source>
-        <translation type="obsolete">Byloje yra netinkamas apribojimas (studentų maks pastatų pasikeitimas per dieną) - bus ignoruojamas
-</translation>
-    </message>
-    <message>
-        <source>File contains deprecated constraint max room changes per day for teachers - will be ignored
-</source>
-        <translation type="obsolete">Byloje yra netinkamas apribojimas (dėstytojų maks kambarių pasikeitimas per dieną) - bus ignoruojamas
-</translation>
-    </message>
-    <message>
-        <source>File contains deprecated constraint max room changes per day for students - will be ignored
-</source>
-        <translation type="obsolete">Byloje yra netinkamas apribojimas (studentų maks kambarių pasikeitimas per dieną) - bus ignoruojamas
-</translation>
-    </message>
-    <message>
-        <source>Saved file gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="obsolete">Išsaugota byla su klaidą %1, tai reiškia, kad saugojimas pavojuje. Prašome patikrinti kieto disko laisvą vietą</translation>
-    </message>
-    <message>
-        <source>Basic compulsory constraints (space), WP:%1%</source>
-        <translation type="obsolete">Pagrindiniai privalomi apribojimai (vieta), SP:%1%</translation>
-    </message>
-    <message>
-        <source>These are the basic compulsory constraints 
-(referring to rooms allocation) for any timetable
-</source>
-        <translation type="obsolete">Tai yra pagrindiniai privalomi apribojimai
-(besisiejantys su kambarių paskyrimu) bet kokiam tvarkaraščiui
-</translation>
-    </message>
-    <message>
-        <source>Weight (percentage)=%1%</source>
-        <translation type="obsolete">Svoris (procentais)=%1%</translation>
-    </message>
-    <message>
-        <source>The basic space constraints try to avoid:
-</source>
-        <translation type="obsolete">Pagrindiniai vietos apribojimai, pasistenkite išvenkti:
-</translation>
-    </message>
-    <message>
-        <source>- rooms assigned to more than one activity simultaneously
-</source>
-        <translation type="obsolete">- kambariai priskirti daugiau nei vienai veiklai vienu laiku
-</translation>
-    </message>
-    <message>
-        <source>- activities with more students than the capacity of the room
-</source>
-        <translation type="obsolete">- veiklos su daugiau studentų nei kambario talpa
-</translation>
-    </message>
-    <message>
-        <source>Space constraint basic compulsory: unallocated activity with id=%1</source>
-        <translation type="obsolete">Pagrindinis privalomas vietos apribojimas: nepaskirta veikla su id=%1</translation>
-    </message>
-    <message>
-        <source> - this increases the conflicts total by %1</source>
-        <translation type="obsolete">- tai sukels viso konfliktų %1</translation>
-    </message>
-    <message>
-        <source>Space constraint basic compulsory: room %1 has allocated activity with id %2 and the capacity of the room is overloaded</source>
-        <translation type="obsolete">Pagrindinis privalomas vietos apribojimas: kambarys %1 turi paskirtą veiklą su id %2 ir talpa yra per maža</translation>
-    </message>
-    <message>
-        <source>This increases conflicts total by %1</source>
-        <translation type="obsolete">Tai sukels viso konfliktų %1</translation>
-    </message>
-    <message>
-        <source>Space constraint basic compulsory: room with name %1 has more than one allocated activity on day %2, hour %3.</source>
-        <translation type="obsolete">Pagrindinis privalomas vietos apribojimas: kambarys %1 turi kelias paskirtas veiklas tą pačią dieną %2 ir valandą %3.</translation>
-    </message>
-    <message>
-        <source>This increases the conflicts total by %1</source>
-        <translation type="obsolete">Tai sukels viso konfliktų %1</translation>
-    </message>
-    <message>
-        <source>WP:%1%</source>
-        <translation type="obsolete">SP:%1%</translation>
-    </message>
-    <message>
-        <source>R:%1</source>
-        <translation type="obsolete">K:%1</translation>
-    </message>
-    <message>
-        <source>Space constraint</source>
-        <translation type="obsolete">Vietos apribojimas</translation>
-    </message>
-    <message>
-        <source>Room=%1</source>
-        <translation type="obsolete">Kambarys=%1</translation>
-    </message>
-    <message>
-        <source>FET error in data</source>
-        <translation type="obsolete">FET klaida duomenyse</translation>
-    </message>
-    <message>
-        <source>Following constraint is wrong:
-%1</source>
-        <translation type="obsolete">Sekantis apribojimas yra neteisingas:
-%1</translation>
-    </message>
-    <message>
-        <source>A:%1</source>
-        <translation type="obsolete">V:%1</translation>
-    </message>
-    <message>
-        <source> Invalid (inexistent) activity id for constraint activity preferred room</source>
-        <translation type="obsolete">Neteisingas (netikslus) veiklos id apribojimui (veiklos privilegijuotas kambarys)</translation>
-    </message>
-    <message>
-        <source>T:</source>
-        <translation type="obsolete">D:</translation>
-    </message>
-    <message>
-        <source>,S:</source>
-        <translation type="obsolete">,T:</translation>
-    </message>
-    <message>
-        <source>,St:</source>
-        <translation type="obsolete">,St:</translation>
-    </message>
-    <message>
-        <source>Activity preferred room</source>
-        <translation type="obsolete">Veiklos privilegijuotas kambarys</translation>
-    </message>
-    <message>
-        <source>Activity id=%1</source>
-        <translation type="obsolete">Veiklos id=%1</translation>
-    </message>
-    <message>
-        <source>Space constraint activity preferred room broken for activity with id=%1 (subject=%2), room=%3</source>
-        <translation type="obsolete">Laiko apribojimas (veiklos privilegijuotas kambarys) sugadintas veiklai su id=%1 (tema=%2), kambarys=%3</translation>
-    </message>
-    <message>
-        <source> Invalid (inexistent) activity id for constraint activity preferred rooms</source>
-        <translation type="obsolete">Neteisingas (netikslus) veiklos id apribojimui (veiklos privilegijuoti kambariai)</translation>
-    </message>
-    <message>
-        <source>Activity preferred rooms</source>
-        <translation type="obsolete">Veiklos privilegijuoti kambariai</translation>
-    </message>
-    <message>
-        <source>Space constraint activity preferred rooms broken for activity with id=%1 (subject=%2)</source>
-        <translation type="obsolete">Laiko apribojimas (veiklos privilegijuoti kambariai) sugadintas veiklai su id=%1 (tema=%2)</translation>
-    </message>
-    <message>
-        <source>S:%1</source>
-        <translation type="obsolete">T:%1</translation>
-    </message>
-    <message>
-        <source>Room name=%1</source>
-        <translation type="obsolete">Kambario pavadinimas=%1</translation>
-    </message>
-    <message>
-        <source>Yn:</source>
-        <translation type="obsolete">MP:</translation>
-    </message>
-    <message>
-        <source>No:</source>
-        <translation type="obsolete">Nr:</translation>
-    </message>
-    <message>
-        <source>Students set - year</source>
-        <translation type="obsolete">Studentų sąrašas - metai</translation>
-    </message>
-    <message>
-        <source>Year name=</source>
-        <translation type="obsolete">Metų pavadinimas=</translation>
-    </message>
-    <message>
-        <source>Number of students=</source>
-        <translation type="obsolete">Studentų skaičius=</translation>
-    </message>
-    <message>
-        <source>Time constraints directly related to this students year:</source>
-        <translation type="obsolete">Laiko apribijimai, tiesiogiai susiję šiais studentų metais:</translation>
-    </message>
-    <message>
-        <source>Space constraints directly related to this students year:</source>
-        <translation type="obsolete">Vietos apribijimai, tiesiogiai susiję šiais studentų metais:</translation>
-    </message>
-    <message>
-        <source>Gn:</source>
-        <translation type="obsolete">GP:</translation>
-    </message>
-    <message>
-        <source>Students set - group</source>
-        <translation type="obsolete">Studentų sąrašas - grupė</translation>
-    </message>
-    <message>
-        <source>Group name=</source>
-        <translation type="obsolete">Grupės pavadinimas=</translation>
-    </message>
-    <message>
-        <source>Time constraints directly related to this students group:</source>
-        <translation type="obsolete">Laiko apribijimai, tiesiogiai susiję šia studentų grupe:</translation>
-    </message>
-    <message>
-        <source>Space constraints directly related to this students group:</source>
-        <translation type="obsolete">Vietos apribijimas tiesiogiai susijęs šia studentų grupe:</translation>
-    </message>
-    <message>
-        <source>Sgn:</source>
-        <translation type="obsolete">PgP:</translation>
-    </message>
-    <message>
-        <source>Students set - subgroup</source>
-        <translation type="obsolete">Studentų sąrašas - pogrupis</translation>
-    </message>
-    <message>
-        <source>Subgroup name=</source>
-        <translation type="obsolete">Pogrupio pavadinimas</translation>
-    </message>
-    <message>
-        <source>Time constraints directly related to this students subgroup:</source>
-        <translation type="obsolete">Laiko apribijimai, tiesiogiai susiję šiuo studentų pogrupiu:</translation>
-    </message>
-    <message>
-        <source>Space constraints directly related to this students subgroup:</source>
-        <translation type="obsolete">Vietos apribijimai, tiesiogiai susiję šiuo studentų pogrupiu:</translation>
-    </message>
-    <message>
-        <source>Subject</source>
-        <translation type="obsolete">Tema</translation>
-    </message>
-    <message>
-        <source>Time constraints directly related to this subject:</source>
-        <translation type="obsolete">Laiko apribojimai, tiesiogiai susieti su šia tema:</translation>
-    </message>
-    <message>
-        <source>Space constraints directly related to this subject:</source>
-        <translation type="obsolete">Vietos apribojimai, tiesiogiai susieti su šia tema:</translation>
-    </message>
-    <message>
-        <source>Teacher</source>
-        <translation type="obsolete">Dėstytojas</translation>
-    </message>
-    <message>
-        <source>Time constraints directly related to this teacher:</source>
-        <translation type="obsolete">Laiko apribojimai, tiesiogiai susieti su šiuo dėstytoju:</translation>
-    </message>
-    <message>
-        <source>Space constraints directly related to this teacher:</source>
-        <translation type="obsolete">Vietos apribojimai, tiesiogiai susieti su šiuo dėstytoju:</translation>
-    </message>
-    <message>
-        <source>Basic compulsory constraints (time)</source>
-        <translation type="obsolete">Pagrindiniai privalomi apribojimai (laiko)</translation>
-    </message>
-    <message>
-        <source>These are the basic compulsory constraints
-(referring to time allocation) for any timetable
-</source>
-        <translation type="obsolete">Tai yra pagrindiniai privalomi apribojimai
-(besisiejantys su laiko paskyrimu) bet kokiam tvarkaraščiui
-</translation>
-    </message>
-    <message>
-        <source>The basic time constraints try to avoid:
-</source>
-        <translation type="obsolete">Pagrindiniai laiko apribojimai, pasistenkite išvenkti:
-</translation>
-    </message>
-    <message>
-        <source>- teachers assigned to more than one activity simultaneously
-</source>
-        <translation type="obsolete">- dėstytojai priskirti daugiau nei vienai veiklai vienu laiku
-</translation>
-    </message>
-    <message>
-        <source>- students assigned to more than one activity simultaneously
-</source>
-        <translation type="obsolete">- studentai priskirti daugiau nei vienai veiklai vienu laiku
-</translation>
-    </message>
-    <message>
-        <source>Time constraint basic compulsory</source>
-        <translation type="obsolete">Pagrindiniai privalomi laiko apribojimai</translation>
-    </message>
-    <message>
-        <source>unallocated activity with id=%1</source>
-        <translation type="obsolete">nepaskirstyta veikla su id=%1</translation>
-    </message>
-    <message>
-        <source>activity with id=%1 is late.</source>
-        <translation type="obsolete">veikla su id=%1 vėluoja.</translation>
-    </message>
-    <message>
-        <source>teacher with name %1 has more than one allocated activity on day %2, hour %3</source>
-        <translation type="obsolete">dėstytojas %1 turi daugiau nei viena nustatytą veiklą dieną %2, valandą %3</translation>
-    </message>
-    <message>
-        <source>subgroup %1 has more than one allocated activity on day %2, hour %3</source>
-        <translation type="obsolete">pogrupis %1 turi daugiau nei vieną nustatytą veiklą dieną %2, valandą %3</translation>
-    </message>
-    <message>
-        <source>Teacher not available</source>
-        <translation type="obsolete">Dėstytojas nepasiekiamas</translation>
-    </message>
-    <message>
-        <source>T:%1</source>
-        <translation type="obsolete">D:%1</translation>
-    </message>
-    <message>
-        <source>Time constraint</source>
-        <translation type="obsolete">Laiko apribojimas</translation>
-    </message>
-    <message>
-        <source>Constraint students set not available is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
-%1</source>
-        <translation type="obsolete">Apribojimas (studentų sąrašo nepasiekiamumas) yra neteisingas, tai siejasi su netiksliu studentų sąrašu. Prašome pataisyti (apribojimo pašalinimas galėtu tai išspęsti) Prašome pranešti apie potensialią klaidą. Apribojimas yra:
-%1 </translation>
-    </message>
-    <message>
-        <source>broken for subgroup: %1 on day %2, hour %3</source>
-        <translation type="obsolete">sugadintas pogrupiui: %1 diena %2, valanda %3</translation>
-    </message>
-    <message>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
-%1</source>
-        <translation type="obsolete">Sekantis apribojimas neteisingas (nes jums reikia 2 ar daugiau veiklų. Prašome pataisyti):
-%1</translation>
-    </message>
-    <message>
-        <source>Activities same starting time</source>
-        <translation type="obsolete">Veiklos prasideda tuo pačiu laiku</translation>
-    </message>
-    <message>
-        <source>NA:%1</source>
-        <translation type="obsolete">VS:%1</translation>
-    </message>
-    <message>
-        <source>ID:%1</source>
-        <translation type="obsolete">ID:%1</translation>
-    </message>
-    <message>
-        <source>Activities must have the same starting time</source>
-        <translation type="obsolete">Veiklos turi turėti tą patį padžios laiką</translation>
-    </message>
-    <message>
-        <source>Number of activities=%1</source>
-        <translation type="obsolete">Veiklų skaičius=%1</translation>
-    </message>
-    <message>
-        <source>Activity with id=%1</source>
-        <translation type="obsolete">Veikla su id=%1</translation>
-    </message>
-    <message>
-        <source> Invalid (inexistent) id for activity</source>
-        <translation type="obsolete">Neteisingas (netikslus) veiklos id</translation>
-    </message>
-    <message>
-        <source>T: </source>
-        <translation type="obsolete">D:</translation>
-    </message>
-    <message>
-        <source> , S: </source>
-        <translation type="obsolete">, T:</translation>
-    </message>
-    <message>
-        <source> , St: </source>
-        <translation type="obsolete">, St:</translation>
-    </message>
-    <message>
-        <source>Time constraint activities same starting time broken, because activity with id=%1 is not at the same starting time with activity with id=%2</source>
-        <translation type="obsolete">Laiko apribojimas (veiklos prasideda tuo pačiu laiku) sugadintas, nes veikla su id=%1 neprasideda tuo pačiu laiku su veikla id=%2</translation>
-    </message>
-    <message>
-        <source>conflicts factor increase=%1</source>
-        <translation type="obsolete">konfliktų faktorius padidėjo %1</translation>
-    </message>
-    <message>
-        <source>Activities not overlapping</source>
-        <translation type="obsolete">Veiklos nepersidengia</translation>
-    </message>
-    <message>
-        <source>Activities must not overlap</source>
-        <translation type="obsolete">Veiklos turi nepersidengti</translation>
-    </message>
-    <message>
-        <source>activity with id=%1 overlaps with activity with id=%2 on a number of %3 periods</source>
-        <translation type="obsolete">veikla su id=%1 ir veikla id=%2 persidengia %3 periodus</translation>
-    </message>
-    <message>
-        <source>Time constraint activities not overlapping</source>
-        <translation type="obsolete">Laiko apribojimas (veiklos nepersidengia)</translation>
-    </message>
-    <message>
-        <source>broken:</source>
-        <translation type="obsolete">sugadinta:</translation>
-    </message>
-    <message>
-        <source>Min N days between activities</source>
-        <translation type="obsolete">Min N dienos tarp veiklų</translation>
-    </message>
-    <message>
-        <source>CSD:%1</source>
-        <translation type="obsolete">NTD:%1</translation>
-    </message>
-    <message>
-        <source>N:%1</source>
-        <translation type="obsolete">Nr:%1</translation>
-    </message>
-    <message>
-        <source>Minimum N days between activities</source>
-        <translation type="obsolete">Minimalus N dienų skaičius tarp veiklų</translation>
-    </message>
-    <message>
-        <source>Consecutive if same day=%1</source>
-        <translation type="obsolete">Nuoseklu, jei ta pati diena=%1</translation>
-    </message>
-    <message>
-        <source>Minimum number of days=%1</source>
-        <translation type="obsolete">Minimalus dienų skaičius=%1</translation>
-    </message>
-    <message>
-        <source>Time constraint min n days between activities</source>
-        <translation type="obsolete">Laiko apribojimai (min n dienos tarp veiklų)</translation>
-    </message>
-    <message>
-        <source>on days %1 and %2</source>
-        <translation type="obsolete">dieną %1 ir %2</translation>
-    </message>
-    <message>
-        <source>teachers1 %1, students sets1 %2, subject1 %3</source>
-        <translation type="obsolete">dėstytojai1 %1, studentų sąrašai1 %2, tema1 %3</translation>
-    </message>
-    <message>
-        <source>teachers2 %1, students sets2 %2, subject2 %3</source>
-        <translation type="obsolete">dėstytojai2 %1, studentų sąrašai2 %2, tema2 %3</translation>
-    </message>
-    <message>
-        <source>The activities are placed consecutively in the timetable, because you selected this option in case the activities are in the same day</source>
-        <translation type="obsolete">Veiklos padėtos į tvarkaraštį nuosekliai, nes jūs pasirinkote, kad veiklos vyktų tą pačią dieną</translation>
-    </message>
-    <message>
-        <source>Teachers max %1 hours daily</source>
-        <translation type="obsolete">Dėstytojų maks %1 valandų kasdien</translation>
-    </message>
-    <message>
-        <source>Teachers must not have more than %1 hours daily</source>
-        <translation type="obsolete">Dėstytojai neturėtų turėti daugiau nei %1 valandų kasdien</translation>
-    </message>
-    <message>
-        <source>Time constraint teachers max %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
-        <translation type="obsolete">Laiko apribojimas (dėstytojų maks %1 valandų kasdien) sugadintas dėstytojui %2, diena %3, ilgis=%4.</translation>
-    </message>
-    <message>
-        <source>Teacher max %1 hours daily</source>
-        <translation type="obsolete">Dėstytojo maks %1 valandų kasdien</translation>
-    </message>
-    <message>
-        <source>TN:%1</source>
-        <translation type="obsolete">DV:%1</translation>
-    </message>
-    <message>
-        <source>Teacher %1 must not have more than %2 hours daily</source>
-        <translation type="obsolete">Dėstytojas %1 neturėtų turėti daugiau nei %2 valandų kasdien</translation>
-    </message>
-    <message>
-        <source>Time constraint teacher max %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
-        <translation type="obsolete">Laiko apribojimas (dėstytojo maks %1 valandų kasdien) sugadintas dėstytojui %2, diena %3, ilgis=%4.</translation>
-    </message>
-    <message>
-        <source>Teacher max days per week</source>
-        <translation type="obsolete">Dėstytojo maks dienų per savaitę</translation>
-    </message>
-    <message>
-        <source>MD:%1</source>
-        <translation type="obsolete">MD:%1</translation>
-    </message>
-    <message>
-        <source>Teacher max. days per week</source>
-        <translation type="obsolete">Dėstytojų maks. dienų per savaitę</translation>
-    </message>
-    <message>
-        <source>Max. days per week=%1</source>
-        <translation type="obsolete">Maks. dienų per savaitę=%1</translation>
-    </message>
-    <message>
-        <source>Time constraint teacher max days per week broken for</source>
-        <translation type="obsolete">Laiko apribojimas (dėstytojo maks dienos per savaitę) sugadintas</translation>
-    </message>
-    <message>
-        <source>teacher: %1.</source>
-        <translation type="obsolete">dėstytojas=%1.</translation>
-    </message>
-    <message>
-        <source>Teachers max gaps per week</source>
-        <translation type="obsolete">Dėstytojo maks tarpai per savaitę</translation>
-    </message>
-    <message>
-        <source>MG:%1</source>
-        <translation type="obsolete">MT:%1</translation>
-    </message>
-    <message>
-        <source>Time constraint teachers max gaps per week broken: teacher: %1, conflicts factor increase=%2</source>
-        <translation type="obsolete">Laiko apribojimas (dėstytojų maks tarpų per savaitę) sugadintas dėstytojui: %1, konfliktų faktorius padidėjo %2</translation>
-    </message>
-    <message>
-        <source>Teacher max gaps per week</source>
-        <translation type="obsolete">Dėstytojo maks tarpai per savaitę</translation>
-    </message>
-    <message>
-        <source>Teacher: %1</source>
-        <translation type="obsolete">Dėstytojas: %1</translation>
-    </message>
-    <message>
-        <source>Max gaps per week: %1</source>
-        <translation type="obsolete">Maks dienų per savaitę: %1</translation>
-    </message>
-    <message>
-        <source>Time constraint teacher max gaps per week broken: teacher: %1, conflicts factor increase=%2</source>
-        <translation type="obsolete">Laiko apribojimas (dėstytojo maks tarpų per savaitę) sugadintas: %1, konfliktų faktorius padidėjo %2</translation>
-    </message>
-    <message>
-        <source>This increases the conflicts total by</source>
-        <translation type="obsolete">Tai padidino konfliktus viso</translation>
-    </message>
-    <message>
-        <source>St:%1</source>
-        <translation type="obsolete">St:%1</translation>
-    </message>
-    <message>
-        <source>Weight (percentage)=%1</source>
-        <translation type="obsolete">Svoris (procentais)=%1</translation>
-    </message>
-    <message>
-        <source>Students set=%1</source>
-        <translation type="obsolete">Studentų sąrašas=%1</translation>
-    </message>
-    <message>
-        <source>Students max hours daily</source>
-        <translation type="obsolete">Studentų maks. valandų kasdien</translation>
-    </message>
-    <message>
-        <source>MH:%1</source>
-        <translation type="obsolete">MV:%1</translation>
-    </message>
-    <message>
-        <source>Maximum recommended hours daily=%1</source>
-        <translation type="obsolete">Rekomenduojamas maksimalus valandų skaičius=%1</translation>
-    </message>
-    <message>
-        <source>Time constraint students max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4</source>
-        <translation type="obsolete">Laiko apribojimas (studentų maks valandų kasdien) sugadintas pogrupiui %1, diena %2, ilgis=%3, konfliktas padidėjo %4</translation>
-    </message>
-    <message>
-        <source>Students set max hours daily</source>
-        <translation type="obsolete">Studentų sąrašo maks. valandų kasdien</translation>
-    </message>
-    <message>
-        <source>Students set must respect the maximum number of hours daily</source>
-        <translation type="obsolete">Studentų sąrašas turi atsižvelgti į maksimalų valandų skaičių kasdien</translation>
-    </message>
-    <message>
-        <source>Time constraint students set max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4</source>
-        <translation type="obsolete">Laiko apribojimas (studentų sąrašų maks valandų kasdien) sugadintas pogrupiui %1, diena %2, ilgis=%3, konfliktas padidėjo %4</translation>
-    </message>
-    <message>
-        <source>Students min hours daily</source>
-        <translation type="obsolete">Studentų min. valandų kasdien</translation>
-    </message>
-    <message>
-        <source>mH:%1</source>
-        <translation type="obsolete">mV:%1</translation>
-    </message>
-    <message>
-        <source>All students sets must have the minimum number of hours daily</source>
-        <translation type="obsolete">Visi studentų sąrašai turi turėti minimalų skaičių valandų kasdien</translation>
-    </message>
-    <message>
-        <source>Minimum recommended hours daily=%1</source>
-        <translation type="obsolete">Rekomenduojamas minimalus valandų skaičius=%1</translation>
-    </message>
-    <message>
-        <source>Time constraint students min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4</source>
-        <translation type="obsolete">Laiko apribojimas (studentų min valandų kasdien) sugadintas pogrupiui %1, diena %2, ilgis=%3, konfliktas padidėjo %4</translation>
-    </message>
-    <message>
-        <source>Students set min hours daily</source>
-        <translation type="obsolete">Studentų sąrašo min. valandų kasdien</translation>
-    </message>
-    <message>
-        <source>Students set must respect the minimum number of hours daily</source>
-        <translation type="obsolete">Studentų sąrašas turi atsižvelgti į minimalų valandų skaičių kasdien</translation>
-    </message>
-    <message>
-        <source>Time constraint students set min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4</source>
-        <translation type="obsolete">Laiko apribojimas (studentų sąrašų min valandų kasdien) sugadintas pogrupiui %1, diena %2, ilgis=%3, konfliktas padidėjo %4</translation>
-    </message>
-    <message>
-        <source>Following constraint is wrong (because it refers to invalid activity id. Please correct (maybe removing it is a solution)):
-%1</source>
-        <translation type="obsolete">Sekantis apribojimas neteisingas (nes jis siejasi su neteisinga veikla. Prašome pataisyti (apribojimo pašalinimas galėtu tai išspręsti)):
-%1</translation>
-    </message>
-    <message>
-        <source>Constraint activity preferred time is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="obsolete">Apribojimas (veiklos privilegijuotas laikas) yra neteisingas, tai siejasi su pašalinta diena. Prašome pataisyti (apribojimo pašalinimas galėtu tai išspęsti) Prašome pranešti apie potensialią klaidą. Apribojimas yra:
-%1 </translation>
-    </message>
-    <message>
-        <source>Constraint activity preferred time is wrong because preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="obsolete">Apribojimas (veiklos privilegijuotas laikas) yra neteisingas, nes privilegijuotas laikas yra per vėlai (po paskutinio galimo plyšio). Prašome pataisyti ir pabandyti dar kartą. Prašome pranešti apie potensialią klaidą. Apribojimas yra:
-%1 </translation>
-    </message>
-    <message>
-        <source>Constraint activity preferred time is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="obsolete">Apribojimas (veiklos privilegijuotas laikas) yra neteisingas, tai siejasi su pašalinta valanda. Prašome pataisyti ir pabandyti dar kartą. Prašome pranešti apie potensialią klaidą. Apribojimas yra:
-%1 </translation>
-    </message>
-    <message>
-        <source>Act. id:%1</source>
-        <translation type="obsolete">Vkl. id:%1</translation>
-    </message>
-    <message>
-        <source>Following constraint is wrong (because it refers to invalid activity id. Please correct it (maybe removing it is a solution)):
-%1</source>
-        <translation type="obsolete">Sekantis apribojimas neteisingas (nes jis siejasi su neteisinga veikla. Prašome pataisyti (apribojimo pašalinimas galėtu tai išspręsti)):
-%1</translation>
-    </message>
-    <message>
-        <source>WP:%1</source>
-        <translation type="obsolete">SP:%1</translation>
-    </message>
-    <message>
-        <source>teachers %1, students sets %2, subject %3</source>
-        <translation type="obsolete">dėstytojai %1, studentų sąrašai %2, tema %3</translation>
-    </message>
-    <message>
-        <source>Following constraint is wrong (refers to no activities. Please correct it):
-%1</source>
-        <translation type="obsolete">Sekantis apribojimas neteisingas (nes nėra veiklų. Prašome pataisyti):
-%1</translation>
-    </message>
-    <message>
-        <source>Activities with </source>
-        <translation type="obsolete">Veiklos su</translation>
-    </message>
-    <message>
-        <source>teacher=%1, </source>
-        <translation type="obsolete">dėstytojas=%1,</translation>
-    </message>
-    <message>
-        <source>all teachers, </source>
-        <translation type="obsolete">visi dėstytojai,</translation>
-    </message>
-    <message>
-        <source>students=%1, </source>
-        <translation type="obsolete">studentai=%1,</translation>
-    </message>
-    <message>
-        <source>all students, </source>
-        <translation type="obsolete">visi studentai,</translation>
-    </message>
-    <message>
-        <source>subject=%1, </source>
-        <translation type="obsolete">tema=%1,</translation>
-    </message>
-    <message>
-        <source>all subjects, </source>
-        <translation type="obsolete">visos temos,</translation>
-    </message>
-    <message>
-        <source>Activities with:</source>
-        <translation type="obsolete">Veiklos su:</translation>
-    </message>
-    <message>
-        <source>Teacher=%1
-</source>
-        <translation type="obsolete">Dėstytojas=%1</translation>
-    </message>
-    <message>
-        <source>All teachers
-</source>
-        <translation type="obsolete">Visi dėstytojai</translation>
-    </message>
-    <message>
-        <source>Students=%1
-</source>
-        <translation type="obsolete">Studentai=%1</translation>
-    </message>
-    <message>
-        <source>All students
-</source>
-        <translation type="obsolete">Visi studentai</translation>
-    </message>
-    <message>
-        <source>Subject=%1
-</source>
-        <translation type="obsolete">Tema=%1</translation>
-    </message>
-    <message>
-        <source>All subjects
-</source>
-        <translation type="obsolete">Visos temos</translation>
-    </message>
-    <message>
-        <source>Activities same starting hour</source>
-        <translation type="obsolete">Veiklos prasideda tą pačią valandą</translation>
-    </message>
-    <message>
-        <source>Activities must have the same starting hour</source>
-        <translation type="obsolete">Veiklos turi turėti tą patčią padžios valandą</translation>
-    </message>
-    <message>
-        <source> Invalid (inexistent) activity id</source>
-        <translation type="obsolete">Neteisingas (netikslus) veiklos id</translation>
-    </message>
-    <message>
-        <source>Time constraint activities same starting hour broken, because activity with id=%1 is not at the same hour with activity with id=%2</source>
-        <translation type="obsolete">Laiko apribojimas (veiklos prasideda tą pačią valandą) sugadintas, nes veikla su id=%1 neprasideda tą pačią valandą su veikla id=%2</translation>
-    </message>
-    <message>
-        <source>Following constraint is wrong (refers to inexistent activity ids):
-%1</source>
-        <translation type="obsolete">Sekantis apribojimas neteisingas (netikslūs veiklų id):
-%1</translation>
-    </message>
-    <message>
-        <source>Following constraint is wrong (refers to same activities):
-%1</source>
-        <translation type="obsolete">Sekantis apribojimas neteisingas (susiję su tomis pačiomis veiklomis):
-%1</translation>
-    </message>
-    <message>
-        <source>Constraint 2 activities consecutive: </source>
-        <translation type="obsolete">Apribojimas (2 veiklos nuoseklios):</translation>
-    </message>
-    <message>
-        <source>first act. id:%1</source>
-        <translation type="obsolete">pirma vkl. id:%1</translation>
-    </message>
-    <message>
-        <source>second act. id:%1</source>
-        <translation type="obsolete">antra vkl. id:%1</translation>
-    </message>
-    <message>
-        <source>First activity id=%1</source>
-        <translation type="obsolete">Pirmos veiklos id=%1</translation>
-    </message>
-    <message>
-        <source> Invalid (inexistent) activity id for first activity</source>
-        <translation type="obsolete">Neteisingas (netikslus) veiklos id pirmoje veikloje</translation>
-    </message>
-    <message>
-        <source>Second activity id=%1</source>
-        <translation type="obsolete">Antros veiklos id=%1</translation>
-    </message>
-    <message>
-        <source> Invalid (inexistent) activity id for second activity</source>
-        <translation type="obsolete">Neteisingas (netikslus) veiklos id antroje veikloje</translation>
-    </message>
-    <message>
-        <source>Time constraint 2 activities consecutive broken for first activity with id=%1 and second activity with id=%2, increases conflicts total by %3</source>
-        <translation type="obsolete">Laiko apribojimas (2 veiklos nuoseklios) sugadintas, pirma veikla su id=%1 ir antra veikla su id=%2, padidinti konfliktai viso %3</translation>
-    </message>
-    <message>
-        <source>Act. id:%1 must end students&apos; day</source>
-        <translation type="obsolete">Vkl. id:%1 turi užbaigti studentų dieną</translation>
-    </message>
-    <message>
-        <source>Activity with id=%1 must end students&apos; day</source>
-        <translation type="obsolete">Veikla su id:%1 turi užbaigti studentų dieną</translation>
-    </message>
-    <message>
-        <source>Time constraint activity ends students&apos; day broken for activity with id=%1, increases conflicts total by %2</source>
-        <translation type="obsolete">Laiko apribojimas (veikla užbaigia studentų dieną) sugadintas, veikla su id=%1, padidinti konfliktai viso %2</translation>
-    </message>
-    <message>
-        <source>Teachers min %1 hours daily</source>
-        <translation type="obsolete">Dėstytojų min %1 valandų kasdien</translation>
-    </message>
-    <message>
-        <source>Teachers must not have less than %1 hours daily</source>
-        <translation type="obsolete">Dėstytojai neturėtų turėti mažiau nei %1 valandų kasdien</translation>
-    </message>
-    <message>
-        <source>Note: FET is smart enough to use this constraint only on working days of the teachers</source>
-        <translation type="obsolete">Pastaba: FET pakankamai gudrus panaudoti apribojimą tik dėstytojų darbo dienomis</translation>
-    </message>
-    <message>
-        <source>Time constraint teachers min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
-        <translation type="obsolete">Laiko apribojimas (dėstytojų min %1 valandų kasdien) sugadintas dėstytojui %2, diena %3, ilgis=%4.</translation>
-    </message>
-    <message>
-        <source>Teacher min %1 hours daily</source>
-        <translation type="obsolete">Dėstytojo min %1 valandų kasdien</translation>
-    </message>
-    <message>
-        <source>Teacher %1 must not have less than %2 hours daily</source>
-        <translation type="obsolete">Dėstytojas %1 neturėtų turėti mažiau nei %2 valandų kasdien</translation>
-    </message>
-    <message>
-        <source>Note: FET is smart enough to use this constraint only on working days of the teacher</source>
-        <translation type="obsolete">Pastaba: FET pakankamai gudrus panaudoti apribojimą tik dėstytojo darbo dienomis</translation>
-    </message>
-    <message>
-        <source>Time constraint teacher min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
-        <translation type="obsolete">Laiko apribojimas (dėstytojo min %1 valandų kasdien) sugadintas dėstytojui %2, diena %3, ilgis=%4.</translation>
-    </message>
-    <message>
-        <source>Invalid selected activity</source>
-        <translation type="obsolete">Neteisinga pasirinkta veikla</translation>
-    </message>
-    <message>
-        <source>There will also be removed the related activities from the same larger split activity</source>
-        <translation type="obsolete">Taip pat buvo pašalintos susijusios veiklos iš tos pačios didesnės išskaidytos veiklos</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation type="obsolete">Gerai</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Atšaukti</translation>
-    </message>
-    <message>
-        <source>Invalid activity</source>
-        <translation type="obsolete">Neteisinga veikla</translation>
-    </message>
-    <message>
-        <source>Current constraint:</source>
-        <translation type="obsolete">Einamasis apribojimas:</translation>
-    </message>
-    <message>
-        <source>2 activities consecutive</source>
-        <translation type="obsolete">2 veiklos nuoseklios</translation>
-    </message>
-    <message>
-        <source>Invalid first activity</source>
-        <translation type="obsolete">Neteisinga pirma veikla</translation>
-    </message>
-    <message>
-        <source>Invalid second activity</source>
-        <translation type="obsolete">Neteisinga antra veikla</translation>
-    </message>
-    <message>
-        <source>Invalid weight (percentage)</source>
-        <translation type="obsolete">Netaisingas svoris (procentais)</translation>
-    </message>
-    <message>
-        <source>Same activities - impossible</source>
-        <translation type="obsolete">Ta pati veikla - neįmanoma</translation>
-    </message>
-    <message>
-        <source>Constraint NOT added - error?</source>
-        <translation type="obsolete">Apribojimas nepridėtas - klaida?</translation>
-    </message>
-    <message>
-        <source>Empty list of not overlapping activities</source>
-        <translation type="obsolete">Tuščias sąrašas nepersidengiančių veiklų</translation>
-    </message>
-    <message>
-        <source>Only one selected activity</source>
-        <translation type="obsolete">Tik viena pasirinkta veikla</translation>
-    </message>
-    <message>
-        <source>Please report error to the author
-MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING must be increased (you have too many activities)</source>
-        <translation type="obsolete">Prašome pranešti apie klaidą autoriui
-MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING kintamasis turi būti padidintas (jūs turite per daug veiklų)</translation>
-    </message>
-    <message>
-        <source>Constraint added:</source>
-        <translation type="obsolete">Pridėtas apribojimas:</translation>
-    </message>
-    <message>
-        <source>Constraint NOT added - please report error</source>
-        <translation type="obsolete">Apribojimas, nepridėtas - prašom pranešti klaidą</translation>
-    </message>
-    <message>
-        <source>Yes</source>
-        <translation type="obsolete">Taip</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation type="obsolete">Ne</translation>
-    </message>
-    <message>
-        <source>Not enough slots (too many &quot;Yes&quot; values).</source>
-        <translation type="obsolete">Nepakanka plyšių (per daug &quot;Taip&quot; reikšmių).</translation>
-    </message>
-    <message>
-        <source>Currently, it is %1</source>
-        <translation type="obsolete">Dabar yra %1</translation>
-    </message>
-    <message>
-        <source>Constraint NOT added - duplicate?</source>
-        <translation type="obsolete">Apribojimas NEpridėtas - pasikartojantis?</translation>
-    </message>
-    <message>
-        <source>Empty list of selected activities</source>
-        <translation type="obsolete">Tuščias pasirinktų veiklų sąrašas</translation>
-    </message>
-    <message>
-        <source>Please report error to the author
-MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too many activities)</source>
-        <translation type="obsolete">Prašome pranešti apie klaidą autoriui
-MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR kintamasis turi būti padidintas (jūs turite per daug veiklų)</translation>
-    </message>
-    <message>
-        <source>Empty list of simultaneous activities</source>
-        <translation type="obsolete">Tuščias sąrašas veiklų, kurios vyksta tuo pačiu metu</translation>
-    </message>
-    <message>
-        <source>Only one selected activity - impossible</source>
-        <translation type="obsolete">Tik viena pasirinkta veikla - neįmanoma</translation>
-    </message>
-    <message>
-        <source>Too many activities - please report error
-(CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME too little)</source>
-        <translation type="obsolete">Per daug veiklų - prašome pranešti apie klaidą
-(CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis per mažas)</translation>
-    </message>
-    <message>
-        <source>Sub-activities do not correspond. Mistake:
-</source>
-        <translation type="obsolete">Sub-veiklos nesusiriša. Klaida:
-</translation>
-    </message>
-    <message>
-        <source>1. First (sub)activity has id=%1 and represents %2 sub-activities
-</source>
-        <translation type="obsolete">1. Pirma (sub)veikla id=%1 ir atstovauja %2 sub-veiklas
-</translation>
-    </message>
-    <message>
-        <source>2. Current (sub)activity has id=%1 and represents %2 sub-activities
-</source>
-        <translation type="obsolete">2. Dabartinė (sub)veikla id=%1 atstovauja %2 sub-veiklas
-</translation>
-    </message>
-    <message>
-        <source>Activity ends students day</source>
-        <translation type="obsolete">Veikla baigia studentų dieną</translation>
-    </message>
-    <message>
-        <source>Invalid weight (percentage) - must be 100%</source>
-        <translation type="obsolete">Neteisingas svoris (procentais) - turi būti 100%</translation>
-    </message>
-    <message>
-        <source>Constraint NOT added - please report bug</source>
-        <translation type="obsolete">Apribojimas nepridėtas - prašom pranešti apie klaidą</translation>
-    </message>
-    <message>
-        <source>Invalid room</source>
-        <translation type="obsolete">Netaisingas kambarys</translation>
-    </message>
-    <message>
-        <source>Constraint NOT added - must be a duplicate</source>
-        <translation type="obsolete">Apribojimas NEpridėtas - pasikartojantys</translation>
-    </message>
-    <message>
-        <source>Empty list of selected rooms</source>
-        <translation type="obsolete">Tuščias pasirinktų kambarių sąrašas</translation>
-    </message>
-    <message>
-        <source>Only one selected room - please use constraint activity preferred room if you want a single room</source>
-        <translation type="obsolete">Tik vienas pasirinktas kambarys - prašome panaudoti apribojimą (veiklos privilegijuotas kambarys), jei norite tik vieno kambario</translation>
-    </message>
-    <message>
-        <source>Invalid day</source>
-        <translation type="obsolete">Neteisinga diena</translation>
-    </message>
-    <message>
-        <source>Day:%1</source>
-        <translation type="obsolete">Diena:%1</translation>
-    </message>
-    <message>
-        <source>Invalid start hour</source>
-        <translation type="obsolete">Neteisinga pradžios valanda</translation>
-    </message>
-    <message>
-        <source>Start hour:%1</source>
-        <translation type="obsolete">Pradžios valanda:%1</translation>
-    </message>
-    <message>
-        <source>Constraint NOT added - duplicate</source>
-        <translation type="obsolete">Apribojimas NEpridėtas - pasikartojantis</translation>
-    </message>
-    <message>
-        <source>Basic compulsory space</source>
-        <translation type="obsolete">Pagrindiniai privalomi vietos apribojimai</translation>
-    </message>
-    <message>
-        <source>Invalid weight</source>
-        <translation type="obsolete">Netaisingas svoris</translation>
-    </message>
-    <message>
-        <source>Basic compulsory time</source>
-        <translation type="obsolete">Pagrindiniai privalomi laiko apribojimai</translation>
-    </message>
-    <message>
-        <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="obsolete">Negaliojantis svoris (procentais). Jis turi būti 100</translation>
-    </message>
-    <message>
-        <source>Please report error to the author
-MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES must be increased (you have too many activities)</source>
-        <translation type="obsolete">Prašome pranešti apie klaidą autoriui
-MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES kintamasis turi būti padidintas (jūs turite per daug veiklų)</translation>
-    </message>
-    <message>
-        <source>Constraint NOT added - it must be a duplicate</source>
-        <translation type="obsolete">Apribojimas NEpridėtas - pasikartojantys</translation>
-    </message>
-    <message>
-        <source>Invalid weight (percentage) - it must be 100%</source>
-        <translation type="obsolete">Negaliojantis svoris (procentais). Jis turi būti 100</translation>
-    </message>
-    <message>
-        <source>Max. hours:%1</source>
-        <translation type="obsolete">Maks valandų:%1</translation>
-    </message>
-    <message>
-        <source>Min. hours:%1</source>
-        <translation type="obsolete">Min valandų:%1</translation>
-    </message>
-    <message>
-        <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="obsolete">Negaliojantis svoris (procentais) - turi būti 100%</translation>
-    </message>
-    <message>
-        <source>Invalid weight(percentage)</source>
-        <translation type="obsolete">Negaliojantis svoris (procentais)</translation>
-    </message>
-    <message>
-        <source>Invalid weight(percentage) - it must be 100%</source>
-        <translation type="obsolete">Negaliojantis svoris (procentais) - turi būti 100%</translation>
-    </message>
-    <message>
-        <source>Invalid students set</source>
-        <translation type="obsolete">Negaliojantis studentų sąrašas</translation>
-    </message>
-    <message>
-        <source>Invalid weight - it has to be 100%</source>
-        <translation type="obsolete">Neteisingas svoris - turi būti 100%</translation>
-    </message>
-    <message>
-        <source>Invalid subject</source>
-        <translation type="obsolete">Negaliojanti tema</translation>
-    </message>
-    <message>
-        <source>Constraint NOT added - error ?</source>
-        <translation type="obsolete">Apribojimas nepridėtas - klaida?</translation>
-    </message>
-    <message>
-        <source>Only one selected room - please use constraint subject preferred room if you want a single room</source>
-        <translation type="obsolete">Tik vienas pasirinktas kambarys - prašome panaudoti apribojimą (temos privilegijuotas kambarys), jei norite tik vieno kambario</translation>
-    </message>
-    <message>
-        <source>Invalid selected subject</source>
-        <translation type="obsolete">Neteisinga pasirinkta tema</translation>
-    </message>
-    <message>
-        <source>Max days per week=%1</source>
-        <translation type="obsolete">Maks dienų per savaitę=%1</translation>
-    </message>
-    <message>
-        <source>Invalid teacher</source>
-        <translation type="obsolete">Negaliojantis dėstytojas</translation>
-    </message>
-    <message>
-        <source>Max gaps=%1</source>
-        <translation type="obsolete">Maks tarpai=%1</translation>
-    </message>
-    <message>
-        <source>Teacher max hours daily</source>
-        <translation type="obsolete">Dėstytojo maks valandų kasdien</translation>
-    </message>
-    <message>
-        <source>Max hours daily=%1</source>
-        <translation type="obsolete">Maks valandų kasdien=%1</translation>
-    </message>
-    <message>
-        <source>Teacher min hours daily</source>
-        <translation type="obsolete">Dėstytojo min valandų kasdien</translation>
-    </message>
-    <message>
-        <source>Min hours daily=%1</source>
-        <translation type="obsolete">Min valandų kasdien=%1</translation>
-    </message>
-    <message>
-        <source>Teachers max hours daily</source>
-        <translation type="obsolete">Dėstytojų maks valandų kasdien</translation>
-    </message>
-    <message>
-        <source>Teachers min hours daily</source>
-        <translation type="obsolete">Dėstytojų min valandų kasdien</translation>
-    </message>
-    <message>
-        <source>Incorrect name</source>
-        <translation type="obsolete">Netaisingas pavadinimas</translation>
-    </message>
-    <message>
-        <source>Room insertion dialog</source>
-        <translation type="obsolete">Kambario pridėjimas</translation>
-    </message>
-    <message>
-        <source>Could not insert item. Must be a duplicate</source>
-        <translation type="obsolete">Elementas NEpridėtas - kartojasi</translation>
-    </message>
-    <message>
-        <source>Room added</source>
-        <translation type="obsolete">Kambarys pridėtas</translation>
-    </message>
-    <message>
-        <source>It is advisable to only input special rooms, which are not available, or for activities with special rooms needed (no need to input home rooms for teachers or students)
-
-It is advisable to generate the timetable without the rooms, then, if a solution is possible, to add rooms</source>
-        <translation type="obsolete">Patartina pridėti tik specialius kambarius, kurie yra neprieinami, ar veiklos su specialiais kambariais (nebūtina pridėti namų kambarių dėstytojams ir studentams)
-
-Patartina sugeneruoti tvarkaraštį be kambarių, o po to, jei sprendimas įmanomas, pridėti kambarius</translation>
-    </message>
-    <message>
-        <source>Please note that each room can hold a single activity at a specified period. If you have a very large room, which can hold more activities at one time, please add more rooms, representing this larger room</source>
-        <translation type="obsolete">Prašome įsidėmėti, kad kiekvienas kambarys gali būti panaudojamas vienai veiklai nurodytu periodu. Jei jūs turite labai didelį kambarį, kuriame gali vykti kelios veiklos vienu metu, prašome pridėti daugiau kambarių, kurie atstovauja šį didelį kambarį</translation>
-    </message>
-    <message>
-        <source>FET - help on adding room(s)</source>
-        <translation type="obsolete">FET - pagalba pridedant kambarius</translation>
-    </message>
-    <message>
-        <source>Group insertion dialog</source>
-        <translation type="obsolete">Grupės pridėjimas</translation>
-    </message>
-    <message>
-        <source>Could not insert item. Duplicate</source>
-        <translation type="obsolete">Elementas NEpridėtas - kartojasi</translation>
-    </message>
-    <message>
-        <source>This name is taken for a year - please consider another name</source>
-        <translation type="obsolete">Šis pavadinimas panaudotas metams - prašome sugalvoti kitą pavadinimą</translation>
-    </message>
-    <message>
-        <source>This name is taken for a subgroup - please consider another name</source>
-        <translation type="obsolete">Šis pavadinimas panaudotas pogrupiui - prašome sugalvoti kitą pavadinimą</translation>
-    </message>
-    <message>
-        <source>FET</source>
-        <translation type="obsolete">FET</translation>
-    </message>
-    <message>
-        <source>This group already exists, but in another year
-If you insert current group to current year, that
-means that some years share the same group (overlap)
-If you want to make a new group, independent,
-please abort now and give it another name
-</source>
-        <translation type="obsolete">Ši grupė jau egzistuoja, bet kituose metuose
-Jei jūs įterpsite šią grupę į šiuos metus, tai
-reikš, kad keli metai dalinsis ta pačia grupe (persidengimas)
-Jei jūs norite pridėti naują nepriklausomą grupę,
-nutraukite veiksmą dabar ir pasirinkite kitą pavadinimą</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation type="obsolete">Pridėti</translation>
-    </message>
-    <message>
-        <source>Abort</source>
-        <translation type="obsolete">Nutraukti</translation>
-    </message>
-    <message>
-        <source>Group added</source>
-        <translation type="obsolete">Grupė pridėta</translation>
-    </message>
-    <message>
-        <source>Subgroup insertion dialog</source>
-        <translation type="obsolete">Pogrupio pridėjimas</translation>
-    </message>
-    <message>
-        <source>This name is taken for a group - please consider another name</source>
-        <translation type="obsolete">Šis pavadinimas panaudotas grupei - prašome sugalvoti kitą pavadinimą</translation>
-    </message>
-    <message>
-        <source>This subgroup already exists, but in another group
-If you insert current subgroup to current group, that
-means that some groups share the same subgroup (overlap)
-If you want to make a new subgroup, independent,
-please abort now and give it another name
-</source>
-        <translation type="obsolete">Šis pogrupis jau egzistuoja, bet kitoje grupėje
-Jei jūs įterpsite šį pogrupį į šią grupę, tai reikš,
-kad kelios grupės dalinsis tuo pačiu pogrupiu (persidengimas)
-Jei jūs norite pridėti naują nepriklausomą pogrupį,
-nutraukite veiksmą dabar ir pasirinkite kitą pavadinimą</translation>
-    </message>
-    <message>
-        <source>Subgroup added</source>
-        <translation type="obsolete">Pogrupis pridėtas</translation>
-    </message>
-    <message>
-        <source>Year insertion dialog</source>
-        <translation type="obsolete">Metų pridėjimas</translation>
-    </message>
-    <message>
-        <source>Year added. You might want to divide it into sections - this is done in the years dialog - button &apos;Divide year ...&apos;, or by manually adding groups and subgroups in the groups or subgroups menus
-
- Important note: if you plan to use option &apos;divide&apos;, please try to use it only once for each year at the beginning, because a second use of option &apos;divide&apos; for the same year will remove all activities and constraints referring to old groups and subgroups from this year.</source>
-        <translation type="obsolete">Metai pridėti. Jūs galite norėti padalinti juos į kelias dalis - tai padaroma metų formoje - mygtukas &quot;Dalinti metus ...&quot;, arba tai galima padaryti pridedant grupes ir pogrupius iš grupių ir pogrupių meniu
-
-Svarbi pastaba: jei jūs planuojate naudori &quot;dalinimo&quot; funkciją, prašome tai daryti pradžioje ir tik vieną kartą kiekvieniems metams. Pakartotinas šios funkcijos panaudojimas pašalins visas veiklas susijusias su senomis grupėmis ir pogrupiais šiems metams.</translation>
-    </message>
-    <message>
-        <source>Invalid selected constraint</source>
-        <translation type="obsolete">Negaliojantis pasirinktas apribojimas</translation>
-    </message>
-    <message>
-        <source>Cannot update comments during simulation
-Please stop simulation before this</source>
-        <translation type="obsolete">Negalima atnaujinti komentaru vykstant simuliacijai
-Prašome sustabdyti simuliacija prieštai</translation>
-    </message>
-    <message>
-        <source>Modifying all weights for min n days</source>
-        <translation type="obsolete">Koreguoti visus svorius skirtus min n dienoms</translation>
-    </message>
-    <message>
-        <source>Warning: all min n days weights will be
- changed to selected value. Are you sure?
- If yes, please enter weight percentage for all constraints of
- type min n days between activities (any integer/fractional
-number between 0.0 and 100.0, recommended 95.0 at least)</source>
-        <translation type="obsolete">Įpėjimas: visi min n dienų svoriai bus pakeisti
-į pasirinktą reikšmę. Ar esate tikri?
-Jei taip, prašome įvesti procentinį svorį visiems
-šio tipo apribojimams (realus skaičius tarp 0.0 - 100.0
-rekomenduojamas svoris mažiausiai 95.0)</translation>
-    </message>
-    <message>
-        <source>Invalid weight (percentage) - has to be &gt;=0.0 and &lt;=100.0</source>
-        <translation type="obsolete">Negaliojantis svoris (procentais) - turi būti &gt;=0.0 ir &lt;=100.0</translation>
-    </message>
-    <message>
-        <source>Empty names not allowed
-</source>
-        <translation type="obsolete">Tušti pavadinimai neleistini
-</translation>
-    </message>
-    <message>
-        <source>Duplicates not allowed
-</source>
-        <translation type="obsolete">Pasikartojimai neleistini
-</translation>
-    </message>
-    <message>
-        <source>Please note that FET will NOT take care
-of old constraints using erased days
-(only renamed days will be handled correctly)
-</source>
-        <translation type="obsolete">Prašome pastebėti, kad FET nieko nedarys su
-senais apribojimais, kuriuose yra ištrintos dienos
-(tik pervadintos dienos sutvarkytos teisingai)
-</translation>
-    </message>
-    <message>
-        <source>Specified language is incorrect - making it en_GB (English)</source>
-        <translation type="obsolete">Nurodyta kalba neteisinga - bus nustatyta en_GB (Anglų)</translation>
-    </message>
-    <message>
-        <source>Translation for specified language not loaded - this is an error, maybe translation file is missing - making language en_GB (English)</source>
-        <translation type="obsolete">Vertimas nurodytai kalbai neužkrautas - tai yra klaida, gal vertimų byla dingus - bus nustatyta en_GB (Anglų)</translation>
-    </message>
-    <message>
-        <source>Invalid selected year</source>
-        <translation type="obsolete">Neteisingi pasirinkti metai</translation>
-    </message>
-    <message>
-        <source>Invalid selected group</source>
-        <translation type="obsolete">Neteisinga pasirinkta grupė</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to delete this group and all related subgroup, activities and constraints?
-</source>
-        <translation type="obsolete">Ar esate tikri, kad norite ištrinti šią grupę ir visus susijusius pogrupius, veiklas ir apribojimus?
-</translation>
-    </message>
-    <message>
-        <source>This group still exists into another year
-The related subgroups, activities and constraints were not removed</source>
-        <translation type="obsolete">Ši grupė vis dar egzistuoje kituose metuose
-Susiję pogrupiai, veiklos ir apribojimai nepašalinti</translation>
-    </message>
-    <message>
-        <source>Activated a number of %1 activities</source>
-        <translation type="obsolete">Aktyvuotas skaičius %1 veiklų</translation>
-    </message>
-    <message>
-        <source>De-activated a number of %1 activities</source>
-        <translation type="obsolete">Neaktyvuotas skaičius %1 veiklų</translation>
-    </message>
-    <message>
-        <source>Please note that FET will NOT take care
-of old constraints using erased hours
-(only renamed hours will be handled correctly)
-</source>
-        <translation type="obsolete">Prašome pastebėti, kad FET nieko nedarys su
-senais apribojimais, kuriuose yra ištrintos valandos
-(tik pervadintos valandos bus sutvarkytos teisingai)
-</translation>
-    </message>
-    <message>
-        <source>Cannot update institution name during simulation
-Please stop simulation before this</source>
-        <translation type="obsolete">Negalima atnaujinti įstaigos pavadinimo vykstant simuliacijai
-Prašome sustabdyti simuliacija prieštai</translation>
-    </message>
-    <message>
-        <source>Please report error to the author
-MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME must be increased (you have too many activities)</source>
-        <translation type="obsolete">Prašome pranešti apie klaidą autoriui
-MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME kintamasis turi būti padidintas (jūs turite per daug veiklų)</translation>
-    </message>
-    <message>
-        <source>Weight=%1</source>
-        <translation type="obsolete">Svoris=%1</translation>
-    </message>
-    <message>
-        <source>Max hours:%1</source>
-        <translation type="obsolete">Maks valandų:%1</translation>
-    </message>
-    <message>
-        <source>Min hours:%1</source>
-        <translation type="obsolete">Min valandų:%1</translation>
-    </message>
-    <message>
-        <source>Teacher max hours daily </source>
-        <translation type="obsolete">Dėstytojo maks valandų kasdien</translation>
-    </message>
-    <message>
-        <source>Teacher min hours daily </source>
-        <translation type="obsolete">Dėstytojo min valandų kasdien</translation>
-    </message>
-    <message>
-        <source>Teachers max hours daily </source>
-        <translation type="obsolete">Dėstytojų maks valandų kasdien</translation>
-    </message>
-    <message>
-        <source>Teachers min hours daily </source>
-        <translation type="obsolete">Dėstytojų min valandų kasdien</translation>
-    </message>
-    <message>
-        <source>Name existing - please choose another</source>
-        <translation type="obsolete">Vardas jau egzistuoja - prašome pasirinkti kitą</translation>
-    </message>
-    <message>
-        <source>Name exists. If you would like to make more years to contain a group (overlapping years), please remove current group (FET will unfortunately remove all related activities and constraints) and add a new group with desired name in current year. I know this is a not an elegant procedure, I&apos;ll try to fix that in the future.</source>
-        <translation type="obsolete">Pavadinimas egzistuoja. </translation>
-    </message>
-    <message>
-        <source>Invalid selected room</source>
-        <translation type="obsolete">Neteisingas pasirinktas kambarys</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to delete this room and all related constraints?
-</source>
-        <translation type="obsolete">Ar tikrai norite ištrinti šį kambarį ir visus susijusius apribojimus?
-</translation>
-    </message>
-    <message>
-        <source>Invalid selected subgroup</source>
-        <translation type="obsolete">Neteisingas pasirinktas pogrupis</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to delete this subgroup and all related activities and constraints?
-</source>
-        <translation type="obsolete">Ar tikrai norite ištrinti pogrupį ir visas susijusias veiklas ir apribojimus?
-</translation>
-    </message>
-    <message>
-        <source>User input</source>
-        <translation type="obsolete">Vartotojo įvestis</translation>
-    </message>
-    <message>
-        <source>Please enter subject&apos;s name</source>
-        <translation type="obsolete">Prašome įvesti temos pavadinimą</translation>
-    </message>
-    <message>
-        <source>Subject insertion dialog</source>
-        <translation type="obsolete">Temos pridėjimas</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to delete this subject and all related activities and constraints?
-</source>
-        <translation type="obsolete">Ar tikrai norite ištrinti temą ir visas susijusias veiklas ir apribojimus?
-</translation>
-    </message>
-    <message>
-        <source>Please enter new subject&apos;s name</source>
-        <translation type="obsolete">Prašome įvesti naują temos pavadinimą</translation>
-    </message>
-    <message>
-        <source>Could not modify item. New name must be a duplicate</source>
-        <translation type="obsolete">Negalima koreguoti elemento. Naujas pavadinimas tikriausiai dublikatas</translation>
-    </message>
-    <message>
-        <source>Please enter teacher&apos;s name</source>
-        <translation type="obsolete">Prašome įvesti dėstytojo vardą</translation>
-    </message>
-    <message>
-        <source>Teacher insertion dialog</source>
-        <translation type="obsolete">Dėstytojo pridėjimas</translation>
-    </message>
-    <message>
-        <source>Invalid selected teacher</source>
-        <translation type="obsolete">Neteisingas pasirinktas dėstytojas</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to delete this teacher and all related activities and constraints?
-</source>
-        <translation type="obsolete">Ar tikrai norite ištrinti dėstytoją ir visas susijusias veiklas ir apribojimus?
-</translation>
-    </message>
-    <message>
-        <source>Please enter new teacher&apos;s name</source>
-        <translation type="obsolete">Prašome įvesti naujo dėstytojo vardą</translation>
-    </message>
-    <message>
-        <source>Allocation in course.
-Please stop simulation before this.</source>
-        <translation type="obsolete">Paskyrimas kurse.
-Prašom sustabdyti imitavimą prieš tai.</translation>
-    </message>
-    <message>
-        <source>Students</source>
-        <translation type="obsolete">Studentai</translation>
-    </message>
-    <message>
-        <source>R:</source>
-        <translation type="obsolete">K:</translation>
-    </message>
-    <message>
-        <source>Room: </source>
-        <translation type="obsolete">Kambarys:</translation>
-    </message>
-    <message>
-        <source>The teacher&apos;s timetable cannot be printed,
-because the teacher is invalid</source>
-        <translation type="obsolete">Dėstytojo tvarkaraštis negali būti atspausdintas,
-nes dėstytojas yra neteisingas</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to delete this year and all related groups, subgroups, activities and constraints?
-</source>
-        <translation type="obsolete">Ar esate tikri, kad norite ištrinti šiuos metus ir visas susijusias grupes,  pogrupius, veiklas ir apribojimus?
-</translation>
-    </message>
-    <message>
-        <source>Automatic Group</source>
-        <comment>Please keep this translation short. It is when year contains no groups and an automatic group is added in the year, in the timetable</comment>
-        <translation type="obsolete">Automatinė Grupė</translation>
-    </message>
-    <message>
-        <source>Automatic Subgroup</source>
-        <comment>Please keep this translation short. It is when group contains no subgroups and an automatic subgroup is added in the group, in the timetable</comment>
-        <translation type="obsolete">Automatinis pogrupis</translation>
-    </message>
-    <message>
-        <source>Your file contains group %1 which might be unneeded. Starting with FET 5.4.17, it is corrected a potentially bad situation. It is highly recommended to remove this group ending in WHOLE YEAR, for performance reasons.</source>
-        <translation type="obsolete">Jūsų byloje yra grupė %1, kuri yra nenaudojama. Labai rekomenduojama pašalinti šią grupę iš visų metų, dėl spartesnio programos veikimo.</translation>
-    </message>
-    <message>
-        <source>You may want to add a group in an empty year - in this case please choose a name not ending in WHOLE YEAR, so you can avoid this warning.</source>
-        <translation type="obsolete">Jūs tikriausiai norite pridėti grupę į tuščius metus - šiuo atveju prašom pasirinkti pavadinimą, nepasibaigiantį VISAIS METAIS, tokiu būdu jūs galite išvengti šio įspėjimo.</translation>
-    </message>
-    <message>
-        <source>From now on, if you have an empty year, there will be added an automatic group only in the generated timetables, not in the data file.</source>
-        <translation type="obsolete">Nuo dabar, jei jūs turite tuščius metus, bus automatiškai įdėta grupė tik generuojamiems tvarkaraščiams, bet ne į duomenų bylą.</translation>
-    </message>
-    <message>
-        <source>For more details, join the mailing list or email the author.</source>
-        <translation type="obsolete">Jei jums reikia daugiau informacijos, susisiekite su autoriumi ar kitu atsakingu asmeniu.</translation>
-    </message>
-    <message>
-        <source>You may want to add a subgroup in an empty group - in this case please choose a name not ending in WHOLE GROUP, so you can avoid this warning.</source>
-        <translation type="obsolete">Jūs tikriausiai norite pridėti pogrupį į tuščią grupę - šiuo atveju prašom pasirinkti pavadinimą, nepasibaigiantį VISOJE GRUPĖJE, tokiu būdu jūs galite išvengti šio įspėjimo.</translation>
-    </message>
-    <message>
-        <source>From now on, if you have an empty group, there will be added an automatic subgroup only in the generated timetables, not in the data file.</source>
-        <translation type="obsolete">Nuo dabar, jei jūs turite tuščią grupę, bus automatiškai įdėtas pogrupis tik generuojamiems tvarkaraščiams, bet ne į duomenų bylą.</translation>
-    </message>
-    <message>
-        <source>Your file contains subgroup %1 which might be unneeded. Starting with FET 5.4.17, it is corrected a potentially bad situation. It is highly recommended to remove this subgroup ending in WHOLE GROUP, for performance reasons.</source>
-        <translation type="obsolete">Jūsų byloje yra pogrupis %1, kuris yra nenaudojamas. Labai rekomenduojama pašalinti šį pogrupį iš visos grupės, dėl spartesnio programos veikimo.</translation>
-    </message>
-    <message>
-        <source>Could not open file - not existing or in use</source>
-        <translation type="obsolete">Negalima atidaryti bylos - neegzistuoja arba yra naudojama</translation>
-    </message>
-    <message>
-        <source>Could not read file - XML parse error at line %1, column %2:
-%3</source>
-        <translation type="obsolete">Negalima perskaityti bylos - XML nagrinėjimo klaida eilutėje %1, stulpelis %2:
-%3</translation>
-    </message>
-    <message>
-        <source>Act: T:%1, S:%2, St:%3, Id:%4, AGId:%5, D:%6, TD:%7, A:%8, NSt:%9</source>
-        <comment>Comment for translators (do not translate this comment):
-This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)Please be careful and respect arrangement.
-Activity: Teacher, Subject, Students, Id, Activity Group Id, Duration, Total Duration, Active (yes/no), Number of Students</comment>
-        <translation type="obsolete">Vkl: D:%1, T:%2, St:%3, Id:%4, VGId:%5, t:%6, Vt:%7, A:%8, NSt:%9</translation>
-    </message>
-    <message>
-        <source>Act: T:%1, S:%2, St:%3, Id:%4, D:%5, A:%6, NSt:%7</source>
-        <comment>Comment for translators (do not translate this comment):
-This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)Please be careful and respect arrangement.
-Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no), Number of Students</comment>
-        <translation type="obsolete">Vkl: D:%1, T:%2, St:%3, Id:%4, t:%5, A:%6, NSt:%7</translation>
-    </message>
-    <message>
-        <source>Act: T:%1, S:%2, St:%3, Id:%4, AGId:%5, D:%6, TD:%7, A:%8</source>
-        <comment>Comment for translators (do not translate this comment):
-This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)Please be careful and respect arrangement.
-Activity: Teacher, Subject, Students, Id, Activity Group Id, Duration, Total Duration, Active (yes/no)</comment>
-        <translation type="obsolete">Vkl: D:%1, T:%2, St:%3, Id:%4, VGId:%5, t:%6, Vt:%7, A:%8</translation>
-    </message>
-    <message>
-        <source>Act: T:%1, S:%2, St:%3, Id:%4, D:%5, A:%6</source>
-        <comment>Comment for translators (do not translate this comment):
-This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)Please be careful and respect arrangement.
-Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no)</comment>
-        <translation type="obsolete">Vkl: D:%1, T:%2, St:%3, Id:%4, t:%5, A:%6</translation>
-    </message>
-    <message>
-        <source>Activity tag=%1</source>
-        <translation type="obsolete">Veiklos žymė=%1</translation>
-    </message>
-    <message>
-        <source>Activity tag</source>
-        <translation type="obsolete">Veiklos žymė (tag)</translation>
-    </message>
-    <message>
-        <source>Time constraints directly related to this activity tag:</source>
-        <translation type="obsolete">Laiko apribojimai tiesiogiai susiję su šia veiklos žyme:</translation>
-    </message>
-    <message>
-        <source>Space constraints directly related to this activity tag:</source>
-        <translation type="obsolete">Vietos apribojimai tiesiogiai susiję su šia veiklos žyme:</translation>
-    </message>
-    <message>
-        <source>Your file contains subject tags list, which is named in versions&gt;=5.5.0 activity tags list</source>
-        <translation type="obsolete">Jūsų byloje yra temos žymių sąrašas, kuris nuo 5.5.0 versijos yra pervadintas į veiklos žymių sąrašą</translation>
-    </message>
-    <message>
-        <source>T:%1</source>
-        <comment>T means teacher</comment>
-        <translation type="obsolete">D:%1</translation>
-    </message>
-    <message>
-        <source>St:%1</source>
-        <comment>St means students</comment>
-        <translation type="obsolete">St:%1</translation>
-    </message>
-    <message>
-        <source>R:%1</source>
-        <comment>R means Room</comment>
-        <translation type="obsolete">K:%1</translation>
-    </message>
-    <message>
-        <source>(breaks and teacher not available not counted)</source>
-        <translation type="obsolete">(pertraukos ir dėstytojo neprieinamumas neskaičiuojamas)</translation>
-    </message>
-    <message>
-        <source>Teachers max gaps per day</source>
-        <translation type="obsolete">Dėstytojo maks tarpai per dieną</translation>
-    </message>
-    <message>
-        <source>Max gaps per day: %1</source>
-        <translation type="obsolete">Maks dienų per dieną:= %1</translation>
-    </message>
-    <message>
-        <source>Teacher max gaps per day</source>
-        <translation type="obsolete">Dėstytojo maks tarpai per dieną</translation>
-    </message>
-    <message>
-        <source>Students max gaps per week</source>
-        <translation type="obsolete">Studentų maks tarpai per savaitę</translation>
-    </message>
-    <message>
-        <source>(breaks and students set not available not counted)</source>
-        <translation type="obsolete">(pertraukos ir studentų sąrašų neprieinamumas neskaičiuojamas)</translation>
-    </message>
-    <message>
-        <source>Students set max gaps per week</source>
-        <translation type="obsolete">Studentų sąrašų maks tarpai per savaitę</translation>
-    </message>
-    <message>
-        <source>activity tag=%1, </source>
-        <translation type="obsolete">veiklos žymė=%1, </translation>
-    </message>
-    <message>
-        <source>all activity tags, </source>
-        <translation type="obsolete">visos veiklos žymės, </translation>
-    </message>
-    <message>
-        <source>Activity tag=%1
-</source>
-        <translation type="obsolete">Veiklos žymė=%1
-</translation>
-    </message>
-    <message>
-        <source>All activity tags
-</source>
-        <translation type="obsolete">Visos veiklos žymės
-</translation>
-    </message>
-    <message>
-        <source>Please enter activity tag&apos;s name</source>
-        <translation type="obsolete">Prašome įvesti veiklos žymės pavadinimą</translation>
-    </message>
-    <message>
-        <source>Activity tag insertion dialog</source>
-        <translation type="obsolete">Veiklos žymės pridėjimas</translation>
-    </message>
-    <message>
-        <source>Invalid selected activity tag</source>
-        <translation type="obsolete">Neteisinga pasirinkta veiklos žymė</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to delete this activity tag?
-</source>
-        <translation type="obsolete">Ar tikrai norite pašalinti šią veiklos žymę?
-</translation>
-    </message>
-    <message>
-        <source>Please enter new activity tag&apos;s name</source>
-        <translation type="obsolete">Prašome įvesti naują veiklos žymės pavadinimą</translation>
-    </message>
-    <message>
-        <source>Invalid activity tag</source>
-        <translation type="obsolete">Negaliojanti veiklos žymė</translation>
-    </message>
-    <message>
-        <source>FET help on activity tags</source>
-        <translation type="obsolete">FET pagalba dėl veiklų žymių</translation>
-    </message>
-    <message>
-        <source>N:%1</source>
-        <comment>Name</comment>
-        <translation type="obsolete">V:%1</translation>
-    </message>
-    <message>
-        <source>No: %1</source>
-        <comment>Number</comment>
-        <translation type="obsolete">Nr: %1</translation>
-    </message>
-    <message>
-        <source>id=%1</source>
-        <translation type="obsolete">id=%1</translation>
-    </message>
-    <message>
-        <source>teachers:</source>
-        <translation type="obsolete">dėstytojai:</translation>
-    </message>
-    <message>
-        <source>subject:</source>
-        <translation type="obsolete">tema:</translation>
-    </message>
-    <message>
-        <source>students:</source>
-        <translation type="obsolete">studentai:</translation>
-    </message>
-    <message>
-        <source>B:%1</source>
-        <comment>Building</comment>
-        <translation type="obsolete">P:%1</translation>
-    </message>
-    <message>
-        <source>C:%1</source>
-        <comment>Capacity</comment>
-        <translation type="obsolete">T:%1</translation>
-    </message>
-    <message>
-        <source>Building=%1</source>
-        <translation type="obsolete">Pastatas=%1</translation>
-    </message>
-    <message>
-        <source>Capacity=%1</source>
-        <translation type="obsolete">Talpa=%1</translation>
-    </message>
-    <message>
-        <source>Room not available times</source>
-        <translation type="obsolete">Kambario neprieinamumo laikai</translation>
-    </message>
-    <message>
-        <source>WP:%1%</source>
-        <comment>Weight percentage</comment>
-        <translation type="obsolete">SP:%1%</translation>
-    </message>
-    <message>
-        <source>R:%1</source>
-        <comment>Room</comment>
-        <translation type="obsolete">K:%1</translation>
-    </message>
-    <message>
-        <source>NA at:</source>
-        <comment>Not available at</comment>
-        <translation type="obsolete">N/A:</translation>
-    </message>
-    <message>
-        <source>Not available at:</source>
-        <translation type="obsolete">Neprieinama:</translation>
-    </message>
-    <message>
-        <source>Teacher home room</source>
-        <translation type="obsolete">Dėstytojo namų kambarys</translation>
-    </message>
-    <message>
-        <source>Teacher home rooms</source>
-        <translation type="obsolete">Dėstytojo namų kambariai</translation>
-    </message>
-    <message>
-        <source>Subject preferred room</source>
-        <translation type="obsolete">Temos privilegijuotas kambarys</translation>
-    </message>
-    <message>
-        <source>Subject preferred rooms</source>
-        <translation type="obsolete">Temos privilegijuotas kambariai</translation>
-    </message>
-    <message>
-        <source>AT:%1</source>
-        <comment>Activity tag</comment>
-        <translation type="obsolete">VŽ: %1</translation>
-    </message>
-    <message>
-        <source>MC:%1</source>
-        <comment>MC means max changes</comment>
-        <translation type="obsolete">MP:%1</translation>
-    </message>
-    <message>
-        <source>Students set max building changes per day</source>
-        <translation type="obsolete">Studentų sąrašo maksimalus pastatų pakeitimas per dieną</translation>
-    </message>
-    <message>
-        <source>Max building changes per day=%1</source>
-        <translation type="obsolete">Maksimalus paspatų pakeitimas per dieną=%1</translation>
-    </message>
-    <message>
-        <source>Students max building changes per day</source>
-        <translation type="obsolete">Studentų maksimalus pastatų pakeitimas per dieną</translation>
-    </message>
-    <message>
-        <source>Students set max building changes per week</source>
-        <translation type="obsolete">Studentų sąrašo maksimalus pastatų pakeitimas per savaitę</translation>
-    </message>
-    <message>
-        <source>Max building changes per week=%1</source>
-        <translation type="obsolete">Maksimalus paspatų pakeitimas per savaitę=%1</translation>
-    </message>
-    <message>
-        <source>Students max building changes per week</source>
-        <translation type="obsolete">Studentų maksimalus pastatų pakeitimas per savaitę</translation>
-    </message>
-    <message>
-        <source>Students set min gaps between building changes</source>
-        <translation type="obsolete">Studentų sąrašų minimalūs tarpai tarp pastatų pakeitimų</translation>
-    </message>
-    <message>
-        <source>Min gaps between building changes=%1</source>
-        <translation type="obsolete">Minimalūs tarpai tarp pastatų pakeitimų=%1</translation>
-    </message>
-    <message>
-        <source>Students min gaps between building changes</source>
-        <translation type="obsolete">Studentų minimalūs tarpai tarp pastatų pakeitimų</translation>
-    </message>
-    <message>
-        <source>Teacher max building changes per day</source>
-        <translation type="obsolete">Dėstytojų maksimalus pastatų pakeitimas per dieną</translation>
-    </message>
-    <message>
-        <source>Teachers max building changes per day</source>
-        <translation type="obsolete">Dėstytojų maksimalus pastatų pakeitimas per dieną</translation>
-    </message>
-    <message>
-        <source>Teacher max building changes per week</source>
-        <translation type="obsolete">Dėstytojo maksimalus pastatų pakeitimas per savaitę</translation>
-    </message>
-    <message>
-        <source>Teachers max building changes per week</source>
-        <translation type="obsolete">Dėstytojų maksimalus pastatų pakeitimas per savaitę</translation>
-    </message>
-    <message>
-        <source>T:%1</source>
-        <comment>Teacher</comment>
-        <translation type="obsolete">D:%1</translation>
-    </message>
-    <message>
-        <source>Students set not available times</source>
-        <translation type="obsolete">Studentų sąrašo neprienami laikai</translation>
-    </message>
-    <message>
-        <source>S:%1</source>
-        <comment>Students</comment>
-        <translation type="obsolete">T:%1</translation>
-    </message>
-    <message>
-        <source>Time constraint students not available times</source>
-        <translation type="obsolete">Laiko apribojimai (studentų sąrašo neprieinamų laikų apribojimas)</translation>
-    </message>
-    <message>
-        <source>Break times</source>
-        <translation type="obsolete">Pertraukos</translation>
-    </message>
-    <message>
-        <source>B at:</source>
-        <comment>Break at</comment>
-        <translation type="obsolete">P:</translation>
-    </message>
-    <message>
-        <source>Break at:</source>
-        <translation type="obsolete">Pertrauka:</translation>
-    </message>
-    <message>
-        <source>NA:%1</source>
-        <comment>Number of activities</comment>
-        <translation type="obsolete">VS:%1</translation>
-    </message>
-    <message>
-        <source>Activities must have the same starting day</source>
-        <translation type="obsolete">Veiklos turi turėti tą pačią padžios dieną</translation>
-    </message>
-    <message>
-        <source>T: </source>
-        <comment>Teacher</comment>
-        <translation type="obsolete">D:</translation>
-    </message>
-    <message>
-        <source> , S: </source>
-        <comment>Subject</comment>
-        <translation type="obsolete">, T:</translation>
-    </message>
-    <message>
-        <source> , St: </source>
-        <comment>Students</comment>
-        <translation type="obsolete">, St:</translation>
-    </message>
-    <message>
-        <source>Building insertion dialog</source>
-        <translation type="obsolete">Pastato pridėjimas</translation>
-    </message>
-    <message>
-        <source>Building added</source>
-        <translation type="obsolete">Pastatas pridėtas</translation>
-    </message>
-    <message>
-        <source>Allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Leistina</translation>
-    </message>
-    <message>
-        <source>Not allowed</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Neleistina</translation>
-    </message>
-    <message>
-        <source>Teacher min gaps between building changes</source>
-        <translation type="obsolete">Dėstytojo minimalūs tarpai tarp pastatų pakeitimų</translation>
-    </message>
-    <message>
-        <source>Teachers min gaps between building changes</source>
-        <translation type="obsolete">Dėstytojų minimalūs tarpai tarp pastatų pakeitimų</translation>
-    </message>
-    <message>
-        <source>Incorrect building</source>
-        <translation type="obsolete">Neteisingas pastatas</translation>
-    </message>
-    <message>
-        <source>Invalid selected building</source>
-        <translation type="obsolete">Neteisingas pasirinktas pastatas</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to delete this building?
-</source>
-        <translation type="obsolete">Ar tikrai norite pašalinti šį pastatą?
-</translation>
-    </message>
-    <message>
-        <source>Invalid building</source>
-        <translation type="obsolete">Neteisingas pastatas</translation>
-    </message>
-    <message>
-        <source>Break</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Pertrauka</translation>
-    </message>
-    <message>
-        <source>Not available</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Neprieinama</translation>
-    </message>
-    <message>
-        <source>Available</source>
-        <comment>Please keep translation short</comment>
-        <translation type="obsolete">Prieinama</translation>
-    </message>
-    <message>
-        <source>Skip rest</source>
-        <translation type="obsolete">Praleisti kitus</translation>
-    </message>
-    <message>
-        <source>See next</source>
-        <translation type="obsolete">Žiūrėti toliau</translation>
-    </message>
-    <message>
-        <source>Constraint is:</source>
-        <translation type="obsolete">Apribojimas yra:</translation>
-    </message>
-    <message>
-        <source>2 activities ordered</source>
-        <translation type="obsolete">2 veiklos išrūšiuotos</translation>
-    </message>
-    <message>
-        <source>Teachers max %1 hours continuously</source>
-        <translation type="obsolete">Dėstytojų maks %1 valandų nuosekliai</translation>
-    </message>
-    <message>
-        <source>Teacher max %1 hours continuously</source>
-        <translation type="obsolete">Dėstytojo maks %1 valandų nuosekliai</translation>
-    </message>
-    <message>
-        <source>TN:%1</source>
-        <comment>Teacher name</comment>
-        <translation type="obsolete">DV:%1</translation>
-    </message>
-    <message>
-        <source>Teacher max hours continuously</source>
-        <translation type="obsolete">Dėstytojo maks valandų nuosekliai</translation>
-    </message>
-    <message>
-        <source>Max hours continuously=%1</source>
-        <translation type="obsolete">Maks valandos be tarpo=%1</translation>
-    </message>
-    <message>
-        <source>Teachers max hours continuously</source>
-        <translation type="obsolete">Dėstytojų maks valandų nuosekliai</translation>
-    </message>
-    <message>
-        <source>Room %1 has not enough slots for home rooms constraints (requested %2, available %3) - please correct that</source>
-        <translation type="obsolete">Kambarys %1 neturi pakankamai plyšių namų kambarių apribojimams (reikia %2, yra %3) - prašome tai pataisyti</translation>
-    </message>
-    <message>
-        <source>Students max hours continuously</source>
-        <translation type="obsolete">Studentų maks valandų nuosekliai</translation>
-    </message>
-    <message>
-        <source>MH:%1</source>
-        <comment>Max hours</comment>
-        <translation type="obsolete">MV:%1</translation>
-    </message>
-    <message>
-        <source>FET question</source>
-        <translation type="obsolete">FET klausimas</translation>
-    </message>
-    <message>
-        <source>Min gaps between activities</source>
-        <translation type="obsolete">Min tarpų tarp veiklų</translation>
-    </message>
-    <message>
-        <source>MG:%1</source>
-        <comment>Min gaps</comment>
-        <translation type="obsolete">MT:%1</translation>
-    </message>
-    <message>
-        <source>Minimum number of gaps=%1</source>
-        <translation type="obsolete">Minimalus tarpų skaičius=%1</translation>
-    </message>
-    <message>
-        <source>Time constraint min gaps between activities</source>
-        <translation type="obsolete">Laiko apribojimai (min n tarpų tarp veiklų)</translation>
-    </message>
-    <message>
-        <source>activity tag %4</source>
-        <translation type="obsolete">veiklos žymė %4</translation>
-    </message>
-    <message>
-        <source>Subactivities with </source>
-        <translation type="obsolete">Subveiklos su</translation>
-    </message>
-    <message>
-        <source>component number=%1</source>
-        <translation type="obsolete">komponento skaičius=%1</translation>
-    </message>
-    <message>
-        <source>Subactivities with:</source>
-        <translation type="obsolete">Subveiklos su:</translation>
-    </message>
-    <message>
-        <source>Component number=%1</source>
-        <translation type="obsolete">Komponento skaičius=%1</translation>
-    </message>
-    <message>
-        <source>component number %1</source>
-        <translation type="obsolete">komponento skaičius %1</translation>
-    </message>
-    <message>
-        <source>WP:%1</source>
-        <comment>Weight Percentage</comment>
-        <translation type="obsolete">SP:%1</translation>
-    </message>
-    <message>
-        <source>Teacher interval max days per week</source>
-        <translation type="obsolete">Dėstytojo maks dienų intervalas per savaitę</translation>
-    </message>
-    <message>
-        <source>WP:%1%</source>
-        <comment>Abbreviation for weight percentage</comment>
-        <translation type="obsolete">SP:%1%</translation>
-    </message>
-    <message>
-        <source>T:%1</source>
-        <comment>Abbreviation for teacher</comment>
-        <translation type="obsolete">D:%1</translation>
-    </message>
-    <message>
-        <source>ISH:%1</source>
-        <comment>Abbreviation for interval start hour</comment>
-        <translation type="obsolete">IPrV:%1</translation>
-    </message>
-    <message>
-        <source>IEH:%1</source>
-        <comment>Abbreviation for interval end hour</comment>
-        <translation type="obsolete">IPbV:%1</translation>
-    </message>
-    <message>
-        <source>End of day</source>
-        <translation type="obsolete">Dienos pabaiga</translation>
-    </message>
-    <message>
-        <source>MD:%1</source>
-        <comment>Abbreviation for max days</comment>
-        <translation type="obsolete">MD:%1</translation>
-    </message>
-    <message>
-        <source>Teacher interval max. days per week</source>
-        <translation type="obsolete">Dėstytojo maks dienų intervalas per savaitę</translation>
-    </message>
-    <message>
-        <source>Interval start hour=%1</source>
-        <translation type="obsolete">Intervalo pradžios valanda=%1</translation>
-    </message>
-    <message>
-        <source>Interval end hour=%1</source>
-        <translation type="obsolete">Intervalo pabaigos valanda=%1</translation>
-    </message>
-    <message>
-        <source>Teachers interval max days per week</source>
-        <translation type="obsolete">Dėstytojo maks dienų intervalas per savaitę</translation>
-    </message>
-    <message>
-        <source>Teachers interval max. days per week</source>
-        <translation type="obsolete">Dėstytojo maks dienų intervalas per savaitę</translation>
-    </message>
-    <message>
-        <source>Students set interval max days per week</source>
-        <translation type="obsolete">Studentų sąrašo maks dienų intervalas per savaitę</translation>
-    </message>
-    <message>
-        <source>S:%1</source>
-        <comment>Abbreviation for students</comment>
-        <translation type="obsolete">T:%1</translation>
-    </message>
-    <message>
-        <source>Students set interval max. days per week</source>
-        <translation type="obsolete">Studentų sąrašo maks dienų intervalas per savaitę</translation>
-    </message>
-    <message>
-        <source>Students interval max days per week</source>
-        <translation type="obsolete">Studentų maks dienų intervalas per savaitę</translation>
-    </message>
-    <message>
-        <source>Students interval max. days per week</source>
-        <translation type="obsolete">Studentų maks dienų intervalas per savaitę</translation>
-    </message>
-    <message>
-        <source>must end students&apos; day</source>
-        <translation type="obsolete">turi užbaigti studentų dieną</translation>
-    </message>
-    <message>
-        <source>WP:%1%</source>
-        <comment>Abbreviation for Weight Percentage</comment>
-        <translation type="obsolete">SP:%1%</translation>
-    </message>
-    <message>
-        <source>Activity preferred starting time</source>
-        <translation type="obsolete">Veiklos privilegijuotas pradžios laikas</translation>
-    </message>
-    <message>
-        <source>St:%1</source>
-        <comment>Students</comment>
-        <translation type="obsolete">St:%1</translation>
-    </message>
-    <message>
-        <source>Act: T:%1, S:%2, AT:%3, St:%4, Id:%5, AGId:%6, D:%7, TD:%8, A:%9, NSt:%10</source>
-        <comment>Comment for translators (do not translate this comment):
-This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)Please be careful and respect arrangement.
-Activity: Teacher, Subject, Activity Tags, Students, Id, Activity Group Id, Duration, Total Duration, Active (yes/no), Number of Students</comment>
-        <translation type="obsolete">Vkl: D:%1, T:%2, VŽ:%3, St:%4, Id:%5, VGId:%6, t:%7, Vt:%8, A:%9, NSt:%10</translation>
-    </message>
-    <message>
-        <source>Act: T:%1, S:%2, AT:%3, St:%4, Id:%5, D:%6, A:%7, NSt:%8</source>
-        <comment>Comment for translators (do not translate this comment):
-This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)Please be careful and respect arrangement.
-Activity: Teacher, Subject, Activity Tags, Students, Id, Duration, Active (yes/no), Number of Students</comment>
-        <translation type="obsolete">Vkl: D:%1, T:%2, VŽ:%3, St:%4, Id:%5, t:%6, A:%7, NSt:%8</translation>
-    </message>
-    <message>
-        <source>Act: T:%1, S:%2, AT:%3, St:%4, Id:%5, AGId:%6, D:%7, TD:%8, A:%9</source>
-        <comment>Comment for translators (do not translate this comment):
-This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)Please be careful and respect arrangement.
-Activity: Teacher, Subject, Activity Tags, Students, Id, Activity Group Id, Duration, Total Duration, Active (yes/no)</comment>
-        <translation type="obsolete">Vkl: D:%1, T:%2, VŽ:%3, St:%4, Id:%5, VGId:%6, t:%7, Vt:%8, A:%9</translation>
-    </message>
-    <message>
-        <source>Act: T:%1, S:%2, AT:%3, St:%4, Id:%5, D:%6, A:%7</source>
-        <comment>Comment for translators (do not translate this comment):
-This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)Please be careful and respect arrangement.
-Activity: Teacher, Subject, Activity Tags, Students, Id, Duration, Active (yes/no)</comment>
-        <translation type="obsolete">Vkl: D:%1, T:%2, VŽ:%3, St:%4, Id:%5, t:%6, A:%7</translation>
-    </message>
-    <message>
-        <source>MG:%1</source>
-        <comment>MG means min gaps</comment>
-        <translation type="obsolete">MT:%1</translation>
-    </message>
-    <message>
-        <source>Name=%1</source>
-        <comment>The name of the activity tag</comment>
-        <translation type="obsolete">Pavadinimas=%1</translation>
-    </message>
-    <message>
-        <source>Name=%1</source>
-        <comment>The name of the building</comment>
-        <translation type="obsolete">Pavadinimas=%1</translation>
-    </message>
-    <message>
-        <source>Name=%1</source>
-        <comment>The name of the room</comment>
-        <translation type="obsolete">Pavadinimas=%1</translation>
-    </message>
-    <message>
-        <source>Name=%1</source>
-        <comment>The name of the teacher</comment>
-        <translation type="obsolete">Pavadinimas=%1</translation>
-    </message>
-    <message>
-        <source>Name=%1</source>
-        <comment>The name of the subject</comment>
-        <translation type="obsolete">Pavadinimas=%1</translation>
-    </message>
-    <message>
-        <source>MD:%1</source>
-        <comment>Max days</comment>
-        <translation type="obsolete">MD:%1</translation>
     </message>
 </context>
 <context>
@@ -47909,12 +40120,6 @@ Activity: Teacher, Subject, Activity Tags, Students, Id, Duration, Active (yes/n
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Are you sure you want to delete this room and all related constraints?
-</source>
-        <translation type="obsolete">Ar tikrai norite ištrinti šį kambarį ir visus susijusius apribojimus?
-</translation>
-    </message>
-    <message>
         <location filename="../src/interface/roomsform.cpp" line="112"/>
         <source>Yes</source>
         <translation type="unfinished">Taip</translation>
@@ -47924,10 +40129,6 @@ Activity: Teacher, Subject, Activity Tags, Students, Id, Duration, Active (yes/n
         <source>No</source>
         <translation type="unfinished">Ne</translation>
     </message>
-    <message>
-        <source>Invalid room</source>
-        <translation type="obsolete">Netaisingas kambarys</translation>
-    </message>
 </context>
 <context>
     <name>RoomsForm_template</name>
@@ -47936,14 +40137,6 @@ Activity: Teacher, Subject, Activity Tags, Students, Id, Duration, Active (yes/n
         <source>Rooms</source>
         <extracomment>The name of the rooms dialog</extracomment>
         <translation>Kambariai</translation>
-    </message>
-    <message>
-        <source>Add room</source>
-        <translation type="obsolete">Pridėti kambarį</translation>
-    </message>
-    <message>
-        <source>Remove current</source>
-        <translation type="obsolete">Šalinti pasirinktą</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="20"/>
@@ -47971,19 +40164,9 @@ Activity: Teacher, Subject, Activity Tags, Students, Id, Duration, Active (yes/n
         <translation type="unfinished">Koreguoti</translation>
     </message>
     <message>
-        <source>Modify current</source>
-        <translation type="obsolete">Koreguoti pasirinktą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/roomsform_template.ui" line="56"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>NOTE: each room can hold a single activity at the same time
-(you can add more rooms representing a very large room)</source>
-        <translation type="obsolete">PASTABA: kiekvienas kambarys gali laikyti vieną veiklą tuo pačiu metu
-(jūs galite pridėti daugiau kambarių, atstovaujančių labai dideliam kambariui)</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="77"/>
@@ -48192,16 +40375,6 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
 Prašome susisiekti su autorium, kad padidintu MAX_SPACE_CONSTRAINTS kintamąjį</translation>
     </message>
     <message>
-        <source>Automatic Group</source>
-        <comment>Please keep this translation short. It is when year contains no groups and an automatic group is added in the year, in the timetable</comment>
-        <translation type="obsolete">Automatinė Grupė</translation>
-    </message>
-    <message>
-        <source>Automatic Subgroup</source>
-        <comment>Please keep this translation short. It is when group contains no subgroups and an automatic subgroup is added in the group, in the timetable</comment>
-        <translation type="obsolete">Automatinis pogrupis</translation>
-    </message>
-    <message>
         <location filename="../src/engine/rules.cpp" line="438"/>
         <source>Processing internally the activities ... please wait</source>
         <translation type="unfinished">Vykdomas vidinis veiklų apdirbimas ... prašome palaukti</translation>
@@ -48397,12 +40570,6 @@ Prašome susisiekti su autorium, kad padidintu MAX_SPACE_CONSTRAINTS kintamąjį
         <translation type="unfinished">Negalima atidaryti bylos - neegzistuoja arba yra naudojama</translation>
     </message>
     <message>
-        <source>Could not read file - XML parse error at line %1, column %2:
-%3</source>
-        <translation type="obsolete">Negalima perskaityti bylos - XML nagrinėjimo klaida eilutėje %1, stulpelis %2:
-%3</translation>
-    </message>
-    <message>
         <location filename="../src/engine/rules.cpp" line="5151"/>
         <source>Could not read file - XML parse error at line %1, column %2:
 %3</source>
@@ -48528,22 +40695,6 @@ Please note that the default weight percentage of constraints min days between a
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Your file contains group %1 which might be unneeded. Starting with FET 5.4.17, it is corrected a potentially bad situation. It is highly recommended to remove this group ending in WHOLE YEAR, for performance reasons.</source>
-        <translation type="obsolete">Jūsų byloje yra grupė %1, kuri yra nenaudojama. Labai rekomenduojama pašalinti šią grupę iš visų metų, dėl spartesnio programos veikimo.</translation>
-    </message>
-    <message>
-        <source>You may want to add a group in an empty year - in this case please choose a name not ending in WHOLE YEAR, so you can avoid this warning.</source>
-        <translation type="obsolete">Jūs tikriausiai norite pridėti grupę į tuščius metus - šiuo atveju prašom pasirinkti pavadinimą, nepasibaigiantį VISAIS METAIS, tokiu būdu jūs galite išvengti šio įspėjimo.</translation>
-    </message>
-    <message>
-        <source>From now on, if you have an empty year, there will be added an automatic group only in the generated timetables, not in the data file.</source>
-        <translation type="obsolete">Nuo dabar, jei jūs turite tuščius metus, bus automatiškai įdėta grupė tik generuojamiems tvarkaraščiams, bet ne į duomenų bylą.</translation>
-    </message>
-    <message>
-        <source>For more details, join the mailing list or email the author.</source>
-        <translation type="obsolete">Jei jums reikia daugiau informacijos, susisiekite su autoriumi ar kitu atsakingu asmeniu.</translation>
-    </message>
-    <message>
         <location filename="../src/engine/rules.cpp" line="5777"/>
         <source>Trying to add subgroup %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
@@ -48559,18 +40710,6 @@ Please note that the default weight percentage of constraints min days between a
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Your file contains subgroup %1 which might be unneeded. Starting with FET 5.4.17, it is corrected a potentially bad situation. It is highly recommended to remove this subgroup ending in WHOLE GROUP, for performance reasons.</source>
-        <translation type="obsolete">Jūsų byloje yra pogrupis %1, kuris yra nenaudojamas. Labai rekomenduojama pašalinti šį pogrupį iš visos grupės, dėl spartesnio programos veikimo.</translation>
-    </message>
-    <message>
-        <source>You may want to add a subgroup in an empty group - in this case please choose a name not ending in WHOLE GROUP, so you can avoid this warning.</source>
-        <translation type="obsolete">Jūs tikriausiai norite pridėti pogrupį į tuščią grupę - šiuo atveju prašom pasirinkti pavadinimą, nepasibaigiantį VISOJE GRUPĖJE, tokiu būdu jūs galite išvengti šio įspėjimo.</translation>
-    </message>
-    <message>
-        <source>From now on, if you have an empty group, there will be added an automatic subgroup only in the generated timetables, not in the data file.</source>
-        <translation type="obsolete">Nuo dabar, jei jūs turite tuščią grupę, bus automatiškai įdėtas pogrupis tik generuojamiems tvarkaraščiams, bet ne į duomenų bylą.</translation>
-    </message>
-    <message>
         <location filename="../src/engine/rules.cpp" line="245"/>
         <source>Automatic Group</source>
         <comment>Please keep the translation short. It is used when a year contains no groups and an automatic group is added in the year, in the timetable (when viewing the students timetable from FET and also in the html timetables for students groups or subgroups). In the empty year there will be added a group with name = yearName+a space character+your translation of &apos;Automatic Group&apos;.</comment>
@@ -48581,10 +40720,6 @@ Please note that the default weight percentage of constraints min days between a
         <source>Automatic Subgroup</source>
         <comment>Please keep the translation short. It is used when a group contains no subgroups and an automatic subgroup is added in the group, in the timetable (when viewing the students timetable from FET and also in the html timetables for students subgroups). In the empty group there will be added a subgroup with name = groupName+a space character+your translation of &apos;Automatic Subgroup&apos;.</comment>
         <translation type="unfinished">Automatinis pogrupis</translation>
-    </message>
-    <message>
-        <source>Loading activities ... please wait</source>
-        <translation type="obsolete">Užkraunamos veiklos ... prašome palaukti</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="437"/>
@@ -49021,10 +41156,6 @@ nepridėtas - kartojasi</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Constraint is:</source>
-        <translation type="obsolete">Apribojimas yra:</translation>
-    </message>
-    <message>
         <location filename="../src/engine/rules.cpp" line="9677"/>
         <location filename="../src/engine/rules.cpp" line="9833"/>
         <source>Found constraint activity preferred starting time with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
@@ -49273,10 +41404,6 @@ nepridėtas - kartojasi</translation>
 </context>
 <context>
     <name>SettingsTimetableHtmlLevelForm_template</name>
-    <message>
-        <source>Settings - timetable html level</source>
-        <translation type="obsolete">Nustatymai - tvarkaraščių HTML lygis</translation>
-    </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="20"/>
         <source>The html level for generated timetables</source>
@@ -49549,10 +41676,6 @@ nepridėtas - kartojasi</translation>
 </context>
 <context>
     <name>SplitYearForm_template</name>
-    <message>
-        <source>FET - Split year</source>
-        <translation type="obsolete">FET - Metų skaidymas</translation>
-    </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="14"/>
         <source>Split year dialog</source>
@@ -49891,62 +42014,6 @@ Please report error. FET will now abort current operation</source>
     </message>
 </context>
 <context>
-    <name>SpreadMinNDaysConstraints5DaysForm</name>
-    <message>
-        <source>FET information</source>
-        <translation type="obsolete">FET informacija</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Atšaukti</translation>
-    </message>
-</context>
-<context>
-    <name>SpreadMinNDaysConstraints5DaysForm_template</name>
-    <message>
-        <source>95.0</source>
-        <translation type="obsolete">95.0</translation>
-    </message>
-    <message>
-        <source>2</source>
-        <translation type="obsolete">2</translation>
-    </message>
-    <message>
-        <source>3</source>
-        <translation type="obsolete">3</translation>
-    </message>
-</context>
-<context>
-    <name>SpreadMinNDaysConstraintsFiveDaysForm</name>
-    <message>
-        <source>FET information</source>
-        <translation type="obsolete">FET informacija</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Atšaukti</translation>
-    </message>
-    <message>
-        <source>FET help</source>
-        <translation type="obsolete">FET pagalba</translation>
-    </message>
-</context>
-<context>
-    <name>SpreadMinNDaysConstraintsFiveDaysForm_template</name>
-    <message>
-        <source>95.0</source>
-        <translation type="obsolete">95.0</translation>
-    </message>
-    <message>
-        <source>3</source>
-        <translation type="obsolete">3</translation>
-    </message>
-    <message>
-        <source>2</source>
-        <translation type="obsolete">2</translation>
-    </message>
-</context>
-<context>
     <name>StatisticsExport</name>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="130"/>
@@ -49999,14 +42066,6 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/statisticsexport.cpp" line="1805"/>
         <source>Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
         <translation type="unfinished">Negalima atidaryti bylos %1 rašymui. Prašome patikrinti kieto disko laisvą vietą. Bylos %1 išsaugojimas atšauktas.</translation>
-    </message>
-    <message>
-        <source>CSS Stylesheet of %1</source>
-        <translation type="obsolete">CSS Stilius iš %1</translation>
-    </message>
-    <message>
-        <source>Stylesheet generated with FET %1 on %2</source>
-        <translation type="obsolete">Stilius sugeneruotas su FET %1 data %2</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="430"/>
@@ -50072,10 +42131,6 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/statisticsexport.cpp" line="601"/>
         <source>view</source>
         <translation type="unfinished">vaizdas</translation>
-    </message>
-    <message>
-        <source>Timetable generated with FET %1 on %2</source>
-        <translation type="obsolete">Tvarkaraštis sugeneruotas su FET %1 data %2</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="689"/>
@@ -50284,14 +42339,6 @@ Please report error. FET will now abort current operation</source>
         <translation>Veiklų skaičius</translation>
     </message>
     <message>
-        <source>No. of hours</source>
-        <translation type="obsolete">Valandų skaičius</translation>
-    </message>
-    <message>
-        <source>periods</source>
-        <translation type="obsolete">periodai</translation>
-    </message>
-    <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="424"/>
         <source>Show duplicates</source>
         <translation type="unfinished"></translation>
@@ -50340,10 +42387,6 @@ Please report error. FET will now abort current operation</source>
 </context>
 <context>
     <name>StudentsStatisticsForm_template</name>
-    <message>
-        <source>FET - Students statistics</source>
-        <translation type="obsolete">FET - Studentų statistika</translation>
-    </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="49"/>
         <source>Show subgroups</source>
@@ -50469,11 +42512,6 @@ Please report error. FET will now abort current operation</source>
 <context>
     <name>SubactivitiesForm</name>
     <message>
-        <source>%1 h</source>
-        <comment>%1 hours, the number of hours</comment>
-        <translation type="obsolete">%1 h</translation>
-    </message>
-    <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="297"/>
         <source>No: %1 / %2</source>
         <comment>No means number, %1 is the number of active activities, %2 is the number of total activities.Please leave space between fields, so that they are better visible</comment>
@@ -50554,10 +42592,6 @@ Please report error. FET will now abort current operation</source>
 </context>
 <context>
     <name>SubactivitiesForm_template</name>
-    <message>
-        <source>New Item</source>
-        <translation type="obsolete">Naujas elementas</translation>
-    </message>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="70"/>
         <source>Filter</source>
@@ -50689,12 +42723,6 @@ Please report error. FET will now abort current operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Are you sure you want to delete this subgroup and all related activities and constraints?
-</source>
-        <translation type="obsolete">Ar tikrai norite ištrinti pogrupį ir visas susijusias veiklas ir apribojimus?
-</translation>
-    </message>
-    <message>
         <location filename="../src/interface/subgroupsform.cpp" line="134"/>
         <source>Yes</source>
         <translation type="unfinished">Taip</translation>
@@ -50723,10 +42751,6 @@ Please report error. FET will now abort current operation</source>
 <context>
     <name>SubgroupsForm_template</name>
     <message>
-        <source>FET - subgroups of students</source>
-        <translation type="obsolete">FET - studentų pogrupiai</translation>
-    </message>
-    <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="14"/>
         <source>Subgroups of students</source>
         <extracomment>The name of the dialog which lists the subgroups of students</extracomment>
@@ -50748,18 +42772,6 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/subgroupsform_template.ui" line="79"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Add subgroup</source>
-        <translation type="obsolete">Pridėti pogrupį</translation>
-    </message>
-    <message>
-        <source>Modify current</source>
-        <translation type="obsolete">Koreguoti pasirinktą</translation>
-    </message>
-    <message>
-        <source>Remove current</source>
-        <translation type="obsolete">Šalinti pasirinktą</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="40"/>
@@ -50888,12 +42900,6 @@ Please report error. FET will now abort current operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Are you sure you want to delete this subject and all related activities and constraints?
-</source>
-        <translation type="obsolete">Ar tikrai norite ištrinti temą ir visas susijusias veiklas ir apribojimus?
-</translation>
-    </message>
-    <message>
         <location filename="../src/interface/subjectsform.cpp" line="108"/>
         <source>Yes</source>
         <translation type="unfinished">Taip</translation>
@@ -50914,10 +42920,6 @@ Please report error. FET will now abort current operation</source>
         <translation type="unfinished">Negalima koreguoti elemento. Naujas pavadinimas tikriausiai dublikatas</translation>
     </message>
     <message>
-        <source>Invalid subject</source>
-        <translation type="obsolete">Negaliojanti tema</translation>
-    </message>
-    <message>
         <location filename="../src/interface/subjectsform.cpp" line="190"/>
         <source>Activated a number of %1 activities</source>
         <translation type="unfinished">Aktyvuotas skaičius %1 veiklų</translation>
@@ -50931,26 +42933,10 @@ Please report error. FET will now abort current operation</source>
 <context>
     <name>SubjectsForm_template</name>
     <message>
-        <source>FET - subjects</source>
-        <translation type="obsolete">FET - temos</translation>
-    </message>
-    <message>
         <location filename="../src/interface/subjectsform_template.ui" line="14"/>
         <source>Subjects</source>
         <extracomment>Title of dialog</extracomment>
         <translation type="unfinished">Temos</translation>
-    </message>
-    <message>
-        <source>Remove current</source>
-        <translation type="obsolete">Šalinti pasirinktą</translation>
-    </message>
-    <message>
-        <source>Add subject</source>
-        <translation type="obsolete">Pridėti temą</translation>
-    </message>
-    <message>
-        <source>Rename current</source>
-        <translation type="obsolete">Pervadinti pažymėtą</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="79"/>
@@ -51010,21 +42996,9 @@ Please report error. FET will now abort current operation</source>
         <source>Duration</source>
         <translation type="unfinished">Trukmė</translation>
     </message>
-    <message>
-        <source>No. of hours</source>
-        <translation type="obsolete">Valandų skaičius</translation>
-    </message>
-    <message>
-        <source>periods</source>
-        <translation type="obsolete">periodai</translation>
-    </message>
 </context>
 <context>
     <name>SubjectsStatisticsForm_template</name>
-    <message>
-        <source>FET - Subjects statistics</source>
-        <translation type="obsolete">FET - Temų statistika</translation>
-    </message>
     <message>
         <location filename="../src/interface/subjectsstatisticsform_template.ui" line="14"/>
         <source>Subjects statistics</source>
@@ -51117,12 +43091,6 @@ Please report error. FET will now abort current operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Are you sure you want to delete this teacher and all related activities and constraints?
-</source>
-        <translation type="obsolete">Ar tikrai norite ištrinti dėstytoją ir visas susijusias veiklas ir apribojimus?
-</translation>
-    </message>
-    <message>
         <location filename="../src/interface/teachersform.cpp" line="105"/>
         <source>Yes</source>
         <translation type="unfinished">Taip</translation>
@@ -51167,14 +43135,6 @@ Please report error. FET will now abort current operation</source>
         <translation>Dėstytojai</translation>
     </message>
     <message>
-        <source>Add teacher</source>
-        <translation type="obsolete">Pridėti dėstytoją</translation>
-    </message>
-    <message>
-        <source>Remove current</source>
-        <translation type="obsolete">Šalinti pasirinktą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/teachersform_template.ui" line="79"/>
         <source>Sort alphabetically</source>
         <translation>Rūšiuoti alfabeto tvarka</translation>
@@ -51205,10 +43165,6 @@ Please report error. FET will now abort current operation</source>
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>Rename current</source>
-        <translation type="obsolete">Pervadinti pažymėtą</translation>
-    </message>
-    <message>
         <location filename="../src/interface/teachersform_template.ui" line="63"/>
         <source>Activate all activities for selected teacher</source>
         <translation>Aktivuoti visas veiklas pasirinktam dėstytojui</translation>
@@ -51236,21 +43192,9 @@ Please report error. FET will now abort current operation</source>
         <source>Duration</source>
         <translation type="unfinished">Trukmė</translation>
     </message>
-    <message>
-        <source>No. of hours</source>
-        <translation type="obsolete">Valandų skaičius</translation>
-    </message>
-    <message>
-        <source>periods</source>
-        <translation type="obsolete">periodai</translation>
-    </message>
 </context>
 <context>
     <name>TeachersStatisticsForm_template</name>
-    <message>
-        <source>FET - Teachers statistics</source>
-        <translation type="obsolete">FET - Dėstytojų statistika</translation>
-    </message>
     <message>
         <location filename="../src/interface/teachersstatisticsform_template.ui" line="14"/>
         <source>Teachers statistics</source>
@@ -51336,14 +43280,6 @@ Please report error. FET will now abort current operation</source>
         <translation>Negalima atidaryti bylos %1 rašymui. Prašome patikrinti kieto disko laisvą vietą. Bylos %1 išsaugojimas atšauktas.</translation>
     </message>
     <message>
-        <source>Soft conflicts of %1</source>
-        <translation type="obsolete">Lengvų konfliktų iš %1</translation>
-    </message>
-    <message>
-        <source>Generated with FET %1 on %2</source>
-        <translation type="obsolete">Sugeneruota su FET %1 data %2</translation>
-    </message>
-    <message>
         <location filename="../src/engine/timetableexport.cpp" line="1484"/>
         <location filename="../src/engine/timetableexport.cpp" line="1499"/>
         <location filename="../src/engine/timetableexport.cpp" line="1989"/>
@@ -51418,22 +43354,6 @@ Please report error. FET will now abort current operation</source>
         <translation>Įrašymas %1 grąžino klaidą %2, tai reiškia, kad saugojimas pavojuje. Prašome patikrinti kieto disko laisvą vietą.</translation>
     </message>
     <message>
-        <source>CSS Stylesheet of %1</source>
-        <translation type="obsolete">CSS Stilius iš %1</translation>
-    </message>
-    <message>
-        <source>Stylesheet generated with FET %1 on %2</source>
-        <translation type="obsolete">Stilius sugeneruotas su FET %1 data %2</translation>
-    </message>
-    <message>
-        <source>To do a page-break only after every second timetable, cut line %1 and paste it into line %2.</source>
-        <translation type="obsolete">Norint atskirti puslapius po kas antro tvarkaraščio, iškirpkite eilutę %1 ir įklijuokite i eilutę %2.</translation>
-    </message>
-    <message>
-        <source>To hide an element just write the following phrase into the element</source>
-        <translation type="obsolete">Norint paslėpti elementą, tiesiog parašykite sekančia fraze i elementą</translation>
-    </message>
-    <message>
         <location filename="../src/engine/timetableexport.cpp" line="6631"/>
         <source>Institution name</source>
         <translation>Įstaigos pavadinimas</translation>
@@ -51442,10 +43362,6 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/timetableexport.cpp" line="6632"/>
         <source>Comments</source>
         <translation>Komentarai</translation>
-    </message>
-    <message>
-        <source>Table of content</source>
-        <translation type="obsolete">Turinys</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2024"/>
@@ -51464,10 +43380,6 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/timetableexport.cpp" line="2675"/>
         <source>Group</source>
         <translation>Grupė</translation>
-    </message>
-    <message>
-        <source>Timetable generated with FET %1 on %2</source>
-        <translation type="obsolete">Tvarkaraštis sugeneruotas su FET %1 data %2</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2087"/>
@@ -51530,10 +43442,6 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/timetableexport.cpp" line="6649"/>
         <source>Less detailed</source>
         <translation>Mažiau detalizuota</translation>
-    </message>
-    <message>
-        <source>No rooms recorded in fet for %1.</source>
-        <translation type="obsolete">Jokie kambariai neįrašyti Į FET skirti %1.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="5421"/>
@@ -51812,17 +43720,9 @@ Please report error. FET will now abort current operation</source>
         <translation>Neprieinama</translation>
     </message>
     <message>
-        <source>Total soft conflicts: </source>
-        <translation type="obsolete">Viso lengvų konfliktų:</translation>
-    </message>
-    <message>
         <location filename="../src/engine/timetableexport.cpp" line="1481"/>
         <source>Soft conflicts list (in decreasing order):</source>
         <translation>Lengvų konfliktų sąrašas (mažėjančia tvarka):</translation>
-    </message>
-    <message>
-        <source>Total conflicts: </source>
-        <translation type="obsolete">Viso konfliktų:</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1496"/>
@@ -52238,10 +44138,6 @@ Dėl išsamesnės informacijos, jūs galite prisijungti prie adresų sąrašo ar
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Total conflicts: </source>
-        <translation type="obsolete">Viso konfliktų:</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="653"/>
         <source>Total soft conflicts:</source>
         <translation type="unfinished"></translation>
@@ -52262,51 +44158,11 @@ Dėl išsamesnės informacijos, jūs galite prisijungti prie adresų sąrašo ar
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Additional information relating impossible to schedule activities:
-
-</source>
-        <translation type="obsolete">Papildoma informacija susijusi su neimanomo tvarkaraščio veiklomis:
-
-</translation>
-    </message>
-    <message>
-        <source>Please check the constraints related to the last activities in the list below, which might be impossible to schedule:
-
-</source>
-        <translation type="obsolete">Prašome patikrinti veiklos apribojimus apačioje, kurie gali būti neimanomi:
-
- </translation>
-    </message>
-    <message>
-        <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):
-
-</source>
-        <translation type="obsolete">Čia pateiktos veiklos, kurios sukialia nesuderinamumą. Išrūšiuotos nuo pirmos iki paskutinės (paskutinė, kurios nepavyko įdėti į tvarkaraštį ir kuri labiausiai tikėtina, kad yra neimanoma):
-
-</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="305"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="572"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="907"/>
         <source>No: %1</source>
         <translation>Nr: %1</translation>
-    </message>
-    <message>
-        <source>Id: %1</source>
-        <translation type="obsolete">Id: %1</translation>
-    </message>
-    <message>
-        <source> TN: </source>
-        <translation type="obsolete">DV:</translation>
-    </message>
-    <message>
-        <source>SN: %1</source>
-        <translation type="obsolete">TP: %1</translation>
-    </message>
-    <message>
-        <source> StN: </source>
-        <translation type="obsolete">SV:</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="327"/>
@@ -52321,14 +44177,6 @@ Dėl išsamesnės informacijos, jūs galite prisijungti prie adresų sąrašo ar
         <location filename="../src/interface/timetablegenerateform.cpp" line="540"/>
         <source>FET could not find a timetable. Maybe you can consider lowering the constraints.</source>
         <translation>FET negali rasti tvarkarščio. Galbūt jūs galite sumažinti apribojimus.</translation>
-    </message>
-    <message>
-        <source>Please check the constraints related to the activity below, which might be impossible to schedule:
-
-</source>
-        <translation type="obsolete">Prašome patikrinti veiklos apribojimus apačioje, kurie gali būti neimanomi:
-
- </translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="657"/>
@@ -52353,18 +44201,6 @@ Simuliacijos rezultatai dabar turi būti įrašyti. Jūs galite patikrinti Tvark
         <location filename="../src/interface/timetablegenerateform.cpp" line="714"/>
         <source>Elapsed time:</source>
         <translation>Praėjas laikas:</translation>
-    </message>
-    <message>
-        <source>%1 h</source>
-        <translation type="obsolete">%1 h</translation>
-    </message>
-    <message>
-        <source>%1 m</source>
-        <translation type="obsolete">%1 m</translation>
-    </message>
-    <message>
-        <source>%1 s</source>
-        <translation type="obsolete">%1 s</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="767"/>
@@ -52397,10 +44233,6 @@ Simuliacijos rezultatai dabar turi būti įrašyti. Jūs galite patikrinti Tvark
         <translation>Imitavimo rezultatai dabar turi būti parašyti kataloge %1 HTML kalba ir xml formatu ir konfliktai tekstiniam formatu</translation>
     </message>
     <message>
-        <source>It is recommended to strengthen the constraints step by step (for instance min n days between activities weight or teacher(s) max gaps), as you obtain feasible timetables.</source>
-        <translation type="obsolete">Rekomenduojama sustiprinti apribojimus žingsnis po žingsnio (pavyzdžiui, min n dienos tarp veiksmo svorio ar mokytojo(ų) max tarpai), kadangi jūs gaunate įmanomus tvarkaraščius.</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="780"/>
         <source>NEW: If your timetable gets stuck on a certain activity number k (and then begins going back), please check the initial evaluation order and see activity number k+1 in this list. I found errors this way.</source>
         <translation>NAUJA: Jei jūsų tvarkaraštis suklumpa ant tam tikro veiklos skaičiaus k (ir paskui pradeda grįžti), prašom patikrinti pradinis įvertinimo eiliškumą ir pasižiūrėkite veiklos k+1 skaičių šiame sąraše. Aš suradau klaidas tokiu būdu.</translation>
@@ -52409,45 +44241,6 @@ Simuliacijos rezultatai dabar turi būti įrašyti. Jūs galite patikrinti Tvark
         <location filename="../src/interface/timetablegenerateform.cpp" line="879"/>
         <source>Highest stage results should now be written in the directory %1 in html and xml mode and the conflicts in txt mode</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Information relating difficult to schedule activities:
-
-</source>
-        <translation type="obsolete">Informacija susijusi su sudėtingomis veiklomis:
-
-</translation>
-    </message>
-    <message>
-        <source>Please check the constraints related to the last activities in the list below, which might be difficult to schedule:
-
-</source>
-        <translation type="obsolete">Prašome patikrinti apribojimus, susietus su paskutiniu veiksmu sąraše apačioje, kuris galėtų būti sudėtingas suplanuoti:
-
-</translation>
-    </message>
-    <message>
-        <source>Here are the placed activities which lead to a difficulty, in order from the first one to the last (the last one FET failed to schedule and the last ones are difficult):
-
-</source>
-        <translation type="obsolete">Čia padėtos veiklos, kurios priveda prie sunkumo, surūšiuotos nuo pirmos iki paskutinės (paskutinė yra ta, kurios nepavyko suplanuoti ir tikriausiai yra sudėtinga):
-
-</translation>
-    </message>
-    <message>
-        <source> TN: </source>
-        <comment>Teacher name</comment>
-        <translation type="obsolete">DV:</translation>
-    </message>
-    <message>
-        <source>SN: %1</source>
-        <comment>Subject name</comment>
-        <translation type="obsolete">TP: %1</translation>
-    </message>
-    <message>
-        <source> StN: </source>
-        <comment>Students names</comment>
-        <translation type="obsolete">SV:</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="923"/>
@@ -52530,10 +44323,6 @@ Simuliacijos rezultatai dabar turi būti įrašyti. Jūs galite patikrinti Tvark
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Total soft conflicts: </source>
-        <translation type="obsolete">Viso lengvų konfliktų:</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="267"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="426"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see initial order of placing the activities in the generate dialog. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
@@ -52550,11 +44339,6 @@ Simuliacijos rezultatai dabar turi būti įrašyti. Jūs galite patikrinti Tvark
         <location filename="../src/interface/timetablegenerateform.cpp" line="433"/>
         <source>Please check constraints related to following possibly problematic activity (or teacher(s), or students set(s)):</source>
         <translation>Prašome patikrinti apribojimus priklausančius sekančiai galimai problematiškai veiklai (ar dėstytojui(ams), ar studentų sąrašui(ams)):</translation>
-    </message>
-    <message>
-        <source>AT: %1</source>
-        <comment>Activity tags</comment>
-        <translation type="obsolete">VŽ: %1</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="718"/>
@@ -52591,11 +44375,6 @@ Simuliacijos rezultatai dabar turi būti įrašyti. Jūs galite patikrinti Tvark
 </context>
 <context>
     <name>TimetableGenerateForm_template</name>
-    <message>
-        <source>Automatically generate</source>
-        <extracomment>Title of dialog of generation of a new timetable</extracomment>
-        <translation type="obsolete">Automatiškai generuoti</translation>
-    </message>
     <message>
         <location filename="../src/interface/timetablegenerateform_template.ui" line="17"/>
         <source>Generate new timetable</source>
@@ -52654,14 +44433,6 @@ Simuliacijos rezultatai dabar turi būti įrašyti. Jūs galite patikrinti Tvark
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>Write (save, update) the results on hard disk, without 
-stopping the simulation. You can see the partial 
-timetable on the hard disk, in xml and html formats.</source>
-        <translation type="obsolete">Įrašyti (išsaugoti, atnaujinti) rezultatus į kietą diską, 
-nestabdant similiacijos. Jūs galite pamatyti dalinį
-tvarkaraštį kietajame diske, xml ir HTML kalbos formatuose.</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetablegenerateform_template.ui" line="127"/>
         <source>Help</source>
         <translation>Pagalba</translation>
@@ -52670,19 +44441,6 @@ tvarkaraštį kietajame diske, xml ir HTML kalbos formatuose.</translation>
         <location filename="../src/interface/timetablegenerateform_template.ui" line="118"/>
         <source>Start</source>
         <translation>Pradėti</translation>
-    </message>
-    <message>
-        <source>Stop and see impossible activities</source>
-        <translation type="obsolete">Sustabdykite ir pamatykite neįmanomas veiklas</translation>
-    </message>
-    <message>
-        <source>See difficult activities without stoping simulation</source>
-        <translation type="obsolete">Žr. sudėtingas veiklas, nesustabdydami imitavimo</translation>
-    </message>
-    <message>
-        <source>See initial order of placing the activities, without stopping simulation
-(might help with impossible timetables).</source>
-        <translation type="obsolete">Žr. pradinę veiklų sudėjimo seką, nesustabdydami imitavimo (galėtų padėti su neįmanomais tvarkaraščiais).</translation>
     </message>
 </context>
 <context>
@@ -52696,14 +44454,6 @@ tvarkaraštį kietajame diske, xml ir HTML kalbos formatuose.</translation>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="438"/>
         <source>FET information</source>
         <translation>FET informacija</translation>
-    </message>
-    <message>
-        <source>Notice: you can only see generated timetables on the hard disk, in html and xml formats and soft conflicts in txt format, or latest timetable in the FET Timetable/View menu. It is needed that the directory %1 to be emptied+deleted before proceeding.
-
-Please note that, for large data, each timetable might occupy more megabytes of hard disk space, so make sure you have enough space (you can check the dimension of a single timetable as a precaution).</source>
-        <translation type="obsolete">Pastaba: jūs galite tiktai pamatyti sukurtus tvarkaraščius standžiajame diske, HTML ir xml formatuose ir lengvus konfliktus txt formate, ar paskutiniame tvarkaraštyje FET meniu Tvarkaraštis/Žiūrėti. Tai būtina kad katalogas %1, kad būtų išvalytas+pašalintas prieš vykdymą.
-
-Prašom įsidėmėti, kad, dideliems duomenims, kiekvienas tvarkaraštis galėtų užimti daugiau standžiojo disko erdvės megabaitų, prašom įsitikinti, kad jūs turite pakankamai erdvės (jūs galite tikrinti vieno tvarkaraščio matmenį atsargumui).</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="217"/>
@@ -52820,14 +44570,6 @@ Dėl išsamesnės informacijos, jūs galite prisijungti prie adresų sąrašo ar
         <translation>Visas paieškos laikas buvo %1h %2m %3s</translation>
     </message>
     <message>
-        <source>Total soft conflicts: </source>
-        <translation type="obsolete">Viso lengvų konfliktų:</translation>
-    </message>
-    <message>
-        <source>NEW: There are also saved the timetables in .fet format (data + constraints to lock the timetable), so that you can open each of them later</source>
-        <translation type="obsolete">NAUJA: Ten yra taip pat išsaugoti tvarkaraščiai *.fet formate (duomenys + apribojimai, kad užrakintų tvarkaraštį), kad jūs galėtumėte atidaryti kiekvieną iš jų vėliau</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="391"/>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="441"/>
         <source>The data+timetables are also saved as .fet files (data+constraints to lock the timetable), so you can open-modify-regenerate the same timetables after that</source>
@@ -52836,15 +44578,6 @@ Dėl išsamesnės informacijos, jūs galite prisijungti prie adresų sąrašo ar
 </context>
 <context>
     <name>TimetableGenerateMultipleForm_template</name>
-    <message>
-        <source>Automatically generate multiple timetables</source>
-        <extracomment>Title of dialog</extracomment>
-        <translation type="obsolete">Automatiškai sugeneruoti daugialypiai tvarkaraščiai</translation>
-    </message>
-    <message>
-        <source>Time limit for each timetable (minutes)</source>
-        <translation type="obsolete">Laiko limitai kiekvienam tvarkaraščiui (minutės)</translation>
-    </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="39"/>
         <source>Limit for each timetable</source>
@@ -52896,10 +44629,6 @@ Dėl išsamesnės informacijos, jūs galite prisijungti prie adresų sąrašo ar
 </context>
 <context>
     <name>TimetableShowConflictsForm_template</name>
-    <message>
-        <source>FET - showing the timetable conflicts</source>
-        <translation type="obsolete">FET - tvarkaraščio konfliktų rodymas</translation>
-    </message>
     <message>
         <location filename="../src/interface/timetableshowconflictsform_template.ui" line="14"/>
         <source>Soft conflicts</source>
@@ -53261,14 +44990,6 @@ Prašom sustabdyti imitavimą prieš tai.</translation>
 <context>
     <name>TimetableViewRoomsForm_template</name>
     <message>
-        <source>Viewing the timetable for the rooms</source>
-        <translation type="obsolete">Kambarių tvarkaraščio peržiūra</translation>
-    </message>
-    <message>
-        <source>Room</source>
-        <translation type="obsolete">Kambarys</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="48"/>
         <source>Lock/unlock</source>
         <extracomment>This is a group box for locking/unlocking buttons</extracomment>
@@ -53306,14 +45027,6 @@ Prašom sustabdyti imitavimą prieš tai.</translation>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="32"/>
         <source>New Item</source>
         <translation>Naujas elementas</translation>
-    </message>
-    <message>
-        <source>Details</source>
-        <translation type="obsolete">Detalės</translation>
-    </message>
-    <message>
-        <source>Please click on the table for details for a specific activity.</source>
-        <translation type="obsolete">Prašom paspausti lentelę detalėms specifinei veiklai.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="101"/>
@@ -53397,18 +45110,6 @@ Prašom sustabdyti imitavimą prieš tai.</translation>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="544"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Students</source>
-        <translation type="obsolete">Studentai</translation>
-    </message>
-    <message>
-        <source>R:</source>
-        <translation type="obsolete">K:</translation>
-    </message>
-    <message>
-        <source>Room: </source>
-        <translation type="obsolete">Kambarys:</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="573"/>
@@ -53506,11 +45207,6 @@ Prašom sustabdyti imitavimą prieš tai.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>R:%1</source>
-        <comment>Room</comment>
-        <translation type="obsolete">K:%1</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="512"/>
         <source>Room: %1</source>
         <translation type="unfinished"></translation>
@@ -53551,22 +45247,6 @@ Prašom sustabdyti imitavimą prieš tai.</translation>
 </context>
 <context>
     <name>TimetableViewStudentsForm_template</name>
-    <message>
-        <source>Viewing the timetable for the students</source>
-        <translation type="obsolete">Studentų tvarkaraščio peržiūra</translation>
-    </message>
-    <message>
-        <source>Year</source>
-        <translation type="obsolete">Metai</translation>
-    </message>
-    <message>
-        <source>Group</source>
-        <translation type="obsolete">Grupė</translation>
-    </message>
-    <message>
-        <source>Subgroup</source>
-        <translation type="obsolete">Pogrupis</translation>
-    </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="30"/>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="39"/>
@@ -53612,10 +45292,6 @@ Prašom sustabdyti imitavimą prieš tai.</translation>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="168"/>
         <source>Details</source>
         <translation>Detalės</translation>
-    </message>
-    <message>
-        <source>Please click on the table for details for a specific activity.</source>
-        <translation type="obsolete">Prašom paspausti lentelę detalėms specifinei veiklai.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="113"/>
@@ -53703,23 +45379,9 @@ Prašom sustabdyti imitavimą prieš tai.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The teacher&apos;s timetable cannot be printed,
-because the teacher is invalid</source>
-        <translation type="obsolete">Dėstytojo tvarkaraštis negali būti atspausdintas,
-nes dėstytojas yra neteisingas</translation>
-    </message>
-    <message>
-        <source>R:</source>
-        <translation type="obsolete">K:</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="382"/>
         <source>The teacher is invalid - please close this dialog and open a new view teachers timetable</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Room: </source>
-        <translation type="obsolete">Kambarys:</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="464"/>
@@ -53780,11 +45442,6 @@ Prašom sustabdyti imitavimą prieš tai.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>R:%1</source>
-        <comment>Room</comment>
-        <translation type="obsolete">K:%1</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="402"/>
         <source>Room: %1</source>
         <translation type="unfinished"></translation>
@@ -53841,10 +45498,6 @@ Prašom sustabdyti imitavimą prieš tai.</translation>
 <context>
     <name>TimetableViewTeachersForm_template</name>
     <message>
-        <source>Viewing the timetable for the teachers</source>
-        <translation type="obsolete">Dėstytojų tvarkaraščio peržiūra</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="14"/>
         <source>View teachers timetable</source>
         <extracomment>Title of dialog to view the teachers timetable</extracomment>
@@ -53885,21 +45538,9 @@ Prašom sustabdyti imitavimą prieš tai.</translation>
         <translation>Uždaryti</translation>
     </message>
     <message>
-        <source>Details</source>
-        <translation type="obsolete">Detalės</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="122"/>
         <source>Teacher&apos;s name</source>
         <translation>Dėstytojo vardas</translation>
-    </message>
-    <message>
-        <source>Please click on the table for details for a specific activity.</source>
-        <translation type="obsolete">Prašom paspausti lentelę detalėms specifinei veiklai.</translation>
-    </message>
-    <message>
-        <source>Teacher</source>
-        <translation type="obsolete">Dėstytojas</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="32"/>
@@ -53933,12 +45574,6 @@ Prašom sustabdyti imitavimą prieš tai.</translation>
         <location filename="../src/interface/yearsform.cpp" line="98"/>
         <source>FET</source>
         <translation type="unfinished">FET</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to delete this year and all related groups, subgroups, activities and constraints?
-</source>
-        <translation type="obsolete">Ar esate tikri, kad norite ištrinti šiuos metus ir visas susijusias grupes,  pogrupius, veiklas ir apribojimus?
-</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform.cpp" line="99"/>
@@ -53995,10 +45630,6 @@ Prašom sustabdyti imitavimą prieš tai.</translation>
         <translation>Deaktivuoti visas veiklas pasirinktiems studentų metams</translation>
     </message>
     <message>
-        <source>Add year (form, class)</source>
-        <translation type="obsolete">Pridėti metus (formą, klasę)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/yearsform_template.ui" line="47"/>
         <source>Remove</source>
         <translation type="unfinished">Šalinti</translation>
@@ -54007,14 +45638,6 @@ Prašom sustabdyti imitavimą prieš tai.</translation>
         <location filename="../src/interface/yearsform_template.ui" line="58"/>
         <source>Modify</source>
         <translation type="unfinished">Koreguoti</translation>
-    </message>
-    <message>
-        <source>Remove current</source>
-        <translation type="obsolete">Šalinti pasirinktą</translation>
-    </message>
-    <message>
-        <source>Modify current</source>
-        <translation type="obsolete">Koreguoti pasirinktą</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="65"/>
@@ -54030,53 +45653,6 @@ Prašom sustabdyti imitavimą prieš tai.</translation>
         <location filename="../src/interface/yearsform_template.ui" line="81"/>
         <source>Activate all activities for selected students year</source>
         <translation>Aktivuoti visas veiklas pasirinktiems studentų metams</translation>
-    </message>
-</context>
-<context>
-    <name>chooseFieldsDialog</name>
-    <message>
-        <source>FET - Import from CSV file</source>
-        <translation type="obsolete">FET - Importas iš CSV bylos</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation type="obsolete">Gerai</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Atšaukti</translation>
-    </message>
-</context>
-<context>
-    <name>lastWarningsDialog</name>
-    <message>
-        <source>FET - import %1 comment</source>
-        <comment>The comment of importing of category named %1</comment>
-        <translation type="obsolete">FET - importo %1 komentaras</translation>
-    </message>
-    <message>
-        <source>FET - import %1 comment</source>
-        <translation type="obsolete">FET - importo %1 komentaras</translation>
-    </message>
-    <message>
-        <source>&amp;OK</source>
-        <translation type="obsolete">&amp;Gerai</translation>
-    </message>
-</context>
-<context>
-    <name>lastWarningsDialogE</name>
-    <message>
-        <source>FET - export comment</source>
-        <comment>The comment of exporting operation</comment>
-        <translation type="obsolete">FET - eksporto komentaras</translation>
-    </message>
-    <message>
-        <source>FET - export comment</source>
-        <translation type="obsolete">FET - eksporto komentaras</translation>
-    </message>
-    <message>
-        <source>&amp;Ok</source>
-        <translation type="obsolete">&amp;Gerai</translation>
     </message>
 </context>
 </TS>

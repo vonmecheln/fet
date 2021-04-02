@@ -1,3 +1,5 @@
+TODO:
+
 In the initial order, in nIncompatible, put also teacher(students)intervalMaxDaysPerWeek, like in teacherMaxDaysPerWeek
 
 ---------------------------------------------------------------
@@ -460,8 +462,7 @@ maybe it's possible to do XXX::setLayoutDirection(XXX::LeftToRight) only to the 
 From Volker Dirr (16 September 2007):
 
 > i saw at les timetable, that he call hour==period.
-> also at wikipedia it´s called period. (compare
-> http://en.wikipedia.org/wiki/School_timetables   chapter terminilogy)
+> also at wikipedia it´s called period. (see School_timetables chapter, terminology)
 >
 > i am not sure about that. in german we have the also the word "peridode",
 > but we don´t use it for timetables. we say hour.
@@ -1578,3 +1579,10 @@ From Gert Veltink:
 	
 	Regards,
 	
+
+52---------------------------------------------------------
+From Mr Robo:
+
+In the Time tab, Break button, leading to the dialogue to set up break times... At the moment, I set up one break time constraint that has morning breaks and lunch breaks combined.
+
+If I set up two (one for break and one for lunch) and I could attach a label that would be displayed in the unavailable slots in the finished timetable, such as 'Break' or 'Lunch', it would save me having to edit each Student, Teacher and Room timetable before they can be printed, etc. It's quite manual at the moment because '-X-' is used throughout and I can't do a global search and replace.

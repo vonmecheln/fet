@@ -1,8 +1,7 @@
-Code contributors:
-
-Volker Dirr ( to contact Volker Dirr visit http://www.timetabling.de/ )
+Code contributor:
+Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/)
 	Lots of helping with testing, bug reports, suggestions, comparisons
-	
+
 	XHTML generation code modified by Volker Dirr from old HTML generation code
 	(old code by Liviu Lalescu)
 	added features: - XHTML 1.0 strict valid
@@ -19,11 +18,11 @@ Volker Dirr ( to contact Volker Dirr visit http://www.timetabling.de/ )
 		- index HTML file
 		- print daily timetable
 		- print activities with same starting time
- 
+
 	Import and export of CSV files
-	
+
 	Export of advanced statistics
-	
+
 	Important suggestions and partial code for great speed improvements in some particular cases
 	(better computation for initial order of activities, which leads to much faster generation for some
 	particular cases of timetables).

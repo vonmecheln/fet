@@ -33,8 +33,8 @@ HelpAboutForm::HelpAboutForm()
 		
 	tabWidget->setCurrentIndex(0);
 	
-	textBrowser->setOpenExternalLinks(true);
-	textBrowser_3->setOpenExternalLinks(true);
+	authorsTextBrowser->setOpenExternalLinks(true);
+	referencesTextBrowser->setOpenExternalLinks(true);
 }
 
 HelpAboutForm::~HelpAboutForm()

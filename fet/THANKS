@@ -1,44 +1,38 @@
-I did not put the e-mail of the listed persons, I do not know if they agree (Liviu).
-If you are on this list and want your e-mail listed, please write me!
+Thanks to (chronologically):
 
-
-People who helped me (chronologically)
---------------------------------------
-
-Costin Badica	- my teacher. He actually made me begin this project and provided me with 
-	documentation and advices.
+Costin Badica - he advised Liviu Lalescu to begin this project, offered suggestions and provided him with documentation.
 
 Carsten Niehaus - suggestions.
 
-Imre Nagy 	- e-mail list (does not work anymore), suggestions.
+Imre Nagy - e-mail list (does not work anymore), suggestions.
 
 Sajith V. K. - suggestions
 
-Michael Towers	- lots of bugs reported, sample files, suggestions, front/back-end.
+Michael Towers - lots of bugs reported, sample files, suggestions, front/back-end.
 
-Antti Leppik	- sample file, suggestions.
+Antti Leppik - sample file, suggestions.
 
-Ian Fantom	- sample file, suggestions.
+Ian Fantom - sample file, suggestions.
 
-Simon Ghetti	- sample files, suggestions.
+Simon Ghetti - sample files, suggestions.
 
 Gibbon Tamba - sample file, bug reported.
 
-Jerome Durand - bug reported, French translation (fetfr@free.fr, please also see http://fetfr.free.fr/).
+Jerome Durand - bug reported, French translation.
 
 Marek Jaszuk - bugs reported, suggestions, sample file.
 
 Ramanathan Srinivasan - suggested Constraint2ActivitiesConsecutive and Constraint2ActivitiesGrouped.
 
-Vimal Joseph - suggestins, a script to convert the .xml results into .tex.
+Vimal Joseph - suggestions, a script to convert the .xml results into .tex.
 
 Cristian Gherman - bugs reported, suggestions.
-				
+
 Nicholas Robinson - suggestions.
 
 Radu Spineanu - Debian package.
 
-Morten Piil	- bug reported, sample file.
+Morten Piil - bug reported, sample file.
 
 Sebastian Canagaratna - lots of suggestions, bugs reported, sample files.
 
@@ -72,8 +66,7 @@ Niels Fikse - Dutch translation.
 
 Simon Bohlin - suggestions.
 
-Volker Dirr - German translation, bug reports, suggestions, 
-2-point and uniform crossover implementation and testing.
+Volker Dirr - German translation, bug reports, suggestions, 2-point and uniform crossover implementation and testing.
 
 Les Richardson - Update of the FAQ.
 
@@ -89,8 +82,7 @@ Andres Chandia - icons.
 
 Zoran Zdravkovski - bug reports, Macedonian translation.
 
-Constantin Romulus - bug reports, sample file (private), small
-improvements in Romanian translation, testing, fet forum logo.
+Constantin Romulus - bug reports, sample file (private), small improvements in Romanian translation, testing, fet forum logo.
 
 L. W. Johnstone - suggestions, sample file.
 
@@ -209,3 +201,5 @@ David Lamhauge - Danish translation.
 murad - suggestions.
 
 Achini Duisna - Sinhala translation.
+
+Ondrej Gregor - Slovak translation.

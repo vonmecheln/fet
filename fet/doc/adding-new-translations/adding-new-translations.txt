@@ -1,5 +1,4 @@
-FET - How to add new translations (languages)
----------------------------------------------
+FET - How to add new translations (languages):
 
 VERY IMPORTANT: Please e-mail the author, mailing list or write on the forum
 if you want to translate FET into your language. Another person might work on
@@ -10,7 +9,6 @@ a field. Either translate it or not, but not partially.
 
 
 Please read the instructions below very carefully and follow them:
-
 
 STEP 1: You can use the fet_untranslated.ts file, just rename it
 fet_**.ts (** means your language).
@@ -32,6 +30,10 @@ Open the file "fet-x.x.x/translations/fet_**.ts" (for example, fet_it.ts)
 with the Qt Linguist and edit it, then save it.
 
 You do not have to translate all the fields. Just leave the corresponding fields marked as unfinished (untranslated).
+Especially, there are 8 weird looking large fields (5 in HelpAboutForm_template, 1 in HelpFaqForm_template,
+1 in HelpInstructionsForm_template and 1 in HelpTipsForm_template). These fields begin with
+something like: "<!DOCTYPE HTML...". You are advised not to translate these 8 fields. They are big,
+difficult to translate and will suffer ulterior modifications.
 
 There are some comments in the translation file, they are not to be translated, they just help you.
 You can see that for instance in the "FET xml files" field.

@@ -1181,6 +1181,7 @@ TRANSLATIONS += \
 		../translations/fet_ro.ts \
 		../translations/fet_ru.ts \
 		../translations/fet_si.ts \
+		../translations/fet_sk.ts \
 		../translations/fet_tr.ts \
 		../translations/fet_uk.ts \
 		../translations/fet_untranslated.ts
