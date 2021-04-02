@@ -57,8 +57,14 @@ tar xjf $OUTPUT_FILE
 mv "fet-${FET_VERSION}" fet/
 
 #commitar as alterações
+git add fet/
+git commit -m "fet-${FET_VERSION}"
+
 #criar uma tag
+git tag -a "fet-${FET_VERSION}" -m "fet-${FET_VERSION}"
+
 #enviar para o git
+git push
 
 
 
