@@ -8,7 +8,7 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>775</width>
+            <width>785</width>
             <height>541</height>
         </rect>
     </property>
@@ -19,9 +19,9 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="0" column="0" rowspan="9" colspan="1">
+        <widget class="QLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>layout21</cstring>
+                <cstring>layout22</cstring>
             </property>
             <vbox>
                 <property name="name">
@@ -29,7 +29,7 @@
                 </property>
                 <widget class="QLayoutWidget">
                     <property name="name">
-                        <cstring>layout7</cstring>
+                        <cstring>layout18</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -48,7 +48,7 @@
                                         <cstring>allTeachersTextLabel</cstring>
                                     </property>
                                     <property name="text">
-                                        <string>All teachers</string>
+                                        <string>All teachers (dbl. click adds)</string>
                                     </property>
                                 </widget>
                                 <widget class="QListBox">
@@ -65,41 +65,7 @@
                         </widget>
                         <widget class="QLayoutWidget">
                             <property name="name">
-                                <cstring>layout3</cstring>
-                            </property>
-                            <vbox>
-                                <property name="name">
-                                    <cstring>unnamed</cstring>
-                                </property>
-                                <widget class="QPushButton">
-                                    <property name="name">
-                                        <cstring>addTeacherPushButton</cstring>
-                                    </property>
-                                    <property name="text">
-                                        <string>Add</string>
-                                    </property>
-                                </widget>
-                                <widget class="QPushButton">
-                                    <property name="name">
-                                        <cstring>removeTeacherPushButton</cstring>
-                                    </property>
-                                    <property name="text">
-                                        <string>Remove</string>
-                                    </property>
-                                </widget>
-                                <widget class="QPushButton">
-                                    <property name="name">
-                                        <cstring>clearTeacherPushButton</cstring>
-                                    </property>
-                                    <property name="text">
-                                        <string>Clear</string>
-                                    </property>
-                                </widget>
-                            </vbox>
-                        </widget>
-                        <widget class="QLayoutWidget">
-                            <property name="name">
-                                <cstring>layout2</cstring>
+                                <cstring>layout17</cstring>
                             </property>
                             <vbox>
                                 <property name="name">
@@ -110,7 +76,7 @@
                                         <cstring>selectedTeachersTextLabel</cstring>
                                     </property>
                                     <property name="text">
-                                        <string>Selected teachers</string>
+                                        <string>Selected (dbl. click removes)</string>
                                     </property>
                                 </widget>
                                 <widget class="QListBox">
@@ -122,6 +88,24 @@
                                     <property name="name">
                                         <cstring>selectedTeachersListBox</cstring>
                                     </property>
+                                </widget>
+                                <widget class="QLayoutWidget">
+                                    <property name="name">
+                                        <cstring>layout3</cstring>
+                                    </property>
+                                    <vbox>
+                                        <property name="name">
+                                            <cstring>unnamed</cstring>
+                                        </property>
+                                        <widget class="QPushButton">
+                                            <property name="name">
+                                                <cstring>clearTeacherPushButton</cstring>
+                                            </property>
+                                            <property name="text">
+                                                <string>Clear</string>
+                                            </property>
+                                        </widget>
+                                    </vbox>
                                 </widget>
                             </vbox>
                         </widget>
@@ -199,7 +183,7 @@
                 </widget>
                 <widget class="QLayoutWidget">
                     <property name="name">
-                        <cstring>layout17</cstring>
+                        <cstring>layout21</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -218,7 +202,7 @@
                                         <cstring>allStudentsTextLabel</cstring>
                                     </property>
                                     <property name="text">
-                                        <string>All students</string>
+                                        <string>All students (dbl. click adds)</string>
                                     </property>
                                 </widget>
                                 <widget class="QListBox">
@@ -235,41 +219,7 @@
                         </widget>
                         <widget class="QLayoutWidget">
                             <property name="name">
-                                <cstring>layout16</cstring>
-                            </property>
-                            <vbox>
-                                <property name="name">
-                                    <cstring>unnamed</cstring>
-                                </property>
-                                <widget class="QPushButton">
-                                    <property name="name">
-                                        <cstring>addStudentsPushButton</cstring>
-                                    </property>
-                                    <property name="text">
-                                        <string>Add</string>
-                                    </property>
-                                </widget>
-                                <widget class="QPushButton">
-                                    <property name="name">
-                                        <cstring>removeStudentsPushButton</cstring>
-                                    </property>
-                                    <property name="text">
-                                        <string>Remove</string>
-                                    </property>
-                                </widget>
-                                <widget class="QPushButton">
-                                    <property name="name">
-                                        <cstring>clearStudentsPushButton</cstring>
-                                    </property>
-                                    <property name="text">
-                                        <string>Clear</string>
-                                    </property>
-                                </widget>
-                            </vbox>
-                        </widget>
-                        <widget class="QLayoutWidget">
-                            <property name="name">
-                                <cstring>layout15</cstring>
+                                <cstring>layout20</cstring>
                             </property>
                             <vbox>
                                 <property name="name">
@@ -280,7 +230,7 @@
                                         <cstring>selectedStudentsTextLabel</cstring>
                                     </property>
                                     <property name="text">
-                                        <string>Selected students</string>
+                                        <string>Selected (dbl. click removes)</string>
                                     </property>
                                 </widget>
                                 <widget class="QListBox">
@@ -292,6 +242,24 @@
                                     <property name="name">
                                         <cstring>selectedStudentsListBox</cstring>
                                     </property>
+                                </widget>
+                                <widget class="QLayoutWidget">
+                                    <property name="name">
+                                        <cstring>layout16</cstring>
+                                    </property>
+                                    <vbox>
+                                        <property name="name">
+                                            <cstring>unnamed</cstring>
+                                        </property>
+                                        <widget class="QPushButton">
+                                            <property name="name">
+                                                <cstring>clearStudentsPushButton</cstring>
+                                            </property>
+                                            <property name="text">
+                                                <string>Clear</string>
+                                            </property>
+                                        </widget>
+                                    </vbox>
                                 </widget>
                             </vbox>
                         </widget>
@@ -342,749 +310,749 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QLabel" row="0" column="1" rowspan="1" colspan="4">
+        <widget class="QLayoutWidget" row="0" column="1">
             <property name="name">
-                <cstring>currentActivityTextLabel</cstring>
+                <cstring>layout25</cstring>
             </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
-            </property>
-            <property name="text">
-                <string>Current activity</string>
-            </property>
-        </widget>
-        <widget class="QTextEdit" row="1" column="1" rowspan="1" colspan="4">
-            <property name="name">
-                <cstring>currentActivityTextEdit</cstring>
-            </property>
-            <property name="readOnly">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QGroupBox" row="2" column="1" rowspan="1" colspan="4">
-            <property name="name">
-                <cstring>splitGroupBox_2</cstring>
-            </property>
-            <property name="title">
-                <string>Number of students (-1 for automatic computing)</string>
-            </property>
-            <grid>
+            <vbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QSpinBox" row="0" column="0">
+                <widget class="QLayoutWidget">
                     <property name="name">
-                        <cstring>nStudentsSpinBox</cstring>
+                        <cstring>layout24</cstring>
                     </property>
-                    <property name="maxValue">
-                        <number>1000</number>
-                    </property>
-                    <property name="minValue">
-                        <number>-1</number>
-                    </property>
-                    <property name="value">
-                        <number>-1</number>
-                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>currentActivityTextLabel</cstring>
+                            </property>
+                            <property name="frameShape">
+                                <enum>NoFrame</enum>
+                            </property>
+                            <property name="frameShadow">
+                                <enum>Plain</enum>
+                            </property>
+                            <property name="text">
+                                <string>Current activity</string>
+                            </property>
+                        </widget>
+                        <widget class="QTextEdit">
+                            <property name="name">
+                                <cstring>currentActivityTextEdit</cstring>
+                            </property>
+                            <property name="readOnly">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                        <widget class="QGroupBox">
+                            <property name="name">
+                                <cstring>splitGroupBox_2</cstring>
+                            </property>
+                            <property name="title">
+                                <string>Number of students (-1 for automatic computing)</string>
+                            </property>
+                            <grid>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QSpinBox" row="0" column="0">
+                                    <property name="name">
+                                        <cstring>nStudentsSpinBox</cstring>
+                                    </property>
+                                    <property name="maxValue">
+                                        <number>1000</number>
+                                    </property>
+                                    <property name="minValue">
+                                        <number>-1</number>
+                                    </property>
+                                    <property name="value">
+                                        <number>-1</number>
+                                    </property>
+                                </widget>
+                            </grid>
+                        </widget>
+                        <widget class="QGroupBox">
+                            <property name="name">
+                                <cstring>splitGroupBox</cstring>
+                            </property>
+                            <property name="title">
+                                <string>Split this activity into ... lessons per week.</string>
+                            </property>
+                            <grid>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QSpinBox" row="0" column="0">
+                                    <property name="name">
+                                        <cstring>splitSpinBox</cstring>
+                                    </property>
+                                    <property name="maxValue">
+                                        <number>10</number>
+                                    </property>
+                                    <property name="minValue">
+                                        <number>1</number>
+                                    </property>
+                                </widget>
+                            </grid>
+                        </widget>
+                    </vbox>
                 </widget>
-            </grid>
-        </widget>
-        <widget class="QGroupBox" row="3" column="1" rowspan="1" colspan="4">
-            <property name="name">
-                <cstring>splitGroupBox</cstring>
-            </property>
-            <property name="title">
-                <string>Split this activity into ... lessons per week.</string>
-            </property>
-            <grid>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QSpinBox" row="0" column="0">
+                <widget class="QLayoutWidget">
                     <property name="name">
-                        <cstring>splitSpinBox</cstring>
+                        <cstring>layout23</cstring>
                     </property>
-                    <property name="maxValue">
-                        <number>8</number>
-                    </property>
-                    <property name="minValue">
-                        <number>1</number>
-                    </property>
-                </widget>
-            </grid>
-        </widget>
-        <widget class="QLayoutWidget" row="8" column="1" rowspan="1" colspan="4">
-            <property name="name">
-                <cstring>layout20</cstring>
-            </property>
-            <hbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>addActivityPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Add current activity</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>closePushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Close</string>
-                    </property>
-                </widget>
-            </hbox>
-        </widget>
-        <widget class="QCheckBox" row="7" column="3" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>forceAdjacentCheckBox</cstring>
-            </property>
-            <property name="text">
-                <string>If broken min days, 
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QSpinBox" row="2" column="2">
+                            <property name="name">
+                                <cstring>percentageSpinBox</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>true</bool>
+                            </property>
+                            <property name="maxValue">
+                                <number>100</number>
+                            </property>
+                            <property name="value">
+                                <number>95</number>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="0" column="0">
+                            <property name="name">
+                                <cstring>minDayDistanceTextLabel</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>true</bool>
+                            </property>
+                            <property name="text">
+                                <string>The minimum required 
+distance in days between 
+each pair of subactivities</string>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="2" column="3">
+                            <property name="name">
+                                <cstring>percentTextLabel</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>true</bool>
+                            </property>
+                            <property name="text">
+                                <string>%</string>
+                            </property>
+                        </widget>
+                        <widget class="QCheckBox" row="3" column="2" rowspan="1" colspan="2">
+                            <property name="name">
+                                <cstring>forceAdjacentCheckBox</cstring>
+                            </property>
+                            <property name="text">
+                                <string>If broken min days, 
 force adjacency of
 lessons?</string>
-            </property>
-            <property name="checked">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QSpinBox" row="6" column="3">
-            <property name="name">
-                <cstring>percentageSpinBox</cstring>
-            </property>
-            <property name="enabled">
-                <bool>true</bool>
-            </property>
-            <property name="value">
-                <number>95</number>
-            </property>
-        </widget>
-        <widget class="QLabel" row="6" column="4">
-            <property name="name">
-                <cstring>percentTextLabel</cstring>
-            </property>
-            <property name="enabled">
-                <bool>true</bool>
-            </property>
-            <property name="text">
-                <string>%</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="4" column="3" rowspan="2" colspan="2">
-            <property name="name">
-                <cstring>percentageTextLabel</cstring>
-            </property>
-            <property name="enabled">
-                <bool>true</bool>
-            </property>
-            <property name="text">
-                <string>Percentage of 
+                            </property>
+                            <property name="checked">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="0" column="2" rowspan="2" colspan="2">
+                            <property name="name">
+                                <cstring>percentageTextLabel</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>true</bool>
+                            </property>
+                            <property name="text">
+                                <string>Percentage of 
 added constraint
  (min days between 
 activities constraint)
 Recommended: 95%</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="4" column="1">
-            <property name="name">
-                <cstring>minDayDistanceTextLabel</cstring>
-            </property>
-            <property name="enabled">
-                <bool>true</bool>
-            </property>
-            <property name="text">
-                <string>The minimum required 
-distance in days between 
-each pair of subactivities</string>
-            </property>
-        </widget>
-        <widget class="QSpinBox" row="4" column="2">
-            <property name="name">
-                <cstring>minDayDistanceSpinBox</cstring>
-            </property>
-            <property name="enabled">
-                <bool>true</bool>
-            </property>
-            <property name="value">
-                <number>1</number>
-            </property>
-        </widget>
-        <widget class="QTabWidget" row="5" column="1" rowspan="3" colspan="2">
-            <property name="name">
-                <cstring>subactivitiesTabWidget</cstring>
-            </property>
-            <widget class="QWidget">
-                <property name="name">
-                    <cstring>TabPage</cstring>
-                </property>
-                <attribute name="title">
-                    <string>1</string>
-                </attribute>
-                <grid>
+                            </property>
+                        </widget>
+                        <widget class="QTabWidget" row="1" column="0" rowspan="3" colspan="2">
+                            <property name="name">
+                                <cstring>subactivitiesTabWidget</cstring>
+                            </property>
+                            <widget class="QWidget">
+                                <property name="name">
+                                    <cstring>TabPage1</cstring>
+                                </property>
+                                <attribute name="title">
+                                    <string>1</string>
+                                </attribute>
+                                <grid>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QSpinBox" row="0" column="1">
+                                        <property name="name">
+                                            <cstring>duration1SpinBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="minValue">
+                                            <number>1</number>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel" row="0" column="0">
+                                        <property name="name">
+                                            <cstring>duration1TextLabel</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Duration</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox" row="1" column="1">
+                                        <property name="name">
+                                            <cstring>active1CheckBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Active</string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                </grid>
+                            </widget>
+                            <widget class="QWidget">
+                                <property name="name">
+                                    <cstring>TabPage2</cstring>
+                                </property>
+                                <attribute name="title">
+                                    <string>2</string>
+                                </attribute>
+                                <grid>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel" row="0" column="0">
+                                        <property name="name">
+                                            <cstring>duration1TextLabel_2</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Duration</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QSpinBox" row="0" column="1" rowspan="1" colspan="2">
+                                        <property name="name">
+                                            <cstring>duration2SpinBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="minValue">
+                                            <number>1</number>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox" row="3" column="1" rowspan="1" colspan="2">
+                                        <property name="name">
+                                            <cstring>active2CheckBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Active</string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                </grid>
+                            </widget>
+                            <widget class="QWidget">
+                                <property name="name">
+                                    <cstring>TabPage3</cstring>
+                                </property>
+                                <attribute name="title">
+                                    <string>3</string>
+                                </attribute>
+                                <grid>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel" row="0" column="0">
+                                        <property name="name">
+                                            <cstring>duration1TextLabel_3</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Duration</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QSpinBox" row="0" column="1" rowspan="1" colspan="2">
+                                        <property name="name">
+                                            <cstring>duration3SpinBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="minValue">
+                                            <number>1</number>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox" row="3" column="1" rowspan="1" colspan="2">
+                                        <property name="name">
+                                            <cstring>active3CheckBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Active</string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                </grid>
+                            </widget>
+                            <widget class="QWidget">
+                                <property name="name">
+                                    <cstring>TabPage4</cstring>
+                                </property>
+                                <attribute name="title">
+                                    <string>4</string>
+                                </attribute>
+                                <grid>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel" row="0" column="0">
+                                        <property name="name">
+                                            <cstring>duration1TextLabel_4</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Duration</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QSpinBox" row="0" column="1" rowspan="1" colspan="2">
+                                        <property name="name">
+                                            <cstring>duration4SpinBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="minValue">
+                                            <number>1</number>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox" row="3" column="1" rowspan="1" colspan="2">
+                                        <property name="name">
+                                            <cstring>active4CheckBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Active</string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                </grid>
+                            </widget>
+                            <widget class="QWidget">
+                                <property name="name">
+                                    <cstring>TabPage5</cstring>
+                                </property>
+                                <attribute name="title">
+                                    <string>5</string>
+                                </attribute>
+                                <grid>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel" row="0" column="0">
+                                        <property name="name">
+                                            <cstring>duration1TextLabel_5</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Duration</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QSpinBox" row="0" column="1">
+                                        <property name="name">
+                                            <cstring>duration5SpinBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="minValue">
+                                            <number>1</number>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox" row="1" column="1">
+                                        <property name="name">
+                                            <cstring>active5CheckBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Active</string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                </grid>
+                            </widget>
+                            <widget class="QWidget">
+                                <property name="name">
+                                    <cstring>TabPage6</cstring>
+                                </property>
+                                <attribute name="title">
+                                    <string>6</string>
+                                </attribute>
+                                <grid>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QSpinBox" row="0" column="1">
+                                        <property name="name">
+                                            <cstring>duration6SpinBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="minValue">
+                                            <number>1</number>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel" row="0" column="0">
+                                        <property name="name">
+                                            <cstring>duration1TextLabel_6</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Duration</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox" row="1" column="1">
+                                        <property name="name">
+                                            <cstring>active6CheckBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Active</string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                </grid>
+                            </widget>
+                            <widget class="QWidget">
+                                <property name="name">
+                                    <cstring>TabPage7</cstring>
+                                </property>
+                                <attribute name="title">
+                                    <string>7</string>
+                                </attribute>
+                                <grid>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel" row="0" column="0">
+                                        <property name="name">
+                                            <cstring>duration1TextLabel_7</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Duration</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QSpinBox" row="0" column="1" rowspan="1" colspan="2">
+                                        <property name="name">
+                                            <cstring>duration7SpinBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="minValue">
+                                            <number>1</number>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox" row="3" column="1" rowspan="1" colspan="2">
+                                        <property name="name">
+                                            <cstring>active7CheckBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Active</string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                </grid>
+                            </widget>
+                            <widget class="QWidget">
+                                <property name="name">
+                                    <cstring>TabPage8</cstring>
+                                </property>
+                                <attribute name="title">
+                                    <string>8</string>
+                                </attribute>
+                                <grid>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel" row="0" column="0">
+                                        <property name="name">
+                                            <cstring>duration1TextLabel_8</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Duration</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QSpinBox" row="0" column="1" rowspan="1" colspan="2">
+                                        <property name="name">
+                                            <cstring>duration8SpinBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="minValue">
+                                            <number>1</number>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox" row="3" column="1" rowspan="1" colspan="2">
+                                        <property name="name">
+                                            <cstring>active8CheckBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Active</string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                </grid>
+                            </widget>
+                            <widget class="QWidget">
+                                <property name="name">
+                                    <cstring>TabPage9</cstring>
+                                </property>
+                                <attribute name="title">
+                                    <string>9</string>
+                                </attribute>
+                                <grid>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QSpinBox" row="0" column="1">
+                                        <property name="name">
+                                            <cstring>duration9SpinBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="minValue">
+                                            <number>1</number>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel" row="0" column="0">
+                                        <property name="name">
+                                            <cstring>duration1TextLabel_9</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Duration</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox" row="1" column="1">
+                                        <property name="name">
+                                            <cstring>active9CheckBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Active</string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                </grid>
+                            </widget>
+                            <widget class="QWidget">
+                                <property name="name">
+                                    <cstring>TabPage10</cstring>
+                                </property>
+                                <attribute name="title">
+                                    <string>10</string>
+                                </attribute>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>duration1TextLabel_10</cstring>
+                                    </property>
+                                    <property name="enabled">
+                                        <bool>true</bool>
+                                    </property>
+                                    <property name="geometry">
+                                        <rect>
+                                            <x>11</x>
+                                            <y>14</y>
+                                            <width>95</width>
+                                            <height>22</height>
+                                        </rect>
+                                    </property>
+                                    <property name="text">
+                                        <string>Duration</string>
+                                    </property>
+                                </widget>
+                                <widget class="QSpinBox">
+                                    <property name="name">
+                                        <cstring>duration10SpinBox</cstring>
+                                    </property>
+                                    <property name="enabled">
+                                        <bool>true</bool>
+                                    </property>
+                                    <property name="geometry">
+                                        <rect>
+                                            <x>112</x>
+                                            <y>14</y>
+                                            <width>95</width>
+                                            <height>22</height>
+                                        </rect>
+                                    </property>
+                                    <property name="minValue">
+                                        <number>1</number>
+                                    </property>
+                                </widget>
+                                <widget class="QCheckBox">
+                                    <property name="name">
+                                        <cstring>active10CheckBox</cstring>
+                                    </property>
+                                    <property name="enabled">
+                                        <bool>true</bool>
+                                    </property>
+                                    <property name="geometry">
+                                        <rect>
+                                            <x>127</x>
+                                            <y>45</y>
+                                            <width>80</width>
+                                            <height>20</height>
+                                        </rect>
+                                    </property>
+                                    <property name="text">
+                                        <string>Active</string>
+                                    </property>
+                                    <property name="checked">
+                                        <bool>true</bool>
+                                    </property>
+                                </widget>
+                            </widget>
+                        </widget>
+                        <widget class="QSpinBox" row="0" column="1">
+                            <property name="name">
+                                <cstring>minDayDistanceSpinBox</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>true</bool>
+                            </property>
+                            <property name="value">
+                                <number>1</number>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+                <widget class="QLayoutWidget">
                     <property name="name">
-                        <cstring>unnamed</cstring>
+                        <cstring>layout20</cstring>
                     </property>
-                    <widget class="QSpinBox" row="0" column="1" rowspan="1" colspan="2">
+                    <hbox>
                         <property name="name">
-                            <cstring>duration1SpinBox</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="minValue">
-                            <number>1</number>
-                        </property>
-                    </widget>
-                    <widget class="QLabel" row="0" column="0">
-                        <property name="name">
-                            <cstring>duration1TextLabel</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="text">
-                            <string>Duration</string>
-                        </property>
-                    </widget>
-                    <widget class="QCheckBox" row="3" column="1" rowspan="1" colspan="2">
-                        <property name="name">
-                            <cstring>active1CheckBox</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="text">
-                            <string>Active</string>
-                        </property>
-                        <property name="checked">
-                            <bool>true</bool>
-                        </property>
-                    </widget>
-                </grid>
-            </widget>
-            <widget class="QWidget">
-                <property name="name">
-                    <cstring>TabPage</cstring>
-                </property>
-                <attribute name="title">
-                    <string>2</string>
-                </attribute>
-                <grid>
-                    <property name="name">
-                        <cstring>unnamed</cstring>
-                    </property>
-                    <widget class="QLabel" row="0" column="0">
-                        <property name="name">
-                            <cstring>duration1TextLabel_2</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="text">
-                            <string>Duration</string>
-                        </property>
-                    </widget>
-                    <widget class="QSpinBox" row="0" column="1" rowspan="1" colspan="2">
-                        <property name="name">
-                            <cstring>duration2SpinBox</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="minValue">
-                            <number>1</number>
-                        </property>
-                    </widget>
-                    <widget class="QCheckBox" row="3" column="1" rowspan="1" colspan="2">
-                        <property name="name">
-                            <cstring>active2CheckBox</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="text">
-                            <string>Active</string>
-                        </property>
-                        <property name="checked">
-                            <bool>true</bool>
-                        </property>
-                    </widget>
-                </grid>
-            </widget>
-            <widget class="QWidget">
-                <property name="name">
-                    <cstring>TabPage</cstring>
-                </property>
-                <attribute name="title">
-                    <string>3</string>
-                </attribute>
-                <grid>
-                    <property name="name">
-                        <cstring>unnamed</cstring>
-                    </property>
-                    <widget class="QLabel" row="0" column="0">
-                        <property name="name">
-                            <cstring>duration1TextLabel_3</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="text">
-                            <string>Duration</string>
-                        </property>
-                    </widget>
-                    <widget class="QSpinBox" row="0" column="1" rowspan="1" colspan="2">
-                        <property name="name">
-                            <cstring>duration3SpinBox</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="minValue">
-                            <number>1</number>
-                        </property>
-                    </widget>
-                    <widget class="QCheckBox" row="3" column="1" rowspan="1" colspan="2">
-                        <property name="name">
-                            <cstring>active3CheckBox</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="text">
-                            <string>Active</string>
-                        </property>
-                        <property name="checked">
-                            <bool>true</bool>
-                        </property>
-                    </widget>
-                </grid>
-            </widget>
-            <widget class="QWidget">
-                <property name="name">
-                    <cstring>TabPage</cstring>
-                </property>
-                <attribute name="title">
-                    <string>4</string>
-                </attribute>
-                <grid>
-                    <property name="name">
-                        <cstring>unnamed</cstring>
-                    </property>
-                    <widget class="QLabel" row="0" column="0">
-                        <property name="name">
-                            <cstring>duration1TextLabel_4</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="text">
-                            <string>Duration</string>
-                        </property>
-                    </widget>
-                    <widget class="QSpinBox" row="0" column="1" rowspan="1" colspan="2">
-                        <property name="name">
-                            <cstring>duration4SpinBox</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="minValue">
-                            <number>1</number>
-                        </property>
-                    </widget>
-                    <widget class="QCheckBox" row="3" column="1" rowspan="1" colspan="2">
-                        <property name="name">
-                            <cstring>active4CheckBox</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="text">
-                            <string>Active</string>
-                        </property>
-                        <property name="checked">
-                            <bool>true</bool>
-                        </property>
-                    </widget>
-                </grid>
-            </widget>
-            <widget class="QWidget">
-                <property name="name">
-                    <cstring>TabPage</cstring>
-                </property>
-                <attribute name="title">
-                    <string>5</string>
-                </attribute>
-                <grid>
-                    <property name="name">
-                        <cstring>unnamed</cstring>
-                    </property>
-                    <widget class="QLabel" row="0" column="0">
-                        <property name="name">
-                            <cstring>duration1TextLabel_5</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="text">
-                            <string>Duration</string>
-                        </property>
-                    </widget>
-                    <widget class="QSpinBox" row="0" column="1">
-                        <property name="name">
-                            <cstring>duration5SpinBox</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="minValue">
-                            <number>1</number>
-                        </property>
-                    </widget>
-                    <widget class="QCheckBox" row="1" column="1">
-                        <property name="name">
-                            <cstring>active5CheckBox</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="text">
-                            <string>Active</string>
-                        </property>
-                        <property name="checked">
-                            <bool>true</bool>
-                        </property>
-                    </widget>
-                </grid>
-            </widget>
-            <widget class="QWidget">
-                <property name="name">
-                    <cstring>TabPage</cstring>
-                </property>
-                <attribute name="title">
-                    <string>6</string>
-                </attribute>
-                <grid>
-                    <property name="name">
-                        <cstring>unnamed</cstring>
-                    </property>
-                    <widget class="QSpinBox" row="0" column="1">
-                        <property name="name">
-                            <cstring>duration6SpinBox</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="minValue">
-                            <number>1</number>
-                        </property>
-                    </widget>
-                    <widget class="QLabel" row="0" column="0">
-                        <property name="name">
-                            <cstring>duration1TextLabel_6</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="text">
-                            <string>Duration</string>
-                        </property>
-                    </widget>
-                    <widget class="QCheckBox" row="1" column="1">
-                        <property name="name">
-                            <cstring>active6CheckBox</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="text">
-                            <string>Active</string>
-                        </property>
-                        <property name="checked">
-                            <bool>true</bool>
-                        </property>
-                    </widget>
-                </grid>
-            </widget>
-            <widget class="QWidget">
-                <property name="name">
-                    <cstring>TabPage</cstring>
-                </property>
-                <attribute name="title">
-                    <string>7</string>
-                </attribute>
-                <grid>
-                    <property name="name">
-                        <cstring>unnamed</cstring>
-                    </property>
-                    <widget class="QLabel" row="0" column="0">
-                        <property name="name">
-                            <cstring>duration1TextLabel_7</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="text">
-                            <string>Duration</string>
-                        </property>
-                    </widget>
-                    <widget class="QSpinBox" row="0" column="1" rowspan="1" colspan="2">
-                        <property name="name">
-                            <cstring>duration7SpinBox</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="minValue">
-                            <number>1</number>
-                        </property>
-                    </widget>
-                    <widget class="QCheckBox" row="3" column="1" rowspan="1" colspan="2">
-                        <property name="name">
-                            <cstring>active7CheckBox</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="text">
-                            <string>Active</string>
-                        </property>
-                        <property name="checked">
-                            <bool>true</bool>
-                        </property>
-                    </widget>
-                </grid>
-            </widget>
-            <widget class="QWidget">
-                <property name="name">
-                    <cstring>TabPage</cstring>
-                </property>
-                <attribute name="title">
-                    <string>8</string>
-                </attribute>
-                <grid>
-                    <property name="name">
-                        <cstring>unnamed</cstring>
-                    </property>
-                    <widget class="QLabel" row="0" column="0">
-                        <property name="name">
-                            <cstring>duration1TextLabel_8</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="text">
-                            <string>Duration</string>
-                        </property>
-                    </widget>
-                    <widget class="QSpinBox" row="0" column="1" rowspan="1" colspan="2">
-                        <property name="name">
-                            <cstring>duration8SpinBox</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="minValue">
-                            <number>1</number>
-                        </property>
-                    </widget>
-                    <widget class="QCheckBox" row="3" column="1" rowspan="1" colspan="2">
-                        <property name="name">
-                            <cstring>active8CheckBox</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>true</bool>
-                        </property>
-                        <property name="text">
-                            <string>Active</string>
-                        </property>
-                        <property name="checked">
-                            <bool>true</bool>
-                        </property>
-                    </widget>
-                </grid>
-            </widget>
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>addActivityPushButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Add current activity</string>
+                            </property>
+                        </widget>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>closePushButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Close</string>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </vbox>
         </widget>
     </grid>
 </widget>
 <connections>
     <connection>
-        <sender>addActivityPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>addActivity()</slot>
-    </connection>
-    <connection>
-        <sender>closePushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>close()</slot>
-    </connection>
-    <connection>
-        <sender>subjectsComboBox</sender>
-        <signal>activated(const QString&amp;)</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>subjectChanged(const QString&amp;)</slot>
-    </connection>
-    <connection>
-        <sender>splitSpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>splitChanged()</slot>
-    </connection>
-    <connection>
-        <sender>minDayDistanceSpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>duration1SpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>duration2SpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>duration3SpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>duration4SpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>duration5SpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>duration6SpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>duration7SpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>duration8SpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>yearsCheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>showYearsChanged()</slot>
-    </connection>
-    <connection>
-        <sender>groupsCheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>showGroupsChanged()</slot>
-    </connection>
-    <connection>
-        <sender>subgroupsCheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>showSubgroupsChanged()</slot>
-    </connection>
-    <connection>
-        <sender>subjectTagsComboBox</sender>
-        <signal>activated(const QString&amp;)</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>subjectTagChanged(const QString&amp;)</slot>
-    </connection>
-    <connection>
-        <sender>addTeacherPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>addTeacher()</slot>
-    </connection>
-    <connection>
-        <sender>removeTeacherPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>removeTeacher()</slot>
-    </connection>
-    <connection>
-        <sender>addStudentsPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>addStudents()</slot>
-    </connection>
-    <connection>
-        <sender>removeStudentsPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>removeStudents()</slot>
-    </connection>
-    <connection>
-        <sender>clearTeacherPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>clearTeachers()</slot>
-    </connection>
-    <connection>
-        <sender>clearStudentsPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>clearStudents()</slot>
-    </connection>
-    <connection>
-        <sender>active1CheckBox</sender>
+        <sender>forceAdjacentCheckBox</sender>
         <signal>toggled(bool)</signal>
         <receiver>AddActivityForm_template</receiver>
         <slot>activityChanged()</slot>
     </connection>
     <connection>
-        <sender>active2CheckBox</sender>
-        <signal>toggled(bool)</signal>
+        <sender>percentageSpinBox</sender>
+        <signal>valueChanged(int)</signal>
         <receiver>AddActivityForm_template</receiver>
         <slot>activityChanged()</slot>
     </connection>
     <connection>
-        <sender>active3CheckBox</sender>
-        <signal>toggled(bool)</signal>
+        <sender>nStudentsSpinBox</sender>
+        <signal>valueChanged(int)</signal>
         <receiver>AddActivityForm_template</receiver>
         <slot>activityChanged()</slot>
     </connection>
     <connection>
-        <sender>active4CheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>active5CheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>active6CheckBox</sender>
+        <sender>active8CheckBox</sender>
         <signal>toggled(bool)</signal>
         <receiver>AddActivityForm_template</receiver>
         <slot>activityChanged()</slot>
@@ -1096,37 +1064,201 @@ each pair of subactivities</string>
         <slot>activityChanged()</slot>
     </connection>
     <connection>
-        <sender>active8CheckBox</sender>
+        <sender>active6CheckBox</sender>
         <signal>toggled(bool)</signal>
         <receiver>AddActivityForm_template</receiver>
         <slot>activityChanged()</slot>
     </connection>
     <connection>
-        <sender>nStudentsSpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>percentageSpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>AddActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>forceAdjacentCheckBox</sender>
+        <sender>active5CheckBox</sender>
         <signal>toggled(bool)</signal>
         <receiver>AddActivityForm_template</receiver>
         <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>active4CheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>active3CheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>active2CheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>active1CheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>clearStudentsPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>clearStudents()</slot>
+    </connection>
+    <connection>
+        <sender>clearTeacherPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>clearTeachers()</slot>
+    </connection>
+    <connection>
+        <sender>subjectTagsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>subjectTagChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>subgroupsCheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>showSubgroupsChanged()</slot>
+    </connection>
+    <connection>
+        <sender>groupsCheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>showGroupsChanged()</slot>
+    </connection>
+    <connection>
+        <sender>yearsCheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>showYearsChanged()</slot>
+    </connection>
+    <connection>
+        <sender>duration8SpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>duration7SpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>duration6SpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>duration5SpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>duration4SpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>duration3SpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>duration2SpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>duration1SpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>minDayDistanceSpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>splitSpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>splitChanged()</slot>
+    </connection>
+    <connection>
+        <sender>subjectsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>subjectChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>closePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>close()</slot>
+    </connection>
+    <connection>
+        <sender>addActivityPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>addActivity()</slot>
+    </connection>
+    <connection>
+        <sender>allTeachersListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>addTeacher()</slot>
+    </connection>
+    <connection>
+        <sender>selectedTeachersListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>removeTeacher()</slot>
+    </connection>
+    <connection>
+        <sender>allStudentsListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>addStudents()</slot>
+    </connection>
+    <connection>
+        <sender>selectedStudentsListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>removeStudents()</slot>
     </connection>
 </connections>
 <tabstops>
+    <tabstop>allTeachersListBox</tabstop>
+    <tabstop>selectedTeachersListBox</tabstop>
+    <tabstop>clearTeacherPushButton</tabstop>
     <tabstop>subjectsComboBox</tabstop>
+    <tabstop>subjectTagsComboBox</tabstop>
+    <tabstop>allStudentsListBox</tabstop>
+    <tabstop>selectedStudentsListBox</tabstop>
+    <tabstop>clearStudentsPushButton</tabstop>
+    <tabstop>yearsCheckBox</tabstop>
+    <tabstop>groupsCheckBox</tabstop>
+    <tabstop>subgroupsCheckBox</tabstop>
     <tabstop>currentActivityTextEdit</tabstop>
+    <tabstop>nStudentsSpinBox</tabstop>
     <tabstop>splitSpinBox</tabstop>
     <tabstop>minDayDistanceSpinBox</tabstop>
     <tabstop>subactivitiesTabWidget</tabstop>
     <tabstop>duration1SpinBox</tabstop>
+    <tabstop>active1CheckBox</tabstop>
+    <tabstop>percentageSpinBox</tabstop>
+    <tabstop>forceAdjacentCheckBox</tabstop>
     <tabstop>addActivityPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
     <tabstop>duration2SpinBox</tabstop>
@@ -1136,6 +1268,13 @@ each pair of subactivities</string>
     <tabstop>duration6SpinBox</tabstop>
     <tabstop>duration7SpinBox</tabstop>
     <tabstop>duration8SpinBox</tabstop>
+    <tabstop>active2CheckBox</tabstop>
+    <tabstop>active3CheckBox</tabstop>
+    <tabstop>active4CheckBox</tabstop>
+    <tabstop>active5CheckBox</tabstop>
+    <tabstop>active6CheckBox</tabstop>
+    <tabstop>active7CheckBox</tabstop>
+    <tabstop>active8CheckBox</tabstop>
 </tabstops>
 <slots>
     <slot>activityChanged()</slot>

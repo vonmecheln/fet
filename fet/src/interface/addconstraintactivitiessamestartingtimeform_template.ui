@@ -19,39 +19,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="3" column="2" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>layout4</cstring>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>weightTextLabel</cstring>
-                    </property>
-                    <property name="frameShape">
-                        <enum>NoFrame</enum>
-                    </property>
-                    <property name="frameShadow">
-                        <enum>Plain</enum>
-                    </property>
-                    <property name="text">
-                        <string>Weight percentage (recommended: 0%-100%)</string>
-                    </property>
-                </widget>
-                <widget class="QLineEdit">
-                    <property name="name">
-                        <cstring>weightLineEdit</cstring>
-                    </property>
-                    <property name="text">
-                        <string>100</string>
-                    </property>
-                </widget>
-            </vbox>
-        </widget>
-        <widget class="QLayoutWidget" row="4" column="0" rowspan="1" colspan="4">
+        <widget class="QLayoutWidget" row="4" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout2</cstring>
             </property>
@@ -77,7 +45,7 @@
                 </widget>
             </hbox>
         </widget>
-        <widget class="QCheckBox" row="2" column="0" rowspan="1" colspan="4">
+        <widget class="QCheckBox" row="2" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>blockCheckBox</cstring>
             </property>
@@ -110,10 +78,7 @@ tuple)</string>
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>All activities</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>roomsComboBox</cstring>
+                        <string>All activities (dbl. click or Enter adds)</string>
                     </property>
                 </widget>
                 <widget class="QListBox">
@@ -128,44 +93,7 @@ tuple)</string>
                 </widget>
             </vbox>
         </widget>
-        <widget class="QLayoutWidget" row="1" column="3">
-            <property name="name">
-                <cstring>layout9</cstring>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>simultaneousActivitiesTextLabel</cstring>
-                    </property>
-                    <property name="frameShape">
-                        <enum>NoFrame</enum>
-                    </property>
-                    <property name="frameShadow">
-                        <enum>Plain</enum>
-                    </property>
-                    <property name="text">
-                        <string>Simultaneous activities</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>roomsComboBox</cstring>
-                    </property>
-                </widget>
-                <widget class="QListBox">
-                    <item>
-                        <property name="text">
-                            <string>New Item</string>
-                        </property>
-                    </item>
-                    <property name="name">
-                        <cstring>simultaneousActivitiesListBox</cstring>
-                    </property>
-                </widget>
-            </vbox>
-        </widget>
-        <widget class="QLayoutWidget" row="0" column="0" rowspan="1" colspan="4">
+        <widget class="QLayoutWidget" row="0" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout3</cstring>
             </property>
@@ -227,55 +155,93 @@ tuple)</string>
                 </widget>
             </grid>
         </widget>
-        <widget class="QLayoutWidget" row="1" column="1" rowspan="1" colspan="2">
+        <widget class="QLayoutWidget" row="1" column="1">
             <property name="name">
-                <cstring>layout7</cstring>
+                <cstring>layout79</cstring>
             </property>
-            <grid>
+            <vbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QPushButton" row="2" column="0">
+                <widget class="QLabel">
                     <property name="name">
-                        <cstring>clearPushButton</cstring>
+                        <cstring>simultaneousActivitiesTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>Clear</string>
+                        <string>Simultaneous (dbl. click or Enter removes)</string>
                     </property>
                 </widget>
-                <widget class="QPushButton" row="0" column="0">
+                <widget class="QListBox">
+                    <item>
+                        <property name="text">
+                            <string>New Item</string>
+                        </property>
+                    </item>
                     <property name="name">
-                        <cstring>addPushButton</cstring>
+                        <cstring>simultaneousActivitiesListBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout7</cstring>
+                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QPushButton" row="2" column="0">
+                            <property name="name">
+                                <cstring>clearPushButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Clear</string>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+            </vbox>
+        </widget>
+        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>layout4</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>weightTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>Add</string>
+                        <string>Weight percentage (recommended: 0%-100%)</string>
                     </property>
                 </widget>
-                <widget class="QPushButton" row="1" column="0">
+                <widget class="QLineEdit">
                     <property name="name">
-                        <cstring>removePushButton</cstring>
+                        <cstring>weightLineEdit</cstring>
                     </property>
                     <property name="text">
-                        <string>Remove</string>
+                        <string>100</string>
                     </property>
                 </widget>
-            </grid>
+            </vbox>
         </widget>
     </grid>
 </widget>
 <connections>
-    <connection>
-        <sender>addPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>AddConstraintActivitiesSameStartingTimeForm_template</receiver>
-        <slot>addActivity()</slot>
-    </connection>
-    <connection>
-        <sender>removePushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>AddConstraintActivitiesSameStartingTimeForm_template</receiver>
-        <slot>removeActivity()</slot>
-    </connection>
     <connection>
         <sender>closePushButton</sender>
         <signal>clicked()</signal>
@@ -324,7 +290,32 @@ tuple)</string>
         <receiver>AddConstraintActivitiesSameStartingTimeForm_template</receiver>
         <slot>clear()</slot>
     </connection>
+    <connection>
+        <sender>activitiesListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>AddConstraintActivitiesSameStartingTimeForm_template</receiver>
+        <slot>addActivity()</slot>
+    </connection>
+    <connection>
+        <sender>simultaneousActivitiesListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>AddConstraintActivitiesSameStartingTimeForm_template</receiver>
+        <slot>removeActivity()</slot>
+    </connection>
 </connections>
+<tabstops>
+    <tabstop>teachersComboBox</tabstop>
+    <tabstop>studentsComboBox</tabstop>
+    <tabstop>subjectsComboBox</tabstop>
+    <tabstop>subjectTagsComboBox</tabstop>
+    <tabstop>activitiesListBox</tabstop>
+    <tabstop>simultaneousActivitiesListBox</tabstop>
+    <tabstop>clearPushButton</tabstop>
+    <tabstop>blockCheckBox</tabstop>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>addConstraintPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+</tabstops>
 <slots>
     <slot>addActivity()</slot>
     <slot>removeActivity()</slot>

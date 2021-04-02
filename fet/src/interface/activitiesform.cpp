@@ -206,9 +206,9 @@ void ActivitiesForm::modifyActivity()
 			Activity* act2=gt.rules.activitiesList[i];
 			if(act2->activityGroupId==act->activityGroupId)
 				nSplit++;
-			if(nSplit>8){
+			if(nSplit>10){
 				QMessageBox::warning(this, QObject::tr("FET information"),
-					QObject::tr("Cannot modify this activity, because it contains more than 8 subactivities.\n"
+					QObject::tr("Cannot modify this activity, because it contains more than 10 subactivities.\n"
 					"If you really need that, please talk to the author\n"));
 				return;
 			}

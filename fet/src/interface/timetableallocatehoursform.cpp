@@ -109,6 +109,16 @@ TimetableAllocateHoursForm::TimetableAllocateHoursForm()
 
 TimetableAllocateHoursForm::~TimetableAllocateHoursForm()
 {
+	//timeSolvingThread.quit();
+	
+	if(simulation_running)
+		this->stop();
+	
+/*	mutex.lock();
+	ot.abortOptimization=true;
+	mutex.unlock();
+
+	simulation_running=false;*/
 }
 
 void TimetableAllocateHoursForm::start(){
@@ -182,6 +192,14 @@ void TimetableAllocateHoursForm::start(){
 
 void TimetableAllocateHoursForm::stop()
 {
+	if(!simulation_running){
+		QMessageBox::critical(this, QObject::tr("FET information"), 
+		 QObject::tr("Simulation stopped but the simulation is not running."
+		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));
+		 
+		return;
+	}
+
 	mutex.lock();
 	ot.abortOptimization=true;
 	mutex.unlock();
@@ -302,6 +320,14 @@ void TimetableAllocateHoursForm::stop()
 
 void TimetableAllocateHoursForm::impossibleToSolve()
 {
+	if(!simulation_running){
+		QMessageBox::critical(this, QObject::tr("FET information"), 
+		 QObject::tr("Simulation impossible to solve, but the simulation is not running."
+		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));
+		 
+		return;
+	}
+
 	mutex.lock();
 	ot.abortOptimization=true;
 	mutex.unlock();
@@ -382,6 +408,14 @@ void TimetableAllocateHoursForm::impossibleToSolve()
 
 void TimetableAllocateHoursForm::simulationFinished()
 {
+	if(!simulation_running){
+		QMessageBox::critical(this, QObject::tr("FET information"), 
+		 QObject::tr("Simulation finished but the simulation is not running."
+		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));
+		 
+		return;
+	}
+	
 	assert(simulation_running);
 
 	finishedSemaphore.acquire();
@@ -430,6 +464,16 @@ void TimetableAllocateHoursForm::simulationFinished()
 }
 
 void TimetableAllocateHoursForm::activityPlaced(int na){
+	/*if(!simulation_running){
+		assert(0);
+		
+		QMessageBox::critical(this, QObject::tr("FET information"), 
+		 QObject::tr("Activity placed but the simulation is not running."
+		 " Maybe you aborted simulation previously. Please report possible bug to author"));
+		 
+		return;
+	}*/
+
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 

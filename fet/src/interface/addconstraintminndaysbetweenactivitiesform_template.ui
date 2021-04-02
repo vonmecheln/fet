@@ -38,10 +38,7 @@
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>All activities</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>roomsComboBox</cstring>
+                        <string>All activities (dbl. click or Enter adds)</string>
                     </property>
                 </widget>
                 <widget class="QListBox">
@@ -57,32 +54,6 @@
             </vbox>
         </widget>
         <widget class="QLayoutWidget" row="0" column="1">
-            <property name="name">
-                <cstring>layout12</cstring>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>addPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Add</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>removePushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Remove</string>
-                    </property>
-                </widget>
-            </vbox>
-        </widget>
-        <widget class="QLayoutWidget" row="0" column="2">
             <property name="name">
                 <cstring>layout9</cstring>
             </property>
@@ -101,10 +72,7 @@
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>Selected activities</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>roomsComboBox</cstring>
+                        <string>Selected (dbl. click or Enter removes)</string>
                     </property>
                 </widget>
                 <widget class="QListBox">
@@ -131,7 +99,7 @@ adjcency of activities</string>
                 <bool>true</bool>
             </property>
         </widget>
-        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="3">
+        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout2</cstring>
             </property>
@@ -157,7 +125,7 @@ adjcency of activities</string>
                 </widget>
             </hbox>
         </widget>
-        <widget class="QLayoutWidget" row="2" column="1" rowspan="1" colspan="2">
+        <widget class="QLayoutWidget" row="2" column="1">
             <property name="name">
                 <cstring>layout4</cstring>
             </property>
@@ -189,7 +157,7 @@ adjcency of activities</string>
                 </widget>
             </vbox>
         </widget>
-        <widget class="QLayoutWidget" row="1" column="1" rowspan="1" colspan="2">
+        <widget class="QLayoutWidget" row="1" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout6</cstring>
             </property>
@@ -222,18 +190,6 @@ adjcency of activities</string>
 </widget>
 <connections>
     <connection>
-        <sender>addPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>AddConstraintMinNDaysBetweenActivitiesForm_template</receiver>
-        <slot>addActivity()</slot>
-    </connection>
-    <connection>
-        <sender>removePushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>AddConstraintMinNDaysBetweenActivitiesForm_template</receiver>
-        <slot>removeActivity()</slot>
-    </connection>
-    <connection>
         <sender>closePushButton</sender>
         <signal>clicked()</signal>
         <receiver>AddConstraintMinNDaysBetweenActivitiesForm_template</receiver>
@@ -245,7 +201,28 @@ adjcency of activities</string>
         <receiver>AddConstraintMinNDaysBetweenActivitiesForm_template</receiver>
         <slot>addConstraint()</slot>
     </connection>
+    <connection>
+        <sender>activitiesListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>AddConstraintMinNDaysBetweenActivitiesForm_template</receiver>
+        <slot>addActivity()</slot>
+    </connection>
+    <connection>
+        <sender>selectedActivitiesListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>AddConstraintMinNDaysBetweenActivitiesForm_template</receiver>
+        <slot>removeActivity()</slot>
+    </connection>
 </connections>
+<tabstops>
+    <tabstop>activitiesListBox</tabstop>
+    <tabstop>selectedActivitiesListBox</tabstop>
+    <tabstop>minDaysSpinBox</tabstop>
+    <tabstop>adjIfBrokenCheckBox</tabstop>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>addConstraintPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+</tabstops>
 <slots>
     <slot>addActivity()</slot>
     <slot>removeActivity()</slot>

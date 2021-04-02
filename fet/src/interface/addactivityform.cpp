@@ -60,7 +60,9 @@
 			(i==4?duration5SpinBox:					\
 			(i==5?duration6SpinBox:					\
 			(i==6?duration7SpinBox:					\
-			(duration1SpinBox))))))))
+			(i==7?duration8SpinBox:					\
+			(i==8?duration9SpinBox:					\
+			(duration10SpinBox))))))))))
 #define activ(i)		(i==0?active1CheckBox:					\
 			(i==1?active2CheckBox:					\
 			(i==2?active3CheckBox:					\
@@ -68,7 +70,9 @@
 			(i==4?active5CheckBox:					\
 			(i==5?active6CheckBox:					\
 			(i==6?active7CheckBox:					\
-			(active8CheckBox))))))))
+			(i==7?active8CheckBox:					\
+			(i==8?active9CheckBox:					\
+			(active10CheckBox))))))))))
 
 AddActivityForm::AddActivityForm()
 {
@@ -90,7 +94,7 @@ AddActivityForm::AddActivityForm()
 	minDayDistanceSpinBox->setValue(1);
 
 	int nSplit=splitSpinBox->value();
-	for(int i=0; i<8; i++)
+	for(int i=0; i<10; i++)
 		if(i<nSplit)
 			subTab(i)->setEnabled(true);
 		else
@@ -102,6 +106,8 @@ AddActivityForm::AddActivityForm()
 	percentageSpinBox->setEnabled(nSplit>=2);
 	percentTextLabel->setEnabled(nSplit>=2);
 	forceAdjacentCheckBox->setEnabled(nSplit>=2);
+	
+	subactivitiesTabWidget->setCurrentIndex(0);
 }
 
 AddActivityForm::~AddActivityForm()
@@ -289,7 +295,7 @@ void AddActivityForm::splitChanged()
 	percentTextLabel->setEnabled(nSplit>=2);
 	forceAdjacentCheckBox->setEnabled(nSplit>=2);
 
-	for(int i=0; i<8; i++)
+	for(int i=0; i<10; i++)
 		if(i<nSplit)
 			subTab(i)->setEnabled(true);
 		else
@@ -522,11 +528,11 @@ void AddActivityForm::addActivity()
 	}
 	else{ //split activity
 		int totalduration;
-		int durations[8];
+		int durations[10];
 		//int parities[8];
 		//int preferred_days[8];
 		//int preferred_hours[8];
-		bool active[8];
+		bool active[10];
 		int nsplit=splitSpinBox->value();
 
 		totalduration=0;
@@ -583,3 +589,4 @@ void AddActivityForm::clearStudents()
 //#undef prefHour
 #undef subTab
 #undef activ
+#undef dur

@@ -858,4 +858,8 @@ Versions 5.0.0 -
 	- Improved html timetables (suggested by L. W. Johnstone)
 - Version 5.0.0-preview16
 	- Crash bug fix in teacher max days per week (reported by Constantin Romulus)
-	
+- Version 5.0.0-preview17
+	- Improvements in add/modify activity dialogs (suggested by Constantin Romulus)
+	- Improvements in add/modify constraints not overlapping, same starting hour/time,
+	min n days between activities (suggested by Constantin Romulus).
+	- Bug fix - when pressing Esc in the allocation of hours.

@@ -45,32 +45,6 @@
                 </widget>
             </hbox>
         </widget>
-        <widget class="QLayoutWidget" row="1" column="1">
-            <property name="name">
-                <cstring>layout12</cstring>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>addPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Add</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>removePushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Remove</string>
-                    </property>
-                </widget>
-            </vbox>
-        </widget>
         <widget class="QLayoutWidget" row="1" column="0">
             <property name="name">
                 <cstring>layout10</cstring>
@@ -90,10 +64,7 @@
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>All activities</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>roomsComboBox</cstring>
+                        <string>All activities (dbl. click or Enter to add)</string>
                     </property>
                 </widget>
                 <widget class="QListBox">
@@ -127,10 +98,7 @@
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>Not overlapping activities</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>roomsComboBox</cstring>
+                        <string>Selected (dbl. click or Enter to remove)</string>
                     </property>
                 </widget>
                 <widget class="QListBox">
@@ -193,18 +161,6 @@ a timetable, maybe you can try optimizing first without these constraints</strin
 </widget>
 <connections>
     <connection>
-        <sender>addPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>ModifyConstraintActivitiesNotOverlappingForm_template</receiver>
-        <slot>addActivity()</slot>
-    </connection>
-    <connection>
-        <sender>removePushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>ModifyConstraintActivitiesNotOverlappingForm_template</receiver>
-        <slot>removeActivity()</slot>
-    </connection>
-    <connection>
         <sender>cancelPushButton</sender>
         <signal>clicked()</signal>
         <receiver>ModifyConstraintActivitiesNotOverlappingForm_template</receiver>
@@ -216,7 +172,26 @@ a timetable, maybe you can try optimizing first without these constraints</strin
         <receiver>ModifyConstraintActivitiesNotOverlappingForm_template</receiver>
         <slot>ok()</slot>
     </connection>
+    <connection>
+        <sender>activitiesListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>ModifyConstraintActivitiesNotOverlappingForm_template</receiver>
+        <slot>addActivity()</slot>
+    </connection>
+    <connection>
+        <sender>notOverlappingActivitiesListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>ModifyConstraintActivitiesNotOverlappingForm_template</receiver>
+        <slot>removeActivity()</slot>
+    </connection>
 </connections>
+<tabstops>
+    <tabstop>activitiesListBox</tabstop>
+    <tabstop>notOverlappingActivitiesListBox</tabstop>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>okPushButton</tabstop>
+    <tabstop>cancelPushButton</tabstop>
+</tabstops>
 <slots>
     <slot>addActivity()</slot>
     <slot>removeActivity()</slot>

@@ -19,7 +19,104 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="1" column="2" rowspan="1" colspan="2">
+        <widget class="QLayoutWidget" row="0" column="0">
+            <property name="name">
+                <cstring>layout10</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>activitiesTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>All activities (dbl. click or Enter adds)</string>
+                    </property>
+                </widget>
+                <widget class="QListBox">
+                    <item>
+                        <property name="text">
+                            <string>New Item</string>
+                        </property>
+                    </item>
+                    <property name="name">
+                        <cstring>activitiesListBox</cstring>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+        <widget class="QLayoutWidget" row="0" column="1">
+            <property name="name">
+                <cstring>layout9</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>selectedActivitiesTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>Selected (dbl. click or Enter removes)</string>
+                    </property>
+                </widget>
+                <widget class="QListBox">
+                    <item>
+                        <property name="text">
+                            <string>New Item</string>
+                        </property>
+                    </item>
+                    <property name="name">
+                        <cstring>selectedActivitiesListBox</cstring>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+        <widget class="QLayoutWidget" row="1" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>layout6</cstring>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QSpinBox" row="1" column="0">
+                    <property name="name">
+                        <cstring>minDaysSpinBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>minDaysTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>Min days</string>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QLayoutWidget" row="2" column="1">
             <property name="name">
                 <cstring>layout4</cstring>
             </property>
@@ -51,7 +148,7 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QCheckBox" row="1" column="0" rowspan="1" colspan="2">
+        <widget class="QCheckBox" row="2" column="0">
             <property name="name">
                 <cstring>adjIfBrokenCheckBox</cstring>
             </property>
@@ -63,107 +160,7 @@ adjcency of activities</string>
                 <bool>true</bool>
             </property>
         </widget>
-        <widget class="QLayoutWidget" row="0" column="0">
-            <property name="name">
-                <cstring>layout10</cstring>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>activitiesTextLabel</cstring>
-                    </property>
-                    <property name="frameShape">
-                        <enum>NoFrame</enum>
-                    </property>
-                    <property name="frameShadow">
-                        <enum>Plain</enum>
-                    </property>
-                    <property name="text">
-                        <string>All activities</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>roomsComboBox</cstring>
-                    </property>
-                </widget>
-                <widget class="QListBox">
-                    <item>
-                        <property name="text">
-                            <string>New Item</string>
-                        </property>
-                    </item>
-                    <property name="name">
-                        <cstring>activitiesListBox</cstring>
-                    </property>
-                </widget>
-            </vbox>
-        </widget>
-        <widget class="QLayoutWidget" row="0" column="1" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>layout12</cstring>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>addPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Add</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>removePushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Remove</string>
-                    </property>
-                </widget>
-            </vbox>
-        </widget>
-        <widget class="QLayoutWidget" row="0" column="3">
-            <property name="name">
-                <cstring>layout9</cstring>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>selectedActivitiesTextLabel</cstring>
-                    </property>
-                    <property name="frameShape">
-                        <enum>NoFrame</enum>
-                    </property>
-                    <property name="frameShadow">
-                        <enum>Plain</enum>
-                    </property>
-                    <property name="text">
-                        <string>Selected activities</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>roomsComboBox</cstring>
-                    </property>
-                </widget>
-                <widget class="QListBox">
-                    <item>
-                        <property name="text">
-                            <string>New Item</string>
-                        </property>
-                    </item>
-                    <property name="name">
-                        <cstring>selectedActivitiesListBox</cstring>
-                    </property>
-                </widget>
-            </vbox>
-        </widget>
-        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="4">
+        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout2</cstring>
             </property>
@@ -189,50 +186,9 @@ adjcency of activities</string>
                 </widget>
             </hbox>
         </widget>
-        <widget class="QLayoutWidget" row="2" column="2" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>layout6</cstring>
-            </property>
-            <grid>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QSpinBox" row="1" column="0">
-                    <property name="name">
-                        <cstring>minDaysSpinBox</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="0" column="0">
-                    <property name="name">
-                        <cstring>minDaysTextLabel</cstring>
-                    </property>
-                    <property name="frameShape">
-                        <enum>NoFrame</enum>
-                    </property>
-                    <property name="frameShadow">
-                        <enum>Plain</enum>
-                    </property>
-                    <property name="text">
-                        <string>Min days</string>
-                    </property>
-                </widget>
-            </grid>
-        </widget>
     </grid>
 </widget>
 <connections>
-    <connection>
-        <sender>addPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>ModifyConstraintMinNDaysBetweenActivitiesForm_template</receiver>
-        <slot>addActivity()</slot>
-    </connection>
-    <connection>
-        <sender>removePushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>ModifyConstraintMinNDaysBetweenActivitiesForm_template</receiver>
-        <slot>removeActivity()</slot>
-    </connection>
     <connection>
         <sender>cancelPushButton</sender>
         <signal>clicked()</signal>
@@ -245,7 +201,28 @@ adjcency of activities</string>
         <receiver>ModifyConstraintMinNDaysBetweenActivitiesForm_template</receiver>
         <slot>ok()</slot>
     </connection>
+    <connection>
+        <sender>activitiesListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>ModifyConstraintMinNDaysBetweenActivitiesForm_template</receiver>
+        <slot>addActivity()</slot>
+    </connection>
+    <connection>
+        <sender>selectedActivitiesListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>ModifyConstraintMinNDaysBetweenActivitiesForm_template</receiver>
+        <slot>removeActivity()</slot>
+    </connection>
 </connections>
+<tabstops>
+    <tabstop>activitiesListBox</tabstop>
+    <tabstop>selectedActivitiesListBox</tabstop>
+    <tabstop>minDaysSpinBox</tabstop>
+    <tabstop>adjIfBrokenCheckBox</tabstop>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>okPushButton</tabstop>
+    <tabstop>cancelPushButton</tabstop>
+</tabstops>
 <slots>
     <slot>addActivity()</slot>
     <slot>removeActivity()</slot>

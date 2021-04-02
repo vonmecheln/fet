@@ -41,7 +41,9 @@
 			(i==4?duration5SpinBox:					\
 			(i==5?duration6SpinBox:					\
 			(i==6?duration7SpinBox:					\
-			(duration8SpinBox))))))))
+			(i==7?duration8SpinBox:					\
+			(i==8?duration9SpinBox:					\
+			(duration10SpinBox))))))))))
 #define activ(i)		(i==0?active1CheckBox:			\
 			(i==1?active2CheckBox:					\
 			(i==2?active3CheckBox:					\
@@ -49,7 +51,9 @@
 			(i==4?active5CheckBox:					\
 			(i==5?active6CheckBox:					\
 			(i==6?active7CheckBox:					\
-			(active8CheckBox))))))))
+			(i==7?active8CheckBox:					\
+			(i==8?active9CheckBox:					\
+			(active10CheckBox))))))))))
 
 ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 {
@@ -80,7 +84,7 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 		for(int i=0; i<gt.rules.activitiesList.size(); i++){
 			Activity* act=gt.rules.activitiesList[i];
 			if(act->activityGroupId==this->_activityGroupId){
-				if(nSplit>=8){
+				if(nSplit>=10){
 					assert(0);
 				}
 				else{
@@ -113,7 +117,7 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 	updateSubjectsComboBox();
 	updateSubjectTagsComboBox();
 
-	for(int i=0; i<8; i++)
+	for(int i=0; i<10; i++)
 		if(i<nSplit)
 			subTab(i)->setEnabled(true);
 		else
@@ -408,9 +412,9 @@ void ModifyActivityForm::ok()
 	}
 
 	int totalduration;
-	int durations[8];
+	int durations[10];
 	//int parities[8];
-	bool active[8];
+	bool active[10];
 	int nsplit=splitSpinBox->value();
 
 	totalduration=0;
@@ -450,7 +454,8 @@ void ModifyActivityForm::clearStudents()
 	activityChanged();
 }
 
-#undef prefDay
-#undef prefHour
+//#undef prefDay
+//#undef prefHour
 #undef subTab
 #undef activ
+#undef dur
