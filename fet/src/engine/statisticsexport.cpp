@@ -805,9 +805,9 @@ QString StatisticsExport::exportStatisticsTeachersSubjectsHtml(QWidget* parent, 
 						else
 							tmp+="<td>";
 						
-						StringListPair slp=it.key();
-						QStringList studentsNames=slp.list1;
-						QStringList activityTagsNames=slp.list2;
+						const StringListPair& slp=it.key();
+						const QStringList& studentsNames=slp.list1;
+						const QStringList& activityTagsNames=slp.list2;
 						QString tmpSt=QString("");
 						if(studentsNames.size()>0||activityTagsNames.size()>0){
 							for(QStringList::const_iterator st=studentsNames.constBegin(); st!=studentsNames.constEnd(); st++){
@@ -1105,9 +1105,9 @@ QString StatisticsExport::exportStatisticsSubjectsTeachersHtml(QWidget* parent, 
 						else
 							tmp+="<td>";
 						
-						StringListPair slp=it.key();
-						QStringList studentsNames=slp.list1;
-						QStringList activityTagsNames=slp.list2;
+						const StringListPair& slp=it.key();
+						const QStringList& studentsNames=slp.list1;
+						const QStringList& activityTagsNames=slp.list2;
 						QString tmpSt=QString("");
 						if(studentsNames.size()>0||activityTagsNames.size()>0){
 							for(QStringList::const_iterator st=studentsNames.constBegin(); st!=studentsNames.constEnd(); st++){
@@ -1407,10 +1407,10 @@ QString StatisticsExport::exportStatisticsTeachersStudentsHtml(QWidget* parent, 
 						else
 							tmp+="<td>";
 
-						StringListPair slp=it.key();
+						const StringListPair& slp=it.key();
 						assert(slp.list1.count()==1);
-						QString subjectName=slp.list1.at(0);
-						QStringList activityTagsNames=slp.list2;
+						const QString& subjectName=slp.list1.at(0);
+						const QStringList& activityTagsNames=slp.list2;
 						QString tmpS=QString("");
 						if(!subjectName.isEmpty()||activityTagsNames.size()>0){
 							if(!subjectName.isEmpty())
@@ -1708,10 +1708,10 @@ QString StatisticsExport::exportStatisticsStudentsTeachersHtml(QWidget* parent, 
 						else
 							tmp+="<td>";
 							
-						StringListPair slp=it.key();
+						const StringListPair& slp=it.key();
 						assert(slp.list1.count()==1);
-						QString subjectName=slp.list1.at(0);
-						QStringList activityTagsNames=slp.list2;
+						const QString& subjectName=slp.list1.at(0);
+						const QStringList& activityTagsNames=slp.list2;
 						QString tmpS=QString("");
 						if(!subjectName.isEmpty()||activityTagsNames.size()>0){
 							if(!subjectName.isEmpty())
@@ -2007,9 +2007,9 @@ QString StatisticsExport::exportStatisticsSubjectsStudentsHtml(QWidget* parent, 
 						else
 							tmp+="<td>";
 
-						StringListPair slp=it.key();
-						QStringList teachersNames=slp.list1;
-						QStringList activityTagsNames=slp.list2;
+						const StringListPair& slp=it.key();
+						const QStringList& teachersNames=slp.list1;
+						const QStringList& activityTagsNames=slp.list2;
 						QString tmpT=QString("");
 
 						if(teachersNames.size()>0||activityTagsNames.size()>0){
@@ -2309,9 +2309,9 @@ QString StatisticsExport::exportStatisticsStudentsSubjectsHtml(QWidget* parent, 
 						else
 							tmp+="<td>";
 
-						StringListPair slp=it.key();
-						QStringList teachersNames=slp.list1;
-						QStringList activityTagsNames=slp.list2;
+						const StringListPair& slp=it.key();
+						const QStringList& teachersNames=slp.list1;
+						const QStringList& activityTagsNames=slp.list2;
 						QString tmpT=QString("");
 
 						if(teachersNames.size()>0||activityTagsNames.size()>0){

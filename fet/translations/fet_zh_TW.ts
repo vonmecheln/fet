@@ -876,8 +876,8 @@ there won&apos;t be removed an additional number of %1 activities
         <translation type="unfinished">目標</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="3998"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="4001"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="3997"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4000"/>
         <source>Delete all?</source>
         <comment>It refers to activities</comment>
         <translation>刪除所有？</translation>
@@ -906,13 +906,13 @@ there won&apos;t be removed an additional number of %1 activities
         <translation>刪除%2個老師的%1教學班</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="3998"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="3997"/>
         <source>Are you sure you want to remove ALL the %1 activities and related constraints?</source>
         <comment>%1 is the total number of activities</comment>
         <translation type="unfinished">你想要刪除所有 %1個教學班和相關的約束？</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4001"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4000"/>
         <source>Are you absolutely sure you want to remove ALL activities and related constraints from your data?</source>
         <translation>你確實要刪除所有的教學班和相關的約束從您的資料中？</translation>
     </message>
@@ -1054,37 +1054,37 @@ Please select another cell to swap students.</source>
         <translation>學生</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4039"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4038"/>
         <source>There are no activities without teachers and without students.</source>
         <translation>沒有教學班即無老師也無學生。</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4041"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4040"/>
         <source>Activities without teachers and without students:</source>
         <translation>教學班即無老師也無學生。</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4044"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4043"/>
         <source>There are no activities without teachers.</source>
         <translation>沒有教學班沒有老師。</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4046"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4045"/>
         <source>Activities without teachers:</source>
         <translation>教學班沒有老師：</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4049"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4048"/>
         <source>There are no activities without students.</source>
         <translation>沒有教學班沒有學生。</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4051"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4050"/>
         <source>Activities without students:</source>
         <translation>教學班沒有學生：</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4053"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4052"/>
         <source>Information about pseudo activities</source>
         <comment>Pseudo activities means activities without teachers and/or students sets</comment>
         <translation>偽教學班的資訊</translation>
@@ -3553,12 +3553,12 @@ slots</source>
         <translation>沒有增加成功-請回報錯誤</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="417"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="410"/>
         <source>FET help</source>
         <translation>FET 幫助</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="412"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="405"/>
         <source>Add multiple constraints: this is a check box. Select this if you want to input only the representatives of sub-activities and FET to add multiple constraints, for all sub-activities from the same components, in turn, respectively. There will be added more constraints activities same starting time, one for each corresponding tuple. The number of sub-activities must match for the representants and be careful to the order, to be what you need</source>
         <translation>增加多個約束：這是一個複選框。如果你想輸入的子活動和FET，添加多個約束，所有的子活動，由相同的組件，依次分別僅代表選擇此項。有將被添加更多的約束的活動相同的起始時間，每一個相應元組。子活動的數量必須為representants匹配，並且要小心的順序，什麼是你需要的。
 </translation>

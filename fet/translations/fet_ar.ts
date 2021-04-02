@@ -873,8 +873,8 @@ there won&apos;t be removed an additional number of %1 activities
         <translation>الهدف</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="3998"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="4001"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="3997"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4000"/>
         <source>Delete all?</source>
         <comment>It refers to activities</comment>
         <translation>حذف الكل؟</translation>
@@ -903,13 +903,13 @@ there won&apos;t be removed an additional number of %1 activities
         <translation>حذف الأنشطة %1 للمدرس %2؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="3998"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="3997"/>
         <source>Are you sure you want to remove ALL the %1 activities and related constraints?</source>
         <comment>%1 is the total number of activities</comment>
         <translation>هل تريد بالتأكيد حذف الأنشطة %1 والقيود المرتبطة بها؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4001"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4000"/>
         <source>Are you absolutely sure you want to remove ALL activities and related constraints from your data?</source>
         <translation>هل تريد بالتأكيد حذف كل الأنشطة والقيود المرتبطة بها من بياناتك؟</translation>
     </message>
@@ -1057,37 +1057,37 @@ Please select another cell to swap students.</source>
         <translation>الطلاب</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4039"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4038"/>
         <source>There are no activities without teachers and without students.</source>
         <translation>لا يوجد أنشطة بدون مدرسين و بدون طلاب.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4041"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4040"/>
         <source>Activities without teachers and without students:</source>
         <translation>أنشطة بدون مدرسين و بدون طلاب:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4044"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4043"/>
         <source>There are no activities without teachers.</source>
         <translation>لا يوجد أنشطة بدون مدرسين.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4046"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4045"/>
         <source>Activities without teachers:</source>
         <translation>أنشطة بدون مدرسين:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4049"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4048"/>
         <source>There are no activities without students.</source>
         <translation>لا يوجد أنشطة بدون طلاب.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4051"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4050"/>
         <source>Activities without students:</source>
         <translation>أنشطة بدون طلاب:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4053"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4052"/>
         <source>Information about pseudo activities</source>
         <comment>Pseudo activities means activities without teachers and/or students sets</comment>
         <translation>معلومات حول الأنشطة التخيلية</translation>
@@ -3537,12 +3537,12 @@ slots</source>
         <translation>القيد لم يُضف - يرجى الابلاغ عن الخطأ</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="417"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="410"/>
         <source>FET help</source>
         <translation>FET مساعدة</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="412"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="405"/>
         <source>Add multiple constraints: this is a check box. Select this if you want to input only the representatives of sub-activities and FET to add multiple constraints, for all sub-activities from the same components, in turn, respectively. There will be added more constraints activities same starting time, one for each corresponding tuple. The number of sub-activities must match for the representants and be careful to the order, to be what you need</source>
         <translation>اضافة قيود متعددة: هذا مربع االتحديد. حدّد هذا إذا كنت ترغب في إدخال ممثلي الأنشطة الفرعية و FET لإضافة قيود متعددة، لجميع الأنشطة الفرعية من نفس العناصر، بدورها، على التوالي. سوف يتم اضافة المزيد من القيود من نوع نفس وقت البدء، واحد لكل &quot;مجموعة حقول مترابطة&quot; -tuple- ( حسب قاموس المعاني في مجال الحاسوب) المناسبة. عدد الأنشطة الفرعية يجب أن يتطابق مع الممثلين، مع توخي الحذر بالنسبة للترتيب، ليكون ما تحتاجه</translation>
     </message>

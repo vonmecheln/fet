@@ -240,9 +240,9 @@ ActivityPlanningForm::ActivityPlanningForm(QWidget *parent): QDialog(parent)
 	leftSplitter=new QSplitter(Qt::Vertical);
 	//leftSplitter->setChildrenCollapsible(false);
 	
-	activitiesTableView= new SparseTableView;
+	activitiesTableView=new SparseTableView;
 
-	teachersTableView= new SparseTableView;
+	teachersTableView=new SparseTableView;
 
 	leftSplitter->addWidget(activitiesTableView);
 	leftSplitter->addWidget(teachersTableView);
@@ -3544,7 +3544,7 @@ void ActivityPlanningForm::updateTables(){
 }
 
 void ActivityPlanningForm::updateTables_Students_Subjects(){	//similar to statisticsexport.cpp
-	QMultiHash <QString, int> studentsActivities;
+	QMultiHash<QString, int> studentsActivities;
 
 	statisticValues.studentsTotalNumberOfHours.clear();
 	statisticValues.studentsTotalNumberOfHours2.clear();
@@ -3697,7 +3697,7 @@ void ActivityPlanningForm::updateTables_Students_Subjects(){	//similar to statis
 }
 
 void ActivityPlanningForm::updateTables_Teachers(){	//similar to statisticsexport.cpp
-	QMultiHash <QString, int> teachersActivities;
+	QMultiHash<QString, int> teachersActivities;
 	
 	statisticValues.teachersTotalNumberOfHours.clear();
 	statisticValues.teachersTotalNumberOfHours2.clear();
@@ -3980,7 +3980,6 @@ void ActivityPlanningForm::updateTablesVisual(){
 	teachersTableView->model.horizontalHeaderItems=tHorizontalHeaderItems;
 	teachersTableView->model.verticalHeaderItems=tVerticalHeaderItems;
 	teachersTableView->allTableChanged();*/
-
 	
 	/*activitiesTable->resizeColumnsToContents();
 	activitiesTable->resizeRowsToContents();*/

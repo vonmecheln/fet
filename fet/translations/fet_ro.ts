@@ -650,8 +650,8 @@
         <translation>Șterge toate</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="3998"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="4001"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="3997"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4000"/>
         <source>Delete all?</source>
         <comment>It refers to activities</comment>
         <translation>Șterge toate?</translation>
@@ -1031,17 +1031,17 @@ Vă rog selectați altă celulă pentru a interschimba studenții.</translation>
         <translation>Șterg %1 activități ale profesorului %2?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4001"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4000"/>
         <source>Are you absolutely sure you want to remove ALL activities and related constraints from your data?</source>
         <translation>Sunteți absolut sigur că doriți să ștergeți TOATE activitățile și constrângerile aferente din datele dvs.?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4039"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4038"/>
         <source>There are no activities without teachers and without students.</source>
         <translation>Nu sunt activități fără profesori și fără studenți.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4041"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4040"/>
         <source>Activities without teachers and without students:</source>
         <translation>Activități fără profesori și fără studenți:</translation>
     </message>
@@ -1063,33 +1063,33 @@ Vă rog selectați altă celulă pentru a interschimba studenții.</translation>
         <translation>Studenți</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="3998"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="3997"/>
         <source>Are you sure you want to remove ALL the %1 activities and related constraints?</source>
         <comment>%1 is the total number of activities</comment>
         <translation>Sunteți sigur că doriți să ștergeți TOATE cele %1 activități și constrângerile aferente?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4044"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4043"/>
         <source>There are no activities without teachers.</source>
         <translation>Nu sunt activități fără profesori.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4046"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4045"/>
         <source>Activities without teachers:</source>
         <translation>Activități fără profesori:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4049"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4048"/>
         <source>There are no activities without students.</source>
         <translation>Nu sunt activități fără studenți.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4051"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4050"/>
         <source>Activities without students:</source>
         <translation>Activități fără studenți:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4053"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4052"/>
         <source>Information about pseudo activities</source>
         <comment>Pseudo activities means activities without teachers and/or students sets</comment>
         <translation>Informație despre pseudo activități</translation>
@@ -3490,12 +3490,12 @@ Dacă aveți nevoie de importanță sub 100%, atunci puteți folosi această con
 <context>
     <name>AddConstraintActivitiesSameStartingTimeForm</name>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="417"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="410"/>
         <source>FET help</source>
         <translation>FET - ajutor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="412"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="405"/>
         <source>Add multiple constraints: this is a check box. Select this if you want to input only the representatives of sub-activities and FET to add multiple constraints, for all sub-activities from the same components, in turn, respectively. There will be added more constraints activities same starting time, one for each corresponding tuple. The number of sub-activities must match for the representants and be careful to the order, to be what you need</source>
         <translation>Adaugă constrângeri multiple: aceasta este un check box. Selectați aceasta dacă vreți să introduceți numai reprezentanții sub-activităților și FET să adauge constrângeri multiple, pentru toate sub-activitățile din aceeași componentă, la rând, corespunzător. Vor fi adăugate mai multe constrângeri activități același timp de start, câte una pentru fiecare tuplu corespunzător. Numărul de sub-activități trebuie să corespundă pentru reprezentanți și fiți atent la ordine, să fie ceea ce vă trebuie</translation>
     </message>

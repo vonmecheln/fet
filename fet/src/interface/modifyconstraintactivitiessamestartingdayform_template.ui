@@ -96,7 +96,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QListWidget" name="activitiesListWidget"/>
+        <widget class="QListWidget" name="allActivitiesListWidget"/>
        </item>
        <item>
         <widget class="QPushButton" name="addAllActivitiesPushButton">

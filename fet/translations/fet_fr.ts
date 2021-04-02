@@ -836,7 +836,7 @@ un nombre supplémentaire de %1 activités ne seront pas modifiées
         <translation>Il y a des activités affectant d&apos;autres jeux d&apos;apprenants. Les activités dépendantes doivent-elles être aussi modifiées ?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="3998"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="3997"/>
         <source>Are you sure you want to remove ALL the %1 activities and related constraints?</source>
         <comment>%1 is the total number of activities</comment>
         <translation>Êtes-vous sûr de vouloir retirer TOUTES les %1 activités et contraintes relatives ?</translation>
@@ -1048,49 +1048,49 @@ Merci de sélectionner une autre cellule pour échanger les apprenants.</transla
         <translation>Apprenant</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="3998"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="4001"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="3997"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4000"/>
         <source>Delete all?</source>
         <comment>It refers to activities</comment>
         <translation>Supprimer tout ?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4001"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4000"/>
         <source>Are you absolutely sure you want to remove ALL activities and related constraints from your data?</source>
         <translation>Êtes-vous absolument sûr de vouloir retirer TOUTES les activités et contraintes relatives de vos données ?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4039"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4038"/>
         <source>There are no activities without teachers and without students.</source>
         <translation>Il n&apos;y a pas d&apos;activité sans enseignant ni apprenant.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4041"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4040"/>
         <source>Activities without teachers and without students:</source>
         <translation>Activités sans enseignant et sans apprenants :</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4044"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4043"/>
         <source>There are no activities without teachers.</source>
         <translation>Il n&apos;y a pas d&apos;activité sans enseignant.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4046"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4045"/>
         <source>Activities without teachers:</source>
         <translation>Activités sans enseignant :</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4049"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4048"/>
         <source>There are no activities without students.</source>
         <translation>Il n&apos;y a pas d&apos;activité sans apprenant.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4051"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4050"/>
         <source>Activities without students:</source>
         <translation>Activités sans apprenants :</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4053"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4052"/>
         <source>Information about pseudo activities</source>
         <comment>Pseudo activities means activities without teachers and/or students sets</comment>
         <translation>Information au sujet des pseudo-activités</translation>
@@ -3545,12 +3545,12 @@ Si vous avez besoin d&apos;un poids inférieur à 100.0 %, alors vous pouvez uti
         <translation>Contrainte PAS ajoutée - merci de signaler cette erreur</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="412"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="405"/>
         <source>Add multiple constraints: this is a check box. Select this if you want to input only the representatives of sub-activities and FET to add multiple constraints, for all sub-activities from the same components, in turn, respectively. There will be added more constraints activities same starting time, one for each corresponding tuple. The number of sub-activities must match for the representants and be careful to the order, to be what you need</source>
         <translation>Ajouter contraintes multiples : c&apos;est une case à cocher. Sélectionnez la si vous souhaitez ne saisir que les représentants des sous-activités et que FET ajoute les contraintes multiples, pour toutes les sous-activités du même composant, à leur tour, respectivement.Il sera ajouté plus de contraintes même temps de démarrage, une pour chaque tuple correspondant. Le nombre de sous-activités doit correspondre aux représentants et faites attention à l&apos;ordre qui doit être celui dont vous avez besoin</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="417"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="410"/>
         <source>FET help</source>
         <translation>FET aide</translation>
     </message>

@@ -50,7 +50,7 @@ private:
 	//the id's of the activities listed in the activities list
 	QList<int> activitiesList;
 	//the id-s of the activities listed in the list of non-overlapping activities
-	QList<int> notOverlappingActivitiesList;
+	QList<int> selectedActivitiesList;
 };
 
 #endif

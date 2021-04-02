@@ -413,45 +413,32 @@ void ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::addActivity(
 	
 	QString actName=allActivitiesListWidget->currentItem()->text();
 	assert(actName!="");
-	int i;
+	
 	//duplicate?
-	for(i=0; i<selectedActivitiesListWidget->count(); i++)
-		if(actName==selectedActivitiesListWidget->item(i)->text())
-			break;
-	if(i<selectedActivitiesListWidget->count())
+	if(this->selectedActivitiesList.contains(_id))
 		return;
+	
 	selectedActivitiesListWidget->addItem(actName);
 	selectedActivitiesListWidget->setCurrentRow(selectedActivitiesListWidget->count()-1);
-	
+
 	this->selectedActivitiesList.append(_id);
 }
 
 void ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::addAllActivities()
 {
 	for(int tmp=0; tmp<allActivitiesListWidget->count(); tmp++){
-		//int tmp=allActivitiesListWidget->currentRow();
 		int _id=this->activitiesList.at(tmp);
 	
 		QString actName=allActivitiesListWidget->item(tmp)->text();
 		assert(actName!="");
-		int i;
-		//duplicate?
-		for(i=0; i<selectedActivitiesList.count(); i++)
-			if(selectedActivitiesList.at(i)==_id)
-				break;
-		if(i<selectedActivitiesList.count())
+		
+		if(this->selectedActivitiesList.contains(_id))
 			continue;
 		
-		/*for(i=0; i<selectedActivitiesListWidget->count(); i++)
-			if(actName==selectedActivitiesListWidget->item(i)->text())
-				break;
-		if(i<selectedActivitiesListWidget->count())
-			continue;*/
-			
 		selectedActivitiesListWidget->addItem(actName);
 		this->selectedActivitiesList.append(_id);
 	}
-
+	
 	selectedActivitiesListWidget->setCurrentRow(selectedActivitiesListWidget->count()-1);
 }
 

@@ -879,8 +879,8 @@ werden weitere %1 Aktivitäten nicht modifiziert
         <translation>Soll</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="3998"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="4001"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="3997"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4000"/>
         <source>Delete all?</source>
         <comment>It refers to activities</comment>
         <translation>Alle löschen?</translation>
@@ -909,13 +909,13 @@ werden weitere %1 Aktivitäten nicht modifiziert
         <translation>Lösche %1 Aktivitäten mit Lehrer %2?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="3998"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="3997"/>
         <source>Are you sure you want to remove ALL the %1 activities and related constraints?</source>
         <comment>%1 is the total number of activities</comment>
         <translation>Sind sie sicher, dass ALLE %1 Aktivitäten und die dazugehörigen Einschränkungen gelöscht werden sollen?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4001"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4000"/>
         <source>Are you absolutely sure you want to remove ALL activities and related constraints from your data?</source>
         <translation>Sind sie sicher, dass ALLE Aktivitäten und dazugehörige Einschränkungen entfernt werden sollen?</translation>
     </message>
@@ -1059,37 +1059,37 @@ Bitte wählen SIe eine andere Zelle aus um die Schüler zu tauschen.</translatio
         <translation>Schüler</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4039"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4038"/>
         <source>There are no activities without teachers and without students.</source>
         <translation>Es gibt keine Aktivitäten ohne Lehrer und ohne Schüler.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4041"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4040"/>
         <source>Activities without teachers and without students:</source>
         <translation>Aktivitäten ohne Lehrer und ohne Schüler:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4044"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4043"/>
         <source>There are no activities without teachers.</source>
         <translation>Es gibt keine Aktivitäten ohne Lehrer.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4046"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4045"/>
         <source>Activities without teachers:</source>
         <translation>Aktivitäten ohne Lehrer:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4049"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4048"/>
         <source>There are no activities without students.</source>
         <translation>Es gibt keine Aktivitäten ohne Schüler.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4051"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4050"/>
         <source>Activities without students:</source>
         <translation>Aktivitäten ohne Schüler:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4053"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4052"/>
         <source>Information about pseudo activities</source>
         <comment>Pseudo activities means activities without teachers and/or students sets</comment>
         <translation>Information über Pseudoaktivitäten</translation>
@@ -3545,12 +3545,12 @@ Bei einer Gewichtung unter 100% kann man diese Einschränkung einsetzen, aber ma
         <translation>Einschränkung NICHT hinzugefügt - Bitte melden Sie den Fehler!</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="417"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="410"/>
         <source>FET help</source>
         <translation>FET-Hilfe</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="412"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="405"/>
         <source>Add multiple constraints: this is a check box. Select this if you want to input only the representatives of sub-activities and FET to add multiple constraints, for all sub-activities from the same components, in turn, respectively. There will be added more constraints activities same starting time, one for each corresponding tuple. The number of sub-activities must match for the representants and be careful to the order, to be what you need</source>
         <translation>Hinzufügen von mehreren Einschränkungen (das Kontrollkästchen): Dies kann ausgewählt werden, um nur die Stellvertreter für mehrere Teilaktivitäten einzugeben und das Setzen von mehreren Einschränkungen für alle Teilaktivitäten respektiv dieser Komponenten dem Programm FET zu überlassen. Mehrere Einschränkungen „Aktivitäten mit der gleichen Startzeit“ werden für jedes entsprechende Tupel hinzugefügt. Die Anzahl Teilaktivitäten muss der Anzahl der Stellvertrenden entsprechen; auch deren richtige Reihenfolge muss beachtet werden.</translation>
     </message>

@@ -2542,7 +2542,7 @@ bool Rules::modifyStudentsSets(const QHash<QString, QString>& oldAndNewStudentsS
 	}
 
 	QHash<QString, QString>::const_iterator i=oldAndNewStudentsSetNames.constBegin();
-	while (i!=oldAndNewStudentsSetNames.constEnd()) {
+	while(i!=oldAndNewStudentsSetNames.constEnd()) {
 		StudentsSet* studentsSet=searchStudentsSet(i.key());
 		assert(studentsSet!=NULL);
 		studentsSet->name=i.value();

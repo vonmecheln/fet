@@ -52,7 +52,7 @@ private:
 	//the id's of the activities listed in the activities list
 	QList<int> activitiesList;
 	//the id-s of the activities listed in the list of simultaneous activities
-	QList<int> simultaneousActivitiesList;
+	QList<int> selectedActivitiesList;
 };
 
 #endif

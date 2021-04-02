@@ -46,24 +46,21 @@ void SparseTableView::resizeToFit()
 	
 	QHash<QPair<int, int>, QString>::const_iterator i=model.items.constBegin();
 	while(i!=model.items.constEnd()){
-		QPair<int, int> pair=i.key();
+		const QPair<int, int>& pair=i.key();
 		
-		if(this->isRowHidden(pair.first))
-			continue;
-		if(this->isColumnHidden(pair.second))
-			continue;
-		
-		QString str=i.value();
-		
-		QAbstractItemDelegate* delegate=this->itemDelegate(model.index(pair.first, pair.second));
-		
-		QSize size=delegate->sizeHint(this->viewOptions(), model.index(pair.first, pair.second));
-		
-		if(size.width() > columnSizes.value(pair.second, 0))
-			columnSizes.insert(pair.second, size.width());
-		if(size.height() > rowSizes.value(pair.first, 0))
-			rowSizes.insert(pair.first, size.height());
+		if(!this->isRowHidden(pair.first) && !this->isColumnHidden(pair.second)){
+			//QString str=i.value();
 			
+			QAbstractItemDelegate* delegate=this->itemDelegate(model.index(pair.first, pair.second));
+			
+			QSize size=delegate->sizeHint(this->viewOptions(), model.index(pair.first, pair.second));
+			
+			if(size.width() > columnSizes.value(pair.second, 0))
+				columnSizes.insert(pair.second, size.width());
+			if(size.height() > rowSizes.value(pair.first, 0))
+				rowSizes.insert(pair.first, size.height());
+		}
+		
 		i++;
 	}
 	

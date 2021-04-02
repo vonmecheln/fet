@@ -33,17 +33,17 @@ AddConstraintActivitiesSameStartingTimeForm::AddConstraintActivitiesSameStarting
 
 	addConstraintPushButton->setDefault(true);
 	
-	activitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
-	simultaneousActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	allActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	selectedActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
 	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
 	connect(blockCheckBox, SIGNAL(toggled(bool)), this, SLOT(blockChanged()));
 	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
-	connect(activitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivity()));
+	connect(allActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivity()));
 	connect(addAllActivitiesPushButton, SIGNAL(clicked()), this, SLOT(addAllActivities()));
-	connect(simultaneousActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivity()));
+	connect(selectedActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivity()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -81,8 +81,8 @@ AddConstraintActivitiesSameStartingTimeForm::AddConstraintActivitiesSameStarting
 	populateStudentsComboBox(studentsComboBox, QString(""), true);
 	studentsComboBox->setCurrentIndex(0);
 	
-	simultaneousActivitiesListWidget->clear();
-	this->simultaneousActivitiesList.clear();
+	selectedActivitiesListWidget->clear();
+	this->selectedActivitiesList.clear();
 
 	this->filterChanged();
 
@@ -142,7 +142,7 @@ bool AddConstraintActivitiesSameStartingTimeForm::filterOk(Activity* act)
 
 void AddConstraintActivitiesSameStartingTimeForm::filterChanged()
 {
-	activitiesListWidget->clear();
+	allActivitiesListWidget->clear();
 	this->activitiesList.clear();
 
 	if(blockCheckBox->isChecked())
@@ -151,11 +151,11 @@ void AddConstraintActivitiesSameStartingTimeForm::filterChanged()
 			Activity* ac=gt.rules.activitiesList[i];
 			if(filterOk(ac)){
 				if(ac->activityGroupId==0){
-					activitiesListWidget->addItem(ac->getDescription(gt.rules));
+					allActivitiesListWidget->addItem(ac->getDescription(gt.rules));
 					this->activitiesList.append(ac->id);
 				}
 				else if(ac->id==ac->activityGroupId){
-					activitiesListWidget->addItem(ac->getDescription(gt.rules));
+					allActivitiesListWidget->addItem(ac->getDescription(gt.rules));
 					this->activitiesList.append(ac->id);
 				}
 			}
@@ -164,19 +164,19 @@ void AddConstraintActivitiesSameStartingTimeForm::filterChanged()
 		for(int i=0; i<gt.rules.activitiesList.size(); i++){
 			Activity* ac=gt.rules.activitiesList[i];
 			if(filterOk(ac)){
-				activitiesListWidget->addItem(ac->getDescription(gt.rules));
+				allActivitiesListWidget->addItem(ac->getDescription(gt.rules));
 				this->activitiesList.append(ac->id);
 			}
 		}
 	
-	int q=activitiesListWidget->verticalScrollBar()->minimum();
-	activitiesListWidget->verticalScrollBar()->setValue(q);
+	int q=allActivitiesListWidget->verticalScrollBar()->minimum();
+	allActivitiesListWidget->verticalScrollBar()->setValue(q);
 }
 
 void AddConstraintActivitiesSameStartingTimeForm::blockChanged()
 {
-	simultaneousActivitiesListWidget->clear();
-	this->simultaneousActivitiesList.clear();
+	selectedActivitiesListWidget->clear();
+	this->selectedActivitiesList.clear();
 
 	filterChanged();
 }
@@ -194,12 +194,12 @@ void AddConstraintActivitiesSameStartingTimeForm::addConstraint()
 		return;
 	}
 
-	if(this->simultaneousActivitiesList.count()==0){
+	if(this->selectedActivitiesList.count()==0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Empty list of simultaneous activities"));
 		return;
 	}
-	if(this->simultaneousActivitiesList.count()==1){
+	if(this->selectedActivitiesList.count()==1){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Only one selected activity - impossible"));
 		return;
@@ -209,7 +209,7 @@ void AddConstraintActivitiesSameStartingTimeForm::addConstraint()
 		///////////phase 1 - how many constraints will be added?
 		int nConstraints=0;
 		QList<int>::const_iterator it;
-		for(it=this->simultaneousActivitiesList.constBegin(); it!=this->simultaneousActivitiesList.constEnd(); it++){
+		for(it=this->selectedActivitiesList.constBegin(); it!=this->selectedActivitiesList.constEnd(); it++){
 			int _id=(*it);
 			int tmp=0; //tmp represents the number of sub-activities represented by the current (sub)activity
 
@@ -240,7 +240,7 @@ void AddConstraintActivitiesSameStartingTimeForm::addConstraint()
 					QString s=tr("Sub-activities do not correspond. Mistake:");
 					s+="\n";
 					s+=tr("1. First (sub)activity has id=%1 and represents %2 sub-activities")
-						.arg(this->simultaneousActivitiesList.at(0))
+						.arg(this->selectedActivitiesList.at(0))
 						.arg(nConstraints);
 					s+="\n";
 					s+=tr("2. Current (sub)activity has id=%1 and represents %2 sub-activities")
@@ -259,7 +259,7 @@ void AddConstraintActivitiesSameStartingTimeForm::addConstraint()
 		for(int i=0; i<nConstraints; i++)
 			ids[i].clear();
 		int k;
-		for(k=0, it=this->simultaneousActivitiesList.constBegin(); it!=this->simultaneousActivitiesList.constEnd(); k++, it++){
+		for(k=0, it=this->selectedActivitiesList.constBegin(); it!=this->selectedActivitiesList.constEnd(); k++, it++){
 			int _id=(*it);
 			int tmp=0; //tmp represents the number of sub-activities represented by the current (sub)activity
 
@@ -292,7 +292,7 @@ void AddConstraintActivitiesSameStartingTimeForm::addConstraint()
 	
 		////////////////phase 3 - add the constraints
 		for(k=0; k<nConstraints; k++){
-			ctr=new ConstraintActivitiesSameStartingTime(weight, this->simultaneousActivitiesList.count(), ids[k]);
+			ctr=new ConstraintActivitiesSameStartingTime(weight, this->selectedActivitiesList.count(), ids[k]);
 			bool tmp2=gt.rules.addTimeConstraint(ctr);
 			
 			if(tmp2){
@@ -314,10 +314,10 @@ void AddConstraintActivitiesSameStartingTimeForm::addConstraint()
 		QList<int> ids;
 		QList<int>::const_iterator it;
 		ids.clear();
-		for(it=this->simultaneousActivitiesList.constBegin(); it!=this->simultaneousActivitiesList.constEnd(); it++){
+		for(it=this->selectedActivitiesList.constBegin(); it!=this->selectedActivitiesList.constEnd(); it++){
 			ids.append(*it);
 		}
-		ctr=new ConstraintActivitiesSameStartingTime(weight, this->simultaneousActivitiesList.count(), ids);
+		ctr=new ConstraintActivitiesSameStartingTime(weight, this->selectedActivitiesList.count(), ids);
 
 		bool tmp2=gt.rules.addTimeConstraint(ctr);
 		
@@ -339,70 +339,63 @@ void AddConstraintActivitiesSameStartingTimeForm::addConstraint()
 
 void AddConstraintActivitiesSameStartingTimeForm::addActivity()
 {
-	if(activitiesListWidget->currentRow()<0)
+	if(allActivitiesListWidget->currentRow()<0)
 		return;
-	int tmp=activitiesListWidget->currentRow();
+	int tmp=allActivitiesListWidget->currentRow();
 	int _id=this->activitiesList.at(tmp);
 	
-	QString actName=activitiesListWidget->currentItem()->text();
+	QString actName=allActivitiesListWidget->currentItem()->text();
 	assert(actName!="");
-	int i;
+	
 	//duplicate?
-	for(i=0; i<simultaneousActivitiesListWidget->count(); i++)
-		if(actName==simultaneousActivitiesListWidget->item(i)->text())
-			break;
-	if(i<simultaneousActivitiesListWidget->count())
+	if(this->selectedActivitiesList.contains(_id))
 		return;
 	
-	simultaneousActivitiesListWidget->addItem(actName);
-	simultaneousActivitiesListWidget->setCurrentRow(simultaneousActivitiesListWidget->count()-1);
-	
-	this->simultaneousActivitiesList.append(_id);
+	selectedActivitiesListWidget->addItem(actName);
+	selectedActivitiesListWidget->setCurrentRow(selectedActivitiesListWidget->count()-1);
+
+	this->selectedActivitiesList.append(_id);
 }
 
 void AddConstraintActivitiesSameStartingTimeForm::addAllActivities()
 {
-	for(int tmp=0; tmp<activitiesListWidget->count(); tmp++){
+	for(int tmp=0; tmp<allActivitiesListWidget->count(); tmp++){
 		int _id=this->activitiesList.at(tmp);
 	
-		QString actName=activitiesListWidget->item(tmp)->text();
+		QString actName=allActivitiesListWidget->item(tmp)->text();
 		assert(actName!="");
-		int i;
-		//duplicate?
-		for(i=0; i<simultaneousActivitiesList.count(); i++)
-			if(simultaneousActivitiesList.at(i)==_id)
-				break;
-		if(i<simultaneousActivitiesList.count())
+		
+		if(this->selectedActivitiesList.contains(_id))
 			continue;
-			
-		simultaneousActivitiesListWidget->addItem(actName);
-		this->simultaneousActivitiesList.append(_id);
+		
+		selectedActivitiesListWidget->addItem(actName);
+		this->selectedActivitiesList.append(_id);
 	}
 	
-	simultaneousActivitiesListWidget->setCurrentRow(simultaneousActivitiesListWidget->count()-1);
+	selectedActivitiesListWidget->setCurrentRow(selectedActivitiesListWidget->count()-1);
 }
 
 void AddConstraintActivitiesSameStartingTimeForm::removeActivity()
 {
-	if(simultaneousActivitiesListWidget->currentRow()<0 || simultaneousActivitiesListWidget->count()<=0)
+	if(selectedActivitiesListWidget->currentRow()<0 || selectedActivitiesListWidget->count()<=0)
 		return;
-	int tmp=simultaneousActivitiesListWidget->currentRow();
+	int tmp=selectedActivitiesListWidget->currentRow();
 	
-	this->simultaneousActivitiesList.removeAt(tmp);
+	this->selectedActivitiesList.removeAt(tmp);
 	
-	simultaneousActivitiesListWidget->setCurrentRow(-1);
-	QListWidgetItem* item=simultaneousActivitiesListWidget->takeItem(tmp);
+	selectedActivitiesListWidget->setCurrentRow(-1);
+	QListWidgetItem* item=selectedActivitiesListWidget->takeItem(tmp);
 	delete item;
-	if(tmp<simultaneousActivitiesListWidget->count())
-		simultaneousActivitiesListWidget->setCurrentRow(tmp);
+	if(tmp<selectedActivitiesListWidget->count())
+		selectedActivitiesListWidget->setCurrentRow(tmp);
 	else
-		simultaneousActivitiesListWidget->setCurrentRow(simultaneousActivitiesListWidget->count()-1);
+		selectedActivitiesListWidget->setCurrentRow(selectedActivitiesListWidget->count()-1);
 }
 
 void AddConstraintActivitiesSameStartingTimeForm::clear()
 {
-	simultaneousActivitiesListWidget->clear();
-	simultaneousActivitiesList.clear();
+	selectedActivitiesListWidget->clear();
+	selectedActivitiesList.clear();
 }
 
 void AddConstraintActivitiesSameStartingTimeForm::help()

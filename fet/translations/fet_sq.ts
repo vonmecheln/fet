@@ -875,8 +875,8 @@ there won&apos;t be removed an additional number of %1 activities
         <translation type="unfinished">Synimi</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="3998"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="4001"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="3997"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4000"/>
         <source>Delete all?</source>
         <comment>It refers to activities</comment>
         <translation>Fshij të gjitha?</translation>
@@ -905,13 +905,13 @@ there won&apos;t be removed an additional number of %1 activities
         <translation>Fshij %1 veprimtari të mësuesve %2?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="3998"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="3997"/>
         <source>Are you sure you want to remove ALL the %1 activities and related constraints?</source>
         <comment>%1 is the total number of activities</comment>
         <translation type="unfinished">A jeni i sigurt që dëshironi të fshini TË GJITHA %1 veprimtaritë dhe kushtet përkatëse?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4001"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4000"/>
         <source>Are you absolutely sure you want to remove ALL activities and related constraints from your data?</source>
         <translation>A je krejtësisht i sigurt që dëshiron të fshish TË GJITHA veprimtaritë dhe kushtet përkatëse nga të dhënat e tua?</translation>
     </message>
@@ -1053,37 +1053,37 @@ Please select another cell to swap students.</source>
         <translation>Nxënës</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4039"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4038"/>
         <source>There are no activities without teachers and without students.</source>
         <translation>Nuk ka veprimtari pa mësues dhe pa nxënës.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4041"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4040"/>
         <source>Activities without teachers and without students:</source>
         <translation>Veprimtari pa mësues dhe pa nxënës:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4044"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4043"/>
         <source>There are no activities without teachers.</source>
         <translation>Nuk ka veprimtari pa mësues.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4046"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4045"/>
         <source>Activities without teachers:</source>
         <translation>Veprimtari pa mësues:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4049"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4048"/>
         <source>There are no activities without students.</source>
         <translation>Nuk ka veprimtari pa nxënës.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4051"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4050"/>
         <source>Activities without students:</source>
         <translation>Veprimtari pa nxënës:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="4053"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="4052"/>
         <source>Information about pseudo activities</source>
         <comment>Pseudo activities means activities without teachers and/or students sets</comment>
         <translation>Informacione mbi pseudo veprimtaritë</translation>
@@ -3536,12 +3536,12 @@ Nëse nevojitet një peshë më e ulët se 100%, atëherë mund të përdorni k�
         <translation>Kusht i PA vendosur - lutemi të lajmëroni gabimin</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="417"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="410"/>
         <source>FET help</source>
         <translation>FET - ndihmë</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="412"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="405"/>
         <source>Add multiple constraints: this is a check box. Select this if you want to input only the representatives of sub-activities and FET to add multiple constraints, for all sub-activities from the same components, in turn, respectively. There will be added more constraints activities same starting time, one for each corresponding tuple. The number of sub-activities must match for the representants and be careful to the order, to be what you need</source>
         <translation>Shto kushte të shumfishta: kjo është një kuti përzgjedhjeje. Përzgjidhi nëse dëshironi të vendosni vetëm përfaqësueset e nënveprimtarive dhe FET do të arri të shtojë kushte të shumëfishta për të gjitha nënveprimtaritë me përmbajtje të njëjtë, sipas radhës, përkatësisht. Do të shtohen edhe kushte për veprimtaritë me të njëjtin orar fillimi, një për secilin. Numri i nënveprimtarive duhet ti përputhet dhe të përfaqëohet me kujdes, që të jetë ajo që ju nevojitet</translation>
     </message>
