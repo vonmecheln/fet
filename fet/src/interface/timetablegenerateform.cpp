@@ -119,12 +119,12 @@ void TimetableGenerateForm::start(){
 		return;
 	}
 
-	currentResultsTextEdit->setText(TimetableGenerateForm::tr("Entering simulation....precomputing"));
-	currentResultsTextEdit->repaint();
-
+	currentResultsTextEdit->setText(TimetableGenerateForm::tr("Entering simulation....precomputing, please be patient"));
+	//currentResultsTextEdit->repaint();
+	
 	gen.abortOptimization=false;
 	bool ok=gen.precompute();
-
+	
 	if(!ok){
 		currentResultsTextEdit->setText(TimetableGenerateForm::tr("Cannot generate - please modify your data"));
 		currentResultsTextEdit->repaint();

@@ -100,7 +100,7 @@ bool Activity::searchTeacher(const QString& teacherName)
 
 bool Activity::removeTeacher(const QString& teacherName)
 {
-	int t=this->teachersNames.remove(teacherName);
+	int t=this->teachersNames.removeAll(teacherName);
 	
 	return t>0;
 }
@@ -126,7 +126,7 @@ bool Activity::removeStudents(Rules& r, const QString& studentsName, int nStuden
 	if(&r==NULL){	
 	}
 	
-	int t=this->studentsNames.remove(studentsName);
+	int t=this->studentsNames.removeAll(studentsName);
 
 	if(t>0 && this->computeNTotalStudents==true){
 		/*StudentsSet* s=r.searchStudentsSet(studentsName);

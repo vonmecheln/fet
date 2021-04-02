@@ -38,6 +38,11 @@ using namespace std;
 
 extern Timetable gt;
 
+#include <QApplication>
+#include <QProgressDialog>
+
+extern QApplication* pqapplication;
+
 
 int permutation[MAX_ACTIVITIES]; //the permutation matrix to obtain activities in
 //decreasing difficulty order
@@ -1406,8 +1411,25 @@ bool computeActivitiesConflictingPercentage()
 	//compute conflictig
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		activitiesConflictingPercentage[i][i]=100;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		
+	QProgressDialog progress(NULL);
+	progress.setLabelText(QObject::tr("Precomputing ... please wait"));
+	progress.setRange(0, gt.rules.nInternalActivities*(gt.rules.nInternalActivities-1)/2);
+	progress.setModal(true);
+	
+	int ttt=0;
+		
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		progress.setValue(ttt);
+		pqapplication->processEvents();
+		if(progress.wasCanceled()){
+			QMessageBox::information(NULL, QObject::tr("FET information"), QObject::tr("Canceled"));
+			return false;
+		}
+			
 		for(int j=i+1; j<gt.rules.nInternalActivities; j++){
+			ttt++;
+		
 			//see if they share a teacher
 			bool shareTeacher=false;
 			foreach(QString tni, gt.rules.internalActivitiesList[i].teachersNames){
@@ -1438,6 +1460,7 @@ bool computeActivitiesConflictingPercentage()
 			else
 				activitiesConflictingPercentage[i][j]=activitiesConflictingPercentage[j][i]=-1;
 		}
+	}
 		
 	return true;
 }
@@ -1887,12 +1910,11 @@ bool computeActivitiesRoomsPreferences()
 	return ok;
 }
 
-#if 1
 void sortActivities()
 {
 	const double THRESHOLD=80.0;
 	
-	static int nIncompatible[MAX_ACTIVITIES];
+	int nIncompatible[MAX_ACTIVITIES];
 	
 	
 	
@@ -1933,13 +1955,7 @@ void sortActivities()
 			if(allowedTimesPercentages[i][j]>=THRESHOLD)
 				nIncompatible[i]++;
 		
-		//min n days
-		/*for(int j=0; j<minNDaysListOfActivities[i].count(); j++){
-			int md=minNDaysListOfMinDays[i].at(j);
-			double wp=minNDaysListOfWeightPercentages[i].at(j);
-			if(wp>=THRESHOLD)
-				nImpossibleSlots+=gt.rules.nHoursPerDay*md;
-		}*/
+		//min n days - no
 		
 
 		//teachers max days per week
@@ -1967,16 +1983,6 @@ void sortActivities()
 
 	//same starting time - not computing, the algo takes care even without correct sorting
 	//it is difficult to sort about same starting time
-	/*
-	careful - must pass more than one time
-	for(int i=0; i<gt.rules.nInternalActivities; i++){
-		for(int j=0; j<activitiesSameStartingTimeActivities[i].count(); j++){
-			int a2=activitiesSameStartingTimeActivities[i].at(j);
-			int wp=activitiesSameStartingTimePercentages[i].at(j);
-			if(wp>=THRESHOLD)
-				nIncompatible[i]=max(nIncompatible[i], nIncompatible[a2]);
-		}
-	}*/
 	
 	//Sort activities in in-creasing order of number of the other activities with which
 	//this activity does not conflict
@@ -2024,62 +2030,4 @@ void sortActivities()
 		permutation[k]=tmp;
 	}*/
 }
-#endif
 
-#if 0
-void sortActivities()
-{
-	//computeMinNDays();
-	
-	static int nIncompatible[MAX_ACTIVITIES];
-
-	for(int i=0; i<gt.rules.nInternalActivities; i++){
-		nIncompatible[i]=0;
-		
-		for(int j=0; j<gt.rules.nInternalActivities; j++)
-			if(i!=j && activitiesConflictingPercentage[i][j]>=0)
-				nIncompatible[i]+=gt.rules.internalActivitiesList[j].duration;
-
-		nIncompatible[i]*=gt.rules.internalActivitiesList[i].duration;
-				
-	/*	nCompatible[i] -= 5
-		 *minNDaysListOfActivities[i].count()
-		 *minNDaysListOfActivities[i].count()
-		 *minNDaysListOfActivities[i].count()
-		 *minNDaysListOfActivities[i].count();*/
-	}
-	
-	//Sort activities in in-creasing order of number of the other activities with which
-	//this activity does not conflict
-	//Selection sort, based on a permutation
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		permutation[i]=i;
-		
-	for(int i=0; i<gt.rules.nInternalActivities; i++){
-		for(int j=i+1; j<gt.rules.nInternalActivities; j++){
-			if(nIncompatible[permutation[i]]<nIncompatible[permutation[j]]){
-				int t=permutation[i];
-				permutation[i]=permutation[j];
-				permutation[j]=t;
-			}
-		}
-	}
-	
-	/*cout<<"The order of activities (id-s):"<<endl;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		cout<<"id=="<<gt.rules.internalActivitiesList[permutation[i]].id<<endl;
-	cout<<"End - the order of activities (id-s):"<<endl;*/
-
-	//RANDOM ORDER
-	/*for(int i=0; i<gt.rules.nInternalActivities; i++)
-		permutation[i]=i;
-	for(int i=0; i<gt.rules.nInternalActivities*gt.rules.nInternalActivities/2; i++){
-		int j=randomKnuth()%gt.rules.nInternalActivities;
-		int k=randomKnuth()%gt.rules.nInternalActivities;
-		int tmp;
-		tmp=permutation[j];
-		permutation[j]=permutation[k];
-		permutation[k]=tmp;
-	}*/
-}
-#endif

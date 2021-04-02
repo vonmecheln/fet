@@ -1011,4 +1011,6 @@ Versions 5.2.0 - 5.2.
 	- Bug fixes (when using activities with no teachers or no students, removing a teacher
 	or a students set might remove accidentaly such activities) - corrected
 	- Added more information about dividing a year
+- Version 5.2.14
+	- Interface improvements
 	

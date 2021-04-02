@@ -48,13 +48,13 @@ bool HttpGet::getFile(const QUrl& url)
 	http.setHost(url.host(), url.port(80));
 	buffer.open(QIODevice::WriteOnly);
 	http.get(url.path(), &buffer);
-	http.close();
-	buffer.close();
+	//http.close(); - does not work on new server
 	return true;
 }
 
 void HttpGet::httpDone(bool error)
 {
+	buffer.close();
 	if(error){
 		/*cout<<"Http error"<<qPrintable(http.errorString())<<endl;
 		

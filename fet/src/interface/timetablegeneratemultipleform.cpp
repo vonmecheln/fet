@@ -62,6 +62,9 @@ extern QString conflictsString;
 
 time_t start_time;
 
+extern int permutation[MAX_ACTIVITIES];
+int savedPermutation[MAX_ACTIVITIES];
+
 void GenerateMultipleThread::run()
 {
 	genMulti.abortOptimization=false;
@@ -71,9 +74,11 @@ void GenerateMultipleThread::run()
 	
 		bool impossible;
 		bool timeExceeded;
-		bool ok=genMulti.precompute(); //here I can speed up, precomputation is only needed to restore permutation of activities
-		assert(ok);
-		//cout<<"timeLimit=="<<timeLimit<<endl;
+		
+		//bool ok=genMulti.precompute(); //here I can speed up, precomputation is only needed to restore permutation of activities
+		//assert(ok);
+		for(int qq=0; qq<gt.rules.nInternalActivities; qq++)
+			permutation[qq]=savedPermutation[qq];
 
 		genMulti.generate(timeLimit, impossible, timeExceeded);
 
@@ -202,7 +207,6 @@ void TimetableGenerateMultipleForm::start(){
 	//currentResultsTextEdit->repaint();
 
 	bool ok=genMulti.precompute();
-
 	if(!ok){
 		currentResultsTextEdit->setText(TimetableGenerateMultipleForm::tr("Cannot optimize - please modify your data"));
 		currentResultsTextEdit->repaint();
@@ -221,6 +225,9 @@ void TimetableGenerateMultipleForm::start(){
 	closePushButton->setDisabled(TRUE);
 
 	simulation_running_multi=true;
+
+	for(int qq=0; qq<gt.rules.nInternalActivities; qq++)
+		savedPermutation[qq]=permutation[qq];
 
 	generateMultipleThread.start();
 }

@@ -1086,6 +1086,9 @@ double ConstraintActivitiesSameStartingTime::fitness(Solution& c, Rules& r, QLis
 							tmp = 2 * (abs(day1-day2) + abs(hour1-hour2));
 						else*/
 							tmp = abs(day1-day2) + abs(hour1-hour2);
+							
+						if(tmp>0)
+							tmp=1;
 
 						nbroken+=tmp;
 					}
@@ -1117,11 +1120,14 @@ double ConstraintActivitiesSameStartingTime::fitness(Solution& c, Rules& r, QLis
 							tmp = 2 * (abs(day1-day2) + abs(hour1-hour2));
 						else*/
 							tmp = abs(day1-day2) + abs(hour1-hour2);
+							
+						if(tmp>0)
+							tmp=1;
 
 						nbroken+=tmp;
 
 						if(tmp>0 && conflictsString!=NULL){
-							QString s=QObject::tr("Time constraint activities same time broken, because activity with id=%1 is not at the same time with activity with id=%2")
+							QString s=QObject::tr("Time constraint activities same starting time broken, because activity with id=%1 is not at the same starting time with activity with id=%2")
 							 .arg(this->activitiesId[i])
 							 .arg(this->activitiesId[j]);
 							s+=", ";
@@ -4043,6 +4049,7 @@ QString ConstraintStudentsSetMaxHoursDaily::getDescription(Rules& r)
 		assert(0);
 	//if(this->minHoursDaily>=0)
 	//	s+=(QObject::tr("mH:%1").arg(this->minHoursDaily));
+	s+=", ";
 	s+=(QObject::tr("St:%1").arg(this->students));
 
 	return s;
@@ -4469,6 +4476,7 @@ QString ConstraintStudentsSetMinHoursDaily::getDescription(Rules& r)
 		assert(0);
 	//if(this->minHoursDaily>=0)
 	//	s+=(QObject::tr("mH:%1").arg(this->minHoursDaily));
+	s+=", ";
 	s+=(QObject::tr("St:%1").arg(this->students));
 
 	return s;
@@ -5857,7 +5865,7 @@ double ConstraintActivitiesSameStartingHour::fitness(Solution& c, Rules& r, QLis
 						nbroken+=tmp;
 
 						if(tmp>0 && conflictsString!=NULL){
-							QString s=QObject::tr("Time constraint activities same hour broken, because activity with id=%1 is not at the same hour with activity with id=%2")
+							QString s=QObject::tr("Time constraint activities same starting hour broken, because activity with id=%1 is not at the same hour with activity with id=%2")
 							 .arg(this->activitiesId[i])
 							 .arg(this->activitiesId[j]);
 							s+=", ";
