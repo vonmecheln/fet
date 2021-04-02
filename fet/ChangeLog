@@ -1016,4 +1016,6 @@ Versions 5.2.0 - 5.2.
 - Version 5.2.15
 	- The default/maximum time limit for multiple timetables is 1200 minutes (a large enough value)
 	- Minor improvements
+- Version 5.1.16
+	- Minor improvements
 	

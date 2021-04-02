@@ -3110,6 +3110,7 @@ QString ConstraintStudentsNoGaps::getDetailedDescription(Rules& r)
 	s+=QObject::tr("Students must not have gaps");s+="\n";
 	s+=(QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage));s+="\n";
 	s+=QObject::tr("Please note that for each subgroup, you must have: 1. only no gaps or 2. no gaps and early, with the same weight percentage");
+	s+="\n";
 	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
 
 	return s;
@@ -3322,6 +3323,7 @@ QString ConstraintStudentsSetNoGaps::getDetailedDescription(Rules& r){
 	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
 	s+=QObject::tr("Students=%1").arg(this->students); s+="\n";
 	s+=QObject::tr("Please note that for each subgroup, you must have: 1. only no gaps or 2. no gaps and early, with the same weight percentage");
+	s+="\n";
 
 	return s;
 }
@@ -3489,6 +3491,7 @@ QString ConstraintStudentsEarly::getDetailedDescription(Rules& r)
 	s+=QObject::tr("Students must begin their courses as early as possible (permitted by breaks and students not available)");s+="\n";
 	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 	s+=QObject::tr("Please note that for each subgroup, you must have: 1. only no gaps or 2. no gaps and early, with the same weight percentage");
+	s+="\n";
 	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
 
 	return s;
@@ -3696,6 +3699,7 @@ QString ConstraintStudentsSetEarly::getDetailedDescription(Rules& r)
 	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 	s+=QObject::tr("Please note that for each subgroup, you must have: 1. only no gaps or 2. no gaps and early, with the same weight percentage");
 	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
+	s+="\n";
 
 	return s;
 }
