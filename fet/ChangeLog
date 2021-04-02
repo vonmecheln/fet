@@ -1506,4 +1506,7 @@ Versions 5.13.0 - 5.13.x
 	- Updated the Indonesian translation, by Nirwan Yus.
 	- Very rare crash bugs fixed.
 	- Code cleanup.
-	
+- Verson 5.13.3
+	- Updated the Indonesian translation, by Nirwan Yus.
+	- Rare minor bug fixed, reported by Frans on the forum.
+	- Code cleanup.

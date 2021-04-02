@@ -294,7 +294,7 @@ Un-installing FET:
 	Probably in $HOME/.config directory you'll find a directory "fet" containing file "fettimetabling.conf". Remove the file and the directory.
 	
 	Microsoft Windows:
-	Run regedit, search key "fet". You will find a section "fet" with sub-section "fettimetabling". Remove it.
+	Run regedit.exe (Registry Editor), search key "fet". You will find a section "fet" with sub-section "fettimetabling". Remove it.
 
 
 Feed-back / help:

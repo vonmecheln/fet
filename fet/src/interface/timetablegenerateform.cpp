@@ -167,7 +167,7 @@ void TimetableGenerateForm::start(){
 	
 	if(!ok){
 		currentResultsTextEdit->setText(TimetableGenerateForm::tr("Cannot generate - please modify your data"));
-		currentResultsTextEdit->repaint();
+		currentResultsTextEdit->update();
 
 		QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
 		 TimetableGenerateForm::tr("Your data cannot be processed - please modify it as instructed"

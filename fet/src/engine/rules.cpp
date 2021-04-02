@@ -128,6 +128,15 @@ void Rules::init() //initializes the rules (empty, but with default hours and da
 
 bool Rules::computeInternalStructure()
 {
+	//To fix a bug reported by Frans on forum, on 7 May 2010.
+	//If user generates, then changes some activities (changes teachers of them), then tries to generate but FET cannot precompute in generate_pre.cpp,
+	//then if user views the timetable, the timetable of a teacher contains activities of other teacher.
+	//The bug appeared because it is possible to compute internal structure, so internal activities change the teacher, but the timetables remain the same,
+	//with the same activities indexes.
+	teachers_schedule_ready=false;
+	students_schedule_ready=false;
+	rooms_schedule_ready=false;
+
 	//The order is important - firstly the teachers, subjects, activity tags and students.
 	//After that, the buildings.
 	//After that, the rooms.

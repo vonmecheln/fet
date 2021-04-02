@@ -279,7 +279,7 @@ void TimetableGenerateMultipleForm::start(){
 	bool ok=genMulti.precompute();
 	if(!ok){
 		currentResultsTextEdit->setText(TimetableGenerateMultipleForm::tr("Cannot optimize - please modify your data"));
-		currentResultsTextEdit->repaint();
+		currentResultsTextEdit->update();
 
 		QMessageBox::information(this, TimetableGenerateMultipleForm::tr("FET information"),
 		 TimetableGenerateMultipleForm::tr("Your data cannot be processed - please modify it as instructed"
