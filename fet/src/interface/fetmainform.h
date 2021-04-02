@@ -155,6 +155,7 @@ public slots:
 	void on_helpTipsAction_activated();
 	void on_helpInstructionsAction_activated();
 	void on_helpInOtherLanguagesAction_activated();
+	void on_helpForumAction_activated();
 
 	void on_timetableGenerateAction_activated();
 	void on_timetableViewStudentsAction_activated();
@@ -188,6 +189,7 @@ public slots:
 	void on_settingsRestoreDefaultsAction_activated();
 
 	void on_settingsTimetableHtmlLevelAction_activated();
+	void on_settingsPrintNotAvailableSlotsAction_toggled();
 	
 	void httpDone(bool error);
 	

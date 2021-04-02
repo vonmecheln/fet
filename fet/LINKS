@@ -7,7 +7,7 @@ Open source free software tools for FET:
 FET:
 	http://www.lalescu.ro/liviu/fet/
 
-Unofficial user's guide:
+User's guide:
 	http://www.timetabling.de/manual/FET-manual.en.html
 Alternative timetabling algorithms and German FET support available at
 	http://www.timetabling.de/
@@ -25,9 +25,6 @@ Other open source free software for school administration/timetabling:
 TABLIX - a free software kernel for solving general timetabling problems
 	http://www.tablix.org/
 
-G-Tablix - a graphical user interface (GUI) for Tablix (GNU/GPL)
-	http://gtablix.homelinux.org/
-	
 G-stpl - The Swing Timetable PLatform (GNU/GPL)
 	http://gstpl.sourceforge.net/
 	
@@ -47,9 +44,6 @@ Web based school administration software
 Open Admin for Schools - a web based school administration program written in perl and released 
 under the GNU GPL. Includes FET import/export.
 	http://richtech.ca/openadmin/
-	
-Orario_Elettronico - a comfortable and flexible tool to compile a school timetable
-	http://orarelettr.sourceforge.net/
 	
 SchoolTool - a project to develop a common global school administration infrastructure 
 that is freely available under an Open Source licence

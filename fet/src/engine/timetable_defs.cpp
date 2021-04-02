@@ -27,7 +27,7 @@ QString internetVersion;
 /**
 FET version
 */
-const QString FET_VERSION="5.6.3";
+const QString FET_VERSION="5.6.4";
 
 /**
 FET language
@@ -42,6 +42,8 @@ QString LANGUAGE_FOR_HTML;
 Timetable html css javaScript Level, by Volker Dirr
 */
 int TIMETABLE_HTML_LEVEL;
+
+bool PRINT_NOT_AVAILABLE_TIME_SLOTS;
 
 QString protect(const QString& str) //used for xml
 {

@@ -116,6 +116,7 @@ public:
 	Time vertical version.
 	*/
 	static void writeGroupsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+
 	/**
 	Function writing the years' timetable html format, to a file
 	Days horizontal version.
@@ -139,7 +140,33 @@ public:
 	Time vertical version.
 	*/
 	static void writeYearsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+
+	/**
+	Function writing all activities' timetable html format, to a file
+	Days horizontal version.
+	*/
+	static void writeAllActivitiesTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+
+	/**
+	Function writing all activities' timetable html format, to a file
+	Days vertical version.
+	*/
+	static void writeAllActivitiesTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+
+
+	/**
+	Function writing all activities' timetable html format, to a file
+	Time horizontal version.
+	*/
+	static void writeAllActivitiesTimetableTimeHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+
+	/**
+	Function writing all activities' timetable html format, to a file
+	Time vertical version.
+	*/
+	static void writeAllActivitiesTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 	
+
 	/**
 	Function writing the teachers' timetable in html format
 	Days horizontal version

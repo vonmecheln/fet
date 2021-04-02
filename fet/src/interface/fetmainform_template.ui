@@ -45,6 +45,8 @@
     <addaction name="separator" />
     <addaction name="helpInOtherLanguagesAction" />
     <addaction name="separator" />
+    <addaction name="helpForumAction" />
+    <addaction name="separator" />
     <addaction name="helpAboutAction" />
    </widget>
    <widget class="QMenu" name="fileMenu" >
@@ -333,6 +335,8 @@
     </widget>
     <addaction name="checkForUpdatesAction" />
     <addaction name="languageMenu" />
+    <addaction name="separator" />
+    <addaction name="settingsPrintNotAvailableSlotsAction" />
     <addaction name="settingsTimetableHtmlLevelAction" />
     <addaction name="separator" />
     <addaction name="settingsRestoreDefaultsAction" />
@@ -1357,6 +1361,22 @@
    </property>
    <property name="text" >
     <string>lt (Lithuanian)</string>
+   </property>
+  </action>
+  <action name="helpForumAction" >
+   <property name="text" >
+    <string>Forum webpage</string>
+   </property>
+  </action>
+  <action name="settingsPrintNotAvailableSlotsAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="checked" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>Mark not available slots with -x- in timetables</string>
    </property>
   </action>
  </widget>

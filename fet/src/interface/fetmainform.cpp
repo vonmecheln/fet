@@ -282,6 +282,9 @@ FetMainForm::FetMainForm()
 		bool t=getter.getFile(QUrl("http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt"));
 		assert(t);
 	}
+	
+	settingsPrintNotAvailableSlotsAction->setCheckable(true);
+	settingsPrintNotAvailableSlotsAction->setChecked(PRINT_NOT_AVAILABLE_TIME_SLOTS);
 }
 
 void FetMainForm::on_checkForUpdatesAction_toggled()
@@ -1952,6 +1955,19 @@ void FetMainForm::on_helpAboutAction_activated()
 	form->show();
 }
 
+void FetMainForm::on_helpForumAction_activated()
+{
+	QString s=tr("FET has a forum where you can ask questions or talk about FET");
+	s+="\n\n";
+	s+=tr("The current address is: %1").arg("http://lalescu.ro/liviu/fet/forum/");
+	s+="\n";
+	s+=tr("Please open this address in a web browser");
+	s+="\n\n";
+	s+=tr("If it does not work, please search the FET web page, maybe the address was changed");
+
+	QMessageBox::information(this, tr("FET forum"), s);
+}
+
 void FetMainForm::on_helpFAQAction_activated()
 {
 	HelpFaqForm* form=new HelpFaqForm();
@@ -2335,16 +2351,9 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 	s+="\n";
 	s+=tr("6. Import directory will be %1").arg(OUTPUT_DIR);
 	s+="\n";
+	s+=tr("7. Mark not available slots with -x- in timetables will be true");
+	s+="\n";
 	
-	/*s+=tr("(these are:\n"
-	  "1. Mainform geometry will be reset to default\n"
-	  "2. Check for updates at startup will be disabled\n"
-	  "3. Language will be en_GB (restart needed to activate language change)\n"
-	  "4. Working directory will be sample_inputs\n"
-	  "5. Timetable html level will be 2"
-  	  "6. Import directory will be home directory)"
-	 );*/
-
 	switch( QMessageBox::information( this, tr("FET application"), s,
 	 tr("&Yes"), tr("&No"), 0 , 1 ) ) {
 	case 0: // Yes
@@ -2352,15 +2361,6 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 	case 1: // No
 		return;
 	}
-
-	/*QMessageBox::information(this, tr("FET information"), 
-	 tr("Settings reset to defaults:\n\n"
-	  "1. Mainform geometry will be reset\n"
-	  "2. Check for updates is disabled\n"
-	  "3. Language = en_GB (please restart FET to activate language change)\n"
-	  "4. Working directory = sample_inputs\n"
-	  "5. Timetable html level will be 2"
-	 ));*/
 
 	resize(ORIGINAL_WIDTH, ORIGINAL_HEIGHT);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -2381,6 +2381,9 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 	IMPORT_DIRECTORY=OUTPUT_DIR;
 	
 	TIMETABLE_HTML_LEVEL=2;
+	
+	settingsPrintNotAvailableSlotsAction->setChecked(true);
+	PRINT_NOT_AVAILABLE_TIME_SLOTS=true;
 }
 
 void FetMainForm::on_settingsTimetableHtmlLevelAction_activated()
@@ -2393,5 +2396,10 @@ void FetMainForm::on_settingsTimetableHtmlLevelAction_activated()
 
 	SettingsTimetableHtmlLevelForm* form=new SettingsTimetableHtmlLevelForm();
 	form->exec();
+}
+
+void FetMainForm::on_settingsPrintNotAvailableSlotsAction_toggled()
+{
+	PRINT_NOT_AVAILABLE_TIME_SLOTS=settingsPrintNotAvailableSlotsAction->isChecked();
 }
 

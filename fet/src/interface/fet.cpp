@@ -124,6 +124,10 @@ void readSimulationParameters(){
 	checkForUpdates=settings.value("check-for-updates", "-1").toInt();
 	QString ver=settings.value("version", "-1").toString();
 	TIMETABLE_HTML_LEVEL=settings.value("timetable-html-level", "2").toInt();
+	
+	int tmp=settings.value("print-not-available", "1").toInt();
+	PRINT_NOT_AVAILABLE_TIME_SLOTS=tmp;
+	
 	cout<<"Settings read"<<endl;
 }
 
@@ -135,6 +139,11 @@ void writeSimulationParameters(){
 	settings.setValue("version", FET_VERSION);
 	settings.setValue("check-for-updates", checkForUpdates);
 	settings.setValue("timetable-html-level", TIMETABLE_HTML_LEVEL);
+	
+	int tmp=1;
+	if(!PRINT_NOT_AVAILABLE_TIME_SLOTS)
+		tmp=0;
+	settings.setValue("print-not-available", tmp);
 }
 
 void setLanguage(QApplication& qapplication)
@@ -286,6 +295,8 @@ int main(int argc, char **argv)
 		TIMETABLE_HTML_LEVEL=2;
 		
 		FET_LANGUAGE="en_GB";
+		
+		PRINT_NOT_AVAILABLE_TIME_SLOTS=true;
 
 		for(int i=1; i<argc; i++){
 			QString s=argv[i];
@@ -298,6 +309,12 @@ int main(int argc, char **argv)
 				TIMETABLE_HTML_LEVEL=s.right(s.length()-21).toInt();
 			else if(s.left(11)=="--language=")
 				FET_LANGUAGE=s.right(s.length()-11);
+			else if(s.left(20)=="--printnotavailable="){
+				if(s.right(5)=="false")
+					PRINT_NOT_AVAILABLE_TIME_SLOTS=false;
+				else
+					PRINT_NOT_AVAILABLE_TIME_SLOTS=true;
+			}
 		}
 		
 		if(filename==""){

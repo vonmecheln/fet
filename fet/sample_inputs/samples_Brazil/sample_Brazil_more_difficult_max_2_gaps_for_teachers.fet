@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.5.8">
+<!DOCTYPE FET><FET version="5.6.4">
 
 <Institution_Name>Institutie implicita</Institution_Name>
 
@@ -6881,6 +6881,10 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Max_Gaps>2</Max_Gaps>
 </ConstraintTeachersMaxGapsPerWeek>
+<ConstraintTeachersMinHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+</ConstraintTeachersMinHoursDaily>
 </Time_Constraints_List>
 
 <Space_Constraints_List>

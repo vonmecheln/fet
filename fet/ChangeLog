@@ -1249,3 +1249,12 @@ Versions 5.6.0 - 5.6.x
 	- Added an -x- in the not available slots in teachers', students' and rooms' timetables
 	(suggested by George Miliotis [Ionio]), added by Volker Dirr.
 	- Added Lithuanian translation by Darius Staigys (incomplete yet).
+- Version 5.6.4
+	- Improved Arabic, Lithuanian and Italian translations.
+	- Improved a very very rare situation (raised the maximum number of retries for a single activity from 100,000 to 200,000.
+	This way, some saved timetables which contain constraints with weights close to 100% and below 100% (like 99.995%) are possible.
+	Probably this situation is unnoticed by anybody). The possible problem is not perfectly solved, but it is a compromise.
+	- Added possibility to mark or not -x- in the not available slots in timetables (suggested by Silvia, done by Volker Dirr).
+	- Added all activities timetables by Volker Dirr (suggested by kdsayang)
+	- Added exporting of timetable in csv form by Volker Dirr
+	

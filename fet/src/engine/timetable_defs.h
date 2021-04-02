@@ -62,6 +62,8 @@ Timetable html css javaScript Level, added by Volker Dirr
 */
 extern int TIMETABLE_HTML_LEVEL;
 
+extern bool PRINT_NOT_AVAILABLE_TIME_SLOTS;
+
 /**
 The maximum number of different years of students
 */
@@ -471,6 +473,33 @@ An output file containing the timetable for each subject, arranged in html forma
 Time vertical version.
 */
 const QString SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="subjects_timetable_time_vertical.html";
+
+/**
+An output file containing the timetable for all activities, arranged in html format.
+Days horizontal version.
+*/
+const QString ALL_ACTIVITIES_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="all_activities_timetable_days_horizontal.html";
+
+/**
+An output file containing the timetable for all activities, arranged in html format.
+Days vertical version.
+*/
+const QString ALL_ACTIVITIES_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="all_activities_timetable_days_vertical.html";
+
+
+/**
+An output file containing the timetable for all activities, arranged in html format.
+Time horizontal version.
+*/
+const QString ALL_ACTIVITIES_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="all_activities_timetable_time_horizontal.html";
+
+/**
+An output file containing the timetable for all activities, arranged in html format.
+Time vertical version.
+*/
+const QString ALL_ACTIVITIES_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="all_activities_timetable_time_vertical.html";
+
+
 
 /**
 A log file explaining how the xml input file was parsed

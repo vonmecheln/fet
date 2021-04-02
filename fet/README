@@ -13,8 +13,7 @@ Requirements:
 
 	FET is created in the following environment: openSUSE 11.0 GNU/Linux distribution,
 	Midnight Commander 4.6.2, Qt 4.4.0, gcc 4.3.1, Linux 2.6.25, other great free tools.
-	FET can be run on any platform supported by the free software Qt (GNU/Linux,
-	Windows, Mac OS X).
+	FET can be run on any platform supported by the free software Qt (GNU/Linux, Windows, Mac OS X).
 
 	GNU/Linux, Mac OS X and similar OS's:
 	Software:
@@ -26,8 +25,14 @@ Requirements:
 	the MinGW and Qt dlls).
 	For compiling, you need Qt and MinGW (do NOT use Qt 4.2.x or gcc 4.2.x).
 	
-	Note: it seems that on GNU/Linux FET runs faster than on Windows. Maybe because compilation
-	is done for the specific platform and with a more recent gcc compiler.
+	Important note about virtual memory: on Windows you might get the error message
+	"The paging file is too small for this operation to complete" when trying to run fet.exe .
+	Maybe on other systems you can get a similar problem.
+	It seems that FET won't run without a decent amount of virtual memory.
+	This is because FET allocates a large amount of static data (600MB), of which only about 50 MB are normally used.
+	So the operating system must have virtual memory reserved (which will not be used normally,
+	but that does not matter). So, if you disabled virtual memory, please enable it and/or increse maximum size
+	if FET does not run.
 
 
 Download:
@@ -127,13 +132,19 @@ Running FET:
 	Microsoft Windows:
 	Run the executable fet.exe
 	
-	Note for MS Windows users: if you disable virtual memory, it seems that the program won't start.
+	NOTE for MS Windows users: if you get the message "The paging file is too small for this operation to complete":
+	If you disable virtual memory or have it low, it seems that the program won't start.
+	The memory consumption of FET is maybe around 50 MB, but FET has defined approximately 600 MB of memory in internal
+	variables (these are not used in normal cases). FET seems to need a good amount of virtual memory on Windows
+	(maybe it is best to let Windows manage the virtual memory).
 	
-	NEW: Command line, no GUI, just run "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t]",
+	COMMAND LINE: no GUI, just run "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t] [--printnotavailable=u]",
 	where	x is the input file, for instance "inputfile.fet"
 			y is integer (seconds)
 			z is integer from 0 to 5 and represents the detaliation level for html timetables
-			t is one of en_GB, ar, ca, de, el, es, fr, hu, id, it, mk, ms, nl, pl, ro, tr
+			t is one of en_GB, ar, ca, de, el, es, fr, hu, id, it, lt, mk, ms, nl, pl, ro, tr
+			u is either "true" or "false" and represents if you want -x- or --- in the generated timetables for the
+				not available slots (default true)
 			
 	On GNU/Linux, you'll get a console output to help you with data.
 	

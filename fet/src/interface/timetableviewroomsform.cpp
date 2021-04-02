@@ -123,7 +123,8 @@ void TimetableViewRoomsForm::updateRoomsTimetableTable(){
 				s += act->subjectName + " " + act->activityTagName;
 			}
 			else{
-				if(notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]>=0 || breakDayHour[k][j])
+				if((notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]>=0 || breakDayHour[k][j])
+				 && PRINT_NOT_AVAILABLE_TIME_SLOTS)
 					s+="-x-";
 				/*if(!breakDayHour[k][j] && notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]>=0 && notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]<100.0){
 					s+="\n";

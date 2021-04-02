@@ -128,7 +128,7 @@ static qint16 sbgDayNFirstGaps[MAX_DAYS_PER_WEEK];
 
 int maxActivitiesPlaced;
 
-const int MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0=100000;
+const int MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0=200000;
 
 
 inline int max(qint16 a, int b){

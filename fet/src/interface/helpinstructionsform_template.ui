@@ -38,7 +38,7 @@
                 <cstring>textBrowser3_2</cstring>
             </property>
             <property name="text">
-                <string>Updated: 16 August 2008
+                <string>Updated: 8 September 2008
 
 Instructions by Liviu Lalescu
 
@@ -91,7 +91,9 @@ Each constraint of type not available or preferred times which filters out impos
 
 15) Added 15 August 2008: If you want for instance teachers (or students) not to have more than 2 times per week activities in the last hours, you have to use new constraint teacher(s) or students (set) hourly interval max days per week. Please read FAQ for more details.
 
-16) Added 16 August 2008: If you have activities which you want to put in the last slots of a day (like say the meetings with the class master), please use the new constraint a set of activities end students day (or singular activity ends students day).</string>
+16) Added 16 August 2008: If you have activities which you want to put in the last slots of a day (like say the meetings with the class master), please use the new constraint a set of activities end students day (or singular activity ends students day).
+
+17) Added 8 September 2008: If you have activities split into 3 activities per week and need them to be not in 3 consecutive days, there is an entry in the FAQ explaining how to specify this (question Q1-5-September-2008).</string>
             </property>
         </widget>
     </grid>

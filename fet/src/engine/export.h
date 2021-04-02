@@ -46,6 +46,7 @@ private:
 	static bool exportCSVSubjects(QString& lastWarnings, const QString textquote, const bool head);
 	static bool exportCSVTeachers(QString& lastWarnings, const QString textquote, const bool head, const QString setSeparator);
 	static bool exportCSVStudents(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head, const QString setSeparator);
+	static bool exportCSVTimetable(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head);
 
 	static bool exportSchILD(QString& lastWarnings);
 };

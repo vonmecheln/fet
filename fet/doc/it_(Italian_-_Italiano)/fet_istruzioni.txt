@@ -1,0 +1,138 @@
+Installa il programma sotto Windows eseguendo il file scaricato da Web.
+L'esecuzione produrrà una cartella nella stessa posizione dove si trova il file scaricato, contenente l'eseguibile FET.EXE che avvia il programma.
+L'interfaccia è semplice e comprensibile. Accedi al menu / Dati e, cominciando dall'alto, inserisci le informazioni richieste da ogni voce del sottomenu.
+
+Inizialmente puoi tralasciare le Chiavi dell'attività (i concetti relativi saranno chiariti più avanti) e i Commenti.
+Gli anni sono, di solito, una serie di numeri da 1 in poi. Cerca di avere una buona descrizione delle classi che ti occorre definire. Clicca il bottone Dividi l'anno automaticamente selezionando le categorie, per inserire come prima categoria la sezione, caratterizzata, in genere,  da una lettera (A, B, C ecc. ecc.). Si possono scegliere altre 2 categorie in base alle quali dividere le classi dell'anno selezionato (per esempio maschi e femmine, oppure Materie Facoltative Uno, Due, Tre ecc.). Queste ulteriori categorie permettono di impostare corsi e attività che coinvolgono orizzontalmente gruppi di studenti di più classi.
+
+Esempio: le classi 2 sono divise nelle sezioni A, B e C. Gli studenti delle classi 2 possono scegliere una materia facoltativa tra chitarra e fotografia. Infine si distinguono tra maschi e femmine.
+
+    * Si avrà un anno 2.
+    * Si avranno 7 classi: 2A, 2B, 2C, 2-chitarra, 2-fotografia, 2-maschi e 2-femmine.
+    * Si avranno, inoltre, ben 12 sottogruppi: dal 2A-chitarra-maschi al 2C-fotografia-femmine.
+
+Sarà possibile, ad esempio, impostare una attività di fotografia (che interessa la classe 2-fotografia, composta da 2 ore a settimana) ed una attività di chitarra (che interessa la classe 2-chitarra per tre ore a settimana). Si potrà imporre il vincolo di piazzare 2 lezioni di chitarra contemporaneamente alle 2 lezioni di fotografia. Si imporrà altresì il vincolo che la terza ora di chitarra concluda la giornata degli studenti: così chi non fa chitarra uscirà un'ora prima (scrivimi per avere altri esempi).
+
+Nell'inserire le materie tieni conto che ti occorre definire anche le materie combinate (italiano-latino oppure storia-filosofia oppure mat-fis ecc.) da attribuire ai corsi nei quali uno stesso docente insegna più materie. Ciò per ottenere una migliore distribuzione dell'orario nella settimana e per far sì che più ore di un insegnante nello stesso giorno siano consecutive.
+Definisci le aule speciali (laboratori, palestre ecc.) destinate a materie particolari (educazione fisica) o a materie che di solito si svolgono nell'aula normale, ma occasionalmente richiedono un'aula speciale (laboratorio di lingue).
+
+Potrai vincolare una o più materie (oppure certe attività o anche le lezioni di particolari insegnanti) ad essere svolte in determinate aule.
+
+
+Se necessario, definisci gli edifici nei quali devono normalmente spostarsi gli insegnanti e/o gli studenti. Ciò perchè FET può condizionare il Numero massimo di cambi di edificio e può impostare una o più ore buche da destinare ad effettuare lo spostamento.
+
+L'inserimento dei dati può essere fatto tramite la importazione di quelli già disponibili in formato elettronico:
+l'elenco degli insegnanti. Occorre un file di testo (il cui nome termini con l'estensione CSV oppure TXT oppure DAT) composto così:
+"Teacher"
+"Aldighieri"
+"Baioni"
+"Baldelli"
+"Bernardi"
+"Casali"
+"Cecconi"
+ecc.
+Il doppio apice non è obbligatorio.
+
+Il dati inerenti a materie, anni, classi, chiavi dell'attavità, aule ed edifici se non sono troppi, possono essere facilmente inseriti a mano. Altrimenti, se esistono già loro elenchi in formato elettronico, possono essere anch'essi importati. Per il formato esatto, osserva quello dei file che si ottengono esportando un insieme di dati scelto aprendone uno di quelli di esempio.
+
+Anche le attività possono essere importate a partire da un file di testo, seguendo la seguente sintassi:
+
+"Students Sets","Subject","Teachers","Activity Tag","Total Duration","Split Duration","Min N Days","Weight","Consecutive"
+"1 A","STORIA","Cecconi","",3,"1+1+1",1,90,1
+"1 A","INGLESE","Giacinti","",3,"1+1+1",1,90,1
+"1 A","ST.ARTE","Baioni","",2,"1+1",2,90,1
+"1 A","ED.FISICA","Galli","centrale",2,"1+1",2,90,1
+"1 A","RELIGIONE","Bernardi","",1,"",,,
+"1 B","INGLESE","Paolini","",3,"1+1+1",1,90,1
+"1 B","ST.ARTE","Baioni","",2,"1+1",2,90,1
+ecc.
+Dove
+"Students Sets" è la classe o l'insieme di studenti interessato all'attività,
+"Subject" è la materia,
+"Teachers" sono gli insegnanti,
+"Activity Tag" è la Chiave dell'attività (eventuale),
+"Total Duration" è la durata totale in ore,
+"Split Duration" sono le durate delle singole subattività (o lezioni),
+"Min N Days" è il vincolo di numero minimo di giorni tra due subattività,
+"Weight" è il peso da attribuire al vincolo,
+"Consecutive" 1 se si, 0 se cadendo nello stesso giorno, non devono essere necessariamente consecutive.
+
+Puoi aggiungere le attività (o corsi) settimanali, indicando nell'apposita finestra:
+
+    * la materia (una)
+    * le classi (uno o più insiemi di studenti)
+    * gli insegnanti (uno o più) e
+    * il numero di lezioni (subattività) settimanali.
+
+Potrai impostare la durata delle singole subattività (lezioni di 1 ora, 2 ore ecc.). FET cercherà di distribuire le lezioni in modo omogeneo: per un corso di 2 lezioni settimanali puoi richiedere che la seconda si tenga a distanza di 2 o 3 giorni dalla prima. Perciò imposta misura e peso del nuovo vincolo Numero minimo di giorni tra subattività. FET tenterà di disporre le lezioni in giorni diversi. Qualora ciò risultasse impossibile, puoi chiedergli, nel malaugurato caso che debba inserire due lezioni nello stesso giorno, di imporre che siano consecutive.
+Al termine di questo inserimento, prova che i dati inseriti siano coerenti, selezionando il menu / Orario / Genera nuovo. Se la generazione va a buon fine prosegui con l'inserire i vincoli.
+
+
+Imponi che, per esempio, l'attività di Educazuione fisica si svolga in Palestra. (Dati / Vincoli di spazio / Vincoli di spazio per materie / Una materia ha una aula preferenziale). Tieni conto che FET non permette di avere 2 lezioni contemporanee in una stessa aula. Se ti occorre dovrai: 1) o definire una attività che coinvolge contemporaneamente più classi, 2) oppure definire più aule che rappresentino l'aula nella quale puoi prevedere più lezioni contemporaneamente.
+
+Occorre inserire il vincolo per impedire di avere ore buche nell'orario degli studenti (Dati / Vincoli di tempo / Vincoli d'orario per studenti / Numero massimo di ore buche settimanali per tutti gli studenti). Eccezioni sono ammesse e gestibili.
+Occorre anche imporre che gli studenti entrino sempre alla prima ora (Dati / Vincoli di tempo / Vincoli d'orario per studenti / Tutti gli studenti iniziano presto...). Anche in questo caso si possono gestire eccezioni.
+Occorre impostare le ore nelle quali ogni insegnante non è disponibile: nel suo giorno libero usando un peso del 100%, nel gestire altre preferenze con un peso dal 95% in su (prime ore, ultime ore, ulteriori giorni liberi ecc.). In questa fase, di solito lunga, è utile provare di volta in volta che l'insieme di dati che si vanno inserendo restino coerenti e risolvibili. Seleziona il menu / Orario / Genera nuovo. Se la generazione va a buon fine prosegui con l'inserire nuovi vincoli. Non dimenticare, di tanto in tanto, di salvare i dati.
+
+
+Si può limitare il numero massimo di ore buche nell'orario settimanale degli insegnanti.
+
+L'insieme di vincoli disponibili è estremamente ricco. Dovresti facilmente trovare quelli che ti servono. Se così non fosse, scrivimi e cercheremo insieme una soluzione.
+
+Ora dovresti essere in grado di giungere ad un orario accettabile. Per migliorare i risultati leggi le seguenti istruzioni dell'autore e, se vuoi, anche le informazioni fornite con le FAQ (Frequently Asked Questions)
+FET funziona?
+
+
+Aggiornamento del 1/09/2008
+
+ 
+
+
+Istruzioni di Liviu Lalescu
+           testo aggiornato il 4 agosto 2008
+           (traduzione dell' 8 agosto 2008)
+
+Questi sono alcuni accorgimenti che dovrete seguire per inserire insiemi di dati che sarà possibile risolvere.
+0) Impostate i giorni e le ore di insegnamento. Per garantire prestazioni ottimali, è meglio indicare l'esatto numero di ore al giorno che vi servono, e non di più. E' consigliabile fissare fin dall'inizio il numero di giorni e il numero di ore (se occorre potrete comunque cambiarli in qualsiasi momento in seguito). 
+
+Aggiunta del 14 giugno 2008: dalla versione 5.5.8 in poi, è possibile aggiungere 2 vincoli di Numero minimo di giorni tra lezioni per le stesse attività. Nella finestra di dialogo per l'inserimento di attività, selezionare minimo 2 (o 3) giorni e quando si conferma l'inserimento si ottiene la possibilità di aggiungere un altro vincolo di minimo 1 giorno (o 2). Questo è il metodo raccomandato per aggiungere gruppi di attività (o lezioni) dello stesso tipo. Se per esempio, si devono disporre 3 attività (o lezioni) a settimana di Storia, è possibile aggiungere 2 vincoli, minimo 2 giorni e minimo 1 giorno, entrambi con il 95%. Ciò garantisce che nel 99,75% dei casi la distanza minima di 1 giorno sia rispettata.
+
+1) E' possibile utilizzare qualsiasi peso per il vincolo "numero minimo di giorni tra lezioni". Può essere del 95%, 99,75% o anche il 100%. Se si specifica un valore al di sotto del 100% (99,75% o anche più) per un vincolo impossibile, FET è in grado di rilevare che non può rispettarlo e ottenere comunque un orario alla fine; il peso è soggettivo. L'orario migliore potrebbe scaturire preferendo pesi del 99,75% per tutti (o quasi) i vincoli, ma il tempo di generazione potrebbe essere molto maggiore che scegliendo invece il 95%.
+
+Si potrebbe provare prima il 95%, valore minimo raccomandato, quindi alzare il peso percentuale fino al 99,75% o anche fino al 100%. Se volete cambiare il 95% con un altro valore per tutti i vincoli di questo tipo, il modo più semplice è da menu Dati / Vincoli di tempo / Vincoli d'orario per lezioni / Numero minimo di giorni tra subattività, dove a partire dalla versione 5.3.6 è stato inserito un semplice comando per questo.
+
+Si potrebbero scegliere diversi pesi per diversi vincoli del tipo "numero minimo di giorni" (per esempio assegnando un valore più alto a corsi con un numero inferiore di attività settimanali).
+
+2) Se abbiamo un corso con 4 o 5 attività per settimana, lezioni difficili (Matematica), che si preferisce programmare all'inizio della giornata (diciamo che 2 o 3 lezioni su 4 o 5 dovrebbero svolgersi nella prima metà del giorno), conviene usare il vincolo di orari preferiti o ore iniziali preferite per subattività, specificando il soggetto e il numero della componente: 1, 2 o 3, aggiungendo 3 vincoli (vedere le FAQ per ulteriori dettagli). Si possono aggiungere - ad esempio - vincoli per le componenti numero 3, 4 e 5 per la materia Matematica (così se l'attività è divisa in 4 se ne avranno 2 presto, se invece è divisa in 5 ne avremo 3 presto - uno stratagemma efficace).
+
+3) Per il modo in cui è concepito e funziona l'algoritmo, la generazione automatica è più veloce se si usa il vincolo di indisponibilità di studenti (o insegnanti) e/o il vincolo di ore preferenziali per più attività al fine di specificare ore prive di lezioni, in aggiunta al possibile utilizzo del numero massimo di ore al giorno per studenti e/o insegnanti. Per esempio, se sapete che il quinto anno avrà soltanto ore dalle 8 alle 13, è meglio aggiungere studenti non disponibili in aggiunta al vincolo di numero massimo di ore al giorno. Questo accorgimento aiuta a guidare meglio FET verso una soluzione.
+
+Ogni vincolo di tipo Non disponibile o Ore preferenziali che filtra via le ore impossibili può portare un miglioramento nella velocità. 
+
+4) Vincolo di Inizio presto nell'orario degli studenti: se si immettono soltanto dati parziali, si potrebbero ottenere orari impossibili (altre informazioni nelle FAQ).
+
+5) Per le ore buche nell'orario di uno o più insegnanti: si noti che FET prenderà in considerazione i buchi se glielo chiederete, aggiungendo il vincolo del numero massimo di buchi alla settimana per insegnante. È normale aggiungere tali vincoli dopo che abbiate verificato che i vostri dati sono risolvibili, usando come numero massimo di buchi un valore che sembri accettabile e abbassandolo man mano che si trovano nuovi orari. 
+
+6) Immettere soltanto le aule speciali (palestre, laboratori ecc.) che necessitano di vincoli. Non occorre definire tutte le aule. Potreste in primo luogo provare a generare un orario senza definire aule, vedere se è fattibile e, allora, aggiungere le aule ed i vincoli a loro riferiti.
+
+7) E' possibile ottenere orari per quegli istituti nei quali gli studenti lavorano a turni (per esempio, le prime classi al mattino e le ultime classi al pomeriggio). Si consultino le FAQ per informazioni su come fare (in pratica occorre aggiungere i necessari vincoli di studenti non disponibili).
+
+8) L' algoritmo introdotto con la versione 5.0.0 non accetta attività quindicinali. Ma si può usare un espediente. Consultare le FAQ per la descrizione su come fare. (In pratica occorre definire una attività con la somma di insegnanti e studenti di entrambe le attività quindicinali).
+
+9) Anche se occorre molto tempo per generare il vostro orario con una certa serie di vincoli, se aumentate il peso percentuale dei vincoli stessi, la produzione del nuovo orario potrebbe non rallentare di molto. Si consiglia di provare ad appesantire i pesi dei vincoli dopo aver già ottenuto soluzioni, perchè in questo modo si possono ottenere risultati migliori.
+
+10) Se un vincolo ammette valori di peso inferiori a 100%, si può utilizzare qualsiasi peso, compresi anche numeri decimali come 99,75%. Ciò potrebbe essere utile con vincoli come Numero minimo di giorni, Aule preferenziali, Numero massimo di ore giornaliere ecc...
+
+11) Ogni aula può ospitare una singola attività per volta. Se si dispone di una grande sala che può ospitare più attività contemporaneamente, si deve usare un piccolo artificio. Si possono definire più aule che rappresentino, nel loro insieme, questo ambiente più grande e aggiungere vincoli di aule preferenziali. C'è una voce nelle FAQ al riguardo. 
+
+12) Se qualche insegnante ottiene giorni con una sola ora di lavoro, si può aggiungere il vincolo del numero minimo di ore al giorno per insegnante (ad esempio 2 ore), ma occorre assicurarsi che l'orario sia risolvibile. Questo vincolo tiene conto solo di giorni non vuoti.
+
+13) Aggiunta del 27 marzo 2008: se avete per esempio 7 ore di matematica su una settimana di 5 giorni (più lezioni che i giorni), fare attenzione ad aggiungere questa attività suddividendola correttamente. Vedi la domanda Q-1-27-Marzo-2008 dalle FAQ. È importante!
+
+14) Aggiunta del 28 giugno 2008: cercate di rimuovere i vincoli ridondanti di Numero minimo di giorni quando si aggiungono vincoli di inizio nello stesso giorno o ora (leggi Help / Consigli importanti).
+
+----------------------------------------------------
+
+Se ottenete un orario impossibile e la scuola permette di iniziare le lezioni ad ore successive alla prima, provate a riconsiderare i vincoli di inizio alla prima ora per le classi e / o sostituirne alcuni con vincoli di indisponibilità / interruzione nelle ultime ore. Inoltre la rimozione o l'alleggerimento del peso di altri vincoli potrebbe essere di aiuto. Se FET non riesce a trovare un buon orario per la tua scuola, scrivi all'autore e suggerisci come FET può essere migliorato. Forse piccole modifiche al tuo file dati possono portare a soluzioni migliori o forse ci sono aspetti che devono essere modificati in FET.
+
+Un orario impossibile potrebbe anche essere causato da una errata divisione degli anni. Verificate le statistiche degli studenti per tutti i sottogruppi: ogni sottogruppo dovrebbe avere le ore necessarie, non di meno. Se avete per esempio alcuni sottogruppi diciamo con meno di 20 ore alla settimana potrebbe essere impossibile arrivare ad un orario a causa di un errore di suddivisione degli anni o per attività aggiunte in modo errato. Ogni sottogruppo è indipendente e dovrebbe avere un totale di ore di studio alla settimana vicino alla media di tutti i sottogruppi. Consultate le FAQ per maggiori informazioni.

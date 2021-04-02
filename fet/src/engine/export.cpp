@@ -30,11 +30,16 @@ class QWidget;
 void centerWidgetOnScreen(QWidget* widget);
 
 #include "export.h"
+#include "solution.h"
 #include <QtGui>
 #include <QHash>
 #include <QSet>
 
 extern Timetable gt;
+extern Solution best_solution;
+extern bool teachers_schedule_ready;
+extern bool students_schedule_ready;
+extern bool rooms_schedule_ready;
 
 Export::Export()
 {
@@ -68,6 +73,8 @@ void Export::exportCSV(){
 			ok=exportCSVStudents(lastWarnings, textquote, fieldSeparator, head, setSeparator);
 		if(ok)
 			ok=exportCSVActivities(lastWarnings, textquote, fieldSeparator, head);
+		if(ok)
+			ok=exportCSVTimetable(lastWarnings, textquote, fieldSeparator, head);
 		lastWarnings.insert(0,Export::tr("CSV files were exported to directory %1.").arg(OUTPUT_DIR)+"\n");
 		if(ok)
 			lastWarnings.insert(0,Export::tr("Exported complete")+"\n");
@@ -680,6 +687,88 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString textquote,
 	fileExport.close();
 	return true;
 }
+
+
+bool Export::exportCSVTimetable(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head){
+	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
+	QString file=OUTPUT_DIR+FILE_SEP+s2+"_Timetable.csv";
+	
+	QFile fileExport(file);
+	if(!fileExport.open(QIODevice::WriteOnly)){
+		lastWarnings+=Export::tr("FET critical. Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(file)+"\n";
+		return false;
+		assert(0);
+	}
+	QTextStream tosExport(&fileExport);
+	tosExport.setCodec("UTF-8");
+	tosExport.setGenerateByteOrderMark(true);	//default is "true", but openOffice have problems to open those files
+	
+	if(head)
+		tosExport	<<textquote<<"Day"<<textquote<<fieldSeparator
+				<<textquote<<"Period"<<textquote<<fieldSeparator
+				<<textquote<<"Students Sets"<<textquote<<fieldSeparator
+				<<textquote<<"Subject"<<textquote<<fieldSeparator
+				<<textquote<<"Teachers"<<textquote<<fieldSeparator
+				<<textquote<<"Activity Tag"<<textquote<<fieldSeparator
+				<<textquote<<"Room"<<textquote<<endl;
+
+	if(gt.rules.initialized && gt.rules.internalStructureComputed
+	 && students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready){
+		Activity *act;
+		int exportedActivities=0;
+		for(int i=0; i<gt.rules.nInternalActivities; i++){
+			if(best_solution.times[i]!=UNALLOCATED_TIME) {
+				exportedActivities++;
+				act=&gt.rules.internalActivitiesList[i];
+				int hour=best_solution.times[i]/gt.rules.nDaysPerWeek;
+				int day=best_solution.times[i]%gt.rules.nDaysPerWeek;
+				int r=best_solution.rooms[i];
+				for(int dd=0; dd < act->duration; dd++){
+					assert(hour+dd<gt.rules.nHoursPerDay);
+					//Day
+					tosExport<<textquote<<protectCSV(gt.rules.daysOfTheWeek[day])<<textquote<<fieldSeparator;
+					//Period
+					tosExport<<textquote<<protectCSV(gt.rules.hoursOfTheDay[hour+dd])<<textquote<<fieldSeparator<<textquote;
+					//Students Sets
+					for(int s=0; s<act->studentsNames.size(); s++){
+						if(s!=0)
+							tosExport<<"+";
+						tosExport<<protectCSV(act->studentsNames[s]);
+					}
+					tosExport<<textquote<<fieldSeparator<<textquote;
+					//Subject
+					tosExport<<protectCSV(act->subjectName);
+					tosExport<<textquote<<fieldSeparator<<textquote;
+					//Teachers
+					for(int t=0; t<act->teachersNames.size(); t++){
+						if(t!=0)
+							tosExport<<"+";
+						tosExport<<protectCSV(act->teachersNames[t]);
+					}
+					tosExport<<textquote<<fieldSeparator<<textquote;
+					//Activity Tag
+					tosExport<<protectCSV(act->activityTagName)<<textquote<<fieldSeparator;
+					//Room
+					if(best_solution.rooms[i] != UNSPECIFIED_ROOM && best_solution.rooms[i] != UNALLOCATED_SPACE){
+						assert(best_solution.rooms[i]>=0 && best_solution.rooms[i]<gt.rules.nInternalRooms);
+						tosExport<<textquote<<protectCSV(gt.rules.internalRoomsList[r]->name)<<textquote;
+					}
+					tosExport<<endl;
+				}
+			}
+		}	
+		lastWarnings+=Export::tr("%1 scheduled activities exported.").arg(exportedActivities)+"\n";
+	} else {
+		lastWarnings+=Export::tr("0 scheduled activities exported, because no timetable was generated.")+"\n";
+	}
+	if(fileExport.error()>0){
+		lastWarnings+=Export::tr("FET critical. Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(file).arg(fileExport.error())+"\n";
+		return false;
+	}
+	fileExport.close();
+	return true;
+}
+
 
 
 bool Export::exportSchILD(QString& lastWarnings){

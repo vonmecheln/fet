@@ -1,5 +1,28 @@
 From Volker Dirr
 
+i also get today a mail from a guy, that had trouble to find the correct
+outputfiles today, because there are so many files in the directory.
+
+just a maybe todo:
+maybe write only the XXX_index file into the result directory. then make 3
+subdirecories. one subdirectory with all html files, one with all xml
+files and one with all csv files. so we don't need the export menue
+anymore, because it is exported always by default and the directory is a
+little bit more tidy.
+
+--------------------------------------------------------------------------------
+
+From Hatim Ali:
+
+- i hope you can add filter in (all time constraints and all space constraints) like the image in attachment file.
+(He designed a filter for teacher, students set, subject and activity tag, under the constraint description).
+
+
+--------------------------------------------------------------------------------
+
+
+From Volker Dirr
+
 >> we have:
 >>
 >> 1. category: 3-4 classes
@@ -732,3 +755,39 @@ a CLASS="room_not_avail" I can skin?)
 Thanks again for the software
 --GM
 Ionian University
+
+23---------------------------------------------------------
+From Zsolt Udvari
+
+We've created a timetable but the rooms aren't. So we do it by hand.
+How can I change in FET the rooms simpiler in a generated timetable?
+The times are locked.
+It would be the most simplier when I open e.g. the teachers timetable,
+click on a activities and I can add room to this.
+
+----------
+Liviu wrote:
+> I'm sorry, but you'll have to add manually constraints activity preferred
+> room
+> for each of the activities.
+>
+> I am not sure I understood correctly the problem, if not, please excuse me
+> and
+> explain more detailed.
+----------
+
+Yes, imho you understand my problem. I hoped that there is a simplier
+solution. So, maybe in the next releases would be nice: when a
+timetable is generated, user can changes/sets the rooms (only the
+activities without rooms of course) from the timetable (Timetable ->
+Show teachers/students): you select an activite, you click a button
+with "Assign room" and choose a room.
+
+One more: plus constraint: maximalize the activities in same time -
+because of number of rooms.
+
+24---------------------------------------------------------
+From Naji
+
+Hopefully, FET's team can enhanced it to be able to export the xml data to database, that will facilitates the 
+output of the data and enables programmers to engage it with their programs.

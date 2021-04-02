@@ -195,7 +195,7 @@ void TimetableViewStudentsForm::updateStudentsTimetableTable(){
 				}
 			}
 			else{
-				if(subgroupNotAvailableDayHour[i][k][j] || breakDayHour[k][j])
+				if((subgroupNotAvailableDayHour[i][k][j] || breakDayHour[k][j]) && PRINT_NOT_AVAILABLE_TIME_SLOTS)
 					s+="-x-";
 			}
 			studentsTimetableTable->setText(j, k, s);

@@ -73,7 +73,7 @@ void SettingsTimetableHtmlLevelForm::on_okPushButton_clicked()
 	assert(level>=0);
 
 	if(level>=3){
-		int t=QMessageBox::warning(this, tr("FET warning"), tr("This level might generate very large timetables, maybe 1 MB per file"
+		int t=QMessageBox::information(this, tr("FET information"), tr("This level might generate very large timetables, maybe 1 MB per file"
 		 " and 10 MB for all files of a timetable or even more."
 		 " Are you sure you have enough disk space?"),
 		 QMessageBox::Yes, QMessageBox::Cancel);

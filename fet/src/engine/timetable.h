@@ -34,7 +34,7 @@ This class represents the main interface for the library.
 class Timetable{
 public:
 	/**
-	The set of rules for the genetic timetable (the main input).
+	The set of rules for the timetable (the main input).
 	*/
 	Rules rules;
 };

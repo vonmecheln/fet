@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 17 August 2008 (new additions are written with date, most are at the end)
+this documentation by Liviu Lalescu, reviewed and modified - 5 September 2008 (new additions are written with date, most are at the end)
 
 --------
 
@@ -670,7 +670,55 @@ New, added 17 August 2008:
 
 Q: What about the automatic search for updates? Should I enable it?
 
-A: It is recommended to enable automatic search for updates. I didn't set it as default because people might be annoyed if I release too fast new versions. But if you can cope with that, it is recommended to always have the latest version and enable searching for updates at startup.</string>
+A: It is recommended to enable automatic search for updates. I didn't set it as default because people might be annoyed if I release too fast new versions. But if you can cope with that, it is recommended to always have the latest version and enable searching for updates at startup.
+
+-------------------------------------------------------------------------------
+
+New, added 30 August 2008:
+
+Q: From Q.D.John:
+
+&gt; you might think about a very powerful new
+&gt; feature: Schools like ours which educate young teachers have to place some
+&gt; lessons of one subject in a special class with both, the trainee and the
+&gt; trainer, for instance: The trainee "scf" has to have six lessons "German"
+&gt; in "4a" (2,1,1,1,1), in one of these single lessons (1+1,1,1,1,1) she has
+&gt; to be attended by the trainer "fri". I got many problems in putting in
+&gt; this, so we had to create a workaround, that does not work really good (as
+&gt; you may see from my data, that I'll send later on). Best would be to have
+&gt; two more fields in the "input activity screen": 1-attendng teacher(s)
+&gt; 2-number of single lessons to be attended. - Is this challenging ?
+
+A: I suggest 2 simple alternative approaches:
+
+1) The interface does not allow to specify different teachers for a larger 
+split activity. But you can modify manually the .fet data file and add one additional 
+teacher in a component.
+
+2) For working only in the GUI: for instance, you have activity A, split into 
+A1, A2, A3, A4 and A5. Then, consider instead activities Aa, split into Aa1, 
+Aa2, Aa3 and Aa4, with teacher T1 (do not add here a constraint min n days 
+between activities), and Ab, one component, with teachers T1 and T2. Add a 
+constraint min n days between activities, Aa1, Aa2, Aa3, Aa4 and Ab.
+
+---------------------------------------------------------------------------------
+
+New, added 5 September 2008:
+
+Q - Q1-5-September-2008: From juancmar:
+
+Hi, normative for High-School in Spain specifies that if an activity is scheduled in 3 periods in a week, they can't be in three consecutive days. So if I set min n days between activities as 1, then sometimes I get the 3 activities in consecutive days. If I set it as 2, then a restriction must be broken as I only have 5 days and not always can be used Monday, Wednesday and Friday. Then sometimes I got two of these activities the same day.
+
+How can I do these 3 days activities not being in three consecutive days? (I'd like to schedule two of them in consecutive days, and the other one two days after, or Monday, Wednesday and Friday)
+
+A: More solutions possible:
+
+1) the perfect solution, which is a bit difficult to implement: say A1, A2, A3 are the activities. Add constraint min n days between activities A1 and A2, 100%, 1 day, constraint min n days between activities A1 and A3, 2 days, 100% and between A2 and A3, 2 days, 100%.
+
+2) add a constraint min n days between activities for A1, A2 and A3, min days 1, weight 100%. Then add a second constraint min n days between activities, A1, A2, A3, min days 2, weight somewhere from 50% to 95% or even 99.75% if it is possible.
+From the add activity interface, you can add min days 2 and FET will ask about a second constraint, with min days 1, so you can add them directly from add activity dialog.
+
+Also, you can change multiple constraints at once from the min n days constraints dialog, using an intelligent filter.</string>
             </property>
         </widget>
     </grid>
