@@ -980,4 +980,6 @@ Versions 5.2.0 - 5.2.
 - Version 5.2.3
 	- Small bug fix - when clicking cancel on exit, the filename is preserved correctly
 	- Small corrections
+- Version 5.2.4
+	- Small interface improvement (now the add activity dialog has default show subgroups unchecked)
 	

@@ -159,8 +159,9 @@ void TimetableGenerateMultipleForm::help()
 
 	QMessageBox::information(this, tr("FET information"), tr("Notice: you can only see generated timetables on the hard disk,"
 	 " in html or xml format, or latest timetable in the FET Timetable/View menu. It is needed that the directory"
-	 " %1 to be emptied+deleted before proceeeding.\n\nPlease note that each timetable might occupy 1 MB of hard disk space or more,"
-	 " so make sure you have enough space.")
+	 " %1 to be emptied+deleted before proceeeding.\n\nPlease note that, for large data, each timetable might occupy more"
+	 " megabytes of hard disk space,"
+	 " so make sure you have enough space (you can check the dimension of a single timetable as a precaution).")
 	 .arg(destDir));
 }
 

@@ -197,9 +197,9 @@ void AddActivityForm::showSubgroupsChanged()
 
 void AddActivityForm::updateStudentsListBox()
 {
-	bool showYears=yearsCheckBox->isChecked();	
-	bool showGroups=groupsCheckBox->isChecked();	
-	bool showSubgroups=subgroupsCheckBox->isChecked();	
+	bool showYears=yearsCheckBox->isChecked();
+	bool showGroups=groupsCheckBox->isChecked();
+	bool showSubgroups=subgroupsCheckBox->isChecked();
 
 	allStudentsListBox->clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
