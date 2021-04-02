@@ -1,4 +1,4 @@
-This is FET version 5.13.4
+This is FET version 5.13.5
 
 
 Program description:
@@ -29,7 +29,7 @@ Requirements:
 	Microsoft Windows:
 	For running, you need only the archive of FET compiled for Windows (which contains the MinGW and Qt dlls).
 	For compiling, you need Qt (Qt 4.6.3 [2010.03 SDK] has a bug under Windows, see note NQt463BugWin, Qt 4.6.2 [2010.02.1 SDK] is OK)
-	and a compatible C++ compiler (MinGW is probably an easy option).
+	and a compatible C++ compiler (MinGW is probably an easy option, as it is included in Qt SDK).
 
 
 Download:
@@ -55,11 +55,11 @@ Getting - compiling - installing GNU tools: make, gcc and gcc-c++ (or g++):
 Getting - compiling - installing Qt by Nokia:
 
 	Note NQt463BugWin: Under some Windows versions, Qt 4.6.3 [2010.03 SDK] has a bug, FET will start slow sometimes
-	(this bug is not critical and it seems that there are no other bugs). So, please use other Qt version under Windows
-	(the previous Qt is 4.6.2 [2010.02.1 SDK], which works well). Currently, the latest Qt available for download is 4.6.3 [2010.03 SDK],
-	so you may need to search the Qt page for the older version, 4.6.2 [2010.02.1 SDK].
+	(this bug is not critical and it seems that there are no other bugs). So, please use other Qt version (the previous
+	Qt is 4.6.2 [2010.02.1 SDK], which works well). Currently (17 June 2010), the latest Qt available for download is 4.6.3 [2010.03 SDK],
+	so you may need to search the Qt page for the older Qt for Windows version, 4.6.2 [2010.02.1 SDK].
 
-	You will need Qt 4.6.3 or compatible to compile FET (see note NQt463BugWin - under Windows, Qt 4.6.3 has a bug).
+	You will need Qt 4.6.3 or compatible to compile FET (see note NQt463BugWin - Qt 4.6.3 has a bug under Windows).
 	You can get the corresponding version of Qt with your package manager or from http://qt.nokia.com/
 	Qt can be downloaded with LGPL (open source) or commercial license, complete SDK or Framework only. Any variant should work.
 
@@ -125,7 +125,7 @@ Compiling FET:
 	(The mkspecs directory contains more subdirectories, in the form platform-compiler, you need to search for your corresponding directories/files.
 	For instance, GNU/Linux with gcc compiler is named "linux-g++", and you may also need to modify the "common" section).
 
-	Currently FET can be compiled with a C++ compiler, using Qt version 4.6.3 or compatible (under Windows, Qt 4.6.3 has a bug, please see note NQt463BugWin).
+	Currently FET can be compiled with a C++ compiler, using Qt version 4.6.3 or compatible (Qt 4.6.3 has a bug under Windows, please see note NQt463BugWin).
 
 
 	GNU/Linux and similar OS's:
@@ -181,7 +181,7 @@ Compiling FET:
 Installing FET:
 
 	GNU/Linux and similar OS's:
-	Please move the whole directory "fet-x.x.x" into the place where you like,
+	Please move the whole directory "fet-v.v.v" into the place where you like,
 	for instance to the directory "/usr/local/".
 
 	Microsoft Windows:
@@ -198,16 +198,19 @@ Running FET:
 	consider that you want to run the command line version (see below instructions for command line version).
 
 	GNU/Linux and similar OS's:
-	chdir to the directory where the fet executable is (for instance, "cd /home/liviu/fet-x.x.x/") and run it with "./fet" or with the suitable command
-	for your platform. Alternatively, you may run the executable named fet from the fet-x.x.x directory, using another method. The fet executable
-	will be located inside the fet-x.x.x directory after a successful compilation.
+	chdir to the directory where the fet executable is (for instance, "cd /home/liviu/fet-v.v.v/") and run it with "./fet" or with the suitable command
+	for your platform. Alternatively, you may run the executable named fet from the fet-v.v.v directory, using another method. The fet executable
+	will be located inside the fet-v.v.v directory after a successful compilation.
 	
 	Note for Mac OS X about using translations (if you want to run FET into other language): it seems that you need to copy the contents
-	of the "translations/" directory into the directory fet-x.x.x/fet.app/Contents/MacOS/translations/ or into the directory /usr/share/fet/translations/
-	(if you compiled/installed FET by yourself).
-	
+	of the "translations/" directory into the directory fet-v.v.v/fet.app/Contents/MacOS/translations/ or into the directory /usr/share/fet/translations/
+	(if you compiled/installed FET by yourself). Or copy the whole directory translations/ into fet-v.v.v/fet.app/Contents/MacOS/ or into usr/share/fet/
+	More notes for the Mac OS X platform, from a user: copying the translations/ directory into the directory fet.app/Contents/MacOS/ is
+	possible from the command line in X11 xterm (but it is not possible with the finder program, because the file extension ".app" is
+	exclusive for applications, so the program finder interprets a directory with the extension ".app" as an application).
+
 	Microsoft Windows:
-	Run the executable fet.exe (its location is inside the fet-x.x.x directory, you can find it there if you have FET precompiled for Windows or after you compiled it).
+	Run the executable fet.exe (its location is inside the fet-v.v.v directory, you can find it there if you have FET precompiled for Windows or after you compiled it).
 
 	COMMAND LINE: no GUI, just run "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u] [--printbreak=b]
 	 [--dividetimeaxisbydays=v] [--printsimultaneousactivities=w] [--randomseed=r] [--warnifusingnotperfectconstraints=s] [--warnifusingstudentsminhoursdailywithallowemptydays=p]",
@@ -253,26 +256,29 @@ Running FET:
 
 Languages (translations):
 
-	The translation files which the FET executable needs in order to be able to run in other languages are ending in .qm (like fet_xx.qm)
+	The translation files which the FET executable needs in order to be able to run in other languages are ending in .qm (like fet_**.qm)
 	and they are located in the "translations" directory in the FET distribution.
 
-	FET will search for translations (fet_xx.qm files) in the following order:
+	FET will search for translations (fet_**.qm files) in the following order:
 	1) directly in the directory where the fet executable is,
 	2) the directory "translations" in the directory where fet executable is,
 	3) the directory /usr/share/fet/translations (under GNU/Linux or Mac OS X).
 
 	So, on:
-	Windows: if fet.exe is in C:\fet-x.x.x, fet will search for the file fet_xx.qm in
-		C:\fet-x.x.x and then in C:\fet-x.x.x\translations
-	GNU/Linux: if the fet executable is in /home/liviu/fet-x.x.x, fet will search for the file fet_xx.qm in
-		/home/liviu/fet-x.x.x, then in /home/liviu/fet-x.x.x/translations and then in /usr/share/fet/translations
+	Windows: if fet.exe is in C:\fet-v.v.v, fet will search for the file fet_**.qm in
+		C:\fet-v.v.v and then in C:\fet-v.v.v\translations
+	GNU/Linux: if the fet executable is in /home/liviu/fet-v.v.v, fet will search for the file fet_**.qm in
+		/home/liviu/fet-v.v.v, then in /home/liviu/fet-v.v.v/translations and then in /usr/share/fet/translations
 	Mac OS X: the operation is approximately similar to GNU/Linux.
 		The difference is that it seems that the fet application on Mac OS X contains in turn other directories (application directories),
-		so FET will search for the translations inside these application directories, not in the fet-x.x.x directory. The GNU/Linux style fet executable
-		seems to be located in fet-x.x.x/fet.app/Contents/MacOS, so FET will search for the file fet_xx.qm in the directory
-		fet-x.x.x/fet.app/Contents/MacOS, then in the directory fet-x.x.x/fet.app/Contents/MacOS/translations,
+		so FET will search for the translations inside these application directories, not in the fet-v.v.v directory. The GNU/Linux style fet executable
+		seems to be located in fet-v.v.v/fet.app/Contents/MacOS, so FET will search for the file fet_**.qm in the directory
+		fet-v.v.v/fet.app/Contents/MacOS, then in the directory fet-v.v.v/fet.app/Contents/MacOS/translations,
 		then in the directory /usr/share/fet/translations.
 		Please see also the Mac OS X note from the section "Running FET".
+		More notes for the Mac OS X platform, from a user: copying the translations/ directory into the directory fet.app/Contents/MacOS/ is
+		possible from the command line in X11 xterm (but it is not possible with the finder program, because the file extension ".app" is
+		exclusive for applications, so the program finder interprets a directory with the extension ".app" as an application).
 
 	What to do if you get stuck with an unknown language: in each language, the submenu (Settings->)Language is translated also in English
 		(like: Limba/Language in Romanian). You can select the US English language (en_US abbreviation) and then close and restart FET (press the middle button
@@ -289,23 +295,22 @@ Languages (translations):
 
 Documentation:
 
-	Some hints in the directory "fet-x.x.x/doc/".
+	Some hints in the directory "fet-v.v.v/doc/".
 	Some other hints in the Help menu.
 	You may find more documentation on the FET homepage.
 
 
 Input files:
 
-	You can open a few sample input files in "fet-x.x.x/examples/" directory
+	You can open a few sample input files in "fet-v.v.v/examples/" directory
 	(under GNU/Linux or Mac OS X, they may be found in /usr/share/doc/fet/, or /usr/share/fet/)
 
-	You can create/modify a file from FET's user interface or you can modify it by
-	hand, if you like.
+	You can create/modify a file from FET's user interface or you can modify it by hand, if you like.
 
 
 Un-installing FET:
 
-	Remove the directory fet-x.x.x. Also, you may want to remove the directory with the fet results (default: $HOME/fet-results).
+	Remove the directory fet-v.v.v. Also, you may want to remove the directory with the fet results (default: $HOME/fet-results).
 	This will leave the settings of FET on your system, certainly this is not a problem.
 	FET stores a few bytes in your operating system settings. If you really want to get rid of everything FET created, read below.
 

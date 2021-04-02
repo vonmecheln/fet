@@ -10,7 +10,7 @@ Disable menues and shortcuts (in FET main form) if they are currently not
 useable. For example: Disable teacher constraints, if there is no teacher
 in the dataset. Disable space constraints if there is no room in the
 dataset. ... (Disable mean: Just make them unavailable/gray. Don't hide
-them. Do it like openOfiice, Firefox, ...)
+them. Do it like OpenOffice.org, Firefox, ...)
 
 ---------------------------------------------------------------
 
@@ -1586,3 +1586,13 @@ From Mr Robo:
 In the Time tab, Break button, leading to the dialogue to set up break times... At the moment, I set up one break time constraint that has morning breaks and lunch breaks combined.
 
 If I set up two (one for break and one for lunch) and I could attach a label that would be displayed in the unavailable slots in the finished timetable, such as 'Break' or 'Lunch', it would save me having to edit each Student, Teacher and Room timetable before they can be printed, etc. It's quite manual at the moment because '-X-' is used throughout and I can't do a global search and replace.
+
+53---------------------------------------------------------
+From George Miliotis:
+
+About the "Show years", "Show groups", "Show subgroups" check boxes in add/modify activity and
+modify subactivity dialogs:
+
+I'd be more interested in FET actually remembering these settings
+globally (not even per form) for each session, no need to actually store
+to disk.

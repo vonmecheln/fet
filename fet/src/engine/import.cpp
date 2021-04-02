@@ -15,7 +15,7 @@ File import.cpp
                          : http://www.timetabling.de/
  ***************************************************************************
  *                                                                         *
- *   NULL program is free software; you can redistribute it and/or modify  *
+ *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
  *   the Free Software Foundation; either version 2 of the License, or     *
  *   (at your option) any later version.                                   *
@@ -1014,7 +1014,10 @@ int Import::readFields(){
 							} else if(i==FIELD_TOTAL_DURATION){
 								 assert(true);
 							}else{
-								assert(false);
+								ok=false;
+								warnText+=Import::tr("Skipped line %1: Field '%2' doesn't contain an integer value.").arg(lineNumber).arg(fieldName[i])+"\n";
+								//because of bug reported by murad on 25 May 2010, crash when importing rooms, if capacity is empty
+								//assert(false);
 							}
 						}
 						if(ok && i==FIELD_MIN_DAYS_WEIGHT){
@@ -1106,7 +1109,7 @@ int Import::showFieldsAndWarnings(){
 		else{
 			if(i!=FIELD_TEACHER_NAME){		//needed for activities!
 				//assert(fieldList[i].isEmpty());
-				; //because of bug reported 17.03.2008. Please add again?! compare add activities function
+				//because of bug reported 17.03.2008. Please add again?! compare add activities function
 			}
 		}
 	}
@@ -1150,7 +1153,7 @@ FILE_STRIPPED_NAME
 	if(max!=0)
 		headTableText->setText(Import::tr("Following data found in the file:"));
 	else
-		headTableText->setText(Import::tr("There is no useable data in the file."));
+		headTableText->setText(Import::tr("There is no usable data in the file."));
 
 	QTableWidget* fieldsTable= new QTableWidget;
 	fieldsTable->setRowCount(max);
@@ -1275,7 +1278,7 @@ void Import::importCSVActivityTags(){
 	//check empty fields (start)
 	for(int i=0; i<fieldList[FIELD_ACTIVITY_TAG_NAME].size(); i++){
 		if(fieldList[FIELD_ACTIVITY_TAG_NAME][i].isEmpty())
-			warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(fieldName[FIELD_LINE_NUMBER]).arg(fieldName[FIELD_ACTIVITY_TAG_NAME])+"\n";
+			warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(fieldName[FIELD_ACTIVITY_TAG_NAME])+"\n";
 	}
 	//check empty fields (end)
 
@@ -1341,7 +1344,7 @@ void Import::importCSVRoomsAndBuildings(){
 	if(fieldNumber[FIELD_ROOM_NAME]!=DO_NOT_IMPORT)
 		for(int i=0; i<fieldList[FIELD_ROOM_NAME].size(); i++)
 			if(duplicatesCheck.contains(fieldList[FIELD_ROOM_NAME][i]))
-				warnText+=Import::tr("Skipped line %1: Field '%2' is already in a previous line.").arg(fieldName[FIELD_LINE_NUMBER]).arg(fieldName[FIELD_ROOM_NAME])+"\n";
+				warnText+=Import::tr("Skipped line %1: Field '%2' is already in a previous line.").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(fieldName[FIELD_ROOM_NAME])+"\n";
 			else
 				duplicatesCheck<<fieldList[FIELD_ROOM_NAME][i];
 	duplicatesCheck.clear();
@@ -1349,7 +1352,7 @@ void Import::importCSVRoomsAndBuildings(){
 	if(fieldNumber[FIELD_ROOM_NAME]==DO_NOT_IMPORT&&fieldNumber[FIELD_BUILDING_NAME]!=DO_NOT_IMPORT)
 		for(int i=0; i<fieldList[FIELD_BUILDING_NAME].size(); i++)
 			if(duplicatesCheck.contains(fieldList[FIELD_BUILDING_NAME][i]))
-				warnText+=Import::tr("Skipped line %1: Field '%2' is already in a previous line.").arg(fieldName[FIELD_LINE_NUMBER]).arg(fieldName[FIELD_BUILDING_NAME])+"\n";
+				warnText+=Import::tr("Skipped line %1: Field '%2' is already in a previous line.").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(fieldName[FIELD_BUILDING_NAME])+"\n";
 			else
 				duplicatesCheck<<fieldList[FIELD_BUILDING_NAME][i];
 	duplicatesCheck.clear();
@@ -1357,13 +1360,13 @@ void Import::importCSVRoomsAndBuildings(){
 	if(fieldNumber[FIELD_ROOM_NAME!=DO_NOT_IMPORT])
 		for(int i=0; i<fieldList[FIELD_ROOM_NAME].size(); i++)
 			if(fieldList[FIELD_ROOM_NAME][i].isEmpty())
-				warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(fieldName[FIELD_LINE_NUMBER]).arg(fieldName[FIELD_ROOM_NAME])+"\n";
+				warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(fieldName[FIELD_ROOM_NAME])+"\n";
 	//check empty rooms (end)
 	//check empty buildings (start)
 	if((fieldNumber[FIELD_ROOM_NAME]==DO_NOT_IMPORT||fieldNumber[FIELD_ROOM_NAME]==IMPORT_DEFAULT_ITEM)&&fieldNumber[FIELD_BUILDING_NAME!=DO_NOT_IMPORT])
 		for(int i=0; i<fieldList[FIELD_BUILDING_NAME].size(); i++)
 			if(fieldList[FIELD_BUILDING_NAME][i].isEmpty())
-				warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(fieldName[FIELD_LINE_NUMBER]).arg(fieldName[FIELD_BUILDING_NAME])+"\n";
+				warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(fieldName[FIELD_BUILDING_NAME])+"\n";
 	//check empty buildings (end)
 
 	//check if rooms are already in memory (start)
@@ -1460,7 +1463,7 @@ void Import::importCSVSubjects(){
 	//check empty fields (start)
 	for(int i=0; i<fieldList[FIELD_SUBJECT_NAME].size(); i++){
 		if(fieldList[FIELD_SUBJECT_NAME][i].isEmpty())
-			warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(fieldName[FIELD_LINE_NUMBER]).arg(fieldName[FIELD_SUBJECT_NAME])+"\n";
+			warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(fieldName[FIELD_SUBJECT_NAME])+"\n";
 	}
 	//check empty fields (end)
 
@@ -1522,7 +1525,7 @@ void Import::importCSVTeachers(){
 	//check empty fields (start)
 	for(int i=0; i<fieldList[FIELD_TEACHER_NAME].size(); i++){
 		if(fieldList[FIELD_TEACHER_NAME][i].isEmpty())
-			warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(fieldName[FIELD_LINE_NUMBER]).arg(fieldName[FIELD_TEACHER_NAME])+"\n";
+			warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(fieldName[FIELD_TEACHER_NAME])+"\n";
 	}
 	//check empty fields (end)
 

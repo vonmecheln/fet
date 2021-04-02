@@ -1,15 +1,22 @@
 //
 //
-// C++ Implementation: $MODULE$
-//
-// Description:
+// Description: This file is part of FET
 //
 //
-// Author: Lalescu Liviu <Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)>, (C) 2003
+// Author: Lalescu Liviu <Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)>
+// Copyright (C) 2003 Liviu Lalescu <http://lalescu.ro/liviu/>
 //
-// Copyright: See COPYING file that comes with this distribution
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
 //
 //
+
 #include <iostream>
 using namespace std;
 
@@ -503,6 +510,14 @@ FetMainForm::FetMainForm()
 	connect(enableStudentsMinHoursDailyWithAllowEmptyDaysAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool)));
 	connect(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool)));
 
+	dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction->setIconVisibleInMenu(true);
+	dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction->setIconVisibleInMenu(true);
+	dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction->setIconVisibleInMenu(true);
+	dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction->setIconVisibleInMenu(true);
+
+	dataTimeConstraintsStudentsSetMaxGapsPerDayAction->setIconVisibleInMenu(true);
+	dataTimeConstraintsStudentsMaxGapsPerDayAction->setIconVisibleInMenu(true);
+
 	setEnabledIcon(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
 	setEnabledIcon(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
 	setEnabledIcon(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
@@ -765,25 +780,25 @@ void FetMainForm::on_fileOpenAction_activated()
 		QString s2=s.right(s.length()-tmp2-1);
 			
 		if(s2.indexOf("\"") >= 0){
-			QMessageBox::warning(this, tr("FET info"), 
+			QMessageBox::warning(this, tr("FET information"), 
 			 tr("Please do not use quotation marks \" in filename, the html css code does not work."
 			  " File was not loaded. Please rename it, removing not allowed characters and open it after that with FET."));
 			return;
 		}		
 		if(s2.indexOf(";") >= 0){
-			QMessageBox::warning(this, tr("FET info"), 
+			QMessageBox::warning(this, tr("FET information"), 
 			 tr("Please do not use semicolon ; in filename, the html css code does not work."
 			  " File was not loaded. Please rename it, removing not allowed characters and open it after that with FET."));
 			return;
 		}
 		if(s2.indexOf("#") >= 0){
-			QMessageBox::warning(this, tr("FET info"), 
+			QMessageBox::warning(this, tr("FET information"), 
 			 tr("Please do not use # in filename, the html css code does not work."
 			  " File was not loaded. Please rename it, removing not allowed characters and open it after that with FET."));
 			return;
 		}
 		/*if(s2.indexOf("(") >= 0 || s2.indexOf(")")>=0){
-			QMessageBox::information(this, tr("FET info"), tr("Please do not use parentheses () in filename, the html css code does not work"));
+			QMessageBox::information(this, tr("FET information"), tr("Please do not use parentheses () in filename, the html css code does not work"));
 			return;
 		}*/
 		else{
@@ -807,7 +822,7 @@ void FetMainForm::on_fileOpenAction_activated()
 			else{
 				statusBar()->showMessage("", STATUS_BAR_MILLISECONDS);
 
-				QMessageBox::information(this, tr("FET info"), tr("Invalid file"), tr("&OK"));
+				QMessageBox::information(this, tr("FET information"), tr("Invalid file"), tr("&OK"));
 			}
 
 			//this->setCursor(orig);
@@ -842,19 +857,19 @@ bool FetMainForm::fileSaveAs()
 	QString s2=s.right(s.length()-tmp2-1);
 			
 	if(s2.indexOf("\"") >= 0){
-		QMessageBox::warning(this, tr("FET info"), tr("Please do not use quotation marks \" in filename, the html css code does not work"));
+		QMessageBox::warning(this, tr("FET information"), tr("Please do not use quotation marks \" in filename, the html css code does not work"));
 		return false;
 	}
 	if(s2.indexOf(";") >= 0){
-		QMessageBox::warning(this, tr("FET info"), tr("Please do not use semicolon ; in filename, the html css code does not work"));
+		QMessageBox::warning(this, tr("FET information"), tr("Please do not use semicolon ; in filename, the html css code does not work"));
 		return false;
 	}
 	if(s2.indexOf("#") >= 0){
-		QMessageBox::warning(this, tr("FET info"), tr("Please do not use # in filename, the html css code does not work"));
+		QMessageBox::warning(this, tr("FET information"), tr("Please do not use # in filename, the html css code does not work"));
 		return false;
 	}
 	/*if(s2.indexOf("(") >= 0 || s2.indexOf(")")>=0){
-		QMessageBox::information(this, tr("FET info"), tr("Please do not use parentheses () in filename, the html css code does not work"));
+		QMessageBox::information(this, tr("FET information"), tr("Please do not use parentheses () in filename, the html css code does not work"));
 		return false;
 	}*/
 		
@@ -1038,19 +1053,19 @@ void FetMainForm::on_timetableSaveTimetableAsAction_activated()
 		QString s2=s.right(s.length()-tmp2-1);
 			
 		if(s2.indexOf("\"") >= 0){
-			QMessageBox::warning(this, tr("FET info"), tr("Please do not use quotation marks \" in filename, the html css code does not work"));
+			QMessageBox::warning(this, tr("FET information"), tr("Please do not use quotation marks \" in filename, the html css code does not work"));
 			return;
 		}
 		if(s2.indexOf(";") >= 0){
-			QMessageBox::warning(this, tr("FET info"), tr("Please do not use semicolon ; in filename, the html css code does not work"));
+			QMessageBox::warning(this, tr("FET information"), tr("Please do not use semicolon ; in filename, the html css code does not work"));
 			return;
 		}
 		if(s2.indexOf("#") >= 0){
-			QMessageBox::warning(this, tr("FET info"), tr("Please do not use # in filename, the html css code does not work"));
+			QMessageBox::warning(this, tr("FET information"), tr("Please do not use # in filename, the html css code does not work"));
 			return;
 		}
 		/*if(s2.indexOf("(") >= 0 || s2.indexOf(")")>=0){
-			QMessageBox::information(this, tr("FET info"), tr("Please do not use parentheses () in filename, the html css code does not work"));
+			QMessageBox::information(this, tr("FET information"), tr("Please do not use parentheses () in filename, the html css code does not work"));
 			return;
 		}*/
 			

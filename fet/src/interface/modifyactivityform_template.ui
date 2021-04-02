@@ -173,7 +173,7 @@
        <item>
         <widget class="QCheckBox" name="showYearsCheckBox">
          <property name="text">
-          <string>Show years</string>
+          <string>Years</string>
          </property>
          <property name="checked">
           <bool>true</bool>
@@ -183,7 +183,7 @@
        <item>
         <widget class="QCheckBox" name="showGroupsCheckBox">
          <property name="text">
-          <string>Show groups</string>
+          <string>Groups</string>
          </property>
          <property name="checked">
           <bool>true</bool>
@@ -193,7 +193,7 @@
        <item>
         <widget class="QCheckBox" name="showSubgroupsCheckBox">
          <property name="text">
-          <string>Show subgroups</string>
+          <string>Subgroups</string>
          </property>
         </widget>
        </item>

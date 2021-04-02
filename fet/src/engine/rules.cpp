@@ -5267,7 +5267,7 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 		filev[0]=filev[1]=filev[2]=-1;
 		if(tfile!=0){
 			QMessageBox::warning(NULL, tr("FET warning"), tr("File contains a version numbering scheme which"
-			" is not matched by x.x.xa (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are adviced"
+			" is not matched by v.v.va (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are adviced"
 			" to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it")+"\n\n"+
 			tr("If you are opening a file older than FET format version 5, it will be converted to latest FET data format"));
 			cout<<"Opened file version not matched by regexp"<<endl;
@@ -5289,7 +5289,7 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 		int tfet=fetVerReCap.indexIn(FET_VERSION);
 		fetv[0]=fetv[1]=fetv[2]=-1;
 		if(tfet!=0){
-			QMessageBox::warning(NULL, tr("FET warning"), tr("FET version does not respect the format x.x.xa"
+			QMessageBox::warning(NULL, tr("FET warning"), tr("FET version does not respect the format v.v.va"
 			" (3 numbers separated by points, followed by any string a, which may be empty). This is probably a bug in FET - please report it"));
 			cout<<"FET version not matched by regexp"<<endl;
 		}

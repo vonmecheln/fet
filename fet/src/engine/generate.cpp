@@ -4654,7 +4654,7 @@ impossiblestudentsintervalmaxdaysperweek:
 
 		//not breaking students early max beginnings at second hour
 		//TODO: this should take care of students max gaps per day also. Very critical changes, so be very careful if you do them. Safer -> leave them as they are now.
-		//see file fet-x.x.x/doc/algorithm/improve-studentsmaxgapsperday.txt for advice and (unstable) code on how to make students max gaps per day constraint perfect
+		//see file fet-v.v.v/doc/algorithm/improve-studentsmaxgapsperday.txt for advice and (unstable) code on how to make students max gaps per day constraint perfect
 		okstudentsearlymaxbeginningsatsecondhour=true;
 		
 		foreach(int sbg, act->iSubgroupsList)
@@ -4811,7 +4811,7 @@ impossiblestudentsearlymaxbeginningsatsecondhour:
 
 		//not breaking students max gaps per week
 		//TODO: this should take care of students max gaps per day also. Very critical changes, so be very careful if you do them. Safer -> leave them as they are now.
-		//see file fet-x.x.x/doc/algorithm/improve-studentsmaxgapsperday.txt for advice and (unstable) code on how to make students max gaps per day constraint perfect
+		//see file fet-v.v.v/doc/algorithm/improve-studentsmaxgapsperday.txt for advice and (unstable) code on how to make students max gaps per day constraint perfect
 		okstudentsmaxgapsperweek=true;
 		
 		foreach(int sbg, act->iSubgroupsList)
@@ -4907,7 +4907,7 @@ impossiblestudentsmaxgapsperweek:
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 		//!!!NOT PERFECT constraint, in other places may be improved, like in min/max hours daily.
-		//see file fet-x.x.x/doc/algorithm/improve-studentsmaxgapsperday.txt for advice and (unstable) code on how to make students max gaps per day constraint perfect
+		//see file fet-v.v.v/doc/algorithm/improve-studentsmaxgapsperday.txt for advice and (unstable) code on how to make students max gaps per day constraint perfect
 
 		//not causing more than subgroupsMaxGapsPerDay students gaps
 		
@@ -5089,7 +5089,7 @@ impossiblestudentsmaxgapsperday:
 
 		//allowed from students max hours daily
 		//TODO: this should take care of students max gaps per day also. Very critical changes, so be very careful if you do them. Safer -> leave them as they are now.
-		//see file fet-x.x.x/doc/algorithm/improve-studentsmaxgapsperday.txt for advice and (unstable) code on how to make students max gaps per day constraint perfect
+		//see file fet-v.v.v/doc/algorithm/improve-studentsmaxgapsperday.txt for advice and (unstable) code on how to make students max gaps per day constraint perfect
 		okstudentsmaxhoursdaily=true;
 		
 		foreach(int sbg, act->iSubgroupsList){
@@ -6018,7 +6018,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 		/////////begin students min hours daily
 		
 		//TODO: this should take care of students max gaps per day also. Very critical changes, so be very careful if you do them. Safer -> leave them as they are now.
-		//see file fet-x.x.x/doc/algorithm/improve-studentsmaxgapsperday.txt for advice and (unstable) code on how to make students max gaps per day constraint perfect
+		//see file fet-v.v.v/doc/algorithm/improve-studentsmaxgapsperday.txt for advice and (unstable) code on how to make students max gaps per day constraint perfect
 		okstudentsminhoursdaily=true;
 		
 		foreach(int sbg, act->iSubgroupsList){

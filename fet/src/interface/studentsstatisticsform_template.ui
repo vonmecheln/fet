@@ -26,7 +26,7 @@
       <item row="0" column="0">
        <widget class="QCheckBox" name="showYearsCheckBox">
         <property name="text">
-         <string>Show Years</string>
+         <string>Show years</string>
         </property>
         <property name="checked">
          <bool>true</bool>

@@ -1512,3 +1512,10 @@ Versions 5.13.0 - 5.13.x
 	- Code cleanup.
 - Version 5.13.4
 	- Added a Slovak translation, by Ondrej Gregor.
+- Version 5.13.5
+	- Corrected a bug, under newer versions of GNOME (the locked/unlocked icons for the special constraints were not shown in the menus).
+	- Very rare bug fix (crash in import if some fields in a line are missing, reported by murad).
+	- Other minor bug fixes in import (if an imported line was incorrect, the report message didn't specify this line number, in some cases).
+	- Updated the Indonesian translation, by Nirwan Yus.
+	- Updated the Spanish translation, by Jose Cesar Fernandez Lopez.
+	- Code cleanup
