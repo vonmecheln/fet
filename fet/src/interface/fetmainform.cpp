@@ -2990,7 +2990,8 @@ void FetMainForm::on_timetableShowConflictsAction_activated()
 
 void FetMainForm::on_timetableViewRoomsAction_activated()
 {
-	if(!rooms_schedule_ready){
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+	//if(!rooms_schedule_ready){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
 	}
@@ -3111,6 +3112,7 @@ void FetMainForm::on_languageAction_activated()
 	languagesMap.insert("uk", tr("Ukrainian"));
 	languagesMap.insert("pt_BR", tr("Brazilian Portuguese"));
 	languagesMap.insert("da", tr("Danish"));
+	languagesMap.insert("si", tr("Sinhala"));
 	
 	//assert(languagesMap.count()==N_LANGUAGES);
 	

@@ -25201,24 +25201,24 @@ Siusplau atura la simulació abans</translation>
 <context>
     <name>DaysForm</name>
     <message>
-        <location filename="../src/interface/daysform.cpp" line="118"/>
-        <location filename="../src/interface/daysform.cpp" line="125"/>
-        <location filename="../src/interface/daysform.cpp" line="130"/>
+        <location filename="../src/interface/daysform.cpp" line="122"/>
+        <location filename="../src/interface/daysform.cpp" line="129"/>
+        <location filename="../src/interface/daysform.cpp" line="134"/>
         <source>FET information</source>
         <translation>Informació de FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform.cpp" line="119"/>
+        <location filename="../src/interface/daysform.cpp" line="123"/>
         <source>Empty names not allowed</source>
         <translation>Noms buits no permesos</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform.cpp" line="126"/>
+        <location filename="../src/interface/daysform.cpp" line="130"/>
         <source>Duplicates not allowed</source>
         <translation>Duplicats no permesos</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform.cpp" line="131"/>
+        <location filename="../src/interface/daysform.cpp" line="135"/>
         <source>Please note that FET will NOT take care of old constraints using erased days (only renamed days will be handled correctly)</source>
         <translation>Siusplau sàpigues que FET NO es cuidarà de restriccions antigues que usin dies esborrats (només els dies reanomenats)</translation>
     </message>
@@ -25733,15 +25733,15 @@ La importació de dades serà més fàcil amb aquesta configuració.</translatio
         <location filename="../src/interface/fetmainform.cpp" line="2947"/>
         <location filename="../src/interface/fetmainform.cpp" line="2965"/>
         <location filename="../src/interface/fetmainform.cpp" line="2969"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2999"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3132"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3184"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3534"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3574"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3604"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3629"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3656"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3678"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3000"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3134"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3186"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3536"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3576"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3606"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3631"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3658"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3680"/>
         <source>FET warning</source>
         <translation>Avís de FET</translation>
     </message>
@@ -25876,19 +25876,19 @@ La importació de dades serà més fàcil amb aquesta configuració.</translatio
         <location filename="../src/interface/fetmainform.cpp" line="2942"/>
         <location filename="../src/interface/fetmainform.cpp" line="2960"/>
         <location filename="../src/interface/fetmainform.cpp" line="2982"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2994"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3013"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3023"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3033"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3043"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3053"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3063"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3188"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3371"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3398"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3421"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3488"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3499"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2995"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3014"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3024"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3034"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3044"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3054"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3064"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3190"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3373"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3400"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3423"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3490"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3501"/>
         <source>FET information</source>
         <translation>Informació de FET</translation>
     </message>
@@ -25926,7 +25926,7 @@ La importació de dades serà més fàcil amb aquesta configuració.</translatio
         <location filename="../src/interface/fetmainform.cpp" line="646"/>
         <location filename="../src/interface/fetmainform.cpp" line="708"/>
         <location filename="../src/interface/fetmainform.cpp" line="870"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3276"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3278"/>
         <source>&amp;Yes</source>
         <translation>&amp;Sí</translation>
     </message>
@@ -25934,14 +25934,14 @@ La importació de dades serà més fàcil amb aquesta configuració.</translatio
         <location filename="../src/interface/fetmainform.cpp" line="646"/>
         <location filename="../src/interface/fetmainform.cpp" line="708"/>
         <location filename="../src/interface/fetmainform.cpp" line="870"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3276"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3278"/>
         <source>&amp;No</source>
         <translation>&amp;No</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="646"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3433"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3454"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3435"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3456"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Cancel·la</translation>
     </message>
@@ -26062,11 +26062,11 @@ La importació de dades serà més fàcil amb aquesta configuració.</translatio
         <location filename="../src/interface/fetmainform.cpp" line="2664"/>
         <location filename="../src/interface/fetmainform.cpp" line="2883"/>
         <location filename="../src/interface/fetmainform.cpp" line="2910"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3372"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3399"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3422"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3489"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3500"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3374"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3401"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3424"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3491"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3502"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>Col·locació en curs. Siusplau atura la simulació abans d&apos;això.</translation>
@@ -26274,149 +26274,154 @@ Tenir un subgrup amb massa poques hores laborables per setmana vol dir que has i
         <translation>En cas que aquestes adreces no funcionin, potser la web de FET tingui problemes temporals, per tant torna-ho a provar més tard. o potser la pàgina de FET ha canviat, per tant fes una cerca de la nova pàgina a internet.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3078"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3079"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3092"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3223"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3093"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3225"/>
         <source>US English</source>
         <translation>Anglès americà</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3112"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3113"/>
         <source>Brazilian Portuguese</source>
         <translation>Portuguès del Brasil</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3113"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3114"/>
         <source>Danish</source>
         <translation>Danès</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3132"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3115"/>
+        <source>Sinhala</source>
+        <translation>Singalès</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="3134"/>
         <source>Invalid current language - making it en_US (US English)</source>
         <translation>Idioma actual no vàlid - convertint-lo en en_US (anglès americà)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3184"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3186"/>
         <source>Invalid language selected - making it en_US (US English)</source>
         <translation>Idioma sel·leccionat no vàlid - convertint-lo en en_US (anglès americà)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3204"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3206"/>
         <source>That means:</source>
         <translation>Això significa:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3207"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3209"/>
         <source>Mainform geometry will be reset to default</source>
         <translation>La geometria del formulari principal es restaurarà a predeterminada</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3210"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3212"/>
         <source>Show shortcut buttons in main window will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Mostra els botons de drecera a la finestra principal serà %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3213"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3215"/>
         <source>In the shortcuts tab from the main window, the first section will be selected/shown</source>
         <comment>Option refers to the main window tab widget for shortcuts, which currently contains 5 tabs: File, Data, Time, Space, Timetable (so it will select/show File tab).</comment>
         <translation>En la pestanya de dreceres de la finestra principal, la primera secció estarà sel·leccionada/mostrada</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3217"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3219"/>
         <source>Check for updates at startup will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>La comprovació d&apos;actualitzacions a l&apos;inici serà %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3226"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3228"/>
         <source>Working directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>El directori de treball serà %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3229"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3231"/>
         <source>Output directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>El directori de destinació serà %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3232"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3234"/>
         <source>Import directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>El directori d&apos;importació serà %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3235"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3237"/>
         <source>Html level of the timetables will be %1</source>
         <comment>%1 is default html level</comment>
         <translation>El nivell d&apos;HTML dels horaris serà %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3238"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3240"/>
         <source>Mark not available slots with -x- in timetables will be %1</source>
         <comment>%1 is true or false. Lowercase -x-</comment>
         <translation>Marca les franges no disponibles amb una -x- als horaris serà %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3241"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3243"/>
         <source>Mark break slots with -X- in timetables will be %1</source>
         <comment>%1 is true or false. Uppercase -X-</comment>
         <translation>Marca les franges de pausa amb una -X- als horaris serà %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3244"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3246"/>
         <source>Divide html timetables with time-axis by days will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Divideix horaris en html amb un eix temporal per dies serà %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3247"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3249"/>
         <source>Print activities with same starting time will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Imprimeix activitats amb mateix temps d&apos;inici serà %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3250"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3252"/>
         <source>Enable activity tag max hours daily will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Habilita max hores diàries per etiqueta d&apos;activitat serà %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3253"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3255"/>
         <source>Enable students max gaps per day will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Habilita max buits per dia per tots els alumnes serà %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3267"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3269"/>
         <source>Confirm activity planning will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Confirma planificació d&apos;activitats serà %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3269"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3271"/>
         <source>Confirm spread activities over the week will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Confirma distribueix les activitats al llarg de la setmana serà %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3271"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3273"/>
         <source>Confirm remove redundant constraints will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Confirma treu restriccions redundants serà %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3646"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3648"/>
         <source>This kind of constraint is good, but only in the right case. Adding such constraints in the wrong circumstance may make your timetable solve too slow or even impossible.</source>
         <translation>Aquesta mena de restricció és bona, però només en casos correctes. Afegir aquesta mena de restriccions en circumstàncies equivocades poden fer que el teu horari es resolgui massa lent, o fins i tot que sigui impossible.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3649"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3651"/>
         <source>Please use such constraints only if you are sure that there exists a timetable with empty days for students. If your instution requires each day for the students to be not empty, or if there does not exist a solution with empty days for students, it is IMPERATIVE (for performance reasons) that you use the standard constraint which does not allow empty days. Otherwise, the timetable may be impossible to find.</source>
         <translation>Siusplau usa aquestes restriccions si estàs segur que hi ha un horari amb diei la teva institució requereix que cap dels dies dels alumnes estigui buit, o si no hi ha una solució amb dies buits per als alumnes, és IMPERATIU (per motius d&apos;execució) que utilitzis la restricció standardque no permet dies buits. En cas contrari, l&apos;horari pot ser impossible de trobar.</translation>
     </message>
@@ -26429,20 +26434,20 @@ Tenir un subgrup amb massa poques hores laborables per setmana vol dir que has i
         <location filename="../src/interface/fetmainform.cpp" line="2942"/>
         <location filename="../src/interface/fetmainform.cpp" line="2960"/>
         <location filename="../src/interface/fetmainform.cpp" line="2982"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2994"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3013"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3023"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3033"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3043"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3053"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3063"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2995"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3014"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3024"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3034"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3044"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3054"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3064"/>
         <source>Please generate, firstly</source>
         <translation>Siusplau, genera primer</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="2947"/>
         <location filename="../src/interface/fetmainform.cpp" line="2965"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2999"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3000"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation>No es pot mostrar l&apos;horari perquè has afegit o tret alguna aula. Siusplau regenera l&apos;horari i visualitza&apos;l</translation>
     </message>
@@ -26452,50 +26457,50 @@ Tenir un subgrup amb massa poques hores laborables per setmana vol dir que has i
         <translation>No es pot mostrar l&apos;horari perquè has afegit o tret algun professor. Siusplau regenera l&apos;horari i visualitza&apos;l</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3189"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3191"/>
         <source>Please exit and restart FET to activate language change</source>
         <translation>Siusplau surt i reinicia FET per activar el canvi d&apos;idioma</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3565"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3595"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3567"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3597"/>
         <source>These kinds of constraints are good, but not perfectly optimized. Adding such constraints may make your timetable solve too slow or even impossible.</source>
         <translation>Aquest tipus de restriccions són bones, però no perfectament optimitzades. Afegir-les pot fer que el teu horari es resolgui massa lentament o fins i tot que sigui impossible.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3568"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3598"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3570"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3600"/>
         <source>It is recommended to use such constraints only at the end, after you generated successfully with all the other constraints.</source>
         <translation>Es recomana usar aquesta mena de restriccions només al final, quan ja has generat amb èxit amb totes les altres restriccions.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3570"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3600"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3572"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3602"/>
         <source>If your timetable is too difficult, it may be from these kinds of constraints, so you may need to remove them and retry.</source>
         <translation>Si el teu horari és massa difícil pot ser a causa d&apos;aquesta mena de restriccions, per tant pots necessitar treure-les i tornar-ho a intentar.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3572"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3602"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3654"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3574"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3604"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3656"/>
         <source>Continue only if you know what you are doing.</source>
         <translation>Continua només si saps el que estàs fent.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3623"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3672"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3625"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3674"/>
         <source>It is recommended to keep this warning active, but if you really want, you can disable it.</source>
         <translation>Es recomana mantenir aquest avís actiu, però si vols el pots desactivar.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3625"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3674"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3627"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3676"/>
         <source>Disable it only if you know what you are doing.</source>
         <translation>Desactiva-la només si saps el que estàs fent.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3627"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3676"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3629"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3678"/>
         <source>Are you sure you want to disable it?</source>
         <translation>Segur que vols desabilirtar-lo?</translation>
     </message>
@@ -26608,7 +26613,7 @@ Tenir un subgrup amb massa poques hores laborables per setmana vol dir que has i
         <translation>Aquesta opció només és útil si necessites bloquejar l&apos;horari actual en un fitxer. Bloquejar-lo significa que s&apos;afegiran restriccions d&apos;hora preferida d&apos;inici d&apos;activitat i aula preferida d&apos;activitat amb importància 100% per cada activitat per fixar-la en el lloc actual de l&apos;horari actual. Pots desar aquest horari com un fitxer fet ordinari; quan l&apos;obris veuràs les dades antigues entrades (activitats, professors, etc.) i les restriccions bloquejadores com a les darreres restriccions d&apos;espai/temps. Pots desbloquejar algunes d&apos;aquestes activitats (treient les restriccions) si apareixen petits canvis en la configuració, i tornar a generar i les restriccions bloquejants restants es respectaran.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3201"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3203"/>
         <source>Are you sure you want to reset all settings to defaults?</source>
         <translation>Segur que vols restaurar totes les configuracions predeterminades?</translation>
     </message>
@@ -26643,66 +26648,66 @@ Tenir un subgrup amb massa poques hores laborables per setmana vol dir que has i
         <translation>Si utilitzes una restricció imperfecta (max hores diàries per etiqueta d&apos;activitat o max buits per dia per tots els alumnes), obtindràs un avís abans de generar. Desactiva aquesta opció per desfer-te d&apos;aquest avís (es recomana mantenir l&apos;avís).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3210"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3238"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3241"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3256"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3263"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3267"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3212"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3240"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3243"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3258"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3265"/>
         <location filename="../src/interface/fetmainform.cpp" line="3269"/>
         <location filename="../src/interface/fetmainform.cpp" line="3271"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3273"/>
         <source>true</source>
         <translation>cert</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3220"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3222"/>
         <source>Use colors in FET graphical user interface will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>L&apos;ús de colors en la interfície gràfica d&apos;usuari de FET serà %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3223"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3225"/>
         <source>Language will be %1 (restart needed to activate language change)</source>
         <comment>%1 is the default language</comment>
         <translation>L&apos;idioma es posarà en %1 (caldrà reiniciar per activar el canvi d&apos;idioma)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3256"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3258"/>
         <source>Warn if using not perfect constraints will be %1</source>
         <comment>%1 is true or false. This is a warning if user uses not perfect constraints</comment>
         <translation>L&apos;avís si no s&apos;usen restriccions perfectes serà %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3259"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3261"/>
         <source>Enable constraints students min hours daily with empty days will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Habilita min hores diàries amb dies buits per tots els alumnes serà %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3262"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3264"/>
         <source>Warn if using constraints students min hours daily with empty days will be %1</source>
         <comment>%1 is true or false. This is a warning if user uses a non-standard constraint students min hours daily with allowed empty days</comment>
         <translation>Avisa si l&apos;ús de restriccions min hores diàries amb dies buits per tots els alumnes és %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3428"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3430"/>
         <source>You have more than 6 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation>Tens més de 6 dies per setmana, per tant, probablement no necessitaràs aquesta característica. Tot i això vols continuar?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3431"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3452"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3433"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3454"/>
         <source>FET question</source>
         <translation>Pregunta de FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3433"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3454"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3435"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3456"/>
         <source>&amp;Continue</source>
         <translation>&amp;Continua</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3449"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3451"/>
         <source>You have less than 5 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation>Tens menys de 5 dies per setmana, per tant, probablement no necessitaràs aquesta característica. Tot i això vols continuar?</translation>
     </message>
@@ -26797,123 +26802,123 @@ Tenir un subgrup amb massa poques hores laborables per setmana vol dir que has i
         <translation>Adreces web de FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3073"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3138"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3074"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3140"/>
         <source>Please select FET language</source>
         <translation>Siusplau sel·lecciona l&apos;idioma de FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3077"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3078"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3093"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3094"/>
         <source>Arabic</source>
         <translation>Àrab</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3094"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3095"/>
         <source>Catalan</source>
         <translation>Català</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3095"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3096"/>
         <source>German</source>
         <translation>Alemany</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3096"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3097"/>
         <source>Greek</source>
         <translation>Grec</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3097"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3098"/>
         <source>Spanish</source>
         <translation>Espanyol</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3098"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3099"/>
         <source>French</source>
         <translation>Francès</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3099"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3100"/>
         <source>Hungarian</source>
         <translation>Hongarès</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3100"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3101"/>
         <source>Indonesian</source>
         <translation>Indonès</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3101"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3102"/>
         <source>Italian</source>
         <translation>Italià</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3102"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3103"/>
         <source>Lithuanian</source>
         <translation>Lituà</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3103"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3104"/>
         <source>Macedonian</source>
         <translation>Macedoni</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3104"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3105"/>
         <source>Malay</source>
         <translation>Malai</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3105"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3106"/>
         <source>Dutch</source>
         <translation>Holandès</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3106"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3107"/>
         <source>Polish</source>
         <translation>Polonès</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3107"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3108"/>
         <source>Romanian</source>
         <translation>Romanès</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3108"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3109"/>
         <source>Turkish</source>
         <translation>Turc</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3111"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3112"/>
         <source>Ukrainian</source>
         <translation>Ucraïnès</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3188"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3190"/>
         <source>Language %1 selected</source>
         <translation>Idioma %1 sel·leccionat</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3109"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3110"/>
         <source>Russian</source>
         <translation>Rus</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3110"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3111"/>
         <source>Persian</source>
         <translation>Persa</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3525"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3527"/>
         <source>Choose results (output) directory</source>
         <translation>Tria directori de resultats (sortida)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3534"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3536"/>
         <source>You don&apos;t have write permissions in this directory</source>
         <translation>No tens permisos d&apos;escriptura en aquest directori</translation>
     </message>
@@ -26933,18 +26938,18 @@ Tenir un subgrup amb massa poques hores laborables per setmana vol dir que has i
         <translation>El fitxer %1 ja existeix - estàs segur que vols sobreescriure el fitxer existent?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3217"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3220"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3244"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3247"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3250"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3253"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3259"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3219"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3222"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3246"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3249"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3252"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3255"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3261"/>
         <source>false</source>
         <translation>fals</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3275"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3277"/>
         <source>FET confirmation</source>
         <translation>Confirmació de FET</translation>
     </message>
@@ -29730,12 +29735,262 @@ Siusplau modifica les teves dades de manera que correspongui i torna-ho a intent
         <translation>Col·laboradors</translation>
     </message>
     <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="81"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Volker Dirr ( to contact Volker Dirr visit http://www.timetabling.de/ )&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Lots of helping with testing, bug reports, suggestions, comparisons&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	XHTML generation code modified by Volker Dirr from old HTML generation code&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	(old code by Liviu Lalescu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	added features: - XHTML 1.0 strict valid&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- use colspan and rowspan&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- times vertical&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- table of contents with hyperlinks&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- css and JavaScript support&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print rooms timetable&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- level of HTML for timetables&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print groups and years timetable&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print subjects timetable&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print teachers&apos; free periods timetable&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print activities timetable&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- index HTML file&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print daily timetable&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print activities with same starting time&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Import and export of CSV files&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Export of advanced statistics&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Important suggestions and partial code for great speed improvements in some particular cases&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	(better computation for initial order of activities, which leads to much faster generation for some particular cases of timetables).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Idea and partial code for locking the activities.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Activity planning dialog.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="120"/>
         <source>Translators</source>
         <translation>Traductors</translation>
     </message>
     <message utf8="true">
-        <location filename="../src/interface/helpaboutform_template.ui" line="258"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="261"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;(chronologically)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;--------------------&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Costin Badica	- my teacher. He actually made me begin this project and provided me with documentation and advices.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Carsten Niehaus - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Imre Nagy 	- e-mail list (does not work anymore), suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Sajith V. K. 	- suggestions&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Michael Towers	- lots of bugs reported, sample files, suggestions, front/back-end.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Antti Leppik	- sample file, suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Ian Fantom	- sample file, suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Simon Ghetti	- sample files, suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Gibbon Tamba - sample file, bug reported.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Jerome Durand - bug reported, French translation (fetfr@free.fr, please also see http://fetfr.free.fr/).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Marek Jaszuk - bugs reported, suggestions, sample file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Ramanathan Srinivasan - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Vimal Joseph - suggestions, a script to convert the .xml results into .tex.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Cristian Gherman - bug reported, suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;				&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Nicholas Robinson - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Radu Spineanu 	- Debian package.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Morten Piil	- bug reported, sample file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Sebastian Canagaratna - lots of suggestions, bugs reported, sample files.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Abdul Hadi Kamel - sample file, bugs reported, Malay translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Miguel Gea Milvaques - Catalan translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Frank de Bruijn - bug reported.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Radoslaw Pasiok - Polish translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Daan Huntjens - bug reported, sample file, suggestions, partial Dutch translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Yush Yuen - sample file, bug report.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Scott Sweeting - sample file, suggestions, icon for FET.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Dragos Petrascu - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Daniel S. - suggestions, help files for the constraints.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Gianluca Salvo - suggested ConstraintTwoActivitiesOrdered.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Sebastian O&apos;Halloran - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Mehmet Gezmisoglu - Turkish translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Tom Hosty - sample file, bugs reported, user&apos;s guide.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Niels Fikse - Dutch translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Simon Bohlin - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Volker Dirr - German translation, bug reports, suggestions, 2-point and uniform crossover implementation and testing.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Les Richardson - update of the FAQ.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Gabi Danon - instructions on how to compile/run FET on Mac OS X.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Manolo Par - suggested ConstraintTeachersMinHoursDaily&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Viktor Ferenczi - bug report, Hungarian translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Patrick Fox - improved French translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Andres Chandia - icons.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Zoran Zdravkovski - bug reports, Macedonian translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Constantin Romulus - bug reports, sample file (private), small improvements in Romanian translation, testing, fet forum logo.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;L. W. Johnstone - suggestions, sample file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Zsolt Udvari - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mantas - bug reports.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;moryus - bug report.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;bb - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Maciej Deorowicz - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Jose Cesar Fernandez Lopez - Spanish translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Daniel Chiriac - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Dimitrios Ropokis - suggestions, Greek translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Danail - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Peter Ambroz - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Nirwan Yus - Indonesian translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Marco Barsotti - Italian translation, testing.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Romeu Veloso - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Hatim Alahmadi - Arabic translation, sample file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;kdsayang - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;didit - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Bobby Wise - sample files.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Willy Henckert - sample file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Wilfred - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;W. D. John - sample file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Darius Staigys - Lithuanian translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;George Miliotis [Ionio] - suggestions&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Silvia - suggestions, sample file&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;alfaromeo - suggestions, testing.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Niels Stargardt - sample file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Cristian Balint - sample files.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sherman - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Azu Boba - suggestion.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Thomas Schwartz - bug report.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Catalin Maican - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Ilya V. Paramonov - Russian translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Hamed SadeghiNeshat - Persian translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Joan de Gracia - Catalan translation of the manual.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Massimo Mancini - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Regina V. Kryvakovska - Russian translation additional checking.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Bingen - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Angela - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;T. Renganathan - sample file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Marco - sample file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sally sat - Persian translation update.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sstt2 - bug report.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Nikos Koutsoukos - suggestions, bug reports.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pinco - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Ben Bauer - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Rodica Lalescu - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Gigica Nedelcu - icons design.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Paolo Cataldi - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Gerrit Jan Veltink - sample file, suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Soyeb Aswat - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Andriy Melnyk - Ukrainian translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Frans - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;m - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Christoph Schilling - sample file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Frank Mártin - Brazilian Portuguese translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Werner Bruns - Brazilian Portuguese translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;aliponte - sample file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;David Lamhauge - Danish translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;murad - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Achini Duisna - Sinhala translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -29943,7 +30198,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;David Lamhauge - Danish translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -30152,7 +30407,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="224"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="227"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -30195,7 +30450,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Copyright (C) 2002-2010 Liviu Lalescu&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Version: 5.13.1 (April 2010)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Version: 5.13.2 (May 2010)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Licensed under GNU GPL.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -30215,7 +30470,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Copyright (C) 2002-2010 Liviu Lalescu&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Versió: 5.13.1 (abril 2010)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Versió: 5.13.2 (maig 2010)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Amb llicència GNU GPL.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -30228,13 +30483,92 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Aquest projecte és de codi obert. Estàs convidat a aportar coses a aquest programari i els comentaris que ens puguis fer seran molt apreciats.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
+    <message utf8="true">
+        <location filename="../src/interface/helpaboutform_template.ui" line="132"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ar - Arabic translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Hatim Alahmadi (dr.hatim AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ca - Catalan translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Sílvia Lag (to contact Sílvia visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Catalan translation, or contact forum user silvia)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;da - Danish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	David Lamhauge (davidlamhauge AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;de - German translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;el - Greek translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Dimitrios Ropokis (wamy80s AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;es - Spanish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Jose Cesar Fernandez Lopez (cesar.fernandez.lopez AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fa - Persian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Hamed SadeghiNeshat (ha_sadeghi AT ce.sharif.edu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updates and many improvements - sally sat (soory63 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fr - French translation &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Jerome Durand (fetfr AT free.fr, http://fetfr.free.fr/).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by Patrick Fox (patrick.fox AT laposte.net)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;hu - Hungarian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ferenczi Viktor (cx AT cx.hu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;id - Indonesian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nirwan Yus (ny.unpar AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;it - Italian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Marco Barsotti (mbarsan AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;lt - Lithuanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Darius Staigys (darius AT e-servisas.lt)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mk - Macedonian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Zoran Zdravkovski (zoran AT pmf.ukim.edu.mk)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ms - Malay translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Abdul Hadi Kamel (hadikamel AT perlis.uitm.edu.my)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;nl - Dutch translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Niels Fikse (k.fikse AT student.utwente.nl)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pl - Polish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radoslaw Pasiok (zapala AT konto.pl)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pt_BR - Brazilian Portuguese translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Werner Bruns (werner.bruns AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Frank Mártin (drfarofa AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ro - Romanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Liviu Lalescu (Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	in particular you can find here the e-mail address).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ru - Russian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ilya V. Paramonov (ivparamonov AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;si - Sinhala translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Achini Duisna (duisna1012 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;tr - Turkish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator - Mehmet Gezmisoglu (m_gezmisoglu AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updates and many improvements - Mahir Nacar (mahirnacar AT email.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uk - Ukrainian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Andriy Melnyk (melnyk.andriy AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="212"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="215"/>
         <source>References</source>
         <translation>Referències</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="81"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -30267,7 +30601,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Activity planning dialog.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -30301,7 +30635,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message utf8="true">
-        <location filename="../src/interface/helpaboutform_template.ui" line="132"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -30375,7 +30708,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uk - Ukrainian translation&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Andriy Melnyk (melnyk.andriy AT gmail.com)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -30450,7 +30783,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="246"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="249"/>
         <source>Thanks to</source>
         <translation>Agraïments</translation>
     </message>
@@ -31852,24 +32185,24 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>HoursForm</name>
     <message>
-        <location filename="../src/interface/hoursform.cpp" line="144"/>
-        <location filename="../src/interface/hoursform.cpp" line="151"/>
-        <location filename="../src/interface/hoursform.cpp" line="156"/>
+        <location filename="../src/interface/hoursform.cpp" line="148"/>
+        <location filename="../src/interface/hoursform.cpp" line="155"/>
+        <location filename="../src/interface/hoursform.cpp" line="160"/>
         <source>FET information</source>
         <translation>Informació de FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform.cpp" line="145"/>
+        <location filename="../src/interface/hoursform.cpp" line="149"/>
         <source>Empty names not allowed</source>
         <translation>Noms buits no permesos</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform.cpp" line="152"/>
+        <location filename="../src/interface/hoursform.cpp" line="156"/>
         <source>Duplicates not allowed</source>
         <translation>Duplicats no permesos</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform.cpp" line="157"/>
+        <location filename="../src/interface/hoursform.cpp" line="161"/>
         <source>Please note that FET will NOT take care of old constraints using erased hours (only renamed hours will be handled correctly)</source>
         <translation>Siusplau sàpigues que FET NO es cuidarà de restriccions antigues que usin hores esborrades (només les hores reanomenades)</translation>
     </message>
@@ -40630,334 +40963,334 @@ Les dades actuals només serveixen per aquesta subactivitat</translation>
 <context>
     <name>Rules</name>
     <message>
-        <location filename="../src/engine/rules.cpp" line="113"/>
-        <location filename="../src/engine/rules.cpp" line="5270"/>
+        <location filename="../src/engine/rules.cpp" line="117"/>
+        <location filename="../src/engine/rules.cpp" line="5356"/>
         <source>Monday</source>
         <translation>Dilluns</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="114"/>
-        <location filename="../src/engine/rules.cpp" line="5271"/>
+        <location filename="../src/engine/rules.cpp" line="118"/>
+        <location filename="../src/engine/rules.cpp" line="5357"/>
         <source>Tuesday</source>
         <translation>Dimarts</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="115"/>
-        <location filename="../src/engine/rules.cpp" line="5272"/>
+        <location filename="../src/engine/rules.cpp" line="119"/>
+        <location filename="../src/engine/rules.cpp" line="5358"/>
         <source>Wednesday</source>
         <translation>Dimecres</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="116"/>
-        <location filename="../src/engine/rules.cpp" line="5273"/>
+        <location filename="../src/engine/rules.cpp" line="120"/>
+        <location filename="../src/engine/rules.cpp" line="5359"/>
         <source>Thursday</source>
         <translation>Dijous</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="117"/>
-        <location filename="../src/engine/rules.cpp" line="5274"/>
+        <location filename="../src/engine/rules.cpp" line="121"/>
+        <location filename="../src/engine/rules.cpp" line="5360"/>
         <source>Friday</source>
         <translation>Divendres</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="119"/>
-        <location filename="../src/engine/rules.cpp" line="5276"/>
+        <location filename="../src/engine/rules.cpp" line="123"/>
+        <location filename="../src/engine/rules.cpp" line="5362"/>
         <source>Default institution</source>
         <translation>Institució predeterminada</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="120"/>
-        <location filename="../src/engine/rules.cpp" line="5277"/>
+        <location filename="../src/engine/rules.cpp" line="124"/>
+        <location filename="../src/engine/rules.cpp" line="5363"/>
         <source>Default comments</source>
         <translation>Comentaris predeterminats</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="135"/>
-        <location filename="../src/engine/rules.cpp" line="140"/>
-        <location filename="../src/engine/rules.cpp" line="271"/>
-        <location filename="../src/engine/rules.cpp" line="285"/>
-        <location filename="../src/engine/rules.cpp" line="291"/>
-        <location filename="../src/engine/rules.cpp" line="297"/>
-        <location filename="../src/engine/rules.cpp" line="303"/>
-        <location filename="../src/engine/rules.cpp" line="309"/>
-        <location filename="../src/engine/rules.cpp" line="431"/>
-        <location filename="../src/engine/rules.cpp" line="528"/>
-        <location filename="../src/engine/rules.cpp" line="555"/>
-        <location filename="../src/engine/rules.cpp" line="603"/>
-        <location filename="../src/engine/rules.cpp" line="630"/>
-        <location filename="../src/engine/rules.cpp" line="4453"/>
-        <location filename="../src/engine/rules.cpp" line="4484"/>
-        <location filename="../src/engine/rules.cpp" line="4513"/>
-        <location filename="../src/engine/rules.cpp" line="4542"/>
-        <location filename="../src/engine/rules.cpp" line="4571"/>
-        <location filename="../src/engine/rules.cpp" line="4601"/>
-        <location filename="../src/engine/rules.cpp" line="5232"/>
-        <location filename="../src/engine/rules.cpp" line="5244"/>
-        <location filename="../src/engine/rules.cpp" line="5437"/>
-        <location filename="../src/engine/rules.cpp" line="6043"/>
-        <location filename="../src/engine/rules.cpp" line="6198"/>
-        <location filename="../src/engine/rules.cpp" line="6239"/>
-        <location filename="../src/engine/rules.cpp" line="6374"/>
-        <location filename="../src/engine/rules.cpp" line="6435"/>
-        <location filename="../src/engine/rules.cpp" line="6456"/>
-        <location filename="../src/engine/rules.cpp" line="6486"/>
-        <location filename="../src/engine/rules.cpp" line="6500"/>
-        <location filename="../src/engine/rules.cpp" line="6528"/>
-        <location filename="../src/engine/rules.cpp" line="6545"/>
-        <location filename="../src/engine/rules.cpp" line="6562"/>
-        <location filename="../src/engine/rules.cpp" line="6617"/>
-        <location filename="../src/engine/rules.cpp" line="6650"/>
-        <location filename="../src/engine/rules.cpp" line="6884"/>
-        <location filename="../src/engine/rules.cpp" line="7302"/>
-        <location filename="../src/engine/rules.cpp" line="7319"/>
-        <location filename="../src/engine/rules.cpp" line="7336"/>
-        <location filename="../src/engine/rules.cpp" line="7437"/>
-        <location filename="../src/engine/rules.cpp" line="7456"/>
-        <location filename="../src/engine/rules.cpp" line="7524"/>
-        <location filename="../src/engine/rules.cpp" line="7557"/>
-        <location filename="../src/engine/rules.cpp" line="7594"/>
-        <location filename="../src/engine/rules.cpp" line="7627"/>
-        <location filename="../src/engine/rules.cpp" line="7683"/>
-        <location filename="../src/engine/rules.cpp" line="7699"/>
-        <location filename="../src/engine/rules.cpp" line="7722"/>
-        <location filename="../src/engine/rules.cpp" line="7782"/>
-        <location filename="../src/engine/rules.cpp" line="7798"/>
-        <location filename="../src/engine/rules.cpp" line="7821"/>
-        <location filename="../src/engine/rules.cpp" line="7881"/>
-        <location filename="../src/engine/rules.cpp" line="7897"/>
-        <location filename="../src/engine/rules.cpp" line="7920"/>
-        <location filename="../src/engine/rules.cpp" line="7980"/>
-        <location filename="../src/engine/rules.cpp" line="7995"/>
-        <location filename="../src/engine/rules.cpp" line="8018"/>
-        <location filename="../src/engine/rules.cpp" line="8061"/>
-        <location filename="../src/engine/rules.cpp" line="8077"/>
-        <location filename="../src/engine/rules.cpp" line="8093"/>
-        <location filename="../src/engine/rules.cpp" line="8194"/>
-        <location filename="../src/engine/rules.cpp" line="8213"/>
-        <location filename="../src/engine/rules.cpp" line="9602"/>
-        <location filename="../src/engine/rules.cpp" line="9619"/>
-        <location filename="../src/engine/rules.cpp" line="9635"/>
-        <location filename="../src/engine/rules.cpp" line="9657"/>
-        <location filename="../src/engine/rules.cpp" line="9758"/>
-        <location filename="../src/engine/rules.cpp" line="9775"/>
-        <location filename="../src/engine/rules.cpp" line="9791"/>
-        <location filename="../src/engine/rules.cpp" line="9813"/>
-        <location filename="../src/engine/rules.cpp" line="10297"/>
-        <location filename="../src/engine/rules.cpp" line="10316"/>
-        <location filename="../src/engine/rules.cpp" line="10399"/>
-        <location filename="../src/engine/rules.cpp" line="10418"/>
-        <location filename="../src/engine/rules.cpp" line="10501"/>
-        <location filename="../src/engine/rules.cpp" line="10520"/>
-        <location filename="../src/engine/rules.cpp" line="10565"/>
-        <location filename="../src/engine/rules.cpp" line="10580"/>
-        <location filename="../src/engine/rules.cpp" line="10595"/>
-        <location filename="../src/engine/rules.cpp" line="10689"/>
-        <location filename="../src/engine/rules.cpp" line="10707"/>
-        <location filename="../src/engine/rules.cpp" line="11444"/>
-        <location filename="../src/engine/rules.cpp" line="11466"/>
-        <location filename="../src/engine/rules.cpp" line="11573"/>
-        <location filename="../src/engine/rules.cpp" line="11595"/>
-        <location filename="../src/engine/rules.cpp" line="11702"/>
-        <location filename="../src/engine/rules.cpp" line="11724"/>
-        <location filename="../src/engine/rules.cpp" line="11837"/>
-        <location filename="../src/engine/rules.cpp" line="11859"/>
-        <location filename="../src/engine/rules.cpp" line="11971"/>
-        <location filename="../src/engine/rules.cpp" line="11993"/>
-        <location filename="../src/engine/rules.cpp" line="12096"/>
-        <location filename="../src/engine/rules.cpp" line="12112"/>
-        <location filename="../src/engine/rules.cpp" line="12128"/>
-        <location filename="../src/engine/rules.cpp" line="12227"/>
-        <location filename="../src/engine/rules.cpp" line="12246"/>
-        <location filename="../src/engine/rules.cpp" line="12353"/>
+        <location filename="../src/engine/rules.cpp" line="139"/>
+        <location filename="../src/engine/rules.cpp" line="144"/>
+        <location filename="../src/engine/rules.cpp" line="275"/>
+        <location filename="../src/engine/rules.cpp" line="289"/>
+        <location filename="../src/engine/rules.cpp" line="295"/>
+        <location filename="../src/engine/rules.cpp" line="301"/>
+        <location filename="../src/engine/rules.cpp" line="307"/>
+        <location filename="../src/engine/rules.cpp" line="313"/>
+        <location filename="../src/engine/rules.cpp" line="445"/>
+        <location filename="../src/engine/rules.cpp" line="542"/>
+        <location filename="../src/engine/rules.cpp" line="569"/>
+        <location filename="../src/engine/rules.cpp" line="617"/>
+        <location filename="../src/engine/rules.cpp" line="644"/>
+        <location filename="../src/engine/rules.cpp" line="4519"/>
+        <location filename="../src/engine/rules.cpp" line="4550"/>
+        <location filename="../src/engine/rules.cpp" line="4579"/>
+        <location filename="../src/engine/rules.cpp" line="4608"/>
+        <location filename="../src/engine/rules.cpp" line="4637"/>
+        <location filename="../src/engine/rules.cpp" line="4667"/>
+        <location filename="../src/engine/rules.cpp" line="5318"/>
+        <location filename="../src/engine/rules.cpp" line="5330"/>
+        <location filename="../src/engine/rules.cpp" line="5523"/>
+        <location filename="../src/engine/rules.cpp" line="6129"/>
+        <location filename="../src/engine/rules.cpp" line="6284"/>
+        <location filename="../src/engine/rules.cpp" line="6325"/>
+        <location filename="../src/engine/rules.cpp" line="6460"/>
+        <location filename="../src/engine/rules.cpp" line="6521"/>
+        <location filename="../src/engine/rules.cpp" line="6542"/>
+        <location filename="../src/engine/rules.cpp" line="6572"/>
+        <location filename="../src/engine/rules.cpp" line="6586"/>
+        <location filename="../src/engine/rules.cpp" line="6614"/>
+        <location filename="../src/engine/rules.cpp" line="6631"/>
+        <location filename="../src/engine/rules.cpp" line="6648"/>
+        <location filename="../src/engine/rules.cpp" line="6703"/>
+        <location filename="../src/engine/rules.cpp" line="6736"/>
+        <location filename="../src/engine/rules.cpp" line="6970"/>
+        <location filename="../src/engine/rules.cpp" line="7388"/>
+        <location filename="../src/engine/rules.cpp" line="7405"/>
+        <location filename="../src/engine/rules.cpp" line="7422"/>
+        <location filename="../src/engine/rules.cpp" line="7523"/>
+        <location filename="../src/engine/rules.cpp" line="7542"/>
+        <location filename="../src/engine/rules.cpp" line="7610"/>
+        <location filename="../src/engine/rules.cpp" line="7643"/>
+        <location filename="../src/engine/rules.cpp" line="7680"/>
+        <location filename="../src/engine/rules.cpp" line="7713"/>
+        <location filename="../src/engine/rules.cpp" line="7769"/>
+        <location filename="../src/engine/rules.cpp" line="7785"/>
+        <location filename="../src/engine/rules.cpp" line="7808"/>
+        <location filename="../src/engine/rules.cpp" line="7868"/>
+        <location filename="../src/engine/rules.cpp" line="7884"/>
+        <location filename="../src/engine/rules.cpp" line="7907"/>
+        <location filename="../src/engine/rules.cpp" line="7967"/>
+        <location filename="../src/engine/rules.cpp" line="7983"/>
+        <location filename="../src/engine/rules.cpp" line="8006"/>
+        <location filename="../src/engine/rules.cpp" line="8066"/>
+        <location filename="../src/engine/rules.cpp" line="8081"/>
+        <location filename="../src/engine/rules.cpp" line="8104"/>
+        <location filename="../src/engine/rules.cpp" line="8147"/>
+        <location filename="../src/engine/rules.cpp" line="8163"/>
+        <location filename="../src/engine/rules.cpp" line="8179"/>
+        <location filename="../src/engine/rules.cpp" line="8280"/>
+        <location filename="../src/engine/rules.cpp" line="8299"/>
+        <location filename="../src/engine/rules.cpp" line="9688"/>
+        <location filename="../src/engine/rules.cpp" line="9705"/>
+        <location filename="../src/engine/rules.cpp" line="9721"/>
+        <location filename="../src/engine/rules.cpp" line="9743"/>
+        <location filename="../src/engine/rules.cpp" line="9844"/>
+        <location filename="../src/engine/rules.cpp" line="9861"/>
+        <location filename="../src/engine/rules.cpp" line="9877"/>
+        <location filename="../src/engine/rules.cpp" line="9899"/>
+        <location filename="../src/engine/rules.cpp" line="10383"/>
+        <location filename="../src/engine/rules.cpp" line="10402"/>
+        <location filename="../src/engine/rules.cpp" line="10485"/>
+        <location filename="../src/engine/rules.cpp" line="10504"/>
+        <location filename="../src/engine/rules.cpp" line="10587"/>
+        <location filename="../src/engine/rules.cpp" line="10606"/>
+        <location filename="../src/engine/rules.cpp" line="10651"/>
+        <location filename="../src/engine/rules.cpp" line="10666"/>
+        <location filename="../src/engine/rules.cpp" line="10681"/>
+        <location filename="../src/engine/rules.cpp" line="10775"/>
+        <location filename="../src/engine/rules.cpp" line="10793"/>
+        <location filename="../src/engine/rules.cpp" line="11530"/>
+        <location filename="../src/engine/rules.cpp" line="11552"/>
+        <location filename="../src/engine/rules.cpp" line="11659"/>
+        <location filename="../src/engine/rules.cpp" line="11681"/>
+        <location filename="../src/engine/rules.cpp" line="11788"/>
+        <location filename="../src/engine/rules.cpp" line="11810"/>
+        <location filename="../src/engine/rules.cpp" line="11923"/>
+        <location filename="../src/engine/rules.cpp" line="11945"/>
+        <location filename="../src/engine/rules.cpp" line="12057"/>
+        <location filename="../src/engine/rules.cpp" line="12079"/>
+        <location filename="../src/engine/rules.cpp" line="12182"/>
+        <location filename="../src/engine/rules.cpp" line="12198"/>
+        <location filename="../src/engine/rules.cpp" line="12214"/>
+        <location filename="../src/engine/rules.cpp" line="12313"/>
+        <location filename="../src/engine/rules.cpp" line="12332"/>
+        <location filename="../src/engine/rules.cpp" line="12439"/>
         <source>FET information</source>
         <translation>Informació de FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="136"/>
+        <location filename="../src/engine/rules.cpp" line="140"/>
         <source>You have too many teachers.
 Please talk to the author or increase variable MAX_TEACHERS</source>
         <translation>Tens massa professors.
 Siusplau parla amb l&apos;autor o augmenta la variable MAX_TEACHERS</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="141"/>
+        <location filename="../src/engine/rules.cpp" line="145"/>
         <source>You have too many subjects.
 Please talk to the author or increase variable MAX_SUBJECTS</source>
         <translation>Tens massa matèries.
 Siusplau parla amb l&apos;autor o augmenta la variable MAX_SUBJECTS</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="272"/>
+        <location filename="../src/engine/rules.cpp" line="276"/>
         <source>You have too many total subgroups.
 Please talk to the author or increase variable MAX_TOTAL_SUBGROUPS. Currently MAX_TOTAL_SUBGROUPS=%1</source>
         <translation>Tens massa subgrups totals.
  Siusplau parla amb l&apos;autor o augmenta la variable MAX_TOTAL_SUBGROUPS. Actualment MAX_TOTAL_SUBGROUPS=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="286"/>
+        <location filename="../src/engine/rules.cpp" line="290"/>
         <source>You have too many active activities.
 Please talk to the author or increase variable MAX_ACTIVITIES</source>
         <translation>Tens massa activitats actives. Siusplau parla amb l&apos;autor o augmenta la variable MAX_ACTIVITIES</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="292"/>
+        <location filename="../src/engine/rules.cpp" line="296"/>
         <source>You have too many buildings.
 Please talk to the author or increase variable MAX_BUILDINGS</source>
         <translation>Tens massa edificis.
 Siusplau parla amb l&apos;autor o augmenta la variable MAX_BUILDINGS</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="298"/>
+        <location filename="../src/engine/rules.cpp" line="302"/>
         <source>You have too many rooms.
 Please talk to the author or increase variable MAX_ROOMS</source>
         <translation>Tens massa aules.
 Siusplau parla amb l&apos;autor o augmenta la variable MAX_ROOMS</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="304"/>
+        <location filename="../src/engine/rules.cpp" line="308"/>
         <source>You have too many time constraints.
 Please talk to the author or increase variable MAX_TIME_CONSTRAINTS</source>
         <translation>Tens massa restriccions de temps.
  Siusplau parla amb l&apos;autor o augmenta la variable MAX_TIME_CONSTRAINTS</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="310"/>
+        <location filename="../src/engine/rules.cpp" line="314"/>
         <source>You have too many space constraints.
 Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation>Tens massa restriccions de lloc.
  Siusplau parla amb l&apos;autor o augmenta la variable MAX_SPACE_CONSTRAINTS</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="415"/>
+        <location filename="../src/engine/rules.cpp" line="429"/>
         <source>Processing internally the activities ... please wait</source>
         <translation>Processant les activitats internament ... siusplau espera</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="431"/>
-        <location filename="../src/engine/rules.cpp" line="555"/>
-        <location filename="../src/engine/rules.cpp" line="630"/>
+        <location filename="../src/engine/rules.cpp" line="445"/>
+        <location filename="../src/engine/rules.cpp" line="569"/>
+        <location filename="../src/engine/rules.cpp" line="644"/>
         <source>Canceled</source>
         <translation>Cancel·lat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="524"/>
+        <location filename="../src/engine/rules.cpp" line="538"/>
         <source>The following time constraint is ignored, because it refers to inactive activities:</source>
         <translation>La següent restricció de temps s&apos;ha ignorat perquè es refereix a activitats no actives:</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="529"/>
-        <location filename="../src/engine/rules.cpp" line="604"/>
-        <location filename="../src/engine/rules.cpp" line="5570"/>
-        <location filename="../src/engine/rules.cpp" line="5626"/>
-        <location filename="../src/engine/rules.cpp" line="5696"/>
-        <location filename="../src/engine/rules.cpp" line="5771"/>
-        <location filename="../src/engine/rules.cpp" line="5794"/>
-        <location filename="../src/engine/rules.cpp" line="5817"/>
-        <location filename="../src/engine/rules.cpp" line="6201"/>
-        <location filename="../src/engine/rules.cpp" line="6242"/>
-        <location filename="../src/engine/rules.cpp" line="6313"/>
-        <location filename="../src/engine/rules.cpp" line="6323"/>
-        <location filename="../src/engine/rules.cpp" line="6333"/>
-        <location filename="../src/engine/rules.cpp" line="6378"/>
-        <location filename="../src/engine/rules.cpp" line="6426"/>
-        <location filename="../src/engine/rules.cpp" line="6441"/>
-        <location filename="../src/engine/rules.cpp" line="6459"/>
-        <location filename="../src/engine/rules.cpp" line="6491"/>
-        <location filename="../src/engine/rules.cpp" line="6505"/>
-        <location filename="../src/engine/rules.cpp" line="6533"/>
-        <location filename="../src/engine/rules.cpp" line="6550"/>
-        <location filename="../src/engine/rules.cpp" line="6568"/>
-        <location filename="../src/engine/rules.cpp" line="6593"/>
-        <location filename="../src/engine/rules.cpp" line="6603"/>
-        <location filename="../src/engine/rules.cpp" line="6653"/>
-        <location filename="../src/engine/rules.cpp" line="6667"/>
-        <location filename="../src/engine/rules.cpp" line="6678"/>
-        <location filename="../src/engine/rules.cpp" line="6690"/>
-        <location filename="../src/engine/rules.cpp" line="6701"/>
-        <location filename="../src/engine/rules.cpp" line="6712"/>
-        <location filename="../src/engine/rules.cpp" line="6723"/>
-        <location filename="../src/engine/rules.cpp" line="6734"/>
-        <location filename="../src/engine/rules.cpp" line="6751"/>
-        <location filename="../src/engine/rules.cpp" line="6799"/>
-        <location filename="../src/engine/rules.cpp" line="6810"/>
-        <location filename="../src/engine/rules.cpp" line="6821"/>
-        <location filename="../src/engine/rules.cpp" line="6832"/>
-        <location filename="../src/engine/rules.cpp" line="9650"/>
-        <location filename="../src/engine/rules.cpp" line="9662"/>
-        <location filename="../src/engine/rules.cpp" line="9806"/>
-        <location filename="../src/engine/rules.cpp" line="9818"/>
-        <location filename="../src/engine/rules.cpp" line="12368"/>
+        <location filename="../src/engine/rules.cpp" line="543"/>
+        <location filename="../src/engine/rules.cpp" line="618"/>
+        <location filename="../src/engine/rules.cpp" line="5656"/>
+        <location filename="../src/engine/rules.cpp" line="5712"/>
+        <location filename="../src/engine/rules.cpp" line="5782"/>
+        <location filename="../src/engine/rules.cpp" line="5857"/>
+        <location filename="../src/engine/rules.cpp" line="5880"/>
+        <location filename="../src/engine/rules.cpp" line="5903"/>
+        <location filename="../src/engine/rules.cpp" line="6287"/>
+        <location filename="../src/engine/rules.cpp" line="6328"/>
+        <location filename="../src/engine/rules.cpp" line="6399"/>
+        <location filename="../src/engine/rules.cpp" line="6409"/>
+        <location filename="../src/engine/rules.cpp" line="6419"/>
+        <location filename="../src/engine/rules.cpp" line="6464"/>
+        <location filename="../src/engine/rules.cpp" line="6512"/>
+        <location filename="../src/engine/rules.cpp" line="6527"/>
+        <location filename="../src/engine/rules.cpp" line="6545"/>
+        <location filename="../src/engine/rules.cpp" line="6577"/>
+        <location filename="../src/engine/rules.cpp" line="6591"/>
+        <location filename="../src/engine/rules.cpp" line="6619"/>
+        <location filename="../src/engine/rules.cpp" line="6636"/>
+        <location filename="../src/engine/rules.cpp" line="6654"/>
+        <location filename="../src/engine/rules.cpp" line="6679"/>
+        <location filename="../src/engine/rules.cpp" line="6689"/>
+        <location filename="../src/engine/rules.cpp" line="6739"/>
+        <location filename="../src/engine/rules.cpp" line="6753"/>
+        <location filename="../src/engine/rules.cpp" line="6764"/>
+        <location filename="../src/engine/rules.cpp" line="6776"/>
+        <location filename="../src/engine/rules.cpp" line="6787"/>
+        <location filename="../src/engine/rules.cpp" line="6798"/>
+        <location filename="../src/engine/rules.cpp" line="6809"/>
+        <location filename="../src/engine/rules.cpp" line="6820"/>
+        <location filename="../src/engine/rules.cpp" line="6837"/>
+        <location filename="../src/engine/rules.cpp" line="6885"/>
+        <location filename="../src/engine/rules.cpp" line="6896"/>
+        <location filename="../src/engine/rules.cpp" line="6907"/>
+        <location filename="../src/engine/rules.cpp" line="6918"/>
+        <location filename="../src/engine/rules.cpp" line="9736"/>
+        <location filename="../src/engine/rules.cpp" line="9748"/>
+        <location filename="../src/engine/rules.cpp" line="9892"/>
+        <location filename="../src/engine/rules.cpp" line="9904"/>
+        <location filename="../src/engine/rules.cpp" line="12454"/>
         <source>Skip rest</source>
         <translation>salta&apos;t la resta</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="529"/>
-        <location filename="../src/engine/rules.cpp" line="604"/>
-        <location filename="../src/engine/rules.cpp" line="5570"/>
-        <location filename="../src/engine/rules.cpp" line="5626"/>
-        <location filename="../src/engine/rules.cpp" line="5696"/>
-        <location filename="../src/engine/rules.cpp" line="5771"/>
-        <location filename="../src/engine/rules.cpp" line="5794"/>
-        <location filename="../src/engine/rules.cpp" line="5817"/>
-        <location filename="../src/engine/rules.cpp" line="6201"/>
-        <location filename="../src/engine/rules.cpp" line="6242"/>
-        <location filename="../src/engine/rules.cpp" line="6313"/>
-        <location filename="../src/engine/rules.cpp" line="6323"/>
-        <location filename="../src/engine/rules.cpp" line="6333"/>
-        <location filename="../src/engine/rules.cpp" line="6378"/>
-        <location filename="../src/engine/rules.cpp" line="6426"/>
-        <location filename="../src/engine/rules.cpp" line="6441"/>
-        <location filename="../src/engine/rules.cpp" line="6459"/>
-        <location filename="../src/engine/rules.cpp" line="6491"/>
-        <location filename="../src/engine/rules.cpp" line="6505"/>
-        <location filename="../src/engine/rules.cpp" line="6533"/>
-        <location filename="../src/engine/rules.cpp" line="6550"/>
-        <location filename="../src/engine/rules.cpp" line="6568"/>
-        <location filename="../src/engine/rules.cpp" line="6593"/>
-        <location filename="../src/engine/rules.cpp" line="6603"/>
-        <location filename="../src/engine/rules.cpp" line="6653"/>
-        <location filename="../src/engine/rules.cpp" line="6667"/>
-        <location filename="../src/engine/rules.cpp" line="6678"/>
-        <location filename="../src/engine/rules.cpp" line="6690"/>
-        <location filename="../src/engine/rules.cpp" line="6701"/>
-        <location filename="../src/engine/rules.cpp" line="6712"/>
-        <location filename="../src/engine/rules.cpp" line="6723"/>
-        <location filename="../src/engine/rules.cpp" line="6734"/>
-        <location filename="../src/engine/rules.cpp" line="6751"/>
-        <location filename="../src/engine/rules.cpp" line="6799"/>
-        <location filename="../src/engine/rules.cpp" line="6810"/>
-        <location filename="../src/engine/rules.cpp" line="6821"/>
-        <location filename="../src/engine/rules.cpp" line="6832"/>
-        <location filename="../src/engine/rules.cpp" line="9650"/>
-        <location filename="../src/engine/rules.cpp" line="9662"/>
-        <location filename="../src/engine/rules.cpp" line="9806"/>
-        <location filename="../src/engine/rules.cpp" line="9818"/>
-        <location filename="../src/engine/rules.cpp" line="12368"/>
+        <location filename="../src/engine/rules.cpp" line="543"/>
+        <location filename="../src/engine/rules.cpp" line="618"/>
+        <location filename="../src/engine/rules.cpp" line="5656"/>
+        <location filename="../src/engine/rules.cpp" line="5712"/>
+        <location filename="../src/engine/rules.cpp" line="5782"/>
+        <location filename="../src/engine/rules.cpp" line="5857"/>
+        <location filename="../src/engine/rules.cpp" line="5880"/>
+        <location filename="../src/engine/rules.cpp" line="5903"/>
+        <location filename="../src/engine/rules.cpp" line="6287"/>
+        <location filename="../src/engine/rules.cpp" line="6328"/>
+        <location filename="../src/engine/rules.cpp" line="6399"/>
+        <location filename="../src/engine/rules.cpp" line="6409"/>
+        <location filename="../src/engine/rules.cpp" line="6419"/>
+        <location filename="../src/engine/rules.cpp" line="6464"/>
+        <location filename="../src/engine/rules.cpp" line="6512"/>
+        <location filename="../src/engine/rules.cpp" line="6527"/>
+        <location filename="../src/engine/rules.cpp" line="6545"/>
+        <location filename="../src/engine/rules.cpp" line="6577"/>
+        <location filename="../src/engine/rules.cpp" line="6591"/>
+        <location filename="../src/engine/rules.cpp" line="6619"/>
+        <location filename="../src/engine/rules.cpp" line="6636"/>
+        <location filename="../src/engine/rules.cpp" line="6654"/>
+        <location filename="../src/engine/rules.cpp" line="6679"/>
+        <location filename="../src/engine/rules.cpp" line="6689"/>
+        <location filename="../src/engine/rules.cpp" line="6739"/>
+        <location filename="../src/engine/rules.cpp" line="6753"/>
+        <location filename="../src/engine/rules.cpp" line="6764"/>
+        <location filename="../src/engine/rules.cpp" line="6776"/>
+        <location filename="../src/engine/rules.cpp" line="6787"/>
+        <location filename="../src/engine/rules.cpp" line="6798"/>
+        <location filename="../src/engine/rules.cpp" line="6809"/>
+        <location filename="../src/engine/rules.cpp" line="6820"/>
+        <location filename="../src/engine/rules.cpp" line="6837"/>
+        <location filename="../src/engine/rules.cpp" line="6885"/>
+        <location filename="../src/engine/rules.cpp" line="6896"/>
+        <location filename="../src/engine/rules.cpp" line="6907"/>
+        <location filename="../src/engine/rules.cpp" line="6918"/>
+        <location filename="../src/engine/rules.cpp" line="9736"/>
+        <location filename="../src/engine/rules.cpp" line="9748"/>
+        <location filename="../src/engine/rules.cpp" line="9892"/>
+        <location filename="../src/engine/rules.cpp" line="9904"/>
+        <location filename="../src/engine/rules.cpp" line="12454"/>
         <source>See next</source>
         <translation>Veure la següent</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="544"/>
+        <location filename="../src/engine/rules.cpp" line="558"/>
         <source>Processing internally the time constraints ... please wait</source>
         <translation>Processant les restriccions de temps internament ... siusplau espera</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="599"/>
+        <location filename="../src/engine/rules.cpp" line="613"/>
         <source>The following space constraint is ignored, because it refers to inactive activities:</source>
         <translation>La següent restricció de lloc s&apos;ha ignorat perquè es refereix a activitats no actives:</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="619"/>
+        <location filename="../src/engine/rules.cpp" line="633"/>
         <source>Processing internally the space constraints ... please wait</source>
         <translation>Processant les restriccions de lloc internament ... siusplau espera</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4454"/>
-        <location filename="../src/engine/rules.cpp" line="4485"/>
-        <location filename="../src/engine/rules.cpp" line="4514"/>
-        <location filename="../src/engine/rules.cpp" line="4543"/>
-        <location filename="../src/engine/rules.cpp" line="4572"/>
-        <location filename="../src/engine/rules.cpp" line="4602"/>
+        <location filename="../src/engine/rules.cpp" line="4520"/>
+        <location filename="../src/engine/rules.cpp" line="4551"/>
+        <location filename="../src/engine/rules.cpp" line="4580"/>
+        <location filename="../src/engine/rules.cpp" line="4609"/>
+        <location filename="../src/engine/rules.cpp" line="4638"/>
+        <location filename="../src/engine/rules.cpp" line="4668"/>
         <source>The constraint
 %1 will be modified into constraint
 %2 because there is only one room left in the constraint</source>
@@ -40966,64 +41299,64 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
 %2 perquè només resta una aula lliure a la restricció</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5045"/>
-        <location filename="../src/engine/rules.cpp" line="5055"/>
-        <location filename="../src/engine/rules.cpp" line="5075"/>
-        <location filename="../src/engine/rules.cpp" line="5086"/>
-        <location filename="../src/engine/rules.cpp" line="5174"/>
-        <location filename="../src/engine/rules.cpp" line="5197"/>
-        <location filename="../src/engine/rules.cpp" line="5226"/>
-        <location filename="../src/engine/rules.cpp" line="5375"/>
-        <location filename="../src/engine/rules.cpp" line="5418"/>
-        <location filename="../src/engine/rules.cpp" line="5464"/>
-        <location filename="../src/engine/rules.cpp" line="5507"/>
-        <location filename="../src/engine/rules.cpp" line="5569"/>
-        <location filename="../src/engine/rules.cpp" line="5625"/>
-        <location filename="../src/engine/rules.cpp" line="5695"/>
-        <location filename="../src/engine/rules.cpp" line="5770"/>
-        <location filename="../src/engine/rules.cpp" line="5793"/>
-        <location filename="../src/engine/rules.cpp" line="5816"/>
-        <location filename="../src/engine/rules.cpp" line="5945"/>
-        <location filename="../src/engine/rules.cpp" line="6052"/>
-        <location filename="../src/engine/rules.cpp" line="6085"/>
-        <location filename="../src/engine/rules.cpp" line="6147"/>
-        <location filename="../src/engine/rules.cpp" line="6311"/>
-        <location filename="../src/engine/rules.cpp" line="6321"/>
-        <location filename="../src/engine/rules.cpp" line="6331"/>
-        <location filename="../src/engine/rules.cpp" line="6424"/>
-        <location filename="../src/engine/rules.cpp" line="6591"/>
-        <location filename="../src/engine/rules.cpp" line="6601"/>
-        <location filename="../src/engine/rules.cpp" line="6665"/>
-        <location filename="../src/engine/rules.cpp" line="6676"/>
-        <location filename="../src/engine/rules.cpp" line="6688"/>
-        <location filename="../src/engine/rules.cpp" line="6699"/>
-        <location filename="../src/engine/rules.cpp" line="6710"/>
-        <location filename="../src/engine/rules.cpp" line="6721"/>
-        <location filename="../src/engine/rules.cpp" line="6732"/>
-        <location filename="../src/engine/rules.cpp" line="6749"/>
-        <location filename="../src/engine/rules.cpp" line="6797"/>
-        <location filename="../src/engine/rules.cpp" line="6808"/>
-        <location filename="../src/engine/rules.cpp" line="6819"/>
-        <location filename="../src/engine/rules.cpp" line="6830"/>
-        <location filename="../src/engine/rules.cpp" line="8273"/>
-        <location filename="../src/engine/rules.cpp" line="8389"/>
-        <location filename="../src/engine/rules.cpp" line="9045"/>
-        <location filename="../src/engine/rules.cpp" line="9107"/>
-        <location filename="../src/engine/rules.cpp" line="9458"/>
-        <location filename="../src/engine/rules.cpp" line="9522"/>
-        <location filename="../src/engine/rules.cpp" line="9581"/>
-        <location filename="../src/engine/rules.cpp" line="9737"/>
-        <location filename="../src/engine/rules.cpp" line="12316"/>
+        <location filename="../src/engine/rules.cpp" line="5131"/>
+        <location filename="../src/engine/rules.cpp" line="5141"/>
+        <location filename="../src/engine/rules.cpp" line="5161"/>
+        <location filename="../src/engine/rules.cpp" line="5172"/>
+        <location filename="../src/engine/rules.cpp" line="5260"/>
+        <location filename="../src/engine/rules.cpp" line="5283"/>
+        <location filename="../src/engine/rules.cpp" line="5312"/>
+        <location filename="../src/engine/rules.cpp" line="5461"/>
+        <location filename="../src/engine/rules.cpp" line="5504"/>
+        <location filename="../src/engine/rules.cpp" line="5550"/>
+        <location filename="../src/engine/rules.cpp" line="5593"/>
+        <location filename="../src/engine/rules.cpp" line="5655"/>
+        <location filename="../src/engine/rules.cpp" line="5711"/>
+        <location filename="../src/engine/rules.cpp" line="5781"/>
+        <location filename="../src/engine/rules.cpp" line="5856"/>
+        <location filename="../src/engine/rules.cpp" line="5879"/>
+        <location filename="../src/engine/rules.cpp" line="5902"/>
+        <location filename="../src/engine/rules.cpp" line="6031"/>
+        <location filename="../src/engine/rules.cpp" line="6138"/>
+        <location filename="../src/engine/rules.cpp" line="6171"/>
+        <location filename="../src/engine/rules.cpp" line="6233"/>
+        <location filename="../src/engine/rules.cpp" line="6397"/>
+        <location filename="../src/engine/rules.cpp" line="6407"/>
+        <location filename="../src/engine/rules.cpp" line="6417"/>
+        <location filename="../src/engine/rules.cpp" line="6510"/>
+        <location filename="../src/engine/rules.cpp" line="6677"/>
+        <location filename="../src/engine/rules.cpp" line="6687"/>
+        <location filename="../src/engine/rules.cpp" line="6751"/>
+        <location filename="../src/engine/rules.cpp" line="6762"/>
+        <location filename="../src/engine/rules.cpp" line="6774"/>
+        <location filename="../src/engine/rules.cpp" line="6785"/>
+        <location filename="../src/engine/rules.cpp" line="6796"/>
+        <location filename="../src/engine/rules.cpp" line="6807"/>
+        <location filename="../src/engine/rules.cpp" line="6818"/>
+        <location filename="../src/engine/rules.cpp" line="6835"/>
+        <location filename="../src/engine/rules.cpp" line="6883"/>
+        <location filename="../src/engine/rules.cpp" line="6894"/>
+        <location filename="../src/engine/rules.cpp" line="6905"/>
+        <location filename="../src/engine/rules.cpp" line="6916"/>
+        <location filename="../src/engine/rules.cpp" line="8359"/>
+        <location filename="../src/engine/rules.cpp" line="8475"/>
+        <location filename="../src/engine/rules.cpp" line="9131"/>
+        <location filename="../src/engine/rules.cpp" line="9193"/>
+        <location filename="../src/engine/rules.cpp" line="9544"/>
+        <location filename="../src/engine/rules.cpp" line="9608"/>
+        <location filename="../src/engine/rules.cpp" line="9667"/>
+        <location filename="../src/engine/rules.cpp" line="9823"/>
+        <location filename="../src/engine/rules.cpp" line="12402"/>
         <source>FET warning</source>
         <translation>Avís de FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5045"/>
+        <location filename="../src/engine/rules.cpp" line="5131"/>
         <source>Could not open file - not existing or in use</source>
         <translation>No s&apos;ha pogut obrir el fitxer - no existeix o està en ús</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5056"/>
+        <location filename="../src/engine/rules.cpp" line="5142"/>
         <source>Could not read file - XML parse error at line %1, column %2:
 %3</source>
         <comment>The error description is %3</comment>
@@ -41031,734 +41364,734 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
 %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5075"/>
-        <location filename="../src/engine/rules.cpp" line="5086"/>
+        <location filename="../src/engine/rules.cpp" line="5161"/>
+        <location filename="../src/engine/rules.cpp" line="5172"/>
         <source>Cannot create or use directory %1 - cannot continue</source>
         <translation>No es pot crear o utilitzar el directori %1 - no es pot continuar</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5125"/>
+        <location filename="../src/engine/rules.cpp" line="5211"/>
         <source>FET cannot open the log file %1 for writing. This might mean that you don&apos;t have write permissions in this location. You can continue operation, but you might not be able to save the generated timetables as html files</source>
         <translation>FET no pot obrir el fitxer de log %1 per escriure-hi. Això podria voler dir que no tens permisos d&apos;escriptura en aquesta ubicació. Pots continuar l&apos;operació, però potser no podràs desar els horaris generats com a fitxers html</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5128"/>
+        <location filename="../src/engine/rules.cpp" line="5214"/>
         <source>A solution is to remove that file (if it exists already) or set its permissions to allow writing</source>
         <translation>Una solució és treure aquest fitxer (si ja existeix) o donar-li permisos d&apos;escriptura</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5129"/>
+        <location filename="../src/engine/rules.cpp" line="5215"/>
         <source>Please report possible bug</source>
         <translation>Siusplau comunica el possible bug</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5130"/>
-        <location filename="../src/engine/rules.cpp" line="6910"/>
-        <location filename="../src/engine/rules.cpp" line="6931"/>
-        <location filename="../src/engine/rules.cpp" line="7044"/>
+        <location filename="../src/engine/rules.cpp" line="5216"/>
+        <location filename="../src/engine/rules.cpp" line="6996"/>
+        <location filename="../src/engine/rules.cpp" line="7017"/>
+        <location filename="../src/engine/rules.cpp" line="7130"/>
         <source>FET critical</source>
         <translation>FET crític</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5174"/>
+        <location filename="../src/engine/rules.cpp" line="5260"/>
         <source>File contains a version numbering scheme which is not matched by x.x.xa (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are adviced to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5177"/>
+        <location filename="../src/engine/rules.cpp" line="5263"/>
         <source>If you are opening a file older than FET format version 5, it will be converted to latest FET data format</source>
         <translation>Si estàs obrint un fitxer anterior a la versió de FET 5, es convertirà al darrer format de dades de FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5197"/>
+        <location filename="../src/engine/rules.cpp" line="5283"/>
         <source>FET version does not respect the format x.x.xa (3 numbers separated by points, followed by any string a, which may be empty). This is probably a bug in FET - please report it</source>
         <translation>La versió de FET no respecta el format x.x.xa (3 nombres separats per punts, seguits per qualsevol successió a, que pot estar buida). Això és probablement un bug de FET - siusplau comunica&apos;l</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5226"/>
+        <location filename="../src/engine/rules.cpp" line="5312"/>
         <source>File does not have a corresponding beginning tag - it should be %1 or %2. File is incorrect...it cannot be opened</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5233"/>
+        <location filename="../src/engine/rules.cpp" line="5319"/>
         <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are adviced to make a backup of your old file before saving in new format.
 
 Please note that the default weight percentage of constraints min days between activities will be 95% (mainly satisfied, not always) and &apos;force consecutive if same day&apos; will be set to true (meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity)If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5245"/>
+        <location filename="../src/engine/rules.cpp" line="5331"/>
         <source>Opening a file generated with a newer version than your current FET software ... file will be opened but it is recommended to update your FET software to the latest version</source>
         <translation>Obrint un fitxer generat amb una versió més nova que la del vostre FET actual ... s&apos;obrirà el fitxer però es recomana actualitzar el programari de FET a la darrera versió</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5246"/>
+        <location filename="../src/engine/rules.cpp" line="5332"/>
         <source>Your FET version: %1, file version: %2</source>
         <translation>La teva versió de FET: %1, versió del fitxer: %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5376"/>
+        <location filename="../src/engine/rules.cpp" line="5462"/>
         <source>Duplicate teacher %1 found - ignoring</source>
         <translation>Trobat professor %1 duplicat - ignorant-ho</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5419"/>
+        <location filename="../src/engine/rules.cpp" line="5505"/>
         <source>Duplicate subject %1 found - ignoring</source>
         <translation>Trobada matèria  %1 duplicada - ignorant-ho</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5437"/>
+        <location filename="../src/engine/rules.cpp" line="5523"/>
         <source>Your file contains subject tags list, which is named in versions&gt;=5.5.0 activity tags list</source>
         <translation>El teu fitxer conté llista d&apos;etiquetes de matèria, que a les versions &gt;=5.5.0 s&apos;anomena llista d&apos;etiquetes d&apos;activitat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5465"/>
-        <location filename="../src/engine/rules.cpp" line="5508"/>
+        <location filename="../src/engine/rules.cpp" line="5551"/>
+        <location filename="../src/engine/rules.cpp" line="5594"/>
         <source>Duplicate activity tag %1 found - ignoring</source>
         <translation>Trobada etiqueta d&apos;activitat %1 duplicada - ignorant-la</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5563"/>
+        <location filename="../src/engine/rules.cpp" line="5649"/>
         <source>Trying to add year %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Intentant afegir el curs %1, que ja està afegit com un altre curs - el teu fitxer es carregarà però probablement contingui errors, siusplau corregeix-los un cop l&apos;hagis carregat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5565"/>
+        <location filename="../src/engine/rules.cpp" line="5651"/>
         <source>Trying to add year %1, which is already added as another group - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Intentant afegir el curs %1, que ja està afegit com un altre grup - el teu fitxer es carregarà però probablement contingui errors, siusplau corregeix-los un cop l&apos;hagis carregat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5567"/>
+        <location filename="../src/engine/rules.cpp" line="5653"/>
         <source>Trying to add year %1, which is already added as another subgroup - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Intentant afegir el curs %1, que ja està afegit com un altre subgrup - el teu fitxer es carregarà però probablement contingui errors, siusplau corregeix-los un cop l&apos;hagis carregat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5612"/>
+        <location filename="../src/engine/rules.cpp" line="5698"/>
         <source>Trying to add group %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Intentant afegir el grup %1, que ja està afegit com un altre curs - el teu fitxer es carregarà però probablement contingui errors, siusplau corregeix-los un cop l&apos;hagis carregat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5615"/>
+        <location filename="../src/engine/rules.cpp" line="5701"/>
         <source>Trying to add group %1 in year %2 but it is already added - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Intentant afegir el grup %1 al curs %2 però ja està afegit - el teu fitxer es carregarà però probablement contingui errors, siusplau corregeix-los un cop l&apos;hagis carregat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5621"/>
+        <location filename="../src/engine/rules.cpp" line="5707"/>
         <source>Trying to add group %1, which is already added as another subgroup - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Intentant afegir el curs %1, que ja està afegit com un altre subgrup - el teu fitxer es carregarà però probablement contingui errors, siusplau corregeix-los un cop l&apos;hagis carregat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5682"/>
+        <location filename="../src/engine/rules.cpp" line="5768"/>
         <source>Trying to add subgroup %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5684"/>
+        <location filename="../src/engine/rules.cpp" line="5770"/>
         <source>Trying to add subgroup %1, which is already added as another group - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5687"/>
+        <location filename="../src/engine/rules.cpp" line="5773"/>
         <source>Trying to add subgroup %1 in year %2, group %3 but it is already added - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="232"/>
+        <location filename="../src/engine/rules.cpp" line="236"/>
         <source>Automatic Group</source>
         <comment>Please keep the translation short. It is used when a year contains no groups and an automatic group is added in the year, in the timetable (when viewing the students timetable from FET and also in the html timetables for students groups or subgroups). In the empty year there will be added a group with name = yearName+a space character+your translation of &apos;Automatic Group&apos;.</comment>
         <translation>Grup automàtic</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="245"/>
+        <location filename="../src/engine/rules.cpp" line="249"/>
         <source>Automatic Subgroup</source>
         <comment>Please keep the translation short. It is used when a group contains no subgroups and an automatic subgroup is added in the group, in the timetable (when viewing the students timetable from FET and also in the html timetables for students subgroups). In the empty group there will be added a subgroup with name = groupName+a space character+your translation of &apos;Automatic Subgroup&apos;.</comment>
         <translation>Subgrup automàtic</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="414"/>
+        <location filename="../src/engine/rules.cpp" line="428"/>
         <source>Computing internal structure</source>
         <comment>Title of a progress dialog</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5762"/>
+        <location filename="../src/engine/rules.cpp" line="5848"/>
         <source>Minor problem found and corrected: year %1 has different number of students in two places (%2 and %3)</source>
         <comment>%2 and %3 are number of students</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5766"/>
+        <location filename="../src/engine/rules.cpp" line="5852"/>
         <source>Explanation: this is a minor problem, which appears if using overlapping students set, due to a bug in FET previous to version %1. FET will now correct this problem by setting the number of students for this year, in all places where it appears, to the number that was found in the first appearance (%2). It is advisable to check the number of students for this year.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5785"/>
+        <location filename="../src/engine/rules.cpp" line="5871"/>
         <source>Minor problem found and corrected: group %1 has different number of students in two places (%2 and %3)</source>
         <comment>%2 and %3 are number of students</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5789"/>
+        <location filename="../src/engine/rules.cpp" line="5875"/>
         <source>Explanation: this is a minor problem, which appears if using overlapping students set, due to a bug in FET previous to version %1. FET will now correct this problem by setting the number of students for this group, in all places where it appears, to the number that was found in the first appearance (%2). It is advisable to check the number of students for this group.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5808"/>
+        <location filename="../src/engine/rules.cpp" line="5894"/>
         <source>Minor problem found and corrected: subgroup %1 has different number of students in two places (%2 and %3)</source>
         <comment>%2 and %3 are number of students</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5812"/>
+        <location filename="../src/engine/rules.cpp" line="5898"/>
         <source>Explanation: this is a minor problem, which appears if using overlapping students set, due to a bug in FET previous to version %1. FET will now correct this problem by setting the number of students for this subgroup, in all places where it appears, to the number that was found in the first appearance (%2). It is advisable to check the number of students for this subgroup.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5946"/>
+        <location filename="../src/engine/rules.cpp" line="6032"/>
         <source>Found activity active tag which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The activity will be considered not active</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6044"/>
+        <location filename="../src/engine/rules.cpp" line="6130"/>
         <source>Activity with id=%1 contains invalid data - skipping</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6053"/>
+        <location filename="../src/engine/rules.cpp" line="6139"/>
         <source>File contains deprecated equipments list - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6086"/>
+        <location filename="../src/engine/rules.cpp" line="6172"/>
         <source>Duplicate building %1 found - ignoring</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6148"/>
+        <location filename="../src/engine/rules.cpp" line="6234"/>
         <source>Duplicate room %1 found - ignoring</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6199"/>
+        <location filename="../src/engine/rules.cpp" line="6285"/>
         <source>File contains constraint teacher not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint teacher not available times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6240"/>
+        <location filename="../src/engine/rules.cpp" line="6326"/>
         <source>File contains constraint students set not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set not available times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6312"/>
+        <location filename="../src/engine/rules.cpp" line="6398"/>
         <source>File contains deprecated constraint teachers subgroups max hours daily - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6322"/>
+        <location filename="../src/engine/rules.cpp" line="6408"/>
         <source>File contains deprecated constraint students n hours daily - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6332"/>
+        <location filename="../src/engine/rules.cpp" line="6418"/>
         <source>File contains deprecated constraint students set n hours daily - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6375"/>
+        <location filename="../src/engine/rules.cpp" line="6461"/>
         <source>File contains old constraint type activity preferred time, which will be converted to the newer similar constraint of this type, constraint activity preferred STARTING time. This improvement is done in versions 5.5.9 and above</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6425"/>
+        <location filename="../src/engine/rules.cpp" line="6511"/>
         <source>File contains deprecated constraint activity ends day - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6436"/>
+        <location filename="../src/engine/rules.cpp" line="6522"/>
         <source>Your file contains old constraint activity preferred times, which will be converted to new equivalent constraint activity preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of an activity (constraint activity preferred starting times) or: 2. the accepted time slots (constraint activity preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6457"/>
+        <location filename="../src/engine/rules.cpp" line="6543"/>
         <source>File contains constraint break, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint break times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6487"/>
+        <location filename="../src/engine/rules.cpp" line="6573"/>
         <source>File contains constraint students no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6501"/>
+        <location filename="../src/engine/rules.cpp" line="6587"/>
         <source>File contains constraint students set no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6529"/>
+        <location filename="../src/engine/rules.cpp" line="6615"/>
         <source>File contains constraint students early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6546"/>
+        <location filename="../src/engine/rules.cpp" line="6632"/>
         <source>File contains constraint students set early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6563"/>
+        <location filename="../src/engine/rules.cpp" line="6649"/>
         <source>Your file contains old constraint activities preferred times, which will be converted to new equivalent constraint activities preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of several activities (constraint activities preferred starting times) or: 2. the accepted time slots (constraint activities preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6592"/>
+        <location filename="../src/engine/rules.cpp" line="6678"/>
         <source>File contains deprecated constraint teachers subject tags max hours continuously - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6602"/>
+        <location filename="../src/engine/rules.cpp" line="6688"/>
         <source>File contains deprecated constraint teachers subject tag max hours continuously - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6618"/>
-        <location filename="../src/engine/rules.cpp" line="6885"/>
+        <location filename="../src/engine/rules.cpp" line="6704"/>
+        <location filename="../src/engine/rules.cpp" line="6971"/>
         <source>Constraint
 %1
 not added - must be a duplicate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6651"/>
+        <location filename="../src/engine/rules.cpp" line="6737"/>
         <source>File contains constraint room not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint room not available times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6666"/>
+        <location filename="../src/engine/rules.cpp" line="6752"/>
         <source>File contains deprecated constraint room type not allowed subjects - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6677"/>
+        <location filename="../src/engine/rules.cpp" line="6763"/>
         <source>File contains deprecated constraint subject requires equipments - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6689"/>
+        <location filename="../src/engine/rules.cpp" line="6775"/>
         <source>File contains deprecated constraint subject tag requires equipments - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6700"/>
+        <location filename="../src/engine/rules.cpp" line="6786"/>
         <source>File contains deprecated constraint teacher requires room - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6711"/>
+        <location filename="../src/engine/rules.cpp" line="6797"/>
         <source>File contains deprecated constraint teacher subject require room - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6722"/>
+        <location filename="../src/engine/rules.cpp" line="6808"/>
         <source>File contains deprecated constraint minimize number of rooms for students - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6733"/>
+        <location filename="../src/engine/rules.cpp" line="6819"/>
         <source>File contains deprecated constraint minimize number of rooms for teachers - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6750"/>
+        <location filename="../src/engine/rules.cpp" line="6836"/>
         <source>File contains deprecated constraint activities same room - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6798"/>
+        <location filename="../src/engine/rules.cpp" line="6884"/>
         <source>File contains deprecated constraint max building changes per day for teachers - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6809"/>
+        <location filename="../src/engine/rules.cpp" line="6895"/>
         <source>File contains deprecated constraint max building changes per day for students - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6820"/>
+        <location filename="../src/engine/rules.cpp" line="6906"/>
         <source>File contains deprecated constraint max room changes per day for teachers - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6831"/>
+        <location filename="../src/engine/rules.cpp" line="6917"/>
         <source>File contains deprecated constraint max room changes per day for students - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6911"/>
+        <location filename="../src/engine/rules.cpp" line="6997"/>
         <source>Saving of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6932"/>
+        <location filename="../src/engine/rules.cpp" line="7018"/>
         <source>Cannot open filename for writing ... please check write permissions of the selected directory or your disk free space. Saving of file aborted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7045"/>
+        <location filename="../src/engine/rules.cpp" line="7131"/>
         <source>Saved file gave error code %1, which means saving is compromised. Please check your disk free space</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7303"/>
+        <location filename="../src/engine/rules.cpp" line="7389"/>
         <source>Constraint TeacherNotAvailable day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7320"/>
+        <location filename="../src/engine/rules.cpp" line="7406"/>
         <source>Constraint TeacherNotAvailable start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7337"/>
+        <location filename="../src/engine/rules.cpp" line="7423"/>
         <source>Constraint TeacherNotAvailable end hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7438"/>
+        <location filename="../src/engine/rules.cpp" line="7524"/>
         <source>Constraint TeacherNotAvailableTimes day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7457"/>
+        <location filename="../src/engine/rules.cpp" line="7543"/>
         <source>Constraint TeacherNotAvailableTimes hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7525"/>
+        <location filename="../src/engine/rules.cpp" line="7611"/>
         <source>Constraint TeacherMaxDaysPerWeek day corrupt for teacher %1, max days %2 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7558"/>
+        <location filename="../src/engine/rules.cpp" line="7644"/>
         <source>Constraint TeachersMaxDaysPerWeek day corrupt, max days %1 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7595"/>
+        <location filename="../src/engine/rules.cpp" line="7681"/>
         <source>Constraint TeacherMinDaysPerWeek day corrupt for teacher %1, min days %2 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7628"/>
+        <location filename="../src/engine/rules.cpp" line="7714"/>
         <source>Constraint TeachersMinDaysPerWeek day corrupt, min days %1 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7684"/>
+        <location filename="../src/engine/rules.cpp" line="7770"/>
         <source>Constraint TeacherIntervalMaxDaysPerWeek max days corrupt for teacher %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7700"/>
+        <location filename="../src/engine/rules.cpp" line="7786"/>
         <source>Constraint Teacher interval max days per week start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7723"/>
+        <location filename="../src/engine/rules.cpp" line="7809"/>
         <source>Constraint Teacher interval max days per week end hour corrupt for teacher %1, hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7783"/>
+        <location filename="../src/engine/rules.cpp" line="7869"/>
         <source>Constraint TeachersIntervalMaxDaysPerWeek max days corrupt, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7799"/>
+        <location filename="../src/engine/rules.cpp" line="7885"/>
         <source>Constraint Teachers interval max days per week start hour corrupt because hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7822"/>
+        <location filename="../src/engine/rules.cpp" line="7908"/>
         <source>Constraint Teachers interval max days per week end hour corrupt because hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7882"/>
+        <location filename="../src/engine/rules.cpp" line="7968"/>
         <source>Constraint StudentsSetIntervalMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7898"/>
+        <location filename="../src/engine/rules.cpp" line="7984"/>
         <source>Constraint Students set interval max days per week start hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7921"/>
+        <location filename="../src/engine/rules.cpp" line="8007"/>
         <source>Constraint Students set interval max days per week end hour corrupt for students %1, hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7981"/>
+        <location filename="../src/engine/rules.cpp" line="8067"/>
         <source>Constraint StudentsIntervalMaxDaysPerWeek max days corrupt: max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7996"/>
+        <location filename="../src/engine/rules.cpp" line="8082"/>
         <source>Constraint Students interval max days per week start hour corrupt: hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8019"/>
+        <location filename="../src/engine/rules.cpp" line="8105"/>
         <source>Constraint Students interval max days per week end hour corrupt: hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8062"/>
+        <location filename="../src/engine/rules.cpp" line="8148"/>
         <source>Constraint StudentsSetNotAvailable day corrupt for students %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8078"/>
+        <location filename="../src/engine/rules.cpp" line="8164"/>
         <source>Constraint StudentsSetNotAvailable start hour corrupt for students set %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8094"/>
+        <location filename="../src/engine/rules.cpp" line="8180"/>
         <source>Constraint StudentsSetNotAvailable end hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8195"/>
+        <location filename="../src/engine/rules.cpp" line="8281"/>
         <source>Constraint StudentsSetNotAvailableTimes day corrupt for students %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8214"/>
+        <location filename="../src/engine/rules.cpp" line="8300"/>
         <source>Constraint StudentsSetNotAvailableTimes hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8274"/>
-        <location filename="../src/engine/rules.cpp" line="8390"/>
+        <location filename="../src/engine/rules.cpp" line="8360"/>
+        <location filename="../src/engine/rules.cpp" line="8476"/>
         <source>Found constraint min days between activities with tag consecutive if same day which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9046"/>
+        <location filename="../src/engine/rules.cpp" line="9132"/>
         <source>Found constraint teachers min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9108"/>
+        <location filename="../src/engine/rules.cpp" line="9194"/>
         <source>Found constraint teacher min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9459"/>
+        <location filename="../src/engine/rules.cpp" line="9545"/>
         <source>Found constraint students min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9523"/>
+        <location filename="../src/engine/rules.cpp" line="9609"/>
         <source>Found constraint students set min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9582"/>
-        <location filename="../src/engine/rules.cpp" line="9738"/>
+        <location filename="../src/engine/rules.cpp" line="9668"/>
+        <location filename="../src/engine/rules.cpp" line="9824"/>
         <source>Found constraint activity preferred starting time with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9603"/>
+        <location filename="../src/engine/rules.cpp" line="9689"/>
         <source>Constraint ActivityPreferredTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9620"/>
+        <location filename="../src/engine/rules.cpp" line="9706"/>
         <source>Constraint ActivityPreferredTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9636"/>
-        <location filename="../src/engine/rules.cpp" line="9792"/>
+        <location filename="../src/engine/rules.cpp" line="9722"/>
+        <location filename="../src/engine/rules.cpp" line="9878"/>
         <source>Found constraint activity preferred starting time, with unspecified tag &apos;permanently locked&apos; - this tag will be set to &apos;false&apos; by default. You can always modify it by editing the constraint in the &apos;Data&apos; menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9639"/>
-        <location filename="../src/engine/rules.cpp" line="9795"/>
+        <location filename="../src/engine/rules.cpp" line="9725"/>
+        <location filename="../src/engine/rules.cpp" line="9881"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred starting time has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9658"/>
-        <location filename="../src/engine/rules.cpp" line="9814"/>
+        <location filename="../src/engine/rules.cpp" line="9744"/>
+        <location filename="../src/engine/rules.cpp" line="9900"/>
         <source>Found constraint activity preferred starting time, with unspecified day or hour. This constraint will be transformed into constraint activity preferred starting times (a set of times, not only one). This change is done in FET versions 5.8.1 and higher.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9759"/>
+        <location filename="../src/engine/rules.cpp" line="9845"/>
         <source>Constraint ActivityPreferredStartingTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9776"/>
+        <location filename="../src/engine/rules.cpp" line="9862"/>
         <source>Constraint ActivityPreferredStartingTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10298"/>
+        <location filename="../src/engine/rules.cpp" line="10384"/>
         <source>Constraint ActivityPreferredTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10317"/>
+        <location filename="../src/engine/rules.cpp" line="10403"/>
         <source>Constraint ActivityPreferredTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10400"/>
+        <location filename="../src/engine/rules.cpp" line="10486"/>
         <source>Constraint ActivityPreferredTimeSlots day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10419"/>
+        <location filename="../src/engine/rules.cpp" line="10505"/>
         <source>Constraint ActivityPreferredTimeSlots hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10502"/>
+        <location filename="../src/engine/rules.cpp" line="10588"/>
         <source>Constraint ActivityPreferredStartingTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10521"/>
+        <location filename="../src/engine/rules.cpp" line="10607"/>
         <source>Constraint ActivityPreferredStartingTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10566"/>
+        <location filename="../src/engine/rules.cpp" line="10652"/>
         <source>Constraint Break day corrupt for day %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10581"/>
+        <location filename="../src/engine/rules.cpp" line="10667"/>
         <source>Constraint Break start hour corrupt for hour %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10596"/>
+        <location filename="../src/engine/rules.cpp" line="10682"/>
         <source>Constraint Break end hour corrupt for hour %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10690"/>
+        <location filename="../src/engine/rules.cpp" line="10776"/>
         <source>Constraint BreakTimes day corrupt for day %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10708"/>
+        <location filename="../src/engine/rules.cpp" line="10794"/>
         <source>Constraint BreakTimes hour corrupt for hour %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11445"/>
+        <location filename="../src/engine/rules.cpp" line="11531"/>
         <source>Constraint ActivitiesPreferredTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11467"/>
+        <location filename="../src/engine/rules.cpp" line="11553"/>
         <source>Constraint ActivitiesPreferredTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11574"/>
-        <location filename="../src/engine/rules.cpp" line="11838"/>
+        <location filename="../src/engine/rules.cpp" line="11660"/>
+        <location filename="../src/engine/rules.cpp" line="11924"/>
         <source>Constraint ActivitiesPreferredTimeSlots day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11596"/>
-        <location filename="../src/engine/rules.cpp" line="11860"/>
+        <location filename="../src/engine/rules.cpp" line="11682"/>
+        <location filename="../src/engine/rules.cpp" line="11946"/>
         <source>Constraint ActivitiesPreferredTimeSlots hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11703"/>
-        <location filename="../src/engine/rules.cpp" line="11972"/>
+        <location filename="../src/engine/rules.cpp" line="11789"/>
+        <location filename="../src/engine/rules.cpp" line="12058"/>
         <source>Constraint ActivitiesPreferredStartingTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11725"/>
-        <location filename="../src/engine/rules.cpp" line="11994"/>
+        <location filename="../src/engine/rules.cpp" line="11811"/>
+        <location filename="../src/engine/rules.cpp" line="12080"/>
         <source>Constraint ActivitiesPreferredStartingTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="12097"/>
+        <location filename="../src/engine/rules.cpp" line="12183"/>
         <source>Constraint RoomNotAvailable day corrupt for room %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="12113"/>
+        <location filename="../src/engine/rules.cpp" line="12199"/>
         <source>Constraint RoomNotAvailable start hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="12129"/>
+        <location filename="../src/engine/rules.cpp" line="12215"/>
         <source>Constraint RoomNotAvailable end hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="12228"/>
+        <location filename="../src/engine/rules.cpp" line="12314"/>
         <source>Constraint RoomNotAvailableTimes day corrupt for room %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="12247"/>
+        <location filename="../src/engine/rules.cpp" line="12333"/>
         <source>Constraint RoomNotAvailableTimes hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="12317"/>
+        <location filename="../src/engine/rules.cpp" line="12403"/>
         <source>Found constraint activity preferred room with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="12354"/>
+        <location filename="../src/engine/rules.cpp" line="12440"/>
         <source>Found constraint activity preferred room, with unspecified tag &apos;permanently locked&apos; - this tag will be set to &apos;false&apos; by default. You can always modify it by editing the constraint in the &apos;Data&apos; menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="12357"/>
+        <location filename="../src/engine/rules.cpp" line="12443"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred room has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -43823,7 +44156,7 @@ Siusplau comunica l&apos;error. FET cancel·larà l&apos;actual operació</trans
         <location filename="../src/engine/timetableexport.cpp" line="5418"/>
         <location filename="../src/engine/timetableexport.cpp" line="5544"/>
         <location filename="../src/engine/timetableexport.cpp" line="6641"/>
-        <source>Table of content</source>
+        <source>Table of contents</source>
         <translation>Taula de continguts</translation>
     </message>
     <message>
@@ -43925,14 +44258,8 @@ Siusplau comunica l&apos;error. FET cancel·larà l&apos;actual operació</trans
         <translation>Menys detallat</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4902"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4995"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5089"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5168"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5251"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5334"/>
-        <source>No rooms recorded in fet for %1.</source>
-        <translation>No s&apos;han gravat aules al FET per %1.</translation>
+        <source>No rooms recorded in FET for %1.</source>
+        <translation type="obsolete">No s&apos;han gravat aules al FET per %1.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="5421"/>
@@ -44051,6 +44378,17 @@ Siusplau comunica l&apos;error. FET cancel·larà l&apos;actual operació</trans
         <location filename="../src/engine/timetableexport.cpp" line="1943"/>
         <source>Be careful. You might get mutual and ambiguous styles. CSS means that the last definition will be used.</source>
         <translation>Vés amb compte. Podries obtenir estils mutus i ambigus. CSS vol dir que es farà servir la darrera definició.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="4902"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4995"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5089"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5168"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5251"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5334"/>
+        <source>No rooms recorded in FET for %1.</source>
+        <comment>%1 is the institution name</comment>
+        <translation>No s&apos;han gravat aules al FET per %1.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="6136"/>

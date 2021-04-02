@@ -97,11 +97,13 @@ const int MAX_SUBJECTS=6000;
 
 /**
 The maximum number of activities
+IMPORTANT: must be qint16 (max 32767), because we are using qint16 for each activity index and for unallocated activity = max_activities
 */
-const int MAX_ACTIVITIES=15000;
+const int MAX_ACTIVITIES=30000;
 
 /**
 The maximum number of rooms
+IMPORTANT: max_rooms+1 must be qint16 (max 32766 for max_rooms), because we are using qint16 for each room index and for unallocated space = max_rooms and for unspecified room = max_rooms+1
 */
 const int MAX_ROOMS=6000;
 
@@ -117,11 +119,15 @@ const qint16 UNALLOCATED_ACTIVITY = MAX_ACTIVITIES;
 
 /**
 The maximum number of working hours per day.
+IMPORTANT: max hours per day * max days per week = max hours per week must be qint16 (max 32767),
+because each time is qint16 and unallocated time is qint16
 */
 const int MAX_HOURS_PER_DAY=60;
 
 /**
 The maximum number of working days per week.
+IMPORTANT: max hours per day * max days per week = max hours per week must be qint16 (max 32767)
+because each time is qint16 and unallocated time is qint16
 */
 const int MAX_DAYS_PER_WEEK=35;
 
@@ -141,6 +147,9 @@ hours in a week are arranged like this:
 3-4        15 16 17 18 19
 4-5        20 21 22 23 24
 5-6        25 26 27 28 29 etc.
+
+IMPORTANT: max hours per day * max days per week = max hours per week must be qint16 (max 32767)
+because each time is qint16 and unallocated time is qint16
 */
 const int MAX_HOURS_PER_WEEK = MAX_HOURS_PER_DAY * MAX_DAYS_PER_WEEK;
 
@@ -160,12 +169,12 @@ const qint16 UNSPECIFIED_ROOM = MAX_ROOMS+1;
 /**
 The maximum number of time constraints
 */
-const int MAX_TIME_CONSTRAINTS = 30000;
+const int MAX_TIME_CONSTRAINTS = 60000;
 
 /**
 The maximum number of space constraints
 */
-const int MAX_SPACE_CONSTRAINTS = 30000;
+const int MAX_SPACE_CONSTRAINTS = 60000;
 
 /**
 The maximum number of preferred times that can be considered

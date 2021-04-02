@@ -157,6 +157,9 @@ public:
 	int nInternalSubjects;
 	Matrix1D<Subject*> internalSubjectsList;
 
+	int nInternalActivityTags;
+	Matrix1D<ActivityTag*> internalActivityTagsList;
+
 	int nInternalSubgroups;
 	Matrix1D<StudentsSubgroup*> internalSubgroupsList;
 	

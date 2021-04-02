@@ -65,6 +65,10 @@ static bool toSkipSpace[MAX_SPACE_CONSTRAINTS];
 
 extern QApplication* pqapplication;
 
+extern bool students_schedule_ready;
+extern bool rooms_schedule_ready;
+extern bool teachers_schedule_ready;
+
 
 FakeString::FakeString()
 {
@@ -124,7 +128,7 @@ void Rules::init() //initializes the rules (empty, but with default hours and da
 
 bool Rules::computeInternalStructure()
 {
-	//The order is important - firstly the teachers, subjects and students.
+	//The order is important - firstly the teachers, subjects, activity tags and students.
 	//After that, the buildings.
 	//After that, the rooms.
 	//After that, the activities.
@@ -340,6 +344,16 @@ bool Rules::computeInternalStructure()
 		this->internalSubjectsList[i]=sbj;
 	}
 	assert(i==this->nInternalSubjects);
+
+	//activity tags
+	ActivityTag* at;
+	this->nInternalActivityTags=this->activityTagsList.size();
+	this->internalActivityTagsList.resize(this->nInternalActivityTags);
+	for(i=0; i<this->activityTagsList.size(); i++){
+		at=this->activityTagsList[i];
+		this->internalActivityTagsList[i]=at;
+	}
+	assert(i==this->nInternalActivityTags);
 
 	//students
 	this->nInternalSubgroups=0;
@@ -800,6 +814,11 @@ bool Rules::addTeacher(Teacher* teacher)
 	}
 	
 	this->internalStructureComputed=false;
+
+	teachers_schedule_ready=false;
+	students_schedule_ready=false;
+	rooms_schedule_ready=false;
+
 	this->teachersList.append(teacher);
 	return true;
 }
@@ -807,6 +826,11 @@ bool Rules::addTeacher(Teacher* teacher)
 bool Rules::addTeacherFast(Teacher* teacher)
 {
 	this->internalStructureComputed=false;
+
+	teachers_schedule_ready=false;
+	students_schedule_ready=false;
+	rooms_schedule_ready=false;
+
 	this->teachersList.append(teacher);
 	return true;
 }
@@ -1118,6 +1142,10 @@ bool Rules::removeTeacher(const QString& teacherName)
 	
 	this->internalStructureComputed=false;
 
+	teachers_schedule_ready=false;
+	students_schedule_ready=false;
+	rooms_schedule_ready=false;
+
 	return true;
 }
 
@@ -1376,6 +1404,11 @@ bool Rules::addSubject(Subject* subject)
 	}
 	
 	this->internalStructureComputed=false;
+
+	teachers_schedule_ready=false;
+	students_schedule_ready=false;
+	rooms_schedule_ready=false;
+
 	this->subjectsList << subject;
 	return true;
 }
@@ -1383,6 +1416,11 @@ bool Rules::addSubject(Subject* subject)
 bool Rules::addSubjectFast(Subject* subject)
 {
 	this->internalStructureComputed=false;
+
+	teachers_schedule_ready=false;
+	students_schedule_ready=false;
+	rooms_schedule_ready=false;
+
 	this->subjectsList << subject;
 	return true;
 }
@@ -1528,6 +1566,10 @@ bool Rules::removeSubject(const QString& subjectName)
 	
 	this->internalStructureComputed=false;
 
+	teachers_schedule_ready=false;
+	students_schedule_ready=false;
+	rooms_schedule_ready=false;
+
 	return true;
 }
 
@@ -1660,6 +1702,11 @@ bool Rules::addActivityTag(ActivityTag* activityTag)
 	}
 
 	this->internalStructureComputed=false;
+
+	teachers_schedule_ready=false;
+	students_schedule_ready=false;
+	rooms_schedule_ready=false;
+
 	this->activityTagsList << activityTag;
 	return true;
 }
@@ -1667,6 +1714,11 @@ bool Rules::addActivityTag(ActivityTag* activityTag)
 bool Rules::addActivityTagFast(ActivityTag* activityTag)
 {
 	this->internalStructureComputed=false;
+
+	teachers_schedule_ready=false;
+	students_schedule_ready=false;
+	rooms_schedule_ready=false;
+
 	this->activityTagsList << activityTag;
 	return true;
 }
@@ -1930,6 +1982,10 @@ bool Rules::removeActivityTag(const QString& activityTagName)
 		}
 	
 	this->internalStructureComputed=false;
+
+	teachers_schedule_ready=false;
+	students_schedule_ready=false;
+	rooms_schedule_ready=false;
 
 	return true;
 }
@@ -4391,6 +4447,11 @@ bool Rules::addRoom(Room* rm)
 		return false;
 	this->roomsList << rm; //append
 	this->internalStructureComputed=false;
+
+	teachers_schedule_ready=false;
+	students_schedule_ready=false;
+	rooms_schedule_ready=false;
+
 	return true;
 }
 
@@ -4398,6 +4459,11 @@ bool Rules::addRoomFast(Room* rm)
 {
 	this->roomsList << rm; //append
 	this->internalStructureComputed=false;
+
+	teachers_schedule_ready=false;
+	students_schedule_ready=false;
+	rooms_schedule_ready=false;
+
 	return true;
 }
 
@@ -4624,6 +4690,11 @@ bool Rules::removeRoom(const QString& roomName)
 	}
 
 	this->internalStructureComputed=false;
+
+	teachers_schedule_ready=false;
+	students_schedule_ready=false;
+	rooms_schedule_ready=false;
+
 	return true;
 }
 
@@ -4779,6 +4850,11 @@ bool Rules::addBuilding(Building* bu)
 		return false;
 	this->buildingsList << bu; //append
 	this->internalStructureComputed=false;
+
+	teachers_schedule_ready=false;
+	students_schedule_ready=false;
+	rooms_schedule_ready=false;
+
 	return true;
 }
 
@@ -4786,6 +4862,11 @@ bool Rules::addBuildingFast(Building* bu)
 {
 	this->buildingsList << bu; //append
 	this->internalStructureComputed=false;
+
+	teachers_schedule_ready=false;
+	students_schedule_ready=false;
+	rooms_schedule_ready=false;
+
 	return true;
 }
 
@@ -4815,6 +4896,11 @@ bool Rules::removeBuilding(const QString& buildingName)
 	this->buildingsList.removeAt(i);
 	
 	this->internalStructureComputed=false;
+
+	teachers_schedule_ready=false;
+	students_schedule_ready=false;
+	rooms_schedule_ready=false;
+
 	return true;
 }
 

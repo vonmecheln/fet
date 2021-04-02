@@ -26,6 +26,10 @@ extern Timetable gt;
 QLineEdit* hoursNames[60];
 int nHours;
 
+extern bool students_schedule_ready;
+extern bool teachers_schedule_ready;
+extern bool rooms_schedule_ready;
+
 HoursForm::HoursForm()
  : HoursForm_template()
 {
@@ -165,6 +169,12 @@ void HoursForm::ok()
 		);		
 	if(t==QMessageBox::Cancel)
 		return;*/
+		
+	if(gt.rules.nHoursPerDay!=nHours){
+		students_schedule_ready=false;
+		teachers_schedule_ready=false;
+		rooms_schedule_ready=false;
+	}
 
 	//remove old names
 	for(int i=nHours; i<gt.rules.nHoursPerDay; i++)

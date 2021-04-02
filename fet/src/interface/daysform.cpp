@@ -24,6 +24,10 @@ extern Timetable gt;
 QLineEdit* daysNames[35];
 int nDays;
 
+extern bool students_schedule_ready;
+extern bool teachers_schedule_ready;
+extern bool rooms_schedule_ready;
+
 DaysForm::DaysForm()
  : DaysForm_template()
 {
@@ -131,6 +135,12 @@ void DaysForm::ok()
 		tr("Please note that FET will NOT take care "
 		"of old constraints using erased days "
 		"(only renamed days will be handled correctly)"));
+		
+	if(gt.rules.nDaysPerWeek!=nDays){
+		students_schedule_ready=false;
+		teachers_schedule_ready=false;
+		rooms_schedule_ready=false;
+	}
 		
 	//remove old names
 	for(int i=nDays; i<gt.rules.nDaysPerWeek; i++)

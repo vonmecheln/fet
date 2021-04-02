@@ -1564,3 +1564,17 @@ From alfaromeo:
 
 -Min hours DAILY with an activity tag (to count real activities only leaving pseudo activities out of count)
 -Min hours continuously with an activity tag 
+
+51---------------------------------------------------------
+From Gert Veltink:
+
+	Hi,
+	
+	I would be very pleased, if in a future version it would be possible to specify the number of students for an activity as an extra column in the activities.csv.
+	
+	Rationale: I mainly use FET for planning examinations. In this setting the number of calculated participants and actual participants differs significantly, because students have to repeat examinations or do not register for  examinations.
+	
+	Many thanks in advance!
+	
+	Regards,
+	

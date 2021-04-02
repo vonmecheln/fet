@@ -208,7 +208,7 @@ Running FET:
 			y is integer (seconds) (default 2000000000, which is practically infinite).
 			z is integer from 0 to 6 and represents the detail level for the generated html timetables
 				(default 2, larger values have more details/facilities and larger file sizes).
-			t is one of en_US, ar, ca, da, de, el, es, fa, fr, hu, id, it, lt, mk, ms, nl, pl, pt_BR, ro, ru, tr, uk (default en_US).
+			t is one of en_US, ar, ca, da, de, el, es, fa, fr, hu, id, it, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, tr, uk (default en_US).
 			u is either "true" or "false" and represents if you want -x- (for true) or --- (for false) in the generated timetables for the
 				not available slots (default true).
 			b is either "true" or "false" and represents if you want -X- (for true) or --- (for false) in the generated timetables for the

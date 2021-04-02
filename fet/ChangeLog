@@ -1500,4 +1500,10 @@ Versions 5.13.0 - 5.13.x
 	- Increased maximum number of teachers, subjects, rooms and buildings to 6000 (they were 3000 previously).
 	- Corrected some HTML minor problems, by Volker Dirr.
 	- Added a new sample file, by alfaromeo (from Morocco). This user also describes tricks to use official FET for Moroccan schools.
+- Verson 5.13.2
+	- Increased max activities from 15,000 to 30,000 (suggested by murad). Also, increased max time constraints from 30,000 to 60,000 and max space constraints from 30,000 to 60,000.
+	- Added a partial Sinhala translation (only the main menu), by Achini Duisna.
+	- Updated the Indonesian translation, by Nirwan Yus.
+	- Very rare crash bugs fixed.
+	- Code cleanup.
 	
