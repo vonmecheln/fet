@@ -328,6 +328,10 @@ void usage(QTextStream* out, const QString& error)
 		"\t\tWANFTFS is either true or false, represents whether you want the program to issue a warning if you are using activites which are not fixed in time, "
 		"but are fixed in space in a virtual room, specifying also the real rooms (which is not recommended) (default true).\n"
 		"\n"
+		"\t--warnifusingmaxhoursdailywithlessthan100percentweight=WMHDWLT100PW\n"
+		"\t\tWMHDWLT100PW is either true or false, represents whether you want the program to issue a warning if you are using constraints of type teacher(s)/students (set) "
+		"max hours daily with a weight less than 100% (default true).\n"
+		"\n"
 		"\t--verbose=VBS\n"
 		"\t\tVBS is either true or false, represents whether you want additional generation messages and other messages to be shown on the command line (default false).\n"
 		"\n"
@@ -468,6 +472,7 @@ void readSimulationParameters()
 	SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=newSettings.value("warn-if-using-not-perfect-constraints", "true").toBool();
 	SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES=newSettings.value("warn-subgroups-with-the-same-activities", "true").toBool();
 	SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME=newSettings.value("warn-activities-not-fixed-time-fixed-space-virtual-real", "true").toBool();
+	SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT=newSettings.value("warn-max-hours-daily-with-under-100-weight", "true").toBool();
 	ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=newSettings.value("enable-students-min-hours-daily-with-allow-empty-days", "false").toBool();
 	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=newSettings.value("warn-if-using-students-min-hours-daily-with-allow-empty-days", "true").toBool();
 	
@@ -556,6 +561,7 @@ void writeSimulationParameters()
 	settings.setValue("warn-if-using-not-perfect-constraints", SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS);
 	settings.setValue("warn-subgroups-with-the-same-activities", SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES);
 	settings.setValue("warn-activities-not-fixed-time-fixed-space-virtual-real", SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME);
+	settings.setValue("warn-max-hours-daily-with-under-100-weight", SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT);
 	settings.setValue("enable-students-min-hours-daily-with-allow-empty-days", ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
 	settings.setValue("warn-if-using-students-min-hours-daily-with-allow-empty-days", SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
 
@@ -1041,6 +1047,8 @@ int main(int argc, char **argv)
 		SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES=true;
 		
 		SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME=true;
+
+		SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT=true;
 		
 		SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
 		
@@ -1170,6 +1178,10 @@ int main(int argc, char **argv)
 			else if(s.left(67)=="--warnifusingactivitiesnotfixedtimefixedspacevirtualroomsrealrooms="){
 				if(s.right(5)=="false")
 					SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME=false;
+			}
+			else if(s.left(55)=="--warnifusingmaxhoursdailywithlessthan100percentweight="){
+				if(s.right(5)=="false")
+					SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT=false;
 			}
 			else if(s.left(43)=="--warnifusinggroupactivitiesininitialorder="){
 				if(s.right(5)=="false")

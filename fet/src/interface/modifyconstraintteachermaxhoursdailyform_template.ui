@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>476</width>
-    <height>240</height>
+    <width>553</width>
+    <height>296</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -72,7 +72,8 @@
        </property>
        <property name="text">
         <string>Weight percentage
-(recommended: 0.0%-100.0%)</string>
+(recommended: 100.0%,
+allowed: 0.0%-100.0%)</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>

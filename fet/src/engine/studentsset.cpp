@@ -36,6 +36,9 @@ StudentsYear::StudentsYear()
 	: StudentsSet()
 {
 	this->type=STUDENTS_YEAR;
+	
+	divisions.clear();
+	separator=QString(" ");
 
 	indexInAugmentedYearsList=-1;
 }
@@ -51,6 +54,18 @@ QString StudentsYear::getXmlDescription()
 	s+="	<Name>"+protect(this->name)+"</Name>\n";
 	s+="	<Number_of_Students>"+CustomFETString::number(this->numberOfStudents)+"</Number_of_Students>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	
+	s+="	<!-- The information regarding categories, divisions of each category, and separator is only used in the divide year automatically by categories dialog. -->\n";
+	s+="	<Number_of_Categories>"+CustomFETString::number(divisions.count())+"</Number_of_Categories>\n";
+	for(const QStringList& tl : qAsConst(divisions)){
+		s+="	<Category>\n";
+		s+="		<Number_of_Divisions>"+CustomFETString::number(tl.count())+"</Number_of_Divisions>\n";
+		for(const QString& dn : qAsConst(tl))
+			s+="		<Division>"+protect(dn)+"</Division>\n";
+		s+="	</Category>\n";
+	}
+	s+="	<Separator>"+protect(separator)+"</Separator>\n";
+	
 	for(int i=0; i<this->groupsList.size(); i++){
 		StudentsGroup* stg=this->groupsList[i];
 		s+=stg->getXmlDescription();

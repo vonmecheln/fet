@@ -207,6 +207,11 @@ bool Rules::computeInternalStructure(QWidget* parent)
 		StudentsYear* ay=new StudentsYear();
 		ay->name=y->name;
 		ay->numberOfStudents=y->numberOfStudents;
+		
+		//2020-09-04 - this is not really important
+		ay->divisions=y->divisions;
+		ay->separator=y->separator;
+		
 		ay->groupsList.clear();
 		augmentedYearsList << ay;
 		
@@ -980,7 +985,7 @@ void Rules::kill() //clears memory for the rules, destroys them
 	for(StudentsSubgroup* subgroup : qAsConst(asubgroups)){
 		assert(subgroup!=NULL);
 		delete subgroup;
-	}	
+	}
 	augmentedYearsList.clear();
 	//////////////////
 	
@@ -5748,6 +5753,11 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					allAllocatedStudentsSets.insert(sty);
 					int ng=0;
 					
+					//sty->divisions.clear();
+					//sty->separator="";
+					int readCategories=-1;
+					int metCategories=0;
+					
 					QSet<QString> groupsInYear;
 
 					bool tmp2=this->addYearFast(sty);
@@ -5810,6 +5820,72 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 							sty->comments=text;
 							xmlReadingLog+="    Crt. year comments="+sty->comments+"\n";
 						}
+						
+						//2020-09-03
+						else if(xmlReader.name()=="Number_of_Categories"){
+							QString text=xmlReader.readElementText();
+							readCategories=text.toInt();
+							xmlReadingLog+="    Read number of categories: "+CustomFETString::number(readCategories)+"\n";
+						}
+						else if(xmlReader.name()=="Category"){
+							xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+
+							metCategories++;
+							
+							int readDivisions=-1;
+							int metDivisions=0;
+							QStringList divisionsTL;
+
+							assert(xmlReader.isStartElement());
+							while(xmlReader.readNextStartElement()){
+								xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+								if(xmlReader.name()=="Number_of_Divisions"){
+									QString text=xmlReader.readElementText();
+									readDivisions=text.toInt();
+									xmlReadingLog+="     Read number of divisions: "+CustomFETString::number(readDivisions)+"\n";
+								}
+								else if(xmlReader.name()=="Division"){
+									xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+									
+									metDivisions++;
+									
+									QString text=xmlReader.readElementText();
+									divisionsTL.append(text);
+									xmlReadingLog+="     Read new division: "+divisionsTL.last()+"\n";
+								}
+								else{
+									unrecognizedXmlTags.append(xmlReader.name().toString());
+									unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+									unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+									xmlReader.skipCurrentElement();
+									xmlReaderNumberOfUnrecognizedFields++;
+								}
+							}
+							
+							if(readDivisions==-1){
+								if(metDivisions==0){
+									//ok
+								}
+								else{
+									xmlReader.raiseError(tr("The specified number of divisions was not found, but there were found specified the divisions."));
+									okStudents=false;
+								}
+							}
+							else if(readDivisions!=metDivisions){
+								xmlReader.raiseError(tr("The specified number of divisions is not equal with the met number of divisions."));
+								okStudents=false;
+							}
+							else{
+								sty->divisions.append(divisionsTL);
+							}
+						}
+						else if(xmlReader.name()=="Separator"){
+							QString text=xmlReader.readElementText();
+							sty->separator=text;
+							xmlReadingLog+="    Read year separator="+sty->separator+"\n";
+						}
+						
 						else if(xmlReader.name()=="Group"){
 							QSet<StudentsSubgroup*> allocatedSubgroups;
 						
@@ -6068,6 +6144,23 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 						xmlReadingLog+="   Added "+CustomFETString::number(ng)+" groups\n";
 						tgr+=ng;
 						//reducedXmlLog+="	Added "+CustomFETString::number(ng)+" groups\n";
+					}
+					
+					if(readCategories==-1){
+						if(metCategories==0){
+							//ok
+						}
+						else{
+							xmlReader.raiseError(tr("The specified number of categories was not found, but there were found specified the categories."));
+							okStudents=false;
+						}
+					}
+					else if(readCategories!=metCategories){
+						xmlReader.raiseError(tr("The specified number of categories is not equal with the met number of categories."));
+						okStudents=false;
+					}
+					else{
+						//ok
 					}
 				}
 				else{

@@ -1161,7 +1161,6 @@ void TimetableExport::writeSimulationResults(QWidget* parent, int n){
 		
 	finalDestDir+=FILE_SEP;
 
-
 	QString s3=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
 
 	if(s3.right(4)==".fet")
@@ -1970,70 +1969,42 @@ void TimetableExport::writeActivitiesTimetableXml(QWidget* parent, const QString
 	tos << "<" << protect(ACTIVITIES_TIMETABLE_TAG) << ">\n";
 	
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-		tos<<"<Activity>"<<Qt::endl;
-#else
-		tos<<"<Activity>"<<endl;
-#endif
+		tos<<"<Activity>\n";
 		
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-		tos<<"	<Id>"<<gt.rules.internalActivitiesList[i].id<<"</Id>"<<Qt::endl;
-#else
-		tos<<"	<Id>"<<gt.rules.internalActivitiesList[i].id<<"</Id>"<<endl;
-#endif
+		tos<<"	<Id>"<<gt.rules.internalActivitiesList[i].id<<"</Id>\n";
 		
 		QString day="";
 		if(best_solution.times[i]!=UNALLOCATED_TIME){
 			int d=best_solution.times[i]%gt.rules.nDaysPerWeek;
 			day=gt.rules.daysOfTheWeek[d];
 		}
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-		tos<<"	<Day>"<<protect(day)<<"</Day>"<<Qt::endl;
-#else
-		tos<<"	<Day>"<<protect(day)<<"</Day>"<<endl;
-#endif
+		tos<<"	<Day>"<<protect(day)<<"</Day>\n";
 		
 		QString hour="";
 		if(best_solution.times[i]!=UNALLOCATED_TIME){
 			int h=best_solution.times[i]/gt.rules.nDaysPerWeek;
 			hour=gt.rules.hoursOfTheDay[h];
 		}
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-		tos<<"	<Hour>"<<protect(hour)<<"</Hour>"<<Qt::endl;
-#else
-		tos<<"	<Hour>"<<protect(hour)<<"</Hour>"<<endl;
-#endif
+		tos<<"	<Hour>"<<protect(hour)<<"</Hour>\n";
 		
 		QString room="";
 		if(best_solution.rooms[i]!=UNALLOCATED_SPACE && best_solution.rooms[i]!=UNSPECIFIED_ROOM){
 			int r=best_solution.rooms[i];
 			room=gt.rules.internalRoomsList[r]->name;
 		}
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-		tos<<"	<Room>"<<protect(room)<<"</Room>"<<Qt::endl;
-#else
-		tos<<"	<Room>"<<protect(room)<<"</Room>"<<endl;
-#endif
+		tos<<"	<Room>"<<protect(room)<<"</Room>\n";
 		if(best_solution.rooms[i]!=UNALLOCATED_SPACE && best_solution.rooms[i]!=UNSPECIFIED_ROOM){
 			int r=best_solution.rooms[i];
 			if(gt.rules.internalRoomsList[r]->isVirtual==true){
 				assert(gt.rules.internalRoomsList[r]->rrsl.count()==best_solution.realRoomsList[i].count());
 				for(int rr : qAsConst(best_solution.realRoomsList[i])){
 					assert(rr>=0 && rr<gt.rules.nInternalRooms);
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-					tos<<"	<Real_Room>"<<protect(gt.rules.internalRoomsList[rr]->name)<<"</Real_Room>"<<Qt::endl;
-#else
-					tos<<"	<Real_Room>"<<protect(gt.rules.internalRoomsList[rr]->name)<<"</Real_Room>"<<endl;
-#endif
+					tos<<"	<Real_Room>"<<protect(gt.rules.internalRoomsList[rr]->name)<<"</Real_Room>\n";
 				}
 			}
 		}
 		
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-		tos<<"</Activity>"<<Qt::endl;
-#else
-		tos<<"</Activity>"<<endl;
-#endif
+		tos<<"</Activity>\n";
 	}
 
 	tos << "</" << protect(ACTIVITIES_TIMETABLE_TAG) << ">\n";
@@ -2586,11 +2557,7 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& cssfile
 		}
 	}
 	if(TIMETABLE_HTML_LEVEL==6){
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-		tos<<Qt::endl<<"/* "<<TimetableExport::tr("Be careful. You might get mutual and ambiguous styles. CSS means that the last definition will be used.")<<" */\n\n";
-#else
-		tos<<endl<<"/* "<<TimetableExport::tr("Be careful. You might get mutual and ambiguous styles. CSS means that the last definition will be used.")<<" */\n\n";
-#endif
+		tos<<"/* "<<TimetableExport::tr("Be careful. You might get mutual and ambiguous styles. CSS means that the last definition will be used.")<<" */\n\n";
 		for(int i=0; i<gt.rules.nInternalSubjects; i++){
 			tos << "td.s_"<<hashSubjectIDsTimetable.value(gt.rules.internalSubjectsList[i]->name)<<" { /* subject "<<gt.rules.internalSubjectsList[i]->name<<" */\n\n}\n\n";
 		}

@@ -6892,12 +6892,23 @@ impossiblestudentsminrestinghours:
 							bool k=subgroupRemoveAnActivityFromEnd(level, ai, conflActivities[newtime], nConflActivities[newtime], ai2);
 							assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 							if(!k){
-								if(level==0){
-									//this should not be displayed
-									//cout<<"WARNING - maybe bug - file "<<__FILE__<<" line "<<__LINE__<<endl;
+								//Added on 2020-09-17 - logic improvement / theoretical bug fix.
+								bool k2=false;
+								//if(subgroupsMaxGapsPerWeekPercentage[sbg]<0 ||
+								// (subgroupsMaxGapsPerWeekPercentage[sbg]>=0 && subgroupsMaxGapsPerWeekMaxGaps[sbg]>0))
+								if(subgroupsMaxGapsPerWeekMaxGaps[sbg]!=0){ //-1 or >0
+									k2=subgroupRemoveAnActivityFromAnywhere(level, ai, conflActivities[newtime], nConflActivities[newtime], ai2);
+									assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 								}
-								okstudentsearlymaxbeginningsatsecondhour=false;
-								goto impossiblestudentsearlymaxbeginningsatsecondhour;
+								
+								if(!k2){
+									if(level==0){
+										//this should not be displayed
+										//cout<<"WARNING - maybe bug - file "<<__FILE__<<" line "<<__LINE__<<endl;
+									}
+									okstudentsearlymaxbeginningsatsecondhour=false;
+									goto impossiblestudentsearlymaxbeginningsatsecondhour;
+								}
 							}
 						}
 						else{ //OK
@@ -7019,17 +7030,16 @@ impossiblestudentsmaxgapsperweek:
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-		//!!!NOT PERFECT constraint, in other places may be improved, like in min/max hours daily.
-		//see file fet-v.v.v/doc/algorithm/improve-studentsmaxgapsperday.txt for advice and (unstable) code on how to make students max gaps per day constraint perfect
+	//!!!NOT PERFECT constraint, in other places may be improved, like in min/max hours daily.
+	//see file fet-v.v.v/doc/algorithm/improve-studentsmaxgapsperday.txt for advice and (unstable) code on how to make students max gaps per day constraint perfect
 
-		//not causing more than subgroupsMaxGapsPerDay students gaps
-		
-		//TODO: improve, check
-		
+	//not causing more than subgroupsMaxGapsPerDay students gaps
+	
+	//TODO: improve, check
+	
 	okstudentsmaxgapsperday=true;
-		
+	
 	if(haveStudentsMaxGapsPerDay){
-		
 		//okstudentsmaxgapsperday=true;
 		for(int sbg : qAsConst(act->iSubgroupsList))
 			if(!skipRandom(subgroupsMaxGapsPerDayPercentage[sbg])){
@@ -7141,6 +7151,10 @@ impossiblestudentsmaxgapsperweek:
 					int ai2=-1;
 					
 					//it should also be allowed to take from anywhere, but it is risky to change now
+					// Addition 2020-09-18: I might be mistaking and should not be allowed to take from anywhere.
+					// Also, I think it should be allowed to take from anywhere only if
+					// the max allowed gaps per week/day are greater than 0 (or not existing max gaps per week,
+					// but this cannot happen, because I compute automatically max_per_week = n_days*max_per_day).
 					if(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0){
 						bool k=subgroupRemoveAnActivityFromEnd(level, ai, conflActivities[newtime], nConflActivities[newtime], ai2);
 						assert(conflActivities[newtime].count()==nConflActivities[newtime]);
@@ -7284,8 +7298,13 @@ impossiblestudentsmaxgapsperday:
 					if(newSubgroupsDayNHours(sbg,d)>limitHoursDaily){
 						_ok=false; //trivially
 					}
-					//basically, see that the gaps are enough
 					else{
+						//basically, see that the gaps are enough
+						// Comment added on 2020-09-15: This code was written a long time ago. It cares that the gaps are enough, but it is more like a heuristic,
+						// because the weight might be any real number below 100.0%. So on other days the constraints should be allowed to be broken.
+						// However, it is very risky to change now. I think that the best would be to allow max hours daily only with 100.0% weight,
+						// but unfortunately I think that many users have files with weight <100.0%.
+						// Also, don't forget that we might have two constraints max hours daily for each subgroup.
 						if(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0){
 							if(subgroupsMaxGapsPerWeekPercentage[sbg]>=0){
 								//both
@@ -7414,9 +7433,15 @@ impossiblestudentsmaxgapsperday:
 						//////////////////////////new
 						bool ok;
 						if(sbgDayNHours[d]>limitHoursDaily){
-							ok=false;
+							ok=false; //trivially
 						}
 						else{
+							//basically, see that the gaps are enough
+							// Comment added on 2020-09-15: This code was written a long time ago. It cares that the gaps are enough, but it is more like a heuristic,
+							// because the weight might be any real number below 100.0%. So on other days the constraints should be allowed to be broken.
+							// However, it is very risky to change now. I think that the best would be to allow max hours daily only with 100.0% weight,
+							// but unfortunately I think that many users have files with weight <100.0%.
+							// Also, don't forget that we might have two constraints max hours daily for each subgroup.
 							if(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0){
 								if(subgroupsMaxGapsPerWeekPercentage[sbg]>=0){
 									//both
@@ -9933,13 +9958,17 @@ impossibleteachersmaxgapsperday:
 					}
 					
 					//preliminary test
-
-					//basically, see that the gaps are enough
 					bool _ok;
 					if(newTeachersDayNHours(tch,d)>limitHoursDaily){
-						_ok=false;
+						_ok=false; //trivially
 					}
 					else{
+						//basically, see that the gaps are enough
+						// Comment added on 2020-09-15: This code was written a long time ago. It cares that the gaps are enough, but it is more like a heuristic,
+						// because the weight might be any real number below 100.0%. So on other days the constraints should be allowed to be broken.
+						// However, it is very risky to change now. I think that the best would be to allow max hours daily only with 100.0% weight,
+						// but unfortunately I think that many users have files with weight <100.0%.
+						// Also, don't forget that we might have two constraints max hours daily for each subgroup.
 						if(teachersMaxGapsPerWeekPercentage[tch]>=0){
 							int rg=teachersMaxGapsPerWeekMaxGaps[tch];
 							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
@@ -10001,12 +10030,17 @@ impossibleteachersmaxgapsperday:
 					bool canTakeFromBeginOrEndAnyDay=(teachersMaxGapsPerWeekMaxGaps[tch]>=0 || teachersMaxGapsPerDayMaxGaps[tch]>=0);
 	
 					for(;;){
-						//basically, see that the gaps are enough
 						bool ok;
 						if(tchDayNHours[d]>limitHoursDaily){
-							ok=false;
+							ok=false; //trivially
 						}
 						else{
+							//basically, see that the gaps are enough
+							// Comment added on 2020-09-15: This code was written a long time ago. It cares that the gaps are enough, but it is more like a heuristic,
+							// because the weight might be any real number below 100.0%. So on other days the constraints should be allowed to be broken.
+							// However, it is very risky to change now. I think that the best would be to allow max hours daily only with 100.0% weight,
+							// but unfortunately I think that many users have files with weight <100.0%.
+							// Also, don't forget that we might have two constraints max hours daily for each subgroup.
 							if(teachersMaxGapsPerWeekPercentage[tch]>=0){
 								int rg=teachersMaxGapsPerWeekMaxGaps[tch];
 								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){

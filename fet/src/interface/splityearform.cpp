@@ -27,7 +27,7 @@
 
 #include <QMessageBox>
 
-#include <QSettings>
+//#include <QSettings>
 
 #include <QListWidget>
 #include <QAbstractItemView>
@@ -39,8 +39,8 @@
 
 #include "longtextmessagebox.h"
 
-extern const QString COMPANY;
-extern const QString PROGRAM;
+//extern const QString COMPANY;
+//extern const QString PROGRAM;
 
 SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(parent)
 {
@@ -100,7 +100,7 @@ SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(par
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 	
-	QSettings settings(COMPANY, PROGRAM);
+	/*QSettings settings(COMPANY, PROGRAM);
 	
 	_sep=settings.value(this->metaObject()->className()+QString("/separator-string"), QString("")).toString();
 	
@@ -113,7 +113,7 @@ SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(par
 			if(!ts.isEmpty())
 				_divisions[i].append(ts);
 			else
-				_nDivisions[i]--;
+				_nDivisions[i]--; //comment on 2020-09-03: this is wrong code, but practically not met in practice.
 		}
 		if(_nDivisions[i]!=_divisions[i].count()){
 			QMessageBox::warning(this, tr("FET warning"), tr("You have met a minor bug in FET, please report it. FET expected to read"
@@ -121,6 +121,17 @@ SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(par
 			 .arg(_nDivisions[i]).arg(i).arg(_divisions[i].count()));
 			_nDivisions[i]=_divisions[i].count();
 		}
+	}*/
+	
+	//2020-09-03
+	StudentsSet* ss=gt.rules.searchStudentsSet(_year);
+	assert(ss->type==STUDENTS_YEAR);
+	StudentsYear* sy=(StudentsYear*)ss;
+	_sep=sy->separator;
+	_nCategories=sy->divisions.count();
+	for(int i=0; i<_nCategories; i++){
+		_nDivisions[i]=sy->divisions.at(i).count();
+		_divisions[i]=sy->divisions.at(i);
 	}
 
 	year=_year;
@@ -147,7 +158,7 @@ SplitYearForm::~SplitYearForm()
 {
 	saveFETDialogGeometry(this);
 
-	QSettings settings(COMPANY, PROGRAM);
+	/*QSettings settings(COMPANY, PROGRAM);
 	
 	settings.setValue(this->metaObject()->className()+QString("/separator-string"), _sep);
 	
@@ -160,7 +171,7 @@ SplitYearForm::~SplitYearForm()
 		assert(_nDivisions[i]==_divisions[i].count());
 		for(int j=0; j<_nDivisions[i]; j++)
 			settings.setValue(this->metaObject()->className()+QString("/category/%1/division/%2").arg(i+1).arg(j+1), _divisions[i].at(j));
-	}
+	}*/
 }
 
 void SplitYearForm::tabIndexChanged(int i)
@@ -197,7 +208,8 @@ void SplitYearForm::addClicked()
 		for(int k=0; k<categoriesSpinBox->value(); k++)
 			for(int j=0; j<listWidgets[k]->count(); j++)
 				if(listWidgets[k]->item(j)->text()==text){
-					QMessageBox::information(this, tr("FET information"), tr("Duplicates not allowed!"));
+					QMessageBox::information(this, tr("FET information"), tr("Duplicate names are not allowed (the current string is found in category number %1, division number %2).")
+					 .arg(k+1).arg(j+1));
 					return;
 				}
 	
@@ -231,7 +243,8 @@ void SplitYearForm::modifyDoubleClicked(int i)
 				for(int k=0; k<categoriesSpinBox->value(); k++)
 					for(int j=0; j<listWidgets[k]->count(); j++)
 						if(listWidgets[k]->item(j)->text()==text){
-							QMessageBox::information(this, tr("FET information"), tr("Duplicates not allowed!"));
+							QMessageBox::information(this, tr("FET information"), tr("Duplicate names are not allowed (the current string is found in category number %1, division number %2).")
+							 .arg(k+1).arg(j+1));
 							return;
 						}
 						
@@ -427,11 +440,13 @@ void SplitYearForm::ok()
 		for(int j=0; j<listWidgets[i]->count(); j++){
 			QString ts=listWidgets[i]->item(j)->text();
 			if(tmp.contains(ts)){
-				QMessageBox::information(this, tr("FET information"), tr("Duplicate names not allowed"));
+				QMessageBox::information(this, tr("FET information"), tr("Duplicate names not allowed (%1 appears a second time in category number %2, division number %3).",
+				 "%1 is the name of a division (of a year).")
+				 .arg(ts).arg(i+1).arg(j+1));
 				return;
 			}
 			else if(ts.isEmpty()){
-				QMessageBox::information(this, tr("FET information"), tr("Empty names not allowed"));
+				QMessageBox::information(this, tr("FET information"), tr("Empty names not allowed (the entry in category number %1, division number %2 has an empty name).").arg(i+1).arg(j+1));
 				return;
 			}
 			tmp.insert(ts);
@@ -713,6 +728,11 @@ again_here_2:
 		for(int j=0; j<listWidgets[i]->count(); j++)
 			_divisions[i].append(listWidgets[i]->item(j)->text());
 	}
+
+	//2020-09-03
+	newYear->separator=_sep;
+	for(int i=0; i<_nCategories; i++)
+		newYear->divisions.append(_divisions[i]);
 	
 	//No need for gt.rules.internalStructureComputed=false and the rest of it, because there are invoked addGroupFast and addSubgroupFast
 	
@@ -751,9 +771,10 @@ void SplitYearForm::help()
 
 	s+="\n\n";
 
-	s+=tr("Please note that the dialog here will keep the last configuration of the last"
-		" divided year, it will not remember the values for a specific year you need to modify.");
-	s+=" ";
+//Commented on 2020-09-03
+//	s+=tr("Please note that the dialog here will keep the last configuration of the last"
+//		" divided year, it will not remember the values for a specific year you need to modify.");
+//	s+=" ";
 	s+=tr("If you intend to divide again a year by categories and you want to keep (the majority of) the existing groups in this year,"
 		" you will need to use the exact same separator character(s) for dividing this year as you used when previously dividing this year,"
 		" and the same division names (any old division which is no longer entered means a group which will be removed from this year).");

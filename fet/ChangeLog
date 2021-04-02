@@ -2288,7 +2288,7 @@ Versions 5.45.0 - 5.45.1
 	- Added a new example file from South Africa, by Eric Carolus.
 	- Updated the Arabic translation, by Benahmed Abdelkrim.
 ---------------------------------------------------------------------------------
-Versions 5.46.0 - 5.46.v
+Versions 5.46.0 - 5.46.1
 - Version 5.46.0
 	- Added a new feature to create easier overlapping groups/years, from the subgroups/groups dialogs (suggested by samantha.goddard's file).
 	- Added the possibility of executing an external command after the generation (suggested by Zsolt Udvari and other users). The implementation of this feature
@@ -2298,3 +2298,13 @@ Versions 5.46.0 - 5.46.v
 	- Increased the maximum number of hours per day to 72 (suggested by Celia22).
 	- Added help/information in the add/modify constraint activity preferred room dialog (suggested by math).
 	- Minor improvements.
+---------------------------------------------------------------------------------
+Versions 5.47.0 - 5.47.v
+- Version 5.47.0
+	- Updated to Qt 5.15.1.
+	- Theoretical improvement/logic bug fixed in the generation when using constraints of type students (set) early max beginnings at second hour without
+	max gaps constraints or with more than zero max gaps allowed.
+	- Added a warning if using constraints of type teacher(s)/students (set) max hours daily with weights less than 100%, because the algorithm
+	is not perfectly implemented in this case.
+	- The automatic division of years by categories will now retain the settings for each year, separately (suggested by crow and possibly other users).
+	- Minor code improvements (suggested by Volker Dirr).

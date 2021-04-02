@@ -83,13 +83,13 @@ void HelpFaqForm::setText()
 	s+=tr("These limits are:");
 	
 	s+="\n- ";
-	s+=tr("Maximum total number of hours (periods) per day: %1").arg(MAX_HOURS_PER_DAY);
-	s+="\n- ";
 	s+=tr("Maximum number of working days per week: %1").arg(MAX_DAYS_PER_WEEK);
 	s+="\n- ";
-	s+=tr("Maximum total number of teachers: %1").arg(MAX_TEACHERS);
+	s+=tr("Maximum number of hours per day: %1").arg(MAX_HOURS_PER_DAY);
 	s+="\n- ";
-	s+=tr("Maximum total number of sets of students: %1").arg(MAX_TOTAL_SUBGROUPS);
+	s+=tr("Maximum number of teachers: %1").arg(MAX_TEACHERS);
+	s+="\n- ";
+	s+=tr("Maximum number of subgroups of students: %1").arg(MAX_TOTAL_SUBGROUPS);
 	s+="\n- ";
 	s+=tr("Virtually unlimited number of subjects");
 	s+="\n- ";

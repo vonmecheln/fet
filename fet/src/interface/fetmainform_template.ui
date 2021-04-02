@@ -1287,6 +1287,8 @@
      <addaction name="separator"/>
      <addaction name="showWarningForSubgroupsWithTheSameActivitiesAction"/>
      <addaction name="separator"/>
+     <addaction name="showWarningForMaxHoursDailyWithUnder100WeightAction"/>
+     <addaction name="separator"/>
      <addaction name="enableActivityTagMaxHoursDailyAction"/>
      <addaction name="enableActivityTagMinHoursDailyAction"/>
      <addaction name="enableStudentsMaxGapsPerDayAction"/>
@@ -2809,6 +2811,17 @@
   <action name="settingsCommandAfterFinishingAction">
    <property name="text">
     <string>Notification command</string>
+   </property>
+  </action>
+  <action name="showWarningForMaxHoursDailyWithUnder100WeightAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Warn if using max hours daily with a weight less than 100%</string>
    </property>
   </action>
  </widget>

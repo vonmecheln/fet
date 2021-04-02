@@ -381,6 +381,8 @@ bool SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES=true;
 
 bool SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME=true;
 
+bool SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT=true;
+
 bool ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=false;
 
 bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
@@ -743,6 +745,7 @@ FetMainForm::FetMainForm()
 	
 	showWarningForSubgroupsWithTheSameActivitiesAction->setCheckable(true);
 	showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction->setCheckable(true);
+	showWarningForMaxHoursDailyWithUnder100WeightAction->setCheckable(true);
 	
 	enableActivityTagMaxHoursDailyAction->setCheckable(true);
 	enableActivityTagMinHoursDailyAction->setCheckable(true);
@@ -759,6 +762,8 @@ FetMainForm::FetMainForm()
 
 	showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction->setChecked(SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME);
 
+	showWarningForMaxHoursDailyWithUnder100WeightAction->setChecked(SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT);
+
 	enableActivityTagMaxHoursDailyAction->setChecked(ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
 	enableActivityTagMinHoursDailyAction->setChecked(ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
 	enableStudentsMaxGapsPerDayAction->setChecked(ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
@@ -773,6 +778,8 @@ FetMainForm::FetMainForm()
 	connect(showWarningForSubgroupsWithTheSameActivitiesAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForSubgroupsWithTheSameActivitiesToggled(bool)));
 	connect(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction, SIGNAL(toggled(bool)),
 	 this, SLOT(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsToggled(bool)));
+	connect(showWarningForMaxHoursDailyWithUnder100WeightAction, SIGNAL(toggled(bool)),
+	 this, SLOT(showWarningForMaxHoursDailyWithUnder100WeightToggled(bool)));
 
 	connect(checkForUpdatesAction, SIGNAL(toggled(bool)), this, SLOT(checkForUpdatesToggled(bool)));
 	connect(settingsUseColorsAction, SIGNAL(toggled(bool)), this, SLOT(useColorsToggled(bool)));
@@ -4240,7 +4247,7 @@ void FetMainForm::on_timetableGenerateAction_triggered()
 			count++;
 	}
 	if(count<1){
-		QMessageBox::information(this, tr("FET information"), tr("Please input at least one active activity before generating"));
+		QMessageBox::information(this, tr("FET information"), tr("Please input at least one active activity before generating."));
 		return;
 	}
 	TimetableGenerateForm form(this);
@@ -4260,7 +4267,7 @@ void FetMainForm::on_timetableGenerateMultipleAction_triggered()
 
 	if(INPUT_FILENAME_XML.isEmpty()){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Your current data has no name. Please save it as a file with a certain name before proceeding."));
+			tr("Your current data file is unnamed. Please save it under a chosen name before continuing."));
 		return;
 	}
 
@@ -4271,7 +4278,7 @@ void FetMainForm::on_timetableGenerateMultipleAction_triggered()
 			count++;
 	}
 	if(count<1){
-		QMessageBox::information(this, tr("FET information"), tr("Please input at least one active activity before generating multiple"));
+		QMessageBox::information(this, tr("FET information"), tr("Please input at least one active activity before generating multiple."));
 		return;
 	}
 	TimetableGenerateMultipleForm form(this);
@@ -4880,8 +4887,12 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	s+="\n";
 
 	s+=tr("55")+QString(". ")+tr("Beep at the end of the generation will be %1, run external command at the end of generation will be %2,"
-	 " and the external command will be empty.",
+	 " and the external command will be empty",
 	 "%1 and %2 are true or false").arg(tr("true")).arg(tr("false"));
+	s+="\n";
+
+	s+=tr("56")+QString(". ")+tr("Show warning if using constraints of type max hours daily with a weight less than 100%"
+	 " will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
 	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,
@@ -4975,6 +4986,9 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	
 	SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME=true;
 	showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction->setChecked(SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME);
+	
+	SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT=true;
+	showWarningForMaxHoursDailyWithUnder100WeightAction->setChecked(SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT);
 	
 	ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY=false;
 	enableActivityTagMaxHoursDailyAction->setChecked(ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
@@ -5447,6 +5461,28 @@ void FetMainForm::showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoo
 	SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME=checked;
 }
 
+void FetMainForm::showWarningForMaxHoursDailyWithUnder100WeightToggled(bool checked)
+{
+	if(checked==false){
+		QString s=tr("It is recommended to keep this warning active, but if you really want, you can disable it.");
+		s+="\n\n";
+		s+=tr("Disable it only if you know what you are doing.");
+		s+="\n\n";
+		s+=tr("Are you sure you want to disable it?");
+	
+		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Yes);
+	
+		if(b!=QMessageBox::Yes){
+			disconnect(showWarningForMaxHoursDailyWithUnder100WeightAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForMaxHoursDailyWithUnder100WeightToggled(bool)));
+			showWarningForMaxHoursDailyWithUnder100WeightAction->setChecked(true);
+			connect(showWarningForMaxHoursDailyWithUnder100WeightAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForMaxHoursDailyWithUnder100WeightToggled(bool)));
+			return;
+		}
+	}
+	
+	SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT=checked;
+}
+
 void FetMainForm::showWarningForNotPerfectConstraintsToggled(bool checked)
 {
 	if(checked==false){
@@ -5766,6 +5802,8 @@ void FetMainForm::on_shortcutSaveAsPushButton_clicked()
 bool SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES=true;
 
 bool SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME=true;
+
+bool SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT=true;
 
 bool SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=true;
 bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;

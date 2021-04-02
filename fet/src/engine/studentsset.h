@@ -23,6 +23,8 @@
 #include "timetable_defs.h"
 
 #include <QList>
+#include <QString>
+#include <QStringList>
 
 const int STUDENTS_SET=0;
 const int STUDENTS_YEAR=1;
@@ -56,7 +58,7 @@ public:
 	int type;
 	
 	QString comments;
-
+	
 	StudentsSet();
 	virtual ~StudentsSet();
 };
@@ -67,6 +69,9 @@ class StudentsYear: public StudentsSet
 	
 public:
 	StudentsGroupsList groupsList;
+
+	QList<QStringList> divisions;
+	QString separator; //The separator when dividing a year by categories.
 
 	int indexInAugmentedYearsList; //internal
 

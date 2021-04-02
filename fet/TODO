@@ -7167,3 +7167,21 @@ For example:
 2. Click OK
 3. The activity will appear immediately item 3
 If you do this, it will be very easy for the user to observe.
+
+420---------------------------------------------------------
+From Fiorellino (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4653.0
+
+Excel/Open Office/Libre Office export of the timetable after it was generated.
+
+See also TODO items #18, #124, #152, #170, #300, #310.
+
+421---------------------------------------------------------
+From daviodan:
+
+After you generate, you get a message box: "Timetable generated successfully", with a button "OK". Add another button, "See soft conflicts".
+
+Liviu:
+
+I do not like the idea, but I will write it down in the TODO.

@@ -182,6 +182,8 @@ public slots:
 
 	void showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsToggled(bool checked);
 	
+	void showWarningForMaxHoursDailyWithUnder100WeightToggled(bool checked);
+	
 	void enableActivityTagMaxHoursDailyToggled(bool checked);
 	void enableActivityTagMinHoursDailyToggled(bool checked);
 	void enableStudentsMaxGapsPerDayToggled(bool checked);

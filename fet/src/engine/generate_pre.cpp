@@ -349,6 +349,9 @@ static Matrix1D<bool> tmpFoundNonEmpty;
 
 static QSet<int> fixedVirtualSpaceNonZeroButNotTimeActivities;
 
+static bool thereAreTeachersWithMaxHoursDailyWithUnder100Weight;
+static bool thereAreSubgroupsWithMaxHoursDailyWithUnder100Weight;
+
 static Matrix1D<QList<SpaceConstraint*> > constraintsForActivity;
 
 static Matrix1D<bool> visitedActivityResultantRealRooms;
@@ -1069,6 +1072,22 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	//must have here repr computed correctly
 	sortActivities(parent, reprSameStartingTime, reprSameActivitiesSet, initialOrderStream);
 	
+	if(SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT && (thereAreTeachersWithMaxHoursDailyWithUnder100Weight || thereAreSubgroupsWithMaxHoursDailyWithUnder100Weight)){
+		QString s=GeneratePreTranslate::tr("Your file contains constraints of type teacher(s)/students (set) max hours daily"
+		 " with a weight less than 100%. This is not recommended, because in this case the algorithm is not implemented perfectly"
+		 " (even if it might work well in practice). You are advised to use constraints of this type only with weight 100%.");
+		s+="\n\n";
+		s+=GeneratePreTranslate::tr("Are you sure you want to continue?");
+		s+="\n\n";
+		s+=GeneratePreTranslate::tr("Note: You can deactivate this warning from the Settings menu.");
+		
+		int t=GeneratePreReconcilableMessage::largeConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+		 GeneratePreTranslate::tr("Continue"), GeneratePreTranslate::tr("Cancel"), QString(), 0, 1);
+		
+		if(t!=0)
+			return false;
+	}
+
 	if(SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS){
 		if(haveStudentsMaxGapsPerDay || haveTeachersActivityTagMaxHoursDaily || haveStudentsActivityTagMaxHoursDaily
 		 || haveTeachersActivityTagMinHoursDaily || haveStudentsActivityTagMinHoursDaily){
@@ -1185,6 +1204,8 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 //must be after allowed times, after n hours per subgroup and after max days per week for subgroups
 bool computeSubgroupsMaxHoursDaily(QWidget* parent)
 {
+	thereAreSubgroupsWithMaxHoursDailyWithUnder100Weight=false;
+
 	bool ok=true;
 	
 	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
@@ -1198,6 +1219,9 @@ bool computeSubgroupsMaxHoursDaily(QWidget* parent)
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_HOURS_DAILY){
 			ConstraintStudentsMaxHoursDaily* smd=(ConstraintStudentsMaxHoursDaily*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(smd->weightPercentage<100.0)
+				thereAreSubgroupsWithMaxHoursDailyWithUnder100Weight=true;
 
 			for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
 				if(subgroupsMaxHoursDailyMaxHours1[sb]==-1 ||
@@ -1221,7 +1245,7 @@ bool computeSubgroupsMaxHoursDaily(QWidget* parent)
 					 subgroupsMaxHoursDailyPercentages2[sb] >= smd->weightPercentage){
 					 	//nothing
 					}
-					else{				
+					else{
 						 //cannot proceed
 						ok=false;
 		
@@ -1247,6 +1271,9 @@ bool computeSubgroupsMaxHoursDaily(QWidget* parent)
 		}
 		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
 			ConstraintStudentsSetMaxHoursDaily* smd=(ConstraintStudentsSetMaxHoursDaily*)gt.rules.internalTimeConstraintsList[i];
+
+			if(smd->weightPercentage<100.0)
+				thereAreSubgroupsWithMaxHoursDailyWithUnder100Weight=true;
 
 			for(int q=0; q<smd->iSubgroupsList.count(); q++){
 				int sb=smd->iSubgroupsList.at(q);
@@ -2800,6 +2827,8 @@ bool computeStudentsActivityTagMinHoursDaily(QWidget* parent)
 //must be after allowed times, after n hours per teacher and after max days per week for teachers
 bool computeTeachersMaxHoursDaily(QWidget* parent)
 {
+	thereAreTeachersWithMaxHoursDailyWithUnder100Weight=false;
+
 	bool ok=true;
 	
 	for(int i=0; i<gt.rules.nInternalTeachers; i++){
@@ -2813,6 +2842,9 @@ bool computeTeachersMaxHoursDaily(QWidget* parent)
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_HOURS_DAILY){
 			ConstraintTeacherMaxHoursDaily* tmd=(ConstraintTeacherMaxHoursDaily*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tmd->weightPercentage<100.0)
+				thereAreTeachersWithMaxHoursDailyWithUnder100Weight=true;
 
 			//////////
 			/*if(tmd->weightPercentage!=100){
@@ -2876,6 +2908,9 @@ bool computeTeachersMaxHoursDaily(QWidget* parent)
 		}
 		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_HOURS_DAILY){
 			ConstraintTeachersMaxHoursDaily* tmd=(ConstraintTeachersMaxHoursDaily*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tmd->weightPercentage<100.0)
+				thereAreTeachersWithMaxHoursDailyWithUnder100Weight=true;
 
 			//////////
 			/*if(tmd->weightPercentage!=100){

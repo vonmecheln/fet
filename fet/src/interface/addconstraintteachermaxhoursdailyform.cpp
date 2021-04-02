@@ -70,6 +70,15 @@ void AddConstraintTeacherMaxHoursDailyForm::addCurrentConstraint()
 		return;
 	}
 
+	if(weight<100.0){
+		int t=QMessageBox::warning(this, tr("FET warning"),
+			tr("You selected a weight less than 100%. The generation algorithm is not perfectly optimized to work with such weights (even"
+			 " if in practice it might work well). It is recommended to work only with 100% weights for these constraints. Are you sure you want to continue?"),
+			 QMessageBox::Yes | QMessageBox::Cancel);
+		if(t==QMessageBox::Cancel)
+			return;
+	}
+
 	QString teacher_name=teachersComboBox->currentText();
 	int teacher_ID=gt.rules.searchTeacher(teacher_name);
 	if(teacher_ID<0){
