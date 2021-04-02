@@ -33,7 +33,10 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 class Activity;
 
 //a probabilistic function to say if we can skip a constraint based on its percentage weight
-inline bool skipRandom(double weightPercentage);
+bool skipRandom(double weightPercentage);
+
+//for sorting slots in ascending order of potential conflicts
+bool compareFunction(int i, int j);
 
 /**
 This class represents the solving of time

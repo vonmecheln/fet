@@ -1,14 +1,15 @@
 ﻿File written by Volker Dirr on 12 Aug. 2007:
 
 
-﻿small note for german translation: (to keep FETs behaviour similar in every form)
+Small note for German translation: (to keep FETs behaviour similar in every form)
 
-Aktivity	== Aktivität					(done)
+Activity	== Aktivität					(done)
 year		== Jahrgang						(done)
 group		== Gruppe						(done)
 subgroup	== Teilgruppe					(done)
 subject     == Unterrichtsfach				(please recheck)
 subject tag	== Unterrichtskennzeichnung		(done)
+(Note: "subject tag" was renamed to "activity tag" in FET)
 remove		== Enfernen oder Löschen		(different at the moment. please rethink about it)
 gap			== Freistunde					(maybe better "Leerstelle" oder "Unterbrechnung". please rethink about it)
 											Freistunde ist umgangssprachlich sehr gut im Schulbetrieb zu verstehen.
@@ -28,4 +29,3 @@ F == Unterrichtsfach
 K == Unterrichtskennzeichnung
 R == Raum
 G == Gewichtung
-

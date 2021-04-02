@@ -28,6 +28,8 @@ using namespace std;
 
 #include <ctime>
 
+#include <QtAlgorithms>
+
 #include <cmath>
 #include <algorithm>
 #include <cstdlib>
@@ -2987,23 +2989,35 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 	}
 }
 
-//faster: (to avoid allocating memory at each call
+//faster: (to avoid allocating memory at each call)
 #if 1
 
 static double nMinDaysBrokenL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
 static int selectedRoomL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
 static int permL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
 static QList<int> conflActivitiesL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
-//static QSet<int> conflActivitiesL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
-static int conflPermL[MAX_LEVEL][MAX_HOURS_PER_WEEK]; //the permutation in increasing order of number of conflicting activities
+//static int conflPermL[MAX_LEVEL][MAX_HOURS_PER_WEEK]; //the permutation in increasing order of number of conflicting activities
 static int nConflActivitiesL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
 static int roomSlotsL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
+
+
+static int currentLevel;
+
+inline bool compareFunction(int i, int j)
+{
+	if(nConflActivitiesL[currentLevel][i] < nConflActivitiesL[currentLevel][j] ||
+	 (nConflActivitiesL[currentLevel][i] == nConflActivitiesL[currentLevel][j] &&
+	 nMinDaysBrokenL[currentLevel][i] < nMinDaysBrokenL[currentLevel][j]))
+		return true;
+	return false;
+}
+
 
 #define nMinDaysBroken			(nMinDaysBrokenL[level])
 #define selectedRoom			(selectedRoomL[level])
 #define perm					(permL[level])
 #define conflActivities			(conflActivitiesL[level])
-#define conflPerm				(conflPermL[level])
+//#define conflPerm				(conflPermL[level])
 #define nConflActivities		(nConflActivitiesL[level])
 #define roomSlots				(roomSlotsL[level])
 
@@ -8195,22 +8209,25 @@ skip_here_if_already_allocated_in_time:
 	}
 	
 
-	for(int i=0; i<gt.rules.nHoursPerWeek; i++)
-		conflPerm[perm[i]]=perm[i];
+	//for(int i=0; i<gt.rules.nHoursPerWeek; i++)
+	//	conflPerm[perm[i]]=perm[i];
 		
+	//DEPRECATED
 	//Sorting - O(n^2) - should be improved?
 	//The sorting below is not stable (I hope I am not mistaking) - but this should not be a problem.
-	for(int i=0; i<gt.rules.nHoursPerWeek; i++)
+/*	for(int i=0; i<gt.rules.nHoursPerWeek; i++)
 		for(int j=i+1; j<gt.rules.nHoursPerWeek; j++)
-#if 1
 			if(nConflActivities[conflPerm[perm[i]]]>nConflActivities[conflPerm[perm[j]]]
 			 || (nConflActivities[conflPerm[perm[i]]]==nConflActivities[conflPerm[perm[j]]] 
 			 && nMinDaysBroken[conflPerm[perm[i]]]>nMinDaysBroken[conflPerm[perm[j]]] )){
-#endif
 				int t=conflPerm[perm[i]];
 				conflPerm[perm[i]]=conflPerm[perm[j]];
 				conflPerm[perm[j]]=t;
-			}
+			}*/
+			
+	//O(n*log(n)) stable sorting
+	currentLevel=level;
+	qStableSort(perm+0, perm+gt.rules.nHoursPerWeek, compareFunction);
 			
 	/*cout<<"perm[i]: ";
 	for(int i=0; i<gt.rules.nHoursPerWeek; i++)
@@ -8226,8 +8243,11 @@ skip_here_if_already_allocated_in_time:
 	cout<<endl;
 	assert(0);*/
 			
-	//for(int i=1; i<gt.rules.nHoursPerWeek; i++)
-	//	assert(nConflActivities[conflPerm[perm[i-1]]]<=nConflActivities[conflPerm[perm[i]]]);
+	for(int i=1; i<gt.rules.nHoursPerWeek; i++){
+		assert( (nConflActivities[perm[i-1]]<nConflActivities[perm[i]])
+		|| ( (nConflActivities[perm[i-1]]==nConflActivities[perm[i]]) &&
+		(nMinDaysBroken[perm[i-1]]<=nMinDaysBroken[perm[i]]) ) );
+	}
 
 	/*for(int i=0; i<gt.rules.nHoursPerWeek; i++){
 		int newtime=conflPerm[perm[i]];
@@ -8236,7 +8256,7 @@ skip_here_if_already_allocated_in_time:
 				assert(!swappedActivities[ai2]);
 	}*/
 
-	if(level==0 && (nConflActivities[conflPerm[perm[0]]]==MAX_ACTIVITIES)){
+	if(level==0 && (nConflActivities[perm[0]]==MAX_ACTIVITIES)){
 		if(activity_count_impossible_tries<MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0){
 			activity_count_impossible_tries++;
 			goto again_if_impossible_activity;
@@ -8259,10 +8279,10 @@ skip_here_if_already_allocated_in_time:
 		
 		QList<int> tim;
 		for(int i=0; i<gt.rules.nHoursPerWeek; i++)
-			if(nConflActivities[conflPerm[perm[i]]]>0 && nConflActivities[conflPerm[perm[i]]]<MAX_ACTIVITIES
-			 && roomSlots[conflPerm[perm[i]]]!=UNALLOCATED_SPACE)
-				tim.append(conflPerm[perm[i]]);
-		if(tim.count()==0 && nConflActivities[conflPerm[perm[0]]]==MAX_ACTIVITIES){
+			if(nConflActivities[perm[i]]>0 && nConflActivities[perm[i]]<MAX_ACTIVITIES
+			 && roomSlots[perm[i]]!=UNALLOCATED_SPACE)
+				tim.append(perm[i]);
+		if(tim.count()==0 && nConflActivities[perm[0]]==MAX_ACTIVITIES){
 			cout<<"optimizetime.cpp line 2712 - WARNING - no possible timeslots for activity with id=="<<
 			 gt.rules.internalActivitiesList[ai].id<<endl;
 			 
@@ -8343,7 +8363,7 @@ skip_here_if_already_allocated_in_time:
 	//int nExplored=0;
 	
 	for(int i=0; i<gt.rules.nHoursPerWeek; i++){
-		int newtime=conflPerm[perm[i]]; //the considered time
+		int newtime=perm[i]; //the considered time
 		if(nConflActivities[newtime]>=MAX_ACTIVITIES)
 			break;
 		

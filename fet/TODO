@@ -1578,7 +1578,6 @@ From Gert Veltink:
 	Many thanks in advance!
 	
 	Regards,
-	
 
 52---------------------------------------------------------
 From Mr Robo:
@@ -1596,3 +1595,89 @@ modify subactivity dialogs:
 I'd be more interested in FET actually remembering these settings
 globally (not even per form) for each session, no need to actually store
 to disk.
+
+54---------------------------------------------------------
+From George Miliotis:
+
+Is there a way to add a constraint that forces all activities to have a 
+room? This would help a lot. For example, I keep getting caught by the 
+'student set has home room' constraint, which works for let's say A1 and 
+A2 separately but not for activities with A1+A2 simultaneously. These 
+end up with no room and I have to manually check each activity is placed 
+in a room...
+
+>
+>>> An easy/fast check: in activities.xml, search for the string
+>>> "<Room></Room>". This represents an activity without room.
+>>>
+>>> Please tell me if this works for you.
+>> Yes I can work with that. However, it'd be nice if we could get a class
+>> "noroom" or something in the html output for those activities with no
+>> room, then I can style them and make them red or something. This way
+>> non-technical people can see if an activity is 'dangling'.
+> Non-technical persons I think cannot modify the css, but I am not the best
+> person to talk about HTML. Volker maybe could answer here.
+>
+Well, yes, they can't but it's much easier to just bundle a css file (or 
+a patch) and send it off to the secretaries automatically (I'm working 
+on automatic timetable generation for our department).
+
+In any case, I think it would be a useful default to highlight 
+activities with no rooms or just to add a small option in the output 
+menu about this.
+
+55---------------------------------------------------------
+From Frans (on forum):
+
+Frans:
+
+I came across the following, it is possible that you know about this:
+
+I generate a timetable with constraints such as minimum hours daily for a students set
+
+Next from the data, students, groups or subgroup menu I de-activate all activities for one group. This group has the constraint minimum hours.
+
+I generate again and then Fet- gives an error message and stops, namely you have too little activities to respect the constraint minimum hours ....
+
+In other words I must go to minimum hours and delete the constraint. It is not de-activated automatically.
+
+As said I do not know if it must be like this. Other constraints such as same starting time are automatically de-acticted.
+
+------------
+
+Liviu:
+
+It is normal to be like that, because it is hard to take care of such constraints, and because you don't deactivate a students set, but a set of activities. The constraint min hours daily is for a students set, not for a set of activities.
+
+------------
+
+Frans:
+
+I understand what you say, but I am not talking about deactivating activities.  In my case however I had to deactivate a complete studens set and this one can only do from the data menu. In other words everything for a students set must be de-activated.
+
+Studens go out to work in private practice for a few months. During that period they are not on campus and everythig must therefore be deactivated as another students set takes their place and must be scheduled.
+
+If it was possible to deactivate everything only when one uses the data menu.
+
+------------
+
+Liviu:
+
+Yes, you are right in a way, but there are many problems which may appear if I do like you say, and the things are complicated.
+
+For instance, user deactivates a students set's activities, then activates only one activity for this user. Or if there is an activity with more students sets, of which some are deactivated and some are activated. Or there might be a global constraint min hours daily for all students.
+
+The perfect approach might be to add a flag to each teacher, subject, activity tag, students set -> active or not active. I'll add this in the TODO.
+It would be kind of tedious and difficult to change now, as it was not designed from the beginning.
+
+56---------------------------------------------------------
+From Anwarul Alam (on guestbook):
+
+found time-tabling software excellent, but how to get a quick print-out?
+
+57---------------------------------------------------------
+From Jason (on guestbook):
+
+Ask for new feature:
+
+- Auto generated after allow user to manual adjust timetable (Drag and Drop in view timetable)

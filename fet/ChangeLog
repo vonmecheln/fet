@@ -1529,3 +1529,7 @@ Versions 5.14.0 - 5.14.x
 	- Improved memory consumption on constraints activity/activities/subactivities preferred starting times/preferred time slots.
 	- Minor interface improvements.
 	- Updates in the Arabic translation, by Hatim Alahmadi.
+- Version 5.14.1
+	- Speed improvement in the generation algorithm (this speed improvement is better observable as the number of hours per week is larger).
+	- Added a partial Hebrew translation, by Yotam Medini (only the main menu).
+	

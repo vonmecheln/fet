@@ -1169,6 +1169,7 @@ TRANSLATIONS += \
 		../translations/fet_es.ts \
 		../translations/fet_fa.ts \
 		../translations/fet_fr.ts \
+		../translations/fet_he.ts \
 		../translations/fet_hu.ts \
 		../translations/fet_id.ts \
 		../translations/fet_it.ts \

@@ -1,4 +1,4 @@
-This is FET version 5.14.0
+This is FET version 5.14.1
 
 
 Program description:
@@ -14,16 +14,15 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE 11.2 GNU/Linux distribution,
-	Midnight Commander 4.6.2, Qt 4.6.3 (see note NQt463BugWin about a bug of Qt 4.6.3 under Windows),
-	gcc 4.5.0, Linux 2.6.31, KDiff3 0.9.95, other great free tools.
+	FET is created in the following environment: openSUSE 11.2 GNU/Linux distribution, Linux 2.6.31, Midnight Commander 4.6.2,
+	KDiff3 0.9.95, Qt 4.6.3 (see note NQt463BugWin about a bug of Qt 4.6.3 under Windows), gcc 4.5.0, g++ 4.5.0, make 3.81, other great free tools.
 	FET can be run on any platform supported by the free software Qt (GNU/Linux, Windows, Mac OS X).
 
 	GNU/Linux, Mac OS X and similar OS's:
 	Software:
-		make (GNU make command)
+		make 3.81 or similar (GNU Make)
 		gcc 4.5.0 or similar
-		gcc-c++ (or g++, the name may vary)
+		g++ 4.5.0 or similar (or gcc-g++, or gcc-c++, the name may vary. This program may be included in the gcc package)
 		Qt 4.6.3 or compatible
 
 	Microsoft Windows:
@@ -40,7 +39,7 @@ Download:
 	versions, you will have to contact the author.
 
 
-Getting - compiling - installing GNU tools: make, gcc and gcc-c++ (or g++):
+Getting - compiling - installing GNU tools: make, gcc and g++ (or gcc-g++, or gcc-c++):
 
 	GNU/Linux, Mac OS X: Most probably, your platform has these installed by default or available on the internet
 	as precompiled packages. If you don't have them, please install them using YaST (on openSUSE), Adept Manager
@@ -65,8 +64,8 @@ Getting - compiling - installing Qt by Nokia:
 
 	GNU/Linux: It is possible to use YaST (or Adept Manager) or other package managers to get your version of Qt, pre-compiled.
 	Or you can download, compile and install Qt from http://qt.nokia.com/ .
-	On my OpenSUSE GNU/Linux, which has pre-compiled packages on the internet, I need to install the packages
-	libqt4 and libqt4-devel (libqt4 is installed by default, I think) - to compile+run FET.
+	On the author's openSUSE GNU/Linux, which has pre-compiled packages on the internet, the author needs to install the packages
+	libqt4 and libqt4-devel (libqt4 is installed by default, probably) - to compile+run FET.
 	For Ubuntu GNU/Linux (advice from a user):
 	sudo apt-get install qt4-qmake
 	sudo apt-get build-dep qt4-qmake
@@ -108,7 +107,7 @@ Compiling FET:
 
 	Note2: the following situation may appear under GNU/Linux, but it could be met also on other platforms.
 	Depending on your Qt installation, it may happen that the FET intermediary files and executable are very large
-	(~100 MB for the fet executable instead of ~10 MB). I am not sure if this affects the FET speed and performance, but anyway it is
+	(~100 MB for the fet executable instead of ~10 MB). The author is not sure if this affects the FET speed and performance, but anyway it is
 	unpleasant. In this case, you may want to modify some files in your system (Qt files) to improve this. You need to change some Qt configuration
 	files and recompile FET from the beginning (remove any temporary files with make distclean or unpack FET sources again, in an empty location).
 	Notations: mkspecs is a directory and QMAKE_CFLAGS_RELEASE is a section (text on a line) contained in a file in a subdirectory of mkspecs.
@@ -116,14 +115,20 @@ Compiling FET:
 	If mkspecs files for your platform contain the -g flag (text) in the QMAKE_CFLAGS_RELEASE section, you need to remove this flag from this section.
 	If they do not contain -g flag in this section, then you don't need to remove anything (and most probably the intermediary files and fet
 	executable will have normal size).
-	More details about where can you find the mkspecs files: under my openSUSE GNU/Linux, I need to modify the /usr/share/qt4/mkspecs/common/g++.conf,
-	line 10, remove the "-g" flag from the QMAKE_CFLAGS_RELEASE section (root access needed to make this change).
+	More details about where can you find the mkspecs files: under the author's openSUSE GNU/Linux, the author needs to modify the file
+	/usr/share/qt4/mkspecs/common/g++.conf, line 10, remove the "-g" flag from the QMAKE_CFLAGS_RELEASE section (root access needed to make this change).
 	Under Fedora GNU/Linux for the same problem, a user reported that you need to modify /usr/lib/qt4/mkspecs/common/g++.conf
 	and /usr/lib/qt4/mkspecs/linux-g++/qmake.conf (remove the -g flag from QMAKE_CFLAGS_RELEASE section).
 	(Do not confound the section QMAKE_CFLAGS_RELEASE with QMAKE_CFLAGS_DEBUG. It is normal for the section QMAKE_CFLAGS_DEBUG to
 	contain the -g flag, because it is for debug, not release, so in the debug section leave it unchanged).
 	(The mkspecs directory contains more subdirectories, in the form platform-compiler, you need to search for your corresponding directories/files.
 	For instance, GNU/Linux with gcc compiler is named "linux-g++", and you may also need to modify the "common" section).
+	
+	Note NMkJobs: advice from a user: if you have a multiple core computer, you may be able to split the compilation into more threads, with the -j option for the
+	make command, so that the compilation is faster. This option creates a number of compilation threads equal with the number specified along with the -j option.
+	Under GNU/Linux or similar, just write "make -j 2" if you have dual core or "make -j 4" if you have quad core (in case you have quad core and you want
+	to keep a core free for other tasks, write "make -j 3"). This is proven to work under GNU/Linux, seems not to work under Windows (using mingw32-make,
+	the -j argument seems to be ignored, for the time being) and may work under Mac OS X (it is not verified under Mac OS X). This trick is not thoroughly tested.
 
 	Currently FET can be compiled with a C++ compiler, using Qt version 4.6.3 or compatible (Qt 4.6.3 has a bug under Windows, please see note NQt463BugWin).
 
@@ -132,7 +137,7 @@ Compiling FET:
 	- You will need Qt 4.6.3 or compatible to compile this program.
 	- type "qmake fet.pro" or simply "qmake". You have to use qmake from Qt 4 series, which on some systems
 	might be named qmake-qt4 (this command is executed very fast, so don't worry if you get immediate return from it)
-	- type "make" (this takes a long time, maybe even 1 hour)
+	- type "make" (this takes a long time, maybe even 1 hour). See also note NMkJobs above.
 	To remove the compiled objects/executable: "make clean" and/or "make distclean".
 
 
@@ -147,7 +152,7 @@ Compiling FET:
 	- IMPORTANT: you might need to write: "qmake -spec macx-g++ fet.pro", if "qmake fet.pro" 
 	does not produce a correct makefile. Please see 
 	http://lists.trolltech.com/qt-interest/2007-04/thread01126-0.html for details.
-	- type "make" (this takes a long time, maybe even 1 hour)
+	- type "make" (this takes a long time, maybe even 1 hour). See also note NMkJobs above.
 	To remove the compiled objects/executable: "make clean" and/or "make distclean".
 
 	2. Another variant:
@@ -164,7 +169,7 @@ Compiling FET:
 	for other variants. Any C++ compiler that supports Qt should be good.
 	You need to run "qmake fet.pro" or "qmake" (this command is executed very fast, so don't worry if you get
 	immediate return from it) and then "mingw32-make" (this takes a long time, maybe even 1 hour) 
-	in a command line in the FET directory.
+	in a command line in the FET directory. See also note NMkJobs above.
 	(You can use the command line prompt of Windows or use the Qt command line prompt
 	shortcut in the Qt shortcuts menu.)
 	Then, you can remove directories "src" and "tmp", to save up space, if you want.
@@ -221,7 +226,7 @@ Running FET:
 			y is integer (seconds) (default 2000000000, which is practically infinite).
 			z is integer from 0 to 6 and represents the detail level for the generated html timetables
 				(default 2, larger values have more details/facilities and larger file sizes).
-			t is one of en_US, ar, ca, da, de, el, es, fa, fr, hu, id, it, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, tr, uk (default en_US).
+			t is one of en_US, ar, ca, da, de, el, es, fa, fr, he, hu, id, it, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, tr, uk (default en_US).
 			u is either "true" or "false" and represents if you want -x- (for true) or --- (for false) in the generated timetables for the
 				not available slots (default true).
 			b is either "true" or "false" and represents if you want -X- (for true) or --- (for false) in the generated timetables for the
@@ -253,7 +258,7 @@ Running FET:
 	On GNU/Linux and Mac OS X, you'll get a console output to help you with data, along with the files in the directory outputdir/logs/.
 
 	On Windows, there is no console output, only the files in the directory outputdir\logs\ will guide you,
-	I cannot make a console output on Windows (I could, but it would complicate the interface).
+	The author cannot make a console output on Windows (it is possible, but it would complicate the interface).
 
 
 Languages (translations):

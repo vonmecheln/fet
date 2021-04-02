@@ -24,7 +24,7 @@ File timetable_defs.cpp
 
 #include <ctime>
 
-#include <QByteArray>
+//#include <QByteArray>
 #include <QHash>
 
 int checkForUpdates;
@@ -34,7 +34,7 @@ QString internetVersion;
 /**
 FET version
 */
-const QString FET_VERSION="5.14.0";
+const QString FET_VERSION="5.14.1";
 
 /**
 FET language
