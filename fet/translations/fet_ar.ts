@@ -657,78 +657,78 @@
         <translation>اغلاق</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="736"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="771"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="911"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="944"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1228"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1252"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1376"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1512"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="746"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="781"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="931"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="964"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1248"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1272"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1399"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1535"/>
         <source>Because you have individually modified the components, there will be removed an additional number of %1 activities (which are in the same larger split activities as the selected activities).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="745"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="953"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="755"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="973"/>
         <source>There are activities affecting other students sets. Should the related activities also be deleted?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1101"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1121"/>
         <source>Cannot modify this large activity, because it contains more than %1 activities.</source>
         <translation type="unfinished">لم يتم تعديل هذه المهمة الكبيرة, لاحتوائها على أكثر من %1 مهمة.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1383"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1519"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1406"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1542"/>
         <source>There are activities affecting other teachers. Should the related activities also be deleted?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1997"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="2000"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2020"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2023"/>
         <source>Delete all?</source>
         <comment>It refers to activities</comment>
         <translation>حذف الكل؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="732"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="940"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="742"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="960"/>
         <source>Delete %1 activities of students set %2?</source>
         <translation type="unfinished">حذف المهام %1 للطلاب %2؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="766"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="906"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="776"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="926"/>
         <source>Delete %1 activities of subject %2?</source>
         <translation type="unfinished">حذف المهام %1 للمادة %2؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1257"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1277"/>
         <source>Delete activities?</source>
         <translation>حذف المهام؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1372"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1508"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1395"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1531"/>
         <source>Delete %1 activities of teacher %2?</source>
         <translation type="unfinished">حذف المهام %1 للمدرس %2؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2000"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2023"/>
         <source>Are you absolutely sure you want to remove ALL activities and related constraints from your data?</source>
         <translation type="unfinished">هل تريد بالتأكيد حذف كل المهام والقيود المرتبطة بها من بياناتك؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="745"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="780"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="920"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="953"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1261"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1267"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1383"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1519"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="755"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="790"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="940"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="973"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1281"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1287"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1406"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1542"/>
         <source>Delete related?</source>
         <comment>It refers to activities</comment>
         <translation type="unfinished">حذف الارتباطات؟</translation>
@@ -740,122 +740,122 @@
         <translation type="unfinished">زر</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="740"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="775"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="915"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="948"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1379"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1515"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="750"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="785"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="935"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="968"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1402"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1538"/>
         <source>Delete multiple?</source>
         <comment>It refers to activities</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="780"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="920"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="790"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="940"/>
         <source>There are activities affecting other subjects. Should the related activities also be deleted?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1100"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1120"/>
         <source>FET information</source>
         <translation>فيت معلومات</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1218"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1242"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1238"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1262"/>
         <source>Delete %1 activities from selected cell?</source>
         <translation type="unfinished">حذف المهام %1 من الخلية المحددة؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1220"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1246"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1240"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1266"/>
         <source>subject=%1</source>
         <translation type="unfinished">المادة=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1222"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1244"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1242"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1264"/>
         <source>students=%1</source>
         <translation type="unfinished">الطلاب=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1262"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1282"/>
         <source>This cell contains activities that relate to other students. Should the related activities also be deleted?</source>
         <translation type="unfinished">هذه الخلية تحتوي على مهام مرتبطة بطلاب آخرين. ولهذا فإن المهام المرتبطة يجب أن تحذف؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1268"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1288"/>
         <source>This cell contains activities that relate to other subjects. Should the related activities also be deleted?</source>
         <translation type="unfinished">هذه الخلية تحتوي على مهام مرتبطة بمواد آخرى. ولهذا فإن المهام المرتبطة يجب أن تحذف؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1407"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1430"/>
         <source>FET question</source>
         <translation>فيت سؤال</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1407"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1430"/>
         <source>Please enter the target number of hours:</source>
         <comment>This field is for the moment inactive in FET, but we translate it for possible future use</comment>
         <translation>فضلا ادخل عدد الحصص المستهدفة:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1753"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1776"/>
         <source>Target</source>
         <comment>Please keep translation short. This field is for the moment inactive in FET, we keep it for possible future use</comment>
         <translation>الهدف</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1754"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1777"/>
         <source>Subjects</source>
         <comment>Please keep translation short</comment>
         <translation>المواد</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1755"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1778"/>
         <source>Students</source>
         <comment>Please keep translation short</comment>
         <translation>الطلاب</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1997"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2020"/>
         <source>Are you sure you want to remove ALL the %1 activities and related constraints?</source>
         <comment>%1 is the number of total activities</comment>
         <translation type="unfinished">هل تريد بالتأكيد حذف المهام %1 والقيود المرتبطة بها؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2038"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2061"/>
         <source>There are no activities without teachers and without students.</source>
         <translation>لا مهام بدون مدرسين وطلاب.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2040"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2063"/>
         <source>Activities without teachers and without students:</source>
         <translation>مهام بدون مدرسين وطلاب:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2043"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2066"/>
         <source>There are no activities without teachers.</source>
         <translation>لا مهام بدون مدرسين.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2045"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2068"/>
         <source>Activities without teachers:</source>
         <translation>مهام بدون مدرسين:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2048"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2071"/>
         <source>There are no activities without students.</source>
         <translation>لا مهام بدون طلاب.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2050"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2073"/>
         <source>Activities without students:</source>
         <translation>مهام بدون طلاب:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2052"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2075"/>
         <source>Information about pseudo activities</source>
         <comment>Pseudo activities means activities without teachers and/or students sets</comment>
         <translation>مهام بدون مدرسين أوطلاب</translation>
@@ -33553,7 +33553,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2016 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.29.4 (May 2016).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.29.5 (June 2016).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
