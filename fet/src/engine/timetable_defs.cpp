@@ -34,7 +34,7 @@ QString internetVersion;
 /**
 FET version
 */
-const QString FET_VERSION="5.14.2";
+const QString FET_VERSION="5.14.3";
 
 /**
 FET language
@@ -250,9 +250,9 @@ void initRandomKnuth()
 	
 	ZZ=XX-YY;
 	if(ZZ<=0)
-		ZZ+=MM-1; //-1 is not written in Knuth, I think it should.
+		ZZ+=MM-1; //-1 is not written in Knuth TAOCP vol. 2 third edition, I think it should. (Later edit: yes, the author confirmed that).
 	assert(ZZ>0);
-	assert(ZZ<MM);
+	assert(ZZ<MM); //again, modified from Knuth TAOCP vol. 2 third edition, ZZ is strictly lower than MM (the author confirmed that, too).
 }
 
 int randomKnuth1MM1()
@@ -279,9 +279,9 @@ int randomKnuth1MM1()
 
 	ZZ=XX-YY;
 	if(ZZ<=0)
-		ZZ+=MM-1; //-1 is not written in Knuth, I think it should.
+		ZZ+=MM-1; //-1 is not written in Knuth TAOCP vol. 2 third edition, I think it should. (Later edit: yes, the author confirmed that).
 	assert(ZZ>0);
-	assert(ZZ<MM);
+	assert(ZZ<MM); //again, modified from Knuth TAOCP vol. 2 third edition, ZZ is strictly lower than MM (the author confirmed that, too).
 	
 	return ZZ;
 }

@@ -7574,7 +7574,7 @@ void sortActivities(const QHash<int, int> & reprSameStartingTime, const QHash<in
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
 		if(fixedTimeActivity[i]){
 			int cnt=0;
-			int allowed;
+			int allowed=-1;
 			for(int s=0; s<gt.rules.nHoursPerWeek; s++){
 				if(notAllowedTimesPercentages[i][s]<100.0){
 					allowed=s;

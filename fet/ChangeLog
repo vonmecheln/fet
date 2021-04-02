@@ -1540,3 +1540,8 @@ Versions 5.14.0 - 5.14.x
 	- Improved a bit the add/modify activity dialogs (inactive tabs for the components of a subactivity are disabled).
 	- Updated the Slovak translation, by Ondrej Gregor.
 	- Added a new sample file, by Marco Barsotti.
+- Version 5.14.3
+	- Upgraded to Qt 4.7.0.
+	- Improved the Greek translation, by Dimitris Kanatas.
+	- Minor interface improvements.
+	- Added two new sample files, by Massimo Mancini and Dimitris Kanatas.

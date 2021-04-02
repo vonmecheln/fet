@@ -2047,3 +2047,11 @@ a "preferred teacher" constraint like the preferred room constraint.
 However, also add an "same room/teacher" option. That is, room/teacher
 may be selected from list of preferred rooms/teachers, however, the
 same room/teachers must be assigned to the same activities.
+
+84---------------------------------------------------------
+From Silver (on forum):
+
+i hope you can add "Min gaps between activites in the day for teacher".
+i mean like this :
+when i select Min gaps = 2
+saturday:   activity - gap - gap - activity - gap - gap - activity

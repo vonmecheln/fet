@@ -316,8 +316,8 @@
         <item>
          <widget class="QLabel" name="textLabel1">
           <property name="text">
-           <string>This value cannot be changed. If you need to 
-modify it, please remove the corresponding 
+           <string>This value cannot be changed. If you need to
+modify it, please remove the corresponding
 activities and add a new split activity</string>
           </property>
           <property name="wordWrap">

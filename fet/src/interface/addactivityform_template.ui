@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>790</width>
+    <width>800</width>
     <height>560</height>
    </rect>
   </property>
@@ -325,8 +325,8 @@
               <bool>true</bool>
              </property>
              <property name="text">
-              <string>The minimum required 
-distance in days between 
+              <string>The minimum required
+distance in days between
 each pair of activities</string>
              </property>
              <property name="wordWrap">
@@ -1868,9 +1868,9 @@ each pair of activities</string>
             <bool>true</bool>
            </property>
            <property name="text">
-            <string>Percentage of 
+            <string>Percentage of
 added constraint
- (min days between 
+(min days between
 activities constraint)
 Recommended:
 95.0%-100.0%</string>
@@ -1907,7 +1907,7 @@ Recommended:
          <item>
           <widget class="QCheckBox" name="forceAdjacentCheckBox">
            <property name="text">
-            <string>If activities on 
+            <string>If activities on
 same day, force
 consecutive?</string>
            </property>

@@ -4424,7 +4424,7 @@ QString ConstraintTeacherMaxGapsPerWeek::getDetailedDescription(Rules& r){
 	s+=tr("(breaks and teacher not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage); s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName); s+="\n";
-	s+=tr("Maximum gaps per week= %1").arg(this->maxGaps); s+="\n";
+	s+=tr("Maximum gaps per week=%1").arg(this->maxGaps); s+="\n";
 
 	return s;
 }

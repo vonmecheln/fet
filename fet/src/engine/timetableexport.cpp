@@ -1734,10 +1734,10 @@ void TimetableExport::writeIndexHtml(const QString& htmlfilename, const QString&
 //	tos<<"    </p>\n";
 //	tos<<"    <p>\n";
 
-	QString tmp1="<a href=\""+s2+bar+ACTIVITIES_TIMETABLE_FILENAME_XML+"\">"+tr("activities")+"</a>";
+	QString tmp1="<a href=\""+s2+bar+SUBGROUPS_TIMETABLE_FILENAME_XML+"\">"+tr("subgroups")+"</a>";
 	QString tmp2="<a href=\""+s2+bar+TEACHERS_TIMETABLE_FILENAME_XML+"\">"+tr("teachers")+"</a>";
-	QString tmp3="<a href=\""+s2+bar+SUBGROUPS_TIMETABLE_FILENAME_XML+"\">"+tr("subgroups")+"</a>";
-	QString tmp4=TimetableExport::tr("View XML: %1, %2, %3.", "%1, %2 and %3 are three files in XML format, activities, teachers and subgroups timetables. The user can click on one file to view it").arg(tmp1).arg(tmp2).arg(tmp3);
+	QString tmp3="<a href=\""+s2+bar+ACTIVITIES_TIMETABLE_FILENAME_XML+"\">"+tr("activities")+"</a>";
+	QString tmp4=TimetableExport::tr("View XML: %1, %2, %3.", "%1, %2 and %3 are three files in XML format, subgroups, teachers and activities timetables. The user can click on one file to view it").arg(tmp1).arg(tmp2).arg(tmp3);
 	tos<<"      "<<tmp4<<"\n";
 
 	tos<<"    </p>\n\n";
