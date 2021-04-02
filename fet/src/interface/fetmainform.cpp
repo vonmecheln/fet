@@ -200,6 +200,11 @@ using namespace std;
 #include "constraintactivitiesoccupymaxdifferentroomsform.h"
 #include "constraintactivitiessameroomifconsecutiveform.h"
 
+#include "constraintstudentssetmingapsbetweenorderedpairofactivitytagsform.h"
+#include "constraintstudentsmingapsbetweenorderedpairofactivitytagsform.h"
+#include "constraintteachermingapsbetweenorderedpairofactivitytagsform.h"
+#include "constraintteachersmingapsbetweenorderedpairofactivitytagsform.h"
+
 #include "settingstimetablehtmllevelform.h"
 
 #include "activityplanningconfirmationform.h"
@@ -3520,6 +3525,58 @@ void FetMainForm::on_dataTimeConstraintsStudentsMinHoursDailyAction_triggered()
 	form.exec();
 }
 
+void FetMainForm::on_dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
 void FetMainForm::on_dataTimeConstraintsActivitiesNotOverlappingAction_triggered()
 {
 	if(simulation_running){
@@ -4068,7 +4125,8 @@ void FetMainForm::on_timetableUnlockAllActivitiesAction_triggered()
 		return;
 	}
 
-	AdvancedLockUnlockForm::unlockAll(this);
+	//AdvancedLockUnlockForm::unlockAll(this);
+	AdvancedLockUnlockForm::unlockAllWithoutTimetable(this);
 }
 
 void FetMainForm::on_timetableLockActivitiesDayAction_triggered()
@@ -4092,7 +4150,8 @@ void FetMainForm::on_timetableUnlockActivitiesDayAction_triggered()
 		return;
 	}
 
-	AdvancedLockUnlockForm::unlockDay(this);
+	//AdvancedLockUnlockForm::unlockDay(this);
+	AdvancedLockUnlockForm::unlockDayWithoutTimetable(this);
 }
 
 void FetMainForm::on_timetableLockActivitiesEndStudentsDayAction_triggered()
@@ -4146,7 +4205,8 @@ void FetMainForm::on_timetableUnlockActivitiesWithASpecifiedActivityTagAction_tr
 		return;
 	}
 
-	AdvancedLockUnlockForm::unlockActivityTag(this);
+	//AdvancedLockUnlockForm::unlockActivityTag(this);
+	AdvancedLockUnlockForm::unlockActivityTagWithoutTimetable(this);
 }
 
 void FetMainForm::on_languageAction_triggered()

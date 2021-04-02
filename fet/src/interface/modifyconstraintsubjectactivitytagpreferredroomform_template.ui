@@ -37,7 +37,7 @@
     <widget class="QComboBox" name="subjectsComboBox"/>
    </item>
    <item row="2" column="0" colspan="2">
-    <widget class="QLabel" name="subjectsTextLabel_2">
+    <widget class="QLabel" name="activityTagTextLabel">
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
      </property>

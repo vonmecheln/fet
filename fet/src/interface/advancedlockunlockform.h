@@ -27,12 +27,12 @@ class AdvancedLockUnlockForm: public QObject{
 
 public:
 	static void lockAll(QWidget* parent);
-	static void unlockAll(QWidget* parent);
+//	static void unlockAll(QWidget* parent);
 
 	static void unlockAllWithoutTimetable(QWidget* parent);
 	
 	static void lockDay(QWidget* parent);
-	static void unlockDay(QWidget* parent);
+//	static void unlockDay(QWidget* parent);
 
 	static void unlockDayWithoutTimetable(QWidget* parent);
 	
@@ -40,7 +40,7 @@ public:
 	static void unlockEndStudentsDay(QWidget* parent);
 	
 	static void lockActivityTag(QWidget* parent);
-	static void unlockActivityTag(QWidget* parent);
+//	static void unlockActivityTag(QWidget* parent);
 
 	static void unlockActivityTagWithoutTimetable(QWidget* parent);
 };

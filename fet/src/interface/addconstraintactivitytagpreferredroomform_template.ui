@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QLabel" name="subjectsTextLabel_2">
+      <widget class="QLabel" name="activityTagTextLabel">
        <property name="frameShape">
         <enum>QFrame::NoFrame</enum>
        </property>

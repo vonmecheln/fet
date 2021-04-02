@@ -469,7 +469,20 @@ SOURCES += \
 	interface/addconstraintstudentsminrestinghoursform.cpp \
 	interface/modifyconstraintstudentsminrestinghoursform.cpp \
 	\
-	interface/studentscomboboxesstyleform.cpp
+	interface/studentscomboboxesstyleform.cpp \
+	\
+	interface/addconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform.cpp \
+	interface/constraintstudentssetmingapsbetweenorderedpairofactivitytagsform.cpp \
+	interface/modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform.cpp \
+	interface/addconstraintstudentsmingapsbetweenorderedpairofactivitytagsform.cpp \
+	interface/constraintstudentsmingapsbetweenorderedpairofactivitytagsform.cpp \
+	interface/modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsform.cpp \
+	interface/addconstraintteachermingapsbetweenorderedpairofactivitytagsform.cpp \
+	interface/constraintteachermingapsbetweenorderedpairofactivitytagsform.cpp \
+	interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform.cpp \
+	interface/addconstraintteachersmingapsbetweenorderedpairofactivitytagsform.cpp \
+	interface/constraintteachersmingapsbetweenorderedpairofactivitytagsform.cpp \
+	interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform.cpp
 
 HEADERS += \
 	engine/timetableexport.h \
@@ -945,7 +958,20 @@ HEADERS += \
 	interface/addconstraintstudentsminrestinghoursform.h \
 	interface/modifyconstraintstudentsminrestinghoursform.h \
 	\
-	interface/studentscomboboxesstyleform.h
+	interface/studentscomboboxesstyleform.h \
+	\
+	interface/addconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform.h \
+	interface/constraintstudentssetmingapsbetweenorderedpairofactivitytagsform.h \
+	interface/modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform.h \
+	interface/addconstraintstudentsmingapsbetweenorderedpairofactivitytagsform.h \
+	interface/constraintstudentsmingapsbetweenorderedpairofactivitytagsform.h \
+	interface/modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsform.h \
+	interface/addconstraintteachermingapsbetweenorderedpairofactivitytagsform.h \
+	interface/constraintteachermingapsbetweenorderedpairofactivitytagsform.h \
+	interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform.h \
+	interface/addconstraintteachersmingapsbetweenorderedpairofactivitytagsform.h \
+	interface/constraintteachersmingapsbetweenorderedpairofactivitytagsform.h \
+	interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform.h
 
 FORMS += \
 	interface/fetmainform_template.ui \
@@ -1382,7 +1408,20 @@ FORMS += \
 	interface/addconstraintstudentsminrestinghoursform_template.ui \
 	interface/modifyconstraintstudentsminrestinghoursform_template.ui \
 	\
-	interface/studentscomboboxesstyleform_template.ui
+	interface/studentscomboboxesstyleform_template.ui \
+	\
+	interface/addconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui \
+	interface/constraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui \
+	interface/modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui \
+	interface/addconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui \
+	interface/constraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui \
+	interface/modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui \
+	interface/addconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui \
+	interface/constraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui \
+	interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui \
+	interface/addconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui \
+	interface/constraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui \
+	interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui
 
 TRANSLATIONS += \
 	../translations/fet_ar.ts \

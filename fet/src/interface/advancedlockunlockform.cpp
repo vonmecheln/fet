@@ -354,7 +354,7 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 	LockUnlock::increaseCommunicationSpinBox();
 }
 
-void AdvancedLockUnlockForm::unlockDay(QWidget* parent)
+/*void AdvancedLockUnlockForm::unlockDay(QWidget* parent)
 {
 	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
 		return;
@@ -616,7 +616,7 @@ void AdvancedLockUnlockForm::unlockDay(QWidget* parent)
 	
 	LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
 	LockUnlock::increaseCommunicationSpinBox();
-}
+}*/
 
 void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 {
@@ -1431,7 +1431,7 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 	//cout<<"isc=="<<gt.rules.internalStructureComputed<<endl;
 }
 
-void AdvancedLockUnlockForm::unlockAll(QWidget* parent)
+/*void AdvancedLockUnlockForm::unlockAll(QWidget* parent)
 {
 	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
 		return;
@@ -1667,7 +1667,7 @@ void AdvancedLockUnlockForm::unlockAll(QWidget* parent)
 	LockUnlock::increaseCommunicationSpinBox();
 	
 	//cout<<"isc=="<<gt.rules.internalStructureComputed<<endl;
-}
+}*/
 
 void AdvancedLockUnlockForm::unlockAllWithoutTimetable(QWidget* parent)
 {
@@ -2453,7 +2453,7 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 	LockUnlock::increaseCommunicationSpinBox();
 }
 
-void AdvancedLockUnlockForm::unlockActivityTag(QWidget* parent)
+/*void AdvancedLockUnlockForm::unlockActivityTag(QWidget* parent)
 {
 	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
 		return;
@@ -2716,7 +2716,7 @@ void AdvancedLockUnlockForm::unlockActivityTag(QWidget* parent)
 	
 	LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
 	LockUnlock::increaseCommunicationSpinBox();
-}
+}*/
 
 void AdvancedLockUnlockForm::unlockActivityTagWithoutTimetable(QWidget* parent)
 {

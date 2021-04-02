@@ -2087,7 +2087,7 @@ Versions 5.36.0 - 5.36.2
 	- Bug fix in the unlocking of activities of a certain day if the timetable was not generated: If the user selected only space unlocking, no activities
 	were unlocked.
 ---------------------------------------------------------------------------------
-Versions 5.37.0 - 5.37.v
+Versions 5.37.0 - 5.37.5
 - Version 5.37.0
 	- Code update: removed the dependency of the obsolete Qt 'foreach' keyword (suggested by Volker Dirr). The speed of generation is improved by 5%-25%,
 	depending on the data file. Now you need a C++11 compliant compiler to compile FET.
@@ -2121,3 +2121,15 @@ Versions 5.37.0 - 5.37.v
 	- Minor improvement (automatic check for updates also sends to the server the user's processor architecture type, as other programs usually do) - suggested
 	and implemented by Volker Dirr.
 	- Updated the translations.
+---------------------------------------------------------------------------------
+Versions 5.38.0 - 5.38.v
+- Version 5.38.0
+	- Updated to Qt 5.12.3.
+	- Added a new type of constraint: min gaps between an ordered pair of activity tags for a students set / all students / a teacher / all teachers,
+	suggested by Nagendra and other users.
+	- Bug fixes and code cleanup.
+	- Minor bug fix: the modify constraint room not available times dialog did not allow the weight to be set to 0%, a value which should have been permitted.
+	Reported by math.
+	- Added two new example files from Hungary, by Madas Pál.
+	- Added a new example file from Tunisia, by fourat.
+	- Added a new example file from India, by Nagendra.

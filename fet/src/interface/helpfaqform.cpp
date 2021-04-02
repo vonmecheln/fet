@@ -46,7 +46,7 @@ void HelpFaqForm::setText()
 	
 	s+=tr("Frequently asked questions.");
 	s+="\n\n";
-	s+=tr("Last modified on %1.").arg(tr("7 February 2016"));
+	s+=tr("Last modified on %1.").arg(tr("10 June 2019"));
 	
 	s+="\n\n";
 	s+="--------------------";
@@ -1026,6 +1026,20 @@ void HelpFaqForm::setText()
 	s+=" ";
 	s+=tr("The order of the constraints is only important to the interaction with the user. It is only the weight percentage which counts while"
 		" generating the timetable. Note however that you may get different timetables for different constraints order.");
+
+	s+="\n\n";
+	s+="--------------------";
+	s+="\n\n";
+	
+	s+=tr("Q: How does one use the constraints of type students (set) / teacher(s) min gaps between ordered pair of activity tags?");
+	s+="\n\n";
+	s+=tr("A:", "Answer");
+	s+=" ";
+	s+=tr("These constraints ensure that for the affected students (set) / teacher(s), if on the same day an activity with the second activity tag comes after"
+		" an activity with the first activity tag, between them there must be at least min gaps (hours). As a trick, if you want min gaps from the first"
+		" activity tag to the second activity tag and from the second activity tag to the first activity tag (so, between these two activity tags,"
+		" in any order they can be, to be at least min gaps), you can add two constraints, the second constraint switching the first activity tag with the second"
+		" activity tag.");
 
 	plainTextEdit->setPlainText(s);
 }

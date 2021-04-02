@@ -1026,6 +1026,7 @@
       <addaction name="dataTimeConstraintsTeacherMinHoursDailyAction"/>
       <addaction name="dataTimeConstraintsTeacherMaxHoursContinuouslyAction"/>
       <addaction name="dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction"/>
+      <addaction name="dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction"/>
       <addaction name="dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction"/>
       <addaction name="dataTimeConstraintsTeacherMinRestingHoursAction"/>
       <addaction name="separator"/>
@@ -1039,6 +1040,7 @@
       <addaction name="dataTimeConstraintsTeachersMinHoursDailyAction"/>
       <addaction name="dataTimeConstraintsTeachersMaxHoursContinuouslyAction"/>
       <addaction name="dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction"/>
+      <addaction name="dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction"/>
       <addaction name="dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction"/>
       <addaction name="dataTimeConstraintsTeachersMinRestingHoursAction"/>
      </widget>
@@ -1058,6 +1060,7 @@
       <addaction name="dataTimeConstraintsStudentsSetMinHoursDailyAction"/>
       <addaction name="dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction"/>
       <addaction name="dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction"/>
+      <addaction name="dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction"/>
       <addaction name="dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction"/>
       <addaction name="dataTimeConstraintsStudentsSetMinRestingHoursAction"/>
       <addaction name="separator"/>
@@ -1071,6 +1074,7 @@
       <addaction name="dataTimeConstraintsStudentsMinHoursDailyAction"/>
       <addaction name="dataTimeConstraintsStudentsMaxHoursContinuouslyAction"/>
       <addaction name="dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction"/>
+      <addaction name="dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction"/>
       <addaction name="dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction"/>
       <addaction name="dataTimeConstraintsStudentsMinRestingHoursAction"/>
      </widget>
@@ -1680,6 +1684,26 @@
   <action name="dataTimeConstraintsStudentsSetMinHoursDailyAction">
    <property name="text">
     <string>Min hours daily for a students set</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction">
+   <property name="text">
+    <string>Min gaps between an ordered pair of activity tags for a students set</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction">
+   <property name="text">
+    <string>Min gaps between an ordered pair of activity tags for all students</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction">
+   <property name="text">
+    <string>Min gaps between an ordered pair of activity tags for a teacher</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction">
+   <property name="text">
+    <string>Min gaps between an ordered pair of activity tags for all teachers</string>
    </property>
   </action>
   <action name="timetableGenerateMultipleAction">

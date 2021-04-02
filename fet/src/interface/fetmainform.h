@@ -314,6 +314,11 @@ public slots:
 	void on_dataTimeConstraintsStudentsMinHoursDailyAction_triggered();
 	void on_dataTimeConstraintsStudentsSetMinHoursDailyAction_triggered();
 
+	void on_dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction_triggered();
+	void on_dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction_triggered();
+	void on_dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction_triggered();
+	void on_dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction_triggered();
+
 	void on_dataTimeConstraintsTeacherMaxSpanPerDayAction_triggered();
 	void on_dataTimeConstraintsTeachersMaxSpanPerDayAction_triggered();
 	void on_dataTimeConstraintsStudentsSetMaxSpanPerDayAction_triggered();

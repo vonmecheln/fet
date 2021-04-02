@@ -39,7 +39,7 @@
       <widget class="QComboBox" name="subjectsComboBox"/>
      </item>
      <item>
-      <widget class="QLabel" name="subjectsTextLabel_2">
+      <widget class="QLabel" name="activityTagsTextLabel">
        <property name="frameShape">
         <enum>QFrame::NoFrame</enum>
        </property>

@@ -21,7 +21,7 @@
      </property>
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
-       <widget class="QLabel" name="teachersTextLabel_2">
+       <widget class="QLabel" name="teachersTextLabel">
         <property name="text">
          <string>Teacher</string>
         </property>
@@ -31,7 +31,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLabel" name="studentsTextLabel_2">
+       <widget class="QLabel" name="studentsTextLabel">
         <property name="text">
          <string>Students set</string>
         </property>
@@ -47,7 +47,7 @@
        <widget class="QComboBox" name="studentsComboBox"/>
       </item>
       <item row="2" column="0">
-       <widget class="QLabel" name="subjectsTextLabel_2">
+       <widget class="QLabel" name="subjectsTextLabel">
         <property name="text">
          <string>Subject</string>
         </property>
@@ -57,7 +57,7 @@
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QLabel" name="activityTagsTextLabel_2">
+       <widget class="QLabel" name="activityTagsTextLabel">
         <property name="text">
          <string>Activity tag</string>
         </property>

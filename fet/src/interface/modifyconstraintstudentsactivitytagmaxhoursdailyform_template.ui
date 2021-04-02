@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <layout class="QVBoxLayout">
      <item>
-      <widget class="QLabel" name="studentsTextLabel_2">
+      <widget class="QLabel" name="studentsTextLabel">
        <property name="frameShape">
         <enum>QFrame::NoFrame</enum>
        </property>

@@ -6549,3 +6549,84 @@ From satellite2 (on forum): (https://lalescu.ro/liviu/fet/forum/index.php?topic=
 The other constraint is "max hours per day for a teacher (or all teachers)". Is there a way to add another constraint like "max activities per day for a
 teacher (or all teachers)" ? The hours of the activities change from 1 to 4 but teachers see them as an activity and let's say some of them don't want more
 than two activities a day etc.
+
+376---------------------------------------------------------
+From Volker Dirr:
+
+Disable energy saving mode, because FET won't calculate anymore if
+the computer falls into save mode after x minutes.
+
+377---------------------------------------------------------
+From Nagendra (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4050.msg21599#msg21599
+
+I request you to enable multi-selection (using 'ctrl' key) and range selection (using 'Shift' key) in time and space constraints also. So that
+anyone can enable/disable/delete many constraints at once.
+
+Also from ChicagoPianoTuner, he suggests selecting and removing more constraints or activities at once.
+
+378---------------------------------------------------------
+From CarolStott and Volker Dirr (on forum):
+
+- A teacher-subject matrix to enter teacher qualified subjects (so you
+only need to enable/disable a cell in a table)
+
+379---------------------------------------------------------
+From Volker Dirr:
+
+In the "Add activity" dialog:
+Under the word "duration" (so left from the "active" checkbox) there is still
+enough place to add some useful information.
+I suggest to add the currently computed "Total duration".
+
+380---------------------------------------------------------
+From Christoph Voelker and math (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4068.0
+
+They refer to the selection mark and the colors in the constraints activity(ies) preferred times and activities occupy max time slots from selection.
+
+381---------------------------------------------------------
+From Nagendra (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4085.0
+
+Let us say a time table is generated with some constraints and locked. Now, If a faculty wants to re-schedule an activity, then if an interface as explained below
+will be much more appealing.
+
+Stage-1
+Say, Teacher-1 wants his lecture scheduled on Monday Morning 8:30 to be shifted to any other possible day&timing of his own timetable. So, we go to the particular
+teacher's timetable and click on the box. If by some means, all the possible positions (satisfying all the constraints) where this lecture could be relocated gets
+highlighted, then it would be great. Just like we play chess on a computer, and all possible moves of a chesspiece gets highlighted upon selection. Then a simple
+drag and drop kind of thing.
+
+Stage-2
+Teacher-1 wants his lecture scheduled on Monday Morning 8:30 (say Group A) to be swapped with some teacher-2 who is teaching the same student group (A), but
+different subject. By showing both teachers timetable side-by-side and highlighting the boxes of teacher-2 upon clicking the lecture of Teacher-1.
+
+This is just a suggestion, definitely not very important. But, it will be very easy this way to modify timetable without breaking constraints, if we get some
+swap requests.
+
+382---------------------------------------------------------
+From math (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4102.0
+
+When selecting "Timetable -> Students -> Days horizontal", the timetable dialog shows up. When selecting "Year" or "Group" in the dropdown combo box, the
+order of entries corresponds to the order of "Data -> Students -> Years" resp. "Data -> Student -> Groups". Hence, if I'm sorting the data entries there,
+the list of entries is sorted in the timetable dialog as well.
+
+As a matter of fact, it is not possible to sort the subgroups, since they spread over multiple groups. As a consequence, the list of entries in
+"Timetable -> Students -> Days horizontal" is unsorted as well, when selecting "Subgroups" in the dropdown combo box.
+
+Would it be possible to sort the list of subgroups in that dialog by default?
+
+If there is a scenario where the list should better remain unsorted, would it be possible to add an option to "Settings -> Advanced -> Sort list of subgroups"?
+
+383---------------------------------------------------------
+From Nagendra (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4104.0
+
+Add a constraint to limit the maximum number of subgroups (or number of students?) in any given time slot.

@@ -229,7 +229,7 @@ void ModifyConstraintRoomNotAvailableTimesForm::ok()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	weight_sscanf(tmp, "%lf", &weight);
-	if(weight<=0.0 || weight>100){
+	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight"));
 		return;

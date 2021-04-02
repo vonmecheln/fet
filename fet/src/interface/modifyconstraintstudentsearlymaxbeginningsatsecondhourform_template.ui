@@ -15,7 +15,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0" colspan="3">
-    <widget class="QLabel" name="weightTextLabel_2_2">
+    <widget class="QLabel" name="instructionsTextLabel">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
        <horstretch>0</horstretch>
@@ -53,7 +53,7 @@
     </spacer>
    </item>
    <item row="2" column="0" colspan="3">
-    <widget class="QLabel" name="weightTextLabel_2">
+    <widget class="QLabel" name="instructionsTextLabel_2">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
        <horstretch>0</horstretch>

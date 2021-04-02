@@ -113,6 +113,56 @@ QString getActivityDetailedDescription(Rules& r, int id)
 	return s;
 }
 
+void populateInternalSubgroupsList(const Rules& r, const StudentsSet* ss, QList<int>& iSubgroupsList){
+	iSubgroupsList.clear();
+	
+	QSet<int> tmpSet;
+	
+	if(ss->type==STUDENTS_SUBGROUP){
+		int tmp;
+		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
+		assert(tmp>=0);
+		assert(tmp<r.nInternalSubgroups);
+		if(!tmpSet.contains(tmp)){
+			tmpSet.insert(tmp);
+			iSubgroupsList.append(tmp);
+		}
+	}
+	else if(ss->type==STUDENTS_GROUP){
+		StudentsGroup* stg=(StudentsGroup*)ss;
+		for(int i=0; i<stg->subgroupsList.size(); i++){
+			StudentsSubgroup* sts=stg->subgroupsList[i];
+			int tmp;
+			tmp=sts->indexInInternalSubgroupsList;
+			assert(tmp>=0);
+			assert(tmp<r.nInternalSubgroups);
+			if(!tmpSet.contains(tmp)){
+				tmpSet.insert(tmp);
+				iSubgroupsList.append(tmp);
+			}
+		}
+	}
+	else if(ss->type==STUDENTS_YEAR){
+		StudentsYear* sty=(StudentsYear*)ss;
+		for(int i=0; i<sty->groupsList.size(); i++){
+			StudentsGroup* stg=sty->groupsList[i];
+			for(int j=0; j<stg->subgroupsList.size(); j++){
+				StudentsSubgroup* sts=stg->subgroupsList[j];
+				int tmp;
+				tmp=sts->indexInInternalSubgroupsList;
+				assert(tmp>=0);
+				assert(tmp<r.nInternalSubgroups);
+				if(!tmpSet.contains(tmp)){
+					tmpSet.insert(tmp);
+					iSubgroupsList.append(tmp);
+				}
+			}
+		}
+	}
+	else
+		assert(0);
+}
+
 TimeConstraint::TimeConstraint()
 {
 	type=CONSTRAINT_GENERIC_TIME;
@@ -625,9 +675,9 @@ bool ConstraintTeacherNotAvailableTimes::computeInternalStructure(QWidget* paren
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher not available times is wrong because it refers to inexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 		return false;
-	}	
+	}
 
 	assert(days.count()==hours.count());
 	for(int k=0; k<days.count(); k++){
@@ -846,7 +896,8 @@ bool ConstraintStudentsSetNotAvailableTimes::computeInternalStructure(QWidget* p
 	
 	assert(ss);
 
-	this->iSubgroupsList.clear();
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+	/*this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
 		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
@@ -883,7 +934,7 @@ bool ConstraintStudentsSetNotAvailableTimes::computeInternalStructure(QWidget* p
 		}
 	}
 	else
-		assert(0);
+		assert(0);*/
 	return true;
 }
 
@@ -4169,7 +4220,7 @@ ConstraintTeacherMaxDaysPerWeek::ConstraintTeacherMaxDaysPerWeek()
 	this->type=CONSTRAINT_TEACHER_MAX_DAYS_PER_WEEK;
 }
 
-ConstraintTeacherMaxDaysPerWeek::ConstraintTeacherMaxDaysPerWeek(double wp, int maxnd, QString tn)
+ConstraintTeacherMaxDaysPerWeek::ConstraintTeacherMaxDaysPerWeek(double wp, int maxnd, const QString& tn)
 	 : TimeConstraint(wp)
 {
 	this->teacherName = tn;
@@ -4856,7 +4907,7 @@ ConstraintTeacherMaxGapsPerWeek::ConstraintTeacherMaxGapsPerWeek()
 	this->type = CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK;
 }
 
-ConstraintTeacherMaxGapsPerWeek::ConstraintTeacherMaxGapsPerWeek(double wp, QString tn, int mg)
+ConstraintTeacherMaxGapsPerWeek::ConstraintTeacherMaxGapsPerWeek(double wp, const QString& tn, int mg)
 	: TimeConstraint(wp)
 {
 	this->type = CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK;
@@ -5268,7 +5319,7 @@ ConstraintTeacherMaxGapsPerDay::ConstraintTeacherMaxGapsPerDay()
 	this->type = CONSTRAINT_TEACHER_MAX_GAPS_PER_DAY;
 }
 
-ConstraintTeacherMaxGapsPerDay::ConstraintTeacherMaxGapsPerDay(double wp, QString tn, int mg)
+ConstraintTeacherMaxGapsPerDay::ConstraintTeacherMaxGapsPerDay(double wp, const QString& tn, int mg)
 	: TimeConstraint(wp)
 {
 	this->type = CONSTRAINT_TEACHER_MAX_GAPS_PER_DAY;
@@ -5987,7 +6038,8 @@ bool ConstraintStudentsSetMaxGapsPerWeek::computeInternalStructure(QWidget* pare
 
 	assert(ss);
 
-	this->iSubgroupsList.clear();
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+	/*this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
 		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
@@ -6024,7 +6076,7 @@ bool ConstraintStudentsSetMaxGapsPerWeek::computeInternalStructure(QWidget* pare
 		}
 	}
 	else
-		assert(0);
+		assert(0);*/
 		
 	return true;
 }
@@ -6490,7 +6542,8 @@ bool ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::computeInternalStructu
 
 	assert(ss);
 
-	this->iSubgroupsList.clear();
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+	/*this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
 		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
@@ -6527,7 +6580,7 @@ bool ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::computeInternalStructu
 		}
 	}
 	else
-		assert(0);
+		assert(0);*/
 	return true;
 }
 
@@ -6963,7 +7016,7 @@ ConstraintStudentsSetMaxHoursDaily::ConstraintStudentsSetMaxHoursDaily()
 	this->maxHoursDaily = -1;
 }
 
-ConstraintStudentsSetMaxHoursDaily::ConstraintStudentsSetMaxHoursDaily(double wp, int maxnh, QString s)
+ConstraintStudentsSetMaxHoursDaily::ConstraintStudentsSetMaxHoursDaily(double wp, int maxnh, const QString& s)
 	: TimeConstraint(wp)
 {
 	this->maxHoursDaily = maxnh;
@@ -7049,7 +7102,8 @@ bool ConstraintStudentsSetMaxHoursDaily::computeInternalStructure(QWidget* paren
 
 	assert(ss);
 
-	this->iSubgroupsList.clear();
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+	/*this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
 		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
@@ -7086,7 +7140,7 @@ bool ConstraintStudentsSetMaxHoursDaily::computeInternalStructure(QWidget* paren
 		}
 	}
 	else
-		assert(0);
+		assert(0);*/
 		
 	return true;
 }
@@ -7444,7 +7498,7 @@ ConstraintStudentsSetMaxHoursContinuously::ConstraintStudentsSetMaxHoursContinuo
 	this->maxHoursContinuously = -1;
 }
 
-ConstraintStudentsSetMaxHoursContinuously::ConstraintStudentsSetMaxHoursContinuously(double wp, int maxnh, QString s)
+ConstraintStudentsSetMaxHoursContinuously::ConstraintStudentsSetMaxHoursContinuously(double wp, int maxnh, const QString& s)
 	: TimeConstraint(wp)
 {
 	this->maxHoursContinuously = maxnh;
@@ -7530,7 +7584,8 @@ bool ConstraintStudentsSetMaxHoursContinuously::computeInternalStructure(QWidget
 
 	assert(ss);
 
-	this->iSubgroupsList.clear();
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+	/*this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
 		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
@@ -7567,7 +7622,7 @@ bool ConstraintStudentsSetMaxHoursContinuously::computeInternalStructure(QWidget
 		}
 	}
 	else
-		assert(0);
+		assert(0);*/
 		
 	return true;
 }
@@ -8087,7 +8142,8 @@ bool ConstraintStudentsSetActivityTagMaxHoursContinuously::computeInternalStruct
 
 	assert(ss);
 
-	this->iSubgroupsList.clear();
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+	/*this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
 		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
@@ -8124,7 +8180,7 @@ bool ConstraintStudentsSetActivityTagMaxHoursContinuously::computeInternalStruct
 		}
 	}
 	else
-		assert(0);
+		assert(0);*/
 		
 	/////////////
 	this->canonicalSubgroupsList.clear();
@@ -8142,7 +8198,6 @@ bool ConstraintStudentsSetActivityTagMaxHoursContinuously::computeInternalStruct
 		if(found)
 			this->canonicalSubgroupsList.append(i);
 	}
-
 		
 	return true;
 }
@@ -8547,7 +8602,7 @@ ConstraintStudentsSetMinHoursDaily::ConstraintStudentsSetMinHoursDaily()
 	this->allowEmptyDays=false;
 }
 
-ConstraintStudentsSetMinHoursDaily::ConstraintStudentsSetMinHoursDaily(double wp, int minnh, QString s, bool _allowEmptyDays)
+ConstraintStudentsSetMinHoursDaily::ConstraintStudentsSetMinHoursDaily(double wp, int minnh, const QString& s, bool _allowEmptyDays)
 	: TimeConstraint(wp)
 {
 	this->minHoursDaily = minnh;
@@ -8648,7 +8703,8 @@ bool ConstraintStudentsSetMinHoursDaily::computeInternalStructure(QWidget* paren
 
 	assert(ss);
 
-	this->iSubgroupsList.clear();
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+	/*this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
 		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
@@ -8685,7 +8741,7 @@ bool ConstraintStudentsSetMinHoursDaily::computeInternalStructure(QWidget* paren
 		}
 	}
 	else
-		assert(0);
+		assert(0);*/
 		
 	return true;
 }
@@ -9414,8 +9470,8 @@ ConstraintActivitiesPreferredTimeSlots::ConstraintActivitiesPreferredTimeSlots()
 	this->type = CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS;
 }
 
-ConstraintActivitiesPreferredTimeSlots::ConstraintActivitiesPreferredTimeSlots(double wp, QString te,
-	QString st, QString su, QString sut, int dur, int nPT_L, QList<int> d_L, QList<int> h_L)
+ConstraintActivitiesPreferredTimeSlots::ConstraintActivitiesPreferredTimeSlots(double wp, const QString& te,
+	const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, QList<int> d_L, QList<int> h_L)
 	: TimeConstraint(wp)
 {
 	assert(dur==-1 || dur>=1);
@@ -9916,8 +9972,8 @@ ConstraintSubactivitiesPreferredTimeSlots::ConstraintSubactivitiesPreferredTimeS
 	this->type = CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS;
 }
 
-ConstraintSubactivitiesPreferredTimeSlots::ConstraintSubactivitiesPreferredTimeSlots(double wp, int compNo, QString te,
-	QString st, QString su, QString sut, int dur, int nPT_L, QList<int> d_L, QList<int> h_L)
+ConstraintSubactivitiesPreferredTimeSlots::ConstraintSubactivitiesPreferredTimeSlots(double wp, int compNo, const QString& te,
+	const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, QList<int> d_L, QList<int> h_L)
 	: TimeConstraint(wp)
 {
 	assert(dur==-1 || dur>=1);
@@ -10743,8 +10799,8 @@ ConstraintActivitiesPreferredStartingTimes::ConstraintActivitiesPreferredStartin
 	this->type = CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES;
 }
 
-ConstraintActivitiesPreferredStartingTimes::ConstraintActivitiesPreferredStartingTimes(double wp, QString te,
-	QString st, QString su, QString sut, int dur, int nPT_L, QList<int> d_L, QList<int> h_L)
+ConstraintActivitiesPreferredStartingTimes::ConstraintActivitiesPreferredStartingTimes(double wp, const QString& te,
+	const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, QList<int> d_L, QList<int> h_L)
 	: TimeConstraint(wp)
 {
 	assert(dur==-1 || dur>=1);
@@ -11232,8 +11288,8 @@ ConstraintSubactivitiesPreferredStartingTimes::ConstraintSubactivitiesPreferredS
 	this->type = CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES;
 }
 
-ConstraintSubactivitiesPreferredStartingTimes::ConstraintSubactivitiesPreferredStartingTimes(double wp, int compNo, QString te,
-	QString st, QString su, QString sut, int dur, int nPT_L, QList<int> d_L, QList<int> h_L)
+ConstraintSubactivitiesPreferredStartingTimes::ConstraintSubactivitiesPreferredStartingTimes(double wp, int compNo, const QString& te,
+	const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, QList<int> d_L, QList<int> h_L)
 	: TimeConstraint(wp)
 {
 	assert(dur==-1 || dur>=1);
@@ -14890,7 +14946,7 @@ ConstraintTeacherIntervalMaxDaysPerWeek::ConstraintTeacherIntervalMaxDaysPerWeek
 	this->type=CONSTRAINT_TEACHER_INTERVAL_MAX_DAYS_PER_WEEK;
 }
 
-ConstraintTeacherIntervalMaxDaysPerWeek::ConstraintTeacherIntervalMaxDaysPerWeek(double wp, int maxnd, QString tn, int sh, int eh)
+ConstraintTeacherIntervalMaxDaysPerWeek::ConstraintTeacherIntervalMaxDaysPerWeek(double wp, int maxnd, const QString& tn, int sh, int eh)
 	 : TimeConstraint(wp)
 {
 	this->teacherName = tn;
@@ -15397,7 +15453,7 @@ ConstraintStudentsSetIntervalMaxDaysPerWeek::ConstraintStudentsSetIntervalMaxDay
 	this->type=CONSTRAINT_STUDENTS_SET_INTERVAL_MAX_DAYS_PER_WEEK;
 }
 
-ConstraintStudentsSetIntervalMaxDaysPerWeek::ConstraintStudentsSetIntervalMaxDaysPerWeek(double wp, int maxnd, QString sn, int sh, int eh)
+ConstraintStudentsSetIntervalMaxDaysPerWeek::ConstraintStudentsSetIntervalMaxDaysPerWeek(double wp, int maxnd, const QString& sn, int sh, int eh)
 	 : TimeConstraint(wp)
 {
 	this->students = sn;
@@ -15447,7 +15503,8 @@ bool ConstraintStudentsSetIntervalMaxDaysPerWeek::computeInternalStructure(QWidg
 
 	assert(ss);
 
-	this->iSubgroupsList.clear();
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+	/*this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
 		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
@@ -15484,7 +15541,7 @@ bool ConstraintStudentsSetIntervalMaxDaysPerWeek::computeInternalStructure(QWidg
 		}
 	}
 	else
-		assert(0);
+		assert(0);*/
 		
 	return true;
 }
@@ -15954,8 +16011,8 @@ ConstraintActivitiesEndStudentsDay::ConstraintActivitiesEndStudentsDay()
 	this->type = CONSTRAINT_ACTIVITIES_END_STUDENTS_DAY;
 }
 
-ConstraintActivitiesEndStudentsDay::ConstraintActivitiesEndStudentsDay(double wp, QString te,
-	QString st, QString su, QString sut)
+ConstraintActivitiesEndStudentsDay::ConstraintActivitiesEndStudentsDay(double wp, const QString& te,
+	const QString& st, const QString& su, const QString& sut)
 	: TimeConstraint(wp)
 {
 	this->teacherName=te;
@@ -17096,7 +17153,8 @@ bool ConstraintStudentsSetActivityTagMaxHoursDaily::computeInternalStructure(QWi
 
 	assert(ss);
 
-	this->iSubgroupsList.clear();
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+	/*this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
 		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
@@ -17133,7 +17191,7 @@ bool ConstraintStudentsSetActivityTagMaxHoursDaily::computeInternalStructure(QWi
 		}
 	}
 	else
-		assert(0);
+		assert(0);*/
 		
 	/////////////
 	this->canonicalSubgroupsList.clear();
@@ -17151,7 +17209,6 @@ bool ConstraintStudentsSetActivityTagMaxHoursDaily::computeInternalStructure(QWi
 		if(found)
 			this->canonicalSubgroupsList.append(i);
 	}
-
 		
 	return true;
 }
@@ -17532,7 +17589,8 @@ bool ConstraintStudentsSetMaxGapsPerDay::computeInternalStructure(QWidget* paren
 
 	assert(ss);
 
-	this->iSubgroupsList.clear();
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+	/*this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
 		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
@@ -17569,7 +17627,7 @@ bool ConstraintStudentsSetMaxGapsPerDay::computeInternalStructure(QWidget* paren
 		}
 	}
 	else
-		assert(0);
+		assert(0);*/
 		
 	return true;
 }
@@ -18495,7 +18553,7 @@ ConstraintStudentsSetMaxDaysPerWeek::ConstraintStudentsSetMaxDaysPerWeek()
 	this->type=CONSTRAINT_STUDENTS_SET_MAX_DAYS_PER_WEEK;
 }
 
-ConstraintStudentsSetMaxDaysPerWeek::ConstraintStudentsSetMaxDaysPerWeek(double wp, int maxnd, QString sn)
+ConstraintStudentsSetMaxDaysPerWeek::ConstraintStudentsSetMaxDaysPerWeek(double wp, int maxnd, const QString& sn)
 	 : TimeConstraint(wp)
 {
 	this->students = sn;
@@ -18518,7 +18576,8 @@ bool ConstraintStudentsSetMaxDaysPerWeek::computeInternalStructure(QWidget* pare
 
 	assert(ss);
 
-	this->iSubgroupsList.clear();
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+	/*this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
 		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
@@ -18555,7 +18614,7 @@ bool ConstraintStudentsSetMaxDaysPerWeek::computeInternalStructure(QWidget* pare
 		}
 	}
 	else
-		assert(0);
+		assert(0);*/
 		
 	return true;
 }
@@ -19330,7 +19389,7 @@ ConstraintStudentsSetMaxSpanPerDay::ConstraintStudentsSetMaxSpanPerDay()
 	this->maxSpanPerDay = -1;
 }
 
-ConstraintStudentsSetMaxSpanPerDay::ConstraintStudentsSetMaxSpanPerDay(double wp, int maxspan, QString sn)
+ConstraintStudentsSetMaxSpanPerDay::ConstraintStudentsSetMaxSpanPerDay(double wp, int maxspan, const QString& sn)
 	: TimeConstraint(wp)
 {
 	this->maxSpanPerDay = maxspan;
@@ -19416,7 +19475,8 @@ bool ConstraintStudentsSetMaxSpanPerDay::computeInternalStructure(QWidget* paren
 
 	assert(ss);
 
-	this->iSubgroupsList.clear();
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+	/*this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
 		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
@@ -19453,7 +19513,7 @@ bool ConstraintStudentsSetMaxSpanPerDay::computeInternalStructure(QWidget* paren
 		}
 	}
 	else
-		assert(0);
+		assert(0);*/
 		
 	return true;
 }
@@ -20165,7 +20225,7 @@ ConstraintStudentsSetMinRestingHours::ConstraintStudentsSetMinRestingHours()
 	this->circular=true;
 }
 
-ConstraintStudentsSetMinRestingHours::ConstraintStudentsSetMinRestingHours(double wp, int minrestinghours, bool circ, QString sn)
+ConstraintStudentsSetMinRestingHours::ConstraintStudentsSetMinRestingHours(double wp, int minrestinghours, bool circ, const QString& sn)
 	: TimeConstraint(wp)
 {
 	this->minRestingHours = minrestinghours;
@@ -20255,7 +20315,8 @@ bool ConstraintStudentsSetMinRestingHours::computeInternalStructure(QWidget* par
 
 	assert(ss);
 
-	this->iSubgroupsList.clear();
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+	/*this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
 		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
@@ -20292,7 +20353,7 @@ bool ConstraintStudentsSetMinRestingHours::computeInternalStructure(QWidget* par
 		}
 	}
 	else
-		assert(0);
+		assert(0);*/
 		
 	return true;
 }
@@ -20594,6 +20655,1174 @@ bool ConstraintStudentsMinRestingHours::repairWrongDayOrHour(Rules& r)
 	
 	if(minRestingHours>r.nHoursPerDay)
 		minRestingHours=r.nHoursPerDay;
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS;
+
+	this->minGaps = 0;
+	this->firstActivityTag=QString("");
+	this->secondActivityTag=QString("");
+	this->students=QString("");
+}
+
+ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags(double wp, const QString& _students, int _minGaps, const QString& _firstActivityTag, const QString& _secondActivityTag)
+	: TimeConstraint(wp)
+{
+	this->type = CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS;
+
+	this->minGaps = _minGaps;
+	this->firstActivityTag=_firstActivityTag;
+	this->secondActivityTag=_secondActivityTag;
+	this->students=_students;
+}
+
+bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Students>"+protect(this->students)+"</Students>\n";
+	s+="	<First_Activity_Tag>"+protect(this->firstActivityTag)+"</First_Activity_Tag>\n";
+	s+="	<Second_Activity_Tag>"+protect(this->secondActivityTag)+"</Second_Activity_Tag>\n";
+	s+="	<MinGaps>"+CustomFETString::number(this->minGaps)+"</MinGaps>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags>\n";
+	return s;
+}
+
+QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	
+	s+=tr("Students set min gaps between ordered pair of activity tags");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("St:%1", "Students (set)").arg(this->students);s+=", ";
+	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=", ";
+	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=", ";
+	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
+
+	return begin+s+end;
+}
+
+QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("A students set must respect the minimum gaps between an ordered pair of activity tags");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Students set=%1").arg(this->students);s+="\n";
+	s+=tr("First activity tag=%1").arg(this->firstActivityTag);s+="\n";
+	s+=tr("Second activity tag=%1").arg(this->secondActivityTag);s+="\n";
+	s+=tr("Minimum gaps=%1").arg(this->minGaps);s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	_firstActivityTagIndex=r.activityTagsHash.value(firstActivityTag, -1);
+	assert(this->_firstActivityTagIndex>=0);
+		
+	_secondActivityTagIndex=r.activityTagsHash.value(secondActivityTag, -1);
+	assert(this->_secondActivityTagIndex>=0);
+
+	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	StudentsSet* ss=r.studentsHash.value(students, NULL);
+	
+	if(ss==NULL){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint students set min gaps between ordered pair of activity tags is wrong because it refers to inexistent students set."
+		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}	
+
+	assert(ss);
+	
+	QList<int> iSubgroupsList;
+	populateInternalSubgroupsList(r, ss, iSubgroupsList);
+	/*iSubgroupsList.clear();
+	if(ss->type==STUDENTS_SUBGROUP){
+		int tmp;
+		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
+		assert(tmp>=0);
+		assert(tmp<r.nInternalSubgroups);
+		if(!iSubgroupsList.contains(tmp))
+			iSubgroupsList.append(tmp);
+	}
+	else if(ss->type==STUDENTS_GROUP){
+		StudentsGroup* stg=(StudentsGroup*)ss;
+		for(int i=0; i<stg->subgroupsList.size(); i++){
+			StudentsSubgroup* sts=stg->subgroupsList[i];
+			int tmp;
+			tmp=sts->indexInInternalSubgroupsList;
+			assert(tmp>=0);
+			assert(tmp<r.nInternalSubgroups);
+			if(!iSubgroupsList.contains(tmp))
+				iSubgroupsList.append(tmp);
+		}
+	}
+	else if(ss->type==STUDENTS_YEAR){
+		StudentsYear* sty=(StudentsYear*)ss;
+		for(int i=0; i<sty->groupsList.size(); i++){
+			StudentsGroup* stg=sty->groupsList[i];
+			for(int j=0; j<stg->subgroupsList.size(); j++){
+				StudentsSubgroup* sts=stg->subgroupsList[j];
+				int tmp;
+				tmp=sts->indexInInternalSubgroupsList;
+				assert(tmp>=0);
+				assert(tmp<r.nInternalSubgroups);
+				if(!iSubgroupsList.contains(tmp))
+					iSubgroupsList.append(tmp);
+			}
+		}
+	}
+	else
+		assert(0);*/
+		
+	/////////////
+	this->canonicalSubgroupsList.clear();
+	for(int i : qAsConst(iSubgroupsList)){
+		bool foundF=false; //found first
+		bool foundS=false; //found second
+	
+		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
+		for(int actIndex : qAsConst(sbg->activitiesForSubgroup)){
+			if(!foundF)
+				if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->_firstActivityTagIndex))
+					foundF=true;
+			if(!foundS)
+				if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->_secondActivityTagIndex))
+					foundS=true;
+					
+			if(foundF && foundS)
+				break;
+		}
+		
+		if(foundF && foundS)
+			this->canonicalSubgroupsList.append(i);
+	}
+	
+	return true;
+}
+
+double ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+	
+	int nbroken=0;
+
+	for(int i : qAsConst(this->canonicalSubgroupsList)){
+		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
+
+		int crtSubgroupTimetableActivityTag[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+
+		for(int d=0; d<r.nDaysPerWeek; d++)
+			for(int h=0; h<r.nHoursPerDay; h++)
+				crtSubgroupTimetableActivityTag[d][h]=-1;
+
+		for(int ai : qAsConst(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
+			int d=c.times[ai]%r.nDaysPerWeek;
+			int h=c.times[ai]/r.nDaysPerWeek;
+			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+				assert(h+dur<r.nHoursPerDay);
+				assert(crtSubgroupTimetableActivityTag[d][h+dur]==-1);
+				
+				if(r.internalActivitiesList[ai].iActivityTagsSet.contains(this->_firstActivityTagIndex)){
+					assert(crtSubgroupTimetableActivityTag[d][h+dur]==-1);
+					crtSubgroupTimetableActivityTag[d][h+dur]=this->_firstActivityTagIndex;
+				}
+				else if(r.internalActivitiesList[ai].iActivityTagsSet.contains(this->_secondActivityTagIndex)){
+					assert(crtSubgroupTimetableActivityTag[d][h+dur]==-1);
+					crtSubgroupTimetableActivityTag[d][h+dur]=this->_secondActivityTagIndex;
+				}
+			}
+		}
+		
+		for(int d=0; d<r.nDaysPerWeek; d++){
+			int cnt=-1;
+			for(int h=0; h<r.nHoursPerDay; h++){
+				if(crtSubgroupTimetableActivityTag[d][h]==_firstActivityTagIndex){
+					cnt=0;
+				}
+				else if(crtSubgroupTimetableActivityTag[d][h]==-1){
+					if(cnt>=0)
+						cnt++;
+				}
+				else if(crtSubgroupTimetableActivityTag[d][h]==_secondActivityTagIndex){
+					if(cnt>=0 && cnt<minGaps){
+						nbroken++;
+
+						if(conflictsString!=NULL){
+							QString s=tr("Time constraint students set min %1 gaps between ordered pair of activity tags broken for subgroup: %2,"
+							 " day: %3, real gaps=%4, conflicts increase=%5")
+							 .arg(minGaps)
+							 .arg(sbg->name)
+							 .arg(r.daysOfTheWeek[d])
+							 .arg(CustomFETString::number(cnt))
+							 .arg(CustomFETString::number(1*weightPercentage/100));
+								
+							dl.append(s);
+							cl.append(1*weightPercentage/100);
+							
+							*conflictsString+= s+"\n";
+						}
+					}
+					
+					cnt=-1;
+				}
+				else{
+					assert(0);
+				}
+			}
+		}
+	}
+	
+	if(weightPercentage==100)
+		assert(nbroken==0);
+
+	return nbroken * weightPercentage / 100.0;
+}
+
+bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::isRelatedToActivityTag(ActivityTag* s)
+{
+	if(s->name==this->firstActivityTag || s->name==this->secondActivityTag)
+		return true;
+
+	return false;
+}
+
+bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	return r.setsShareStudents(this->students, s->name);
+}
+
+bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::hasWrongDayOrHour(Rules& r)
+{
+	if(minGaps>r.nHoursPerDay)
+		return true;
+		
+	return false;
+}
+
+bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(minGaps>r.nHoursPerDay)
+		minGaps=r.nHoursPerDay;
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS;
+
+	this->minGaps = 0;
+	this->firstActivityTag=QString("");
+	this->secondActivityTag=QString("");
+}
+
+ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags(double wp, int _minGaps, const QString& _firstActivityTag, const QString& _secondActivityTag)
+	: TimeConstraint(wp)
+{
+	this->type = CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS;
+
+	this->minGaps = _minGaps;
+	this->firstActivityTag=_firstActivityTag;
+	this->secondActivityTag=_secondActivityTag;
+}
+
+bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<First_Activity_Tag>"+protect(this->firstActivityTag)+"</First_Activity_Tag>\n";
+	s+="	<Second_Activity_Tag>"+protect(this->secondActivityTag)+"</Second_Activity_Tag>\n";
+	s+="	<MinGaps>"+CustomFETString::number(this->minGaps)+"</MinGaps>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags>\n";
+	return s;
+}
+
+QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	
+	s+=tr("Students min gaps between ordered pair of activity tags");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=", ";
+	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=", ";
+	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
+
+	return begin+s+end;
+}
+
+QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("All students must respect the minimum gaps between an ordered pair of activity tags");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("First activity tag=%1").arg(this->firstActivityTag);s+="\n";
+	s+=tr("Second activity tag=%1").arg(this->secondActivityTag);s+="\n";
+	s+=tr("Minimum gaps=%1").arg(this->minGaps);s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+
+	_firstActivityTagIndex=r.activityTagsHash.value(firstActivityTag, -1);
+	assert(this->_firstActivityTagIndex>=0);
+		
+	_secondActivityTagIndex=r.activityTagsHash.value(secondActivityTag, -1);
+	assert(this->_secondActivityTagIndex>=0);
+
+	this->canonicalSubgroupsList.clear();
+	for(int i=0; i<r.nInternalSubgroups; i++){
+		bool foundF=false; //found first
+		bool foundS=false; //found second
+	
+		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
+		for(int actIndex : qAsConst(sbg->activitiesForSubgroup)){
+			if(!foundF)
+				if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->_firstActivityTagIndex))
+					foundF=true;
+			if(!foundS)
+				if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->_secondActivityTagIndex))
+					foundS=true;
+					
+			if(foundF && foundS)
+				break;
+		}
+		
+		if(foundF && foundS)
+			this->canonicalSubgroupsList.append(i);
+	}
+
+	return true;
+}
+
+double ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+	
+	int nbroken=0;
+
+	for(int i : qAsConst(this->canonicalSubgroupsList)){
+		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
+
+		int crtSubgroupTimetableActivityTag[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+
+		for(int d=0; d<r.nDaysPerWeek; d++)
+			for(int h=0; h<r.nHoursPerDay; h++)
+				crtSubgroupTimetableActivityTag[d][h]=-1;
+
+		for(int ai : qAsConst(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
+			int d=c.times[ai]%r.nDaysPerWeek;
+			int h=c.times[ai]/r.nDaysPerWeek;
+			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+				assert(h+dur<r.nHoursPerDay);
+				assert(crtSubgroupTimetableActivityTag[d][h+dur]==-1);
+				
+				if(r.internalActivitiesList[ai].iActivityTagsSet.contains(this->_firstActivityTagIndex)){
+					assert(crtSubgroupTimetableActivityTag[d][h+dur]==-1);
+					crtSubgroupTimetableActivityTag[d][h+dur]=this->_firstActivityTagIndex;
+				}
+				else if(r.internalActivitiesList[ai].iActivityTagsSet.contains(this->_secondActivityTagIndex)){
+					assert(crtSubgroupTimetableActivityTag[d][h+dur]==-1);
+					crtSubgroupTimetableActivityTag[d][h+dur]=this->_secondActivityTagIndex;
+				}
+			}
+		}
+		
+		for(int d=0; d<r.nDaysPerWeek; d++){
+			int cnt=-1;
+			for(int h=0; h<r.nHoursPerDay; h++){
+				if(crtSubgroupTimetableActivityTag[d][h]==_firstActivityTagIndex){
+					cnt=0;
+				}
+				else if(crtSubgroupTimetableActivityTag[d][h]==-1){
+					if(cnt>=0)
+						cnt++;
+				}
+				else if(crtSubgroupTimetableActivityTag[d][h]==_secondActivityTagIndex){
+					if(cnt>=0 && cnt<minGaps){
+						nbroken++;
+
+						if(conflictsString!=NULL){
+							QString s=tr("Time constraint students min %1 gaps between ordered pair of activity tags broken for subgroup: %2,"
+							 " day: %3, real gaps=%4, conflicts increase=%5")
+							 .arg(minGaps)
+							 .arg(sbg->name)
+							 .arg(r.daysOfTheWeek[d])
+							 .arg(CustomFETString::number(cnt))
+							 .arg(CustomFETString::number(1*weightPercentage/100));
+								
+							dl.append(s);
+							cl.append(1*weightPercentage/100);
+							
+							*conflictsString+= s+"\n";
+						}
+					}
+					
+					cnt=-1;
+				}
+				else{
+					assert(0);
+				}
+			}
+		}
+	}
+	
+	if(weightPercentage==100)
+		assert(nbroken==0);
+
+	return nbroken * weightPercentage / 100.0;
+}
+
+bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::isRelatedToActivityTag(ActivityTag* s)
+{
+	if(s->name==this->firstActivityTag || s->name==this->secondActivityTag)
+		return true;
+
+	return false;
+}
+
+bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return true;
+}
+
+bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::hasWrongDayOrHour(Rules& r)
+{
+	if(minGaps>r.nHoursPerDay)
+		return true;
+		
+	return false;
+}
+
+bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(minGaps>r.nHoursPerDay)
+		minGaps=r.nHoursPerDay;
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS;
+
+	this->minGaps = 0;
+	this->firstActivityTag=QString("");
+	this->secondActivityTag=QString("");
+	this->teacher=QString("");
+}
+
+ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags(double wp, const QString& _teacher, int _minGaps, const QString& _firstActivityTag, const QString& _secondActivityTag)
+	: TimeConstraint(wp)
+{
+	this->type = CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS;
+
+	this->minGaps = _minGaps;
+	this->firstActivityTag=_firstActivityTag;
+	this->secondActivityTag=_secondActivityTag;
+	this->teacher=_teacher;
+}
+
+bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Teacher>"+protect(this->teacher)+"</Teacher>\n";
+	s+="	<First_Activity_Tag>"+protect(this->firstActivityTag)+"</First_Activity_Tag>\n";
+	s+="	<Second_Activity_Tag>"+protect(this->secondActivityTag)+"</Second_Activity_Tag>\n";
+	s+="	<MinGaps>"+CustomFETString::number(this->minGaps)+"</MinGaps>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags>\n";
+	return s;
+}
+
+QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	
+	s+=tr("Teacher min gaps between ordered pair of activity tags");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("T:%1", "Teacher").arg(this->teacher);s+=", ";
+	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=", ";
+	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=", ";
+	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
+
+	return begin+s+end;
+}
+
+QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("A teacher must respect the minimum gaps between an ordered pair of activity tags");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Teacher=%1").arg(this->teacher);s+="\n";
+	s+=tr("First activity tag=%1").arg(this->firstActivityTag);s+="\n";
+	s+=tr("Second activity tag=%1").arg(this->secondActivityTag);s+="\n";
+	s+=tr("Minimum gaps=%1").arg(this->minGaps);s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	_firstActivityTagIndex=r.activityTagsHash.value(firstActivityTag, -1);
+	assert(this->_firstActivityTagIndex>=0);
+		
+	_secondActivityTagIndex=r.activityTagsHash.value(secondActivityTag, -1);
+	assert(this->_secondActivityTagIndex>=0);
+
+	int teacherIndex=r.teachersHash.value(teacher, -1);
+
+	if(teacherIndex<0){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint teacher min gaps between ordered pair of activity tags is wrong because it refers to inexistent teacher."
+		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	/////////////
+	this->canonicalTeachersList.clear();
+
+	bool foundF=false; //found first
+	bool foundS=false; //found second
+	
+	Teacher* tch=r.internalTeachersList[teacherIndex];
+	
+	for(int actIndex : qAsConst(tch->activitiesForTeacher)){
+		if(!foundF)
+			if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->_firstActivityTagIndex))
+				foundF=true;
+		if(!foundS)
+			if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->_secondActivityTagIndex))
+				foundS=true;
+				
+		if(foundF && foundS)
+			break;
+	}
+	
+	if(foundF && foundS)
+		this->canonicalTeachersList.append(teacherIndex);
+	
+	return true;
+}
+
+double ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+	
+	int nbroken=0;
+
+	for(int i : qAsConst(this->canonicalTeachersList)){
+		Teacher* tch=r.internalTeachersList[i];
+
+		int crtTeacherTimetableActivityTag[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+
+		for(int d=0; d<r.nDaysPerWeek; d++)
+			for(int h=0; h<r.nHoursPerDay; h++)
+				crtTeacherTimetableActivityTag[d][h]=-1;
+
+		for(int ai : qAsConst(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
+			int d=c.times[ai]%r.nDaysPerWeek;
+			int h=c.times[ai]/r.nDaysPerWeek;
+			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+				assert(h+dur<r.nHoursPerDay);
+				assert(crtTeacherTimetableActivityTag[d][h+dur]==-1);
+				
+				if(r.internalActivitiesList[ai].iActivityTagsSet.contains(this->_firstActivityTagIndex)){
+					assert(crtTeacherTimetableActivityTag[d][h+dur]==-1);
+					crtTeacherTimetableActivityTag[d][h+dur]=this->_firstActivityTagIndex;
+				}
+				else if(r.internalActivitiesList[ai].iActivityTagsSet.contains(this->_secondActivityTagIndex)){
+					assert(crtTeacherTimetableActivityTag[d][h+dur]==-1);
+					crtTeacherTimetableActivityTag[d][h+dur]=this->_secondActivityTagIndex;
+				}
+			}
+		}
+		
+		for(int d=0; d<r.nDaysPerWeek; d++){
+			int cnt=-1;
+			for(int h=0; h<r.nHoursPerDay; h++){
+				if(crtTeacherTimetableActivityTag[d][h]==_firstActivityTagIndex){
+					cnt=0;
+				}
+				else if(crtTeacherTimetableActivityTag[d][h]==-1){
+					if(cnt>=0)
+						cnt++;
+				}
+				else if(crtTeacherTimetableActivityTag[d][h]==_secondActivityTagIndex){
+					if(cnt>=0 && cnt<minGaps){
+						nbroken++;
+
+						if(conflictsString!=NULL){
+							QString s=tr("Time constraint teacher min %1 gaps between ordered pair of activity tags broken for teacher: %2,"
+							 " day: %3, real gaps=%4, conflicts increase=%5")
+							 .arg(minGaps)
+							 .arg(tch->name)
+							 .arg(r.daysOfTheWeek[d])
+							 .arg(CustomFETString::number(cnt))
+							 .arg(CustomFETString::number(1*weightPercentage/100));
+								
+							dl.append(s);
+							cl.append(1*weightPercentage/100);
+							
+							*conflictsString+= s+"\n";
+						}
+					}
+					
+					cnt=-1;
+				}
+				else{
+					assert(0);
+				}
+			}
+		}
+	}
+	
+	if(weightPercentage==100)
+		assert(nbroken==0);
+
+	return nbroken * weightPercentage / 100.0;
+}
+
+bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::isRelatedToTeacher(Teacher* t)
+{
+	if(t->name==this->teacher)
+		return true;
+
+	return false;
+}
+
+bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::isRelatedToActivityTag(ActivityTag* s)
+{
+	if(s->name==this->firstActivityTag || s->name==this->secondActivityTag)
+		return true;
+
+	return false;
+}
+
+bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	
+	return false;
+}
+
+bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::hasWrongDayOrHour(Rules& r)
+{
+	if(minGaps>r.nHoursPerDay)
+		return true;
+		
+	return false;
+}
+
+bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(minGaps>r.nHoursPerDay)
+		minGaps=r.nHoursPerDay;
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS;
+
+	this->minGaps = 0;
+	this->firstActivityTag=QString("");
+	this->secondActivityTag=QString("");
+}
+
+ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags(double wp, int _minGaps, const QString& _firstActivityTag, const QString& _secondActivityTag)
+	: TimeConstraint(wp)
+{
+	this->type = CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS;
+
+	this->minGaps = _minGaps;
+	this->firstActivityTag=_firstActivityTag;
+	this->secondActivityTag=_secondActivityTag;
+}
+
+bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<First_Activity_Tag>"+protect(this->firstActivityTag)+"</First_Activity_Tag>\n";
+	s+="	<Second_Activity_Tag>"+protect(this->secondActivityTag)+"</Second_Activity_Tag>\n";
+	s+="	<MinGaps>"+CustomFETString::number(this->minGaps)+"</MinGaps>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags>\n";
+	return s;
+}
+
+QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	
+	s+=tr("Teachers min gaps between ordered pair of activity tags");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=", ";
+	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=", ";
+	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
+
+	return begin+s+end;
+}
+
+QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("All teachers must respect the minimum gaps between an ordered pair of activity tags");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("First activity tag=%1").arg(this->firstActivityTag);s+="\n";
+	s+=tr("Second activity tag=%1").arg(this->secondActivityTag);s+="\n";
+	s+=tr("Minimum gaps=%1").arg(this->minGaps);s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+
+	_firstActivityTagIndex=r.activityTagsHash.value(firstActivityTag, -1);
+	assert(this->_firstActivityTagIndex>=0);
+		
+	_secondActivityTagIndex=r.activityTagsHash.value(secondActivityTag, -1);
+	assert(this->_secondActivityTagIndex>=0);
+
+	/////////////
+	this->canonicalTeachersList.clear();
+
+	for(int teacherIndex=0; teacherIndex<r.nInternalTeachers; teacherIndex++){
+		bool foundF=false; //found first
+		bool foundS=false; //found second
+	
+		Teacher* tch=r.internalTeachersList[teacherIndex];
+	
+		for(int actIndex : qAsConst(tch->activitiesForTeacher)){
+			if(!foundF)
+				if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->_firstActivityTagIndex))
+					foundF=true;
+			if(!foundS)
+				if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->_secondActivityTagIndex))
+					foundS=true;
+					
+			if(foundF && foundS)
+				break;
+		}
+		if(foundF && foundS)
+			this->canonicalTeachersList.append(teacherIndex);
+	}
+	
+	return true;
+}
+
+double ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+	
+	int nbroken=0;
+
+	for(int i : qAsConst(this->canonicalTeachersList)){
+		Teacher* tch=r.internalTeachersList[i];
+
+		int crtTeacherTimetableActivityTag[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+
+		for(int d=0; d<r.nDaysPerWeek; d++)
+			for(int h=0; h<r.nHoursPerDay; h++)
+				crtTeacherTimetableActivityTag[d][h]=-1;
+
+		for(int ai : qAsConst(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
+			int d=c.times[ai]%r.nDaysPerWeek;
+			int h=c.times[ai]/r.nDaysPerWeek;
+			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+				assert(h+dur<r.nHoursPerDay);
+				assert(crtTeacherTimetableActivityTag[d][h+dur]==-1);
+				
+				if(r.internalActivitiesList[ai].iActivityTagsSet.contains(this->_firstActivityTagIndex)){
+					assert(crtTeacherTimetableActivityTag[d][h+dur]==-1);
+					crtTeacherTimetableActivityTag[d][h+dur]=this->_firstActivityTagIndex;
+				}
+				else if(r.internalActivitiesList[ai].iActivityTagsSet.contains(this->_secondActivityTagIndex)){
+					assert(crtTeacherTimetableActivityTag[d][h+dur]==-1);
+					crtTeacherTimetableActivityTag[d][h+dur]=this->_secondActivityTagIndex;
+				}
+			}
+		}
+		
+		for(int d=0; d<r.nDaysPerWeek; d++){
+			int cnt=-1;
+			for(int h=0; h<r.nHoursPerDay; h++){
+				if(crtTeacherTimetableActivityTag[d][h]==_firstActivityTagIndex){
+					cnt=0;
+				}
+				else if(crtTeacherTimetableActivityTag[d][h]==-1){
+					if(cnt>=0)
+						cnt++;
+				}
+				else if(crtTeacherTimetableActivityTag[d][h]==_secondActivityTagIndex){
+					if(cnt>=0 && cnt<minGaps){
+						nbroken++;
+
+						if(conflictsString!=NULL){
+							QString s=tr("Time constraint teachers min %1 gaps between ordered pair of activity tags broken for teacher: %2,"
+							 " day: %3, real gaps=%4, conflicts increase=%5")
+							 .arg(minGaps)
+							 .arg(tch->name)
+							 .arg(r.daysOfTheWeek[d])
+							 .arg(CustomFETString::number(cnt))
+							 .arg(CustomFETString::number(1*weightPercentage/100));
+								
+							dl.append(s);
+							cl.append(1*weightPercentage/100);
+							
+							*conflictsString+= s+"\n";
+						}
+					}
+					
+					cnt=-1;
+				}
+				else{
+					assert(0);
+				}
+			}
+		}
+	}
+	
+	if(weightPercentage==100)
+		assert(nbroken==0);
+
+	return nbroken * weightPercentage / 100.0;
+}
+
+bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return true;
+}
+
+bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::isRelatedToActivityTag(ActivityTag* s)
+{
+	if(s->name==this->firstActivityTag || s->name==this->secondActivityTag)
+		return true;
+
+	return false;
+}
+
+bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	
+	return false;
+}
+
+bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::hasWrongDayOrHour(Rules& r)
+{
+	if(minGaps>r.nHoursPerDay)
+		return true;
+		
+	return false;
+}
+
+bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(minGaps>r.nHoursPerDay)
+		minGaps=r.nHoursPerDay;
 
 	return true;
 }

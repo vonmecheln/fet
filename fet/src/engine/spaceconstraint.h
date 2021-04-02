@@ -415,7 +415,7 @@ public:
 
 	ConstraintStudentsSetHomeRoom();
 
-	ConstraintStudentsSetHomeRoom(double wp, QString st, QString rm);
+	ConstraintStudentsSetHomeRoom(double wp, const QString& st, const QString& rm);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -466,7 +466,7 @@ public:
 
 	ConstraintStudentsSetHomeRooms();
 
-	ConstraintStudentsSetHomeRooms(double wp, QString st, const QStringList& rms);
+	ConstraintStudentsSetHomeRooms(double wp, const QString& st, const QStringList& rms);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -515,7 +515,7 @@ public:
 
 	ConstraintTeacherHomeRoom();
 
-	ConstraintTeacherHomeRoom(double wp, QString tc, QString rm);
+	ConstraintTeacherHomeRoom(double wp, const QString& tc, const QString& rm);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -566,7 +566,7 @@ public:
 
 	ConstraintTeacherHomeRooms();
 
-	ConstraintTeacherHomeRooms(double wp, QString st, const QStringList& rms);
+	ConstraintTeacherHomeRooms(double wp, const QString& st, const QStringList& rms);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -928,7 +928,7 @@ public:
 
 	ConstraintStudentsSetMaxBuildingChangesPerDay();
 
-	ConstraintStudentsSetMaxBuildingChangesPerDay(double wp, QString st, int mc);
+	ConstraintStudentsSetMaxBuildingChangesPerDay(double wp, const QString& st, int mc);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -1014,7 +1014,7 @@ public:
 
 	ConstraintStudentsSetMaxBuildingChangesPerWeek();
 
-	ConstraintStudentsSetMaxBuildingChangesPerWeek(double wp, QString st, int mc);
+	ConstraintStudentsSetMaxBuildingChangesPerWeek(double wp, const QString& st, int mc);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -1100,7 +1100,7 @@ public:
 
 	ConstraintStudentsSetMinGapsBetweenBuildingChanges();
 
-	ConstraintStudentsSetMinGapsBetweenBuildingChanges(double wp, QString st, int mg);
+	ConstraintStudentsSetMinGapsBetweenBuildingChanges(double wp, const QString& st, int mg);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -1186,7 +1186,7 @@ public:
 
 	ConstraintTeacherMaxBuildingChangesPerDay();
 
-	ConstraintTeacherMaxBuildingChangesPerDay(double wp, QString tc, int mc);
+	ConstraintTeacherMaxBuildingChangesPerDay(double wp, const QString& tc, int mc);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -1272,7 +1272,7 @@ public:
 
 	ConstraintTeacherMaxBuildingChangesPerWeek();
 
-	ConstraintTeacherMaxBuildingChangesPerWeek(double wp, QString tc, int mc);
+	ConstraintTeacherMaxBuildingChangesPerWeek(double wp, const QString& tc, int mc);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -1358,7 +1358,7 @@ public:
 
 	ConstraintTeacherMinGapsBetweenBuildingChanges();
 
-	ConstraintTeacherMinGapsBetweenBuildingChanges(double wp, QString tc, int mg);
+	ConstraintTeacherMinGapsBetweenBuildingChanges(double wp, const QString& tc, int mg);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 

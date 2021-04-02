@@ -87,6 +87,11 @@
 #include "modifyconstraintstudentssetminhoursdailyform.h"
 #include "modifyconstraintstudentsminhoursdailyform.h"
 
+#include "modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform.h"
+#include "modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsform.h"
+#include "modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform.h"
+#include "modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform.h"
+
 #include "modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform.h"
 #include "modifyconstraintstudentsactivitytagmaxhourscontinuouslyform.h"
 
@@ -965,6 +970,31 @@ void AllTimeConstraintsForm::modifyConstraint()
 	//75
 	else if(ctr->type==CONSTRAINT_TWO_ACTIVITIES_ORDERED_IF_SAME_DAY){
 		ModifyConstraintTwoActivitiesOrderedIfSameDayForm form(this, (ConstraintTwoActivitiesOrderedIfSameDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//2019-06-09
+	//76
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS){
+		ModifyConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm form(this, (ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//77
+	else if(ctr->type==CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS){
+		ModifyConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm form(this, (ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//78
+	else if(ctr->type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS){
+		ModifyConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm form(this, (ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//79
+	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS){
+		ModifyConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm form(this, (ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags*)ctr);
 		setParentAndOtherThings(&form, this);
 		form.exec();
 	}

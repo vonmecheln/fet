@@ -64,7 +64,9 @@ static int rooms_conflicts=-1;
 //static qint8 subgroupsBuildingsTimetable[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 //static qint8 teachersBuildingsTimetable[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
-QString getActivityDetailedDescription(Rules& r, int id);
+QString getActivityDetailedDescription(Rules& r, int id); //implemented in timeconstraint.cpp
+
+void populateInternalSubgroupsList(const Rules& r, const StudentsSet* ss, QList<int>& iSubgroupsList); //implemented in timeconstraint.cpp
 
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
@@ -1250,7 +1252,7 @@ ConstraintStudentsSetHomeRoom::ConstraintStudentsSetHomeRoom()
 	this->type=CONSTRAINT_STUDENTS_SET_HOME_ROOM;
 }
 
-ConstraintStudentsSetHomeRoom::ConstraintStudentsSetHomeRoom(double wp, QString st, QString rm)
+ConstraintStudentsSetHomeRoom::ConstraintStudentsSetHomeRoom(double wp, const QString& st, const QString& rm)
 	: SpaceConstraint(wp)
 {
 	this->type=CONSTRAINT_STUDENTS_SET_HOME_ROOM;
@@ -1511,7 +1513,7 @@ ConstraintStudentsSetHomeRooms::ConstraintStudentsSetHomeRooms()
 	this->type=CONSTRAINT_STUDENTS_SET_HOME_ROOMS;
 }
 
-ConstraintStudentsSetHomeRooms::ConstraintStudentsSetHomeRooms(double wp, QString st, const QStringList& rms)
+ConstraintStudentsSetHomeRooms::ConstraintStudentsSetHomeRooms(double wp, const QString& st, const QStringList& rms)
 	: SpaceConstraint(wp)
 {
 	this->type=CONSTRAINT_STUDENTS_SET_HOME_ROOMS;
@@ -1787,7 +1789,7 @@ ConstraintTeacherHomeRoom::ConstraintTeacherHomeRoom()
 	this->type=CONSTRAINT_TEACHER_HOME_ROOM;
 }
 
-ConstraintTeacherHomeRoom::ConstraintTeacherHomeRoom(double wp, QString tc, QString rm)
+ConstraintTeacherHomeRoom::ConstraintTeacherHomeRoom(double wp, const QString& tc, const QString& rm)
 	: SpaceConstraint(wp)
 {
 	this->type=CONSTRAINT_TEACHER_HOME_ROOM;
@@ -2046,7 +2048,7 @@ ConstraintTeacherHomeRooms::ConstraintTeacherHomeRooms()
 	this->type=CONSTRAINT_TEACHER_HOME_ROOMS;
 }
 
-ConstraintTeacherHomeRooms::ConstraintTeacherHomeRooms(double wp, QString tc, const QStringList& rms)
+ConstraintTeacherHomeRooms::ConstraintTeacherHomeRooms(double wp, const QString& tc, const QStringList& rms)
 	: SpaceConstraint(wp)
 {
 	this->type=CONSTRAINT_TEACHER_HOME_ROOMS;
@@ -3747,7 +3749,7 @@ ConstraintStudentsSetMaxBuildingChangesPerDay::ConstraintStudentsSetMaxBuildingC
 	this->type=CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_DAY;
 }
 
-ConstraintStudentsSetMaxBuildingChangesPerDay::ConstraintStudentsSetMaxBuildingChangesPerDay(double wp, QString st, int mc)
+ConstraintStudentsSetMaxBuildingChangesPerDay::ConstraintStudentsSetMaxBuildingChangesPerDay(double wp, const QString& st, int mc)
 	: SpaceConstraint(wp)
 {
 	this->type=CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_DAY;
@@ -3757,8 +3759,6 @@ ConstraintStudentsSetMaxBuildingChangesPerDay::ConstraintStudentsSetMaxBuildingC
 
 bool ConstraintStudentsSetMaxBuildingChangesPerDay::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	this->iSubgroupsList.clear();
-	
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
 	StudentsSet* ss=r.studentsHash.value(studentsName, NULL);
 			
@@ -3770,6 +3770,8 @@ bool ConstraintStudentsSetMaxBuildingChangesPerDay::computeInternalStructure(QWi
 		return false;
 	}												
 	
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+	/*this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
 		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
@@ -3803,7 +3805,7 @@ bool ConstraintStudentsSetMaxBuildingChangesPerDay::computeInternalStructure(QWi
 		}
 	}
 	else
-		assert(0);
+		assert(0);*/
 
 	return true;
 }
@@ -4271,7 +4273,7 @@ ConstraintStudentsSetMaxBuildingChangesPerWeek::ConstraintStudentsSetMaxBuilding
 	this->type=CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_WEEK;
 }
 
-ConstraintStudentsSetMaxBuildingChangesPerWeek::ConstraintStudentsSetMaxBuildingChangesPerWeek(double wp, QString st, int mc)
+ConstraintStudentsSetMaxBuildingChangesPerWeek::ConstraintStudentsSetMaxBuildingChangesPerWeek(double wp, const QString& st, int mc)
 	: SpaceConstraint(wp)
 {
 	this->type=CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_WEEK;
@@ -4281,8 +4283,6 @@ ConstraintStudentsSetMaxBuildingChangesPerWeek::ConstraintStudentsSetMaxBuilding
 
 bool ConstraintStudentsSetMaxBuildingChangesPerWeek::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	this->iSubgroupsList.clear();
-	
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
 	StudentsSet* ss=r.studentsHash.value(studentsName, NULL);
 			
@@ -4294,6 +4294,8 @@ bool ConstraintStudentsSetMaxBuildingChangesPerWeek::computeInternalStructure(QW
 		return false;
 	}												
 	
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+	/*this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
 		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
@@ -4327,7 +4329,7 @@ bool ConstraintStudentsSetMaxBuildingChangesPerWeek::computeInternalStructure(QW
 		}
 	}
 	else
-		assert(0);
+		assert(0);*/
 
 	return true;
 }
@@ -4794,7 +4796,7 @@ ConstraintStudentsSetMinGapsBetweenBuildingChanges::ConstraintStudentsSetMinGaps
 	this->type=CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_BUILDING_CHANGES;
 }
 
-ConstraintStudentsSetMinGapsBetweenBuildingChanges::ConstraintStudentsSetMinGapsBetweenBuildingChanges(double wp, QString st, int mg)
+ConstraintStudentsSetMinGapsBetweenBuildingChanges::ConstraintStudentsSetMinGapsBetweenBuildingChanges(double wp, const QString& st, int mg)
 	: SpaceConstraint(wp)
 {
 	this->type=CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_BUILDING_CHANGES;
@@ -4804,8 +4806,6 @@ ConstraintStudentsSetMinGapsBetweenBuildingChanges::ConstraintStudentsSetMinGaps
 
 bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	this->iSubgroupsList.clear();
-	
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
 	StudentsSet* ss=r.studentsHash.value(studentsName, NULL);
 			
@@ -4817,6 +4817,8 @@ bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::computeInternalStructur
 		return false;
 	}												
 	
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+	/*this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
 		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
@@ -4850,7 +4852,7 @@ bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::computeInternalStructur
 		}
 	}
 	else
-		assert(0);
+		assert(0);*/
 
 	return true;
 }
@@ -5342,7 +5344,7 @@ ConstraintTeacherMaxBuildingChangesPerDay::ConstraintTeacherMaxBuildingChangesPe
 	this->type=CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_DAY;
 }
 
-ConstraintTeacherMaxBuildingChangesPerDay::ConstraintTeacherMaxBuildingChangesPerDay(double wp, QString tc, int mc)
+ConstraintTeacherMaxBuildingChangesPerDay::ConstraintTeacherMaxBuildingChangesPerDay(double wp, const QString& tc, int mc)
 	: SpaceConstraint(wp)
 {
 	this->type=CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_DAY;
@@ -5830,7 +5832,7 @@ ConstraintTeacherMaxBuildingChangesPerWeek::ConstraintTeacherMaxBuildingChangesP
 	this->type=CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_WEEK;
 }
 
-ConstraintTeacherMaxBuildingChangesPerWeek::ConstraintTeacherMaxBuildingChangesPerWeek(double wp, QString tc, int mc)
+ConstraintTeacherMaxBuildingChangesPerWeek::ConstraintTeacherMaxBuildingChangesPerWeek(double wp, const QString& tc, int mc)
 	: SpaceConstraint(wp)
 {
 	this->type=CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_WEEK;
@@ -6318,7 +6320,7 @@ ConstraintTeacherMinGapsBetweenBuildingChanges::ConstraintTeacherMinGapsBetweenB
 	this->type=CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_BUILDING_CHANGES;
 }
 
-ConstraintTeacherMinGapsBetweenBuildingChanges::ConstraintTeacherMinGapsBetweenBuildingChanges(double wp, QString tc, int mg)
+ConstraintTeacherMinGapsBetweenBuildingChanges::ConstraintTeacherMinGapsBetweenBuildingChanges(double wp, const QString& tc, int mg)
 	: SpaceConstraint(wp)
 {
 	this->type=CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_BUILDING_CHANGES;
