@@ -82,6 +82,10 @@ QList<int> activitiesForTeacher[MAX_TEACHERS][MAX_HOURS_PER_WEEK];
 QList<int> studentsActivitiesForDay[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK];
 
 
+//QList<qint16> impossibleTimes[MAX_ACTIVITIES];
+QSet<int> impossibleTimes[MAX_ACTIVITIES];
+
+
 bool skipRandom(int weightPercentage)
 {
 	if(weightPercentage==-1)
@@ -382,9 +386,13 @@ void OptimizeTime::optimize()
 			}
 				
 			if(pred_pos==-1){
+				//cout<<"here here here here here here here here here here here here here here here here "<<endl;
+			
 				//////////added in version 5.0.0-preview5
-				for(int k=0; k<gt.rules.nInternalActivities; k++)
+				for(int k=0; k<gt.rules.nInternalActivities; k++){
 					pred[permutation[k]]=-1;
+					impossibleTimes[permutation[k]].clear();
+				}
 				/////////////////////////////////////////
 			
 				//compute pred
@@ -403,7 +411,6 @@ void OptimizeTime::optimize()
 									conflmind=true;
 
 						if(activitiesConflictingPercentage[permutation[added_act]][permutation[k]]<PERCENTAGE_THRESHOLD
-						// && minNDays[permutation[added_act]][permutation[k]]==0)
 						 && !conflmind)
 							k--;
 						else
@@ -413,15 +420,45 @@ void OptimizeTime::optimize()
 					if(k<0)
 						break;
 					pred[permutation[j]]=permutation[k];
+
+					//////////////////
+					if(j==added_act){
+						//assert(impossibleTimes[permutation[k]].indexOf(c.times[permutation[k]])==-1);
+						//impossibleTimes[permutation[k]].append(c.times[permutation[k]]);
+						assert(!impossibleTimes[permutation[k]].contains(c.times[permutation[k]]));
+						impossibleTimes[permutation[k]].insert(c.times[permutation[k]]);
+					}
+					//////////////////
+
 					j=k;
 				}
 			}
+			else{
+				for(int k=pred_pos; k<added_act; k++){
+					assert(c.times[permutation[k]]!=UNALLOCATED_TIME);
+					if(pred[permutation[k]]>=0){
+						//assert(impossibleTimes[permutation[k]].indexOf(c.times[permutation[k]])==-1);
+						//impossibleTimes[permutation[k]].append(c.times[permutation[k]]);
+						assert(!impossibleTimes[permutation[k]].contains(c.times[permutation[k]]));
+						impossibleTimes[permutation[k]].insert(c.times[permutation[k]]);
+					}
+				}
+			}
 
-			//backtrack				
+			//backtrack
 			int j;
 			for(j=added_act-1; j>=0; j--)
 				if(pred[permutation[added_act]]==permutation[j])
 					break;
+					
+			/*for(int k=j; k<=added_act; k++){
+				cout<<"Act id=="<<gt.rules.internalActivitiesList[permutation[k]].id<<" ";
+				cout<<"predId="<<gt.rules.internalActivitiesList[pred[permutation[k]]].id<<" ";
+				cout<<"impossible times: ";
+				foreach(qint16 it, impossibleTimes[permutation[k]])
+					cout<<it<<" ";
+				cout<<endl;
+			}*/
 					
 			if(j<0){
 				//????? invalid timetable data?
@@ -918,6 +955,14 @@ void OptimizeTime::randomswap(int ai, int level){
 	
 	for(int n=0; n<gt.rules.nHoursPerWeek; n++){
 		int newtime=perm[n];
+
+		///////////////////
+		if(impossibleTimes[ai].contains(newtime)){
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		///////////////////
+
 		//not too late
 		int d=newtime%gt.rules.nDaysPerWeek;
 		int h=newtime/gt.rules.nDaysPerWeek;
