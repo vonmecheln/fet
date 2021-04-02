@@ -109,16 +109,16 @@ static int tabu_size;
 static int crt_tabu_index;
 /*qint16 tabu_activities[MAX_TABU];
 qint16 tabu_times[MAX_TABU];*/
-static Matrix1D<qint16> tabu_activities;
-static Matrix1D<qint16> tabu_times;
+static Matrix1D<int> tabu_activities;
+static Matrix1D<int> tabu_times;
 ////////////
 
 /*static qint16 teachersTimetable[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 static qint16 subgroupsTimetable[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 static qint16 roomsTimetable[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];*/
-static Matrix3D<qint16> teachersTimetable;
-static Matrix3D<qint16> subgroupsTimetable;
-static Matrix3D<qint16> roomsTimetable;
+static Matrix3D<int> teachersTimetable;
+static Matrix3D<int> subgroupsTimetable;
+static Matrix3D<int> roomsTimetable;
 
 
 /*static qint16 newTeachersTimetable[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
@@ -128,13 +128,13 @@ static qint16 newTeachersDayNGaps[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
 static qint16 newSubgroupsDayNHours[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK];
 static qint16 newSubgroupsDayNGaps[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK];
 static qint16 newSubgroupsDayNFirstGaps[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK];*/
-static Matrix3D<qint16> newTeachersTimetable;
-static Matrix3D<qint16> newSubgroupsTimetable;
-static Matrix2D<qint16> newTeachersDayNHours;
-static Matrix2D<qint16> newTeachersDayNGaps;
-static Matrix2D<qint16> newSubgroupsDayNHours;
-static Matrix2D<qint16> newSubgroupsDayNGaps;
-static Matrix2D<qint16> newSubgroupsDayNFirstGaps;
+static Matrix3D<int> newTeachersTimetable;
+static Matrix3D<int> newSubgroupsTimetable;
+static Matrix2D<int> newTeachersDayNHours;
+static Matrix2D<int> newTeachersDayNGaps;
+static Matrix2D<int> newSubgroupsDayNHours;
+static Matrix2D<int> newSubgroupsDayNGaps;
+static Matrix2D<int> newSubgroupsDayNFirstGaps;
 
 
 /*static qint16 oldTeachersTimetable[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
@@ -144,13 +144,13 @@ static qint16 oldTeachersDayNGaps[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
 static qint16 oldSubgroupsDayNHours[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK];
 static qint16 oldSubgroupsDayNGaps[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK];
 static qint16 oldSubgroupsDayNFirstGaps[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK];*/
-static Matrix3D<qint16> oldTeachersTimetable;
-static Matrix3D<qint16> oldSubgroupsTimetable;
-static Matrix2D<qint16> oldTeachersDayNHours;
-static Matrix2D<qint16> oldTeachersDayNGaps;
-static Matrix2D<qint16> oldSubgroupsDayNHours;
-static Matrix2D<qint16> oldSubgroupsDayNGaps;
-static Matrix2D<qint16> oldSubgroupsDayNFirstGaps;
+static Matrix3D<int> oldTeachersTimetable;
+static Matrix3D<int> oldSubgroupsTimetable;
+static Matrix2D<int> oldTeachersDayNHours;
+static Matrix2D<int> oldTeachersDayNGaps;
+static Matrix2D<int> oldSubgroupsDayNHours;
+static Matrix2D<int> oldSubgroupsDayNGaps;
+static Matrix2D<int> oldSubgroupsDayNFirstGaps;
 
 
 /*static qint16 tchTimetable[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
@@ -161,14 +161,14 @@ static qint16 sbgTimetable[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 static qint16 sbgDayNHours[MAX_DAYS_PER_WEEK];
 static qint16 sbgDayNGaps[MAX_DAYS_PER_WEEK];
 static qint16 sbgDayNFirstGaps[MAX_DAYS_PER_WEEK];*/
-static Matrix2D<qint16> tchTimetable;
-static Matrix1D<qint16> tchDayNHours;
-static Matrix1D<qint16> tchDayNGaps;
+static Matrix2D<int> tchTimetable;
+static Matrix1D<int> tchDayNHours;
+static Matrix1D<int> tchDayNGaps;
 
-static Matrix2D<qint16> sbgTimetable;
-static Matrix1D<qint16> sbgDayNHours;
-static Matrix1D<qint16> sbgDayNGaps;
-static Matrix1D<qint16> sbgDayNFirstGaps;
+static Matrix2D<int> sbgTimetable;
+static Matrix1D<int> sbgDayNHours;
+static Matrix1D<int> sbgDayNGaps;
+static Matrix1D<int> sbgDayNFirstGaps;
 
 //static QList<int> teacherActivitiesOfTheDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
 static Matrix2D<QList<int> > teacherActivitiesOfTheDay;
@@ -193,13 +193,12 @@ static Matrix1D<bool> slotCanEmpty;
 static Matrix1D<QSet<int> > activitiesAtTime;
 ////////////
 
-
-inline int max(qint16 a, int b){
+/*inline int max(qint16 a, int b){
 	if(int(a)>=b)
 		return int(a);
 	else
 		return b;
-}
+}*/
 
 inline void Generate::addAiToNewTimetable(int ai, const Activity* act, int d, int h)
 {
@@ -2353,6 +2352,9 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 				
 	if(level>0){
 		for(int q=0; q<listedRooms.count(); q++){
+			//The 'mapr' custom version disables the test below and always does an .append(q). But this
+			//gives a very bad behavior for the file examples/Egypt/Dakahlia/institution-2012-2013.fet
+			//(usually, the file seems not to solve anymore, and one time it solved very slowly).
 			if(nConflActivitiesRooms.at(q)==optConflActivities){
 				allowedRoomsIndex.append(q);
 			}
@@ -2957,7 +2959,7 @@ if(threaded){
 				return;
 			}
 		
-			//update difficult activities (activities which are placed correctly so far, together with added_act
+			//update difficult activities (activities which are placed correctly so far, together with added_act)
 			nDifficultActivities=added_act+1;
 			if(VERBOSE){
 				cout<<"nDifficultActivities=="<<nDifficultActivities<<endl;
@@ -3616,8 +3618,10 @@ again_if_impossible_activity:
 					int ai2=teachersTimetable(tch,d,h+dur);
 					assert(ai2!=ai);
 				
-					assert(activitiesConflictingPercentage(ai,ai2)==100);
-					if(!skipRandom(activitiesConflictingPercentage(ai,ai2))){
+					//assert(activitiesConflictingPercentage(ai,ai2)==100);
+					assert(activitiesConflictingPercentage[ai].value(ai2, -1)==100);
+					//if(!skipRandom(activitiesConflictingPercentage(ai,ai2))){
+					if(true){
 						if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
 							okbasictime=false;
 							goto impossiblebasictime;
@@ -3646,8 +3650,10 @@ again_if_impossible_activity:
 					int ai2=subgroupsTimetable(sbg,d,h+dur);
 					assert(ai2!=ai);
 			
-					assert(activitiesConflictingPercentage(ai,ai2)==100);
-					if(!skipRandom(activitiesConflictingPercentage(ai,ai2))){
+					//assert(activitiesConflictingPercentage(ai,ai2)==100);
+					assert(activitiesConflictingPercentage[ai].value(ai2, -1)==100);
+					//if(!skipRandom(activitiesConflictingPercentage(ai,ai2))){
+					if(true){
 						if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
 							okbasictime=false;
 							goto impossiblebasictime;

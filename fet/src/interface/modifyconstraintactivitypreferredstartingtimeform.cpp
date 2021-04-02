@@ -239,7 +239,23 @@ void ModifyConstraintActivityPreferredStartingTimeForm::ok()
 	this->_ctr->weightPercentage=weight;
 	this->_ctr->day=day;
 	this->_ctr->hour=startHour;
-	this->_ctr->activityId=id;
+
+	if(_ctr->activityId!=id){
+		int oldId=_ctr->activityId;
+		int newId=id;
+
+		QSet<ConstraintActivityPreferredStartingTime*> cs=gt.rules.apstHash.value(oldId, QSet<ConstraintActivityPreferredStartingTime*>());
+		assert(cs.contains(_ctr));
+		cs.remove(_ctr);
+		gt.rules.apstHash.insert(oldId, cs);
+
+		cs=gt.rules.apstHash.value(newId, QSet<ConstraintActivityPreferredStartingTime*>());
+		assert(!cs.contains(_ctr));
+		cs.insert(_ctr);
+		gt.rules.apstHash.insert(newId, cs);
+
+		this->_ctr->activityId=id;
+	}
 	
 	this->_ctr->permanentlyLocked=permLockedCheckBox->isChecked();
 	

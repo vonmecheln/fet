@@ -256,10 +256,26 @@ void ModifyConstraintStudentsSetNotAvailableTimesForm::ok()
 				tr("A constraint of this type exists for the same students set - cannot proceed"));
 				return;
 			}
-		}																												
-																											
+		}
+		
 	this->_ctr->weightPercentage=weight;
-	this->_ctr->students=students_name;
+	
+	if(_ctr->students!=students_name){
+		QString oldName=_ctr->students;
+		QString newName=students_name;
+
+		QSet<ConstraintStudentsSetNotAvailableTimes*> cs=gt.rules.ssnatHash.value(oldName, QSet<ConstraintStudentsSetNotAvailableTimes*>());
+		assert(cs.contains(_ctr));
+		cs.remove(_ctr);
+		gt.rules.ssnatHash.insert(oldName, cs);
+
+		cs=gt.rules.ssnatHash.value(newName, QSet<ConstraintStudentsSetNotAvailableTimes*>());
+		assert(!cs.contains(_ctr));
+		cs.insert(_ctr);
+		gt.rules.ssnatHash.insert(newName, cs);
+
+		this->_ctr->students=students_name;
+	}
 
 	QList<int> days;
 	QList<int> hours;

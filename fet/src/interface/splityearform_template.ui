@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>829</width>
+    <width>837</width>
     <height>615</height>
    </rect>
   </property>
@@ -97,7 +97,7 @@
    <item row="4" column="0" colspan="4">
     <widget class="QGroupBox" name="category1GroupBox">
      <property name="title">
-      <string>Category 1 (you can select 2-12 divisions)</string>
+      <string>Category 1 (you can select 2-16 divisions)</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="0" column="0">
@@ -106,7 +106,7 @@
          <number>2</number>
         </property>
         <property name="maximum">
-         <number>12</number>
+         <number>16</number>
         </property>
        </widget>
       </item>
@@ -194,13 +194,41 @@
         </property>
        </widget>
       </item>
+      <item row="0" column="13">
+       <widget class="QLineEdit" name="category1Division13LineEdit">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="14">
+       <widget class="QLineEdit" name="category1Division14LineEdit">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="15">
+       <widget class="QLineEdit" name="category1Division15LineEdit">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="16">
+       <widget class="QLineEdit" name="category1Division16LineEdit">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </item>
    <item row="5" column="0" colspan="4">
     <widget class="QGroupBox" name="category2GroupBox">
      <property name="title">
-      <string>Category 2 (you can select 2-6 divisions)</string>
+      <string>Category 2 (you can select 2-12 divisions)</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_3">
       <item row="0" column="0">
@@ -209,7 +237,7 @@
          <number>2</number>
         </property>
         <property name="maximum">
-         <number>6</number>
+         <number>12</number>
         </property>
        </widget>
       </item>
@@ -250,6 +278,48 @@
       </item>
       <item row="0" column="6">
        <widget class="QLineEdit" name="category2Division6LineEdit">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="7">
+       <widget class="QLineEdit" name="category2Division7LineEdit">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="8">
+       <widget class="QLineEdit" name="category2Division8LineEdit">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="9">
+       <widget class="QLineEdit" name="category2Division9LineEdit">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="10">
+       <widget class="QLineEdit" name="category2Division10LineEdit">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="11">
+       <widget class="QLineEdit" name="category2Division11LineEdit">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="12">
+       <widget class="QLineEdit" name="category2Division12LineEdit">
         <property name="text">
          <string/>
         </property>

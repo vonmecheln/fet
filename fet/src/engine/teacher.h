@@ -40,7 +40,7 @@ class Teacher
 	Q_DECLARE_TR_FUNCTIONS(Teacher)
 	
 public:
-	QList<qint16> activitiesForTeacher;
+	QList<int> activitiesForTeacher;
 
 	QString name;
 

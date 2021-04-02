@@ -1675,7 +1675,7 @@ Versions 5.20.0 - 5.20.2
 	- The multiple generation outputs an overall report (suggested by MarioMic).
 	- Minor improvements and source cleanup.
 ---------------------------------------------------------------------------------
-Versions 5.21.0 - 5.21.x
+Versions 5.21.0 - 5.21.3
 - Version 5.21.0
 	- Updated the sources to Qt 5.2.0 (but the precompiled Windows version still uses Qt 4.8.5, because of various problems).
 	- Added print of advanced statistics directly from FET, suggested by Bobby Wise and implemented by Volker Dirr.
@@ -1691,4 +1691,12 @@ Versions 5.21.0 - 5.21.x
 	- Corrected a bug in two of the Brazil examples (the bug was introduced in the previous version).
 - Version 5.21.3
 	- Updated the Windows version to Qt 5.2.1.
-	
+---------------------------------------------------------------------------------
+Versions 5.22.0 - 5.22.v
+- Version 5.22.0
+	- Updated to Qt 5.3.0.
+	- Many improvements on memory and speed in pre-generating and after-generating.
+	- Corrected a crash bug under Windows (for extremely large files).
+	- Now you can unlock all activities or activities of a single day without generating the timetable (suggested by Volker Dirr).
+	- Increased the maximum number of divisions in the first and second categories when dividing a year (suggested by Bobby Wise).
+	- Added a new Morocco example file, by Mohamed Bahaj.

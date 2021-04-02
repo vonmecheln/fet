@@ -1725,7 +1725,7 @@ void ActivityPlanningForm::updateTables_Teachers(){	//similar to statisticsexpor
 			}
 			if(statisticValues.teachersTotalNumberOfHours2.value(statisticValues.allTeachersNames.at(teacher))>teachersTargetNumberOfHours.at(teacher)){
 				prefixString2="+";
-			}else if(statisticValues.teachersTotalNumberOfHours2.value(statisticValues.allTeachersNames.at(teacher))>teachersTargetNumberOfHours.at(teacher)){
+			}else if(statisticValues.teachersTotalNumberOfHours2.value(statisticValues.allTeachersNames.at(teacher))==teachersTargetNumberOfHours.at(teacher)){
 				prefixString2="=";
 			}
 		}

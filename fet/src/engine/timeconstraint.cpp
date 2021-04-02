@@ -63,8 +63,8 @@ static QString yesNoTranslated(bool x){
 //of the solution.
 /*static qint8 subgroupsMatrix[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 static qint8 teachersMatrix[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];*/
-static Matrix3D<qint8> subgroupsMatrix;
-static Matrix3D<qint8> teachersMatrix;
+static Matrix3D<int> subgroupsMatrix;
+static Matrix3D<int> teachersMatrix;
 
 static int teachers_conflicts=-1;
 static int subgroups_conflicts=-1;
@@ -82,10 +82,11 @@ extern Matrix3D<bool> subgroupNotAvailableDayHour;
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-QString getActivityDetailedDescription(Rules& r, int id){
+QString getActivityDetailedDescription(Rules& r, int id)
+{
 	QString s;
 
-	int ai;
+	/*int ai;
 	for(ai=0; ai<r.activitiesList.size(); ai++)
 		if(r.activitiesList[ai]->id==id)
 			break;
@@ -95,9 +96,15 @@ QString getActivityDetailedDescription(Rules& r, int id){
 		return s;
 	}
 	assert(ai<r.activitiesList.size());
-	
-	Activity* act=r.activitiesList.at(ai);
-	
+
+	Activity* act=r.activitiesList.at(ai);*/
+
+	Activity* act=r.activitiesPointerHash.value(id, NULL);
+	if(act==NULL){
+		s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+		return s;
+	}
+
 	if(act->activityTagsNames.count()>0){
 		s+=QCoreApplication::translate("Activity", "T:%1, S:%2, AT:%3, St:%4", "This is an important translation for an activity's detailed description, please take care (it appears in many places in constraints)."
 		 "The abbreviations are: Teachers, Subject, Activity tags, Students. This variant includes activity tags").arg(act->teachersNames.join(",")).arg(act->subjectName).arg(act->activityTagsNames.join(",")).arg(act->studentsNames.join(","));
@@ -239,7 +246,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 
 	int i,dd;
 
-	int unallocated; //unallocated activities
+	qint64 unallocated; //unallocated activities
 	int late; //late activities
 	int nte; //number of teacher exhaustions
 	int nse; //number of students exhaustions
@@ -253,6 +260,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 			if(c.times[i]==UNALLOCATED_TIME){
 				//Firstly, we consider a big clash each unallocated activity.
 				//Needs to be very a large constant, bigger than any other broken constraint.
+				//Take care: MAX_ACTIVITIES*this_constant <= INT_MAX
 				unallocated += /*r.internalActivitiesList[i].duration * r.internalActivitiesList[i].nSubgroups * */ 10000;
 				//(an unallocated activity for a year is more important than an unallocated activity for a subgroup)
 			}
@@ -314,6 +322,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 			if(c.times[i]==UNALLOCATED_TIME){
 				//Firstly, we consider a big clash each unallocated activity.
 				//Needs to be very a large constant, bigger than any other broken constraint.
+				//Take care: MAX_ACTIVITIES*this_constant <= INT_MAX
 				unallocated += /*r.internalActivitiesList[i].duration * r.internalActivitiesList[i].nSubgroups * */ 10000;
 				//(an unallocated activity for a year is more important than an unallocated activity for a subgroup)
 				if(conflictsString!=NULL){
@@ -443,7 +452,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 	assert(nse==subgroupsConflicts);*/
 
 	//return int (ceil ( weight * (unallocated + late + nte + nse) ) ); //conflicts factor
-	return weightPercentage/100 * (unallocated + late + nte + nse); //conflicts factor
+	return weightPercentage/100 * (unallocated + qint64(late) + qint64(nte) + qint64(nse)); //conflicts factor
 }
 
 bool ConstraintBasicCompulsoryTime::isRelatedToActivity(Rules& r, Activity* a)
@@ -612,7 +621,8 @@ QString ConstraintTeacherNotAvailableTimes::getDetailedDescription(Rules& r){
 }
 
 bool ConstraintTeacherNotAvailableTimes::computeInternalStructure(QWidget* parent, Rules& r){
-	this->teacher_ID=r.searchTeacher(this->teacher);
+	//this->teacher_ID=r.searchTeacher(this->teacher);
+	teacher_ID=r.teachersHash.value(teacher, -1);
 
 	if(this->teacher_ID<0){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
@@ -808,7 +818,8 @@ ConstraintStudentsSetNotAvailableTimes::ConstraintStudentsSetNotAvailableTimes(d
 }
 
 bool ConstraintStudentsSetNotAvailableTimes::computeInternalStructure(QWidget* parent, Rules& r){
-	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	StudentsSet* ss=r.studentsHash.value(students, NULL);
 	
 	if(ss==NULL){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
@@ -1134,7 +1145,11 @@ bool ConstraintActivitiesSameStartingTime::computeInternalStructure(QWidget* par
 
 	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
-		int j;
+		int j=r.activitiesHash.value(activitiesId.at(i), -1);
+		//assert(j>=0);
+		if(j>=0)
+			_activities.append(j);
+		/*int j;
 		Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
@@ -1142,7 +1157,7 @@ bool ConstraintActivitiesSameStartingTime::computeInternalStructure(QWidget* par
 				this->_activities.append(j);
 				break;
 			}
-		}
+		}*/
 	}
 	this->_n_activities=this->_activities.count();
 	
@@ -1165,13 +1180,16 @@ void ConstraintActivitiesSameStartingTime::removeUseless(Rules& r)
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		for(int k=0; k<r.activitiesList.size(); k++){
+		Activity* act=r.activitiesPointerHash.value(activitiesId[i], NULL);
+		if(act!=NULL)
+			tmpList.append(act->id);
+		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
 			if(act->id==this->activitiesId[i]){
 				tmpList.append(act->id);
 				break;
 			}
-		}
+		}*/
 	}
 	
 	this->activitiesId=tmpList;
@@ -1432,7 +1450,11 @@ bool ConstraintActivitiesNotOverlapping::computeInternalStructure(QWidget* paren
 
 	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
-		int j;
+		int j=r.activitiesHash.value(activitiesId.at(i), -1);
+		//assert(j>=0);
+		if(j>=0)
+			_activities.append(j);
+		/*int j;
 		Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
@@ -1440,7 +1462,7 @@ bool ConstraintActivitiesNotOverlapping::computeInternalStructure(QWidget* paren
 				this->_activities.append(j);
 				break;
 			}
-		}
+		}*/
 	}
 	this->_n_activities=this->_activities.count();
 	
@@ -1463,13 +1485,16 @@ void ConstraintActivitiesNotOverlapping::removeUseless(Rules& r)
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		for(int k=0; k<r.activitiesList.size(); k++){
+		Activity* act=r.activitiesPointerHash.value(activitiesId[i], NULL);
+		if(act!=NULL)
+			tmpList.append(act->id);
+		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
 			if(act->id==this->activitiesId[i]){
 				tmpList.append(act->id);
 				break;
 			}
-		}
+		}*/
 	}
 	
 	this->activitiesId=tmpList;
@@ -1768,15 +1793,18 @@ bool ConstraintMinDaysBetweenActivities::computeInternalStructure(QWidget* paren
 
 	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
-		int j;
-		Activity* act;
+		int j=r.activitiesHash.value(activitiesId.at(i), -1);
+		//assert(j>=0);
+		if(j>=0)
+			_activities.append(j);
+		/*Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
 			if(act->id==this->activitiesId[i]){
 				this->_activities.append(j);
 				break;
 			}
-		}
+		}*/
 	}
 	this->_n_activities=this->_activities.count();
 	
@@ -1799,13 +1827,16 @@ void ConstraintMinDaysBetweenActivities::removeUseless(Rules& r)
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		for(int k=0; k<r.activitiesList.size(); k++){
+		Activity* act=r.activitiesPointerHash.value(activitiesId[i], NULL);
+		if(act!=NULL)
+			tmpList.append(act->id);
+		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
 			if(act->id==this->activitiesId[i]){
 				tmpList.append(act->id);
 				break;
 			}
-		}
+		}*/
 	}
 	
 	this->activitiesId=tmpList;
@@ -2106,7 +2137,11 @@ bool ConstraintMaxDaysBetweenActivities::computeInternalStructure(QWidget* paren
 
 	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
-		int j;
+		int j=r.activitiesHash.value(activitiesId.at(i), -1);
+		//assert(j>=0);
+		if(j>=0)
+			_activities.append(j);
+		/*int j;
 		Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
@@ -2114,7 +2149,7 @@ bool ConstraintMaxDaysBetweenActivities::computeInternalStructure(QWidget* paren
 				this->_activities.append(j);
 				break;
 			}
-		}
+		}*/
 	}
 	this->_n_activities=this->_activities.count();
 	
@@ -2137,13 +2172,16 @@ void ConstraintMaxDaysBetweenActivities::removeUseless(Rules& r)
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		for(int k=0; k<r.activitiesList.size(); k++){
+		Activity* act=r.activitiesPointerHash.value(activitiesId[i], NULL);
+		if(act!=NULL)
+			tmpList.append(act->id);
+		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
 			if(act->id==this->activitiesId[i]){
 				tmpList.append(act->id);
 				break;
 			}
-		}
+		}*/
 	}
 	
 	this->activitiesId=tmpList;
@@ -2433,7 +2471,11 @@ bool ConstraintMinGapsBetweenActivities::computeInternalStructure(QWidget* paren
 
 	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
-		int j;
+		int j=r.activitiesHash.value(activitiesId.at(i), -1);
+		//assert(j>=0);
+		if(j>=0)
+			_activities.append(j);
+		/*int j;
 		Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
@@ -2441,7 +2483,7 @@ bool ConstraintMinGapsBetweenActivities::computeInternalStructure(QWidget* paren
 				this->_activities.append(j);
 				break;
 			}
-		}
+		}*/
 	}
 	this->_n_activities=this->_activities.count();
 	
@@ -2464,13 +2506,16 @@ void ConstraintMinGapsBetweenActivities::removeUseless(Rules& r)
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		for(int k=0; k<r.activitiesList.size(); k++){
+		Activity* act=r.activitiesPointerHash.value(activitiesId[i], NULL);
+		if(act!=NULL)
+			tmpList.append(act->id);
+		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
 			if(act->id==this->activitiesId[i]){
 				tmpList.append(act->id);
 				break;
 			}
-		}
+		}*/
 	}
 	
 	this->activitiesId=tmpList;
@@ -2932,7 +2977,8 @@ bool ConstraintTeacherMaxHoursDaily::computeInternalStructure(QWidget* parent, R
 {
 	Q_UNUSED(parent);
 
-	this->teacher_ID=r.searchTeacher(this->teacherName);
+	//this->teacher_ID=r.searchTeacher(this->teacherName);
+	teacher_ID=r.teachersHash.value(teacherName, -1);
 	assert(this->teacher_ID>=0);
 	return true;
 }
@@ -3374,7 +3420,8 @@ bool ConstraintTeacherMaxHoursContinuously::computeInternalStructure(QWidget* pa
 {
 	Q_UNUSED(parent);
 
-	this->teacher_ID=r.searchTeacher(this->teacherName);
+	//this->teacher_ID=r.searchTeacher(this->teacherName);
+	teacher_ID=r.teachersHash.value(teacherName, -1);
 	assert(this->teacher_ID>=0);
 	return true;
 }
@@ -3602,7 +3649,8 @@ bool ConstraintTeachersActivityTagMaxHoursContinuously::computeInternalStructure
 {
 	Q_UNUSED(parent);
 
-	this->activityTagIndex=r.searchActivityTag(this->activityTagName);
+	//this->activityTagIndex=r.searchActivityTag(this->activityTagName);
+	activityTagIndex=r.activityTagsHash.value(activityTagName, -1);
 	assert(this->activityTagIndex>=0);
 	
 	this->canonicalTeachersList.clear();
@@ -3867,10 +3915,12 @@ bool ConstraintTeacherActivityTagMaxHoursContinuously::computeInternalStructure(
 {
 	Q_UNUSED(parent);
 
-	this->teacher_ID=r.searchTeacher(this->teacherName);
+	//this->teacher_ID=r.searchTeacher(this->teacherName);
+	teacher_ID=r.teachersHash.value(teacherName, -1);
 	assert(this->teacher_ID>=0);
 
-	this->activityTagIndex=r.searchActivityTag(this->activityTagName);
+	//this->activityTagIndex=r.searchActivityTag(this->activityTagName);
+	activityTagIndex=r.activityTagsHash.value(activityTagName, -1);
 	assert(this->activityTagIndex>=0);
 
 	this->canonicalTeachersList.clear();
@@ -4134,7 +4184,8 @@ bool ConstraintTeacherMaxDaysPerWeek::computeInternalStructure(QWidget* parent, 
 {
 	Q_UNUSED(parent);
 
-	this->teacher_ID=r.searchTeacher(this->teacherName);
+	//this->teacher_ID=r.searchTeacher(this->teacherName);
+	teacher_ID=r.teachersHash.value(teacherName, -1);
 	assert(this->teacher_ID>=0);
 	return true;
 }
@@ -4820,7 +4871,8 @@ bool ConstraintTeacherMaxGapsPerWeek::computeInternalStructure(QWidget* parent, 
 {
 	Q_UNUSED(parent);
 
-	this->teacherIndex=r.searchTeacher(this->teacherName);
+	//this->teacherIndex=r.searchTeacher(this->teacherName);
+	teacherIndex=r.teachersHash.value(teacherName, -1);
 	assert(this->teacherIndex>=0);
 	return true;
 }
@@ -5231,7 +5283,8 @@ bool ConstraintTeacherMaxGapsPerDay::computeInternalStructure(QWidget* parent, R
 {
 	Q_UNUSED(parent);
 
-	this->teacherIndex=r.searchTeacher(this->teacherName);
+	//this->teacherIndex=r.searchTeacher(this->teacherName);
+	teacherIndex=r.teachersHash.value(teacherName, -1);
 	assert(this->teacherIndex>=0);
 	return true;
 }
@@ -5924,7 +5977,8 @@ ConstraintStudentsSetMaxGapsPerWeek::ConstraintStudentsSetMaxGapsPerWeek(double 
 }
 
 bool ConstraintStudentsSetMaxGapsPerWeek::computeInternalStructure(QWidget* parent, Rules& r){
-	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	StudentsSet* ss=r.studentsHash.value(students, NULL);
 
 	if(ss==NULL){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
@@ -6425,8 +6479,9 @@ ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::ConstraintStudentsSetEarlyM
 
 bool ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
-	
+	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	StudentsSet* ss=r.studentsHash.value(students, NULL);
+
 	if(ss==NULL){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set early is wrong because it refers to inexistent students set."
@@ -6982,7 +7037,8 @@ QString ConstraintStudentsSetMaxHoursDaily::getDetailedDescription(Rules& r)
 
 bool ConstraintStudentsSetMaxHoursDaily::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	StudentsSet* ss=r.studentsHash.value(students, NULL);
 	
 	if(ss==NULL){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
@@ -7462,7 +7518,8 @@ QString ConstraintStudentsSetMaxHoursContinuously::getDetailedDescription(Rules&
 
 bool ConstraintStudentsSetMaxHoursContinuously::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	StudentsSet* ss=r.studentsHash.value(students, NULL);
 	
 	if(ss==NULL){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
@@ -7676,7 +7733,8 @@ bool ConstraintStudentsActivityTagMaxHoursContinuously::computeInternalStructure
 {
 	Q_UNUSED(parent);
 
-	this->activityTagIndex=r.searchActivityTag(this->activityTagName);
+	//this->activityTagIndex=r.searchActivityTag(this->activityTagName);
+	activityTagIndex=r.activityTagsHash.value(activityTagName, -1);
 	assert(this->activityTagIndex>=0);
 	
 	this->canonicalSubgroupsList.clear();
@@ -8013,10 +8071,12 @@ QString ConstraintStudentsSetActivityTagMaxHoursContinuously::getDetailedDescrip
 
 bool ConstraintStudentsSetActivityTagMaxHoursContinuously::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	this->activityTagIndex=r.searchActivityTag(this->activityTagName);
+	//this->activityTagIndex=r.searchActivityTag(this->activityTagName);
+	activityTagIndex=r.activityTagsHash.value(activityTagName, -1);
 	assert(this->activityTagIndex>=0);
 
-	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	StudentsSet* ss=r.studentsHash.value(students, NULL);
 	
 	if(ss==NULL){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
@@ -8576,7 +8636,8 @@ QString ConstraintStudentsSetMinHoursDaily::getDetailedDescription(Rules& r)
 
 bool ConstraintStudentsSetMinHoursDaily::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	StudentsSet* ss=r.studentsHash.value(students, NULL);
 	
 	if(ss==NULL){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
@@ -8786,13 +8847,15 @@ bool ConstraintActivityPreferredStartingTime::operator==(ConstraintActivityPrefe
 
 bool ConstraintActivityPreferredStartingTime::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	Activity* act;
+	/*Activity* act;
 	int i;
 	for(i=0; i<r.nInternalActivities; i++){
 		act=&r.internalActivitiesList[i];
 		if(act->id==this->activityId)
 			break;
-	}
+	}*/
+	
+	int i=r.activitiesHash.value(activityId, r.nInternalActivities);
 	
 	if(i==r.nInternalActivities){
 		//assert(0);
@@ -8823,7 +8886,7 @@ bool ConstraintActivityPreferredStartingTime::computeInternalStructure(QWidget* 
 		return false;
 	}
 
-	this->activityIndex=i;	
+	this->activityIndex=i;
 	return true;
 }
 
@@ -9046,13 +9109,15 @@ ConstraintActivityPreferredTimeSlots::ConstraintActivityPreferredTimeSlots(doubl
 
 bool ConstraintActivityPreferredTimeSlots::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	Activity* act;
+	/*Activity* act;
 	int i;
 	for(i=0; i<r.nInternalActivities; i++){
 		act=&r.internalActivitiesList[i];
 		if(act->id==this->p_activityId)
 			break;
-	}
+	}*/
+	
+	int i=r.activitiesHash.value(p_activityId, r.nInternalActivities);
 
 	if(i==r.nInternalActivities){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
@@ -9388,7 +9453,7 @@ bool ConstraintActivitiesPreferredTimeSlots::computeInternalStructure(QWidget* p
 		if(this->p_studentsName!=""){
 			bool commonStudents=false;
 			foreach(QString st, act->studentsNames)
-				if(r.setsShareStudents(st, p_studentsName)){
+				if(r.augmentedSetsShareStudentsFaster(st, p_studentsName)){
 					commonStudents=true;
 					break;
 				}
@@ -9867,7 +9932,7 @@ bool ConstraintSubactivitiesPreferredTimeSlots::computeInternalStructure(QWidget
 		if(this->p_studentsName!=""){
 			bool commonStudents=false;
 			foreach(QString st, act->studentsNames)
-				if(r.setsShareStudents(st, p_studentsName)){
+				if(r.augmentedSetsShareStudentsFaster(st, p_studentsName)){
 					commonStudents=true;
 					break;
 				}
@@ -10334,13 +10399,15 @@ ConstraintActivityPreferredStartingTimes::ConstraintActivityPreferredStartingTim
 
 bool ConstraintActivityPreferredStartingTimes::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	Activity* act;
+	/*Activity* act;
 	int i;
 	for(i=0; i<r.nInternalActivities; i++){
 		act=&r.internalActivitiesList[i];
 		if(act->id==this->activityId)
 			break;
-	}
+	}*/
+	
+	int i=r.activitiesHash.value(activityId, r.nInternalActivities);
 
 	if(i==r.nInternalActivities){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
@@ -10661,7 +10728,7 @@ bool ConstraintActivitiesPreferredStartingTimes::computeInternalStructure(QWidge
 		if(this->studentsName!=""){
 			bool commonStudents=false;
 			foreach(QString st, act->studentsNames)
-				if(r.setsShareStudents(st, studentsName)){
+				if(r.augmentedSetsShareStudentsFaster(st, studentsName)){
 					commonStudents=true;
 					break;
 				}
@@ -11127,7 +11194,7 @@ bool ConstraintSubactivitiesPreferredStartingTimes::computeInternalStructure(QWi
 		if(this->studentsName!=""){
 			bool commonStudents=false;
 			foreach(QString st, act->studentsNames)
-				if(r.setsShareStudents(st, studentsName)){
+				if(r.augmentedSetsShareStudentsFaster(st, studentsName)){
 					commonStudents=true;
 					break;
 				}
@@ -11584,15 +11651,18 @@ bool ConstraintActivitiesSameStartingHour::computeInternalStructure(QWidget* par
 
 	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
-		int j;
-		Activity* act;
+		int j=r.activitiesHash.value(activitiesId.at(i), -1);
+		//assert(j>=0);
+		if(j>=0)
+			_activities.append(j);
+		/*Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
 			if(act->id==this->activitiesId[i]){
 				this->_activities.append(j);
 				break;
 			}
-		}
+		}*/
 	}
 	this->_n_activities=this->_activities.count();
 	
@@ -11615,13 +11685,16 @@ void ConstraintActivitiesSameStartingHour::removeUseless(Rules& r)
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		for(int k=0; k<r.activitiesList.size(); k++){
+		Activity* act=r.activitiesPointerHash.value(activitiesId[i], NULL);
+		if(act!=NULL)
+			tmpList.append(act->id);
+		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
 			if(act->id==this->activitiesId[i]){
 				tmpList.append(act->id);
 				break;
 			}
-		}
+		}*/
 	}
 	
 	this->activitiesId=tmpList;
@@ -11882,7 +11955,11 @@ bool ConstraintActivitiesSameStartingDay::computeInternalStructure(QWidget* pare
 
 	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
-		int j;
+		int j=r.activitiesHash.value(activitiesId.at(i), -1);
+		//assert(j>=0);
+		if(j>=0)
+			_activities.append(j);
+		/*int j;
 		Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
@@ -11890,7 +11967,7 @@ bool ConstraintActivitiesSameStartingDay::computeInternalStructure(QWidget* pare
 				this->_activities.append(j);
 				break;
 			}
-		}
+		}*/
 	}
 	this->_n_activities=this->_activities.count();
 	
@@ -11913,13 +11990,16 @@ void ConstraintActivitiesSameStartingDay::removeUseless(Rules& r)
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		for(int k=0; k<r.activitiesList.size(); k++){
+		Activity* act=r.activitiesPointerHash.value(activitiesId[i], NULL);
+		if(act!=NULL)
+			tmpList.append(act->id);
+		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
 			if(act->id==this->activitiesId[i]){
 				tmpList.append(act->id);
 				break;
 			}
-		}
+		}*/
 	}
 	
 	this->activitiesId=tmpList;
@@ -12166,32 +12246,36 @@ ConstraintTwoActivitiesConsecutive::ConstraintTwoActivitiesConsecutive(double wp
 
 bool ConstraintTwoActivitiesConsecutive::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	Activity* act;
+	/*Activity* act;
 	int i;
 	for(i=0; i<r.nInternalActivities; i++){
 		act=&r.internalActivitiesList[i];
 		if(act->id==this->firstActivityId)
 			break;
-	}
+	}*/
 	
-	if(i==r.nInternalActivities){	
+	int i=r.activitiesHash.value(firstActivityId, r.nInternalActivities);
+	
+	if(i==r.nInternalActivities){
 		//assert(0);
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 
-	this->firstActivityIndex=i;	
+	this->firstActivityIndex=i;
 
 	////////
 	
-	for(i=0; i<r.nInternalActivities; i++){
+	/*for(i=0; i<r.nInternalActivities; i++){
 		act=&r.internalActivitiesList[i];
 		if(act->id==this->secondActivityId)
 			break;
-	}
+	}*/
 	
-	if(i==r.nInternalActivities){	
+	i=r.activitiesHash.value(secondActivityId, r.nInternalActivities);
+	
+	if(i==r.nInternalActivities){
 		//assert(0);
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
@@ -12435,15 +12519,17 @@ ConstraintTwoActivitiesGrouped::ConstraintTwoActivitiesGrouped(double wp, int fi
 
 bool ConstraintTwoActivitiesGrouped::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	Activity* act;
+	/*Activity* act;
 	int i;
 	for(i=0; i<r.nInternalActivities; i++){
 		act=&r.internalActivitiesList[i];
 		if(act->id==this->firstActivityId)
 			break;
-	}
+	}*/
 	
-	if(i==r.nInternalActivities){	
+	int i=r.activitiesHash.value(firstActivityId, r.nInternalActivities);
+	
+	if(i==r.nInternalActivities){
 		//assert(0);
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
@@ -12454,13 +12540,15 @@ bool ConstraintTwoActivitiesGrouped::computeInternalStructure(QWidget* parent, R
 
 	////////
 	
-	for(i=0; i<r.nInternalActivities; i++){
+	/*for(i=0; i<r.nInternalActivities; i++){
 		act=&r.internalActivitiesList[i];
 		if(act->id==this->secondActivityId)
 			break;
-	}
+	}*/
+
+	i=r.activitiesHash.value(secondActivityId, r.nInternalActivities);
 	
-	if(i==r.nInternalActivities){	
+	if(i==r.nInternalActivities){
 		//assert(0);
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
@@ -12718,32 +12806,36 @@ ConstraintThreeActivitiesGrouped::ConstraintThreeActivitiesGrouped(double wp, in
 
 bool ConstraintThreeActivitiesGrouped::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	Activity* act;
+	/*Activity* act;
 	int i;
 	for(i=0; i<r.nInternalActivities; i++){
 		act=&r.internalActivitiesList[i];
 		if(act->id==this->firstActivityId)
 			break;
-	}
+	}*/
 	
-	if(i==r.nInternalActivities){	
+	int i=r.activitiesHash.value(firstActivityId, r.nInternalActivities);
+	
+	if(i==r.nInternalActivities){
 		//assert(0);
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 
-	this->firstActivityIndex=i;	
+	this->firstActivityIndex=i;
 
 	////////
 	
-	for(i=0; i<r.nInternalActivities; i++){
+	/*for(i=0; i<r.nInternalActivities; i++){
 		act=&r.internalActivitiesList[i];
 		if(act->id==this->secondActivityId)
 			break;
-	}
+	}*/
+
+	i=r.activitiesHash.value(secondActivityId, r.nInternalActivities);
 	
-	if(i==r.nInternalActivities){	
+	if(i==r.nInternalActivities){
 		//assert(0);
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
@@ -12754,13 +12846,15 @@ bool ConstraintThreeActivitiesGrouped::computeInternalStructure(QWidget* parent,
 	
 	////////
 	
-	for(i=0; i<r.nInternalActivities; i++){
+	/*for(i=0; i<r.nInternalActivities; i++){
 		act=&r.internalActivitiesList[i];
 		if(act->id==this->thirdActivityId)
 			break;
-	}
+	}*/
+
+	i=r.activitiesHash.value(thirdActivityId, r.nInternalActivities);
 	
-	if(i==r.nInternalActivities){	
+	if(i==r.nInternalActivities){
 		//assert(0);
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
@@ -13080,15 +13174,17 @@ ConstraintTwoActivitiesOrdered::ConstraintTwoActivitiesOrdered(double wp, int fi
 
 bool ConstraintTwoActivitiesOrdered::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	Activity* act;
+	/*Activity* act;
 	int i;
 	for(i=0; i<r.nInternalActivities; i++){
 		act=&r.internalActivitiesList[i];
 		if(act->id==this->firstActivityId)
 			break;
-	}
+	}*/
 	
-	if(i==r.nInternalActivities){	
+	int i=r.activitiesHash.value(firstActivityId, r.nInternalActivities);
+	
+	if(i==r.nInternalActivities){
 		//assert(0);
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
@@ -13099,13 +13195,15 @@ bool ConstraintTwoActivitiesOrdered::computeInternalStructure(QWidget* parent, R
 
 	////////
 	
-	for(i=0; i<r.nInternalActivities; i++){
+	/*for(i=0; i<r.nInternalActivities; i++){
 		act=&r.internalActivitiesList[i];
 		if(act->id==this->secondActivityId)
 			break;
-	}
+	}*/
+
+	i=r.activitiesHash.value(secondActivityId, r.nInternalActivities);
 	
-	if(i==r.nInternalActivities){	
+	if(i==r.nInternalActivities){
 		//assert(0);
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
@@ -13334,15 +13432,17 @@ ConstraintActivityEndsStudentsDay::ConstraintActivityEndsStudentsDay(double wp, 
 
 bool ConstraintActivityEndsStudentsDay::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	Activity* act;
+	/*Activity* act;
 	int i;
 	for(i=0; i<r.nInternalActivities; i++){
 		act=&r.internalActivitiesList[i];
 		if(act->id==this->activityId)
 			break;
-	}
+	}*/
 	
-	if(i==r.nInternalActivities){	
+	int i=r.activitiesHash.value(activityId, r.nInternalActivities);
+	
+	if(i==r.nInternalActivities){
 		//assert(0);
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):\n%1").arg(this->getDetailedDescription(r)));
@@ -13790,7 +13890,8 @@ ConstraintTeacherMinHoursDaily::ConstraintTeacherMinHoursDaily(double wp, int mi
 
 bool ConstraintTeacherMinHoursDaily::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	this->teacher_ID=r.searchTeacher(this->teacherName);
+	//this->teacher_ID=r.searchTeacher(this->teacherName);
+	teacher_ID=r.teachersHash.value(teacherName, -1);
 	assert(this->teacher_ID>=0);
 	
 	if(allowEmptyDays==false){
@@ -14029,7 +14130,8 @@ bool ConstraintTeacherMinDaysPerWeek::computeInternalStructure(QWidget* parent, 
 {
 	Q_UNUSED(parent);
 
-	this->teacher_ID=r.searchTeacher(this->teacherName);
+	//this->teacher_ID=r.searchTeacher(this->teacherName);
+	teacher_ID=r.teachersHash.value(teacherName, -1);
 	assert(this->teacher_ID>=0);
 	return true;
 }
@@ -14433,7 +14535,8 @@ ConstraintTeacherIntervalMaxDaysPerWeek::ConstraintTeacherIntervalMaxDaysPerWeek
 
 bool ConstraintTeacherIntervalMaxDaysPerWeek::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	this->teacher_ID=r.searchTeacher(this->teacherName);
+	//this->teacher_ID=r.searchTeacher(this->teacherName);
+	teacher_ID=r.teachersHash.value(teacherName, -1);
 	assert(this->teacher_ID>=0);
 	if(this->startHour>=this->endHour){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
@@ -14962,7 +15065,8 @@ bool ConstraintStudentsSetIntervalMaxDaysPerWeek::computeInternalStructure(QWidg
 	}
 
 	/////////
-	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	StudentsSet* ss=r.studentsHash.value(students, NULL);
 
 	if(ss==NULL){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
@@ -15513,7 +15617,7 @@ bool ConstraintActivitiesEndStudentsDay::computeInternalStructure(QWidget* paren
 		if(this->studentsName!=""){
 			bool commonStudents=false;
 			foreach(QString st, act->studentsNames)
-				if(r.setsShareStudents(st, studentsName)){
+				if(r.augmentedSetsShareStudentsFaster(st, studentsName)){
 					commonStudents=true;
 					break;
 				}
@@ -15822,7 +15926,8 @@ bool ConstraintTeachersActivityTagMaxHoursDaily::computeInternalStructure(QWidge
 {
 	Q_UNUSED(parent);
 
-	this->activityTagIndex=r.searchActivityTag(this->activityTagName);
+	//this->activityTagIndex=r.searchActivityTag(this->activityTagName);
+	activityTagIndex=r.activityTagsHash.value(activityTagName, -1);
 	assert(this->activityTagIndex>=0);
 	
 	this->canonicalTeachersList.clear();
@@ -16057,10 +16162,12 @@ bool ConstraintTeacherActivityTagMaxHoursDaily::computeInternalStructure(QWidget
 {
 	Q_UNUSED(parent);
 
-	this->teacher_ID=r.searchTeacher(this->teacherName);
+	//this->teacher_ID=r.searchTeacher(this->teacherName);
+	teacher_ID=r.teachersHash.value(teacherName, -1);
 	assert(this->teacher_ID>=0);
 
-	this->activityTagIndex=r.searchActivityTag(this->activityTagName);
+	//this->activityTagIndex=r.searchActivityTag(this->activityTagName);
+	activityTagIndex=r.activityTagsHash.value(activityTagName, -1);
 	assert(this->activityTagIndex>=0);
 
 	this->canonicalTeachersList.clear();
@@ -16294,7 +16401,8 @@ bool ConstraintStudentsActivityTagMaxHoursDaily::computeInternalStructure(QWidge
 {
 	Q_UNUSED(parent);
 
-	this->activityTagIndex=r.searchActivityTag(this->activityTagName);
+	//this->activityTagIndex=r.searchActivityTag(this->activityTagName);
+	activityTagIndex=r.activityTagsHash.value(activityTagName, -1);
 	assert(this->activityTagIndex>=0);
 	
 	this->canonicalSubgroupsList.clear();
@@ -16602,10 +16710,12 @@ QString ConstraintStudentsSetActivityTagMaxHoursDaily::getDetailedDescription(Ru
 
 bool ConstraintStudentsSetActivityTagMaxHoursDaily::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	this->activityTagIndex=r.searchActivityTag(this->activityTagName);
+	//this->activityTagIndex=r.searchActivityTag(this->activityTagName);
+	activityTagIndex=r.activityTagsHash.value(activityTagName, -1);
 	assert(this->activityTagIndex>=0);
 
-	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	StudentsSet* ss=r.studentsHash.value(students, NULL);
 	
 	if(ss==NULL){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
@@ -17040,7 +17150,8 @@ ConstraintStudentsSetMaxGapsPerDay::ConstraintStudentsSetMaxGapsPerDay(double wp
 }
 
 bool ConstraintStudentsSetMaxGapsPerDay::computeInternalStructure(QWidget* parent, Rules& r){
-	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	StudentsSet* ss=r.studentsHash.value(students, NULL);
 
 	if(ss==NULL){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
@@ -17309,7 +17420,15 @@ ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::ConstraintActivitiesOccupyM
 
 bool ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	this->_activitiesIndices.clear();
+	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
+	_activitiesIndices.clear();
+	foreach(int id, activitiesIds){
+		int i=r.activitiesHash.value(id, -1);
+		if(i>=0)
+			_activitiesIndices.append(i);
+	}
+
+	/*this->_activitiesIndices.clear();
 	
 	QSet<int> req=this->activitiesIds.toSet();
 	assert(req.count()==this->activitiesIds.count());
@@ -17318,7 +17437,7 @@ bool ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::computeInternalStructu
 	int i;
 	for(i=0; i<r.nInternalActivities; i++)
 		if(req.contains(r.internalActivitiesList[i].id))
-			this->_activitiesIndices.append(i);
+			this->_activitiesIndices.append(i);*/
 			
 	//////////////////////
 	assert(this->selectedDays.count()==this->selectedHours.count());
@@ -17542,16 +17661,19 @@ double ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::fitness(Solution& c,
 
 void ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::removeUseless(Rules& r)
 {
-	QSet<int> validActs;
+	/*QSet<int> validActs;
 	
 	foreach(Activity* act, r.activitiesList)
-		validActs.insert(act->id);
+		validActs.insert(act->id);*/
 		
 	QList<int> newActs;
 	
-	foreach(int aid, activitiesIds)
-		if(validActs.contains(aid))
+	foreach(int aid, activitiesIds){
+		Activity* act=r.activitiesPointerHash.value(aid, NULL);
+		if(act!=NULL)
+		//if(validActs.contains(aid))
 			newActs.append(aid);
+	}
 			
 	activitiesIds=newActs;
 }
@@ -17667,7 +17789,15 @@ ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::ConstraintActivitiesMaxS
 
 bool ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	this->_activitiesIndices.clear();
+	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
+	_activitiesIndices.clear();
+	foreach(int id, activitiesIds){
+		int i=r.activitiesHash.value(id, -1);
+		if(i>=0)
+			_activitiesIndices.append(i);
+	}
+
+	/*this->_activitiesIndices.clear();
 	
 	QSet<int> req=this->activitiesIds.toSet();
 	assert(req.count()==this->activitiesIds.count());
@@ -17676,7 +17806,7 @@ bool ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::computeInternalStru
 	int i;
 	for(i=0; i<r.nInternalActivities; i++)
 		if(req.contains(r.internalActivitiesList[i].id))
-			this->_activitiesIndices.append(i);
+			this->_activitiesIndices.append(i);*/
 			
 	//////////////////////
 	assert(this->selectedDays.count()==this->selectedHours.count());
@@ -17898,16 +18028,19 @@ double ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::fitness(Solution&
 
 void ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::removeUseless(Rules& r)
 {
-	QSet<int> validActs;
+	/*QSet<int> validActs;
 	
 	foreach(Activity* act, r.activitiesList)
-		validActs.insert(act->id);
+		validActs.insert(act->id);*/
 		
 	QList<int> newActs;
 	
-	foreach(int aid, activitiesIds)
-		if(validActs.contains(aid))
+	foreach(int aid, activitiesIds){
+		Activity* act=r.activitiesPointerHash.value(aid, NULL);
+		if(act!=NULL)
+		//if(validActs.contains(aid))
 			newActs.append(aid);
+	}
 			
 	activitiesIds=newActs;
 }
@@ -18015,7 +18148,8 @@ ConstraintStudentsSetMaxDaysPerWeek::ConstraintStudentsSetMaxDaysPerWeek(double 
 
 bool ConstraintStudentsSetMaxDaysPerWeek::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	StudentsSet* ss=r.studentsHash.value(students, NULL);
 
 	if(ss==NULL){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),

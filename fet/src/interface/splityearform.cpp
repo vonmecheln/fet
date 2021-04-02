@@ -44,10 +44,10 @@ SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(par
 	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(close()));
 	connect(categoriesSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfCategoriesChanged()));
 	connect(category1SpinBox, SIGNAL(valueChanged(int)), this, SLOT(category1Changed()));
-	connect(pushButton3, SIGNAL(clicked()), this, SLOT(help()));
 	connect(category2SpinBox, SIGNAL(valueChanged(int)), this, SLOT(category2Changed()));
 	connect(category3SpinBox, SIGNAL(valueChanged(int)), this, SLOT(category3Changed()));
 	connect(category4SpinBox, SIGNAL(valueChanged(int)), this, SLOT(category4Changed()));
+	connect(pushButton3, SIGNAL(clicked()), this, SLOT(help()));
 	connect(pushButton4, SIGNAL(clicked()), this, SLOT(reset()));
 
 	centerWidgetOnScreen(this);
@@ -76,6 +76,10 @@ SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(par
 	_cat1div10=settings.value(this->metaObject()->className()+QString("/category/1/division/10"), QString("")).toString();
 	_cat1div11=settings.value(this->metaObject()->className()+QString("/category/1/division/11"), QString("")).toString();
 	_cat1div12=settings.value(this->metaObject()->className()+QString("/category/1/division/12"), QString("")).toString();
+	_cat1div13=settings.value(this->metaObject()->className()+QString("/category/1/division/13"), QString("")).toString();
+	_cat1div14=settings.value(this->metaObject()->className()+QString("/category/1/division/14"), QString("")).toString();
+	_cat1div15=settings.value(this->metaObject()->className()+QString("/category/1/division/15"), QString("")).toString();
+	_cat1div16=settings.value(this->metaObject()->className()+QString("/category/1/division/16"), QString("")).toString();
 
 	_cat2div1=settings.value(this->metaObject()->className()+QString("/category/2/division/1"), QString("")).toString();
 	_cat2div2=settings.value(this->metaObject()->className()+QString("/category/2/division/2"), QString("")).toString();
@@ -83,6 +87,12 @@ SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(par
 	_cat2div4=settings.value(this->metaObject()->className()+QString("/category/2/division/4"), QString("")).toString();
 	_cat2div5=settings.value(this->metaObject()->className()+QString("/category/2/division/5"), QString("")).toString();
 	_cat2div6=settings.value(this->metaObject()->className()+QString("/category/2/division/6"), QString("")).toString();
+	_cat2div7=settings.value(this->metaObject()->className()+QString("/category/2/division/7"), QString("")).toString();
+	_cat2div8=settings.value(this->metaObject()->className()+QString("/category/2/division/8"), QString("")).toString();
+	_cat2div9=settings.value(this->metaObject()->className()+QString("/category/2/division/9"), QString("")).toString();
+	_cat2div10=settings.value(this->metaObject()->className()+QString("/category/2/division/10"), QString("")).toString();
+	_cat2div11=settings.value(this->metaObject()->className()+QString("/category/2/division/11"), QString("")).toString();
+	_cat2div12=settings.value(this->metaObject()->className()+QString("/category/2/division/12"), QString("")).toString();
 
 	_cat3div1=settings.value(this->metaObject()->className()+QString("/category/3/division/1"), QString("")).toString();
 	_cat3div2=settings.value(this->metaObject()->className()+QString("/category/3/division/2"), QString("")).toString();
@@ -125,6 +135,10 @@ SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(par
 	category1Division10LineEdit->setText(_cat1div10);
 	category1Division11LineEdit->setText(_cat1div11);
 	category1Division12LineEdit->setText(_cat1div12);
+	category1Division13LineEdit->setText(_cat1div13);
+	category1Division14LineEdit->setText(_cat1div14);
+	category1Division15LineEdit->setText(_cat1div15);
+	category1Division16LineEdit->setText(_cat1div16);
 
 	category2Division1LineEdit->setText(_cat2div1);
 	category2Division2LineEdit->setText(_cat2div2);
@@ -132,6 +146,12 @@ SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(par
 	category2Division4LineEdit->setText(_cat2div4);
 	category2Division5LineEdit->setText(_cat2div5);
 	category2Division6LineEdit->setText(_cat2div6);
+	category2Division7LineEdit->setText(_cat2div7);
+	category2Division8LineEdit->setText(_cat2div8);
+	category2Division9LineEdit->setText(_cat2div9);
+	category2Division10LineEdit->setText(_cat2div10);
+	category2Division11LineEdit->setText(_cat2div11);
+	category2Division12LineEdit->setText(_cat2div12);
 
 	category3Division1LineEdit->setText(_cat3div1);
 	category3Division2LineEdit->setText(_cat3div2);
@@ -201,6 +221,14 @@ SplitYearForm::~SplitYearForm()
 		settings.setValue(this->metaObject()->className()+QString("/category/1/division/11"), _cat1div11);
 	if(_nCategories>=1 && _nDiv1>=12)
 		settings.setValue(this->metaObject()->className()+QString("/category/1/division/12"), _cat1div12);
+	if(_nCategories>=1 && _nDiv1>=13)
+		settings.setValue(this->metaObject()->className()+QString("/category/1/division/13"), _cat1div13);
+	if(_nCategories>=1 && _nDiv1>=14)
+		settings.setValue(this->metaObject()->className()+QString("/category/1/division/14"), _cat1div14);
+	if(_nCategories>=1 && _nDiv1>=15)
+		settings.setValue(this->metaObject()->className()+QString("/category/1/division/15"), _cat1div15);
+	if(_nCategories>=1 && _nDiv1>=16)
+		settings.setValue(this->metaObject()->className()+QString("/category/1/division/16"), _cat1div16);
 	///////////
 	if(_nCategories>=2 && _nDiv2>=1)
 		settings.setValue(this->metaObject()->className()+QString("/category/2/division/1"), _cat2div1);
@@ -214,6 +242,18 @@ SplitYearForm::~SplitYearForm()
 		settings.setValue(this->metaObject()->className()+QString("/category/2/division/5"), _cat2div5);
 	if(_nCategories>=2 && _nDiv2>=6)
 		settings.setValue(this->metaObject()->className()+QString("/category/2/division/6"), _cat2div6);
+	if(_nCategories>=2 && _nDiv2>=7)
+		settings.setValue(this->metaObject()->className()+QString("/category/2/division/7"), _cat2div7);
+	if(_nCategories>=2 && _nDiv2>=8)
+		settings.setValue(this->metaObject()->className()+QString("/category/2/division/8"), _cat2div8);
+	if(_nCategories>=2 && _nDiv2>=9)
+		settings.setValue(this->metaObject()->className()+QString("/category/2/division/9"), _cat2div9);
+	if(_nCategories>=2 && _nDiv2>=10)
+		settings.setValue(this->metaObject()->className()+QString("/category/2/division/10"), _cat2div10);
+	if(_nCategories>=2 && _nDiv2>=11)
+		settings.setValue(this->metaObject()->className()+QString("/category/2/division/11"), _cat2div11);
+	if(_nCategories>=2 && _nDiv2>=12)
+		settings.setValue(this->metaObject()->className()+QString("/category/2/division/12"), _cat2div12);
 	///////////
 			
 	///////////
@@ -316,6 +356,26 @@ void SplitYearForm::category1Changed()
 		category1Division12LineEdit->setHidden(true);
 	else
 		category1Division12LineEdit->setHidden(false);
+
+	if(category1SpinBox->value()<13)
+		category1Division13LineEdit->setHidden(true);
+	else
+		category1Division13LineEdit->setHidden(false);
+		
+	if(category1SpinBox->value()<14)
+		category1Division14LineEdit->setHidden(true);
+	else
+		category1Division14LineEdit->setHidden(false);
+		
+	if(category1SpinBox->value()<15)
+		category1Division15LineEdit->setHidden(true);
+	else
+		category1Division15LineEdit->setHidden(false);
+		
+	if(category1SpinBox->value()<16)
+		category1Division16LineEdit->setHidden(true);
+	else
+		category1Division16LineEdit->setHidden(false);
 }
 
 void SplitYearForm::category2Changed()
@@ -339,6 +399,36 @@ void SplitYearForm::category2Changed()
 		category2Division6LineEdit->setHidden(true);
 	else
 		category2Division6LineEdit->setHidden(false);
+
+	if(category2SpinBox->value()<7)
+		category2Division7LineEdit->setHidden(true);
+	else
+		category2Division7LineEdit->setHidden(false);
+
+	if(category2SpinBox->value()<8)
+		category2Division8LineEdit->setHidden(true);
+	else
+		category2Division8LineEdit->setHidden(false);
+
+	if(category2SpinBox->value()<9)
+		category2Division9LineEdit->setHidden(true);
+	else
+		category2Division9LineEdit->setHidden(false);
+
+	if(category2SpinBox->value()<10)
+		category2Division10LineEdit->setHidden(true);
+	else
+		category2Division10LineEdit->setHidden(false);
+
+	if(category2SpinBox->value()<11)
+		category2Division11LineEdit->setHidden(true);
+	else
+		category2Division11LineEdit->setHidden(false);
+
+	if(category2SpinBox->value()<12)
+		category2Division12LineEdit->setHidden(true);
+	else
+		category2Division12LineEdit->setHidden(false);
 }
 
 void SplitYearForm::category3Changed()
@@ -391,8 +481,8 @@ void SplitYearForm::ok()
 {
 	QString separator=separatorLineEdit->text();
 
-	QString namesCategory1[12+1];
-	QString namesCategory2[6+1];
+	QString namesCategory1[16+1];
+	QString namesCategory2[12+1];
 	QString namesCategory3[6+1];
 	QString namesCategory4[6+1];
 	
@@ -499,7 +589,7 @@ void SplitYearForm::ok()
 		namesCategory1[11]="";
 
 	if(category1SpinBox->value()>=12){
-		if(category1Division11LineEdit->text()==""){
+		if(category1Division12LineEdit->text()==""){
 			QMessageBox::information(this, tr("FET information"), tr("Empty names not allowed"));
 			return;
 		}
@@ -507,6 +597,46 @@ void SplitYearForm::ok()
 	}
 	else
 		namesCategory1[12]="";
+
+	if(category1SpinBox->value()>=13){
+		if(category1Division13LineEdit->text()==""){
+			QMessageBox::information(this, tr("FET information"), tr("Empty names not allowed"));
+			return;
+		}
+		namesCategory1[13]=category1Division13LineEdit->text();
+	}
+	else
+		namesCategory1[13]="";
+
+	if(category1SpinBox->value()>=14){
+		if(category1Division14LineEdit->text()==""){
+			QMessageBox::information(this, tr("FET information"), tr("Empty names not allowed"));
+			return;
+		}
+		namesCategory1[14]=category1Division14LineEdit->text();
+	}
+	else
+		namesCategory1[14]="";
+
+	if(category1SpinBox->value()>=15){
+		if(category1Division15LineEdit->text()==""){
+			QMessageBox::information(this, tr("FET information"), tr("Empty names not allowed"));
+			return;
+		}
+		namesCategory1[15]=category1Division15LineEdit->text();
+	}
+	else
+		namesCategory1[15]="";
+
+	if(category1SpinBox->value()>=16){
+		if(category1Division16LineEdit->text()==""){
+			QMessageBox::information(this, tr("FET information"), tr("Empty names not allowed"));
+			return;
+		}
+		namesCategory1[16]=category1Division16LineEdit->text();
+	}
+	else
+		namesCategory1[16]="";
 	/////////////////////////////////
 	//////////////
 
@@ -561,9 +691,69 @@ void SplitYearForm::ok()
 		}
 		else
 			namesCategory2[6]="";
+
+		if(category2SpinBox->value()>=7){
+			if(category2Division7LineEdit->text()==""){
+				QMessageBox::information(this, tr("FET information"), tr("Empty names not allowed"));
+				return;
+			}
+			namesCategory2[7]=category2Division7LineEdit->text();
+		}
+		else
+			namesCategory2[7]="";
+
+		if(category2SpinBox->value()>=8){
+			if(category2Division8LineEdit->text()==""){
+				QMessageBox::information(this, tr("FET information"), tr("Empty names not allowed"));
+				return;
+			}
+			namesCategory2[8]=category2Division8LineEdit->text();
+		}
+		else
+			namesCategory2[8]="";
+
+		if(category2SpinBox->value()>=9){
+			if(category2Division9LineEdit->text()==""){
+				QMessageBox::information(this, tr("FET information"), tr("Empty names not allowed"));
+				return;
+			}
+			namesCategory2[9]=category2Division9LineEdit->text();
+		}
+		else
+			namesCategory2[9]="";
+
+		if(category2SpinBox->value()>=10){
+			if(category2Division10LineEdit->text()==""){
+				QMessageBox::information(this, tr("FET information"), tr("Empty names not allowed"));
+				return;
+			}
+			namesCategory2[10]=category2Division10LineEdit->text();
+		}
+		else
+			namesCategory2[10]="";
+
+		if(category2SpinBox->value()>=11){
+			if(category2Division11LineEdit->text()==""){
+				QMessageBox::information(this, tr("FET information"), tr("Empty names not allowed"));
+				return;
+			}
+			namesCategory2[11]=category2Division11LineEdit->text();
+		}
+		else
+			namesCategory2[11]="";
+
+		if(category2SpinBox->value()>=12){
+			if(category2Division12LineEdit->text()==""){
+				QMessageBox::information(this, tr("FET information"), tr("Empty names not allowed"));
+				return;
+			}
+			namesCategory2[12]=category2Division12LineEdit->text();
+		}
+		else
+			namesCategory2[12]="";
 	}
 	else
-		for(int i=1; i<=6; i++)
+		for(int i=1; i<=12; i++)
 			namesCategory2[i]="";
 	/////////////////////
 		
@@ -712,7 +902,7 @@ void SplitYearForm::ok()
 	}
 		
 	QStringList tmp;
-	for(int i=1; i<=12; i++){
+	for(int i=1; i<=16; i++){
 		if(namesCategory1[i]!=""){
 			if(tmp.contains(namesCategory1[i])){
 				QMessageBox::information(this, tr("FET information"), tr("Duplicate names not allowed"));
@@ -721,7 +911,7 @@ void SplitYearForm::ok()
 			tmp.append(namesCategory1[i]);
 		}
 	}
-	for(int j=1; j<=6; j++){
+	for(int j=1; j<=12; j++){
 		if(namesCategory2[j]!=""){
 			if(tmp.contains(namesCategory2[j])){
 				QMessageBox::information(this, tr("FET information"), tr("Duplicate names not allowed"));
@@ -750,40 +940,57 @@ void SplitYearForm::ok()
 	}
 
 
-	if(namesCategory4[1]!=""){ //4 categories
-		for(int i=1; i<=12; i++)
+	if(namesCategory4[1]!=""){ //four categories
+		for(int i=1; i<=16; i++){
+			if(namesCategory1[i]!=""){
+				QString t=year+separator+namesCategory1[i];
+				if(gt.rules.searchStudentsSet(t)!=NULL){
+					QMessageBox::information(this, tr("FET information"), tr("Cannot add group %1, because a set with same name exists. "
+					 "Please choose another name or remove old group").arg(t));
+					return;
+				}
+			}
+		}
+		for(int j=1; j<=12; j++){
+			if(namesCategory2[j]!=""){
+				QString t=year+separator+namesCategory2[j];
+				if(gt.rules.searchStudentsSet(t)!=NULL){
+					QMessageBox::information(this, tr("FET information"), tr("Cannot add group %1, because a set with same name exists. "
+					 "Please choose another name or remove old group").arg(t));
+					return;
+				}
+			}
+		}
+		for(int k=1; k<=6; k++){
+			if(namesCategory3[k]!=""){
+				QString t=year+separator+namesCategory3[k];
+				if(gt.rules.searchStudentsSet(t)!=NULL){
+					QMessageBox::information(this, tr("FET information"), tr("Cannot add group %1, because a set with same name exists. "
+					 "Please choose another name or remove old group").arg(t));
+					return;
+				}
+			}
+		}
+		for(int m=1; m<=6; m++){
+			if(namesCategory4[m]!=""){
+				QString t=year+separator+namesCategory4[m];
+				if(gt.rules.searchStudentsSet(t)!=NULL){
+					QMessageBox::information(this, tr("FET information"), tr("Cannot add group %1, because a set with same name exists. "
+					 "Please choose another name or remove old group").arg(t));
+					return;
+				}
+			}
+		}
+	
+		for(int i=1; i<=16; i++)
 			if(namesCategory1[i]!="")
-				for(int j=1; j<=6; j++)
+				for(int j=1; j<=12; j++)
 					if(namesCategory2[j]!="")
 						for(int k=1; k<=6; k++)
 							if(namesCategory3[k]!="")
 								for(int m=1; m<=6; m++)
 									if(namesCategory4[m]!=""){
-										QString t=year+separator+namesCategory1[i];
-										if(gt.rules.searchStudentsSet(t)!=NULL){
-											QMessageBox::information(this, tr("FET information"), tr("Cannot add group %1, because a set with same name exists. "
-											 "Please choose another name or remove old group").arg(t));
-											return;
-										}
-										t=year+separator+namesCategory2[j];
-										if(gt.rules.searchStudentsSet(t)!=NULL){
-											QMessageBox::information(this, tr("FET information"), tr("Cannot add group %1, because a set with same name exists. "
-											 "Please choose another name or remove old group").arg(t));
-											return;
-										}
-										t=year+separator+namesCategory3[k];
-										if(gt.rules.searchStudentsSet(t)!=NULL){
-											QMessageBox::information(this, tr("FET information"), tr("Cannot add group %1, because a set with same name exists. "
-											 "Please choose another name or remove old group").arg(t));
-											return;
-										}
-										t=year+separator+namesCategory4[m];
-										if(gt.rules.searchStudentsSet(t)!=NULL){
-											QMessageBox::information(this, tr("FET information"), tr("Cannot add group %1, because a set with same name exists. "
-											 "Please choose another name or remove old group").arg(t));
-											return;
-										}
-										t=year+separator+namesCategory1[i]+separator+namesCategory2[j]+separator+namesCategory3[k]+separator+namesCategory4[m];
+										QString t=year+separator+namesCategory1[i]+separator+namesCategory2[j]+separator+namesCategory3[k]+separator+namesCategory4[m];
 										if(gt.rules.searchStudentsSet(t)!=NULL){
 											QMessageBox::information(this, tr("FET information"), tr("Cannot add subgroup %1, because a set with same name exists. "
 											 "Please choose another name or remove old subgroup").arg(t));
@@ -791,17 +998,17 @@ void SplitYearForm::ok()
 										}
 									}
 							
-		StudentsSubgroup* subgroups[12+1][6+1][6+1][6+1];
+		StudentsSubgroup* subgroups[16+1][12+1][6+1][6+1];
 		
-		for(int i=1; i<=12; i++)
-			for(int j=1; j<=6; j++)
+		for(int i=1; i<=16; i++)
+			for(int j=1; j<=12; j++)
 				for(int k=1; k<=6; k++)
 					for(int m=1; m<=6; m++)
 						subgroups[i][j][k][m]=NULL;
 
-		for(int i=1; i<=12; i++)
+		for(int i=1; i<=16; i++)
 			if(namesCategory1[i]!="")
-				for(int j=1; j<=6; j++)
+				for(int j=1; j<=12; j++)
 					if(namesCategory2[j]!="")
 						for(int k=1; k<=6; k++)
 							if(namesCategory3[k]!="")
@@ -813,28 +1020,28 @@ void SplitYearForm::ok()
 										subgroups[i][j][k][m]->name=t;
 									}
 								
-		for(int i=1; i<=12; i++)
+		for(int i=1; i<=16; i++)
 			if(namesCategory1[i]!=""){
 				QString t=year+separator+namesCategory1[i];
 				assert(gt.rules.searchStudentsSet(t)==NULL);
 				StudentsGroup* gr=new StudentsGroup;
 				gr->name=t;
 				gt.rules.addGroup(year, gr);
-				for(int j=1; j<=6; j++)
+				for(int j=1; j<=12; j++)
 					for(int k=1; k<=6; k++)
 						for(int m=1; m<=6; m++)
 							if(subgroups[i][j][k][m]!=NULL)
 								gt.rules.addSubgroup(year, t, subgroups[i][j][k][m]);
 			}
 
-		for(int j=1; j<=6; j++)
+		for(int j=1; j<=12; j++)
 			if(namesCategory2[j]!=""){
 				QString t=year+separator+namesCategory2[j];
 				assert(gt.rules.searchStudentsSet(t)==NULL);
 				StudentsGroup* gr=new StudentsGroup;
 				gr->name=t;
 				gt.rules.addGroup(year, gr);
-				for(int i=1; i<=12; i++)
+				for(int i=1; i<=16; i++)
 					for(int k=1; k<=6; k++)
 						for(int m=1; m<=6; m++)
 							if(subgroups[i][j][k][m]!=NULL)
@@ -848,8 +1055,8 @@ void SplitYearForm::ok()
 				StudentsGroup* gr=new StudentsGroup;
 				gr->name=t;
 				gt.rules.addGroup(year, gr);
-				for(int i=1; i<=12; i++)
-					for(int j=1; j<=6; j++)
+				for(int i=1; i<=16; i++)
+					for(int j=1; j<=12; j++)
 						for(int m=1; m<=6; m++)
 							if(subgroups[i][j][k][m]!=NULL)
 								gt.rules.addSubgroup(year, t, subgroups[i][j][k][m]);
@@ -862,40 +1069,53 @@ void SplitYearForm::ok()
 				StudentsGroup* gr=new StudentsGroup;
 				gr->name=t;
 				gt.rules.addGroup(year, gr);
-				for(int i=1; i<=12; i++)
-					for(int j=1; j<=6; j++)
+				for(int i=1; i<=16; i++)
+					for(int j=1; j<=12; j++)
 						for(int k=1; k<=6; k++)
 							if(subgroups[i][j][k][m]!=NULL)
 								gt.rules.addSubgroup(year, t, subgroups[i][j][k][m]);
 			}
 	}
 	
-	else if(namesCategory3[1]!=""){ //3 categories
-		for(int i=1; i<=12; i++)
+	else if(namesCategory3[1]!=""){ //three categories
+		for(int i=1; i<=16; i++){
+			if(namesCategory1[i]!=""){
+				QString t=year+separator+namesCategory1[i];
+				if(gt.rules.searchStudentsSet(t)!=NULL){
+					QMessageBox::information(this, tr("FET information"), tr("Cannot add group %1, because a set with same name exists. "
+					 "Please choose another name or remove old group").arg(t));
+					return;
+				}
+			}
+		}
+		for(int j=1; j<=12; j++){
+			if(namesCategory2[j]!=""){
+				QString t=year+separator+namesCategory2[j];
+				if(gt.rules.searchStudentsSet(t)!=NULL){
+					QMessageBox::information(this, tr("FET information"), tr("Cannot add group %1, because a set with same name exists. "
+					 "Please choose another name or remove old group").arg(t));
+					return;
+				}
+			}
+		}
+		for(int k=1; k<=6; k++){
+			if(namesCategory3[k]!=""){
+				QString t=year+separator+namesCategory3[k];
+				if(gt.rules.searchStudentsSet(t)!=NULL){
+					QMessageBox::information(this, tr("FET information"), tr("Cannot add group %1, because a set with same name exists. "
+					 "Please choose another name or remove old group").arg(t));
+					return;
+				}
+			}
+		}
+	
+		for(int i=1; i<=16; i++)
 			if(namesCategory1[i]!="")
-				for(int j=1; j<=6; j++)
+				for(int j=1; j<=12; j++)
 					if(namesCategory2[j]!="")
 						for(int k=1; k<=6; k++)
 							if(namesCategory3[k]!=""){
-								QString t=year+separator+namesCategory1[i];
-								if(gt.rules.searchStudentsSet(t)!=NULL){
-									QMessageBox::information(this, tr("FET information"), tr("Cannot add group %1, because a set with same name exists. "
-									 "Please choose another name or remove old group").arg(t));
-									return;
-								}
-								t=year+separator+namesCategory2[j];
-								if(gt.rules.searchStudentsSet(t)!=NULL){
-									QMessageBox::information(this, tr("FET information"), tr("Cannot add group %1, because a set with same name exists. "
-									 "Please choose another name or remove old group").arg(t));
-									return;
-								}
-								t=year+separator+namesCategory3[k];
-								if(gt.rules.searchStudentsSet(t)!=NULL){
-									QMessageBox::information(this, tr("FET information"), tr("Cannot add group %1, because a set with same name exists. "
-									 "Please choose another name or remove old group").arg(t));
-									return;
-								}
-								t=year+separator+namesCategory1[i]+separator+namesCategory2[j]+separator+namesCategory3[k];
+								QString t=year+separator+namesCategory1[i]+separator+namesCategory2[j]+separator+namesCategory3[k];
 								if(gt.rules.searchStudentsSet(t)!=NULL){
 									QMessageBox::information(this, tr("FET information"), tr("Cannot add subgroup %1, because a set with same name exists. "
 									 "Please choose another name or remove old subgroup").arg(t));
@@ -903,16 +1123,16 @@ void SplitYearForm::ok()
 								}
 							}
 							
-		StudentsSubgroup* subgroups[12+1][6+1][6+1];
+		StudentsSubgroup* subgroups[16+1][12+1][6+1];
 		
-		for(int i=1; i<=12; i++)
-			for(int j=1; j<=6; j++)
+		for(int i=1; i<=16; i++)
+			for(int j=1; j<=12; j++)
 				for(int k=1; k<=6; k++)
 					subgroups[i][j][k]=NULL;
 
-		for(int i=1; i<=12; i++)
+		for(int i=1; i<=16; i++)
 			if(namesCategory1[i]!="")
-				for(int j=1; j<=6; j++)
+				for(int j=1; j<=12; j++)
 					if(namesCategory2[j]!="")
 						for(int k=1; k<=6; k++)
 							if(namesCategory3[k]!=""){
@@ -922,27 +1142,27 @@ void SplitYearForm::ok()
 								subgroups[i][j][k]->name=t;
 							}
 								
-		for(int i=1; i<=12; i++)
+		for(int i=1; i<=16; i++)
 			if(namesCategory1[i]!=""){
 				QString t=year+separator+namesCategory1[i];
 				assert(gt.rules.searchStudentsSet(t)==NULL);
 				StudentsGroup* gr=new StudentsGroup;
 				gr->name=t;
 				gt.rules.addGroup(year, gr);
-				for(int j=1; j<=6; j++)
+				for(int j=1; j<=12; j++)
 					for(int k=1; k<=6; k++)
 						if(subgroups[i][j][k]!=NULL)
 							gt.rules.addSubgroup(year, t, subgroups[i][j][k]);
 			}
 
-		for(int j=1; j<=6; j++)
+		for(int j=1; j<=12; j++)
 			if(namesCategory2[j]!=""){
 				QString t=year+separator+namesCategory2[j];
 				assert(gt.rules.searchStudentsSet(t)==NULL);
 				StudentsGroup* gr=new StudentsGroup;
 				gr->name=t;
 				gt.rules.addGroup(year, gr);
-				for(int i=1; i<=12; i++)
+				for(int i=1; i<=16; i++)
 					for(int k=1; k<=6; k++)
 						if(subgroups[i][j][k]!=NULL)
 							gt.rules.addSubgroup(year, t, subgroups[i][j][k]);
@@ -955,31 +1175,40 @@ void SplitYearForm::ok()
 				StudentsGroup* gr=new StudentsGroup;
 				gr->name=t;
 				gt.rules.addGroup(year, gr);
-				for(int i=1; i<=12; i++)
-					for(int j=1; j<=6; j++)
+				for(int i=1; i<=16; i++)
+					for(int j=1; j<=12; j++)
 						if(subgroups[i][j][k]!=NULL)
 							gt.rules.addSubgroup(year, t, subgroups[i][j][k]);
 			}
 	}
 
 	else if(namesCategory2[1]!=""){ //two categories
-		for(int i=1; i<=12; i++)
+		for(int i=1; i<=16; i++){
+			if(namesCategory1[i]!=""){
+				QString t=year+separator+namesCategory1[i];
+				if(gt.rules.searchStudentsSet(t)!=NULL){
+					QMessageBox::information(this, tr("FET information"), tr("Cannot add group %1, because a set with same name exists. "
+					 "Please choose another name or remove old group").arg(t));
+					return;
+				}
+			}
+		}
+		for(int j=1; j<=12; j++){
+			if(namesCategory2[j]!=""){
+				QString t=year+separator+namesCategory2[j];
+				if(gt.rules.searchStudentsSet(t)!=NULL){
+					QMessageBox::information(this, tr("FET information"), tr("Cannot add group %1, because a set with same name exists. "
+					 "Please choose another name or remove old group").arg(t));
+					return;
+				}
+			}
+		}
+	
+		for(int i=1; i<=16; i++)
 			if(namesCategory1[i]!="")
-				for(int j=1; j<=6; j++)
+				for(int j=1; j<=12; j++)
 					if(namesCategory2[j]!=""){
-						QString t=year+separator+namesCategory1[i];
-						if(gt.rules.searchStudentsSet(t)!=NULL){
-							QMessageBox::information(this, tr("FET information"), tr("Cannot add group %1, because a set with same name exists. "
-							 "Please choose another name or remove old group").arg(t));
-							return;
-						}
-						t=year+separator+namesCategory2[j];
-						if(gt.rules.searchStudentsSet(t)!=NULL){
-							QMessageBox::information(this, tr("FET information"), tr("Cannot add group %1, because a set with same name exists. "
-							 "Please choose another name or remove old group").arg(t));
-							return;
-						}
-						t=year+separator+namesCategory1[i]+separator+namesCategory2[j];
+						QString t=year+separator+namesCategory1[i]+separator+namesCategory2[j];
 						if(gt.rules.searchStudentsSet(t)!=NULL){
 							QMessageBox::information(this, tr("FET information"), tr("Cannot add subgroup %1, because a set with same name exists. "
 							 "Please choose another name or remove old subgroup").arg(t));
@@ -987,15 +1216,15 @@ void SplitYearForm::ok()
 						}
 					}
 						
-		StudentsSubgroup* subgroups[12+1][6+1];
+		StudentsSubgroup* subgroups[16+1][12+1];
 		
-		for(int i=1; i<=12; i++)
-			for(int j=1; j<=6; j++)
+		for(int i=1; i<=16; i++)
+			for(int j=1; j<=12; j++)
 				subgroups[i][j]=NULL;
 
-		for(int i=1; i<=12; i++)
+		for(int i=1; i<=16; i++)
 			if(namesCategory1[i]!="")
-				for(int j=1; j<=6; j++)
+				for(int j=1; j<=12; j++)
 					if(namesCategory2[j]!=""){
 						QString t=year+separator+namesCategory1[i]+separator+namesCategory2[j];
 						assert(gt.rules.searchStudentsSet(t)==NULL);
@@ -1003,33 +1232,33 @@ void SplitYearForm::ok()
 						subgroups[i][j]->name=t;
 					}
 								
-		for(int i=1; i<=12; i++)
+		for(int i=1; i<=16; i++)
 			if(namesCategory1[i]!=""){
 				QString t=year+separator+namesCategory1[i];
 				assert(gt.rules.searchStudentsSet(t)==NULL);
 				StudentsGroup* gr=new StudentsGroup;
 				gr->name=t;
 				gt.rules.addGroup(year, gr);
-				for(int j=1; j<=6; j++)
+				for(int j=1; j<=12; j++)
 					if(subgroups[i][j]!=NULL)
 						gt.rules.addSubgroup(year, t, subgroups[i][j]);
 			}
 
-		for(int j=1; j<=6; j++)
+		for(int j=1; j<=12; j++)
 			if(namesCategory2[j]!=""){
 				QString t=year+separator+namesCategory2[j];
 				assert(gt.rules.searchStudentsSet(t)==NULL);
 				StudentsGroup* gr=new StudentsGroup;
 				gr->name=t;
 				gt.rules.addGroup(year, gr);
-				for(int i=1; i<=12; i++)
+				for(int i=1; i<=16; i++)
 					if(subgroups[i][j]!=NULL)
 						gt.rules.addSubgroup(year, t, subgroups[i][j]);
 			}
 	}
-	else{ //one categories
+	else{ //one category
 		assert(namesCategory1[1]!="");
-		for(int i=1; i<=12; i++)
+		for(int i=1; i<=16; i++)
 			if(namesCategory1[i]!=""){
 				QString t=year+separator+namesCategory1[i];
 				if(gt.rules.searchStudentsSet(t)!=NULL){
@@ -1039,7 +1268,7 @@ void SplitYearForm::ok()
 				}
 			}
 						
-		for(int i=1; i<=12; i++)
+		for(int i=1; i<=16; i++)
 			if(namesCategory1[i]!=""){
 				QString t=year+separator+namesCategory1[i];
 				assert(gt.rules.searchStudentsSet(t)==NULL);
@@ -1074,6 +1303,10 @@ void SplitYearForm::ok()
 	_cat1div10=category1Division10LineEdit->text();
 	_cat1div11=category1Division11LineEdit->text();
 	_cat1div12=category1Division12LineEdit->text();
+	_cat1div13=category1Division13LineEdit->text();
+	_cat1div14=category1Division14LineEdit->text();
+	_cat1div15=category1Division15LineEdit->text();
+	_cat1div16=category1Division16LineEdit->text();
 	
 	_cat2div1=category2Division1LineEdit->text();
 	_cat2div2=category2Division2LineEdit->text();
@@ -1081,6 +1314,12 @@ void SplitYearForm::ok()
 	_cat2div4=category2Division4LineEdit->text();
 	_cat2div5=category2Division5LineEdit->text();
 	_cat2div6=category2Division6LineEdit->text();
+	_cat2div7=category2Division7LineEdit->text();
+	_cat2div8=category2Division8LineEdit->text();
+	_cat2div9=category2Division9LineEdit->text();
+	_cat2div10=category2Division10LineEdit->text();
+	_cat2div11=category2Division11LineEdit->text();
+	_cat2div12=category2Division12LineEdit->text();
 	
 	_cat3div1=category3Division1LineEdit->text();
 	_cat3div2=category3Division2LineEdit->text();
@@ -1115,7 +1354,7 @@ void SplitYearForm::help()
 	s+=tr("Please choose a number of categories and in each category the number of divisions. You can choose for instance"
 	 " 3 categories, 5 divisions for the first category: a, b, c, d and e, 2 divisions for the second category: boys and girls,"
 	 " and 3 divisions for the third: English, German and French."
-	 " You can select 1 to 4 categories, first with 2 to 12 divisions and the second, third and fourth ones each with 2 to 6 divisions."
+	 " You can select 1 to 4 categories, the first with 2 to 16 divisions, the second with 2 to 12 divisions, and the third and fourth ones each with 2 to 6 divisions."
 	 " If you need 5 categories, you may apply this trick: consider 9a a year, 9b another year, ..., and divide them by 4 categories (more details below)"
 	 ". For more values (very unlikely case) you will have to manually"
 	 " add the groups and subgroups");
@@ -1201,6 +1440,10 @@ void SplitYearForm::reset() //reset to defaults
 	category1Division10LineEdit->setText("");
 	category1Division11LineEdit->setText("");
 	category1Division12LineEdit->setText("");
+	category1Division13LineEdit->setText("");
+	category1Division14LineEdit->setText("");
+	category1Division15LineEdit->setText("");
+	category1Division16LineEdit->setText("");
 
 	category2Division1LineEdit->setText("");
 	category2Division2LineEdit->setText("");
@@ -1208,6 +1451,12 @@ void SplitYearForm::reset() //reset to defaults
 	category2Division4LineEdit->setText("");
 	category2Division5LineEdit->setText("");
 	category2Division6LineEdit->setText("");
+	category2Division7LineEdit->setText("");
+	category2Division8LineEdit->setText("");
+	category2Division9LineEdit->setText("");
+	category2Division10LineEdit->setText("");
+	category2Division11LineEdit->setText("");
+	category2Division12LineEdit->setText("");
 
 	category3Division1LineEdit->setText("");
 	category3Division2LineEdit->setText("");

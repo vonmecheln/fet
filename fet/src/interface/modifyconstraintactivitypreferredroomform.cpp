@@ -120,7 +120,23 @@ void ModifyConstraintActivityPreferredRoomForm::ok()
 
 	this->_ctr->weightPercentage=weight;
 	this->_ctr->roomName=room;
-	this->_ctr->activityId=act->id;
+	
+	if(_ctr->activityId!=act->id){
+		int oldId=_ctr->activityId;
+		int newId=act->id;
+		
+		QSet<ConstraintActivityPreferredRoom*> cs=gt.rules.aprHash.value(oldId, QSet<ConstraintActivityPreferredRoom*>());
+		assert(cs.contains(_ctr));
+		cs.remove(_ctr);
+		gt.rules.aprHash.insert(oldId, cs);
+		
+		cs=gt.rules.aprHash.value(newId, QSet<ConstraintActivityPreferredRoom*>());
+		assert(!cs.contains(_ctr));
+		cs.insert(_ctr);
+		gt.rules.aprHash.insert(newId, cs);
+	
+		this->_ctr->activityId=act->id;
+	}
 	
 	this->_ctr->permanentlyLocked=permLockedCheckBox->isChecked();
 

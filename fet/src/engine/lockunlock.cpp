@@ -155,4 +155,3 @@ void LockUnlock::increaseCommunicationSpinBox()
 	
 	communicationSpinBox.increaseValue();
 }
-

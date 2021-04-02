@@ -85,12 +85,12 @@ extern Timetable gt;
 /*extern qint16 teachers_timetable_weekly[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 extern qint16 students_timetable_weekly[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 extern qint16 rooms_timetable_weekly[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];*/
-extern Matrix3D<qint16> teachers_timetable_weekly;
-extern Matrix3D<qint16> students_timetable_weekly;
-extern Matrix3D<qint16> rooms_timetable_weekly;
+extern Matrix3D<int> teachers_timetable_weekly;
+extern Matrix3D<int> students_timetable_weekly;
+extern Matrix3D<int> rooms_timetable_weekly;
 
 //extern QList<qint16> teachers_free_periods_timetable_weekly[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-extern Matrix3D<QList<qint16> > teachers_free_periods_timetable_weekly;
+extern Matrix3D<QList<int> > teachers_free_periods_timetable_weekly;
 
 //extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 extern Matrix2D<bool> breakDayHour;
@@ -809,6 +809,8 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 	
 	rules2.spaceConstraintsList=gt.rules.spaceConstraintsList;
 
+	rules2.apstHash=gt.rules.apstHash;
+	rules2.aprHash=gt.rules.aprHash;
 
 	//add locking constraints
 	TimeConstraintsList lockTimeConstraintsList;
@@ -930,6 +932,9 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 	rules2.timeConstraintsList.clear();
 	
 	rules2.spaceConstraintsList.clear();
+
+	rules2.apstHash.clear();
+	rules2.aprHash.clear();
 	
 	if(!result){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"), tr("Could not save the data + timetable file on the hard disk - maybe hard disk is full"));

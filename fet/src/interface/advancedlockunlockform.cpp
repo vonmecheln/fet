@@ -190,22 +190,23 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 				}
 			}
 			
+			int aid=gt.rules.internalActivitiesList[i].id;
+			
 			if(newTimeCtr!=NULL){
 				bool add=true;
-				foreach(TimeConstraint* tc, gt.rules.timeConstraintsList){
-					if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
-						if((*((ConstraintActivityPreferredStartingTime*)tc)) == (*newTimeCtr)){
-							add=false;
-							break;
-						}
+				
+				foreach(ConstraintActivityPreferredStartingTime* tc, gt.rules.apstHash.value(aid, QSet<ConstraintActivityPreferredStartingTime*>())){
+					if((*tc) == (*newTimeCtr)){
+						add=false;
+						break;
 					}
 				}
 				
 				if(add){
 					addedTimeConstraintsString+=newTimeCtr->getDetailedDescription(gt.rules)+"\n";
 					addedTimeConstraints.append(newTimeCtr);
-	 				
-	 				addedTime++;
+					
+					addedTime++;
 				}
 				else{
 					notAddedTimeConstraintsString+=newTimeCtr->getDetailedDescription(gt.rules)+"\n";
@@ -217,12 +218,11 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 
 			if(newSpaceCtr!=NULL){
 				bool add=true;
-				foreach(SpaceConstraint* tc, gt.rules.spaceConstraintsList){
-					if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
-						if((*((ConstraintActivityPreferredRoom*)tc)) == (*newSpaceCtr)){
-							add=false;
-							break;
-						}
+				
+				foreach(ConstraintActivityPreferredRoom* tc, gt.rules.aprHash.value(aid, QSet<ConstraintActivityPreferredRoom*>())){
+					if((*tc) == (*newSpaceCtr)){
+						add=false;
+						break;
 					}
 				}
 				
@@ -442,7 +442,7 @@ void AdvancedLockUnlockForm::unlockDay(QWidget* parent)
 	int removedTime=0, notRemovedTime=0;
 	int removedSpace=0, notRemovedSpace=0;
 	
-	QSet<int> lockedActivitiesIds;
+	QList<int> lockedActivitiesIds;
 
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
 		if(best_solution.times[i]!=UNALLOCATED_TIME){
@@ -451,7 +451,7 @@ void AdvancedLockUnlockForm::unlockDay(QWidget* parent)
 			//int h=best_solution.times[i]/gt.rules.nDaysPerWeek;
 			
 			if(d==selectedDayInt){
-				lockedActivitiesIds.insert(gt.rules.internalActivitiesList[i].id);
+				lockedActivitiesIds.append(gt.rules.internalActivitiesList[i].id);
 			}
 		}
 	}
@@ -459,20 +459,20 @@ void AdvancedLockUnlockForm::unlockDay(QWidget* parent)
 	QString removedTimeConstraintsString;
 	QString notRemovedTimeConstraintsString;
 
-	QList<ConstraintActivityPreferredStartingTime*> removedTimeConstraints;
-	QList<ConstraintActivityPreferredStartingTime*> notRemovedTimeConstraints;
+	QList<TimeConstraint*> removedTimeConstraints;
+	QList<TimeConstraint*> notRemovedTimeConstraints;
 	
 	QString removedSpaceConstraintsString;
 	QString notRemovedSpaceConstraintsString;
 
-	QList<ConstraintActivityPreferredRoom*> removedSpaceConstraints;
-	QList<ConstraintActivityPreferredRoom*> notRemovedSpaceConstraints;
+	QList<SpaceConstraint*> removedSpaceConstraints;
+	QList<SpaceConstraint*> notRemovedSpaceConstraints;
 	
 	if(unlockTime){
-		foreach(TimeConstraint* tc, gt.rules.timeConstraintsList){
-			if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
-				ConstraintActivityPreferredStartingTime* c=(ConstraintActivityPreferredStartingTime*)tc;
-				if(c->weightPercentage==100.0 && c->day>=0 && c->hour>=0 && lockedActivitiesIds.contains(c->activityId)){
+		foreach(int aid, lockedActivitiesIds){
+			foreach(ConstraintActivityPreferredStartingTime* c, gt.rules.apstHash.value(aid, QSet<ConstraintActivityPreferredStartingTime*>())){
+				assert(aid==c->activityId);
+				if(c->weightPercentage==100.0 && c->day>=0 && c->hour>=0){
 					if(c->day!=selectedDayInt){
 						//QMessageBox::warning(&taDialog, tr("FET warning"), tr("Incorrect data - time constraint is incorrect - please regenerate the timetable. Please report possible bug."));
 						//above test is no good???
@@ -480,12 +480,12 @@ void AdvancedLockUnlockForm::unlockDay(QWidget* parent)
 					//assert(c->day==selectedDayInt);
 					
 					if(!c->permanentlyLocked){
-						removedTimeConstraints.append(c);
+						removedTimeConstraints.append((TimeConstraint*)c);
 						removedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 						removedTime++;
 					}
 					else{
-						notRemovedTimeConstraints.append(c);
+						notRemovedTimeConstraints.append((TimeConstraint*)c);
 						notRemovedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 						notRemovedTime++;
 					}
@@ -495,17 +495,17 @@ void AdvancedLockUnlockForm::unlockDay(QWidget* parent)
 	}
 
 	if(unlockSpace){
-		foreach(SpaceConstraint* tc, gt.rules.spaceConstraintsList){
-			if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
-				ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*)tc;
-				if(c->weightPercentage==100.0 && lockedActivitiesIds.contains(c->activityId)){
+		foreach(int aid, lockedActivitiesIds){
+			foreach(ConstraintActivityPreferredRoom* c, gt.rules.aprHash.value(aid, QSet<ConstraintActivityPreferredRoom*>())){
+				assert(aid==c->activityId);
+				if(c->weightPercentage==100.0){
 					if(!c->permanentlyLocked){
-						removedSpaceConstraints.append(c);
+						removedSpaceConstraints.append((SpaceConstraint*)c);
 						removedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 						removedSpace++;
 					}
 					else{
-						notRemovedSpaceConstraints.append(c);
+						notRemovedSpaceConstraints.append((SpaceConstraint*)c);
 						notRemovedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 						notRemovedSpace++;
 					}
@@ -594,13 +594,19 @@ void AdvancedLockUnlockForm::unlockDay(QWidget* parent)
 		return;
 	////////////
 	
-	foreach(TimeConstraint* tc, removedTimeConstraints)
-		gt.rules.removeTimeConstraint(tc);
+	//foreach(TimeConstraint* tc, removedTimeConstraints)
+	//	gt.rules.removeTimeConstraint(tc);
+	bool t=gt.rules.removeTimeConstraints(removedTimeConstraints);
+	assert(t);
+	
 	removedTimeConstraints.clear();
 	notRemovedTimeConstraints.clear();
 
-	foreach(SpaceConstraint* sc, removedSpaceConstraints)
-		gt.rules.removeSpaceConstraint(sc);
+	//foreach(SpaceConstraint* sc, removedSpaceConstraints)
+	//	gt.rules.removeSpaceConstraint(sc);
+	t=gt.rules.removeSpaceConstraints(removedSpaceConstraints);
+	assert(t);
+	
 	removedSpaceConstraints.clear();
 	notRemovedSpaceConstraints.clear();
 
@@ -750,12 +756,11 @@ void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 			
 			if(newTimeCtr!=NULL){
 				bool add=true;
-				foreach(TimeConstraint* tc, gt.rules.timeConstraintsList){
-					if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
-						if((*((ConstraintActivityPreferredStartingTime*)tc)) == (*newTimeCtr)){
-							add=false;
-							break;
-						}
+
+				foreach(ConstraintActivityPreferredStartingTime* tc, gt.rules.apstHash.value(id, QSet<ConstraintActivityPreferredStartingTime*>())){
+					if((*tc) == (*newTimeCtr)){
+						add=false;
+						break;
 					}
 				}
 				
@@ -775,12 +780,11 @@ void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 
 			if(newSpaceCtr!=NULL){
 				bool add=true;
-				foreach(SpaceConstraint* tc, gt.rules.spaceConstraintsList){
-					if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
-						if((*((ConstraintActivityPreferredRoom*)tc)) == (*newSpaceCtr)){
-							add=false;
-							break;
-						}
+
+				foreach(ConstraintActivityPreferredRoom* tc, gt.rules.aprHash.value(id, QSet<ConstraintActivityPreferredRoom*>())){
+					if((*tc) == (*newSpaceCtr)){
+						add=false;
+						break;
 					}
 				}
 				
@@ -984,6 +988,7 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay(QWidget* parent)
 	int removedSpace=0, notRemovedSpace=0;
 	
 
+	QList<int> activitiesIdsList;
 	QSet<int> activitiesIdsSet;
 	for(int sg=0; sg<gt.rules.nInternalSubgroups; sg++){
 		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
@@ -995,6 +1000,7 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay(QWidget* parent)
 					
 					if(!activitiesIdsSet.contains(act->id)){
 						activitiesIdsSet.insert(act->id);
+						activitiesIdsList.append(act->id);
 					}
 				
 					break;
@@ -1006,27 +1012,27 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay(QWidget* parent)
 	QString removedTimeConstraintsString;
 	QString notRemovedTimeConstraintsString;
 
-	QList<ConstraintActivityPreferredStartingTime*> removedTimeConstraints;
-	QList<ConstraintActivityPreferredStartingTime*> notRemovedTimeConstraints;
+	QList<TimeConstraint*> removedTimeConstraints;
+	QList<TimeConstraint*> notRemovedTimeConstraints;
 	
 	QString removedSpaceConstraintsString;
 	QString notRemovedSpaceConstraintsString;
 
-	QList<ConstraintActivityPreferredRoom*> removedSpaceConstraints;
-	QList<ConstraintActivityPreferredRoom*> notRemovedSpaceConstraints;
+	QList<SpaceConstraint*> removedSpaceConstraints;
+	QList<SpaceConstraint*> notRemovedSpaceConstraints;
 	
 	if(unlockTime){
-		foreach(TimeConstraint* tc, gt.rules.timeConstraintsList){
-			if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
-				ConstraintActivityPreferredStartingTime* c=(ConstraintActivityPreferredStartingTime*)tc;
-				if(c->weightPercentage==100.0 && c->day>=0 && c->hour>=0 && activitiesIdsSet.contains(c->activityId)){
+		foreach(int id, activitiesIdsList){
+			foreach(ConstraintActivityPreferredStartingTime* c, gt.rules.apstHash.value(id, QSet<ConstraintActivityPreferredStartingTime*>())){
+				assert(id==c->activityId);
+				if(c->weightPercentage==100.0 && c->day>=0 && c->hour>=0){
 					if(!c->permanentlyLocked){
-						removedTimeConstraints.append(c);
+						removedTimeConstraints.append((TimeConstraint*)c);
 						removedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 						removedTime++;
 					}
 					else{
-						notRemovedTimeConstraints.append(c);
+						notRemovedTimeConstraints.append((TimeConstraint*)c);
 						notRemovedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 						notRemovedTime++;
 					}
@@ -1036,17 +1042,17 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay(QWidget* parent)
 	}
 
 	if(unlockSpace){
-		foreach(SpaceConstraint* tc, gt.rules.spaceConstraintsList){
-			if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
-				ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*)tc;
-				if(c->weightPercentage==100.0 && activitiesIdsSet.contains(c->activityId)){
+		foreach(int id, activitiesIdsList){
+			foreach(ConstraintActivityPreferredRoom* c, gt.rules.aprHash.value(id, QSet<ConstraintActivityPreferredRoom*>())){
+				assert(id==c->activityId);
+				if(c->weightPercentage==100.0){
 					if(!c->permanentlyLocked){
-						removedSpaceConstraints.append(c);
+						removedSpaceConstraints.append((SpaceConstraint*)c);
 						removedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 						removedSpace++;
 					}
 					else{
-						notRemovedSpaceConstraints.append(c);
+						notRemovedSpaceConstraints.append((SpaceConstraint*)c);
 						notRemovedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 						notRemovedSpace++;
 					}
@@ -1135,13 +1141,19 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay(QWidget* parent)
 		return;
 	////////////
 	
-	foreach(TimeConstraint* tc, removedTimeConstraints)
-		gt.rules.removeTimeConstraint(tc);
+	//foreach(TimeConstraint* tc, removedTimeConstraints)
+	//	gt.rules.removeTimeConstraint(tc);
+	bool t=gt.rules.removeTimeConstraints(removedTimeConstraints);
+	assert(t);
+	
 	removedTimeConstraints.clear();
 	notRemovedTimeConstraints.clear();
 
-	foreach(SpaceConstraint* sc, removedSpaceConstraints)
-		gt.rules.removeSpaceConstraint(sc);
+	//foreach(SpaceConstraint* sc, removedSpaceConstraints)
+	//	gt.rules.removeSpaceConstraint(sc);
+	t=gt.rules.removeSpaceConstraints(removedSpaceConstraints);
+	assert(t);
+	
 	removedSpaceConstraints.clear();
 	notRemovedSpaceConstraints.clear();
 
@@ -1246,6 +1258,8 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 			int d=best_solution.times[i]%gt.rules.nDaysPerWeek;
 			int h=best_solution.times[i]/gt.rules.nDaysPerWeek;
 			
+			int id=gt.rules.internalActivitiesList[i].id;
+
 			ConstraintActivityPreferredStartingTime* newTimeCtr=NULL;
 			
 			ConstraintActivityPreferredRoom* newSpaceCtr=NULL;
@@ -1260,14 +1274,14 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 				}
 			}
 			
+			
 			if(newTimeCtr!=NULL){
 				bool add=true;
-				foreach(TimeConstraint* tc, gt.rules.timeConstraintsList){
-					if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
-						if((*((ConstraintActivityPreferredStartingTime*)tc)) == (*newTimeCtr)){
-							add=false;
-							break;
-						}
+				
+				foreach(ConstraintActivityPreferredStartingTime* tc, gt.rules.apstHash.value(id, QSet<ConstraintActivityPreferredStartingTime*>())){
+					if((*tc) == (*newTimeCtr)){
+						add=false;
+						break;
 					}
 				}
 				
@@ -1287,12 +1301,11 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 
 			if(newSpaceCtr!=NULL){
 				bool add=true;
-				foreach(SpaceConstraint* tc, gt.rules.spaceConstraintsList){
-					if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
-						if((*((ConstraintActivityPreferredRoom*)tc)) == (*newSpaceCtr)){
-							add=false;
-							break;
-						}
+
+				foreach(ConstraintActivityPreferredRoom* tc, gt.rules.aprHash.value(id, QSet<ConstraintActivityPreferredRoom*>())){
+					if((*tc) == (*newSpaceCtr)){
+						add=false;
+						break;
 					}
 				}
 				
@@ -1497,39 +1510,39 @@ void AdvancedLockUnlockForm::unlockAll(QWidget* parent)
 	int removedTime=0, notRemovedTime=0;
 	int removedSpace=0, notRemovedSpace=0;
 	
-	QSet<int> lockedActivitiesIds;
+	QList<int> lockedActivitiesIds;
 
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
 		if(best_solution.times[i]!=UNALLOCATED_TIME){
 			assert(best_solution.times[i]>=0 && best_solution.times[i]<gt.rules.nHoursPerWeek);
-			lockedActivitiesIds.insert(gt.rules.internalActivitiesList[i].id);
+			lockedActivitiesIds.append(gt.rules.internalActivitiesList[i].id);
 		}
 	}
 
 	QString removedTimeConstraintsString;
 	QString notRemovedTimeConstraintsString;
 
-	QList<ConstraintActivityPreferredStartingTime*> removedTimeConstraints;
-	QList<ConstraintActivityPreferredStartingTime*> notRemovedTimeConstraints;
+	QList<TimeConstraint*> removedTimeConstraints;
+	QList<TimeConstraint*> notRemovedTimeConstraints;
 	
 	QString removedSpaceConstraintsString;
 	QString notRemovedSpaceConstraintsString;
 
-	QList<ConstraintActivityPreferredRoom*> removedSpaceConstraints;
-	QList<ConstraintActivityPreferredRoom*> notRemovedSpaceConstraints;
+	QList<SpaceConstraint*> removedSpaceConstraints;
+	QList<SpaceConstraint*> notRemovedSpaceConstraints;
 	
 	if(unlockTime){
-		foreach(TimeConstraint* tc, gt.rules.timeConstraintsList){
-			if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
-				ConstraintActivityPreferredStartingTime* c=(ConstraintActivityPreferredStartingTime*)tc;
-				if(c->weightPercentage==100.0 && c->day>=0 && c->hour>=0 && lockedActivitiesIds.contains(c->activityId)){
+		foreach(int id, lockedActivitiesIds){
+			foreach(ConstraintActivityPreferredStartingTime* c, gt.rules.apstHash.value(id, QSet<ConstraintActivityPreferredStartingTime*>())){
+				assert(id==c->activityId);
+				if(c->weightPercentage==100.0 && c->day>=0 && c->hour>=0){
 					if(!c->permanentlyLocked){
-						removedTimeConstraints.append(c);
+						removedTimeConstraints.append((TimeConstraint*)c);
 						removedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 						removedTime++;
 					}
 					else{
-						notRemovedTimeConstraints.append(c);
+						notRemovedTimeConstraints.append((TimeConstraint*)c);
 						notRemovedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 						notRemovedTime++;
 					}
@@ -1539,17 +1552,17 @@ void AdvancedLockUnlockForm::unlockAll(QWidget* parent)
 	}
 
 	if(unlockSpace){
-		foreach(SpaceConstraint* tc, gt.rules.spaceConstraintsList){
-			if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
-				ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*)tc;
-				if(c->weightPercentage==100.0 && lockedActivitiesIds.contains(c->activityId)){
+		foreach(int id, lockedActivitiesIds){
+			foreach(ConstraintActivityPreferredRoom* c, gt.rules.aprHash.value(id, QSet<ConstraintActivityPreferredRoom*>())){
+				assert(id==c->activityId);
+				if(c->weightPercentage==100.0){
 					if(!c->permanentlyLocked){
-						removedSpaceConstraints.append(c);
+						removedSpaceConstraints.append((SpaceConstraint*)c);
 						removedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 						removedSpace++;
 					}
 					else{
-						notRemovedSpaceConstraints.append(c);
+						notRemovedSpaceConstraints.append((SpaceConstraint*)c);
 						notRemovedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 						notRemovedSpace++;
 					}
@@ -1638,13 +1651,19 @@ void AdvancedLockUnlockForm::unlockAll(QWidget* parent)
 		return;
 	////////////
 	
-	foreach(TimeConstraint* tc, removedTimeConstraints)
-		gt.rules.removeTimeConstraint(tc);
+	//foreach(TimeConstraint* tc, removedTimeConstraints)
+	//	gt.rules.removeTimeConstraint(tc);
+	bool t=gt.rules.removeTimeConstraints(removedTimeConstraints);
+	assert(t);
+	
 	removedTimeConstraints.clear();
 	notRemovedTimeConstraints.clear();
 
-	foreach(SpaceConstraint* sc, removedSpaceConstraints)
-		gt.rules.removeSpaceConstraint(sc);
+	//foreach(SpaceConstraint* sc, removedSpaceConstraints)
+	//	gt.rules.removeSpaceConstraint(sc);
+	t=gt.rules.removeSpaceConstraints(removedSpaceConstraints);
+	assert(t);
+	
 	removedSpaceConstraints.clear();
 	notRemovedSpaceConstraints.clear();
 
@@ -1656,4 +1675,589 @@ void AdvancedLockUnlockForm::unlockAll(QWidget* parent)
 	LockUnlock::increaseCommunicationSpinBox();
 	
 	//cout<<"isc=="<<gt.rules.internalStructureComputed<<endl;
+}
+
+void AdvancedLockUnlockForm::unlockAllWithoutTimetable(QWidget* parent)
+{
+	/*if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
+		return;
+	}*/
+	
+	//New Dialog
+	QDialog taDialog(parent);
+	taDialog.setWindowTitle(tr("FET - Unlock all activities without a generated timetable"));
+
+	QVBoxLayout* taMainLayout=new QVBoxLayout(&taDialog);
+
+	QLabel* taLabel=new QLabel();
+	taLabel->setWordWrap(true);
+	taLabel->setText(tr("All activities will be unlocked (those which are not permanently locked)"));
+	taLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+
+	QPushButton* tapb1=new QPushButton(tr("Cancel"));
+	QPushButton* tapb2=new QPushButton(tr("OK"));
+	
+	QHBoxLayout* buttons=new QHBoxLayout();
+	buttons->addStretch();
+	buttons->addWidget(tapb1);
+	buttons->addWidget(tapb2);
+	
+	////////
+	QGroupBox* selectorsGroupBox=new QGroupBox();
+	selectorsGroupBox->setTitle("Unlock");
+	
+	QHBoxLayout* groupLayout=new QHBoxLayout(selectorsGroupBox);
+	
+	QCheckBox* timeCheckBox=new QCheckBox();
+	timeCheckBox->setChecked(true);
+	timeCheckBox->setText("Time");
+	QCheckBox* spaceCheckBox=new QCheckBox();
+	spaceCheckBox->setChecked(true);
+	spaceCheckBox->setText("Space");
+
+	groupLayout->addWidget(timeCheckBox);
+	groupLayout->addWidget(spaceCheckBox);
+	groupLayout->addStretch();
+	/////////
+	
+	taMainLayout->addWidget(taLabel);
+	taMainLayout->addStretch();
+	taMainLayout->addWidget(selectorsGroupBox);
+	taMainLayout->addStretch();
+	taMainLayout->addLayout(buttons);
+
+	QObject::connect(tapb2, SIGNAL(clicked()), &taDialog, SLOT(accept()));
+	QObject::connect(tapb1, SIGNAL(clicked()), &taDialog, SLOT(reject()));
+
+	tapb2->setDefault(true);
+	tapb2->setFocus();
+	
+	int w=taDialog.sizeHint().width();
+	int h=taDialog.sizeHint().height();
+	if(w<MIN_WIDTH)
+		w=MIN_WIDTH;
+	if(h<MIN_HEIGHT)
+		h=MIN_HEIGHT;
+	taDialog.resize(w,h);
+	centerWidgetOnScreen(&taDialog);
+	restoreFETDialogGeometry(&taDialog, unlockAllSettingsString);
+	bool ok=taDialog.exec();
+	saveFETDialogGeometry(&taDialog, unlockAllSettingsString);
+	if(!ok)
+		return;
+		
+	bool unlockTime=timeCheckBox->isChecked();
+	bool unlockSpace=spaceCheckBox->isChecked();
+
+	int removedTime=0, notRemovedTime=0;
+	int removedSpace=0, notRemovedSpace=0;
+	
+	/*QList<int> lockedActivitiesIds;
+
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		if(best_solution.times[i]!=UNALLOCATED_TIME){
+			assert(best_solution.times[i]>=0 && best_solution.times[i]<gt.rules.nHoursPerWeek);
+			lockedActivitiesIds.append(gt.rules.internalActivitiesList[i].id);
+		}
+	}*/
+
+	QString removedTimeConstraintsString;
+	QString notRemovedTimeConstraintsString;
+
+	QList<TimeConstraint*> removedTimeConstraints;
+	QList<TimeConstraint*> notRemovedTimeConstraints;
+	
+	QString removedSpaceConstraintsString;
+	QString notRemovedSpaceConstraintsString;
+
+	QList<SpaceConstraint*> removedSpaceConstraints;
+	QList<SpaceConstraint*> notRemovedSpaceConstraints;
+	
+	if(unlockTime)
+		foreach(TimeConstraint* tc, gt.rules.timeConstraintsList)
+			if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
+				ConstraintActivityPreferredStartingTime* c=(ConstraintActivityPreferredStartingTime*)tc;
+				if(tc->weightPercentage==100.0 && c->day>=0 && c->hour>=0){
+					if(!c->permanentlyLocked){
+						removedTimeConstraints.append((TimeConstraint*)c);
+						removedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						removedTime++;
+					}
+					else{
+						notRemovedTimeConstraints.append((TimeConstraint*)c);
+						notRemovedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						notRemovedTime++;
+					}
+				}
+			}
+	
+	/*if(unlockTime){
+		foreach(int id, lockedActivitiesIds){
+			foreach(ConstraintActivityPreferredStartingTime* c, gt.rules.apstHash.value(id, QSet<ConstraintActivityPreferredStartingTime*>())){
+				assert(id==c->activityId);
+				if(c->weightPercentage==100.0 && c->day>=0 && c->hour>=0){
+					if(!c->permanentlyLocked){
+						removedTimeConstraints.append((TimeConstraint*)c);
+						removedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						removedTime++;
+					}
+					else{
+						notRemovedTimeConstraints.append((TimeConstraint*)c);
+						notRemovedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						notRemovedTime++;
+					}
+				}
+			}
+		}
+	}*/
+
+	if(unlockSpace)
+		foreach(SpaceConstraint* sc, gt.rules.spaceConstraintsList)
+			if(sc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
+				ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*)sc;
+				if(c->weightPercentage==100.0){
+					if(!c->permanentlyLocked){
+						removedSpaceConstraints.append((SpaceConstraint*)c);
+						removedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						removedSpace++;
+					}
+					else{
+						notRemovedSpaceConstraints.append((SpaceConstraint*)c);
+						notRemovedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						notRemovedSpace++;
+					}
+				}
+			}
+
+	/*if(unlockSpace){
+		foreach(int id, lockedActivitiesIds){
+			foreach(ConstraintActivityPreferredRoom* c, gt.rules.aprHash.value(id, QSet<ConstraintActivityPreferredRoom*>())){
+				assert(id==c->activityId);
+				if(c->weightPercentage==100.0){
+					if(!c->permanentlyLocked){
+						removedSpaceConstraints.append((SpaceConstraint*)c);
+						removedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						removedSpace++;
+					}
+					else{
+						notRemovedSpaceConstraints.append((SpaceConstraint*)c);
+						notRemovedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						notRemovedSpace++;
+					}
+				}
+			}
+		}
+	}*/
+
+	////////////
+	//last confirmation dialog
+	QDialog lastConfirmationDialog(&taDialog);
+	lastConfirmationDialog.setWindowTitle(tr("Last confirmation needed"));
+
+	QVBoxLayout* lastMainLayout=new QVBoxLayout(&lastConfirmationDialog);
+
+	QPushButton* lastpb1=new QPushButton(tr("Cancel"));
+	QPushButton* lastpb2=new QPushButton(tr("OK"));
+	QHBoxLayout* lastButtons=new QHBoxLayout();
+	lastButtons->addStretch();
+	lastButtons->addWidget(lastpb1);
+	lastButtons->addWidget(lastpb2);
+	
+	////texts
+	QVBoxLayout* left=new QVBoxLayout();
+	QVBoxLayout* right=new QVBoxLayout();
+	QHBoxLayout* all=new QHBoxLayout();
+	all->addLayout(left);
+	all->addLayout(right);
+	
+	QPlainTextEdit* remTim=new QPlainTextEdit();
+	remTim->setReadOnly(true);
+	remTim->setPlainText(removedTimeConstraintsString);
+	QLabel* labRemTim=new QLabel(tr("These time constraints will be removed"));
+	labRemTim->setWordWrap(true);
+	labRemTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	left->addWidget(labRemTim);
+	left->addWidget(remTim);
+
+	QPlainTextEdit* notRemTim=new QPlainTextEdit();
+	notRemTim->setReadOnly(true);
+	notRemTim->setPlainText(notRemovedTimeConstraintsString);
+	QLabel* labNotRemTim=new QLabel(tr("These time constraints will NOT be removed"));
+	labNotRemTim->setWordWrap(true);
+	labNotRemTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	left->addWidget(labNotRemTim);
+	left->addWidget(notRemTim);
+
+	QPlainTextEdit* remSpa=new QPlainTextEdit();
+	remSpa->setReadOnly(true);
+	remSpa->setPlainText(removedSpaceConstraintsString);
+	QLabel* labRemSpa=new QLabel(tr("These space constraints will be removed"));
+	labRemSpa->setWordWrap(true);
+	labRemSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	right->addWidget(labRemSpa);
+	right->addWidget(remSpa);
+	
+	QPlainTextEdit* notRemSpa=new QPlainTextEdit();
+	notRemSpa->setReadOnly(true);
+	notRemSpa->setPlainText(notRemovedSpaceConstraintsString);
+	QLabel* labNotRemSpa=new QLabel(tr("These space constraints will NOT be removed"));
+	labNotRemSpa->setWordWrap(true);
+	labNotRemSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	right->addWidget(labNotRemSpa);
+	right->addWidget(notRemSpa);
+	////end texts
+	
+	////////
+	lastMainLayout->addLayout(all);
+	//lastMainLayout->addStretch();
+	lastMainLayout->addLayout(lastButtons);
+
+	QObject::connect(lastpb2, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(accept()));
+	QObject::connect(lastpb1, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(reject()));
+
+	lastpb2->setDefault(true);
+	lastpb2->setFocus();
+	
+	int lw=lastConfirmationDialog.sizeHint().width();
+	int lh=lastConfirmationDialog.sizeHint().height();
+	lastConfirmationDialog.resize(lw,lh);
+	centerWidgetOnScreen(&lastConfirmationDialog);
+	restoreFETDialogGeometry(&lastConfirmationDialog, unlockAllConfirmationSettingsString);
+	ok=lastConfirmationDialog.exec();
+	saveFETDialogGeometry(&lastConfirmationDialog, unlockAllConfirmationSettingsString);
+	if(!ok)
+		return;
+	////////////
+	
+	//foreach(TimeConstraint* tc, removedTimeConstraints)
+	//	gt.rules.removeTimeConstraint(tc);
+	bool t=gt.rules.removeTimeConstraints(removedTimeConstraints);
+	assert(t);
+	
+	removedTimeConstraints.clear();
+	notRemovedTimeConstraints.clear();
+
+	//foreach(SpaceConstraint* sc, removedSpaceConstraints)
+	//	gt.rules.removeSpaceConstraint(sc);
+	t=gt.rules.removeSpaceConstraints(removedSpaceConstraints);
+	assert(t);
+	
+	removedSpaceConstraints.clear();
+	notRemovedSpaceConstraints.clear();
+
+	QMessageBox::information(&lastConfirmationDialog, tr("FET information"), tr("There were removed %1 locking time constraints and"
+		" %2 locking space constraints. There were not removed %3 locking time constraints and %4 locking space constraints, because"
+		" these activities were permanently locked").arg(removedTime).arg(removedSpace).arg(notRemovedTime).arg(notRemovedSpace));
+	
+	LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
+	LockUnlock::increaseCommunicationSpinBox();
+	
+	//cout<<"isc=="<<gt.rules.internalStructureComputed<<endl;
+}
+
+void AdvancedLockUnlockForm::unlockDayWithoutTimetable(QWidget* parent)
+{
+	/*if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
+		return;
+	}*/
+	
+	QStringList days;
+	for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+		days<<gt.rules.daysOfTheWeek[j];
+	assert(days.size()!=0);
+
+	//New Dialog
+	QDialog taDialog(parent);
+	taDialog.setWindowTitle(tr("FET - Unlock activities of a day"));
+
+	QVBoxLayout* taMainLayout=new QVBoxLayout(&taDialog);
+
+	QLabel* taLabel=new QLabel();
+	taLabel->setWordWrap(true);
+	taLabel->setText(tr("All activities of the selected day will be unlocked (those which are not permanently locked)")+"\n\n"+tr("Please select the day to unlock:"));
+	taLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+
+	QComboBox* taLW=new QComboBox();
+	
+	QSize tmp2=taLW->minimumSizeHint();
+	Q_UNUSED(tmp2);
+	
+	taLW->addItems(days);
+	taLW->setCurrentIndex(0);
+
+	QPushButton* tapb1=new QPushButton(tr("Cancel"));
+	QPushButton* tapb2=new QPushButton(tr("OK"));
+	
+	QHBoxLayout* buttons=new QHBoxLayout();
+	buttons->addStretch();
+	buttons->addWidget(tapb1);
+	buttons->addWidget(tapb2);
+	
+	////////
+	QGroupBox* selectorsGroupBox=new QGroupBox();
+	selectorsGroupBox->setTitle("Unlock");
+	
+	QHBoxLayout* groupLayout=new QHBoxLayout(selectorsGroupBox);
+	
+	QCheckBox* timeCheckBox=new QCheckBox();
+	timeCheckBox->setChecked(true);
+	timeCheckBox->setText("Time");
+	QCheckBox* spaceCheckBox=new QCheckBox();
+	spaceCheckBox->setChecked(true);
+	spaceCheckBox->setText("Space");
+
+	groupLayout->addWidget(timeCheckBox);
+	groupLayout->addWidget(spaceCheckBox);
+	groupLayout->addStretch();
+	/////////
+	
+	taMainLayout->addWidget(taLabel);
+	taMainLayout->addWidget(taLW);
+	taMainLayout->addStretch();
+	taMainLayout->addWidget(selectorsGroupBox);
+	taMainLayout->addStretch();
+	taMainLayout->addLayout(buttons);
+
+	QObject::connect(tapb2, SIGNAL(clicked()), &taDialog, SLOT(accept()));
+	QObject::connect(tapb1, SIGNAL(clicked()), &taDialog, SLOT(reject()));
+
+	tapb2->setDefault(true);
+	tapb2->setFocus();
+	
+	int w=taDialog.sizeHint().width();
+	int h=taDialog.sizeHint().height();
+	if(w<MIN_WIDTH)
+		w=MIN_WIDTH;
+	if(h<MIN_HEIGHT)
+		h=MIN_HEIGHT;
+	taDialog.resize(w,h);
+	centerWidgetOnScreen(&taDialog);
+	restoreFETDialogGeometry(&taDialog, unlockDaySettingsString);
+	bool ok=taDialog.exec();
+	saveFETDialogGeometry(&taDialog, unlockDaySettingsString);
+	if(!ok)
+		return;
+		
+	bool unlockTime=timeCheckBox->isChecked();
+	bool unlockSpace=spaceCheckBox->isChecked();
+
+	int selectedDayInt=taLW->currentIndex();
+	assert(selectedDayInt>=0 && selectedDayInt<gt.rules.nDaysPerWeek);
+
+	int removedTime=0, notRemovedTime=0;
+	int removedSpace=0, notRemovedSpace=0;
+	
+	/*QList<int> lockedActivitiesIds;
+
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		if(best_solution.times[i]!=UNALLOCATED_TIME){
+			assert(best_solution.times[i]>=0 && best_solution.times[i]<gt.rules.nHoursPerWeek);
+			int d=best_solution.times[i]%gt.rules.nDaysPerWeek;
+			//int h=best_solution.times[i]/gt.rules.nDaysPerWeek;
+			
+			if(d==selectedDayInt){
+				lockedActivitiesIds.append(gt.rules.internalActivitiesList[i].id);
+			}
+		}
+	}*/
+
+	QString removedTimeConstraintsString;
+	QString notRemovedTimeConstraintsString;
+
+	QList<TimeConstraint*> removedTimeConstraints;
+	QList<TimeConstraint*> notRemovedTimeConstraints;
+	
+	QString removedSpaceConstraintsString;
+	QString notRemovedSpaceConstraintsString;
+
+	QList<SpaceConstraint*> removedSpaceConstraints;
+	QList<SpaceConstraint*> notRemovedSpaceConstraints;
+	
+	QSet<int> actsSet;
+	
+	if(unlockTime)
+		foreach(TimeConstraint* tc, gt.rules.timeConstraintsList)
+			if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
+				ConstraintActivityPreferredStartingTime* c=(ConstraintActivityPreferredStartingTime*)tc;
+				if(c->weightPercentage==100.0 && c->day>=0 && c->hour>=0 && c->day==selectedDayInt){
+					actsSet.insert(c->activityId);
+					if(!c->permanentlyLocked){
+						removedTimeConstraints.append((TimeConstraint*)c);
+						removedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						removedTime++;
+					}
+					else{
+						notRemovedTimeConstraints.append((TimeConstraint*)c);
+						notRemovedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						notRemovedTime++;
+					}
+				}
+			}
+			
+	/*if(unlockTime){
+		foreach(int aid, lockedActivitiesIds){
+			foreach(ConstraintActivityPreferredStartingTime* c, gt.rules.apstHash.value(aid, QSet<ConstraintActivityPreferredStartingTime*>())){
+				assert(aid==c->activityId);
+				if(c->weightPercentage==100.0 && c->day>=0 && c->hour>=0){
+					if(c->day!=selectedDayInt){
+						//QMessageBox::warning(&taDialog, tr("FET warning"), tr("Incorrect data - time constraint is incorrect - please regenerate the timetable. Please report possible bug."));
+						//above test is no good???
+					}
+					//assert(c->day==selectedDayInt);
+					
+					if(!c->permanentlyLocked){
+						removedTimeConstraints.append((TimeConstraint*)c);
+						removedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						removedTime++;
+					}
+					else{
+						notRemovedTimeConstraints.append((TimeConstraint*)c);
+						notRemovedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						notRemovedTime++;
+					}
+				}
+			}
+		}
+	}*/
+
+	if(unlockSpace)
+		foreach(SpaceConstraint* sc, gt.rules.spaceConstraintsList)
+			if(sc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
+				ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*) sc;
+				if(c->weightPercentage==100.0 && actsSet.contains(c->activityId)){
+					if(!c->permanentlyLocked){
+						removedSpaceConstraints.append((SpaceConstraint*)c);
+						removedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						removedSpace++;
+					}
+					else{
+						notRemovedSpaceConstraints.append((SpaceConstraint*)c);
+						notRemovedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						notRemovedSpace++;
+					}
+				}
+			}
+
+	/*if(unlockSpace){
+		foreach(int aid, lockedActivitiesIds){
+			foreach(ConstraintActivityPreferredRoom* c, gt.rules.aprHash.value(aid, QSet<ConstraintActivityPreferredRoom*>())){
+				assert(aid==c->activityId);
+				if(c->weightPercentage==100.0){
+					if(!c->permanentlyLocked){
+						removedSpaceConstraints.append((SpaceConstraint*)c);
+						removedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						removedSpace++;
+					}
+					else{
+						notRemovedSpaceConstraints.append((SpaceConstraint*)c);
+						notRemovedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						notRemovedSpace++;
+					}
+				}
+			}
+		}
+	}*/
+
+	////////////
+	//last confirmation dialog
+	QDialog lastConfirmationDialog(&taDialog);
+	lastConfirmationDialog.setWindowTitle(tr("Last confirmation needed"));
+
+	QVBoxLayout* lastMainLayout=new QVBoxLayout(&lastConfirmationDialog);
+
+	QPushButton* lastpb1=new QPushButton(tr("Cancel"));
+	QPushButton* lastpb2=new QPushButton(tr("OK"));
+	QHBoxLayout* lastButtons=new QHBoxLayout();
+	lastButtons->addStretch();
+	lastButtons->addWidget(lastpb1);
+	lastButtons->addWidget(lastpb2);
+	
+	////texts
+	QVBoxLayout* left=new QVBoxLayout();
+	QVBoxLayout* right=new QVBoxLayout();
+	QHBoxLayout* all=new QHBoxLayout();
+	all->addLayout(left);
+	all->addLayout(right);
+	
+	QPlainTextEdit* remTim=new QPlainTextEdit();
+	remTim->setReadOnly(true);
+	remTim->setPlainText(removedTimeConstraintsString);
+	QLabel* labRemTim=new QLabel(tr("These time constraints will be removed"));
+	labRemTim->setWordWrap(true);
+	labRemTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	left->addWidget(labRemTim);
+	left->addWidget(remTim);
+
+	QPlainTextEdit* notRemTim=new QPlainTextEdit();
+	notRemTim->setReadOnly(true);
+	notRemTim->setPlainText(notRemovedTimeConstraintsString);
+	QLabel* labNotRemTim=new QLabel(tr("These time constraints will NOT be removed"));
+	labNotRemTim->setWordWrap(true);
+	labNotRemTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	left->addWidget(labNotRemTim);
+	left->addWidget(notRemTim);
+
+	QPlainTextEdit* remSpa=new QPlainTextEdit();
+	remSpa->setReadOnly(true);
+	remSpa->setPlainText(removedSpaceConstraintsString);
+	QLabel* labRemSpa=new QLabel(tr("These space constraints will be removed"));
+	labRemSpa->setWordWrap(true);
+	labRemSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	right->addWidget(labRemSpa);
+	right->addWidget(remSpa);
+	
+	QPlainTextEdit* notRemSpa=new QPlainTextEdit();
+	notRemSpa->setReadOnly(true);
+	notRemSpa->setPlainText(notRemovedSpaceConstraintsString);
+	QLabel* labNotRemSpa=new QLabel(tr("These space constraints will NOT be removed"));
+	labNotRemSpa->setWordWrap(true);
+	labNotRemSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	right->addWidget(labNotRemSpa);
+	right->addWidget(notRemSpa);
+	////end texts
+	
+	////////
+	lastMainLayout->addLayout(all);
+	//lastMainLayout->addStretch();
+	lastMainLayout->addLayout(lastButtons);
+
+	QObject::connect(lastpb2, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(accept()));
+	QObject::connect(lastpb1, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(reject()));
+
+	lastpb2->setDefault(true);
+	lastpb2->setFocus();
+	
+	int lw=lastConfirmationDialog.sizeHint().width();
+	int lh=lastConfirmationDialog.sizeHint().height();
+	lastConfirmationDialog.resize(lw,lh);
+	centerWidgetOnScreen(&lastConfirmationDialog);
+	restoreFETDialogGeometry(&lastConfirmationDialog, unlockDayConfirmationSettingsString);
+	ok=lastConfirmationDialog.exec();
+	saveFETDialogGeometry(&lastConfirmationDialog, unlockDayConfirmationSettingsString);
+	if(!ok)
+		return;
+	////////////
+	
+	//foreach(TimeConstraint* tc, removedTimeConstraints)
+	//	gt.rules.removeTimeConstraint(tc);
+	bool t=gt.rules.removeTimeConstraints(removedTimeConstraints);
+	assert(t);
+	
+	removedTimeConstraints.clear();
+	notRemovedTimeConstraints.clear();
+
+	//foreach(SpaceConstraint* sc, removedSpaceConstraints)
+	//	gt.rules.removeSpaceConstraint(sc);
+	t=gt.rules.removeSpaceConstraints(removedSpaceConstraints);
+	assert(t);
+	
+	removedSpaceConstraints.clear();
+	notRemovedSpaceConstraints.clear();
+
+	QMessageBox::information(&lastConfirmationDialog, tr("FET information"), tr("There were removed %1 locking time constraints and"
+		" %2 locking space constraints. There were not removed %3 locking time constraints and %4 locking space constraints, because"
+		" these activities were permanently locked").arg(removedTime).arg(removedSpace).arg(notRemovedTime).arg(notRemovedSpace));
+	
+	LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
+	LockUnlock::increaseCommunicationSpinBox();
 }

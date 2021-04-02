@@ -1314,6 +1314,9 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 		
 		rules2.spaceConstraintsList=gt.rules.spaceConstraintsList;
 
+		rules2.apstHash=gt.rules.apstHash;
+		rules2.aprHash=gt.rules.aprHash;
+
 		//add locking constraints
 		TimeConstraintsList lockTimeConstraintsList;
 		SpaceConstraintsList lockSpaceConstraintsList;
@@ -1416,6 +1419,9 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 		rules2.timeConstraintsList.clear();
 		
 		rules2.spaceConstraintsList.clear();
+
+		rules2.apstHash.clear();
+		rules2.aprHash.clear();
 	}
 	
 	if(pc_form!=NULL)
@@ -3319,7 +3325,11 @@ void FetMainForm::on_timetableLockAllActivitiesAction_triggered()
 void FetMainForm::on_timetableUnlockAllActivitiesAction_triggered()
 {
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
-		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
+		//QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
+		QMessageBox::information(this, tr("FET information"), tr("The timetable is not generated, but anyway FET will proceed now"));
+
+		AdvancedLockUnlockForm::unlockAllWithoutTimetable(this);
+	
 		return;
 	}
 
@@ -3339,7 +3349,11 @@ void FetMainForm::on_timetableLockActivitiesDayAction_triggered()
 void FetMainForm::on_timetableUnlockActivitiesDayAction_triggered()
 {
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
-		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
+		//QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
+		QMessageBox::information(this, tr("FET information"), tr("The timetable is not generated, but anyway FET will proceed now"));
+		
+		AdvancedLockUnlockForm::unlockDayWithoutTimetable(this);
+		
 		return;
 	}
 

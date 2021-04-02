@@ -211,26 +211,26 @@ void Activity::computeInternalStructure(Rules& r)
 	//this->nTeachers=0;
 	this->iTeachersList.clear();
 	for(QStringList::Iterator it=this->teachersNames.begin(); it!=this->teachersNames.end(); it++){
-		int tmp;
-		for(tmp=0; tmp<r.nInternalTeachers; tmp++){
+		int tmp=r.teachersHash.value(*it, -1);
+		/*for(tmp=0; tmp<r.nInternalTeachers; tmp++){
 			if(r.internalTeachersList[tmp]->name == (*it))
 				break;
-		}
-		assert(tmp < r.nInternalTeachers);
+		}*/
+		assert(tmp>=0 && tmp < r.nInternalTeachers);
 		//assert(this->nTeachers<MAX_TEACHERS_PER_ACTIVITY);
 		//this->teachers[this->nTeachers++]=tmp;
 		this->iTeachersList.append(tmp);
 	}
 
 	//subjects
-	this->subjectIndex = r.searchSubject(this->subjectName);
+	this->subjectIndex = r.subjectsHash.value(subjectName, -1); //r.searchSubject(this->subjectName);
 	assert(this->subjectIndex>=0);
 
 	//activity tags
 	this->iActivityTagsSet.clear();
 	foreach(QString tag, this->activityTagsNames){
 		assert(tag!="");
-		int index=r.searchActivityTag(tag);
+		int index=r.activityTagsHash.value(tag, -1); //r.searchActivityTag(tag);
 		assert(index>=0);
 		this->iActivityTagsSet.insert(index);
 	}
@@ -240,7 +240,7 @@ void Activity::computeInternalStructure(Rules& r)
 	//this->nSubgroups=0;
 	this->iSubgroupsList.clear();
 	for(QStringList::Iterator it=this->studentsNames.begin(); it!=this->studentsNames.end(); it++){
-		StudentsSet* ss=r.searchAugmentedStudentsSet(*it);
+		StudentsSet* ss=r.studentsHash.value(*it, NULL); //r.searchAugmentedStudentsSet(*it);
 		assert(ss);
 		if(ss->type==STUDENTS_SUBGROUP){
 			int tmp;

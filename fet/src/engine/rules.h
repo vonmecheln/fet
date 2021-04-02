@@ -36,9 +36,10 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 #include "matrix.h"
 
+#include <QHash>
 #include <QSet>
 #include <QList>
-
+#include <QStringList>
 #include <QString>
 
 #include <QCoreApplication>
@@ -97,9 +98,9 @@ public:
 	QString daysOfTheWeek[MAX_DAYS_PER_WEEK];
 
 	/**
-	The hours of the day (names). This includes also the last hour (+1)
+	The hours of the day (names).
 	*/
-	QString hoursOfTheDay[MAX_HOURS_PER_DAY+1];
+	QString hoursOfTheDay[MAX_HOURS_PER_DAY];
 
 	/**
 	The number of hours per week
@@ -152,6 +153,31 @@ public:
 	*/
 	SpaceConstraintsList spaceConstraintsList;
 	
+	//For faster operation
+	//not internal, based on activity id / teacher name / students set name and constraints list
+	QHash<int, Activity*> activitiesPointerHash; //first is id, second is pointer to Rules::activitiesList
+	QSet<ConstraintBasicCompulsoryTime*> bctSet;
+	QSet<ConstraintBreakTimes*> btSet;
+	QSet<ConstraintBasicCompulsorySpace*> bcsSet;
+	QHash<int, QSet<ConstraintActivityPreferredStartingTime*> > apstHash;
+	QHash<int, QSet<ConstraintActivityPreferredRoom*> > aprHash;
+	QHash<int, QSet<ConstraintMinDaysBetweenActivities*> > mdbaHash;
+	QHash<QString, QSet<ConstraintTeacherNotAvailableTimes*> > tnatHash;
+	QHash<QString, QSet<ConstraintStudentsSetNotAvailableTimes*> > ssnatHash;
+	//internal
+	QHash<QString, int> teachersHash;
+	QHash<QString, int> subjectsHash;
+	QHash<QString, int> activityTagsHash;
+	QHash<QString, StudentsSet*> studentsHash;
+	QHash<QString, int> buildingsHash;
+	QHash<QString, int> roomsHash;
+	QHash<int, int> activitiesHash; //first is id, second is index in internal list
+	//using activity index in internal activities
+	/*QHash<QString, QSet<int> > activitiesForTeacherHash;
+	QHash<QString, QSet<int> > activitiesForSubjectHash;
+	QHash<QString, QSet<int> > activitiesForActivityTagHash;
+	QHash<QString, QSet<int> > activitiesForStudentsSetHash;*/
+
 	/*
 	The following variables contain redundant data and are used internally
 	*/
@@ -355,6 +381,9 @@ public:
 	This function is used in constraints isRelatedToStudentsSet
 	*/
 	bool setsShareStudents(const QString& studentsSet1, const QString& studentsSet2);
+
+	//Internal
+	bool augmentedSetsShareStudentsFaster(const QString& studentsSet1, const QString& studentsSet2);
 
 	/**
 	Adds a new year of study to the academic structure
@@ -638,12 +667,15 @@ public:
 	Returns true on success, false for already existing constraints.
 	*/
 	bool addSpaceConstraint(SpaceConstraint* ctr);
-
+	
 	/**
 	Removes this space constraint.
 	Returns true on success, false on failure (not found).
 	*/
 	bool removeSpaceConstraint(SpaceConstraint* ctr);
+	
+	bool removeTimeConstraints(QList<TimeConstraint*> _tcl);
+	bool removeSpaceConstraints(QList<SpaceConstraint*> _scl);
 
 	/**
 	Reads the rules from the xml input file "filename".

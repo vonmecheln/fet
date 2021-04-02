@@ -366,7 +366,16 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 
 	assert(res==QDialog::Accepted);
 	
-	foreach(ConstraintMinDaysBetweenActivities* mdc, constraintsToBeRemoved){
+	//better
+	QList<TimeConstraint*> removedList;
+	foreach(ConstraintMinDaysBetweenActivities* mdc, constraintsToBeRemoved)
+		removedList.append((TimeConstraint*)mdc);
+	bool t=gt.rules.removeTimeConstraints(removedList);
+	assert(t);
+	removedList.clear();
+	constraintsToBeRemoved.clear();
+	
+	/*foreach(ConstraintMinDaysBetweenActivities* mdc, constraintsToBeRemoved){
 		int t=gt.rules.timeConstraintsList.removeAll(mdc);
 		assert(t==1);
 	}
@@ -376,7 +385,7 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 	foreach(ConstraintMinDaysBetweenActivities* mdc, constraintsToBeRemoved)
 		delete mdc;
 		
-	constraintsToBeRemoved.clear();
+	constraintsToBeRemoved.clear();*/
 		
 	foreach(ConstraintMinDaysBetweenActivities* tc, addedConstraints){
 		bool t=gt.rules.addTimeConstraint(tc);

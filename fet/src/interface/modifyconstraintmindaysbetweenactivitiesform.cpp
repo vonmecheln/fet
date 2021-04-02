@@ -270,13 +270,32 @@ void ModifyConstraintMinDaysBetweenActivitiesForm::ok()
 		}
 	}
 	
-	int i;
+	if(_ctr->activitiesId!=selectedActivitiesList){
+		foreach(int oldId, _ctr->activitiesId){
+			QSet<ConstraintMinDaysBetweenActivities*> cs=gt.rules.mdbaHash.value(oldId, QSet<ConstraintMinDaysBetweenActivities*>());
+			assert(cs.contains(_ctr));
+			cs.remove(_ctr);
+			gt.rules.mdbaHash.insert(oldId, cs);
+		}
+		
+		foreach(int newId, selectedActivitiesList){
+			QSet<ConstraintMinDaysBetweenActivities*> cs=gt.rules.mdbaHash.value(newId, QSet<ConstraintMinDaysBetweenActivities*>());
+			assert(!cs.contains(_ctr));
+			cs.insert(_ctr);
+			gt.rules.mdbaHash.insert(newId, cs);
+		}
+		
+		_ctr->activitiesId=selectedActivitiesList;
+		_ctr->n_activities=_ctr->activitiesId.count();
+	}
+
+	/*int i;
 	QList<int>::iterator it;
 	this->_ctr->activitiesId.clear();
 	for(i=0, it=this->selectedActivitiesList.begin(); it!=this->selectedActivitiesList.end(); it++, i++){
 		this->_ctr->activitiesId.append(*it);
 	}
-	this->_ctr->n_activities=i;
+	this->_ctr->n_activities=i;*/
 		
 	this->_ctr->weightPercentage=weight;
 	this->_ctr->consecutiveIfSameDay=consecutiveIfSameDayCheckBox->isChecked();

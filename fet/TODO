@@ -1133,10 +1133,10 @@ In changing the number FET hours from 11 to 10 the constraints were not automati
 
 I just want to know it it must be like that or if FET cannot change the constraints automatically. <-- DONE
 
-63---------------------------------------------------------
+63-----------------------DONE------------------------------
 From Volker Dirr:
 
-Our timetablemaker played a bit with FET. he done several changes in the
+DONE --> Our timetablemaker played a bit with FET. he done several changes in the
 dataset, sadly he used the FET file with locked activities.
 he tried to generated, but of course it failed, because of the changes in
 dataset, but locked times/rooms.
@@ -1147,7 +1147,7 @@ because FET complains it must be generated first. but why? can't we unlock
 even it is not generated?
 (yes, i know i can remove constraints manualy. i just mean: unlocking a
 special day and unlocking all activities is possible, even if table is not
-generated.)
+generated.) <-- DONE
 
 64---------------------------------------------------------
 From aliponte:
@@ -1714,10 +1714,10 @@ From Silver (on forum):
 He needs "teachers_rooms.html" in the statistics folder, he thinks it would be useful for the examination timetable.
 
 107---------------------------------------------------------
-From Horatiu Halmajan:
+From Horatiu Halmajan and Yush Yuen:
 
-He suggests the possibility of selecting more constraints in the all time/space constraints dialogs and
-de(activate) them in a single operation.
+They suggest the possibility of selecting more constraints in the all time/space constraints dialogs and
+de(activate)/remove them in a single operation.
 
 108---------------------------------------------------------
 From skinkone (on forum):
@@ -2874,3 +2874,12 @@ I have been making this by hand, but it generates a lot of work on each manual i
 I think in a pair of tables per year, one with the teachers and their activities in that year and another with the "teachers not available time" for that year.
 
 With this table it could be simpler to redistribute Activities or teachers.
+
+188---------------------------------------------------------
+From Frans (on forum):
+
+In the data and timetable fet file the sizes for subjects are indicated. Is it not possible when export to csv file to also export the group and/or subject sizes.
+
+In some institutions the group and subject size are important in calculating workloads and ftes for lecturers.
+
+The groups with the respective sizes are already exported but this is not always the same for all subjects as the number of students can be changed on the add activities page and this is not exported.

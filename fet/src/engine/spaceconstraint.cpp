@@ -58,7 +58,7 @@ static QString yesNoTranslated(bool x)
 }
 
 //static qint8 roomsMatrix[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-static Matrix3D<qint8> roomsMatrix;
+static Matrix3D<int> roomsMatrix;
 
 static int rooms_conflicts=-1;
 
@@ -208,7 +208,7 @@ double ConstraintBasicCompulsorySpace::fitness(
 
 	int i;
 
-	int unallocated; //unallocated activities
+	qint64 unallocated; //unallocated activities
 	int nre; //number of room exhaustions
 	int nor; //number of overwhelmed rooms
 
@@ -366,7 +366,7 @@ double ConstraintBasicCompulsorySpace::fitness(
 		assert(nor==0);
 	}
 
-	return weightPercentage/100 * (unallocated + nre + nor); //fitness factor
+	return weightPercentage/100 * (unallocated + qint64(nre) + qint64(nor)); //fitness factor
 }
 
 bool ConstraintBasicCompulsorySpace::isRelatedToActivity(Activity* a)
@@ -547,7 +547,8 @@ QString ConstraintRoomNotAvailableTimes::getDetailedDescription(Rules& r){
 }
 
 bool ConstraintRoomNotAvailableTimes::computeInternalStructure(QWidget* parent, Rules& r){
-	this->room_ID=r.searchRoom(this->room);
+	//this->room_ID=r.searchRoom(this->room);
+	room_ID=r.roomsHash.value(room, -1);
 	
 	if(this->room_ID<0){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
@@ -759,8 +760,10 @@ bool ConstraintActivityPreferredRoom::operator==(ConstraintActivityPreferredRoom
 bool ConstraintActivityPreferredRoom::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	this->_activity=-1;
-	int ac;
-	for(ac=0; ac<r.nInternalActivities; ac++)
+	int ac=r.activitiesHash.value(activityId, -1);
+	assert(ac>=0);
+	_activity=ac;
+	/*for(ac=0; ac<r.nInternalActivities; ac++)
 		if(r.internalActivitiesList[ac].id==this->activityId){
 			assert(this->_activity==-1);
 			this->_activity=ac;
@@ -771,9 +774,11 @@ bool ConstraintActivityPreferredRoom::computeInternalStructure(QWidget* parent, 
 			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
-	}
+	}*/
 		
-	this->_room = r.searchRoom(this->roomName);
+	//this->_room = r.searchRoom(this->roomName);
+	_room=r.roomsHash.value(roomName, -1);
+	assert(_room>=0);
 
 	if(this->_room<0){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
@@ -1005,14 +1010,17 @@ ConstraintActivityPreferredRooms::ConstraintActivityPreferredRooms(double wp, in
 
 bool ConstraintActivityPreferredRooms::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	this->_activity=-1;
+	_activity=r.activitiesHash.value(activityId, r.nInternalActivities);
+	int ac=_activity;
+
+	/*this->_activity=-1;
 	int ac;
 	for(ac=0; ac<r.nInternalActivities; ac++)
 		if(r.internalActivitiesList[ac].id==this->activityId){
 			assert(this->_activity==-1);
 			this->_activity=ac;
 			break;
-		}
+		}*/
 		
 	if(ac==r.nInternalActivities){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
@@ -1023,7 +1031,8 @@ bool ConstraintActivityPreferredRooms::computeInternalStructure(QWidget* parent,
 	
 	this->_rooms.clear();
 	foreach(QString rm, this->roomsNames){
-		int t=r.searchRoom(rm);
+		//int t=r.searchRoom(rm);
+		int t=r.roomsHash.value(rm, -1);
 
 		if(t<0){
 			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
@@ -1259,11 +1268,21 @@ bool ConstraintStudentsSetHomeRoom::computeInternalStructure(QWidget* parent, Ru
 	//This procedure computes the internal list of all the activities
 	//which correspond to the subject of the constraint.
 	
-	QStringList::iterator it;
+	//QStringList::iterator it;
 	Activity* act;
 
 	this->_activities.clear();
-
+	
+	/*QSet<int> set=r.activitiesForStudentsSetHash.value(studentsName, QSet<int>());
+	foreach(int i, set){
+		const Activity& act=r.internalActivitiesList[i];
+		if(act.studentsNames.count()==1){
+			assert(act.studentsNames.at(0)==studentsName);
+			_activities.append(i);
+		}
+	}
+	qSort(_activities);*/
+	
 	for(int ac=0; ac<r.nInternalActivities; ac++){
 		act=&r.internalActivitiesList[ac];
 
@@ -1279,7 +1298,8 @@ bool ConstraintStudentsSetHomeRoom::computeInternalStructure(QWidget* parent, Ru
 		this->_activities.append(ac);
 	}
 
-	this->_room = r.searchRoom(this->roomName);
+	//this->_room = r.searchRoom(this->roomName);
+	_room=r.roomsHash.value(roomName, -1);
 	assert(this->_room>=0);
 	
 	return true;
@@ -1516,7 +1536,17 @@ bool ConstraintStudentsSetHomeRooms::computeInternalStructure(QWidget* parent, R
 	
 	this->_activities.clear();
 
-	QStringList::iterator it;
+	/*QSet<int> set=r.activitiesForStudentsSetHash.value(studentsName, QSet<int>());
+	foreach(int i, set){
+		const Activity& act=r.internalActivitiesList[i];
+		if(act.studentsNames.count()==1){
+			assert(act.studentsNames.at(0)==studentsName);
+			_activities.append(i);
+		}
+	}
+	qSort(_activities);*/
+
+	//QStringList::iterator it;
 	Activity* act;
 
 	for(int ac=0; ac<r.nInternalActivities; ac++){
@@ -1537,7 +1567,8 @@ bool ConstraintStudentsSetHomeRooms::computeInternalStructure(QWidget* parent, R
 	this->_rooms.clear();
 
 	foreach(QString rm, this->roomsNames){
-		int t=r.searchRoom(rm);
+		//int t=r.searchRoom(rm);
+		int t=r.roomsHash.value(rm, -1);
 		if(t<0){
 			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
@@ -1789,10 +1820,20 @@ bool ConstraintTeacherHomeRoom::computeInternalStructure(QWidget* parent, Rules&
 	//This procedure computes the internal list of all the activities
 	//which correspond to the subject of the constraint.
 	
-	QStringList::iterator it;
+	//QStringList::iterator it;
 	Activity* act;
 
 	this->_activities.clear();
+
+	/*QSet<int> set=r.activitiesForTeacherHash.value(teacherName, QSet<int>());
+	foreach(int i, set){
+		const Activity& act=r.internalActivitiesList[i];
+		if(act.teachersNames.count()==1){
+			assert(act.teachersNames.at(0)==teacherName);
+			_activities.append(i);
+		}
+	}
+	qSort(_activities);*/
 
 	for(int ac=0; ac<r.nInternalActivities; ac++){
 		act=&r.internalActivitiesList[ac];
@@ -1809,7 +1850,8 @@ bool ConstraintTeacherHomeRoom::computeInternalStructure(QWidget* parent, Rules&
 		this->_activities.append(ac);
 	}
 
-	this->_room = r.searchRoom(this->roomName);
+	//this->_room = r.searchRoom(this->roomName);
+	_room=r.roomsHash.value(roomName, -1);
 	assert(this->_room>=0);
 	
 	return true;
@@ -2044,7 +2086,17 @@ bool ConstraintTeacherHomeRooms::computeInternalStructure(QWidget* parent, Rules
 	
 	this->_activities.clear();
 
-	QStringList::iterator it;
+	/*QSet<int> set=r.activitiesForTeacherHash.value(teacherName, QSet<int>());
+	foreach(int i, set){
+		const Activity& act=r.internalActivitiesList[i];
+		if(act.teachersNames.count()==1){
+			assert(act.teachersNames.at(0)==teacherName);
+			_activities.append(i);
+		}
+	}
+	qSort(_activities);*/
+
+	//QStringList::iterator it;
 	Activity* act;
 
 	for(int ac=0; ac<r.nInternalActivities; ac++){
@@ -2065,7 +2117,8 @@ bool ConstraintTeacherHomeRooms::computeInternalStructure(QWidget* parent, Rules
 	this->_rooms.clear();
 
 	foreach(QString rm, this->roomsNames){
-		int t=r.searchRoom(rm);
+		//int t=r.searchRoom(rm);
+		int t=r.roomsHash.value(rm, -1);
 		if(t<0){
 			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
@@ -2314,12 +2367,22 @@ bool ConstraintSubjectPreferredRoom::computeInternalStructure(QWidget* parent, R
 	//which correspond to the subject of the constraint.
 	
 	this->_activities.clear();
+
+	/*QSet<int> set=r.activitiesForSubjectHash.value(subjectName, QSet<int>());
+	foreach(int i, set){
+		const Activity& act=r.internalActivitiesList[i];
+		assert(act.subjectName==subjectName);
+		_activities.append(i);
+	}
+	qSort(_activities);*/
+
 	for(int ac=0; ac<r.nInternalActivities; ac++)
 		if(r.internalActivitiesList[ac].subjectName == this->subjectName){
 			this->_activities.append(ac);
 		}
 	
-	this->_room = r.searchRoom(this->roomName);
+	//this->_room = r.searchRoom(this->roomName);
+	_room=r.roomsHash.value(roomName, -1);
 	if(this->_room<0){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
@@ -2540,6 +2603,15 @@ bool ConstraintSubjectPreferredRooms::computeInternalStructure(QWidget* parent, 
 	//which correspond to the subject of the constraint.
 	
 	this->_activities.clear();
+
+	/*QSet<int> set=r.activitiesForSubjectHash.value(subjectName, QSet<int>());
+	foreach(int i, set){
+		const Activity& act=r.internalActivitiesList[i];
+		assert(act.subjectName==subjectName);
+		_activities.append(i);
+	}
+	qSort(_activities);*/
+
 	for(int ac=0; ac<r.nInternalActivities; ac++)
 		if(r.internalActivitiesList[ac].subjectName == this->subjectName){
 			this->_activities.append(ac);
@@ -2547,7 +2619,8 @@ bool ConstraintSubjectPreferredRooms::computeInternalStructure(QWidget* parent, 
 	
 	this->_rooms.clear();
 	foreach(QString rm, this->roomsNames){
-		int t=r.searchRoom(rm);
+		//int t=r.searchRoom(rm);
+		int t=r.roomsHash.value(rm, -1);
 		if(t<0){
 			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
@@ -2782,13 +2855,26 @@ bool ConstraintSubjectActivityTagPreferredRoom::computeInternalStructure(QWidget
 	//which correspond to the subject of the constraint.
 	
 	this->_activities.clear();
+	
+	/*QSet<int> set=r.activitiesForSubjectHash.value(subjectName, QSet<int>());
+	QSet<int> set2=r.activitiesForActivityTagHash.value(activityTagName, QSet<int>());
+	set.intersect(set2);
+	foreach(int i, set){
+		const Activity& act=r.internalActivitiesList[i];
+		assert(act.subjectName==subjectName);
+		assert(act.activityTagsNames.contains(activityTagName));
+		_activities.append(i);
+	}
+	qSort(_activities);*/
+	
 	for(int ac=0; ac<r.nInternalActivities; ac++)
 		if(r.internalActivitiesList[ac].subjectName == this->subjectName
 		 && r.internalActivitiesList[ac].activityTagsNames.contains(this->activityTagName)){
 		 	this->_activities.append(ac);
 		}
 		
-	this->_room = r.searchRoom(this->roomName);
+	//this->_room = r.searchRoom(this->roomName);
+	_room=r.roomsHash.value(roomName, -1);
 	if(this->_room<0){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
@@ -3014,6 +3100,18 @@ bool ConstraintSubjectActivityTagPreferredRooms::computeInternalStructure(QWidge
 	//which correspond to the subject of the constraint.
 	
 	this->_activities.clear();
+
+	/*QSet<int> set=r.activitiesForSubjectHash.value(subjectName, QSet<int>());
+	QSet<int> set2=r.activitiesForActivityTagHash.value(activityTagName, QSet<int>());
+	set.intersect(set2);
+	foreach(int i, set){
+		const Activity& act=r.internalActivitiesList[i];
+		assert(act.subjectName==subjectName);
+		assert(act.activityTagsNames.contains(activityTagName));
+		_activities.append(i);
+	}
+	qSort(_activities);*/
+
 	for(int ac=0; ac<r.nInternalActivities; ac++)
 		if(r.internalActivitiesList[ac].subjectName == this->subjectName
 		 && r.internalActivitiesList[ac].activityTagsNames.contains(this->activityTagName)){
@@ -3022,7 +3120,8 @@ bool ConstraintSubjectActivityTagPreferredRooms::computeInternalStructure(QWidge
 
 	this->_rooms.clear();
 	foreach(QString rm, roomsNames){
-		int t=r.searchRoom(rm);
+		//int t=r.searchRoom(rm);
+		int t=r.roomsHash.value(rm, -1);
 		if(t<0){
 			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
@@ -3260,12 +3359,22 @@ bool ConstraintActivityTagPreferredRoom::computeInternalStructure(QWidget* paren
 	//which correspond to the subject of the constraint.
 	
 	this->_activities.clear();
+
+	/*QSet<int> set=r.activitiesForActivityTagHash.value(activityTagName, QSet<int>());
+	foreach(int i, set){
+		const Activity& act=r.internalActivitiesList[i];
+		assert(act.activityTagsNames.contains(activityTagName));
+		_activities.append(i);
+	}
+	qSort(_activities);*/
+
 	for(int ac=0; ac<r.nInternalActivities; ac++)
 		if(r.internalActivitiesList[ac].activityTagsNames.contains(this->activityTagName)){
 		 	this->_activities.append(ac);
 		}
 		
-	this->_room = r.searchRoom(this->roomName);
+	//this->_room = r.searchRoom(this->roomName);
+	_room=r.roomsHash.value(roomName, -1);
 	if(this->_room<0){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
@@ -3487,6 +3596,15 @@ bool ConstraintActivityTagPreferredRooms::computeInternalStructure(QWidget* pare
 	//which correspond to the subject of the constraint.
 	
 	this->_activities.clear();
+
+	/*QSet<int> set=r.activitiesForActivityTagHash.value(activityTagName, QSet<int>());
+	foreach(int i, set){
+		const Activity& act=r.internalActivitiesList[i];
+		assert(act.activityTagsNames.contains(activityTagName));
+		_activities.append(i);
+	}
+	qSort(_activities);*/
+
 	for(int ac=0; ac<r.nInternalActivities; ac++)
 		if(r.internalActivitiesList[ac].activityTagsNames.contains(this->activityTagName)){
 			this->_activities.append(ac);
@@ -3494,7 +3612,8 @@ bool ConstraintActivityTagPreferredRooms::computeInternalStructure(QWidget* pare
 
 	this->_rooms.clear();
 	foreach(QString rm, roomsNames){
-		int t=r.searchRoom(rm);
+		//int t=r.searchRoom(rm);
+		int t=r.roomsHash.value(rm, -1);
 		if(t<0){
 			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
@@ -3727,7 +3846,8 @@ bool ConstraintStudentsSetMaxBuildingChangesPerDay::computeInternalStructure(QWi
 {
 	this->iSubgroupsList.clear();
 	
-	StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
+	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
+	StudentsSet* ss=r.studentsHash.value(studentsName, NULL);
 			
 	if(ss==NULL){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
@@ -4250,7 +4370,8 @@ bool ConstraintStudentsSetMaxBuildingChangesPerWeek::computeInternalStructure(QW
 {
 	this->iSubgroupsList.clear();
 	
-	StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
+	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
+	StudentsSet* ss=r.studentsHash.value(studentsName, NULL);
 			
 	if(ss==NULL){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
@@ -4772,7 +4893,8 @@ bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::computeInternalStructur
 {
 	this->iSubgroupsList.clear();
 	
-	StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
+	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
+	StudentsSet* ss=r.studentsHash.value(studentsName, NULL);
 			
 	if(ss==NULL){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
@@ -5317,7 +5439,8 @@ ConstraintTeacherMaxBuildingChangesPerDay::ConstraintTeacherMaxBuildingChangesPe
 
 bool ConstraintTeacherMaxBuildingChangesPerDay::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	this->teacher_ID=r.searchTeacher(this->teacherName);
+	//this->teacher_ID=r.searchTeacher(this->teacherName);
+	teacher_ID=r.teachersHash.value(teacherName, -1);
 	
 	if(this->teacher_ID<0){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
@@ -5804,7 +5927,8 @@ ConstraintTeacherMaxBuildingChangesPerWeek::ConstraintTeacherMaxBuildingChangesP
 
 bool ConstraintTeacherMaxBuildingChangesPerWeek::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	this->teacher_ID=r.searchTeacher(this->teacherName);
+	//this->teacher_ID=r.searchTeacher(this->teacherName);
+	teacher_ID=r.teachersHash.value(teacherName, -1);
 	
 	if(this->teacher_ID<0){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
@@ -6291,7 +6415,8 @@ ConstraintTeacherMinGapsBetweenBuildingChanges::ConstraintTeacherMinGapsBetweenB
 
 bool ConstraintTeacherMinGapsBetweenBuildingChanges::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	this->teacher_ID=r.searchTeacher(this->teacherName);
+	//this->teacher_ID=r.searchTeacher(this->teacherName);
+	teacher_ID=r.teachersHash.value(teacherName, -1);
 	
 	if(this->teacher_ID<0){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
@@ -6806,14 +6931,21 @@ bool ConstraintActivitiesOccupyMaxDifferentRooms::computeInternalStructure(QWidg
 {
 	this->_activitiesIndices.clear();
 	
-	QSet<int> req=this->activitiesIds.toSet();
+/*	QSet<int> req=this->activitiesIds.toSet();
 	assert(req.count()==this->activitiesIds.count());
 	
 	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
 	int i;
 	for(i=0; i<r.nInternalActivities; i++)
 		if(req.contains(r.internalActivitiesList[i].id))
-			this->_activitiesIndices.append(i);
+			this->_activitiesIndices.append(i);*/
+			
+	foreach(int id, activitiesIds){
+		int index=r.activitiesHash.value(id, -1);
+		//assert(index>=0);
+		if(index>=0) //take care for inactive activities
+			_activitiesIndices.append(index);
+	}
 			
 	///////////////////////
 	
@@ -6971,16 +7103,19 @@ double ConstraintActivitiesOccupyMaxDifferentRooms::fitness(
 
 void ConstraintActivitiesOccupyMaxDifferentRooms::removeUseless(Rules& r)
 {
-	QSet<int> validActs;
+	/*QSet<int> validActs;
 	
 	foreach(Activity* act, r.activitiesList)
-		validActs.insert(act->id);
+		validActs.insert(act->id);*/
 		
 	QList<int> newActs;
 	
-	foreach(int aid, activitiesIds)
-		if(validActs.contains(aid))
+	foreach(int aid, activitiesIds){
+		Activity* act=r.activitiesPointerHash.value(aid, NULL);
+		if(act!=NULL)
+		//if(validActs.contains(aid))
 			newActs.append(aid);
+	}
 			
 	activitiesIds=newActs;
 }
@@ -7068,7 +7203,15 @@ ConstraintActivitiesSameRoomIfConsecutive::ConstraintActivitiesSameRoomIfConsecu
 
 bool ConstraintActivitiesSameRoomIfConsecutive::computeInternalStructure(QWidget* parent, Rules& r)
 {
-	this->_activitiesIndices.clear();
+	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
+	_activitiesIndices.clear();
+	foreach(int id, activitiesIds){
+		int i=r.activitiesHash.value(id, -1);
+		if(i>=0)
+			_activitiesIndices.append(i);
+	}
+
+	/*this->_activitiesIndices.clear();
 	
 	QSet<int> req=this->activitiesIds.toSet();
 	assert(req.count()==this->activitiesIds.count());
@@ -7077,7 +7220,7 @@ bool ConstraintActivitiesSameRoomIfConsecutive::computeInternalStructure(QWidget
 	int i;
 	for(i=0; i<r.nInternalActivities; i++)
 		if(req.contains(r.internalActivitiesList[i].id))
-			this->_activitiesIndices.append(i);
+			this->_activitiesIndices.append(i);*/
 			
 	///////////////////////
 	
@@ -7240,16 +7383,19 @@ double ConstraintActivitiesSameRoomIfConsecutive::fitness(
 
 void ConstraintActivitiesSameRoomIfConsecutive::removeUseless(Rules& r)
 {
-	QSet<int> validActs;
+	/*QSet<int> validActs;
 	
 	foreach(Activity* act, r.activitiesList)
-		validActs.insert(act->id);
+		validActs.insert(act->id);*/
 		
 	QList<int> newActs;
 	
-	foreach(int aid, activitiesIds)
-		if(validActs.contains(aid))
+	foreach(int aid, activitiesIds){
+		Activity* act=r.activitiesPointerHash.value(aid, NULL);
+		if(act!=NULL)
+		//if(validActs.contains(aid))
 			newActs.append(aid);
+	}
 			
 	activitiesIds=newActs;
 }
@@ -7317,5 +7463,5 @@ bool ConstraintActivitiesSameRoomIfConsecutive::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
-//////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////

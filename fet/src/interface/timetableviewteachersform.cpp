@@ -559,34 +559,32 @@ void TimetableViewTeachersForm::lock(bool lockTime, bool lockSpace)
 							QList<TimeConstraint*> tmptc;
 							tmptc.clear();
 							int count=0;
-							foreach(TimeConstraint* tc, gt.rules.timeConstraintsList){
-								if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
-									ConstraintActivityPreferredStartingTime* c=(ConstraintActivityPreferredStartingTime*) tc;
-									if(c->activityId==act->id && c->weightPercentage==100.0 && c->active && c->day>=0 && c->hour>=0){
-										count++;
-										if(c->permanentlyLocked){
-											if(idsOfLockedTime.contains(c->activityId) || !idsOfPermanentlyLockedTime.contains(c->activityId)){
-												QMessageBox::warning(this, tr("FET warning"), tr("Small problem detected")
-												 +"\n\n"+tr("A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them").arg(act->id)
-												 +"\n\n"+tr("A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again")
-												 +"\n\n"+tr("Please report possible bug")
-												 );
-											}
-											else{
-												s+=tr("Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.").arg("\n"+c->getDetailedDescription(gt.rules)+"\n");
-											}
+							foreach(ConstraintActivityPreferredStartingTime* c, gt.rules.apstHash.value(act->id, QSet<ConstraintActivityPreferredStartingTime*>())){
+								assert(c->activityId==act->id);
+								if(c->activityId==act->id && c->weightPercentage==100.0 && c->active && c->day>=0 && c->hour>=0){
+									count++;
+									if(c->permanentlyLocked){
+										if(idsOfLockedTime.contains(c->activityId) || !idsOfPermanentlyLockedTime.contains(c->activityId)){
+											QMessageBox::warning(this, tr("FET warning"), tr("Small problem detected")
+											 +"\n\n"+tr("A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them").arg(act->id)
+											 +"\n\n"+tr("A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again")
+											 +"\n\n"+tr("Please report possible bug")
+											 );
 										}
 										else{
-											if(!idsOfLockedTime.contains(c->activityId) || idsOfPermanentlyLockedTime.contains(c->activityId)){
-												QMessageBox::warning(this, tr("FET warning"), tr("Small problem detected")
-												 +"\n\n"+tr("A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them").arg(act->id)
-												 +"\n\n"+tr("A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again")
-												 +"\n\n"+tr("Please report possible bug")
-												 );
-											}
-											else{
-												tmptc.append(tc);
-											}
+											s+=tr("Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.").arg("\n"+c->getDetailedDescription(gt.rules)+"\n");
+										}
+									}
+									else{
+										if(!idsOfLockedTime.contains(c->activityId) || idsOfPermanentlyLockedTime.contains(c->activityId)){
+											QMessageBox::warning(this, tr("FET warning"), tr("Small problem detected")
+											 +"\n\n"+tr("A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them").arg(act->id)
+											 +"\n\n"+tr("A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again")
+											 +"\n\n"+tr("Please report possible bug")
+											 );
+										}
+										else{
+											tmptc.append((TimeConstraint*)c);
 										}
 									}
 								}
@@ -633,34 +631,34 @@ void TimetableViewTeachersForm::lock(bool lockTime, bool lockSpace)
 							QList<SpaceConstraint*> tmpsc;
 							tmpsc.clear();
 							int count=0;
-							foreach(SpaceConstraint* sc, gt.rules.spaceConstraintsList){
-								if(sc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
-									ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*) sc;
-									if(c->activityId==act->id && c->weightPercentage==100.0 && c->active){
-										count++;
-										if(c->permanentlyLocked){
-											if(idsOfLockedSpace.contains(c->activityId) || !idsOfPermanentlyLockedSpace.contains(c->activityId)){
-												QMessageBox::warning(this, tr("FET warning"), tr("Small problem detected")
-												 +"\n\n"+tr("A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them").arg(act->id)
-												 +"\n\n"+tr("A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again")
-												 +"\n\n"+tr("Please report possible bug")
-												 );
-											}
-											else{
-												s+=tr("Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.").arg("\n"+c->getDetailedDescription(gt.rules)+"\n");
-											}
+
+							foreach(ConstraintActivityPreferredRoom* c, gt.rules.aprHash.value(act->id, QSet<ConstraintActivityPreferredRoom*>())){
+								assert(c->activityId==act->id);
+
+								if(c->activityId==act->id && c->weightPercentage==100.0 && c->active){
+									count++;
+									if(c->permanentlyLocked){
+										if(idsOfLockedSpace.contains(c->activityId) || !idsOfPermanentlyLockedSpace.contains(c->activityId)){
+											QMessageBox::warning(this, tr("FET warning"), tr("Small problem detected")
+											 +"\n\n"+tr("A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them").arg(act->id)
+											 +"\n\n"+tr("A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again")
+											 +"\n\n"+tr("Please report possible bug")
+											 );
 										}
 										else{
-											if(!idsOfLockedSpace.contains(c->activityId) || idsOfPermanentlyLockedSpace.contains(c->activityId)){
-												QMessageBox::warning(this, tr("FET warning"), tr("Small problem detected")
-												 +"\n\n"+tr("A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them").arg(act->id)
-												 +"\n\n"+tr("A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again")
-												 +"\n\n"+tr("Please report possible bug")
-												 );
-											}
-											else{
-												tmpsc.append(sc);
-											}
+											s+=tr("Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.").arg("\n"+c->getDetailedDescription(gt.rules)+"\n");
+										}
+									}
+									else{
+										if(!idsOfLockedSpace.contains(c->activityId) || idsOfPermanentlyLockedSpace.contains(c->activityId)){
+											QMessageBox::warning(this, tr("FET warning"), tr("Small problem detected")
+											 +"\n\n"+tr("A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them").arg(act->id)
+											 +"\n\n"+tr("A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again")
+											 +"\n\n"+tr("Please report possible bug")
+											 );
+										}
+										else{
+											tmpsc.append((SpaceConstraint*)c);
 										}
 									}
 								}

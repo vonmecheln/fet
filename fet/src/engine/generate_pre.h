@@ -49,8 +49,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 ////////BEGIN BASIC TIME CONSTRAINTS
 //extern bool activitiesConflicting[MAX_ACTIVITIES][MAX_ACTIVITIES];
 //extern qint8 activitiesConflictingPercentage[MAX_ACTIVITIES][MAX_ACTIVITIES]; //-1 for not conflicting,
-extern Matrix2D<qint8> activitiesConflictingPercentage; //-1 for not conflicting,
+//extern Matrix2D<qint8> activitiesConflictingPercentage; //-1 for not conflicting,
 //a value >=0 equal with the weight of the maximum weightPercentage of a basic time constraint
+extern Matrix1D<QHash<int, int> > activitiesConflictingPercentage;
 
 bool computeActivitiesConflictingPercentage(QWidget* parent);
 //void computeActivitiesConflicting();

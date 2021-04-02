@@ -99,6 +99,7 @@ const int MAX_TEACHERS=6000;
 
 /**
 The maximum number of activities
+DEPRECATED COMMENT BELOW
 IMPORTANT: must be qint16 (max 32767), because we are using qint16 for each activity index and for
 unallocated activity = max_activities
 */
@@ -110,6 +111,7 @@ const int MAX_SPLIT_OF_AN_ACTIVITY=35;
 
 /**
 The maximum number of rooms
+DEPRECATED COMMENT BELOW
 IMPORTANT: max_rooms+1 must be qint16 (max 32766 for max_rooms), because we are using qint16 for each room index and
 for unallocated space = max_rooms and for unspecified room = max_rooms+1
 */
@@ -123,10 +125,11 @@ const int MAX_BUILDINGS=6000;
 /**
 This constant represents an unallocated activity
 */
-const qint16 UNALLOCATED_ACTIVITY = MAX_ACTIVITIES;
+const int UNALLOCATED_ACTIVITY = MAX_ACTIVITIES;
 
 /**
 The maximum number of working hours per day.
+DEPRECATED COMMENT BELOW
 IMPORTANT: max hours per day * max days per week = max hours per week must be qint16 (max 32767),
 because each time is qint16 and unallocated time is qint16
 */
@@ -134,6 +137,7 @@ const int MAX_HOURS_PER_DAY=60;
 
 /**
 The maximum number of working days per week.
+DEPRECATED COMMENT BELOW
 IMPORTANT: max hours per day * max days per week = max hours per week must be qint16 (max 32767)
 because each time is qint16 and unallocated time is qint16
 */
@@ -156,6 +160,7 @@ Hours in a week are arranged like this:
 5        20 21 22 23 24
 6        25 26 27 28 29 etc.
 
+DEPRECATED COMMENT BELOW
 IMPORTANT: MAX_HOURS_PER_DAY * MAX_DAYS_PER_WEEK == MAX_HOURS_PER_WEEK must be qint16 (max 32767)
 because each time is qint16 and unallocated time is qint16
 */
@@ -164,14 +169,14 @@ const int MAX_HOURS_PER_WEEK = MAX_HOURS_PER_DAY * MAX_DAYS_PER_WEEK;
 /**
 This constant represents unallocated time for an activity
 */
-const qint16 UNALLOCATED_TIME = MAX_HOURS_PER_WEEK;
+const int UNALLOCATED_TIME = MAX_HOURS_PER_WEEK;
 
 /**
 This constant represents unallocated space for an activity
 */
-const qint16 UNALLOCATED_SPACE = MAX_ROOMS;
+const int UNALLOCATED_SPACE = MAX_ROOMS;
 
-const qint16 UNSPECIFIED_ROOM = MAX_ROOMS+1;
+const int UNSPECIFIED_ROOM = MAX_ROOMS+1;
 
 /**
 The maximum number of time constraints
@@ -246,19 +251,19 @@ QString protect2java(const QString& str);
 /**
 This constants represents free periods of a teacher in the teachers free periods timetable
 */
-const qint16 TEACHER_HAS_SINGLE_GAP = 0;
-const qint16 TEACHER_HAS_BORDER_GAP = 1;
-const qint16 TEACHER_HAS_BIG_GAP = 2;
+const int TEACHER_HAS_SINGLE_GAP = 0;
+const int TEACHER_HAS_BORDER_GAP = 1;
+const int TEACHER_HAS_BIG_GAP = 2;
 
-const qint16 TEACHER_MUST_COME_EARLIER = 4;
-const qint16 TEACHER_MUST_COME_MUCH_EARLIER = 6;
+const int TEACHER_MUST_COME_EARLIER = 4;
+const int TEACHER_MUST_COME_MUCH_EARLIER = 6;
 
-const qint16 TEACHER_MUST_STAY_LONGER = 3;
-const qint16 TEACHER_MUST_STAY_MUCH_LONGER = 5;		// BE CAREFULL, I just print into LESS_DETAILED timetable, if it's smaller then TEACHER_MUST_STAY_MUCH_LONGER
+const int TEACHER_MUST_STAY_LONGER = 3;
+const int TEACHER_MUST_STAY_MUCH_LONGER = 5;		// BE CAREFULL, I just print into LESS_DETAILED timetable, if it's smaller then TEACHER_MUST_STAY_MUCH_LONGER
 
-const qint16 TEACHER_HAS_A_FREE_DAY = 7;
+const int TEACHER_HAS_A_FREE_DAY = 7;
 
-const qint16 TEACHER_IS_NOT_AVAILABLE = 8;
+const int TEACHER_IS_NOT_AVAILABLE = 8;
 
 const int TEACHERS_FREE_PERIODS_N_CATEGORIES = 9;
 

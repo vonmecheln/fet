@@ -63,9 +63,9 @@ public:
 	stored as an integer value). We have a special value here:
 	UNALLOCATED_TIME, which is a large number.
 	*/
-	qint16 times[MAX_ACTIVITIES];
+	int times[MAX_ACTIVITIES];
 	
-	qint16 rooms[MAX_ACTIVITIES];
+	int rooms[MAX_ACTIVITIES];
 
 	/**
 	Fitness; it is calculated only at the initialization or
@@ -100,20 +100,20 @@ public:
 	*/
 	double fitness(Rules& r, QString* conflictsString=NULL);
 
-	void getTeachersTimetable(Rules& r, Matrix3D<qint16>& a, Matrix3D<QList<qint16> >& b);
+	void getTeachersTimetable(Rules& r, Matrix3D<int>& a, Matrix3D<QList<int> >& b);
 	//return value is the number of conflicts, which must be 0
 
-	void getSubgroupsTimetable(Rules& r, Matrix3D<qint16>& a);
+	void getSubgroupsTimetable(Rules& r, Matrix3D<int>& a);
 	//return value is the number of conflicts, which must be 0
 
-	void getRoomsTimetable(Rules& r, Matrix3D<qint16>& a);
+	void getRoomsTimetable(Rules& r, Matrix3D<int>& a);
 	//return value is the number of conflicts, which must be 0
 
-	int getSubgroupsMatrix(Rules& r, Matrix3D<qint8>& a);
+	int getSubgroupsMatrix(Rules& r, Matrix3D<int>& a);
 
-	int getTeachersMatrix(Rules& r, Matrix3D<qint8>& a);
+	int getTeachersMatrix(Rules& r, Matrix3D<int>& a);
 
-	int getRoomsMatrix(Rules& r, Matrix3D<qint8>& a);
+	int getRoomsMatrix(Rules& r, Matrix3D<int>& a);
 };
 
 #endif
