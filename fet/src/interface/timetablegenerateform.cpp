@@ -618,7 +618,7 @@ void TimetableGenerateForm::impossibleToSolve()
 				myProcess->start(command, arguments);
 			}*/
 			//else{
-				QProcess::startDetached(command, arguments);
+			QProcess::startDetached(command, arguments);
 			//}
 		}
 	}
@@ -746,7 +746,7 @@ void TimetableGenerateForm::simulationFinished()
 				myProcess->start(command, arguments);
 			}*/
 			//else{
-				QProcess::startDetached(command, arguments);
+			QProcess::startDetached(command, arguments);
 			//}
 		}
 	}

@@ -81,28 +81,15 @@ extern Matrix3D<bool> subgroupNotAvailableDayHour;
 
 QString getActivityDetailedDescription(Rules& r, int id)
 {
-	QString s;
-
-	/*int ai;
-	for(ai=0; ai<r.activitiesList.size(); ai++)
-		if(r.activitiesList[ai]->id==id)
-			break;
+	QString s="";
 	
-	if(ai==r.activitiesList.size()){
-		s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
-		return s;
-	}
-	assert(ai<r.activitiesList.size());
-
-	Activity* act=r.activitiesList.at(ai);*/
-
 	Activity* act=r.activitiesPointerHash.value(id, NULL);
 	if(act==NULL){
 		s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
 		return s;
 	}
 
-	if(act->activityTagsNames.count()>0){
+	/*if(act->activityTagsNames.count()>0){
 		s+=QCoreApplication::translate("Activity", "T:%1, S:%2, AT:%3, St:%4", "This is an important translation for an activity's detailed description, please take care (it appears in many places in constraints)."
 		 "The abbreviations are: Teachers, Subject, Activity tags, Students. This variant includes activity tags").arg(act->teachersNames.join(",")).arg(act->subjectName).arg(act->activityTagsNames.join(",")).arg(act->studentsNames.join(","));
 	}
@@ -110,7 +97,106 @@ QString getActivityDetailedDescription(Rules& r, int id)
 		s+=QCoreApplication::translate("Activity", "T:%1, S:%2, St:%3", "This is an important translation for an activity's detailed description, please take care (it appears in many places in constraints)."
 		 "The abbreviations are: Teachers, Subject, Students. There are no activity tags here").arg(act->teachersNames.join(",")).arg(act->subjectName).arg(act->studentsNames.join(","));
 	}
+	return s;*/
+
+	const int INDENT=4;
+
+	bool _indent;
+	if(act->isSplit() && act->id!=act->activityGroupId)
+		_indent=true;
+	else
+		_indent=false;
+		
+	bool indentRepr;
+	if(act->isSplit() && act->id==act->activityGroupId)
+		indentRepr=true;
+	else
+		indentRepr=false;
+		
+	QString _teachers="";
+	if(act->teachersNames.count()==0)
+		_teachers=QCoreApplication::translate("Activity", "no teachers");
+	else
+		_teachers=act->teachersNames.join(",");
+
+	QString _subject=act->subjectName;
+	
+	QString _activityTags=act->activityTagsNames.join(",");
+
+	QString _students="";
+	if(act->studentsNames.count()==0)
+		_students=QCoreApplication::translate("Activity", "no students");
+	else
+		_students=act->studentsNames.join(",");
+
+	QString _id;
+	_id = CustomFETString::number(id);
+
+	QString _agid="";
+	if(act->isSplit())
+		_agid = CustomFETString::number(act->activityGroupId);
+
+	QString _duration=CustomFETString::number(act->duration);
+	
+	QString _totalDuration="";
+	if(act->isSplit())
+		_totalDuration = CustomFETString::number(act->totalDuration);
+
+	QString _active;
+	if(act->active==true)
+		_active="";
+	else
+		_active="X";
+
+	QString _nstudents="";
+	if(act->computeNTotalStudents==false)
+		_nstudents=CustomFETString::number(act->nTotalStudents);
+
+	/////////
+	//QString s="";
+	if(_indent)
+		s+=QString(INDENT, ' ');
+		
+	/*s+=_id;
+	s+=" - ";*/
+
+	if(_active!=""){
+		s+=_active;
+		s+=" - ";
+	}
+	
+	s+=_duration;
+	if(act->isSplit()){
+		s+="/";
+		s+=_totalDuration;
+	}
+	s+=" - ";
+	
+	if(indentRepr)
+		s+=QString(INDENT, ' ');
+	
+	s+=_teachers;
+	s+=" - ";
+	s+=_subject;
+	s+=" - ";
+	if(_activityTags!=""){
+		s+=_activityTags;
+		s+=" - ";
+	}
+	s+=_students;
+
+	if(_nstudents!=""){
+		s+=" - ";
+		s+=_nstudents;
+	}
+	
+	if(!act->comments.isEmpty()){
+		s+=" - ";
+		s+=act->comments;
+	}
+
 	return s;
+
 }
 
 void populateInternalSubgroupsList(const Rules& r, const StudentsSet* ss, QList<int>& iSubgroupsList){
@@ -13200,7 +13286,7 @@ double ConstraintTwoActivitiesGrouped::fitness(Solution& c, Rules& r, QList<doub
 				if(!breakDayHour[d][h])
 					break;
 					
-			assert(h<=sh);	
+			assert(h<=sh);
 				
 			if(h!=sh)
 				nbroken=1;
@@ -13213,7 +13299,7 @@ double ConstraintTwoActivitiesGrouped::fitness(Solution& c, Rules& r, QList<doub
 				if(!breakDayHour[d][h])
 					break;
 					
-			assert(h<=fh);	
+			assert(h<=fh);
 				
 			if(h!=fh)
 				nbroken=1;

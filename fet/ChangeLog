@@ -2306,5 +2306,12 @@ Versions 5.47.0 - 5.47.v
 	max gaps constraints or with more than zero max gaps allowed.
 	- Added a warning if using constraints of type teacher(s)/students (set) max hours daily with weights less than 100%, because the algorithm
 	is not perfectly implemented in this case.
-	- The automatic division of years by categories will now retain the settings for each year, separately (suggested by crow and possibly other users).
+	- The automatic division of years by categories will now retain the settings for each year, separately (suggested by Eric Carolus and possibly other users).
 	- Minor code improvements (suggested by Volker Dirr).
+- Version 5.47.1
+	- Updated to Qt 5.15.2.
+	- Corrected a few warnings appearing with the new Qt 5.15.2 (about using deprecated Qt functions).
+	- Corrected three minor warnings when compiling with clang.
+	- Minor improvements in the text description of the activities.
+	- Code cleanup.
+	- Added a new example file from Spain, by Fran.

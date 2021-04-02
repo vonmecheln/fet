@@ -10879,16 +10879,39 @@ void sortActivities(QWidget* parent, const QHash<int, int> & reprSameStartingTim
 			cout<<"No: "<<i+1;
 		
 			Activity* act=&gt.rules.internalActivitiesList[permutation[i]];
-			cout<<", id="<<act->id;
-			cout<<", teachers: ";
+			cout<<", Id="<<act->id;
+			
+			bool spacerBefore=false, spacerAfter=false;
+			if(act->isSplit()){
+				if(act->id==act->activityGroupId){
+					spacerBefore=false;
+					spacerAfter=true;
+				}
+				else{
+					spacerBefore=true;
+					spacerAfter=false;
+				}
+			}
+			cout<<", ";
+			if(spacerBefore)
+				cout<<"    ";
+			if(act->isSplit())
+				cout<<"Duration: "<<act->duration<<"/"<<act->totalDuration;
+			else
+				cout<<"Duration: "<<act->duration;
+			cout<<", ";
+			if(spacerAfter)
+				cout<<"    ";
+			
+			cout<<"Teachers: ";
 			QString tj=act->teachersNames.join(" ");
 			cout<<qPrintable(tj);
-			cout<<", subject: "<<qPrintable(act->subjectName);
+			cout<<", Subject: "<<qPrintable(act->subjectName);
 			if(act->activityTagsNames.count()>0){
 				QString atj=act->activityTagsNames.join(" ");
-				cout<<", activity tags: "<<qPrintable(atj);
+				cout<<", Activity tags: "<<qPrintable(atj);
 			}
-			cout<<", students: ";
+			cout<<", Students: ";
 			QString sj=act->studentsNames.join(" ");
 			cout<<qPrintable(sj);
 			
@@ -10921,6 +10944,27 @@ void sortActivities(QWidget* parent, const QHash<int, int> & reprSameStartingTim
 		Activity* act=&gt.rules.internalActivitiesList[permutation[i]];
 		s+=GeneratePreTranslate::tr("Id: %1", "Id of activity").arg(act->id);
 		s+=", ";
+
+		bool spacerBefore=false, spacerAfter=false;
+		if(act->isSplit()){
+			if(act->id==act->activityGroupId){
+				spacerBefore=false;
+				spacerAfter=true;
+			}
+			else{
+				spacerBefore=true;
+				spacerAfter=false;
+			}
+		}
+		if(spacerBefore)
+			s+="    ";
+		if(act->isSplit())
+			s+=GeneratePreTranslate::tr("Duration: %1").arg(CustomFETString::number(act->duration)+QString("/")+CustomFETString::number(act->totalDuration));
+		else
+			s+=GeneratePreTranslate::tr("Duration: %1").arg(act->duration);
+		s+=", ";
+		if(spacerAfter)
+			s+="    ";
 		
 		s+=GeneratePreTranslate::tr("Teachers: %1").arg(act->teachersNames.join(", "));
 		s+=", ";

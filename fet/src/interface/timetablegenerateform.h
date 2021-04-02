@@ -41,8 +41,8 @@ signals:
 class TimetableGenerateForm : public QDialog, Ui::TimetableGenerateForm_template  {
 	Q_OBJECT
 	
-private:
-	QList<QProcess*> commandProcesses;
+//private:
+//	QList<QProcess*> commandProcesses;
 
 public:
 	TimetableGenerateForm(QWidget* parent);

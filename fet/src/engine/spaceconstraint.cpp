@@ -4544,7 +4544,7 @@ double ConstraintStudentsSetMaxBuildingChangesPerWeek::fitness(
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtBuildingsTimetable[d2][h2]=-1;
-				
+		
 		for(int ai : qAsConst(sts->activitiesForSubgroup))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
@@ -4562,7 +4562,7 @@ double ConstraintStudentsSetMaxBuildingChangesPerWeek::fitness(
 		/////////////
 
 		int n_changes=0;
-		for(int d2=0; d2<r.nDaysPerWeek; d2++){			
+		for(int d2=0; d2<r.nDaysPerWeek; d2++){
 			int crt_building=-1;
 			for(int h2=0; h2<r.nHoursPerDay; h2++){
 				if(crtBuildingsTimetable[d2][h2]!=-1){
@@ -4574,7 +4574,7 @@ double ConstraintStudentsSetMaxBuildingChangesPerWeek::fitness(
 				}
 			}
 		}
-						
+		
 		if(n_changes>this->maxBuildingChangesPerWeek){
 			nbroken+=-this->maxBuildingChangesPerWeek+n_changes;
 		
@@ -4780,7 +4780,7 @@ double ConstraintStudentsMaxBuildingChangesPerWeek::fitness(
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtBuildingsTimetable[d2][h2]=-1;
-				
+		
 		for(int ai : qAsConst(sts->activitiesForSubgroup))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
@@ -4798,7 +4798,7 @@ double ConstraintStudentsMaxBuildingChangesPerWeek::fitness(
 		/////////////
 
 		int n_changes=0;
-		for(int d2=0; d2<r.nDaysPerWeek; d2++){			
+		for(int d2=0; d2<r.nDaysPerWeek; d2++){
 			int crt_building=-1;
 			for(int h2=0; h2<r.nHoursPerDay; h2++){
 				if(crtBuildingsTimetable[d2][h2]!=-1){
@@ -4810,7 +4810,7 @@ double ConstraintStudentsMaxBuildingChangesPerWeek::fitness(
 				}
 			}
 		}
-						
+		
 		if(n_changes>this->maxBuildingChangesPerWeek){
 			nbroken+=-this->maxBuildingChangesPerWeek+n_changes;
 		
@@ -6104,7 +6104,7 @@ double ConstraintTeacherMaxBuildingChangesPerWeek::fitness(
 			}
 		}
 	}
-					
+	
 	if(n_changes>this->maxBuildingChangesPerWeek){
 		nbroken+=n_changes-this->maxBuildingChangesPerWeek;
 	
@@ -6309,7 +6309,7 @@ double ConstraintTeachersMaxBuildingChangesPerWeek::fitness(
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtBuildingsTimetable[d2][h2]=-1;
-				
+		
 		for(int ai : qAsConst(tchpointer->activitiesForTeacher))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
@@ -6340,7 +6340,7 @@ double ConstraintTeachersMaxBuildingChangesPerWeek::fitness(
 				}
 			}
 		}
-					
+		
 		if(n_changes>this->maxBuildingChangesPerWeek){
 			nbroken+=n_changes-this->maxBuildingChangesPerWeek;
 		
@@ -7640,7 +7640,7 @@ double ConstraintStudentsSetMaxRoomChangesPerWeek::fitness(
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtRoomsTimetable[d2][h2]=-1;
-				
+		
 		for(int ai : qAsConst(sts->activitiesForSubgroup))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
@@ -7670,7 +7670,7 @@ double ConstraintStudentsSetMaxRoomChangesPerWeek::fitness(
 				}
 			}
 		}
-						
+		
 		if(n_changes>this->maxRoomChangesPerWeek){
 			nbroken+=-this->maxRoomChangesPerWeek+n_changes;
 		
@@ -7876,7 +7876,7 @@ double ConstraintStudentsMaxRoomChangesPerWeek::fitness(
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtRoomsTimetable[d2][h2]=-1;
-				
+		
 		for(int ai : qAsConst(sts->activitiesForSubgroup))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
@@ -7906,7 +7906,7 @@ double ConstraintStudentsMaxRoomChangesPerWeek::fitness(
 				}
 			}
 		}
-						
+		
 		if(n_changes>this->maxRoomChangesPerWeek){
 			nbroken+=-this->maxRoomChangesPerWeek+n_changes;
 		
@@ -9169,7 +9169,7 @@ double ConstraintTeacherMaxRoomChangesPerWeek::fitness(
 	for(int d2=0; d2<r.nDaysPerWeek; d2++)
 		for(int h2=0; h2<r.nHoursPerDay; h2++)
 			crtRoomsTimetable[d2][h2]=-1;
-			
+	
 	for(int ai : qAsConst(tchpointer->activitiesForTeacher))
 		if(c.times[ai]!=UNALLOCATED_TIME){
 			int d2=c.times[ai]%r.nDaysPerWeek;
@@ -9200,7 +9200,7 @@ double ConstraintTeacherMaxRoomChangesPerWeek::fitness(
 			}
 		}
 	}
-					
+	
 	if(n_changes>this->maxRoomChangesPerWeek){
 		nbroken+=n_changes-this->maxRoomChangesPerWeek;
 	
@@ -9405,7 +9405,7 @@ double ConstraintTeachersMaxRoomChangesPerWeek::fitness(
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtRoomsTimetable[d2][h2]=-1;
-				
+		
 		for(int ai : qAsConst(tchpointer->activitiesForTeacher))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
@@ -9436,7 +9436,7 @@ double ConstraintTeachersMaxRoomChangesPerWeek::fitness(
 				}
 			}
 		}
-					
+		
 		if(n_changes>this->maxRoomChangesPerWeek){
 			nbroken+=n_changes-this->maxRoomChangesPerWeek;
 		

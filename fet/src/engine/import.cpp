@@ -923,7 +923,7 @@ int Import::readFields(QWidget* parent){
 		return false;
 	}
 	if(!file.open(QIODevice::ReadOnly)){
-		QMessageBox::warning(parent, tr("Error! Can't open file."),fileName);
+		QMessageBox::warning(parent, tr("Error! Can't open file."), fileName);
 		return false;
 	}
 	QTextStream in(&file);

@@ -1,8 +1,8 @@
 /***************************************************************************
                           constraintactivitiesendstudentsdayform.h  -  description
                              -------------------
-    begin                : 15 May 2004
-    copyright            : (C) 2004 by Lalescu Liviu
+    begin                : 2008
+    copyright            : (C) 2008 by Lalescu Liviu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
  ***************************************************************************/
 
