@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 6 October 2008 (new additions are written with date, most are at the end)
+this documentation by Liviu Lalescu, reviewed and modified - 5 December 2008 (new additions are written with date, most are at the end)
 
 --------
 
@@ -727,7 +727,21 @@ New, added 6 October 2008
 
 Q: By law a teacher in Italy must work not less of 5 days a week
 
-A: You might use this trick: add for each teacher a dummy container (larger) activity, with no students, split into 5 activities per week, with constraint min 1 day between activities 100%. Then, constraint teachers min hours daily, min 2 hours (for minimum 1 real hour) or min 3 hours (for minimum 2 real hours).</string>
+A: You might use this trick: add for each teacher a dummy container (larger) activity, with no students, split into 5 activities per week, with constraint min 1 day between activities 100%. Then, constraint teachers min hours daily, min 2 hours (for minimum 1 real hour) or min 3 hours (for minimum 2 real hours).
+
+---------------------------------------------------------------------------------
+
+New, added 5 December 2008
+
+Q: I have a double duration activity. Is it possible that it is spread over the break period, like:
+
+Activity Math, duration 2, id say 100
+
+Hour 10:00 Math (first hour of act. 100)
+Hour 11:00 Break
+Hour 12:00 Math (second hour of act. 100)
+
+A: No, the activity must respect the break, so it is before or after the break with all the hours of it.</string>
             </property>
         </widget>
     </grid>

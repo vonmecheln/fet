@@ -538,7 +538,7 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString textquote,
 			}
 	
 			if(!oktmp){
-				lastWarnings+=Export::tr("Warning! Constraint")+" "+c->getDescription(gt.rules)+tr("was skipped, because"
+				lastWarnings+=Export::tr("Note: Constraint")+" "+c->getDescription(gt.rules)+" "+tr("was skipped, because"
 				" it refers not to a whole larger container activity")+"\n";
 			}
 	
@@ -547,34 +547,34 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString textquote,
 				if(oldc!=NULL){
 					if(oldc->weightPercentage < c->weightPercentage){
 						activitiesConstraints.insert(repres, c); //overwrites old value
-						lastWarnings+=Export::tr("Warning! Constraint")+" "+oldc->getDescription(gt.rules)+" "+tr("was skipped, because"
+						lastWarnings+=Export::tr("Note: Constraint")+" "+oldc->getDescription(gt.rules)+" "+tr("was skipped, because"
 							" there exists another constraint of this type with larger weight percentage, referring to the same activities")+"\n";
 					}
 					else if(oldc->weightPercentage > c->weightPercentage){
-						lastWarnings+=Export::tr("Warning! Constraint")+" "+c->getDescription(gt.rules)+" "+tr("was skipped, because"
+						lastWarnings+=Export::tr("Note: Constraint")+" "+c->getDescription(gt.rules)+" "+tr("was skipped, because"
 							" there exists another constraint of this type with larger weight percentage, referring to the same activities")+"\n";
 					}
 	
 					//equal weights - choose the lowest number of min n days
 					else if(oldc->minDays > c->minDays){
-						lastWarnings+=Export::tr("Warning! Constraint")+" "+c->getDescription(gt.rules)+" "+tr("was skipped, because"
+						lastWarnings+=Export::tr("Note: Constraint")+" "+c->getDescription(gt.rules)+" "+tr("was skipped, because"
 							" there exists another constraint of this type with same weight percentage and higher number of min days, referring to the same activities")+"\n";
 					}
 					else if(oldc->minDays < c->minDays){
 						activitiesConstraints.insert(repres, c); //overwrites old value
-						lastWarnings+=Export::tr("Warning! Constraint")+" "+oldc->getDescription(gt.rules)+" "+tr("was skipped, because"
+						lastWarnings+=Export::tr("Note: Constraint")+" "+oldc->getDescription(gt.rules)+" "+tr("was skipped, because"
 							" there exists another constraint of this type with same weight percentage and higher number of min days, referring to the same activities")+"\n";
 					}
 	
 					//equal weights and min days - choose the one with consecutive is same day true
 					else if(oldc->consecutiveIfSameDay==true){
-						lastWarnings+=Export::tr("Warning! Constraint")+" "+c->getDescription(gt.rules)+" "+tr("was skipped, because"
+						lastWarnings+=Export::tr("Note: Constraint")+" "+c->getDescription(gt.rules)+" "+tr("was skipped, because"
 							" there exists another constraint of this type with same weight percentage and same number of min days and"
 							" consecutive if same day true, referring to the same activities")+"\n";
 					}
 					else if(c->consecutiveIfSameDay==true){
 						activitiesConstraints.insert(repres, c); //overwrites old value
-						lastWarnings+=Export::tr("Warning! Constraint")+" "+oldc->getDescription(gt.rules)+" "+tr("was skipped, because"
+						lastWarnings+=Export::tr("Note: Constraint")+" "+oldc->getDescription(gt.rules)+" "+tr("was skipped, because"
 							" there exists another constraint of this type with same weight percentage and same number of min days and"
 							" consecutive if same day true, referring to the same activities")+"\n";
 					}

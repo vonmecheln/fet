@@ -307,6 +307,8 @@ int main(int argc, char **argv)
 				secondsLimit=s.right(s.length()-19).toInt();
 			else if(s.left(21)=="--timetablehtmllevel=")
 				TIMETABLE_HTML_LEVEL=s.right(s.length()-21).toInt();
+			else if(s.left(12)=="--htmllevel=")
+				TIMETABLE_HTML_LEVEL=s.right(s.length()-12).toInt();
 			else if(s.left(11)=="--language=")
 				FET_LANGUAGE=s.right(s.length()-11);
 			else if(s.left(20)=="--printnotavailable="){
@@ -319,28 +321,28 @@ int main(int argc, char **argv)
 		
 		if(filename==""){
 			cout<<"Incorrect parameters (input file not specified). Please see README for usage (basically,\n"
-			 "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t]\n"
+			 "fet --inputfile=x [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false]\n"
 			 "where z is from 0 to 5 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
 			out<<"Incorrect parameters (input file not specified). Please see README for usage (basically,\n"
-			 "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t]\n"
+			 "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t] [--printnotavailable=true|false]\n"
 			 "where z is from 0 to 5 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
 			return 1;
 		}	
 		if(secondsLimit==0){
 			cout<<"Incorrect parameters (time limit is 0 seconds). Please see README for usage (basically,\n"
-			 "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t]\n"
+			 "fet --inputfile=x [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false]\n"
 			 "where z is from 0 to 5 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
 			out<<"Incorrect parameters (time limit is 0 seconds). Please see README for usage (basically,\n"
-			 "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t]\n"
+			 "fet --inputfile=x [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false]\n"
 			 "where z is from 0 to 5 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
 			return 1;
 		}	
 		if(TIMETABLE_HTML_LEVEL>5 || TIMETABLE_HTML_LEVEL<0){
-			cout<<"Incorrect parameters (timetable html level 0, 1, 2, 3, 4 or 5). Please see README for usage (basically,\n"
-			 "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t]\n"
+			cout<<"Incorrect parameters (html level must be 0, 1, 2, 3, 4 or 5). Please see README for usage (basically,\n"
+			 "fet --inputfile=x [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false]\n"
 			 "where z is from 0 to 5 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
-			out<<"Incorrect parameters (timetable html level 0, 1, 2, 3, 4 or 5). Please see README for usage (basically,\n"
-			 "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t]\n"
+			out<<"Incorrect parameters (html level must be 0, 1, 2, 3, 4 or 5). Please see README for usage (basically,\n"
+			 "fet --inputfile=x [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false]\n"
 			 "where z is from 0 to 5 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
 			return 1;
 		}	

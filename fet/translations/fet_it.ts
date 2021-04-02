@@ -7608,6 +7608,16 @@ nello stesso giorno, devono essere separate da un Numero minimo di ore buche.</t
         <source>Please note that this is a new feature, not thoroughly tested, so it is a good practice to check the new constraints before saving your file, and maybe making some backups</source>
         <translation type="obsolete">Si fa presente che si tratta di una nuova funzionalità, non ancora testata a fondo, ed è pertanto consigliato testare i nuovi vincoli prima di salvare il file, facendo comunque qualche backup</translation>
     </message>
+    <message>
+        <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="419"/>
+        <source>NOTE: If you are using constraints of type activities same starting time or activities same starting day, it is important (after current operation) to apply the operation of removing redundant constraints.</source>
+        <translation>Attenzione: se stai usando vincoli del tipo Attività con inizio alla stessa ora oppure Attività con inizio nello stesso giorno, è importante (dopo questa operazione) effettuare la procedura di rimozione dei vincoli ridondanti.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="420"/>
+        <source>Read Help/Important tips - tip 2) for details.</source>
+        <translation>Leggi Aiuto / Suggerimenti importanti - Suggerimento 2) per ulteriori dettagli.</translation>
+    </message>
 </context>
 <context>
     <name>ConstraintMinNDaysBetweenActivitiesForm_template</name>
@@ -10735,7 +10745,7 @@ Sei sicuro?</translation>
     <message>
         <location filename="../src/engine/export.cpp" line="577"/>
         <source>Warning! Constraint</source>
-        <translation>Attenzione! Vincolo</translation>
+        <translation type="obsolete">Attenzione! Vincolo</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="542"/>
@@ -10808,6 +10818,11 @@ Importare i dati sarà più semplice con questi valori.</translation>
         <location filename="../src/engine/export.cpp" line="790"/>
         <source>0 scheduled activities exported, because no timetable was generated.</source>
         <translation>Nessuna attività esportata perchè ancora non è stato generato alcun orario.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/export.cpp" line="577"/>
+        <source>Note: Constraint</source>
+        <translation>Nota: Vincolo</translation>
     </message>
 </context>
 <context>
@@ -13457,7 +13472,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;(c) Liviu Lalescu 2002-2008&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Version: 5.7.5 (December 2008)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Version: 5.7.6 (December 2008)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -13489,7 +13504,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/interface/helpfaqform_template.ui" line="41"/>
         <source>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 6 October 2008 (new additions are written with date, most are at the end)
+this documentation by Liviu Lalescu, reviewed and modified - 5 December 2008 (new additions are written with date, most are at the end)
 
 --------
 
@@ -14176,7 +14191,21 @@ New, added 6 October 2008
 
 Q: By law a teacher in Italy must work not less of 5 days a week
 
-A: You might use this trick: add for each teacher a dummy container (larger) activity, with no students, split into 5 activities per week, with constraint min 1 day between activities 100%. Then, constraint teachers min hours daily, min 2 hours (for minimum 1 real hour) or min 3 hours (for minimum 2 real hours).</source>
+A: You might use this trick: add for each teacher a dummy container (larger) activity, with no students, split into 5 activities per week, with constraint min 1 day between activities 100%. Then, constraint teachers min hours daily, min 2 hours (for minimum 1 real hour) or min 3 hours (for minimum 2 real hours).
+
+---------------------------------------------------------------------------------
+
+New, added 5 December 2008
+
+Q: I have a double duration activity. Is it possible that it is spread over the break period, like:
+
+Activity Math, duration 2, id say 100
+
+Hour 10:00 Math (first hour of act. 100)
+Hour 11:00 Break
+Hour 12:00 Math (second hour of act. 100)
+
+A: No, the activity must respect the break, so it is before or after the break with all the hours of it.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -14289,7 +14318,7 @@ More details: the combination of 2 or more redundant constraints min n days betw
 Do not consider redundant constraints with the same activities but different number of days (you may want to add min 2 days 95% and min 1 day 95%, which gives in 95% cases the 2 days will be respected and in 99.75% cases the 1 day will be respected).
 
 Preferred time(s) constraints do not have the problem of redundancy like min days constraints.</source>
-        <translation>FET Importanti suggerimenti per l&apos;ottimizzazione - si prega di leggere con attenzione e cercare di conformarsi
+        <translation type="obsolete">FET Importanti suggerimenti per l&apos;ottimizzazione - si prega di leggere con attenzione e cercare di conformarsi
 Modificati il 15 giugno 2008.
 
 1) Supponiamo di aggiungere una attività divisa in due o di aggiungere un vincolo min n giorni tra attività (diciamo na attività), quando la nostra settimane ha ng giorni. Non aggiungere un vincolo con na&gt; ng (numero di attività strettamente maggiore di numero di giorni a settimana).
@@ -14309,6 +14338,75 @@ Ulteriori dettagli: la combinazione di 2 o più vincoli ridondanti min n giorni 
 Non considerate ridondanti i vincoli con le stesse attività, ma diverso numero di giorni (è possibile aggiungere min 2 giorni 95% e min 1 giorno 95%, faranno sì che nel 95% dei casi i 2 giorni verranno rispettati e nel 99,75% dei casi 1 giorno verrà rispettato).
 
 I vincoli di tempo preferito non hanno il problema della ridondanza come i vincoli min n giorni.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helptipsform_template.ui" line="41"/>
+        <source>FET Important optimization tips - please read them carefully and try to comply
+Modified 15 June 2008.
+
+1) Say you add a split activity or you add a constraint min n days between activities (say na activities), when your week has nd days. Do not add a constraint with na&gt;nd (number of activities strictly greater than number of days per week).
+
+The correct way: if you want consecutive if same day, consider activities having a longer duration. Instead of adding activities 1+1+1+1+1+1+1 in a 5 days week, add them as 2+2+1+1+1. If you don&apos;t want consecutive if same day, add 1+1+1+1+1 firstly and 1+1 after that.
+
+The generation will be much faster and easier using this approach (more than 10 times faster sometimes).
+
+2) When adding constraints activities same starting time (or day), please remove redundant min n days constraints. For instance, A1 (at same time with B1 and C1), A2 (same time with B2 and C2) and A3 (same time with B3 and C3). You will normally have 3 or 6 constraints min n days between activities (first one or two with A1,A2,A3 and then with B1,B2,B3 and then with C1,C2,C3). These 3 or 6 constraints min n days will result in a much stronger constraint, which will make the timetable much harder to find. If you have say 4 groups of activities (A, B, C, D), things will be even harder.
+
+The correct way is to leave only the constraints min n days referring to the first group of activities (A). You will have a much faster generation (maybe 10 times faster or more).
+
+PS: Suppose there are 2 constraints for activities A1,2,3 and 2 constraints for activities B1,2,3 and 2 constraints for activities C1,2,3. If A and B and C are simultaneous, remove only the constraints referring to B and C (but leave both for A, if for instance you have min 2 days with 95% and min 1 day with 100%).
+
+More details: the combination of 2 or more redundant constraints min n days between activities gives another resultant constraint, much stronger. From 3 redundant constraints with 95%, you get one with 100%-5%*5%*5%=99.9875%, which is not what you want.
+
+Do not consider redundant constraints with the same activities but different number of days (you may want to add min 2 days 95% and min 1 day 95%, which gives in 95% cases the 2 days will be respected and in 99.75% cases the 1 day will be respected).
+
+The other constraints (like preferred time(s) constraints) do not have the problem of redundancy like min days constraints, so no need to take care about them.</source>
+        <translation type="obsolete">FET Importanti suggerimenti per l&apos;ottimizzazione - si prega di leggere con attenzione e cercare di conformarsi
+Modificati il 15 giugno 2008.
+
+1) Supponiamo di aggiungere una attività divisa in due o di aggiungere un vincolo min n giorni tra attività (diciamo na attività), quando la nostra settimane ha ng giorni. Non aggiungere un vincolo con na&gt; ng (numero di attività strettamente maggiore di numero di giorni a settimana).
+
+Il modo corretto: se si desiderano attività consecutive se stesso giorno, prendere in considerazione le attività che hanno una durata maggiore. Invece di aggiungere attività 1+1+1+1+1+1+1 in 5 giorni settimanali, aggiungerle come 2 +2 +1 +1 +1. Se non si desiderano consecutive se stesso giorno, aggiungere 1+1+1+1+1 in primo luogo e dopo 1 +1.
+
+La generazione sarà molto più veloce e più facile utilizzando questo approccio (oltre 10 volte più veloce a volte).
+
+2) Quando si aggiungono vincoli stessa ora di inizio (o giorno) per attività, si consiglia di rimuovere eventuali vincoli ridondanti min n giorni. Per esempio, A1 (contemporaneamente a B1 e C1), A2 (contemporaneamente a B2 e C2) e A3 (contemporaneamente a B3 e C3). Generalmente si hanno 3 o 6 vincoli di min n giorni tra attività (prima uno o due con A1, A2, A3 e poi con B1, B2, B3 e poi con C1, C2, C3). Questi 3 o 6 vincoli di min n giorni si tradurranno in un vincolo molto più forte, il che renderà l&apos;orario molto più difficile da trovare. Se si dispone di, diciamo, 4 gruppi di attività (A, B, C, D), le cose saranno ancora più difficili.
+
+Il modo corretto è quello di lasciare solo il vincolo min n giorni che fa riferimento al primo gruppo di attività (A). Avrete una generazione molto più veloce (fino a 10 volte più veloce o anche meglio).
+
+PS: Supponiamo che ci sono 2 vincoli per le attività A1,2,3 e 2 vincoli per le attività B1,2,3 e 2 vincoli per le attività C1,2,3. Se A e B e C sono simultanee, rimuovere solo i vincoli che fanno riferimento a B e C (ma lasciare entrambi quelli per A, se per esempio avete min 2 giorni con il 95% e min 1 giorno con 100%).
+
+Ulteriori dettagli: la combinazione di 2 o più vincoli ridondanti min n giorni tra attività dà un altro vincolo che ne deriva, molto più forte. Da 3  vincoli ridondanti con il 95%, ne otterrete uno con 100% -5% * 5% * 5% = 99.9875%, che non è quello che volete.
+
+Non considerate ridondanti i vincoli con le stesse attività, ma diverso numero di giorni (è possibile aggiungere min 2 giorni 95% e min 1 giorno 95%, faranno sì che nel 95% dei casi i 2 giorni verranno rispettati e nel 99,75% dei casi 1 giorno verrà rispettato).
+
+Altri vincoli (come i vincoli di ore preferenziali) non hanno il problema della ridondanza come i vincoli min n giorni e, quindi, non comportano particolari preoccupazioni.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helptipsform_template.ui" line="41"/>
+        <source>FET Important optimization tips - please read them carefully and try to comply
+Modified 15 June 2008.
+
+1) Say you add a split activity or you add a constraint min n days between activities (say na activities), when your week has nd days. Do not add a constraint with na&gt;nd (number of activities strictly greater than number of days per week).
+
+The correct way: if you want consecutive if same day, consider activities having a longer duration. Instead of adding activities 1+1+1+1+1+1+1 in a 5 days week, add them as 2+2+1+1+1. If you don&apos;t want consecutive if same day, add 1+1+1+1+1 firstly and 1+1 after that.
+
+The generation will be much faster and easier using this approach (more than 10 times faster sometimes).
+
+2) When adding constraints activities same starting time (or day), please remove redundant min n days constraints. For instance, A1 (at same time with B1 and C1), A2 (same time with B2 and C2) and A3 (same time with B3 and C3). You will normally have 3 or 6 constraints min n days between activities (first one or two with A1,A2,A3 and then with B1,B2,B3 and then with C1,C2,C3). These 3 or 6 constraints min n days will result in a much stronger constraint, which will make the timetable much harder to find. If you have say 4 groups of activities (A, B, C, D), things will be even harder.
+
+The correct way is to leave only the constraints min n days referring to the first group of activities (A). You will have a much faster generation (maybe 10 times faster or more).
+
+PS: Suppose there are 2 constraints for activities A1,2,3 and 2 constraints for activities B1,2,3 and 2 constraints for activities C1,2,3. If A and B and C are simultaneous, remove only the constraints referring to B and C (but leave both for A, if for instance you have min 2 days with 95% and min 1 day with 100%).
+
+More details: the combination of 2 or more redundant constraints min n days between activities gives another resultant constraint, much stronger. From 3 redundant constraints with 95%, you get one with 100%-5%*5%*5%=99.9875%, which is not what you want.
+
+Do not consider redundant constraints with the same activities but different number of days (you may want to add min 2 days 95% and min 1 day 95%, which gives in 95% cases the 2 days will be respected and in 99.75% cases the 1 day will be respected).
+
+The other constraints (like preferred time(s) constraints) do not have the problem of redundancy like min days constraints, so no need to take care about them.
+
+It is IMPORTANT to remove redundant min n days constraints after you inputted data and before generating. Any modification of the min n days constraints should be followed by this removal of redundant min n days constraints (well, not all modifications, but better to do it than not). If you modify more constraints at once or apply the balancing of activities, it is important to remove redundant constraints. If you have no redundant constraints, it is no need to remove the redundant constraints, but better to check again than let some redundant constraints active.</source>
+        <translation>FET Importanti suggerimenti per l&apos;ottimizzazione - si prega di leggere con attenzione e cercare di conformarsiModificati il 15 giugno 2008.1) Supponiamo di aggiungere una attività divisa in due o di aggiungere un vincolo min n giorni tra attività (diciamo na attività), quando la nostra settimane ha ng giorni. Non aggiungere un vincolo con na&gt; ng (numero di attività strettamente maggiore di numero di giorni a settimana).Il modo corretto: se si desiderano attività consecutive se stesso giorno, prendere in considerazione le attività che hanno una durata maggiore. Invece di aggiungere attività 1+1+1+1+1+1+1 in 5 giorni settimanali, aggiungerle come 2 +2 +1 +1 +1. Se non si desiderano consecutive se stesso giorno, aggiungere 1+1+1+1+1 in primo luogo e dopo 1 +1.La generazione sarà molto più veloce e più facile utilizzando questo approccio (oltre 10 volte più veloce a volte).2) Quando si aggiungono i vincoli stessa ora di inizio (o giorno) per attività, si prega di rimuovere eventuali vincoli ridondanti min n giorni. Per esempio, A1 (al tempo stesso con B1 e C1), A2 (stesso tempo con B2 e C2) e A3 (stesso tempo con B3 e C3). Generalmente si hanno 3 o 6 vincoli di min n giorni tra attività (prima uno o due con A1, A2, A3 e poi con B1, B2, B3 e poi con C1, C2, C3). Questi 3 o 6 vincoli di min n giorni si tradurranno in un vincolo molto più forte, il che renderà l&apos;orario molto più difficile da trovare. Se si dispone di, diciamo, 4 gruppi di attività (A, B, C, D), le cose saranno ancora più difficili.Il modo corretto è quello di lasciare solo il vincolo min n giorni che fa riferimento al primo gruppo di attività (A). Avrete una generazione molto più veloce (fino a 10 volte più veloce o più).PS: Supponiamo che ci sono 2 vincoli per le attività A1, 2, 3 e 2 vincoli per le attività B1, 2, 3 e 2 vincoli per le attività C1, 2, 3. Se A e B e C sono simultanee, rimuovere solo i vincoli che fanno riferimento a B e C (ma lasciare entrambi quelli per A, se per esempio avete min 2 giorni con il 95% e min 1 giorno con 100%).Ulteriori dettagli: la combinazione di 2 o più vincoli ridondanti min n giorni tra attività dà un altro vincolo che ne deriva, molto più forte. Da 3  vincoli ridondanti con il 95%, ne otterrete uno con 100% -5% * 5% * 5% = 99.9875%, che non è quello che volete.Non considerate ridondanti i vincoli con le stesse attività, ma diverso numero di giorni (è possibile aggiungere min 2 giorni 95% e min 1 giorno 95%, faranno sì che nel 95% dei casi i 2 giorni verranno rispettati e nel 99,75% dei casi 1 giorno verrà rispettato).I vincoli di tempo preferito non hanno il problema della ridondanza come i vincoli min n giorni.</translation>
     </message>
 </context>
 <context>
@@ -26564,7 +26662,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="obsolete">OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="388"/>
+        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="389"/>
         <source>FET information</source>
         <translation>FET - informazione</translation>
     </message>
@@ -26625,7 +26723,7 @@ Riferisci l&apos;informazione all&apos;autore. FET ora interromperà l&apos;oper
         <translation>Hai trovato un probabile bug in FET - Numero minimo 1 giorno doveva essere selezionato automaticamente per tutte le subattività suddivise. Riferisci l&apos;informazione all&apos;autore. FET ora interromperà l&apos;operazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="389"/>
+        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="390"/>
         <source>This box must remain checked, so that split activities are not in the same day (with the probability you write below)</source>
         <translation>Questa opzione deve essere selezionata, così che le attività suddivise non siano collocate nello stesso giorno (con la probabilità che tu indichi più sotto)</translation>
     </message>
@@ -26637,7 +26735,17 @@ Riferisci l&apos;informazione all&apos;autore. FET ora interromperà l&apos;oper
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="359"/>
         <source>If you are using constraints of type activities same starting time or activities same starting day, sometimes you might find useful (after current operation) to apply the operation of removing redundant constraints.</source>
-        <translation>Se utilizzi vincoli del tipo Un insieme di attività con inzio alla stessa ora o lo stesso giorno, potresti trovare talvolta utile (dopo la corrente operazione) effettuare l&apos;operazione di rimuovere vincoli ridondanti.</translation>
+        <translation type="obsolete">Se utilizzi vincoli del tipo Un insieme di attività con inzio alla stessa ora o lo stesso giorno, potresti trovare talvolta utile (dopo la corrente operazione) effettuare l&apos;operazione di rimuovere vincoli ridondanti.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="360"/>
+        <source>NOTE: If you are using constraints of type activities same starting time or activities same starting day, it is important (after current operation) to apply the operation of removing redundant constraints.</source>
+        <translation>Attenzione: se stai usando vincoli del tipo Attività con inizio alla stessa ora oppure Attività con inizio nello stesso giorno, è importante (dopo questa operazione) effettuare la procedura di rimozione dei vincoli ridondanti.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="360"/>
+        <source>Read Help/Important tips - tip 2) for details.</source>
+        <translation>Leggi Aiuto / Suggerimenti importanti - Suggerimento 2) per ulteriori dettagli.</translation>
     </message>
 </context>
 <context>

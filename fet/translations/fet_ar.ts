@@ -311,7 +311,7 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="326"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">المادة المكملة=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="534"/>
@@ -675,68 +675,68 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="16"/>
         <source>FET - Add new constraint 2 activities grouped dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - اضافة مهمتين متجاورتين</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="35"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">اضافة القيد الحالي</translation>
+        <translation>اضافة القيد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="43"/>
         <source>Close</source>
-        <translation type="unfinished">اغلاق</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="67"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation>الوزن النسبي(يقبل: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="76"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="117"/>
         <source>Current constraint</source>
-        <translation type="unfinished">القيد الحالي</translation>
+        <translation>القيد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="139"/>
         <source>First activity</source>
-        <translation type="unfinished">المهمة الاولى</translation>
+        <translation>المهمة الاولى</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="186"/>
         <source>Second activity</source>
-        <translation type="unfinished">المهمة الثانية</translation>
+        <translation>المهمة الثانية</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="219"/>
         <source>Filter</source>
-        <translation type="unfinished">المرشح</translation>
+        <translation>المرشح</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="235"/>
         <source>Students set</source>
-        <translation type="unfinished">الطلاب المعينين</translation>
+        <translation>الطلاب المعينين</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="248"/>
         <source>Teacher</source>
-        <translation type="unfinished">المدرس</translation>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="261"/>
         <source>Subject</source>
-        <translation type="unfinished">المادة</translation>
+        <translation>المادة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="269"/>
         <source>Activity tag</source>
-        <translation type="unfinished">المادة المكملة</translation>
+        <translation>المادة المكملة</translation>
     </message>
 </context>
 <context>
@@ -956,7 +956,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="252"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>تحذير: لم تختر أي مكان. هل أنت متأكد؟</translation>
     </message>
 </context>
 <context>
@@ -964,7 +964,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="16"/>
         <source>FET - Adding a new constraint activities preferred starting times</source>
-        <translation type="unfinished"></translation>
+        <translation>فيت - اضافة تقييد جديد بوقت مفضل لمهام معينة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="35"/>
@@ -1065,7 +1065,7 @@ blank for all teachers), students set, subject and activity tag.</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="252"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>تحذير: لم تختر أي مكان. هل أنت متأكد؟</translation>
     </message>
 </context>
 <context>
@@ -1560,7 +1560,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="16"/>
         <source>FET - Add new constraint activity preferred starting time dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>فيت - اضافة تقييد جديد بوقت بدء مفضل لمهمة معينة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="49"/>
@@ -1638,12 +1638,12 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="244"/>
         <source>FET question</source>
-        <translation type="unfinished">سؤال فيت</translation>
+        <translation>سؤال فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="245"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>تحذير: لم تختر أي مكان. هل أنت متأكد؟</translation>
     </message>
 </context>
 <context>
@@ -1651,7 +1651,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="16"/>
         <source>FET - Adding a new constraint activity preferred starting times</source>
-        <translation type="unfinished"></translation>
+        <translation>فيت - اضافة تقييد جديد بوقت بدء مفضل لمهمة معينة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="35"/>
@@ -1719,12 +1719,12 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="244"/>
         <source>FET question</source>
-        <translation type="unfinished">سؤال فيت</translation>
+        <translation>سؤال فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="245"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>تحذير: لم تختر أي مكان. هل أنت متأكد؟</translation>
     </message>
 </context>
 <context>
@@ -1732,7 +1732,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="16"/>
         <source>FET - Adding a new constraint activity preferred time slots</source>
-        <translation type="unfinished"></translation>
+        <translation>فيت - اضافة تقييد جديد بوقت مفضل لمهمة معينة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="35"/>
@@ -2021,7 +2021,7 @@ gaps for teachers or students</source>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="16"/>
         <source>FET - Add new constraint min n days between activities</source>
-        <translation type="unfinished">فيت - اضافة قيد جديد بالعدد الأدنى للأيام الفاصلة بين حصتين</translation>
+        <translation>فيت - اضافة قيد جديد بالعدد الأدنى للأيام الفاصلة بين حصتين</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="27"/>
@@ -2153,7 +2153,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="59"/>
         <source>Weight percentage=%1%</source>
-        <translation type="unfinished">الوزن النسبي=%1%</translation>
+        <translation>الوزن النسبي=%1%</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="69"/>
@@ -2163,7 +2163,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="104"/>
         <source>FET information</source>
-        <translation type="unfinished">معلومات فيت</translation>
+        <translation>معلومات فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="84"/>
@@ -2178,12 +2178,12 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="102"/>
         <source>Constraint added.</source>
-        <translation type="unfinished">اضيف القيد.</translation>
+        <translation>اضيف القيد.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="105"/>
         <source>Constraint NOT added - please report error</source>
-        <translation type="unfinished">لم يضف القيد - فضلاً اقرأ تقرير الخطأ</translation>
+        <translation>لم يضف القيد - فضلاً اقرأ تقرير الخطأ</translation>
     </message>
 </context>
 <context>
@@ -2251,17 +2251,17 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="68"/>
         <source>End of day</source>
-        <translation type="unfinished">نهاية اليوم</translation>
+        <translation>نهاية اليوم</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="77"/>
         <source>Current constraint:</source>
-        <translation type="unfinished">القيد الحالي:</translation>
+        <translation>القيد الحالي:</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="83"/>
         <source>Weight (percentage)=%1</source>
-        <translation type="unfinished">الوزن (النسبي)=%1</translation>
+        <translation>الوزن (النسبي)=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="86"/>
@@ -2271,42 +2271,42 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="91"/>
         <source>Interval start hour=%1</source>
-        <translation type="unfinished">من الحصة=%1</translation>
+        <translation>من الحصة=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="94"/>
         <source>Interval end hour=%1</source>
-        <translation type="unfinished">إلى الحصة=%1</translation>
+        <translation>إلى الحصة=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="97"/>
         <source>Max days per week=%1</source>
-        <translation type="unfinished">ايام الدوام الاسبوعي القصوى=%1</translation>
+        <translation>ايام الدوام الاسبوعي القصوى=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="160"/>
         <source>FET information</source>
-        <translation type="unfinished">معلومات فيت</translation>
+        <translation>معلومات فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="112"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">لم يتم اختيار الوزن(النسبي)</translation>
+        <translation>لم يتم اختيار الوزن(النسبي)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="117"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
+        <translation>لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="139"/>
         <source>Start hour invalid</source>
-        <translation type="unfinished">من الحصة</translation>
+        <translation>من الحصة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="144"/>
         <source>End hour invalid</source>
-        <translation type="unfinished">إلى الحصة</translation>
+        <translation>إلى الحصة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="149"/>
@@ -2316,12 +2316,12 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="158"/>
         <source>Constraint added</source>
-        <translation type="unfinished">اضيف القيد</translation>
+        <translation>اضيف القيد</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="161"/>
         <source>Constraint NOT added - please report error</source>
-        <translation type="unfinished">لم يضف القيد - فضلاً اقرأ تقرير الخطأ</translation>
+        <translation>لم يضف القيد - فضلاً اقرأ تقرير الخطأ</translation>
     </message>
 </context>
 <context>
@@ -2680,7 +2680,7 @@ students)</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="131"/>
         <source>FET information</source>
-        <translation type="unfinished">معلومات فيت</translation>
+        <translation>معلومات فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="103"/>
@@ -3333,12 +3333,12 @@ students)</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="144"/>
         <source>FET information</source>
-        <translation type="unfinished">معلومات فيت</translation>
+        <translation>معلومات فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="116"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="124"/>
@@ -3431,7 +3431,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="255"/>
         <source>FET question</source>
-        <translation type="unfinished">سؤال فيت</translation>
+        <translation>سؤال فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="191"/>
@@ -3445,7 +3445,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="225"/>
         <source>Do you want to add current constraint?</source>
-        <translation type="unfinished">هل ترغب اضافة القيد الحالي؟</translation>
+        <translation>هل ترغب اضافة القيد الحالي؟</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="208"/>
@@ -3468,7 +3468,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="256"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>تحذير: لم تختر أي مكان. هل أنت متأكد؟</translation>
     </message>
 </context>
 <context>
@@ -3476,62 +3476,62 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="16"/>
         <source>FET - Adding a new constraint subactivities preferred starting times</source>
-        <translation type="unfinished">فيت - أوقات مفضلة لبدء حصص ذات ترتيب معين</translation>
+        <translation>فيت - أوقات مفضلة لبدء حصص ذات ترتيب معين</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="35"/>
         <source>Add constraint</source>
-        <translation type="unfinished">اضافة القيد</translation>
+        <translation>اضافة القيد</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="43"/>
         <source>Set all slots allowed</source>
-        <translation type="unfinished">السماح للكل</translation>
+        <translation>السماح للكل</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">اغلاق</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="59"/>
         <source>Set all slots not allowed</source>
-        <translation type="unfinished">عدم السماح للكل</translation>
+        <translation>عدم السماح للكل</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="83"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">الوزن النسبي (يقبل: 0.0%-100.0%)</translation>
+        <translation>الوزن النسبي (يقبل: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="91"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="123"/>
         <source>Activity tag</source>
-        <translation type="unfinished">المادة المكملة</translation>
+        <translation>المادة المكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="141"/>
         <source>Students set</source>
-        <translation type="unfinished">الطلاب المعينين</translation>
+        <translation>الطلاب المعينين</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="154"/>
         <source>Subject</source>
-        <translation type="unfinished">المادة</translation>
+        <translation>المادة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="167"/>
         <source>Teacher</source>
-        <translation type="unfinished">المدرس</translation>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="220"/>
         <source>Please choose the teacher (blank=all), students set, subject, activity tag.</source>
-        <translation type="unfinished"></translation>
+        <translation>فضلاً اختر المدرس, الطلاب, المادة, المادة المكملة.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="185"/>
@@ -3586,7 +3586,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="256"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>تحذير: لم تختر أي مكان. هل أنت متأكد؟</translation>
     </message>
 </context>
 <context>
@@ -3594,7 +3594,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="16"/>
         <source>FET - Adding a new constraint subactivities preferred time slots</source>
-        <translation type="unfinished">فيت - أوقات مفضلة لحصص ذات ترتيب معين</translation>
+        <translation>فيت - أوقات مفضلة لحصص ذات ترتيب معين</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="35"/>
@@ -3649,7 +3649,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="228"/>
         <source>Please choose the teacher (blank=all), students set, subject, activity tag.</source>
-        <translation type="unfinished"></translation>
+        <translation>فضلاً اختر المدرس, الطلاب, المادة, المادة المكملة.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="185"/>
@@ -3667,7 +3667,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomform_template.ui" line="16"/>
         <source>FET - Add new constraint subject activity tag preferred room</source>
-        <translation type="unfinished"></translation>
+        <translation>فيت - اضافة تقييد جديد لربط مادة ومادة مكملة بقاعة معينة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomform_template.ui" line="33"/>
@@ -3710,7 +3710,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="16"/>
         <source>FET - Add new constraint subject activity tag preferred rooms</source>
-        <translation type="unfinished"></translation>
+        <translation>فيت - اضافة تقييد جديد لربط مادة ومادة مكملة بقاعات معينة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="41"/>
@@ -4523,12 +4523,12 @@ to start with 2 min hours and highten them as you find new timetables</source>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="135"/>
         <source>FET information</source>
-        <translation type="unfinished">معلومات فيت</translation>
+        <translation>معلومات فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="107"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation>لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="115"/>
@@ -4641,12 +4641,12 @@ period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="88"/>
         <source>Interval start hour=%1</source>
-        <translation type="unfinished">من الحصة=%1</translation>
+        <translation>من الحصة=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="91"/>
         <source>Interval end hour=%1</source>
-        <translation type="unfinished">إلى الحصة=%1</translation>
+        <translation>إلى الحصة=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="94"/>
@@ -4873,7 +4873,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="16"/>
         <source>FET - Add new constraint teachers max gaps per week dialog</source>
-        <translation></translation>
+        <translation>FET - اضافة قيد بالحد الأقصى للفراغات الاسبوعية للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="35"/>
@@ -5355,7 +5355,7 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform.cpp" line="100"/>
         <source>FET warning</source>
-        <translation type="unfinished">تحذير فيت</translation>
+        <translation>تحذير فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform.cpp" line="69"/>
@@ -5413,7 +5413,7 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform_template.ui" line="146"/>
         <source>Consecutive if same day</source>
-        <translation type="unfinished"></translation>
+        <translation>متتالية اذا كانت في يوم واحد</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform_template.ui" line="89"/>
@@ -5448,7 +5448,7 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform_template.ui" line="13"/>
         <source>Change more constraints min n days</source>
-        <translation type="unfinished"></translation>
+        <translation>تغيير أكثر من تقييد بالحد الادني من الايام بين حصتين</translation>
     </message>
 </context>
 <context>
@@ -5524,42 +5524,42 @@ after A1, same day, possibly separated by breaks</source>
     <message>
         <location filename="../src/interface/constraint2activitiesgroupedform_template.ui" line="16"/>
         <source>FET - Time constraints 2 activies grouped</source>
-        <translation type="unfinished"></translation>
+        <translation>فيت - تقييد زمني لمهمتين متجاورتين</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesgroupedform_template.ui" line="27"/>
         <source>Close</source>
-        <translation type="unfinished">اغلاق</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesgroupedform_template.ui" line="35"/>
         <source>Add</source>
-        <translation type="unfinished">اضافة</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesgroupedform_template.ui" line="43"/>
         <source>Remove</source>
-        <translation type="unfinished">حذف</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesgroupedform_template.ui" line="51"/>
         <source>Modify</source>
-        <translation type="unfinished">تعديل</translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesgroupedform_template.ui" line="57"/>
         <source>New Item</source>
-        <translation type="unfinished">مشروع جديد</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesgroupedform_template.ui" line="77"/>
         <source>Current constraint</source>
-        <translation type="unfinished">القيد الحالي</translation>
+        <translation>القيد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesgroupedform_template.ui" line="91"/>
         <source>Constraints</source>
-        <translation type="unfinished">القيود</translation>
+        <translation>القيود</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesgroupedform_template.ui" line="99"/>
@@ -5628,37 +5628,37 @@ A1, separated by any time interval</source>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="27"/>
         <source>Close</source>
-        <translation type="unfinished">اغلاق</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="35"/>
         <source>Remove</source>
-        <translation type="unfinished">حذف</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="43"/>
         <source>Add</source>
-        <translation type="unfinished">اضافة</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="51"/>
         <source>Modify</source>
-        <translation type="unfinished">تعديل</translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="57"/>
         <source>New Item</source>
-        <translation type="unfinished">مشروع جديد</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="75"/>
         <source>Constraints</source>
-        <translation type="unfinished">القيود</translation>
+        <translation>القيود</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="91"/>
         <source>Current constraint</source>
-        <translation type="unfinished">القيد الحالي</translation>
+        <translation>القيد الحالي</translation>
     </message>
 </context>
 <context>
@@ -5970,7 +5970,7 @@ constraints if adding constraints same starting time</source>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="16"/>
         <source>FET - Time constraints activity ends students day</source>
-        <translation type="unfinished">FET - القيد الزمني لمهمة أخيرة للطلاب</translation>
+        <translation>FET - القيد الزمني لمهمة أخيرة للطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="25"/>
@@ -6010,27 +6010,27 @@ constraints if adding constraints same starting time</source>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="91"/>
         <source>Filter</source>
-        <translation type="unfinished">المرشح</translation>
+        <translation>المرشح</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="102"/>
         <source>Teacher</source>
-        <translation type="unfinished">المدرس</translation>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="115"/>
         <source>Activity tag</source>
-        <translation type="unfinished">المادة المكملة</translation>
+        <translation>المادة المكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="133"/>
         <source>Subject</source>
-        <translation type="unfinished">المادة</translation>
+        <translation>المادة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="146"/>
         <source>Students set</source>
-        <translation type="unfinished">الطلاب المعينين</translation>
+        <translation>الطلاب المعينين</translation>
     </message>
 </context>
 <context>
@@ -6646,11 +6646,21 @@ in the same day, they must be separated by at least min gaps (hours).</source>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="415"/>
         <source>FET information</source>
-        <translation type="unfinished">معلومات فيت</translation>
+        <translation>معلومات فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="416"/>
         <source>There were inspected (and possibly modified) %1 constraints min n days between activities matching your criteria</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="419"/>
+        <source>NOTE: If you are using constraints of type activities same starting time or activities same starting day, it is important (after current operation) to apply the operation of removing redundant constraints.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="420"/>
+        <source>Read Help/Important tips - tip 2) for details.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6659,7 +6669,7 @@ in the same day, they must be separated by at least min gaps (hours).</source>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="16"/>
         <source>FET - Time constraints min n days between activities</source>
-        <translation type="unfinished">FET - القيد الزمني للعدد الأدنى للأيام الفاصلة بين حصتين</translation>
+        <translation>FET - القيد الزمني للعدد الأدنى للأيام الفاصلة بين حصتين</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="160"/>
@@ -6729,7 +6739,7 @@ in the same day, they must be separated by at least min gaps (hours).</source>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="140"/>
         <source>Modify multiple constraints at once</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل عدة قيود دفعة واحدة</translation>
     </message>
 </context>
 <context>
@@ -6785,7 +6795,7 @@ in the same day, they must be separated by at least min gaps (hours).</source>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="102"/>
         <source>FET information</source>
-        <translation type="unfinished">معلومات فيت</translation>
+        <translation>معلومات فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="102"/>
@@ -6807,7 +6817,7 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="111"/>
         <source>FET warning</source>
-        <translation type="unfinished">تحذير فيت</translation>
+        <translation>تحذير فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="112"/>
@@ -6868,39 +6878,39 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="121"/>
         <source>FET information</source>
-        <translation type="unfinished">معلومات فيت</translation>
+        <translation>معلومات فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="121"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">لم يتم اختيار قيد</translation>
+        <translation>لم يتم اختيار قيد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="126"/>
         <source>Removing constraint:
 </source>
-        <translation type="unfinished">حذف القيد:</translation>
+        <translation>حذف القيد:</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="128"/>
         <source>
 Are you sure?</source>
-        <translation type="unfinished">هل أنت متأكد؟</translation>
+        <translation>هل أنت متأكد؟</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="130"/>
         <source>FET warning</source>
-        <translation type="unfinished">تحذير فيت</translation>
+        <translation>تحذير فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="131"/>
         <source>OK</source>
-        <translation type="unfinished">موافق</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="131"/>
         <source>Cancel</source>
-        <translation type="unfinished">الغاء</translation>
+        <translation>الغاء</translation>
     </message>
 </context>
 <context>
@@ -7454,39 +7464,39 @@ rooms override the home rooms.</source>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="120"/>
         <source>FET information</source>
-        <translation type="unfinished">معلومات فيت</translation>
+        <translation>معلومات فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="120"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">لم يتم اختيار قيد</translation>
+        <translation>لم يتم اختيار قيد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="125"/>
         <source>Removing constraint:
 </source>
-        <translation type="unfinished">حذف القيد:</translation>
+        <translation>حذف القيد:</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="127"/>
         <source>
 Are you sure?</source>
-        <translation type="unfinished">هل أنت متأكد؟</translation>
+        <translation>هل أنت متأكد؟</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="129"/>
         <source>FET warning</source>
-        <translation type="unfinished">تحذير فيت</translation>
+        <translation>تحذير فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="130"/>
         <source>OK</source>
-        <translation type="unfinished">موافق</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="130"/>
         <source>Cancel</source>
-        <translation type="unfinished">الغاء</translation>
+        <translation>الغاء</translation>
     </message>
 </context>
 <context>
@@ -7994,7 +8004,7 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="16"/>
         <source>FET - ConstraintSubactivitiesPreferredStartingTimes</source>
-        <translation type="unfinished">فيت - أوقات مفضلة لبدء حصص ذات ترتيب معين</translation>
+        <translation>فيت - أوقات مفضلة لبدء حصص ذات ترتيب معين</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="27"/>
@@ -8049,7 +8059,7 @@ for activities. Please click Help button for details.</source>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="130"/>
         <source>FET help</source>
-        <translation type="unfinished">مساعدة فيت</translation>
+        <translation>مساعدة فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="134"/>
@@ -8077,53 +8087,53 @@ for activities. Please click Help button for details.</source>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="16"/>
         <source>FET - ConstraintSubactivitiesPreferredTimeSlots</source>
-        <translation type="unfinished">فيت - أوقات مفضلة لحصص ذات ترتيب معين</translation>
+        <translation>فيت - أوقات مفضلة لحصص ذات ترتيب معين</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="33"/>
         <source>Constraints</source>
-        <translation type="unfinished">القيود</translation>
+        <translation>القيود</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="41"/>
         <source>Add</source>
-        <translation type="unfinished">اضافة</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="49"/>
         <source>Modify</source>
-        <translation type="unfinished">تعديل</translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="65"/>
         <source>Remove</source>
-        <translation type="unfinished">حذف</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="71"/>
         <source>New Item</source>
-        <translation type="unfinished">مشروع جديد</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="83"/>
         <source>Current constraint</source>
-        <translation type="unfinished">القيد الحالي</translation>
+        <translation>القيد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="91"/>
         <source>Close</source>
-        <translation type="unfinished">اغلاق</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="99"/>
         <source>Help</source>
-        <translation type="unfinished">مساعدة</translation>
+        <translation>مساعدة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="107"/>
         <source>This constraint is useful to constrain only the n-th component
 for activities. Please click Help button for details.</source>
-        <translation type="unfinished">هذا القيد يستخدم لقيد بدء حصة ذات ترتيب معين. مثل الحصة الثالثة لمادة 
+        <translation>هذا القيد يستخدم لقيد بدء حصة ذات ترتيب معين. مثل الحصة الثالثة لمادة 
 الرياضيات للمدرس س والطلاب ص،  فضلاً انقر على زر المساعدة لمزيد من المعلومات.</translation>
     </message>
 </context>
@@ -8132,7 +8142,7 @@ for activities. Please click Help button for details.</source>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="16"/>
         <source>FET - Space constraints subject activity tag preferred room</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - القيد المكاني لربط قاعة مفضلة بمادة ومادة مكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="25"/>
@@ -8434,39 +8444,39 @@ Preferred rooms override the home rooms.</source>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="111"/>
         <source>FET information</source>
-        <translation type="unfinished">معلومات فيت</translation>
+        <translation>معلومات فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="111"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">لم يتم اختيار قيد</translation>
+        <translation>لم يتم اختيار قيد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="116"/>
         <source>Removing constraint:
 </source>
-        <translation type="unfinished">حذف القيد:</translation>
+        <translation>حذف القيد:</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="118"/>
         <source>
 Are you sure?</source>
-        <translation type="unfinished">هل أنت متأكد؟</translation>
+        <translation>هل أنت متأكد؟</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="120"/>
         <source>FET warning</source>
-        <translation type="unfinished">تحذير فيت</translation>
+        <translation>تحذير فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="121"/>
         <source>OK</source>
-        <translation type="unfinished">موافق</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="121"/>
         <source>Cancel</source>
-        <translation type="unfinished">الغاء</translation>
+        <translation>الغاء</translation>
     </message>
 </context>
 <context>
@@ -9725,11 +9735,6 @@ Are you sure?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="577"/>
-        <source>Warning! Constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/engine/export.cpp" line="542"/>
         <source>was skipped, because it refers not to a whole larger container activity</source>
         <translation type="unfinished"></translation>
@@ -9798,6 +9803,11 @@ Import of data will be easier with these settings.</source>
     <message>
         <location filename="../src/engine/export.cpp" line="790"/>
         <source>0 scheduled activities exported, because no timetable was generated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/export.cpp" line="577"/>
+        <source>Note: Constraint</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10720,7 +10730,7 @@ Please stop simulation before this.</source>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="819"/>
         <source>A set of activities has same starting hour (any days)</source>
-        <translation type="unfinished">مهام لها نفس الوقت والايام قد تتغير</translation>
+        <translation>مهام لها نفس الوقت والايام قد تتغير</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="832"/>
@@ -11360,12 +11370,12 @@ Please stop simulation before this.</source>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1398"/>
         <source>A user&apos;s manual</source>
-        <translation type="unfinished"></translation>
+        <translation>دليل المستخدم</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1403"/>
         <source>2 activities are grouped</source>
-        <translation type="unfinished"></translation>
+        <translation>مهمتين متجاورتين</translation>
     </message>
 </context>
 <context>
@@ -12351,7 +12361,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;(c) Liviu Lalescu 2002-2008&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Version: 5.7.5 (December 2008)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Version: 5.7.6 (December 2008)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -12383,7 +12393,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/interface/helpfaqform_template.ui" line="41"/>
         <source>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 6 October 2008 (new additions are written with date, most are at the end)
+this documentation by Liviu Lalescu, reviewed and modified - 5 December 2008 (new additions are written with date, most are at the end)
 
 --------
 
@@ -13070,7 +13080,21 @@ New, added 6 October 2008
 
 Q: By law a teacher in Italy must work not less of 5 days a week
 
-A: You might use this trick: add for each teacher a dummy container (larger) activity, with no students, split into 5 activities per week, with constraint min 1 day between activities 100%. Then, constraint teachers min hours daily, min 2 hours (for minimum 1 real hour) or min 3 hours (for minimum 2 real hours).</source>
+A: You might use this trick: add for each teacher a dummy container (larger) activity, with no students, split into 5 activities per week, with constraint min 1 day between activities 100%. Then, constraint teachers min hours daily, min 2 hours (for minimum 1 real hour) or min 3 hours (for minimum 2 real hours).
+
+---------------------------------------------------------------------------------
+
+New, added 5 December 2008
+
+Q: I have a double duration activity. Is it possible that it is spread over the break period, like:
+
+Activity Math, duration 2, id say 100
+
+Hour 10:00 Math (first hour of act. 100)
+Hour 11:00 Break
+Hour 12:00 Math (second hour of act. 100)
+
+A: No, the activity must respect the break, so it is before or after the break with all the hours of it.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -13182,7 +13206,9 @@ More details: the combination of 2 or more redundant constraints min n days betw
 
 Do not consider redundant constraints with the same activities but different number of days (you may want to add min 2 days 95% and min 1 day 95%, which gives in 95% cases the 2 days will be respected and in 99.75% cases the 1 day will be respected).
 
-Preferred time(s) constraints do not have the problem of redundancy like min days constraints.</source>
+The other constraints (like preferred time(s) constraints) do not have the problem of redundancy like min days constraints, so no need to take care about them.
+
+It is IMPORTANT to remove redundant min n days constraints after you inputted data and before generating. Any modification of the min n days constraints should be followed by this removal of redundant min n days constraints (well, not all modifications, but better to do it than not). If you modify more constraints at once or apply the balancing of activities, it is important to remove redundant constraints. If you have no redundant constraints, it is no need to remove the redundant constraints, but better to check again than let some redundant constraints active.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -13539,7 +13565,7 @@ Preferred time(s) constraints do not have the problem of redundancy like min day
     <message>
         <location filename="../src/engine/import.cpp" line="84"/>
         <source>Activity Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>مادة مكملة</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="85"/>
@@ -13719,7 +13745,7 @@ Preferred time(s) constraints do not have the problem of redundancy like min day
     <message>
         <location filename="../src/engine/import.cpp" line="660"/>
         <source>Empty filename.</source>
-        <translation type="unfinished"></translation>
+        <translation>اسم ملف فارغ.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="664"/>
@@ -14249,7 +14275,7 @@ is:</source>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="418"/>
         <source>FET question</source>
-        <translation type="unfinished">سؤال فيت</translation>
+        <translation>سؤال فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="377"/>
@@ -14259,7 +14285,7 @@ is:</source>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="410"/>
         <source>FET information</source>
-        <translation type="unfinished">معلومات فيت</translation>
+        <translation>معلومات فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="402"/>
@@ -14279,7 +14305,7 @@ is:</source>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="296"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>المادة المكملة=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="411"/>
@@ -14494,43 +14520,43 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesgroupedform_template.ui" line="16"/>
         <source>FET - Modify constraint 2 activities grouped dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>فيت - تعديل تقييد بمهمتين متجاورتين</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesgroupedform_template.ui" line="35"/>
         <source>Ok</source>
-        <translation type="unfinished">موافق</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesgroupedform_template.ui" line="43"/>
         <source>Cancel</source>
-        <translation type="unfinished">الغاء</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesgroupedform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">القيد الحالي</translation>
+        <translation>القيد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesgroupedform_template.ui" line="89"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation>الوزن النسبي(يقبل: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesgroupedform_template.ui" line="98"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesgroupedform_template.ui" line="139"/>
         <source>First activity</source>
-        <translation type="unfinished">المهمة الاولى</translation>
+        <translation>المهمة الاولى</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesgroupedform_template.ui" line="186"/>
         <source>Second activity</source>
-        <translation type="unfinished">المهمة الثانية</translation>
+        <translation>المهمة الثانية</translation>
     </message>
 </context>
 <context>
@@ -14587,42 +14613,42 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="41"/>
         <source>Weight percentage (necessary: 100.0%)</source>
-        <translation type="unfinished">الوزن النسبي (ضروري: 100%) {100.0%?}</translation>
+        <translation>الوزن النسبي (ضروري: 100%) {100.0%?}</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="67"/>
         <source>Ok</source>
-        <translation type="unfinished">موافق</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="75"/>
         <source>Cancel</source>
-        <translation type="unfinished">الغاء</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="101"/>
         <source>Teacher</source>
-        <translation type="unfinished">المدرس</translation>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="114"/>
         <source>Students set</source>
-        <translation type="unfinished">الطلاب المعينين</translation>
+        <translation>الطلاب المعينين</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="142"/>
         <source>Activity tag</source>
-        <translation type="unfinished">المادة المكملة</translation>
+        <translation>المادة المكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="155"/>
         <source>Subject</source>
-        <translation type="unfinished">المادة</translation>
+        <translation>المادة</translation>
     </message>
 </context>
 <context>
@@ -14682,7 +14708,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="311"/>
         <source>FET question</source>
-        <translation type="unfinished">سؤال فيت</translation>
+        <translation>سؤال فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="247"/>
@@ -14719,7 +14745,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="312"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>تحذير: لم تختر أي مكان. هل أنت متأكد؟</translation>
     </message>
 </context>
 <context>
@@ -14785,7 +14811,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="311"/>
         <source>FET question</source>
-        <translation type="unfinished">سؤال فيت</translation>
+        <translation>سؤال فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="247"/>
@@ -14799,7 +14825,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="281"/>
         <source>Do you want to add current constraint?</source>
-        <translation type="unfinished">هل ترغب اضافة القيد الحالي؟</translation>
+        <translation>هل ترغب اضافة القيد الحالي؟</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="264"/>
@@ -14822,7 +14848,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="312"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>تحذير: لم تختر أي مكان. هل أنت متأكد؟</translation>
     </message>
 </context>
 <context>
@@ -15281,12 +15307,12 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform.cpp" line="283"/>
         <source>FET question</source>
-        <translation type="unfinished">سؤال فيت</translation>
+        <translation>سؤال فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform.cpp" line="284"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>تحذير: لم تختر أي مكان. هل أنت متأكد؟</translation>
     </message>
 </context>
 <context>
@@ -15362,12 +15388,12 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform.cpp" line="285"/>
         <source>FET question</source>
-        <translation type="unfinished">سؤال فيت</translation>
+        <translation>سؤال فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform.cpp" line="286"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>تحذير: لم تختر أي مكان. هل أنت متأكد؟</translation>
     </message>
 </context>
 <context>
@@ -15631,17 +15657,17 @@ gaps for teachers or students</source>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="207"/>
         <source>The best way to add the activities would be:</source>
-        <translation type="unfinished">يفضل أن تقوم بأحد الأمرين التاليين: </translation>
+        <translation>يفضل أن تقوم بأحد الأمرين التاليين: </translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="213"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min n days between activities up to 100%)</source>
-        <translation type="unfinished">- إذا كنت ستضيف تقييد&quot;إذا كانت الحصص في نفس اليوم فالتتابع إجباري&quot;،إذنعليك أن تقوم بتجميع بعض الحصص إلى بعضها لتحصل على عدد حصص مساو لعددايام الدراسة. مثال: علينا أن نبرمج 7 حصص طولها 1ساعة في خمس أيام. إذنقم بتحويلها إلى مهمة واحدة حاوية لخمس حصص هكذا: 2,2,1,1,1 (يمكنك ان ترفع نسبة أهمية الحد الأدنى من الأيام الفاصلة بين حصتين/مهمتين إلى100% )</translation>
+        <translation>- إذا كنت ستضيف تقييد&quot;إذا كانت الحصص في نفس اليوم فالتتابع إجباري&quot;،إذنعليك أن تقوم بتجميع بعض الحصص إلى بعضها لتحصل على عدد حصص مساو لعددايام الدراسة. مثال: علينا أن نبرمج 7 حصص طولها 1ساعة في خمس أيام. إذنقم بتحويلها إلى مهمة واحدة حاوية لخمس حصص هكذا: 2,2,1,1,1 (يمكنك ان ترفع نسبة أهمية الحد الأدنى من الأيام الفاصلة بين حصتين/مهمتين إلى100% )</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="221"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)</source>
-        <translation type="unfinished">2- إذا لم ترغب بتطبيق تقييد &quot;إذا كانت الحصص في نفس اليوم فالتتابعإجباري&quot;، إذن يفضل أن تدخل مهمة/حاوية كبيرة مقسمة إلى عدد من الحصص مساولعدد أيام الدراسة الأسبوعية. ثم مهمة/حاوية أخرى تضم ماتبقى من حصص.مثال: علينا أن نبرمج 7 حصص طولها 1 في خمس أيام. نضيف مهمة/حاوية كبيرةمجزأة إلأى 5 حصص طول كل منها ساعة. ثم مهمة/حاوية ثانية مجزأة إلى 2 حصصبطول ساعة لكل واحدة (يمكنك ان  ترفع نسبة أهمية الحد الأدنى من الأيامالفاصلة بين حصتين/مهمتين إلى 100% )</translation>
+        <translation>2- إذا لم ترغب بتطبيق تقييد &quot;إذا كانت الحصص في نفس اليوم فالتتابعإجباري&quot;، إذن يفضل أن تدخل مهمة/حاوية كبيرة مقسمة إلى عدد من الحصص مساولعدد أيام الدراسة الأسبوعية. ثم مهمة/حاوية أخرى تضم ماتبقى من حصص.مثال: علينا أن نبرمج 7 حصص طولها 1 في خمس أيام. نضيف مهمة/حاوية كبيرةمجزأة إلأى 5 حصص طول كل منها ساعة. ثم مهمة/حاوية ثانية مجزأة إلى 2 حصصبطول ساعة لكل واحدة (يمكنك ان  ترفع نسبة أهمية الحد الأدنى من الأيامالفاصلة بين حصتين/مهمتين إلى 100% )</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="222"/>
@@ -15651,12 +15677,12 @@ gaps for teachers or students</source>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="224"/>
         <source>FET warning</source>
-        <translation type="unfinished">تحذير فيت</translation>
+        <translation>تحذير فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="254"/>
         <source>FET information</source>
-        <translation type="unfinished">معلومات فيت</translation>
+        <translation>معلومات فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="254"/>
@@ -15806,7 +15832,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="92"/>
         <source>FET information</source>
-        <translation type="unfinished">معلومات فيت</translation>
+        <translation>معلومات فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="88"/>
@@ -15904,12 +15930,12 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="87"/>
         <source>Interval start hour=%1</source>
-        <translation type="unfinished">من الحصة=%1</translation>
+        <translation>من الحصة=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="90"/>
         <source>Interval end hour=%1</source>
-        <translation type="unfinished">إلى الحصة=%1</translation>
+        <translation>إلى الحصة=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="93"/>
@@ -15929,17 +15955,17 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="111"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
+        <translation>لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="133"/>
         <source>Start hour invalid</source>
-        <translation type="unfinished">من الحصة</translation>
+        <translation>من الحصة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="138"/>
         <source>End hour invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>إلى الحصة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="143"/>
@@ -15957,37 +15983,37 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="41"/>
         <source>Current constraint</source>
-        <translation type="unfinished">القيد الحالي</translation>
+        <translation>القيد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="67"/>
         <source>Ok</source>
-        <translation type="unfinished">موافق</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="75"/>
         <source>Cancel</source>
-        <translation type="unfinished">الغاء</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="99"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
+        <translation>الوزن النسبي (ضروري: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="107"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="131"/>
         <source>Interval start hour</source>
-        <translation type="unfinished">من الحصة</translation>
+        <translation>من الحصة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="172"/>
         <source>Interval end hour</source>
-        <translation type="unfinished">إلى الحصة</translation>
+        <translation>إلى الحصة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="247"/>
@@ -16020,7 +16046,7 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperdayform.cpp" line="80"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
 </context>
 <context>
@@ -16086,7 +16112,7 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperweekform.cpp" line="80"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
 </context>
 <context>
@@ -16276,7 +16302,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenbuildingchangesform.cpp" line="80"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
 </context>
 <context>
@@ -16727,7 +16753,7 @@ lower it as you find new timetables</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform.cpp" line="114"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform.cpp" line="122"/>
@@ -16808,7 +16834,7 @@ lower it as you find new timetables</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform.cpp" line="114"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform.cpp" line="122"/>
@@ -17028,7 +17054,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform.cpp" line="114"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform.cpp" line="122"/>
@@ -17139,7 +17165,7 @@ students)</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="145"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="153"/>
@@ -17239,7 +17265,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="316"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تحذير: لم تختر أي مكان. هل أنت متأكد؟</translation>
     </message>
 </context>
 <context>
@@ -17347,7 +17373,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="316"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تحذير: لم تختر أي مكان. هل أنت متأكد؟</translation>
     </message>
 </context>
 <context>
@@ -17872,7 +17898,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform.cpp" line="100"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform.cpp" line="108"/>
@@ -17953,7 +17979,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform.cpp" line="100"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform.cpp" line="108"/>
@@ -18267,7 +18293,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform.cpp" line="100"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform.cpp" line="108"/>
@@ -18379,7 +18405,7 @@ to start with 2 min hours and highten them as you find new timetables</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="130"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="138"/>
@@ -18577,7 +18603,7 @@ before and after this not available period, there will be no gaps counted</sourc
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperdayform.cpp" line="80"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
 </context>
 <context>
@@ -18643,7 +18669,7 @@ before and after this not available period, there will be no gaps counted</sourc
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform.cpp" line="80"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
 </context>
 <context>
@@ -18881,7 +18907,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenbuildingchangesform.cpp" line="80"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
 </context>
 <context>
@@ -20869,7 +20895,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too man
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform.cpp" line="115"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="197"/>
@@ -21634,7 +21660,7 @@ Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no)</comment>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3028"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">المادة المكملة=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activitytag.cpp" line="35"/>
@@ -24401,7 +24427,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="obsolete">موافق</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="388"/>
+        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="389"/>
         <source>FET information</source>
         <translation>معلومات فيت</translation>
     </message>
@@ -24454,7 +24480,7 @@ Please report error. FET will now abort current operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="389"/>
+        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="390"/>
         <source>This box must remain checked, so that split activities are not in the same day (with the probability you write below)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -24464,8 +24490,13 @@ Please report error. FET will now abort current operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="359"/>
-        <source>If you are using constraints of type activities same starting time or activities same starting day, sometimes you might find useful (after current operation) to apply the operation of removing redundant constraints.</source>
+        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="360"/>
+        <source>NOTE: If you are using constraints of type activities same starting time or activities same starting day, it is important (after current operation) to apply the operation of removing redundant constraints.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="360"/>
+        <source>Read Help/Important tips - tip 2) for details.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -25749,7 +25780,7 @@ Please note that, for large data, each timetable might occupy more megabytes of 
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="228"/>
         <source>Cannot optimize - please modify your data</source>
-        <translation type="unfinished"></translation>
+        <translation>لم تتم المعالجة - فضلاً عدل بياناتك</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="233"/>
@@ -25797,7 +25828,7 @@ For more information you can join the mailing list or write to author</source>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="364"/>
         <source>Total searching time was %1h %2m %3s</source>
-        <translation type="unfinished"></translation>
+        <translation>زمن البحث الكلي  %1h %2m %3s</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="274"/>
@@ -25912,12 +25943,12 @@ For more information you can join the mailing list or write to author</source>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="175"/>
         <source>Break with weight 100% in this slot</source>
-        <translation type="unfinished"></translation>
+        <translation>ايقاف بنسبة  100%  في هذا المكان</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="171"/>
         <source>Room is not available with weight %1%</source>
-        <translation type="unfinished"></translation>
+        <translation>القاعة غير متاحة بنسبة  %1%</translation>
     </message>
 </context>
 <context>
@@ -25945,7 +25976,7 @@ For more information you can join the mailing list or write to author</source>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="81"/>
         <source>Please click on the table for details for a specific activity.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">فضلاً انقر المهمة المطلوبة لمعرفة التفاصيل.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="92"/>
@@ -26014,12 +26045,12 @@ For more information you can join the mailing list or write to author</source>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="257"/>
         <source>Students subgroup is not available 100% in this slot</source>
-        <translation type="unfinished"></translation>
+        <translation>مجموعة الطلاب الفرعية غير متاح بنسبة  100% في هذا المكان</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="261"/>
         <source>Break with weight 100% in this slot</source>
-        <translation type="unfinished"></translation>
+        <translation>ايقاف بنسبة  100%  في هذا المكان</translation>
     </message>
 </context>
 <context>
@@ -26047,7 +26078,7 @@ For more information you can join the mailing list or write to author</source>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="136"/>
         <source>Please click on the table for details for a specific activity.</source>
-        <translation type="unfinished"></translation>
+        <translation>فضلاً انقر المهمة المطلوبة لمعرفة التفاصيل.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="155"/>
@@ -26058,7 +26089,8 @@ For more information you can join the mailing list or write to author</source>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="109"/>
         <source>Lock selected activities
 (only the time)</source>
-        <translation type="unfinished"></translation>
+        <translation>تثبيت المهام المحددة
+(زمنياً فقط)</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="33"/>
@@ -26079,13 +26111,15 @@ For more information you can join the mailing list or write to author</source>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="118"/>
         <source>Lock selected activities
 (time&amp;&amp;space)</source>
-        <translation type="unfinished"></translation>
+        <translation>تثبيت المهام المحددة
+(زمانياً&amp;&amp;مكانياً)</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="127"/>
         <source>Lock selected activities
 (only the space)</source>
-        <translation type="unfinished"></translation>
+        <translation>تثبيت المهام المحددة
+(مكانياً فقط)</translation>
     </message>
 </context>
 <context>
@@ -26129,12 +26163,12 @@ For more information you can join the mailing list or write to author</source>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="188"/>
         <source>Teacher is not available 100% in this slot</source>
-        <translation type="unfinished"></translation>
+        <translation>المدرس غير متاح بنسبة  100%  في هذا المكان</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="192"/>
         <source>Break with weight 100% in this slot</source>
-        <translation type="unfinished"></translation>
+        <translation>ايقاف بنسبة  100%  في هذا المكان</translation>
     </message>
 </context>
 <context>
@@ -26148,7 +26182,8 @@ For more information you can join the mailing list or write to author</source>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="109"/>
         <source>Lock selected activities
 (only time)</source>
-        <translation type="unfinished"></translation>
+        <translation>تثبيت المهام المحددة
+(زمنياً فقط)</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="33"/>
@@ -26163,7 +26198,7 @@ For more information you can join the mailing list or write to author</source>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="71"/>
         <source>Please click on the table for details for a specific activity.</source>
-        <translation type="unfinished"></translation>
+        <translation>فضلاً انقر المهمة المطلوبة لمعرفة التفاصيل.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="82"/>
@@ -26184,13 +26219,15 @@ For more information you can join the mailing list or write to author</source>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="100"/>
         <source>Lock selected activities
 (only space)</source>
-        <translation type="unfinished"></translation>
+        <translation>تثبيت المهام المحددة
+(مكانياً فقط)</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="118"/>
         <source>Lock selected activities
 (time&amp;&amp;space)</source>
-        <translation type="unfinished"></translation>
+        <translation>تثبيت المهام المحددة
+(زمانياً&amp;&amp;مكانياً)</translation>
     </message>
 </context>
 <context>

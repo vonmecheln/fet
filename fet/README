@@ -159,12 +159,13 @@ Running FET:
 	variables (these are not used in normal cases). FET seems to need a good amount of virtual memory on Windows
 	(maybe it is best to let Windows manage the virtual memory).
 	
-	COMMAND LINE: no GUI, just run "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t] [--printnotavailable=u]",
+	COMMAND LINE: no GUI, just run "fet --inputfile=x [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u]",
 	where	x is the input file, for instance "inputfile.fet"
-			y is integer (seconds)
-			z is integer from 0 to 5 and represents the detaliation level for html timetables
-			t is one of en_GB, ar, ca, de, el, es, fr, hu, id, it, lt, mk, ms, nl, pl, ro, tr
-			u is either "true" or "false" and represents if you want -x- or --- in the generated timetables for the
+			y is integer (seconds) (default 2000000000, which is practically infinite)
+			z is integer from 0 to 5 and represents the detail level for the generated html timetables
+				(default 2, larger values have more details/facilities and larger file sizes)
+			t is one of en_GB, ar, ca, de, el, es, fr, hu, id, it, lt, mk, ms, nl, pl, ro, tr (default en_GB)
+			u is either "true" or "false" and represents if you want -x- (for true) or --- (for false) in the generated timetables for the
 				not available slots (default true)
 			
 	On GNU/Linux, you'll get a console output to help you with data.

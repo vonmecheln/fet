@@ -6798,6 +6798,26 @@ de activitati e in aceeasi zi, ele trebuie separate de cel putin min ferestre (o
         <source>Please note that this is a new feature, not thoroughly tested, so it is a good practice to check the new constraints before saving your file, and maybe making some backups</source>
         <translation type="obsolete">Va rog tineti cont ca aceasta e o noua facilitate, netestata foarte mult, asa ca e o buna practica sa verificati noile constrangeri inainte de a salva fisierul dvs., si poate sa faceti backup (rezerve)</translation>
     </message>
+    <message>
+        <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="419"/>
+        <source>If you are using constraints of type activities same starting time or activities same starting day, it is important (after current operation) to apply the operation of removing redundant constraints.</source>
+        <translation type="obsolete">Daca folositi constrangeri de tip activitati acelasi timp de start sau activitati aceeasi zi de start, este important (dupa operatia curenta) sa aplicati operatia de stergere a constrangerilor redundante.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="419"/>
+        <source>If you are using constraints of type activities same starting time or activities same starting day, it is IMPORTANT (after current operation) to apply the operation of removing redundant constraints.</source>
+        <translation type="obsolete">Daca folositi constrangeri de tip activitati acelasi timp de start sau activitati aceeasi zi de start, este IMPORTANT (dupa operatia curenta) sa aplicati operatia de stergere a constrangerilor redundante.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="419"/>
+        <source>NOTE: If you are using constraints of type activities same starting time or activities same starting day, it is important (after current operation) to apply the operation of removing redundant constraints.</source>
+        <translation>Nota: daca folositi constrangeri de tip activitati acelasi timp de start sau activitati aceeasi zi de start, este important (dupa operatia curenta) sa aplicati operatia de stergere a constrangerilor redundante.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="420"/>
+        <source>Read Help/Important tips - tip 2) for details.</source>
+        <translation>Cititi Ajutor/Sfaturi importante - sfatul 2) pentru detalii.</translation>
+    </message>
 </context>
 <context>
     <name>ConstraintMinNDaysBetweenActivitiesForm_template</name>
@@ -9900,7 +9920,7 @@ Sigur?</translation>
     <message>
         <location filename="../src/engine/export.cpp" line="577"/>
         <source>Warning! Constraint</source>
-        <translation>Atentie! Constrangerea</translation>
+        <translation type="obsolete">Atentie! Constrangerea</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="542"/>
@@ -9973,6 +9993,11 @@ Importul datelor va fi mai simplu cu aceste setari.</translation>
         <location filename="../src/engine/export.cpp" line="790"/>
         <source>0 scheduled activities exported, because no timetable was generated.</source>
         <translation>0 activitati programate exportate, pentru ca nu a fost generat un orar.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/export.cpp" line="577"/>
+        <source>Note: Constraint</source>
+        <translation>Nota: constrangerea</translation>
     </message>
 </context>
 <context>
@@ -12552,7 +12577,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;(c) Liviu Lalescu 2002-2008&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Version: 5.7.5 (December 2008)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Version: 5.7.6 (December 2008)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -12584,7 +12609,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/interface/helpfaqform_template.ui" line="41"/>
         <source>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 6 October 2008 (new additions are written with date, most are at the end)
+this documentation by Liviu Lalescu, reviewed and modified - 5 December 2008 (new additions are written with date, most are at the end)
 
 --------
 
@@ -13271,7 +13296,21 @@ New, added 6 October 2008
 
 Q: By law a teacher in Italy must work not less of 5 days a week
 
-A: You might use this trick: add for each teacher a dummy container (larger) activity, with no students, split into 5 activities per week, with constraint min 1 day between activities 100%. Then, constraint teachers min hours daily, min 2 hours (for minimum 1 real hour) or min 3 hours (for minimum 2 real hours).</source>
+A: You might use this trick: add for each teacher a dummy container (larger) activity, with no students, split into 5 activities per week, with constraint min 1 day between activities 100%. Then, constraint teachers min hours daily, min 2 hours (for minimum 1 real hour) or min 3 hours (for minimum 2 real hours).
+
+---------------------------------------------------------------------------------
+
+New, added 5 December 2008
+
+Q: I have a double duration activity. Is it possible that it is spread over the break period, like:
+
+Activity Math, duration 2, id say 100
+
+Hour 10:00 Math (first hour of act. 100)
+Hour 11:00 Break
+Hour 12:00 Math (second hour of act. 100)
+
+A: No, the activity must respect the break, so it is before or after the break with all the hours of it.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -13383,7 +13422,9 @@ More details: the combination of 2 or more redundant constraints min n days betw
 
 Do not consider redundant constraints with the same activities but different number of days (you may want to add min 2 days 95% and min 1 day 95%, which gives in 95% cases the 2 days will be respected and in 99.75% cases the 1 day will be respected).
 
-Preferred time(s) constraints do not have the problem of redundancy like min days constraints.</source>
+The other constraints (like preferred time(s) constraints) do not have the problem of redundancy like min days constraints, so no need to take care about them.
+
+It is IMPORTANT to remove redundant min n days constraints after you inputted data and before generating. Any modification of the min n days constraints should be followed by this removal of redundant min n days constraints (well, not all modifications, but better to do it than not). If you modify more constraints at once or apply the balancing of activities, it is important to remove redundant constraints. If you have no redundant constraints, it is no need to remove the redundant constraints, but better to check again than let some redundant constraints active.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -24931,7 +24972,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="obsolete">Va rog selectati componenta singura</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="388"/>
+        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="389"/>
         <source>FET information</source>
         <translation>FET - informatie</translation>
     </message>
@@ -24989,7 +25030,7 @@ Please report error. FET will now abort current operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="389"/>
+        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="390"/>
         <source>This box must remain checked, so that split activities are not in the same day (with the probability you write below)</source>
         <translation>Aceasta casuta trebuie sa ramana selectata, pentru ca activitatile impartite sa nu fie in aceeasi zi (cu probabilitatea pe care o scrieti mai jos)</translation>
     </message>
@@ -25006,7 +25047,27 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="359"/>
         <source>If you are using constraints of type activities same starting time or activities same starting day, sometimes you might find useful (after current operation) to apply the operation of removing redundant constraints.</source>
-        <translation>Daca folositi constrangeri de tip activitati acelasi timp de start sau activitati aceeasi zi de start, cateodata s-ar putea sa fie folositor (dupa operatiunea curenta) sa aplicati operatiune de stergere a constrangerilor redundante.</translation>
+        <translation type="obsolete">Daca folositi constrangeri de tip activitati acelasi timp de start sau activitati aceeasi zi de start, cateodata s-ar putea sa fie folositor (dupa operatiunea curenta) sa aplicati operatiune de stergere a constrangerilor redundante.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="359"/>
+        <source>If you are using constraints of type activities same starting time or activities same starting day, it is important (after current operation) to apply the operation of removing redundant constraints.</source>
+        <translation type="obsolete">Daca folositi constrangeri de tip activitati acelasi timp de start sau activitati aceeasi zi de start, este important (dupa operatia curenta) sa aplicati operatia de stergere a constrangerilor redundante.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="359"/>
+        <source>If you are using constraints of type activities same starting time or activities same starting day, it is IMPORTANT (after current operation) to apply the operation of removing redundant constraints.</source>
+        <translation type="obsolete">Daca folositi constrangeri de tip activitati acelasi timp de start sau activitati aceeasi zi de start, este IMPORTANT (dupa operatia curenta) sa aplicati operatia de stergere a constrangerilor redundante.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="360"/>
+        <source>NOTE: If you are using constraints of type activities same starting time or activities same starting day, it is important (after current operation) to apply the operation of removing redundant constraints.</source>
+        <translation>Nota: daca folositi constrangeri de tip activitati acelasi timp de start sau activitati aceeasi zi de start, este important (dupa operatia curenta) sa aplicati operatia de stergere a constrangerilor redundante.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="360"/>
+        <source>Read Help/Important tips - tip 2) for details.</source>
+        <translation>Cititi Ajutor/Sfaturi importante - sfatul 2) pentru detalii.</translation>
     </message>
 </context>
 <context>
@@ -25247,7 +25308,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="349"/>
         <source>End of file.</source>
-        <translation type="unfinished">Sfarsit fisier.</translation>
+        <translation>Sfarsit fisier.</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="1552"/>
