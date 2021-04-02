@@ -1,7 +1,7 @@
 /***************************************************************************
                           addconstraintroomnotavailabletimesform.cpp  -  description
                              -------------------
-    begin                : Thu Jan 8 2004
+    begin                : January 8, 2004
     copyright            : (C) 2004 by Lalescu Liviu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
  ***************************************************************************/

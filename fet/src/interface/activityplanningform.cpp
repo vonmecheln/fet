@@ -61,6 +61,7 @@
 #include <QMultiHash>
 #include <QMap>
 #include <QSet>
+#include <QPair>
 
 #include <QRadioButton>
 #include <QCheckBox>

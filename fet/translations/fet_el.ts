@@ -516,203 +516,192 @@
 <context>
     <name>ActivityPlanningForm</name>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="228"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="229"/>
         <source>Activity Planning Dialog</source>
         <translation>Διάλογος προγραμματισμού δραστηριοτήτων</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="248"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="249"/>
         <source>Action</source>
         <comment>It means the kind of action the user selects</comment>
         <translation>Ενέργεια</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="250"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="251"/>
         <source>Activities</source>
         <comment>Please keep translation short</comment>
         <translation>Δραστηριότητες</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="251"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="252"/>
         <source>Subactivities</source>
         <comment>Please keep translation short</comment>
         <translation>Υποδραστηριότητες</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="252"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="253"/>
         <source>Add activity</source>
         <comment>Please keep translation short</comment>
         <translation>Προσθήκη δραστηριότητας</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="253"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="254"/>
         <source>Modify activity</source>
         <comment>Please keep translation short</comment>
         <translation>Τροποποίηση δραστηριότητας</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="254"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="255"/>
         <source>Delete activities</source>
         <comment>Please keep translation short</comment>
         <translation>Διαγραφή δραστηριοτήτων</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="255"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="256"/>
         <source>Swap teachers</source>
         <comment>Please keep translation short</comment>
         <translation>Αντιμετάθεση εκπαιδευτικών</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="266"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="267"/>
         <source>Options</source>
         <translation>Επιλογές</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="270"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="271"/>
         <source>Active</source>
         <comment>It refers to active activities. Please keep translation short</comment>
         <translation>Ενεργές</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="271"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="272"/>
         <source>Inactive</source>
         <comment>It refers to inactive activities. Please keep translation short</comment>
         <translation>Ανενεργές</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="272"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="273"/>
         <source>All</source>
         <comment>It refers to all activities. Please keep translation short</comment>
         <translation>Όλες</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="276"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="277"/>
         <source>Show years</source>
         <comment>Please keep translation short</comment>
         <translation>Προβολή ετών</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="278"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="279"/>
         <source>Show groups</source>
         <comment>Please keep translation short</comment>
         <translation>Προβολή τμημάτων</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="280"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="281"/>
         <source>Show subgroups</source>
         <comment>Please keep translation short</comment>
         <translation>Προβολή υποτμημάτων</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="283"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="284"/>
         <source>Show teachers</source>
         <comment>Please keep translation short</comment>
         <translation>Προβολή εκπαιδευτικών</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="286"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="287"/>
         <source>Show tags</source>
         <comment>Please keep translation short. It refers to activity tags, but I want to keep it shorter, because there is not enough space.</comment>
         <translation>Προβολή ετικετών</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="288"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="289"/>
         <source>Show duplicates</source>
         <comment>Please keep translation short</comment>
         <translation>Προβολή διπλών εγγραφών</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="290"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="291"/>
         <source>Hide empty lines</source>
         <comment>Please keep translation short</comment>
         <translation>Απόκρυψη άδειων γραμμών</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="294"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="295"/>
         <source>Swap axes</source>
         <comment>Please keep translation short</comment>
         <translation>Αντιμετάθεση αξόνων</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="296"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="297"/>
         <source>Pseudo activities</source>
         <comment>Please keep translation short. It means activities without teachers and/or students sets</comment>
         <translation>Ψευδο-δραστηριότητες</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="299"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="300"/>
         <source>Delete all</source>
         <comment>Refers to activities. Please keep translation short</comment>
         <translation>Διαγραφή όλων</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="305"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="512"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="306"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="513"/>
         <source>Hide buttons</source>
         <comment>Please keep translation short. This is an option to hide some buttons in the planning activity dialog, so that the tables are more visible.</comment>
         <translation>Απόκρυψη κουμπιών</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="312"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="313"/>
         <source>Close</source>
         <comment>Please keep translation short</comment>
         <translation>Κλείσιμο</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="496"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="497"/>
         <source>B</source>
         <comment>Abbreviation for &apos;Buttons&apos;. Please keep translation very short (probably only one letter). There is an option to hide the buttons in the planning activity dialog, so that the tables can have larger visible parts. This button (B) will remain there after the user hides the other buttons. The user then can press this button to show again all the buttons. We need this &apos;B&apos; button to be very small, so keep translation abbreviated to the initial only</comment>
         <translation>Κ</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="892"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="927"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1245"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1278"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1749"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1773"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="2057"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="2311"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="893"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="928"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1246"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1279"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1750"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1774"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2058"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2312"/>
         <source>Because you have individually modified the components, there will be removed an additional number of %1 activities (which are in the same larger split activities as the selected activities).</source>
         <translation>Δεδομένου ότι έχετε τροποποιήσει μεμονωμένα τα στοιχεία (τις υποδραστηριότητες), θα διαγραφεί επιπρόσθετος αριθμός %1 δραστηριοτήτων (οι οποίες ανήκουν στις ίδιες επιμερισμένες δραστηριότητες με τις επιλεγμένες δραστηριότητες).</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="901"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1287"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="902"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1288"/>
         <source>There are activities affecting other students sets. Should the related activities also be deleted?</source>
         <translation>Υπάρχουν δραστηριότητες που επηρεάζουν άλλες ομάδες μαθητών. Οφείλουν να διαγραφούν και αυτές οι σχετικές δραστηριότητες;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1018"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1433"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1019"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1434"/>
         <source>Modify %1 activities of students set %2?</source>
         <translation>Να τροποποιηθούν %1 δραστηριότητες της ομάδας μαθητών %2;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1022"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1066"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1437"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1875"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1899"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="2140"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="2393"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1023"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1067"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1438"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1876"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1900"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2141"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2394"/>
         <source>Because you have individually modified the components,
 there won&apos;t be modified an additional number of %1 activities
 (which are in the same larger split activities as the selected activities).</source>
         <translation>Δεδομένου ότι έχετε τροποποιήσει μεμονωμένα τα στοιχεία (τις υποδραστηριότητες),
 δεν θα τροποποιηθεί επιπρόσθετος αριθμός %1 δραστηριοτήτων
 (οι οποίες ανήκουν στις ίδιες επιμερισμένες δραστηριότητες με τις επιλεγμένες δραστηριότητες).</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1035"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1079"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1388"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1450"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1913"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="2152"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="2405"/>
-        <source>Please choose a new teacher:</source>
-        <translation>Παρακαλώ επιλέξτε έναν νέο εκπαιδευτικό:</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningform.cpp" line="1036"/>
@@ -722,47 +711,58 @@ there won&apos;t be modified an additional number of %1 activities
         <location filename="../src/interface/activityplanningform.cpp" line="1914"/>
         <location filename="../src/interface/activityplanningform.cpp" line="2153"/>
         <location filename="../src/interface/activityplanningform.cpp" line="2406"/>
+        <source>Please choose a new teacher:</source>
+        <translation>Παρακαλώ επιλέξτε έναν νέο εκπαιδευτικό:</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activityplanningform.cpp" line="1037"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1081"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1390"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1452"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1915"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2154"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2407"/>
         <source>FET - Select new teacher dialog</source>
         <translation>FET - Διάλογος επιλογής νέου εκπαιδευτικού</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1040"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1455"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1918"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="2157"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="2410"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1041"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1456"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1919"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2158"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2411"/>
         <source>Modify related?</source>
         <comment>It refers to activities</comment>
         <translation>Τροποποίηση σχετικών;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1040"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1455"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1041"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1456"/>
         <source>There are activities affecting other students sets. Should the related activities also be modified?</source>
         <translation>Υπάρχουν δραστηριότητες που επηρεάζουν άλλες ομάδες μαθητών. Οφείλουν να τροποποιηθούν και αυτές οι σχετικές δραστηριότητες;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1061"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1370"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1062"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1371"/>
         <source>Modify %1 activities of subject %2?</source>
         <translation>Να τροποποιηθούν %1 δραστηριότητες του αντικειμένου %2;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1075"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1384"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1909"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1076"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1385"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1910"/>
         <source>FET - Information</source>
         <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1075"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1384"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1909"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1076"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1385"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1910"/>
         <source>There is no teacher qualified for this subject. You should set teachers qualified subjects in FET -&gt; Data -&gt; Teachers.</source>
         <translation>Δεν υπάρχει εκπαιδευτικός με προσόντα για το αντικείμενο αυτό. Θα πρέπει να ρυθμίσετε τα προσόντα για τα αντικείμενα των εκπαιδευτικών στο &quot;FET -&gt; Δεδομένα -&gt; Εκπαιδευτικοί&quot;.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1375"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1376"/>
         <source>Because you have individually modified the components,
 there won&apos;t be removed an additional number of %1 activities
 (which are in the same larger split activities as the selected activities).</source>
@@ -771,214 +771,214 @@ there won&apos;t be removed an additional number of %1 activities
 (οι οποίες ανήκουν στις ίδιες επιμερισμένες δραστηριότητες με τις επιλεγμένες δραστηριότητες).</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1622"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1623"/>
         <source>Cannot modify this large activity, because it contains more than %1 activities.</source>
         <translation>Αδύνατη η τροποποίηση της συγκεκριμένης επιμερισμένης δραστηριότητας, διότι περιλαμβάνει περισσότερες από %1 υποδραστηριότητες.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1865"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1889"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1866"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1890"/>
         <source>Modify %1 activities from selected cell?</source>
         <translation>Να τροποποιηθούν %1 δραστηριότητες από το επιλεγμένο κελί;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1919"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1920"/>
         <source>This cell contains activities that relate to other students. Should the related activities also be modified?</source>
         <translation>Το κελί αυτό περιλαμβάνει δραστηριότητες που σχετίζονται με άλλους μαθητές. Οφείλουν να τροποποιηθούν και οι δραστηριότητες αυτές (που σχετίζονται με άλλους μαθητές);</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2064"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="2318"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2065"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2319"/>
         <source>There are activities affecting other teachers. Should the related activities also be deleted?</source>
         <translation>Υπάρχουν δραστηριότητες που επηρεάζουν άλλους εκπαιδευτικούς. Οφείλουν να διαγραφούν και αυτές οι σχετικές δραστηριότητες;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2136"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="2389"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2137"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2390"/>
         <source>Modify %1 activities of teacher %2?</source>
         <translation>Να τροποποιηθούν %1 δραστηριότητες του εκπαιδευτικού %2;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2157"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="2410"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2158"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2411"/>
         <source>There are activities affecting other teachers. Should the related activities also be modified?</source>
         <translation>Υπάρχουν δραστηριότητες που επηρεάζουν άλλους εκπαιδευτικούς. Οφείλουν να τροποποιηθούν και αυτές οι σχετικές δραστηριότητες;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2200"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2201"/>
         <source>Please enter the target number of hours:</source>
         <translation>Παρακαλώ εισαγάγετε τον αριθμό-στόχο των ωρών:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2662"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2663"/>
         <source>Target</source>
         <comment>Please keep translation short.</comment>
         <translation>Στόχος</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2908"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="2911"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2909"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2912"/>
         <source>Delete all?</source>
         <comment>It refers to activities</comment>
         <translation>Να διαγραφούν όλες;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="888"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1274"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="889"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1275"/>
         <source>Delete %1 activities of students set %2?</source>
         <translation>Να διαγραφούν %1 δραστηριότητες της ομάδας μαθητών %2;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="922"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1240"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="923"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1241"/>
         <source>Delete %1 activities of subject %2?</source>
         <translation>Να διαγραφούν %1 δραστηριότητες του αντικειμένου %2;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1778"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1779"/>
         <source>Delete activities?</source>
         <translation>Να διαγραφούν οι δραστηριότητες;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2053"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="2307"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2054"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2308"/>
         <source>Delete %1 activities of teacher %2?</source>
         <translation>Να διαγραφούν %1 δραστηριότητες του εκπαιδευτικού %2;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2911"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2912"/>
         <source>Are you absolutely sure you want to remove ALL activities and related constraints from your data?</source>
         <translation>Είστε απόλυτα σίγουροι πως θέλετε να διαγράψετε ΟΛΕΣ τις δραστηριότητες και τους σχετικούς περιορισμούς από τα δεδομένα σας;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="901"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="936"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1254"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1287"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1782"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1788"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="2064"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="2318"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="902"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="937"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1255"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1288"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1783"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1789"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2065"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2319"/>
         <source>Delete related?</source>
         <comment>It refers to activities</comment>
         <translation>Να διαγραφούν οι σχετικές;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="292"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="293"/>
         <source>Hide full teachers</source>
         <comment>It refers to teachers who have their number of hours fulfilled. Please keep translation short</comment>
         <translatorcomment>Αναφέρεται σε εκπαιδευτικούς που έχουν συμπληρώσει το ωράριό τους</translatorcomment>
         <translation>Απόκρυψη πλήρων εκπαιδευτικών</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="896"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="931"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1249"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1282"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="2060"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="2314"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="897"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="932"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1250"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1283"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2061"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2315"/>
         <source>Delete multiple?</source>
         <comment>It refers to activities</comment>
         <translation>Να διαγραφούν πολλαπλές;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="936"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1254"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="937"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1255"/>
         <source>There are activities affecting other subjects. Should the related activities also be deleted?</source>
         <translation>Υπάρχουν δραστηριότητες που επηρεάζουν άλλα αντικείμενα. Οφείλουν να διαγραφούν και αυτές οι σχετικές δραστηριότητες;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1621"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1622"/>
         <source>FET information</source>
         <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1739"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1763"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1740"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1764"/>
         <source>Delete %1 activities from selected cell?</source>
         <translation>Να διαγραφούν %1 δραστηριότητες από το επιλεγμένο κελί;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1741"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1767"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1867"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1893"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1742"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1768"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1868"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1894"/>
         <source>subject=%1</source>
         <translation>αντικείμενο=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1743"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1765"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1869"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1891"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1744"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1766"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1870"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1892"/>
         <source>students=%1</source>
         <translation>μαθητές=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1783"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1784"/>
         <source>This cell contains activities that relate to other students. Should the related activities also be deleted?</source>
         <translation>Το κελί αυτό περιλαμβάνει δραστηριότητες που σχετίζονται με άλλους μαθητές. Οφείλουν να διαγραφούν και οι δραστηριότητες αυτές (που σχετίζονται με άλλους μαθητές);</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1789"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1790"/>
         <source>This cell contains activities that relate to other subjects. Should the related activities also be deleted?</source>
         <translation>Το κελί αυτό περιλαμβάνει δραστηριότητες που σχετίζονται με άλλα αντικείμενα. Οφείλουν να διαγραφούν και οι δραστηριότητες αυτές (που σχετίζονται με άλλα αντικείμενα);</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2200"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2201"/>
         <source>FET question</source>
         <translation>FET - Ερώτηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2663"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2664"/>
         <source>Subjects</source>
         <comment>Please keep translation short</comment>
         <translation>Αντικείμενα</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2664"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2665"/>
         <source>Students</source>
         <comment>Please keep translation short</comment>
         <translation>Μαθητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2908"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2909"/>
         <source>Are you sure you want to remove ALL the %1 activities and related constraints?</source>
         <comment>%1 is the number of total activities</comment>
         <translation>Είστε σίγουροι πως θέλετε να διαγράψετε ΟΛΕΣ τις %1 δραστηριότητες και τους σχετικούς περιορισμούς;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2949"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2950"/>
         <source>There are no activities without teachers and without students.</source>
         <translation>Δεν υπάρχουν καθόλου δραστηριότητες χωρίς εκπαιδευτικούς και χωρίς μαθητές.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2951"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2952"/>
         <source>Activities without teachers and without students:</source>
         <translation>Δραστηριότητες χωρίς εκπαιδευτικούς και χωρίς μαθητές:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2954"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2955"/>
         <source>There are no activities without teachers.</source>
         <translation>Δεν υπάρχουν καθόλου δραστηριότητες χωρίς εκπαιδευτικούς.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2956"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2957"/>
         <source>Activities without teachers:</source>
         <translation>Δραστηριότητες χωρίς εκπαιδευτικούς:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2959"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2960"/>
         <source>There are no activities without students.</source>
         <translation>Δεν υπάρχουν καθόλου δραστηριότητες χωρίς μαθητές.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2961"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2962"/>
         <source>Activities without students:</source>
         <translation>Δραστηριότητες χωρίς μαθητές:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="2963"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="2964"/>
         <source>Information about pseudo activities</source>
         <comment>Pseudo activities means activities without teachers and/or students sets</comment>
         <translation>Πληροφορίες για τις ψευδο-δραστηριότητες</translation>
@@ -50439,12 +50439,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="67"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>October</source>
         <translation>Οκτώβριος</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="69"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>November</source>
         <translation>Νοέμβριος</translation>
     </message>

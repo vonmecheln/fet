@@ -1145,10 +1145,15 @@ If I set up two (one for break and one for lunch) and I could attach a label tha
 finished timetable, such as 'Break' or 'Lunch', it would save me having to edit each Student, Teacher and Room timetable before they
 can be printed, etc. It's quite manual at the moment because '-X-' is used throughout and I can't do a global search and replace.
 
-Also suggested by S Chandrasekar:
+Also suggested by S Chandrasekar, on forum:
 
 It is important to display a text like "LUNCH INTERVAL" or "SHORT INTERVAL" or "ASSEMBLY" in the break slots rather than an
 "-X-" symbol. Is it possible?
+
+Also suggested by Nagendra, on forum:
+
+You can consider including this in settings -> timetables -> "Mark break slots with custom text". Let the user decide, whether s/he wants
+to use the default '-X-' or any custom text. Similarly for 'uniting' the cells.
 
 69---------------------------------------------------------
 From George Miliotis:
@@ -1324,6 +1329,9 @@ I want to use this constraint for the majority of teachers but not all of them. 
 course load is impossible for less days. I wonder whether there is a way to adapt this constraint like "max days per week for the selected teachers"
 or "max days per week except these teachers" instead of entering all of the teachers one by one. Is this difficult to implement? (Because there are
 lots of teachers in the university).
+
+Suggested also by Zafar Allah Askar (on forum), on 26 October 2019 (https://lalescu.ro/liviu/fet/forum/index.php?topic=4313.0):
+	Create lists of teachers to be added to a constraint.
 
 See also TODO item #84.
 
@@ -6667,3 +6675,15 @@ Hello .. I have a suggestion and I hope that you will try to achieve it .. Some 
 so that we do not have to go down every time .. For example when I click on the constraints of time: "All" appear the latest constraints in the
 bottom .. I think it would be better to arrange  it in descending order, the last constraint appears first directly under the constraint Primary.
 I am sorry again because my English is not strong .. I hope you understand my idea .. Thank you for all your efforts .
+
+392---------------------------------------------------------
+From Zafar Allah Askar (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4313.0
+
+Add an option like in the custom FET for Morocco, in the Add activity dialog, a check box "Separately" for the selected students,
+so that FET will add multiple activities, one for each selected students set.
+
+From Zafar Allah Askar (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4313.0

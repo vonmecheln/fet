@@ -30,6 +30,7 @@ File generate_pre.h
 #include <QSet>
 #include <QHash>
 #include <QList>
+#include <QPair>
 
 #include <QTextStream>
 

@@ -2166,3 +2166,7 @@ Versions 5.40.0 - 5.40.v
 	- Small memory leak bug fixed (when reading incorrect files with virtual rooms).
 	- Minor fixes and improvements.
 	- Added a new example file from Greece, by dimzev.
+- Version 5.40.3
+	- Updated to Qt 5.13.2.
+	- Code cleanup.
+	- Added two new example files from Syria, by Zafar Allah Askar.
