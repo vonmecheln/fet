@@ -73,7 +73,7 @@ Some other details follow:
  are very important differences in constraints.
  
  Important: indications for abbreviations: T means teacher, S subject, ST subject tag, St students, 
- D duration, TD total duration, A active.
+ D duration, TD total duration, A active. Also StN means students names
  
  Maybe try to keep the length of large fields (the ones relating to constraints) in FetMainForm_template
  to a minimum, otherwise they will look too big.

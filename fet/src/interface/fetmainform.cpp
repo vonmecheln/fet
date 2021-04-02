@@ -123,6 +123,8 @@ static HttpGet getter;
 
 static int ORIGINAL_WIDTH, ORIGINAL_HEIGHT;
 
+//English has to be counted also
+const int NUMBER_OF_LANGUAGES=12;
 
 const int LANGUAGE_EN_GB_POSITION=0;
 const int LANGUAGE_CA_POSITION=1;
@@ -578,6 +580,32 @@ void FetMainForm::on_dataStudentsStatisticsAction_activated()
 {
 	StudentsStatisticsForm* form=new StudentsStatisticsForm();
 	form->exec();
+}
+
+void FetMainForm::on_dataHelpOnStatisticsAction_activated()
+{
+	QString s;
+	
+	s+=tr("Statistics for students might be the most difficult to understand."
+	 " If you are using divisions of years: probably the most relevant statistics"
+	 " are the ones for each subgroup (so you may check only subgroups check box)."
+	 "\n\n"
+	 "Each subgroup should have a number of hours per week close to the average of"
+	 " all subgroups and close to the normal number of working hours of each students set."
+	 " If a subgroup has a much lower value, maybe you used incorrectly"
+	 " the years/groups/subgroups for activities."
+	 "\n\n"
+	 "Please read FAQ for detailed description"
+	 " on how divisions work. The key is that the subgroups are independent and represent the smallest unit of students."
+	 " Each subgroup receives the activities of the parent year and parent group and of itself."
+	 "\n\n"
+	 "Having a subgroup with too little working hours per week means that you inputted activities in a wrong manner,"
+	 " and also that some constraints like no gaps, early or min hours daily for this subgroup"
+	 " are interpreted in a wrong manner (if subgroup has only 2 activities, then these must"
+	 " be placed in the first hours, which is too hard and wrong)."
+	 );
+
+	QMessageBox::information(this, tr("FET information about statistics"), s);
 }
 
 void FetMainForm::on_dataActivitiesAction_activated()

@@ -51,6 +51,7 @@ public slots:
 	void on_dataGroupsAction_activated();
 	void on_dataSubgroupsAction_activated();
 	void on_dataStudentsStatisticsAction_activated();
+	void on_dataHelpOnStatisticsAction_activated();
 	void on_dataActivitiesAction_activated();
 	void on_dataRoomsAction_activated();
 	void on_dataAllTimeConstraintsAction_activated();

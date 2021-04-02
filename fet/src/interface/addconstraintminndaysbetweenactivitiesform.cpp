@@ -196,6 +196,9 @@ void AddConstraintMinNDaysBetweenActivitiesForm::addConstraint()
 		ids[i]=*it;
 	
 	ctr=new ConstraintMinNDaysBetweenActivities(weight, consecutiveIfSameDayCheckBox->isChecked(),/*compulsory,*/ this->selectedActivitiesList.count(), ids, minDaysSpinBox->value());
+
+	//QMessageBox::information(this, QObject::tr("FET information"), ctr->getDetailedDescription(gt.rules));
+
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	
 	if(tmp2){
@@ -206,7 +209,7 @@ void AddConstraintMinNDaysBetweenActivitiesForm::addConstraint()
 	}
 	else{
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Constraint NOT added - please report error"));
+			QObject::tr("Constraint NOT added - it must be a duplicate"));
 		delete ctr;
 	}
 }
@@ -240,4 +243,10 @@ void AddConstraintMinNDaysBetweenActivitiesForm::removeActivity()
 	
 	selectedActivitiesListBox->removeItem(selectedActivitiesListBox->currentItem());
 	this->selectedActivitiesList.removeAt(tmp);
+}
+
+void AddConstraintMinNDaysBetweenActivitiesForm::clear()
+{
+	selectedActivitiesListBox->clear();
+	selectedActivitiesList.clear();
 }

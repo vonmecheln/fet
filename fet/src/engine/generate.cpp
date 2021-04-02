@@ -3981,8 +3981,24 @@ impossibleteachersmaxhoursdaily:
 							}
 		
 							if(optNWrong==INF || optNWrong==-1){
-								if(level==0)
-									cout<<"WARNING - unlikely case, optimizetime.cpp line 3957"<<endl;
+								if(level==0){
+									cout<<"WARNING - unlikely case, file "<<__FILE__<<" line "<<__LINE__<<endl;
+									
+									/*cout<<"d=="<<d<<", h=="<<h<<", dur=="<<act->duration<<endl;
+									
+									cout<<"  MTWTF"<<endl;
+									for(int hh=0; hh<gt.rules.nHoursPerDay; hh++){
+										if(hh<10)
+											cout<<0;
+										cout<<hh;
+										for(int dd=0; dd<gt.rules.nDaysPerWeek; dd++)
+											if(subgroupsTimetable[isg][dd][hh]>=0)
+												cout<<"x";
+											else
+												cout<<" ";
+										cout<<endl;
+									}*/
+								}
 								break; //impossible slot
 							}
 							assert(optNWrong<INF);
@@ -4831,7 +4847,7 @@ impossibleactivityendsstudentsday:
 						//choose a random slot to remove an activity
 						if(possibleDays.count()==0){
 							if(level==0)
-								cout<<"WARNING - maybe bug - generate.cpp line 4809"<<endl;
+								cout<<"WARNING - maybe bug - file "<<__FILE__<<" line "<<__LINE__<<endl;
 							okteachersminhoursdaily=false;
 							goto impossibleteachersminhoursdaily;
 						}

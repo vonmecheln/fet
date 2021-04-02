@@ -51,6 +51,8 @@ public:
 	bool filterOk(Activity* a);
 	void filterChanged();	
 	
+	void clear();
+	
 private:
 	//the id's of the activities listed in the activities list
 	QList<int> activitiesList;

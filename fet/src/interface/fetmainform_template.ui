@@ -5,7 +5,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>522</width>
+    <width>507</width>
     <height>254</height>
    </rect>
   </property>
@@ -21,7 +21,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>522</width>
+     <width>507</width>
      <height>29</height>
     </rect>
    </property>
@@ -64,6 +64,8 @@
     <addaction name="dataTeachersStatisticsAction" />
     <addaction name="dataSubjectsStatisticsAction" />
     <addaction name="dataStudentsStatisticsAction" />
+    <addaction name="separator" />
+    <addaction name="dataHelpOnStatisticsAction" />
    </widget>
    <widget class="QMenu" name="dataMenu" >
     <property name="title" >
@@ -939,6 +941,11 @@
   <action name="dataTimeConstraintsTeacherMinHoursDailyAction" >
    <property name="text" >
     <string>Min hours daily for a teacher</string>
+   </property>
+  </action>
+  <action name="dataHelpOnStatisticsAction" >
+   <property name="text" >
+    <string>Help on statistics</string>
    </property>
   </action>
  </widget>

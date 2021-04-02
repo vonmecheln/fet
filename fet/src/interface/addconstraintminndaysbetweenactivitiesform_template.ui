@@ -84,7 +84,7 @@ force activities consecutive</string>
                         <cstring>weightLineEdit</cstring>
                     </property>
                     <property name="text">
-                        <string>95.0</string>
+                        <string>95</string>
                     </property>
                 </widget>
             </vbox>
@@ -195,7 +195,7 @@ force activities consecutive</string>
         </widget>
         <widget class="QLayoutWidget" row="1" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>layout9</cstring>
+                <cstring>layout15</cstring>
             </property>
             <hbox>
                 <property name="name">
@@ -237,7 +237,7 @@ force activities consecutive</string>
                 </widget>
                 <widget class="QLayoutWidget">
                     <property name="name">
-                        <cstring>layout8</cstring>
+                        <cstring>layout14</cstring>
                     </property>
                     <vbox>
                         <property name="name">
@@ -265,6 +265,14 @@ force activities consecutive</string>
                             </item>
                             <property name="name">
                                 <cstring>selectedActivitiesListBox</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>pushButton6</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Clear</string>
                             </property>
                         </widget>
                     </vbox>
@@ -322,10 +330,21 @@ force activities consecutive</string>
         <receiver>AddConstraintMinNDaysBetweenActivitiesForm_template</receiver>
         <slot>filterChanged()</slot>
     </connection>
+    <connection>
+        <sender>pushButton6</sender>
+        <signal>clicked()</signal>
+        <receiver>AddConstraintMinNDaysBetweenActivitiesForm_template</receiver>
+        <slot>clear()</slot>
+    </connection>
 </connections>
 <tabstops>
+    <tabstop>teachersComboBox</tabstop>
+    <tabstop>studentsComboBox</tabstop>
+    <tabstop>subjectsComboBox</tabstop>
+    <tabstop>subjectTagsComboBox</tabstop>
     <tabstop>activitiesListBox</tabstop>
     <tabstop>selectedActivitiesListBox</tabstop>
+    <tabstop>pushButton6</tabstop>
     <tabstop>minDaysSpinBox</tabstop>
     <tabstop>consecutiveIfSameDayCheckBox</tabstop>
     <tabstop>weightLineEdit</tabstop>
@@ -337,6 +356,7 @@ force activities consecutive</string>
     <slot>removeActivity()</slot>
     <slot>addConstraint()</slot>
     <slot>filterChanged()</slot>
+    <slot>clear()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>
