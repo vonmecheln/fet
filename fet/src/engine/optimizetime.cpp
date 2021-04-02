@@ -1417,6 +1417,10 @@ void OptimizeTime::randomswap(int ai, int level){
 						
 						/////////////////////////////added in 5.0.0-preview11
 						if(!ok){
+							if(h!=0){
+								break; //impossible slot
+							}
+						
 							for(int i=0; i<gt.rules.nHoursPerWeek; i++){
 								assert(activitiesForSubgroup[isg][i].count()<=1);
 								
@@ -1828,7 +1832,7 @@ void OptimizeTime::randomswap(int ai, int level){
 				assert(subgroupsEarlyPercentage[isg]==-1 && subgroupsNoGapsPercentage[isg]==-1);
 		}
 		if(k<act->nSubgroups){
-			assert(0);
+			//assert(0);
 			
 			nConflActivities[newtime]=MAX_ACTIVITIES;
 			continue;
