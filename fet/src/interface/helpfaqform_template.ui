@@ -279,11 +279,9 @@ This approach might be adapted to suit your needs.
 
 Q: Are some constraints more efficient in speed of generation than other constraints, even if they give the same result?
 
-A: From the way the algorithm is conceived, the automatic generation is faster if you use students set (or teacher) not available and/or constraint activity(ies) preferred times instead of using students (set) or teacher(s) max hours daily, whenever it is possible. For instance, if you know that year 5 will only have hours from 8:00 to 13:00, it is better to add students set not available instead of students set max hours daily. So, if possible, try to follow this advice. This trick helps guide FET better towards a solution.
+A: From the way the algorithm is conceived, the automatic generation is faster if you use students set (or teacher) not available and/or constraint activity(ies) preferred times to specify impossible slots, in addition to possible use of students (set) or teacher(s) max hours daily, whenever it is possible. For instance, if you know that year 5 will only have hours from 8:00 to 13:00, it is better to add students set not available in addition to students set max hours daily. So, if possible, try to follow this advice. This trick helps guide FET better towards a solution.
 
-Experimentally, for German sample data, the generation is about 2 times faster with the better approach.
-
-Of course, only if possible. If max hours constraints are necessary, please use them. There might be lots of situations where you have to use max hours constraints.</string>
+Each constraint of type not available or preferred times which filters out impossible slots might bring an improvement in speed.</string>
             </property>
         </widget>
     </grid>

@@ -54,11 +54,9 @@ You might want to choose different weights for different constraint min n days (
 
 2) If you have a course lesson with say 4 activities per week, difficult lessons, which you would like to schedule in the beginning of the day (say 3 out of 4 need to be in the first half of the day), you can add constraint activity preferred times for the first three activities, with preferred times in the first half of the day. This approach worked with the sample German high-school data.
 
-3) From the way the algorithm is conceived, the automatic generation is faster if you use students set (or teacher) not available and/or constraint activity(ies) preferred times instead of using students (set) or teacher(s) max hours daily, whenever it is possible. For instance, if you know that year 5 will only have hours from 8:00 to 13:00, it is better to add students set not available instead of students set max hours daily. So, if possible, try to follow this advice. This trick helps guide FET better towards a solution.
+3) From the way the algorithm is conceived, the automatic generation is faster if you use students set (or teacher) not available and/or constraint activity(ies) preferred times to specify impossible slots, in addition to possible use of students (set) or teacher(s) max hours daily, whenever it is possible. For instance, if you know that year 5 will only have hours from 8:00 to 13:00, it is better to add students set not available in addition to students set max hours daily. So, if possible, try to follow this advice. This trick helps guide FET better towards a solution.
 
-Experimentally, for German sample data, the generation is about 2 times faster with the better approach.
-
-Of course, only if possible. If max hours constraints are necessary, please use them. There might be lots of situations where you have to use max hours constraints.
+Each constraint of type not available or preferred times which filters out impossible slots might bring an improvement in speed.
 
 4) For teacher(s) gaps: you have to use 100% weight. You could try with rather large values for max allowed gaps, and lower it as you find possible timetables.
 

@@ -1956,10 +1956,10 @@ impossible2activitiesconsecutive:
 					if(finalNHours+finalGaps>subgroupsMaxHoursDailyMaxHours[sb]){
 						bool skip=skipRandom(subgroupsMaxHoursDailyPercentages[sb]);
 						if(!skip){
-							if(h+act->duration > subgroupsMaxHoursDailyMaxHours[sb]){
-								okstudentsmaxhoursdaily=false;
-								goto impossiblestudentsmaxhoursdaily;
-							}
+							//if(h+act->duration > subgroupsMaxHoursDailyMaxHours[sb]){ //always true, not correct test, because of breaks and not available
+							okstudentsmaxhoursdaily=false;
+							goto impossiblestudentsmaxhoursdaily;
+							//}
 						}
 					}
 				}

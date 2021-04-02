@@ -1033,4 +1033,6 @@ Versions 5.3.0 - 5.3.
 	- Constraint students (set) or teacher max hours daily has now compulsory 100% weight
 - Version 5.3.1
 	- Bug fixes in max hours per day
+- Version 5.3.2
+	- Small improvement in help
 	
