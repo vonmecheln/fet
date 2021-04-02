@@ -1267,3 +1267,7 @@ Versions 5.7.0 - 5.7.x
 	- Added an option to remove redundant constraints
 	- Added exporting of advanced statistics as html by Volker Dirr
 	- Arabic translation update
+- Version 5.7.2
+	- Added 2 more samples by Cristian Balint
+	- Small bug fix in statistics exported as html, by Volker Dirr
+	

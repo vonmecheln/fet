@@ -1172,7 +1172,7 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QString saveTime){
 	foreach(QString students, allStudentsNames){
 		tos<<"          <th>"<<qPrintable(QString::number(studentsTotalNumberOfHours.value(students)));
 		if(studentsTotalNumberOfHours.value(students)!=studentsTotalNumberOfHours2.value(students))
-			tos<<"<br />("<<qPrintable(QString::number(studentsTotalNumberOfHours.value(students)))<<")";
+			tos<<"<br />("<<qPrintable(QString::number(studentsTotalNumberOfHours2.value(students)))<<")";
 		tos<<"</th>\n";
 	}
 	tos<<"          <th></th>\n        </tr>\n";
@@ -1536,7 +1536,7 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QString saveTime){
 	foreach(QString students, allStudentsNames){
 		tos<<"          <th>"<<qPrintable(QString::number(studentsTotalNumberOfHours.value(students)));
 		if(studentsTotalNumberOfHours.value(students)!=studentsTotalNumberOfHours2.value(students))
-			tos<<"<br />("<<qPrintable(QString::number(studentsTotalNumberOfHours.value(students)))<<")";
+			tos<<"<br />("<<qPrintable(QString::number(studentsTotalNumberOfHours2.value(students)))<<")";
 		tos<<"</th>\n";	
 	}
 	tos<<"          <th></th>\n        </tr>\n";
