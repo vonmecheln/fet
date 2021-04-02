@@ -49,11 +49,13 @@ using namespace std;
 #define yesNo(x)				((x)==0?"no":"yes")
 #define yesNoTranslated(x)		((x)==0?QObject::tr("no"):QObject::tr("yes"))
 
+#include "generate_pre.h"
+
 static qint8 roomsMatrix[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
 static int rooms_conflicts=-1;
 
-extern QList<int> activitiesPreferredRoomsPreferredRooms[MAX_ACTIVITIES];
+//extern QList<int> activitiesPreferredRoomsPreferredRooms[MAX_ACTIVITIES];
 
 static qint8 subgroupsBuildingsTimetable[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 static qint8 teachersBuildingsTimetable[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
@@ -1375,7 +1377,12 @@ double ConstraintStudentsSetHomeRoom::fitness(
 		else if(rm==this->_room){
 		} //OK
 		else{ //other room, from subject (activity tag) pref. room(s)
-			assert(activitiesPreferredRoomsPreferredRooms[ac].contains(rm));
+			bool okk=false;
+			foreach(PreferredRoomsItem it, activitiesPreferredRoomsList[ac])
+				if(it.preferredRooms.contains(rm))
+					okk=true;
+			assert(okk);
+			//assert(activitiesPreferredRoomsPreferredRooms[ac].contains(rm));
 		}
 
 		if(!ok){
@@ -1622,7 +1629,12 @@ double ConstraintStudentsSetHomeRooms::fitness(
 			if(rm==UNSPECIFIED_ROOM)
 				ok=false;
 			else{
-				assert(activitiesPreferredRoomsPreferredRooms[ac].contains(rm));
+				bool okk=false;
+				foreach(PreferredRoomsItem it, activitiesPreferredRoomsList[ac])
+					if(it.preferredRooms.contains(rm))
+						okk=true;
+				assert(okk);
+				//assert(activitiesPreferredRoomsPreferredRooms[ac].contains(rm));
 			}
 		}
 
@@ -1841,7 +1853,12 @@ double ConstraintTeacherHomeRoom::fitness(
 		else if(rm==this->_room){
 		} //OK
 		else{ //other room, from subject (activity tag) pref. room(s)
-			assert(activitiesPreferredRoomsPreferredRooms[ac].contains(rm));
+			bool okk=false;
+			foreach(PreferredRoomsItem it, activitiesPreferredRoomsList[ac])
+				if(it.preferredRooms.contains(rm))
+					okk=true;
+			assert(okk);
+			//assert(activitiesPreferredRoomsPreferredRooms[ac].contains(rm));
 		}
 
 		if(!ok){
@@ -2082,7 +2099,12 @@ double ConstraintTeacherHomeRooms::fitness(
 			if(rm==UNSPECIFIED_ROOM)
 				ok=false;
 			else{
-				assert(activitiesPreferredRoomsPreferredRooms[ac].contains(rm));
+				bool okk=false;
+				foreach(PreferredRoomsItem it, activitiesPreferredRoomsList[ac])
+					if(it.preferredRooms.contains(rm))
+						okk=true;
+				assert(okk);
+				//	assert(activitiesPreferredRoomsPreferredRooms[ac].contains(rm));
 			}
 		}
 

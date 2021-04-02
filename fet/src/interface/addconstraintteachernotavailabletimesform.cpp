@@ -133,10 +133,9 @@ void AddConstraintTeacherNotAvailableTimesForm::help()
 	 
 	s+="\n\n";
 	 
-	s+=tr("If you need to use weight under 100%, you can use activities preferred times with"
-	 " only the teacher specified, but this is higly unrecommended, as gaps will be"
-	 " counted and you may obtain an impossible timetable. Please DO NOT use this method unless really necessary."
-	 " Or you may use this method if specifying only last slots of the days, so no gaps can appear");
+	s+=tr("If you really need to use weight under 100%, you can use activities preferred times with"
+	 " only the teacher specified, but this might generate problems, as possible gaps will be"
+	 " counted and you may obtain an impossible timetable.");
 
 	QMessageBox::information(this, tr("FET help"), s);
 }

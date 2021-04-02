@@ -3376,7 +3376,7 @@ bool Rules::removeSpaceConstraint(SpaceConstraint *ctr)
 	return false;
 }
 
-bool Rules::read(const QString& filename)
+bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 {
 	bool reportWhole=true;
 
@@ -3411,19 +3411,25 @@ bool Rules::read(const QString& filename)
 
 	////////////////////////////////////////
 
-	//logging part
-	QDir dir;
-	bool t=true;
-	if(!dir.exists(OUTPUT_DIR))
-		t=dir.mkdir(OUTPUT_DIR);
-	if(!t){
-		QMessageBox::warning(NULL, QObject::tr("FET warning"), QObject::tr("Cannot create or use directory %1 - cannot continue").arg(OUTPUT_DIR));
-		return false;
+	if(!logIntoCurrentDirectory){
+		//logging part
+		QDir dir;
+		bool t=true;
+		if(!dir.exists(OUTPUT_DIR))
+			t=dir.mkdir(OUTPUT_DIR);
+		if(!t){
+			QMessageBox::warning(NULL, QObject::tr("FET warning"), QObject::tr("Cannot create or use directory %1 - cannot continue").arg(OUTPUT_DIR));
+			return false;
+		}
+		assert(t);
 	}
-	assert(t);
 	
 	QString xmlReadingLog="";
-	QString tmp=OUTPUT_DIR+FILE_SEP+XML_PARSING_LOG_FILENAME;
+	QString tmp;
+	if(logIntoCurrentDirectory)
+		tmp=XML_PARSING_LOG_FILENAME;
+	else
+		tmp=OUTPUT_DIR+FILE_SEP+XML_PARSING_LOG_FILENAME;
 	QFile file2(tmp);
 	if(!file2.open(QIODevice::WriteOnly)){
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
@@ -4200,7 +4206,7 @@ bool Rules::read(const QString& filename)
 				}
 				else if(elem3.tagName()=="ConstraintTeacherNotAvailable"){
 					if(reportTeacherNotAvailableChange){
-						t=QMessageBox::information(NULL, QObject::tr("FET information"),
+						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
 						 QObject::tr("File contains constraint teacher not available, which is old (it was improved in FET 5.5.0), and will be converted"
 						 " to the similar constraint of this type, constraint teacher not available times (a matrix)."),
 						  QObject::tr("Skip rest of such information"), QObject::tr("See next improved constraint"), QString(), 1, 0 );
@@ -4451,7 +4457,7 @@ bool Rules::read(const QString& filename)
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetNotAvailable"){
 					if(reportStudentsSetNotAvailableChange){
-						t=QMessageBox::information(NULL, QObject::tr("FET information"),
+						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
 						 QObject::tr("File contains constraint students set not available, which is old (it was improved in FET 5.5.0), and will be converted"
 						 " to the similar constraint of this type, constraint students set not available times (a matrix)."),
 						  QObject::tr("Skip rest of such information"), QObject::tr("See next improved constraint"), QString(), 1, 0 );
@@ -5678,7 +5684,7 @@ bool Rules::read(const QString& filename)
 				}
 				else if(elem3.tagName()=="ConstraintBreak"){
 					if(reportBreakChange){
-						t=QMessageBox::information(NULL, QObject::tr("FET information"),
+						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
 						 QObject::tr("File contains constraint break, which is old (it was improved in FET 5.5.0), and will be converted"
 						 " to the similar constraint of this type, constraint break times (a matrix)."),
 						  QObject::tr("Skip rest of such information"), QObject::tr("See next improved constraint"), QString(), 1, 0 );
@@ -6139,7 +6145,7 @@ bool Rules::read(const QString& filename)
 				}
 				else if(elem3.tagName()=="ConstraintStudentsNoGaps"){
 					if(reportMaxGapsChange){
-						t=QMessageBox::information(NULL, QObject::tr("FET information"),
+						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
 						 QObject::tr("File contains constraint students no gaps, which is old (it was improved in FET 5.5.0), and will be converted"
 						 " to the similar constraint of this type, constraint students max gaps per week,"
 						 " with max gaps=0. If you like, you can modify this constraint to allow"
@@ -6188,7 +6194,7 @@ bool Rules::read(const QString& filename)
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetNoGaps"){
 					if(reportMaxGapsChange){
-						t=QMessageBox::information(NULL, QObject::tr("FET information"),
+						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
 						 QObject::tr("File contains constraint students set no gaps, which is old (it was improved in FET 5.5.0), and will be converted"
 						 " to the similar constraint of this type, constraint students set max gaps per week,"
 						 " with max gaps=0. If you like, you can modify this constraint to allow"
@@ -7039,7 +7045,7 @@ corruptConstraintTime:
 				}
 				else if(elem3.tagName()=="ConstraintRoomNotAvailable"){
 					if(reportRoomNotAvailableChange){
-						t=QMessageBox::information(NULL, QObject::tr("FET information"),
+						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
 						 QObject::tr("File contains constraint room not available, which is old (it was improved in FET 5.5.0), and will be converted"
 						 " to the similar constraint of this type, constraint room not available times (a matrix)."),
 						  QObject::tr("Skip rest of such information"), QObject::tr("See next improved constraint"), QString(), 1, 0 );
@@ -8654,7 +8660,7 @@ corruptConstraintSpace:
 
 	if(file2.error()>0){
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
-		 QObject::tr("Saved of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space")
+		 QObject::tr("Saving of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space")
 		 .arg(file2.error()));
 	}
 

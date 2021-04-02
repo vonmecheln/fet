@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.5.0-beta1">
+<!DOCTYPE FET><FET version="5.5.1">
 
 <Institution_Name>Facultatea de Stiinte Economice</Institution_Name>
 
@@ -67661,11 +67661,6 @@ Anul universitar 2007-2008</Comments>
 	<Preferred_Room>P08</Preferred_Room>
 	<Preferred_Room>P11</Preferred_Room>
 </ConstraintActivityPreferredRooms>
-<ConstraintActivityPreferredRoom>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>627</Activity_Id>
-	<Room>106</Room>
-</ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1186</Activity_Id>

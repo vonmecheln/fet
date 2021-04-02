@@ -97,10 +97,11 @@
             </property>
             <property name="text">
                 <string>Note: if you use this constraint with only a teacher or only a students
-set or for all activities, the not allowed periods will be counted as gaps
-and might cause impossible timetables. Please try to use breaks or not
-available constraints instead, which do not count as gaps. However, you
-may need to use this constraint with weight less than 100%, but be careful.</string>
+set or for all activities, please use with caution, because not allowed
+slots might be counted as gaps in timetable if in between (or before)
+allowed slots. You might get impossible timetables in extreme cases.
+The best practice is to use breaks or not available times, but if you
+need weight under 100%, you may need to use this constraint</string>
             </property>
         </widget>
     </grid>

@@ -391,8 +391,8 @@ void TimetableExport::writeConflictsTxt(const QString& filename, QString saveTim
 		tos<<TimetableExport::tr("Soft conflicts of %1").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1))<<"\n";
 		tos<<TimetableExport::tr("Generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"\n\n";
 
-		tos<<"Total soft conflicts: "<<best_solution.conflictsTotal<<endl<<endl;
-		tos<<"Soft conflicts list (in decreasing order):"<<endl<<endl;
+		tos<<TimetableExport::tr("Total soft conflicts: ")<<best_solution.conflictsTotal<<endl<<endl;
+		tos<<TimetableExport::tr("Soft conflicts list (in decreasing order):")<<endl<<endl;
 		foreach(QString t, best_solution.conflictsDescriptionList)
 			tos<<t<<endl;
 		tos<<endl<<TimetableExport::tr("End of file.")<<"\n\n";
@@ -402,8 +402,8 @@ void TimetableExport::writeConflictsTxt(const QString& filename, QString saveTim
 		tos<<TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"\n";
 		tos<<TimetableExport::tr("Generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"\n\n";
 
-		tos<<"Total conflicts: "<<best_solution.conflictsTotal<<endl<<endl;
-		tos<<"Conflicts list (in decreasing order):"<<endl<<endl;
+		tos<<TimetableExport::tr("Total conflicts: ")<<best_solution.conflictsTotal<<endl<<endl;
+		tos<<TimetableExport::tr("Conflicts list (in decreasing order):")<<endl<<endl;
 		foreach(QString t, best_solution.conflictsDescriptionList)
 			tos<<t<<endl;
 		tos<<endl<<TimetableExport::tr("End of file.")<<"\n\n";

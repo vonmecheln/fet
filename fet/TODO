@@ -24,6 +24,15 @@ ConstraintTeachersMaxHoursContinuously
 
 ----------------------------------------------------------------------------------
 
+From Volker Dirr
+
+>> how about displaying "minimum home
+>> room hours" and maybe also "maximum special room hours" in the teacher
+>> statistics? because a timetable maker (maybe) need that for his
+>> planning.
+
+----------------------------------------------------------------------------------
+
 From Abdul Hadi Kamel Abdullah
 
 Why did you remove the "Teachers-subjecttags max hours continously"
@@ -98,7 +107,7 @@ weight
 them in status bar or in another log window.
 3.Option to remember last focused control in dialogs - very useful if 
 you want by keyboard to open many constraints and change their weight
-4.Constraint "Max gaps per day" and "longest gap is n hours"
+4.Constraint "longest gap is n hours"
 5.way to save last generated timetable and reopen it again (for example 
 for printing it with different html level, or for viewing it.
 6.Ability to show free teachers for every position in students and 

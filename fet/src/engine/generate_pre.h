@@ -28,6 +28,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include "timetable_defs.h"
 #include "timetable.h"
 
+#include <QSet>
+
 extern int permutation[MAX_ACTIVITIES]; //the permutation matrix to obtain activities in
 //decreasing difficulty order
 
@@ -222,8 +224,13 @@ bool computeBasicSpace();
 extern double notAllowedRoomTimePercentages[MAX_ROOMS][MAX_HOURS_PER_WEEK]; //-1 for available
 bool computeNotAllowedRoomTimePercentages();
 
-extern QList<int> activitiesPreferredRoomsPreferredRooms[MAX_ACTIVITIES];
-extern double activitiesPreferredRoomsPercentage[MAX_ACTIVITIES];
+class PreferredRoomsItem{
+public:
+	double percentage;
+	QSet<int> preferredRooms;
+};
+
+extern QList<PreferredRoomsItem> activitiesPreferredRoomsList[MAX_ACTIVITIES];
 extern bool unspecifiedPreferredRoom[MAX_ACTIVITIES];
 
 extern QList<int> activitiesHomeRoomsHomeRooms[MAX_ACTIVITIES];

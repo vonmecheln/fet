@@ -260,7 +260,7 @@ void TimetableGenerateMultipleForm::timetableGenerated(int timetable, const QStr
 
 	//update the string representing the conflicts
 	conflictsString = "";
-	conflictsString+="Total soft conflicts: ";
+	conflictsString+=tr("Total soft conflicts: ");
 	conflictsString+=QString::number(best_solution.conflictsTotal);
 	conflictsString+="\n";
 	conflictsString += tr("Soft conflicts listing (in decreasing order):\n");

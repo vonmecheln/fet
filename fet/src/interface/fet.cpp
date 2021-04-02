@@ -128,14 +128,18 @@ int main(int argc, char **argv){
 	//srand(unsigned(time(NULL)));
 	initRandomKnuth();
 
-	QDir dir;
-	
 	bool t=true;
-	//make sure that the output directory exists
-	if(!dir.exists(OUTPUT_DIR))
-		t=dir.mkdir(OUTPUT_DIR);
-	readSimulationParameters();
 
+	if(argc==1){
+		QDir dir;
+	
+		//make sure that the output directory exists
+		if(!dir.exists(OUTPUT_DIR))
+			t=dir.mkdir(OUTPUT_DIR);
+	}
+
+	readSimulationParameters();
+	
 	students_schedule_ready=0;
 	teachers_schedule_ready=0;
 	rooms_schedule_ready=0;
@@ -234,6 +238,8 @@ int main(int argc, char **argv){
 			cout<<"Usage: fet inputfile.fet [timelimitseconds] [timetablehtmllevel (0..5)]"<<endl;
 			return 1;
 		}
+		
+		INPUT_FILENAME_XML="";
 	
 		QString filename=argv[1];
 		
@@ -248,7 +254,7 @@ int main(int argc, char **argv){
 		if(TIMETABLE_HTML_LEVEL>5 || TIMETABLE_HTML_LEVEL<0)
 			TIMETABLE_HTML_LEVEL=2;
 	
-		bool t=gt.rules.read(filename);
+		bool t=gt.rules.read(filename, true);
 		if(!t){
 			cout<<"Cannot read file - aborting"<<endl;
 			return 1;

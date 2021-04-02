@@ -36,6 +36,9 @@ using namespace std;
 
 #include <QMessageBox>
 
+#include <QPair>
+#include <QSet>
+
 extern Timetable gt;
 
 #include <QApplication>
@@ -155,8 +158,7 @@ bool haveActivityEndsStudentsDay;
 ////////rooms
 double notAllowedRoomTimePercentages[MAX_ROOMS][MAX_HOURS_PER_WEEK]; //-1 for available
 
-QList<int> activitiesPreferredRoomsPreferredRooms[MAX_ACTIVITIES];
-double activitiesPreferredRoomsPercentage[MAX_ACTIVITIES];
+QList<PreferredRoomsItem> activitiesPreferredRoomsList[MAX_ACTIVITIES];
 bool unspecifiedPreferredRoom[MAX_ACTIVITIES];
 
 QList<int> activitiesHomeRoomsHomeRooms[MAX_ACTIVITIES];
@@ -2978,20 +2980,44 @@ bool computeNotAllowedRoomTimePercentages()
 
 bool computeActivitiesRoomsPreferences()
 {
+	//to disallow duplicates
+	QSet<QString> studentsSetHomeRoom;
+	QSet<QString> teachersHomeRoom;
+	/*QSet<QString> subjectsPreferredRoom;
+	QSet<QPair<QString, QString> > subjectsActivityTagsPreferredRoom;*/
+	//QSet<int> activitiesPreferredRoom;
+
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
 		unspecifiedPreferredRoom[i]=true;
-		activitiesPreferredRoomsPreferredRooms[i].clear();
-		activitiesPreferredRoomsPercentage[i]=-1;
+		activitiesPreferredRoomsList[i].clear();
+		//activitiesPreferredRoomsPercentage[i]=-1;
 
 		unspecifiedHomeRoom[i]=true;
 		activitiesHomeRoomsHomeRooms[i].clear();
 		activitiesHomeRoomsPercentage[i]=-1;
 	}
 	
+	bool ok=true;
+
 	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
 		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_HOME_ROOM){
 			ConstraintStudentsSetHomeRoom* spr=(ConstraintStudentsSetHomeRoom*)gt.rules.internalSpaceConstraintsList[i];
 			
+			if(studentsSetHomeRoom.contains(spr->studentsName)){
+				ok=false;
+				
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot generate timetable, because you have more than one constraint of type "
+				 "students set home room(s) for students set %1. Please leave only one of them")
+				 .arg(spr->studentsName),
+				 QObject::tr("Skip rest of such problems"), QObject::tr("See next problem"), QString(),
+				 1, 0 );
+	
+				if(t==0)
+					break;
+			}
+			studentsSetHomeRoom.insert(spr->studentsName);
+		
 			foreach(int a, spr->_activities){
 			//for(int j=0; j<spr->_nActivities; j++){
 			//	int a=spr->_activities[j];
@@ -3014,6 +3040,21 @@ bool computeActivitiesRoomsPreferences()
 		}
 		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_HOME_ROOMS){
 			ConstraintStudentsSetHomeRooms* spr=(ConstraintStudentsSetHomeRooms*)gt.rules.internalSpaceConstraintsList[i];
+		
+			if(studentsSetHomeRoom.contains(spr->studentsName)){
+				ok=false;
+				
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot generate timetable, because you have more than one constraint of type "
+				 "students set home room(s) for students set %1. Please leave only one of them")
+				 .arg(spr->studentsName),
+				 QObject::tr("Skip rest of such problems"), QObject::tr("See next problem"), QString(),
+				 1, 0 );
+	
+				if(t==0)
+					break;
+			}
+			studentsSetHomeRoom.insert(spr->studentsName);
 		
 			foreach(int a, spr->_activities){	
 		//	for(int j=0; j<spr->_nActivities; j++){
@@ -3045,6 +3086,21 @@ bool computeActivitiesRoomsPreferences()
 		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_TEACHER_HOME_ROOM){
 			ConstraintTeacherHomeRoom* spr=(ConstraintTeacherHomeRoom*)gt.rules.internalSpaceConstraintsList[i];
 			
+			if(teachersHomeRoom.contains(spr->teacherName)){
+				ok=false;
+				
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot generate timetable, because you have more than one constraint of type "
+				 "teacher home room(s) for teacher %1. Please leave only one of them")
+				 .arg(spr->teacherName),
+				 QObject::tr("Skip rest of such problems"), QObject::tr("See next problem"), QString(),
+				 1, 0 );
+	
+				if(t==0)
+					break;
+			}
+			teachersHomeRoom.insert(spr->teacherName);
+		
 			foreach(int a, spr->_activities){
 			//for(int j=0; j<spr->_nActivities; j++){
 			//	int a=spr->_activities[j];
@@ -3067,6 +3123,21 @@ bool computeActivitiesRoomsPreferences()
 		}
 		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_TEACHER_HOME_ROOMS){
 			ConstraintTeacherHomeRooms* spr=(ConstraintTeacherHomeRooms*)gt.rules.internalSpaceConstraintsList[i];
+		
+			if(teachersHomeRoom.contains(spr->teacherName)){
+				ok=false;
+				
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot generate timetable, because you have more than one constraint of type "
+				 "teacher home room(s) for teacher %1. Please leave only one of them")
+				 .arg(spr->teacherName),
+				 QObject::tr("Skip rest of such problems"), QObject::tr("See next problem"), QString(),
+				 1, 0 );
+	
+				if(t==0)
+					break;
+			}
+			teachersHomeRoom.insert(spr->teacherName);
 		
 			foreach(int a, spr->_activities){	
 		//	for(int j=0; j<spr->_nActivities; j++){
@@ -3098,34 +3169,81 @@ bool computeActivitiesRoomsPreferences()
 		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_SUBJECT_PREFERRED_ROOM){
 			ConstraintSubjectPreferredRoom* spr=(ConstraintSubjectPreferredRoom*)gt.rules.internalSpaceConstraintsList[i];
 			
+			/*if(subjectsPreferredRoom.contains(spr->subjectName)){
+				ok=false;
+				
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot generate timetable, because you have more than one constraint of type "
+				 "subject preferred room(s) for subject %1. Please leave only one of them")
+				 .arg(spr->subjectName),
+				 QObject::tr("Skip rest of such problems"), QObject::tr("See next problem"), QString(),
+				 1, 0 );
+	
+				if(t==0)
+					break;
+			}
+			subjectsPreferredRoom.insert(spr->subjectName);*/
+		
 			//for(int j=0; j<spr->_nActivities; j++){
 			//	int a=spr->_activities[j];
-			foreach(int a, spr->_activities){
+			foreach(int a, spr->_activities){				
+				PreferredRoomsItem it;
 				
+				it.percentage=spr->weightPercentage;
+				it.preferredRooms.insert(spr->_room);
+			
 				if(unspecifiedPreferredRoom[a]){
 					unspecifiedPreferredRoom[a]=false;
-					activitiesPreferredRoomsPercentage[a]=spr->weightPercentage;
-					assert(activitiesPreferredRoomsPreferredRooms[a].count()==0);
-					activitiesPreferredRoomsPreferredRooms[a].append(spr->_room);
+					//activitiesPreferredRoomsPercentage[a]=spr->weightPercentage;
+					//assert(activitiesPreferredRoomsPreferredRooms[a].count()==0);
+					//activitiesPreferredRoomsPreferredRooms[a].append(spr->_room);
 				}
 				else{
-					int t=activitiesPreferredRoomsPreferredRooms[a].indexOf(spr->_room);
-					activitiesPreferredRoomsPreferredRooms[a].clear();
-					activitiesPreferredRoomsPercentage[a]=max(activitiesPreferredRoomsPercentage[a], spr->weightPercentage);
-					if(t!=-1){
-						activitiesPreferredRoomsPreferredRooms[a].append(spr->_room);
-					}
+					//int t=activitiesPreferredRoomsPreferredRooms[a].indexOf(spr->_room);
+					//activitiesPreferredRoomsPreferredRooms[a].clear();
+					//activitiesPreferredRoomsPercentage[a]=max(activitiesPreferredRoomsPercentage[a], spr->weightPercentage);
+					//if(t!=-1){
+					//	activitiesPreferredRoomsPreferredRooms[a].append(spr->_room);
+					//}
 				}
+				
+				activitiesPreferredRoomsList[a].append(it);
 			}
 		}
 		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_SUBJECT_PREFERRED_ROOMS){
 			ConstraintSubjectPreferredRooms* spr=(ConstraintSubjectPreferredRooms*)gt.rules.internalSpaceConstraintsList[i];
 			
+			/*if(subjectsPreferredRoom.contains(spr->subjectName)){
+				ok=false;
+				
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot generate timetable, because you have more than one constraint of type "
+				 "subject preferred room(s) for subject %1. Please leave only one of them")
+				 .arg(spr->subjectName),
+				 QObject::tr("Skip rest of such problems"), QObject::tr("See next problem"), QString(),
+				 1, 0 );
+	
+				if(t==0)
+					break;
+			}
+			subjectsPreferredRoom.insert(spr->subjectName);*/
+		
 			//for(int j=0; j<spr->_nActivities; j++){
 			//	int a=spr->_activities[j];
 			foreach(int a, spr->_activities){
+			
+				PreferredRoomsItem it;
 				
-				if(unspecifiedPreferredRoom[a]){
+				it.percentage=spr->weightPercentage;
+				foreach(int k, spr->_rooms)
+					it.preferredRooms.insert(k);
+			
+				if(unspecifiedPreferredRoom[a])
+					unspecifiedPreferredRoom[a]=false;
+				
+				activitiesPreferredRoomsList[a].append(it);
+
+				/*if(unspecifiedPreferredRoom[a]){
 					unspecifiedPreferredRoom[a]=false;
 					activitiesPreferredRoomsPercentage[a]=spr->weightPercentage;
 					assert(activitiesPreferredRoomsPreferredRooms[a].count()==0);
@@ -3145,16 +3263,43 @@ bool computeActivitiesRoomsPreferences()
 					}
 					activitiesPreferredRoomsPercentage[a]=max(activitiesPreferredRoomsPercentage[a], spr->weightPercentage);
 					activitiesPreferredRoomsPreferredRooms[a]=shared;
-				}
+				}*/
 			}
 		}
 		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOM){
 			ConstraintSubjectActivityTagPreferredRoom* spr=(ConstraintSubjectActivityTagPreferredRoom*)gt.rules.internalSpaceConstraintsList[i];
 			
+			/*QPair<QString, QString> pair=qMakePair(spr->subjectName, spr->activityTagName);
+			if(subjectsActivityTagsPreferredRoom.contains(pair)){
+				ok=false;
+				
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot generate timetable, because you have more than one constraint of type "
+				 "subject activity tag preferred room(s) for subject %1, activity tag %2. Please leave only one of them")
+				 .arg(spr->subjectName)
+				 .arg(spr->activityTagName),
+				 QObject::tr("Skip rest of such problems"), QObject::tr("See next problem"), QString(),
+				 1, 0 );
+	
+				if(t==0)
+					break;
+			}
+			subjectsActivityTagsPreferredRoom.insert(pair);*/
+		
 			//for(int j=0; j<spr->_nActivities; j++){
 			//	int a=spr->_activities[j];
 			foreach(int a, spr->_activities){
-				if(unspecifiedPreferredRoom[a]){
+				PreferredRoomsItem it;
+				
+				it.percentage=spr->weightPercentage;
+				it.preferredRooms.insert(spr->_room);
+			
+				if(unspecifiedPreferredRoom[a])
+					unspecifiedPreferredRoom[a]=false;
+				
+				activitiesPreferredRoomsList[a].append(it);
+
+				/*if(unspecifiedPreferredRoom[a]){
 					unspecifiedPreferredRoom[a]=false;
 					activitiesPreferredRoomsPercentage[a]=spr->weightPercentage;
 					assert(activitiesPreferredRoomsPreferredRooms[a].count()==0);
@@ -3167,17 +3312,45 @@ bool computeActivitiesRoomsPreferences()
 					if(t!=-1){
 						activitiesPreferredRoomsPreferredRooms[a].append(spr->_room);
 					}
-				}
+				}*/
 			}
 		}
 		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOMS){
 			ConstraintSubjectActivityTagPreferredRooms* spr=(ConstraintSubjectActivityTagPreferredRooms*)gt.rules.internalSpaceConstraintsList[i];
 			
+			/*QPair<QString, QString> pair=qMakePair(spr->subjectName, spr->activityTagName);
+			if(subjectsActivityTagsPreferredRoom.contains(pair)){
+				ok=false;
+				
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot generate timetable, because you have more than one constraint of type "
+				 "subject activity tag preferred room(s) for subject %1, activity tag %2. Please leave only one of them")
+				 .arg(spr->subjectName)
+				 .arg(spr->activityTagName),
+				 QObject::tr("Skip rest of such problems"), QObject::tr("See next problem"), QString(),
+				 1, 0 );
+	
+				if(t==0)
+					break;
+			}
+			subjectsActivityTagsPreferredRoom.insert(pair);*/
+		
 			//for(int j=0; j<spr->_nActivities; j++){
 			//	int a=spr->_activities[j];
 			foreach(int a, spr->_activities){
+
+				PreferredRoomsItem it;
 				
-				if(unspecifiedPreferredRoom[a]){
+				it.percentage=spr->weightPercentage;
+				foreach(int k, spr->_rooms)
+					it.preferredRooms.insert(k);
+			
+				if(unspecifiedPreferredRoom[a])
+					unspecifiedPreferredRoom[a]=false;
+				
+				activitiesPreferredRoomsList[a].append(it);
+				
+				/*if(unspecifiedPreferredRoom[a]){
 					unspecifiedPreferredRoom[a]=false;
 					activitiesPreferredRoomsPercentage[a]=spr->weightPercentage;
 					assert(activitiesPreferredRoomsPreferredRooms[a].count()==0);
@@ -3197,15 +3370,39 @@ bool computeActivitiesRoomsPreferences()
 					}
 					activitiesPreferredRoomsPercentage[a]=max(activitiesPreferredRoomsPercentage[a], spr->weightPercentage);
 					activitiesPreferredRoomsPreferredRooms[a]=shared;
-				}
+				}*/
 			}
 		}
 		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
 			ConstraintActivityPreferredRoom* apr=(ConstraintActivityPreferredRoom*)gt.rules.internalSpaceConstraintsList[i];
 			
+			/*if(activitiesPreferredRoom.contains(apr->activityId)){
+				ok=false;
+				
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot generate timetable, because you have more than one constraint of type "
+				 "activity preferred room(s) for activity with id %1. Please leave only one of them")
+				 .arg(apr->activityId),
+				 QObject::tr("Skip rest of such problems"), QObject::tr("See next problem"), QString(),
+				 1, 0 );
+	
+				if(t==0)
+					break;
+			}
+			activitiesPreferredRoom.insert(apr->activityId);*/
+		
 			int a=apr->_activity;
 				
-			if(unspecifiedPreferredRoom[a]){
+			PreferredRoomsItem it;
+				
+			it.percentage=apr->weightPercentage;
+			it.preferredRooms.insert(apr->_room);
+			
+			if(unspecifiedPreferredRoom[a])
+				unspecifiedPreferredRoom[a]=false;
+		
+			activitiesPreferredRoomsList[a].append(it);
+			/*if(unspecifiedPreferredRoom[a]){
 				unspecifiedPreferredRoom[a]=false;
 				activitiesPreferredRoomsPercentage[a]=apr->weightPercentage;
 				assert(activitiesPreferredRoomsPreferredRooms[a].count()==0);
@@ -3218,14 +3415,40 @@ bool computeActivitiesRoomsPreferences()
 				if(t!=-1){
 					activitiesPreferredRoomsPreferredRooms[a].append(apr->_room);
 				}
-			}
+			}*/
 		}
 		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOMS){
 			ConstraintActivityPreferredRooms* apr=(ConstraintActivityPreferredRooms*)gt.rules.internalSpaceConstraintsList[i];
 			
+			/*if(activitiesPreferredRoom.contains(apr->activityId)){
+				ok=false;
+				
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot generate timetable, because you have more than one constraint of type "
+				 "activity preferred room(s) for activity with id %1. Please leave only one of them")
+				 .arg(apr->activityId),
+				 QObject::tr("Skip rest of such problems"), QObject::tr("See next problem"), QString(),
+				 1, 0 );
+	
+				if(t==0)
+					break;
+			}
+			activitiesPreferredRoom.insert(apr->activityId);*/
+		
 			int a=apr->_activity;
 				
-			if(unspecifiedPreferredRoom[a]){
+			PreferredRoomsItem it;
+				
+			it.percentage=apr->weightPercentage;
+			foreach(int k, apr->_rooms)
+				it.preferredRooms.insert(k);
+			
+			if(unspecifiedPreferredRoom[a])
+				unspecifiedPreferredRoom[a]=false;
+				
+			activitiesPreferredRoomsList[a].append(it);
+				
+			/*if(unspecifiedPreferredRoom[a]){
 				unspecifiedPreferredRoom[a]=false;
 				activitiesPreferredRoomsPercentage[a]=apr->weightPercentage;
 				assert(activitiesPreferredRoomsPreferredRooms[a].count()==0);
@@ -3245,12 +3468,11 @@ bool computeActivitiesRoomsPreferences()
 				}
 				activitiesPreferredRoomsPercentage[a]=max(activitiesPreferredRoomsPercentage[a], apr->weightPercentage);
 				activitiesPreferredRoomsPreferredRooms[a]=shared;
-			}
+			}*/
 		}
 	}
 	
-	bool ok=true;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
+	/*for(int i=0; i<gt.rules.nInternalActivities; i++)
 		if(!unspecifiedPreferredRoom[i])
 			if(activitiesPreferredRoomsPreferredRooms[i].count()==0){
 				ok=false;
@@ -3264,7 +3486,7 @@ bool computeActivitiesRoomsPreferences()
 	
 				if(t==0)
 					break;
-			}
+			}*/
 
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		if(!unspecifiedHomeRoom[i])
@@ -3273,7 +3495,7 @@ bool computeActivitiesRoomsPreferences()
 				
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 				 QObject::tr("Cannot generate timetable, because for activity with id==%1 "
-				 "you have no home room (from constraints students set home room(s) and teacher home room(s))")
+				 "you have no allowed home room (from constraints students set home room(s) and teacher home room(s))")
 				 .arg(gt.rules.internalActivitiesList[i].id),
 				 QObject::tr("Skip rest of activities without rooms"), QObject::tr("See next problem"), QString(),
 				 1, 0 );
@@ -3284,7 +3506,51 @@ bool computeActivitiesRoomsPreferences()
 
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
 		if(!unspecifiedPreferredRoom[i]){
-			bool okinitial=true;
+			for(int kk=0; kk<activitiesPreferredRoomsList[i].count(); kk++){
+			//foreach(PreferredRoomsItem it, activitiesPreferredRoomsList[i]){
+				PreferredRoomsItem& it=activitiesPreferredRoomsList[i][kk];
+		
+				bool okinitial=true;
+				if(it.preferredRooms.count()==0){
+					okinitial=false;
+
+					ok=false;
+					
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("Cannot generate timetable, because for activity with id==%1 "
+					 "you have no allowed preferred room (from subject or subject activity tag or activity preferred room(s)). "
+					 "This means that a constraint preferred room(s) hos 0 rooms in it. "
+					 "This should not happen. Please report possible bug.")
+					 .arg(gt.rules.internalActivitiesList[i].id),
+					 QObject::tr("Skip rest of activities without rooms"), QObject::tr("See next problem"), QString(),
+					 1, 0 );
+	
+					if(t==0)
+						goto jumpOverPrefRoomsNStudents;
+
+					//assert(0);
+				}
+				QSet<int> tmp=it.preferredRooms;
+				foreach(int r, tmp){
+					if(gt.rules.internalRoomsList[r]->capacity < gt.rules.internalActivitiesList[i].nTotalStudents){
+						it.preferredRooms.remove(r);
+					}
+				}
+				if(okinitial && it.preferredRooms.count()==0){
+					ok=false;
+					
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("Cannot generate timetable, because for activity with id==%1 "
+					 "you have no allowed preferred room (from the allowed number of students)")
+					 .arg(gt.rules.internalActivitiesList[i].id),
+					 QObject::tr("Skip rest of activities without rooms"), QObject::tr("See next problem"), QString(),
+					 1, 0 );
+	
+					if(t==0)
+						goto jumpOverPrefRoomsNStudents;
+				}		
+			}
+			/*bool okinitial=true;
 			if(activitiesPreferredRoomsPreferredRooms[i].count()==0)
 				okinitial=false;
 			foreach(int r, activitiesPreferredRoomsPreferredRooms[i]){
@@ -3304,16 +3570,18 @@ bool computeActivitiesRoomsPreferences()
 	
 				if(t==0)
 					break;
-			}
+			}*/
 		}
 	}
+jumpOverPrefRoomsNStudents:
 	
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
 		if(!unspecifiedHomeRoom[i]){
 			bool okinitial=true;
 			if(activitiesHomeRoomsHomeRooms[i].count()==0)
 				okinitial=false;
-			foreach(int r, activitiesHomeRoomsHomeRooms[i]){
+			QList<int> tmp=activitiesHomeRoomsHomeRooms[i];
+			foreach(int r, tmp){
 				if(gt.rules.internalRoomsList[r]->capacity < gt.rules.internalActivitiesList[i].nTotalStudents){
 					activitiesHomeRoomsHomeRooms[i].removeAll(r);
 				}
@@ -3323,7 +3591,7 @@ bool computeActivitiesRoomsPreferences()
 				
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 				 QObject::tr("Cannot generate timetable, because for activity with id==%1 "
-				 "you have no home room (from the allowed number of students)")
+				 "you have no allowed home room (from the allowed number of students)")
 				 .arg(gt.rules.internalActivitiesList[i].id),
 				 QObject::tr("Skip rest of activities without rooms"), QObject::tr("See next problem"), QString(),
 				 1, 0 );
@@ -3935,12 +4203,30 @@ void sortActivities()
 	for(int j=0; j<gt.rules.nInternalRooms; j++)
 		nHoursForRoom[j]=0;
 
-	for(int j=0; j<gt.rules.nInternalActivities; j++)
-		if(activitiesPreferredRoomsPercentage[j]>=THRESHOLD){
+	//only consider for each activity the constraint preferred room(s) with highest percentage (and then lowest number of rooms)
+	PreferredRoomsItem maxPercentagePrefRooms[MAX_ACTIVITIES];
+	for(int j=0; j<gt.rules.nInternalActivities; j++){
+		maxPercentagePrefRooms[j].percentage=-1;
+		maxPercentagePrefRooms[j].preferredRooms.clear();
+	
+		double maxPercentage=-1;
+		double minNRooms=INF;
+		foreach(PreferredRoomsItem it, activitiesPreferredRoomsList[j])
+			if(maxPercentage<it.percentage || maxPercentage==it.percentage && minNRooms>it.preferredRooms.count()){
+				maxPercentage=it.percentage;
+				minNRooms=it.preferredRooms.count();
+				maxPercentagePrefRooms[j]=it;
+			}
+	}
+
+	for(int j=0; j<gt.rules.nInternalActivities; j++){
+		PreferredRoomsItem it=maxPercentagePrefRooms[j];
+		if(it.percentage>=THRESHOLD){
 			assert(!unspecifiedPreferredRoom[j]);
-			foreach(int rm, activitiesPreferredRoomsPreferredRooms[j])
+			foreach(int rm, it.preferredRooms)
 				nHoursForRoom[rm]+=gt.rules.internalActivitiesList[j].duration;
 		}
+	}
 	
 
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
@@ -3972,14 +4258,15 @@ void sortActivities()
 
 		
 		//rooms
-		if(activitiesPreferredRoomsPercentage[i]>=THRESHOLD){
+		PreferredRoomsItem it=maxPercentagePrefRooms[i];
+		if(it.percentage>=THRESHOLD){
 			int cnt=0;
 			assert(!unspecifiedPreferredRoom[i]);
-			foreach(int rm, activitiesPreferredRoomsPreferredRooms[i])
+			foreach(int rm, it.preferredRooms)
 				cnt+=nRoomsIncompat[rm]+nHoursForRoom[rm]-1; //-1 because we considered also current activity
 				//it seems that it should be -duration, not -1, but I am afraid to change what is functioning all right
 				
-			nIncompatible[i] += cnt / activitiesPreferredRoomsPreferredRooms[i].count(); //average for all the rooms
+			nIncompatible[i] += cnt / it.preferredRooms.count(); //average for all the rooms
 		}
 				
 		

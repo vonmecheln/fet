@@ -124,6 +124,16 @@ void ModifyConstraintTeacherNotAvailableTimesForm::ok()
 		return;
 	}
 
+	foreach(TimeConstraint* c, gt.rules.timeConstraintsList)
+		if(c!=this->_ctr && c->type==CONSTRAINT_TEACHER_NOT_AVAILABLE_TIMES){
+			ConstraintTeacherNotAvailableTimes* cc=(ConstraintTeacherNotAvailableTimes*)c;
+			if(cc->teacher==teacher_name){
+				QMessageBox::warning(this, QObject::tr("FET information"),
+					QObject::tr("A constraint of this type exists for the same teacher - cannot proceed"));
+				return;
+			}
+		}																												
+																																							
 	this->_ctr->weightPercentage=weight;
 	this->_ctr->teacher=teacher_name;
 

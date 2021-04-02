@@ -130,8 +130,19 @@ void ModifyConstraintRoomNotAvailableTimesForm::ok()
 			QObject::tr("Invalid room"));
 		return;
 	}
+	
 	Room* room=gt.rules.roomsList.at(i);
 
+	foreach(SpaceConstraint* c, gt.rules.spaceConstraintsList)
+		if(c!=this->_ctr && c->type==CONSTRAINT_ROOM_NOT_AVAILABLE_TIMES){
+			ConstraintRoomNotAvailableTimes* cc=(ConstraintRoomNotAvailableTimes*)c;
+			if(cc->room==room->name){
+				QMessageBox::warning(this, QObject::tr("FET information"),
+					QObject::tr("A constraint of this type exists for the same room - cannot proceed"));
+				return;
+			}
+		}
+	
 	this->_ctr->weightPercentage=weight;
 	this->_ctr->room=room->name;
 

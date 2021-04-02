@@ -33,7 +33,7 @@
         <property name="text" >
          <string>Level 1 - basic css
 - less then 1 kb larger filesize than level 0
-- css file created to style elements table, caption, thead, tfoot, tbody,th and td
+- css file created to style elements table, caption, thead, tfoot, tbody, th and td
 - page-break after every or every second timetable (useful if you print timetables)</string>
         </property>
        </widget>
@@ -52,7 +52,7 @@
         <property name="text" >
          <string>Level 3 - advanced css
 - all features of level 2 with around 2 times larger filesize then level 2
-- style (or hide) all subjects, subjectstags, teachers, students and rooms
+- style (or hide) all subjects, activity tags, teachers, students sets and rooms
 - style (or hide) line 1, line 2 and line 3 of the activity cells</string>
         </property>
        </widget>
@@ -68,7 +68,7 @@
         <property name="text" >
          <string>Level 4 - full css
 - all features of level 3 with around 3 times larger filesize then level 2
-- style every single subject, subjectstag, teacher, student and room</string>
+- style every single subject, activity tag, teacher, students set and room</string>
         </property>
        </widget>
       </item>
@@ -83,7 +83,7 @@
         <property name="text" >
          <string>Level 5 - JavaScript
 - all features of level 4 with around 4 times larger filesize then level 2
-- highlighting of same subjects, subjectstags, teachers, students and rooms
+- highlighting of same subjects, activity tags, teachers, students sets and rooms
   (needs JavaScript - just move mouse over a word and wait a little bit)</string>
         </property>
        </widget>

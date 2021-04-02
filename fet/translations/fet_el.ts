@@ -692,29 +692,56 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
 <context>
     <name>AddConstraintActivitiesPreferredTimesForm</name>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="223"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="233"/>
         <source>FET question</source>
         <translation>FET ερώτηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="224"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="234"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Προειδοποίηση: 0 θέσεις επιλέχθηκαν. Είστε σίγουρος;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="168"/>
         <source>Note: if you use this constraint for all activities, there will be counted gaps for not allowed slots. You might get impossible timetables. If you use weight 100%, a more correct approach is to use constraint break. Only if you need weight less than 100% you might be forced to use this constraint, but be careful. Are you sure you want to add this constraint for all activities? (no teacher, students, subject or activity tag specified)</source>
-        <translation>Σημ.:χρησιμοποιώντας τον όρο για όλες τις εργασίες, θα υπολογιστούν κενά για μη αποδεκτές περιόδους. Ίσως τότε δεν υπάρχει λύση στο χρονοδιάγραμμα, Αν χρησιμοποιείτε βάρος 100%, θα ήταν καλύτερο να χρησιμοποιήσετε ως όρο διάλλειμα. Μόνο για βάρος μικρότερο απο 100% είναι ίσως απαραίτητη η χρήση αυτού του όρου, αλλά με προσοχή. Είστε σίγουρος πως θέλετε να προσθέσετε αυτό τον όρο για όλες τις εργασίες? (δεν καθορίστηκαν καθηγητής, τμήμα, μάθημα, χαρ/σμός μαθήματος)</translation>
+        <translation type="obsolete">Σημ.:χρησιμοποιώντας τον όρο για όλες τις εργασίες, θα υπολογιστούν κενά για μη αποδεκτές περιόδους. Ίσως τότε δεν υπάρχει λύση στο χρονοδιάγραμμα, Αν χρησιμοποιείτε βάρος 100%, θα ήταν καλύτερο να χρησιμοποιήσετε ως όρο διάλλειμα. Μόνο για βάρος μικρότερο απο 100% είναι ίσως απαραίτητη η χρήση αυτού του όρου, αλλά με προσοχή. Είστε σίγουρος πως θέλετε να προσθέσετε αυτό τον όρο για όλες τις εργασίες? (δεν καθορίστηκαν καθηγητής, τμήμα, μάθημα, χαρ/σμός μαθήματος)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="181"/>
         <source>It is not good to add such a constraint for only a teacher. There will be counted gaps and you might get impossible data. It is highly recommended to use teacher not available or break constraints instead. Only if you need weight less than 100% you might be forced to use this constraint, but be careful. Are you sure you want to add current constraint?</source>
-        <translation>Μην προσθέτετε τέτοιον όρο μόνο για ένα καθηγητή. Θα υπολογιστούν κενά και ίσως δεν υπάρξει λύση. Συνιστάται να χρησιμοποιείται καθηγητή μη διαθέσιμο ή διάλλειμμα. Μόνο αν έχει βάρος μικρότερο από 100% ίσως είναι απαραίτητο να χρησιμοποιήσετε τον όρο με προσοχή όμως. Είστε σίγουρος για την χρήση του όρου αυτού?</translation>
+        <translation type="obsolete">Μην προσθέτετε τέτοιον όρο μόνο για ένα καθηγητή. Θα υπολογιστούν κενά και ίσως δεν υπάρξει λύση. Συνιστάται να χρησιμοποιείται καθηγητή μη διαθέσιμο ή διάλλειμμα. Μόνο αν έχει βάρος μικρότερο από 100% ίσως είναι απαραίτητο να χρησιμοποιήσετε τον όρο με προσοχή όμως. Είστε σίγουρος για την χρήση του όρου αυτού?</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="193"/>
         <source>It is not good to add such a constraint for only a students set. There will be counted gaps and you might get impossible data. It is highly recommended to use students set not available or break constraints instead. Only if you need weight less than 100% you might be forced to use this constraint, but be careful. Are you sure you want to add current constraint?</source>
-        <translation>Μην προσθέτετε τέτοιον όρο μόνο για ένα τμήμα. Θα υπολογιστούν κενά και ίσως δεν υπάρξει λύση. Συνιστάται να χρησιμοποιείται καθηγητή μη διαθέσιμο ή διάλλειμμα. Μόνο αν έχει βάρος μικρότερο από 100% ίσως είναι απαραίτητο να χρησιμοποιήσετε τον όρο με προσοχή όμως. Είστε σίγουρος για την χρήση του όρου αυτού?</translation>
+        <translation type="obsolete">Μην προσθέτετε τέτοιον όρο μόνο για ένα τμήμα. Θα υπολογιστούν κενά και ίσως δεν υπάρξει λύση. Συνιστάται να χρησιμοποιείται καθηγητή μη διαθέσιμο ή διάλλειμμα. Μόνο αν έχει βάρος μικρότερο από 100% ίσως είναι απαραίτητο να χρησιμοποιήσετε τον όρο με προσοχή όμως. Είστε σίγουρος για την χρήση του όρου αυτού?</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="171"/>
+        <source>You specified all the activities. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teachers&apos; and students&apos; timetable.
+
+ The best practice would be to use constraint break times.
+
+ If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="187"/>
+        <source>You specified only the teacher. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teacher&apos;s timetable.
+
+ The best practice would be to use constraint teacher not available times.
+
+ If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="203"/>
+        <source>You specified only the students set. This might be a small problem: if you specify a not allowed slot between two allowed slots (or a not allowed slot before allowed slots), this not allowed slot will be counted as a gap (or early gap) in the students&apos; timetable.
+
+ The best practice would be to use constraint students set not available times.
+
+ If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible gap might be counted in students&apos; timetable)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2435,14 +2462,14 @@ students)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="148"/>
-        <source>If you really need to use weight under 100%, you can use activities preferred times with only the students set specified, but this is higly unrecommended, as gaps will be counted and you may obtain an impossible timetable. Please DO NOT use this method unless really necessary. Or you may use this method safely if specifying only last slots of the days, so no gaps can appear.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="150"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="149"/>
         <source>FET help</source>
         <translation type="unfinished">FET βοήθεια</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="147"/>
+        <source>If you really need to use weight under 100%, you can use activities preferred times with only the students set specified, but this might generate problems, as possible gaps will be counted and you may obtain an impossible timetable</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3213,14 +3240,14 @@ to start with 2 min hours and highten them as you find new timetables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="139"/>
-        <source>If you need to use weight under 100%, you can use activities preferred times with only the teacher specified, but this is higly unrecommended, as gaps will be counted and you may obtain an impossible timetable. Please DO NOT use this method unless really necessary. Or you may use this method if specifying only last slots of the days, so no gaps can appear</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="141"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="140"/>
         <source>FET help</source>
         <translation type="unfinished">FET βοήθεια</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="138"/>
+        <source>If you really need to use weight under 100%, you can use activities preferred times with only the teacher specified, but this might generate problems, as possible gaps will be counted and you may obtain an impossible timetable.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3975,10 +4002,11 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimesform_template.ui" line="99"/>
         <source>Note: if you use this constraint with only a teacher or only a students
-set or for all activities, the not allowed periods will be counted as gaps
-and might cause impossible timetables. Please try to use breaks or not
-available constraints instead, which do not count as gaps. However, you
-may need to use this constraint with weight less than 100%, but be careful.</source>
+set or for all activities, please use with caution, because not allowed
+slots might be counted as gaps in timetable if in between (or before)
+allowed slots. You might get impossible timetables in extreme cases.
+The best practice is to use breaks or not available times, but if you
+need weight under 100%, you may need to use this constraint</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8819,7 +8847,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2008&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.5.0 (March 2008)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.5.1 (March 2008)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
@@ -9991,29 +10019,51 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
 <context>
     <name>ModifyConstraintActivitiesPreferredTimesForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="284"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="294"/>
         <source>FET question</source>
         <translation>FET ερώτηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="285"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="295"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Προειδοποίηση: 0 θέσεις επιλέχθηκαν. Είστε σίγουρος;</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="229"/>
-        <source>Note: if you use this constraint for all activities, there will be counted gaps for not allowed slots. You might get impossible timetables. If you use weight 100%, a correct approach is to use constraint break. Only if you need weight less than 100% you might be forced to use this constraint, but be careful. Are you sure you want to add this constraint for all activities? (no teacher, students, subject or activity tag specified)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="242"/>
         <source>It is not good to add such a constraint for only a teacher. There will be counted gaps and you might get impossible data. It is highly recommended to use teacher not available or break constraints instead. Only if you need weight less than 100% you might be forced to use this constraint, but be careful. Are you sure you want to add current constraint?</source>
-        <translation type="unfinished">Μην προσθέτετε τέτοιον όρο μόνο για ένα καθηγητή. Θα υπολογιστούν κενά και ίσως δεν υπάρξει λύση. Συνιστάται να χρησιμοποιείται καθηγητή μη διαθέσιμο ή διάλλειμμα. Μόνο αν έχει βάρος μικρότερο από 100% ίσως είναι απαραίτητο να χρησιμοποιήσετε τον όρο με προσοχή όμως. Είστε σίγουρος για την χρήση του όρου αυτού?</translation>
+        <translation type="obsolete">Μην προσθέτετε τέτοιον όρο μόνο για ένα καθηγητή. Θα υπολογιστούν κενά και ίσως δεν υπάρξει λύση. Συνιστάται να χρησιμοποιείται καθηγητή μη διαθέσιμο ή διάλλειμμα. Μόνο αν έχει βάρος μικρότερο από 100% ίσως είναι απαραίτητο να χρησιμοποιήσετε τον όρο με προσοχή όμως. Είστε σίγουρος για την χρήση του όρου αυτού?</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="254"/>
         <source>It is not good to add such a constraint for only a students set. There will be counted gaps and you might get impossible data. It is highly recommended to use students set not available or break constraints instead. Only if you need weight less than 100% you might be forced to use this constraint, but be careful. Are you sure you want to add current constraint?</source>
-        <translation type="unfinished">Μην προσθέτετε τέτοιον όρο μόνο για ένα τμήμα. Θα υπολογιστούν κενά και ίσως δεν υπάρξει λύση. Συνιστάται να χρησιμοποιείται καθηγητή μη διαθέσιμο ή διάλλειμμα. Μόνο αν έχει βάρος μικρότερο από 100% ίσως είναι απαραίτητο να χρησιμοποιήσετε τον όρο με προσοχή όμως. Είστε σίγουρος για την χρήση του όρου αυτού?</translation>
+        <translation type="obsolete">Μην προσθέτετε τέτοιον όρο μόνο για ένα τμήμα. Θα υπολογιστούν κενά και ίσως δεν υπάρξει λύση. Συνιστάται να χρησιμοποιείται καθηγητή μη διαθέσιμο ή διάλλειμμα. Μόνο αν έχει βάρος μικρότερο από 100% ίσως είναι απαραίτητο να χρησιμοποιήσετε τον όρο με προσοχή όμως. Είστε σίγουρος για την χρήση του όρου αυτού?</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="232"/>
+        <source>You specified all the activities. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teachers&apos; and students&apos; timetable.
+
+ The best practice would be to use constraint break times.
+
+ If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="248"/>
+        <source>You specified only the teacher. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teacher&apos;s timetable.
+
+ The best practice would be to use constraint teacher not available times.
+
+ If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="264"/>
+        <source>You specified only the students set. This might be a small problem: if you specify a not allowed slot between two allowed slots (or a not allowed slot before allowed slots), this not allowed slot will be counted as a gap (or early gap) in the students&apos; timetable.
+
+ The best practice would be to use constraint students set not available times.
+
+ If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible gap might be counted in students&apos; timetable)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13150,7 +13200,7 @@ but they might be too large and you might get a impossible timetable.</source>
         <translation>Άκυρη επιλεγμένη εργασία</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="179"/>
+        <location filename="../src/interface/fet.cpp" line="183"/>
         <source>FET warning</source>
         <translation>FET προειδοποίηση</translation>
     </message>
@@ -13175,7 +13225,7 @@ but they might be too large and you might get a impossible timetable.</source>
         <translation>Καθηγητής=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2919"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2941"/>
         <source>Subject=%1</source>
         <translation>Μάθημα=%1</translation>
     </message>
@@ -13287,7 +13337,7 @@ MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING πρέπει να αυξηθεί (έχ
         <translation>Όχι αρκετές μεταβλητές (πολλά &quot;Ναι&quot;).</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="270"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="280"/>
         <source>Please increase the variable MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES</source>
         <translation>Αυξήστε την μεταβλητή MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES</translation>
     </message>
@@ -13788,12 +13838,12 @@ of old constraints using erased days
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="148"/>
+        <location filename="../src/interface/fet.cpp" line="152"/>
         <source>FET critical</source>
         <translation>FET προσοχή</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="148"/>
+        <location filename="../src/interface/fet.cpp" line="152"/>
         <source>Cannot create or use %1 directory - FET will now abort</source>
         <translation>Αδυναμία δημιουργίας ή χρήσης καταλόγου %1 - αδυναμία προόδου</translation>
     </message>
@@ -14089,47 +14139,47 @@ because the teacher is invalid</source>
         <translation>Χώρου όροι σχετιζόμενοι με αυτή την εργασία:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1423"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1425"/>
         <source>Skip rest of max hours problems</source>
         <translation>Προσπέρασε προβλήματα μεγ. ωρών</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1423"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1425"/>
         <source>See next incompatibility max hours</source>
         <translation>Δες επόμενο ασυμβίβαστο μεγίστων ωρών</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="570"/>
+        <location filename="../src/engine/generate_pre.cpp" line="572"/>
         <source>Cannot optimize for students, because the constraint of type min hours daily relating to students has no 100% weight. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation>Δεν μπορείτε να  βελτιστοποιήσετε για τους σπουδαστές, επειδή ο περιορισμός των ελάχιστων ωρών καθημερινά δεν έχει βάρος 100%. Παρακαλώ τροποποιήστε τα στοιχεία σας αναλόγως και προσπαθήστε πάλι. Για περισσότερες λεπτομέρειες, μπείτε στην λίστα ταχυδρομείου ή στείλετε μήνυμα με το ηλεκτρονικό ταχυδρομείο στον συντάκτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1142"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1144"/>
         <source>Skip rest of min hours problems</source>
         <translation>Προσπέρασε υπόλοιπα προβλήματα ελαχίστων ωρών</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1142"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1144"/>
         <source>See next incompatibility min hours</source>
         <translation>Δες επόμενο ασυμβίβαστο ελαχίστων ωρών</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="589"/>
+        <location filename="../src/engine/generate_pre.cpp" line="591"/>
         <source>Cannot optimize for students set %1, because the constraint of type min hours daily relating to him has no 100% weight. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation>Δεν μπορείτε να  βελτιστοποιήσετε για τους μαθητές %1, επειδή ο περιορισμός των ελάχιστων ωρών καθημερινά δεν έχει βάρος 100%. Παρακαλώ τροποποιήστε τα στοιχεία σας αναλόγως και προσπαθήστε πάλι. Για περισσότερες λεπτομέρειες, μπείτε στην λίστα ταχυδρομείου ή στείλετε μήνυμα με το ηλεκτρονικό ταχυδρομείο στον συντάκτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="661"/>
+        <location filename="../src/engine/generate_pre.cpp" line="663"/>
         <source>Cannot optimize for subgroup %1, because there are two constraints of type min hours daily relating to him, and the weight percentage is higher on the constraint with less minimum hours. You are allowed only to have for each subgroup the most important constraint with maximum weight percentage and largest minimum hours daily allowed. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε για το τμήμα %1, επειδή υπάρχουν δύο περιορισμοί των ελάχιστων ωρών τύπων καθημερινά σχετικά με αυτό, και το ποσοστό βάρους είναι υψηλότερο στον περιορισμό με τις λιγότερες ελάχιστες ώρες. Έχετε την άδεια μόνο για να έχετε για κάθε τμήμα το σημαντικότερο περιορισμό με το μέγιστο ποσοστό βάρους και τις μεγαλύτερες ελάχιστες ώρες επιτρεπτές καθημερινά. Παρακαλώ τροποποιήστε τα στοιχεία σας αναλόγως και προσπαθήστε πάλι. Για περισσότερες λεπτομέρειες, δείτε την λίστα ταχυδρομείου ή στείλετε μήνυμα με το ηλεκτρονικό ταχυδρομείο το συντάκτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="701"/>
+        <location filename="../src/engine/generate_pre.cpp" line="703"/>
         <source>For subgroup %1 you have too little activities to respect the constraint of type min hours daily. Please modify your data accordingly and try again. A possible situation is that you have unneeded groups like &apos;year1 WHOLE YEAR&apos; and subgroups with name like &apos;year1 WHOLE YEAR WHOLE GROUP&apos;. You might need to remove such dummy groups and subgroups (they are generated if you start allocation with incomplete students data). FET cannot automatically remove such dummy groups and subgroups. For more details, join the mailing list or email the author</source>
         <translation>Για το τμήμα %1 έχετε πολύ λίγες εργασίες για να σεβαστείτε τον περιορισμό των ελάχιστων ωρών τύπων καθημερινά. Παρακαλώ τροποποιήστε τα στοιχεία σας αναλόγως και προσπαθήστε πάλι. Μια πιθανή κατάσταση είναι ότι έχετε τις αχρείαστες τάξεις όπως &apos;έτος1 WHOLE YEAR&apos; και τα τμήματα με το όνομα όπως &apos;έτος1 WHOLE YEAR WHOLE GROUP&apos;. Πρέπει να αφαιρέσετε τέτοιες πλαστές τάξεις και τμήματα (παράγονται εάν αρχίζετε την κατανομή με  ελλιπή στοιχεία σπουδαστών). Το FET δεν μπορεί αυτόματα να αφαιρέσει τέτοιες πλαστές τάξεις και τμήματα. Για περισσότερες λεπτομέρειες, δείτε την λίστα ταχυδρομείου ή στείλετε μήνυμα με το ηλεκτρονικό ταχυδρομείο στον συντάκτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="725"/>
+        <location filename="../src/engine/generate_pre.cpp" line="727"/>
         <source>For subgroup %1 cannot respect the constraint of type min hours daily on day %2, because of students set not available and/or break. Probably you have a day off for this subgroup. The workaround is described in the Help/Frequently Asked Questions menu (for short: keep constraint min hours daily for this students set, remove corresponding constraint students set not available (or break) for this students set, add a dummy activity for this students set with dummy subject and duration the number of hours per day and add a constraint activity preferred time for this dummy activity in the corresponding day, first hour)
 
 Please modify your data accordingly and try again</source>
@@ -14138,157 +14188,157 @@ Please modify your data accordingly and try again</source>
 Παρακαλώ τροποποιήστε τα στοιχεία σας αναλόγως και προσπαθήστε πάλι</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1312"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1314"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2  and you have only %3 days x %4 hours in a week. Probably you need to increase with 1 the number of hours per day (probably you misunderstood FET hours notation)</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε για το δάσκαλο %1, επειδή ο αριθμός ωρών για το δάσκαλο είναι %2   και έχετε  μόνο %3  ημέρες Χ %4 ώρες σε μια εβδομάδα. Πιθανώς πρέπει να αυξήσετε με 1 τον αριθμό ωρών ανά ημέρα (πιθανώς παρανοήσατε τη σημείωση ωρών FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1362"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1364"/>
         <source>Skip rest of teachers problems</source>
         <translation>Παράβλεψη υπολοίπων προβλημάτων καθηγητών</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1362"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1364"/>
         <source>See next teacher problem</source>
         <translation>Δες επόμενο πρόβλημα καθηγητή</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1336"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1338"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2  and you have only %3 free slots from constraints teacher not available and/or break. Maybe you inputted wrong constraints teacher not available or break or the number of hours per day is less with 1, because of a misunderstanding</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε για το δάσκαλο %1, επειδή ο αριθμός ωρών για το δάσκαλο είναι %2   και έχετε τις ελεύθερες θέσεις μόνο %3 από τον περιορισμό καθηγητής μη εύκαιρος ή/και το κενό. Ίσως εισαγάγατε το λανθασμένο περιορισμό καθηγητής μη εύκαιρος ή/και το κενό ή ο αριθμός ωρών ανά ημέρα είναι λιγότερος κατά 1, λόγω παρανόησης</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1339"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1341"/>
         <source>Skip rest of teach. not avail. problems</source>
         <translation>Παράβλεψη υπολοίπων προβλημάτων καθηγ. μη εύκαιρου</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1339"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1341"/>
         <source>See next teach. not avail. problem</source>
         <translation>Δες επόμενο πρόβλημα καθηγητή όχι εύκαιρου</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1358"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1360"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 allowed days from constraint teacher max days per week x %4 hours in a day. Probably there is an error in your data</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε για τον καθηγητή %1, επειδή ο αριθμός ωρών για το δάσκαλο είναι %2   και έχετε  μόνο %3  ημέρες Χ %4 ώρες σε μια εβδομάδα. Πιθανώς υπάρχει λάθος δεδομένων σας</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1648"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1650"/>
         <source>Skip rest of max gaps problems</source>
         <translation>Παράβλεψη υπόλοιπων προβλημάτων ανώτατων χασμάτων</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1648"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1650"/>
         <source>See next incompatibility max gaps</source>
         <translation>Δες επόμενο ασυμβίβαστο μεγίστων κενών</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1685"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1687"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2  and you have only %3 days x %4 hours in a week. Probably you need to increase with 1 the number of hours per day (probably you misunderstood FET hours notation)</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε για τμήμα %1, επειδή ο αριθμός ωρών για το τμήμα είναι %2 και έχετε τις ημέρες Χ %3  μόνο %4 ώρες σε μια εβδομάδα. Πιθανώς πρέπει να αυξήσετε με 1 τον αριθμό ωρών ανά ημέρα (πιθανώς παρανοήσατε την σημείωση ωρών FET)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1689"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1691"/>
         <source>Skip rest of students problems</source>
         <translation>Παράβλεψη υπόλοιπων προβλημάτων μαθητών</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1689"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1691"/>
         <source>See next students problem</source>
         <translation>Δες επόμενο πρόβλημα μαθητών</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1709"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1711"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2  and you have only %3 free slots from constraints students set not available and/or break. Maybe you inputted wrong constraints students set not available or break or the number of hours per day is less with 1, because of a misunderstanding</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1712"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1714"/>
         <source>Skip rest of stud. not avail. problems</source>
         <translation>Παράβλεψη υπόλοιπων προβλημάτων μαθ. όχι εύκαιροι</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1712"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1714"/>
         <source>See next stud. not avail. problem</source>
         <translation>Δες επόμ. μαθητές μη εύκαιροι πρόβλ</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1743"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1745"/>
         <source>Cannot optimize, because you have constraint teacher max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.2.17 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1744"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1746"/>
         <source>Skip rest of max days problems</source>
         <translation>Προσπέρασε προβλήματα μεγ. ημερών</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1744"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1746"/>
         <source>See next incompatibility max days</source>
         <translation>Δες επόμενο ασυμβίβαστο μεγίστων ημερών</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1762"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1764"/>
         <source>Cannot optimize for teacher %1, because it has at least two constraints max days per week. Please modify your data correspondingly (leave maximum one constraint of type constraint teacher max days per week for each teacher) and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1763"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1765"/>
         <source>Skip rest of max days per week problems</source>
         <translation>Παράβλεψη υπολοίπων προβλημάτων μέγ. ημέρες την εβδομάδα</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1763"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1765"/>
         <source>See next incompatibility max days per week</source>
         <translation>Δες επόμενη ασυμβατότητα μέγ. ημέρες την εβδομάδα</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1956"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1958"/>
         <source>Skip rest of early - no gaps problems</source>
         <translation>Παράβλεψη υπολοίπων προβλημάτων νωρίς - χωρίς κενά</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1956"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1958"/>
         <source>See next incompatibility no gaps - early</source>
         <translation>Δες επόμενη ασυμβατότητα όχι κενά - νωρίς</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2025"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2027"/>
         <source>Cannot optimize, because you have constraints of type teacher not available with weight percentage less than 100% for teacher %1. Currently, FET can only optimize with constraints teacher not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2071"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2073"/>
         <source>Cannot optimize, because you have constraints of type students set not available with weight percentage less than 100% for students set %1. Currently, FET can only optimize with constraints students set not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2114"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2116"/>
         <source>Cannot optimize, because you have constraints of type break with weight percentage less than 100%. Currently, FET can only optimize with constraints break with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2163"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2165"/>
         <source>Cannot optimize, because you have constraints of type activity preferred time with no day nor hour selected (for activity with id==%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2505"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2507"/>
         <source>Skip rest of constraints problems</source>
         <translation>Προσπέρασε υπόλοιπα προβλήματα περιορισμών</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2754"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2756"/>
         <source>See next incorrect constraint</source>
         <translation>Δες επόμενο λάθος όρο</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2376"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2378"/>
         <source>Cannot optimize, because you have no basic time constraints or its weight is lower than 100.0%. Please add a basic time constraint (100% weight)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2388"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2390"/>
         <source>Precomputing ... please wait</source>
         <translation>Προετοιμασία... παρακαλώ περιμένετε</translation>
     </message>
@@ -14298,29 +14348,29 @@ Please modify your data accordingly and try again</source>
         <translation>Ακυρώθηκε</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2504"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2506"/>
         <source>Cannot optimize, because you have constraints of type activity activity ends students day for activity with id==%1 with weight percentage under 100%. Constraint activity ends students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2949"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2951"/>
         <source>Cannot optimize, because you have no basic space constraints or its weight percentage is lower than 100.0%. Please add a basic space constraint with 100% weight</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3328"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3596"/>
         <source>Skip rest of activities without rooms</source>
         <translation>Παράβλεψη υπόλοιπων εργασιών χωρίς αίθουσες</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3328"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3596"/>
         <source>See next problem</source>
         <translation>Δες επόμενο πρόβλημα</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3301"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3466"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed room (from the allowed number of students)</source>
-        <translation>Δεν μπορείτε να παραγάγετε το χρονοδιάγραμμα, επειδή για τη δραστηριότητα με id==%1 δεν έχετε καμία αίθουσα (με τον επιτρεπόμενο αριθμό σπουδαστών)</translation>
+        <translation type="obsolete">Δεν μπορείτε να παραγάγετε το χρονοδιάγραμμα, επειδή για τη δραστηριότητα με id==%1 δεν έχετε καμία αίθουσα (με τον επιτρεπόμενο αριθμό σπουδαστών)</translation>
     </message>
     <message>
         <location filename="../src/engine/room.cpp" line="116"/>
@@ -14328,37 +14378,37 @@ Please modify your data accordingly and try again</source>
         <translation>Χώρου όροι αναφέρονται στην αίθουσα:</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3513"/>
+        <location filename="../src/engine/rules.cpp" line="3519"/>
         <source>Monday</source>
         <translation>Δευτέρα</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3514"/>
+        <location filename="../src/engine/rules.cpp" line="3520"/>
         <source>Tuesday</source>
         <translation>Τρίτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3515"/>
+        <location filename="../src/engine/rules.cpp" line="3521"/>
         <source>Wednesday</source>
         <translation>Τετάρτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3516"/>
+        <location filename="../src/engine/rules.cpp" line="3522"/>
         <source>Thursday</source>
         <translation>Πέμπτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3517"/>
+        <location filename="../src/engine/rules.cpp" line="3523"/>
         <source>Friday</source>
         <translation>Παρασκευή</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3519"/>
+        <location filename="../src/engine/rules.cpp" line="3525"/>
         <source>Default institution</source>
         <translation>Προκαθορισμένο Ίδρυμα</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3520"/>
+        <location filename="../src/engine/rules.cpp" line="3526"/>
         <source>Default comments</source>
         <translation>Προκαθορισμένα σχόλια</translation>
     </message>
@@ -14414,12 +14464,12 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
 %2 διότι μόνο μια αίθουσα έμεινε στον όρο</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3420"/>
+        <location filename="../src/engine/rules.cpp" line="3421"/>
         <source>Cannot create or use directory %1 - cannot continue</source>
         <translation>Αδυναμία δημιουργίας ή χρήσης καταλόγου %1 - αδυναμία προόδου</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3489"/>
+        <location filename="../src/engine/rules.cpp" line="3495"/>
         <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are adviced to make a backup of your old file before saving in new format.
 
 Please note that the default weight percentage of constraints min n days between activities will be 95% (mainly satisfied, not always) and &apos;force consecutive if same day&apos; will be set to true (meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity)If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
@@ -14427,144 +14477,144 @@ Please note that the default weight percentage of constraints min n days between
 Σημειώστε ότι το ποσοστό βάρους ως προεπιλογή του όρου ελάχιστες ημέρες μεταξύ εργασιών θα είναι 95% (κυρίως ικανοποιημένος, όχι πάντα) και &quot;υποχρέωση διαδοχής εάν σε ίδια ημέρα&quot; θα τεθεί αληθινή (σημαίνοντας ότι εάν οι δραστηριότητες είναι σε την ίδια μέρα, θα τοποθετηθούν συνεχόμενες, σε μια εργασία μεγαλύτερης διάρκειας). Αν θέλετε, μπορείτε να τροποποιήσετε αυτό το ποσοστό 100%, με το χέρι στο αρχείο εισαγωγής FET ή από την διεπαφή</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4014"/>
+        <location filename="../src/engine/rules.cpp" line="4020"/>
         <source>Activity with id=%1 contains invalid data - skipping</source>
         <translation>Εργασία με id=%1 περιέχει λάθος δεδομένα - προσπέραση</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4022"/>
+        <location filename="../src/engine/rules.cpp" line="4028"/>
         <source>File contains deprecated equipments list - will be ignored
 </source>
         <translation>Το αρχείο περιέχει τον αποδοκιμασμένο κατάλογο εξοπλισμών - θα αγνοηθεί
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4234"/>
+        <location filename="../src/engine/rules.cpp" line="4240"/>
         <source>Constraint TeacherNotAvailable day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Όρος ΚαθηγητήςΌχιΕύκαιρος ημέρα αλλοιωμένη για το δάσκαλο %1, ημέρα %2 είναι ανύπαρκτη... δεν θα ισχύσει ο περιορισμός</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4249"/>
+        <location filename="../src/engine/rules.cpp" line="4255"/>
         <source>Constraint TeacherNotAvailable start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Όρος ΚαθηγητήςΌχιΕύκαιρος ώρα έναρξης αλλοιωμένη για καθηγητή %1, ώρα %2 είναι ανύπαρκτη... δεν θα ισχύσει ο περιορισμός</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4264"/>
+        <location filename="../src/engine/rules.cpp" line="4270"/>
         <source>Constraint TeacherNotAvailable end hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Όρος ΚαθηγητήςΌχιΕύκαιρος ώρα λήξης αλλοιωμένη για καθηγητή %1, ώρα %2 είναι ανύπαρκτη... δεν θα ισχύσει ο περιορισμός</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4440"/>
+        <location filename="../src/engine/rules.cpp" line="4446"/>
         <source>Constraint TeacherMaxDaysPerWeek day corrupt for teacher %1, max days %2 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
         <translation>Όρος ΚαθηγητήςΜέγιστεςΗμέρεςΤηνΕβδομάδα ημέρα αλλοιώθηκε για καθηγητή %1, μεγ. ημέρες %2 &lt;=0 ή &gt;αρ.ΗμερώνΤηνΕβδομάδα, θα παραβλεφθεί ο όρος</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4486"/>
+        <location filename="../src/engine/rules.cpp" line="4492"/>
         <source>Constraint StudentsSetNotAvailable day corrupt for students %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4501"/>
+        <location filename="../src/engine/rules.cpp" line="4507"/>
         <source>Constraint StudentsSetNotAvailable start hour corrupt for students set %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4516"/>
+        <location filename="../src/engine/rules.cpp" line="4522"/>
         <source>Constraint StudentsSetNotAvailable end hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4886"/>
+        <location filename="../src/engine/rules.cpp" line="4892"/>
         <source>File contains deprecated constraint teachers max hours continuously - will be ignored
 </source>
         <translation>Το αρχείο περιέχει τον αποδοκιμασμένο όρο καθηγητές μέγιστες συνεχόμενες ώρες - θα αγνοηθεί
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5091"/>
+        <location filename="../src/engine/rules.cpp" line="5097"/>
         <source>File contains deprecated constraint teachers subgroups max hours daily - will be ignored
 </source>
         <translation>Το αρχείο περιέχει τις αποδοκιμασμένες ανώτατες ώρες καθηγητές τμήματα μέγιστες ώρες ημερησίως - θα αγνοηθεί
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5138"/>
+        <location filename="../src/engine/rules.cpp" line="5144"/>
         <source>File contains deprecated constraint students n hours daily - will be ignored
 </source>
         <translation>Το αρχείο περιέχει τις αποδοκιμασμένες ώρες μαθητές ημερησίως - θα αγνοηθεί
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5188"/>
+        <location filename="../src/engine/rules.cpp" line="5194"/>
         <source>File contains deprecated constraint students set n hours daily - will be ignored
 </source>
         <translation>Το αρχείο περιέχει τον αποδοκιμασμένο όρο σετ μαθητών αρ. ωρών ημερησίως - θα αγνοηθεί
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5446"/>
+        <location filename="../src/engine/rules.cpp" line="5452"/>
         <source>Constraint ActivityPreferredTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5462"/>
+        <location filename="../src/engine/rules.cpp" line="5468"/>
         <source>Constraint ActivityPreferredTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5537"/>
+        <location filename="../src/engine/rules.cpp" line="5543"/>
         <source>File contains deprecated constraint activity ends day - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5643"/>
+        <location filename="../src/engine/rules.cpp" line="5649"/>
         <source>Constraint ActivityPreferredTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5661"/>
+        <location filename="../src/engine/rules.cpp" line="5667"/>
         <source>Constraint ActivityPreferredTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6508"/>
+        <location filename="../src/engine/rules.cpp" line="6514"/>
         <source>File contains deprecated constraint students set interval max days per week - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6574"/>
+        <location filename="../src/engine/rules.cpp" line="6580"/>
         <source>File contains deprecated constraint teacher interval max days per week - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6639"/>
+        <location filename="../src/engine/rules.cpp" line="6645"/>
         <source>File contains deprecated constraint 2 activities ordered - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6689"/>
+        <location filename="../src/engine/rules.cpp" line="6695"/>
         <source>File contains deprecated constraint 2 activities grouped - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6865"/>
+        <location filename="../src/engine/rules.cpp" line="6871"/>
         <source>File contains deprecated constraint teachers subject tags max hours continuously - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6912"/>
+        <location filename="../src/engine/rules.cpp" line="6918"/>
         <source>File contains deprecated constraint teachers subject tag max hours continuously - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8641"/>
+        <location filename="../src/engine/rules.cpp" line="8647"/>
         <source>Constraint
 %1
 not added - must be a duplicate</source>
@@ -14573,139 +14623,139 @@ not added - must be a duplicate</source>
 δεν προστέθηκε - ίσως είναι διπλοεγγραφή</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7073"/>
+        <location filename="../src/engine/rules.cpp" line="7079"/>
         <source>Constraint RoomNotAvailable day corrupt for room %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7088"/>
+        <location filename="../src/engine/rules.cpp" line="7094"/>
         <source>Constraint RoomNotAvailable start hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7103"/>
+        <location filename="../src/engine/rules.cpp" line="7109"/>
         <source>Constraint RoomNotAvailable end hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7349"/>
+        <location filename="../src/engine/rules.cpp" line="7355"/>
         <source>File contains deprecated constraint room type not allowed subjects - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8328"/>
+        <location filename="../src/engine/rules.cpp" line="8334"/>
         <source>Skip rest of deprecated constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8328"/>
+        <location filename="../src/engine/rules.cpp" line="8334"/>
         <source>See next deprecated constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7393"/>
+        <location filename="../src/engine/rules.cpp" line="7399"/>
         <source>File contains deprecated constraint subject requires equipments - will be ignored
 </source>
         <translation>Το αρχείο περιέχει τον αποδοκιμασμένο όρο μάθημα απαιτεί εξοπλισμούς - θα αγνοηθεί</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7437"/>
+        <location filename="../src/engine/rules.cpp" line="7443"/>
         <source>File contains deprecated constraint subject tag requires equipments - will be ignored
 </source>
         <translation>Το αρχείο περιέχει τον αποδοκιμασμένο όρο χαρ/σμός μαθήματος απαιτεί εξοπλισμούς - θα αγνοηθεί
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7485"/>
+        <location filename="../src/engine/rules.cpp" line="7491"/>
         <source>File contains deprecated constraint teacher requires room - will be ignored
 </source>
         <translation>Το αρχείο περιέχει τον αποδοκιμασμένο όρο καθηγητής απαιτεί αίθουσα - θα αγνοηθεί
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7530"/>
+        <location filename="../src/engine/rules.cpp" line="7536"/>
         <source>File contains deprecated constraint teacher subject require room - will be ignored
 </source>
         <translation>Το αρχείο περιέχει τον αποδοκιμασμένο όρο καθηγητής μάθημα απαιτεί αίθουσα - θα αγνοηθεί
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7578"/>
+        <location filename="../src/engine/rules.cpp" line="7584"/>
         <source>File contains deprecated constraint minimize number of rooms for students - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7614"/>
+        <location filename="../src/engine/rules.cpp" line="7620"/>
         <source>File contains deprecated constraint minimize number of rooms for teachers - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7767"/>
+        <location filename="../src/engine/rules.cpp" line="7773"/>
         <source>File contains deprecated constraint activities same room - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8207"/>
+        <location filename="../src/engine/rules.cpp" line="8213"/>
         <source>File contains deprecated constraint max building changes per day for teachers - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8247"/>
+        <location filename="../src/engine/rules.cpp" line="8253"/>
         <source>File contains deprecated constraint max building changes per day for students - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8287"/>
+        <location filename="../src/engine/rules.cpp" line="8293"/>
         <source>File contains deprecated constraint max room changes per day for teachers - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8327"/>
+        <location filename="../src/engine/rules.cpp" line="8333"/>
         <source>File contains deprecated constraint max room changes per day for students - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="124"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="126"/>
         <source>Basic compulsory constraints (space), WP:%1%</source>
         <translation>Βασικός συνδυασμός όρων (χώρου), WP:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="136"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="138"/>
         <source>These are the basic compulsory constraints 
 (referring to rooms allocation) for any timetable
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="139"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="141"/>
         <source>The basic space constraints try to avoid:
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="140"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="142"/>
         <source>- rooms assigned to more than one activity simultaneously
 </source>
         <translation>- αίθουσες διορίζονται σε πάνω από μια εργασία συνεχόμενα
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="141"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="143"/>
         <source>- activities with more students than the capacity of the room
 </source>
         <translation>- εργασίες με περισσότερους μαθητές από την χωρητικότητα αίθουσας
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="250"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="252"/>
         <source>Space constraint basic compulsory: unallocated activity with id=%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -14715,17 +14765,17 @@ not added - must be a duplicate</source>
         <translation> -αυτό αυξάνει το σύνολο συγκρούσεων κατά %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="281"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="283"/>
         <source>Space constraint basic compulsory: room %1 has allocated activity with id %2 and the capacity of the room is overloaded</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="283"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="285"/>
         <source>This increases conflicts total by %1</source>
         <translation>Αυτό αυξάνει το σύνολο συγκρούσεων κατά %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="303"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="305"/>
         <source>Space constraint basic compulsory: room with name %1 has more than one allocated activity on day %2, hour %3.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -14740,17 +14790,17 @@ not added - must be a duplicate</source>
         <translation>WP:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2905"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2927"/>
         <source>R:%1</source>
         <translation>R:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5202"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5224"/>
         <source>Space constraint</source>
         <translation>Χώρου όρος</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2922"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2944"/>
         <source>Room=%1</source>
         <translation>Αίθουσα=%1</translation>
     </message>
@@ -14760,34 +14810,34 @@ not added - must be a duplicate</source>
         <translation>FET λάθος στα δεδομένα</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2849"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2871"/>
         <source>Following constraint is wrong:
 %1</source>
         <translation>Ο περιορισμός είναι λανθασμένος:
  %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1021"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1023"/>
         <source>A:%1</source>
         <translation>A:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="783"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="785"/>
         <source>Activity preferred room</source>
         <translation>Εργασία σε προτιμητέα αίθουσα</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="870"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="872"/>
         <source>Space constraint activity preferred room broken for activity with id=%1 (subject=%2), room=%3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1071"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1073"/>
         <source>Activity preferred rooms</source>
         <translation>Εργασία σε προτιμητέες αίθουσες</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1166"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1168"/>
         <source>Space constraint activity preferred rooms broken for activity with id=%1 (subject=%2)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -14797,27 +14847,27 @@ not added - must be a duplicate</source>
         <translation>S:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2234"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2256"/>
         <source>Subject preferred room</source>
         <translation>Μάθημα σε προτιμητέα αίθουσα</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2688"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2710"/>
         <source>Room name=%1</source>
         <translation>Αίθουσας όνομα=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2292"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2314"/>
         <source>Space constraint subject preferred room broken for activity with id %1 (subject=%2)</source>
         <translation>Χώρου όρος με μάθημα σε προτιμητέα αίθουσα σπάει για εργασία με id %1 (μάθημα=%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2462"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2484"/>
         <source>Subject preferred rooms</source>
         <translation>Μάθημα σε προτιμητέες αίθουσες</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2527"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2549"/>
         <source>Space constraint subject preferred rooms broken for activity with id %1 (subject=%2)</source>
         <translation>Χώρου όρος με μάθημα σε προτιμητέες αίθουσες σπάει για εργασία με id %1 (μάθημα=%2)</translation>
     </message>
@@ -15621,7 +15671,7 @@ not added - must be a duplicate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="405"/>
+        <location filename="../src/engine/generate_pre.cpp" line="407"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -15637,7 +15687,7 @@ not added - must be a duplicate</source>
  Για περισσότερες λεπτομέρειες, δείτε την λίστα ταχυδρομείου ή στείλετε μήνυμα με το ηλεκτρονικό ταχυδρομείο στον συντάκτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="457"/>
+        <location filename="../src/engine/generate_pre.cpp" line="459"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -15651,17 +15701,17 @@ not added - must be a duplicate</source>
  Για περισσότερες λεπτομέρειες, δείτε την λίστα τχυδρομείου ή στείλετε μήνυμα με το ηλεκτρονικό ταχυδρομείο στον συντάκτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="529"/>
+        <location filename="../src/engine/generate_pre.cpp" line="531"/>
         <source>Cannot optimize for subgroup %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, students set not available and/or breaks. The number of total hours for this subgroup is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε για τμήμα %1, επειδή υπάρχει ένας περιορισμός των ανώτατων %2 ωρών τύπων καθημερινά με το βάρος 100% που δεν μπορεί να γίνει σεβόμενο λόγω του αριθμού ημερών την εβδομάδα, αριθμός ωρών ανά ημέρα, σπουδαστών καθορισμένων μη διαθέσιμων ή/και κενών. Ο αριθμός συνολικών ωρών για αυτήν το τμήμα είναι %3 και ο αριθμός διαθέσιμων ωρών είναι, θεωρώντας τις μέγ. ώρες καθημερινά και άλλοι περιορισμούς, %4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1420"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1422"/>
         <source>Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation>Παρακαλώ τροποποιήστε τα στοιχεία σας αναλόγως και προσπαθήστε πάλι.  Για περισσότερες λεπτομέρειες, δείτε την λίστα ταχυδρομείου ή στείλετε μήνυμα με το ηλεκτρονικό ταχυδρομείο στον συντάκτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="872"/>
+        <location filename="../src/engine/generate_pre.cpp" line="874"/>
         <source>Cannot optimize for teacher %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -15674,62 +15724,62 @@ not added - must be a duplicate</source>
  Παρακαλώ τροποποιήστε τα στοιχεία σας αναλόγως και προσπαθήστε πάλι. Για περισσότερες λεπτομέρειες, δείτε την λίστα ταχυδρομείου ή στείλετε μήνυμα με το ηλεκτρονικό ταχυδρομείο στον συντάκτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="994"/>
+        <location filename="../src/engine/generate_pre.cpp" line="996"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε για το δάσκαλο %1, επειδή υπάρχει ένας περιορισμός των ανώτατων %2 ωρών τύπων καθημερινά με το βάρος 100% που δεν μπορεί να γίνει σεβόμενο λόγω του αριθμού ημερών την εβδομάδα, αριθμός ωρών ανά ημέρα, ανώτατες ημέρες δασκάλων την εβδομάδα, δάσκαλος μη διαθέσιμος ή/και κενά. Ο αριθμός συνολικών ωρών για αυτόν τον δάσκαλο είναι %3 και ο αριθμός διαθέσιμων ωρών είναι, θεωρώντας τις ανώτατες ώρες καθημερινώς και όλους τους άλλου περιορισμούς, %4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1037"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1039"/>
         <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε, επειδή έχετε περιορισμό τις ελάχιστες ώρες δασκάλων καθημερινά για τον καθηγητή %1 με το βάρος (ποσοστό) κάτω από 100, Αρχίζοντας από την έκδοση FET 5.4.0 είναι μόνο δυνατό να χρησιμοποιηθεί το βάρος 100% για τέτοιους περιορισμούς. Παρακαλώ κάνετε το βάρος 100% και προσπαθήστε πάλι</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1053"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1055"/>
         <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with %2 min hours daily, and the number of working hours per day is only %3. Please correct and try again</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε, επειδή έχετε περιορισμό με τις ελάχιστες ώρες καθηγητών καθημερινά για %1 με τις ελάχιστες ώρες %2 καθημερινά, και ο αριθμός ωρών απασχόλησης ανά ημέρα είναι μόνο %3. Διορθώστε και προσπαθείστε πάλι</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1079"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1081"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε, επειδή έχετε περιορισμού τις ελάχιστες ώρες καθηγητών καθημερινά με το βάρος (ποσοστό) κάτω από 10. Αρχίζοντας από την έκδοση FET 5.4.0 είναι μόνο δυνατό να χρησιμοποιηθεί το βάρος 100% για τέτοιους περιορισμούς. Παρακαλώ κάνετε το βάρος 100% και προσπαθήστε πάλι</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1095"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1097"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily with %1 min hours daily, and the number of working hours per day is only %2. Please correct and try again</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε, επειδή έχετε περιορισμό με τις ελάχιστες ώρες καθηγητών καθημερινά κ&apos; ελάχιστες ώρες %1 καθημερινά, και ο αριθμός ωρών απασχόλησης ανά ημέρα είναι μόνο %2. Διορθώστε και προσπαθείστε πάλι</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1122"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1124"/>
         <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2. This teacher has in total only %3 hours per week, so impossible constraint. Please correct and try again</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε, επειδή έχετε περιορισμό με τις ελάχιστες ώρες καθηγητή καθημερινά για %1 με τις ελάχιστες ώρες %2 καθημερινά, και ο αριθμός ωρών απασχόλησης ανά ημέρα είναι μόνο %3. Διορθώστε και προσπαθείστε πάλι</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1139"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1141"/>
         <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2. The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again</source>
         <translation>Αδυναμία βελτιστοποίησης διότι έχετε όρο με καθηγητή ελάχ. %1 ώρες ημερησίως για %2. Ο αριθμός ελαχίστων ωρών ημερησίως θα έπρεπε να είναι τουλάχιστον 2 για αποφυγή λαθών. Διορθώστε και ξαναπροσπαθήστε</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1415"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1417"/>
         <source>Cannot optimize for teacher %1, because of too constrained teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %2 and the number of available slots is, considering max days per week and all other constraints, %3.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2600"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2602"/>
         <source>Constraint %1 cannot be respected because teacher %2 has at most %3 available days from teacher not available, breaks and teacher max days per week. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2754"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2756"/>
         <source>Skip rest of min n days problems</source>
         <translation>Προσπέρασε προβλήματα ελαχ. ημερών</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2623"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2625"/>
         <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 available days from students set not available and breaks. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3494"/>
+        <location filename="../src/engine/rules.cpp" line="3500"/>
         <source>Opening a newer FET version file ... file will be opened but it is recommended to update your FET software to the latest version</source>
         <translation>Το άνοιγμα ενός νεώτερου αρχείου αρχείων έκδοσης FET... το αρχείο θα ανοίξει αλλά συστήνεται να ενημερωθεί το λογισμικό FET στην πιό πρόσφατη έκδοση</translation>
     </message>
@@ -15832,32 +15882,27 @@ number between 0.0 and 100.0, recommended 95.0 at least)</source>
         <translation>Καθηγητές ελάχ.ώρες την ημέρα </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3430"/>
+        <location filename="../src/engine/rules.cpp" line="3436"/>
         <source>Cannot open log file for writing ... please check your disk free space. Opening of file aborted</source>
         <translation>Αδυναμία ανοίγματος αρχείου καταγραφών για εγγραφή. Ελέγξτε τον ελεύθερο χώρο σας. Αδύνατη αποθήκευση αρχείου</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8658"/>
-        <source>Saved of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="8677"/>
+        <location filename="../src/engine/rules.cpp" line="8683"/>
         <source>Cannot open filename for writing ... please check your disk free space. Saving of file aborted</source>
         <translation>Αδυναμία ανοίγματος αρχείου για εγγραφή. Ελέγξτε τον ελεύθερο χώρο σας. Αδύνατη αποθήκευση αρχείου</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8789"/>
+        <location filename="../src/engine/rules.cpp" line="8795"/>
         <source>Saved file gave error code %1, which means saving is compromised. Please check your disk free space</source>
         <translation>Το σωζόμενο αρχείο έδωσε τον κώδικα %1 λάθους, το οποίο σημαίνει ότι το σώσιμο δεν γίνεταιι. Παρακαλώ ελέγξτε τον ελεύθερο χώρο των δίσκων σας</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="795"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="797"/>
         <source> Invalid (inexistent) activity id for constraint activity preferred room</source>
         <translation> Άκυρη (δεν υπάρχει) δραστηριότητα με id για όρο εργασία σε προτιμητέα αίθουσα</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1083"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1085"/>
         <source> Invalid (inexistent) activity id for constraint activity preferred rooms</source>
         <translation> Άκυρη (δεν υπάρχει) δραστηριότητα με id για όρο εργασία σε προτιμητέες αίθουσες</translation>
     </message>
@@ -15911,7 +15956,7 @@ If you really need that, please talk to the author
         <translation>Όρος ΔΕΝ προστέθηκε - διπλοεγγραφή</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="169"/>
+        <location filename="../src/interface/fet.cpp" line="173"/>
         <source>Specified language is incorrect - making it en_GB (English)</source>
         <translation>Η επιλεγμένη γλώσσα είναι ελλιπής - θα χρησιμοποιηθεί en_GB (Αγγλικά)</translation>
     </message>
@@ -15961,7 +16006,7 @@ If you really need that, please talk to the author
         <translation>Ενεργό: όχι</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="180"/>
+        <location filename="../src/interface/fet.cpp" line="184"/>
         <source>Translation for specified language not loaded - this is an error, maybe translation file is missing - making language en_GB (English)</source>
         <translation>Μετάφραση επιλέγμένης γλώσσας δεν φορτώθηκε - είναι σφάλμα, πιθανώς το αρχείο μετάφρασης να λείπει - θα χρησιμοποιηθεί en_GB (Αγγλικά)</translation>
     </message>
@@ -15981,22 +16026,22 @@ If you really need that, please talk to the author
         <translation>Παρακαλώ σημειώστε ότι κάθε αίθουσα μπορεί να κρατήσει μια ενιαία δραστηριότητα σε μια καθορισμένη περίοδο. Εάν έχετε μεγαλύτερη αίθουσα, που μπορεί να κρατήσει περισσότερες δραστηριότητες συγχρόνως,  προσθέστε περισσότερες αίθουσες, που αντιπροσωπεύουν αυτήν την μεγαλύτερη αίθουσα</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2713"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2715"/>
         <source>Constraint %1 cannot be respected because teacher %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
         <translation>Ο περιορισμός %1 δεν μπορεί να γίνει σεβόμενος επειδή ο καθηγητής %2 έχει το πολύ %3 ελεύθερες ημέρες . Διευκρινίσατε για αυτόν τον περιορισμό εάν διαδοχικό  ίδια ημέρα=αληθές. Αυτήν την περίοδο το FET δεν μπορεί να βάλει περισσότερες από 2 δραστηριότητες σε την ίδια μέρα, διαδοχικές αν είναι την ίδια ημέρα. Αυτή είναι σπάνια περίπτωση, γι&apos; αυτό δεν πολυ-ασχολήθηκα με αυτό. Εάν πρέπει, αλλάξτε το αρχείο σας (μην επιτρέπετε συνεχόμενα αν σε ίδια ημέρα ή προσθέστε εργασίες μεγαλύτερης διάρκειας) ή επικοινωνήστε με συντάκτη/λίστα-ταχυδρομείου.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2749"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2751"/>
         <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3825"/>
+        <location filename="../src/engine/rules.cpp" line="3831"/>
         <source>Skip rest of such warnings</source>
         <translation>Προσπέραση παρόμοιων ειδοποιήσεων</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3825"/>
+        <location filename="../src/engine/rules.cpp" line="3831"/>
         <source>See next such warning</source>
         <translation>Δες επόμενη ειδοποίηση</translation>
     </message>
@@ -16006,7 +16051,7 @@ If you really need that, please talk to the author
         <translation>Προεπεξεργασία εργασιών ... παρακαλούμε περιμένετε</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3872"/>
+        <location filename="../src/engine/rules.cpp" line="3878"/>
         <source>Loading activities ... please wait</source>
         <translation>Φόρτωση εργασιών ... περιμένετε</translation>
     </message>
@@ -16055,37 +16100,37 @@ Please talk to the author or increase variable MAX_TOTAL_SUBGROUPS. Currently MA
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3769"/>
+        <location filename="../src/engine/rules.cpp" line="3775"/>
         <source>Your file contains group %1 which might be unneeded. Starting with FET 5.4.17, it is corrected a potentially bad situation. It is highly recommended to remove this group ending in WHOLE YEAR, for performance reasons.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3772"/>
+        <location filename="../src/engine/rules.cpp" line="3778"/>
         <source>You may want to add a group in an empty year - in this case please choose a name not ending in WHOLE YEAR, so you can avoid this warning.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3775"/>
+        <location filename="../src/engine/rules.cpp" line="3781"/>
         <source>From now on, if you have an empty year, there will be added an automatic group only in the generated timetables, not in the data file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3823"/>
+        <location filename="../src/engine/rules.cpp" line="3829"/>
         <source>For more details, join the mailing list or email the author.</source>
         <translation>Για περισσότερες πληροφορίες, δείτε την λίστα ταχυδρομείου ή επικοινωνήστε με τον συγγραφέα.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3815"/>
+        <location filename="../src/engine/rules.cpp" line="3821"/>
         <source>Your file contains subgroup %1 which might be unneeded. Starting with FET 5.4.17, it is corrected a potentially bad situation. It is highly recommended to remove this subgroup ending in WHOLE GROUP, for performance reasons.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3818"/>
+        <location filename="../src/engine/rules.cpp" line="3824"/>
         <source>You may want to add a subgroup in an empty group - in this case please choose a name not ending in WHOLE GROUP, so you can avoid this warning.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3821"/>
+        <location filename="../src/engine/rules.cpp" line="3827"/>
         <source>From now on, if you have an empty group, there will be added an automatic subgroup only in the generated timetables, not in the data file.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16154,7 +16199,7 @@ Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no)</comment>
         <translation>Act: T:%1, S:%2, St:%3, Id:%4, D:%5, A:%6</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2920"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2942"/>
         <source>Activity tag=%1</source>
         <translation>Εργασίας χαρ/σμός=%1</translation>
     </message>
@@ -16174,93 +16219,93 @@ Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no)</comment>
         <translation>Όροι χώρου άμεσα σχετικοί με τον χαρ/σμό εργασίας:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1452"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1454"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1470"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1472"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per week with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1534"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1536"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per week relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1565"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1567"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per day with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1583"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1585"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per day with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1647"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1649"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per day relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1881"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1883"/>
         <source>Cannot optimize for subgroup %1, because you have a max gaps constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint max gaps or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1897"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1899"/>
         <source>Cannot optimize for subgroup %1, because you have an early max beginnings at second hour constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint early m.b.a.s.h. or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1953"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1955"/>
         <source>Cannot optimize for subgroup %1, because early max beginnings at second hour constraint has max beginnings at second hour %2, and the number of days per week is %3 which is less. It must be that the number of days per week must be greater or equal with the max beginnings at second hour
 Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3648"/>
+        <location filename="../src/engine/rules.cpp" line="3654"/>
         <source>Your file contains subject tags list, which is named in versions&gt;=5.5.0 activity tags list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6146"/>
+        <location filename="../src/engine/rules.cpp" line="6152"/>
         <source>File contains constraint students no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7045"/>
+        <location filename="../src/engine/rules.cpp" line="7051"/>
         <source>Skip rest of such information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7045"/>
+        <location filename="../src/engine/rules.cpp" line="7051"/>
         <source>See next improved constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6195"/>
+        <location filename="../src/engine/rules.cpp" line="6201"/>
         <source>File contains constraint students set no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6336"/>
+        <location filename="../src/engine/rules.cpp" line="6342"/>
         <source>File contains constraint students early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6422"/>
+        <location filename="../src/engine/rules.cpp" line="6428"/>
         <source>File contains constraint students set early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6821"/>
+        <location filename="../src/engine/rules.cpp" line="6827"/>
         <source>Constraint ActivitiesPreferredTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6842"/>
+        <location filename="../src/engine/rules.cpp" line="6848"/>
         <source>Constraint ActivitiesPreferredTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16271,19 +16316,19 @@ Please modify your data correspondingly and try again</source>
         <translation>,AT:</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5005"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5027"/>
         <source>T:%1</source>
         <comment>T means teacher</comment>
         <translation>T:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3918"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3940"/>
         <source>St:%1</source>
         <comment>St means students</comment>
         <translation>St:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2011"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2028"/>
         <source>R:%1</source>
         <comment>R means Room</comment>
         <translation>R:%1</translation>
@@ -16469,143 +16514,128 @@ Please modify your data correspondingly and try again</source>
         <translation>N:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3261"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed room (from constraints activity preferred room(s) and subject (activity tag) preferred room(s) )</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3277"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no home room (from constraints students set home room(s) and teacher home room(s))</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3327"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no home room (from the allowed number of students)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3359"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3627"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3572"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3840"/>
         <source>Skip rest of max changes per day problems</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3633"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3901"/>
         <source>See next incompatibility changes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3383"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3651"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3422"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3690"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3633"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3901"/>
         <source>Skip rest of max changes per week problems</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3446"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3714"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3485"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3753"/>
         <source>Cannot optimize, because there is a space constraint students set min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3510"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3778"/>
         <source>Skip rest of min gaps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3694"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3962"/>
         <source>See next incompatibility min gaps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3509"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3777"/>
         <source>Cannot optimize, because there is a space constraint students min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3549"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3817"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3571"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3839"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3610"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3878"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3632"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3900"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3671"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3939"/>
         <source>Cannot optimize, because there is a space constraint teacher min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3694"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3962"/>
         <source>Skip rest of min gaps problems</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3693"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3961"/>
         <source>Cannot optimize, because there is a space constraint teachers min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4032"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4319"/>
         <source>This is the initial evaluation order of activities computed by FET. If the generation gets stuck after a certain number of activities, please check the activity corresponding to this number+1. You might find errors in your input.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4034"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4321"/>
         <source>The initial order of activities (id-s):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4037"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4324"/>
         <source>No: %1</source>
         <comment>Number</comment>
         <translation>No: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4041"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4328"/>
         <source>id=%1</source>
         <translation>id=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4044"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4331"/>
         <source>teachers:</source>
         <translation>καθηγητές:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4049"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4336"/>
         <source>subject:</source>
         <translation>μάθημα:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4053"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4340"/>
         <source>students:</source>
         <translation>μαθητές:</translation>
     </message>
@@ -16638,82 +16668,82 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4205"/>
+        <location filename="../src/engine/rules.cpp" line="4211"/>
         <source>File contains constraint teacher not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint teacher not available times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4358"/>
+        <location filename="../src/engine/rules.cpp" line="4364"/>
         <source>Constraint TeacherNotAvailableTimes day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4376"/>
+        <location filename="../src/engine/rules.cpp" line="4382"/>
         <source>Constraint TeacherNotAvailableTimes hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4456"/>
+        <location filename="../src/engine/rules.cpp" line="4462"/>
         <source>File contains constraint students set not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set not available times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4610"/>
+        <location filename="../src/engine/rules.cpp" line="4616"/>
         <source>Constraint StudentsSetNotAvailableTimes day corrupt for students %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4628"/>
+        <location filename="../src/engine/rules.cpp" line="4634"/>
         <source>Constraint StudentsSetNotAvailableTimes hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5683"/>
+        <location filename="../src/engine/rules.cpp" line="5689"/>
         <source>File contains constraint break, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint break times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5711"/>
+        <location filename="../src/engine/rules.cpp" line="5717"/>
         <source>Constraint Break day corrupt for day %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5725"/>
+        <location filename="../src/engine/rules.cpp" line="5731"/>
         <source>Constraint Break start hour corrupt for hour %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5739"/>
+        <location filename="../src/engine/rules.cpp" line="5745"/>
         <source>Constraint Break end hour corrupt for hour %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5828"/>
+        <location filename="../src/engine/rules.cpp" line="5834"/>
         <source>Constraint BreakTimes day corrupt for day %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5845"/>
+        <location filename="../src/engine/rules.cpp" line="5851"/>
         <source>Constraint BreakTimes hour corrupt for hour %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7044"/>
+        <location filename="../src/engine/rules.cpp" line="7050"/>
         <source>File contains constraint room not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint room not available times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7303"/>
+        <location filename="../src/engine/rules.cpp" line="7309"/>
         <source>Constraint RoomNotAvailableTimes day corrupt for room %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7321"/>
+        <location filename="../src/engine/rules.cpp" line="7327"/>
         <source>Constraint RoomNotAvailableTimes hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="457"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="459"/>
         <source>Room not available times</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16724,7 +16754,7 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
         <translation>WP:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="435"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="437"/>
         <source>R:%1</source>
         <comment>Room</comment>
         <translation>R:%1</translation>
@@ -16741,97 +16771,97 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
         <translation>Μη διαθέσ. σε:</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="485"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="487"/>
         <source>Constraint room not available times is wrong because it refers to inexistent room. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="523"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="525"/>
         <source>Constraint room not available times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="530"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="532"/>
         <source>Constraint room not available times is wrong because an hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="586"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="588"/>
         <source>Time constraint room not available times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="589"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="591"/>
         <source>broken for room: %1 on day %2, hour %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1321"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1323"/>
         <source>Students set home room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1387"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1394"/>
         <source>Space constraint students set home room broken for activity with id %1 (students=%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1635"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1647"/>
         <source>Space constraint students set home rooms broken for activity with id %1 (students=%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1787"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1799"/>
         <source>Teacher home room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1853"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1870"/>
         <source>Space constraint teacher home room broken for activity with id %1 (teacher=%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2021"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2038"/>
         <source>Teacher home rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2095"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2117"/>
         <source>Space constraint teacher home rooms broken for activity with id %1 (teacher=%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2902"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2924"/>
         <source>AT:%1</source>
         <comment>Activity tag</comment>
         <translation>AT:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2743"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2765"/>
         <source>Space constraint subject activity tag preferred room broken for activity with id %1 (subject=%2, activity tag=%3)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2917"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2939"/>
         <source>Subject activity tag preferred rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2983"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3005"/>
         <source>Space constraint subject activity tag preferred rooms broken for activity with id %1 (subject=%2, activity tag=%3)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3071"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3093"/>
         <source>Constraint students set max building changes per day is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4825"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4847"/>
         <source>MC:%1</source>
         <comment>MC means max changes</comment>
         <translation>MC:%1</translation>
@@ -16847,7 +16877,7 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
         <translation type="unfinished">Μέγιστες αλλαγές κτιρίων την ημέρα=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3205"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3227"/>
         <source>Space constraint students set max building changes per day broken for students=%1 on day %2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16857,12 +16887,12 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3374"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3396"/>
         <source>Space constraint students max building changes per day broken for students=%1 on day %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3463"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3485"/>
         <source>Constraint students set max building changes per week is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
@@ -16878,7 +16908,7 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
         <translation type="unfinished">Μέγιστες αλλαγές κτιρίων την εβδομάδα=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3598"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3620"/>
         <source>Space constraint students set max building changes per week broken for students=%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16888,18 +16918,18 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3766"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3788"/>
         <source>Space constraint students max building changes per week broken for students=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3853"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3875"/>
         <source>Constraint students set min gaps between building changes is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5191"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5213"/>
         <source>MG:%1</source>
         <comment>MC means min gaps</comment>
         <translation type="unfinished">MG:%1</translation>
@@ -16915,7 +16945,7 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3991"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4013"/>
         <source>Space constraint students set min gaps between building changes broken for students=%1 on day %2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16925,12 +16955,12 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4172"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4194"/>
         <source>Space constraint students min gaps between building changes broken for students=%1 on day %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4267"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4289"/>
         <source>Constraint teacher max building changes per day is wrong because it refers to inexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
@@ -16941,7 +16971,7 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
         <translation type="unfinished">Καθηγητής μέγιστες αλλαγές κτιρίων την ημέρα</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4367"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4389"/>
         <source>Space constraint teacher max building changes per day broken for teacher=%1 on day %2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16951,12 +16981,12 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4534"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4556"/>
         <source>Space constraint teachers max building changes per day broken for teacher=%1 on day %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4621"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4643"/>
         <source>Constraint teacher max building changes per week is wrong because it refers to inexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
@@ -16967,7 +16997,7 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4723"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4745"/>
         <source>Space constraint teacher max building changes per week broken for teacher=%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16977,38 +17007,38 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
         <translation type="unfinished">Καθηγητές μέγιστες αλλαγές κτιρίων την εβδομάδα</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4890"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4912"/>
         <source>Space constraint teachers max building changes per week broken for teacher=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4975"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4997"/>
         <source>Constraint teacher min gaps between building change is wrong because it refers to inexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5020"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5042"/>
         <source>Teacher min gaps between building change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5208"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5230"/>
         <source>Min gaps between building change=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5079"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5101"/>
         <source>Space constraint teacher min gaps between building changes broken for teacher=%1 on day %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5204"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5226"/>
         <source>Teachers min gaps between building change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5260"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5282"/>
         <source>Space constraint teachers min gaps between building changes broken for teacher=%1 on day %2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -17236,27 +17266,27 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3778"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4046"/>
         <source>Activity with id=%1 has no allowed slot - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3780"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4048"/>
         <source>Skip rest of such problems</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3780"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4048"/>
         <source>See next incompatibility</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1561"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1568"/>
         <source>Students set home rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2684"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2706"/>
         <source>Subject activity tag preferred room</source>
         <translation type="unfinished"></translation>
     </message>
@@ -17287,6 +17317,56 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <source>Available</source>
         <comment>Please keep translation short</comment>
         <translation type="unfinished">Διαθέσιμος</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="3499"/>
+        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="3595"/>
+        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from the allowed number of students)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="3050"/>
+        <source>Cannot generate timetable, because you have more than one constraint of type students set home room(s) for students set %1. Please leave only one of them</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="3133"/>
+        <source>Cannot generate timetable, because you have more than one constraint of type teacher home room(s) for teacher %1. Please leave only one of them</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="8664"/>
+        <source>Saving of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform.cpp" line="141"/>
+        <source>A constraint of this type exists for the same room - cannot proceed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="147"/>
+        <source>A constraint of this type exists for the same students set - cannot proceed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="132"/>
+        <source>A constraint of this type exists for the same teacher - cannot proceed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="3524"/>
+        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from subject or subject activity tag or activity preferred room(s)). This means that a constraint preferred room(s) hos 0 rooms in it. This should not happen. Please report possible bug.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="3545"/>
+        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from the allowed number of students)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -17381,7 +17461,7 @@ can bring problems of misunderstanding.</source>
 - less then 1 kb larger filesize than level 0
 - css file created to style elements table, caption, thead, tfoot, tbody,th and td
 - page-break after every or every second timetable (useful if you print timetables)</source>
-        <translation>Επίπεδο 1 - βασικό css
+        <translation type="obsolete">Επίπεδο 1 - βασικό css
 -  1 kb μεγαλύτερο από επίπεδο 0
 - css αρχείο θα περιέχει στοιχεία όπως: elements table, caption, thead, tfoot, tbody,th , td
 - αλλαγή σελίδας μετά από 1-2 εγγραφές  (χρήσιμο για εκτύπωση)</translation>
@@ -17401,7 +17481,7 @@ can bring problems of misunderstanding.</source>
 - all features of level 2 with around 2 times larger filesize then level 2
 - style (or hide) all subjects, subjectstags, teachers, students and rooms
 - style (or hide) line 1, line 2 and line 3 of the activity cells</source>
-        <translation>Επίπεδο 3 - αυξημένο css
+        <translation type="obsolete">Επίπεδο 3 - αυξημένο css
 - όλα όσα περιέχει το 2 με διπλάσια ανάλυση και μέγεθος αρχείου
 - εμφάνιση (ή όχι) μάθημα, χαρ/σμός, καθηγητής, μαθητής, αίθουσα
 - εμφάνιση (ή όχι) γραμμή 1, γραμμή 2 και γραμμή 3 των κελιών εργασίας</translation>
@@ -17411,7 +17491,7 @@ can bring problems of misunderstanding.</source>
         <source>Level 4 - full css
 - all features of level 3 with around 3 times larger filesize then level 2
 - style every single subject, subjectstag, teacher, student and room</source>
-        <translation>Επίπεδο 4 - πλήρες css
+        <translation type="obsolete">Επίπεδο 4 - πλήρες css
 - όλα του 3 με περίπου 3 φορές μεγαλύτερη ανάλυση από το επίπεδο 2
 - στυλ για κάθε ένα μάθημα, χαρ/σμό, καθηγητή, μαθητή και αίθουσα</translation>
     </message>
@@ -17421,7 +17501,7 @@ can bring problems of misunderstanding.</source>
 - all features of level 4 with around 4 times larger filesize then level 2
 - highlighting of same subjects, subjectstags, teachers, students and rooms
   (needs JavaScript - just move mouse over a word and wait a little bit)</source>
-        <translation>Επίπεδο 5 - JavaScript
+        <translation type="obsolete">Επίπεδο 5 - JavaScript
 - όλα του 4 με περίπου 4 φορές μεγαλύτερη ανάλυση από το επίπεδο 2
 - εμφάνιση ίδιων μαθημάτων, χαρ/σμών, καθηγητών, μαθητών κ&apos; αιθουσών
   (χρειάζεται JavaScript - απλώς κινείτε το ποντίκι πάνω στα πεδία και περιμένετε λίγο)</translation>
@@ -17435,6 +17515,37 @@ can bring problems of misunderstanding.</source>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="119"/>
         <source>Cancel</source>
         <translation>Άκυρο</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="34"/>
+        <source>Level 1 - basic css
+- less then 1 kb larger filesize than level 0
+- css file created to style elements table, caption, thead, tfoot, tbody, th and td
+- page-break after every or every second timetable (useful if you print timetables)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="53"/>
+        <source>Level 3 - advanced css
+- all features of level 2 with around 2 times larger filesize then level 2
+- style (or hide) all subjects, activity tags, teachers, students sets and rooms
+- style (or hide) line 1, line 2 and line 3 of the activity cells</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="69"/>
+        <source>Level 4 - full css
+- all features of level 3 with around 3 times larger filesize then level 2
+- style every single subject, activity tag, teacher, students set and room</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="84"/>
+        <source>Level 5 - JavaScript
+- all features of level 4 with around 4 times larger filesize then level 2
+- highlighting of same subjects, activity tags, teachers, students sets and rooms
+  (needs JavaScript - just move mouse over a word and wait a little bit)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -17485,9 +17596,9 @@ can bring problems of misunderstanding.</source>
         <translation>Δεν μπορεί να προστεθεί τάξη %1, διότι το όνομα χρησιμοποιείται. Επιλέξτε διαφορετικό ή αφαιρέστε την παλαιά τάξη</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="639"/>
+        <location filename="../src/interface/splityearform.cpp" line="556"/>
         <source>Cannot add subgroup %1, because a set with same name exists. Please choose another name or remove old group</source>
-        <translation>Δεν μπορεί να προστεθεί τμήμα %1, διότι το όνομα χρησιμοποιείται. Επιλέξτε διαφορετικό ή αφαιρέστε το παλιό τμήμα</translation>
+        <translation type="obsolete">Δεν μπορεί να προστεθεί τμήμα %1, διότι το όνομα χρησιμοποιείται. Επιλέξτε διαφορετικό ή αφαιρέστε το παλιό τμήμα</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="707"/>
@@ -17543,6 +17654,11 @@ can bring problems of misunderstanding.</source>
         <location filename="../src/interface/splityearform.cpp" line="816"/>
         <source>OK</source>
         <translation>ΟΚ</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="639"/>
+        <source>Cannot add subgroup %1, because a set with same name exists. Please choose another name or remove old subgroup</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18038,6 +18154,26 @@ can bring problems of misunderstanding.</source>
         <source>Teachers&apos; Free Periods</source>
         <translation>Καθηγητών Ελεύθερες Ώρες</translation>
     </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="394"/>
+        <source>Total soft conflicts: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="395"/>
+        <source>Soft conflicts list (in decreasing order):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="405"/>
+        <source>Total conflicts: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="406"/>
+        <source>Conflicts list (in decreasing order):</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TimetableGenerateForm</name>
@@ -18304,6 +18440,11 @@ Simulation results should be now written. You may check now Timetable/View. The 
         <source>Usually, there is no need to stop and restart the search. But for very difficult timetables this can help. Sometimes in such cases FET can become stuck and cycle forever, and restarting might produce a very fast solution.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="434"/>
+        <source>Total soft conflicts: </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TimetableGenerateForm_template</name>
@@ -18448,6 +18589,11 @@ For more information you can join the mailing list or write to author</source>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="349"/>
         <source>Total searching time was %1h %2m %3s</source>
         <translation>Συνολικός χρόνος %1h %2m %3s</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="263"/>
+        <source>Total soft conflicts: </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

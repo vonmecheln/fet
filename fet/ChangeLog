@@ -1161,3 +1161,9 @@ Versions 5.5.0 - 5.5.x
 	- Constraint activities same starting day
 	- Teachers, students sets, rooms, breaks not available matrices
 	- Updated Romanian, Greek, Italian, Arabic translations by the persons in charge
+- Version 5.5.1
+	- Improved handling of multiple constraints preferred room for same activity (or same
+	subject or same subject+activity tag) - suggested by Volker Dirr.
+	- Improved Romanian translation.
+	- Small improvements in the interface.
+	

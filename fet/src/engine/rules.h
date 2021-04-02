@@ -625,7 +625,7 @@ public:
 	Reads the rules from the xml input file "filename".
 	Returns true on success, false on failure (inexistent file or wrong format)
 	*/
-	bool read(const QString& filename);
+	bool read(const QString& filename, bool logIntoCurrentDirectory=false);
 
 	/**
 	Write the rules to the xml input file "inputfile".

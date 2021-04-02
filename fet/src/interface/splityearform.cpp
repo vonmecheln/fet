@@ -553,7 +553,7 @@ void SplitYearForm::ok()
 								t=year+separator+namesCategory1[i]+separator+namesCategory2[j]+separator+namesCategory3[k];
 								if(gt.rules.searchStudentsSet(t)!=NULL){
 									QMessageBox::information(this, SplitYearForm::tr("FET information"), SplitYearForm::tr("Cannot add subgroup %1, because a set with same name exists. "
-									 "Please choose another name or remove old group").arg(t));
+									 "Please choose another name or remove old subgroup").arg(t));
 									return;
 								}
 							}
@@ -636,7 +636,7 @@ void SplitYearForm::ok()
 						t=year+separator+namesCategory1[i]+separator+namesCategory2[j];
 						if(gt.rules.searchStudentsSet(t)!=NULL){
 							QMessageBox::information(this, SplitYearForm::tr("FET information"), SplitYearForm::tr("Cannot add subgroup %1, because a set with same name exists. "
-							 "Please choose another name or remove old group").arg(t));
+							 "Please choose another name or remove old subgroup").arg(t));
 							return;
 						}
 					}

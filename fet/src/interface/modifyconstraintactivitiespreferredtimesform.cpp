@@ -221,12 +221,15 @@ void ModifyConstraintActivitiesPreferredTimesForm::ok()
 		
 	if(teacher=="" && students=="" && subject=="" && activityTag==""){
 		int t=QMessageBox::question(this, tr("FET question"),
-		 tr("Note: if you use this constraint for all activities, there"
-		 " will be counted gaps for not allowed slots. You might get impossible timetables."
-		 " If you use weight 100%, a correct approach is to use constraint break."
-		 " Only if you need weight less than 100% you might be forced to use this constraint, but be careful."
-		 " Are you sure you want to add this constraint for all activities?"
-		 " (no teacher, students, subject or activity tag specified)"),
+		 tr("You specified all the activities. This might be a small problem: if you specify"
+		  " a not allowed slot between two allowed slots, this not allowed slot will"
+		  " be counted as a gap in the teachers' and students' timetable.\n\n"
+		  " The best practice would be to use constraint break times.\n\n"
+		  " If you need weight under 100%, then you can use this constraint, but be careful"
+		  " not to obtain an impossible timetable (if your teachers/students are constrained on gaps"
+		  " or early gaps and if you leave a not allowed slot between 2 allowed slots or"
+		  " a not allowed slot early in the day and more allowed slots after it,"
+		  " this possible gap might be counted in teachers' and students' timetable)"),
 		 QMessageBox::Yes, QMessageBox::Cancel);
 						 
 		if(t==QMessageBox::Cancel)
@@ -235,11 +238,14 @@ void ModifyConstraintActivitiesPreferredTimesForm::ok()
 
 	if(teacher!="" && students=="" && subject=="" && activityTag==""){
 		int t=QMessageBox::question(this, tr("FET question"),
-		 tr("It is not good to add such a constraint for only a teacher."
-		  " There will be counted gaps and you might get impossible data."
-		  " It is highly recommended to use teacher not available or break constraints instead."
-		  " Only if you need weight less than 100% you might be forced to use this constraint, but be careful."
-		  " Are you sure you want to add current constraint?" ),
+		 tr("You specified only the teacher. This might be a small problem: if you specify"
+		  " a not allowed slot between two allowed slots, this not allowed slot will"
+		  " be counted as a gap in the teacher's timetable.\n\n"
+		  " The best practice would be to use constraint teacher not available times.\n\n"
+		  " If you need weight under 100%, then you can use this constraint, but be careful"
+		  " not to obtain an impossible timetable (if your teacher is constrained on gaps"
+		  " and if you leave a not allowed slot between 2 allowed slots, this possible"
+		  " gap might be counted in teacher's timetable)"),
 		 QMessageBox::Yes, QMessageBox::Cancel);
 						 
 		if(t==QMessageBox::Cancel)
@@ -247,11 +253,15 @@ void ModifyConstraintActivitiesPreferredTimesForm::ok()
 	}
 	if(teacher=="" && students!="" && subject=="" && activityTag==""){
 		int t=QMessageBox::question(this, tr("FET question"),
-		 tr("It is not good to add such a constraint for only a students set."
-		  " There will be counted gaps and you might get impossible data."
-		  " It is highly recommended to use students set not available or break constraints instead."
-		  " Only if you need weight less than 100% you might be forced to use this constraint, but be careful."
-		  " Are you sure you want to add current constraint?" ),
+		 tr("You specified only the students set. This might be a small problem: if you specify"
+		  " a not allowed slot between two allowed slots (or a not allowed slot before allowed slots),"
+		  " this not allowed slot will"
+		  " be counted as a gap (or early gap) in the students' timetable.\n\n"
+		  " The best practice would be to use constraint students set not available times.\n\n"
+		  " If you need weight under 100%, then you can use this constraint, but be careful"
+		  " not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps"
+		  " and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible"
+		  " gap might be counted in students' timetable)"),
 		 QMessageBox::Yes, QMessageBox::Cancel);
 						 
 		if(t==QMessageBox::Cancel)

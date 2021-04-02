@@ -139,6 +139,16 @@ void ModifyConstraintStudentsSetNotAvailableTimesForm::ok()
 		return;
 	}
 
+	foreach(TimeConstraint* c, gt.rules.timeConstraintsList)
+		if(c!=this->_ctr && c->type==CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE_TIMES){
+			ConstraintStudentsSetNotAvailableTimes* cc=(ConstraintStudentsSetNotAvailableTimes*)c;
+			if(cc->students==students_name){
+				QMessageBox::warning(this, QObject::tr("FET information"),
+				QObject::tr("A constraint of this type exists for the same students set - cannot proceed"));
+				return;
+			}
+		}																												
+																											
 	this->_ctr->weightPercentage=weight;
 	this->_ctr->students=students_name;
 

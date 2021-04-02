@@ -1927,11 +1927,41 @@ inline bool Generate::getHomeRoom(const QList<int>& globalConflActivities, int l
 	return chooseRoom(activitiesHomeRoomsHomeRooms[ai], globalConflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities);
 }
 
-inline bool Generate::getPreferredRoom(const QList<int>& globalConflActivities, int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& localConflActivities)
+inline bool Generate::getPreferredRoom(const QList<int>& globalConflActivities, int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& localConflActivities, bool& canBeUnspecifiedPreferredRoom)
 {
 	assert(!unspecifiedPreferredRoom[ai]);
+	
+	bool unspecifiedRoom=true;
+	QSet<int> allowedRooms;
+	foreach(PreferredRoomsItem it, activitiesPreferredRoomsList[ai]){
+		bool skip=skipRandom(it.percentage);
+		
+		if(!skip){
+			if(unspecifiedRoom){
+				unspecifiedRoom=false;
+				allowedRooms=it.preferredRooms;		
+			}
+			else{
+				allowedRooms.intersect(it.preferredRooms);
+			}
+		}
+		else{
+			if(unspecifiedRoom){
+				allowedRooms.unite(it.preferredRooms);
+			}
+			else{
+				//do nothing
+			}
+		}
+	}
+	
+	QList<int> allowedRoomsList;
+	foreach(int rm, allowedRooms)
+		allowedRoomsList.append(rm);
+		
+	canBeUnspecifiedPreferredRoom=unspecifiedRoom;
 
-	return chooseRoom(activitiesPreferredRoomsPreferredRooms[ai], globalConflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities);
+	return chooseRoom(allowedRoomsList, globalConflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities);
 }
 
 inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& conflActivities, int& nConflActivities)
@@ -1962,7 +1992,9 @@ inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int
 		}
 	}
 	else{
-		okp=getPreferredRoom(conflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities);
+		bool canBeUnspecifiedPreferredRoom;
+	
+		okp=getPreferredRoom(conflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities, canBeUnspecifiedPreferredRoom);
 		if(okp && localConflActivities.count()==0){
 			/*foreach(int t, localConflActivities){
 				conflActivities.append(t);
@@ -1972,7 +2004,7 @@ inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int
 			return okp;
 		}
 		else if(okp){
-			if(skipRandom(activitiesPreferredRoomsPercentage[ai])){
+			if(canBeUnspecifiedPreferredRoom){ //skipRandom(activitiesPreferredRoomsPercentage[ai])){
 				//get a home room
 				if(unspecifiedHomeRoom[ai]){
 					roomSlot=UNSPECIFIED_ROOM;
@@ -2005,7 +2037,7 @@ inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int
 			}
 		}
 		else{ //!ok from preferred room, search a home room
-			if(skipRandom(activitiesPreferredRoomsPercentage[ai])){
+			if(canBeUnspecifiedPreferredRoom){ //skipRandom(activitiesPreferredRoomsPercentage[ai])){
 				//get a home room
 				if(unspecifiedHomeRoom[ai]){
 					roomSlot=UNSPECIFIED_ROOM;
@@ -3451,7 +3483,7 @@ impossiblestudentsearlymaxbeginningsatsecondhour:
 							assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 							if(!k){
 								if(level==0){
-									cout<<"WARNING - maybe bug - file "<<__FILE__<<" line "<<__LINE__<<endl;
+									cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
 									//assert(0);
 								}
 								okstudentsmaxgapsperweek=false;
@@ -4201,6 +4233,14 @@ impossiblestudentsminhoursdaily:
 			int _nOc=0;
 			for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
 				//if(newTeachersDayNHours[tch][d2]>0)
+				
+				//IT IS VITAL TO USE teacherActivitiesOfTheDay as a QList<int> [tch][d2]!!!!!!!
+				//The order of evaluation of activities is changed,
+				//with activities which were moved forward and back again
+				//being put at the end.
+				//If you do not follow this, you'll get impossible timetables
+				//for italian sample or samples from South Africa, I am not sure which of these 2
+								
 				if(teacherActivitiesOfTheDay[tch][d2].count()>0 || d2==d)
 					_nOc++;
 			if(_nOc<=maxDays)
@@ -4275,7 +4315,7 @@ impossiblestudentsminhoursdaily:
 					
 					if(!canChooseDay){
 						if(level==0){
-							cout<<"WARNING - maybe bug - file "<<__FILE__<<" line "<<__LINE__<<endl;
+							cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
 							//assert(0);
 						}
 						okteachermaxdaysperweek=false;
@@ -4406,7 +4446,7 @@ impossibleteachermaxdaysperweek:
 							assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 							if(!k){
 								if(level==0){
-									cout<<"WARNING - maybe bug - file "<<__FILE__<<" line "<<__LINE__<<endl;
+									cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
 									//assert(0);
 								}
 								okteachersmaxgapsperweek=false;
@@ -4482,7 +4522,7 @@ impossibleteachersmaxgapsperweek:
 					assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 					if(!k){
 						if(level==0){
-							cout<<"WARNING - maybe bug - file "<<__FILE__<<" line "<<__LINE__<<endl;
+							cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
 							//assert(0);
 						}
 						okteachersmaxgapsperday=false;
@@ -4704,7 +4744,7 @@ impossibleteachersmaxgapsperday:
 										cout<<endl;
 									}*/
 								
-									cout<<"WARNING - maybe bug - file "<<__FILE__<<" line "<<__LINE__<<endl;
+									cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
 									//assert(0);
 								}
 								okteachersmaxhoursdaily=false;
@@ -4872,7 +4912,7 @@ impossibleteachersmaxhoursdaily:
 							
 							if(!ka){
 								if(level==0){
-									cout<<"WARNING - maybe bug - file "<<__FILE__<<" line "<<__LINE__<<endl;
+									cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
 									//assert(0);
 								}
 								okteachersminhoursdaily=false;
