@@ -178,7 +178,7 @@ extern QApplication* pqapplication;
 
 #include <QSettings>
 
-static HttpGet getter;
+//static HttpGet getter;
 
 Rules rules2;
 
@@ -292,9 +292,17 @@ FetMainForm::FetMainForm()
 
 	QObject::connect(&getter, SIGNAL(done(bool)), this, SLOT(httpDone(bool)));
 	
+	useGetter=false;
+	
 	if(checkForUpdates){
+		useGetter=true;
 		bool t=getter.getFile(QUrl("http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt"));
-		assert(t);
+		if(!t){
+			QMessageBox::critical(this, tr("FET information"), tr("Critical error - cannot check for updates"
+			 " because of a bug in application. FET will now continue operation, but you should"
+			 " visit the FET page to report this bug or to get the fixed version."));
+		}
+		//assert(t);
 	}
 	
 	settingsPrintNotAvailableSlotsAction->setCheckable(true);
@@ -369,7 +377,8 @@ void FetMainForm::closeEvent(QCloseEvent* event)
 
 FetMainForm::~FetMainForm()
 {
-	getter.http.abort();
+	if(useGetter)
+		getter.http.abort();
 }
 
 void FetMainForm::on_fileExitAction_activated()
@@ -2034,6 +2043,47 @@ void FetMainForm::on_helpInstructionsAction_activated()
 {
 	HelpInstructionsForm* form=new HelpInstructionsForm();
 	form->show();
+}
+
+void FetMainForm::on_helpManualAction_activated()
+{
+	QString s=tr("You can read a contributed user's manual in the doc/manual/ directory of FET.");
+	s+="\n\n";
+	s+=tr("This manual is contributed by Volker Dirr (timetabling.de).");
+	s+="\n\n";
+	s+=tr("You can read this manual using a web browser."
+	 " Please open the main html file from the specified directory in a web browser.");
+	s+="\n\n";
+	s+=tr("See the website timetabling.de for possible updated version of this manual.");
+
+	//show the message in a dialog
+	QDialog* dialog=new QDialog();
+	
+	dialog->setWindowTitle(tr("FET - contributed user's manual"));
+
+	QVBoxLayout* vl=new QVBoxLayout(dialog);
+	QTextEdit* te=new QTextEdit();
+	te->setPlainText(s);
+
+	te->setReadOnly(true);
+	QPushButton* pb=new QPushButton(tr("OK"));
+
+	QHBoxLayout* hl=new QHBoxLayout(0);
+	hl->addStretch(1);
+	hl->addWidget(pb);
+
+	vl->addWidget(te);
+	vl->addLayout(hl);
+	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
+
+	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	QRect rect = QApplication::desktop()->availableGeometry(dialog);
+	//QDesktopWidget* desktop=QApplication::desktop();
+	int xx=rect.width()/2 - 300;
+	int yy=rect.height()/2 - 200;
+	dialog->setGeometry(xx, yy, 600, 400);
+
+	dialog->exec();
 }
 
 void FetMainForm::on_helpInOtherLanguagesAction_activated()

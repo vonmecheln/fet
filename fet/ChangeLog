@@ -1275,3 +1275,10 @@ Versions 5.7.0 - 5.7.x
 	is by default NOT checked, because this might lead to impossible timetables for difficult files. If you want
 	spreading for these activities, you need to manually select this option.
 	- Arabic translation update by Hatim Alahmadi
+- Version 5.7.4
+	- Minor bug fix - if searching for updates at startup is enabled, it gave segmentation fault when exiting FET, under GNU/Linux.
+	Probably unnoticed bug.
+	- Switched to Qt 4.4.3
+	- Added a user's manual by Volker Dirr
+	- Spanish translation update by Jose Cesar Fernandez Lopez
+	- Added an additional sample file by Horatiu Halmajan (Faculty of Economics, Timisoara, Romania)

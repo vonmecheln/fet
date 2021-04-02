@@ -23,11 +23,17 @@
 
 #include <QMainWindow>
 
+#include "httpget.h"
+
 class FetMainForm:public QMainWindow, Ui::FetMainForm_template
 {
 	Q_OBJECT
 
 public:
+	HttpGet getter;
+	
+	bool useGetter;
+
 	FetMainForm();
 	~FetMainForm();
 	
@@ -156,6 +162,7 @@ public slots:
 	void on_helpFAQAction_activated();
 	void on_helpTipsAction_activated();
 	void on_helpInstructionsAction_activated();
+	void on_helpManualAction_activated();
 	void on_helpInOtherLanguagesAction_activated();
 	void on_helpForumAction_activated();
 

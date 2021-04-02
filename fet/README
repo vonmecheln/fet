@@ -11,14 +11,16 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE 11.0 GNU/Linux distribution,
-	Midnight Commander 4.6.2, Qt 4.4.0, gcc 4.3.1, Linux 2.6.25, other great free tools.
+	FET is created in the following environment: openSUSE 11.1-beta5 GNU/Linux distribution,
+	Midnight Commander 4.6.2-pre1, Qt 4.4.3, gcc 4.3.2, Linux 2.6.27, other great free tools.
 	FET can be run on any platform supported by the free software Qt (GNU/Linux, Windows, Mac OS X).
 
 	GNU/Linux, Mac OS X and similar OS's:
 	Software:
-		gcc 4.3.1 or similar (3.x.x and 4.1.x are fine, gcc 4.2.x does NOT work)
-		Qt 4.4.0 or compatible (4.3.x is fine, Qt 4.2.x does NOT work).
+		make (GNU make command)
+		gcc 4.3.2 or similar (3.x.x and 4.1.x are fine, gcc 4.2.x does NOT work)
+		gcc-c++ (or g++, the name may vary)
+		Qt 4.4.3 or compatible (4.3.x is fine, Qt 4.2.x does NOT work).
 	
 	Microsoft Windows:
 	For running, you need only the archive of FET compiled for Windows (which contains
@@ -41,20 +43,33 @@ Download:
 	Older versions: you will have to contact the author if you are interested.
 
 
+Getting - compiling - installing GNU tools: make, gcc and gcc-g++ (or g++):
+
+	Most probably, your platform has these installed by default or available on the internet
+	as precompiled packages. If you don't have them, please install them using YaST (on openSUSE), Adept Manager
+	(on Ubuntu or Kubuntu) or other package manager.
+	To verify that you have the correct packages, write "make --version", "gcc --version" and
+	"g++ --version".
+
+
 Getting - compiling - installing Qt by Trolltech:
 
-	You will need Qt 4.4.0 or compatible (4.3.x works, 4.2.x does NOT work) to compile FET.
+	You will need Qt 4.4.3 or compatible (4.3.x works, 4.2.x does NOT work) to compile FET.
 	You can get your corresponding version of Qt from http://www.trolltech.com or with your
 	package manager. Please get the opensource version of Qt.
 	
-	GNU/Linux: It is possible to use adept manager or other package managers to get
+	GNU/Linux: It is possible to use YaST (or Adept Manager) or other package managers to get
 	your version of Qt, pre-compiled. Please DO NOT use Qt 4.2.x, FET does not work with it.
 	Or you can download, compile and install Qt from trolltech.com .
+	On my OpenSUSE GNU/Linux, which has pre-compiled packages on the internet, I need to install
+	libqt4 and libqt4-devel packages (libqt4 is installed by default, I think) - to compile+run FET.
+	Additionally, to modify FET, you will need the qt3, qt3-devel and qt3-devel-tools packages
+	(qt3 is installed by default, I think).
 	
 	For Windows - Download latest OpenSource Qt for MinGW from http://www.trolltech.com
 	Install and let Qt download and install MinGW.
 	Please make sure, after installing Qt and MinGW, that you have
-	an environment variable named "QTDIR" which is C:\Qt\4.4.0"
+	an environment variable named "QTDIR" which is C:\Qt\4.4.3"
 	and you have in the PATH environmental variable the contents
 	QTDIR and C:\MinGW\bin.
 	
@@ -65,7 +80,7 @@ Getting - compiling - installing Qt by Trolltech:
 Compiling FET:
 	Note: compilation takes long (maybe even 1 hour, if you are using an older computer).
 	
-	Currently FET can be compiled using Qt 4.4.0 or compatible (4.3.x OK, 4.2.x NOT OK).
+	Currently FET can be compiled using Qt 4.4.3 or compatible (4.3.x OK, 4.2.x NOT OK).
 	But the majority of interface files are Qt 3.3 forms and to modify them
 	you will need Qt 3.3, which unfortunately has no free Windows version.
 	
@@ -75,18 +90,24 @@ Compiling FET:
 
 
 	GNU/Linux and similar OS's:
-	- You will need Qt 4.4.0 or compatible (NOT 4.2.x) to compile this program.
+	- You will need Qt 4.4.3 or compatible (NOT 4.2.x) to compile this program.
 	- type "qmake fet.pro". You have to use qmake from Qt 4 series, which on some systems
 	might be named qmake-qt4. So, "qmake-qt4 fet.pro" might sometimes be needed.
 	- type "make"
 	To remove the compiled objects/executable: "make clean" and/or "make distclean".
+	
+	Note (N1): if you get an error like: "uic: File generated with too recent version of Qt Designer (4.0 vs. 3.3.8b)",
+	please make sure uic links to uic4. You can check this with "uic -version". Another possibility: you may need to
+	remove the Makefiles (there are 3, in main dir, in src/ and in src/interface/) and type qmake-qt4 again,
+	because when you initially typed qmake, it was used qmake3, which is not good. Or remove fet directory and
+	unpack again the fet archive and run qmake-qt4.
 
 	
 	Mac OS X:
 	2 Variants:
 	
 	1. First variant, if you use gcc compiler:
-	- You will need Qt 4.4.0 or compatible to compile this program.
+	- You will need Qt 4.4.3 or compatible to compile this program.
 	- type "qmake fet.pro". You have to use qmake from Qt 4 series, which on some systems
 	might be named qmake-qt4. So, "qmake-qt4 fet.pro" might sometimes be needed.
 	- IMPORTANT: you might need to write: "qmake -spec macx-g++ fet.pro", if "qmake fet.pro" 
@@ -107,9 +128,9 @@ Compiling FET:
 	Then, you can remove directories "src" and "tmp", to save up space.
 	If you want to obtain a version which can be run on other computers, 
 	you have to copy these 7 files into the FET directory:
-	C:\Qt\4.4.0\bin\mingwm10.dll,
-	C:\Qt\4.4.0\bin\Qt3Support4.dll, C:\Qt\4.4.0\bin\QtCore4.dll, C:\Qt\4.4.0\bin\QtGui4.dll,
-	C:\Qt\4.4.0\bin\QtNetwork4.dll, C:\Qt\4.4.0\bin\QtSQl4.dll, C:\Qt\4.4.0\bin\QtXml4.dll.
+	C:\Qt\4.4.3\bin\mingwm10.dll,
+	C:\Qt\4.4.3\bin\Qt3Support4.dll, C:\Qt\4.4.3\bin\QtCore4.dll, C:\Qt\4.4.3\bin\QtGui4.dll,
+	C:\Qt\4.4.3\bin\QtNetwork4.dll, C:\Qt\4.4.3\bin\QtSQl4.dll, C:\Qt\4.4.3\bin\QtXml4.dll.
 	
 	
 Installing FET:

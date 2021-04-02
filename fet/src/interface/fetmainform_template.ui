@@ -16,23 +16,14 @@
    <iconset>
     <normaloff>fet-5.4.2/src/interface</normaloff>fet-5.4.2/src/interface</iconset>
   </property>
-  <widget class="QWidget" name="widget" >
-   <property name="geometry" >
-    <rect>
-     <x>0</x>
-     <y>30</y>
-     <width>557</width>
-     <height>252</height>
-    </rect>
-   </property>
-  </widget>
+  <widget class="QWidget" name="widget" />
   <widget class="QMenuBar" name="menubar" >
    <property name="geometry" >
     <rect>
      <x>0</x>
      <y>0</y>
      <width>557</width>
-     <height>30</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="helpMenu" >
@@ -42,6 +33,8 @@
     <addaction name="helpInstructionsAction" />
     <addaction name="helpTipsAction" />
     <addaction name="helpFAQAction" />
+    <addaction name="separator" />
+    <addaction name="helpManualAction" />
     <addaction name="separator" />
     <addaction name="helpInOtherLanguagesAction" />
     <addaction name="separator" />
@@ -1397,6 +1390,11 @@
   <action name="removeRedundantConstraintsAction" >
    <property name="text" >
     <string>Remove redundant constraints</string>
+   </property>
+  </action>
+  <action name="helpManualAction" >
+   <property name="text" >
+    <string>A user's manual</string>
    </property>
   </action>
  </widget>

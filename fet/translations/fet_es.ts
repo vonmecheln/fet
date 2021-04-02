@@ -864,12 +864,14 @@ encuentra una solución, quizás debas retocar esta característica</translation
  The best practice would be to use constraint break times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado todas las actividades. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de profesores y alumnos.
+La mejor solución sería usar restricciones de pausa.
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, pero ponga atención en no obtener horarios imposibles (si el profesor/alumno están restringidos en huecos o primeras horas y se deja una casilla no permitido entre dos casillas o un no permitido a primera hora del día y más casillas después, este posible hueco puede ser contabilizado en el horiario de profesores y alumnos)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="221"/>
         <source>Do you want to add current constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Desea añadir la restricción?</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="204"/>
@@ -878,7 +880,9 @@ encuentra una solución, quizás debas retocar esta característica</translation
  The best practice would be to use constraint teacher not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado solo el profesor. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de profesores.
+La mejor solución sería usar restricciones de tiempo no disponible para el profesor.
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, (pero ponga atención en no obtener horarios imposibles.)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="221"/>
@@ -887,7 +891,9 @@ encuentra una solución, quizás debas retocar esta característica</translation
  The best practice would be to use constraint students set not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible gap might be counted in students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado solo alumnos. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de alumnos.
+La mejor solución sería usar restricciones de tiempo no disponible para alumnos.
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, (pero ponga atención en no obtener horarios imposibles.)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="252"/>
@@ -900,64 +906,64 @@ encuentra una solución, quizás debas retocar esta característica</translation
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="16"/>
         <source>FET - Adding a new constraint activities preferred starting times</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Añadir restricción de momento de inicio preferido</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="35"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="53"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="66"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="79"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="89"/>
         <source>Instructions: you can choose a set of activities with a certain teacher (or
 blank for all teachers), students set, subject and activity tag.</source>
-        <translation type="unfinished">Instrucciones: puede elegir un grupo de actividades con un profesor (o
+        <translation>Instrucciones: puede elegir un grupo de actividades con un profesor (o
 vacío para todos), grupo de alumnos, materia y tipo de actividad.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="112"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="120"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="152"/>
         <source>Add constraint</source>
-        <translation type="unfinished">Añadir restricción</translation>
+        <translation>Añadir restricción</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="168"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="160"/>
         <source>Set all slots allowed</source>
-        <translation type="unfinished">Todas las casillas permitidas</translation>
+        <translation>Todas las casillas permitidas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="176"/>
         <source>Set all slots not allowed</source>
-        <translation type="unfinished">Todas las casillas no permitidas</translation>
+        <translation>Todas las casillas no permitidas</translation>
     </message>
 </context>
 <context>
@@ -965,7 +971,7 @@ vacío para todos), grupo de alumnos, materia y tipo de actividad.</translation>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="251"/>
         <source>FET question</source>
-        <translation type="unfinished">FET pregunta</translation>
+        <translation>FET pregunta</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="187"/>
@@ -974,12 +980,14 @@ vacío para todos), grupo de alumnos, materia y tipo de actividad.</translation>
  The best practice would be to use constraint break times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado todas las actividades. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de profesores y alumnos.
+La mejor solución sería usar restricciones de pausa.
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, pero ponga atención en no obtener horarios imposibles (si el profesor/alumno están restringidos en huecos o primeras horas y se deja una casilla no permitido entre dos casillas o un no permitido a primera hora del día y más casillas después, este posible hueco puede ser contabilizado en el horiario de profesores y alumnos)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="221"/>
         <source>Do you want to add current constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Desea añadir la restricción?</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="204"/>
@@ -988,7 +996,9 @@ vacío para todos), grupo de alumnos, materia y tipo de actividad.</translation>
  The best practice would be to use constraint teacher not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado solo el profesor. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de profesores.
+La mejor solución sería usar restricciones de tiempo no disponible para el profesor.
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, (pero ponga atención en no obtener horarios imposibles.)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="221"/>
@@ -997,12 +1007,14 @@ vacío para todos), grupo de alumnos, materia y tipo de actividad.</translation>
  The best practice would be to use constraint students set not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible gap might be counted in students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado solo alumnos. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de alumnos.
+La mejor solución sería usar restricciones de tiempo no disponible para alumnos.
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, (pero ponga atención en no obtener horarios imposibles.)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="252"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished">Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
+        <translation>Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
     </message>
 </context>
 <context>
@@ -1010,63 +1022,63 @@ vacío para todos), grupo de alumnos, materia y tipo de actividad.</translation>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="16"/>
         <source>FET - Adding a new constraint activities preferred time slots</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Restricción de casillas preferidas para actividades</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="160"/>
         <source>Add constraint</source>
-        <translation type="unfinished">Añadir restricción</translation>
+        <translation>Añadir restricción</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="152"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="176"/>
         <source>Set all slots allowed</source>
-        <translation type="unfinished">Todas las casillas permitidas</translation>
+        <translation>Todas las casillas permitidas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="168"/>
         <source>Set all slots not allowed</source>
-        <translation type="unfinished">Todas las casillas no permitidas</translation>
+        <translation>Todas las casillas no permitidas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="81"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="99"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="112"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="125"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="135"/>
         <source>Instructions: you can choose a set of activities with a certain teacher (or
 blank for all teachers), students set, subject and activity tag.</source>
-        <translation type="unfinished">Instrucciones: puede elegir un grupo de actividades con un profesor (o
+        <translation>Instrucciones: puede elegir un grupo de actividades con un profesor (o
 vacío para todos), grupo de alumnos, materia y tipo de actividad.</translation>
     </message>
 </context>
@@ -1075,7 +1087,7 @@ vacío para todos), grupo de alumnos, materia y tipo de actividad.</translation>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform.cpp" line="196"/>
         <source>IMPORTANT: when adding this constraint, it is necessary (otherwise generation might be impossible) to remove redundant constraints min n days between activities. Only if after adding this constraint you will have redundant min n days constraints. Please read Help/Important tips - tip number 2 for details</source>
-        <translation>IMPORTANTE: cuando añada esta restricción, es necesario (o será imposible generar un horario) eliminar las restricciones redundantes de mín n de días entre activiades. Solo si después de añadir esta restricción tienes restricciones redundantes. Lea el apartado de ayuda/consejos importantes - consejo 2 para más detalles</translation>
+        <translation>IMPORTANTE: cuando añada esta restricción, es necesario (o será imposible generar un horario) eliminar las restricciones redundantes de mín n de días entre actividades. Solo si después de añadir esta restricción tienes restricciones redundantes. Lea el apartado de ayuda/consejos importantes - consejo 2 para más detalles</translation>
     </message>
 </context>
 <context>
@@ -1593,7 +1605,7 @@ ser cuidadoso con el orden, puede ser diferente de lo que necesitas...)</transla
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="16"/>
         <source>FET - Adding a new constraint activity preferred starting times</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Restricción de tiempos de inicio preferido para actividades</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="35"/>
@@ -1674,67 +1686,67 @@ ser cuidadoso con el orden, puede ser diferente de lo que necesitas...)</transla
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="16"/>
         <source>FET - Adding a new constraint activity preferred time slots</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Restricción de casillas preferidas para actividades</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="35"/>
         <source>Activity</source>
-        <translation type="unfinished">Actividad</translation>
+        <translation>Actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="101"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="109"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="119"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="135"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="148"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="166"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="174"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="192"/>
         <source>Add constraint</source>
-        <translation type="unfinished">Añadir restricción</translation>
+        <translation>Añadir restricción</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="216"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="208"/>
         <source>Set all slots allowed</source>
-        <translation type="unfinished">Todas las casillas permitidas</translation>
+        <translation>Todas las casillas permitidas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="200"/>
         <source>Set all slots not allowed</source>
-        <translation type="unfinished">Todas las casillas no permitidas</translation>
+        <translation>Todas las casillas no permitidas</translation>
     </message>
 </context>
 <context>
@@ -1845,7 +1857,7 @@ huecos para profesores o estudiantes</translation>
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="90"/>
         <source>Add constraint</source>
-        <translation type="unfinished">Añadir restricción</translation>
+        <translation>Añadir restricción</translation>
     </message>
 </context>
 <context>
@@ -1853,77 +1865,77 @@ huecos para profesores o estudiantes</translation>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="16"/>
         <source>FET - Add new constraint min gaps between activities</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Restricción de mínimo de huecos entre actividades</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="35"/>
         <source>Add constraint</source>
-        <translation type="unfinished">Añadir restricción</translation>
+        <translation>Añadir restricción</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="43"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="67"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="75"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="104"/>
         <source>Min gaps</source>
-        <translation type="unfinished"></translation>
+        <translation>Mínimo huecos</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="114"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="133"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="151"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="164"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="177"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="211"/>
         <source>All activities (dbl. click adds)</source>
-        <translation type="unfinished">Todas actividades (dbl. click añadir)</translation>
+        <translation>Todas actividades (dbl. click añadir)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="251"/>
         <source>New Item</source>
-        <translation type="unfinished">Nuevo elemento</translation>
+        <translation>Nuevo elemento</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="245"/>
         <source>Selected (dbl. click removes)</source>
-        <translation type="unfinished">Seleccionado (dbl. click eliminar)</translation>
+        <translation>Seleccionado (dbl. click eliminar)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="263"/>
         <source>Clear</source>
-        <translation type="unfinished">Eliminar</translation>
+        <translation>Eliminar</translation>
     </message>
 </context>
 <context>
@@ -2208,77 +2220,77 @@ como huecos (huecos a primera hora).
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="68"/>
         <source>End of day</source>
-        <translation type="unfinished"></translation>
+        <translation>Fin de día</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="77"/>
         <source>Current constraint:</source>
-        <translation type="unfinished">Restricción actual:</translation>
+        <translation>Restricción actual:</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="83"/>
         <source>Weight (percentage)=%1</source>
-        <translation type="unfinished">Porcentaje=%1</translation>
+        <translation>Porcentaje=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="86"/>
         <source>Students interval max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervalo máx de días por semana para alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="91"/>
         <source>Interval start hour=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio de intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="94"/>
         <source>Interval end hour=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final de intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="97"/>
         <source>Max days per week=%1</source>
-        <translation type="unfinished">Máx días por semana=%1</translation>
+        <translation>Máx días por semana=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="160"/>
         <source>FET information</source>
-        <translation type="unfinished">FET información</translation>
+        <translation>FET información</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="112"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Porcentaje inválido</translation>
+        <translation>Porcentaje inválido</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="117"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Porcentaje inválido - debe ser 100%</translation>
+        <translation>Porcentaje inválido - debe ser 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="139"/>
         <source>Start hour invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio inválida</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="144"/>
         <source>End hour invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final inválida</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="149"/>
         <source>Start hour cannot be greater or equal than end hour</source>
-        <translation type="unfinished"></translation>
+        <translation>La hora de comienzo no puede ser mayor o igual que la de final</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="158"/>
         <source>Constraint added</source>
-        <translation type="unfinished">Restricción añadida</translation>
+        <translation>Restricción añadida</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="161"/>
         <source>Constraint NOT added - please report error</source>
-        <translation type="unfinished">Restricción NO añadida - informe del error</translation>
+        <translation>Restricción NO añadida - informe del error</translation>
     </message>
 </context>
 <context>
@@ -2286,47 +2298,47 @@ como huecos (huecos a primera hora).
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui" line="16"/>
         <source>FET - Add new constraint students interval max days per week dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Restricción de intervalo máximo de días por semana para alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui" line="35"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Añadir restricción actual</translation>
+        <translation>Añadir restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui" line="43"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui" line="67"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Ponderación (necesario: 100%)</translation>
+        <translation>Ponderación (necesario: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui" line="75"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui" line="99"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui" line="148"/>
         <source>Max days per week</source>
-        <translation type="unfinished">Máximo de días por semana</translation>
+        <translation>Máximo de días por semana</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui" line="194"/>
         <source>Interval end hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final intervalo</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui" line="235"/>
         <source>Interval start hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio intervalo</translation>
     </message>
 </context>
 <context>
@@ -2847,87 +2859,87 @@ como huecos (huecos a primera hora).</translation>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="87"/>
         <source>End of day</source>
-        <translation type="unfinished"></translation>
+        <translation>Fin de día</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="96"/>
         <source>Current constraint:</source>
-        <translation type="unfinished">Restricción actual:</translation>
+        <translation>Restricción actual:</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="102"/>
         <source>Weight (percentage)=%1</source>
-        <translation type="unfinished">Porcentaje=%1</translation>
+        <translation>Porcentaje=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="105"/>
         <source>Students set interval max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervalo máx de días por semana para alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="107"/>
         <source>Students set=%1</source>
-        <translation type="unfinished">Grupo alumnos=%1</translation>
+        <translation>Grupo alumnos=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="110"/>
         <source>Interval start hour=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio de intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="113"/>
         <source>Interval end hour=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final de intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="116"/>
         <source>Max days per week=%1</source>
-        <translation type="unfinished">Máx días por semana=%1</translation>
+        <translation>Máx días por semana=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="179"/>
         <source>FET information</source>
-        <translation type="unfinished">FET información</translation>
+        <translation>FET información</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="131"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Porcentaje inválido</translation>
+        <translation>Porcentaje inválido</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="136"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Porcentaje inválido - debe ser 100%</translation>
+        <translation>Porcentaje inválido - debe ser 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="150"/>
         <source>Invalid students set</source>
-        <translation type="unfinished">Grupo de alumnos no válido</translation>
+        <translation>Grupo de alumnos no válido</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="158"/>
         <source>Start hour invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio inválida1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="163"/>
         <source>End hour invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final inválida</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="168"/>
         <source>Start hour cannot be greater or equal than end hour</source>
-        <translation type="unfinished"></translation>
+        <translation>La hora de comienzo no puede ser mayor o igual que la de final</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="177"/>
         <source>Constraint added</source>
-        <translation type="unfinished">Restricción añadida</translation>
+        <translation>Restricción añadida</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="180"/>
         <source>Constraint NOT added - please report error</source>
-        <translation type="unfinished">Restricción NO añadida - informe del error</translation>
+        <translation>Restricción NO añadida - informe del error</translation>
     </message>
 </context>
 <context>
@@ -2935,52 +2947,52 @@ como huecos (huecos a primera hora).</translation>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="16"/>
         <source>FET - Add new constraint students set interval max days per week dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Restricción de intervalo máximo de días por semana para alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="41"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="76"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Añadir restricción actual</translation>
+        <translation>Añadir restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="84"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="108"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Ponderación (necesario: 100%)</translation>
+        <translation>Ponderación (necesario: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="116"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="140"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="189"/>
         <source>Max days per week</source>
-        <translation type="unfinished">Máximo de días por semana</translation>
+        <translation>Máximo de días por semana</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="235"/>
         <source>Interval end hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final intervalo</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="276"/>
         <source>Interval start hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio intervalo</translation>
     </message>
 </context>
 <context>
@@ -3409,7 +3421,7 @@ no disponible, los huecos no se contarán</translation>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="255"/>
         <source>FET question</source>
-        <translation type="unfinished">FET pregunta</translation>
+        <translation>FET pregunta</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="191"/>
@@ -3418,12 +3430,14 @@ no disponible, los huecos no se contarán</translation>
  The best practice would be to use constraint break times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado todas las actividades. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de profesores y alumnos.
+La mejor solución sería usar restricciones de pausa.
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, pero ponga atención en no obtener horarios imposibles (si el profesor/alumno están restringidos en huecos o primeras horas y se deja una casilla no permitida entre dos casillas o un no permitido a primera hora del día y más casillas después, este posible hueco puede ser contabilizado en el horiario de profesores y alumnos)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="225"/>
         <source>Do you want to add current constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Desea añadir la restricción?</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="208"/>
@@ -3432,7 +3446,9 @@ no disponible, los huecos no se contarán</translation>
  The best practice would be to use constraint teacher not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado solo el profesor. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de profesores.
+La mejor solución sería usar restricciones de tiempo no disponible para el profesor.
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, (pero ponga atención en no obtener horarios imposibles.)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="225"/>
@@ -3441,12 +3457,14 @@ no disponible, los huecos no se contarán</translation>
  The best practice would be to use constraint students set not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible gap might be counted in students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado solo alumnos. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de alumnos.
+La mejor solución sería usar restricciones de tiempo no disponible para alumnos.
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, (pero ponga atención en no obtener horarios imposibles.)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="256"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished">Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
+        <translation>Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
     </message>
 </context>
 <context>
@@ -3454,72 +3472,72 @@ no disponible, los huecos no se contarán</translation>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="16"/>
         <source>FET - Adding a new constraint subactivities preferred starting times</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Añadir restricción de inicio preferido para subactividades</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="35"/>
         <source>Add constraint</source>
-        <translation type="unfinished">Añadir restricción</translation>
+        <translation>Añadir restricción</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="43"/>
         <source>Set all slots allowed</source>
-        <translation type="unfinished">Todas las casillas permitidas</translation>
+        <translation>Todas las casillas permitidas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="59"/>
         <source>Set all slots not allowed</source>
-        <translation type="unfinished">Todas las casillas no permitidas</translation>
+        <translation>Todas las casillas no permitidas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="83"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="91"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="123"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="141"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="154"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="167"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="220"/>
         <source>Please choose the teacher (blank=all), students set, subject, activity tag.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elija el profesor (blanco=todos), grupo de alumnos, materia, tipo de actividad.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="185"/>
         <source>Component number (split index)</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de componente (índice de partes)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="228"/>
         <source>Please choose the component number of the subactivities to be constrained.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elija el número de componente de la subactividad para ser restringida.</translation>
     </message>
 </context>
 <context>
@@ -3527,7 +3545,7 @@ no disponible, los huecos no se contarán</translation>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="255"/>
         <source>FET question</source>
-        <translation type="unfinished">FET pregunta</translation>
+        <translation>FET pregunta</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="191"/>
@@ -3536,12 +3554,14 @@ no disponible, los huecos no se contarán</translation>
  The best practice would be to use constraint break times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado todas las actividades. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de profesores y alumnos.
+La mejor solución sería usar restricciones de pausa.
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, pero ponga atención en no obtener horarios imposibles (si el profesor/alumno están restringidos en huecos o primeras horas y se deja una casilla no permitido entre dos casillas o un no permitida a primera hora del día y más casillas después, este posible hueco puede ser contabilizado en el horiario de profesores y alumnos)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="225"/>
         <source>Do you want to add current constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Desea añadir la restricción?</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="208"/>
@@ -3550,7 +3570,9 @@ no disponible, los huecos no se contarán</translation>
  The best practice would be to use constraint teacher not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado solo el profesor. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de profesores.
+La mejor solución sería usar restricciones de tiempo no disponible para el profesor.
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, (pero ponga atención en no obtener horarios imposibles.)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="225"/>
@@ -3559,12 +3581,14 @@ no disponible, los huecos no se contarán</translation>
  The best practice would be to use constraint students set not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible gap might be counted in students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado solo alumnos. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de alumnos.
+La mejor solución sería usar restricciones de tiempo no disponible para alumnos.
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, (pero ponga atención en no obtener horarios imposibles.)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="256"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished">Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
+        <translation>Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
     </message>
 </context>
 <context>
@@ -3572,72 +3596,72 @@ no disponible, los huecos no se contarán</translation>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="16"/>
         <source>FET - Adding a new constraint subactivities preferred time slots</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Restricción de casillas preferidas para subactividades</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="35"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="43"/>
         <source>Add constraint</source>
-        <translation type="unfinished">Añadir restricción</translation>
+        <translation>Añadir restricción</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="51"/>
         <source>Set all slots not allowed</source>
-        <translation type="unfinished">Todas las casillas no permitidas</translation>
+        <translation>Todas las casillas no permitidas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="59"/>
         <source>Set all slots allowed</source>
-        <translation type="unfinished">Todas las casillas permitidas</translation>
+        <translation>Todas las casillas permitidas</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="83"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="91"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="123"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="141"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="154"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="167"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="228"/>
         <source>Please choose the teacher (blank=all), students set, subject, activity tag.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elija el profesor (blanco=todos), grupo de alumnos, materia, tipo de actividad.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="185"/>
         <source>Component number (split index)</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de componente (índice de partes)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="220"/>
         <source>Please choose the component number of the subactivities to be constrained.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elija el número de componente de la subactividad para ser restringida.</translation>
     </message>
 </context>
 <context>
@@ -3943,87 +3967,87 @@ no disponible, los huecos no se contarán</translation>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="78"/>
         <source>End of day</source>
-        <translation type="unfinished"></translation>
+        <translation>Fin de día</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="87"/>
         <source>Current constraint:</source>
-        <translation type="unfinished">Restricción actual:</translation>
+        <translation>Restricción actual:</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="93"/>
         <source>Weight (percentage)=%1</source>
-        <translation type="unfinished">Porcentaje=%1</translation>
+        <translation>Porcentaje=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="96"/>
         <source>Teacher interval max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervalo máx de días por semana para profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="98"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished">Profesor=%1</translation>
+        <translation>Profesor=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="101"/>
         <source>Interval start hour=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio de intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="104"/>
         <source>Interval end hour=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final de intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="107"/>
         <source>Max days per week=%1</source>
-        <translation type="unfinished">Máx días por semana=%1</translation>
+        <translation>Máx días por semana=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="170"/>
         <source>FET information</source>
-        <translation type="unfinished">FET información</translation>
+        <translation>FET información</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="122"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Porcentaje inválido</translation>
+        <translation>Porcentaje inválido</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="127"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Porcentaje inválido - debe ser 100%</translation>
+        <translation>Porcentaje inválido - debe ser 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="141"/>
         <source>Invalid teacher</source>
-        <translation type="unfinished">Profesor no válido</translation>
+        <translation>Profesor no válido</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="149"/>
         <source>Start hour invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio inválida</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="154"/>
         <source>End hour invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final inválida</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="159"/>
         <source>Start hour cannot be greater or equal than end hour</source>
-        <translation type="unfinished"></translation>
+        <translation>La hora de comienzo no puede ser mayor o igual que la de final</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="168"/>
         <source>Constraint added</source>
-        <translation type="unfinished">Restricción añadida</translation>
+        <translation>Restricción añadida</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="171"/>
         <source>Constraint NOT added - please report error</source>
-        <translation type="unfinished">Restricción NO añadida - informe del error</translation>
+        <translation>Restricción NO añadida - informe del error</translation>
     </message>
 </context>
 <context>
@@ -4031,52 +4055,52 @@ no disponible, los huecos no se contarán</translation>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="16"/>
         <source>FET - Add new constraint teacher interval max days per week dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Restricción de intervalo máximo de días por semana para profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="41"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="76"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Añadir restricción actual</translation>
+        <translation>Añadir restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="84"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="108"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Ponderación (necesario: 100%)</translation>
+        <translation>Ponderación (necesario: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="116"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="140"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="189"/>
         <source>Max days per week</source>
-        <translation type="unfinished">Máximo de días por semana</translation>
+        <translation>Máximo de días por semana</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="235"/>
         <source>Interval end hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio intervalo</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="276"/>
         <source>Interval start hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final intervalo</translation>
     </message>
 </context>
 <context>
@@ -4616,77 +4640,77 @@ no disponible, los huecos no se contarán</translation>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="67"/>
         <source>End of day</source>
-        <translation type="unfinished"></translation>
+        <translation>Fin de día</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="76"/>
         <source>Current constraint:</source>
-        <translation type="unfinished">Restricción actual:</translation>
+        <translation>Restricción actual:</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="82"/>
         <source>Weight (percentage)=%1</source>
-        <translation type="unfinished">Porcentaje=%1</translation>
+        <translation>Porcentaje=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="85"/>
         <source>Teachers interval max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervalo máx de días por semana para profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="88"/>
         <source>Interval start hour=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio de intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="91"/>
         <source>Interval end hour=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final de intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="94"/>
         <source>Max days per week=%1</source>
-        <translation type="unfinished">Máx días por semana=%1</translation>
+        <translation>Máx días por semana=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="149"/>
         <source>FET information</source>
-        <translation type="unfinished">FET información</translation>
+        <translation>FET información</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="109"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Porcentaje inválido</translation>
+        <translation>Porcentaje inválido</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="114"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Porcentaje inválido - debe ser 100%</translation>
+        <translation>Porcentaje inválido - debe ser 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="128"/>
         <source>Start hour invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio inválida</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="133"/>
         <source>End hour invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final inválida</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="138"/>
         <source>Start hour cannot be greater or equal than end hour</source>
-        <translation type="unfinished"></translation>
+        <translation>La hora de comienzo no puede ser mayor o igual que la de final</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="147"/>
         <source>Constraint added</source>
-        <translation type="unfinished">Restricción añadida</translation>
+        <translation>Restricción añadida</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="150"/>
         <source>Constraint NOT added - please report error</source>
-        <translation type="unfinished">Restricción NO añadida - informe del error</translation>
+        <translation>Restricción NO añadida - informe del error</translation>
     </message>
 </context>
 <context>
@@ -4694,47 +4718,47 @@ no disponible, los huecos no se contarán</translation>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="16"/>
         <source>FET - Add new constraint teachers interval max days per week dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Restricción de intervalo máximo de días por semana para profesores</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="35"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Añadir restricción actual</translation>
+        <translation>Añadir restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="43"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="67"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Ponderación (necesario: 100%)</translation>
+        <translation>Ponderación (necesario: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="75"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="99"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="148"/>
         <source>Max days per week</source>
-        <translation type="unfinished">Máximo de días por semana</translation>
+        <translation>Máximo de días por semana</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="194"/>
         <source>Interval end hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio intervalo</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="235"/>
         <source>Interval start hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final intervalo</translation>
     </message>
 </context>
 <context>
@@ -5348,52 +5372,52 @@ aunque pueden ser demasiado grandes y hacer imposible el horario.</translation>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform.cpp" line="29"/>
         <source>Any</source>
-        <translation type="unfinished">Cualquiera</translation>
+        <translation>Cualquiera</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform.cpp" line="40"/>
         <source>Yes</source>
-        <translation type="unfinished">Si</translation>
+        <translation>Si</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform.cpp" line="41"/>
         <source>No</source>
-        <translation type="unfinished">No</translation>
+        <translation>No</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform.cpp" line="39"/>
         <source>No change</source>
-        <translation type="unfinished"></translation>
+        <translation>Sin cambio</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform.cpp" line="100"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET advertencia</translation>
+        <translation>FET advertencia</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform.cpp" line="69"/>
         <source>Old weight must be -1 or both &gt;=0 and &lt;=100</source>
-        <translation type="unfinished"></translation>
+        <translation>Antiguo porcentaje debe ser -1 ó &gt;=0 y &lt;=100</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform.cpp" line="76"/>
         <source>New weight must be -1 or both &gt;=0 and &lt;=100</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuevo porcentaje debe ser -1 ó &gt;=0 y &lt;=100</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform.cpp" line="82"/>
         <source>Old min n days must be -1 or both &gt;=1 and &lt;=n_days_per_week</source>
-        <translation type="unfinished"></translation>
+        <translation>Antiguo mínimo de n días debe ser -1 ó &gt;=1 y &lt;=n_días_por_semana</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform.cpp" line="88"/>
         <source>New min n days must be -1 or both &gt;=1 and &lt;=n_days_per_week</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuevo mínimo de n días debe ser -1 ó &gt;=1 y &lt;=n_días_por_semana</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform.cpp" line="100"/>
         <source>Old n_acts must be -1 or &gt;=1</source>
-        <translation type="unfinished"></translation>
+        <translation>Antiguo n_acts debe ser -1 o &gt;=1</translation>
     </message>
 </context>
 <context>
@@ -5401,67 +5425,67 @@ aunque pueden ser demasiado grandes y hacer imposible el horario.</translation>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform_template.ui" line="19"/>
         <source>Please input old values (filters) and the new values. All old values (weight, min days and consecutive if same day) of corresponding constraints will be changed to the new ones. New weight is recommended at least 95.0 (or -1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Introduzca antiguos valores (filtros) y los nuevos valores. Todos los antiguos (ponderación, mín de días y consecutivos en el mismo día) de la coacción correspondiente serán cambiados a los nuevos. La nueva ponderación es recomendada al menos en un 95.0 (o -1)</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform_template.ui" line="42"/>
         <source>Old values (filter)</source>
-        <translation type="unfinished"></translation>
+        <translation>Valores antiguos (filtro)</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform_template.ui" line="48"/>
         <source>Weight (-1 = any)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponderación (-1 = cualquiera)</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform_template.ui" line="122"/>
         <source>-1</source>
-        <translation type="unfinished">-1</translation>
+        <translation>-1</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform_template.ui" line="62"/>
         <source>Min n days (-1 = any)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mín n días (-1 = cualquiera)</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform_template.ui" line="146"/>
         <source>Consecutive if same day</source>
-        <translation type="unfinished"></translation>
+        <translation>Consecutivo si es el mismo día</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform_template.ui" line="89"/>
         <source>N activities (-1 = any)</source>
-        <translation type="unfinished"></translation>
+        <translation>N actividades (-1= cualquiera)</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform_template.ui" line="109"/>
         <source>New values</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuevos valores</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform_template.ui" line="115"/>
         <source>Weight (0.0 to 100.0, -1 to leave unchanged)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponderación (0.0 a 100.0, -1 para dejar igual)</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform_template.ui" line="129"/>
         <source>Min n days (-1 to leave unchanged)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mín n de días (-1 para dejar igual)</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform_template.ui" line="187"/>
         <source>OK</source>
-        <translation type="unfinished">Vale</translation>
+        <translation>Vale</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform_template.ui" line="197"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform_template.ui" line="13"/>
         <source>Change more constraints min n days</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambiar mas restricciones de mín n días</translation>
     </message>
 </context>
 <context>
@@ -5587,42 +5611,42 @@ de A1, separado por pausas</translation>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="16"/>
         <source>FET - ConstraintActivitiesEndStudentsDay</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - RestricciónActividadesFinDíaEstudiantes</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="27"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="35"/>
         <source>Remove</source>
-        <translation type="unfinished">Eliminar</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="43"/>
         <source>Add</source>
-        <translation type="unfinished">Añadir</translation>
+        <translation>Añadir</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="51"/>
         <source>Modify</source>
-        <translation type="unfinished">Modificar</translation>
+        <translation>Modificar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="57"/>
         <source>New Item</source>
-        <translation type="unfinished">Nuevo elemento</translation>
+        <translation>Nuevo elemento</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="75"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restricciones</translation>
+        <translation>Restricciones</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="91"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
 </context>
 <context>
@@ -5673,42 +5697,42 @@ de A1, separado por pausas</translation>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredstartingtimesform_template.ui" line="16"/>
         <source>FET - ConstraintActivitiesPreferredStartingTimes</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - RestricciónTiemposPreferidoInicioActividades</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredstartingtimesform_template.ui" line="27"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredstartingtimesform_template.ui" line="35"/>
         <source>Remove</source>
-        <translation type="unfinished">Eliminar</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredstartingtimesform_template.ui" line="43"/>
         <source>Add</source>
-        <translation type="unfinished">Añadir</translation>
+        <translation>Añadir</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredstartingtimesform_template.ui" line="51"/>
         <source>Modify</source>
-        <translation type="unfinished">Modificar</translation>
+        <translation>Modificar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredstartingtimesform_template.ui" line="57"/>
         <source>New Item</source>
-        <translation type="unfinished">Nuevo elemento</translation>
+        <translation>Nuevo elemento</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredstartingtimesform_template.ui" line="75"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restricciones</translation>
+        <translation>Restricciones</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredstartingtimesform_template.ui" line="91"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
 </context>
 <context>
@@ -5716,49 +5740,51 @@ de A1, separado por pausas</translation>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="16"/>
         <source>FET - ConstraintActivitiesPreferredTimeSlots</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - RestricciónCasillasPreferidasActividades</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="27"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="41"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restricciones</translation>
+        <translation>Restricciones</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="49"/>
         <source>Add</source>
-        <translation type="unfinished">Añadir</translation>
+        <translation>Añadir</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="57"/>
         <source>Modify</source>
-        <translation type="unfinished">Modificar</translation>
+        <translation>Modificar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="73"/>
         <source>Remove</source>
-        <translation type="unfinished">Eliminar</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="79"/>
         <source>New Item</source>
-        <translation type="unfinished">Nuevo elemento</translation>
+        <translation>Nuevo elemento</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="91"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="99"/>
         <source>Each hour slot of each considered activity must be allowed
 by this constraint (more restrictive than preferred starting
 times for activities with duration greater than 1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Cada casilla de actividad debe ser permitida
+por esta restricción (más restrictiva que tiempo de inicio
+preferido para actividades duración mayor que 1)</translation>
     </message>
 </context>
 <context>
@@ -5808,7 +5834,9 @@ times for activities with duration greater than 1)</source>
         <source>Please try to read Help/Important tips, advice 2).
 It is IMPORTANT to remove redundant min days
 constraints if adding constraints same starting day</source>
-        <translation type="unfinished"></translation>
+        <translation>Lea la advertencia 2 de Ayuda/Consejos importantes).
+Es IMPORTANTE eliminar restricciones de mín de días
+redundantes si se añaden restricciones de mismo día inicial</translation>
     </message>
 </context>
 <context>
@@ -5899,34 +5927,36 @@ constraints if adding constraints same starting day</source>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="115"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="126"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="139"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="157"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="170"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="97"/>
         <source>Please try to read Help/Important tips, advice 2).
 It is IMPORTANT to remove redundant min days
 constraints if adding constraints same starting time</source>
-        <translation type="unfinished"></translation>
+        <translation>Lea la advertencia 2 de Ayuda/Consejos importantes).
+Es IMPORTANTE eliminar restricciones de mín de días
+redundantes si se añaden restricciones de mismo día inicial</translation>
     </message>
 </context>
 <context>
@@ -5974,27 +6004,27 @@ constraints if adding constraints same starting time</source>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="91"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="102"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="115"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="133"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="146"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
 </context>
 <context>
@@ -6159,7 +6189,7 @@ constraints if adding constraints same starting time</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform.cpp" line="162"/>
         <source>Invalid constraint</source>
-        <translation type="unfinished">Restricción inválida</translation>
+        <translation>Restricción inválida</translation>
     </message>
 </context>
 <context>
@@ -6167,67 +6197,67 @@ constraints if adding constraints same starting time</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="16"/>
         <source>FET - Time constraints activity preferred starting time</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Restricción de actividad con tiempo de inicio preferido</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nuevo elemento</translation>
+        <translation>Nuevo elemento</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restricciones</translation>
+        <translation>Restricciones</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Añadir</translation>
+        <translation>Añadir</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Eliminar</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished">Modificar</translation>
+        <translation>Modificar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="110"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="123"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="141"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="154"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
 </context>
 <context>
@@ -6235,7 +6265,7 @@ constraints if adding constraints same starting time</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform.cpp" line="162"/>
         <source>Invalid constraint</source>
-        <translation type="unfinished">Restricción inválida</translation>
+        <translation>Restricción inválida</translation>
     </message>
 </context>
 <context>
@@ -6243,67 +6273,67 @@ constraints if adding constraints same starting time</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="16"/>
         <source>FET - Time constraints activity preferred starting times</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Restricción de actividad con tiempos de inicio preferido</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nuevo elemento</translation>
+        <translation>Nuevo elemento</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restricciones</translation>
+        <translation>Restricciones</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Añadir</translation>
+        <translation>Añadir</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="67"/>
         <source>Remove</source>
-        <translation type="unfinished">Eliminar</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="78"/>
         <source>Modify</source>
-        <translation type="unfinished">Modificar</translation>
+        <translation>Modificar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="94"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="105"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="118"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="136"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="149"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="159"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
 </context>
 <context>
@@ -6311,7 +6341,7 @@ constraints if adding constraints same starting time</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform.cpp" line="162"/>
         <source>Invalid constraint</source>
-        <translation type="unfinished">Restricción inválida</translation>
+        <translation>Restricción inválida</translation>
     </message>
 </context>
 <context>
@@ -6319,74 +6349,76 @@ constraints if adding constraints same starting time</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="16"/>
         <source>FET - Time constraints activity preferred time slots</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Restricción de actividad con casillas preferidas</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="27"/>
         <source>Remove</source>
-        <translation type="unfinished">Eliminar</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="35"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="46"/>
         <source>Modify</source>
-        <translation type="unfinished">Modificar</translation>
+        <translation>Modificar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="54"/>
         <source>Add</source>
-        <translation type="unfinished">Añadir</translation>
+        <translation>Añadir</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="62"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="73"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="86"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="104"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="117"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="135"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="141"/>
         <source>New Item</source>
-        <translation type="unfinished">Nuevo elemento</translation>
+        <translation>Nuevo elemento</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="159"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restricciones</translation>
+        <translation>Restricciones</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="167"/>
         <source>Each hour slot of each considered activity must be allowed
 by this constraint (more restrictive than preferred starting
 times for activities with duration greater than 1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Cada casilla de actividad debe ser permitida
+por esta restricción (más restrictiva que tiempo de inicio
+preferido para actividades duración mayor que 1)</translation>
     </message>
 </context>
 <context>
@@ -6523,7 +6555,7 @@ times for activities with duration greater than 1)</source>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="182"/>
         <source>Invalid constraint</source>
-        <translation type="unfinished">Restricción inválida</translation>
+        <translation>Restricción inválida</translation>
     </message>
 </context>
 <context>
@@ -6531,73 +6563,74 @@ times for activities with duration greater than 1)</source>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="16"/>
         <source>FET - Time constraints min gaps between activities</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Restricción de un mínimo de huecos entre actividades</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="27"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="35"/>
         <source>Remove</source>
-        <translation type="unfinished">Eliminar</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="43"/>
         <source>Modify</source>
-        <translation type="unfinished">Modificar</translation>
+        <translation>Modificar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="51"/>
         <source>Add</source>
-        <translation type="unfinished">Añadir</translation>
+        <translation>Añadir</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="59"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="70"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="83"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="101"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="114"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="122"/>
         <source>New Item</source>
-        <translation type="unfinished">Nuevo elemento</translation>
+        <translation>Nuevo elemento</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="140"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restricciones</translation>
+        <translation>Restricciones</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="156"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="164"/>
         <source>This constraint ensures, for a set of activities: if any pair of activities is
 in the same day, they must be separated by at least min gaps (hours).</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta restricción asegura, para unas actividades: que si cualquier par de ellas
+están en el mismo día, estarán separadas por al menos un mínimo de huecos (horas).</translation>
     </message>
 </context>
 <context>
@@ -6610,12 +6643,12 @@ in the same day, they must be separated by at least min gaps (hours).</source>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="415"/>
         <source>FET information</source>
-        <translation type="unfinished">FET información</translation>
+        <translation>FET información</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="416"/>
         <source>There were inspected (and possibly modified) %1 constraints min n days between activities matching your criteria</source>
-        <translation type="unfinished"></translation>
+        <translation>Se han inspeccionado (y posiblemente modificado) %1 restricciones de mín n días entre actividades coincidiendo con los criterios</translation>
     </message>
 </context>
 <context>
@@ -6693,7 +6726,7 @@ in the same day, they must be separated by at least min gaps (hours).</source>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="140"/>
         <source>Modify multiple constraints at once</source>
-        <translation type="unfinished"></translation>
+        <translation>Modificar múltiples restricciones de una vez</translation>
     </message>
 </context>
 <context>
@@ -6833,40 +6866,40 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="121"/>
         <source>FET information</source>
-        <translation type="unfinished">FET información</translation>
+        <translation>FET información</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="121"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Restricción seleccionada no válida</translation>
+        <translation>Restricción seleccionada no válida</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="126"/>
         <source>Removing constraint:
 </source>
-        <translation type="unfinished">Restricción eliminada:
+        <translation>Restricción eliminada:
 </translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="128"/>
         <source>
 Are you sure?</source>
-        <translation type="unfinished">¿Está seguro?</translation>
+        <translation>¿Está seguro?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="130"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET advertencia</translation>
+        <translation>FET advertencia</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="131"/>
         <source>OK</source>
-        <translation type="unfinished">Vale</translation>
+        <translation>Vale</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="131"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 <context>
@@ -6874,42 +6907,42 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="16"/>
         <source>FET - Time constraints students interval max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Restricción de un intervalo de máx días por semana para alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nuevo elemento</translation>
+        <translation>Nuevo elemento</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restricciones</translation>
+        <translation>Restricciones</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Añadir</translation>
+        <translation>Añadir</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Eliminar</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished">Modificar</translation>
+        <translation>Modificar</translation>
     </message>
 </context>
 <context>
@@ -7429,40 +7462,40 @@ aulas preferidas se usan sobre las establecidas como principales.</translation>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="120"/>
         <source>FET information</source>
-        <translation type="unfinished">FET información</translation>
+        <translation>FET información</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="120"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Restricción seleccionada no válida</translation>
+        <translation>Restricción seleccionada no válida</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="125"/>
         <source>Removing constraint:
 </source>
-        <translation type="unfinished">Restricción eliminada:
+        <translation>Restricción eliminada:
 </translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="127"/>
         <source>
 Are you sure?</source>
-        <translation type="unfinished">¿Está seguro?</translation>
+        <translation>¿Está seguro?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="129"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET advertencia</translation>
+        <translation>FET advertencia</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="130"/>
         <source>OK</source>
-        <translation type="unfinished">Vale</translation>
+        <translation>Vale</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="130"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 <context>
@@ -7470,47 +7503,47 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform_template.ui" line="16"/>
         <source>FET - Time constraints students set interval max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Restricción de un intervalo de máx días por semana para grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nuevo elemento</translation>
+        <translation>Nuevo elemento</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restricciones</translation>
+        <translation>Restricciones</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Añadir</translation>
+        <translation>Añadir</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Eliminar</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished">Modificar</translation>
+        <translation>Modificar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
 </context>
 <context>
@@ -7943,12 +7976,12 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform.cpp" line="130"/>
         <source>FET help</source>
-        <translation type="unfinished">FET ayuda</translation>
+        <translation>FET ayuda</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform.cpp" line="134"/>
         <source>This constraint is used to specify that for some components of a type of activities, for instance for Mathematics activities, you need that from say 4-5 per week, at least the first 2 to start early (say in the first 4 hours).</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta restricción se usa para indicar que algunos componentes de un tipo de actividades, por ejemplo Matemáticas, necesitan que por ejemplo de los 4-5 por semana, al menos los 2 primeros comiencen temprano (pongamos las primeras 4 horas).</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform.cpp" line="139"/>
@@ -7971,53 +8004,54 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="16"/>
         <source>FET - ConstraintSubactivitiesPreferredStartingTimes</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - RestricciónTiemposInicioPreferidoSubactividades</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="27"/>
         <source>Remove</source>
-        <translation type="unfinished">Eliminar</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="35"/>
         <source>Add</source>
-        <translation type="unfinished">Añadir</translation>
+        <translation>Añadir</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="41"/>
         <source>New Item</source>
-        <translation type="unfinished">Nuevo elemento</translation>
+        <translation>Nuevo elemento</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="59"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restricciones</translation>
+        <translation>Restricciones</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="75"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="91"/>
         <source>Modify</source>
-        <translation type="unfinished">Modificar</translation>
+        <translation>Modificar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="99"/>
         <source>Help</source>
-        <translation type="unfinished">Ayuda</translation>
+        <translation>Ayuda</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="107"/>
         <source>This constraint is useful to constrain only the n-th component
 for activities. Please click Help button for details.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta restricción es útil para coaccionar solo el n-simo componente
+para actividades. Use la ayuda para más detalles.</translation>
     </message>
 </context>
 <context>
@@ -8025,7 +8059,7 @@ for activities. Please click Help button for details.</source>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="130"/>
         <source>FET help</source>
-        <translation type="unfinished">FET ayuda</translation>
+        <translation>FET ayuda</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="134"/>
@@ -8053,53 +8087,54 @@ for activities. Please click Help button for details.</source>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="16"/>
         <source>FET - ConstraintSubactivitiesPreferredTimeSlots</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - RestricciónCasillasPreferidasSubactividades</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="33"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restricciones</translation>
+        <translation>Restricciones</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="41"/>
         <source>Add</source>
-        <translation type="unfinished">Añadir</translation>
+        <translation>Añadir</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="49"/>
         <source>Modify</source>
-        <translation type="unfinished">Modificar</translation>
+        <translation>Modificar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="65"/>
         <source>Remove</source>
-        <translation type="unfinished">Eliminar</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="71"/>
         <source>New Item</source>
-        <translation type="unfinished">Nuevo elemento</translation>
+        <translation>Nuevo elemento</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="83"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="91"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="99"/>
         <source>Help</source>
-        <translation type="unfinished">Ayuda</translation>
+        <translation>Ayuda</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="107"/>
         <source>This constraint is useful to constrain only the n-th component
 for activities. Please click Help button for details.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta restricción es útil para coaccionar solo el n-simo componente
+para actividades. Use la ayuda para más detalles.</translation>
     </message>
 </context>
 <context>
@@ -8413,40 +8448,40 @@ Las aulas preferidas tienen prioridad sobre las principales.</translation>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="111"/>
         <source>FET information</source>
-        <translation type="unfinished">FET información</translation>
+        <translation>FET información</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="111"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Restricción seleccionada no válida</translation>
+        <translation>Restricción seleccionada no válida</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="116"/>
         <source>Removing constraint:
 </source>
-        <translation type="unfinished">Restricción eliminada:
+        <translation>Restricción eliminada:
 </translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="118"/>
         <source>
 Are you sure?</source>
-        <translation type="unfinished">¿Está seguro?</translation>
+        <translation>¿Está seguro?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="120"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET advertencia</translation>
+        <translation>FET advertencia</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="121"/>
         <source>OK</source>
-        <translation type="unfinished">Vale</translation>
+        <translation>Vale</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="121"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 <context>
@@ -8454,47 +8489,47 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="16"/>
         <source>FET - Time constraints teacher interval max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Restricción de intervalo máx días por semana para profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nuevo elemento</translation>
+        <translation>Nuevo elemento</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restricciones</translation>
+        <translation>Restricciones</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Añadir</translation>
+        <translation>Añadir</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Eliminar</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished">Modificar</translation>
+        <translation>Modificar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
 </context>
 <context>
@@ -9023,40 +9058,40 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="105"/>
         <source>FET information</source>
-        <translation type="unfinished">FET información</translation>
+        <translation>FET información</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="105"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Restricción seleccionada no válida</translation>
+        <translation>Restricción seleccionada no válida</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="110"/>
         <source>Removing constraint:
 </source>
-        <translation type="unfinished">Restricción eliminada:
+        <translation>Restricción eliminada:
 </translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="112"/>
         <source>
 Are you sure?</source>
-        <translation type="unfinished">¿Está seguro?</translation>
+        <translation>¿Está seguro?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="114"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET advertencia</translation>
+        <translation>FET advertencia</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="115"/>
         <source>OK</source>
-        <translation type="unfinished">Vale</translation>
+        <translation>Vale</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="115"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 <context>
@@ -9064,42 +9099,42 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="16"/>
         <source>FET - Time constraints teachers interval max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Restricción de intervalo máx días por semana para profesores</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nuevo elemento</translation>
+        <translation>Nuevo elemento</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restricciones</translation>
+        <translation>Restricciones</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Añadir</translation>
+        <translation>Añadir</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Eliminar</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished">Modificar</translation>
+        <translation>Modificar</translation>
     </message>
 </context>
 <context>
@@ -9614,127 +9649,127 @@ Are you sure?</source>
     <message>
         <location filename="../src/engine/export.cpp" line="102"/>
         <source>CSV files were exported to directory %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV se ha exportado al directorio %1.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="104"/>
         <source>Exported complete</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportación completada</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="106"/>
         <source>Export incomplete</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportación incompleta</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="144"/>
         <source>no textquote</source>
-        <translation type="unfinished"></translation>
+        <translation>sin acotador de texto</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="156"/>
         <source>Please specify the separator between fields:</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique el separador entre campos:</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="161"/>
         <source>Use field separator:</source>
-        <translation type="unfinished"></translation>
+        <translation>Use separador de campos:</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="168"/>
         <source>Please specify the text quote of text fields:</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique el acotador de textos o de campos de texto:</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="173"/>
         <source>Use textquote:</source>
-        <translation type="unfinished"></translation>
+        <translation>Use acotador de texto:</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="182"/>
         <source>The first line is the heading.</source>
-        <translation type="unfinished"></translation>
+        <translation>La primera lína es la cabecera.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="855"/>
         <source>FET critical. Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
-        <translation type="unfinished"></translation>
+        <translation>FET error crítico. No puedo abrir el archivo %1 para escritura. Compruebe el disco disponible el espacio libre. Guardado de %1 cancelado.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="283"/>
         <source>%1 activity tags exported.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 tipos de actividad exportadas.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="1050"/>
         <source>FET critical. Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
+        <translation>FET error crítico. La escritura %1 dió un error código %2, lo que implica que no se ha guardado. Compruebe el espacio en disco.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="322"/>
         <source>%1 rooms (with buildings) exported.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 aulas (con edificios) exportadas.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="358"/>
         <source>%1 subjects exported.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 materias exportadas.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="449"/>
         <source>Warning! Import of activities will fail, because %1 include set separator +.</source>
-        <translation type="unfinished"></translation>
+        <translation>¡Advertencia! La importación de actividades no funcionará, porque %1 incluye el separador +.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="392"/>
         <source>%1 teachers exported.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 profesores exportados.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="454"/>
         <source>%1 years exported.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 cursos exportados.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="455"/>
         <source>%1 groups exported.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 grupos exportados.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="456"/>
         <source>%1 subgroups exported.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 subgrupos exportados.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="577"/>
         <source>Warning! Constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>¡Advertencia! Restricción</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="542"/>
         <source>was skipped, because it refers not to a whole larger container activity</source>
-        <translation type="unfinished"></translation>
+        <translation>saltada, porque no se refiere a un contenedero mayor de actividades</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="555"/>
         <source>was skipped, because there exists another constraint of this type with larger weight percentage, referring to the same activities</source>
-        <translation type="unfinished"></translation>
+        <translation>saltada, porque existe otra restricción de este tipo con mayor porcentaje de ponderación, con respecto a las mismas actividades</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="566"/>
         <source>was skipped, because there exists another constraint of this type with same weight percentage and higher number of min days, referring to the same activities</source>
-        <translation type="unfinished"></translation>
+        <translation>saltada, porque existe otra restricción de este tipo con igual porcentaje de ponderación y mayor número de mín de días, con respecto a las mismas actividades</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="579"/>
         <source>was skipped, because there exists another constraint of this type with same weight percentage and same number of min days and consecutive if same day true, referring to the same activities</source>
-        <translation type="unfinished"></translation>
+        <translation>saltada, porque existe otra restricción de este tipo con el mismo porcentaje de ponderación y el mismo número de mín de días y consecutivo si es el mismo, con respecto a las mismas actividades</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="709"/>
         <source>%1 activities exported.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 actividades exportadas.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="1055"/>
@@ -9744,49 +9779,50 @@ Are you sure?</source>
     <message>
         <location filename="../src/engine/export.cpp" line="1056"/>
         <source>User abort export</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportación interrumpida por usuario</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="180"/>
         <source>Please specify the content of the first line:</source>
-        <translation type="unfinished"></translation>
+        <translation>Indique el contenido de la primera línea:</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="324"/>
         <source>Warning! Only %1 of %2 building names are exported, because %3 buildings don&apos;t contain any room.</source>
-        <translation type="unfinished"></translation>
+        <translation>¡Advertencia! Solo %1 de %2 nombres de edificios se exportaron, porque %3 edificios no contenían aulas.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="153"/>
         <source>Please keep the default settings.
 Import of data will be easier with these settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mantenga los ajustes normales.
+La importación será más fácil con ellos.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="183"/>
         <source>The first line contains data. Don&apos;t export heading.</source>
-        <translation type="unfinished"></translation>
+        <translation>La primera línea contiene datos. No exportar cabecera.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="86"/>
         <source>Export aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportación incompleta</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="788"/>
         <source>%1 scheduled activities exported.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 actividades programadas exportadas.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="790"/>
         <source>0 scheduled activities exported, because no timetable was generated.</source>
-        <translation type="unfinished"></translation>
+        <translation>0 actividades programadas exportadas, porque no se generó el horario previamente.</translation>
     </message>
 </context>
 <context>
     <name>FetMainForm</name>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1041"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1050"/>
         <source>Statistics for students might be the most difficult to understand. If you are using divisions of years: probably the most relevant statistics are the ones for each subgroup (so you may check only subgroups check box). You may see more hours for the years or groups, but these are not significant, please ignore them, because each year or group will count also activities of all contained subgroups.
 
 Each subgroup should have a number of hours per week close to the average of all subgroups and close to the normal number of working hours of each students set. If a subgroup has a much lower value, maybe you used incorrectly the years/groups/subgroups for activities.
@@ -9803,32 +9839,32 @@ Lea las FAQ (Preguntas Más Frecuentes) para una descripción detallada de como 
 Teniendo un subgrupo con muy pocas horas por semana siginifica que se han introducido las actividades de una forma errónea, y también que algunas restricciones como las de sin huecos, de primera hora o mínimo de horas diarias para este subgrupo pueden ser interpretadas erróneamente (Si un subgrupo tiene solo 2 actividades, entonces debe ser colocado en la primera hora, lo que es erróneo).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1048"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1057"/>
         <source>FET - information about statistics</source>
         <translation>FET - información sobre estadísticas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2063"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2113"/>
         <source>OK</source>
         <translation>Vale</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2041"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2091"/>
         <source>You can see help translated into other languages in the directory doc/ of FET</source>
         <translation>Puede ver la ayuda traducida en otros idiomas en el directorio doc/ de FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2056"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2106"/>
         <source>FET - help in other languages</source>
         <translation>FET - ayuda en otros idiomas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="828"/>
+        <location filename="../src/interface/fetmainform.cpp" line="837"/>
         <source>FET warning</source>
         <translation>FET advertencia</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="320"/>
+        <location filename="../src/interface/fetmainform.cpp" line="328"/>
         <source>Could not search for possible updates on internet - error message is: %1. I am searching for the file http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt . Maybe the current structure on web page was changed. Please visit FET web page http://www.lalescu.ro/liviu/fet/ and get latest version or, if the web page does not work, try to search for the new FET page on the internet. You can contact the author. Also, sometimes lalescu.ro might have temporary problems, try again later
 
 If you want, you can turn off automatic search for updates in Settings menu</source>
@@ -9837,12 +9873,12 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
 Puede desactivar la búsqueda automática de actualizaciones en los menús de opciones</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2569"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2619"/>
         <source>FET information</source>
         <translation>FET información</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="337"/>
+        <location filename="../src/interface/fetmainform.cpp" line="345"/>
         <source>Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/
 
 You have to manually download and install (open the FET webpage in an internet browser). Please read the information on web page regarding the newer version and choose whether to keep your current version or upgrade (the recommended option is to upgrade). You might need to hit Refresh in your web browser if links do not work
@@ -9854,384 +9890,414 @@ Tiene que descargarla manualmente y proceder a la instalación (abra la página 
 Puede desactivar la búsqueda automática de actualizaciones en el menú de opciones</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="352"/>
+        <location filename="../src/interface/fetmainform.cpp" line="360"/>
         <source>FET - exiting</source>
         <translation>FET - saliendo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="353"/>
+        <location filename="../src/interface/fetmainform.cpp" line="361"/>
         <source>File might have been changed - do you want to save it?</source>
         <translation>El archivo puede haber cambiado ¿Quiere guardarlo?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2408"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2458"/>
         <source>&amp;Yes</source>
         <translation>&amp;Si</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2408"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2458"/>
         <source>&amp;No</source>
         <translation>&amp;No</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2492"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2542"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2570"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2620"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>Trabajo en curso.
 Detenga la simulación antes de esto.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2407"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2457"/>
         <source>FET application</source>
         <translation>FET aplicación</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="396"/>
+        <location filename="../src/interface/fetmainform.cpp" line="405"/>
         <source>Are you sure you want to load new data (rules) ?</source>
         <translation>¿Está seguro de que quiere cargar nuevos datos?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="439"/>
+        <location filename="../src/interface/fetmainform.cpp" line="448"/>
         <source>Choose a file</source>
         <translation>Elija un archivo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="685"/>
+        <location filename="../src/interface/fetmainform.cpp" line="694"/>
         <source>FET info</source>
         <translation>FET información</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="452"/>
+        <location filename="../src/interface/fetmainform.cpp" line="461"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>No use comillas en el nombre de archivo, no es adecuado para el código html. El archivo no se ha cargado. Renómbrelo, eliminando los caractéres no permitidos y ábralo después con FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="458"/>
+        <location filename="../src/interface/fetmainform.cpp" line="467"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>No use ; en el nombre de archivo, no es adecuado para el código html. El archivo no se ha cargado. Renómbrelo, eliminando los caractéres no permitidos y ábralo después con FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="464"/>
+        <location filename="../src/interface/fetmainform.cpp" line="473"/>
         <source>Please do not use # in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>No use # en el nombre de archivo, no es adecuado para el código html. El archivo no se ha cargado. Renómbrelo, eliminando los caractéres no permitidos y ábralo después con FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="482"/>
+        <location filename="../src/interface/fetmainform.cpp" line="491"/>
         <source>Invalid file</source>
         <translation>Archivo inválido</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="482"/>
+        <location filename="../src/interface/fetmainform.cpp" line="491"/>
         <source>&amp;OK</source>
         <translation>&amp;Vale</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="536"/>
+        <location filename="../src/interface/fetmainform.cpp" line="545"/>
         <source>FET - %1</source>
         <translation>FET - %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="667"/>
+        <location filename="../src/interface/fetmainform.cpp" line="676"/>
         <source>Choose a filename to save under</source>
         <translation>Elija un nombre para archivar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="677"/>
+        <location filename="../src/interface/fetmainform.cpp" line="686"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work</source>
         <translation>No use comillas &quot; en el nombre de archivo, no es adecuado para el código html css</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="681"/>
+        <location filename="../src/interface/fetmainform.cpp" line="690"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work</source>
         <translation>No use ; en el nombre de archivo, no es adecuado para el código html</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="685"/>
+        <location filename="../src/interface/fetmainform.cpp" line="694"/>
         <source>Please do not use # in filename, the html css code does not work</source>
         <translation>No use # en el nombre de archivo, no es adecuado para el código html</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="529"/>
+        <location filename="../src/interface/fetmainform.cpp" line="538"/>
         <source>FET</source>
         <translation>FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="530"/>
+        <location filename="../src/interface/fetmainform.cpp" line="539"/>
         <source>File exists - are you sure you want to overwrite existing file?</source>
         <translation>El archivo ya existe - ¿está seguro de querer reemplazarlo?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2117"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2167"/>
         <source>Current file (data) has no name. Please save file under a certain name before proceeding</source>
         <translation>El archivo actual (datos) no tiene nombre. Guárdelo con un nombre antes de proceder</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2173"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2223"/>
         <source>Please generate, firstly</source>
         <translation>Genérelo previamente</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2376"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2426"/>
         <source>Please exit and restart FET to activate language change</source>
         <translation>Salga y arranque de nuevo FET para cambiar el idioma</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="442"/>
+        <location filename="../src/interface/fetmainform.cpp" line="451"/>
         <source>FET xml files (*.fet);;Old FET xml files (*.xml);;All files (*)</source>
         <comment>Comment for translators (do not translate this comment): This field is for File/Open dialog. Please keep ;; without spaces before, between and after (it is a separator), and consider that the first must be *.fet. In special right to left languages, you might need to leave this field untranslated</comment>
         <translation>FET archivos xml (*.fet);;Antiguos FET xml (*.xml);;Todos (*)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="668"/>
+        <location filename="../src/interface/fetmainform.cpp" line="677"/>
         <source>FET xml files (*.fet);;All files (*)</source>
         <comment>Comment for translators (do not translate this comment): This field is for File/Save as dialog. Please keep ;; without spaces before, between and after (it is a separator), and consider that the first must be *.fet. In special right to left languages, you might need to leave this field untranslated</comment>
         <translation>FET archivos xml (*.fet);;Todos (*)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1018"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1027"/>
         <source>This help by Liviu Lalescu, modified 7 November 2007</source>
         <translation>Ayuda por Liviu Lalescu, modificado 7 Noviembre 2007</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2100"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2150"/>
         <source>Please input at least one active activity before generating</source>
         <translation>Introduzca una actividad al menos, antes de la generación</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2130"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2180"/>
         <source>Please input at least one active activity before generating multiple</source>
         <translation>Introduzca una actividad al menos, antes de la generación múltiple</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="409"/>
+        <location filename="../src/interface/fetmainform.cpp" line="418"/>
         <source>FET - a free timetabling program</source>
         <translation>FET - Un programa de horarios libre</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="629"/>
+        <location filename="../src/interface/fetmainform.cpp" line="638"/>
         <source>FET - Warning</source>
         <translation>FET - Advertencia</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="611"/>
+        <location filename="../src/interface/fetmainform.cpp" line="620"/>
         <source>You have not yet generated a timetable - please generate firstly</source>
         <translation>No se ha generado todavía un horario - genérelo previamente</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="630"/>
+        <location filename="../src/interface/fetmainform.cpp" line="639"/>
         <source>It seems that you have an incomplete timetable. Saving of timetable does not work for incomplete timetables. Please generate a complete timetable</source>
         <translation>Parece que tienen un horario incompleto. El guardado de horarios no completos no funciona. Genérelo complentamente</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="636"/>
+        <location filename="../src/interface/fetmainform.cpp" line="645"/>
         <source>Please read this important information before proceeding:</source>
         <translation>Lea la información antes de continuar:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="651"/>
+        <location filename="../src/interface/fetmainform.cpp" line="660"/>
         <source>This option is useful for institutions where you obtain a timetable, then some small changes appear, and you need to regenerate timetable, but respecting in a large proportion the old timetable</source>
         <translation>Esta opción es útil para instituciones donde se obtiene un horario y posteriormente es necesario algún ajuste respetando el horario antiguo en casi su totalidad</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="656"/>
+        <location filename="../src/interface/fetmainform.cpp" line="665"/>
         <source>Current data file will not be affected by anything, locking constraints will only be added to the file you select to save (you can save current datafile and open saved timetable file after that to check it)</source>
         <translation>Los datos actuales no serán afectados, las restricciones serán añadidas al archivo que selecciones para guardar (se puede guardar el archivo de datos y abrirlo después para comprobarlo)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="660"/>
+        <location filename="../src/interface/fetmainform.cpp" line="669"/>
         <source>If you need more information, contact author or mailing list</source>
         <translation>Si necesita más información, contacte con el autor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="662"/>
+        <location filename="../src/interface/fetmainform.cpp" line="671"/>
         <source>FET - information about saving a timetable as</source>
         <translation>FET - información sobre salvar el horario</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="700"/>
+        <location filename="../src/interface/fetmainform.cpp" line="709"/>
         <source>File exists</source>
         <translation>El archivo existe</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="703"/>
+        <location filename="../src/interface/fetmainform.cpp" line="712"/>
         <source>For safety (so you don&apos;t lose work), it is not allowed to overwrite an existing file with locking and saving a current data+timetable</source>
         <translation>Para seguridad (y no perder trabajo), no se permite sobreescribir un archivo existente con bloqueos y datos actuales+horario</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="705"/>
+        <location filename="../src/interface/fetmainform.cpp" line="714"/>
         <source>Please choose a non-existing name</source>
         <translation>Elija un nombre no existente</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="816"/>
+        <location filename="../src/interface/fetmainform.cpp" line="825"/>
         <source>Added the following constraint to saved file:</source>
         <translation>Añadió las siguientes restricciones al horarios guardado:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="818"/>
+        <location filename="../src/interface/fetmainform.cpp" line="827"/>
         <source>Constraint
 %1 NOT added to saved file - duplicate</source>
         <translation>Restricción
 %1 NO añadida al archivo - está duplicada</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="829"/>
+        <location filename="../src/interface/fetmainform.cpp" line="838"/>
         <source>Skip information</source>
         <translation>Información descartada</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="829"/>
+        <location filename="../src/interface/fetmainform.cpp" line="838"/>
         <source>See next</source>
         <translation>Ver siguiente</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="838"/>
+        <location filename="../src/interface/fetmainform.cpp" line="847"/>
         <source>Added %1 locking time constraints and %2 locking space constraints to saved file, ignored %3 activities which were already fixed in time and %4 activities which were already fixed in space</source>
         <translation>Añadidas %1 bloqueos en restricción de tiempo y %2 bloqueos en restricción de espacio al archivo guardado, se han ignorado %3 actividades temporares y %4 de espacio</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="854"/>
+        <location filename="../src/interface/fetmainform.cpp" line="863"/>
         <source>File saved successfully. You can see it on the hard disk. Current data file remained untouched (of locking constraints), so you can save it also, or generate different timetables.</source>
         <translation>El archivo se ha guardado. Puede verlo en el disco. Los datos actuales permanecen inalterados (de restricciones), así que puede guardarlo y generar otros horarios diferentes.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="646"/>
+        <location filename="../src/interface/fetmainform.cpp" line="655"/>
         <source>This option is only useful if you need to lock current timetable into a file. Locking means that there will be added constraints activity preferred starting time and activity preferred room with 100% importance for each activity to fix it at current place in current timetable. You can save this timetable as an ordinary .fet file; when you&apos;ll open it, you&apos;ll see all old inputted data (activities, teachers, etc.) and the locking constraints as the last time/space constraints. You can unlock some of these activities (by removing constraints) if small changes appear in the configuration, and generate again and the remaining locking constraints will be respected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta opción es útil únicamente si se necesita bloquear el horario actual en un archivo. El bloqueo significa que serán añadidas las restricción de tiempo de inicio y aulas con actividad preferida, con un 100% de ponderación para cada actividad, y fijarla en el sitio actual del horario. Se puede guardar este horario como un archivo .fet normal; cuando lo abra, verá todos los datos introducidos (actividades, profesores, etc.) y el bloqueo de las restricciones de tiempo y lugar. Se pueden desbloquear algunas de ellas (eliminando restricciones) si aparecen pequeños cambios en la configuración, y generar de nuevo respetando los bloqueos restantes.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2387"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2437"/>
         <source>Are you sure you want to reset all settings to defaults?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está seguro de querer poner todos los ajustes por omisión?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2390"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2440"/>
         <source>That means</source>
-        <translation type="unfinished"></translation>
+        <translation>Esto implica</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2392"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2442"/>
         <source>1. Mainform geometry will be reset to default</source>
-        <translation type="unfinished"></translation>
+        <translation>1. La geometría del formulario principal será reiniciada</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2394"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2444"/>
         <source>2. Check for updates at startup will be disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Se desactivará la búsqueda de actualizaciones de FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2396"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2446"/>
         <source>3. Language will be en_GB (restart needed to activate language change)</source>
-        <translation type="unfinished"></translation>
+        <translation>3. El idioma será en_GB (inglés, siendo necesario reiniciar para ver el cambio)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2398"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2448"/>
         <source>4. Working directory will be sample_inputs</source>
-        <translation type="unfinished"></translation>
+        <translation>4. El directorio de trabajo será sample_inputs</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2400"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2450"/>
         <source>5. Html level of the timetables will be 2</source>
-        <translation type="unfinished"></translation>
+        <translation>5. El nivel de generación de horarios será el 2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2402"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2452"/>
         <source>6. Import directory will be %1</source>
-        <translation type="unfinished"></translation>
+        <translation>6. El directorio de importación será %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2043"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2093"/>
         <source>Currently (17 July 2008), there are:</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualmente (17 Julio 2008), hay:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2045"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2095"/>
         <source>1. ar - Arabic - Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>1. ar - Arabic - Manual</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2047"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2097"/>
         <source>2. es - Spanish - Instructions</source>
-        <translation type="unfinished">1. es - Español - Instrucciones {2.?}</translation>
+        <translation>2. es - Español - Instrucciones</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2049"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2099"/>
         <source>3. it - Italian - Instructions, FAQ</source>
-        <translation type="unfinished"></translation>
+        <translation>3. it - Italian - Instructions, FAQ</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2051"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2101"/>
         <source>4. ro - Romanian - Import/Export Help</source>
-        <translation type="unfinished"></translation>
+        <translation>4. ro - Romanian - Import/Export Help</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1982"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1991"/>
         <source>FET has a forum where you can ask questions or talk about FET</source>
-        <translation type="unfinished"></translation>
+        <translation>FET tiene un foro dónde se puede preguntar o hablar sobre FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1984"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1993"/>
         <source>The current address is: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>La dirección actual es: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1986"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1995"/>
         <source>Please open this address in a web browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Abra esa dirección en un navegador de internet</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1988"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1997"/>
         <source>If it does not work, please search the FET web page, maybe the address was changed</source>
-        <translation type="unfinished"></translation>
+        <translation>Si no funciona, use la página principal web de FET, puede ser que se cambie</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1994"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2003"/>
         <source>FET forum</source>
-        <translation type="unfinished"></translation>
+        <translation>FET foro</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2404"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2454"/>
         <source>7. Mark not available slots with -x- in timetables will be true</source>
-        <translation type="unfinished"></translation>
+        <translation>7. Se marcarán casillas no disponibles con -x- en los horarios</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="424"/>
+        <location filename="../src/interface/fetmainform.cpp" line="433"/>
         <source>New file generated</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuevo archivo generado</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="479"/>
+        <location filename="../src/interface/fetmainform.cpp" line="488"/>
         <source>File opened</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo abierto</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="884"/>
+        <location filename="../src/interface/fetmainform.cpp" line="893"/>
         <source>File saved</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo guardado</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2466"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2516"/>
         <source>You have more than 6 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiene más de 6 días por semana, por lo que probablemente no necesita esto. ¿Desea continuar igualmente?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2490"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2540"/>
         <source>FET question</source>
-        <translation type="unfinished">FET pregunta</translation>
+        <translation>FET pregunta</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2492"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2542"/>
         <source>&amp;Continue</source>
+        <translation>&amp;Continuar</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="2537"/>
+        <source>You have less than 5 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
+        <translation>Tiene menos de 5 días por semana, por lo que probablemente no necesita esto. ¿Desea continuar igualmente?</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="303"/>
+        <source>Critical error - cannot check for updates because of a bug in application. FET will now continue operation, but you should visit the FET page to report this bug or to get the fixed version.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2487"/>
-        <source>You have less than 5 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
+        <location filename="../src/interface/fetmainform.cpp" line="2050"/>
+        <source>You can read a contributed user&apos;s manual in the doc/manual/ directory of FET.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="2052"/>
+        <source>This manual is contributed by Volker Dirr (timetabling.de).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="2055"/>
+        <source>You can read this manual using a web browser. Please open the main html file from the specified directory in a web browser.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="2057"/>
+        <source>See the website timetabling.de for possible updated version of this manual.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="2062"/>
+        <source>FET - contributed user&apos;s manual</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10243,247 +10309,247 @@ Detenga la simulación antes de esto.</translation>
         <translation>FET - Un programa de horarios libre</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="40"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="31"/>
         <source>&amp;Help</source>
         <translation>&amp;Ayuda</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="54"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="47"/>
         <source>&amp;File</source>
         <translation>&amp;Archivo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="91"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="84"/>
         <source>&amp;Timetable</source>
         <translation>&amp;Horario</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="105"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="98"/>
         <source>Statistics</source>
         <translation>Estadísticas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="117"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="110"/>
         <source>&amp;Data</source>
         <translation>&amp;Datos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="777"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="770"/>
         <source>Space constraints (misc)</source>
         <translation>Restricciones de lugar (varias)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="809"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="802"/>
         <source>Space constraints (rooms)</source>
         <translation>Restricciones de lugar (aulas)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="702"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="695"/>
         <source>Time constraints (misc)</source>
         <translation>Restricciones temporales (varias)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="686"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="679"/>
         <source>Time constraints (students)</source>
         <translation>Restricciones temporales (alumnado)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="694"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="687"/>
         <source>Time constraints (activities)</source>
         <translation>Restricciones temporales (actividades)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="678"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="671"/>
         <source>Time constraints (teachers)</source>
         <translation>Restricciones temporales (profesorado)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="314"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="307"/>
         <source>Settings</source>
         <translation>Opciones</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="318"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="311"/>
         <source>Language</source>
         <translation>Idioma/Language</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="364"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="357"/>
         <source>&amp;New</source>
         <translation>&amp;Nuevo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="367"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="360"/>
         <source>New</source>
         <translation>Nuevo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="370"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="363"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="375"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="368"/>
         <source>&amp;Open...</source>
         <translation>&amp;Abrir...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="378"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="371"/>
         <source>Open</source>
         <translation>Abrir</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="381"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="374"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="386"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="379"/>
         <source>&amp;Save</source>
         <translation>&amp;Guardar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="389"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="382"/>
         <source>Save</source>
         <translation>Guardar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="392"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="385"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="397"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="390"/>
         <source>Save &amp;As...</source>
         <translation>Guard&amp;ar como...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="400"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="393"/>
         <source>Save As</source>
         <translation>Guardar como</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="408"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="401"/>
         <source>E&amp;xit</source>
         <translation>Sa&amp;lir</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="411"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="404"/>
         <source>Exit</source>
         <translation>Salir</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="419"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="412"/>
         <source>&amp;Frequently asked questions</source>
         <translation>&amp;Preguntas habituales</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="422"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="415"/>
         <source>Frequently asked questions</source>
         <translation>Preguntas habituales</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="430"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="423"/>
         <source>&amp;About...</source>
         <translation>&amp;Acerca de...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="433"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="426"/>
         <source>About</source>
         <translation>Acerca de</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="441"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="434"/>
         <source>&amp;Teachers</source>
         <translation>&amp;Profesores</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="444"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="437"/>
         <source>Teachers</source>
         <translation>Profesores</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="449"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="442"/>
         <source>&amp;Subjects</source>
         <translation>&amp;Materias</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="452"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="445"/>
         <source>Subjects</source>
         <translation>Materias</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="457"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="450"/>
         <source>&amp;Years (forms, classes)</source>
         <translation>&amp;Cursos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="460"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="453"/>
         <source>Years</source>
         <translation>Cursos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="465"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="458"/>
         <source>&amp;Groups</source>
         <translation>&amp;Grupos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="468"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="461"/>
         <source>Groups</source>
         <translation>Grupos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="473"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="466"/>
         <source>S&amp;ubgroups</source>
         <translation>S&amp;ubgrupos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="476"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="469"/>
         <source>Subgroups</source>
         <translation>Subgrupos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="481"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="474"/>
         <source>&amp;Activities</source>
         <translation>&amp;Actividades</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="484"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="477"/>
         <source>Activities</source>
         <translation>Actividades</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="489"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="482"/>
         <source>&amp;Generate new</source>
         <translation>&amp;Generar uno nuevo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="492"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="485"/>
         <source>Generate new</source>
         <translation>Generar uno nuevo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="497"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="490"/>
         <source>View (&amp;students)</source>
         <translation>Ver (alumno&amp;s)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="500"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="493"/>
         <source>View (students)</source>
         <translation>Ver (alumnos)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="505"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="498"/>
         <source>View (&amp;teachers)</source>
         <translation>Ver (&amp;profesores)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="508"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="501"/>
         <source>View (teachers)</source>
         <translation>Ver (profesores)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="516"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="509"/>
         <source>Show soft conflicts</source>
         <translation>Mostrar conflictos leves</translation>
     </message>
@@ -10493,272 +10559,272 @@ Detenga la simulación antes de esto.</translation>
         <translation type="obsolete">Mostrar conflictos (temporales)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="521"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="514"/>
         <source>&amp;Days per week</source>
         <translation>&amp;Días por semana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="524"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="517"/>
         <source>Days per week</source>
         <translation>Días por semana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="532"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="525"/>
         <source>Hours per day</source>
         <translation>Horas por día</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="540"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="533"/>
         <source>&amp;Rooms</source>
         <translation>&amp;Aulas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="543"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="536"/>
         <source>Rooms</source>
         <translation>Aulas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="551"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="544"/>
         <source>View (r&amp;ooms)</source>
         <translation>Ver (&amp;aulas)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="554"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="547"/>
         <source>View (rooms)</source>
         <translation>Ver (aulas)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="562"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="555"/>
         <source>&amp;en_GB (British English)</source>
         <translation>&amp;en_GB (British English)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="565"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="558"/>
         <source>en_GB (British English)</source>
         <translation>en_GB (British English)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="573"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="566"/>
         <source>&amp;ro (Romanian)</source>
         <translation>&amp;ro (Romanian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="576"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="569"/>
         <source>ro (Romanian)</source>
         <translation>ro (Romanian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="581"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="574"/>
         <source>T&amp;ime constraints</source>
         <translation>Restricciones &amp;Temporales</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="584"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="577"/>
         <source>Time constraints</source>
         <translation>Restricciones temporales</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="600"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="593"/>
         <source>&amp;fr (French)</source>
         <translation>&amp;fr (French)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="603"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="596"/>
         <source>fr (French)</source>
         <translation>fr (French)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="619"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="612"/>
         <source>View (st&amp;udents-with rooms)</source>
         <translation>Ver (al&amp;umnos con aulas)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="622"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="615"/>
         <source>View (students-with rooms)</source>
         <translation>Ver (alumnos con aulas)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="627"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="620"/>
         <source>All t&amp;ime constraints</source>
         <translation>&amp;Todas las restricciones temporales</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="630"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="623"/>
         <source>All time constraints</source>
         <translation>Todas las restricciones temporales</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="646"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="639"/>
         <source>Basic compulsory time constraints</source>
         <translation>Restricciones básicas temporales</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="766"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="759"/>
         <source>All s&amp;pace constraints</source>
         <translation>Toda&amp;s las restricciones de lugar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="769"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="762"/>
         <source>All space constraints</source>
         <translation>Todas las restricciones de lugar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="785"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="778"/>
         <source>Space constraints</source>
         <translation>Restricciones de lugar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="838"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="831"/>
         <source>I&amp;nstitution name</source>
         <translation>Nombre del colegio o i&amp;nstitución</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="841"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="834"/>
         <source>Institution name</source>
         <translation>Nombre de institución</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="846"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="839"/>
         <source>&amp;Comments</source>
         <translation>&amp;Comentarios</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="849"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="842"/>
         <source>Comments</source>
         <translation>Comentarios</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="865"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="858"/>
         <source>&amp;ca (Catalan)</source>
         <translation>&amp;ca (Catalan)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="868"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="861"/>
         <source>ca (Catalan)</source>
         <translation>ca (Catalan)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="876"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="869"/>
         <source>&amp;ms (Malay)</source>
         <translation>&amp;ms (Malay)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="879"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="872"/>
         <source>ms (Malay)</source>
         <translation>ms (Malay)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="897"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="890"/>
         <source>&amp;pl (Polish)</source>
         <translation>&amp;pl (Polish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="900"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="893"/>
         <source>pl (Polish)</source>
         <translation>pl (Polish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="908"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="901"/>
         <source>&amp;tr (Turkish)</source>
         <translation>&amp;tr (Turkish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="911"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="904"/>
         <source>tr (Turkish)</source>
         <translation>tr (Turkish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="919"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="912"/>
         <source>&amp;nl (Dutch)</source>
         <translation>&amp;nl (Dutch)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="922"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="915"/>
         <source>nl (Dutch)</source>
         <translation>nl (Dutch)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="930"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="923"/>
         <source>&amp;de (German)</source>
         <translation>&amp;de (German)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="935"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="928"/>
         <source>Teachers statistics</source>
         <translation>Estadísticas de profesores</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="946"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="939"/>
         <source>Students statistics</source>
         <translation>Estadísticas de alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="951"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="944"/>
         <source>Subjects statistics</source>
         <translation>Estadísticas de materias</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="959"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="952"/>
         <source>&amp;hu (Hungarian)</source>
         <translation>&amp;hu (Hungarian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1008"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1001"/>
         <source>Instructions</source>
         <translation>Instrucciones</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1019"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1012"/>
         <source>Search for updates on startup</source>
         <translation>Buscar actualizaciones al arrancar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1034"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1027"/>
         <source>Generate &amp;multiple variants</source>
         <translation>Generar &amp;múltiples variantes</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1037"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1030"/>
         <source>Generate multiple variants</source>
         <translation>Generar múltiples variantes</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="967"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="960"/>
         <source>m&amp;k (Macedonian)</source>
         <translation>m&amp;k (Macedonian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1055"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1048"/>
         <source>e&amp;s (Spanish)</source>
         <translation>e&amp;s (Spanish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1060"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1053"/>
         <source>Restore default settings</source>
         <translation>Restaurar opciones normales</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="638"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="631"/>
         <source>A teacher is not available</source>
         <translation>Profesor no disponible</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="654"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="647"/>
         <source>A students set is not available</source>
         <translation>Grupo de alumnos no disponible</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="662"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="655"/>
         <source>Break (all teachers+all students not available)</source>
         <translation>Pausa (no disponibles profesores ni alumnos)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="670"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="663"/>
         <source>Max days per week for a teacher</source>
         <translation>Máximo días semanal para un profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="710"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="703"/>
         <source>Max hours daily for all teachers</source>
         <translation>Máximo horas diarias para profesorado</translation>
     </message>
@@ -10778,549 +10844,554 @@ Detenga la simulación antes de esto.</translation>
         <translation type="obsolete">Todos los alumnos empiezan temprano</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="793"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="786"/>
         <source>Basic compulsory space constraints</source>
         <translation>Restricciones básicas de lugar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="801"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="794"/>
         <source>A room is not available</source>
         <translation>Aula no disponible</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="978"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="971"/>
         <source>Max gaps per week for all teachers</source>
         <translation>Máximo de huecos semana para profesorado</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="983"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="976"/>
         <source>Max gaps per week for a teacher</source>
         <translation>Máximo de huecos semana para un profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="993"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="986"/>
         <source>Max hours daily for a teacher</source>
         <translation>Máximo horas diario para un profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="998"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="991"/>
         <source>Max hours daily for a students set</source>
         <translation>Máximo horas diario para un grupo de alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1003"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="996"/>
         <source>Max hours daily for all students</source>
         <translation>Máximo horas diario para alumnado</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1024"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1017"/>
         <source>Min hours daily for all students</source>
         <translation>Mínimo horas diario para alumnado</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1029"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1022"/>
         <source>Min hours daily for a students set</source>
         <translation>Mínimo horas diario para un grupo de alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1042"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1035"/>
         <source>2 activities are consecutive</source>
         <translation>2 actividades son consecutivas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1047"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1040"/>
         <source>An activity ends students day</source>
         <translation>Actividad final de día para alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1070"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1063"/>
         <source>Min hours daily for all teachers</source>
         <translation>Mínimo horas diario para profesorado</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1075"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1068"/>
         <source>Min hours daily for a teacher</source>
         <translation>Mínimo horas diario para un profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="750"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="743"/>
         <source>A set of activities are not overlapping</source>
         <translation>Actividades no solapadas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="611"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="604"/>
         <source>A set of activities has same starting time (day+hour)</source>
         <translation>Actividades comienzan al mismo tiempo (día+hora)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="825"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="818"/>
         <source>A set of activities has same starting hour (any days)</source>
         <translation>Actividades comienzan a la misma hora (cualquier día)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="529"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="522"/>
         <source>&amp;Hours (periods) per day</source>
         <translation>&amp;Horas (períodos) por día</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="758"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="751"/>
         <source>Min n days between a set of activities</source>
         <translation>Mínimo de días n entre actividades</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="817"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="810"/>
         <source>An activity has a preferred room</source>
         <translation>Actividad que tiene un aula preferida</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="857"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="850"/>
         <source>An activity has a set of preferred rooms</source>
         <translation>Actividad que tiene unas aulas preferidas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1137"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1130"/>
         <source>A subject has a preferred room</source>
         <translation>Materia que tiene un aula preferida</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1142"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1135"/>
         <source>A subject has a set of preferred rooms</source>
         <translation>Materia que tiene unas aulas preferidas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1080"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1073"/>
         <source>Help on statistics</source>
         <translation>Ayuda sobre estadísticas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1085"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1078"/>
         <source>Help in other languages than English</source>
         <translation>Ayuda en otros idiomas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1093"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1086"/>
         <source>e&amp;l (Greek)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1101"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1094"/>
         <source>&amp;ar (Arabic)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1109"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1102"/>
         <source>&amp;id (Indonesian)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1117"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1110"/>
         <source>it (Italian)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1065"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1058"/>
         <source>Html level for generated timetables</source>
         <translation>Nivel HTML para generar horarios</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="726"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="719"/>
         <source>Max gaps per week for a students set</source>
         <translation>Máximo de huecos por semana para un grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="734"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="727"/>
         <source>Max gaps per week for all students</source>
         <translation>Máximo de huecos semanal para todos los alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="742"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="735"/>
         <source>All students begin early (max beginnings at second hour)</source>
         <translation>Todos los alumnos temprano (máximo de veces a segunda hora)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="833"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="826"/>
         <source>Activity tags</source>
         <translation>Tipo de actividades</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="988"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="981"/>
         <source>A students set begins early (max beginnings at second hour)</source>
         <translation>Un grupo de alumnos temprano (máximo de veces a segunda hora)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1122"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1115"/>
         <source>Max gaps per day for all teachers</source>
         <translation>Máximo de huecos diario para profesores</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1127"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1120"/>
         <source>Max gaps per day for a teacher</source>
         <translation>Máximo de huecos diario para un profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="125"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="118"/>
         <source>Misc time constraints</source>
         <translation>Varias restricciones temporales</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="132"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="125"/>
         <source>Teachers time constraints</source>
         <translation>Restricciones temporales profesorado</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="156"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="149"/>
         <source>Students time constraints</source>
         <translation>Restricciones temporales alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="178"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="171"/>
         <source>Activities time constraints</source>
         <translation>Restricciones temporales de actividades</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="218"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="211"/>
         <source>Misc space constraints</source>
         <translation>Varias restricciones de lugar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="224"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="217"/>
         <source>Rooms space constraints</source>
         <translation>Restricciones de aula</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="230"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="223"/>
         <source>Activities space constraints</source>
         <translation>Restricciones de lugar para actividades</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="237"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="230"/>
         <source>Subjects space constraints</source>
         <translation>Restricciones de lugar de materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="244"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="237"/>
         <source>Subjects and activity tags space constraints</source>
         <translation>Restricciones de lugar para tipo de actividad y materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="251"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="244"/>
         <source>Students space constraints</source>
         <translation>Restricciones de lugar para alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="265"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="258"/>
         <source>Teachers space constraints</source>
         <translation>Restricciones de lugar para profesores</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="635"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="628"/>
         <source>A teacher&apos;s not available times</source>
         <translation>Horas no disponibles de un profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="651"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="644"/>
         <source>A students set&apos;s not available times</source>
         <translation>Horas no disponibles para un grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="659"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="652"/>
         <source>Break times (all teachers+all students not available)</source>
         <translation>Pausas de profesores y alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="798"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="791"/>
         <source>A room&apos;s not available times</source>
         <translation>Horas no disponibles de un aula</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="884"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="877"/>
         <source>A set of students has a home room</source>
         <translation>Aula principal de un grupo de alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="889"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="882"/>
         <source>A set of students has a set of home rooms</source>
         <translation>Aulas principales de un grupo de alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1132"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1125"/>
         <source>Buildings</source>
         <translation>Edificios</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1147"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1140"/>
         <source>A subject+an activity tag have a preferred room</source>
         <translation>Aula preferida para materia+tipo de actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1152"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1145"/>
         <source>A subject+an activity tag have a set of preferred rooms</source>
         <translation>Materia+un tipo de actividad tiene unas aulas preferidas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1162"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1155"/>
         <source>A teacher has a home room</source>
         <translation>Profesor tiene aula preferida</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1167"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1160"/>
         <source>A teacher has a set of home rooms</source>
         <translation>Profesor tiene unas aulas preferidas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1172"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1165"/>
         <source>Max building changes per day for a students set</source>
         <translation>Máximo cambios diarios de edificio para grupos de alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1177"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1170"/>
         <source>Max building changes per day for all students</source>
         <translation>Máximo cambios diarios de edificio para alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1182"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1175"/>
         <source>Max building changes per week for a students set</source>
         <translation>Máximo cambios semanales edificio para grupo de alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1187"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1180"/>
         <source>Max building changes per week for all students</source>
         <translation>Máximo cambios semanales de edificio para alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1192"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1185"/>
         <source>Min gaps between building changes for a students set</source>
         <translation>Mínimos de huecos entre cambio de edificio para grupo alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1197"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1190"/>
         <source>Min gaps between building changes for all students</source>
         <translation>Mínimo huecos entre cambio de edificio para alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1202"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1195"/>
         <source>Max building changes per day for a teacher</source>
         <translation>Máximo cambios edificio diario para un profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1207"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1200"/>
         <source>Max building changes per day for all teachers</source>
         <translation>Máximo cambios de edificio diario para profesorado</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1212"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1205"/>
         <source>Max building changes per week for a teacher</source>
         <translation>Máximo cambios semanal de edificio para un profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1217"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1210"/>
         <source>Max building changes per week for all teachers</source>
         <translation>Máximo cambios semanales de edificio para profesorado</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1222"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1215"/>
         <source>Min gaps between building changes for a teacher</source>
         <translation>Mínimo huecos entre cambio edificio para un profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1227"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1220"/>
         <source>Min gaps between building changes for all teachers</source>
         <translation>Mínimo huecos entre cambio edificio para profesorado</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1232"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1225"/>
         <source>A set of activities has same starting day (any hours)</source>
         <translation>Grupo de actividades tiene el mismo día de comienzo (cualquier hora)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1157"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1150"/>
         <source>Space constraints (activities)</source>
         <translation>Restricciones de lugar (actividades)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1237"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1230"/>
         <source>Save data+timetable as...</source>
         <translation>Guardar datos+horario como...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1242"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1235"/>
         <source>2 activities are ordered</source>
         <translation>2 actividades son ordenadas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1247"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1240"/>
         <source>Max hours continuously for all teachers</source>
         <translation>Máximo horas seguidas para profesorado</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1252"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1245"/>
         <source>Max hours continuously for a teacher</source>
         <translation>Máximo horas seguidas para un profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1257"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1250"/>
         <source>Max hours continuously for a students set</source>
         <translation>Máximo horas seguidas para grupo de alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1262"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1255"/>
         <source>Max hours continuously for all students</source>
         <translation>Máximo horas seguidas para todos los alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1267"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1260"/>
         <source>Important tips</source>
         <translation>Consejos importantes</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="718"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="711"/>
         <source>An activity has a preferred starting time</source>
         <translation>Actividad tiene tiempo preferido de inicio</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1272"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1265"/>
         <source>A set of activities has a set of preferred starting times</source>
         <translation>Actividades tienen un grupo de tiempos preferidos de inicio</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1285"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1278"/>
         <source>An activity has a set of preferred starting times</source>
         <translation>Actividad tiene un grupo de tiempos preferidos de inicio</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="592"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="585"/>
         <source>A set of activities has a set of preferred time slots</source>
         <translation>Actividades tienen un grupo de tiempos preferidos de inicio</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1280"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1273"/>
         <source>An activity has a set of preferred time slots</source>
         <translation>Actividad tiene unas casillas preferidas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1290"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1283"/>
         <source>Min gaps (hours) between a set of activities</source>
         <translation>Mín de huecos (horas) entre un grupo de actividades</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="58"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="51"/>
         <source>Export</source>
         <translation>Exportar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="64"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="57"/>
         <source>Import</source>
         <translation>Importar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="68"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="61"/>
         <source>Import comma separated values (text)</source>
         <translation>Importar valores separados por comas (texto)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1295"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1288"/>
         <source>Export comma separated values (text)</source>
         <translation>Exportar valores separados por comas (texto)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1300"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1293"/>
         <source>Import activities from CSV file</source>
         <translation>Importar actividades desde archivo CSV</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1305"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1298"/>
         <source>Import activity tags from CSV file</source>
         <translation>Importar tipo de actividades desde archivo CSV</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1310"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1303"/>
         <source>Import rooms and buildings from CSV file</source>
         <translation>Importar aulas y edificios desde archivo CSV</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1315"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1308"/>
         <source>Import subjects from CSV file</source>
         <translation>Importar materias desde archivo CSV</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1320"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1313"/>
         <source>Import teachers from CSV file</source>
         <translation>Importar profesores desde archivo CSV</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1325"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1318"/>
         <source>Import years, groups and subgroups from CSV file</source>
         <translation>Importar cursos, grupos y subgrupos desde archivo CSV</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1330"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1323"/>
         <source>A set of subactivities has a set of preferred time slots</source>
         <translation>Subactividades tienen unas casillas preferidas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1335"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1328"/>
         <source>A set of subactivities has a set of preferred starting times</source>
         <translation>Subactividades tienen unos tiempos preferidos de inicio</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1340"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1333"/>
         <source>A teacher works in an hourly interval max days per week</source>
         <translation>Profesor trabaja un intervalo de horas max de días por semana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1345"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1338"/>
         <source>All teachers work in an hourly interval max days per week</source>
         <translation>Todos los profesores trabajan un intervalo de horas max de días por semana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1350"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1343"/>
         <source>A students set works in an hourly interval max days per week</source>
         <translation>Grupo de alumnos trabajan un intervalo de horas max días por semana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1355"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1348"/>
         <source>All students work in an hourly interval max days per week</source>
         <translation>Todos los alumnos trabajan un intervalo de horas max días por semana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1360"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1353"/>
         <source>A set of activities end students day</source>
         <translation>Conjunto de actividades final de día para estudiantes</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1368"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1361"/>
         <source>lt (Lithuanian)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1373"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1366"/>
         <source>Forum webpage</source>
         <translation>Página web del foro</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1384"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1377"/>
         <source>Mark not available slots with -x- in timetables</source>
         <translation>Marcar casillas no disponibles con -x- en los horarios</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="348"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="341"/>
         <source>Advanced</source>
         <translation>Avanzado</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1389"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1382"/>
         <source>Spread the activities evenly over the week</source>
         <translation>Repartir actividades uniformemente por semana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1394"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1387"/>
         <source>Export advanced statistics to disk</source>
         <translation>Exportar estadísticas avanzadas a disco</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1399"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1392"/>
         <source>Remove redundant constraints</source>
         <translation>Eliminar restricciones reduntantes</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="1397"/>
+        <source>A user&apos;s manual</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12304,7 +12375,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;(c) Liviu Lalescu 2002-2008&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Version: 5.7.3 (November 2008)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Version: 5.7.4 (November 2008)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -13107,12 +13178,12 @@ Each constraint of type not available or preferred times which filters out impos
     <message>
         <location filename="../src/interface/helptipsform_template.ui" line="16"/>
         <source>FET - important tips</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Consejos importantes</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform_template.ui" line="33"/>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform_template.ui" line="41"/>
@@ -13467,637 +13538,641 @@ Preferred time(s) constraints do not have the problem of redundancy like min day
     <message>
         <location filename="../src/engine/import.cpp" line="76"/>
         <source>Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Línea</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="77"/>
         <source>Year</source>
-        <translation type="unfinished">Curso</translation>
+        <translation>Curso</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="79"/>
         <source>Group</source>
-        <translation type="unfinished">Grupo</translation>
+        <translation>Grupo</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="81"/>
         <source>Subgroup</source>
-        <translation type="unfinished">Subgrupo</translation>
+        <translation>Subgrupo</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="83"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="84"/>
         <source>Activity Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="85"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="86"/>
         <source>Building</source>
-        <translation type="unfinished">Edificio</translation>
+        <translation>Edificio</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="87"/>
         <source>Room Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de aula</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="88"/>
         <source>Room Capacity</source>
-        <translation type="unfinished"></translation>
+        <translation>Capacidad de aula</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="91"/>
         <source>Total Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Duración total</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="92"/>
         <source>Split Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Duración de la parte</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="93"/>
         <source>Min N Days</source>
-        <translation type="unfinished"></translation>
+        <translation>Mín N Días</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="94"/>
         <source>Min N Days Weight</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponderación Mín N Días</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="95"/>
         <source>Min N Days Consecutive</source>
-        <translation type="unfinished"></translation>
+        <translation>Mín N Días Consecutivo</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="102"/>
         <source>line</source>
-        <translation type="unfinished"></translation>
+        <translation>línea</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="127"/>
         <source>Please specify the %1 field:</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique el campo %1:</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="129"/>
         <source>Don&apos;t import &quot;%1&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation>No importar &quot;%1&quot;.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="130"/>
         <source>Import this field from CSV:</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar este campo desde CSV:</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="131"/>
         <source>Set always the same name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Poner siempre el mismo nombre:</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="132"/>
         <source>Set always the same value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Poner siempre el mismo valor:</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="147"/>
         <source>Please modify this text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Modificar este texto.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="396"/>
         <source>activity tags</source>
-        <translation type="unfinished"></translation>
+        <translation>tipos de actividad</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="398"/>
         <source>buildings and rooms</source>
-        <translation type="unfinished"></translation>
+        <translation>edificios y aulas</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="400"/>
         <source>teachers</source>
-        <translation type="unfinished"></translation>
+        <translation>profesores</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="402"/>
         <source>subjects</source>
-        <translation type="unfinished"></translation>
+        <translation>materias</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="404"/>
         <source>years, groups and subgroups</source>
-        <translation type="unfinished"></translation>
+        <translation>cursos, grupos y subgrupos</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="406"/>
         <source>activities</source>
-        <translation type="unfinished"></translation>
+        <translation>actividades</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="506"/>
         <source>FET - Import %1 from CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Importado %1 desde archivo CSV</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="408"/>
         <source>Text Files (*.csv *.dat *.txt);;All Files (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos Texto (*.csv *.dat *.txt);;Todos los archivo (*.*)</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="410"/>
         <source>no separator</source>
-        <translation type="unfinished"></translation>
+        <translation>sin separador</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="412"/>
         <source>no textquote</source>
-        <translation type="unfinished"></translation>
+        <translation>sin acotado de texto</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="522"/>
         <source>Please specify the used separator between fields:</source>
-        <translation type="unfinished"></translation>
+        <translation>Indique el separador usado entre campos:</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="527"/>
         <source>Used field separator:</source>
-        <translation type="unfinished"></translation>
+        <translation>Separador de campos usado:</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="534"/>
         <source>Please specify the used text quote of text fields:</source>
-        <translation type="unfinished"></translation>
+        <translation>Indique el acotador de textos de los campos:</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="539"/>
         <source>Used textquote:</source>
-        <translation type="unfinished"></translation>
+        <translation>Acotador de texto usado:</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="548"/>
         <source>The first line is the heading. Don&apos;t import that line.</source>
-        <translation type="unfinished"></translation>
+        <translation>La primera línea es la cabecera. No importar esa línea.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="549"/>
         <source>The first line contains data. Import that line.</source>
-        <translation type="unfinished"></translation>
+        <translation>La primera línea contiene datos. Importarla.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="555"/>
         <source>OK</source>
-        <translation type="unfinished">Vale</translation>
+        <translation>Vale</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="610"/>
         <source>FET Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>FET advertencia</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1740"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET advertencia</translation>
+        <translation>FET advertencia</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="660"/>
         <source>Empty filename.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sin nombre de archivo.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="664"/>
         <source>Error! Can&apos;t open file.</source>
-        <translation type="unfinished"></translation>
+        <translation>¡Error! No puedo abrir el archivo.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="673"/>
         <source>Loading file</source>
-        <translation type="unfinished"></translation>
+        <translation>Cargando archivo</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="688"/>
         <source>Loading canceled by user.</source>
-        <translation type="unfinished"></translation>
+        <translation>Carga cancelada por el usuario.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="949"/>
         <source>FET import %1 question</source>
-        <translation type="unfinished"></translation>
+        <translation>FET pregunta de importación %1</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="984"/>
         <source>Following data found in the file:</source>
-        <translation type="unfinished"></translation>
+        <translation>Siguiendo los datos encontrados en el archivo:</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="985"/>
         <source>There is no useable data in the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay datos útiles en el archivo.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="994"/>
         <source>%1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1018"/>
         <source>FET noticed %1 warning with the current data.</source>
-        <translation type="unfinished"></translation>
+        <translation>FET Advertencia %1 con los datos actuales.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1020"/>
         <source>FET noticed %1 warnings with the current data.</source>
-        <translation type="unfinished"></translation>
+        <translation>FET Advertencia %1 con los datos actuales.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1029"/>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Importar</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1030"/>
         <source>&amp;Cancel</source>
-        <translation type="unfinished">&amp;Cancelar</translation>
+        <translation>&amp;Cancelar</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1359"/>
         <source>%1 is already in FET data.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ya está en los datos de FET.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1994"/>
         <source>FET information</source>
-        <translation type="unfinished">FET información</translation>
+        <translation>FET información</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1130"/>
         <source>%1 activity tags added. Please check activity tag form.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 tipos de actividad añadidos. Compruébelos.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1878"/>
         <source>%1 subjects added. Please check subjects form.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 materias añadidas. Compruébelas.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1863"/>
         <source>%1 teachers added. Please check teachers form.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 profesores añadidos. Compruébelos.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1427"/>
         <source>Checking CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprobando CSV</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1433"/>
         <source>Checking CSV canceled by user.</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprobación del CSV cancelada por el usuario.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1483"/>
         <source>Checking data</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprobando datos</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1522"/>
         <source>Checking data canceled by user.</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprobación de datos cancelada por el usuario.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1497"/>
         <source>Year %1 is already in FET data.</source>
-        <translation type="unfinished"></translation>
+        <translation>El curso %1 ya está en los datos de FET.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1499"/>
         <source>Can&apos;t import group %1. Name is already taken for a year.</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo importar el grupo %1. El nombre ya está en un curso.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1501"/>
         <source>Can&apos;t import subgroup %1. Name is already taken for a year.</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo importar el subgrupo %1. El nombre ya está en un curso.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1512"/>
         <source>Can&apos;t import year %1. Name is already taken for a group.</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo importar el curso %1. El nombre ya está en un grupo.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1514"/>
         <source>Group name %1 is already in FET data (In the same or in an other year).</source>
-        <translation type="unfinished"></translation>
+        <translation>El grupo de nombre %1 ya está en los datos de FET (en el mismo o en otro curso).</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1516"/>
         <source>Can&apos;t import subgroup %1. Name is already taken for a group.</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo importar el subgrupo %1. El nombre ya existe en un grupo.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1528"/>
         <source>Can&apos;t import year %1. Name is already taken for a subgroup.</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo importar el subgrupo %1. El nombre ya está en un subgrupo.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1530"/>
         <source>Can&apos;t import group %1. Name is taken for a subgroup.</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo importar grupo %1. El nombre existe para un subgrupo.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1532"/>
         <source>Subgroup name %1 is already in FET data (In the same or in an other group).</source>
-        <translation type="unfinished"></translation>
+        <translation>El subgrupo nombre %1 ya existe en los datos de FET ( el mismo o en otro grupo).</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1549"/>
         <source>Importing data</source>
-        <translation type="unfinished"></translation>
+        <translation>Importando datos</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1913"/>
         <source>Importing data canceled by user.</source>
-        <translation type="unfinished"></translation>
+        <translation>Importación interrumpida por el usuario.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1907"/>
         <source>Importing activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Importando actividades</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1959"/>
         <source>Activity NOT added - please report error</source>
-        <translation type="unfinished">Actividad NO añadida - informe del error</translation>
+        <translation>Actividad NO añadida - informe del error</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1994"/>
         <source>Split activity NOT added - error???</source>
-        <translation type="unfinished">Actividad partida NO añadida - error???</translation>
+        <translation>Actividad partida NO añadida - error???</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="546"/>
         <source>Please specify the content of the first line:</source>
-        <translation type="unfinished"></translation>
+        <translation>Indique el contenido de la primera línea:</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="601"/>
         <source>Missing field separator or text quote in first line. Import might be incorrect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Separador de campos o acotador de texto no encontrado en la primera línea. La importación puede ser incorrecta.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="610"/>
         <source>Missing closing text quote in first line. Import might be incorrect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Acotador de cierre de texto no encontrado en la primera línea. Importación incorrecta.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="712"/>
         <source>Warning: FET expected field separator or text separator in line %1. Import might be incorrect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Advertencia: FET esperaba separadores de campo en la línea %1. La importación puede ser incorrecta.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="720"/>
         <source>Warning: FET expected closing text separator in line %1. Import might be incorrect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Advertencia: FET esperaba separadores de cierre de texto en la línea %1. La importación puede ser incorrecta.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="746"/>
         <source>Skipped line %1: FET expected %2 fields but found %3 fields.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorada línea %1: FET esperaba %2 campos pero encontró %3.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1351"/>
         <source>Skipped line %1: Field &apos;%2&apos; is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorada línea %1: El campo &apos;%2&apos; está vacío.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="845"/>
         <source>Skipped line %1: Field &apos;%2&apos; doesn&apos;t contain an integer value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorada línea %1: El campo &apos;%2&apos; no contiene valores enteros.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="839"/>
         <source>Warning in line %1: Field with building name doesn&apos;t affect to a room</source>
-        <translation type="unfinished"></translation>
+        <translation>Advertencia en línea %1: El campo con nombre de edificio no afecta a un aula</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="880"/>
         <source>Skipped line %1: Field &apos;%2&apos; contain an unknown value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignarada línea %1: El campo &apos;%2&apos; contiene un valor desconocido.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="898"/>
         <source>Skipped line %1: Data was already in a previous line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorada línea %1: Los datos ya estaban en un línea previa.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="914"/>
         <source>Line %1 is: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>La línea %1 es: %2</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1178"/>
         <source>Skipped line %1: Field &apos;%2&apos; is already in a previous line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorada línea %1: El campo &apos;%2&apos; ya está en una línea previa.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1253"/>
         <source>%1 buildings added. Please check rooms form.</source>
-        <translation type="unfinished"></translation>
+        <translation>Añadidos %1 edificios. Compruebe el formulario de aulas.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1253"/>
         <source>%2 rooms added. Please check rooms form.</source>
-        <translation type="unfinished"></translation>
+        <translation>Añadidas %2 aulas. Compruebe el formulario de aulas.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1460"/>
         <source>Problem in line %1: Year name %2 is taken for a group - please consider another name</source>
-        <translation type="unfinished"></translation>
+        <translation>Problema en línea %1: El curso con nombre %2 se ha usado para un grupo - pruebe otro nombre</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1468"/>
         <source>Problem in line %1: Subgroup name %2 is taken for a year - please consider another name</source>
-        <translation type="unfinished"></translation>
+        <translation>Problema en línea %1: El subgrupo nombre %2 se ha usado para un curso - pruebe otro nombre</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1470"/>
         <source>Problem in line %1: Subgroup name %2 is taken for a group - please consider another name</source>
-        <translation type="unfinished"></translation>
+        <translation>Problema en línea %1: El subgrupo nombre %2 se ha usado para un grupo - pruebe otro nombre</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1472"/>
         <source>Problem in line %1: Group name %2 is taken for a subgroup - please consider another name</source>
-        <translation type="unfinished"></translation>
+        <translation>Problema en línea %1: El grupo nombre %2 se ha usado para un subgrupo - pruebe otro nombre</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1474"/>
         <source>Problem in line %1: Year name %2 is taken for a subgroup - please consider another name</source>
-        <translation type="unfinished"></translation>
+        <translation>Problema en línea %1: El curso nombre %2 se ha usado para un subgrupo - pruebe otro nombre</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1620"/>
         <source>Group name %1 exists in another year. It means that some years share the same group.</source>
-        <translation type="unfinished"></translation>
+        <translation>El grupo con nombre %1 se ha usado para otro curso. Esto ocurre porque algunos cursos comparten grupo.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1661"/>
         <source>Subgroup name %1 exists in another group. It means that some groups share the same subgroup.</source>
-        <translation type="unfinished"></translation>
+        <translation>El subgrupo con nombre %1 se ha usado para otro grupo. Esto ocurre porque algunos grupos comparten subgrupo.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="2002"/>
         <source>Notes:</source>
-        <translation type="unfinished"></translation>
+        <translation>Notas:</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1689"/>
         <source>%1 subgroups added. Please check subgroups form.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 subgrupos añadidos. Compruebe los subgrupos.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1690"/>
         <source>%1 groups added. Please check groups form.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 grupos añadidos. Compruebe los grupos.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1691"/>
         <source>%1 years added. Please check years form.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 cursos añadidos. Compruebe los cursos.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1770"/>
         <source>Student set %1 doesn&apos;t exist. You must add (or import) years, groups and subgroups first.</source>
-        <translation type="unfinished"></translation>
+        <translation>El grupo de alumnos %1 no existe. Debe añadir (o importar) cursos, grupos y subgrupos antes.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1893"/>
         <source>%1 activity tags added. Please check activity tags form.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 tipos de actividad añadidas. Compruébelos en la caja de diálogo.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1949"/>
         <source>Activity %1 already exists. A duplicate activity is imported. Please check the dataset!</source>
-        <translation type="unfinished"></translation>
+        <translation>La actividad %1 ya existe. Se ha duplicado una actividad. ¡Compruebe los datos!</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="2004"/>
         <source>%1 container activities (%2 total activities) added. Please check activity form.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 contenedro de actividades (%2 en total) se han añadido. Compruebe las actividades.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="828"/>
         <source>Skipped line %1: Fields &apos;%2&apos; and &apos;%3&apos; haven&apos;t the same value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorada línea %1: Los campos &apos;%2&apos; y &apos;%3&apos; no tienen el mismo valor.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1458"/>
         <source>Problem in line %1: Group name %2 is taken for a year - please consider another name</source>
-        <translation type="unfinished"></translation>
+        <translation>Problema en línea %1: El grupo con nombre %2 se ha usado para un curso - pruebe otro nombre</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1764"/>
         <source>FET can&apos;t import activities, because FET needs to know the stucture of the students sets. You must add (or import) years, groups and subgroups first.</source>
-        <translation type="unfinished"></translation>
+        <translation>FET no puede importar las actividades porque necesita saber la estructura de los grupos de alumnos. Debe añadir (o importar) los cursos, grupos y subgrupos antes.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1838"/>
         <source>%1 %2 will be added.</source>
         <comment>For instance &apos;Subject Math will be added&apos;, so use singular</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 será añadido.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="89"/>
         <source>Students Sets</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="90"/>
         <source>Teachers</source>
-        <translation type="unfinished">Profesores</translation>
+        <translation>Profesores</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="896"/>
         <source>Note about line %1: Data was already in a previous line. So this data will be imported once again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota sobre la lína %1: Los datos ya estaban en líneas previas. Será importado una vez más.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1740"/>
         <source>FET need to know %1 or %2 if you import %3.</source>
-        <translation type="unfinished"></translation>
+        <translation>FET necesita conocer %1 o %2 si se importa %3.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="78"/>
         <source>Number of Students per Year</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de Alumnos por Curso</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="80"/>
         <source>Number of Students per Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de Alumnos por Grupo</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="82"/>
         <source>Number of Students per Subgroup</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de Alumnos por Subgrupo</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="848"/>
         <source>Skipped line %1: Field &apos;%2&apos; contains an invalid integer value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorada línea %1: El campo &apos;%2&apos; contiene un valor entero inválido.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="861"/>
         <source>Skipped line %1: Field &apos;%2&apos; doesn&apos;t contain a number (double) value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorada línea %1: El campo &apos;%2&apos; no contiene un valor númerico (doble).</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="864"/>
         <source>Skipped line %1: Field &apos;%2&apos; contains an number (double) value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorada línea %1: El campo &apos;%2&apos; contiene un valor numerico (doble).</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1767"/>
         <source>I recommend to import also teachers, rooms, buildings, subjects and activity tags before importing activities. It is not needed, because FET will automatically do it, but you can check the activity cvs file by that.</source>
-        <translation type="unfinished"></translation>
+        <translation>Recomendamos importar el profesorado, aulas, edificios, materias y tipos de actividad antes de importar las actividades. No es necesario, porque FET lo hace automáticamente, pero puede comprobarse el archivo CVS de esta forma.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="515"/>
         <source>The first line of file
 %1
 is:</source>
-        <translation type="unfinished"></translation>
+        <translation>La primera línea del archivo
+%1
+es:</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="960"/>
         <source>There are several problems in file
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hay varios problemas en el archivo
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="961"/>
         <source>There are no problems in file
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay problemas en el archvio
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="833"/>
         <source>Skipped line %1: Field &apos;%2&apos; contains too many subactivities.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorada línea %1: El campo &apos;%2&apos; contienen demasiadas subactividades.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="803"/>
         <source>Skipped line %1: Field &apos;%2&apos; produces too many subactivities.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorada línea %1: El campo &apos;%2&apos; producen demasiadas subactividades.</translation>
     </message>
 </context>
 <context>
@@ -14499,47 +14574,47 @@ y añada una nueva actividad partida</translation>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="16"/>
         <source>FET - Modify constraint activities end students day</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Modificar restricción actividades final día de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="41"/>
         <source>Weight percentage (necessary: 100.0%)</source>
-        <translation type="unfinished">Ponderación (necesario: 100%) {100.0%?}</translation>
+        <translation>Ponderación (necesario: 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="67"/>
         <source>Ok</source>
-        <translation type="unfinished">Vale</translation>
+        <translation>Vale</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="75"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="101"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="114"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="142"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="155"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
 </context>
 <context>
@@ -14603,7 +14678,7 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="311"/>
         <source>FET question</source>
-        <translation type="unfinished">FET pregunta</translation>
+        <translation>FET pregunta</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="247"/>
@@ -14612,12 +14687,14 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
  The best practice would be to use constraint break times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado todas las actividades. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de profesores y alumnos.
+La mejor solución sería usar restricciones de pausa.
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, pero ponga atención en no obtener horarios imposibles (si el profesor/alumno están restringidos en huecos o primeras horas y se deja una casilla no permitido entre dos casillas o un no permitido a primera hora del día y más casillas después, este posible hueco puede ser contabilizado en el horiario de profesores y alumnos)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="281"/>
         <source>Do you want to add current constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Desea añadir la restricción?</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="264"/>
@@ -14626,7 +14703,10 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
  The best practice would be to use constraint teacher not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado solo el profesor. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de profesores.
+La mejor solución sería usar restricciones de tiempo no disponible para el profesor.
+
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, (pero ponga atención en no obtener horarios imposibles.)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="281"/>
@@ -14635,12 +14715,16 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
  The best practice would be to use constraint students set not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible gap might be counted in students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado solo alumnos. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de alumnos.
+
+La mejor solución sería usar restricciones de tiempo no disponible para alumnos.
+
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, (pero ponga atención en no obtener horarios imposibles.)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="312"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished">Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
+        <translation>Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
     </message>
 </context>
 <context>
@@ -14648,57 +14732,57 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="16"/>
         <source>FET - Modify constraint activities preferred starting times</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Modificar restricción tiempo inicio preferido de actividades </translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="50"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="58"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="71"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="79"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="117"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="125"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="151"/>
         <source>Set all slots allowed</source>
-        <translation type="unfinished">Todas las casillas permitidas</translation>
+        <translation>Todas las casillas permitidas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="143"/>
         <source>Set all slots not allowed</source>
-        <translation type="unfinished">Todas las casillas no permitidas</translation>
+        <translation>Todas las casillas no permitidas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="159"/>
         <source>Ok</source>
-        <translation type="unfinished">Vale</translation>
+        <translation>Vale</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="167"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 <context>
@@ -14706,7 +14790,7 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="311"/>
         <source>FET question</source>
-        <translation type="unfinished">FET pregunta</translation>
+        <translation>FET pregunta</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="247"/>
@@ -14715,12 +14799,16 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
  The best practice would be to use constraint break times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado todas las actividades. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de profesores y alumnos.
+
+La mejor solución sería usar restricciones de pausa.
+
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, pero ponga atención en no obtener horarios imposibles (si el profesor/alumno están restringidos en huecos o primeras horas y se deja una casilla no permitido entre dos casillas o un no permitido a primera hora del día y más casillas después, este posible hueco puede ser contabilizado en el horiario de profesores y alumnos)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="281"/>
         <source>Do you want to add current constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Desea añadir la restricción?</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="264"/>
@@ -14729,7 +14817,11 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
  The best practice would be to use constraint teacher not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado solo el profesor. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de profesores.
+
+La mejor solución sería usar restricciones de tiempo no disponible para el profesor.
+
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, (pero ponga atención en no obtener horarios imposibles.)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="281"/>
@@ -14738,12 +14830,16 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
  The best practice would be to use constraint students set not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible gap might be counted in students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado solo grupos de alumnos. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de alumnos.
+
+La mejor solución sería usar restricciones de tiempo no disponible para grupos de alumnos.
+
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, (pero ponga atención en no obtener horarios imposibles.)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="312"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished">Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
+        <translation>Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
     </message>
 </context>
 <context>
@@ -14751,57 +14847,57 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="16"/>
         <source>FET - Modify constraint activities preferred time slots</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Modificar casillas preferidas para actividades</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="50"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="58"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="71"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="79"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="117"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="125"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="167"/>
         <source>Set all slots allowed</source>
-        <translation type="unfinished">Todas las casillas permitidas</translation>
+        <translation>Todas las casillas permitidas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="143"/>
         <source>Set all slots not allowed</source>
-        <translation type="unfinished">Todas las casillas no permitidas</translation>
+        <translation>Todas las casillas no permitidas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="151"/>
         <source>Ok</source>
-        <translation type="unfinished">Vale</translation>
+        <translation>Vale</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="159"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 <context>
@@ -14935,27 +15031,27 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="153"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="172"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="190"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="203"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="216"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
 </context>
 <context>
@@ -15124,79 +15220,79 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="16"/>
         <source>FET - Modify constraint activity preferred starting time dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Modificar tiempos de inicio preferido para actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="27"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="43"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="56"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="69"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="77"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="106"/>
         <source>Activity</source>
-        <translation type="unfinished">Actividad</translation>
+        <translation>Actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="147"/>
         <source>Ok</source>
-        <translation type="unfinished">Vale</translation>
+        <translation>Vale</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="155"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="198"/>
         <source>Period</source>
-        <translation type="unfinished">Período</translation>
+        <translation>Período</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="209"/>
         <source>Day</source>
-        <translation type="unfinished">Día</translation>
+        <translation>Día</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="225"/>
         <source>Start hour</source>
-        <translation type="unfinished">Hora de comienzo</translation>
+        <translation>Hora de comienzo</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="249"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="271"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Ponderación
+        <translation>Ponderación
 (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="280"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -15204,12 +15300,12 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform.cpp" line="283"/>
         <source>FET question</source>
-        <translation type="unfinished">FET pregunta</translation>
+        <translation>FET pregunta</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform.cpp" line="284"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished">Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
+        <translation>Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
     </message>
 </context>
 <context>
@@ -15217,67 +15313,67 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="16"/>
         <source>FET - Modify constraint activity preferred starting times</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Modificar tiempos de inicio preferidos para actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="49"/>
         <source>Activity</source>
-        <translation type="unfinished">Actividad</translation>
+        <translation>Actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="200"/>
         <source>Ok</source>
-        <translation type="unfinished">Vale</translation>
+        <translation>Vale</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="192"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="70"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="86"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="99"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="112"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="120"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="166"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="174"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="208"/>
         <source>Set all slots allowed</source>
-        <translation type="unfinished">Todas las casillas permitidas</translation>
+        <translation>Todas las casillas permitidas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="216"/>
         <source>Set all slots not allowed</source>
-        <translation type="unfinished">Todas las casillas no permitidas</translation>
+        <translation>Todas las casillas no permitidas</translation>
     </message>
 </context>
 <context>
@@ -15285,12 +15381,12 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform.cpp" line="285"/>
         <source>FET question</source>
-        <translation type="unfinished">FET pregunta</translation>
+        <translation>FET pregunta</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform.cpp" line="286"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished">Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
+        <translation>Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
     </message>
 </context>
 <context>
@@ -15298,67 +15394,67 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="16"/>
         <source>FET - Modify constraint activity preferred time slots</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Modificar casillas preferidas para actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="49"/>
         <source>Activity</source>
-        <translation type="unfinished">Actividad</translation>
+        <translation>Actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="216"/>
         <source>Ok</source>
-        <translation type="unfinished">Vale</translation>
+        <translation>Vale</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="192"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="70"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="86"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="99"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="112"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="120"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="166"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="174"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="200"/>
         <source>Set all slots allowed</source>
-        <translation type="unfinished">Todas las casillas permitidas</translation>
+        <translation>Todas las casillas permitidas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="208"/>
         <source>Set all slots not allowed</source>
-        <translation type="unfinished">Todas las casillas no permitidas</translation>
+        <translation>Todas las casillas no permitidas</translation>
     </message>
 </context>
 <context>
@@ -15477,72 +15573,72 @@ huecos para profesores o estudiantes</translation>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="16"/>
         <source>FET - Modify constraint min gaps between activities</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Modificar restricción mín huecos entre actividades</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="46"/>
         <source>Min gaps</source>
-        <translation type="unfinished"></translation>
+        <translation>Mínimo huecos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="70"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="78"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="96"/>
         <source>Ok</source>
-        <translation type="unfinished">Vale</translation>
+        <translation>Vale</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="104"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="114"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="133"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="151"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="164"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="177"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="211"/>
         <source>All activities (dbl. click or Enter adds)</source>
-        <translation type="unfinished">Todas las actividades (doble click o Entrar añade)</translation>
+        <translation>Todas las actividades (doble click o Entrar añade)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="251"/>
         <source>New Item</source>
-        <translation type="unfinished">Nuevo elemento</translation>
+        <translation>Nuevo elemento</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="245"/>
         <source>Selected (dbl. click or Enter removes)</source>
-        <translation type="unfinished">Seleccionado (doble click o Entrar para eliminar)</translation>
+        <translation>Seleccionado (doble click o Entrar para eliminar)</translation>
     </message>
 </context>
 <context>
@@ -15645,27 +15741,27 @@ forzar el que sean consecutivas</translation>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="126"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="145"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="163"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="176"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="189"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
 </context>
 <context>
@@ -15821,67 +15917,67 @@ como huecos (huecos a primera hora).</translation>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="55"/>
         <source>End of day</source>
-        <translation type="unfinished"></translation>
+        <translation>Fin de día</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="73"/>
         <source>Current constraint:</source>
-        <translation type="unfinished">Restricción actual:</translation>
+        <translation>Restricción actual:</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="79"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished">Ponderación=%1%</translation>
+        <translation>Ponderación=%1%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="82"/>
         <source>Students interval max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervalo máx de días por semana para alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="87"/>
         <source>Interval start hour=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio de intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="90"/>
         <source>Interval end hour=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final de intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="93"/>
         <source>Max days per week=%1</source>
-        <translation type="unfinished">Máx días por semana=%1</translation>
+        <translation>Máx días por semana=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="142"/>
         <source>FET information</source>
-        <translation type="unfinished">FET información</translation>
+        <translation>FET información</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="106"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Porcentaje inválido</translation>
+        <translation>Porcentaje inválido</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="111"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Porcentaje inválido - debe ser 100%</translation>
+        <translation>Porcentaje inválido - debe ser 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="133"/>
         <source>Start hour invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio inválida</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="138"/>
         <source>End hour invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final inválida</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp" line="143"/>
         <source>Start hour cannot be greater or equal than end hour</source>
-        <translation type="unfinished"></translation>
+        <translation>La hora de comienzo no puede ser mayor o igual que la de final</translation>
     </message>
 </context>
 <context>
@@ -15889,47 +15985,47 @@ como huecos (huecos a primera hora).</translation>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="16"/>
         <source>FET - Modify constraint students interval max days per week dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Modificar restricción de intervalo máximo de días por semana</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="41"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="67"/>
         <source>Ok</source>
-        <translation type="unfinished">Vale</translation>
+        <translation>Vale</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="75"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="99"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Ponderación (necesario: 100%)</translation>
+        <translation>Ponderación (necesario: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="107"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="131"/>
         <source>Interval start hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio intervalo</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="172"/>
         <source>Interval end hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final intervalo</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="247"/>
         <source>Max days per week</source>
-        <translation type="unfinished">Máximo de días por semana</translation>
+        <translation>Máximo de días por semana</translation>
     </message>
 </context>
 <context>
@@ -16523,77 +16619,77 @@ gradualmente si encuentra horarios nuevos</translation>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="55"/>
         <source>End of day</source>
-        <translation type="unfinished"></translation>
+        <translation>Fin de día</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="103"/>
         <source>Current constraint:</source>
-        <translation type="unfinished">Restricción actual:</translation>
+        <translation>Restricción actual:</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="109"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished">Ponderación=%1%</translation>
+        <translation>Ponderación=%1%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="112"/>
         <source>Students set interval max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervalo máx de días por semana para grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="114"/>
         <source>Students set=%1</source>
-        <translation type="unfinished">Grupo alumnos=%1</translation>
+        <translation>Grupo alumnos=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="117"/>
         <source>Interval start hour=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio de intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="120"/>
         <source>Interval end hour=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final de intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="123"/>
         <source>Max days per week=%1</source>
-        <translation type="unfinished">Máx días por semana=%1</translation>
+        <translation>Máx días por semana=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="172"/>
         <source>FET information</source>
-        <translation type="unfinished">FET información</translation>
+        <translation>FET información</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="136"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Porcentaje inválido</translation>
+        <translation>Porcentaje inválido</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="141"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Porcentaje inválido - debe ser 100%</translation>
+        <translation>Porcentaje inválido - debe ser 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="155"/>
         <source>Invalid students set</source>
-        <translation type="unfinished">Grupo de alumnos no válido</translation>
+        <translation>Grupo de alumnos no válido</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="163"/>
         <source>Start hour invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio inválida</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="168"/>
         <source>End hour invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final inválida</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="173"/>
         <source>Start hour cannot be greater or equal than end hour</source>
-        <translation type="unfinished"></translation>
+        <translation>La hora de comienzo no puede ser mayor o igual que la de final</translation>
     </message>
 </context>
 <context>
@@ -16601,52 +16697,52 @@ gradualmente si encuentra horarios nuevos</translation>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="16"/>
         <source>FET - Modify constraint students set interval max days per week dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Modificar restricción intervalo máximo días por semana para grupos de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="41"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="67"/>
         <source>Ok</source>
-        <translation type="unfinished">Vale</translation>
+        <translation>Vale</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="75"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="99"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="140"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Ponderación (necesario: 100%)</translation>
+        <translation>Ponderación (necesario: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="148"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="172"/>
         <source>Interval start hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio intervalo</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="213"/>
         <source>Interval end hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final intervalo</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="305"/>
         <source>Max days per week</source>
-        <translation type="unfinished">Máximo de días por semana</translation>
+        <translation>Máximo de días por semana</translation>
     </message>
 </context>
 <context>
@@ -17159,7 +17255,7 @@ huecos</translation>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="315"/>
         <source>FET question</source>
-        <translation type="unfinished">FET pregunta</translation>
+        <translation>FET pregunta</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="251"/>
@@ -17168,12 +17264,16 @@ huecos</translation>
  The best practice would be to use constraint break times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado todas las actividades. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de profesores y alumnos.
+
+La mejor solución sería usar restricciones de pausa.
+
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, pero ponga atención en no obtener horarios imposibles (si el profesor/alumno están restringidos en huecos o primeras horas y se deja una casilla no permitido entre dos casillas o un no permitido a primera hora del día y más casillas después, este posible hueco puede ser contabilizado en el horiario de profesores y alumnos)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="285"/>
         <source>Do you want to add current constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Desea añadir la restricción?</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="268"/>
@@ -17182,7 +17282,9 @@ huecos</translation>
  The best practice would be to use constraint teacher not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado solo el profesor. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de profesores.
+La mejor solución sería usar restricciones de tiempo no disponible para el profesor.
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, (pero ponga atención en no obtener horarios imposibles.)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="285"/>
@@ -17191,12 +17293,16 @@ huecos</translation>
  The best practice would be to use constraint students set not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible gap might be counted in students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado solo grupo de alumnos. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de alumnos.
+
+La mejor solución sería usar restricciones de tiempo no disponible para alumnos.
+
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, (pero ponga atención en no obtener horarios imposibles.)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="316"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished">Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
+        <translation>Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
     </message>
 </context>
 <context>
@@ -17204,62 +17310,62 @@ huecos</translation>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="16"/>
         <source>FET - Modify constraint subactivities preferred starting times</source>
-        <translation type="unfinished"></translation>
+        <translation>FET -  Modificar restricción tiempos inicio preferidos para subactividades</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="67"/>
         <source>Set all slots not allowed</source>
-        <translation type="unfinished">Todas las casillas no permitidas</translation>
+        <translation>Todas las casillas no permitidas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="75"/>
         <source>Set all slots allowed</source>
-        <translation type="unfinished">Todas las casillas permitidas</translation>
+        <translation>Todas las casillas permitidas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="83"/>
         <source>Ok</source>
-        <translation type="unfinished">Vale</translation>
+        <translation>Vale</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="91"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="138"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="146"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="159"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="167"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="185"/>
         <source>Component number (split index)</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de componente (índice de partes)</translation>
     </message>
 </context>
 <context>
@@ -17267,7 +17373,7 @@ huecos</translation>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="315"/>
         <source>FET question</source>
-        <translation type="unfinished">FET pregunta</translation>
+        <translation>FET pregunta</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="251"/>
@@ -17276,12 +17382,16 @@ huecos</translation>
  The best practice would be to use constraint break times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado todas las actividades. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de profesores y alumnos.
+
+La mejor solución sería usar restricciones de pausa.
+
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, pero ponga atención en no obtener horarios imposibles (si el profesor/alumno están restringidos en huecos o primeras horas y se deja una casilla no permitido entre dos casillas o un no permitido a primera hora del día y más casillas después, este posible hueco puede ser contabilizado en el horiario de profesores y alumnos)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="285"/>
         <source>Do you want to add current constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Desea añadir la restricción?</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="268"/>
@@ -17290,7 +17400,11 @@ huecos</translation>
  The best practice would be to use constraint teacher not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado solo el profesor. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de profesores.
+
+La mejor solución sería usar restricciones de tiempo no disponible para el profesor.
+
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, (pero ponga atención en no obtener horarios imposibles.)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="285"/>
@@ -17299,12 +17413,16 @@ huecos</translation>
  The best practice would be to use constraint students set not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible gap might be counted in students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha especificado solo alumnos. Puede ser un pequeño problema: Si especifica una casilla no permitida entre dos que lo están, ésta no permitida será contada como un hueco en el horario de alumnos.
+
+La mejor solución sería usar restricciones de tiempo no disponible para alumnos.
+
+Si necesita una ponderación menor de 100%, entonces puede usar esta coacción, (pero ponga atención en no obtener horarios imposibles.)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="316"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished">Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
+        <translation>Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
     </message>
 </context>
 <context>
@@ -17312,62 +17430,62 @@ huecos</translation>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="16"/>
         <source>FET - Modify constraint subactivities preferred time slots</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Modificar restricción de casillas preferidas para subactividades</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="35"/>
         <source>Set all slots not allowed</source>
-        <translation type="unfinished">Todas las casillas no permitidas</translation>
+        <translation>Todas las casillas no permitidas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="43"/>
         <source>Ok</source>
-        <translation type="unfinished">Vale</translation>
+        <translation>Vale</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="51"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="59"/>
         <source>Set all slots allowed</source>
-        <translation type="unfinished">Todas las casillas permitidas</translation>
+        <translation>Todas las casillas permitidas</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="83"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="91"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="138"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="146"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="159"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="167"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="185"/>
         <source>Component number (split index)</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de componente (índice de partes)</translation>
     </message>
 </context>
 <context>
@@ -17673,77 +17791,77 @@ huecos</translation>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="55"/>
         <source>End of day</source>
-        <translation type="unfinished"></translation>
+        <translation>Fin de día</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="88"/>
         <source>Current constraint:</source>
-        <translation type="unfinished">Restricción actual:</translation>
+        <translation>Restricción actual:</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="94"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished">Ponderación=%1%</translation>
+        <translation>Ponderación=%1%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="97"/>
         <source>Teacher interval max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervalo máx de días por semana para profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="99"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished">Profesor=%1</translation>
+        <translation>Profesor=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="102"/>
         <source>Interval start hour=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio de intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="105"/>
         <source>Interval end hour=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final de intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="108"/>
         <source>Max days per week=%1</source>
-        <translation type="unfinished">Máx días por semana=%1</translation>
+        <translation>Máx días por semana=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="157"/>
         <source>FET information</source>
-        <translation type="unfinished">FET información</translation>
+        <translation>FET información</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="121"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Porcentaje inválido</translation>
+        <translation>Porcentaje inválido</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="126"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Porcentaje inválido - debe ser 100%</translation>
+        <translation>Porcentaje inválido - debe ser 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="140"/>
         <source>Invalid teacher</source>
-        <translation type="unfinished">Profesor no válido</translation>
+        <translation>Profesor no válido</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="148"/>
         <source>Start hour invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio inválida</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="153"/>
         <source>End hour invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final inválida</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="158"/>
         <source>Start hour cannot be greater or equal than end hour</source>
-        <translation type="unfinished"></translation>
+        <translation>La hora de comienzo no puede ser mayor o igual que la de final</translation>
     </message>
 </context>
 <context>
@@ -17751,52 +17869,52 @@ huecos</translation>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="16"/>
         <source>FET - Modify constraint teacher interval max days per week dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Modificar restricción intervalo máx días por semana para profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="41"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="67"/>
         <source>Ok</source>
-        <translation type="unfinished">Vale</translation>
+        <translation>Vale</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="75"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="99"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="140"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Ponderación (necesario: 100%)</translation>
+        <translation>Ponderación (necesario: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="148"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="172"/>
         <source>Interval start hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio intervalo</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="213"/>
         <source>Interval end hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final intervalo</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="305"/>
         <source>Max days per week</source>
-        <translation type="unfinished">Máximo de días por semana</translation>
+        <translation>Máximo de días por semana</translation>
     </message>
 </context>
 <context>
@@ -18413,67 +18531,67 @@ no disponible, los huecos no se contarán</translation>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="53"/>
         <source>End of day</source>
-        <translation type="unfinished"></translation>
+        <translation>Fin de día</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="71"/>
         <source>Current constraint:</source>
-        <translation type="unfinished">Restricción actual:</translation>
+        <translation>Restricción actual:</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="77"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished">Ponderación=%1%</translation>
+        <translation>Ponderación=%1%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="80"/>
         <source>Teachers interval max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervalo máx de días por semana para profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="83"/>
         <source>Interval start hour=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio de intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="86"/>
         <source>Interval end hour=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final de intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="89"/>
         <source>Max days per week=%1</source>
-        <translation type="unfinished">Máx días por semana=%1</translation>
+        <translation>Máx días por semana=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="130"/>
         <source>FET information</source>
-        <translation type="unfinished">FET información</translation>
+        <translation>FET información</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="102"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Porcentaje inválido</translation>
+        <translation>Porcentaje inválido</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="107"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Porcentaje inválido - debe ser 100%</translation>
+        <translation>Porcentaje inválido - debe ser 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="121"/>
         <source>Start hour invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio inválida</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="126"/>
         <source>End hour invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final inválida</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="131"/>
         <source>Start hour cannot be greater or equal than end hour</source>
-        <translation type="unfinished"></translation>
+        <translation>La hora de comienzo no puede ser mayor o igual que la de final</translation>
     </message>
 </context>
 <context>
@@ -18481,47 +18599,47 @@ no disponible, los huecos no se contarán</translation>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="16"/>
         <source>FET - Modify constraint teachers interval max days per week dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Modificar restricción intervalo máx días por semana profesores</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="41"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricción actual</translation>
+        <translation>Restricción actual</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="67"/>
         <source>Ok</source>
-        <translation type="unfinished">Vale</translation>
+        <translation>Vale</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="75"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="99"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Ponderación (necesario: 100%)</translation>
+        <translation>Ponderación (necesario: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="107"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="131"/>
         <source>Interval start hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora inicio intervalo</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="172"/>
         <source>Interval end hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora final intervalo</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="247"/>
         <source>Max days per week</source>
-        <translation type="unfinished">Máximo de días por semana</translation>
+        <translation>Máximo de días por semana</translation>
     </message>
 </context>
 <context>
@@ -23194,12 +23312,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY necesita ser incrementada (muchas ac
     <message>
         <location filename="../src/engine/rules.cpp" line="437"/>
         <source>The following time constraint is ignored, because it refers to inactive activities:</source>
-        <translation type="unfinished"></translation>
+        <translation>La siguiente restricción de tiempo se ignoró, porque se refiere a actividades no usadas:</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="504"/>
         <source>The following space constraint is ignored, because it refers to inactive activities:</source>
-        <translation type="unfinished"></translation>
+        <translation>La siguiente restricción de lugar se ignoró, porque se refiere a actividades no usadas:</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2581"/>
@@ -23299,19 +23417,20 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY necesita ser incrementada (muchas ac
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8636"/>
         <source>must be scheduled starting at:</source>
-        <translation type="unfinished"></translation>
+        <translation>debe ser programada comenzando en:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8651"/>
         <source>WP:%1</source>
         <comment>Weight Percentage</comment>
-        <translation type="unfinished">Pond:%1</translation>
+        <translation>Pond:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9505"/>
         <source>must be scheduled starting at:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>debe ser programada comenzando en:
+</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8767"/>
@@ -23685,7 +23804,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY necesita ser incrementada (muchas ac
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11754"/>
         <source>Teacher interval max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Intervalo máx de días por semana para profesor</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11776"/>
@@ -23822,7 +23941,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY necesita ser incrementada (muchas ac
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12520"/>
         <source>End of day</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fin de día</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12501"/>
@@ -23833,17 +23952,17 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY necesita ser incrementada (muchas ac
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12515"/>
         <source>Interval start hour=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hora inicio de intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12520"/>
         <source>Interval end hour=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hora final de intervalo=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11980"/>
         <source>Teachers interval max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Intervalo máx de días por semana para profesor</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12001"/>
@@ -23885,7 +24004,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY necesita ser incrementada (muchas ac
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12491"/>
         <source>Students interval max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Intervalo máx de días por semana para alumnos</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12512"/>
@@ -23906,7 +24025,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY necesita ser incrementada (muchas ac
         <location filename="../src/engine/timeconstraint.cpp" line="12761"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for Weight Percentage</comment>
-        <translation type="unfinished">Pond:%1%</translation>
+        <translation>Pond:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12841"/>
@@ -23931,7 +24050,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY necesita ser incrementada (muchas ac
     <message>
         <location filename="../src/engine/rules.cpp" line="4241"/>
         <source>Your FET version: %1, file version: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Tu versión de FET: %1, versión de archivo: %2</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="57"/>
@@ -23957,12 +24076,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY necesita ser incrementada (muchas ac
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="85"/>
         <source>FET Question</source>
-        <translation type="unfinished"></translation>
+        <translation>FET pregunta</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="250"/>
         <source>FET Information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET información</translation>
     </message>
 </context>
 <context>
@@ -24056,32 +24175,32 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY necesita ser incrementada (muchas ac
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="13"/>
         <source>Remove redundant constraints</source>
-        <translation type="unfinished">Eliminar restricciones reduntantes</translation>
+        <translation>Eliminar restricciones reduntantes</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="25"/>
         <source>This function will try to improve your timetable data by removing redundant constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta función mejorará el horario eliminando restricciones redundantes</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="51"/>
         <source>Remove redundant min n days constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar restricciones redundantes de mín n de días</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="45"/>
         <source>Min n days between activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Mín n días entre actividades</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="67"/>
         <source>Explanation: If you use constraints activities same starting time and/or constraints activities same starting days, maybe you will obtain redundant constraints min n days between activities, which are not good (your timetable is more difficult to find, or even impossible). This menu enables you to remove these redundant min n days between activities constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Explicación: Si usa restricciones de actividades con el mismo tiempo de comienzo y/o del mismo día de inicio, puede ser que obtenga restricciones redundantes de mín n de días entre actividades, lo que no es bueno (se hace difícil resolver el horario). Este menú permite eliminar las coacciones redundantes de mín n días entre actividades</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="83"/>
         <source>Here, removing means making the weights of the constraints equal to 0.0%</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar las restricciones significa que los porcentajes de éstas se igualan a 0.0%</translation>
     </message>
 </context>
 <context>
@@ -24134,27 +24253,27 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY necesita ser incrementada (muchas ac
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="436"/>
         <source>Add a second constraint or not?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Añadir una segunda restricción?</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="446"/>
         <source>Yes</source>
-        <translation type="unfinished">Si</translation>
+        <translation>Si</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="449"/>
         <source>No</source>
-        <translation type="unfinished">No</translation>
+        <translation>No</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="477"/>
         <source>FET information</source>
-        <translation type="unfinished">FET información</translation>
+        <translation>FET información</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="478"/>
         <source>Invalid weight (percentage) - must be &gt;=0 and &lt;=100.0</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponderación no válida - tiene que ser &gt;=0.0 y &lt;=100.0</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="420"/>
@@ -24197,7 +24316,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY necesita ser incrementada (muchas ac
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform.cpp" line="76"/>
         <source>FET information</source>
-        <translation type="unfinished">FET información</translation>
+        <translation>FET información</translation>
     </message>
 </context>
 <context>
@@ -24454,47 +24573,47 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY necesita ser incrementada (muchas ac
     <message>
         <location filename="../src/interface/spreadconfirmationform_template.ui" line="13"/>
         <source>Instructions and confirmation of spreading activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Instrucciones y confirmación para reparto de actividades</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadconfirmationform_template.ui" line="25"/>
         <source>Please read VERY carefully the description below:</source>
-        <translation type="unfinished">Leer MUY cuadosamente lo siguiente:</translation>
+        <translation>Leer MUY cuadosamente lo siguiente:</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadconfirmationform_template.ui" line="45"/>
         <source>This improvement - optimization of spreading activities in a week - is a process of replacing current constraints of type min n days between activities with others, which should provide you with a better timetable. Note: only min n days constraints referring to components from the same split activity will be replaced. If you have constraints min n days referring to activities in different components, these will be left untouched - this is a useful feature.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta mejora - la optimización de reparto de actividades en la semana - es un proceso para reemplazar las restricciones del tipo mín n días entre actividades por otras, que deberían permitir obtener un mejor horario. Nota: solo la restricción de mín de n días referente a las partes componentes de la misma actividad serán reemplazadas. Si tiene restricciones del tipo mín n días que se refieren a actividades en distintos componentes, serán ignoradas - esta es una característica muy útil.</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadconfirmationform_template.ui" line="98"/>
         <source>Continue</source>
-        <translation type="unfinished">Continuar</translation>
+        <translation>Continuar</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadconfirmationform_template.ui" line="105"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadconfirmationform_template.ui" line="55"/>
         <source>Please SAVE/BACKUP your current file and keep it safe, in case anything goes wrong, and only continue if you did that already. Current function is new and not many users tested it</source>
-        <translation type="unfinished">Guardar una copia de seguridad de tu archivo actual y mantenlo en lugar seguro, en el caso de que algo vaya mal, continúa solo si ya lo has hecho. Esta función es nueva y no está probada totalmente</translation>
+        <translation>GUARDAR una COPIA DE SEGURIDAD de tu archivo actual y mantenlo en lugar seguro, en el caso de que algo vaya mal, y continúa solo si ya lo has hecho. Esta función es nueva y no está probada totalmente</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadconfirmationform_template.ui" line="35"/>
         <source>This function is intended to be used after you introduced all activities and obtained a timetable, if you want now to spread the divided activities more evenly over the week. This function is useful if you have 5 days per week, maybe also if you have 6 days per week.</source>
-        <translation type="unfinished"></translation>
+        <translation>La función se usa después de introducir todas las actividades y obtener un horario, si ahora desea repartir las actividades divididas más uniformemente por la semana. Esta función es útil si tiene una semana de 5 días, y puede ser empleada también en 6 días por semana.</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadconfirmationform_template.ui" line="65"/>
         <source>NEW advice, added 4 October 2008: If you use constraints activities same starting time or same starting day then you must take care of this aspect: after applying this function and before generating a timetable, it is IMPORTANT to remove constraints min n days between activities which are redundant, like described in Help/Important tips, advice 2) . If you don&apos;t do that, you might get too difficult timetables or even impossible ones.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nueva advertencia, añadida 4 Octubre de 2008: Si usa restricciones del tipo mismo tiempo de inicio o misma hora del día, debe tener cuidado: después de aplicar esta función y antes de generar un horario, es IMPORTANTE eliminar las restricciones de mín n de días entre actividades que sean redundantes, como las que se detallan en Ayuda/Consejos importantes, apartado 2). Si no se hace, puede ser imposible la tarea de resolver el horario.</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadconfirmationform_template.ui" line="75"/>
         <source>It is important for you to choose good weights percentages, suitable for your institution. A good weighting might be values from 95.0% to 100.0% (ex.: 95.0%, 99.0%, 99.75%, 100.0%). You may want to select the check boxes for activities split into 2 or 3 components, so that they are not in consecutive days. If you obtain a timetable too difficult for FET, you might need to revert to your former data or lower weights of constraints. Note: you can use a progressive approach in choosing good weights</source>
-        <translation type="unfinished"></translation>
+        <translation>Es importante elegir buenos porcentajes de ponderación, adecuados a su colegio o institución. Una buena elección de valores puede ser desde 95.0% a 100.0% (por ejemplo: 95.0%, 99.0%, 99.7% y 10.0%). Puede querer seleccionar las casillas de la caja de diálogo para partir en 2 o 3 componentes, de forma que que no sea en días consecutivos. Si obtiene un horario muy difícil para FET, puede necesitar deshacer los cambios o bajar los porcentajes de restricción. Nota: puede usar un sistema progresivo para elegir buenos porcentajes de restricción</translation>
     </message>
 </context>
 <context>
@@ -24502,12 +24621,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY necesita ser incrementada (muchas ac
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="349"/>
         <source>FET bug</source>
-        <translation type="unfinished"></translation>
+        <translation>FET error</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="350"/>
         <source>You found a probable bug in FET - trying to add constraint %1, but it is already existing. Please report error. FET will now continue operation</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha encontrado un probable error en FET - intentando añadir una restricción %1, pero ya existente. Informe del error. Aunque FET seguirá operando</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="273"/>
@@ -24517,42 +24636,42 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY necesita ser incrementada (muchas ac
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="388"/>
         <source>FET information</source>
-        <translation type="unfinished">FET información</translation>
+        <translation>FET información</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="272"/>
         <source>Accept</source>
-        <translation type="unfinished">Aceptar</translation>
+        <translation>Aceptar</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="273"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="285"/>
         <source>The following time constraints will be removed:</source>
-        <translation type="unfinished"></translation>
+        <translation>Las siguientes restricciones serán eliminadas:</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="296"/>
         <source>The following time constraints will be added:</source>
-        <translation type="unfinished"></translation>
+        <translation>Las siguientes restricciones serán añadidas:</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="265"/>
         <source>Last confirmation needed</source>
-        <translation type="unfinished">Se necesita confirmación</translation>
+        <translation>Se necesita confirmación</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="269"/>
         <source>Operations that will be done:</source>
-        <translation type="unfinished">Operaciones que serán hechas:</translation>
+        <translation>Operaciones que serán hechas:</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="217"/>
         <source>Please select the isolated component</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione el componente aislado</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="153"/>
@@ -24560,27 +24679,30 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY necesita ser incrementada (muchas ac
 contains invalid activity id %2
 
 Please report error. FET will now abort current operation</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha encontrado un probable error en FET - restricción %1
+contiene una actividad inválida id %2
+
+Informe del error. FET cancelará la operación actual</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="86"/>
         <source>You found a probable bug in FET - min 1 day should be selected automatically for all split activities. Please report error. FET will now abort current operation</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha encontrado un probable error en FET - Un mín de 1 día se debería seleccionar para dividir todas las actividades. Informe del error. FET cancelará la operación actual</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="389"/>
         <source>This box must remain checked, so that split activities are not in the same day (with the probability you write below)</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta casilla debe permacer marcado, de tal forma que las actividades partidas no estén en el mismo día</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="356"/>
         <source>Spreading of activities operation completed successfully</source>
-        <translation type="unfinished"></translation>
+        <translation>El reparto de las actividades se ha completado</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="359"/>
         <source>If you are using constraints of type activities same starting time or activities same starting day, sometimes you might find useful (after current operation) to apply the operation of removing redundant constraints.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si está usando restricciones del tipo de mismo tiempo de incio o que comienzan el mismo día, algunas veces puede encontrar útil (después de esta operación) aplicar la eliminación de restricciones redundantes.</translation>
     </message>
 </context>
 <context>
@@ -24588,92 +24710,92 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="131"/>
         <source>At least 2 days apart</source>
-        <translation type="unfinished"></translation>
+        <translation>Al menos 2 días separadas</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="237"/>
         <source>95.0</source>
-        <translation type="unfinished">95.0</translation>
+        <translation>95.0</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="198"/>
         <source>Should not be in 3 consecutive days</source>
-        <translation type="unfinished"></translation>
+        <translation>No debería ser en 3 días consecutivos</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="73"/>
         <source>At least 1 day apart</source>
-        <translation type="unfinished"></translation>
+        <translation>Al menos 1 día sepadas</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="19"/>
         <source>Consecutive if same day?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Consecutivas si son el mismo día?</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="13"/>
         <source>Spreading activities uniformly in the week</source>
-        <translation type="unfinished"></translation>
+        <translation>Reparto uniforme de actividades en la semana</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="224"/>
         <source>Weight (%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Porcentaje (%)</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="147"/>
         <source>Select this so the activities will not be in 2 consecutive days. There will be added 1 additional constraint to accomplish this</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionarlo de tal forma que las actividades no serán en 2 días consecutivos. Será añadida 1 restricción adicional para cumplirlo</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="262"/>
         <source>1 </source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="291"/>
         <source>2</source>
-        <translation type="unfinished">2</translation>
+        <translation>2</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="278"/>
         <source>3</source>
-        <translation type="unfinished">3</translation>
+        <translation>3</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="64"/>
         <source>All split activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Todas las actividades partidas</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="125"/>
         <source>Activities split into 2 components</source>
-        <translation type="unfinished"></translation>
+        <translation>Actividades partidas en 2 componentes</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="186"/>
         <source>Activities which are split into 3 components per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Actividades partidas en 3 componentes por semana</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="214"/>
         <source>Select this if you want activities split into 3 per week not to be in 3 consecutive days. There will be added 2 additional constraints to accomplish this, min 2 days between isolated component and each of the other 2 components. Note: usually, any isolated component: 1, 2 or 3 should work</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar esto si quiere partir las actividades en 3 por semana no para 3 días consecutivos. Serán añadias restricciones adicionales para cumplir esto, mín 2 días entre componentes aislados y cada uno de los otros 2 componentes. Nota: habitualmente, cualquier componente aislado: 1, 2 o 3 debería trabajar</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="250"/>
         <source>Isolated component</source>
-        <translation type="unfinished"></translation>
+        <translation>Componente aislado</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="35"/>
         <source>Select if when placing 2 activities from the same container in the same day, activities should be consecutive (this only happens for constraints with weight below 100.0%, which are not respected)</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar si cuando coloca 2 actividades desde el mismo contenedor en el mismo día, las actividades deberían ser consecutivas (esto solo ocurre para restricciones con porcentajes bajo 100.00% que no son respetadas)</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="92"/>
         <source>This has to be checked, so activies from the same container are not in the same day (they are at least 1 day apart)</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta debe permacer marcado, de tal forma que las actividades del mismo contenedor no estén en el mismo día (al menos 1 día separadas)</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="115"/>
@@ -24683,12 +24805,12 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="25"/>
         <source>Force consecutive if 2 components are on the same day</source>
-        <translation type="unfinished"></translation>
+        <translation>Forzar consecutivas si los 2 componentes están en el mismo día</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="54"/>
         <source>Weights (percentages) of newly added constraints min n days between activities - recommended between 95.0%-100.0% (maybe lower on those split into 3). Make weights 100.0% if the constraints need to be respected all the time. It is recommended to enable the check boxes for activities split into 2 or 3 components (not to be in consecutive days), if your data is still possible to solve. You may use a progressive approach. Example of weights: 90.0%, 95.0%, 99.0%, 99.75%, 100.0%.</source>
-        <translation type="unfinished"></translation>
+        <translation>Porcentajes de restricciones añadidas con mín de días entre actividades. Una buena elección de valores puede ser desde 95.0% a 100.0%  (puede ser más bajos en repartos en 3). El porcentaje debe ser 100.0% si la restricción necesita ser cumplida todo el tiempo. Se recomienda activar la casilla de de actividades partidas en 2 o 3 componentes (no para días consecutivos), si con los datos todavía es posible resolverlo. Nota: puede usar un sistema progresivo para elegir buenos porcentajes de restricción, por ejemplo 95.0%, 99.0%, 99.7% y 10.0%). </translation>
     </message>
 </context>
 <context>
@@ -24696,122 +24818,122 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="86"/>
         <source>Do you want to export detailed statistic files into directory %1 as html files?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Quiere exportar archivos con estadísticas detalladas en el directorio %1 como html?</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="251"/>
         <source>Statistic files were exported to directory %1 as html files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los archivos de estadísticas se encuentran en %1 como html.</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="254"/>
         <source>Statistic export incomplete</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportado de estadísticas incompleto</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="1385"/>
         <source>Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
-        <translation type="unfinished">No puedo abrir el archivo %1 para escritura. Compruebe el disco disponible el espacio libre. Guardado de %1 cancelado.</translation>
+        <translation>No puedo abrir el archivo %1 para escritura. Compruebe el disco disponible el espacio libre. Guardado de %1 cancelado.</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="289"/>
         <source>CSS Stylesheet of %1</source>
-        <translation type="unfinished">CSS Hoja de estilos %1</translation>
+        <translation>CSS Hoja de estilos %1</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="290"/>
         <source>Stylesheet generated with FET %1 on %2</source>
-        <translation type="unfinished">Hoja de estilos generada con FET %1 de %2</translation>
+        <translation>Hoja de estilos generada con FET %1 de %2</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="291"/>
         <source>To hide an element just write the following phrase into the element</source>
-        <translation type="unfinished">Para ocultar un elemento solo escribe la siguiente frase en el elemento</translation>
+        <translation>Para ocultar un elemento solo escribe la siguiente frase en el elemento</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="349"/>
         <source>End of file.</source>
-        <translation type="unfinished">Fin de archivo.</translation>
+        <translation>Fin de archivo.</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="1552"/>
         <source>Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished">El guardado de archivo %1 dió un código de error %2. Compruebe el espacio en disco.</translation>
+        <translation>El guardado de archivo %1 dió un código de error %2. Compruebe el espacio en disco.</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="410"/>
         <source>Institution name</source>
-        <translation type="unfinished">Nombre de institución</translation>
+        <translation>Nombre de institución</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="411"/>
         <source>Comments</source>
-        <translation type="unfinished">Comentarios</translation>
+        <translation>Comentarios</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="415"/>
         <source>Statistics</source>
-        <translation type="unfinished">Estadísticas</translation>
+        <translation>Estadísticas</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="422"/>
         <source>Teachers</source>
-        <translation type="unfinished">Profesores</translation>
+        <translation>Profesores</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="428"/>
         <source>Students</source>
-        <translation type="unfinished">Alumnos</translation>
+        <translation>Alumnos</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="434"/>
         <source>Subjects</source>
-        <translation type="unfinished">Materias</translation>
+        <translation>Materias</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="436"/>
         <source>view</source>
-        <translation type="unfinished"></translation>
+        <translation>ver</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="1544"/>
         <source>Timetable generated with FET %1 on %2</source>
-        <translation type="unfinished">Horario generado con FET %1 el %2</translation>
+        <translation>Horario generado con FET %1 el %2</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="506"/>
         <source>Teachers - Subjects Matrix</source>
-        <translation type="unfinished"></translation>
+        <translation>Profesores - Matriz de materias</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="1535"/>
         <source>Sum</source>
-        <translation type="unfinished"></translation>
+        <translation>Suma</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="689"/>
         <source>Subjects - Teachers Matrix</source>
-        <translation type="unfinished"></translation>
+        <translation>Materias - Matriz de profesores</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="870"/>
         <source>Teachers - Students Matrix</source>
-        <translation type="unfinished"></translation>
+        <translation>Profesores - Matriz de alumnos</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="1058"/>
         <source>Students -Teachers Matrix</source>
-        <translation type="unfinished"></translation>
+        <translation>Alumnos - Matriz de profesores</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="1246"/>
         <source>Subjects - Students Matrix</source>
-        <translation type="unfinished"></translation>
+        <translation>Materias - Matriz de alumnos</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="1426"/>
         <source>Students -Subjects Matrix</source>
-        <translation type="unfinished"></translation>
+        <translation>Alumnos - Matriz de materias</translation>
     </message>
 </context>
 <context>
@@ -25413,92 +25535,92 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="971"/>
         <source>View the teachers xml.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ver los xml de profesores.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="972"/>
         <source>View the subgroups xml.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ver xml de subgrupos.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="979"/>
         <source>Timetables</source>
-        <translation type="unfinished"></translation>
+        <translation>Horarios</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="981"/>
         <source>Days Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Días Horizontal</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="981"/>
         <source>Days Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Días Vertical</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="981"/>
         <source>Time Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horas Horizontal</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="981"/>
         <source>Time Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Horas Vertical</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="987"/>
         <source>Subgroups</source>
-        <translation type="unfinished">Subgrupos</translation>
+        <translation>Subgrupos</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1040"/>
         <source>view</source>
-        <translation type="unfinished"></translation>
+        <translation>Ver</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="994"/>
         <source>Groups</source>
-        <translation type="unfinished">Grupos</translation>
+        <translation>GruposGrupos</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1001"/>
         <source>Years</source>
-        <translation type="unfinished">Cursos</translation>
+        <translation>Cursos</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1008"/>
         <source>Teachers</source>
-        <translation type="unfinished">Profesores</translation>
+        <translation>Profesores</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1015"/>
         <source>Teachers Free Periods</source>
-        <translation type="unfinished"></translation>
+        <translation>Períodos libres de profesores</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1022"/>
         <source>Rooms</source>
-        <translation type="unfinished">Aulas</translation>
+        <translation>Aulas</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1029"/>
         <source>Subjects</source>
-        <translation type="unfinished">Materias</translation>
+        <translation>Materias</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="970"/>
         <source>View the soft conflicts list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vel la lista de conflictos leves.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1036"/>
         <source>Activities</source>
-        <translation type="unfinished">Actividades</translation>
+        <translation>Actividades</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="5663"/>
         <source>All Activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Todas las actividades</translation>
     </message>
 </context>
 <context>
@@ -26048,12 +26170,12 @@ instrucciones o contacte con el autor</translation>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="175"/>
         <source>Break with weight 100% in this slot</source>
-        <translation type="unfinished"></translation>
+        <translation>Rota por ponderación 100% en esta casilla</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="171"/>
         <source>Room is not available with weight %1%</source>
-        <translation type="unfinished"></translation>
+        <translation>Aula no disponible con ponderación %1%</translation>
     </message>
 </context>
 <context>
@@ -26151,12 +26273,12 @@ instrucciones o contacte con el autor</translation>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="257"/>
         <source>Students subgroup is not available 100% in this slot</source>
-        <translation type="unfinished"></translation>
+        <translation>Subgrupo de alumnos no disponible 100% en esta casilla</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="261"/>
         <source>Break with weight 100% in this slot</source>
-        <translation type="unfinished"></translation>
+        <translation>Rota por ponderación 100% en esta casilla</translation>
     </message>
 </context>
 <context>
@@ -26270,12 +26392,12 @@ instrucciones o contacte con el autor</translation>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="188"/>
         <source>Teacher is not available 100% in this slot</source>
-        <translation type="unfinished"></translation>
+        <translation>Profesor no disponible 100% en esta casilla</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="192"/>
         <source>Break with weight 100% in this slot</source>
-        <translation type="unfinished"></translation>
+        <translation>Roto con el porcentaje de 100% en esta casilla</translation>
     </message>
 </context>
 <context>
@@ -26395,12 +26517,12 @@ instrucciones o contacte con el autor</translation>
     <message>
         <location filename="../src/engine/import.cpp" line="114"/>
         <source>FET - Import from CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Importar desde archivo CSV</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="212"/>
         <source>OK</source>
-        <translation type="unfinished">Vale</translation>
+        <translation>Vale</translation>
     </message>
 </context>
 <context>
@@ -26408,12 +26530,12 @@ instrucciones o contacte con el autor</translation>
     <message>
         <location filename="../src/engine/import.cpp" line="357"/>
         <source>FET - import %1 comment</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - comentario importación %1</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="368"/>
         <source>&amp;Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Vale</translation>
     </message>
 </context>
 <context>
@@ -26421,12 +26543,12 @@ instrucciones o contacte con el autor</translation>
     <message>
         <location filename="../src/engine/export.cpp" line="228"/>
         <source>FET - export comment</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - comentario exportación</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="239"/>
         <source>&amp;Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Vale</translation>
     </message>
 </context>
 </TS>
