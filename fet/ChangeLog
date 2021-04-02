@@ -974,4 +974,7 @@ Versions 5.2.0 - 5.2.
 	- Constraint 2 activities consecutive (suggested by Felix FSH)
 - Version 5.2.1
 	- Bug fix in conflicts reporting in conflicts.txt for single timetable generation
+- Version 5.2.2
+	- Small bug fix (when aborting generation or generation is impossible, correct conflicts are
+	written on hard disk).
 	
