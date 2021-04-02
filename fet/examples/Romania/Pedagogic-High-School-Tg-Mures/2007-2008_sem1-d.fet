@@ -1,222 +1,248 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.16.0">
+<fet version="5.24.0">
 
 <Institution_Name>Liceul Pedagogic &quot;Mihai Eminescu&quot; Tg Mures</Institution_Name>
 
 <Comments>versiunea 08.10.2007</Comments>
 
-<Hours_List>
-	<Number>8</Number>
-	<Name>7</Name>
-	<Name>8</Name>
-	<Name>9</Name>
-	<Name>10</Name>
-	<Name>11</Name>
-	<Name>12</Name>
-	<Name>13</Name>
-	<Name>14</Name>
-</Hours_List>
-
 <Days_List>
-	<Number>5</Number>
+<Number_of_Days>5</Number_of_Days>
+<Day>
 	<Name>Luni</Name>
+</Day>
+<Day>
 	<Name>Marti</Name>
+</Day>
+<Day>
 	<Name>Miercuri</Name>
+</Day>
+<Day>
 	<Name>Joi</Name>
+</Day>
+<Day>
 	<Name>Vineri</Name>
+</Day>
 </Days_List>
+
+<Hours_List>
+<Number_of_Hours>8</Number_of_Hours>
+<Hour>
+	<Name>7</Name>
+</Hour>
+<Hour>
+	<Name>8</Name>
+</Hour>
+<Hour>
+	<Name>9</Name>
+</Hour>
+<Hour>
+	<Name>10</Name>
+</Hour>
+<Hour>
+	<Name>11</Name>
+</Hour>
+<Hour>
+	<Name>12</Name>
+</Hour>
+<Hour>
+	<Name>13</Name>
+</Hour>
+<Hour>
+	<Name>14</Name>
+</Hour>
+</Hours_List>
 
 <Students_List>
 <Year>
-<Name>9</Name>
-<Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>IXA</Name>
+	<Name>9</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Group>
+		<Name>IXA</Name>
+		<Number_of_Students>0</Number_of_Students>
 		<Subgroup>
-		<Name>9A</Name>
-		<Number_of_Students>10</Number_of_Students>
+			<Name>9A</Name>
+			<Number_of_Students>10</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>IXB</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>IXB</Name>
+		<Number_of_Students>0</Number_of_Students>
 		<Subgroup>
-		<Name>9B</Name>
-		<Number_of_Students>10</Number_of_Students>
+			<Name>9B</Name>
+			<Number_of_Students>10</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>IXC</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>IXC</Name>
+		<Number_of_Students>0</Number_of_Students>
 		<Subgroup>
-		<Name>9C</Name>
-		<Number_of_Students>10</Number_of_Students>
+			<Name>9C</Name>
+			<Number_of_Students>10</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>IXD</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>IXD</Name>
+		<Number_of_Students>0</Number_of_Students>
 		<Subgroup>
-		<Name>9D</Name>
-		<Number_of_Students>10</Number_of_Students>
+			<Name>9D</Name>
+			<Number_of_Students>10</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>IXE</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>IXE</Name>
+		<Number_of_Students>0</Number_of_Students>
 		<Subgroup>
-		<Name>9E</Name>
-		<Number_of_Students>10</Number_of_Students>
-		</Subgroup>
-	</Group>
-</Year>
-<Year>
-<Name>10</Name>
-<Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>XA</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>10A</Name>
-		<Number_of_Students>10</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-	<Name>XB</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>10B</Name>
-		<Number_of_Students>10</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-	<Name>XC</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>10C</Name>
-		<Number_of_Students>10</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-	<Name>XD</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>10D</Name>
-		<Number_of_Students>10</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-	<Name>XE</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>10E</Name>
-		<Number_of_Students>10</Number_of_Students>
+			<Name>9E</Name>
+			<Number_of_Students>10</Number_of_Students>
 		</Subgroup>
 	</Group>
 </Year>
 <Year>
-<Name>11</Name>
-<Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>XIA</Name>
+	<Name>10</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Group>
+		<Name>XA</Name>
+		<Number_of_Students>0</Number_of_Students>
 		<Subgroup>
-		<Name>11A</Name>
-		<Number_of_Students>10</Number_of_Students>
+			<Name>10A</Name>
+			<Number_of_Students>10</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>XIB</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>XB</Name>
+		<Number_of_Students>0</Number_of_Students>
 		<Subgroup>
-		<Name>11B</Name>
-		<Number_of_Students>10</Number_of_Students>
+			<Name>10B</Name>
+			<Number_of_Students>10</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>XIC</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>XC</Name>
+		<Number_of_Students>0</Number_of_Students>
 		<Subgroup>
-		<Name>11C</Name>
-		<Number_of_Students>10</Number_of_Students>
+			<Name>10C</Name>
+			<Number_of_Students>10</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>XID</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>XD</Name>
+		<Number_of_Students>0</Number_of_Students>
 		<Subgroup>
-		<Name>11D</Name>
-		<Number_of_Students>10</Number_of_Students>
+			<Name>10D</Name>
+			<Number_of_Students>10</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>XIE</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>XE</Name>
+		<Number_of_Students>0</Number_of_Students>
 		<Subgroup>
-		<Name>11E</Name>
-		<Number_of_Students>10</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-	<Name>XIF</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>11F</Name>
-		<Number_of_Students>10</Number_of_Students>
+			<Name>10E</Name>
+			<Number_of_Students>10</Number_of_Students>
 		</Subgroup>
 	</Group>
 </Year>
 <Year>
-<Name>12</Name>
-<Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>XIIA</Name>
+	<Name>11</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Group>
+		<Name>XIA</Name>
+		<Number_of_Students>0</Number_of_Students>
 		<Subgroup>
-		<Name>12A</Name>
-		<Number_of_Students>10</Number_of_Students>
+			<Name>11A</Name>
+			<Number_of_Students>10</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>XIIB</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>XIB</Name>
+		<Number_of_Students>0</Number_of_Students>
 		<Subgroup>
-		<Name>12B</Name>
-		<Number_of_Students>10</Number_of_Students>
+			<Name>11B</Name>
+			<Number_of_Students>10</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>XIIC</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>XIC</Name>
+		<Number_of_Students>0</Number_of_Students>
 		<Subgroup>
-		<Name>12C</Name>
-		<Number_of_Students>10</Number_of_Students>
+			<Name>11C</Name>
+			<Number_of_Students>10</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>XIID</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>XID</Name>
+		<Number_of_Students>0</Number_of_Students>
 		<Subgroup>
-		<Name>12D</Name>
-		<Number_of_Students>10</Number_of_Students>
+			<Name>11D</Name>
+			<Number_of_Students>10</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>XIIE</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>XIE</Name>
+		<Number_of_Students>0</Number_of_Students>
 		<Subgroup>
-		<Name>12E</Name>
-		<Number_of_Students>10</Number_of_Students>
+			<Name>11E</Name>
+			<Number_of_Students>10</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>XIIF</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>XIF</Name>
+		<Number_of_Students>0</Number_of_Students>
 		<Subgroup>
-		<Name>12F</Name>
-		<Number_of_Students>10</Number_of_Students>
+			<Name>11F</Name>
+			<Number_of_Students>10</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+	<Name>12</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Group>
+		<Name>XIIA</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>12A</Name>
+			<Number_of_Students>10</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>XIIB</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>12B</Name>
+			<Number_of_Students>10</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>XIIC</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>12C</Name>
+			<Number_of_Students>10</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>XIID</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>12D</Name>
+			<Number_of_Students>10</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>XIIE</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>12E</Name>
+			<Number_of_Students>10</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>XIIF</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>12F</Name>
+			<Number_of_Students>10</Number_of_Students>
 		</Subgroup>
 	</Group>
 </Year>

@@ -1,69 +1,93 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.16.0">
+<fet version="5.24.0">
 
 <Institution_Name>Γυμνάσιο Βαρθολομιού</Institution_Name>
 
 <Comments></Comments>
 
-<Hours_List>
-	<Number>7</Number>
-	<Name>1</Name>
-	<Name>2</Name>
-	<Name>3</Name>
-	<Name>4</Name>
-	<Name>5</Name>
-	<Name>6</Name>
-	<Name>7</Name>
-</Hours_List>
-
 <Days_List>
-	<Number>5</Number>
+<Number_of_Days>5</Number_of_Days>
+<Day>
 	<Name>Δευτέρα</Name>
+</Day>
+<Day>
 	<Name>Τρίτη</Name>
+</Day>
+<Day>
 	<Name>Τετάρτη</Name>
+</Day>
+<Day>
 	<Name>Πέμπτη</Name>
+</Day>
+<Day>
 	<Name>Παρασκευή</Name>
+</Day>
 </Days_List>
+
+<Hours_List>
+<Number_of_Hours>7</Number_of_Hours>
+<Hour>
+	<Name>1</Name>
+</Hour>
+<Hour>
+	<Name>2</Name>
+</Hour>
+<Hour>
+	<Name>3</Name>
+</Hour>
+<Hour>
+	<Name>4</Name>
+</Hour>
+<Hour>
+	<Name>5</Name>
+</Hour>
+<Hour>
+	<Name>6</Name>
+</Hour>
+<Hour>
+	<Name>7</Name>
+</Hour>
+</Hours_List>
 
 <Students_List>
 <Year>
-<Name>2008-2009</Name>
-<Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>Α</Name>
+	<Name>2008-2009</Name>
 	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>Α1</Name>
+	<Group>
+		<Name>Α</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>Α1</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>Α2</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>Α2</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>Β</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>Β1</Name>
+		<Name>Β</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>Β1</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>Β2</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>Β2</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>Γ</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>Γ1</Name>
+		<Name>Γ</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>Γ1</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>Γ2</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>Γ2</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 	</Group>
 </Year>

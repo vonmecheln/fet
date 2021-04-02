@@ -1,121 +1,145 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.19.3">
+<fet version="5.24.0">
 
 <Institution_Name>ثانوية سعودية</Institution_Name>
 
 <Comments></Comments>
 
-<Hours_List>
-	<Number>7</Number>
-	<Name>1</Name>
-	<Name>2</Name>
-	<Name>3</Name>
-	<Name>4</Name>
-	<Name>5</Name>
-	<Name>6</Name>
-	<Name>7</Name>
-</Hours_List>
-
 <Days_List>
-	<Number>5</Number>
+<Number_of_Days>5</Number_of_Days>
+<Day>
 	<Name>الاحد</Name>
+</Day>
+<Day>
 	<Name>الاثنين</Name>
+</Day>
+<Day>
 	<Name>الثلاثاء</Name>
+</Day>
+<Day>
 	<Name>الاربعاء</Name>
+</Day>
+<Day>
 	<Name>الخميس</Name>
+</Day>
 </Days_List>
+
+<Hours_List>
+<Number_of_Hours>7</Number_of_Hours>
+<Hour>
+	<Name>1</Name>
+</Hour>
+<Hour>
+	<Name>2</Name>
+</Hour>
+<Hour>
+	<Name>3</Name>
+</Hour>
+<Hour>
+	<Name>4</Name>
+</Hour>
+<Hour>
+	<Name>5</Name>
+</Hour>
+<Hour>
+	<Name>6</Name>
+</Hour>
+<Hour>
+	<Name>7</Name>
+</Hour>
+</Hours_List>
 
 <Students_List>
 <Year>
-<Name>1422</Name>
-<Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>الصف الأول</Name>
+	<Name>1422</Name>
 	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>101</Name>
+	<Group>
+		<Name>الصف الأول</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>101</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>102</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>102</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>103</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>103</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>104</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>104</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>105</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>105</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>106</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>106</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>107</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>107</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>الصف الثاني</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>201</Name>
+		<Name>الصف الثاني</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>201</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>202</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>202</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>203</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>203</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>204</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>204</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>205</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>205</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>206</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>206</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>الصف الثالث</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>301</Name>
+		<Name>الصف الثالث</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>301</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>302</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>302</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>303</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>303</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>304</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>304</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>305</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>305</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>306</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>306</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 	</Group>
 </Year>

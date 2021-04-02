@@ -1,137 +1,183 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.16.0">
+<fet version="5.24.0">
 
 <Institution_Name>Collegiate Junior School for Girls</Institution_Name>
 
 <Comments>Default comments</Comments>
 
-<Hours_List>
-	<Number>13</Number>
-	<Name>07:50 - 08:18</Name>
-	<Name>08:18 - 08:46</Name>
-	<Name>08:46 - 09:14</Name>
-	<Name>09:14 - 09:42</Name>
-	<Name>09:42 - 10:15</Name>
-	<Name>10:15 - 10:40</Name>
-	<Name>10:40 - 11:08</Name>
-	<Name>11:08 - 11:36</Name>
-	<Name>11:36 - 12:04</Name>
-	<Name>12:04 - 12:32</Name>
-	<Name>12:32 - 13:00</Name>
-	<Name>13:00 - 13:28</Name>
-	<Name>13:28 - 13:56</Name>
-</Hours_List>
-
 <Days_List>
-	<Number>10</Number>
+<Number_of_Days>10</Number_of_Days>
+<Day>
 	<Name>Monday</Name>
+</Day>
+<Day>
 	<Name>Tuesday</Name>
+</Day>
+<Day>
 	<Name>Wednesday</Name>
+</Day>
+<Day>
 	<Name>Thursday</Name>
+</Day>
+<Day>
 	<Name>Friday</Name>
+</Day>
+<Day>
 	<Name>Monday2</Name>
+</Day>
+<Day>
 	<Name>Tuesday2</Name>
+</Day>
+<Day>
 	<Name>Wednesday2</Name>
+</Day>
+<Day>
 	<Name>Thursday2</Name>
+</Day>
+<Day>
 	<Name>Friday2</Name>
+</Day>
 </Days_List>
+
+<Hours_List>
+<Number_of_Hours>13</Number_of_Hours>
+<Hour>
+	<Name>07:50 - 08:18</Name>
+</Hour>
+<Hour>
+	<Name>08:18 - 08:46</Name>
+</Hour>
+<Hour>
+	<Name>08:46 - 09:14</Name>
+</Hour>
+<Hour>
+	<Name>09:14 - 09:42</Name>
+</Hour>
+<Hour>
+	<Name>09:42 - 10:15</Name>
+</Hour>
+<Hour>
+	<Name>10:15 - 10:40</Name>
+</Hour>
+<Hour>
+	<Name>10:40 - 11:08</Name>
+</Hour>
+<Hour>
+	<Name>11:08 - 11:36</Name>
+</Hour>
+<Hour>
+	<Name>11:36 - 12:04</Name>
+</Hour>
+<Hour>
+	<Name>12:04 - 12:32</Name>
+</Hour>
+<Hour>
+	<Name>12:32 - 13:00</Name>
+</Hour>
+<Hour>
+	<Name>13:00 - 13:28</Name>
+</Hour>
+<Hour>
+	<Name>13:28 - 13:56</Name>
+</Hour>
+</Hours_List>
 
 <Students_List>
 <Year>
-<Name>2008</Name>
-<Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>Grade 1A</Name>
+	<Name>2008</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Group>
+		<Name>Grade 1A</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Grade 1B</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Grade 1B</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Grade 1C</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Grade 1C</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Grade 2A</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Grade 2A</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Grade 2B</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Grade 2B</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Grade 2C</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Grade 2C</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Grade 3A</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Grade 3A</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Grade 3B</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Grade 3B</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Grade 3C</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Grade 3C</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Grade 4A</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Grade 4A</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Grade 4B</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Grade 4B</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Grade 4C</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Grade 4C</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Grade 5A</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Grade 5A</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Grade 5B</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Grade 5B</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Grade 5C</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Grade 5C</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Grade 6A</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Grade 6A</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Grade 6B</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Grade 6B</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Grade 6C</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Grade 6C</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Grade 7A</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Grade 7A</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Grade 7B</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Grade 7B</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Grade 7C</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Grade 7C</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Pre-Primary</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Pre-Primary</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>Remedial</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>Remedial</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 </Year>
 </Students_List>

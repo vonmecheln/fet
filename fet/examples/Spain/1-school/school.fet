@@ -1,124 +1,152 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.16.0">
+<fet version="5.24.0">
 
 <Institution_Name>INSTITUT</Institution_Name>
 
 <Comments>Default comments</Comments>
 
-<Hours_List>
-	<Number>9</Number>
-	<Name>1</Name>
-	<Name>2</Name>
-	<Name>3</Name>
-	<Name>Pati</Name>
-	<Name>4</Name>
-	<Name>5</Name>
-	<Name>6</Name>
-	<Name>Menjador</Name>
-	<Name>7</Name>
-</Hours_List>
-
 <Days_List>
-	<Number>5</Number>
+<Number_of_Days>5</Number_of_Days>
+<Day>
 	<Name>Dilluns</Name>
+</Day>
+<Day>
 	<Name>Dimarts</Name>
+</Day>
+<Day>
 	<Name>Dimecres</Name>
+</Day>
+<Day>
 	<Name>Dijous</Name>
+</Day>
+<Day>
 	<Name>Divendres</Name>
+</Day>
 </Days_List>
+
+<Hours_List>
+<Number_of_Hours>9</Number_of_Hours>
+<Hour>
+	<Name>1</Name>
+</Hour>
+<Hour>
+	<Name>2</Name>
+</Hour>
+<Hour>
+	<Name>3</Name>
+</Hour>
+<Hour>
+	<Name>Pati</Name>
+</Hour>
+<Hour>
+	<Name>4</Name>
+</Hour>
+<Hour>
+	<Name>5</Name>
+</Hour>
+<Hour>
+	<Name>6</Name>
+</Hour>
+<Hour>
+	<Name>Menjador</Name>
+</Hour>
+<Hour>
+	<Name>7</Name>
+</Hour>
+</Hours_List>
 
 <Students_List>
 <Year>
-<Name>2008-2009</Name>
-<Number_of_Students>575</Number_of_Students>
+	<Name>2008-2009</Name>
+	<Number_of_Students>575</Number_of_Students>
 	<Group>
-	<Name>1-BAT-A</Name>
-	<Number_of_Students>30</Number_of_Students>
+		<Name>1-BAT-A</Name>
+		<Number_of_Students>30</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>1-BAT-B</Name>
-	<Number_of_Students>30</Number_of_Students>
+		<Name>1-BAT-B</Name>
+		<Number_of_Students>30</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>1-BAT-C</Name>
-	<Number_of_Students>30</Number_of_Students>
+		<Name>1-BAT-C</Name>
+		<Number_of_Students>30</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>1-ESO-A</Name>
-	<Number_of_Students>30</Number_of_Students>
+		<Name>1-ESO-A</Name>
+		<Number_of_Students>30</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>1-ESO-B</Name>
-	<Number_of_Students>30</Number_of_Students>
+		<Name>1-ESO-B</Name>
+		<Number_of_Students>30</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>1-ESO-C</Name>
-	<Number_of_Students>30</Number_of_Students>
+		<Name>1-ESO-C</Name>
+		<Number_of_Students>30</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>2-BAT-A</Name>
-	<Number_of_Students>30</Number_of_Students>
+		<Name>2-BAT-A</Name>
+		<Number_of_Students>30</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>2-BAT-B</Name>
-	<Number_of_Students>30</Number_of_Students>
+		<Name>2-BAT-B</Name>
+		<Number_of_Students>30</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>2-ESO-A</Name>
-	<Number_of_Students>30</Number_of_Students>
+		<Name>2-ESO-A</Name>
+		<Number_of_Students>30</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>2-ESO-B</Name>
-	<Number_of_Students>30</Number_of_Students>
+		<Name>2-ESO-B</Name>
+		<Number_of_Students>30</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>2-ESO-C</Name>
-	<Number_of_Students>30</Number_of_Students>
+		<Name>2-ESO-C</Name>
+		<Number_of_Students>30</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>2-ESO-D</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>2-ESO-D</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>3-ESO-A</Name>
-	<Number_of_Students>30</Number_of_Students>
+		<Name>3-ESO-A</Name>
+		<Number_of_Students>30</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>3-ESO-B</Name>
-	<Number_of_Students>30</Number_of_Students>
+		<Name>3-ESO-B</Name>
+		<Number_of_Students>30</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>3-ESO-C</Name>
-	<Number_of_Students>30</Number_of_Students>
+		<Name>3-ESO-C</Name>
+		<Number_of_Students>30</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>3-ESO-D</Name>
-	<Number_of_Students>30</Number_of_Students>
+		<Name>3-ESO-D</Name>
+		<Number_of_Students>30</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>4-ESO-A</Name>
-	<Number_of_Students>30</Number_of_Students>
+		<Name>4-ESO-A</Name>
+		<Number_of_Students>30</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>4-ESO-B</Name>
-	<Number_of_Students>30</Number_of_Students>
+		<Name>4-ESO-B</Name>
+		<Number_of_Students>30</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>4-ESO-C</Name>
-	<Number_of_Students>30</Number_of_Students>
+		<Name>4-ESO-C</Name>
+		<Number_of_Students>30</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>4-ESO-C2</Name>
-	<Number_of_Students>30</Number_of_Students>
+		<Name>4-ESO-C2</Name>
+		<Number_of_Students>30</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>G</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>G</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>GJ</Name>
-	<Number_of_Students>0</Number_of_Students>
+		<Name>GJ</Name>
+		<Number_of_Students>0</Number_of_Students>
 	</Group>
 </Year>
 </Students_List>

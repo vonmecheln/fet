@@ -1,177 +1,207 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.16.0">
+<fet version="5.24.0">
 
 <Institution_Name>ISTITUTO TECNICO COMMERCIALE E PER GEOMETRI</Institution_Name>
 
 <Comments>Esempio reale relativo all&apos;anno 2010/2011</Comments>
 
-<Hours_List>
-	<Number>9</Number>
-	<Name>1-07:50</Name>
-	<Name>2-08:50</Name>
-	<Name>&gt;09:50</Name>
-	<Name>4-10.55</Name>
-	<Name>5-11.50</Name>
-	<Name>6-12.50</Name>
-	<Name>7-14:00</Name>
-	<Name>8-15:00</Name>
-	<Name>9-16:00</Name>
-</Hours_List>
-
 <Days_List>
-	<Number>6</Number>
+<Number_of_Days>6</Number_of_Days>
+<Day>
 	<Name>Lunedì</Name>
+</Day>
+<Day>
 	<Name>Martedì</Name>
+</Day>
+<Day>
 	<Name>Mercoledì</Name>
+</Day>
+<Day>
 	<Name>Giovedì</Name>
+</Day>
+<Day>
 	<Name>Venerdì</Name>
+</Day>
+<Day>
 	<Name>Sabato</Name>
+</Day>
 </Days_List>
+
+<Hours_List>
+<Number_of_Hours>9</Number_of_Hours>
+<Hour>
+	<Name>1-07:50</Name>
+</Hour>
+<Hour>
+	<Name>2-08:50</Name>
+</Hour>
+<Hour>
+	<Name>&gt;09:50</Name>
+</Hour>
+<Hour>
+	<Name>4-10.55</Name>
+</Hour>
+<Hour>
+	<Name>5-11.50</Name>
+</Hour>
+<Hour>
+	<Name>6-12.50</Name>
+</Hour>
+<Hour>
+	<Name>7-14:00</Name>
+</Hour>
+<Hour>
+	<Name>8-15:00</Name>
+</Hour>
+<Hour>
+	<Name>9-16:00</Name>
+</Hour>
+</Hours_List>
 
 <Students_List>
 <Year>
-<Name>CAT_1</Name>
-<Number_of_Students>0</Number_of_Students>
+	<Name>CAT_1</Name>
+	<Number_of_Students>0</Number_of_Students>
 	<Group>
-	<Name>CAT_1 A</Name>
-	<Number_of_Students>28</Number_of_Students>
+		<Name>CAT_1 A</Name>
+		<Number_of_Students>28</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>CAT_1 B</Name>
-	<Number_of_Students>29</Number_of_Students>
-	</Group>
-</Year>
-<Year>
-<Name>GEO_2</Name>
-<Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>GEO_2 A</Name>
-	<Number_of_Students>23</Number_of_Students>
-	</Group>
-	<Group>
-	<Name>GEO_2 B</Name>
-	<Number_of_Students>20</Number_of_Students>
-	</Group>
-	<Group>
-	<Name>GEO_2 C</Name>
-	<Number_of_Students>22</Number_of_Students>
+		<Name>CAT_1 B</Name>
+		<Number_of_Students>29</Number_of_Students>
 	</Group>
 </Year>
 <Year>
-<Name>GEO_3</Name>
-<Number_of_Students>0</Number_of_Students>
+	<Name>GEO_2</Name>
+	<Number_of_Students>0</Number_of_Students>
 	<Group>
-	<Name>GEO_3 A</Name>
-	<Number_of_Students>26</Number_of_Students>
+		<Name>GEO_2 A</Name>
+		<Number_of_Students>23</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>GEO_3 B</Name>
-	<Number_of_Students>27</Number_of_Students>
-	</Group>
-</Year>
-<Year>
-<Name>GEO_4</Name>
-<Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>GEO_4 A</Name>
-	<Number_of_Students>26</Number_of_Students>
+		<Name>GEO_2 B</Name>
+		<Number_of_Students>20</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>GEO_4 B</Name>
-	<Number_of_Students>27</Number_of_Students>
+		<Name>GEO_2 C</Name>
+		<Number_of_Students>22</Number_of_Students>
 	</Group>
 </Year>
 <Year>
-<Name>GEO_5</Name>
-<Number_of_Students>0</Number_of_Students>
+	<Name>GEO_3</Name>
+	<Number_of_Students>0</Number_of_Students>
 	<Group>
-	<Name>GEO_5 A</Name>
-	<Number_of_Students>22</Number_of_Students>
+		<Name>GEO_3 A</Name>
+		<Number_of_Students>26</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>GEO_3 B</Name>
+		<Number_of_Students>27</Number_of_Students>
 	</Group>
 </Year>
 <Year>
-<Name>AMM_1</Name>
-<Number_of_Students>0</Number_of_Students>
+	<Name>GEO_4</Name>
+	<Number_of_Students>0</Number_of_Students>
 	<Group>
-	<Name>AMM_1 A</Name>
-	<Number_of_Students>27</Number_of_Students>
+		<Name>GEO_4 A</Name>
+		<Number_of_Students>26</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>AMM_1 B</Name>
-	<Number_of_Students>27</Number_of_Students>
-	</Group>
-	<Group>
-	<Name>AMM_1 C</Name>
-	<Number_of_Students>28</Number_of_Students>
+		<Name>GEO_4 B</Name>
+		<Number_of_Students>27</Number_of_Students>
 	</Group>
 </Year>
 <Year>
-<Name>IGE_2</Name>
-<Number_of_Students>0</Number_of_Students>
+	<Name>GEO_5</Name>
+	<Number_of_Students>0</Number_of_Students>
 	<Group>
-	<Name>IGE_2 A</Name>
-	<Number_of_Students>24</Number_of_Students>
-	</Group>
-	<Group>
-	<Name>IGE_2 B</Name>
-	<Number_of_Students>20</Number_of_Students>
-	</Group>
-	<Group>
-	<Name>IGE_2 C</Name>
-	<Number_of_Students>20</Number_of_Students>
+		<Name>GEO_5 A</Name>
+		<Number_of_Students>22</Number_of_Students>
 	</Group>
 </Year>
 <Year>
-<Name>IGE_3</Name>
-<Number_of_Students>0</Number_of_Students>
+	<Name>AMM_1</Name>
+	<Number_of_Students>0</Number_of_Students>
 	<Group>
-	<Name>IGE_3 A</Name>
-	<Number_of_Students>25</Number_of_Students>
+		<Name>AMM_1 A</Name>
+		<Number_of_Students>27</Number_of_Students>
 	</Group>
 	<Group>
-	<Name>IGE_3 B</Name>
-	<Number_of_Students>26</Number_of_Students>
+		<Name>AMM_1 B</Name>
+		<Number_of_Students>27</Number_of_Students>
 	</Group>
-</Year>
-<Year>
-<Name>IGE_4</Name>
-<Number_of_Students>0</Number_of_Students>
 	<Group>
-	<Name>IGE_4 A</Name>
-	<Number_of_Students>26</Number_of_Students>
+		<Name>AMM_1 C</Name>
+		<Number_of_Students>28</Number_of_Students>
 	</Group>
 </Year>
 <Year>
-<Name>IGE_5</Name>
-<Number_of_Students>0</Number_of_Students>
+	<Name>IGE_2</Name>
+	<Number_of_Students>0</Number_of_Students>
 	<Group>
-	<Name>IGE_5 A</Name>
-	<Number_of_Students>29</Number_of_Students>
+		<Name>IGE_2 A</Name>
+		<Number_of_Students>24</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>IGE_2 B</Name>
+		<Number_of_Students>20</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>IGE_2 C</Name>
+		<Number_of_Students>20</Number_of_Students>
 	</Group>
 </Year>
 <Year>
-<Name>PRO_3</Name>
-<Number_of_Students>0</Number_of_Students>
+	<Name>IGE_3</Name>
+	<Number_of_Students>0</Number_of_Students>
 	<Group>
-	<Name>PRO_3 A</Name>
-	<Number_of_Students>18</Number_of_Students>
+		<Name>IGE_3 A</Name>
+		<Number_of_Students>25</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>IGE_3 B</Name>
+		<Number_of_Students>26</Number_of_Students>
 	</Group>
 </Year>
 <Year>
-<Name>PRO_4</Name>
-<Number_of_Students>0</Number_of_Students>
+	<Name>IGE_4</Name>
+	<Number_of_Students>0</Number_of_Students>
 	<Group>
-	<Name>PRO_4 A</Name>
-	<Number_of_Students>19</Number_of_Students>
+		<Name>IGE_4 A</Name>
+		<Number_of_Students>26</Number_of_Students>
 	</Group>
 </Year>
 <Year>
-<Name>PRO_5</Name>
-<Number_of_Students>0</Number_of_Students>
+	<Name>IGE_5</Name>
+	<Number_of_Students>0</Number_of_Students>
 	<Group>
-	<Name>PRO_5 A</Name>
-	<Number_of_Students>15</Number_of_Students>
+		<Name>IGE_5 A</Name>
+		<Number_of_Students>29</Number_of_Students>
+	</Group>
+</Year>
+<Year>
+	<Name>PRO_3</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Group>
+		<Name>PRO_3 A</Name>
+		<Number_of_Students>18</Number_of_Students>
+	</Group>
+</Year>
+<Year>
+	<Name>PRO_4</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Group>
+		<Name>PRO_4 A</Name>
+		<Number_of_Students>19</Number_of_Students>
+	</Group>
+</Year>
+<Year>
+	<Name>PRO_5</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Group>
+		<Name>PRO_5 A</Name>
+		<Number_of_Students>15</Number_of_Students>
 	</Group>
 </Year>
 </Students_List>

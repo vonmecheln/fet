@@ -1,297 +1,321 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.16.0">
+<fet version="5.24.0">
 
 <Institution_Name>Bethlen Gábor Református Gimnázium</Institution_Name>
 
 <Comments>2008-2009-es tanév</Comments>
 
-<Hours_List>
-	<Number>7</Number>
-	<Name>1.</Name>
-	<Name>2.</Name>
-	<Name>3.</Name>
-	<Name>4.</Name>
-	<Name>5.</Name>
-	<Name>6.</Name>
-	<Name>7.</Name>
-</Hours_List>
-
 <Days_List>
-	<Number>5</Number>
+<Number_of_Days>5</Number_of_Days>
+<Day>
 	<Name>Hétfő</Name>
+</Day>
+<Day>
 	<Name>Kedd</Name>
+</Day>
+<Day>
 	<Name>Szerda</Name>
+</Day>
+<Day>
 	<Name>Csütörtök</Name>
+</Day>
+<Day>
 	<Name>Péntek</Name>
+</Day>
 </Days_List>
+
+<Hours_List>
+<Number_of_Hours>7</Number_of_Hours>
+<Hour>
+	<Name>1.</Name>
+</Hour>
+<Hour>
+	<Name>2.</Name>
+</Hour>
+<Hour>
+	<Name>3.</Name>
+</Hour>
+<Hour>
+	<Name>4.</Name>
+</Hour>
+<Hour>
+	<Name>5.</Name>
+</Hour>
+<Hour>
+	<Name>6.</Name>
+</Hour>
+<Hour>
+	<Name>7.</Name>
+</Hour>
+</Hours_List>
 
 <Students_List>
 <Year>
-<Name>2008-2009</Name>
-<Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>05A</Name>
+	<Name>2008-2009</Name>
 	<Number_of_Students>0</Number_of_Students>
+	<Group>
+		<Name>05A</Name>
+		<Number_of_Students>0</Number_of_Students>
 		<Subgroup>
-		<Name>05A1</Name>
-		<Number_of_Students>12</Number_of_Students>
+			<Name>05A1</Name>
+			<Number_of_Students>12</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>05A2</Name>
-		<Number_of_Students>12</Number_of_Students>
+			<Name>05A2</Name>
+			<Number_of_Students>12</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>06A</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>06A1</Name>
+		<Name>06A</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>06A1</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>06A2</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-	<Name>07A</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>07A1-N</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-		<Name>07A1-F</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-		<Name>07A1-L</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-		<Name>07A2-N</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-		<Name>07A2-F</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-		<Name>07A2-L</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>06A2</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>08A</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>08A-N</Name>
+		<Name>07A</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>07A1-N</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>08A-F</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-	<Name>09A</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>09A1</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>07A1-F</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>09A2</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-	<Name>09B</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>09B1</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>07A1-L</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>09B2</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>07A2-N</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>07A2-F</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>07A2-L</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>09C</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>09C1</Name>
+		<Name>08A</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>08A-N</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>09C2</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-	<Name>09D</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>09D1</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-		<Name>09D2</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-		<Name>09D3</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>08A-F</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>10A</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>10A1</Name>
+		<Name>09A</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>09A1</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>10A2</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-	<Name>10B</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>10B1</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-		<Name>10B2</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>09A2</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>10C</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>10C1</Name>
+		<Name>09B</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>09B1</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>10C2</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-	<Name>11D</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>11D-nk</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-		<Name>11D-nh</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>09B2</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>11A</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>11A1</Name>
+		<Name>09C</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>09C1</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>11A2</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-	<Name>11B</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>11B1</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-		<Name>11B2</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>09C2</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>11C</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>11C1</Name>
+		<Name>09D</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>09D1</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>11C2</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-	<Name>12E</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>12E1</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>09D2</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>12E2</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>09D3</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>12B</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>12B1</Name>
+		<Name>10A</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>10A1</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>12B2</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-	<Name>12C</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>12C1</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-		<Name>12C2</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>10A2</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>12D</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>12D1</Name>
+		<Name>10B</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>10B1</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>12D2</Name>
-		<Number_of_Students>0</Number_of_Students>
+			<Name>10B2</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 	</Group>
 	<Group>
-	<Name>13D</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>13D1</Name>
+		<Name>10C</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>10C1</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>13D2</Name>
+			<Name>10C2</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>11D</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>11D-nk</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 		<Subgroup>
-		<Name>13D3</Name>
+			<Name>11D-nh</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>11A</Name>
 		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>11A1</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>11A2</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>11B</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>11B1</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>11B2</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>11C</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>11C1</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>11C2</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>12E</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>12E1</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>12E2</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>12B</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>12B1</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>12B2</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>12C</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>12C1</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>12C2</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>12D</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>12D1</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>12D2</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>13D</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>13D1</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>13D2</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>13D3</Name>
+			<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
 	</Group>
 </Year>
@@ -378,9 +402,6 @@
 </Teacher>
 <Teacher>
 	<Name>LTIS</Name>
-</Teacher>
-<Teacher>
-	<Name>MFNÉ</Name>
 </Teacher>
 <Teacher>
 	<Name>MIOR</Name>
@@ -524,9 +545,6 @@
 	<Name>Történelem</Name>
 </Subject>
 <Subject>
-	<Name>Záró óra</Name>
-</Subject>
-<Subject>
 	<Name>Életvitel</Name>
 </Subject>
 <Subject>
@@ -535,6 +553,12 @@
 </Subjects_List>
 
 <Activity_Tags_List>
+<Activity_Tag>
+	<Name>Késői órák</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>Korai órák</Name>
+</Activity_Tag>
 </Activity_Tags_List>
 
 <Activities_List>
@@ -785,6 +809,7 @@
 <Activity>
 	<Teacher>PRGY</Teacher>
 	<Subject>Matematika</Subject>
+	<Activity_Tag>Korai órák</Activity_Tag>
 	<Students>05A</Students>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -796,6 +821,7 @@
 <Activity>
 	<Teacher>PRGY</Teacher>
 	<Subject>Matematika</Subject>
+	<Activity_Tag>Korai órák</Activity_Tag>
 	<Students>05A</Students>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -807,6 +833,7 @@
 <Activity>
 	<Teacher>PRGY</Teacher>
 	<Subject>Matematika</Subject>
+	<Activity_Tag>Korai órák</Activity_Tag>
 	<Students>05A</Students>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -818,6 +845,7 @@
 <Activity>
 	<Teacher>PRGY</Teacher>
 	<Subject>Matematika</Subject>
+	<Activity_Tag>Korai órák</Activity_Tag>
 	<Students>05A</Students>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1139,6 +1167,7 @@
 <Activity>
 	<Teacher>UDZS</Teacher>
 	<Subject>Matematika</Subject>
+	<Activity_Tag>Korai órák</Activity_Tag>
 	<Students>06A2</Students>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1150,6 +1179,7 @@
 <Activity>
 	<Teacher>UDZS</Teacher>
 	<Subject>Matematika</Subject>
+	<Activity_Tag>Korai órák</Activity_Tag>
 	<Students>06A2</Students>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1161,6 +1191,7 @@
 <Activity>
 	<Teacher>UDZS</Teacher>
 	<Subject>Matematika</Subject>
+	<Activity_Tag>Korai órák</Activity_Tag>
 	<Students>06A2</Students>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1172,6 +1203,7 @@
 <Activity>
 	<Teacher>UDZS</Teacher>
 	<Subject>Matematika</Subject>
+	<Activity_Tag>Korai órák</Activity_Tag>
 	<Students>06A2</Students>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1183,6 +1215,7 @@
 <Activity>
 	<Teacher>VALA</Teacher>
 	<Subject>Matematika</Subject>
+	<Activity_Tag>Korai órák</Activity_Tag>
 	<Students>06A1</Students>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1194,6 +1227,7 @@
 <Activity>
 	<Teacher>VALA</Teacher>
 	<Subject>Matematika</Subject>
+	<Activity_Tag>Korai órák</Activity_Tag>
 	<Students>06A1</Students>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1205,6 +1239,7 @@
 <Activity>
 	<Teacher>VALA</Teacher>
 	<Subject>Matematika</Subject>
+	<Activity_Tag>Korai órák</Activity_Tag>
 	<Students>06A1</Students>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1216,6 +1251,7 @@
 <Activity>
 	<Teacher>VALA</Teacher>
 	<Subject>Matematika</Subject>
+	<Activity_Tag>Korai órák</Activity_Tag>
 	<Students>06A1</Students>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2756,8 +2792,8 @@
 </Activity>
 <Activity>
 	<Teacher>MPNÉ</Teacher>
+	<Teacher>LENÉ</Teacher>
 	<Teacher>CSMÁ</Teacher>
-	<Teacher>MFNÉ</Teacher>
 	<Subject>1. nyelv</Subject>
 	<Students>09B</Students>
 	<Students>09D</Students>
@@ -2770,8 +2806,8 @@
 </Activity>
 <Activity>
 	<Teacher>MPNÉ</Teacher>
+	<Teacher>LENÉ</Teacher>
 	<Teacher>CSMÁ</Teacher>
-	<Teacher>MFNÉ</Teacher>
 	<Subject>1. nyelv</Subject>
 	<Students>09B</Students>
 	<Students>09D</Students>
@@ -2784,8 +2820,8 @@
 </Activity>
 <Activity>
 	<Teacher>MPNÉ</Teacher>
+	<Teacher>LENÉ</Teacher>
 	<Teacher>CSMÁ</Teacher>
-	<Teacher>MFNÉ</Teacher>
 	<Subject>1. nyelv</Subject>
 	<Students>09B</Students>
 	<Students>09D</Students>
@@ -2798,8 +2834,8 @@
 </Activity>
 <Activity>
 	<Teacher>MPNÉ</Teacher>
+	<Teacher>LENÉ</Teacher>
 	<Teacher>CSMÁ</Teacher>
-	<Teacher>MFNÉ</Teacher>
 	<Subject>1. nyelv</Subject>
 	<Students>09B</Students>
 	<Students>09D</Students>
@@ -4347,6 +4383,7 @@
 	<Subject>Kémia</Subject>
 	<Students>10A1</Students>
 	<Students>10B2</Students>
+	<Students>10C2</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>362</Id>
@@ -4359,6 +4396,7 @@
 	<Subject>Kémia</Subject>
 	<Students>10A1</Students>
 	<Students>10B2</Students>
+	<Students>10C2</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>363</Id>
@@ -5215,7 +5253,7 @@
 <Activity>
 	<Teacher>KIGA</Teacher>
 	<Subject>Kémia</Subject>
-	<Students>10C</Students>
+	<Students>10C1</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>446</Id>
@@ -5226,7 +5264,7 @@
 <Activity>
 	<Teacher>KIGA</Teacher>
 	<Subject>Kémia</Subject>
-	<Students>10C</Students>
+	<Students>10C1</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>447</Id>
@@ -5833,12 +5871,12 @@
 </Activity>
 <Activity>
 	<Teacher>PRÁG</Teacher>
+	<Teacher>CESÁ</Teacher>
 	<Teacher>NATI</Teacher>
 	<Teacher>SZIT</Teacher>
 	<Teacher>PRGY</Teacher>
 	<Teacher>BINÉ</Teacher>
 	<Teacher>BEJÁ</Teacher>
-	<Teacher>KOKÁ</Teacher>
 	<Subject>2. sáv</Subject>
 	<Students>11A</Students>
 	<Students>11B</Students>
@@ -5853,12 +5891,12 @@
 </Activity>
 <Activity>
 	<Teacher>PRÁG</Teacher>
+	<Teacher>CESÁ</Teacher>
 	<Teacher>NATI</Teacher>
 	<Teacher>SZIT</Teacher>
 	<Teacher>PRGY</Teacher>
 	<Teacher>BINÉ</Teacher>
 	<Teacher>BEJÁ</Teacher>
-	<Teacher>KOKÁ</Teacher>
 	<Subject>2. sáv</Subject>
 	<Students>11A</Students>
 	<Students>11B</Students>
@@ -6064,8 +6102,8 @@
 	<Teacher>BVNÉ</Teacher>
 	<Subject>Matematika</Subject>
 	<Students>11A</Students>
-	<Duration>2</Duration>
-	<Total_Duration>4</Total_Duration>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
 	<Id>522</Id>
 	<Activity_Group_Id>522</Activity_Group_Id>
 	<Active>true</Active>
@@ -6076,7 +6114,7 @@
 	<Subject>Matematika</Subject>
 	<Students>11A</Students>
 	<Duration>1</Duration>
-	<Total_Duration>4</Total_Duration>
+	<Total_Duration>3</Total_Duration>
 	<Id>523</Id>
 	<Activity_Group_Id>522</Activity_Group_Id>
 	<Active>true</Active>
@@ -6087,7 +6125,7 @@
 	<Subject>Matematika</Subject>
 	<Students>11A</Students>
 	<Duration>1</Duration>
-	<Total_Duration>4</Total_Duration>
+	<Total_Duration>3</Total_Duration>
 	<Id>524</Id>
 	<Activity_Group_Id>522</Activity_Group_Id>
 	<Active>true</Active>
@@ -6167,6 +6205,61 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>531</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>BVNÉ</Teacher>
+	<Subject>Osztályfőnöki</Subject>
+	<Students>11A</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>534</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>JSZK</Teacher>
+	<Subject>Magyar</Subject>
+	<Students>11B1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>535</Id>
+	<Activity_Group_Id>535</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>JSZK</Teacher>
+	<Subject>Magyar</Subject>
+	<Students>11B1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>536</Id>
+	<Activity_Group_Id>535</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>JSZK</Teacher>
+	<Subject>Magyar</Subject>
+	<Students>11B1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>537</Id>
+	<Activity_Group_Id>535</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>JSZK</Teacher>
+	<Subject>Magyar</Subject>
+	<Students>11B1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>538</Id>
+	<Activity_Group_Id>535</Activity_Group_Id>
 	<Active>true</Active>
 	<Comments></Comments>
 </Activity>
@@ -7601,7 +7694,7 @@
 </Activity>
 <Activity>
 	<Teacher>CESÁ</Teacher>
-	<Subject>Történelem</Subject>
+	<Subject>Magyar</Subject>
 	<Students>12C</Students>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -7612,7 +7705,7 @@
 </Activity>
 <Activity>
 	<Teacher>CESÁ</Teacher>
-	<Subject>Történelem</Subject>
+	<Subject>Magyar</Subject>
 	<Students>12C</Students>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -7623,7 +7716,7 @@
 </Activity>
 <Activity>
 	<Teacher>CESÁ</Teacher>
-	<Subject>Történelem</Subject>
+	<Subject>Magyar</Subject>
 	<Students>12C</Students>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -8188,7 +8281,7 @@
 </Activity>
 <Activity>
 	<Teacher>BEJÁ</Teacher>
-	<Subject>Fizika</Subject>
+	<Subject>Matematika</Subject>
 	<Students>12D</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -8199,7 +8292,7 @@
 </Activity>
 <Activity>
 	<Teacher>BEJÁ</Teacher>
-	<Subject>Fizika</Subject>
+	<Subject>Matematika</Subject>
 	<Students>12D</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -8396,7 +8489,7 @@
 	<Comments></Comments>
 </Activity>
 <Activity>
-	<Teacher>MPNÉ</Teacher>
+	<Teacher>PRÁG</Teacher>
 	<Subject>Etika</Subject>
 	<Students>13D</Students>
 	<Duration>1</Duration>
@@ -9013,228 +9106,9 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </Activity>
-<Activity>
-	<Teacher>JSZK</Teacher>
-	<Subject>Magyar</Subject>
-	<Students>11B1</Students>
-	<Duration>2</Duration>
-	<Total_Duration>4</Total_Duration>
-	<Id>821</Id>
-	<Activity_Group_Id>821</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Teacher>JSZK</Teacher>
-	<Subject>Magyar</Subject>
-	<Students>11B1</Students>
-	<Duration>1</Duration>
-	<Total_Duration>4</Total_Duration>
-	<Id>822</Id>
-	<Activity_Group_Id>821</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Teacher>JSZK</Teacher>
-	<Subject>Magyar</Subject>
-	<Students>11B1</Students>
-	<Duration>1</Duration>
-	<Total_Duration>4</Total_Duration>
-	<Id>823</Id>
-	<Activity_Group_Id>821</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Subject>Fizika</Subject>
-	<Duration>2</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>824</Id>
-	<Activity_Group_Id>824</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Subject>Fizika</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>825</Id>
-	<Activity_Group_Id>824</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Subject>Fizika</Subject>
-	<Duration>2</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>826</Id>
-	<Activity_Group_Id>826</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Subject>Fizika</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>827</Id>
-	<Activity_Group_Id>826</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Subject>Fizika</Subject>
-	<Duration>2</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>828</Id>
-	<Activity_Group_Id>828</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Subject>Fizika</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>829</Id>
-	<Activity_Group_Id>828</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Subject>Kémia</Subject>
-	<Duration>2</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>830</Id>
-	<Activity_Group_Id>830</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Subject>Kémia</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>831</Id>
-	<Activity_Group_Id>830</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Subject>Biológia</Subject>
-	<Duration>2</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>832</Id>
-	<Activity_Group_Id>832</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Subject>Biológia</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>833</Id>
-	<Activity_Group_Id>832</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Subject>Biológia</Subject>
-	<Duration>2</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>834</Id>
-	<Activity_Group_Id>834</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Subject>Biológia</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>835</Id>
-	<Activity_Group_Id>834</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Subject>Biológia</Subject>
-	<Duration>2</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>836</Id>
-	<Activity_Group_Id>836</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Subject>Biológia</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>837</Id>
-	<Activity_Group_Id>836</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Subject>Kémia</Subject>
-	<Duration>2</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>838</Id>
-	<Activity_Group_Id>838</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Subject>Kémia</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>839</Id>
-	<Activity_Group_Id>838</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Subject>Kémia</Subject>
-	<Duration>2</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>840</Id>
-	<Activity_Group_Id>840</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Subject>Kémia</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>841</Id>
-	<Activity_Group_Id>840</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Subject>Informatika</Subject>
-	<Duration>2</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>844</Id>
-	<Activity_Group_Id>844</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
-	<Subject>Informatika</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>845</Id>
-	<Activity_Group_Id>844</Activity_Group_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
 </Activities_List>
 
 <Buildings_List>
-<Building>
-	<Name>Gimnázium</Name>
-</Building>
-<Building>
-	<Name>Uszoda</Name>
-</Building>
 </Buildings_List>
 
 <Rooms_List>
@@ -9270,21 +9144,11 @@
 </Room>
 <Room>
 	<Name>Tornaterem</Name>
-	<Building>Gimnázium</Building>
-	<Capacity>15000</Capacity>
-</Room>
-<Room>
-	<Name>Uszoda</Name>
-	<Building>Uszoda</Building>
-	<Capacity>15000</Capacity>
-</Room>
-<Room>
-	<Name>Informatika terem</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
 </Room>
 <Room>
-	<Name>Multimédia terem</Name>
+	<Name>Uszoda</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
 </Room>
@@ -9393,6 +9257,13 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintStudentsSetMaxGapsPerWeek>
+<ConstraintStudentsSetMaxHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
+	<Students>05A</Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
@@ -9721,6 +9592,33 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintStudentsMinHoursDaily>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>POGÉ</Teacher>
+	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Hétfő</Day>
+		<Hour>1.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Kedd</Day>
+		<Hour>1.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Szerda</Day>
+		<Hour>1.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Csütörtök</Day>
+		<Hour>1.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Péntek</Day>
+		<Hour>1.</Hour>
+	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
 <ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Max_Beginnings_At_Second_Hour>0</Max_Beginnings_At_Second_Hour>
@@ -9833,42 +9731,42 @@
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
 <ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>96</Weight_Percentage>
+	<Weight_Percentage>100</Weight_Percentage>
 	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>105</Activity_Id>
 	<Activity_Id>106</Activity_Id>
-	<MinDays>2</MinDays>
+	<MinDays>1</MinDays>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
 <ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>96</Weight_Percentage>
+	<Weight_Percentage>100</Weight_Percentage>
 	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>107</Activity_Id>
 	<Activity_Id>108</Activity_Id>
-	<MinDays>2</MinDays>
+	<MinDays>1</MinDays>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
 <ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>96</Weight_Percentage>
+	<Weight_Percentage>100</Weight_Percentage>
 	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>109</Activity_Id>
 	<Activity_Id>110</Activity_Id>
-	<MinDays>2</MinDays>
+	<MinDays>1</MinDays>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
 <ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>96</Weight_Percentage>
+	<Weight_Percentage>100</Weight_Percentage>
 	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>111</Activity_Id>
 	<Activity_Id>112</Activity_Id>
-	<MinDays>2</MinDays>
+	<MinDays>1</MinDays>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
@@ -9884,7 +9782,7 @@
 </ConstraintMinDaysBetweenActivities>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
+	<Minimum_Hours_Daily>6</Minimum_Hours_Daily>
 	<Students>07A</Students>
 	<Allow_Empty_Days>false</Allow_Empty_Days>
 	<Active>true</Active>
@@ -9997,7 +9895,7 @@
 	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>95</Weight_Percentage>
+	<Weight_Percentage>100</Weight_Percentage>
 	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>120</Activity_Id>
@@ -10054,7 +9952,7 @@
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
 <ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>95</Weight_Percentage>
+	<Weight_Percentage>100</Weight_Percentage>
 	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>128</Activity_Id>
@@ -10164,7 +10062,7 @@
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>157</Activity_Id>
 	<Activity_Id>158</Activity_Id>
-	<MinDays>1</MinDays>
+	<MinDays>2</MinDays>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
@@ -10236,7 +10134,7 @@
 	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>95</Weight_Percentage>
+	<Weight_Percentage>100</Weight_Percentage>
 	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>159</Activity_Id>
@@ -10325,7 +10223,7 @@
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
 <ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>95</Weight_Percentage>
+	<Weight_Percentage>100</Weight_Percentage>
 	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>186</Activity_Id>
@@ -10340,7 +10238,7 @@
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>188</Activity_Id>
 	<Activity_Id>189</Activity_Id>
-	<MinDays>1</MinDays>
+	<MinDays>2</MinDays>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
@@ -10350,7 +10248,7 @@
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>195</Activity_Id>
 	<Activity_Id>196</Activity_Id>
-	<MinDays>1</MinDays>
+	<MinDays>2</MinDays>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
@@ -10495,7 +10393,7 @@
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
 <ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>95</Weight_Percentage>
+	<Weight_Percentage>100</Weight_Percentage>
 	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>234</Activity_Id>
@@ -10510,7 +10408,7 @@
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>241</Activity_Id>
 	<Activity_Id>242</Activity_Id>
-	<MinDays>1</MinDays>
+	<MinDays>2</MinDays>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
@@ -10532,7 +10430,7 @@
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>248</Activity_Id>
 	<Activity_Id>249</Activity_Id>
-	<MinDays>1</MinDays>
+	<MinDays>2</MinDays>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
@@ -10603,7 +10501,7 @@
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
 <ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>95</Weight_Percentage>
+	<Weight_Percentage>100</Weight_Percentage>
 	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>268</Activity_Id>
@@ -10638,7 +10536,7 @@
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>279</Activity_Id>
 	<Activity_Id>280</Activity_Id>
-	<MinDays>1</MinDays>
+	<MinDays>2</MinDays>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
@@ -10660,7 +10558,7 @@
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>286</Activity_Id>
 	<Activity_Id>287</Activity_Id>
-	<MinDays>2</MinDays>
+	<MinDays>1</MinDays>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
@@ -10670,7 +10568,7 @@
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>292</Activity_Id>
 	<Activity_Id>293</Activity_Id>
-	<MinDays>2</MinDays>
+	<MinDays>1</MinDays>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
@@ -10708,7 +10606,7 @@
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
 <ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>95</Weight_Percentage>
+	<Weight_Percentage>100</Weight_Percentage>
 	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>305</Activity_Id>
@@ -10743,7 +10641,7 @@
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>315</Activity_Id>
 	<Activity_Id>316</Activity_Id>
-	<MinDays>1</MinDays>
+	<MinDays>2</MinDays>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
@@ -10787,7 +10685,7 @@
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>328</Activity_Id>
 	<Activity_Id>329</Activity_Id>
-	<MinDays>2</MinDays>
+	<MinDays>1</MinDays>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
@@ -10852,7 +10750,7 @@
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>356</Activity_Id>
 	<Activity_Id>357</Activity_Id>
-	<MinDays>2</MinDays>
+	<MinDays>1</MinDays>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
@@ -11138,7 +11036,7 @@
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>413</Activity_Id>
 	<Activity_Id>414</Activity_Id>
-	<MinDays>1</MinDays>
+	<MinDays>2</MinDays>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
@@ -11265,33 +11163,89 @@
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>BEGE</Teacher>
-	<Number_of_Not_Available_Times>7</Number_of_Not_Available_Times>
+	<Number_of_Not_Available_Times>21</Number_of_Not_Available_Times>
 	<Not_Available_Time>
-		<Day>Péntek</Day>
+		<Day>Kedd</Day>
 		<Hour>1.</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>Péntek</Day>
+		<Day>Kedd</Day>
 		<Hour>2.</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>Péntek</Day>
+		<Day>Kedd</Day>
 		<Hour>3.</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>Péntek</Day>
+		<Day>Kedd</Day>
 		<Hour>4.</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>Péntek</Day>
+		<Day>Kedd</Day>
 		<Hour>5.</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>Péntek</Day>
+		<Day>Kedd</Day>
 		<Hour>6.</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>Péntek</Day>
+		<Day>Kedd</Day>
+		<Hour>7.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Szerda</Day>
+		<Hour>1.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Szerda</Day>
+		<Hour>2.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Szerda</Day>
+		<Hour>3.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Szerda</Day>
+		<Hour>4.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Szerda</Day>
+		<Hour>5.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Szerda</Day>
+		<Hour>6.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Szerda</Day>
+		<Hour>7.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Csütörtök</Day>
+		<Hour>1.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Csütörtök</Day>
+		<Hour>2.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Csütörtök</Day>
+		<Hour>3.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Csütörtök</Day>
+		<Hour>4.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Csütörtök</Day>
+		<Hour>5.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Csütörtök</Day>
+		<Hour>6.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Csütörtök</Day>
 		<Hour>7.</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
@@ -11391,6 +11345,56 @@
 	<Not_Available_Time>
 		<Day>Péntek</Day>
 		<Hour>7.</Hour>
+	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>JÓNÉ</Teacher>
+	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Kedd</Day>
+		<Hour>1.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Szerda</Day>
+		<Hour>1.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Csütörtök</Day>
+		<Hour>1.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Péntek</Day>
+		<Hour>1.</Hour>
+	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>KIGA</Teacher>
+	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Hétfő</Day>
+		<Hour>1.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Kedd</Day>
+		<Hour>1.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Szerda</Day>
+		<Hour>1.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Csütörtök</Day>
+		<Hour>1.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Péntek</Day>
+		<Hour>1.</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
 	<Comments></Comments>
@@ -11755,7 +11759,7 @@
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>490</Activity_Id>
 	<Activity_Id>491</Activity_Id>
-	<MinDays>1</MinDays>
+	<MinDays>2</MinDays>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
@@ -11765,7 +11769,7 @@
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>495</Activity_Id>
 	<Activity_Id>496</Activity_Id>
-	<MinDays>1</MinDays>
+	<MinDays>2</MinDays>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
@@ -11893,6 +11897,25 @@
 	<Activity_Id>527</Activity_Id>
 	<Activity_Id>528</Activity_Id>
 	<MinDays>2</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintMinDaysBetweenActivities>
+<ConstraintTwoActivitiesConsecutive>
+	<Weight_Percentage>100</Weight_Percentage>
+	<First_Activity_Id>522</First_Activity_Id>
+	<Second_Activity_Id>534</Second_Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTwoActivitiesConsecutive>
+<ConstraintMinDaysBetweenActivities>
+	<Weight_Percentage>95</Weight_Percentage>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
+	<Number_of_Activities>4</Number_of_Activities>
+	<Activity_Id>535</Activity_Id>
+	<Activity_Id>536</Activity_Id>
+	<Activity_Id>537</Activity_Id>
+	<Activity_Id>538</Activity_Id>
+	<MinDays>1</MinDays>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
@@ -12836,96 +12859,344 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
-<ConstraintActivityEndsStudentsDay>
+<ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>34</Activity_Id>
+	<Teacher_Name></Teacher_Name>
+	<Students_Name></Students_Name>
+	<Subject_Name>1. sáv</Subject_Name>
+	<Activity_Tag_Name></Activity_Tag_Name>
+	<Number_of_Preferred_Starting_Times>33</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
 	<Active>true</Active>
 	<Comments></Comments>
-</ConstraintActivityEndsStudentsDay>
-<ConstraintActivityEndsStudentsDay>
+</ConstraintActivitiesPreferredStartingTimes>
+<ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>79</Activity_Id>
+	<Teacher_Name></Teacher_Name>
+	<Students_Name></Students_Name>
+	<Subject_Name>2. sáv</Subject_Name>
+	<Activity_Tag_Name></Activity_Tag_Name>
+	<Number_of_Preferred_Starting_Times>33</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
 	<Active>true</Active>
 	<Comments></Comments>
-</ConstraintActivityEndsStudentsDay>
-<ConstraintActivityEndsStudentsDay>
+</ConstraintActivitiesPreferredStartingTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>119</Activity_Id>
+	<Students>05A1</Students>
+	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Hétfő</Day>
+		<Hour>7.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Kedd</Day>
+		<Hour>7.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Szerda</Day>
+		<Hour>7.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Csütörtök</Day>
+		<Hour>7.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Péntek</Day>
+		<Hour>7.</Hour>
+	</Not_Available_Time>
 	<Active>true</Active>
 	<Comments></Comments>
-</ConstraintActivityEndsStudentsDay>
-<ConstraintActivityEndsStudentsDay>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>156</Activity_Id>
+	<Students>05A2</Students>
+	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Hétfő</Day>
+		<Hour>7.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Kedd</Day>
+		<Hour>7.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Szerda</Day>
+		<Hour>7.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Csütörtök</Day>
+		<Hour>7.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Péntek</Day>
+		<Hour>7.</Hour>
+	</Not_Available_Time>
 	<Active>true</Active>
 	<Comments></Comments>
-</ConstraintActivityEndsStudentsDay>
-<ConstraintActivityEndsStudentsDay>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>197</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivityEndsStudentsDay>
-<ConstraintActivityEndsStudentsDay>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>243</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivityEndsStudentsDay>
-<ConstraintActivityEndsStudentsDay>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>281</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivityEndsStudentsDay>
-<ConstraintActivityEndsStudentsDay>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>317</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivityEndsStudentsDay>
-<ConstraintActivityEndsStudentsDay>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>373</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivityEndsStudentsDay>
-<ConstraintActivityEndsStudentsDay>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>422</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivityEndsStudentsDay>
-<ConstraintActivityEndsStudentsDay>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>459</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivityEndsStudentsDay>
-<ConstraintActivityEndsStudentsDay>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>494</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivityEndsStudentsDay>
-<ConstraintActivityEndsStudentsDay>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>576</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivityEndsStudentsDay>
-<ConstraintActivityEndsStudentsDay>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>607</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivityEndsStudentsDay>
-<ConstraintActivityEndsStudentsDay>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>792</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivityEndsStudentsDay>
+</ConstraintStudentsSetNotAvailableTimes>
 <ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>07A</Students>
@@ -12945,6 +13216,34 @@
 		<Day>Péntek</Day>
 		<Hour>7.</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>09A</Students>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>09B</Students>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>09C</Students>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>09D</Students>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintStudentsSetNotAvailableTimes>
@@ -13058,7 +13357,11 @@
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>SZZS</Teacher>
-	<Number_of_Not_Available_Times>3</Number_of_Not_Available_Times>
+	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Péntek</Day>
+		<Hour>4.</Hour>
+	</Not_Available_Time>
 	<Not_Available_Time>
 		<Day>Péntek</Day>
 		<Hour>5.</Hour>
@@ -13119,79 +13422,79 @@
 	</Not_Available_Time>
 	<Not_Available_Time>
 		<Day>Hétfő</Day>
-		<Hour>5.</Hour>
-	</Not_Available_Time>
-	<Not_Available_Time>
-		<Day>Hétfő</Day>
-		<Hour>6.</Hour>
-	</Not_Available_Time>
-	<Not_Available_Time>
-		<Day>Hétfő</Day>
-		<Hour>7.</Hour>
-	</Not_Available_Time>
-	<Not_Available_Time>
-		<Day>Kedd</Day>
-		<Hour>1.</Hour>
-	</Not_Available_Time>
-	<Not_Available_Time>
-		<Day>Kedd</Day>
-		<Hour>5.</Hour>
-	</Not_Available_Time>
-	<Not_Available_Time>
-		<Day>Kedd</Day>
-		<Hour>6.</Hour>
-	</Not_Available_Time>
-	<Not_Available_Time>
-		<Day>Kedd</Day>
-		<Hour>7.</Hour>
-	</Not_Available_Time>
-	<Not_Available_Time>
-		<Day>Szerda</Day>
-		<Hour>1.</Hour>
-	</Not_Available_Time>
-	<Not_Available_Time>
-		<Day>Szerda</Day>
-		<Hour>5.</Hour>
-	</Not_Available_Time>
-	<Not_Available_Time>
-		<Day>Szerda</Day>
-		<Hour>6.</Hour>
-	</Not_Available_Time>
-	<Not_Available_Time>
-		<Day>Szerda</Day>
-		<Hour>7.</Hour>
-	</Not_Available_Time>
-	<Not_Available_Time>
-		<Day>Csütörtök</Day>
-		<Hour>1.</Hour>
-	</Not_Available_Time>
-	<Not_Available_Time>
-		<Day>Csütörtök</Day>
-		<Hour>5.</Hour>
-	</Not_Available_Time>
-	<Not_Available_Time>
-		<Day>Csütörtök</Day>
-		<Hour>6.</Hour>
-	</Not_Available_Time>
-	<Not_Available_Time>
-		<Day>Csütörtök</Day>
-		<Hour>7.</Hour>
-	</Not_Available_Time>
-	<Not_Available_Time>
-		<Day>Péntek</Day>
-		<Hour>1.</Hour>
-	</Not_Available_Time>
-	<Not_Available_Time>
-		<Day>Péntek</Day>
 		<Hour>2.</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>Péntek</Day>
+		<Day>Hétfő</Day>
 		<Hour>3.</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>Péntek</Day>
+		<Day>Hétfő</Day>
 		<Hour>4.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Hétfő</Day>
+		<Hour>5.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Hétfő</Day>
+		<Hour>6.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Hétfő</Day>
+		<Hour>7.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Kedd</Day>
+		<Hour>1.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Kedd</Day>
+		<Hour>5.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Kedd</Day>
+		<Hour>6.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Kedd</Day>
+		<Hour>7.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Szerda</Day>
+		<Hour>1.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Szerda</Day>
+		<Hour>5.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Szerda</Day>
+		<Hour>6.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Szerda</Day>
+		<Hour>7.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Csütörtök</Day>
+		<Hour>1.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Csütörtök</Day>
+		<Hour>5.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Csütörtök</Day>
+		<Hour>6.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Csütörtök</Day>
+		<Hour>7.</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Péntek</Day>
+		<Hour>1.</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
 		<Day>Péntek</Day>
@@ -13257,3000 +13560,15 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
-<ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesEndStudentsDay>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>666</Activity_Id>
-	<Activity_Id>708</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>667</Activity_Id>
-	<Activity_Id>709</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>95</Weight_Percentage>
-	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
-	<Number_of_Activities>3</Number_of_Activities>
-	<Activity_Id>821</Activity_Id>
-	<Activity_Id>822</Activity_Id>
-	<Activity_Id>823</Activity_Id>
-	<MinDays>1</MinDays>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintMinDaysBetweenActivities>
-<ConstraintStudentsSetMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Students>05A</Students>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintStudentsSetMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>BAIM</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>BEJÁ</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>BINÉ</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>BOÉV</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>CSMÁ</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>CSNÉ</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>DENÉ</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>DIOR</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>FAMA</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>HAEN</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>JEER</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>JSZK</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>KINÉ</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>KOKÁ</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>LENÉ</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>LTIS</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>MOLÁ</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>MOÁG</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>MPNÉ</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>NATI</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>NAZO</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>POGÉ</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>PRGY</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>PRÁG</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>RANÉ</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>RINÉ</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>SINÉ</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>SZIT</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>SZZS</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>TANÉ</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>UDZS</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintTeacherMaxHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>VALA</Teacher_Name>
-	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintTeacherMaxHoursDaily>
-<ConstraintStudentsSetMinHoursDaily>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
-	<Students>08A</Students>
-	<Allow_Empty_Days>false</Allow_Empty_Days>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintStudentsSetMinHoursDaily>
-<ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>95</Weight_Percentage>
-	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>824</Activity_Id>
-	<Activity_Id>825</Activity_Id>
-	<MinDays>1</MinDays>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintMinDaysBetweenActivities>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>501</Activity_Id>
-	<Activity_Id>824</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>502</Activity_Id>
-	<Activity_Id>825</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>95</Weight_Percentage>
-	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>826</Activity_Id>
-	<Activity_Id>827</Activity_Id>
-	<MinDays>1</MinDays>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintMinDaysBetweenActivities>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>682</Activity_Id>
-	<Activity_Id>826</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>683</Activity_Id>
-	<Activity_Id>827</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>95</Weight_Percentage>
-	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>828</Activity_Id>
-	<Activity_Id>829</Activity_Id>
-	<MinDays>1</MinDays>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintMinDaysBetweenActivities>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>828</Activity_Id>
-	<Activity_Id>501</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>829</Activity_Id>
-	<Activity_Id>502</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>95</Weight_Percentage>
-	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>830</Activity_Id>
-	<Activity_Id>831</Activity_Id>
-	<MinDays>1</MinDays>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintMinDaysBetweenActivities>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>501</Activity_Id>
-	<Activity_Id>830</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>502</Activity_Id>
-	<Activity_Id>831</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>95</Weight_Percentage>
-	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>832</Activity_Id>
-	<Activity_Id>833</Activity_Id>
-	<MinDays>1</MinDays>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintMinDaysBetweenActivities>
-<ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>95</Weight_Percentage>
-	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>834</Activity_Id>
-	<Activity_Id>835</Activity_Id>
-	<MinDays>1</MinDays>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintMinDaysBetweenActivities>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>832</Activity_Id>
-	<Activity_Id>497</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>833</Activity_Id>
-	<Activity_Id>498</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>834</Activity_Id>
-	<Activity_Id>680</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>835</Activity_Id>
-	<Activity_Id>681</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>95</Weight_Percentage>
-	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>836</Activity_Id>
-	<Activity_Id>837</Activity_Id>
-	<MinDays>1</MinDays>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintMinDaysBetweenActivities>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>836</Activity_Id>
-	<Activity_Id>682</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>837</Activity_Id>
-	<Activity_Id>683</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>95</Weight_Percentage>
-	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>838</Activity_Id>
-	<Activity_Id>839</Activity_Id>
-	<MinDays>1</MinDays>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintMinDaysBetweenActivities>
-<ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>95</Weight_Percentage>
-	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>840</Activity_Id>
-	<Activity_Id>841</Activity_Id>
-	<MinDays>1</MinDays>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintMinDaysBetweenActivities>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>838</Activity_Id>
-	<Activity_Id>680</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>839</Activity_Id>
-	<Activity_Id>681</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>840</Activity_Id>
-	<Activity_Id>682</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>841</Activity_Id>
-	<Activity_Id>683</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivityPreferredTimeSlots>
-	<Weight_Percentage>95</Weight_Percentage>
-	<Activity_Id>80</Activity_Id>
-	<Number_of_Preferred_Time_Slots>24</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivityPreferredTimeSlots>
-<ConstraintActivityPreferredTimeSlots>
-	<Weight_Percentage>95</Weight_Percentage>
-	<Activity_Id>318</Activity_Id>
-	<Number_of_Preferred_Time_Slots>24</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivityPreferredTimeSlots>
-<ConstraintActivityPreferredTimeSlots>
-	<Weight_Percentage>95</Weight_Percentage>
-	<Activity_Id>324</Activity_Id>
-	<Number_of_Preferred_Time_Slots>24</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivityPreferredTimeSlots>
-<ConstraintActivityPreferredTimeSlots>
-	<Weight_Percentage>95</Weight_Percentage>
-	<Activity_Id>811</Activity_Id>
-	<Number_of_Preferred_Time_Slots>24</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivityPreferredTimeSlots>
-<ConstraintActivityPreferredTimeSlots>
-	<Weight_Percentage>95</Weight_Percentage>
-	<Activity_Id>814</Activity_Id>
-	<Number_of_Preferred_Time_Slots>24</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivityPreferredTimeSlots>
-<ConstraintActivitiesPreferredTimeSlots>
-	<Weight_Percentage>80</Weight_Percentage>
-	<Teacher_Name>SIFE</Teacher_Name>
-	<Students_Name>12B</Students_Name>
-	<Subject_Name>Magyar</Subject_Name>
-	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Time_Slots>20</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesPreferredTimeSlots>
-<ConstraintActivitiesPreferredTimeSlots>
-	<Weight_Percentage>80</Weight_Percentage>
-	<Teacher_Name>SIFE</Teacher_Name>
-	<Students_Name>09A</Students_Name>
-	<Subject_Name>Magyar</Subject_Name>
-	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Time_Slots>20</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesPreferredTimeSlots>
-<ConstraintMinDaysBetweenActivities>
-	<Weight_Percentage>95</Weight_Percentage>
-	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>844</Activity_Id>
-	<Activity_Id>845</Activity_Id>
-	<MinDays>1</MinDays>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintMinDaysBetweenActivities>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>501</Activity_Id>
-	<Activity_Id>844</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>502</Activity_Id>
-	<Activity_Id>845</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintSubactivitiesPreferredTimeSlots>
-	<Weight_Percentage>98</Weight_Percentage>
-	<Component_Number>1</Component_Number>
 	<Teacher_Name></Teacher_Name>
 	<Students_Name></Students_Name>
-	<Subject_Name>Matematika</Subject_Name>
+	<Subject_Name>Osztályfőnöki</Subject_Name>
 	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Time_Slots>20</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
 	<Active>true</Active>
 	<Comments></Comments>
-</ConstraintSubactivitiesPreferredTimeSlots>
-<ConstraintSubactivitiesPreferredTimeSlots>
-	<Weight_Percentage>98</Weight_Percentage>
-	<Component_Number>1</Component_Number>
-	<Teacher_Name></Teacher_Name>
-	<Students_Name></Students_Name>
-	<Subject_Name>Magyar</Subject_Name>
-	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Time_Slots>20</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintSubactivitiesPreferredTimeSlots>
-<ConstraintSubactivitiesPreferredTimeSlots>
-	<Weight_Percentage>98</Weight_Percentage>
-	<Component_Number>1</Component_Number>
-	<Teacher_Name></Teacher_Name>
-	<Students_Name></Students_Name>
-	<Subject_Name>Történelem</Subject_Name>
-	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Time_Slots>20</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintSubactivitiesPreferredTimeSlots>
-<ConstraintActivitiesPreferredTimeSlots>
-	<Weight_Percentage>85</Weight_Percentage>
-	<Teacher_Name>JÓNÉ</Teacher_Name>
-	<Students_Name></Students_Name>
-	<Subject_Name>Biológia</Subject_Name>
-	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Time_Slots>31</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesPreferredTimeSlots>
-<ConstraintActivitiesPreferredTimeSlots>
-	<Weight_Percentage>85</Weight_Percentage>
-	<Teacher_Name>JÓNÉ</Teacher_Name>
-	<Students_Name></Students_Name>
-	<Subject_Name>Kémia</Subject_Name>
-	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Time_Slots>31</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesPreferredTimeSlots>
-<ConstraintActivitiesPreferredTimeSlots>
-	<Weight_Percentage>70</Weight_Percentage>
-	<Teacher_Name>KIGA</Teacher_Name>
-	<Students_Name></Students_Name>
-	<Subject_Name>Biológia</Subject_Name>
-	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Time_Slots>30</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesPreferredTimeSlots>
-<ConstraintActivitiesPreferredTimeSlots>
-	<Weight_Percentage>70</Weight_Percentage>
-	<Teacher_Name>KIGA</Teacher_Name>
-	<Students_Name></Students_Name>
-	<Subject_Name>Kémia</Subject_Name>
-	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Time_Slots>30</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesPreferredTimeSlots>
-<ConstraintActivitiesPreferredTimeSlots>
-	<Weight_Percentage>90</Weight_Percentage>
-	<Teacher_Name>POGÉ</Teacher_Name>
-	<Students_Name></Students_Name>
-	<Subject_Name></Subject_Name>
-	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Time_Slots>30</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesPreferredTimeSlots>
-<ConstraintSubactivitiesPreferredTimeSlots>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Component_Number>1</Component_Number>
-	<Teacher_Name></Teacher_Name>
-	<Students_Name></Students_Name>
-	<Subject_Name>1. nyelv</Subject_Name>
-	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Time_Slots>20</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintSubactivitiesPreferredTimeSlots>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>10</Activity_Id>
-	<Activity_Id>20</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>11</Activity_Id>
-	<Activity_Id>21</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>12</Activity_Id>
-	<Activity_Id>22</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>17</Activity_Id>
-	<Activity_Id>14</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>18</Activity_Id>
-	<Activity_Id>15</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>19</Activity_Id>
-	<Activity_Id>16</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintSubactivitiesPreferredTimeSlots>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Component_Number>1</Component_Number>
-	<Teacher_Name>NATI</Teacher_Name>
-	<Students_Name></Students_Name>
-	<Subject_Name>2. sáv</Subject_Name>
-	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Time_Slots>24</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintSubactivitiesPreferredTimeSlots>
-<ConstraintSubactivitiesPreferredTimeSlots>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Component_Number>1</Component_Number>
-	<Teacher_Name>UDZS</Teacher_Name>
-	<Students_Name></Students_Name>
-	<Subject_Name>1. sáv</Subject_Name>
-	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Time_Slots>24</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintSubactivitiesPreferredTimeSlots>
-<ConstraintSubactivitiesPreferredTimeSlots>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Component_Number>1</Component_Number>
-	<Teacher_Name>LTIS</Teacher_Name>
-	<Students_Name></Students_Name>
-	<Subject_Name>1. sáv</Subject_Name>
-	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Time_Slots>24</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintSubactivitiesPreferredTimeSlots>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>821</Activity_Id>
-	<Activity_Id>814</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>822</Activity_Id>
-	<Activity_Id>815</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>823</Activity_Id>
-	<Activity_Id>816</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesPreferredTimeSlots>
-	<Weight_Percentage>95</Weight_Percentage>
-	<Teacher_Name>UDZS</Teacher_Name>
-	<Students_Name>12E</Students_Name>
-	<Subject_Name></Subject_Name>
-	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Time_Slots>22</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesPreferredTimeSlots>
-<ConstraintActivitiesPreferredTimeSlots>
-	<Weight_Percentage>85</Weight_Percentage>
-	<Teacher_Name>LTIS</Teacher_Name>
-	<Students_Name></Students_Name>
-	<Subject_Name>Matematika</Subject_Name>
-	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Time_Slots>30</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesPreferredTimeSlots>
-<ConstraintActivitiesPreferredTimeSlots>
-	<Weight_Percentage>85</Weight_Percentage>
-	<Teacher_Name>LTIS</Teacher_Name>
-	<Students_Name></Students_Name>
-	<Subject_Name>Fizika</Subject_Name>
-	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Time_Slots>30</Number_of_Preferred_Time_Slots>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Preferred_Time_Slot>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time_Slot>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesPreferredTimeSlots>
+</ConstraintActivitiesEndStudentsDay>
 </Time_Constraints_List>
 
 <Space_Constraints_List>
@@ -16260,7 +13578,7 @@
 	<Comments></Comments>
 </ConstraintBasicCompulsorySpace>
 <ConstraintSubjectPreferredRooms>
-	<Weight_Percentage>90</Weight_Percentage>
+	<Weight_Percentage>95</Weight_Percentage>
 	<Subject>Fizika</Subject>
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>Fizika előadó</Preferred_Room>
@@ -16278,21 +13596,21 @@
 	<Comments></Comments>
 </ConstraintSubjectPreferredRooms>
 <ConstraintSubjectPreferredRoom>
-	<Weight_Percentage>85</Weight_Percentage>
+	<Weight_Percentage>90</Weight_Percentage>
 	<Subject>Kémia</Subject>
 	<Room>Kémia</Room>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
-	<Weight_Percentage>80</Weight_Percentage>
+	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>Ének</Subject>
 	<Room>Ének-rajz terem</Room>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
-	<Weight_Percentage>90</Weight_Percentage>
+	<Weight_Percentage>80</Weight_Percentage>
 	<Subject>Rajz</Subject>
 	<Room>Ének-rajz terem</Room>
 	<Active>true</Active>
@@ -16637,25 +13955,9 @@
 <ConstraintRoomNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Room>Uszoda</Room>
-	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
+	<Number_of_Not_Available_Times>1</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>Hétfő</Day>
-		<Hour>1.</Hour>
-	</Not_Available_Time>
-	<Not_Available_Time>
-		<Day>Kedd</Day>
-		<Hour>1.</Hour>
-	</Not_Available_Time>
-	<Not_Available_Time>
-		<Day>Szerda</Day>
-		<Hour>1.</Hour>
-	</Not_Available_Time>
-	<Not_Available_Time>
-		<Day>Csütörtök</Day>
-		<Hour>1.</Hour>
-	</Not_Available_Time>
-	<Not_Available_Time>
-		<Day>Péntek</Day>
 		<Hour>1.</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
@@ -16688,39 +13990,6 @@
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>820</Activity_Id>
-	<Room>Tornaterem</Room>
-	<Permanently_Locked>true</Permanently_Locked>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivityPreferredRoom>
-<ConstraintSubjectPreferredRooms>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Subject>Informatika</Subject>
-	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
-	<Preferred_Room>Informatika terem</Preferred_Room>
-	<Preferred_Room>Multimédia terem</Preferred_Room>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintSubjectPreferredRooms>
-<ConstraintActivityPreferredRoom>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>776</Activity_Id>
-	<Room>Tornaterem</Room>
-	<Permanently_Locked>true</Permanently_Locked>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivityPreferredRoom>
-<ConstraintActivityPreferredRoom>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>752</Activity_Id>
-	<Room>Tornaterem</Room>
-	<Permanently_Locked>true</Permanently_Locked>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivityPreferredRoom>
-<ConstraintActivityPreferredRoom>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>753</Activity_Id>
 	<Room>Tornaterem</Room>
 	<Permanently_Locked>true</Permanently_Locked>
 	<Active>true</Active>
