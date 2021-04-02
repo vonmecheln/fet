@@ -34,6 +34,8 @@
 #include <q3textedit.h>
 
 class SplitYearForm : public SplitYearForm_template  {
+	Q_OBJECT
+
 public:
 	QString year;
 	

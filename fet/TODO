@@ -2,6 +2,18 @@
 
 ----------------------------------------------------------------------------------
 
+From Volker Dirr (28 August 2007):
+
+1. add a constraint. then remoce the constarint. now the constraintlist is
+empty, but the right windows ("current constarints") still displays the
+infoemation about the already deleted constraint.
+
+2. maybe change "current constaint" into "description", "constraint
+information", "description of the selected constraint", ... (very very low
+priority, maybe one day)
+
+----------------------------------------------------------------------------------
+
 From Volker Dirr, regarding translation:
 
 1. maybe itÂ´s better to be more exact. example: phrases "min hour" better "min hour per day"
@@ -158,6 +170,30 @@ For multiple generation:
 
 ----------------------------------------------------------------------------------
 
+From bmlahcen13:
+
+for that i advice to start thinking from now to
+- enhance the UI
+- use Database
+- add web client
+- use UML models
+
+and also for the structure, use "int id", this will
+enhance both runtime and will reduce the storage,
+because in the FET xml files, for example to store and
+activity, you have to write again the name of the
+subject, teacher, students and also the day and time
+slot in a solution. the same happens in time and space
+constraints, these 3 entities represent a big
+percentage of the size of the file, so you use int IDs
+and not names you will certainly gain a lot of space
+and also a better execution time, i know, as you said,
+that the internal structure uses int id but for
+loading and saving xml files and searching, the usage
+of strings delays them.
+
+
+----------------------------------------------------------------------------------
 
 
 long time goals:
@@ -170,10 +206,35 @@ code lesson planning (open)
 
 WISHLIST:
 
-1----------several users----------------------------------
+1--------------------------------------------------------
+From bmlahcen13:
+
+for that i advice to start thinking from now to
+- enhance the UI
+- use Database
+- add web client
+- use UML models
+
+and also for the structure, use "int id", this will
+enhance both runtime and will reduce the storage,
+because in the FET xml files, for example to store and
+activity, you have to write again the name of the
+subject, teacher, students and also the day and time
+slot in a solution. the same happens in time and space
+constraints, these 3 entities represent a big
+percentage of the size of the file, so you use int IDs
+and not names you will certainly gain a lot of space
+and also a better execution time, i know, as you said,
+that the internal structure uses int id but for
+loading and saving xml files and searching, the usage
+of strings delays them.
+
+Liviu: maybe it would be better to compress the input file
+
+2----------several users----------------------------------
 - Improve user interface - add help and wizard.
 
-2---------------------------------------------------------
+3---------------------------------------------------------
 From Michael Towers:
 
 "
@@ -202,7 +263,7 @@ a beautiful manual timetable editor (which can also print the various timetables
 perhaps save the data sets and results in a database) with an interface to an automatic 
 timetable scheduler which can be used to speed up the work."
 
-3---------------------------------------------------------
+4---------------------------------------------------------
 From TheStar:
 
 A constraint to think about is that some activities, and I suspect 'normal school management'
@@ -226,7 +287,7 @@ And it will generate students with name: AutoGen-11231, ID: 11231, and the like.
 
 The user could then 'select' groups of these students... and... (Just an idea)
 
-4---------------------------------------------------------
+5---------------------------------------------------------
 From Abdul Hadi Kamel:
 
 Do you have a plan in mind to upgrade the existing fet from standalone
@@ -243,7 +304,7 @@ I think it will be better if the FET can support a single timetable data
 repository (using client-server model) in a database that can be input/view
 by several users simultaneously.
 
-5---------------------------------------------------------
+6---------------------------------------------------------
 From Scott Sweeting:
 I have come up with another idea for FET.  You currently have a timetable - both 
 individual and compiled - for rooms, students and teachers.  How about have another 
@@ -253,13 +314,13 @@ you to see when a subject is being taught, which is handy for school and univers
 environments.  This would allow you to cover all four areas - rooms, students, 
 teachers and subjects.
 
-6----------------------------------------------------------
+7----------------------------------------------------------
 From Patrick Fox:
 I was wondering if a discreet Fet graphic in the background of the
 window program, would be better than having nothing when you start the
 software ?
 
-7---------------------------------------------------------
+8---------------------------------------------------------
 From Volker Dirr:
 If you think that other people don´t like this default constaint how about
 making a menu "default settings". there you can add "langurage" and my
@@ -278,7 +339,7 @@ because it isn´t not to bad if it happen (having a lesson twice a day" only a fe
 or do something like "time constraints (activities) - max n activities with same subject per day"
 or "time constraints (activities) - max n (grouped) activities with same subject per day". (but he have to differ between activities and subactivities. is´t nonsens to subactivities, it has just sense with activities.)
 
-8---------------------------------------------------------
+9---------------------------------------------------------
 From Joseph M Fontana:
 
 Yesterday I was doing some testing and I was able to create some
@@ -291,53 +352,7 @@ created the previous day and I went to view teachers-with rooms. To my
 surprise FET asked me to allocate the rooms again (message saying:
 "please allocate the rooms, firstly").
 
-9---------------------------------------------------------
-From Volker Dirr:
-> > so the current "problem" is:
-> > if you allocate a timetable and stop or interrupt allocatation, 
-then
-> > the timetable is saved in /results/.
-> > if you restart allocation now, then the old timetable will be lost,
-> > because the new (maybe more worse timetable, because you allocate
-> > just a second) has the same name, so the old results will be
-> > overwritten.
-> >
-> > i think this is a TODO to ask the user before overwriting the
-> > results or ask for a new name.
-> 
-> I don't think this is necessary, Volker, the files might become too 
-numerous.
-> 
-
-currently we are doing this with untis. we save several timetables and 
-choose the best manualy. we do this, because untis didn´t differ 
-between some constraints.
-for example:
-a timetable with 1 teacher who have 5 gap-times.
-an other timetable have 5 teachers with 1 gap-time per teacher.
-
-so this timetabels are as good as the other, but of course we prefer 
-the second one.
-
 10---------------------------------------------------------
-From Joshua N. Pritikin
-Can we have an option on the "add new activity dialog" to make the 
-preferred day & hour compulsory? Compulsory constraints are MUCH faster 
-to allocate than non-compulsory constraints.
-
-> > On second thought, rather than clutter the "add new activity dialog," a
-> > "lock all" menu item would probably be just as good.
-> 
-> I don't understand. You mean to lock all activities in the current timetable, 
-> like when viewing the timetable?
-
-Yes.
-
-When viewing the timetable, you can only lock the activities you can 
-select on the screen. I'd like the option to lock all activities in the 
-current timetable.
-
-11---------------------------------------------------------
 From fsh_felix
 I hope you can enhance the software with an IMPORT utility to read 
 text files for (in the order of:)

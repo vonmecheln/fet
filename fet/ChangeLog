@@ -1006,4 +1006,9 @@ Versions 5.2.0 - 5.2.
 	- Small bug fix - crashed if user removed directory "results" while program was running
 - Version 5.2.12
 	- Very small interface improvements
+- Version 5.2.13
+	- Modified the divide year dialog, to allow 12 divisions for the first category
+	- Bug fixes (when using activities with no teachers or no students, removing a teacher
+	or a students set might remove accidentaly such activities) - corrected
+	- Added more information about dividing a year
 	

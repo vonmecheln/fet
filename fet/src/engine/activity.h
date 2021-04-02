@@ -204,7 +204,7 @@ public:
 	/**
 	Removes this teacher from the list of teachers
 	*/
-	void removeTeacher(const QString& teacherName);
+	bool removeTeacher(const QString& teacherName);
 
 	/**
 	Renames this teacher in the list of teachers
@@ -216,7 +216,7 @@ public:
 	/**
 	Removes this students set from the list of students
 	*/
-	void removeStudents(Rules& r, const QString& studentsName, int nStudents);
+	bool removeStudents(Rules& r, const QString& studentsName, int nStudents);
 
 	/**
 	Renames this students set in the list of students

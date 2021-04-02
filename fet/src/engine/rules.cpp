@@ -427,8 +427,8 @@ bool Rules::removeTeacher(const QString& teacherName)
 {
 	for(int i=0; i<this->activitiesList.size(); ){
 		Activity* act=this->activitiesList[i];
-		act->removeTeacher(teacherName);
-		if(act->teachersNames.size()==0){
+		bool t=act->removeTeacher(teacherName);
+		if(t && act->teachersNames.size()==0){
 			this->removeActivity(act->id, act->activityGroupId);
 			i=0;
 			//(You have to be careful, there can be erased more activities here)
@@ -1110,9 +1110,9 @@ bool Rules::removeYear(const QString& yearName)
 
 	for(int i=0; i<this->activitiesList.size(); ){
 		Activity* act=this->activitiesList[i];
-		act->removeStudents(*this, yearName, nStudents);
+		bool t=act->removeStudents(*this, yearName, nStudents);
 		
-		if(act->studentsNames.count()==0){
+		if(t && act->studentsNames.count()==0){
 			this->removeActivity(act->id, act->activityGroupId);
 			i=0;
 			//(You have to be careful, there can be erased more activities here)
@@ -1336,8 +1336,8 @@ bool Rules::removeGroup(const QString& yearName, const QString& groupName)
 	for(int i=0; i<this->activitiesList.size(); ){
 		Activity* act=this->activitiesList[i];
 
-		act->removeStudents(*this, groupName, nStudents);
-		if(act->studentsNames.count()==0){
+		bool t=act->removeStudents(*this, groupName, nStudents);
+		if(t && act->studentsNames.count()==0){
 			this->removeActivity(act->id, act->activityGroupId);
 			i=0;
 			//(You have to be careful, there can be erased more activities here)
@@ -1555,8 +1555,8 @@ bool Rules::removeSubgroup(const QString& yearName, const QString& groupName, co
 	for(int i=0; i<this->activitiesList.size(); ){
 		Activity* act=this->activitiesList[i];
 
-		act->removeStudents(*this, subgroupName, nStudents);
-		if(act->studentsNames.count()==0){
+		bool t=act->removeStudents(*this, subgroupName, nStudents);
+		if(t && act->studentsNames.count()==0){
 			this->removeActivity(act->id, act->activityGroupId);
 			i=0;
 			//(You have to be careful, there can be erased more activities here)

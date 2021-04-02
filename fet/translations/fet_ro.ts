@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="ro">
+<defaultcodec></defaultcodec>
 <context>
     <name>ActivitiesForm_template</name>
     <message>
@@ -5098,7 +5099,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.2.11 (August 2007)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.2.13 (August 2007)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
@@ -5130,7 +5131,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/interface/helpfaqform_template.ui" line="41"/>
         <source>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 27 August 2007
+this documentation by Liviu Lalescu, reviewed and modified - 29 August 2007
 
 --------
 
@@ -5156,6 +5157,8 @@ A: - Students - organized into sets (years (or forms, or classes), containing gr
 Q: How to define the students into sections?
 
 A: Add years and the option &quot;Divide ...&quot; in the years dialog is the easiest way. You can also add manually years, groups and subgroups.
+
+Important note: please do the correct division of a year from the beginning. Each time you divide a year, the corresponding activities and constraints referring to year&apos;s groups and subgroups will be removed, along with groups and subgroups. This is not elegant, I know, I will try to find a better solution in the future. If you already inputted a lot of constraints and activities referring to a year&apos;s groups/subgroups, you might want to manually change the division of a year by the groups/subgroups menus.
 
 
 -------------------------------------------------------------------------------
@@ -5387,7 +5390,7 @@ You might want to choose different weights for different constraint min n days (
 
 2) If you have a course lesson with say 4 activities per week, difficult lessons, which you would like to schedule in the beginning of the day (say 3 out of 4 need to be in the first half of the day), you can add constraint activity preferred times for the first three activities, with preferred times in the first half of the day. This approach worked with the sample German high-school data.
 
-3) For teachers&apos; gaps: you have to use 100% weight. You could try with a rather large value for max allowed gaps, and lower it as you find possible timetables.
+3) For teacher(s) gaps: you have to use 100% weight. You could try with rather large values for max allowed gaps, and lower it as you find possible timetables.
 
 4) Please only input the special rooms with constraints. Home rooms are not necessary (teachers&apos; or students&apos; rooms). You might firstly try togenerate a timetable without rooms, to see if it is possible, then add rooms and rooms related constraints.
 
@@ -7538,96 +7541,96 @@ pauza nu sunt numarate ca ferestre.</translation>
         <translation>FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="319"/>
+        <location filename="../src/engine/activity.cpp" line="323"/>
         <source>Activity: </source>
         <translation>Activitate: </translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="321"/>
+        <location filename="../src/engine/activity.cpp" line="325"/>
         <source>Sub-activity: </source>
         <translation>Sub-activitate: </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6053"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6074"/>
         <source>T:</source>
         <translation>P:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="328"/>
+        <location filename="../src/engine/activity.cpp" line="332"/>
         <source>S:</source>
         <translation>S:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="331"/>
+        <location filename="../src/engine/activity.cpp" line="335"/>
         <source>St:</source>
         <translation>St:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="338"/>
+        <location filename="../src/engine/activity.cpp" line="342"/>
         <source>Id:</source>
         <translation>Id:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="340"/>
+        <location filename="../src/engine/activity.cpp" line="344"/>
         <source>AGId:</source>
         <translation>AGId:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="342"/>
+        <location filename="../src/engine/activity.cpp" line="346"/>
         <source>D:</source>
         <translation>D:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="344"/>
+        <location filename="../src/engine/activity.cpp" line="348"/>
         <source>TD:</source>
         <translation>DT:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="364"/>
+        <location filename="../src/engine/activity.cpp" line="368"/>
         <source>Activity:
 </source>
         <translation>Activitate:
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="366"/>
+        <location filename="../src/engine/activity.cpp" line="370"/>
         <source>Sub-activity:
 </source>
         <translation>Sub-activitate:
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="371"/>
+        <location filename="../src/engine/activity.cpp" line="375"/>
         <source>Teacher=</source>
         <translation>Profesor=</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="372"/>
+        <location filename="../src/engine/activity.cpp" line="376"/>
         <source>Subject=</source>
         <translation>Disciplina=</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="379"/>
+        <location filename="../src/engine/activity.cpp" line="383"/>
         <source>Students=</source>
         <translation>Studenti=</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="381"/>
+        <location filename="../src/engine/activity.cpp" line="385"/>
         <source>Id=</source>
         <translation>Id=</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="383"/>
+        <location filename="../src/engine/activity.cpp" line="387"/>
         <source>Activity group id=</source>
         <translation>Grupul activitatii=</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="385"/>
+        <location filename="../src/engine/activity.cpp" line="389"/>
         <source>Duration=</source>
         <translation>Durata=</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="387"/>
+        <location filename="../src/engine/activity.cpp" line="391"/>
         <source>Total duration=</source>
         <translation>Durata totala=</translation>
     </message>
@@ -7691,7 +7694,7 @@ pauza nu sunt numarate ca ferestre.</translation>
         <translation>Profesor indisponibil</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6003"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6024"/>
         <source>Time constraint</source>
         <translation>Constrangere temporala</translation>
     </message>
@@ -7721,7 +7724,7 @@ pauza nu sunt numarate ca ferestre.</translation>
         <translation>Pauza</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5390"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5411"/>
         <source>must be scheduled at: </source>
         <translation>trebuie programata la:</translation>
     </message>
@@ -8161,22 +8164,22 @@ pentru ca profesorul este invalid</translation>
         <translation>nerespectata pentru subgrupul: %1, in ziua %2, ora %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5702"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5723"/>
         <source>NA:%1</source>
         <translation>NA:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5704"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5725"/>
         <source>ID:%1</source>
         <translation>ID:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5720"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5741"/>
         <source>Number of activities=%1</source>
         <translation>Numar de activitati=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5722"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5743"/>
         <source>Activity with id=%1</source>
         <translation>Activitate cu id=%1</translation>
     </message>
@@ -8186,7 +8189,7 @@ pentru ca profesorul este invalid</translation>
         <translation>Constrangere de timp activitati incep in acelasi timp nerespectata, pt. ca activitatea cu id=%1 nu incepe in acelasi timp cu activitatea cu id=%2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5843"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5864"/>
         <source>conflicts factor increase=%1</source>
         <translation>crestere a factorului de conflicte=%1</translation>
     </message>
@@ -8201,7 +8204,7 @@ pentru ca profesorul este invalid</translation>
         <translation>MO:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5024"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5038"/>
         <source>Act. id:%1</source>
         <translation>Id act.:%1</translation>
     </message>
@@ -8381,7 +8384,7 @@ pentru ca profesorul este invalid</translation>
         <translation>Profesorii nu trebuie sa aiba mai mult de %1 ore zilnic</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5432"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5453"/>
         <source>must be scheduled at:
 </source>
         <translation>trebuie sa fie programata la:
@@ -8468,7 +8471,7 @@ va rog abandonati acum si dati-i un alt nume
         <translation>Constrangere NEadaugata - eroare?</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="409"/>
+        <location filename="../src/engine/activity.cpp" line="413"/>
         <source>Total number of students=%1</source>
         <translation>Numarul total de studenti=%1</translation>
     </message>
@@ -8605,46 +8608,46 @@ va rog abandonati acum si dati-i un alt nume
         <translation>Nume=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5373"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5394"/>
         <source>Activities with </source>
         <translation>Activitatile cu</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5375"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5396"/>
         <source>teacher=%1, </source>
         <translation>profesor=%1,</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5379"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5400"/>
         <source>students=%1, </source>
         <translation>studenti=%1,</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5383"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5404"/>
         <source>subject=%1, </source>
         <translation>disciplina=%1,</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5413"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5434"/>
         <source>Activities with:</source>
         <translation>Activitatile cu:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5416"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5437"/>
         <source>Teacher=%1
 </source>
         <translation>Profesor=%1
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5420"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5441"/>
         <source>Students=%1
 </source>
         <translation>Studenti=%1
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5424"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5445"/>
         <source>Subject=%1
 </source>
         <translation>disciplina=%1
@@ -8741,7 +8744,7 @@ vor fi manipulate corect)</translation>
         <translation>subgrupul %1 are mai mult de o activitate alocata in ziua %2, ora %3</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="370"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="406"/>
         <source>FET question</source>
         <translation>FET intrebare</translation>
     </message>
@@ -8854,17 +8857,17 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME trebuie crescuta (aveti prea multe 
         <translation>De baza obligatorii (spatiu)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5699"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5720"/>
         <source>Activities same starting hour</source>
         <translation>Activitati aceeasi ora de inceput</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5717"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5738"/>
         <source>Activities must have the same starting hour</source>
         <translation>Activitatile trebuie sa aiba aceeasi ora de inceput</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5840"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5861"/>
         <source>Time constraint activities same hour broken, because activity with id=%1 is not at the same hour with activity with id=%2</source>
         <translation>Constrangere de timp activitati aceeasi ora de inceput nerespectata pentru ca activitatea cu id=%1 nu e la aceeasi ora cu activitatea cu id=%2</translation>
     </message>
@@ -8915,12 +8918,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR trebuie crescuta (aveti prea multe 
         <translation>Va rog introduceti noul nume al etichetei disciplinaului</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="330"/>
+        <location filename="../src/engine/activity.cpp" line="334"/>
         <source>ST:</source>
         <translation>ED:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="374"/>
+        <location filename="../src/engine/activity.cpp" line="378"/>
         <source>Subject tag=</source>
         <translation>Eticheta disciplina=</translation>
     </message>
@@ -9130,12 +9133,12 @@ Please talk to the author or increase variable MAX_ROOMS</source>
 Va rog vorbiti cu autorul sau mariti variabila MAX_ROOMS</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="421"/>
+        <location filename="../src/engine/activity.cpp" line="425"/>
         <source>Time constraints directly related to this activity:</source>
         <translation>Constrangeri de timp in legatura directa cu aceasta activitate:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="432"/>
+        <location filename="../src/engine/activity.cpp" line="436"/>
         <source>Space constraints directly related to this activity:</source>
         <translation>Constrangeri de spatiu in legatura directa cu aceasta activitate:</translation>
     </message>
@@ -9239,12 +9242,12 @@ neadaugata - trebuie sa fie un duplicat</translation>
         <translation>Constrangere de timp - profesor max %1 ore zilnic - nerespectata pentru profesorul %2, in ziua %3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5387"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5408"/>
         <source>subject tag=%1, </source>
         <translation>eticheta disciplina=%1,</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5428"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5449"/>
         <source>Subject tag=%1
 </source>
         <translation>Eticheta disciplina=%1
@@ -9258,48 +9261,48 @@ neadaugata - trebuie sa fie un duplicat</translation>
 (nici un profesor, studenti, disciplina sau eticheta disciplina specificate)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5377"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5398"/>
         <source>all teachers, </source>
         <translation>toti profesorii, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5381"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5402"/>
         <source>all students, </source>
         <translation>toti studentii, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5385"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5406"/>
         <source>all subjects, </source>
         <translation>Toate disciplinele, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5389"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5410"/>
         <source>all subject tags, </source>
         <translation>toate etichetele disciplina, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5418"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5439"/>
         <source>All teachers
 </source>
         <translation>Toti profesorii
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5422"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5443"/>
         <source>All students
 </source>
         <translation>Toti studentii
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5426"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5447"/>
         <source>All subjects
 </source>
         <translation>Toate disciplinele
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5430"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5451"/>
         <source>All subject tags
 </source>
         <translation>Toate etichetele disciplina
@@ -9323,24 +9326,24 @@ Daca chiar aveti nevoie de mai multi profesori pentru o activitate, vorbiti cu a
         <translation>Activitate inactiva</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="350"/>
+        <location filename="../src/engine/activity.cpp" line="354"/>
         <source>A: yes</source>
         <translation>A: da</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="352"/>
+        <location filename="../src/engine/activity.cpp" line="356"/>
         <source>A: no</source>
         <translation>A: nu</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="395"/>
+        <location filename="../src/engine/activity.cpp" line="399"/>
         <source>Active: yes
 </source>
         <translation>Activa: da
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="397"/>
+        <location filename="../src/engine/activity.cpp" line="401"/>
         <source>Active: no
 </source>
         <translation>Activa: nu
@@ -9455,12 +9458,12 @@ Va rog opriti simularea inainte de aceasta</translation>
         <translation>Set de studenti</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6062"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6083"/>
         <source>,S:</source>
         <translation>,S:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6065"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6086"/>
         <source>,St:</source>
         <translation>,St:</translation>
     </message>
@@ -9480,7 +9483,7 @@ Va rog opriti simularea inainte de aceasta</translation>
         <translation>Numar de studenti: calculat din seturile de studenti componente</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="355"/>
+        <location filename="../src/engine/activity.cpp" line="359"/>
         <source>NSt:</source>
         <translation>NSt:</translation>
     </message>
@@ -9585,7 +9588,7 @@ ai activitatii, care se refera la aceasta activitate, inainte de a continua</tra
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5996"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6017"/>
         <source>WP:%1%</source>
         <translation>IP:%1%</translation>
     </message>
@@ -9680,22 +9683,22 @@ ai activitatii, care se refera la aceasta activitate, inainte de a continua</tra
         <translation>Constrangere studenti devreme nerespectata pentru subgrupul %1, in ziua %2, mareste conflictele cu %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4879"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4886"/>
         <source>Time constraint activity preferred time broken for activity with id=%1, increases conflicts total by %2</source>
         <translation>Constrangere de timp activitate timp preferat nerespectata pentru activitatea cu id=%1, mareste conflictele cu %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5074"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5088"/>
         <source>WP:%1</source>
         <translation>IP:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5181"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5195"/>
         <source>Time constraint activity preferred times broken for activity with id=%1, increases conflicts total by %2</source>
         <translation>Constrangere de timp activitate timpi preferati nerespectata pentru activitatea cu id=%1, mareste conflictele cu %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5530"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5551"/>
         <source>Time constraint activities preferred times broken for activity with id=%1,  increases conflicts total by %2</source>
         <translation>Constrangere de timp activitati timpi preferati nerespectata pentru activitatea cu id=%1, mareste conflictele cu %2</translation>
     </message>
@@ -9958,12 +9961,12 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="324"/>
+        <location filename="../src/engine/activity.cpp" line="328"/>
         <source> no teachers, </source>
         <translation> fara profesori, </translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="333"/>
+        <location filename="../src/engine/activity.cpp" line="337"/>
         <source> no students, </source>
         <translation> fara studenti, </translation>
     </message>
@@ -9975,7 +9978,7 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="376"/>
+        <location filename="../src/engine/activity.cpp" line="380"/>
         <source>No students sets for this activity
 </source>
         <translation>Fara studenti pentru aceasta activitate
@@ -10110,7 +10113,7 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
         <translation>Aceasta mareste conflictele cu %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5958"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5979"/>
         <source>FET error in data</source>
         <translation>FET - eroare in date</translation>
     </message>
@@ -10313,66 +10316,6 @@ You can choose to disable automatic search for updates in the Settings menu</sou
         <translation>Min ore:%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="66"/>
-        <source>Splitting year: %1</source>
-        <translation>Impart anul: %1</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform.cpp" line="353"/>
-        <source>Empty names not allowed</source>
-        <translation>Numele vide nu sunt posibile</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform.cpp" line="371"/>
-        <source>Year %1 is not empty and it will be emptied before adding the divisions you selected. Do you agree?</source>
-        <translation>Anul %1 nu este vid si va fi golit inainte de a adauga diviziunile pe care le-ati selectat. De acord?</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform.cpp" line="405"/>
-        <source>Duplicate names not allowed</source>
-        <translation>Numele duplicat nu sunt admise</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform.cpp" line="575"/>
-        <source>Cannot add group %1, because a set with same name exists. Please choose another name or remove old group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform.cpp" line="523"/>
-        <source>Cannot add subgroup %1, because a set with same name exists. Please choose another name or remove old group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform.cpp" line="591"/>
-        <source>Split of year complete, please check the groups and subgroups of year to make sure everything is OK</source>
-        <translation>Diviziunea anului s-a incheiat cu succes. Va rog verificati grupurile si subgrupurile acestui an pentru a va asigura ca totul este bine</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform.cpp" line="633"/>
-        <source>
-Please choose a number of categories and in each category the number of divisions. You can choose for instance 2 categories, 2 divisions for the first category: boys and girls, and 3 divisions for the second: English, German and French. You can select 1, 2 or 3 categories, each with 2 to 6 divisions. For more values (very unlikely case) you will have to manually add the groups and subgroups</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform.cpp" line="636"/>
-        <source>
-
-Please note that the dialog here will keep the last configuration of the last divided year, it will not remember the values for a specific year you need to modify.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform.cpp" line="638"/>
-        <source>
-
-Separator character(s) is of your choice (default is space)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform.cpp" line="640"/>
-        <source>FET help on dividing years</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/engine/generate_pre.cpp" line="1145"/>
         <source>Cannot optimize, because you have constraints of type teacher not available with weight percentage less than 100% for teacher %1. Currently, FET can only optimize with constraints teacher not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
@@ -10398,17 +10341,17 @@ Separator character(s) is of your choice (default is space)</source>
         <translation>Importanta (procentuala) invalida. Trebuie sa fie 100</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5733"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5754"/>
         <source>T: </source>
         <translation>T: </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5742"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5763"/>
         <source> , S: </source>
         <translation> , S: </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5745"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5766"/>
         <source> , St: </source>
         <translation> , St: </translation>
     </message>
@@ -10465,22 +10408,22 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5990"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6011"/>
         <source>Constraint 2 activities consecutive: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5992"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6013"/>
         <source>first act. id:%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5994"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6015"/>
         <source>second act. id:%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6005"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6026"/>
         <source>Constraint 2 activities consecutive (second activity must be placed after the first activity, possibly separated by breaks)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10495,7 +10438,7 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6137"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6158"/>
         <source>Time constraint 2 activities consecutive broken for first activity with id=%1 and second activity with id=%2, increases conflicts total by %3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10711,33 +10654,28 @@ Starting with version 5.0.0, it is possible to add activities with no students o
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5649"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5670"/>
         <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5331"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5352"/>
         <source>Following constraint is wrong (refers to no activities. Please correct it):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5950"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5971"/>
         <source>Following constraint is wrong (refers to inexistent activity ids):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5959"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5980"/>
         <source>Following constraint is wrong (refers to same activities):
 %1</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addstudentsyearform.cpp" line="61"/>
-        <source>Year added. You might want to divide it into sections - this is done the easiest way in the years dialog - button &apos;Divide year ...&apos;, or more difficult by manually adding groups and subgroups</source>
-        <translation>An adaugat. Poate veti dori sa il impartiti in sectii - aceasta se face cel mai usor in dialogul ani - butonul &apos;Imparte an...&quot;, sau mai dificil prin adaugare manuala de grupuri si subgrupuri</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="715"/>
@@ -10776,7 +10714,7 @@ Starting with version 5.0.0, it is possible to add activities with no students o
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4968"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4975"/>
         <source>Following constraint is wrong (because it refers to invalid activity id. Please correct it (maybe removing it is a solution)):
 %1</source>
         <translation type="unfinished"></translation>
@@ -10907,31 +10845,31 @@ Starting with version 5.0.0, it is possible to add activities with no students o
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4701"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4708"/>
         <source>Constraint activity preferred time is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4977"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4984"/>
         <source>Constraint activity preferred times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4984"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4998"/>
         <source>Constraint activity preferred times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5313"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5327"/>
         <source>Constraint activities preferred times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5320"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5341"/>
         <source>Constraint activities preferred times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
@@ -10945,6 +10883,38 @@ Starting with version 5.0.0, it is possible to add activities with no students o
         <location filename="../src/interface/fet.cpp" line="136"/>
         <source>Cannot create or use %1 directory - FET will now abort</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="4701"/>
+        <source>Constraint activity preferred time is wrong because preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="4991"/>
+        <source>Constraint activity preferred times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5334"/>
+        <source>Constraint activities preferred times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentsyearform.cpp" line="61"/>
+        <source>Year added. You might want to divide it into sections - this is done in the years dialog - button &apos;Divide year ...&apos;, or by manually adding groups and subgroups in the groups or subgroups menus</source>
+        <translation type="obsolete">An adaugat. Poate veti dori sa il impartiti in sectii - aceasta se face in dialogul ani - butonul &apos;Imparte an...&quot;, sau prin adaugare manuala de grupuri si subgrupuri in meniul grupuri sau subgrupuri</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentsyearform.cpp" line="65"/>
+        <source>Year added. You might want to divide it into sections - this is done in the years dialog - button &apos;Divide year ...&apos;, or by manually adding groups and subgroups in the groups or subgroups menus
+
+ Important note: if you plan to use option &apos;divide&apos;, please try to use it only once for each year at the beginning, because a second use of option &apos;divide&apos; for the same year will remove all activities and constraints referring to old groups and subgroups from this year.</source>
+        <translation>An adaugat. Poate veti dori sa il impartiti in sectii - aceasta se face in dialogul ani - butonul &apos;Imparte an...&quot;, sau prin adaugare manuala de grupuri si subgrupuri in meniul grupuri sau subgrupuri￼
+
+￼ Nota importanta: daca planificati sa utilizati optiunea &apos;divide&apos;, va rog incercati sa o folositi doar o data pentru fiecare an la inceput, deoarece a doua folosire a acestei facilitati pentru acelasi an va sterge toate activitatile si constrangerile care se refera la vechile grupuri si subgrupuri din acest an.</translation>
     </message>
 </context>
 <context>
@@ -10993,6 +10963,102 @@ salile &quot;acasa&quot; ale studentilor sau profesorilor nu sunt necesare</tran
     </message>
 </context>
 <context>
+    <name>SplitYearForm</name>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="72"/>
+        <source>Splitting year: %1</source>
+        <translation>Impart anul: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="706"/>
+        <source>FET information</source>
+        <translation>FET - informatie</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="457"/>
+        <source>Empty names not allowed</source>
+        <translation>Numele vide nu sunt posibile</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="474"/>
+        <source>FET question</source>
+        <translation>FET intrebare</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="485"/>
+        <source>FET warning</source>
+        <translation>FET - avertisment</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="521"/>
+        <source>Duplicate names not allowed</source>
+        <translation>Numele duplicat nu sunt admise</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="691"/>
+        <source>Cannot add group %1, because a set with same name exists. Please choose another name or remove old group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="639"/>
+        <source>Cannot add subgroup %1, because a set with same name exists. Please choose another name or remove old group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="707"/>
+        <source>Split of year complete, please check the groups and subgroups of year to make sure everything is OK</source>
+        <translation>Diviziunea anului s-a incheiat cu succes. Va rog verificati grupurile si subgrupurile acestui an pentru a va asigura ca totul este bine</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="756"/>
+        <source>Please choose a number of categories and in each category the number of divisions. You can choose for instance 3 categories, 5 divisions for the first category: a, b, c, d and e, 2 divisions for the second category: boys and girls, and 3 divisions for the third: English, German and French. You can select 1, 2 or 3 categories, first with 2 to 12 divisions and the second and third ones each with 2 to 6 divisions. For more values (very unlikely case) you will have to manually add the groups and subgroups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="767"/>
+        <source>
+
+Probably you don&apos;t need to worry about empty subgroups (no significant speed changes), although I didn&apos;t test enough such situations. You just need to know that for the moment the maximum total number of subgroups is %1 (which can be changed, but nobody needed larger values)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="770"/>
+        <source>
+
+Please note that the dialog here will keep the last configuration of the last divided year, it will not remember the values for a specific year you need to modify.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="772"/>
+        <source>
+
+Separator character(s) is of your choice (default is space)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="774"/>
+        <source>FET help on dividing years</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="479"/>
+        <source>Year %1 is not empty and it will be emptied before adding the divisions you selected. This means that all the activities and constraints for the groups and subgroups in this year will be removed. It is strongly recommended to save your file before continuing. You might also want, as an alternative, to modify manually the groups/subgroups from the corresponding menu, so that you will not lose constraints and activities referring to them. Do you really want to empty year?</source>
+        <translation>Anul %1 nu e gol si va fi golit inainte de a adauga diviziunile selectate. Aceasta inseamna ca toate activitatile si constrangerile pentru grupurile si subgrupurile din acest an vor fi sterse. Este foarte recomandat sa salvati fisierul dvs. inainte de a continua. Ati putea de asemenea incerca, ca o alternativa, sa modificati manual grupurile/subgrupurile din meniul corespunzator, ca sa nu pierdeti constrangeri si activitati referitoare la ele. Chiar doriti sa golesc anul?</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="487"/>
+        <source>Year %1 will be emptied. This means that all constraints and activities referring to groups/subgroups in year %1 will be removed. Are you absolutely sure?</source>
+        <translation>Anul %1 va fi golit. Asta inseamna ca toate constrangerile si activitatile referitoare la grupurile/subgrupurile din anul %1 vor fi sterse. Sunteti absolut sigur?</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="762"/>
+        <source>
+
+Please input from the beginning the correct divisions. After you inputted activities and constraints for this year&apos;s groups and subgroups, dividing it again will remove the activities and constraints referring to these groups/subgroups. I know this is not elegant, I hope I&apos;ll solve that in the future. If you inputted already many activities and constraints, you might want to use the alternative of manually adding/editing/removing groups/subgroups in the groups/subgroups menu. This way you will preserve your old data</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SplitYearForm_template</name>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="16"/>
@@ -11000,54 +11066,54 @@ salile &quot;acasa&quot; ale studentilor sau profesorilor nu sunt necesare</tran
         <translation>FET - Imparte an</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="35"/>
-        <source>Number of categories</source>
-        <translation>Numar de categorii</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform_template.ui" line="419"/>
+        <location filename="../src/interface/splityearform_template.ui" line="186"/>
         <source>OK</source>
         <translation>Bine</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="427"/>
+        <location filename="../src/interface/splityearform_template.ui" line="194"/>
         <source>Cancel</source>
         <translation>Anuleaza</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="365"/>
+        <location filename="../src/interface/splityearform_template.ui" line="98"/>
         <source>Splitting year:</source>
         <translation>Impart anul:</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="115"/>
-        <source>Category 1</source>
-        <translation>Categoria 1</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform_template.ui" line="187"/>
-        <source>Category 2</source>
-        <translation>Categoria 2</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform_template.ui" line="259"/>
-        <source>Category 3</source>
-        <translation>Categoria 3</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform_template.ui" line="373"/>
+        <location filename="../src/interface/splityearform_template.ui" line="326"/>
         <source>Separator character(s)</source>
         <translation>Caracter(e) separator</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="435"/>
+        <location filename="../src/interface/splityearform_template.ui" line="202"/>
         <source>Help</source>
         <translation>Ajutor</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="443"/>
+        <location filename="../src/interface/splityearform_template.ui" line="210"/>
         <source>Reset</source>
         <translation>Reseteaza</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform_template.ui" line="35"/>
+        <source>Number of categories (you can select 1-3 categories)</source>
+        <translation>Numar de categorii (puteti selecta 1-3 categorii)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform_template.ui" line="106"/>
+        <source>Category 3 (you can select 2-6 divisions)</source>
+        <translation>Categoria 3 (puteti selecta 2-6 diviziuni)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform_template.ui" line="254"/>
+        <source>Category 2 (you can select 2-6 divisions)</source>
+        <translation>Categoria 2 (puteti selecta 2-6 diviziuni)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform_template.ui" line="381"/>
+        <source>Category 1 (you can select 2-12 divisions)</source>
+        <translation>Categoria 1 (puteti selecta 2-12 diviziuni)</translation>
     </message>
 </context>
 <context>
@@ -11607,8 +11673,8 @@ Rezultatele simularii sunt scrise. Puteti sa verificati Orar/Vizualizare. Rezult
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="488"/>
-        <source>It is recommended to strengthen the constraints step by step (for intance min n days or teachers&apos; max gaps), as you obtain feasible timetables.</source>
-        <translation>Este recomandat sa mariti constrangerile pas cu pas (de exemplu min n zile sau max ferestre ale profesorilor), pe masura ce obtineti orare posibile.</translation>
+        <source>It is recommended to strengthen the constraints step by step (for intance min n days or teacher(s) max gaps), as you obtain feasible timetables.</source>
+        <translation>Este recomandat sa mariti constrangerile pas cu pas (de exemplu min n zile sau max ferestre ale profesorului(ilor)), pe masura ce obtineti orare posibile.</translation>
     </message>
 </context>
 <context>

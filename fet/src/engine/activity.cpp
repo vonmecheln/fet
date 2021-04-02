@@ -98,9 +98,11 @@ bool Activity::searchTeacher(const QString& teacherName)
 	return this->teachersNames.find(teacherName)!=this->teachersNames.end();
 }
 
-void Activity::removeTeacher(const QString& teacherName)
+bool Activity::removeTeacher(const QString& teacherName)
 {
-	this->teachersNames.remove(teacherName);
+	int t=this->teachersNames.remove(teacherName);
+	
+	return t>0;
 }
 
 void Activity::renameTeacher(const QString& initialTeacherName, const QString& finalTeacherName)
@@ -119,7 +121,7 @@ bool Activity::searchStudents(const QString& studentsName)
 	return this->studentsNames.find(studentsName)!=this->studentsNames.end();
 }
 
-void Activity::removeStudents(Rules& r, const QString& studentsName, int nStudents)
+bool Activity::removeStudents(Rules& r, const QString& studentsName, int nStudents)
 {
 	if(&r==NULL){	
 	}
@@ -133,6 +135,8 @@ void Activity::removeStudents(Rules& r, const QString& studentsName, int nStuden
 		this->nTotalStudents-=nStudents;
 		assert(this->nTotalStudents>=0);
 	}
+	
+	return t>0;
 }
 
 void Activity::renameStudents(Rules& r, const QString& initialStudentsName, const QString& finalStudentsName)
