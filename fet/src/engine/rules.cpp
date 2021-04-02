@@ -3359,13 +3359,13 @@ bool Rules::read(const QString& filename)
 	
 	if(!version5AndAbove){
 		QMessageBox::warning(NULL, QObject::tr("FET information"), 
-		 QObject::tr("Opening older file - it will be converted to latest format, automatically\n"
-		 "assigning weight percentages to constraints and dropping parity for activities.\n"
-		 "You are adviced to make a backup of your old file before saving in new format.\n"
-		 "Please note that the default weight percentage of constraints min n days between activities\n"
-		 "will be 95% (mainly satisfied, not always) and 'force adjacent if broken' will be set to true\n"
-		 "(meaning that if the constraint min n days is broken, the activities will be placed adjacent)\n"
-		 "If you want, you can modify this percent to be 100%, manually in the fet input file\n"
+		 QObject::tr("Opening older file - it will be converted to latest format, automatically "
+		 "assigning weight percentages to constraints and dropping parity for activities. "
+		 "You are adviced to make a backup of your old file before saving in new format.\n\n"
+		 "Please note that the default weight percentage of constraints min n days between activities "
+		 "will be 95% (mainly satisfied, not always) and 'force consecutive if same day' will be set to true "
+		 "(meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity)"
+		 "If you want, you can modify this percent to be 100%, manually in the fet input file "
 		 "or from the interface"));
 	}
 	

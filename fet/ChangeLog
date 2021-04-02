@@ -880,4 +880,8 @@ Versions 5.0.0 -
 - Version 5.0.0-preview23
 - Version 5.0.0-preview24
 	- Bug fix in saving ConstraintTeacherMaxHoursDaily
+- Version 5.0.0-preview25
+	- Improvement in the optimization algorithm.
+	- Possible bugs fixes (unlikely to happen bugs).
+	- Improved Romanian translation.
 	

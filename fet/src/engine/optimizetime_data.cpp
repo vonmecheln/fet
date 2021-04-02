@@ -194,7 +194,7 @@ bool processTimeConstraints()
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 			 QObject::tr("Cannot optimize, because you have constraints of type "
 			 "teachers max hours continuously. To run with this preview version, you need to remove such constraints"),
-			 "Skip rest of constraints problems", "See next not-implemented yet constraint", QString(),
+			 QObject::tr("Skip rest of constraints problems"), QObject::tr("See next not-implemented yet constraint"), QString(),
 			 1, 0 );
 
 			if(t==0)
@@ -206,31 +206,19 @@ bool processTimeConstraints()
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 			 QObject::tr("Cannot optimize, because you have constraints of type "
 			 "teachers subgroups max hours daily. To run with this preview version, you need to remove such constraints"),
-			 "Skip rest of constraints problems", "See next not-implemented yet constraint", QString(),
+			 QObject::tr("Skip rest of constraints problems"), QObject::tr("See next not-implemented yet constraint"), QString(),
 			 1, 0 );
 
 			if(t==0)
 				break;
 		}
-		/*else if(tc->type==CONSTRAINT_TEACHERS_MAX_HOURS_DAILY){
-			ok=false;
-			
-			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
-			 QObject::tr("Cannot optimize, because you have constraints of type\n"
-			 "teachers max hours daily. To run with this preview version, you need to remove such constraints"),
-			 "Skip rest of constraints problems", "See next not-implemented yet constraint", QString(),
-			 1, 0 );
-
-			if(t==0)
-				break;
-		}*/
 		else if(tc->type==CONSTRAINT_TEACHERS_MIN_HOURS_DAILY){
 			ok=false;
 			
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 			 QObject::tr("Cannot optimize, because you have constraints of type "
 			 "teachers min hours daily. To run with this preview version, you need to remove such constraints"),
-			 "Skip rest of constraints problems", "See next not-implemented yet constraint", QString(),
+			 QObject::tr("Skip rest of constraints problems"), QObject::tr("See next not-implemented yet constraint"), QString(),
 			 1, 0 );
 
 			if(t==0)
@@ -242,7 +230,7 @@ bool processTimeConstraints()
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 			 QObject::tr("Cannot optimize, because you have constraints of type "
 			 "teachers max days per week. To run with this preview version, you need to remove such constraints"),
-			 "Skip rest of constraints problems", "See next not-implemented yet constraint", QString(),
+			 QObject::tr("Skip rest of constraints problems"), QObject::tr("See next not-implemented yet constraint"), QString(),
 			 1, 0 );
 
 			if(t==0)
@@ -254,32 +242,19 @@ bool processTimeConstraints()
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 			 QObject::tr("Cannot optimize, because you have constraints of type "
 			 "students set interval max days per week. To run with this preview version, you need to remove such constraints"),
-			 "Skip rest of constraints problems", "See next not-implemented yet constraint", QString(),
+			 QObject::tr("Skip rest of constraints problems"), QObject::tr("See next not-implemented yet constraint"), QString(),
 			 1, 0 );
 
 			if(t==0)
 				break;
 		}
-		/*
-		else if(tc->type==CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING){
-			ok=false;
-			
-			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
-			 QObject::tr("Cannot optimize, because you have constraints of type\n"
-			 "activities not overlapping. To run with this preview version, you need to remove such constraints"),
-			 "Skip rest of constraints problems", "See next not-implemented yet constraint", QString(),
-			 1, 0 );
-
-			if(t==0)
-				break;
-		}*/
 		else if(tc->type==CONSTRAINT_ACTIVITY_ENDS_DAY){
 			ok=false;
 			
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 			 QObject::tr("Cannot optimize, because you have constraints of type "
 			 "activity ends day. To run with this preview version, you need to remove such constraints"),
-			 "Skip rest of constraints problems", "See next not-implemented yet constraint", QString(),
+			 QObject::tr("Skip rest of constraints problems"), QObject::tr("See next not-implemented yet constraint"), QString(),
 			 1, 0 );
 
 			if(t==0)
@@ -291,7 +266,7 @@ bool processTimeConstraints()
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 			 QObject::tr("Cannot optimize, because you have constraints of type "
 			 "2 activities consecutive. To run with this preview version, you need to remove such constraints"),
-			 "Skip rest of constraints problems", "See next not-implemented yet constraint", QString(),
+			 QObject::tr("Skip rest of constraints problems"), QObject::tr("See next not-implemented yet constraint"), QString(),
 			 1, 0 );
 
 			if(t==0)
@@ -303,7 +278,7 @@ bool processTimeConstraints()
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 			 QObject::tr("Cannot optimize, because you have constraints of type "
 			 "2 activities ordered. To run with this preview version, you need to remove such constraints"),
-			 "Skip rest of constraints problems", "See next not-implemented yet constraint", QString(),
+			 QObject::tr("Skip rest of constraints problems"), QObject::tr("See next not-implemented yet constraint"), QString(),
 			 1, 0 );
 
 			if(t==0)
@@ -315,7 +290,7 @@ bool processTimeConstraints()
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 			 QObject::tr("Cannot optimize, because you have constraints of type "
 			 "2 activities grouped. To run with this preview version, you need to remove such constraints"),
-			 "Skip rest of constraints problems", "See next not-implemented yet constraint", QString(),
+			 QObject::tr("Skip rest of constraints problems"), QObject::tr("See next not-implemented yet constraint"), QString(),
 			 1, 0 );
 
 			if(t==0)
@@ -327,7 +302,7 @@ bool processTimeConstraints()
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 			 QObject::tr("Cannot optimize, because you have constraints of type "
 			 "teachers subject tags max hours continuously. To run with this preview version, you need to remove such constraints"),
-			 "Skip rest of constraints problems", "See next not-implemented yet constraint", QString(),
+			 QObject::tr("Skip rest of constraints problems"), QObject::tr("See next not-implemented yet constraint"), QString(),
 			 1, 0 );
 
 			if(t==0)
@@ -339,7 +314,7 @@ bool processTimeConstraints()
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 			 QObject::tr("Cannot optimize, because you have constraints of type "
 			 "teachers subject tag max hours continuously. To run with this preview version, you need to remove such constraints"),
-			 "Skip rest of constraints problems", "See next not-implemented yet constraint", QString(),
+			 QObject::tr("Skip rest of constraints problems"), QObject::tr("See next not-implemented yet constraint"), QString(),
 			 1, 0 );
 
 			if(t==0)
@@ -351,7 +326,7 @@ bool processTimeConstraints()
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 			 QObject::tr("Cannot optimize, because you have constraints of type "
 			 "students set n hours daily. To run with this preview version, you need to remove such constraints"),
-			 "Skip rest of constraints problems", "See next not-implemented yet constraint", QString(),
+			 QObject::tr("Skip rest of constraints problems"), QObject::tr("See next not-implemented yet constraint"), QString(),
 			 1, 0 );
 
 			if(t==0)
@@ -363,7 +338,7 @@ bool processTimeConstraints()
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 			 QObject::tr("Cannot optimize, because you have constraints of type "
 			 "students n hours daily. To run with this preview version, you need to remove such constraints"),
-			 "Skip rest of constraints problems", "See next not-implemented yet constraint", QString(),
+			 QObject::tr("Skip rest of constraints problems"), QObject::tr("See next not-implemented yet constraint"), QString(),
 			 1, 0 );
 
 			if(t==0)
@@ -409,7 +384,7 @@ bool computeSubgroupsMaxHoursDaily()
 					 ". Please modify your data accordingly and try again"
 					 ". For more details, join the mailing list or email the author")
 					 .arg(gt.rules.internalSubgroupsList[sb]->name),
-					 "Skip rest of max hours problems", "See next incompatibility max hours", QString(),
+					 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
 					 1, 0 );
 				 	
 					if(t==0)
@@ -444,7 +419,7 @@ bool computeSubgroupsMaxHoursDaily()
 					 ". Please modify your data accordingly and try again"
 					 ". For more details, join the mailing list or email the author")
 					 .arg(gt.rules.internalSubgroupsList[sb]->name),
-					 "Skip rest of max hours problems", "See next incompatibility max hours", QString(),
+					 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
 					 1, 0 );
 				 	
 					if(t==0)
@@ -492,7 +467,7 @@ bool computeTeachersMaxHoursDaily()
 				 ". Please modify your data accordingly and try again"
 				 ". For more details, join the mailing list or email the author")
 				 .arg(gt.rules.internalTeachersList[tmd->teacher_ID]->name),
-				 "Skip rest of max hours problems", "See next incompatibility max hours", QString(),
+				 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
 				 1, 0 );
 			 	
 				if(t==0)
@@ -524,7 +499,7 @@ bool computeTeachersMaxHoursDaily()
 					 ". Please modify your data accordingly and try again"
 					 ". For more details, join the mailing list or email the author")
 					 .arg(gt.rules.internalTeachersList[tch]->name),
-					 "Skip rest of max hours problems", "See next incompatibility max hours", QString(),
+					 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
 					 1, 0 );
 				 	
 					if(t==0)
@@ -758,7 +733,7 @@ bool computeTeachersMaxGapsPercentage()
 					 ". Please modify your data accordingly and try again"
 					 ". For more details, join the mailing list or email the author")
 					 .arg(gt.rules.internalTeachersList[j]->name),
-					 "Skip rest of max gaps problems", "See next incompatibility max gaps", QString(),
+					 QObject::tr("Skip rest of max gaps problems"), QObject::tr("See next incompatibility max gaps"), QString(),
 					 1, 0 );
 			 	
 					if(t==0)
@@ -789,7 +764,7 @@ bool computeTeachersMaxGapsPercentage()
 				 ". Please modify your data accordingly and try again"
 				 ". For more details, join the mailing list or email the author")
 				 .arg(gt.rules.internalTeachersList[j]->name),
-				 "Skip rest of max gaps problems", "See next incompatibility max gaps", QString(),
+				 QObject::tr("Skip rest of max gaps problems"), QObject::tr("See next incompatibility max gaps"), QString(),
 				 1, 0 );
 		 	
 				if(t==0)
@@ -883,7 +858,7 @@ bool computeMaxDaysPerWeekForTeachers()
 				 ". Please modify your data correspondingly (leave maximum one constraint of type"
 				 " constraint teacher max days per week for each teacher) and try again")
 				 .arg(gt.rules.internalTeachersList[tn->teacher_ID]->name),
-				 "Skip rest of max days per week problems", "See next incompatibility max days per week", QString(),
+				 QObject::tr("Skip rest of max days per week problems"), QObject::tr("See next incompatibility max days per week"), QString(),
 				 1, 0 );
 			 
 				if(t==0)
@@ -985,7 +960,7 @@ bool computeSubgroupsEarlyAndNoGapsPercentages() //st no gaps & early - part 2
 			 " optimize with not existing constraint no gaps or existing with 100% weight for it"
 			 ". Please modify your data correspondingly and try again")
 			 .arg(gt.rules.internalSubgroupsList[i]->name),
-			 "Abort", "See next incompatibility no gaps - early", QString(),
+			 QObject::tr("Skip rest of early - no gaps problems"), QObject::tr("See next incompatibility no gaps - early"), QString(),
 			 1, 0 );
 			 
 			if(t==0)
@@ -1001,7 +976,7 @@ bool computeSubgroupsEarlyAndNoGapsPercentages() //st no gaps & early - part 2
 			 " optimize with not existing constraint early or existing with 100% weight for it"
 			 ". Please modify your data correspondingly and try again")
 			 .arg(gt.rules.internalSubgroupsList[i]->name),
-			 "Abort", "See next incompatibility no gaps - early", QString(),
+			 QObject::tr("Skip rest of early - no gaps problems"), QObject::tr("See next incompatibility no gaps - early"), QString(),
 			 1, 0 );
 			 
 			if(t==0)
@@ -1013,13 +988,12 @@ bool computeSubgroupsEarlyAndNoGapsPercentages() //st no gaps & early - part 2
 
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 			 QObject::tr("Cannot optimize for subgroup %1, because a students early constraint"
-			 " exists for this subgroup, and you have not 'no gaps' requirements for this subgroup."
-			 ". The algorithm can 1. optimize with 'early' and 'no gaps'"
+			 " exists for this subgroup, and you have not 'no gaps' requirements for this subgroup. "
+			 "The algorithm can 1. optimize with 'early' and 'no gaps'"
 			 " having the same weight percentage or 2. only 'no gaps' optimization"
 			 " without 'early'. Please modify your data correspondingly and try again")
-			 .arg(gt.rules.internalSubgroupsList[i]->name)
-			 .arg(subgroupsEarlyPercentage[i]),
-			 "Abort", "See next incompatibility no gaps - early", QString(),
+			 .arg(gt.rules.internalSubgroupsList[i]->name),
+			 QObject::tr("Skip rest of early - no gaps problems"), QObject::tr("See next incompatibility no gaps - early"), QString(),
 			 1, 0 );
 			 
 			if(t==0)
@@ -1040,7 +1014,7 @@ bool computeSubgroupsEarlyAndNoGapsPercentages() //st no gaps & early - part 2
 			 .arg(gt.rules.internalSubgroupsList[i]->name)
 			 .arg(subgroupsEarlyPercentage[i]).
 			 arg(subgroupsNoGapsPercentage[i]),
-			 "Skip rest of early - no gaps problems", "See next incompatibility no gaps - early", QString(),
+			 QObject::tr("Skip rest of early - no gaps problems"), QObject::tr("See next incompatibility no gaps - early"), QString(),
 			 1, 0 );
 			 
 			if(t==0)
@@ -1165,8 +1139,21 @@ bool computeAllowedTimesPercentages()
 								if(allowedTimesPercentages[ap->activityIndex][d+h*gt.rules.nDaysPerWeek]<ap->weightPercentage)
 									allowedTimesPercentages[ap->activityIndex][d+h*gt.rules.nDaysPerWeek]=int(ap->weightPercentage);
 				}
-				else
-					assert(0);
+				else{
+					ok=false;
+
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("Cannot optimize, because you have constraints of type "
+					 "activity preferred time with no day nor hour selected (for activity with id==%1). "
+					 "Please modify your data accordingly (remove or edit constraint) and try again.")
+					 .arg(gt.rules.internalActivitiesList[ap->activityIndex].id),
+					 QObject::tr("Skip rest of constraints problems"), QObject::tr("See next incorrect constraint"), QString(),
+					1, 0 );
+
+					if(t==0)
+						break;
+					//assert(0);
+				}
 			}	
 
 			//ACTIVITY preferred times
