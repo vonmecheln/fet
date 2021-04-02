@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.1">
+<fet version="5.38.0">
 
 <Institution_Name>Default institution</Institution_Name>
 
@@ -75,6 +75,11 @@
 <Activity_Tags_List>
 <Activity_Tag>
 	<Name>at1</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>at2</Name>
 	<Printable>true</Printable>
 	<Comments></Comments>
 </Activity_Tag>
@@ -242,6 +247,54 @@
 	<Id>5</Id>
 	<Activity_Group_Id>1</Activity_Group_Id>
 	<Active>false</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>t1</Teacher>
+	<Subject>s1</Subject>
+	<Activity_Tag>at2</Activity_Tag>
+	<Students>y1 a</Students>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>6</Id>
+	<Activity_Group_Id>6</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>t1</Teacher>
+	<Subject>s1</Subject>
+	<Activity_Tag>at2</Activity_Tag>
+	<Students>y1 a</Students>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>7</Id>
+	<Activity_Group_Id>6</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>t1</Teacher>
+	<Subject>s1</Subject>
+	<Activity_Tag>at2</Activity_Tag>
+	<Students>y1 a</Students>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>8</Id>
+	<Activity_Group_Id>6</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>t1</Teacher>
+	<Subject>s1</Subject>
+	<Activity_Tag>at2</Activity_Tag>
+	<Students>y1 a</Students>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>9</Id>
+	<Activity_Group_Id>6</Activity_Group_Id>
+	<Active>true</Active>
 	<Comments></Comments>
 </Activity>
 </Activities_List>
@@ -1684,6 +1737,40 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintTwoActivitiesOrderedIfSameDay>
+<ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<First_Activity_Tag>at1</First_Activity_Tag>
+	<Second_Activity_Tag>at2</Second_Activity_Tag>
+	<MinGaps>2</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags>
+<ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags>
+	<Weight_Percentage>100</Weight_Percentage>
+	<First_Activity_Tag>at2</First_Activity_Tag>
+	<Second_Activity_Tag>at1</Second_Activity_Tag>
+	<MinGaps>2</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags>
+<ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<First_Activity_Tag>at1</First_Activity_Tag>
+	<Second_Activity_Tag>at2</Second_Activity_Tag>
+	<MinGaps>2</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags>
+<ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags>
+	<Weight_Percentage>100</Weight_Percentage>
+	<First_Activity_Tag>at2</First_Activity_Tag>
+	<Second_Activity_Tag>at1</Second_Activity_Tag>
+	<MinGaps>1</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags>
 </Time_Constraints_List>
 
 <Space_Constraints_List>

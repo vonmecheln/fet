@@ -1505,7 +1505,7 @@ Puede elegir la distancia mínima entre días entre cada par de actividades. Ten
         <translation>Materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="305"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="302"/>
         <source>1</source>
         <translation>1</translation>
     </message>
@@ -1549,251 +1549,251 @@ Puede elegir la distancia mínima entre días entre cada par de actividades. Ten
         <translation>Subgrupos</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="253"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="250"/>
         <source>Students</source>
         <comment>It refers to the number of students, but I want to keep text small</comment>
         <translation>Alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="275"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="272"/>
         <source>Split</source>
         <comment>Refers to the number of components in an activity split into more components</comment>
         <translation>Dividir</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="316"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="380"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="444"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="508"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="572"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="636"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="700"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="764"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="828"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="892"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="956"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1020"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1084"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1148"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1212"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1276"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1340"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1404"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1468"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1532"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1596"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1660"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1724"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1788"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1852"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1916"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1980"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2044"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2108"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2172"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2236"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2300"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2364"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2428"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2492"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="313"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="377"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="441"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="505"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="569"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="633"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="697"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="761"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="825"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="889"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="953"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1017"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1081"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1145"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1209"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1273"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1337"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1401"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1465"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1529"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1593"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1657"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1721"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1785"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1849"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1913"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1977"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2041"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2105"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2169"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2233"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2297"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2361"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2425"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2489"/>
         <source>Duration</source>
         <translation>Duración</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="369"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="366"/>
         <source>2</source>
         <translation>2</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="433"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="430"/>
         <source>3</source>
         <translation>3</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="497"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="494"/>
         <source>4</source>
         <translation>4</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="561"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="558"/>
         <source>5</source>
         <translation>5</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="625"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="622"/>
         <source>6</source>
         <translation>6</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="689"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="686"/>
         <source>7</source>
         <translation>7</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="753"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="750"/>
         <source>8</source>
         <translation>8</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="817"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="814"/>
         <source>9</source>
         <translation>9</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="881"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="878"/>
         <source>10</source>
         <translation>10</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="945"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="942"/>
         <source>11</source>
         <translation>11</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1009"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1006"/>
         <source>12</source>
         <translation>12</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1073"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1070"/>
         <source>13</source>
         <translation>13</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1137"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1134"/>
         <source>14</source>
         <translation>14</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1201"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1198"/>
         <source>15</source>
         <translation>15</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1265"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1262"/>
         <source>16</source>
         <translation>16</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1329"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1326"/>
         <source>17</source>
         <translation>17</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1393"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1390"/>
         <source>18</source>
         <translation>18</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1457"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1454"/>
         <source>19</source>
         <translation>19</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1521"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1518"/>
         <source>20</source>
         <translation>20</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1585"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1582"/>
         <source>21</source>
         <translation>21</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1649"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1646"/>
         <source>22</source>
         <translation>22</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1713"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1710"/>
         <source>23</source>
         <translation>23</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1777"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1774"/>
         <source>24</source>
         <translation>24</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1841"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1838"/>
         <source>25</source>
         <translation>25</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1905"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1902"/>
         <source>26</source>
         <translation>26</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1969"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1966"/>
         <source>27</source>
         <translation>27</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="2033"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2030"/>
         <source>28</source>
         <translation>28</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="2097"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2094"/>
         <source>29</source>
         <translation>29</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="2161"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2158"/>
         <source>30</source>
         <translation>30</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="2225"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2222"/>
         <source>31</source>
         <translation>31</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="2289"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2286"/>
         <source>32</source>
         <translation>32</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="2353"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2350"/>
         <source>33</source>
         <translation>33</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="2417"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2414"/>
         <source>34</source>
         <translation>34</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="2481"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2478"/>
         <source>35</source>
         <translation>35</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="2553"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2550"/>
         <source>Min days</source>
         <comment>Refers to min days between the components of a larger split activity. Please keep translation short</comment>
         <translation>Mín. días</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="2573"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2570"/>
         <source>Weight %</source>
         <comment>Please keep translation short</comment>
         <translation>Peso %</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="2602"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2599"/>
         <source>Consecutive</source>
         <comment>Refers to forcing component activities consecutive if they are in the same day. Please keep translation short</comment>
         <translation>Consecutiva</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="2634"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2631"/>
         <source>Help</source>
         <translation>Ayuda</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="2641"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2638"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -1826,47 +1826,47 @@ Puede elegir la distancia mínima entre días entre cada par de actividades. Ten
         <translation>Códigos de actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="356"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="420"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="484"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="548"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="612"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="676"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="740"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="804"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="868"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="932"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="996"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1060"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1124"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1188"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1252"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1316"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1380"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1444"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1508"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1572"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1636"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1700"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1764"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1828"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1892"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1956"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2020"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2084"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2148"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2212"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2276"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2340"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2404"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2468"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2532"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="353"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="417"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="481"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="545"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="609"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="673"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="737"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="801"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="865"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="929"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="993"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1057"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1121"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1185"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1249"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1313"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1377"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1441"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1505"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1569"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1633"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1697"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1761"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1825"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1889"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1953"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2017"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2081"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2145"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2209"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2273"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2337"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2401"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2465"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2529"/>
         <source>Active</source>
         <comment>It refers to a subactivity</comment>
         <translation>Activa</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="2627"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2624"/>
         <source>Add</source>
         <translation>Añadir</translation>
     </message>
@@ -3294,7 +3294,7 @@ Si necesita un peso menor de 100%, entonces puede usar esta restricción; ponga 
         <translation>Actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="141"/>
+        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="138"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
@@ -3305,12 +3305,12 @@ Si necesita un peso menor de 100%, entonces puede usar esta restricción; ponga 
         <translation>Añadir actividad finaliza el día del alumnado</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="162"/>
+        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="159"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="169"/>
+        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="166"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -3605,32 +3605,32 @@ Si necesita un peso menor de 100%, entonces puede usar esta restricción; ponga 
         <translation>Actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="157"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="154"/>
         <source>Period</source>
         <translation>Período</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="163"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="160"/>
         <source>Day</source>
         <translation>Día</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="173"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="170"/>
         <source>Start hour</source>
         <translation>Hora de inicio</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="138"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="135"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%) (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="218"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="215"/>
         <source>Select this if you want this constraint not to be unlockable from the &apos;Timetable&apos; menu (recommended). You can always remove this constraint from the constraints dialogs or uncheck &quot;permanently locked&quot; checkbox by editing this constraint</source>
         <translation>Seleccione esta opción si desea que esta restricción no pueda desbloquearse desde el menú &apos;Horario&apos; (recomendado). Siempre puede quitar esta restricción desde el diálogo de restricciones o desactivar &quot;Bloqueo permanente&quot; editando esta restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="242"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="239"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -3666,12 +3666,12 @@ Si necesita un peso menor de 100%, entonces puede usar esta restricción; ponga 
         <translation>Código de actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="202"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="199"/>
         <source>Permanently locked</source>
         <translation>Bloqueo permanente</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="235"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="232"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
@@ -4758,24 +4758,24 @@ recomendado: 0.0%-100.0%)</translation>
         <translation>Código de actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="77"/>
+        <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="74"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="118"/>
+        <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="115"/>
         <source>Max hours continuously</source>
         <translation>Máximo horas continuas</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="148"/>
+        <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="145"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="155"/>
+        <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="152"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -4829,24 +4829,24 @@ recomendado: 0.0%-100.0%)</translation>
         <translation>Código de actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="77"/>
+        <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="74"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="118"/>
+        <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="115"/>
         <source>Max hours daily</source>
         <translation>Máximo horas diarias</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="148"/>
+        <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="145"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="155"/>
+        <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="152"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -5013,7 +5013,7 @@ Nota: los grupos de alumnos no disponibles y las pausas no se cuentan como hueco
         <translation>Intervalo hora final</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui" line="165"/>
+        <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui" line="162"/>
         <source>Interval start hour</source>
         <translation>Intervalo hora inicio</translation>
     </message>
@@ -5625,28 +5625,28 @@ Nota: los grupos no disponibles y las pausas no se cuentan como huecos.</transla
         <translation>Código de la 1era actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui" line="60"/>
+        <location filename="../src/interface/addconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui" line="57"/>
         <source>Second activity tag</source>
         <translation>Código de la 2da actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui" line="112"/>
+        <location filename="../src/interface/addconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui" line="106"/>
         <source>Weight percentage
 (necessary: 100.0%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui" line="156"/>
+        <location filename="../src/interface/addconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui" line="150"/>
         <source>Min gaps</source>
         <translation>Mínimo de huecos</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui" line="189"/>
+        <location filename="../src/interface/addconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui" line="183"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui" line="196"/>
+        <location filename="../src/interface/addconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui" line="190"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -5879,29 +5879,29 @@ Nota: los grupos no disponibles y las pausas no se cuentan como huecos.</transla
         <translation>Grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="60"/>
+        <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="57"/>
         <source>Activity tag</source>
         <translation>Código de actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="112"/>
+        <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="106"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="156"/>
+        <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="150"/>
         <source>Max hours continuously</source>
         <translation>Máximo horas continuas</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="189"/>
+        <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="183"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="196"/>
+        <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="190"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -5961,29 +5961,29 @@ Nota: los grupos no disponibles y las pausas no se cuentan como huecos.</transla
         <translation>Grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="60"/>
+        <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="57"/>
         <source>Activity tag</source>
         <translation>Código de actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="112"/>
+        <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="106"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="156"/>
+        <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="150"/>
         <source>Max hours daily</source>
         <translation>Máximo horas diarias</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="189"/>
+        <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="183"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="196"/>
+        <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="190"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -6033,7 +6033,7 @@ Nota: los grupos no disponibles y las pausas no se cuentan como huecos.</transla
         <translation>Grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="180"/>
+        <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="177"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -6056,12 +6056,12 @@ Note: students set not available and break are not counted as gaps (early gaps).
 Nota: los grupos no disponibles y las pausas no se cuentan como huecos (huecos tempraneros).</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="154"/>
+        <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="151"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="173"/>
+        <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="170"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
@@ -6286,32 +6286,32 @@ Nota: los grupos no disponibles y las pausas no se cuentan como huecos (huecos t
         <translation>Añadir intervalo máximo de días semanales por grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="58"/>
+        <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="55"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="65"/>
+        <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="62"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="82"/>
+        <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="79"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="125"/>
+        <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="122"/>
         <source>Max days per week</source>
         <translation>Máximo de días semanales</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="164"/>
+        <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="161"/>
         <source>Interval end hour</source>
         <translation>Intervalo hora final</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="200"/>
+        <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="194"/>
         <source>Interval start hour</source>
         <translation>Intervalo hora inicio</translation>
     </message>
@@ -6371,12 +6371,12 @@ Nota: los grupos no disponibles y las pausas no se cuentan como huecos (huecos t
         <translation>Grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="82"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="79"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="103"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="100"/>
         <source>Max building changes per day</source>
         <translation>Máximo de cambios diarios de edificio</translation>
     </message>
@@ -6436,12 +6436,12 @@ Nota: los grupos no disponibles y las pausas no se cuentan como huecos (huecos t
         <translation>Grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="82"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="79"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="103"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="100"/>
         <source>Max building changes per week</source>
         <translation>Máximo de cambios semanales de edificio</translation>
     </message>
@@ -6579,22 +6579,22 @@ IMPORTANTE: Si desea 0 huecos totales, se recomienda no usar esta restricción y
         <translation>Grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxgapsperdayform_template.ui" line="99"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxgapsperdayform_template.ui" line="96"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxgapsperdayform_template.ui" line="116"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxgapsperdayform_template.ui" line="113"/>
         <source>Max gaps per day</source>
         <translation>Máximo huecos diarios</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxgapsperdayform_template.ui" line="131"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxgapsperdayform_template.ui" line="128"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxgapsperdayform_template.ui" line="138"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxgapsperdayform_template.ui" line="135"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -6639,17 +6639,17 @@ IMPORTANTE: Si desea 0 huecos totales, se recomienda no usar esta restricción y
 <context>
     <name>AddConstraintStudentsSetMaxGapsPerWeekForm_template</name>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxgapsperweekform_template.ui" line="136"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxgapsperweekform_template.ui" line="133"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxgapsperweekform_template.ui" line="114"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxgapsperweekform_template.ui" line="111"/>
         <source>Max gaps per week</source>
         <translation>Máximo de huecos semanales</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxgapsperweekform_template.ui" line="97"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxgapsperweekform_template.ui" line="94"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
@@ -6672,7 +6672,7 @@ Note: students set not available and break are not counted as gaps.</source>
 Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxgapsperweekform_template.ui" line="129"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxgapsperweekform_template.ui" line="126"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
@@ -6722,24 +6722,24 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Añadir máximo de horas continuas por grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="77"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="74"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="148"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="145"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="155"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="152"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="118"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="115"/>
         <source>Max hours continuously</source>
         <translation>Máximo horas continuas</translation>
     </message>
@@ -6789,24 +6789,24 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Añadir límite de horas diarias por grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="77"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="74"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="148"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="145"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="155"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="152"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="118"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="115"/>
         <source>Max hours daily</source>
         <translation>Máximo horas diarias</translation>
     </message>
@@ -6872,12 +6872,12 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Duración máxima diaria</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxspanperdayform_template.ui" line="90"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxspanperdayform_template.ui" line="87"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxspanperdayform_template.ui" line="97"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxspanperdayform_template.ui" line="94"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -6937,12 +6937,12 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="82"/>
+        <location filename="../src/interface/addconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="79"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="103"/>
+        <location filename="../src/interface/addconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="100"/>
         <source>Min gaps between building changes</source>
         <translation>Mín. de huecos entre cambios de edificio</translation>
     </message>
@@ -7020,34 +7020,34 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Grupos</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="60"/>
+        <location filename="../src/interface/addconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="57"/>
         <source>First activity tag</source>
         <translation>Código de la 1era actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="92"/>
+        <location filename="../src/interface/addconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="86"/>
         <source>Second activity tag</source>
         <translation>Código de la 2da actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="144"/>
+        <location filename="../src/interface/addconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="135"/>
         <source>Weight percentage
 (necessary: 100.0%)</source>
         <translation>Peso (%)
 (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="188"/>
+        <location filename="../src/interface/addconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="179"/>
         <source>Min gaps</source>
         <translation>Mínimo de huecos</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="221"/>
+        <location filename="../src/interface/addconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="212"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="228"/>
+        <location filename="../src/interface/addconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="219"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -7146,27 +7146,27 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Añadir horas mínimas diarias por grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="127"/>
+        <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="124"/>
         <source>Allow empty days</source>
         <translation>Permitir días libres</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="136"/>
+        <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="133"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="143"/>
+        <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="140"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="94"/>
+        <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="91"/>
         <source>Min hours</source>
         <translation>Mínimo de horas</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="71"/>
+        <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="68"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
@@ -7222,27 +7222,27 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetminrestinghoursform_template.ui" line="80"/>
+        <location filename="../src/interface/addconstraintstudentssetminrestinghoursform_template.ui" line="77"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetminrestinghoursform_template.ui" line="101"/>
+        <location filename="../src/interface/addconstraintstudentssetminrestinghoursform_template.ui" line="98"/>
         <source>Min resting hours</source>
         <translation>Horas descanso mínimas</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetminrestinghoursform_template.ui" line="116"/>
+        <location filename="../src/interface/addconstraintstudentssetminrestinghoursform_template.ui" line="113"/>
         <source>Circular</source>
         <translation>Circular</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetminrestinghoursform_template.ui" line="125"/>
+        <location filename="../src/interface/addconstraintstudentssetminrestinghoursform_template.ui" line="122"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetminrestinghoursform_template.ui" line="132"/>
+        <location filename="../src/interface/addconstraintstudentssetminrestinghoursform_template.ui" line="129"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -7302,18 +7302,18 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Nota: esta restricción no incluye huecos (o inicios no respetados) para el alumnado. Si un grupo tiene clases antes y después de un periodo no disponible, no se contarán los huecos</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="127"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="124"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=no permitido, vacía=permitido</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="148"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="145"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="96"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="93"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
@@ -7324,29 +7324,29 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Añadir tiempo no disponible por grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="76"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="73"/>
         <source>Students set</source>
         <translation>Grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="120"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="117"/>
         <source>Set all available</source>
         <comment>It refers to time slots</comment>
         <translation>Autorizar todas</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="134"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="131"/>
         <source>Set all not available</source>
         <comment>It refers to time slots</comment>
         <translation>No permitir ninguna</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="141"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="138"/>
         <source>Add</source>
         <translation>Añadir</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="155"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="152"/>
         <source>Help</source>
         <translation>Ayuda</translation>
     </message>
@@ -7949,7 +7949,7 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
 <context>
     <name>AddConstraintTeacherActivityTagMaxHoursContinuouslyForm_template</name>
     <message>
-        <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="150"/>
+        <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="144"/>
         <source>Max hours continuously</source>
         <translation>Máximo horas continuas</translation>
     </message>
@@ -7965,24 +7965,24 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="60"/>
+        <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="57"/>
         <source>Activity tag</source>
         <translation>Código de actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="109"/>
+        <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="103"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="180"/>
+        <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="174"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="187"/>
+        <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="181"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -8042,29 +8042,29 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="60"/>
+        <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="57"/>
         <source>Activity tag</source>
         <translation>Código de actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="109"/>
+        <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="103"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="150"/>
+        <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="144"/>
         <source>Max hours daily</source>
         <translation>Máximo de horas diarias</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="180"/>
+        <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="174"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="187"/>
+        <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="181"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -8284,32 +8284,32 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Añadir intervalo máximo de días semanales por profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="58"/>
+        <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="55"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="65"/>
+        <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="62"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="82"/>
+        <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="79"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="125"/>
+        <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="122"/>
         <source>Max days per week</source>
         <translation>Máximo de días semanales</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="164"/>
+        <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="161"/>
         <source>Interval end hour</source>
         <translation>Intervalo hora final</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="200"/>
+        <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="194"/>
         <source>Interval start hour</source>
         <translation>Intervalo hora inicio</translation>
     </message>
@@ -8369,12 +8369,12 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxbuildingchangesperdayform_template.ui" line="82"/>
+        <location filename="../src/interface/addconstraintteachermaxbuildingchangesperdayform_template.ui" line="79"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxbuildingchangesperdayform_template.ui" line="103"/>
+        <location filename="../src/interface/addconstraintteachermaxbuildingchangesperdayform_template.ui" line="100"/>
         <source>Max building changes per day</source>
         <translation>Máximo de cambios diarios de edificio</translation>
     </message>
@@ -8434,12 +8434,12 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxbuildingchangesperweekform_template.ui" line="82"/>
+        <location filename="../src/interface/addconstraintteachermaxbuildingchangesperweekform_template.ui" line="79"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxbuildingchangesperweekform_template.ui" line="103"/>
+        <location filename="../src/interface/addconstraintteachermaxbuildingchangesperweekform_template.ui" line="100"/>
         <source>Max building changes per week</source>
         <translation>Máximo cambios semanales de edificio</translation>
     </message>
@@ -8484,19 +8484,19 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
 <context>
     <name>AddConstraintTeacherMaxDaysPerWeekForm_template</name>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="77"/>
+        <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="74"/>
         <source>Weight percentage
 (necessary: 100%)</source>
         <translation>Peso (%)
 (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="148"/>
+        <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="145"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="155"/>
+        <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="152"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -8512,7 +8512,7 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Añadir máximo de días semanales por profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="118"/>
+        <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="115"/>
         <source>Max days per week</source>
         <translation>Máximo de días semanales</translation>
     </message>
@@ -8564,17 +8564,17 @@ Note: teacher not available and break are not counted as gaps.</source>
 Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="110"/>
+        <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="107"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="129"/>
+        <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="126"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="136"/>
+        <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="133"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -8590,7 +8590,7 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Añadir límite de huecos diarios por profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="91"/>
+        <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="88"/>
         <source>Max gaps per day</source>
         <translation>Máximo huecos diarios</translation>
     </message>
@@ -8642,17 +8642,17 @@ Note: teacher not available and break are not counted as gaps.</source>
 Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="110"/>
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="107"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="129"/>
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="126"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="136"/>
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="133"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -8668,7 +8668,7 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Añadir límite de huecos semanales por profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="91"/>
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="88"/>
         <source>Max gaps per week</source>
         <translation>Máximo de huecos semanales</translation>
     </message>
@@ -8713,24 +8713,24 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Añadir máximo de horas continuas por profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="77"/>
+        <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="74"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="148"/>
+        <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="145"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="155"/>
+        <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="152"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="118"/>
+        <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="115"/>
         <source>Max hours continuously</source>
         <translation>Máximo horas continuas</translation>
     </message>
@@ -8780,24 +8780,24 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Añadir límite de horas diarias por profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="77"/>
+        <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="74"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="148"/>
+        <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="145"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="155"/>
+        <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="152"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="118"/>
+        <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="115"/>
         <source>Max hours daily</source>
         <translation>Máximo de horas</translation>
     </message>
@@ -8929,24 +8929,24 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermindaysperweekform_template.ui" line="77"/>
+        <location filename="../src/interface/addconstraintteachermindaysperweekform_template.ui" line="74"/>
         <source>Weight percentage
 (necessary: 100%)</source>
         <translation>Peso (%)
 (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermindaysperweekform_template.ui" line="118"/>
+        <location filename="../src/interface/addconstraintteachermindaysperweekform_template.ui" line="115"/>
         <source>Min days per week</source>
         <translation>Días mínimos semanales</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermindaysperweekform_template.ui" line="148"/>
+        <location filename="../src/interface/addconstraintteachermindaysperweekform_template.ui" line="145"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermindaysperweekform_template.ui" line="155"/>
+        <location filename="../src/interface/addconstraintteachermindaysperweekform_template.ui" line="152"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -9006,12 +9006,12 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="82"/>
+        <location filename="../src/interface/addconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="79"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="103"/>
+        <location filename="../src/interface/addconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="100"/>
         <source>Min gaps between building changes</source>
         <translation>Mínimo de huecos entre cambios de edificio</translation>
     </message>
@@ -9089,34 +9089,34 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="60"/>
+        <location filename="../src/interface/addconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="57"/>
         <source>First activity tag</source>
         <translation>Código de la 1era actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="92"/>
+        <location filename="../src/interface/addconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="86"/>
         <source>Second activity tag</source>
         <translation>Código de la 2da actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="144"/>
+        <location filename="../src/interface/addconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="135"/>
         <source>Weight percentage
 (necessary: 100.0%)</source>
         <translation>Peso (%)
 (necesario: 100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="188"/>
+        <location filename="../src/interface/addconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="179"/>
         <source>Min gaps</source>
         <translation>Mínimo de huecos</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="221"/>
+        <location filename="../src/interface/addconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="212"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="228"/>
+        <location filename="../src/interface/addconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="219"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -9173,7 +9173,7 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
 <context>
     <name>AddConstraintTeacherMinHoursDailyForm_template</name>
     <message>
-        <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="93"/>
+        <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="90"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
@@ -9189,22 +9189,22 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Se recomienda iniciar con un mínimo de 2 horas y reforzarlas conforme encuentra nuevos horarios.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="116"/>
+        <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="113"/>
         <source>Min hours daily</source>
         <translation>Mínimo horas diarias</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="133"/>
+        <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="130"/>
         <source>Allow empty days</source>
         <translation>Permitir días libres</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="145"/>
+        <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="142"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="152"/>
+        <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="149"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -9265,27 +9265,27 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacherminrestinghoursform_template.ui" line="58"/>
+        <location filename="../src/interface/addconstraintteacherminrestinghoursform_template.ui" line="55"/>
         <source>Min resting hours</source>
         <translation>Horas descanso mínimas</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacherminrestinghoursform_template.ui" line="81"/>
+        <location filename="../src/interface/addconstraintteacherminrestinghoursform_template.ui" line="78"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacherminrestinghoursform_template.ui" line="102"/>
+        <location filename="../src/interface/addconstraintteacherminrestinghoursform_template.ui" line="99"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacherminrestinghoursform_template.ui" line="109"/>
+        <location filename="../src/interface/addconstraintteacherminrestinghoursform_template.ui" line="106"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteacherminrestinghoursform_template.ui" line="118"/>
+        <location filename="../src/interface/addconstraintteacherminrestinghoursform_template.ui" line="115"/>
         <source>Circular</source>
         <translation>Circular</translation>
     </message>
@@ -9345,29 +9345,29 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Añadir horarios no disponibles por profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="78"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="75"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="98"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="95"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="124"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="121"/>
         <source>Set all available</source>
         <comment>It refers to time slots</comment>
         <translation>Autorizar todas</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="131"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="128"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=no permitido, vacío=permitido</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="145"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="142"/>
         <source>Add</source>
         <translation>Añadir</translation>
     </message>
@@ -9377,18 +9377,18 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Nota: esta restricción no incluye huecos del profesorado. Si un profesor tiene clases antes y después de un periodo no disponible, no se contarán los huecos</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="138"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="135"/>
         <source>Set all not available</source>
         <comment>It refers to time slots</comment>
         <translation>No permitir ninguna</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="152"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="149"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="159"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="156"/>
         <source>Help</source>
         <translation>Ayuda</translation>
     </message>
@@ -9437,12 +9437,12 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Añadir máximo de horas continuas por código de actividad por profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="121"/>
+        <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="118"/>
         <source>Max hours continuously</source>
         <translation>Máx. de horas continuas</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="151"/>
+        <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="148"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
@@ -9452,14 +9452,14 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Código de actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="80"/>
+        <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="77"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="158"/>
+        <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="155"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -9513,24 +9513,24 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Código de actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="80"/>
+        <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="77"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="121"/>
+        <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="118"/>
         <source>Max hours daily</source>
         <translation>Máx. de horas diarias</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="151"/>
+        <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="148"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="158"/>
+        <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="155"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -9623,7 +9623,7 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Intervalo hora final</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="164"/>
+        <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="161"/>
         <source>Interval start hour</source>
         <translation>Intervalo hora inicio</translation>
     </message>
@@ -10283,29 +10283,29 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Código de la 1era actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui" line="60"/>
+        <location filename="../src/interface/addconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui" line="57"/>
         <source>Second activity tag</source>
         <translation>Código de la 2da actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui" line="112"/>
+        <location filename="../src/interface/addconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui" line="106"/>
         <source>Weight percentage
 (necessary: 100.0%)</source>
         <translation>Peso (%)
 (necesario 100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui" line="156"/>
+        <location filename="../src/interface/addconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui" line="150"/>
         <source>Min gaps</source>
         <translation>Mínimo de huecos</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui" line="189"/>
+        <location filename="../src/interface/addconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui" line="183"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui" line="196"/>
+        <location filename="../src/interface/addconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui" line="190"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -10512,7 +10512,7 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Primera actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="125"/>
+        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="122"/>
         <source>Second activity</source>
         <translation>Segunda actividad</translation>
     </message>
@@ -10542,22 +10542,22 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Código de actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="161"/>
+        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="155"/>
         <source>Third activity</source>
         <translation>Tercera actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="238"/>
+        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="229"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="245"/>
+        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="236"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="216"/>
+        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="207"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
@@ -10606,12 +10606,12 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
 <context>
     <name>AddConstraintTwoActivitiesConsecutiveForm_template</name>
     <message>
-        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="213"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="207"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="177"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="171"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
@@ -10624,7 +10624,7 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Añadir dos actividades consecutivas</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="206"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="200"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
@@ -10634,7 +10634,7 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Primera actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="125"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="122"/>
         <source>Second activity</source>
         <translation>Segunda actividad</translation>
     </message>
@@ -10664,7 +10664,7 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Código de actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="199"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="193"/>
         <source>Swap</source>
         <comment>Interchange (swap) the two selected activities in the dialog</comment>
         <translation>Intercambiar</translation>
@@ -10712,12 +10712,12 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
 <context>
     <name>AddConstraintTwoActivitiesGroupedForm_template</name>
     <message>
-        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="206"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="200"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="177"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="171"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
@@ -10730,7 +10730,7 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Anadir dos actividades agrupadas</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="199"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="193"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
@@ -10740,7 +10740,7 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Primera actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="125"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="122"/>
         <source>Second activity</source>
         <translation>Segunda actividad</translation>
     </message>
@@ -10812,12 +10812,12 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
 <context>
     <name>AddConstraintTwoActivitiesOrderedForm_template</name>
     <message>
-        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="213"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="207"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="177"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="171"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
@@ -10830,7 +10830,7 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Anadir dos actividades ordenadas</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="206"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="200"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
@@ -10840,7 +10840,7 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Primera actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="125"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="122"/>
         <source>Second activity</source>
         <translation>Segunda actividad</translation>
     </message>
@@ -10870,7 +10870,7 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Código de actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="199"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="193"/>
         <source>Swap</source>
         <comment>Interchange (swap) the two selected activities in the dialog</comment>
         <translation>Intercambiar</translation>
@@ -10954,30 +10954,30 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Primera actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstrainttwoactivitiesorderedifsamedayform_template.ui" line="125"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedifsamedayform_template.ui" line="122"/>
         <source>Second activity</source>
         <translation>Segunda actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstrainttwoactivitiesorderedifsamedayform_template.ui" line="177"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedifsamedayform_template.ui" line="171"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso
 (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstrainttwoactivitiesorderedifsamedayform_template.ui" line="199"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedifsamedayform_template.ui" line="193"/>
         <source>Swap</source>
         <comment>Interchange (swap) the two selected activities in the dialog</comment>
         <translation>Intercambiar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstrainttwoactivitiesorderedifsamedayform_template.ui" line="206"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedifsamedayform_template.ui" line="200"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstrainttwoactivitiesorderedifsamedayform_template.ui" line="213"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedifsamedayform_template.ui" line="207"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -41148,102 +41148,102 @@ la simulación. Deténgala antes</translation>
 <context>
     <name>ModifyActivityForm_template</name>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="250"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="247"/>
         <source>Students</source>
         <comment>This refers to the number of students, but I want to keep the text short</comment>
         <translation>Alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="275"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="272"/>
         <source>Split</source>
         <comment>Refers to the number of components in an activity split into more components</comment>
         <translation>Dividir</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="306"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="303"/>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="317"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="381"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="445"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="509"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="573"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="637"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="701"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="765"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="829"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="893"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="957"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1021"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1085"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1149"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1213"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1277"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1341"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1405"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1469"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1533"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1597"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1661"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1725"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1789"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1853"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1917"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1981"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2045"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2109"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2173"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2237"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2301"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2365"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2429"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2493"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="314"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="378"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="442"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="506"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="570"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="634"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="698"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="762"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="826"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="890"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="954"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1018"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1082"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1146"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1210"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1274"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1338"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1402"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1466"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1530"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1594"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1658"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1722"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1786"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1850"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1914"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1978"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2042"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2106"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2170"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2234"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2298"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2362"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2426"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2490"/>
         <source>Duration</source>
         <translation>Duración</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="370"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="367"/>
         <source>2</source>
         <translation>2</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="357"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="421"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="485"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="549"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="613"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="677"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="741"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="805"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="869"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="933"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="997"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1061"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1125"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1189"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1253"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1317"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1381"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1445"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1509"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1573"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1637"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1701"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1765"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1829"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1893"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1957"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2021"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2085"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2149"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2213"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2277"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2341"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2405"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2469"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2533"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="354"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="418"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="482"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="546"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="610"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="674"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="738"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="802"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="866"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="930"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="994"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1058"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1122"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1186"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1250"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1314"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1378"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1442"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1506"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1570"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1634"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1698"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1762"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1826"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1890"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1954"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2018"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2082"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2146"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2210"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2274"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2338"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2402"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2466"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2530"/>
         <source>Active</source>
         <comment>It refers to a subactivity</comment>
         <translation>Activo</translation>
@@ -41261,182 +41261,182 @@ la simulación. Deténgala antes</translation>
         <translation>Calificado</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="434"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="431"/>
         <source>3</source>
         <translation>3</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="498"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="495"/>
         <source>4</source>
         <translation>4</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="562"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="559"/>
         <source>5</source>
         <translation>5</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="626"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="623"/>
         <source>6</source>
         <translation>6</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="690"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="687"/>
         <source>7</source>
         <translation>7</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="754"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="751"/>
         <source>8</source>
         <translation>8</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="818"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="815"/>
         <source>9</source>
         <translation>9</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="882"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="879"/>
         <source>10</source>
         <translation>10</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="946"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="943"/>
         <source>11</source>
         <translation>11</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1010"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1007"/>
         <source>12</source>
         <translation>12</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1074"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1071"/>
         <source>13</source>
         <translation>13</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1138"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1135"/>
         <source>14</source>
         <translation>14</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1202"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1199"/>
         <source>15</source>
         <translation>15</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1266"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1263"/>
         <source>16</source>
         <translation>16</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1330"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1327"/>
         <source>17</source>
         <translation>17</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1394"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1391"/>
         <source>18</source>
         <translation>18</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1458"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1455"/>
         <source>19</source>
         <translation>19</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1522"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1519"/>
         <source>20</source>
         <translation>20</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1586"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1583"/>
         <source>21</source>
         <translation>21</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1650"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1647"/>
         <source>22</source>
         <translation>22</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1714"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1711"/>
         <source>23</source>
         <translation>23</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1778"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1775"/>
         <source>24</source>
         <translation>24</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1842"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1839"/>
         <source>25</source>
         <translation>25</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1906"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1903"/>
         <source>26</source>
         <translation>26</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1970"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1967"/>
         <source>27</source>
         <translation>27</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2034"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2031"/>
         <source>28</source>
         <translation>28</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2098"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2095"/>
         <source>29</source>
         <translation>29</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2162"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2159"/>
         <source>30</source>
         <translation>30</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2226"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2223"/>
         <source>31</source>
         <translation>31</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2290"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2287"/>
         <source>32</source>
         <translation>32</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2354"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2351"/>
         <source>33</source>
         <translation>33</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2418"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2415"/>
         <source>34</source>
         <translation>34</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2482"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2479"/>
         <source>35</source>
         <translation>35</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2558"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2555"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2565"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2562"/>
         <source>Help</source>
         <translation>Ayuda</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2572"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2569"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -42746,12 +42746,12 @@ Si necesita un peso menor de 100%, entonces puede usar esta restricción, (pero 
         <translation>Materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="179"/>
+        <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="176"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="186"/>
+        <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="183"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -42761,7 +42761,7 @@ Si necesita un peso menor de 100%, entonces puede usar esta restricción, (pero 
         <translation>Actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="157"/>
+        <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="154"/>
         <source>Weight percentage
 (necessary: 100%)</source>
         <translation>Peso (%)
@@ -42982,22 +42982,22 @@ Si necesita un peso menor de 100%, entonces puede usar esta restricción, (pero 
         <translation>Actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="216"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="213"/>
         <source>Select this if you want this constraint not to be unlockable from the &apos;Timetable&apos; menu (recommended). You can always remove this constraint from the constraints dialogs or uncheck &quot;permanently locked&quot; checkbox by editing this constraint</source>
         <translation>Seleccione esta opción si desea que esta restricción no pueda desbloquearse desde el menú &apos;Horario&apos; (recomendado). Siempre puede quitar esta restricción desde el diálogo de restricciones o desactivar la opción &quot;Bloqueo permanente&quot; editando esta restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="231"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="228"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="238"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="235"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="157"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="154"/>
         <source>Period</source>
         <translation>Período</translation>
     </message>
@@ -43008,22 +43008,22 @@ Si necesita un peso menor de 100%, entonces puede usar esta restricción, (pero 
         <translation>Modificar hora de inicio preferida de la actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="163"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="160"/>
         <source>Day</source>
         <translation>Día</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="173"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="170"/>
         <source>Start hour</source>
         <translation>Hora de inicio</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="200"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="197"/>
         <source>Permanently locked</source>
         <translation>Bloqueo permanente</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="138"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="135"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%) (recomendado: 0.0%-100.0%)</translation>
     </message>
@@ -43962,24 +43962,24 @@ forzar a que sean consecutivas</translation>
         <translation>Modificar máximo de horas continuas por código de actividad para el alumnado</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="80"/>
+        <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="77"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendada: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="151"/>
+        <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="148"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="158"/>
+        <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="155"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="121"/>
+        <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="118"/>
         <source>Max hours continuously</source>
         <translation>Máx. de horas continuas</translation>
     </message>
@@ -44022,24 +44022,24 @@ forzar a que sean consecutivas</translation>
         <translation>Código de actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="80"/>
+        <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="77"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendada: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="121"/>
+        <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="118"/>
         <source>Max hours daily</source>
         <translation>Máximo de horas diarias</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="151"/>
+        <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="148"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="158"/>
+        <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="155"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -44175,12 +44175,12 @@ Nota: los conjuntos de estudiantes no disponibles y pausas no se cuentan como hu
         <translation>Intervalo hora inicio</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="109"/>
+        <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="106"/>
         <source>Interval end hour</source>
         <translation>Intervalo hora final</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="177"/>
+        <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="171"/>
         <source>Max days per week</source>
         <translation>Máximo de días semanales</translation>
     </message>
@@ -44662,29 +44662,29 @@ Nota: Los alumnos no disponibles y las pausas no se cuentan como huecos.</transl
         <translation>Código de la 1era actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui" line="60"/>
+        <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui" line="57"/>
         <source>Second activity tag</source>
         <translation>Código de la 2da actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui" line="112"/>
+        <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui" line="106"/>
         <source>Weight percentage
 (necessary: 100.0%)</source>
         <translation>Peso (%)
 (necesario: 100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui" line="153"/>
+        <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui" line="147"/>
         <source>Min gaps</source>
         <translation>Mínimo de huecos</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui" line="183"/>
+        <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui" line="177"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui" line="190"/>
+        <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsform_template.ui" line="184"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -44872,24 +44872,24 @@ Nota: Los alumnos no disponibles y las pausas no se cuentan como huecos.</transl
         <translation>Modificar máximo de horas continuas por código de actividad para el alumnado</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="112"/>
+        <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="106"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendada: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="183"/>
+        <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="177"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="190"/>
+        <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="184"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="153"/>
+        <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="147"/>
         <source>Max hours continuously</source>
         <translation>Máx. de horas continuas</translation>
     </message>
@@ -44899,7 +44899,7 @@ Nota: Los alumnos no disponibles y las pausas no se cuentan como huecos.</transl
         <translation>Alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="60"/>
+        <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="57"/>
         <source>Activity tag</source>
         <translation>Código de actividad</translation>
     </message>
@@ -44943,29 +44943,29 @@ Nota: Los alumnos no disponibles y las pausas no se cuentan como huecos.</transl
         <translation>Alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="60"/>
+        <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="57"/>
         <source>Activity tag</source>
         <translation>Código de actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="112"/>
+        <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="106"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendada: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="153"/>
+        <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="147"/>
         <source>Max hours daily</source>
         <translation>Máximo horas diarias</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="183"/>
+        <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="177"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="190"/>
+        <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="184"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -44998,7 +44998,7 @@ Nota: Los alumnos no disponibles y las pausas no se cuentan como huecos.</transl
 <context>
     <name>ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm_template</name>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="154"/>
+        <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="151"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
@@ -45026,12 +45026,12 @@ Note: students set not available and break are not counted as gaps (early gaps).
 Nota: los grupos de alumnos no disponibles y pausas no se cuentan como huecos (huecos tempraneros).</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="173"/>
+        <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="170"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="180"/>
+        <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="177"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -45230,22 +45230,22 @@ Nota: los grupos de alumnos no disponibles y pausas no se cuentan como huecos (h
         <translation>Grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="82"/>
+        <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="79"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="109"/>
+        <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="106"/>
         <source>Interval start hour</source>
         <translation>Intervalo hora inicio</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="145"/>
+        <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="139"/>
         <source>Interval end hour</source>
         <translation>Intervalo hora final</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="229"/>
+        <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="220"/>
         <source>Max days per week</source>
         <translation>Máximo de días semanales</translation>
     </message>
@@ -45283,22 +45283,22 @@ Nota: los grupos de alumnos no disponibles y pausas no se cuentan como huecos (h
         <translation>Modificar máximo de cambios diarios de edificio por grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="80"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="77"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="101"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="98"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="108"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="105"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="119"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="116"/>
         <source>Max building changes per day</source>
         <translation>Máximo de cambios diarios de edificio</translation>
     </message>
@@ -45336,22 +45336,22 @@ Nota: los grupos de alumnos no disponibles y pausas no se cuentan como huecos (h
         <translation>Modificar máximo de cambios semanales de edificio por grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="80"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="77"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="101"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="98"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="108"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="105"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="119"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="116"/>
         <source>Max building changes per week</source>
         <translation>Máximo de cambios semanales de edificio</translation>
     </message>
@@ -45395,22 +45395,22 @@ Nota: los grupos de alumnos no disponibles y pausas no se cuentan como huecos (h
         <translation>Grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="64"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="61"/>
         <source>Max days per week</source>
         <translation>Máximo de días semanales</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="81"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="78"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="88"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="85"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="137"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="134"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
@@ -45460,12 +45460,12 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.
 IMPORTANTE: Si desea 0 huecos totales, se recomienda no usar esta restricción y usar en su lugar la mejor/más segura Huecos máximos semanales.</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform_template.ui" line="126"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform_template.ui" line="123"/>
         <source>Max gaps per day</source>
         <translation>Huecos máximos diarios</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform_template.ui" line="105"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform_template.ui" line="102"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
@@ -45475,12 +45475,12 @@ IMPORTANTE: Si desea 0 huecos totales, se recomienda no usar esta restricción y
         <translation>Alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform_template.ui" line="143"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform_template.ui" line="140"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform_template.ui" line="150"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform_template.ui" line="147"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -45513,12 +45513,12 @@ IMPORTANTE: Si desea 0 huecos totales, se recomienda no usar esta restricción y
 <context>
     <name>ModifyConstraintStudentsSetMaxGapsPerWeekForm_template</name>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="141"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="138"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="148"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="145"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -45536,12 +45536,12 @@ Note: students set not available and break are not counted as gaps.</source>
 Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="124"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="121"/>
         <source>Max gaps per week</source>
         <translation>Máximo de huecos semanales</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="103"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="100"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
@@ -45584,24 +45584,24 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="77"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="74"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendada: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="118"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="115"/>
         <source>Max hours continuously</source>
         <translation>Máx. de horas continuas</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="155"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="152"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="148"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="145"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
@@ -45639,24 +45639,24 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Modificar máximo de horas diarias por grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="77"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="74"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendado: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="155"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="152"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="148"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="145"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="118"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="115"/>
         <source>Max hours daily</source>
         <translation>Máx. de horas diarias</translation>
     </message>
@@ -45715,7 +45715,7 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxspanperdayform_template.ui" line="115"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxspanperdayform_template.ui" line="112"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
@@ -45753,22 +45753,22 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Modificar mínimos de huecos entre cambios de edificio por grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="80"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="77"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="101"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="98"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="108"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="105"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="119"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="116"/>
         <source>Min gaps between building changes</source>
         <translation>Mínimo de huecos entre cambios de edificio</translation>
     </message>
@@ -45830,34 +45830,34 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="60"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="57"/>
         <source>First activity tag</source>
         <translation>Código de la 1era actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="92"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="86"/>
         <source>Second activity tag</source>
         <translation>Código de la 2da actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="144"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="135"/>
         <source>Weight percentage
 (necessary: 100.0%)</source>
         <translation>Peso (%)
 (necesario: 100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="185"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="176"/>
         <source>Min gaps</source>
         <translation>Mínimo de huecos</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="215"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="206"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="222"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform_template.ui" line="213"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -46061,40 +46061,40 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
 <context>
     <name>ModifyConstraintStudentsSetNotAvailableTimesForm_template</name>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="76"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="73"/>
         <source>Students set</source>
         <translation>Grupo</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="96"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="93"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="120"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="117"/>
         <source>Set all available</source>
         <comment>It refers to time slots</comment>
         <translation>Autorizar todas</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="134"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="131"/>
         <source>Set all not available</source>
         <comment>It refers to time slots</comment>
         <translation>No permitir ninguna</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="127"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="124"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=no permitido, vacía=permitido</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="141"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="138"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="148"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="145"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -46613,24 +46613,24 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
 <context>
     <name>ModifyConstraintTeacherActivityTagMaxHoursContinuouslyForm_template</name>
     <message>
-        <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="112"/>
+        <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="106"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendado: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="183"/>
+        <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="177"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="190"/>
+        <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="184"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="153"/>
+        <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="147"/>
         <source>Max hours continuously</source>
         <translation>Máximo de horas continuas</translation>
     </message>
@@ -46646,7 +46646,7 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Código de actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="60"/>
+        <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="57"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
@@ -46694,29 +46694,29 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Código de actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="60"/>
+        <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="57"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="112"/>
+        <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="106"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendado: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="153"/>
+        <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="147"/>
         <source>Max hours daily</source>
         <translation>Máximo de horas diarias</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="183"/>
+        <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="177"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="190"/>
+        <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="184"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -46910,22 +46910,22 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="82"/>
+        <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="79"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="109"/>
+        <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="106"/>
         <source>Interval start hour</source>
         <translation>Intervalo hora inicio</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="145"/>
+        <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="139"/>
         <source>Interval end hour</source>
         <translation>Intervalo hora final</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="229"/>
+        <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="220"/>
         <source>Max days per week</source>
         <translation>Máximo de días semanales</translation>
     </message>
@@ -46963,22 +46963,22 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Modificar máximo de cambios diarios de edificio por profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="80"/>
+        <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="77"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="101"/>
+        <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="98"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="108"/>
+        <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="105"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="119"/>
+        <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="116"/>
         <source>Max building changes per day</source>
         <translation>Máximo de cambios diarios de edificio</translation>
     </message>
@@ -47016,22 +47016,22 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Modificar máximo de cambios semanales de edificio por profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="80"/>
+        <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="77"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="101"/>
+        <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="98"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="108"/>
+        <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="105"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="119"/>
+        <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="116"/>
         <source>Max building changes per week</source>
         <translation>Máximo de cambios semanales de edificio</translation>
     </message>
@@ -47064,12 +47064,12 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
 <context>
     <name>ModifyConstraintTeacherMaxDaysPerWeekForm_template</name>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="147"/>
+        <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="144"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="154"/>
+        <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="151"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -47085,12 +47085,12 @@ Nota: los grupos no disponibles y pausas no se cuentan como huecos.</translation
         <translation>Modificar máximo de días semanales por profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="77"/>
+        <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="74"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="117"/>
+        <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="114"/>
         <source>Max days per week</source>
         <translation>Máximo de días semanales</translation>
     </message>
@@ -47129,12 +47129,12 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation>Debe usar un peso (%) del 100%, porque de lo contrario obtendrá horarios deficientes. Trate de usar, en primer lugar, un valor bastante grande para los huecos máximos diarios y luego disminúyalo conforme encuentre nuevos horarios. Nota: los maestros indisponibles y descansos no cuentan como huecos.</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="141"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="138"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="148"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="145"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -47144,7 +47144,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="120"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="117"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
@@ -47155,7 +47155,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation>Modificar máximo de huecos diarios por profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="97"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="94"/>
         <source>Max gaps per day</source>
         <translation>Máx. huecos diario</translation>
     </message>
@@ -47188,12 +47188,12 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintTeacherMaxGapsPerWeekForm_template</name>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="141"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="138"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="148"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="145"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -47216,12 +47216,12 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="120"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="117"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="97"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="94"/>
         <source>Max gaps per week</source>
         <translation>Máximo de huecos semanales</translation>
     </message>
@@ -47254,24 +47254,24 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Modificar máximo de horas continuas por profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="77"/>
+        <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="74"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendado: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="148"/>
+        <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="145"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="155"/>
+        <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="152"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="118"/>
+        <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="115"/>
         <source>Max hours continuously</source>
         <translation>Máx. de horas continuas</translation>
     </message>
@@ -47309,24 +47309,24 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Modificar máximo horas diarias por profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="77"/>
+        <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="74"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendado: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="148"/>
+        <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="145"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="155"/>
+        <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="152"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="118"/>
+        <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="115"/>
         <source>Max hours daily</source>
         <translation>Máx. de horas</translation>
     </message>
@@ -47375,22 +47375,22 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxspanperdayform_template.ui" line="74"/>
+        <location filename="../src/interface/modifyconstraintteachermaxspanperdayform_template.ui" line="71"/>
         <source>Max span per day</source>
         <translation>Duración máxima diaria</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxspanperdayform_template.ui" line="97"/>
+        <location filename="../src/interface/modifyconstraintteachermaxspanperdayform_template.ui" line="94"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxspanperdayform_template.ui" line="118"/>
+        <location filename="../src/interface/modifyconstraintteachermaxspanperdayform_template.ui" line="115"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxspanperdayform_template.ui" line="125"/>
+        <location filename="../src/interface/modifyconstraintteachermaxspanperdayform_template.ui" line="122"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -47434,22 +47434,22 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="71"/>
+        <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="68"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="94"/>
+        <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="91"/>
         <source>Min days per week</source>
         <translation>Mínimo de días semanales</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="109"/>
+        <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="106"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="116"/>
+        <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="113"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -47487,22 +47487,22 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Modificar mínimo de huecos entre cambios de edificio por profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="80"/>
+        <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="77"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="101"/>
+        <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="98"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="108"/>
+        <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="105"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="119"/>
+        <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="116"/>
         <source>Min gaps between building changes</source>
         <translation>Mínimo de huecos entre cambios de edificio</translation>
     </message>
@@ -47564,34 +47564,34 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="60"/>
+        <location filename="../src/interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="57"/>
         <source>First activity tag</source>
         <translation>Código de la 1era actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="92"/>
+        <location filename="../src/interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="86"/>
         <source>Second activity tag</source>
         <translation>Código de la 2da actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="144"/>
+        <location filename="../src/interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="135"/>
         <source>Weight percentage
 (necessary: 100.0%)</source>
         <translation>Peso (%)
 (necesario: 100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="185"/>
+        <location filename="../src/interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="176"/>
         <source>Min gaps</source>
         <translation>Mínimo de huecos</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="215"/>
+        <location filename="../src/interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="206"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="222"/>
+        <location filename="../src/interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui" line="213"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -47647,22 +47647,22 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Se recomienda iniciar con un mínimo de 2 horas y reforzarlas conforme encuentra nuevos horarios.</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="116"/>
+        <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="113"/>
         <source>Min hours daily</source>
         <translation>Mínimo de horas diarias</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="129"/>
+        <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="126"/>
         <source>Allow empty days</source>
         <translation>Permitir días libres</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="141"/>
+        <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="138"/>
         <source>OK</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="148"/>
+        <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="145"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -47672,7 +47672,7 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="93"/>
+        <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="90"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
@@ -47716,27 +47716,27 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacherminrestinghoursform_template.ui" line="74"/>
+        <location filename="../src/interface/modifyconstraintteacherminrestinghoursform_template.ui" line="71"/>
         <source>Min resting hours</source>
         <translation>Horas de descanso mínimas</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacherminrestinghoursform_template.ui" line="97"/>
+        <location filename="../src/interface/modifyconstraintteacherminrestinghoursform_template.ui" line="94"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacherminrestinghoursform_template.ui" line="116"/>
+        <location filename="../src/interface/modifyconstraintteacherminrestinghoursform_template.ui" line="113"/>
         <source>Circular</source>
         <translation>Circular</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacherminrestinghoursform_template.ui" line="125"/>
+        <location filename="../src/interface/modifyconstraintteacherminrestinghoursform_template.ui" line="122"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteacherminrestinghoursform_template.ui" line="132"/>
+        <location filename="../src/interface/modifyconstraintteacherminrestinghoursform_template.ui" line="129"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -47769,40 +47769,40 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
 <context>
     <name>ModifyConstraintTeacherNotAvailableTimesForm_template</name>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="76"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="73"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="96"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="93"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso (%) (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="120"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="117"/>
         <source>Set all available</source>
         <comment>It refers to time slots</comment>
         <translation>Autorizar todas</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="127"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="124"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=no permitido, vacía=permitido</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="134"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="131"/>
         <source>Set all not available</source>
         <comment>It refers to time slots</comment>
         <translation>No permitir ninguna</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="141"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="138"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="148"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="145"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -47844,24 +47844,24 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
 <context>
     <name>ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm_template</name>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="80"/>
+        <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="77"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendado: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="151"/>
+        <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="148"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="158"/>
+        <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="155"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="121"/>
+        <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="118"/>
         <source>Max hours continuously</source>
         <translation>Máx. de horas continuas</translation>
     </message>
@@ -47914,24 +47914,24 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Código de actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="80"/>
+        <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="77"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Peso (%)
 (recomendado: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="121"/>
+        <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="118"/>
         <source>Max hours daily</source>
         <translation>Máximo de horas diarias</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="151"/>
+        <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="148"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="158"/>
+        <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="155"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -48007,12 +48007,12 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Intervalo hora inicio</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="109"/>
+        <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="106"/>
         <source>Interval end hour</source>
         <translation>Intervalo hora final</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="177"/>
+        <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="171"/>
         <source>Max days per week</source>
         <translation>Máximo de días semanales</translation>
     </message>
@@ -48544,29 +48544,29 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Código de la 1era actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui" line="60"/>
+        <location filename="../src/interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui" line="57"/>
         <source>Second activity tag</source>
         <translation>Código de la 2da actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui" line="112"/>
+        <location filename="../src/interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui" line="106"/>
         <source>Weight percentage
 (necessary: 100.0%)</source>
         <translation>Peso (%)
 (necesario: 100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui" line="153"/>
+        <location filename="../src/interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui" line="147"/>
         <source>Min gaps</source>
         <translation>Mínimo de huecos</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui" line="183"/>
+        <location filename="../src/interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui" line="177"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui" line="190"/>
+        <location filename="../src/interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui" line="184"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -48752,22 +48752,22 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Primera actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="92"/>
+        <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="89"/>
         <source>Second activity</source>
         <translation>Segunda actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="128"/>
+        <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="122"/>
         <source>Third activity</source>
         <translation>Tercera actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="174"/>
+        <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="165"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="181"/>
+        <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="172"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -48839,7 +48839,7 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Primera actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform_template.ui" line="133"/>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform_template.ui" line="130"/>
         <source>Second activity</source>
         <translation>Segunda actividad</translation>
     </message>
@@ -48906,7 +48906,7 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Primera actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform_template.ui" line="126"/>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform_template.ui" line="123"/>
         <source>Second activity</source>
         <translation>Segunda actividad</translation>
     </message>
@@ -48979,7 +48979,7 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Primera actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform_template.ui" line="133"/>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform_template.ui" line="130"/>
         <source>Second activity</source>
         <translation>Segunda actividad</translation>
     </message>
@@ -49052,7 +49052,7 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Primera actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedifsamedayform_template.ui" line="133"/>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedifsamedayform_template.ui" line="130"/>
         <source>Second activity</source>
         <translation>Segunda actividad</translation>
     </message>
@@ -49548,29 +49548,29 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Seleccionado</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform_template.ui" line="251"/>
+        <location filename="../src/interface/modifysubactivityform_template.ui" line="248"/>
         <source>Students</source>
         <comment>This refers to the number of students, but I want to keep string short</comment>
         <translation>Alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform_template.ui" line="327"/>
+        <location filename="../src/interface/modifysubactivityform_template.ui" line="324"/>
         <source>Active</source>
         <comment>It refers to a subactivity</comment>
         <translation>Activo</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform_template.ui" line="387"/>
+        <location filename="../src/interface/modifysubactivityform_template.ui" line="384"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform_template.ui" line="394"/>
+        <location filename="../src/interface/modifysubactivityform_template.ui" line="391"/>
         <source>Help</source>
         <translation>Ayuda</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform_template.ui" line="401"/>
+        <location filename="../src/interface/modifysubactivityform_template.ui" line="398"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -49592,7 +49592,7 @@ Nota: Los profesores no disponibles y las pausas no se cuentan como huecos.</tra
         <translation>Seleccionado</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform_template.ui" line="287"/>
+        <location filename="../src/interface/modifysubactivityform_template.ui" line="284"/>
         <source>Duration</source>
         <translation>Duración</translation>
     </message>

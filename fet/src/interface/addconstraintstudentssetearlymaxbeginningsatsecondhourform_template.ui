@@ -134,9 +134,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
      <property name="insertPolicy">
       <enum>QComboBox::NoInsert</enum>
      </property>
-     <property name="autoCompletion">
-      <bool>false</bool>
-     </property>
      <property name="duplicatesEnabled">
       <bool>false</bool>
      </property>

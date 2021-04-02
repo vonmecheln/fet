@@ -1068,7 +1068,7 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 					} else {
 						if(acti->activityGroupId==0&&actiNext->activityGroupId==acti->activityGroupId){
 							assert(ai==aiNext);
-							assert(actiNext->duration==actiNext->totalDuration);
+							//assert(actiNext->duration==actiNext->totalDuration);
 							if(actiNext->duration>1)
 								tosExport<<actiNext->duration;
 						}	

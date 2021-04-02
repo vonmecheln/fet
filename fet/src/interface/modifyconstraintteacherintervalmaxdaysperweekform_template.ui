@@ -58,9 +58,6 @@
        <property name="insertPolicy">
         <enum>QComboBox::NoInsert</enum>
        </property>
-       <property name="autoCompletion">
-        <bool>false</bool>
-       </property>
        <property name="duplicatesEnabled">
         <bool>false</bool>
        </property>
@@ -121,9 +118,6 @@
        <property name="insertPolicy">
         <enum>QComboBox::NoInsert</enum>
        </property>
-       <property name="autoCompletion">
-        <bool>false</bool>
-       </property>
        <property name="duplicatesEnabled">
         <bool>false</bool>
        </property>
@@ -156,9 +150,6 @@
        </property>
        <property name="insertPolicy">
         <enum>QComboBox::NoInsert</enum>
-       </property>
-       <property name="autoCompletion">
-        <bool>false</bool>
        </property>
        <property name="duplicatesEnabled">
         <bool>false</bool>

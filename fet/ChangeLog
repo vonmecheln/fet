@@ -2133,3 +2133,7 @@ Versions 5.38.0 - 5.38.v
 	- Added two new example files from Hungary, by Madas Pál.
 	- Added a new example file from Tunisia, by fourat.
 	- Added a new example file from India, by Nagendra.
+- Version 5.38.1
+	- Updated to Qt 5.13.0.
+	- Very rare crash bug fixed, when executing fet-cl on an incorrect input file with the option to export the CSV files. Reported by Xingxing.
+	- Code cleanup (fixed some compiler warnings which appeared with the new Qt 5.13.0).
