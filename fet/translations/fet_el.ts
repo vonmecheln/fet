@@ -176,7 +176,7 @@
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="590"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="592"/>
@@ -1165,7 +1165,7 @@ there won&apos;t be removed an additional number of %1 activities
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="356"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="358"/>
@@ -1179,74 +1179,74 @@ there won&apos;t be removed an additional number of %1 activities
         <location filename="../src/interface/activitytagsform_template.ui" line="14"/>
         <source>Activity tags</source>
         <extracomment>This is the title of the activity tags dialog</extracomment>
-        <translation type="unfinished">Ετικέτες δραστηριοτήτων</translation>
+        <translation>Ετικέτες δραστηριοτήτων</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="37"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="44"/>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation>Μετονομασία</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="51"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="58"/>
         <source>Comments</source>
-        <translation type="unfinished">Σχόλια</translation>
+        <translation>Σχόλια</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="69"/>
         <source>Printable</source>
-        <translation type="unfinished"></translation>
+        <translation>Εκτυπώσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="76"/>
         <source>Not printable</source>
-        <translation type="unfinished"></translation>
+        <translation>Μη εκτυπώσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="85"/>
         <source>Activate all activities for selected tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Ενεργοποίησε όλες τις δραστηριότητες για επιλεγμένη ετικέτα</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="92"/>
         <source>Deactivate all activities for selected tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Απενεργοποίησε όλες τις δραστηριότητες για επιλεγμένη ετικέτα</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="101"/>
         <source>Up</source>
         <comment>It means move the item up in the list</comment>
-        <translation type="unfinished">Πάνω</translation>
+        <translation>Πάνω</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="108"/>
         <source>Down</source>
         <comment>It means move the item down in the list</comment>
-        <translation type="unfinished">Κάτω</translation>
+        <translation>Κάτω</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="115"/>
         <source>Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Ταξινόμηση</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="129"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="122"/>
         <source>Help</source>
-        <translation type="unfinished">Βοήθεια</translation>
+        <translation>Βοήθεια</translation>
     </message>
 </context>
 <context>
@@ -1444,7 +1444,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="916"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="714"/>
@@ -1487,69 +1487,69 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="26"/>
         <source>Teachers</source>
-        <translation type="unfinished">Εκπαιδευτικοί</translation>
+        <translation>Εκπαιδευτικοί</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="56"/>
         <location filename="../src/interface/addactivityform_template.ui" line="101"/>
         <location filename="../src/interface/addactivityform_template.ui" line="184"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="204"/>
         <source>Subject</source>
-        <translation type="unfinished">Αντικείμενο</translation>
+        <translation>Αντικείμενο</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="88"/>
         <source>Selected</source>
         <comment>It refers to a list of selected students (in fact, students sets, but translate selected as in &apos;selected students&apos;)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Επιλεγμένοι</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="14"/>
         <source>Add activity</source>
         <extracomment>This is the title of the add activity dialog</extracomment>
-        <translation type="unfinished">Προσθήκη δραστηριότητας</translation>
+        <translation>Προσθήκη δραστηριότητας</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="71"/>
         <source>Students</source>
         <comment>It refers to sets of students, but I want to keep text short</comment>
-        <translation type="unfinished">Μαθητές</translation>
+        <translation>Μαθητές</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="114"/>
         <source>Years</source>
-        <translation type="unfinished"></translation>
+        <translation>Έτη</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="124"/>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Τμήματα</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="134"/>
         <source>Subgroups</source>
-        <translation type="unfinished"></translation>
+        <translation>Υποτμήματα</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="235"/>
         <source>Students</source>
         <comment>It refers to the number of students, but I want to keep text small</comment>
-        <translation type="unfinished">Μαθητές</translation>
+        <translation>Μαθητές</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="257"/>
         <source>Split</source>
         <comment>Refers to the number of components in an activity split into more components</comment>
-        <translation type="unfinished"></translation>
+        <translation>Επιμερισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="287"/>
         <source>1</source>
-        <translation type="unfinished">1</translation>
+        <translation>1</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="298"/>
@@ -1588,222 +1588,222 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addactivityform_template.ui" line="2410"/>
         <location filename="../src/interface/addactivityform_template.ui" line="2474"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Διάρκεια</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="351"/>
         <source>2</source>
-        <translation type="unfinished">2</translation>
+        <translation>2</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="415"/>
         <source>3</source>
-        <translation type="unfinished">3</translation>
+        <translation>3</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="479"/>
         <source>4</source>
-        <translation type="unfinished">4</translation>
+        <translation>4</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="543"/>
         <source>5</source>
-        <translation type="unfinished">5</translation>
+        <translation>5</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="607"/>
         <source>6</source>
-        <translation type="unfinished">6</translation>
+        <translation>6</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="671"/>
         <source>7</source>
-        <translation type="unfinished">7</translation>
+        <translation>7</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="735"/>
         <source>8</source>
-        <translation type="unfinished">8</translation>
+        <translation>8</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="799"/>
         <source>9</source>
-        <translation type="unfinished">9</translation>
+        <translation>9</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="863"/>
         <source>10</source>
-        <translation type="unfinished">10</translation>
+        <translation>10</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="927"/>
         <source>11</source>
-        <translation type="unfinished">11</translation>
+        <translation>11</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="991"/>
         <source>12</source>
-        <translation type="unfinished">12</translation>
+        <translation>12</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1055"/>
         <source>13</source>
-        <translation type="unfinished">13</translation>
+        <translation>13</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1119"/>
         <source>14</source>
-        <translation type="unfinished">14</translation>
+        <translation>14</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1183"/>
         <source>15</source>
-        <translation type="unfinished">15</translation>
+        <translation>15</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1247"/>
         <source>16</source>
-        <translation type="unfinished">16</translation>
+        <translation>16</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1311"/>
         <source>17</source>
-        <translation type="unfinished">17</translation>
+        <translation>17</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1375"/>
         <source>18</source>
-        <translation type="unfinished">18</translation>
+        <translation>18</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1439"/>
         <source>19</source>
-        <translation type="unfinished">19</translation>
+        <translation>19</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1503"/>
         <source>20</source>
-        <translation type="unfinished">20</translation>
+        <translation>20</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1567"/>
         <source>21</source>
-        <translation type="unfinished">21</translation>
+        <translation>21</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1631"/>
         <source>22</source>
-        <translation type="unfinished">22</translation>
+        <translation>22</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1695"/>
         <source>23</source>
-        <translation type="unfinished">23</translation>
+        <translation>23</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1759"/>
         <source>24</source>
-        <translation type="unfinished">24</translation>
+        <translation>24</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1823"/>
         <source>25</source>
-        <translation type="unfinished">25</translation>
+        <translation>25</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1887"/>
         <source>26</source>
-        <translation type="unfinished">26</translation>
+        <translation>26</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1951"/>
         <source>27</source>
-        <translation type="unfinished">27</translation>
+        <translation>27</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="2015"/>
         <source>28</source>
-        <translation type="unfinished">28</translation>
+        <translation>28</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="2079"/>
         <source>29</source>
-        <translation type="unfinished">29</translation>
+        <translation>29</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="2143"/>
         <source>30</source>
-        <translation type="unfinished">30</translation>
+        <translation>30</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="2207"/>
         <source>31</source>
-        <translation type="unfinished">31</translation>
+        <translation>31</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="2271"/>
         <source>32</source>
-        <translation type="unfinished">32</translation>
+        <translation>32</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="2335"/>
         <source>33</source>
-        <translation type="unfinished">33</translation>
+        <translation>33</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="2399"/>
         <source>34</source>
-        <translation type="unfinished">34</translation>
+        <translation>34</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="2463"/>
         <source>35</source>
-        <translation type="unfinished">35</translation>
+        <translation>35</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="2535"/>
         <source>Min days</source>
         <comment>Refers to min days between the components of a larger split activity. Please keep translation short</comment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="2555"/>
         <source>Weight %</source>
         <comment>Please keep translation short</comment>
-        <translation type="unfinished"></translation>
+        <translation>Βαρύτητα %</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="2584"/>
         <source>Consecutive</source>
         <comment>Refers to forcing component activities consecutive if they are in the same day. Please keep translation short</comment>
-        <translation type="unfinished"></translation>
+        <translation>Διαδοχικές</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="2616"/>
         <source>Help</source>
-        <translation type="unfinished">Βοήθεια</translation>
+        <translation>Βοήθεια</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="2623"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="43"/>
         <source>Selected</source>
         <comment>It refers to a list of selected teachers</comment>
-        <translation type="unfinished"></translation>
+        <translation>Επιλεγμένοι</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="171"/>
         <source>Selected</source>
         <comment>It refers to a list of selected activity tags</comment>
-        <translation type="unfinished"></translation>
+        <translation>Επιλεγμένες</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="154"/>
         <source>Activity tags</source>
-        <translation type="unfinished">Ετικέτες δραστηριοτήτων</translation>
+        <translation>Ετικέτες δραστηριοτήτων</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="338"/>
@@ -1843,12 +1843,12 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addactivityform_template.ui" line="2514"/>
         <source>Active</source>
         <comment>It refers to a subactivity</comment>
-        <translation type="unfinished">Ενεργές</translation>
+        <translation>Ενεργή</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="2609"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
 </context>
 <context>
@@ -1889,22 +1889,22 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addbuildingform_template.ui" line="22"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα</translation>
     </message>
     <message>
         <location filename="../src/interface/addbuildingform_template.ui" line="14"/>
         <source>Add building</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη κτιρίου</translation>
     </message>
     <message>
         <location filename="../src/interface/addbuildingform_template.ui" line="39"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/addbuildingform_template.ui" line="49"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
 </context>
 <context>
@@ -1943,48 +1943,48 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiesendstudentsdayform_template.ui" line="136"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesendstudentsdayform_template.ui" line="157"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesendstudentsdayform_template.ui" line="164"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesendstudentsdayform_template.ui" line="54"/>
         <source>Teacher</source>
-        <translation type="unfinished">Εκπαιδευτικός</translation>
+        <translation>Εκπαιδευτικός</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesendstudentsdayform_template.ui" line="14"/>
         <source>Add activities end students day</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη: &quot;Δραστηριότητες - &apos;κλείνουν&apos; ημέρα μαθητών&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesendstudentsdayform_template.ui" line="84"/>
         <source>Students set</source>
-        <translation type="unfinished">Ομάδα μαθητών</translation>
+        <translation>Ομάδα μαθητών</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesendstudentsdayform_template.ui" line="67"/>
         <source>Subject</source>
-        <translation type="unfinished">Αντικείμενο</translation>
+        <translation>Αντικείμενο</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesendstudentsdayform_template.ui" line="97"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Ετικέτα δραστηριότητας</translation>
+        <translation>Ετικέτα δραστηριότητας</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesendstudentsdayform_template.ui" line="26"/>
         <source>Instructions: you can choose a set of activities with a certain teacher (or blank for all teachers), students set, subject and activity tag.</source>
-        <translation type="unfinished"></translation>
+        <translation>Οδηγίες: μπορείτε να επιλέξετε ένα σύνολο δραστηριοτήτων συγκεκριμένα για εκπαιδευτικό (ή να αφήσετε το πεδίο αυτό κενό), για ομάδα μαθητών, για αντικείμενο και για ετικέτα δραστηριότητας.</translation>
     </message>
 </context>
 <context>
@@ -2030,92 +2030,92 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="14"/>
         <source>Add activities max simultaneous in selected time slots</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη: &quot;Δραστηριότητες - μέγιστες ταυτόχρονες σε επιλεγμένες περιόδους&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="24"/>
         <source>Activities</source>
-        <translation type="unfinished">Δραστηριότητες</translation>
+        <translation>Δραστηριότητες</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="30"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="36"/>
         <source>Teacher</source>
-        <translation type="unfinished">Εκπαιδευτικός</translation>
+        <translation>Εκπαιδευτικός</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="46"/>
         <source>Students set</source>
-        <translation type="unfinished">Ομάδα μαθητών</translation>
+        <translation>Ομάδα μαθητών</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="56"/>
         <source>Subject</source>
-        <translation type="unfinished">Αντικείμενο</translation>
+        <translation>Αντικείμενο</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="66"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Ετικέτα δραστηριότητας</translation>
+        <translation>Ετικέτα δραστηριότητας</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="98"/>
         <source>All</source>
         <comment>Text on a button. It refers to adding all activities from the list above this button into the current constraint</comment>
-        <translation type="unfinished"></translation>
+        <translation>Όλες</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="112"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="124"/>
         <source>Time slots</source>
-        <translation type="unfinished"></translation>
+        <translation>Περίοδοι</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="137"/>
         <source>X=selected, empty=not selected</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Χ=επιλεγμένη, κενό=μη επιλεγμένη</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="144"/>
         <source>Select all</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Επιλογή όλων</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="151"/>
         <source>Unselect all</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Αποεπιλογή όλων</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="173"/>
         <source>Max simultaneous</source>
         <comment>It refers to the max number of simultaneous activities</comment>
-        <translation type="unfinished"></translation>
+        <translation>Μέγιστες ταυτόχρονες</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="199"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="220"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="227"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
 </context>
 <context>
@@ -2160,7 +2160,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="190"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="197"/>
@@ -2181,13 +2181,13 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="107"/>
         <source>Activities</source>
-        <translation type="unfinished">Δραστηριότητες</translation>
+        <translation>Δραστηριότητες</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="14"/>
         <source>Add activities not overlapping</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη: &quot;Δραστηριότητες - δεν αλληλεπικαλύπτονται&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="36"/>
@@ -2197,7 +2197,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="72"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Ετικέτα δραστηριότητας</translation>
+        <translation>Ετικέτα δραστηριότητας</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="52"/>
@@ -2223,7 +2223,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="150"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="26"/>
@@ -2310,7 +2310,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="102"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="115"/>
@@ -2320,12 +2320,12 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="135"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="156"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="163"/>
@@ -2417,30 +2417,30 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="112"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="124"/>
         <source>Time slots</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Περίοδοι</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="137"/>
         <source>X=selected, empty=not selected</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Χ=επιλεγμένη, κενό=μη επιλεγμένη</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="144"/>
         <source>Select all</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Επιλογή όλων</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="151"/>
         <source>Unselect all</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αποεπιλογή όλων</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="173"/>
@@ -2451,12 +2451,12 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="199"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="220"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="227"/>
@@ -2561,7 +2561,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="78"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Διάρκεια</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="101"/>
@@ -2722,7 +2722,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="78"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Διάρκεια</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="122"/>
@@ -2821,17 +2821,17 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform_template.ui" line="102"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform_template.ui" line="121"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform_template.ui" line="142"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform_template.ui" line="149"/>
@@ -2881,7 +2881,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="174"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="181"/>
@@ -2908,7 +2908,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="134"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="153"/>
@@ -2994,7 +2994,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="174"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="181"/>
@@ -3052,7 +3052,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="134"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
 </context>
 <context>
@@ -3127,7 +3127,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="190"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="197"/>
@@ -3160,7 +3160,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="134"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="169"/>
@@ -3256,12 +3256,12 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="141"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="162"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="169"/>
@@ -3346,7 +3346,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="195"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="131"/>
@@ -3447,7 +3447,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="180"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="187"/>
@@ -3504,7 +3504,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="142"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
 </context>
 <context>
@@ -3575,7 +3575,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="235"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="138"/>
@@ -3918,7 +3918,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomform_template.ui" line="110"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomform_template.ui" line="28"/>
@@ -3973,7 +3973,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="115"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="122"/>
@@ -4005,7 +4005,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="77"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
 </context>
 <context>
@@ -4055,7 +4055,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform_template.ui" line="50"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform_template.ui" line="28"/>
@@ -4111,7 +4111,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform_template.ui" line="50"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform_template.ui" line="28"/>
@@ -4150,7 +4150,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="44"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="68"/>
@@ -4234,7 +4234,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="197"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="204"/>
@@ -4297,7 +4297,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="134"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="14"/>
@@ -4439,7 +4439,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="134"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="217"/>
@@ -4449,7 +4449,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="238"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="245"/>
@@ -4499,7 +4499,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="197"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="204"/>
@@ -4562,7 +4562,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="134"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="14"/>
@@ -4700,7 +4700,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="148"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
@@ -4782,7 +4782,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="148"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="155"/>
@@ -4831,7 +4831,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="122"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="103"/>
@@ -4858,7 +4858,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="141"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
 </context>
 <context>
@@ -4926,7 +4926,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui" line="22"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui" line="29"/>
@@ -4991,7 +4991,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="22"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="29"/>
@@ -5046,7 +5046,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="22"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="29"/>
@@ -5107,7 +5107,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxdaysperweekform_template.ui" line="22"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxdaysperweekform_template.ui" line="29"/>
@@ -5176,7 +5176,7 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxgapsperdayform_template.ui" line="67"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxgapsperdayform_template.ui" line="84"/>
@@ -5186,7 +5186,7 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxgapsperdayform_template.ui" line="99"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxgapsperdayform_template.ui" line="106"/>
@@ -5246,12 +5246,12 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxgapsperweekform_template.ui" line="65"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxgapsperweekform_template.ui" line="97"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxgapsperweekform_template.ui" line="32"/>
@@ -5290,7 +5290,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="73"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="80"/>
@@ -5345,7 +5345,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="73"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="80"/>
@@ -5412,12 +5412,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxspanperdayform_template.ui" line="26"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxspanperdayform_template.ui" line="54"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxspanperdayform_template.ui" line="61"/>
@@ -5476,7 +5476,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="67"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="28"/>
@@ -5585,12 +5585,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="39"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="104"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
 </context>
 <context>
@@ -5635,7 +5635,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsminrestinghoursform_template.ui" line="36"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminrestinghoursform_template.ui" line="46"/>
@@ -5645,7 +5645,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsminrestinghoursform_template.ui" line="58"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminrestinghoursform_template.ui" line="65"/>
@@ -5719,7 +5719,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="189"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
@@ -5812,7 +5812,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="189"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="196"/>
@@ -5872,7 +5872,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="154"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="103"/>
@@ -5899,7 +5899,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="173"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
 </context>
 <context>
@@ -5954,7 +5954,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentssethomeroomform_template.ui" line="108"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssethomeroomform_template.ui" line="115"/>
@@ -6008,7 +6008,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentssethomeroomsform_template.ui" line="115"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssethomeroomsform_template.ui" line="122"/>
@@ -6040,7 +6040,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentssethomeroomsform_template.ui" line="77"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
 </context>
 <context>
@@ -6119,7 +6119,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="58"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="65"/>
@@ -6129,7 +6129,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="82"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="125"/>
@@ -6189,7 +6189,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="22"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="29"/>
@@ -6204,7 +6204,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="82"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="103"/>
@@ -6254,7 +6254,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="22"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="29"/>
@@ -6269,7 +6269,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="82"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="103"/>
@@ -6325,7 +6325,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxdaysperweekform_template.ui" line="22"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxdaysperweekform_template.ui" line="29"/>
@@ -6335,7 +6335,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxdaysperweekform_template.ui" line="46"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxdaysperweekform_template.ui" line="73"/>
@@ -6409,7 +6409,7 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxgapsperdayform_template.ui" line="99"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxgapsperdayform_template.ui" line="116"/>
@@ -6419,7 +6419,7 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxgapsperdayform_template.ui" line="131"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxgapsperdayform_template.ui" line="138"/>
@@ -6485,12 +6485,12 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxgapsperweekform_template.ui" line="97"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxgapsperweekform_template.ui" line="129"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxgapsperweekform_template.ui" line="65"/>
@@ -6540,7 +6540,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="148"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -6606,7 +6606,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="148"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="28"/>
@@ -6689,7 +6689,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxspanperdayform_template.ui" line="42"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxspanperdayform_template.ui" line="55"/>
@@ -6699,7 +6699,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxspanperdayform_template.ui" line="90"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxspanperdayform_template.ui" line="97"/>
@@ -6749,7 +6749,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="22"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="29"/>
@@ -6764,7 +6764,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="82"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="103"/>
@@ -6868,7 +6868,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="71"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="127"/>
@@ -6888,7 +6888,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="136"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
 </context>
 <context>
@@ -6944,7 +6944,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminrestinghoursform_template.ui" line="80"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminrestinghoursform_template.ui" line="101"/>
@@ -6959,7 +6959,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminrestinghoursform_template.ui" line="125"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminrestinghoursform_template.ui" line="132"/>
@@ -7023,7 +7023,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="96"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="76"/>
@@ -7358,7 +7358,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomform_template.ui" line="130"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomform_template.ui" line="50"/>
@@ -7419,7 +7419,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="128"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="135"/>
@@ -7456,7 +7456,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="90"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
 </context>
 <context>
@@ -7512,7 +7512,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="110"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="117"/>
@@ -7577,7 +7577,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="115"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="122"/>
@@ -7609,7 +7609,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="77"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
 </context>
 <context>
@@ -7663,7 +7663,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="180"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -7766,7 +7766,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="180"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="187"/>
@@ -7826,7 +7826,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherhomeroomform_template.ui" line="91"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherhomeroomform_template.ui" line="98"/>
@@ -7880,7 +7880,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherhomeroomsform_template.ui" line="115"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherhomeroomsform_template.ui" line="122"/>
@@ -7912,7 +7912,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherhomeroomsform_template.ui" line="77"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
 </context>
 <context>
@@ -7991,7 +7991,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="58"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="65"/>
@@ -8001,7 +8001,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="82"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="125"/>
@@ -8061,7 +8061,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperdayform_template.ui" line="22"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperdayform_template.ui" line="29"/>
@@ -8076,7 +8076,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperdayform_template.ui" line="82"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperdayform_template.ui" line="103"/>
@@ -8126,7 +8126,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperweekform_template.ui" line="22"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperweekform_template.ui" line="29"/>
@@ -8141,7 +8141,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperweekform_template.ui" line="82"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperweekform_template.ui" line="103"/>
@@ -8212,7 +8212,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="148"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="77"/>
@@ -8284,7 +8284,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="129"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="32"/>
@@ -8295,7 +8295,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="110"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
 </context>
 <context>
@@ -8361,7 +8361,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="129"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="32"/>
@@ -8372,7 +8372,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="110"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
 </context>
 <context>
@@ -8411,7 +8411,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="148"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="155"/>
@@ -8477,7 +8477,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="148"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="155"/>
@@ -8560,7 +8560,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxspanperdayform_template.ui" line="45"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxspanperdayform_template.ui" line="52"/>
@@ -8575,7 +8575,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxspanperdayform_template.ui" line="96"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
 </context>
 <context>
@@ -8642,7 +8642,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermindaysperweekform_template.ui" line="148"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermindaysperweekform_template.ui" line="155"/>
@@ -8692,7 +8692,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="22"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="29"/>
@@ -8707,7 +8707,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="82"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="103"/>
@@ -8774,7 +8774,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="93"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="116"/>
@@ -8789,7 +8789,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="145"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="152"/>
@@ -8866,12 +8866,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherminrestinghoursform_template.ui" line="81"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminrestinghoursform_template.ui" line="102"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminrestinghoursform_template.ui" line="109"/>
@@ -8940,7 +8940,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="98"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="124"/>
@@ -9032,7 +9032,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="151"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -9119,7 +9119,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="151"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="158"/>
@@ -9192,7 +9192,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="22"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="29"/>
@@ -9202,7 +9202,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="46"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="89"/>
@@ -9256,7 +9256,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperdayform_template.ui" line="22"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperdayform_template.ui" line="29"/>
@@ -9266,7 +9266,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperdayform_template.ui" line="46"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperdayform_template.ui" line="67"/>
@@ -9310,7 +9310,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperweekform_template.ui" line="22"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperweekform_template.ui" line="29"/>
@@ -9320,7 +9320,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperweekform_template.ui" line="46"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperweekform_template.ui" line="67"/>
@@ -9375,7 +9375,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxdaysperweekform_template.ui" line="28"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxdaysperweekform_template.ui" line="55"/>
@@ -9385,7 +9385,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxdaysperweekform_template.ui" line="72"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
 </context>
 <context>
@@ -9446,12 +9446,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperdayform_template.ui" line="105"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperdayform_template.ui" line="84"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
 </context>
 <context>
@@ -9512,12 +9512,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="105"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="84"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
 </context>
 <context>
@@ -9566,7 +9566,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="73"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -9621,7 +9621,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="73"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="28"/>
@@ -9672,7 +9672,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxspanperdayform_template.ui" line="22"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxspanperdayform_template.ui" line="29"/>
@@ -9687,7 +9687,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxspanperdayform_template.ui" line="79"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
 </context>
 <context>
@@ -9732,7 +9732,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmindaysperweekform_template.ui" line="28"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmindaysperweekform_template.ui" line="55"/>
@@ -9742,7 +9742,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmindaysperweekform_template.ui" line="72"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmindaysperweekform_template.ui" line="79"/>
@@ -9786,7 +9786,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="22"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="29"/>
@@ -9796,7 +9796,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="46"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="67"/>
@@ -9852,7 +9852,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="113"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="120"/>
@@ -9878,7 +9878,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="61"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="101"/>
@@ -9933,12 +9933,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersminrestinghoursform_template.ui" line="45"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminrestinghoursform_template.ui" line="66"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminrestinghoursform_template.ui" line="73"/>
@@ -10043,7 +10043,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="238"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="245"/>
@@ -10107,7 +10107,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="206"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="213"/>
@@ -10212,7 +10212,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="199"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="206"/>
@@ -10311,7 +10311,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="206"/>
         <source>Add constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="213"/>
@@ -10444,7 +10444,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="134"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="154"/>
@@ -10512,7 +10512,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addroomform_template.ui" line="22"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Όνομα</translation>
     </message>
     <message>
         <location filename="../src/interface/addroomform_template.ui" line="67"/>
@@ -10633,7 +10633,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addstudentsgroupform_template.ui" line="43"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Όνομα</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsgroupform_template.ui" line="60"/>
@@ -10737,7 +10737,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addstudentssubgroupform_template.ui" line="64"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Όνομα</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform_template.ui" line="14"/>
@@ -10809,7 +10809,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addstudentsyearform_template.ui" line="22"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Όνομα</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsyearform_template.ui" line="39"/>
@@ -10888,7 +10888,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/advancedfilterform.cpp" line="119"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedfilterform.cpp" line="121"/>
@@ -10966,7 +10966,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1989"/>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="2169"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="109"/>
@@ -11184,7 +11184,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>AllSpaceConstraintsForm</name>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="683"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="685"/>
         <source>%1 Space Constraints</source>
         <comment>%1 represents the number of constraints</comment>
         <translation>%1 Χωρικοί περιορισμοί</translation>
@@ -11194,11 +11194,11 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="256"/>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="308"/>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="312"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="424"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="633"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="767"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="812"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="887"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="426"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="635"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="769"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="814"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="889"/>
         <source>FET information</source>
         <translation>FET - Πληροφορίες</translation>
     </message>
@@ -11215,90 +11215,90 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <translation>Για να μετακινήσετε χωρικό περιορισμό, το πλαίσιο ελέγχου &apos;Ταξινομημένοι&apos; δεν πρέπει να είναι τσεκαρισμένο.</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="401"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="800"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="850"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="403"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="802"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="852"/>
         <source>%1 / %2 space constraints</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation>%1 / %2 χωρικοί περιορισμοί</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="424"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="633"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="767"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="812"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="887"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="426"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="635"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="769"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="814"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="889"/>
         <source>Invalid selected constraint</source>
         <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="608"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="610"/>
         <source>FET critical</source>
         <translation>FET - Κρίσιμο</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="608"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="610"/>
         <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recognized in all space constraints dialog. FET will skip this error, so that you can continue work. Probably the constraint can be modified from the specific constraint dialog.</source>
         <translation>Έχετε βρει ένα σφάλμα λογισμικού (bug) στο FET. Παρακαλώ να το αναφέρετε. Αυτός ο τύπος περιορισμού δεν αναγνωρίζεται σωστά στον διάλογο όλων των χωρικών περιορισμών. Το FET θα παραλείψει (αγνοήσει) αυτό το λάθος, ώστε να μπορέσετε να συνεχίζετε τη δουλειά σας. Πιθανώς, ο περιορισμός είναι δυνατόν να τροποποιηθεί από τον ειδικό διάλογο περιορισμών.</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="640"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="642"/>
         <source>Remove constraint?</source>
         <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="648"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="650"/>
         <source>FET confirmation</source>
         <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="649"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="651"/>
         <source>Yes</source>
         <translation>Ναι</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="649"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="651"/>
         <source>No</source>
         <translation>Όχι</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="657"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="659"/>
         <source>Do you really want to remove the basic compulsory space constraint?</source>
         <translation>Σίγουρα θέλετε να διαγράψετε τον βασικό υποχρεωτικό χωρικό περιορισμό;</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="659"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="661"/>
         <source>You cannot generate a timetable without this constraint.</source>
         <translation>Δεν μπορείτε να δημιουργήσετε ωρολόγιο πρόγραμμα χωρίς αυτόν τον περιορισμό.</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="661"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="663"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
         <translation>Σημείωση: μπορείτε να προσθέσετε ξανά περιορισμό αυτού του τύπου από το μενού Δεδομένα -&gt; Χωρικοί περιορισμοί -&gt; Διάφοροι - &gt; Βασικοί υποχρεωτικοί χωρικοί περιορισμοί.</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="664"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="824"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="666"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="826"/>
         <source>FET warning</source>
         <translation>FET - Προειδοποίηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="824"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="826"/>
         <source>You are not allowed to deactivate the basic compulsory space constraints</source>
         <translation>Δεν επιτρέπεται να απενεργοποιήσετε τους βασικούς υποχρεωτικούς χωρικούς περιορισμούς</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="896"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="898"/>
         <source>Constraint comments</source>
         <translation>Σχόλια περιορισμών</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="898"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="900"/>
         <source>OK</source>
         <translation>ΟΚ</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="900"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="902"/>
         <source>Cancel</source>
         <translation>Άκυρο</translation>
     </message>
@@ -11380,7 +11380,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>AllTimeConstraintsForm</name>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1021"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1023"/>
         <source>%1 Time Constraints</source>
         <comment>%1 represents the number of constraints</comment>
         <translation>%1 Χρονικοί περιορισμοί</translation>
@@ -11390,11 +11390,11 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="314"/>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="366"/>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="370"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="482"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="968"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1105"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1150"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1225"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="484"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="970"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1107"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1152"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1227"/>
         <source>FET information</source>
         <translation>FET - Πληροφορίες</translation>
     </message>
@@ -11411,90 +11411,90 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <translation>Για να μετακινήσετε χρονικό περιορισμό, το πλαίσιο ελέγχου &apos;Ταξινομημένοι&apos; δεν πρέπει να είναι τσεκαρισμένο.</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="459"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1138"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1188"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="461"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1140"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1190"/>
         <source>%1 / %2 time constraints</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation>%1 / %2 χρονικοί περιορισμοί</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="482"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="968"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1105"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1150"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1225"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="484"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="970"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1107"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1152"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1227"/>
         <source>Invalid selected constraint</source>
         <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="943"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="945"/>
         <source>FET critical</source>
         <translation>FET - Κρίσιμο</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="943"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="945"/>
         <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recognized in all time constraints dialog. FET will skip this error, so that you can continue work. Probably the constraint can be modified from the specific constraint dialog.</source>
         <translation>Έχετε βρει ένα σφάλμα λογισμικού (bug) στο FET. Παρακαλώ να το αναφέρετε. Αυτός ο τύπος περιορισμού δεν αναγνωρίζεται σωστά στον διάλογο όλων των χρονικών περιορισμών. Το FET θα παραλείψει (αγνοήσει) αυτό το λάθος, ώστε να μπορέσετε να συνεχίζετε τη δουλειά σας. Πιθανώς, ο περιορισμός είναι δυνατόν να τροποποιηθεί από τον ειδικό διάλογο περιορισμών.</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="976"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="978"/>
         <source>Remove constraint?</source>
         <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="986"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="988"/>
         <source>FET confirmation</source>
         <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="987"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="989"/>
         <source>Yes</source>
         <translation>Ναι</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="987"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="989"/>
         <source>No</source>
         <translation>Όχι</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="995"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="997"/>
         <source>Do you really want to remove the basic compulsory time constraint?</source>
         <translation>Σίγουρα θέλετε να διαγράψετε τον βασικό υποχρεωτικό χρονικό περιορισμό;</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="997"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="999"/>
         <source>You cannot generate a timetable without this constraint.</source>
         <translation>Δεν μπορείτε να δημιουργήσετε ωρολόγιο πρόγραμμα χωρίς αυτόν τον περιορισμό.</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="999"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1001"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
         <translation>Σημείωση: μπορείτε να προσθέσετε ξανά περιορισμό αυτού του τύπου από το μενού Δεδομένα -&gt; Χρονικοί περιορισμοί &gt; Διάφοροι -&gt; Βασικοί υποχρεωτικοί χρονικοί περιορισμοί.</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1002"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1162"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1004"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1164"/>
         <source>FET warning</source>
         <translation>FET - Προειδοποίηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1162"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1164"/>
         <source>You are not allowed to deactivate the basic compulsory time constraints</source>
         <translation>Δεν επιτρέπεται να απενεργοποιήσετε τους βασικούς υποχρεωτικούς χρονικούς περιορισμούς</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1234"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1236"/>
         <source>Constraint comments</source>
         <translation>Σχόλια περιορισμών</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1236"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1238"/>
         <source>OK</source>
         <translation>ΟΚ</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1238"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1240"/>
         <source>Cancel</source>
         <translation>Άκυρο</translation>
     </message>
@@ -11648,7 +11648,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/buildingsform.cpp" line="290"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/buildingsform.cpp" line="292"/>
@@ -11694,7 +11694,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/buildingsform_template.ui" line="87"/>
         <source>Sort</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ταξινόμηση</translation>
     </message>
     <message>
         <location filename="../src/interface/buildingsform_template.ui" line="94"/>
@@ -11828,7 +11828,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/changemindaysselectivelyform_template.ui" line="194"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/changemindaysselectivelyform_template.ui" line="204"/>
@@ -11846,7 +11846,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/import.cpp" line="281"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="282"/>
@@ -12027,7 +12027,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="15856"/>
         <source>Time constraint activities end students&apos; day broken for activity with id=%1 (%2), increases conflicts total by %3</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
-        <translation>Δεν έχει τηρηθεί χρονικός περιορισμός &quot;δραστηριότητες &apos;κλείνουν&apos; ημέρα μαθητών&quot; για την δραστηριότητα με ατ=%1 (%2). Το σύνολο των συγκρούσεων αυξάνεται κατά %3</translation>
+        <translation>Δεν έχει τηρηθεί χρονικός περιορισμός &quot;δραστηριότητες - &apos;κλείνουν&apos; ημέρα μαθητών&quot; για την δραστηριότητα με ατ=%1 (%2). Το σύνολο των συγκρούσεων αυξάνεται κατά %3</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15762"/>
@@ -12077,37 +12077,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="14"/>
         <source>Constraints activities end students day</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Δραστηριότητες - &apos;κλείνουν&apos; ημέρα μαθητών&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
 </context>
 <context>
@@ -12124,28 +12124,28 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="17869"/>
         <source>Constraint activities max simultaneous in selected time slots is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation>Περιορισμός &quot;μέγιστες ταυτόχρονες δραστηριότητες σε επιλεγμένες περιόδους&quot; παρουσιάζει σφάλμα, διότι σχετίζεται με ημέρα που έχει διαγραφεί. Παρακαλώ διορθώστε τον και προσπαθήστε ξανά. Διόρθωση σημαίνει επεξεργασία του περιορισμού και ανανέωση των πληροφοριών (στοιχείων). Ο περιορισμός είναι 
+        <translation>Περιορισμός &quot;δραστηριότητες - μέγιστες ταυτόχρονες σε επιλεγμένες περιόδους&quot; παρουσιάζει σφάλμα, διότι σχετίζεται με ημέρα που έχει διαγραφεί. Παρακαλώ διορθώστε τον και προσπαθήστε ξανά. Διόρθωση σημαίνει επεξεργασία του περιορισμού και ανανέωση των πληροφοριών (στοιχείων). Ο περιορισμός είναι 
 %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17876"/>
         <source>Constraint activities max simultaneous in selected time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation>Περιορισμός &quot;μέγιστες ταυτόχρονες δραστηριότητες σε επιλεγμένες περιόδους&quot; παρουσιάζει σφάλμα, διότι κάποια προτιμητέα ώρα είναι πολύ αργά (μετά την τελευταία αποδεκτή περίοδο). Παρακαλώ διορθώστε και προσπαθείτε ξανά. Διόρθωση σημαίνει επεξεργασία του περιορισμού και ανανέωση των πληροφοριών (στοιχείων). Ο περιορισμός είναι:
+        <translation>Περιορισμός &quot;δραστηριότητες - μέγιστες ταυτόχρονες σε επιλεγμένες περιόδους&quot; παρουσιάζει σφάλμα, διότι κάποια προτιμητέα ώρα είναι πολύ αργά (μετά την τελευταία αποδεκτή περίοδο). Παρακαλώ διορθώστε και προσπαθείτε ξανά. Διόρθωση σημαίνει επεξεργασία του περιορισμού και ανανέωση των πληροφοριών (στοιχείων). Ο περιορισμός είναι:
 %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17883"/>
         <source>Constraint activities max simultaneous in selected time slots is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation>Περιορισμός &quot;μέγιστες ταυτόχρονες δραστηριότητες σε επιλεγμένες περιόδους&quot; παρουσιάζει σφάλμα, διότι σχετίζεται με μία ώρα που έχει διαγραφεί. Παρακαλώ διορθώστε και προσπαθείστε ξανά. Διόρθωση σημαίνει επεξεργασία του περιορισμού και ανανέωση των πληροφοριών (στοιχείων). Ο περιορισμός είναι:
+        <translation>Περιορισμός &quot;δραστηριότητες - μέγιστες ταυτόχρονες σε επιλεγμένες περιόδους&quot; παρουσιάζει σφάλμα, διότι σχετίζεται με μία ώρα που έχει διαγραφεί. Παρακαλώ διορθώστε και προσπαθείστε ξανά. Διόρθωση σημαίνει επεξεργασία του περιορισμού και ανανέωση των πληροφοριών (στοιχείων). Ο περιορισμός είναι:
 %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17890"/>
         <source>Constraint activities max simultaneous in selected time slots is wrong because hour or day is not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation>Περιορισμός &quot;μέγιστες ταυτόχρονες δραστηριότητες σε επιλεγμένες περιόδους&quot; παρουσιάζει σφάλμα, διότι για κάποια περίοδο δεν έχει προσδιοριστεί ώρα ή ημέρα (-1). Παρακαλώ διορθώστε και προσπαθήστε ξανά. Διόρθωση σημαίνει επεξεργασία του περιορισμού και ανανέωση των πληροφοριών (στοιχείων). Ο περιορισμός είναι:
+        <translation>Περιορισμός &quot;δραστηριότητες - μέγιστες ταυτόχρονες σε επιλεγμένες περιόδους&quot; παρουσιάζει σφάλμα, διότι για κάποια περίοδο δεν έχει προσδιοριστεί ώρα ή ημέρα (-1). Παρακαλώ διορθώστε και προσπαθήστε ξανά. Διόρθωση σημαίνει επεξεργασία του περιορισμού και ανανέωση των πληροφοριών (στοιχείων). Ο περιορισμός είναι:
 %1</translation>
     </message>
     <message>
@@ -12231,68 +12231,68 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="233"/>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="260"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="233"/>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="260"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="265"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="271"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="272"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="272"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="298"/>
         <source>IMPORTANT NOTE: Please use this constraint ONLY when strictly necessary, when it is really useful, when it has effect, when it is not implied by the other constraints, and in a non-redundant way. Otherwise it may slow down very much the generation.</source>
-        <translation type="unfinished"></translation>
+        <translation>ΣΗΜΑΝΤΙΚΗ ΣΗΜΕΙΩΣΗ: Παρακαλώ, να χρησιμοποιείτε αυτόν τον περιορισμό ΜΟΝΟΝ όταν είναι απολύτως απαραίτητος, όταν είναι πραγματικά χρήσιμος, όταν είναι αποτελεσματικός και όταν δεν &quot;υποδηλώνεται&quot; (&quot;συνάγεται&quot;) από άλλους περιορισμούς. Παρακαλώ να μην τον χρησιμοποιείτε άσκοπα. Σε διαφορετική περίπτωση μπορεί να σημειωθεί πολύ μεγάλη επιβράδυνση στη δημιουργία ωρολογίου προγράμματος.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="301"/>
         <source>Important note: if you want the maximum number of simultaneous activities to be 1, then it is more efficient to use constraint activities not overlapping and the result is the same. (The underlying data structures make FET compute better the initial order of placing the activities and also the generation speed is faster, if using constraints of type activities not overlapping.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Σημαντική σημείωση: αν επιθυμείτε να χρησιμοποιήσετε τον περιορισμό &quot;δραστηριότητες - μέγιστες ταυτόχρονες&quot; με μέγιστο αριθμό ταυτόχρονων δραστηριοτήτων 1, τότε είναι πιο αποτελεσματικό αντί για τον παραπάνω περιορισμό να χρησιμοποιήσετε τον περιορισμό &quot;δραστηριότητες - δεν αλληλεπικαλύπτονται&quot; και το αποτέλεσμα θα είναι το ίδιο. (Οι εν τω βάθει δομές δεδομένων έχουν ως αποτέλεσμα το FET να υπολογίζει καλύτερα την αρχική διάταξη τοποθέτησης δραστηριοτήτων. Επίσης, η δημιουργία του ωρολογίου προγράμματος γίνεται πιο γρήγορα, εάν χρησιμοποιούνται περιορισμοί του τύπου &quot;δραστηριότητες - δεν αλληλεπικαλύπτονται&quot;.)</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="305"/>
         <source>This constraint type was added on 30 September 2011.</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτός ο τύπος περιορισμού προστέθηκε στις 30 Σεπτεμβρίου 2011.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="307"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum number of activities from those selected which can be simultaneous in each of the selected time slots.</source>
-        <translation type="unfinished"></translation>
+        <translation>Για να χρησιμοποιήσετε αυτόν τον περιορισμό, θα πρέπει να καθορίσετε (επιλέξετε) ένα σύνολο δραστηριοτήτων, ένα σύνολο περιόδων, και τον αριθμό των δραστηριοτήτων (από τις επιλεγμένες) που μπορούν κατά μέγιστο να πραγματοποιούνται ταυτόχρονα σε καθεμία από τις επιλεγμένες περιόδους.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="310"/>
         <source>Uses of this constraint are probably wide. The main reason it was added was to enable users to specify that each time slot needs to have a specified number of free teachers, for supervision of students.</source>
-        <translation type="unfinished"></translation>
+        <translation>Οι χρήσεις αυτού του περιορισμού είναι πιθανώς πολλές. Ο κύριος λόγος που προστέθηκε ο περιορισμός αυτός ήταν να δώσει στους χρήστες την δυνατότητα να καθορίσουν ότι η κάθε περίοδος (ώρα) πρέπει να έχει έναν καθορισμένο αριθμό εκπαιδευτικών που δεν απασχολούνται, προκειμένου να επιβλέπουν τους μαθητές.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="313"/>
         <source>Note that if you have activities with two or more teachers, you might need to use a trick for that: add one (or more) dummy activities, no teachers/no students, same starting time with the initial activity.</source>
-        <translation type="unfinished"></translation>
+        <translation>Σημειώστε ότι αν έχετε δραστηριότητες με δύο ή περισσότερους εκπαιδευτικούς, μπορεί να χρειαστεί να χρησιμοποιήσετε ένα τρικ για το σκοπό αυτό: προσθέστε μία (ή περισσότερες) ψευδο-δραστηριότητες, χωρίς εκπαιδευτικό/χωρίς μαθητές, με την ίδια ώρα έναρξης με την αρχική δραστηριότητα.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="316"/>
         <source>FET help</source>
-        <translation type="unfinished">FET - Βοήθεια</translation>
+        <translation>FET - Βοήθεια</translation>
     </message>
 </context>
 <context>
@@ -12301,72 +12301,72 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="14"/>
         <source>Constraints activities max simultaneous in selected time slots</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Δραστηριότητες - μέγιστες ταυτόχρονες σε επιλεγμένες περιόδους&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="26"/>
         <source>IMPORTANT: Please do not overuse this constraint, because the generation may be slowed down very much. Please read Help for more details.</source>
-        <translation type="unfinished"></translation>
+        <translation>ΣΗΜΑΝΤΙΚΟ: Παρακαλώ να μην κάνετε υπερβολική χρήση αυτού του περιορισμού, διότι η δημιουργία ωρολογίου προγράμματος μπορεί να απαιτήσει πολύ χρόνο. Παρακαλώ διαβάστε στη &quot;Βοήθεια&quot; για περισσότερες λεπτομέρειες.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="76"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="82"/>
         <source>Teacher</source>
-        <translation type="unfinished">Εκπαιδευτικός</translation>
+        <translation>Εκπαιδευτικός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="95"/>
         <source>Students set</source>
-        <translation type="unfinished">Ομάδα μαθητών</translation>
+        <translation>Ομάδα μαθητών</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="108"/>
         <source>Subject</source>
-        <translation type="unfinished">Αντικείμενο</translation>
+        <translation>Αντικείμενο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="121"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Ετικέτα δραστηριότητας</translation>
+        <translation>Ετικέτα δραστηριότητας</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="139"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="146"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="153"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="160"/>
         <source>Help</source>
-        <translation type="unfinished">Βοήθεια</translation>
+        <translation>Βοήθεια</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="167"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
 </context>
 <context>
@@ -12392,7 +12392,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1543"/>
         <source>Activities not overlapping</source>
-        <translation>Δραστηριότητες - δεν συμπίπτουν</translation>
+        <translation>Δραστηριότητες - δεν αλληλεπικαλύπτονται</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1544"/>
@@ -12420,7 +12420,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1557"/>
         <source>Activities must not overlap</source>
-        <translation>Δραστηριότητες - δεν πρέπει να συμπίπτουν</translation>
+        <translation>Δραστηριότητες - δεν πρέπει να αλληλεπικαλύπτονται</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1558"/>
@@ -12453,7 +12453,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="1652"/>
         <source>Time constraint activities not overlapping broken: activity with id=%1 (%2) overlaps with activity with id=%3 (%4) on a number of %5 periods</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
-        <translation>Δεν έχει τηρηθεί χρονικός περιορισμός &quot;δραστηριότητες - δεν συμπίπτουν&quot;: η δραστηριότητα με ατ=%1 (%2) συμπίπτει με την δραστηριότητα με ατ=%3 (%4) για αριθμό %5 περιόδων</translation>
+        <translation>Δεν έχει τηρηθεί χρονικός περιορισμός &quot;δραστηριότητες - δεν αλληλεπικαλύπτονται&quot;: η δραστηριότητα με ατ=%1 (%2) αλληλεπικαλύπτεται με την δραστηριότητα με ατ=%3 (%4) για αριθμό %5 περιόδων</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1660"/>
@@ -12467,33 +12467,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiesnotoverlappingform.cpp" line="233"/>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform.cpp" line="260"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform.cpp" line="233"/>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform.cpp" line="260"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform.cpp" line="265"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform.cpp" line="271"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform.cpp" line="272"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform.cpp" line="272"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -12501,63 +12501,63 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="26"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="136"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="115"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="36"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="129"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="122"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="14"/>
         <source>Constraints activities not overlapping</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Δραστηριότητες - δεν αλληλεπικαλύπονται&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="52"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="58"/>
         <source>Teacher</source>
-        <translation type="unfinished">Εκπαιδευτικός</translation>
+        <translation>Εκπαιδευτικός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="97"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Ετικέτα δραστηριότητας</translation>
+        <translation>Ετικέτα δραστηριότητας</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="84"/>
         <source>Subject</source>
-        <translation type="unfinished">Αντικείμενο</translation>
+        <translation>Αντικείμενο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="71"/>
         <source>Students set</source>
-        <translation type="unfinished">Ομάδα μαθητών</translation>
+        <translation>Ομάδα μαθητών</translation>
     </message>
 </context>
 <context>
@@ -12645,53 +12645,53 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="233"/>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="260"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="233"/>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="260"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="265"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="271"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="272"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="272"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="298"/>
         <source>IMPORTANT NOTE: Please be careful with this constraint, as its overuse may lead to a slowdown of generation or even to an impossible timetable.</source>
-        <translation type="unfinished"></translation>
+        <translation>ΣΗΜΑΝΤΙΚΗ ΣΗΜΕΙΩΣΗ: Παρακαλώ να είστε ιδιαίτερα προσεκτικοί στη χρήση αυτού του περιορισμού, διότι η υπερβολική χρήση του μπορεί να οδηγήσει σε επιβράδυνση της δημιουργίας ωρολογίου προγράμματος ή ακόμη και να την καταστήσει αδύνατη.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="300"/>
         <source>This constraint type was added on 29 April 2012.</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτός ο τύπος περιορισμού προστέθηκε στις 29 Απριλίου 2012.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="302"/>
         <source>To use this constraint, you need to specify a set of activities and the maximum number of different rooms which can be occupied by these activities. Note that each activity can take place in a single room, and a single room can hold a single activity at a certain moment. This constraint may be used for instance to constrain all activities of type Physics of a certain students set to be in the same room throughout the week, by adding all Physics activities for this students set and making max different rooms = 1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Για να χρησιμοποιήσετε αυτόν τον περιορισμό, θα πρέπει να καθορίσετε (επιλέξετε) ένα σύνολο δραστηριοτήτων και τον μέγιστο αριθμό των αιθουσών που καταλαμβάνουν οι δραστηριότητες αυτές. Σημειώστε ότι η κάθε δραστηριότητα μπορεί να πραγματοποείται σε μία και μόνον αίθουσα, και αντίστροφα μία αίθουσα μπορεί να &quot;φιλοξενήσει&quot; μία και μόνον δραστηριότητα σε συγκερκιμένη χρονική στιγμή. Αυτός ο περιορισμός μπορεί να χρησιμοποιηθεί για παράδειγμα για να περιοριστούν οι δραστηριότητες του τύπου &quot;Φυσική&quot; μίας συγκερκιμένης ομάδας μαθητών, έτσι ώστε να πραγματοποιούνται όλες στην ίδια αίθουσα. Αυτό επιτυγχάνεται με την προσθήκη όλων των δραστηριοτήτων Φυσικής μίας συγκεκριμένης ομάδας μαθητών και καθορίζοντας τον μέγιστο αριθμό διαφορετικών αιθουσών = 1.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="307"/>
         <source>FET help</source>
-        <translation type="unfinished">FET - Βοήθεια</translation>
+        <translation>FET - Βοήθεια</translation>
     </message>
 </context>
 <context>
@@ -12700,72 +12700,72 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="14"/>
         <source>Constraints activities occupy max different rooms</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Δραστηριότητες - καταλαμβάνουν μέγιστες διαφορετικές αίθουσες&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="26"/>
         <source>IMPORTANT: Please be careful with this constraint, because the generation may become too slow or impossible if you overuse it. Press Help for more details.</source>
-        <translation type="unfinished"></translation>
+        <translation>ΣΗΜΑΝΤΙΚΟ: Παρακαλώ να είστε προσεκτικοί με την χρήση αυτού του περιορισμού. Σε περίπτωση που κάνετε υπερβολική χρήση του περιορισμού αυτού, η δημιουργία ωρολογίου προγράμματος μπορεί να επιβραδυνθεί πολύ ή ακόμη και να καταστεί αδύνατη. Πιέστε στην &quot;Βοήθεια&quot; για περισσότερες λεπτομέρειες.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="76"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="82"/>
         <source>Teacher</source>
-        <translation type="unfinished">Εκπαιδευτικός</translation>
+        <translation>Εκπαιδευτικός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="95"/>
         <source>Students set</source>
-        <translation type="unfinished">Ομάδα μαθητών</translation>
+        <translation>Ομάδα μαθητών</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="108"/>
         <source>Subject</source>
-        <translation type="unfinished">Αντικείμενο</translation>
+        <translation>Αντικείμενο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="121"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Ετικέτα δραστηριότητας</translation>
+        <translation>Ετικέτα δραστηριότητας</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="139"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="146"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="153"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="160"/>
         <source>Help</source>
-        <translation type="unfinished">Βοήθεια</translation>
+        <translation>Βοήθεια</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="167"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
 </context>
 <context>
@@ -12889,58 +12889,58 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="233"/>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="260"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="233"/>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="260"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="265"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="271"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="272"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="272"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="298"/>
         <source>IMPORTANT NOTE: Please use this constraint ONLY when strictly necessary, when it is really useful, when it has effect, when it is not implied by the other constraints, and in a non-redundant way. Otherwise it may slow down very much the generation.</source>
-        <translation type="unfinished"></translation>
+        <translation>ΣΗΜΑΝΤΙΚΗ ΣΗΜΕΙΩΣΗ: Παρακαλώ, να χρησιμοποιείτε αυτόν τον περιορισμό ΜΟΝΟΝ όταν είναι απολύτως απαραίτητος, όταν είναι πραγματικά χρήσιμος, όταν είναι αποτελεσματικός και όταν δεν &quot;υποδηλώνεται&quot; (&quot;συνάγεται&quot;) από άλλους περιορισμούς. Παρακαλώ να μην τον χρησιμοποιείτε άσκοπα. Σε διαφορετική περίπτωση μπορεί να σημειωθεί πολύ μεγάλη επιβράδυνση στη δημιουργία ωρολογίου προγράμματος.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="301"/>
         <source>This constraint type was added on 25 September 2011.</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτός ο τύπος περιορισμού προστέθηκε στις 25 Σεπτεμβρίου 2011.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="303"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum number of time slots from those selected which can be occupied by the specified activities.</source>
-        <translation type="unfinished"></translation>
+        <translation>Για να χρησιμοποιήσετε αυτόν τον περιορισμό, πρέπει να καθορίσετε (επιλέξετε) ένα σύνολο δραστηριοτήτων, ένα σύνολο περιόδων και τον μέγιστο αριθμό των περιόδων (από τις επιλεγμένες) που μπορούν να &quot;καταληφθούν&quot; από τις επιλεγμένες δραστηριότητες.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="306"/>
         <source>Uses of this constraint are probably very wide. The main reason it was added was to enable users to specify that a teacher should have activities in certain time slots. Example: we have a week with 30 hours. Teacher T has 20 hours of activities, and we would like him to have activities Monday and Tuesday on the first two hours. Add a constraint of this type, with the set of activities being all the activities of teacher T, selected time slots being the remaining 30-2*2=26 slots of the week, and the maximum number of selected time slots which can be occupied by these activities being 20-2*2=16.</source>
-        <translation type="unfinished"></translation>
+        <translation>Οι χρήσεις αυτού του περιορισμού είναι πιθανώς πολλές. Ο κύριος λόγος που προστέθηκε ο περιορισμός αυτός ήταν να δώσει την δυνατότητα στους χρήστες να καθορίσουν ότι ένας εκπαιδευτικός θα πρέπει να έχει δραστηριότητες σε συγκεκριμένες περιόδους. Παράδειγμα: έχουμε μία εβδομάδα με 30 ώρες. Ο εκπαιδευτικός Ε έχει 20 ώρες δραστηριοτήτων, και θέλουμε να έχει οπωσδήποτε τέσσερις συνολικά δραστηριότητες οι οποίες θα &quot;τοποθετηθούν&quot; την Δευτέρα και την Τρίτη, στις δύο πρώτες ώρες της κάθε ημέρας. Προσθέτουμε έναν περιορισμό αυτού του τύπου, με το σύνολο των δραστηριοτήτων να είναι όλες οι δραστηριότητες του εκπαιδευτικού Ε, οι επιλεγμένες περίοδοι να είναι οι υπολειπόμενες 30-2*2=26 περίοδοι της εβδομάδας, και ο μέγιστος αριθμός των επιλεγμένων περιόδων που μπορούν να &quot;καταληφθούν&quot; από τις δραστηριότητες αυτές να είναι: 20-2*2=16.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="312"/>
         <source>FET help</source>
-        <translation type="unfinished">FET - Βοήθεια</translation>
+        <translation>FET - Βοήθεια</translation>
     </message>
 </context>
 <context>
@@ -12949,72 +12949,72 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="14"/>
         <source>Constraints activities occupy max time slots from selection</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Δραστηριότητες - καταλαμβάνουν μέγιστες περιόδους από επιλογή&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="26"/>
         <source>IMPORTANT: Please do not overuse this constraint, because the generation may be slowed down very much. Please read Help for more details.</source>
-        <translation type="unfinished"></translation>
+        <translation>ΣΗΜΑΝΤΙΚΟ: Παρακαλώ να μην κάνετε υπερβολική χρήση αυτού του περιορισμού, διότι η δημιουργία ωρολογίου προγράμματος μπορεί να απαιτήσει πολύ χρόνο. Παρακαλώ διαβάστε στη &quot;Βοήθεια&quot; για περισσότερες λεπτομέρειες.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="76"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="82"/>
         <source>Teacher</source>
-        <translation type="unfinished">Εκπαιδευτικός</translation>
+        <translation>Εκπαιδευτικός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="95"/>
         <source>Students set</source>
-        <translation type="unfinished">Ομάδα μαθητών</translation>
+        <translation>Ομάδα μαθητών</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="108"/>
         <source>Subject</source>
-        <translation type="unfinished">Αντικείμενο</translation>
+        <translation>Αντικείμενο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="121"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Ετικέτα δραστηριότητας</translation>
+        <translation>Ετικέτα δραστηριότητας</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="139"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="146"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="153"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="160"/>
         <source>Help</source>
-        <translation type="unfinished">Βοήθεια</translation>
+        <translation>Βοήθεια</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="167"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
 </context>
 <context>
@@ -13256,7 +13256,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiespreferredstartingtimesform_template.ui" line="14"/>
         <source>Constraints activities preferred starting times</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation>Περιορισμοί: &apos;Δραστηριότητες - προτιμητέοι χρόνοι έναρξης&apos;</translation>
+        <translation>Περιορισμοί: &quot;Δραστηριότητες - προτιμητέοι χρόνοι έναρξης&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredstartingtimesform_template.ui" line="83"/>
@@ -13571,7 +13571,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="26"/>
         <source>Each hour slot of each considered activity must be allowed by this constraint (more restrictive than preferred starting times for activities with duration greater than 1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Η κάθε περίοδος της κάθε σχετικής δραστηριότητας πρέπει να επιτρέπεται από αυτόν τον περιορισμό (πιο περιοριστικό από τον περιορισμό &quot;προτιμητέοι χρόνοι έναρξης&quot; για δραστηριότητες με διάρκεια μεγαλύτερη από 1)</translation>
     </message>
 </context>
 <context>
@@ -13602,13 +13602,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7312"/>
         <source>Activities same room if consecutive</source>
-        <translation>Δραστηριότητες - αν συνεχόμενες, στην ίδια αίθουσα</translation>
+        <translation>Δραστηριότητες - αν διαδοχικές, στην ίδια αίθουσα</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7295"/>
         <source>Activities same room if consecutive, WP:%1%, NA:%2, A: %3</source>
         <comment>Constraint description. WP means weight percentage, NA means the number of activities, A means activities list</comment>
-        <translation>Δραστηριότητες - αν συνεχόμενες, στην ίδια αίθουσα, ΠΒ:%1%, ΑΔ:%2, Δ: %3</translation>
+        <translation>Δραστηριότητες - αν διαδοχικές, στην ίδια αίθουσα, ΠΒ:%1%, ΑΔ:%2, Δ: %3</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7313"/>
@@ -13640,7 +13640,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7374"/>
         <source>Space constraint activities same room if consecutive broken</source>
-        <translation>Δεν έχει τηρηθεί χωρικός περιορισμός &quot;δραστηριότητες - αν συνεχόμενες, στην ίδια αίθουσα&quot;</translation>
+        <translation>Δεν έχει τηρηθεί χωρικός περιορισμός &quot;δραστηριότητες - αν διαδοχικές, στην ίδια αίθουσα&quot;</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7376"/>
@@ -13689,7 +13689,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform_template.ui" line="14"/>
         <source>Constraints activities same room if consecutive</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation>Περιορισμοί &apos;Δραστηριότητες - αν συνεχόμενες, στην ίδια αίθουσα&apos;</translation>
+        <translation>Περιορισμοί &apos;Δραστηριότητες - αν διαδοχικές, στην ίδια αίθουσα&apos;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform_template.ui" line="28"/>
@@ -13876,7 +13876,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform.cpp" line="322"/>
         <source>IMPORTANT: after adding such constraints, it is necessary (otherwise generation might be impossible) to remove redundant constraints min days between activities. If you are sure that you don&apos;t have redundant constraints, you can skip this step, but it doesn&apos;t hurt to do it as a precaution. Also, you don&apos;t have to do that after each added constraint, but only once after adding more constraints of this type. Please read Help/Important tips - tip number 2 for details</source>
-        <translation type="unfinished"></translation>
+        <translation>ΣΗΜΑΝΤΙΚΟ: μετά την προσθήκη αυτών των περιορισμών, είναι απαραίτητο (διαφορετικά η δημιουργία ωρολογίου προγράμματος μπορεί να καταστεί αδύνατη) να διαγράψετε τους περιττούς περιορισμούς &quot;ελάχιστες ημέρες ανάμεσα σε δραστηριότητες&quot;. Αν είστε σίγουροι ότι δεν έχετε περιττούς περιορισμούς, μπορείτε να παραλείψετε αυτό το βήμα, αλλά δεν βλάπτει να το κάνετε για προφύλαξη. Επίσης, δεν χρειάζεται να κάνετε το ίδιο μετά από κάθε περιορισμό που προσθέτετε, αλλά μόνον μία φορά, μετά την προσθήκη περισσοτέρων περιορισμών αυτού του τύπου. Παρακαλώ διαβάστε στην &quot;Βοήθεια/Σημαντικές υποδείξεις&quot;, υπόδειξη αριθμός 2 για λεπτομέρειες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform.cpp" line="327"/>
@@ -13955,7 +13955,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="32"/>
         <source>Please try to read Help/Important tips, advice 2). It is IMPORTANT to remove redundant min days constraints after adding constraints same starting day. Please also click Help button here for information.</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρακαλώ προσπαθείστε να διαβάσετε στη &quot;Βοήθεια/Σημαντικές υποδείξεις&quot;, συμβουλή 2). Είναι σημαντικό να διαγράψετε τους περιττούς περιορισμούς &quot;ελάχιστες ημέρες&quot; μετά την προσθήκη των περιοριορισμών &quot;ίδια ημέρα έναρξης&quot;. Επίσης, παρακαλώ πιέστε το κουμπί &quot;Βοήθεια&quot; εδώ, για πληροφορίες.</translation>
     </message>
 </context>
 <context>
@@ -14278,12 +14278,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform.cpp" line="322"/>
         <source>IMPORTANT: after adding such constraints, it is necessary (otherwise generation might be impossible) to remove redundant constraints min days between activities. If you are sure that you don&apos;t have redundant constraints, you can skip this step, but it doesn&apos;t hurt to do it as a precaution. Also, you don&apos;t have to do that after each added constraint, but only once after adding more constraints of this type. Please read Help/Important tips - tip number 2 for details</source>
-        <translation type="unfinished"></translation>
+        <translation>ΣΗΜΑΝΤΙΚΟ: μετά την προσθήκη αυτών των περιορισμών, είναι απαραίτητο (διαφορετικά η δημιουργία ωρολογίου προγράμματος μπορεί να καταστεί αδύνατη) να διαγράψετε τους περιττούς περιορισμούς &quot;ελάχιστες ημέρες ανάμεσα σε δραστηριότητες&quot;. Αν είστε σίγουροι ότι δεν έχετε περιττούς περιορισμούς, μπορείτε να παραλείψετε αυτό το βήμα, αλλά δεν βλάπτει να το κάνετε για προφύλαξη. Επίσης, δεν χρειάζεται να κάνετε το ίδιο μετά από κάθε περιορισμό που προσθέτετε, αλλά μόνον μία φορά, μετά την προσθήκη περισσοτέρων περιορισμών αυτού του τύπου. Παρακαλώ διαβάστε στην &quot;Βοήθεια/Σημαντικές υποδείξεις&quot;, υπόδειξη αριθμός 2 για λεπτομέρειες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform.cpp" line="327"/>
         <source>If you divide the years by categories (the students have optional courses), you may not need this kind of constraint. If the year is for instance divided by language, English/French/German, sometimes people think that it is needed that these optional activities to have the same starting time. But solutions exist without adding same starting time constraints. Some people try to avoid students gaps by using this constraint, because they need to do it this way in other timetabling software. But it is not the best practice to do it with such a constraint. The correct way is to add a max 0 gaps per week constraint for students and maybe also an early max 0 beginnings at second hour constraint for students.</source>
-        <translation type="unfinished"></translation>
+        <translation>Εάν υποδιαιρέσετε τα έτη σε κατηγορίες (για την περίπτωση που οι μαθητές έχουν μαθήματα επιλογής ή μαθήματα κατεύθυνσης), ενδεχομένως να μην χρειάζεστε αυτόν τον τύπο περιορισμού. Αν -για παράδειγμα- το έτος υποδιαιρείται ως προς την ξένη γλώσσα (Αγγλικά/Γαλλικά/Γερμανικά), μερικές φορές πολλοί νομίζουν ότι είναι απαραίτητο αυτές οι δραστηριότητες με μαθήματα επιλογής να έχουν τον ίδιο χρόνο έναρξης. Αλλά, μπορούν να βρεθούν λύσεις ακόμη και χωρίς να προστεθούν περιορισμοί του τύπου &quot;δραστηριότητες - ίδιος χρόνος έναρξης&quot;. Κάποιοι προσπαθούν να αποφύγουν την ύπαρξη κενών στους μαθητές με την χρήση αυτού του περιορισμού, διότι έτσι αντιμετωπίζουν το πρόβλημα αυτό με κάποιο άλλο λογισμικό κατάρτισης ωρολογίων προγραμμάτων. Αλλά αυτή δεν είναι η καλύτερη προσέγγιση, δηλαδή να προσπαθείτε να επιτύχετε αυτό το αποτέλεσμα με την χρήση τέτοιου είδους περιορισμού. Ο ορθός τρόπος είναι να προσθέσετε τον περιορισμό &quot;μαθητές - μέγιστα κενά ανά εβδομάδα&quot;=0 καθώς επίσης πιθανώς και τον περιορισμό &quot;μαθητές - μέγιστες ενάρξεις την δεύτερη ώρα&quot;=0.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform.cpp" line="334"/>
@@ -14306,12 +14306,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="32"/>
         <source>Please read Help/Important tips, advice 2). It is IMPORTANT to remove redundant min days constraints after adding constraints same starting time. Click the Help button!</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρακαλώ διαβάστε στη &quot;Βοήθεια/Σημαντικές υποδείξεις, συμβουλή 2). Είναι ΣΗΜΑΝΤΙΚΟ να διαγράψετε τους περιττούς περιορισμούς &quot;ελάχιστες ημέρες&quot; μετά την προσθήκη των περιορισμών &quot;ίδιος χρόνος έναρξης&quot;. Πιέστε το κουμπί &quot;Βοήθεια&quot;!</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="54"/>
         <source>NOTE: You might not need this constraint. Press Help!</source>
-        <translation type="unfinished"></translation>
+        <translation>ΣΗΜΕΙΩΣΗ: Μπορεί να μην χρειάζεστε αυτόν τον περιορισμό. Πιέστε στη &quot;Βοήθεια&quot;!</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="72"/>
@@ -14482,62 +14482,62 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="14"/>
         <source>Constraints activity ends students day</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Δραστηριότητα - &apos;κλείνει&apos; ημέρα μαθητών&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="26"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="134"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="113"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="36"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="127"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="120"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="52"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="58"/>
         <source>Teacher</source>
-        <translation type="unfinished">Εκπαιδευτικός</translation>
+        <translation>Εκπαιδευτικός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="97"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Ετικέτα δραστηριότητας</translation>
+        <translation>Ετικέτα δραστηριότητας</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="84"/>
         <source>Subject</source>
-        <translation type="unfinished">Αντικείμενο</translation>
+        <translation>Αντικείμενο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="71"/>
         <source>Students set</source>
-        <translation type="unfinished">Ομάδα μαθητών</translation>
+        <translation>Ομάδα μαθητών</translation>
     </message>
 </context>
 <context>
@@ -14650,33 +14650,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitypreferredroomform.cpp" line="231"/>
         <location filename="../src/interface/constraintactivitypreferredroomform.cpp" line="258"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform.cpp" line="231"/>
         <location filename="../src/interface/constraintactivitypreferredroomform.cpp" line="258"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform.cpp" line="263"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform.cpp" line="269"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform.cpp" line="270"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform.cpp" line="270"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -14685,67 +14685,67 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="14"/>
         <source>Constraints activity preferred room</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Δραστηριότητα - προτιμητέα αίθουσα&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="26"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="146"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="125"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="36"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="139"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="132"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="113"/>
         <source>Filter rooms</source>
-        <translation type="unfinished"></translation>
+        <translation>Φίλτρο αιθουσών</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="52"/>
         <source>Filter activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Φίλτρο δραστηριοτήτων</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="58"/>
         <source>Teacher</source>
-        <translation type="unfinished">Εκπαιδευτικός</translation>
+        <translation>Εκπαιδευτικός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="84"/>
         <source>Subject</source>
-        <translation type="unfinished">Αντικείμενο</translation>
+        <translation>Αντικείμενο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="71"/>
         <source>Students set</source>
-        <translation type="unfinished">Ομάδα μαθητών</translation>
+        <translation>Ομάδα μαθητών</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="97"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Ετικέτα δραστηριότητας</translation>
+        <translation>Ετικέτα δραστηριότητας</translation>
     </message>
 </context>
 <context>
@@ -14844,33 +14844,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitypreferredroomsform.cpp" line="221"/>
         <location filename="../src/interface/constraintactivitypreferredroomsform.cpp" line="248"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform.cpp" line="221"/>
         <location filename="../src/interface/constraintactivitypreferredroomsform.cpp" line="248"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform.cpp" line="253"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform.cpp" line="259"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform.cpp" line="260"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform.cpp" line="260"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -14879,62 +14879,62 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="14"/>
         <source>Constraints activity preferred rooms</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Δραστηριότητα - προτιμητέες αίθουσες&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="142"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="121"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="135"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="128"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="60"/>
         <source>Filter activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Φίλτρο δραστηριοτήτων</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="66"/>
         <source>Teacher</source>
-        <translation type="unfinished">Εκπαιδευτικός</translation>
+        <translation>Εκπαιδευτικός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="92"/>
         <source>Subject</source>
-        <translation type="unfinished">Αντικείμενο</translation>
+        <translation>Αντικείμενο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="79"/>
         <source>Students set</source>
-        <translation type="unfinished">Ομάδα μαθητών</translation>
+        <translation>Ομάδα μαθητών</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="105"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Ετικέτα δραστηριότητας</translation>
+        <translation>Ετικέτα δραστηριότητας</translation>
     </message>
 </context>
 <context>
@@ -15068,33 +15068,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform.cpp" line="221"/>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform.cpp" line="248"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform.cpp" line="221"/>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform.cpp" line="248"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform.cpp" line="253"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform.cpp" line="259"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform.cpp" line="260"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform.cpp" line="260"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -15103,62 +15103,62 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="14"/>
         <source>Constraints activity preferred starting time</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Δραστηριότητα - προτιμητέος χρόνος έναρξης&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="26"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="134"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="113"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="36"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="127"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="120"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="52"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="58"/>
         <source>Teacher</source>
-        <translation type="unfinished">Εκπαιδευτικός</translation>
+        <translation>Εκπαιδευτικός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="97"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Ετικέτα δραστηριότητας</translation>
+        <translation>Ετικέτα δραστηριότητας</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="84"/>
         <source>Subject</source>
-        <translation type="unfinished">Αντικείμενο</translation>
+        <translation>Αντικείμενο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="71"/>
         <source>Students set</source>
-        <translation type="unfinished">Ομάδα μαθητών</translation>
+        <translation>Ομάδα μαθητών</translation>
     </message>
 </context>
 <context>
@@ -15267,33 +15267,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform.cpp" line="219"/>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform.cpp" line="246"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform.cpp" line="219"/>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform.cpp" line="246"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform.cpp" line="251"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform.cpp" line="257"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform.cpp" line="258"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform.cpp" line="258"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -15302,62 +15302,62 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="14"/>
         <source>Constraints activity preferred starting times</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Δραστηριότητα - προτιμητέοι χρόνοι έναρξης&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="26"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="137"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="113"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="130"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="123"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="52"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="58"/>
         <source>Teacher</source>
-        <translation type="unfinished">Εκπαιδευτικός</translation>
+        <translation>Εκπαιδευτικός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="97"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Ετικέτα δραστηριότητας</translation>
+        <translation>Ετικέτα δραστηριότητας</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="84"/>
         <source>Subject</source>
-        <translation type="unfinished">Αντικείμενο</translation>
+        <translation>Αντικείμενο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="71"/>
         <source>Students set</source>
-        <translation type="unfinished">Ομάδα μαθητών</translation>
+        <translation>Ομάδα μαθητών</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="36"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
 </context>
 <context>
@@ -15478,33 +15478,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform.cpp" line="219"/>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform.cpp" line="246"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform.cpp" line="219"/>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform.cpp" line="246"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform.cpp" line="251"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform.cpp" line="257"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform.cpp" line="258"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform.cpp" line="258"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -15513,67 +15513,67 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="14"/>
         <source>Constraints activity preferred time slots</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Δραστηριότητα - προτιμητέες περίοδοι&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="146"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="153"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="139"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="129"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="68"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="74"/>
         <source>Teacher</source>
-        <translation type="unfinished">Εκπαιδευτικός</translation>
+        <translation>Εκπαιδευτικός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="113"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Ετικέτα δραστηριότητας</translation>
+        <translation>Ετικέτα δραστηριότητας</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="100"/>
         <source>Subject</source>
-        <translation type="unfinished">Αντικείμενο</translation>
+        <translation>Αντικείμενο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="87"/>
         <source>Students set</source>
-        <translation type="unfinished">Ομάδα μαθητών</translation>
+        <translation>Ομάδα μαθητών</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="52"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="42"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="26"/>
         <source>Each hour slot of each considered activity must be allowed by this constraint (more restrictive than preferred starting times for activities with duration greater than 1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Η κάθε περίοδος της κάθε σχετικής δραστηριότητας πρέπει να επιτρέπεται από αυτόν τον περιορισμό (πιο περιοριστικό από τον περιορισμό &quot;προτιμητέοι χρόνοι έναρξης&quot; για δραστηριότητες με διάρκεια μεγαλύτερη από 1)</translation>
     </message>
 </context>
 <context>
@@ -15669,33 +15669,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitytagpreferredroomform.cpp" line="137"/>
         <location filename="../src/interface/constraintactivitytagpreferredroomform.cpp" line="164"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform.cpp" line="137"/>
         <location filename="../src/interface/constraintactivitytagpreferredroomform.cpp" line="164"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform.cpp" line="169"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform.cpp" line="175"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform.cpp" line="176"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform.cpp" line="176"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -15704,42 +15704,42 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="14"/>
         <source>Constraints activity tag preferred room</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Ετικέτα δραστηριότητας - προτιμητέα αίθουσα&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="98"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="77"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="91"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="84"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
 </context>
 <context>
@@ -15835,33 +15835,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitytagpreferredroomsform.cpp" line="135"/>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform.cpp" line="162"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform.cpp" line="135"/>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform.cpp" line="162"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform.cpp" line="167"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform.cpp" line="173"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform.cpp" line="174"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform.cpp" line="174"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -15870,42 +15870,42 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="14"/>
         <source>Constraints activity tag preferred rooms</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Ετικέτα δραστηριότητας - προτιμητέες αίθουσες&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="85"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="64"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="26"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="36"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="78"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="71"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="52"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
 </context>
 <context>
@@ -16002,53 +16002,53 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="112"/>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="139"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="112"/>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="139"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="144"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="150"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="151"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="151"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="158"/>
         <source>Do you really want to remove the basic compulsory space constraint?</source>
-        <translation type="unfinished">Σίγουρα θέλετε να διαγράψετε τον βασικό υποχρεωτικό χωρικό περιορισμό;</translation>
+        <translation>Σίγουρα θέλετε να διαγράψετε τον βασικό υποχρεωτικό χωρικό περιορισμό;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="160"/>
         <source>You cannot generate a timetable without this constraint.</source>
-        <translation type="unfinished">Δεν μπορείτε να δημιουργήσετε ωρολόγιο πρόγραμμα χωρίς αυτόν τον περιορισμό.</translation>
+        <translation>Δεν μπορείτε να δημιουργήσετε ωρολόγιο πρόγραμμα χωρίς αυτόν τον περιορισμό.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="162"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
-        <translation type="unfinished">Σημείωση: μπορείτε να προσθέσετε ξανά περιορισμό αυτού του τύπου από το μενού Δεδομένα -&gt; Χωρικοί περιορισμοί -&gt; Διάφοροι - &gt; Βασικοί υποχρεωτικοί χωρικοί περιορισμοί.</translation>
+        <translation>Σημείωση: μπορείτε να προσθέσετε ξανά περιορισμό αυτού του τύπου από το μενού Δεδομένα -&gt; Χωρικοί περιορισμοί -&gt; Διάφοροι - &gt; Βασικοί υποχρεωτικοί χωρικοί περιορισμοί.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="165"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET - Προειδοποίηση</translation>
+        <translation>FET - Προειδοποίηση</translation>
     </message>
 </context>
 <context>
@@ -16057,37 +16057,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="14"/>
         <source>Constraints basic compulsory space</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: Βασικοί υποχρεωτικοί χώρου</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
 </context>
 <context>
@@ -16192,53 +16192,53 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="114"/>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="114"/>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="160"/>
         <source>Do you really want to remove the basic compulsory time constraint?</source>
-        <translation type="unfinished">Σίγουρα θέλετε να διαγράψετε τον βασικό υποχρεωτικό χρονικό περιορισμό;</translation>
+        <translation>Σίγουρα θέλετε να διαγράψετε τον βασικό υποχρεωτικό χρονικό περιορισμό;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="162"/>
         <source>You cannot generate a timetable without this constraint.</source>
-        <translation type="unfinished">Δεν μπορείτε να δημιουργήσετε ωρολόγιο πρόγραμμα χωρίς αυτόν τον περιορισμό.</translation>
+        <translation>Δεν μπορείτε να δημιουργήσετε ωρολόγιο πρόγραμμα χωρίς αυτόν τον περιορισμό.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="164"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
-        <translation type="unfinished">Σημείωση: μπορείτε να προσθέσετε ξανά περιορισμό αυτού του τύπου από το μενού Δεδομένα -&gt; Χρονικοί περιορισμοί &gt; Διάφοροι -&gt; Βασικοί υποχρεωτικοί χρονικοί περιορισμοί.</translation>
+        <translation>Σημείωση: μπορείτε να προσθέσετε ξανά περιορισμό αυτού του τύπου από το μενού Δεδομένα -&gt; Χρονικοί περιορισμοί &gt; Διάφοροι -&gt; Βασικοί υποχρεωτικοί χρονικοί περιορισμοί.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="167"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET - Προειδοποίηση</translation>
+        <translation>FET - Προειδοποίηση</translation>
     </message>
 </context>
 <context>
@@ -16247,37 +16247,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="14"/>
         <source>Constraints basic compulsory time</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: Βασικοί υποχρεωτικοί χρόνου</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
 </context>
 <context>
@@ -16369,33 +16369,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintbreaktimesform.cpp" line="114"/>
         <location filename="../src/interface/constraintbreaktimesform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform.cpp" line="114"/>
         <location filename="../src/interface/constraintbreaktimesform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -16404,42 +16404,42 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="14"/>
         <source>Constraints break times</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: Χρόνοι διαλειμμάτων</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="99"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="78"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="26"/>
         <source>Note: An activity with duration greater than 1 cannot be split over a break. Also, the activities constrained by min days between activities constraints with &apos;consecutive if same day&apos; = true cannot spread over a break.</source>
-        <translation type="unfinished"></translation>
+        <translation>Σημείωση: Μία δραστηριότητα με διάρκεια μεγαλύτερη από 1 δεν μπορεί να επιμεριστεί πριν και μετά από ένα διάλειμμα. Επίσης, οι δραστηριότητες που έχουν περιορισμούς &quot;ελάχιστες ημέρες ανάμεσα σε δραστηριότητες&quot; με &apos;διαδοχικές αν την ίδια ημέρα&apos; = αληθής, δεν μπορούν να επιμεριστούν πριν και μετά από ένα διάλειμμα.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="92"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="85"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
 </context>
 <context>
@@ -16551,58 +16551,58 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="232"/>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="259"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="232"/>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="259"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="264"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="270"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="271"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="271"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="297"/>
         <source>Help about the constraint max days between activities:</source>
-        <translation type="unfinished"></translation>
+        <translation>Βοήθεια για τον περιορισμό &quot;μέγιστες ημέρες ανάμεσα σε δραστηριότητες&quot;:</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="299"/>
-        <source>This constraint was suggested for the following situation: a user needed that activities A1, A2 and A3 to be in follower days (like: A1 on Tuesday, A2 on Wednesday and A3 on Thursday. So, they must be in 3 consecutive days). This is simple: add a constraint max days between activities for A1, A2 and A3, with max 2 days between them. It is supposed that these activities are constrained not to be in the same day by a constraint min days between activities.</source>
-        <translation type="unfinished"></translation>
+        <source>This constraint was suggested for the following situation: a user needed that activities A1, A2 and A3 to be in consecutive days (like: A1 on Tuesday, A2 on Wednesday and A3 on Thursday. So, they must be in 3 consecutive days). This is simple: add a constraint max days between activities for A1, A2 and A3, with max 2 days between them. It is supposed that these activities are constrained not to be in the same day by a constraint min days between activities.</source>
+        <translation>Ο περιορισμός αυτός είχε προταθεί για την παρακάτω περίπτωση: κάποιος χρήστης χρειαζόταν να τοποθετήσει τις δραστηριότητες Δ1, Δ2 και Δ3 σε διαδοχικές ημέρες (όπως: Δ1 την Τρίτη, Δ2 την Τετάρτη και Δ3 την Πέμπτη. Αυτό είναι εύκολο: προσθέστε έναν περιορισμό &quot;μέγιστες ημέρες ανάμεσα σε δραστηριότητες&quot; για τις δραστηριότητες Δ1, Δ2 και Δ3, με μέγιστες 2 ημέρες ανάμεσά τους. Θεωρείται ότι οι δραστηριότητες αυτές δεν πραγματοποιούνται την ίδια ημέρα εξαιτίας ύπαρξης του περιορισμού &quot;ελάχιστες ημέρες ανάμεσα σε δραστηριότητες&quot;.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="304"/>
         <source>So, the general situation: this constraint ensures that between each pair from the selected activities, the distance in days is at most the selected value. Distance = 1 day between a pair A1 and A2 means that A1 and A2 are in consecutive days (like Thursday and Friday). Distance = 3 days means that A1 and A2 are 3 days apart, for instance Monday and Thursday.</source>
-        <translation type="unfinished"></translation>
+        <translation>Επομένως, η γενική κατάσταση: ο περιορισμός αυτός εξασφαλίζει ότι ανάμεσα σε κάθε ζεύγος επιλεγμένων δραστηριοτήτων, η απόσταση σε ημέρες είναι κατά μέγιστο η επιλεγμένη τιμή. Απόσταση = 1 ημέρα ανάμεσα σε ζεύγος Δ1 και Δ2 σημαίνει ότι οι Δ1 και Δ2 πραγματοποιούνται σε διαδοχικές ημέρες (όπως Πέμπτη και Παρασκευή). Απόσταση = 3 ημέρες, σημαίνει ότι οι Δ1 και Δ2 απέχουν 3 ημέρες, για παράδειγμα πραγματοποιούνται Δευτέρα και Πέμπτη.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="311"/>
         <source>FET help</source>
-        <translation type="unfinished">FET - Βοήθεια</translation>
+        <translation>FET - Βοήθεια</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="308"/>
         <source>Another example: teacher T wants to ensure that his activities take place in at most 4 consecutive days (so, from Monday to Thursday or from Tuesday to Friday). Then, add all his activities and max days between them = 3.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ακόμη ένα παράδειγμα: ο εκπαιδευτικός Ε θέλει να εξασφαλίσει ότι οι δραστηριότητές του θα πραγματοποιούνται σε κατά μέγιστο 4 διαδοχικές ημέρες (δηλαδή, από Δευτέρα μέχρι Πέμπτη, ή από Τρίτη μέχρι Παρασκευή). Έτσι, πρέπει να προσθέσετε όλες τις δραστηριότητές του και θα θέσετε μέγιστες ημέρες ανάμεσα στις δραστηριότητες = 3.</translation>
     </message>
 </context>
 <context>
@@ -16610,68 +16610,68 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="36"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="147"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="129"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="122"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="115"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="52"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="14"/>
         <source>Constraints max days between activities</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Μέγιστες ημέρες ανάμεσα σε δραστηριότητες&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="58"/>
         <source>Teacher</source>
-        <translation type="unfinished">Εκπαιδευτικός</translation>
+        <translation>Εκπαιδευτικός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="97"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Ετικέτα δραστηριότητας</translation>
+        <translation>Ετικέτα δραστηριότητας</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="84"/>
         <source>Subject</source>
-        <translation type="unfinished">Αντικείμενο</translation>
+        <translation>Αντικείμενο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="71"/>
         <source>Students set</source>
-        <translation type="unfinished">Ομάδα μαθητών</translation>
+        <translation>Ομάδα μαθητών</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="26"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="140"/>
         <source>Help</source>
-        <translation type="unfinished">Βοήθεια</translation>
+        <translation>Βοήθεια</translation>
     </message>
 </context>
 <context>
@@ -16763,7 +16763,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1911"/>
         <source>Consecutive if same day=%1</source>
-        <translation>Συνεχόμενες εάν την ίδια ημέρα=%1</translation>
+        <translation>Διαδοχικές εάν την ίδια ημέρα=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1914"/>
@@ -16807,83 +16807,83 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="370"/>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="427"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="234"/>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="261"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="266"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="272"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="273"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="273"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="316"/>
         <source>FET has meet a critical error - aborting current operation, please report bug (old weight is not -1 and not (&gt;=0.0 and &lt;=100.0))</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Παρουσιάστηκε κρίσιμο σφάλμα στο FET - η τρέχουσα διαδικασία ματαιώνεται. Παρακαλώ να αναφέρετε το σφάλμα λογισμικού (bug) (η παλιά βαρύτητα δεν είναι -1 ούτε και (&gt;=0.0 και &lt;=100.0))</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="326"/>
         <source>FET has met a critical error - aborting current operation, please report bug (new weight is not -1 and not (&gt;=0.0 and &lt;=100.0))</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Παρουσιάστηκε κρίσιμο σφάλμα στο FET - η τρέχουσα διαδικασία ματαιώνεται. Παρακαλώ να αναφέρετε το σφάλμα λογισμικού (bug) (η νέα βαρύτητα δεν είναι -1 ούτε και (&gt;=0.0 και &lt;=100.0))</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="335"/>
         <source>FET has met a critical error - aborting current operation, please report bug (old consecutive is not any, yes or no)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Παρουσιάστηκε κρίσιμο σφάλμα στο FET - η τρέχουσα διαδικασία ματαιώνεται. Παρακαλώ να αναφέρετε το σφάλμα λογισμικού (bug) (οι παλιές διαδοχικές δεν είναι ούτε ναι, ούτε όχι)</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="341"/>
         <source>FET has met a critical error - aborting current operation, please report bug (new consecutive is not no_change, yes or no)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Παρουσιάστηκε κρίσιμο σφάλμα στο FET - η τρέχουσα διαδικασία ματαιώνεται. Παρακαλώ να αναφέρετε το σφάλμα λογισμικού (bug) (οι νέες διαδοχικές δεν είναι &quot;χωρίς αλλαγή&quot;, ούτε ναι, ούτε όχι)</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="351"/>
         <source>FET has met a critical error - aborting current operation, please report bug (old min days is not -1 or 1..ndaysperweek)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Παρουσιάστηκε κρίσιμο σφάλμα στο FET - η τρέχουσα διαδικασία ματαιώνεται. Παρακαλώ να αναφέρετε το σφάλμα λογισμικού (bug) (οι παλιές &quot;ελάχιστες ημέρες&quot; δεν είναι ούτε -1 or 1.. nημέρες ανά εβδομάδα)</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="361"/>
         <source>FET has met a critical error - aborting current operation, please report bug (new min days is not -1 or 1..ndaysperweek)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Παρουσιάστηκε κρίσιμο σφάλμα στο FET - η τρέχουσα διαδικασία ματαιώνεται. Παρακαλώ να αναφέρετε το σφάλμα λογισμικού (bug) (οι νέες &quot;ελάχιστες ημέρες&quot; δεν είναι ούτε -1 ούτε 1.. nημέρεςανά εβδομάδα)</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="371"/>
         <source>FET has met a critical error - aborting current operation, please report bug (old nActivities is not -1 or &gt;=1)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Παρουσιάστηκε κρίσιμο σφάλμα στο FET - η τρέχουσα διαδικασία ματαιώνεται. Παρακαλώ να αναφέρετε το σφάλμα λογισμικού (bug) (οι παλιές nΔραστηριότητες δεν είναι ούτε -1 ούτε &gt;=1)</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="427"/>
         <source>There were inspected (and possibly modified) %1 constraints min days between activities matching your criteria</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Εξετάστηκαν (και πιθανώς τροποποιήθηκαν) %1 περιορισμοί &quot;ελάχιστες ημέρες ανάμεσα σε δραστηριότητες&quot; που ταιριάζουν στα κριτήριά σας</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="429"/>
         <source>NOTE: If you are using constraints of type activities same starting time or activities same starting day, it is important (after current operation) to apply the operation of removing redundant constraints.</source>
-        <translation type="unfinished"></translation>
+        <translation>ΣΗΜΕΙΩΣΗ: Αν χρησιμοποιείτε περιορισμούς του τύπου &quot;δραστηριότητες - ίδιος χρόνος έναρξης&quot; ή &quot;δραστηριότητες - ίδια ημέρα έναρξης&quot;, είναι σημαντικό (μετά την τρέχουσα διαδικασία) να εφαρμόσετε τη διαδικασία διαγραφής περιττών περιορισμών.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="431"/>
         <source>Read Help/Important tips - tip 2) for details.</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαβάστε στο &quot;Βοήθεια/Σημαντικές υποδείξεις - υπόδειξη 2) για λεπτομέρειες</translation>
     </message>
 </context>
 <context>
@@ -16892,67 +16892,67 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="14"/>
         <source>Constraints min days between activities</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Ελάχιστες ημέρες ανάμεσα σε δραστηριότητες&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="36"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="134"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="127"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="120"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="113"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="52"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="58"/>
         <source>Teacher</source>
-        <translation type="unfinished">Εκπαιδευτικός</translation>
+        <translation>Εκπαιδευτικός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="97"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Ετικέτα δραστηριότητας</translation>
+        <translation>Ετικέτα δραστηριότητας</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="84"/>
         <source>Subject</source>
-        <translation type="unfinished">Αντικείμενο</translation>
+        <translation>Αντικείμενο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="71"/>
         <source>Students set</source>
-        <translation type="unfinished">Ομάδα μαθητών</translation>
+        <translation>Ομάδα μαθητών</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="141"/>
         <source>Modify multiple constraints at once</source>
-        <translation type="unfinished"></translation>
+        <translation>Τροποποίηση πολλαπλών περιορισμών με μία ενέργεια</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="26"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
 </context>
 <context>
@@ -17064,43 +17064,43 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="233"/>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="260"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="233"/>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="260"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="265"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="271"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="272"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="272"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="296"/>
         <source>Please make sure that the selected activities are not forced to be consecutive by some other constraint &apos;min days between activities&apos; (with &apos;consecutive if same day&apos; true), by a constraint &apos;two activities consecutive&apos;, or by a constraint &apos;two activities grouped&apos; (also, if you have a constraint &apos;three activities grouped&apos; related to the selected activities, make sure that the constraints do not contradict).</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρακαλώ βεβαιωθείτε ότι για τις επιλεγμένες δραστηριότητες δεν έχει επιβληθεί να είναι διαδοχικές με κάποιον άλλο περιορισμό &quot;ελάχιστες ημέρες ανάμεσα σε δραστηριότητες&quot; (με &quot;διαδοχικές εάν την ίδια ημέρα&quot; = αληθής), με περιορισμό &quot;δύο δραστηριότητες - διαδοχικές&quot;, ή με περιορισμό &quot;δύο δραστηριότητες - ομαδοποιημένες&quot; (επίσης, αν έχετε περιορισμό &quot;τρεις δραστηριότητες - ομαδοποιημένες&quot; που σχετίζεται με τις επιλεγμένες δραστηριότητες, βεβαιωθείτε ότι οι περιορισμοί δεν έρχονται σε αντίφαση).</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="303"/>
         <source>FET help</source>
-        <translation type="unfinished">FET - Βοήθεια</translation>
+        <translation>FET - Βοήθεια</translation>
     </message>
 </context>
 <context>
@@ -17108,78 +17108,78 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="175"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="161"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="154"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="147"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="14"/>
         <source>Constraints min gaps between activities</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Ελάχιστα κενά ανάμεσα σε δραστηριότητες&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="84"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="90"/>
         <source>Teacher</source>
-        <translation type="unfinished">Εκπαιδευτικός</translation>
+        <translation>Εκπαιδευτικός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="129"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Ετικέτα δραστηριότητας</translation>
+        <translation>Ετικέτα δραστηριότητας</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="116"/>
         <source>Subject</source>
-        <translation type="unfinished">Αντικείμενο</translation>
+        <translation>Αντικείμενο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="103"/>
         <source>Students set</source>
-        <translation type="unfinished">Ομάδα μαθητών</translation>
+        <translation>Ομάδα μαθητών</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="58"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="68"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="42"/>
         <source>Note: please click Help for important advice</source>
-        <translation type="unfinished"></translation>
+        <translation>Σημείωση: Παρακαλώ πατήστε στην &quot;Βοήθεια&quot; για σημαντικές συμβουλές</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="168"/>
         <source>Help</source>
-        <translation type="unfinished">Βοήθεια</translation>
+        <translation>Βοήθεια</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="26"/>
         <source>This constraint ensures, for a set of activities: if any pair of activities is in the same day, they must be separated by at least min gaps (hours).</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτός ο περιορισμός εξασφαλίζει για ένα σύνολο δραστηριοτήτων το εξής: αν οποιοδήποτε ζεύγος δραστηριοτήτων είναι την ίδια ημέρα, θα πρέπει οι δραστηριότητες αυτές να διαχωρίζονται από έναν ελάχιστο αριθμό κενών (ωρών).</translation>
     </message>
 </context>
 <context>
@@ -17295,33 +17295,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintroomnotavailabletimesform.cpp" line="126"/>
         <location filename="../src/interface/constraintroomnotavailabletimesform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform.cpp" line="126"/>
         <location filename="../src/interface/constraintroomnotavailabletimesform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -17330,42 +17330,42 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintroomnotavailabletimesform_template.ui" line="14"/>
         <source>Constraints room not available times</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Αίθουσα - μη διαθέσιμοι χρόνοι&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform_template.ui" line="95"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform_template.ui" line="88"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform_template.ui" line="81"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
 </context>
 <context>
@@ -17442,33 +17442,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="125"/>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="152"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="125"/>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="152"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="157"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="163"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="164"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="164"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -17476,48 +17476,48 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="111"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="90"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="104"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Constraints students activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Μαθητές - μέγιστες ώρες συνεχόμενα με ετικέτα δραστηριότητας&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="97"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="76"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="26"/>
         <source>This constraint ensures that all students do not have more than max hours continuously of activities with the specified activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο περιορισμός αυτός εξασφαλίζει ότι όλοι οι μαθητές θα έχουν έναν μέγιστο αριθμό ωρών συνεχόμενα με δραστηριότητες που φέρουν την συγκεκριμένη ετικέτα</translation>
     </message>
 </context>
 <context>
@@ -17598,33 +17598,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform.cpp" line="128"/>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform.cpp" line="155"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform.cpp" line="128"/>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform.cpp" line="155"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform.cpp" line="160"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform.cpp" line="166"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform.cpp" line="167"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform.cpp" line="167"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -17633,57 +17633,57 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Constraints students activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Μαθητές - μέγιστες ώρες ημερησίως με ετικέτα δραστηριότητας&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="26"/>
         <source>This constraint ensures that all students do not have more than max hours daily of activities with the specified activity tag.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο περιορισμός αυτός εξασφαλίζει ότι όλοι οι μαθητές θα έχουν έναν μέγιστο αριθμό ωρών ημερησίως με δραστηριότητες που φέρουν την συγκεκριμένη ετικέτα.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="42"/>
         <source>IMPORTANT: this constraint is not perfectly optimized. Press Help button for more information. Use with caution, as explained.</source>
-        <translation type="unfinished"></translation>
+        <translation>ΣΗΜΑΝΤΙΚΟ: ο περιορισμός αυτός δεν έχει βελτιστοποιηθεί πλήρως. Πιέστε το κουμπί &quot;Βοήθεια&quot; για περισσότερες πληροφορίες. Χρησιμοποιείστε τον περιορισμό με προσοχή, όπως έχει εξηγηθεί.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="127"/>
         <source>Help</source>
-        <translation type="unfinished">Βοήθεια</translation>
+        <translation>Βοήθεια</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="134"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="106"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="120"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="113"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="92"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="77"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="60"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
 </context>
 <context>
@@ -17753,33 +17753,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -17788,37 +17788,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="14"/>
         <source>Constraints students early max beginnings at second hour</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Μαθητές - νωρίς (μέγιστες ενάρξεις την δεύτερη ώρα)&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
 </context>
 <context>
@@ -17952,33 +17952,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -17987,37 +17987,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints students interval max days per week</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Μαθητές - διάστημα δραστηριοτήτων σε μέγιστες ημέρες ανά εβδομάδα&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
 </context>
 <context>
@@ -18093,33 +18093,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform.cpp" line="115"/>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform.cpp" line="142"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform.cpp" line="115"/>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform.cpp" line="142"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform.cpp" line="147"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform.cpp" line="153"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform.cpp" line="154"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform.cpp" line="154"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -18128,37 +18128,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Constraints students max building changes per day</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Μαθητές - μέγιστες αλλαγές κτιρίου ανά ημέρα&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
 </context>
 <context>
@@ -18234,33 +18234,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform.cpp" line="115"/>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform.cpp" line="142"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform.cpp" line="115"/>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform.cpp" line="142"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform.cpp" line="147"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform.cpp" line="153"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform.cpp" line="154"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform.cpp" line="154"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -18269,37 +18269,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Constraints students max building changes per week</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Μαθητές - μέγιστες αλλαγές κτιρίου ανά εβδομάδα&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
 </context>
 <context>
@@ -18375,33 +18375,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -18410,37 +18410,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints students max days per week</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Μαθητές - μέγιστες ημέρες ανά εβδομάδα&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
 </context>
 <context>
@@ -18522,33 +18522,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform.cpp" line="117"/>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform.cpp" line="144"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform.cpp" line="117"/>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform.cpp" line="144"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform.cpp" line="149"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform.cpp" line="155"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform.cpp" line="156"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform.cpp" line="156"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -18557,47 +18557,47 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform_template.ui" line="14"/>
         <source>Constraints students max gaps per day</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Μαθητές - μέγιστα κενά ανά ημέρα&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform_template.ui" line="26"/>
         <source>IMPORTANT: this constraint is not perfectly optimized. Press Help button for more information. Use with caution, as explained.</source>
-        <translation type="unfinished"></translation>
+        <translation>ΣΗΜΑΝΤΙΚΟ: ο περιορισμός αυτός δεν έχει βελτιστοποιηθεί πλήρως. Πιέστε το κουμπί &quot;Βοήθεια&quot; για περισσότερες πληροφορίες. Χρησιμοποιείστε τον περιορισμό με προσοχή, όπως έχει εξηγηθεί.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform_template.ui" line="78"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform_template.ui" line="85"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform_template.ui" line="92"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform_template.ui" line="99"/>
         <source>Help</source>
-        <translation type="unfinished">Βοήθεια</translation>
+        <translation>Βοήθεια</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform_template.ui" line="106"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
 </context>
 <context>
@@ -18673,33 +18673,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -18708,37 +18708,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="14"/>
         <source>Constraints students max gaps per week</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Μαθητές = μέγιστα κενά ανά εβδομάδα&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
 </context>
 <context>
@@ -18816,33 +18816,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -18851,37 +18851,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Constraints students max hours continuously</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Μαθητές - μέγιστες ώρες συνεχόμενα&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
 </context>
 <context>
@@ -18952,33 +18952,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -18987,37 +18987,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="14"/>
         <source>Constraints students max hours daily</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Μαθητές - μέγιστες ώρες ημερησίως&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
 </context>
 <context>
@@ -19083,33 +19083,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxspanperdayform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -19118,42 +19118,42 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxspanperdayform_template.ui" line="14"/>
         <source>Constraints students max span per day</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Μαθητές - μέγιστη παραμονή ανά ημέρα&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform_template.ui" line="26"/>
         <source>This constraint ensures a maximum span of activities on each day. Span means the count of slots (free or occupied) starting with the first occupied slot of the day and ending with the last occupied slot of the day.</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτός ο περιορισμός εξασφαλίζει την μέγιστη παραμονή (σε ώρες) ανά ημέρα, δηλαδή το μέγιστο διάστημα (σε ώρες) ανά ημέρα μέσα στο οποίο πραγματοποιούνται οι δραστηριότητες. Η παραμονή (σε ώρες) επί της ουσίας προκύπτει από την πρόσθεση των περιόδων (τόσο των ελεύθερων όσο και των κατειλημμένων με δραστηριότητες) με αφετηρία την πρώτη κατηλειμμένη (με δραστηριότητα) περίοδο της ημέρας και τέλος την τελευταία κατηλειμμένη (με δραστηριότητα) περίοδο της ημέρας.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform_template.ui" line="78"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform_template.ui" line="85"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform_template.ui" line="92"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform_template.ui" line="99"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
 </context>
 <context>
@@ -19229,33 +19229,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform.cpp" line="115"/>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform.cpp" line="142"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform.cpp" line="115"/>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform.cpp" line="142"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform.cpp" line="147"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform.cpp" line="153"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform.cpp" line="154"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform.cpp" line="154"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -19264,37 +19264,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Constraints students min gaps between building changes</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Μαθητές - ελάχιστα κενά ανάμεσα στις αλλαγές κτιρίου&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
 </context>
 <context>
@@ -19383,33 +19383,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsminhoursdailyform.cpp" line="118"/>
         <location filename="../src/interface/constraintstudentsminhoursdailyform.cpp" line="145"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform.cpp" line="118"/>
         <location filename="../src/interface/constraintstudentsminhoursdailyform.cpp" line="145"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform.cpp" line="150"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform.cpp" line="156"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform.cpp" line="157"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform.cpp" line="157"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -19418,47 +19418,47 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="14"/>
         <source>Constraints students min hours daily</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Μαθητές - ελάχιστες ώρες ημερησίως&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="26"/>
         <source>IMPORTANT: allow empty days for students is a nonstandard option. Only select it if your institution permits that and if a timetable with empty days for students exists. Otherwise do not  select it, for a good performance of generation. Press Help button for more information.</source>
-        <translation type="unfinished"></translation>
+        <translation>ΣΗΜΑΝΤΙΚΟ: η επιλογή &quot;επίτρεψε κενές ημέρες για μαθητές&quot; δεν είναι συνήθης. Επιλέξετε μόνον αν το εκπαιδευτικό σας ίδρυμα το επιτρέπει και εφόσον είναι δυνατόν να υπάρξει ωρολόγιο πρόγραμμα με κενές ημέρες. Σε διαφορετική περίπτωση μην το επιλέξετε, προκειμένου να πετύχετε καλύτερη απόδοση στη δημιουργία ωρολογίου προγράμματος (γρηγορότερη εξεύρεση λύσης). Πιέστε το κουμπί &quot;Βοήθεια&quot; για περισσότερες πληροφορίες.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="99"/>
         <source>Help</source>
-        <translation type="unfinished">Βοήθεια</translation>
+        <translation>Βοήθεια</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="106"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="78"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="92"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="85"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
 </context>
 <context>
@@ -19536,33 +19536,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsminrestinghoursform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsminrestinghoursform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsminrestinghoursform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -19571,42 +19571,42 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsminrestinghoursform_template.ui" line="14"/>
         <source>Constraints students min resting hours</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Μαθητές - ελάχιστες ώρες ανάπαυσης&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform_template.ui" line="26"/>
         <source>This constraint ensures a minimum number of resting hours between the end of a day and the beginning of the next day. Circular means that the time between the end of the last day of the week and the beginning of the first day of the week is also considered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο περιορισμός αυτός εξασφαλίζει τον ελάχιστο αριθμό ωρών ανάπαυσης ανάμεσα στο τέλος της μίας ημέρας και την αρχή της επόμενης. &quot;Κυκλικά&quot; σημαίνει ότι λαμβάνεται επιπρόσθετα υπόψη και ο χρόνος ανάμεσα στο τέλος της τελευταίας ημέρας της εβδομάδας και την αρχή της πρώτης ημέρας της εβδομάδας.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform_template.ui" line="78"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform_template.ui" line="85"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform_template.ui" line="92"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform_template.ui" line="99"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
 </context>
 <context>
@@ -19700,33 +19700,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="145"/>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="172"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="145"/>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="172"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="177"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="183"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="184"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="184"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -19734,48 +19734,48 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="114"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="93"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="107"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Constraints students set activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Ομάδα μαθητών - μέγιστες ώρες συνεχόμενα με ετικέτα δραστηριότητας&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="100"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="76"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="26"/>
         <source>This constraint ensures that the specified students do not have more than max hours continuously of activities with the specified activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο περιορισμός αυτός εξασφαλίζει ότι οι συγκεκριμένοι μαθητές δεν θα έχουν περισσότερες από μέγιστες ώρες συνεχόμενα με δραστηριότητες που φέρουν την συγκεκριμένη ετικέτα (δραστηριότητας)</translation>
     </message>
 </context>
 <context>
@@ -19873,33 +19873,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform.cpp" line="148"/>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform.cpp" line="175"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform.cpp" line="148"/>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform.cpp" line="175"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform.cpp" line="180"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform.cpp" line="186"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform.cpp" line="187"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform.cpp" line="187"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -19908,57 +19908,57 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Constraints students set activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Ομάδα μαθητών - μέγιστες ώρες ημερησίως με ετικέτα δραστηριότητας&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="130"/>
         <source>Help</source>
-        <translation type="unfinished">Βοήθεια</translation>
+        <translation>Βοήθεια</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="137"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="109"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="123"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="116"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="92"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="26"/>
         <source>This constraint ensures that the specified students do not have more than max hours daily of activities with the specified activity tag.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο περιορισμός αυτός εξασφαλίζει ότι οι συγκεκριμένοι μαθητές δεν θα έχουν περισσότερες από μέγιστες ώρες ημερησίως με δραστηριότητες που φέρουν την συγκεκριμένη ετικέτα (δραστηριότητας).</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="42"/>
         <source>IMPORTANT: this constraint is not perfectly optimized. Press Help button for more information. Use with caution, as explained.</source>
-        <translation type="unfinished"></translation>
+        <translation>ΣΗΜΑΝΤΙΚΟ: ο περιορισμός αυτός δεν έχει βελτιστοποιηθεί πλήρως. Πιέστε το κουμπί &quot;Βοήθεια&quot; για περισσότερες πληροφορίες. Χρησιμοποιείστε τον περιορισμό με προσοχή, όπως έχει εξηγηθεί.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="60"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="77"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
 </context>
 <context>
@@ -20056,33 +20056,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="162"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="162"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="167"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="173"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="174"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="174"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -20091,42 +20091,42 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="14"/>
         <source>Constraints students set early max beginnings at second hour</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Ομάδα μαθητών - νωρίς (μέγιστες ενάρξεις την δεύτερη ώρα)&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="95"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="88"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="81"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
 </context>
 <context>
@@ -20222,33 +20222,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssethomeroomform.cpp" line="144"/>
         <location filename="../src/interface/constraintstudentssethomeroomform.cpp" line="171"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform.cpp" line="144"/>
         <location filename="../src/interface/constraintstudentssethomeroomform.cpp" line="171"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform.cpp" line="176"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform.cpp" line="182"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform.cpp" line="183"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform.cpp" line="183"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -20257,47 +20257,47 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="14"/>
         <source>Constraints students set home room</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Περιορισμοί: &quot;Ομάδα μαθητών - βασική αίθουσα&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="104"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="83"/>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="97"/>
         <source>Remove</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="90"/>
         <source>Modify</source>
-        <translation type="unfinished">Τροποποίηση</translation>
+        <translation>Τροποποίηση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="42"/>
         <source>Constraints</source>
-        <translation type="unfinished">Περιορισμοί</translation>
+        <translation>Περιορισμοί</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="52"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων περιορισμός</translation>
+        <translation>Τρέχων περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="68"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation>Φίλτρο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="26"/>
         <source>Note: a home room for a students set means that every activity which has this and ONLY this students set will have this as home room (not other superior or inferior set). You can add home rooms for a group, for a year or for a subgroup, careful not to make impossible timetables. Preferred rooms override the home rooms.</source>
-        <translation type="unfinished"></translation>
+        <translation>Σημείωση: &quot;ομάδα μαθητών - βασική αίθουσα&quot; σημαίνει ότι κάθε δραστηριότητα που έχει αυτήν και ΜΟΝΟΝ αυτήν την ομάδα μαθητών (και όχι τυχόν υπερσύνολο ή υποσύνολο αυτής της ομάδας μαθητών) θα έχει την συγκεκριμένη αίθουσα ως βασική. Μπορείτε να προσθέσετε βασικές αίθουσες για τμήμα, έτος ή υποτμήμα, αλλά με προσοχή προκειμένου να μην καταστήσετε την κατάρτιση του ωρολογίου προγράμματος αδύνατη. Οι &quot;προτιμητέες αίθουσες&quot; υπερισχύουν ως περιορισμός σε σχέση με τις &quot;βασικές αίθουσες&quot; (δηλαδή η ύπαρξη περιορισμού &quot;προτιμητέες αίθουσες&quot; -σε περίπτωση σύγκρουσης- θα παραβιάσει τυχόν περιορισμό &quot;βασικές αίθουσες&quot;).</translation>
     </message>
 </context>
 <context>
@@ -20393,33 +20393,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssethomeroomsform.cpp" line="153"/>
         <location filename="../src/interface/constraintstudentssethomeroomsform.cpp" line="180"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform.cpp" line="153"/>
         <location filename="../src/interface/constraintstudentssethomeroomsform.cpp" line="180"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">Μη αποδεκτή επιλογή περιορισμού</translation>
+        <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform.cpp" line="185"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Διαγραφή περιορισμού;</translation>
+        <translation>Διαγραφή περιορισμού;</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform.cpp" line="191"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET - Επιβεβαίωση</translation>
+        <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform.cpp" line="192"/>
         <source>Yes</source>
-        <translation type="unfinished">Ναι</translation>
+        <translation>Ναι</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform.cpp" line="192"/>
         <source>No</source>
-        <translation type="unfinished">Όχι</translation>
+        <translation>Όχι</translation>
     </message>
 </context>
 <context>
@@ -21346,7 +21346,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperdayform_template.ui" line="26"/>
         <source>IMPORTANT: this constraint is not perfectly optimized. Press Help button for more information. Use with caution, as explained.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΣΗΜΑΝΤΙΚΟ: ο περιορισμός αυτός δεν έχει βελτιστοποιηθεί πλήρως. Πιέστε το κουμπί &quot;Βοήθεια&quot; για περισσότερες πληροφορίες. Χρησιμοποιείστε τον περιορισμό με προσοχή, όπως έχει εξηγηθεί.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperdayform_template.ui" line="44"/>
@@ -22057,7 +22057,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentssetmaxspanperdayform_template.ui" line="110"/>
         <source>This constraint ensures a maximum span of activities on each day. Span means the count of slots (free or occupied) starting with the first occupied slot of the day and ending with the last occupied slot of the day.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αυτός ο περιορισμός εξασφαλίζει την μέγιστη παραμονή (σε ώρες) ανά ημέρα, δηλαδή το μέγιστο διάστημα (σε ώρες) ανά ημέρα μέσα στο οποίο πραγματοποιούνται οι δραστηριότητες. Η παραμονή (σε ώρες) επί της ουσίας προκύπτει από την πρόσθεση των περιόδων (τόσο των ελεύθερων όσο και των κατειλημμένων με δραστηριότητες) με αφετηρία την πρώτη κατηλειμμένη (με δραστηριότητα) περίοδο της ημέρας και τέλος την τελευταία κατηλειμμένη (με δραστηριότητα) περίοδο της ημέρας.</translation>
     </message>
 </context>
 <context>
@@ -22597,7 +22597,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentssetminrestinghoursform_template.ui" line="110"/>
         <source>This constraint ensures a minimum number of resting hours between the end of a day and the beginning of the next day. Circular means that the time between the end of the last day of the week and the beginning of the first day of the week is also considered.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ο περιορισμός αυτός εξασφαλίζει τον ελάχιστο αριθμό ωρών ανάπαυσης ανάμεσα στο τέλος της μίας ημέρας και την αρχή της επόμενης. &quot;Κυκλικά&quot; σημαίνει ότι λαμβάνεται επιπρόσθετα υπόψη και ο χρόνος ανάμεσα στο τέλος της τελευταίας ημέρας της εβδομάδας και την αρχή της πρώτης ημέρας της εβδομάδας.</translation>
     </message>
 </context>
 <context>
@@ -24379,7 +24379,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform_template.ui" line="42"/>
         <source>IMPORTANT: this constraint is not perfectly optimized. Press Help button for more information. Use with caution, as explained.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΣΗΜΑΝΤΙΚΟ: ο περιορισμός αυτός δεν έχει βελτιστοποιηθεί πλήρως. Πιέστε το κουμπί &quot;Βοήθεια&quot; για περισσότερες πληροφορίες. Χρησιμοποιείστε τον περιορισμό με προσοχή, όπως έχει εξηγηθεί.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform_template.ui" line="130"/>
@@ -26231,7 +26231,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintteachermaxspanperdayform_template.ui" line="26"/>
         <source>This constraint ensures a maximum span of activities on each day. Span means the count of slots (free or occupied) starting with the first occupied slot of the day and ending with the last occupied slot of the day.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αυτός ο περιορισμός εξασφαλίζει την μέγιστη παραμονή (σε ώρες) ανά ημέρα, δηλαδή το μέγιστο διάστημα (σε ώρες) ανά ημέρα μέσα στο οποίο πραγματοποιούνται οι δραστηριότητες. Η παραμονή (σε ώρες) επί της ουσίας προκύπτει από την πρόσθεση των περιόδων (τόσο των ελεύθερων όσο και των κατειλημμένων με δραστηριότητες) με αφετηρία την πρώτη κατηλειμμένη (με δραστηριότητα) περίοδο της ημέρας και τέλος την τελευταία κατηλειμμένη (με δραστηριότητα) περίοδο της ημέρας.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxspanperdayform_template.ui" line="38"/>
@@ -26909,7 +26909,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintteacherminrestinghoursform_template.ui" line="26"/>
         <source>This constraint ensures a minimum number of resting hours between the end of a day and the beginning of the next day. Circular means that the time between the end of the last day of the week and the beginning of the first day of the week is also considered.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ο περιορισμός αυτός εξασφαλίζει τον ελάχιστο αριθμό ωρών ανάπαυσης ανάμεσα στο τέλος της μίας ημέρας και την αρχή της επόμενης. &quot;Κυκλικά&quot; σημαίνει ότι λαμβάνεται επιπρόσθετα υπόψη και ο χρόνος ανάμεσα στο τέλος της τελευταίας ημέρας της εβδομάδας και την αρχή της πρώτης ημέρας της εβδομάδας.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminrestinghoursform_template.ui" line="38"/>
@@ -27418,7 +27418,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="42"/>
         <source>IMPORTANT: this constraint is not perfectly optimized. Press Help button for more information. Use with caution, as explained.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΣΗΜΑΝΤΙΚΟ: ο περιορισμός αυτός δεν έχει βελτιστοποιηθεί πλήρως. Πιέστε το κουμπί &quot;Βοήθεια&quot; για περισσότερες πληροφορίες. Χρησιμοποιείστε τον περιορισμό με προσοχή, όπως έχει εξηγηθεί.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="127"/>
@@ -28752,7 +28752,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintteachersmaxspanperdayform_template.ui" line="26"/>
         <source>This constraint ensures a maximum span of activities on each day. Span means the count of slots (free or occupied) starting with the first occupied slot of the day and ending with the last occupied slot of the day.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αυτός ο περιορισμός εξασφαλίζει την μέγιστη παραμονή (σε ώρες) ανά ημέρα, δηλαδή το μέγιστο διάστημα (σε ώρες) ανά ημέρα μέσα στο οποίο πραγματοποιούνται οι δραστηριότητες. Η παραμονή (σε ώρες) επί της ουσίας προκύπτει από την πρόσθεση των περιόδων (τόσο των ελεύθερων όσο και των κατειλημμένων με δραστηριότητες) με αφετηρία την πρώτη κατηλειμμένη (με δραστηριότητα) περίοδο της ημέρας και τέλος την τελευταία κατηλειμμένη (με δραστηριότητα) περίοδο της ημέρας.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxspanperdayform_template.ui" line="44"/>
@@ -29348,7 +29348,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintteachersminrestinghoursform_template.ui" line="26"/>
         <source>This constraint ensures a minimum number of resting hours between the end of a day and the beginning of the next day. Circular means that the time between the end of the last day of the week and the beginning of the first day of the week is also considered.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ο περιορισμός αυτός εξασφαλίζει τον ελάχιστο αριθμό ωρών ανάπαυσης ανάμεσα στο τέλος της μίας ημέρας και την αρχή της επόμενης. &quot;Κυκλικά&quot; σημαίνει ότι λαμβάνεται επιπρόσθετα υπόψη και ο χρόνος ανάμεσα στο τέλος της τελευταίας ημέρας της εβδομάδας και την αρχή της πρώτης ημέρας της εβδομάδας.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminrestinghoursform_template.ui" line="44"/>
@@ -30461,303 +30461,303 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>Export</name>
     <message>
-        <location filename="../src/engine/export.cpp" line="212"/>
-        <location filename="../src/engine/export.cpp" line="331"/>
+        <location filename="../src/engine/export.cpp" line="213"/>
+        <location filename="../src/engine/export.cpp" line="332"/>
         <source>CSV files were exported to directory %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="214"/>
-        <location filename="../src/engine/export.cpp" line="333"/>
+        <location filename="../src/engine/export.cpp" line="215"/>
+        <location filename="../src/engine/export.cpp" line="334"/>
         <source>Exported complete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="216"/>
-        <location filename="../src/engine/export.cpp" line="335"/>
+        <location filename="../src/engine/export.cpp" line="217"/>
+        <location filename="../src/engine/export.cpp" line="336"/>
         <source>Export incomplete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="298"/>
+        <location filename="../src/engine/export.cpp" line="299"/>
         <source>Successfully finished timetable:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="311"/>
+        <location filename="../src/engine/export.cpp" line="312"/>
         <source>Highest stage timetable:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="321"/>
+        <location filename="../src/engine/export.cpp" line="322"/>
         <source>Current stage timetable:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="337"/>
+        <location filename="../src/engine/export.cpp" line="338"/>
         <source>FET - export comment</source>
         <comment>The comment of the exporting operation</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="426"/>
+        <location filename="../src/engine/export.cpp" line="427"/>
         <source>no textquote</source>
         <comment>Please use at least 2 characters for the translation of this field, so that the program works OK</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="443"/>
+        <location filename="../src/engine/export.cpp" line="444"/>
         <source>FET question</source>
         <translation type="unfinished">FET - Ερώτηση</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="451"/>
+        <location filename="../src/engine/export.cpp" line="452"/>
         <source>Please specify the separator between fields:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="458"/>
+        <location filename="../src/engine/export.cpp" line="459"/>
         <source>Use field separator:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="465"/>
+        <location filename="../src/engine/export.cpp" line="466"/>
         <source>Please specify the text quote of text fields:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="472"/>
+        <location filename="../src/engine/export.cpp" line="473"/>
         <source>Use textquote:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="481"/>
+        <location filename="../src/engine/export.cpp" line="482"/>
         <source>The first line is the heading.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="488"/>
+        <location filename="../src/engine/export.cpp" line="489"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="489"/>
+        <location filename="../src/engine/export.cpp" line="490"/>
         <source>Cancel</source>
         <translation type="unfinished">Άκυρο</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="577"/>
-        <location filename="../src/engine/export.cpp" line="628"/>
-        <location filename="../src/engine/export.cpp" line="688"/>
-        <location filename="../src/engine/export.cpp" line="737"/>
-        <location filename="../src/engine/export.cpp" line="788"/>
-        <location filename="../src/engine/export.cpp" line="869"/>
-        <location filename="../src/engine/export.cpp" line="1157"/>
-        <location filename="../src/engine/export.cpp" line="1241"/>
+        <location filename="../src/engine/export.cpp" line="578"/>
+        <location filename="../src/engine/export.cpp" line="629"/>
+        <location filename="../src/engine/export.cpp" line="689"/>
+        <location filename="../src/engine/export.cpp" line="738"/>
+        <location filename="../src/engine/export.cpp" line="789"/>
+        <location filename="../src/engine/export.cpp" line="870"/>
+        <location filename="../src/engine/export.cpp" line="1158"/>
+        <location filename="../src/engine/export.cpp" line="1242"/>
         <source>FET critical. Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="590"/>
-        <location filename="../src/engine/export.cpp" line="750"/>
-        <location filename="../src/engine/export.cpp" line="809"/>
-        <location filename="../src/engine/export.cpp" line="817"/>
-        <location filename="../src/engine/export.cpp" line="827"/>
+        <location filename="../src/engine/export.cpp" line="591"/>
+        <location filename="../src/engine/export.cpp" line="751"/>
+        <location filename="../src/engine/export.cpp" line="810"/>
+        <location filename="../src/engine/export.cpp" line="818"/>
+        <location filename="../src/engine/export.cpp" line="828"/>
         <source>Warning! Import of activities will fail, because %1 includes set separator +.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="593"/>
+        <location filename="../src/engine/export.cpp" line="594"/>
         <source>%1 activity tags exported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="595"/>
-        <location filename="../src/engine/export.cpp" line="655"/>
-        <location filename="../src/engine/export.cpp" line="704"/>
-        <location filename="../src/engine/export.cpp" line="755"/>
-        <location filename="../src/engine/export.cpp" line="836"/>
-        <location filename="../src/engine/export.cpp" line="1124"/>
-        <location filename="../src/engine/export.cpp" line="1208"/>
-        <location filename="../src/engine/export.cpp" line="1324"/>
+        <location filename="../src/engine/export.cpp" line="596"/>
+        <location filename="../src/engine/export.cpp" line="656"/>
+        <location filename="../src/engine/export.cpp" line="705"/>
+        <location filename="../src/engine/export.cpp" line="756"/>
+        <location filename="../src/engine/export.cpp" line="837"/>
+        <location filename="../src/engine/export.cpp" line="1125"/>
+        <location filename="../src/engine/export.cpp" line="1209"/>
+        <location filename="../src/engine/export.cpp" line="1325"/>
         <source>FET critical. Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="649"/>
+        <location filename="../src/engine/export.cpp" line="650"/>
         <source>%1 rooms (with buildings) exported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="702"/>
+        <location filename="../src/engine/export.cpp" line="703"/>
         <source>%1 subjects exported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="753"/>
+        <location filename="../src/engine/export.cpp" line="754"/>
         <source>%1 teachers exported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="832"/>
+        <location filename="../src/engine/export.cpp" line="833"/>
         <source>%1 years exported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="833"/>
+        <location filename="../src/engine/export.cpp" line="834"/>
         <source>%1 groups exported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="834"/>
+        <location filename="../src/engine/export.cpp" line="835"/>
         <source>%1 subgroups exported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="936"/>
+        <location filename="../src/engine/export.cpp" line="937"/>
         <source>was skipped, because it refers not to a whole larger container activity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="945"/>
-        <location filename="../src/engine/export.cpp" line="949"/>
+        <location filename="../src/engine/export.cpp" line="946"/>
+        <location filename="../src/engine/export.cpp" line="950"/>
         <source>was skipped, because there exists another constraint of this type with larger weight percentage, referring to the same activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="955"/>
-        <location filename="../src/engine/export.cpp" line="960"/>
+        <location filename="../src/engine/export.cpp" line="956"/>
+        <location filename="../src/engine/export.cpp" line="961"/>
         <source>was skipped, because there exists another constraint of this type with same weight percentage and higher number of min days, referring to the same activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="966"/>
-        <location filename="../src/engine/export.cpp" line="972"/>
+        <location filename="../src/engine/export.cpp" line="967"/>
+        <location filename="../src/engine/export.cpp" line="973"/>
         <source>was skipped, because there exists another constraint of this type with same weight percentage and same number of min days and consecutive if same day true, referring to the same activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1012"/>
+        <location filename="../src/engine/export.cpp" line="1013"/>
         <source>different active flag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1022"/>
+        <location filename="../src/engine/export.cpp" line="1023"/>
         <source>Activity with id %1 has disabled active flag but it is exported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1024"/>
+        <location filename="../src/engine/export.cpp" line="1025"/>
         <source>Subactivities with activity group id %1 have disabled active flag but they are exported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1122"/>
+        <location filename="../src/engine/export.cpp" line="1123"/>
         <source>%1 activities exported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="479"/>
+        <location filename="../src/engine/export.cpp" line="480"/>
         <source>Please specify the contents of the first line:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="651"/>
+        <location filename="../src/engine/export.cpp" line="652"/>
         <source>Warning! Only %1 of %2 building names are exported, because %3 buildings don&apos;t contain any room.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="448"/>
+        <location filename="../src/engine/export.cpp" line="449"/>
         <source>Please keep the default settings.
 Import of data will be easier with these settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="482"/>
+        <location filename="../src/engine/export.cpp" line="483"/>
         <source>The first line contains data. Don&apos;t export heading.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="195"/>
+        <location filename="../src/engine/export.cpp" line="196"/>
         <source>Export aborted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1206"/>
+        <location filename="../src/engine/export.cpp" line="1207"/>
         <source>%1 active activities statistics exported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1319"/>
+        <location filename="../src/engine/export.cpp" line="1320"/>
         <source>%1 scheduled activities exported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1321"/>
+        <location filename="../src/engine/export.cpp" line="1322"/>
         <source>0 scheduled activities exported, because no timetable was generated.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="936"/>
-        <location filename="../src/engine/export.cpp" line="945"/>
-        <location filename="../src/engine/export.cpp" line="949"/>
-        <location filename="../src/engine/export.cpp" line="955"/>
-        <location filename="../src/engine/export.cpp" line="960"/>
-        <location filename="../src/engine/export.cpp" line="966"/>
-        <location filename="../src/engine/export.cpp" line="972"/>
+        <location filename="../src/engine/export.cpp" line="937"/>
+        <location filename="../src/engine/export.cpp" line="946"/>
+        <location filename="../src/engine/export.cpp" line="950"/>
+        <location filename="../src/engine/export.cpp" line="956"/>
+        <location filename="../src/engine/export.cpp" line="961"/>
+        <location filename="../src/engine/export.cpp" line="967"/>
+        <location filename="../src/engine/export.cpp" line="973"/>
         <source>Note: Constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="120"/>
-        <location filename="../src/engine/export.cpp" line="1104"/>
-        <location filename="../src/engine/export.cpp" line="1115"/>
+        <location filename="../src/engine/export.cpp" line="121"/>
+        <location filename="../src/engine/export.cpp" line="1105"/>
+        <location filename="../src/engine/export.cpp" line="1116"/>
         <source>FET warning</source>
         <translation type="unfinished">FET - Προειδοποίηση</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1016"/>
+        <location filename="../src/engine/export.cpp" line="1017"/>
         <source>Subactivities with activity group id %1 are different between themselves (they were separately edited), so the export will not be very accurate. The fields which are different will be considered those of the representative subactivity. Fields which were different are: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1106"/>
-        <location filename="../src/engine/export.cpp" line="1116"/>
+        <location filename="../src/engine/export.cpp" line="1107"/>
+        <location filename="../src/engine/export.cpp" line="1117"/>
         <source>There are subactivities which were modified separately - so the components had different values for subject, activity tags, teachers, students or number of students from the representative subactivity. The export was done, but it is not very accurate.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1000"/>
+        <location filename="../src/engine/export.cpp" line="1001"/>
         <source>different teachers</source>
         <translation type="unfinished">διαφορετικοί εκπαιδευτικοί</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1002"/>
+        <location filename="../src/engine/export.cpp" line="1003"/>
         <source>different subject</source>
         <translation type="unfinished">διαφορετικό αντικείμενο</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1006"/>
+        <location filename="../src/engine/export.cpp" line="1007"/>
         <source>different students</source>
         <translation type="unfinished">διαφορετικοί μαθητές</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1010"/>
+        <location filename="../src/engine/export.cpp" line="1011"/>
         <source>different number of students</source>
         <translation type="unfinished">διαφορετικός αριθμός μαθητών</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1004"/>
+        <location filename="../src/engine/export.cpp" line="1005"/>
         <source>different activity tags</source>
         <translation type="unfinished">διαφορετικές ετικέτες δραστηριοτήτων</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1008"/>
+        <location filename="../src/engine/export.cpp" line="1009"/>
         <source>different boolean variable &apos;must compute n total students&apos;</source>
         <translation type="unfinished">διαφορετική boolean μεταβλητή &apos;must compute n total students&apos; (&apos;πρέπει να γίνει υπολογισμός για n συνολικά μαθητές&apos;)</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="122"/>
+        <location filename="../src/engine/export.cpp" line="123"/>
         <source>File %1 exists - are you sure you want to overwrite existing file?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -30835,728 +30835,728 @@ Import of data will be easier with these settings.</source>
 <context>
     <name>FetMainForm</name>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="623"/>
-        <location filename="../src/interface/fetmainform.cpp" line="808"/>
-        <location filename="../src/interface/fetmainform.cpp" line="829"/>
-        <location filename="../src/interface/fetmainform.cpp" line="909"/>
-        <location filename="../src/interface/fetmainform.cpp" line="926"/>
-        <location filename="../src/interface/fetmainform.cpp" line="952"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1617"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3632"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3642"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3652"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3769"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3790"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3811"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3815"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3836"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3840"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3876"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3897"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3918"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3922"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4042"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4099"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4651"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4701"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4731"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4756"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4778"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4805"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4827"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4848"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4872"/>
+        <location filename="../src/interface/fetmainform.cpp" line="628"/>
+        <location filename="../src/interface/fetmainform.cpp" line="813"/>
+        <location filename="../src/interface/fetmainform.cpp" line="834"/>
+        <location filename="../src/interface/fetmainform.cpp" line="914"/>
+        <location filename="../src/interface/fetmainform.cpp" line="931"/>
+        <location filename="../src/interface/fetmainform.cpp" line="957"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1622"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3637"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3647"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3657"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3774"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3795"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3816"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3820"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3841"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3845"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3881"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3902"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3923"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3927"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4047"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4104"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4656"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4706"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4736"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4761"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4783"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4810"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4832"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4853"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4877"/>
         <source>FET warning</source>
         <translation>FET - Προειδοποίηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="785"/>
-        <location filename="../src/interface/fetmainform.cpp" line="888"/>
-        <location filename="../src/interface/fetmainform.cpp" line="947"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1040"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1101"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1113"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1185"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1231"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1244"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1252"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1258"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1264"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1338"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1357"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1361"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1368"/>
+        <location filename="../src/interface/fetmainform.cpp" line="790"/>
+        <location filename="../src/interface/fetmainform.cpp" line="893"/>
+        <location filename="../src/interface/fetmainform.cpp" line="952"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1045"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1106"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1118"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1190"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1236"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1249"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1257"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1263"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1269"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1343"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1362"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1366"/>
         <location filename="../src/interface/fetmainform.cpp" line="1373"/>
         <location filename="../src/interface/fetmainform.cpp" line="1378"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1421"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1430"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1439"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1448"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1463"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1472"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1481"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1558"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1577"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1581"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1588"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1383"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1426"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1435"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1444"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1453"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1468"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1477"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1486"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1563"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1582"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1586"/>
         <location filename="../src/interface/fetmainform.cpp" line="1593"/>
         <location filename="../src/interface/fetmainform.cpp" line="1598"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1727"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1802"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1815"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1828"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1841"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1854"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1874"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1894"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1907"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1920"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1933"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1999"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2104"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2157"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2170"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2183"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2196"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2209"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2222"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2235"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2248"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2261"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2274"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2287"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2300"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2313"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2326"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2339"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2352"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2365"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2378"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2391"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2404"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2417"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2430"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2443"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2456"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2469"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2482"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2495"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2508"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2521"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2534"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2547"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2561"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2574"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2588"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2601"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2615"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2628"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2641"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2654"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2667"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2680"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2693"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2705"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2718"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2731"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2744"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2757"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2770"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2783"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2796"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2809"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2822"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2835"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2848"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2861"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2874"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2887"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2900"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2913"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2926"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2939"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2952"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2965"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2978"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2991"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3004"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3017"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3030"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3048"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3066"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3079"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3092"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3105"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3118"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3131"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3143"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3156"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3174"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3192"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3205"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3218"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3231"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3244"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3257"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3270"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3283"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3296"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3309"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3322"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3335"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3348"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3366"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3384"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3397"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3410"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3423"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3436"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3449"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3462"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3475"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3488"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3501"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3514"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3527"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3540"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3553"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3566"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3579"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3593"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3607"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3708"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3720"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3733"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3739"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3751"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3764"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3785"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3806"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3831"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3856"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3871"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3892"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3913"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3937"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3948"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3961"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3972"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3985"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3995"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4456"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4499"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4526"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4599"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4610"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1603"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1732"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1807"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1820"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1833"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1846"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1859"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1879"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1899"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1912"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1925"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1938"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2004"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2109"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2162"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2175"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2188"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2201"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2214"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2227"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2240"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2253"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2266"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2279"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2292"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2305"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2318"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2331"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2344"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2357"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2370"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2383"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2396"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2409"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2422"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2435"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2448"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2461"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2474"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2487"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2500"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2513"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2526"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2539"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2552"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2566"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2579"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2593"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2606"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2620"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2633"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2646"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2659"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2672"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2685"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2698"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2710"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2723"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2736"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2749"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2762"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2775"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2788"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2801"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2814"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2827"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2840"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2853"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2866"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2879"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2892"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2905"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2918"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2931"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2944"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2957"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2970"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2983"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2996"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3009"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3022"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3035"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3053"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3071"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3084"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3097"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3110"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3123"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3136"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3148"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3161"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3179"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3197"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3210"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3223"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3236"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3249"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3262"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3275"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3288"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3301"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3314"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3327"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3340"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3353"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3371"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3389"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3402"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3415"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3428"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3441"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3454"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3467"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3480"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3493"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3506"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3519"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3532"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3545"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3558"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3571"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3584"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3598"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3612"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3713"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3725"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3738"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3744"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3756"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3769"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3790"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3811"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3836"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3861"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3876"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3897"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3918"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3942"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3953"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3966"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3977"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3990"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4000"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4461"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4504"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4531"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4604"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4615"/>
         <source>FET information</source>
         <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="775"/>
+        <location filename="../src/interface/fetmainform.cpp" line="780"/>
         <source>Constraint is not enabled. To use this type of constraint you must enable it from the Settings-&gt;Advanced menu.</source>
         <translation>Ο περιορισμός δεν έχει ενεργοποιηθεί. Για να χρησιμοποιήσετε αυτόν τον τύπο περιορισμών πρέπει να τον ενεργοποιήσετε από τις Ρυθμίσεις-&gt;Προηγμένο μενού.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="777"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3139"/>
+        <location filename="../src/interface/fetmainform.cpp" line="782"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3144"/>
         <source>Explanation:</source>
         <translatorcomment>Επεξήγηση:</translatorcomment>
         <translation>Επεξήγηση:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="781"/>
+        <location filename="../src/interface/fetmainform.cpp" line="786"/>
         <source>For some situations, the generation of the timetable may take too long or be impossible.</source>
         <translation>Σε κάποιες περιπτώσεις, η δημιουργία του ωρολογίου προγράμματος μπορεί να χρειαστεί πολλή ώρα ή ακόμη και να είναι αδύνατη.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="783"/>
+        <location filename="../src/interface/fetmainform.cpp" line="788"/>
         <source>Use with caution.</source>
         <translation>Χρήση με προσοχή.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="981"/>
+        <location filename="../src/interface/fetmainform.cpp" line="986"/>
         <source>FET - exiting</source>
         <translation>FET - Έξοδος</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4299"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4304"/>
         <source>&amp;Yes</source>
         <translation>&amp;Ναι</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4299"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4304"/>
         <source>&amp;No</source>
         <translation>&amp;Όχι</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4538"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4559"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4543"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4564"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Άκυρο</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="889"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1041"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1102"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1114"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1186"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1422"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1431"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1440"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1449"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1464"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1473"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1482"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1803"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1816"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1829"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1842"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1855"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1875"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1895"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1908"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1921"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1934"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2158"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2171"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2184"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2197"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2210"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2223"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2236"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2249"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2262"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2275"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2288"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2301"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2314"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2327"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2340"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2353"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2366"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2379"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2392"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2405"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2418"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2431"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2444"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2457"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2470"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2483"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2496"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2509"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2522"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2535"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2548"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2562"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2575"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2589"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2602"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2616"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2629"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2642"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2655"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2668"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2681"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2694"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2706"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2719"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2732"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2745"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2758"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2771"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2784"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2797"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2810"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2823"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2836"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2849"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2862"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2875"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2888"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2901"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2914"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2927"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2940"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2953"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2966"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2979"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2992"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3005"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3018"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3031"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3049"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3067"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3080"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3093"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3106"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3119"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3132"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3157"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3175"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3193"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3206"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3219"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3232"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3245"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3258"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3271"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3284"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3297"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3310"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3323"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3336"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3349"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3367"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3385"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3398"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3411"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3424"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3437"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3450"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3463"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3476"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3489"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3502"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3515"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3528"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3541"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3554"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3567"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3580"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3594"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3608"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3709"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3734"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4457"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4500"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4527"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4600"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4611"/>
+        <location filename="../src/interface/fetmainform.cpp" line="894"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1046"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1107"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1119"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1191"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1427"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1436"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1445"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1454"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1469"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1478"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1487"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1808"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1821"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1834"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1847"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1860"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1880"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1900"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1913"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1926"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1939"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2163"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2176"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2189"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2202"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2215"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2228"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2241"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2254"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2267"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2280"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2293"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2306"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2319"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2332"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2345"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2358"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2371"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2384"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2397"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2410"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2423"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2436"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2449"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2462"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2475"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2488"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2501"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2514"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2527"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2540"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2553"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2567"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2580"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2594"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2607"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2621"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2634"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2647"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2660"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2673"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2686"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2699"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2711"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2724"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2737"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2750"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2763"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2776"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2789"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2802"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2815"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2828"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2841"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2854"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2867"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2880"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2893"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2906"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2919"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2932"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2945"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2958"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2971"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2984"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2997"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3010"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3023"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3036"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3054"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3072"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3085"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3098"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3111"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3124"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3137"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3162"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3180"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3198"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3211"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3224"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3237"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3250"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3263"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3276"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3289"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3302"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3315"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3328"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3341"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3354"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3372"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3390"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3403"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3416"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3429"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3442"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3455"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3468"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3481"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3494"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3507"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3520"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3533"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3546"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3559"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3572"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3585"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3599"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3613"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3714"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3739"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4462"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4505"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4532"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4605"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4616"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>Κατάρτιση ωρολογίου προγράμματος σε εξέλιξη.
 Παρακαλώ σταματήστε την κατάρτιση πριν συνεχίσετε.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="623"/>
+        <location filename="../src/interface/fetmainform.cpp" line="628"/>
         <source>SSL is not available (this might be caused by missing SSL libraries). Because of this, FET cannot check for updates on startup (it cannot get the file %1).</source>
         <translation>Το πρωτόκολλο SSL δεν είναι διαθέσιμο (αυτό μπορεί να οφείλεται στην έλλειψη των βιβλιοθηκών SSL). Εξαιτίας του προβλήματος αυτού, το FET δεν μπορεί να ελέγξει για ενημερώσεις κατά την εκκίνηση του λογισμικού (δεν μπορεί να λάβει το αρχείο %1).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="739"/>
+        <location filename="../src/interface/fetmainform.cpp" line="744"/>
         <source>British English</source>
         <translation>Αγγλικά (Βρετανίας)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="766"/>
+        <location filename="../src/interface/fetmainform.cpp" line="771"/>
         <source>Chinese Simplified</source>
         <translation>Κινέζικα (απλοποιημένα)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="767"/>
+        <location filename="../src/interface/fetmainform.cpp" line="772"/>
         <source>Chinese Traditional</source>
         <translation>Κινέζικα (παραδοσιακά)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="768"/>
+        <location filename="../src/interface/fetmainform.cpp" line="773"/>
         <source>Basque</source>
         <translation>Βασκικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="769"/>
+        <location filename="../src/interface/fetmainform.cpp" line="774"/>
         <source>Czech</source>
         <translation>Τσέχικα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="770"/>
+        <location filename="../src/interface/fetmainform.cpp" line="775"/>
         <source>Japanese</source>
         <translation>Ιαπωνικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="803"/>
+        <location filename="../src/interface/fetmainform.cpp" line="808"/>
         <source>Note: if you disable this option, you will not be able to add/modify constraints for subgroups, and you will not be able to make filters using a particular subgroup, when selecting activities.</source>
         <translation>Σημείωση: αν απενεργοποιήσετε αυτήν την επιλογή, δεν θα μπορείτε να προσθέσετε/τροποποιήσετε τους περιορισμούς των υποτμημάτων, καθώς επίσης δεν θα μπορείτε να δημιουργήσετε φίλτρα χρησιμοποιώντας ένα συγκεκριμένο υποτμήμα, όταν επιλέγετε δραστηριότητες.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="824"/>
+        <location filename="../src/interface/fetmainform.cpp" line="829"/>
         <source>Note: if you disable this option, you will not be able to view activities for subgroups in the activity planning dialog.</source>
         <translation>Σημείωση: αν απενεργοποιήσετε αυτήν την επιλογή, δεν θα μπορείτε να βλέπετε τις δραστηριότητες των υποτμημάτων στoν διάλογο προγραμματισμού δραστηριοτήτων.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="902"/>
+        <location filename="../src/interface/fetmainform.cpp" line="907"/>
         <source>Could not search for possible updates on the internet - error message is: %1.</source>
         <translation>Αδύνατη η αναζήτηση για πιθανές ενημερώσεις (updates) στο διαδίκτυο - μήνυμα σφάλματος %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="906"/>
+        <location filename="../src/interface/fetmainform.cpp" line="911"/>
         <source>Possible actions: check your network connection, try again later, try to visit FET homepage: %1, or try to search for the new FET page on the internet (maybe it has changed).</source>
         <translation>Προτεινόμενες ενέργειες: ελέγξτε την σύνδεσή σας στο δίκτυο, προσπαθείτε αργότερα, προσπαθείστε να συνδεθείτε στην ιστοσελίδα του FET: %1, ή προσπαθείστε να αναζητήσετε την νέα ιστοσελίδα του FET (πιθανώς να έχει αλλάξει).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="921"/>
+        <location filename="../src/interface/fetmainform.cpp" line="926"/>
         <source>Maybe the FET homepage has some temporary problems, so try again later. Or maybe the current structure on FET homepage was changed. You may visit FET homepage: %1, and get latest version or, if it does not work, try to search for the new FET page on the internet (maybe it has changed).</source>
         <translation>Πιθανώς η ιστοσελίδα του FET να έχει κάποια προσωρινά προβλήματα, οπότε προσπαθήστε εκ νέου αργότερα. Ή πιθανώς η δομή στην ιστοσελίδα του FET να έχει αλλάξει. Μπορείτε να επισκεφθείτε την ιστοσελίδα του FET: %1 και να κατεβάσετε την τελευταία έκδοση του λογισμικού, ή -εάν αυτό δεν έχει αποτέλεσμα- προσπαθείστε να αναζητήσετε την νέα ιστοσελίδα του FET στο διαδίκτυο (μπορεί να έχει αλλάξει).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="941"/>
+        <location filename="../src/interface/fetmainform.cpp" line="946"/>
         <source>You have to manually download and install.</source>
         <translation>Πρέπει να κατεβάσετε και να εγκαταστήσετε &quot;χειροκίνητα&quot;.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="952"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3632"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3642"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3652"/>
+        <location filename="../src/interface/fetmainform.cpp" line="957"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3637"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3647"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3657"/>
         <source>Could not start the default internet browser (trying to open the link %1). Maybe you can try to manually start your browser and open this link.</source>
         <translation>Αδύνατη η εκκίνηση του προκαθορισμένου φυλλομετρητή (κατά την προσπάθεια σύνδεσης με τον σύνδεσμο %1). Προσπαθήστε να εκκινήσετε τον φυλλομετρητή &quot;χειροκίνητα&quot;.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1070"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1075"/>
         <source>%1[*] - FET</source>
         <comment>The title of the main window, %1 is the name of the current file. Please keep the string [*] unmodified (three characters) - it is used to make the difference between modified files and unmodified files.</comment>
         <translation>%1[*] - FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1123"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1195"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1128"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1200"/>
         <source>FET application</source>
         <translation>FET - Εφαρμογή</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1253"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1258"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Παρακαλώ μην χρησιμοποιείτε εισαγωγικά (&quot;) στο όνομα του αρχείου, διότι ο κώδικας html css δεν θα &quot;δουλέψει&quot;. Το αρχείο δεν έχει φορτωθεί. Παρακαλώ να το μετονομάσετε, διαγράφοντας τους μη επιτρεπτούς χαρακτήρες και στη συνέχεια ανοίξτε το με το FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1259"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1264"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Παρακαλώ μην χρησιμοποιείτε το σύμβολο του ελληνικού ερωτηματικού (;) στο όνομα του αρχείου. διότι ο κώδικας html css δεν θα &quot;δουλέψει&quot;. Το αρχείο δεν έχει φορτωθεί. Παρακαλώ να το μετονομάσετε, διαγράφοντας τους μη επιτρεπτούς χαρακτήρες και στη συνέχεια να ανοίξτε το αρχείο με το FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1265"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1270"/>
         <source>Please do not use # in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Παρακαλώ μην χρησιμοποιείτε το σύμβολο της δίεσης (#) στο όνομα του αρχείου. διότι ο κώδικας html css δεν θα &quot;δουλέψει&quot;. Το αρχείο δεν έχει φορτωθεί. Παρακαλώ να το μετονομάσετε, διαγράφοντας τους μη επιτρεπτούς χαρακτήρες και στη συνέχεια ανοίξτε το με το FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1276"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1281"/>
         <source>Loading...</source>
         <comment>This is a message in the status bar, that we are loading the file</comment>
         <translation>Φόρτωση...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1326"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1331"/>
         <source>Choose a filename to save under</source>
         <translation>Επιλέξτε ένα όνομα για το αρχείο προς αποθήκευση</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1340"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1359"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1363"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1369"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1345"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1364"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1368"/>
         <location filename="../src/interface/fetmainform.cpp" line="1374"/>
         <location filename="../src/interface/fetmainform.cpp" line="1379"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1560"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1579"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1583"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1589"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1384"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1565"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1584"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1588"/>
         <location filename="../src/interface/fetmainform.cpp" line="1594"/>
         <location filename="../src/interface/fetmainform.cpp" line="1599"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1604"/>
         <source>File was not saved.</source>
         <translation>Το αρχείο δεν έχει αποθηκευθεί.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1362"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1582"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1367"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1587"/>
         <source>Please do not use a filename ending with white space(s), problems might arise.</source>
         <translation>Παρακαλώ μην χρησιμοποιείτε όνομα αρχείου που τελειώνει με κενό (ή κενά), διότι μπορεί να προκύψουν προβλήματα.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1368"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1588"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1373"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1593"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work</source>
         <translation>Παρακαλώ μην χρησιμοποιείτε εισαγωγικά (&quot;) στο όνομα του αρχείου, διότι ο κώδικας html css δεν θα &quot;δουλέψει&quot;</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1373"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1593"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1378"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1598"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work</source>
         <translation>Παρακαλώ μην χρησιμοποιείτε ελληνικό ερωτηματικό (;) στο όνομα του αρχείου, διότι ο κώδικας html css δεν θα &quot;δουλέψει&quot;</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1378"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1598"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1383"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1603"/>
         <source>Please do not use # in filename, the html css code does not work</source>
         <translation>Παρακαλώ μην χρησιμοποιείτε δίεση (#) στο όνομα του αρχείου, διότι ο κώδικας html css δεν θα &quot;δουλέψει&quot;</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1390"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1395"/>
         <source>FET</source>
         <translation>FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1391"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1396"/>
         <source>File %1 exists - are you sure you want to overwrite it?</source>
         <translation>Το αρχείο %1 υπάρχει ήδη - σίγουρα θέλετε να το αντικαταστήσετε;</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1546"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1551"/>
         <source>Choose a filename for data and timetable</source>
         <translation>Επιλέξτε ένα όνομα αρχείου για τα δεδομένα και το ωρολόγιο πρόγραμμα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1691"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1716"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1696"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1721"/>
         <source>Added to the saved file:</source>
         <comment>It refers to a constraint</comment>
         <translation>Προστέθηκε στο αποθηκευμένο αρχείο:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1693"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1718"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1698"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1723"/>
         <source>NOT added to the saved file (already existing):</source>
         <comment>It refers to a constraint</comment>
         <translation>ΔΕΝ προστέθηκε στο αποθηκευμένο αρχείο (το ήδη υπάρχον):</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1727"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1732"/>
         <source>Added %1 locking time constraints and %2 locking space constraints to saved file, ignored %3 activities which were already fixed in time and %4 activities which were already fixed in space.</source>
         <translation>Προστέθηκαν %1 περιορισμοί χρονικού κλειδώματος και %2 περιορισμοί χωρικού κλειδώματος στο αποθηκευμένο αρχείο, αγνοήθηκαν %3 δραστηριότητες οι οποίες είχαν ήδη τοποθετηθεί σε συγκεκριμένες ώρες και %4 δραστηριότητες οι οποίες είχαν ήδη τοποθετηθεί σε συγκεκριμένους χώρους.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1729"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1734"/>
         <source>Detailed information about each locking constraint which was added or not (if already existing) to the saved file:</source>
         <translation>Λεπτομερείς πληροφορίες για καθέναν από τους περιορισμούς κλειδώματος που έχουν προστεθεί ή όχι (εάν υπάρχουν ήδη) στο αποθηκευμένο αρχείο:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1730"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1735"/>
         <source>Your current data file remained untouched (no locking constraints were added), so you can save it also, or generate different timetables.</source>
         <translation>Στο παρόν αρχείο δεδομένων δεν έχουν πραγματοποιηθεί αλλαγές (δεν έχουν προστεθεί περιορισμοί κλειδώματος). Έτσι, μπορείτε να το αποθηκεύσετε ή να δημιουργήσετε διαφορετικά ωρολόγια προγράμματα.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1966"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1971"/>
         <source>The teachers who are not qualified to teach a certain activity (in activities order):</source>
         <translation>Οι εκπαιδευτικοί που δεν έχουν τα προσόντα να διδάξουν μία συγκεκριμένη δραστηριότητα (με σειρά δραστηριοτήτων):</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1984"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1989"/>
         <source>For activity: %1</source>
         <translation>Για την δραστηριότητα: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2020"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2025"/>
         <source>Seed of random number generator: please read the help in the dialog of this option</source>
-        <translation>Αρχική κατάσταση της γεννήτριας τυχαίων αριθμών: παρακαλώ διαβάσετε τη &quot;Βοήθεια&quot; στον διάλογο της συγκεκριμένης επιλογής</translation>
+        <translation>&quot;Σπόρος&quot; της γεννήτριας τυχαίων αριθμών: παρακαλώ διαβάσετε τη &quot;Βοήθεια&quot; στον διάλογο της συγκεκριμένης επιλογής</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2023"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2028"/>
         <source>Interface - use colors: the places with colors in FET interface are in:</source>
         <translation>Διεπαφή - χρήση χρωμάτων: τα πεδία με χρώματα στην διεπαφή του FET βρίσκονται στα εξής σημεία:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2030"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2035"/>
         <source>activities and subactivities dialogs, the inactive activities will have a distinctive background color</source>
         <translation>διάλογοι δραστηριοτήτων και υποδραστηριοτήτων, οι ανενεργές δραστηριότητες θα εμφανίζονται με διαφορετικό χρώμα φόντου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2033"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2038"/>
         <source>all time constraints and all space constraints dialogs, the inactive constraints will have a distinctive background color</source>
         <translation>διάλογοι όλων των χρονικών και όλων των χωρικών περιορισμών, οι ανενεργοί περιορισμοί θα έχουν διαφορετικό χρώμα φόντου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2036"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2041"/>
         <source>group activities in initial order items, the inactive items will have a distinctive background color</source>
         <translation>&quot;ομαδοποίηση δραστηριοτήτων στο αρχικό στάδιο δημιουργίας ωρολογίου προγράμματος&quot;, τα ανενεργά στοιχεία θα έχουν διαφορετικό χρώμα φόντου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2042"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2047"/>
         <source>Enable activity tag max hours daily:</source>
         <translation>Ενεργοποίηση &quot;ετικέτα δραστηριότητας - μέγιστες ώρες ημερησίως&quot;:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2044"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2049"/>
         <source>This will enable the menu for 4 constraints: teacher(s) or students (set) activity tag max hours daily. These 4 constraints are good, but not perfect and may bring slow down of generation or impossible timetables if used unproperly. Select only if you know what you&apos;re doing.</source>
         <translation>Αυτό θα ενεργοποιήσει το μενού για 4 περιορισμούς: &quot;εκπαιδευτικός (εκπαιδευτικοί) ή μαθητές (ομάδα μαθητών) - μέγιστες ώρες ημερησίως με ετικέτα δραστηριότητας&quot;. Αυτοί οι 4 περιορισμοί λειτουργούν καλά, αλλά όχι τέλεια και ενδεχομένως να προξενήσουν επιβράδυνση της δημιουργίας ωρολογίου προγράμματος αν δεν χρησιμοποιηθούν με τον κατάλληλο τρόπο. Προχωρήστε στην επιλογή αυτή μόνον αν γνωρίζετε πολύ καλά τι κάνετε.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2047"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2052"/>
         <source>Enable students max gaps per day:</source>
         <translation>Ενεργοποίηση &quot;μαθητές - μέγιστα κενά ανά ημέρα&quot;:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2049"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2054"/>
         <source>This will enable the menu for 2 constraints: students (set) max gaps per day. These 2 constraints are good, but not perfect and may bring slow down of generation or impossible timetables if used unproperly. Select only if you know what you&apos;re doing.</source>
         <translation>Η επιλογή αυτή ενεργοποιεί το μενού για δύο (2) περιορισμούς: &quot;μαθητές (ομάδα μαθητών) - μέγιστα κενά ανά ημέρα&quot;. Αυτοί οι περιορισμοί είναι καλοί (μερικώς βελτιστοποιημένοι) αλλά όχι τέλειοι (πλήρως βελτιστοποιημένοι) και πιθανώς να προκαλέσουν αύξηση του χρόνου που απαιτείται για τη δημιουργία (επίλυση) του ωρολογίου προγράμματος ή ακόμη και να την καταστήσουν αδύνατη σε περίπτωση που δεν χρησιμοποιηθούν με τον σωστό τρόπο. Επιλέξτε τον συγκερκιμένο τύπο περιορισμών, μόνον εάν γνωρίζετε πολύ καλά τι κάνετε.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2053"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2058"/>
         <source>Warn if using not perfect constraints:</source>
         <comment>this is a warning if user uses not perfect constraints</comment>
         <translation>Προειδοποίησε αν χρησιμοποιούνται ατελείς (μερικώς βελτιστοποιημένοι) περιορισμοί:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2059"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2064"/>
         <source>Enable students min hours daily with empty days:</source>
         <translation>Ενεργοποίηση &quot;μαθητές - ελάχιστες ώρες ημερησίως με κενές ημέρες&quot;:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2061"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2066"/>
         <source>This will enable you to modify the students min hours daily constraints, to allow empty days. It is IMPERATIVE (for performance reasons) to allow empty days for students min hours daily only if your institution allows empty days for students and if a solution with empty days is possible. Select only if you know what you&apos;re doing.</source>
         <translation>Αυτό θα σας δώσει την δυνατότητα να τροποποιήσετε τους περιορισμούς &quot;μαθητές - ελάχιστες ώρες ημερησίως&quot;, προκειμένου να επιτρέψετε την ύπαρξη κενών ημερών (ημερών κατά τις οποίες οι μαθητές δεν έχουν καμία δραστηριότητα). Είναι ΕΠΙΤΑΚΤΙΚΟ (για λόγους απόδοσης του λογισμικού) να επιτρέψετε την ύπαρξη κενών ημερών όταν χρησιμοποιείτε περιορισμούς αυτού του τύπου (&quot;μαθητές - ελάχιστες ώρες ημερησίως&quot;) μόνον εφόσον το εκπαιδευτικό σας ίδρυμα επιτρέπει να υπάρχουν κενές ημέρες για τους μαθητές και εφόσον είναι εφικτή η κατάρτιση ωρολογίου προγράμματος με κενές ημέρες. Ενεργοποιήστε την επιλογή αυτή μόνον εάν γνωρίζετε πολύ καλά τι κάνετε.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2065"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2070"/>
         <source>Warn if using students min hours daily with empty days:</source>
         <comment>this is a warning if user has constraints min hours daily for students with allowed empty days</comment>
         <translation>Προειδοποίησε αν χρησιμοποιείται ο περιορισμός &quot;μαθητές - ελάχιστες ώρες ημερησίως&quot; με κενές ημέρες:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2067"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2072"/>
         <source>If you use constraints students min hours daily with allowed empty days, you&apos;ll get a warning before generating. Uncheck this option to get rid of that warning (it is recommended to keep the warning).</source>
         <translation>Αν χρησιμοποείτε περιορισμούς &quot;μαθητές - ελάχιστος αριθμός ωρών ημερησίως με επιτρεπτές κενές ημέρες&quot;, θα λάβετε μία προειδοποίηση πριν την δημιουργία ωρολογίου προγράμματος. Αποεπιλέξτε αυτό το πεδίο αν θέλετε να απαλλαγείτε από αυτήν την προειδοποίηση (προτείνεται όμως να διατηρήσετε ενεργοποιημένη αυτήν την προειδοποίηση).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2072"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2077"/>
         <source>Confirmations: unselect the corresponding check boxes if you want to skip introduction and confirmation to various advanced dialogs.</source>
         <translation>Επιβεβαιώσεις: αποεπιλέξτε τα αντίστοιχα πλαίσια ελέγχου εάν επιθυμείτε να παραλείψετε την εισαγωγή και την επιβεβαίωση σε διάφορους προηγμένους διαλόγους.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2076"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2081"/>
         <source>Duplicate vertical headers to the right (in timetable settings) - select this if you want the timetables to duplicate the table left vertical headers to the right part of the tables</source>
         <translation>Διπλασιασμός (εμφάνιση) των κατακόρυφων κεφαλίδων στα δεξιά (στις ρυθμίσεις ωρολογίου προγράμματος) - επιλέξτε το μόνον αν θέλετε να διπλασιαστούν (εμφανιστούν) οι αριστερές κατακόρυφες κεφαλίδες και στην δεξιά πλευρά των πινάκων (ωρολογίων προγραμμάτων)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2081"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2086"/>
         <source>If you have many subgroups and you don&apos;t explicitly use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
         <translation>Αν έχετε πολλά υποτμήματα και δεν τα χρησιμοποιείτε ρητά, προτείνεται να χρησιμοποιήσετε τις τρεις καθολικές ρυθμίσεις: απόκρυψη υποτμημάτων στα σύνθετα πλαίσια, απόκρυψη υποτμημάτων στον προγραμματισμό δραστηριοτήτων και μη εγγραφή ωρολογίων προγραμμάτων των υποτμημάτων στον σκληρό δίσκο.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2092"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2097"/>
         <source>If you are only working on a timetable, and you do not need to publish it, you may want to disable writing some categories of timetables on the hard disk, for operativity (the generation speed is not affected, only the overhead to write the partial/complete timetables when stopping/finishing the simulation). The timetables taking the longest time are the subgroups, groups AND years ones.</source>
         <translation>Εάν απλά δουλεύετε ένα ωρολόγιο πρόγραμμα, και δεν χρειάζεται να το δημοσιοποιήσετε, πιθανώς να θέλετε να απενεργοποιήσετε την εγγραφή κάποιων κατηγοριών ωρολογίων προγραμμάτων στον σκληρό δίσκο, για λόγους λειτουργικότητας. (η ταχύτητα επίλυσης δεν επηρεάζεται, μόνον υπάρχει μία επιβάρυνση για την εγγραφή των μερικώς/πλήρως ολοκληρωμένων ωρολογίων προγραμμάτων όταν διακόπτεται/τερματίζεται η επίλυση). Τα ωρολόγια προγράμματα που απαιτούν τον περισσότερο χρόνο είναι αυτά των υποτμημάτων, τμημάτων ΚΑΙ ετών.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2096"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2101"/>
         <source>(Also the conflicts timetable might take long to write, if the file is large.)</source>
         <translation>(Επίσης, ο πίνακας των συγκρούσεων μπορεί να χρειαστεί αρκετή ώρα για να γραφτεί, αν το αρχείο είναι μεγάλο.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2098"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2103"/>
         <source>After that, you can re-enable writing of the timetables and re-generate.</source>
         <translation>Μετά από αυτό, μπορείτε να επανενεργοποιήσετε την εγγραφή των ωρολογίων προγραμμάτων και να δημιουργήσετε νέα ωρολόγια προγράμματα.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2101"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2106"/>
         <source>Show tool tips for constraints with tables: in the add/modify constraint dialogs which use tables, like the &apos;not available times&apos; ones, each table cell will have a tool tip to show the current day/hour (column/row name).</source>
         <translation>Εμφάνιση με πίνακες των υποδείξεων εργαλείων: στους διαλόγους προσθήκη/τροποποίηση περιορισμών που χρησιμοποιούν πίνακες, όπως οι περιορισμοί &quot;μη διαθέσιμες ώρες&quot;, το κάθε κελί του πιίνακα θα έχει μία υπόδειξη εργαλείων για να εμφανίσει την τρέχουσα ημέρα/ώρα (όνομα στήλης/γραμμής).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2111"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2116"/>
         <source>You will find in the statistics only active activities count. The inactive ones are not counted.</source>
         <translation>Στα στατιστικά λαμβάνονται υπόψη μόνον οι ενεργές δραστηριότητες. Οι ανενεργές δραστηριότητες δεν λαμβάνονται υπόψη.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2115"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2120"/>
         <source>Statistics for students might be the most difficult to understand. If you are using divisions of years: probably the most relevant statistics are the ones for each subgroup (so you may check only subgroups check box). You may see more hours for the years or groups, but these are not significant, please ignore them, because each year or group will count also activities of all contained subgroups.
 
 Each subgroup should have a number of hours per week close to the average of all subgroups and close to the normal number of working hours of each students set. If a subgroup has a much lower value, maybe you used incorrectly the years/groups/subgroups for activities.
@@ -31573,1221 +31573,1221 @@ Having a subgroup with too little working hours per week means that you inputted
 Αν προκύψει να έχετε ένα υποτμήμα με πολύ λίγες ώρες δραστηριοτήτων ανά εβδομάδα, αυτό σημαίνει ότι έχετε κάνει κάποιο σφάλμα στην εισαγωγή δραστηριοτήτων, καθώς και ότι κάποιοι περιορισμοί που αφορούν το συγκεκριμένο υποτμήμα (όπως καθόλου κενά, ενάρξεις την πρώτη ώρα, ελάχιστες ώρες ημερησίως) έχουν χρησιμοποιηθεί με εσφαλμένο τρόπο (π.χ. αν ένα υποτμήμα έχει μόνον δύο δραστηριότητες και εμείς θέλουμε με τον αντίστοιχο περιορισμό να τοποθετηθούν οι δραστηριότητες αυτές τις πρώτες ώρες του ωρολογίου προγράμματος, τότε απαιτούμε κάτι πολύ δύσκολο και πρακτικά εσφαλμένο).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2144"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2149"/>
         <source>Activities rooms statistics: this menu will show the activities which may be scheduled in an unspecified room, if they are referred to by space constraints with weight under 100.0%, and the activities which will certainly be scheduled in an unspecified room, if they are not referred to by any space constraints. Remember that home rooms constraints are effective only on activities which have only the exact specified teacher or students set (activities with more teachers or students sets are not affected by home rooms constraints, you need to have preferred rooms constraints for such activities to ensure they will not end up in an unspecified room).</source>
         <translation>Στατιστικά αιθουσών δραστηριοτήτων: αυτό το μενού θα εμφανίζει τις δραστηριότητες που πιθανώς να μην τοποθετηθούν σε συγκερκιμένη αίθουσα, αν οι σχετικοί χωρικοί περιορισμοί έχουν ποσοστό απαίτησης μικρότερο του 100%, καθώς και τις δραστηριότητες που με βεβαιότητα δεν πρόκειται να τοποθετηθούν σε συγκεκριμένη αίθουσα, εφόσον δεν υπάρχουν σχετικοί χωρικοί περιορισμοί. Υπενθυμίζεται ότι οι περιορισμοί βασικών αιθουσών για εκπαιδευτικό έχουν αποτέλεσμα για τις δραστηριότητες που σχετίζονται με τον συγκεκριμένο εκπαιδευτικό και μόνον, καθώς και ότι οι αντίστοιχοι περιορισμοί βασικών αιθουσών για ομάδα μαθητών έχουν αποτέλεσμα για τις δραστηριότητες που σχετίζονται με την συγκεκριμένη ομάδα μαθητών και μόνον (οι δραστηριότητες με περισσότερους εκπαιδευτικούς ή ομάδες μαθητών δεν επηρεάζονται από περιορισμούς βασικών αιθουσών, θα πρέπει να έχετε περιορισμούς προτιμητέων αιθουσών για τέτοιες δραστηριόρητες, προκειμένου να εξασφαλίσετε ότι θα τοποθετηθούν σε συγκεκριμένη αίθουσα).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2151"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2156"/>
         <source>FET - information about statistics</source>
         <translation>FET - Πληροφορίες για τα στατιστικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3137"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3142"/>
         <source>Feature is not enabled. To use this type of feature you must enable it from the Settings-&gt;Advanced menu.</source>
         <translation>Η λειτουργία αυτή δεν έχει ενεργοποιηθεί. Για να χρησιμοποιήσετε αυτόν τον τύπο λειτουργίας πρέπει πρώτα να την ενεργοποιήσετε από τις Ρυθμίσεις-&gt;Προηγμένο μενού.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3141"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3146"/>
         <source>The feature must be used with caution, by experienced users.</source>
         <translation>Η λειτουργία αυτή θα πρέπει να χρησιμοποιείτει με προσοχή, από έμπειρους χρήστες.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3668"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3673"/>
         <source>Additionally, you may find on the FET homepage other contact information.</source>
         <translation>Επιπρόσθετα, μπορείτε να βρείτε στην ιστοσελίδα του FET και άλλες πληροφορίες επικοινωνίας.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3740"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3745"/>
         <source>Your current data has no name. Please save it as a file with a certain name before proceeding.</source>
         <translation>Το αρχείο δεδομένων δεν έχει όνομα. Παρακαλώ αποθηκεύστε το αρχείο με ένα συγκεκριμένο όνομα πριν προχωρήσετε.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3948"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3972"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3953"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3977"/>
         <source>The timetable is not generated, but anyway FET will proceed now</source>
         <translation>Το ωρολόγιο πρόγραμμα δεν έχει δημιουργηθεί, το FET πάντως θα προχωρήσει τώρα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4010"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4015"/>
         <source>OK</source>
         <translation>ΟΚ</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="757"/>
+        <location filename="../src/interface/fetmainform.cpp" line="762"/>
         <source>Danish</source>
         <translation>Δανικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="758"/>
+        <location filename="../src/interface/fetmainform.cpp" line="763"/>
         <source>Sinhala</source>
         <translation>Σινχαλικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="759"/>
+        <location filename="../src/interface/fetmainform.cpp" line="764"/>
         <source>Slovak</source>
         <translation>Σλοβακικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="760"/>
+        <location filename="../src/interface/fetmainform.cpp" line="765"/>
         <source>Hebrew</source>
         <translation>Εβραϊκά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="761"/>
+        <location filename="../src/interface/fetmainform.cpp" line="766"/>
         <source>Serbian</source>
         <translation>Σερβικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="762"/>
+        <location filename="../src/interface/fetmainform.cpp" line="767"/>
         <source>Galician</source>
         <translation>Γαλικιανά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="763"/>
+        <location filename="../src/interface/fetmainform.cpp" line="768"/>
         <source>Vietnamese</source>
         <translation>Βιετναμέζικα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="764"/>
+        <location filename="../src/interface/fetmainform.cpp" line="769"/>
         <source>Uzbek</source>
         <translation>Ουζμπεκικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="765"/>
+        <location filename="../src/interface/fetmainform.cpp" line="770"/>
         <source>Albanian</source>
         <translation>Αλβανικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1989"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1994"/>
         <source>Teacher %1 is not qualified to teach subject %2.</source>
         <translation>Ο εκπαιδευτικός %1 δεν έχει τα προσόντα για να διδάξει το αντικείμενο %2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1996"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2001"/>
         <source>All the teachers are qualified to teach their activities.</source>
         <translation>Όλοι οι εκπαιδευτικοί έχουν τα προσόντα να διδάξουν τις δραστηριότητές τους.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2039"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2044"/>
         <source>the three timetable view dialogs</source>
         <translation>οι τρεις διάλογοι προβολής ωρολογίων προγραμμάτων</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2084"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2089"/>
         <source>Note that using the global menu setting to hide subgroups in activity planning is a different thing from the check box in the activity planning dialog, and the global setting works better and faster.</source>
         <translation>Προσέξτε ότι η χρήση της καθολικής ρύθμισης στο μενού για απόκρυψη των υποτμημάτων στον προγραμματισμό δραστηριοτήτων είναι κάτι διαφορετικό από το πλαίσιο ελέγχου στον διάλογο προγραμματισμού δραστηριοτήτων. Η καθολική ρύθμιση δουλεύει καλύτερα και γρηγορότερα.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2087"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2092"/>
         <source>If you hide subgroups in combo boxes, the affected dialogs (like the activities dialog or the add constraint students set not available times dialog) will load much faster if you have many subgroups.</source>
         <translation>Αν αποκρύψετε τα υποτμήματα στα σύνθετα πλαίσια, οι διάλογοι που επηρεάζονται (όπως ο διάλογος δραστηριοτήτων ή ο διάλογος &quot;ομάδα μαθητών - μη διαθέσιμοι χρόνοι&quot;) θα φορτώνονται σαφώς πιο γρήγορα στην περίπτωση που έχετε πολλά υποτμήματα.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3662"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3667"/>
         <source>FET homepage: %1</source>
         <comment>%1 is FET homepage, begins with https://...</comment>
         <translation>FET - Ιστοσελίδα: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3664"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3669"/>
         <source>Documentation (online help contents): %1</source>
         <comment>%1 is web page of FET Doc(umentation), which is the contents of the online help, it begins with https://...</comment>
         <translation>Τεκμηρίωση (online βοήθεια - περιεχόμενα): %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3666"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3671"/>
         <source>Forum: %1</source>
         <comment>%1 is web page of FET forum, begins with https://...</comment>
         <translation>Forum: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4125"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4130"/>
         <source>The geometry and any other saved settings of all the windows and dialogs will be reset to default</source>
         <translation>Η γεωμετρία καθώς και οι υπόλοιπες αποθηκευμένες ρυθμίσεις όλων των παραθύρων και των διαλόγων θα επανέλθουν στις αρχικές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4125"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4130"/>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4128"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4133"/>
         <source>2</source>
         <translation>2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4131"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4136"/>
         <source>3</source>
         <translation>3</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4135"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4140"/>
         <source>4</source>
         <translation>4</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4138"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4143"/>
         <source>5</source>
         <translation>5</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4142"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4163"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4147"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4168"/>
         <source>Language will be %1</source>
         <comment>%1 is the default language</comment>
         <translation>Η γλώσσα θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4142"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4163"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4147"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4168"/>
         <source>6</source>
         <translation>6</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4167"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4172"/>
         <source>The list of recently used files will be cleared</source>
         <translation>Θα διαγραφεί το περιεχόμενο της λίστας των αρχείων που έχουν χρησιμοποιηθεί πρόσφατα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4167"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4172"/>
         <source>7</source>
         <translation>7</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4170"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4175"/>
         <source>8</source>
         <translation>8</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4173"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4178"/>
         <source>9</source>
         <translation>9</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4176"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4181"/>
         <source>10</source>
         <translation>10</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4179"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4184"/>
         <source>11</source>
         <translation>11</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4182"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4187"/>
         <source>12</source>
         <translation>12</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4185"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4190"/>
         <source>13</source>
         <translation>13</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4188"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4193"/>
         <source>14</source>
         <translation>14</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4191"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4196"/>
         <source>15</source>
         <translation>15</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4194"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4199"/>
         <source>16</source>
         <translation>16</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4197"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4202"/>
         <source>Print activities tags will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Η εκτύπωση των ετικετών δραστηριοτήτων θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4197"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4202"/>
         <source>17</source>
         <translation>17</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4200"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4205"/>
         <source>18</source>
         <translation>18</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4203"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4208"/>
         <source>19</source>
         <translation>19</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4206"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4211"/>
         <source>20</source>
         <translation>20</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4209"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4214"/>
         <source>21</source>
         <translation>21</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4212"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4217"/>
         <source>Warn if using constraints students min hours daily with empty days will be %1</source>
         <comment>%1 is true or false. This is a warning if user uses a nonstandard constraint students min hours daily with allowed empty days</comment>
         <translation>Προειδοποίησε αν η χρήση των περιορισμών &quot;μαθητές - ελάχιστες ώρες ημερησίως&quot; με ύπαρξη κενών ημερών πρόκειται να είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4212"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4217"/>
         <source>22</source>
         <translation>22</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4217"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4222"/>
         <source>Confirm activity planning will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Η επιβεβαίωση για τον προγραμματισμό δραστηριοτήτων θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4217"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4222"/>
         <source>23</source>
         <translation>23</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4219"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4224"/>
         <source>Confirm spread activities over the week will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Η επιβεβαίωση για την &quot;ομοιόμορφη&quot; κατανομή των δραστηριοτήτων μέσα στην εβδομάδα θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4219"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4224"/>
         <source>24</source>
         <translation>24</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4221"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4226"/>
         <source>Confirm remove redundant constraints will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Η επιβεβαίωση για την διαγραφή των περιττών περιορισμών θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4221"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4226"/>
         <source>25</source>
         <translation>25</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4223"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4228"/>
         <source>26</source>
         <translation>26</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4227"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4232"/>
         <source>Enable group activities in the initial order of generation will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Η ενεργοποίηση &quot;ομαδοποίηση δραστηριοτήτων στο αρχικό στάδιο δημιουργίας ωρολογίου προγράμματος&quot; θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4227"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4232"/>
         <source>27</source>
         <translation>27</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4229"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4234"/>
         <source>Warn if using group activities in the initial order of generation will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Προειδοποίησε αν η χρήση &quot;ομαδοποίηση δραστηριοτήτων στο αρχικό στάδιο δημιουργίας&quot; πρόκειται να είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4229"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4234"/>
         <source>28</source>
         <translation>28</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4233"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4238"/>
         <source>29</source>
         <translation>29</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4233"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4238"/>
         <source>Show subgroups in combo boxes will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Η προβολή υποτμημάτων σε σύνθετα πλαίσια θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4235"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4240"/>
         <source>30</source>
         <translation>30</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4235"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4240"/>
         <source>Show subgroups in activity planning will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Η προβολή υποτμημάτων στον προγραμματισμό δραστηριοτήτων θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4239"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4244"/>
         <source>31</source>
         <translation>31</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4239"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4244"/>
         <source>Write on disk the %1 timetable will be %2</source>
         <comment>%1 is a category of timetables, like conflicts, %2 is true or false</comment>
         <translation>Η εγγραφή στον δίσκο του %1 ωρολογίου προγράμματος θα είναι %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4240"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4245"/>
         <source>conflicts</source>
         <translation>συγκρούσεις</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4243"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4246"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4249"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4252"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4255"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4258"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4262"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4265"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4268"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4271"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4274"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4277"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4280"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4283"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4286"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4248"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4251"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4254"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4257"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4260"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4263"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4267"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4270"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4273"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4276"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4279"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4282"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4285"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4288"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4291"/>
         <source>Write on disk the %1 timetables will be %2</source>
         <comment>%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false</comment>
         <translation>Η εγγραφή στον δίσκο των %1 ωρολογίων προγραμμάτων θα είναι %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4244"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4249"/>
         <source>statistics</source>
         <translation>στατιστικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4247"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4252"/>
         <source>XML</source>
         <translation>XML</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4243"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4248"/>
         <source>32</source>
         <translation>32</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4250"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4255"/>
         <source>days horizontal</source>
         <translation>ημέρες οριζόντια</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4246"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4251"/>
         <source>33</source>
         <translation>33</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4253"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4258"/>
         <source>days vertical</source>
         <translation>ημέρες κατακόρυφα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4249"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4254"/>
         <source>34</source>
         <translation>34</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4256"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4261"/>
         <source>time horizontal</source>
         <translation>χρόνος οριζόντια</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4252"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4257"/>
         <source>35</source>
         <translation>35</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4259"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4264"/>
         <source>time vertical</source>
         <translation>χρόνος κατακόρυφα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4255"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4260"/>
         <source>36</source>
         <translation>36</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4263"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4268"/>
         <source>subgroups</source>
         <translation>υποτμήματα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4258"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4263"/>
         <source>37</source>
         <translation>37</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4266"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4271"/>
         <source>groups</source>
         <translation>τμήματα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4262"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4267"/>
         <source>38</source>
         <translation>38</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4269"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4274"/>
         <source>years</source>
         <translation>έτη</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4265"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4270"/>
         <source>39</source>
         <translation>39</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4272"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4277"/>
         <source>teachers</source>
         <translation>εκπαιδευτικοί</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4268"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4273"/>
         <source>40</source>
         <translation>40</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4275"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4280"/>
         <source>teachers free periods</source>
         <translation>εκπαιδευτικοί - ελεύθερες ώρες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4271"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4276"/>
         <source>41</source>
         <translation>41</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4278"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4283"/>
         <source>rooms</source>
         <translation>αίθουσες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4274"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4279"/>
         <source>42</source>
         <translation>42</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4281"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4286"/>
         <source>subjects</source>
         <translation>αντικείμενα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4277"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4282"/>
         <source>43</source>
         <translation>43</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4287"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4292"/>
         <source>activities</source>
         <translation>δραστηριότητες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4795"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4800"/>
         <source>This kind of constraint is good, but only in the right case. Adding such constraints in the wrong circumstance may make your timetable solve too slow or even impossible.</source>
         <translation>Αυτός ο τύπος περιορισμού είναι καλός, αλλά μόνον στην κατάλληλη περίπτωση. Η προσθήκη τέτοιων περιορισμών σε λάθος περιπτώσεις μπορεί να προξενήσει μεγάλη επιβράδυνση στην επίλυση (κατάρτιση) του ωρολογίου προγράμματος ή ακόμη και να την καταστήσει αδύνατη.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4798"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4803"/>
         <source>Please use such constraints only if you are sure that there exists a timetable with empty days for students. If your instution requires each day for the students to be not empty, or if there does not exist a solution with empty days for students, it is IMPERATIVE (for performance reasons) that you use the standard constraint which does not allow empty days. Otherwise, the timetable may be impossible to find.</source>
         <translation>Παρακαλώ να χρησιμοποιείτε τέτοιους περιορισμούς μόνον αν είστε σίγουροι ότι υπάρχει (δύναται να υπάρξει) ωρολόγιο πρόγραμμα με κενές ημέρες για μαθητές. Αν το εκπαιδευτικό σας ίδρυμα απαιτεί να μην υπάρχουν κενές ημέρες για τους μαθητές, είναι ΕΠΙΤΑΚΤΙΚΟ (για λόγους καλής επίδοσης του αλγόριθμου επίλυσης) να χρησιμοποιείτε τον κανονικό (συνήθη) περιορισμό ο οποίος δεν επιτρέπει ύπαρξη κενών ημερών. Σε διαφορετική περίπτωση, υπάρχει το ενδεχόμενο η επίλυση (κατάρτιση) ωρολογίου προγράμματος να καταστεί αδύνατη.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4843"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4848"/>
         <source>This kind of option is good, but only in the right case. Adding such an option in the wrong circumstance may make your timetable solve too slow or even impossible.</source>
         <translation>Αυτός ο τύπος επιλογής είναι καλός, αλλά μόνον στην κατάλληλη περίπτωση. Η προσθήκη τέτοιας επιλογής σε λάθος περιπτώσεις μπορεί να προξενήσει μεγάλη επιβράδυνση στην επίλυση (κατάρτιση) του ωρολογίου προγράμματος ή ακόμη και να την καταστήσει αδύνατη.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="904"/>
+        <location filename="../src/interface/fetmainform.cpp" line="909"/>
         <source>Searching for file %1.</source>
         <translation>Αναζήτηση του αρχείου %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="919"/>
+        <location filename="../src/interface/fetmainform.cpp" line="924"/>
         <source>The file %1 from the FET homepage, indicating the current FET version, is incorrect.</source>
         <translation>Το αρχείο %1 από την ιστοσελίδα του FET, το οποίο δείχνει ποια είναι η τρέχουσα έκδοση του FET, παρουσίασε σφάλμα.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="944"/>
+        <location filename="../src/interface/fetmainform.cpp" line="949"/>
         <source>Additional comments: %1</source>
         <translation>Πρόσθετα σχόλια: %1</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3764"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3785"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3806"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3831"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3856"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3871"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3892"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3913"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3937"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3961"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3985"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3995"/>
-        <source>Please generate, firstly</source>
-        <translation>Παρακαλώ δημιουργήστε πρώτα ωρολόγιο πρόγραμμα</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3769"/>
         <location filename="../src/interface/fetmainform.cpp" line="3790"/>
         <location filename="../src/interface/fetmainform.cpp" line="3811"/>
         <location filename="../src/interface/fetmainform.cpp" line="3836"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3861"/>
         <location filename="../src/interface/fetmainform.cpp" line="3876"/>
         <location filename="../src/interface/fetmainform.cpp" line="3897"/>
         <location filename="../src/interface/fetmainform.cpp" line="3918"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3942"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3966"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3990"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4000"/>
+        <source>Please generate, firstly</source>
+        <translation>Παρακαλώ δημιουργήστε πρώτα ωρολόγιο πρόγραμμα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="3774"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3795"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3816"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3841"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3881"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3902"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3923"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation>Η προβολή του ωρολογίου προγράμματος είναι αδύνατη, επειδή έχετε προσθέσει ή διαγράψει κάποιες αίθουσες. Παρακαλώ δημιουργήστε εκ νέου το ωρολόγιο πρόγραμμα και στη συνέχεια μπορείτε να το δείτε</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3815"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3840"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3922"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3820"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3845"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3927"/>
         <source>Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it</source>
         <translation>Η προβολή του ωρολογίου προγράμματος είναι αδύνατη, επειδή έχετε προσθέσει ή διαγράψει κάποιους εκπαιδευτικούς. Παρακαλώ δημιουργήστε εκ νέου το ωρολόγιο πρόγραμμα και στη συνέχεια μπορείτε να το δείτε</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="740"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4142"/>
+        <location filename="../src/interface/fetmainform.cpp" line="745"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4147"/>
         <source>US English</source>
         <translation>Αγγλικά (ΗΠΑ)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4042"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4047"/>
         <source>Invalid current language - making it en_US (US English)</source>
         <translation>Η τρέχουσα γλώσσα δεν είναι αποδεκτή - θα χρησιμοποιηθούν Αγγλικά (ΗΠΑ)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4099"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4104"/>
         <source>Invalid language selected - making it en_US (US English)</source>
         <translation>Επελέγη μη αποδεκτή γλώσσα - θα χρησιμοποιηθούν Αγγλικά (ΗΠΑ)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4122"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4127"/>
         <source>That means:</source>
         <translation>Αυτό σημαίνει:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4128"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4182"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4185"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4197"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4206"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4213"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4217"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4219"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4221"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4223"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4229"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4233"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4235"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4133"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4187"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4190"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4202"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4211"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4218"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4222"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4224"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4226"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4228"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4234"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4238"/>
         <location filename="../src/interface/fetmainform.cpp" line="4240"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4244"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4247"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4250"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4253"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4256"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4259"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4263"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4266"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4269"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4272"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4275"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4278"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4281"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4284"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4287"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4291"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4293"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4295"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4245"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4249"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4252"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4255"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4258"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4261"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4264"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4268"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4271"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4274"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4277"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4280"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4283"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4286"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4289"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4292"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4296"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4298"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4300"/>
         <source>true</source>
         <translation>αληθής</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4138"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4143"/>
         <source>Use colors in FET graphical user interface will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Η χρήση χρωμάτων στην διεπαφή του FET θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4191"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4196"/>
         <source>Duplicate vertical headers to the right will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Ο διπλασιασμός (εμφάνιση) των κατακόρυφων κεφαλίδων στα δεξιά θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4206"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4211"/>
         <source>Warn if using not perfect constraints will be %1</source>
         <comment>%1 is true or false. This is a warning if user uses not perfect constraints</comment>
         <translation>Προειδοποίησε αν η χρήση μερικώς βελτιστοποιημένων περιορισμών πρόκειται να είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4223"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4228"/>
         <source>Confirm save data and timetable as will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Η επιβεβαίωση για την αποθήκευση των δεδομένων και των ωρολογίων προγραμμάτων θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4295"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4300"/>
         <source>50</source>
         <translation>50</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4692"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4722"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4697"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4727"/>
         <source>These kinds of constraints are good, but not perfectly optimized. Adding such constraints may make your timetable solve too slow or even impossible.</source>
         <translation>Αυτοί οι τύποι περιορισμών είναι καλοί αλλά όχι πλήρως βελτιστοποιημένοι. Η χρήση τέτοιων περιορισμών μπορεί να προκαλέσει αύξηση του χρόνου που απαιτείται για την κατάρτιση (επίλυση) του ωρολογίου προγράμματος ή ακόμη και να την καταστήσει αδύνατη.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4695"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4725"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4700"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4730"/>
         <source>It is recommended to use such constraints only at the end, after you generated successfully with all the other constraints.</source>
         <translation>Η χρήση αυτού του είδους περιορισμών συνιστάται μόνον στο τέλος, δηλαδή αφού πρώτα έχετε δημιουργήσει επιτυχώς ωρολόγιο πρόγραμμα με όλους τους άλλους περιορισμούς.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4697"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4727"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4702"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4732"/>
         <source>If your timetable is too difficult, it may be from these kinds of constraints, so you may need to remove them and retry.</source>
         <translation>Αν το ωρολόγιο πρόγραμμά σας είναι υπερβολικά δύσκολο, αυτό μπορεί να οφείλεται στους συγκεκριμένους τύπους περιορισμών. Κατά συνέπεια, μπορεί να χρειαστεί να διαγράψετε τους συγκεκριμένους περιορισμούς και να προσπαθήσετε ξανά.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4699"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4729"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4803"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4846"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4704"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4734"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4808"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4851"/>
         <source>Continue only if you know what you are doing.</source>
         <translation>Συνεχίστε μόνον εάν γνωρίζετε πολύ καλά τι κάνετε.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4750"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4772"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4821"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4866"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4755"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4777"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4826"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4871"/>
         <source>It is recommended to keep this warning active, but if you really want, you can disable it.</source>
         <translation>Συνιστάται να κρατήσετε ενεργή την συγκεκριμένη προειδοποίηση. Αν όμως το θέλετε πραγματικά, μπορείτε να την απενεργοποιήσετε.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4752"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4774"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4823"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4868"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4757"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4779"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4828"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4873"/>
         <source>Disable it only if you know what you are doing.</source>
         <translation>Απενεργοποιήστε μόνον αν γνωρίζετε πολύ καλά τι κάνετε.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4754"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4776"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4825"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4870"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4759"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4781"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4830"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4875"/>
         <source>Are you sure you want to disable it?</source>
         <translation>Είστε σίγουροι ότι θέλετε να την απενεργοποιήσετε;</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3720"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3725"/>
         <source>Please input at least one active activity before generating</source>
         <translation>Παρακαλώ να εισαγάγετε μία τουλάχιστον δραστηριότητα πριν τη δημιουργία (ωρολογίου προγράμματος)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3751"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3756"/>
         <source>Please input at least one active activity before generating multiple</source>
         <translation>Παρακαλώ να εισαγάγετε μία τουλάχιστον δραστηριότητα πριν τη δημιουργία πολλαπλών (ωρολογίων προγραμμάτων)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1492"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1502"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1510"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1497"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1507"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1515"/>
         <source>FET - Warning</source>
         <translation>FET - Προειδοποίηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1492"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1497"/>
         <source>You have not yet generated a timetable - please generate firstly</source>
         <translation>Δεν έχετε δημιουργήσει ακόμη ωρολόγιο πρόγραμμα. - Παρακαλώ δημιουργήστε πρώτα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1502"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1510"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1507"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1515"/>
         <source>It seems that you have an incomplete timetable. Saving of timetable does not work for incomplete timetables. Please generate a complete timetable</source>
         <translation>Πιθανώς έχετε ημιτελές ωρολόγιο πρόγραμμα. Δεν είναι δυνατή η αποθήκευση ημιτελών ωρολογίων προγραμμάτων. Παρακαλώ δημιουργείστε ένα πλήρες ωρολόγιο πρόγραμμα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1610"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1615"/>
         <source>File exists</source>
         <translation>Το αρχείο υπάρχει ήδη</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1612"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1617"/>
         <source>For safety (so you don&apos;t lose work), it is not allowed to overwrite an existing file with locking and saving a current data+timetable</source>
         <translation>Για λόγους ασφαλείας (και προκειμένου για να μην χάσετε τη δουλειά σας), δεν επιτρέπεται να αντικαταστήσετε ένα ήδη υπάρχον αρχείο κλειδώνοντας και αποθηκεύοντας ένα αρχείο με τα τρέχοντα δεδομένα και το ωρολόγιο πρόγραμμα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1615"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1620"/>
         <source>Please choose a non-existing name</source>
         <translation>Παρακαλώ επιλέξτε ένα άλλο όνομα αρχείου. Το όνομα που επιλέξατε ήδη χρησιμοποιείται</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4119"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4124"/>
         <source>Are you sure you want to reset all settings to defaults?</source>
         <translation>Είστε σίγουροι ότι θέλετε να επαναφέρετε όλες τις ρυθμίσεις στις αρχικές;</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1166"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1171"/>
         <source>New file generated</source>
         <translation>Δημιουργήθηκε νέο αρχείο</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1232"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1237"/>
         <source>Please do not use a filename starting with white space(s), the html css code does not work. File was not loaded. Please rename it, removing the white space(s) from the beginning and open it after that with FET.</source>
         <translation>Παρακαλώ μην χρησιμοποιείτε όνομα αρχείου που ξεκινά με κενό (ή κενά), διότι ο κώδικας html css δεν θα &quot;δουλέψει&quot;. Το αρχείο δεν έχει φορτωθεί. Παρακαλώ να το μετονομάσετε, διαγράφοντας το κενό (τα κενά) από την αρχή του ονόματος του αρχείου και στη συνέχεια ανοίξτε το με το FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1245"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1250"/>
         <source>Please do not use a filename ending with white space(s) before the &apos;.fet&apos; termination or at the end of the filename, problems might arise. File was not loaded. Please rename it, removing the white space(s) at the end and open it after that with FET.</source>
         <translation>Παρακαλώ μην χρησιμοποιείτε κενό (ή κενά) πριν την κατάληξη &apos;.fet&apos; ή στο τέλος του ονόματος του αρχείου, διότι μπορεί να προκύψουν προβλήματα. Το αρχείο δεν έχει φορτωθεί. Παρακαλώ να το μετονομάσετε, διαγράφοντας το κενό (ή τα κενά) από το τέλος του ονόματος του αρχείου και στη συνέχεια ανοίξτε το με το FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1292"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1297"/>
         <source>File opened</source>
         <translation>Το αρχείο άνοιξε</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1339"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1559"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1344"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1564"/>
         <source>Please do not use a filename starting with white space(s), the html css code does not work.</source>
         <translation>Παρακαλώ μην χρησιμοποιείτε όνομα αρχείου που αρχίζει με κενό (ή κενά), διότι ο κώδικας html css δεν θα &quot;δουλέψει&quot;.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1358"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1578"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1363"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1583"/>
         <source>Please do not use a filename ending with white space(s) before the &apos;.fet&apos; termination, problems might arise.</source>
         <translation>Παρακαλώ μην χρησιμοποιείτε όνομα αρχείου που τελειώνει με κενό (ή κενά) πριν από την κατάληψη &apos;.fet&apos;, διότι μπορεί να προκύψουν προβλήματα.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1404"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1785"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1409"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1790"/>
         <source>File saved</source>
         <translation>Το αρχείο αποθηκεύθηκε</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2055"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2060"/>
         <source>If you use a not perfect constraint (activity tag max hours daily or students max gaps per day), you&apos;ll get a warning before generating. Uncheck this option to get rid of that warning (it is recommended to keep the warning).</source>
         <translation>Αν χρησιμοποιείτε έναν μερικώς βελτιστοποιημένο περιορισμό (π.χ. &quot;ετικέτα δραστηριότητας - μέγιστες ώρες ημερησίως&quot; ή &quot;μαθητές - μέγιστα κενά ανά ημέρα&quot;), θα λάβετε μία προειδοποίηση πριν ξεκινήσετε την δημιουργία ωρολογίου προγράμματος. Αν θέλετε να απαλλαγείτε από την προειδοποίηση αυτή, πρέπει να αναιρέσετε την επιλογή αυτή (όμως την συγκεκριμένη επιλογή συνιστάται να την διατηρήσετε).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4128"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4133"/>
         <source>Show shortcut buttons in main window will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Η προβολή πλήκτων συντόμευσης στο κύριο παράθυρο θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4131"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4136"/>
         <source>In the shortcuts tab from the main window, the first section will be selected/shown</source>
         <comment>Option refers to the main window tab widget for shortcuts, which currently contains 5 tabs: File, Data, Time, Space, Timetable (so it will select/show File tab).</comment>
         <translation>Στην καρτέλα συντομεύσεων (κύριο παράθυρο), θα επιλεγεί/προβληθεί το πρώτο πεδίο</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4135"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4140"/>
         <source>Check for updates at startup will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Ο έλεγχος για ενημερώσεις κατά την εκκίνηση θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4170"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4175"/>
         <source>Working directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>Ο κατάλογος εργασίας θα είναι ο %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4173"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4178"/>
         <source>Output directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>Ο κατάλογος εξαγωγής θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4176"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4181"/>
         <source>Import directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>Ο κατάλογος εισαγωγής θα είναι ο %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4179"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4184"/>
         <source>Html level of the timetables will be %1</source>
         <comment>%1 is default html level</comment>
         <translation>Το επίπεδο html των ωρολογίων προγραμμάτων θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4182"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4187"/>
         <source>Mark not available slots with -x- in timetables will be %1</source>
         <comment>%1 is true or false. Lowercase -x-</comment>
         <translation>Η αποτύπωση των μη διαθέσιμων περιόδων με &quot;-x-&quot; στα ωρολόγια προγράμματα θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4185"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4190"/>
         <source>Mark break slots with -X- in timetables will be %1</source>
         <comment>%1 is true or false. Uppercase -X-</comment>
         <translation>Η αποτύπωση των περιόδων διαλειμμάτων με &quot;-X-&quot; στα ωρολόγια προγράμματα θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4188"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4193"/>
         <source>Divide html timetables with time-axis by days will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Ο διαχωρισμός των ωρολογίων προγραμμάτων (html) σε ημέρες (άξονας χρόνου) θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4194"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4199"/>
         <source>Print activities with same starting time will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Η εκτύπωση των δραστηριοτήτων με τον ίδιο χρόνο έναρξης θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4200"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4205"/>
         <source>Enable activity tag max hours daily will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Η ενεργοποίηση &quot;ετικέτα δραστηριότητας - μέγιστες ώρες ημερησίως&quot; θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4203"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4208"/>
         <source>Enable students max gaps per day will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Η ενεργοποίηση &quot;μαθητές - μέγιστα κενά ανά ημέρα&quot; θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4209"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4214"/>
         <source>Enable constraints students min hours daily with empty days will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Η ενεργοποίηση των περιορισμών &quot;μαθητές - ελάχιστες ώρες ημερησίως με κενές ημέρες&quot; θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4280"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4285"/>
         <source>44</source>
         <translation>44</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4283"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4288"/>
         <source>45</source>
         <translation>45</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4284"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4289"/>
         <source>activity tags</source>
         <translation>ετικέτες δραστηριοτήτων</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4289"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4294"/>
         <source>Show tool tips for constraints with tables will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Η εμφάνιση με πίνακες των υποδείξεων εργαλείων για τους περιορισμούς θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4286"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4291"/>
         <source>46</source>
         <translation>46</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4291"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4296"/>
         <source>Show warning for subgroups with the same activities will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Η προβολή προειδοποίησης για τα υποτμήματα με τις ίδιες δραστηριότητες θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4289"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4294"/>
         <source>47</source>
         <translation>47</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4291"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4296"/>
         <source>48</source>
         <translation>48</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4293"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4298"/>
         <source>Print detailed timetables will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Η εκτύπωση λεπτομερών ωρολογίων προγραμμάτων θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4293"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4298"/>
         <source>49</source>
         <translation>49</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4295"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4300"/>
         <source>Print detailed teachers&apos; free periods timetables will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Η εκτύπωση λεπτομερών ωρολογίων προγραμμάτων με τις ελεύθερες ώρες των εκπαιδευτικών θα είναι %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4533"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4538"/>
         <source>You have more than 6 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation>Έχετε περισσότερες από 6 ημέρες ανά εβδομάδα. Έτσι, πιθανώς να μην χρειάζεστε αυτήν την λειτουργία. Είστε σίγουροι πως θέλετε να συνεχίσετε;</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4536"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4557"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4541"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4562"/>
         <source>FET question</source>
         <translation>FET - Ερώτηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4538"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4559"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4543"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4564"/>
         <source>&amp;Continue</source>
         <translation>&amp;Συνέχεια</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4554"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4559"/>
         <source>You have less than 5 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation>Έχετε λιγότερες από 5 ημέρες ανά εβδομάδα. Έτσι, πιθανώς να μην χρειάζεστε αυτήν την λειτουργία. Είστε σίγουροι πως θέλετε να συνεχίσετε;</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1220"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1328"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1548"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1225"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1333"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1553"/>
         <source>All files</source>
         <translation>Όλα τα αρχεία</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="779"/>
+        <location filename="../src/interface/fetmainform.cpp" line="784"/>
         <source>Constraints of this type are good, working, but they are not perfectly optimized.</source>
         <translation>Οι περιορισμοί αυτού του τύπου είναι λειτουργικοί, αλλά δεν είναι πλήρως βελτιστοποιημένοι.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="939"/>
+        <location filename="../src/interface/fetmainform.cpp" line="944"/>
         <source>Another version: %1, is available on the FET homepage: %2</source>
         <comment>%1 is new version, %2 is FET homepage</comment>
         <translation>Η νέα έκδοση είναι η: %1, η ιστοσελίδα του FET είναι η: %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="941"/>
+        <location filename="../src/interface/fetmainform.cpp" line="946"/>
         <source>You may need to hit Refresh in your web browser.</source>
         <translation>Ίσως χρειαστεί να πιέσετε &quot;Ανανέωση&quot; στον φυλλομετρητή σας.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="941"/>
+        <location filename="../src/interface/fetmainform.cpp" line="946"/>
         <source>Would you like to open the FET homepage now?</source>
         <translation>Θέλετε να ανοίξετε την ιστοσελίδα του FET τώρα;</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="982"/>
+        <location filename="../src/interface/fetmainform.cpp" line="987"/>
         <source>Your data file has been modified - do you want to save it?</source>
         <translation>Το αρχείο δεδομένων έχει αλλάξει. Επιθυμείτε να το αποθηκεύσετε;</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1124"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1129"/>
         <source>Your current data file has been modified. Are you sure you want to reset to new empty data?</source>
         <translation>Το παρόν αρχείο δεδομένων έχει τροποποιηθεί. Είστε σίγουροι πως επιθυμείτε να δημιουργήσετε ένα νέο (κενό) αρχείο δεδομένων χωρίς να αποθηκεύσετε τις αλλαγές του παρόντος αρχείου;</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1196"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1201"/>
         <source>Your current data file has been modified. Are you sure you want to open another data file?</source>
         <translation>Το παρόν αρχείο δεδομένων έχει τροποποιηθεί. Είστε σίγουροι πως επιθυμείτε να ανοίξετε ένα άλλο αρχείο δεδομένων;</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1217"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1222"/>
         <source>Choose a file to open</source>
         <translation>Επιλέξτε ένα αρχείο για άνοιγμα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1219"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1327"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1547"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1224"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1332"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1552"/>
         <source>FET XML files</source>
         <comment>Instructions for translators: FET XML is a type of file format (using text mode). So this field means files in the FET XML format</comment>
         <translation>FET - Αρχεία XML</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2026"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2031"/>
         <source>add/modify constraints break, not available, preferred starting times or time slots, occupy max time slots from selection or max simultaneous in selected time slots (the table cells will have green or red colors).</source>
         <translation>προσθήκη/τροποποίηση περιορισμών: διαλείμματα, μη διαθέσιμοι χρόνοι, προτιμητέοι χρόνοι έναρξης ή προτιμητέες περίοδοι, κάλυψη μέγιστων περιόδων από επιλογή ή μέγιστες ταυτόχρονες δραστηριότητες σε επιλεγμένες περιόδους (τα κελιά του πίνακα θα έχουν πράσινο ή κόκκινο χρώμα).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3660"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3665"/>
         <source>In case the Help/Online menus do not function, please write down these addresses and open them in an internet browser:</source>
         <translation>Σε περίπτωση που τα μενού Βοήθεια/Online δεν λειτουργούν, παρακαλώ σημειώστε αυτές τις διευθύνσεις και ανοίξτε τες με έναν φυλλομετρητή:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3670"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3675"/>
         <source>In case these addresses do not function, maybe the FET webpage has temporary problems, so try again later. Or maybe the FET webpage has changed, so search for the new page on the internet.</source>
         <translation>Σε περίπτωση που αυτές οι διευθύνσεις δεν λειτουργούν, πιθανώς η ιστοσελίδα του FET να έχει κάποια προσωρινά προβλήματα, οπότε προσπαθήστε αργότερα. Ή πιθανώς η ιστοσελίδα του FET να έχει αλλάξει, οπότε αναζητήστε την νέα ιστοσελίδα στο διαδίκτυο.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3672"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3677"/>
         <source>FET web addresses</source>
         <translation>FET - Διεύθυνση Web</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4005"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4048"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4010"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4053"/>
         <source>Please select FET language</source>
         <translation>Παρακαλώ επιλέξτε γλώσσα για το FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4009"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4014"/>
         <source>Cancel</source>
         <translation>Άκυρο</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="735"/>
+        <location filename="../src/interface/fetmainform.cpp" line="740"/>
         <source>Arabic</source>
         <translation>Αραβικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="736"/>
+        <location filename="../src/interface/fetmainform.cpp" line="741"/>
         <source>Catalan</source>
         <translation>Καταλανικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="737"/>
+        <location filename="../src/interface/fetmainform.cpp" line="742"/>
         <source>German</source>
         <translation>Γερμανικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="738"/>
+        <location filename="../src/interface/fetmainform.cpp" line="743"/>
         <source>Greek</source>
         <translation>Ελληνικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="741"/>
+        <location filename="../src/interface/fetmainform.cpp" line="746"/>
         <source>Spanish</source>
         <translation>Ισπανικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="742"/>
+        <location filename="../src/interface/fetmainform.cpp" line="747"/>
         <source>French</source>
         <translation>Γαλλικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="743"/>
+        <location filename="../src/interface/fetmainform.cpp" line="748"/>
         <source>Hungarian</source>
         <translation>Ουγγρικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="744"/>
+        <location filename="../src/interface/fetmainform.cpp" line="749"/>
         <source>Indonesian</source>
         <translation>Ινδονησιακά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="745"/>
+        <location filename="../src/interface/fetmainform.cpp" line="750"/>
         <source>Italian</source>
         <translation>Ιταλικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="746"/>
+        <location filename="../src/interface/fetmainform.cpp" line="751"/>
         <source>Lithuanian</source>
         <translation>Λιθουανικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="747"/>
+        <location filename="../src/interface/fetmainform.cpp" line="752"/>
         <source>Macedonian</source>
         <translation>Σκοπιανά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="748"/>
+        <location filename="../src/interface/fetmainform.cpp" line="753"/>
         <source>Malay</source>
         <translation>Μαλαισιανά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="749"/>
+        <location filename="../src/interface/fetmainform.cpp" line="754"/>
         <source>Dutch</source>
         <translation>Ολλανδικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="750"/>
+        <location filename="../src/interface/fetmainform.cpp" line="755"/>
         <source>Polish</source>
         <translation>Πολωνικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="751"/>
+        <location filename="../src/interface/fetmainform.cpp" line="756"/>
         <source>Romanian</source>
         <translation>Ρουμανικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="752"/>
+        <location filename="../src/interface/fetmainform.cpp" line="757"/>
         <source>Turkish</source>
         <translation>Τούρκικα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="755"/>
+        <location filename="../src/interface/fetmainform.cpp" line="760"/>
         <source>Ukrainian</source>
         <translation>Ουκρανικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="756"/>
+        <location filename="../src/interface/fetmainform.cpp" line="761"/>
         <source>Brazilian Portuguese</source>
         <translation>Πορτογαλικά (Βραζιλίας)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="753"/>
+        <location filename="../src/interface/fetmainform.cpp" line="758"/>
         <source>Russian</source>
         <translation>Ρωσικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="754"/>
+        <location filename="../src/interface/fetmainform.cpp" line="759"/>
         <source>Persian</source>
         <translation>Περσικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4642"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4647"/>
         <source>Choose results (output) directory</source>
         <translation>Επιλέξτε τον κατάλογο εγγραφής (εξαγωγής) των αποτελεσμάτων</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4651"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4656"/>
         <source>You don&apos;t have write permissions in this directory</source>
         <translation>Δεν έχετε δικαιώματα εγγραφής στον συγκεκριμένο κατάλογο</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2137"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2142"/>
         <source>Students&apos; statistics form contains a check box named &apos;%1&apos;. This has effect only if you have overlapping groups/years, and means that FET will show the complete tree structure, even if that means that some subgroups/groups will appear twice or more in the table, with the same information. For instance, if you have year Y1, groups G1 and G2, subgroups S1, S2, S3, with structure: Y1 (G1 (S1, S2), G2 (S1, S3)), S1 will appear twice in the table</source>
-        <translation>Η φόρμα των στατιστικών μαθητών περιλαμβάνει ένα πλαίσιο ελέγχου το οποίο ονομάζεται &apos;%1&apos;. Αυτό έχει αποτέλεσμα μόνον αν έχετε αλληλοεπικαλυπτόμενα τμήματα/ έτη, και σημαίνει ότι το FET θα προβάλει την πλήρη δενδρική δομή, ακόμη και αν αυτό σημαίνει ότι κάποια υποτμήματα/τμήματα θα εμφανιστούν δύο ή περισσότερες φορές στον πίνακα, με τις ίδιες πληροφορίες. Για παράδειγμα, αν έχετε το έτος Ε1, τα τμήματα Τ1 και Τ2, τα υποτμήματα Υ1, Υ2, Υ3, με δομή Ε1 (Τ1 (Υ1,Υ2), Τ2 (Υ1, Υ3)), το Υ1 θα εμφανιστεί δύο φορές στον πίνακα</translation>
+        <translation>Η φόρμα των στατιστικών μαθητών περιλαμβάνει ένα πλαίσιο ελέγχου το οποίο ονομάζεται &apos;%1&apos;. Αυτό έχει αποτέλεσμα μόνον αν έχετε αλληλεπικαλυπτόμενα τμήματα/ έτη, και σημαίνει ότι το FET θα προβάλει την πλήρη δενδρική δομή, ακόμη και αν αυτό σημαίνει ότι κάποια υποτμήματα/τμήματα θα εμφανιστούν δύο ή περισσότερες φορές στον πίνακα, με τις ίδιες πληροφορίες. Για παράδειγμα, αν έχετε το έτος Ε1, τα τμήματα Τ1 και Τ2, τα υποτμήματα Υ1, Υ2, Υ3, με δομή Ε1 (Τ1 (Υ1,Υ2), Τ2 (Υ1, Υ3)), το Υ1 θα εμφανιστεί δύο φορές στον πίνακα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2141"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2146"/>
         <source>Show duplicates</source>
         <translation>Προβολή διπλών εγγραφών</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4135"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4138"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4188"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4191"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4194"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4200"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4203"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4209"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4227"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4289"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4140"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4143"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4193"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4196"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4199"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4205"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4208"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4214"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4232"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4294"/>
         <source>false</source>
         <translation>ψευδής</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4298"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4303"/>
         <source>FET confirmation</source>
         <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2015"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2020"/>
         <source>Option &apos;Print activities with same starting time in timetables&apos;: selecting it means that the html timetables will contain for each slot all the activities which have the same starting time (fact specified by your constraints) as the activity(ies) which are normally shown in this slot. If you don&apos;t use constraints activities same starting time, this option has no effect for you.</source>
         <translation>Η επιλογή &apos;Εκτύπωση δραστηριοτήτων με τον ίδιο χρόνο έναρξης στα ωρολόγια προγράμματα&apos;: η ενεργοποίηση αυτής της επιλογής σημαίνει ότι τα ωρολόγια προγράμματα (html) θα περιλαμβάνουν σε κάθε ώρα τους όλες τις δραστηριότητες που έχουν τον ίδιο χρόνο έναρξης (κάτι που έχει καθοριστεί από τους περιορισμούς σας), με την δραστηριότητα (τις δραστηριότητες) που κανονικά εμφανίζεται (εμφανίζονται) στην ώρα αυτή. Αν δεν χρησιμοποιείτε περιορισμούς &quot;δραστηριότητες - ίδια ώρα έναρξης&quot;, η επιλογή αυτή δεν θα έχει καμία επίδραση.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2008"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2013"/>
         <source>Option &apos;Divide html timetables with time-axis by days&apos;: This means simply that the html timetables of type &apos;time horizontal&apos; or &apos;time vertical&apos; (see the generated html timetables) should be or not divided according to the days.</source>
         <translation>Επιλογή &apos;Διαίρεση ωρολογίων προγραμμάτων (html) κατά τον άξονα του χρόνου σε ημέρες&apos;: Αυτό σημαίνει απλά ότι τα ωρολόγια προγράμματα (html) του τύπου &apos;χρόνος οριζόντια&apos; ή &apos;χρόνος κατακόρυφα&apos; (βλέπε στον φάκελο των ωρολογίων προγραμμάτων) θα πρέπει να διαιρούνται (ή να μην διαιρούνται ανάλογα με την επιλογή) σε ημέρες.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2012"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2017"/>
         <source>If the &apos;time horizontal&apos; or &apos;time vertical&apos; html timetables are too large for you, then you might need to select this option</source>
         <translation>Εάν τα html ωρολόγια προγράμματα &quot;χρόνος οριζόντια&quot; ή &quot;χρόνος κατακόρυφα&quot; είναι πολύ μεγάλα για εσάς, πιθανώς να χρειαστεί να χρησιμοποιήσετε αυτήν την επιλογή</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2006"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2011"/>
         <source>Probably some settings which are more difficult to understand are these ones:</source>
         <translation>Κάποιες πιο δυσνόητες ρυθμίσεις είναι πιθανώς οι εξής:</translation>
     </message>
@@ -33013,7 +33013,7 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2154"/>
         <source>Seed of random number generator</source>
-        <translation>Αρχική κατάσταση της γεννήτριας τυχαίων αριθμών</translation>
+        <translation>&quot;Σπόρος&quot; της γεννήτριας τυχαίων αριθμών</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2165"/>
@@ -33100,7 +33100,7 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1542"/>
         <source>A set of activities are not overlapping</source>
-        <translation>Σύνολο δραστηριοτήτων που δεν επικαλύπτονται (δεν συμπίπτουν)</translation>
+        <translation>Σύνολο δραστηριοτήτων που δεν αλληλεπικαλύπτονται (δεν συμπίπτουν)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1555"/>
@@ -33665,7 +33665,7 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2390"/>
         <source>A set of activities are in the same room if they are consecutive</source>
-        <translation>Πραγματοποίηση συνόλου δραστηριοτήτων στην ίδια αίθουσα, όταν είναι συνεχόμενες</translation>
+        <translation>Πραγματοποίηση συνόλου δραστηριοτήτων στην ίδια αίθουσα, όταν είναι διαδοχικές</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2395"/>
@@ -34217,7 +34217,7 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1686"/>
         <source>Two activities are consecutive</source>
-        <translation>Δύο δραστηριότητες είναι συνεχόμενες</translation>
+        <translation>Δύο δραστηριότητες είναι διαδοχικές</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1876"/>
@@ -35943,7 +35943,7 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="443"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="445"/>
@@ -36017,7 +36017,7 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="151"/>
         <source>Sort</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ταξινόμηση</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="162"/>
@@ -36118,7 +36118,7 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/groupsform.cpp" line="477"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform.cpp" line="479"/>
@@ -36203,7 +36203,7 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="153"/>
         <source>Sort</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ταξινόμηση</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="116"/>
@@ -36241,6 +36241,24 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="27"/>
         <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="48"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2018 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.35.1 (January 2018).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;https://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;https://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -36487,6 +36505,21 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	James (james AT cc.shu.edu.tw)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="358"/>
+        <source>References</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="379"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;You may find references for the algorithms and techniques used in this program on the FET documentation web page, &lt;/span&gt;&lt;a href=&quot;https://lalescu.ro/liviu/fet/doc/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;https://lalescu.ro/liviu/fet/doc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -36815,7 +36848,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;agemagician - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Vlăduţ Frăţiman - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Vlăduț Frățiman - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;vlad2005 - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
@@ -37026,44 +37059,13 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mohammed - suggestion.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Taro Tada - Japanese translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;V Paul C Charlesraj - suggestion.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="358"/>
-        <source>References</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="48"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2018 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.35.0 (January 2018).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;https://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;https://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="379"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;You may find references for the algorithms and techniques used in this program on the FET documentation web page, &lt;/span&gt;&lt;a href=&quot;https://lalescu.ro/liviu/fet/doc/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;https://lalescu.ro/liviu/fet/doc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="974"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="976"/>
         <source>Close</source>
         <translation type="unfinished">Κλείσιμο</translation>
     </message>
@@ -38963,7 +38965,7 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/engine/import.cpp" line="692"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="528"/>
@@ -39562,13 +39564,13 @@ Please stop simulation before this</source>
 <context>
     <name>LastWarningsDialogE</name>
     <message>
-        <location filename="../src/engine/export.cpp" line="1334"/>
+        <location filename="../src/engine/export.cpp" line="1335"/>
         <source>FET - export comment</source>
         <comment>The comment of the exporting operation</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1345"/>
+        <location filename="../src/engine/export.cpp" line="1346"/>
         <source>&amp;Ok</source>
         <translation type="unfinished"></translation>
     </message>
@@ -39583,7 +39585,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/longtextmessagebox.cpp" line="211"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/longtextmessagebox.cpp" line="70"/>
@@ -39647,7 +39649,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="577"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
 </context>
 <context>
@@ -39662,7 +39664,7 @@ Please stop simulation before this</source>
         <location filename="../src/interface/modifyactivityform_template.ui" line="257"/>
         <source>Split</source>
         <comment>Refers to the number of components in an activity split into more components</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Επιμερισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="288"/>
@@ -39706,7 +39708,7 @@ Please stop simulation before this</source>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2411"/>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2475"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Διάρκεια</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="352"/>
@@ -39949,7 +39951,7 @@ Please stop simulation before this</source>
         <location filename="../src/interface/modifyactivityform_template.ui" line="101"/>
         <location filename="../src/interface/modifyactivityform_template.ui" line="181"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="71"/>
@@ -39971,17 +39973,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="114"/>
         <source>Years</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Έτη</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="124"/>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Τμήματα</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="134"/>
         <source>Subgroups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Υποτμήματα</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="168"/>
@@ -40040,7 +40042,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifybuildingform_template.ui" line="40"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Όνομα</translation>
     </message>
 </context>
 <context>
@@ -40178,41 +40180,41 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="112"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="124"/>
         <source>Time slots</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Περίοδοι</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="137"/>
         <source>X=selected, empty=not selected</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Χ=επιλεγμένη, κενό=μη επιλεγμένη</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="144"/>
         <source>Select all</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Επιλογή όλων</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="151"/>
         <source>Unselect all</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αποεπιλογή όλων</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="173"/>
         <source>Max simultaneous</source>
         <comment>It refers to the max number of simultaneous activities</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Μέγιστες ταυτόχρονες</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="199"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="220"/>
@@ -40318,7 +40320,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="150"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="26"/>
@@ -40393,7 +40395,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="102"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="115"/>
@@ -40403,7 +40405,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="135"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="156"/>
@@ -40488,30 +40490,30 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="112"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="124"/>
         <source>Time slots</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Περίοδοι</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="137"/>
         <source>X=selected, empty=not selected</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Χ=επιλεγμένη, κενό=μη επιλεγμένη</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="144"/>
         <source>Select all</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Επιλογή όλων</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="151"/>
         <source>Unselect all</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αποεπιλογή όλων</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="173"/>
@@ -40522,7 +40524,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="199"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="220"/>
@@ -40620,7 +40622,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="78"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Διάρκεια</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="101"/>
@@ -40747,7 +40749,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="78"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Διάρκεια</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="101"/>
@@ -40850,7 +40852,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform_template.ui" line="89"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform_template.ui" line="110"/>
@@ -40871,7 +40873,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform_template.ui" line="147"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
 </context>
 <context>
@@ -40967,7 +40969,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="134"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
 </context>
 <context>
@@ -41063,7 +41065,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="134"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
 </context>
 <context>
@@ -41159,7 +41161,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="134"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
 </context>
 <context>
@@ -41378,7 +41380,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="77"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
 </context>
 <context>
@@ -41825,7 +41827,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="77"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
 </context>
 <context>
@@ -41934,7 +41936,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="44"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="68"/>
@@ -42075,7 +42077,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="134"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
 </context>
 <context>
@@ -42205,7 +42207,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="134"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="217"/>
@@ -42316,7 +42318,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="134"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="156"/>
@@ -42524,7 +42526,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="122"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="141"/>
@@ -42622,7 +42624,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="46"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="73"/>
@@ -42707,7 +42709,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="28"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="49"/>
@@ -42770,7 +42772,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxdaysperweekform_template.ui" line="101"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
 </context>
 <context>
@@ -42816,7 +42818,7 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperdayform_template.ui" line="69"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperdayform_template.ui" line="107"/>
@@ -42874,7 +42876,7 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="67"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="32"/>
@@ -42999,7 +43001,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxspanperdayform_template.ui" line="44"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxspanperdayform_template.ui" line="65"/>
@@ -43041,7 +43043,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="28"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="49"/>
@@ -43126,7 +43128,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="39"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="14"/>
@@ -43147,7 +43149,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="110"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="117"/>
@@ -43185,7 +43187,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminrestinghoursform_template.ui" line="28"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminrestinghoursform_template.ui" line="49"/>
@@ -43368,7 +43370,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="154"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="122"/>
@@ -43522,7 +43524,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="77"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
 </context>
 <context>
@@ -43599,7 +43601,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="82"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="109"/>
@@ -43652,7 +43654,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="80"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="101"/>
@@ -43705,7 +43707,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="80"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="101"/>
@@ -43779,7 +43781,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="137"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
 </context>
 <context>
@@ -43831,7 +43833,7 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform_template.ui" line="105"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform_template.ui" line="69"/>
@@ -43900,7 +43902,7 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="103"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="67"/>
@@ -44078,7 +44080,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxspanperdayform_template.ui" line="115"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
 </context>
 <context>
@@ -44116,7 +44118,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="80"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="101"/>
@@ -44207,7 +44209,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="43"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="14"/>
@@ -44233,7 +44235,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="96"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="103"/>
@@ -44277,7 +44279,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminrestinghoursform_template.ui" line="28"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminrestinghoursform_template.ui" line="49"/>
@@ -44340,7 +44342,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="96"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="120"/>
@@ -44710,7 +44712,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="90"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
 </context>
 <context>
@@ -44839,7 +44841,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="77"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
 </context>
 <context>
@@ -45094,7 +45096,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="77"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
 </context>
 <context>
@@ -45171,7 +45173,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="82"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="109"/>
@@ -45224,7 +45226,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="80"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="101"/>
@@ -45277,7 +45279,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="80"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="101"/>
@@ -45346,7 +45348,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="77"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="117"/>
@@ -45405,7 +45407,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="120"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="97"/>
@@ -45470,7 +45472,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="120"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="97"/>
@@ -45638,7 +45640,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxspanperdayform_template.ui" line="97"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxspanperdayform_template.ui" line="118"/>
@@ -45692,7 +45694,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="71"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="94"/>
@@ -45745,7 +45747,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="80"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="101"/>
@@ -45831,7 +45833,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="93"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="129"/>
@@ -45841,7 +45843,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="141"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
 </context>
 <context>
@@ -45890,7 +45892,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminrestinghoursform_template.ui" line="97"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminrestinghoursform_template.ui" line="116"/>
@@ -45943,7 +45945,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="96"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="120"/>
@@ -46164,7 +46166,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="46"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="73"/>
@@ -46357,7 +46359,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="84"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="61"/>
@@ -46411,7 +46413,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="84"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="61"/>
@@ -46546,7 +46548,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxspanperdayform_template.ui" line="61"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxspanperdayform_template.ui" line="82"/>
@@ -46632,7 +46634,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="28"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="49"/>
@@ -46702,7 +46704,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="61"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="97"/>
@@ -46712,7 +46714,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="109"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="116"/>
@@ -46755,7 +46757,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminrestinghoursform_template.ui" line="45"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βαρύτητα (απαραίτητο 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminrestinghoursform_template.ui" line="66"/>
@@ -47131,7 +47133,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="134"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="154"/>
@@ -47174,7 +47176,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyroomform_template.ui" line="84"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Όνομα</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyroomform_template.ui" line="22"/>
@@ -47227,7 +47229,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifystudentsgroupform_template.ui" line="49"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Όνομα</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsgroupform_template.ui" line="22"/>
@@ -47290,7 +47292,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="64"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Όνομα</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="14"/>
@@ -47407,7 +47409,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifystudentsyearform_template.ui" line="22"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Όνομα</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform_template.ui" line="14"/>
@@ -47472,7 +47474,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifysubactivityform.cpp" line="449"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform.cpp" line="87"/>
@@ -47497,7 +47499,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="104"/>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="187"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="74"/>
@@ -47519,17 +47521,17 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="117"/>
         <source>Years</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Έτη</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="127"/>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Τμήματα</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="137"/>
         <source>Subgroups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Υποτμήματα</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="174"/>
@@ -47584,7 +47586,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="272"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Διάρκεια</translation>
     </message>
 </context>
 <context>
@@ -47598,7 +47600,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/fet.cpp" line="709"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="712"/>
@@ -47667,7 +47669,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/fet.cpp" line="732"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="735"/>
@@ -47716,120 +47718,125 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/fetmainform.cpp" line="361"/>
         <location filename="../src/interface/fetmainform.cpp" line="362"/>
         <source>Allowed minimum %1 to maximum %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιτρέπεται από ελάχιστο %1 έως μέγιστο %2</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="350"/>
         <source>Random seed</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;Σπόρος&quot; γεννήτριας τυχαίων αριθμών</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="352"/>
         <source>Random seed X component:</source>
         <comment>Means the X component of the random seed (random seed has 2 components, X and Y). Please keep translation short</comment>
-        <translation type="unfinished"></translation>
+        <translation>Στοιχείο Χ του &quot;σπόρου&quot;:</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="354"/>
         <source>Random seed Y component:</source>
         <comment>Means the Y component of the random seed (random seed has 2 components, X and Y). Please keep translation short</comment>
-        <translation type="unfinished"></translation>
+        <translation>Στοιχείο Υ του &quot;σπόρου&quot;:</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="356"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="358"/>
         <source>Help</source>
-        <translation type="unfinished">Βοήθεια</translation>
+        <translation>Βοήθεια</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="359"/>
         <source>Cancel</source>
-        <translation type="unfinished">Άκυρο</translation>
+        <translation>Άκυρο</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="409"/>
         <source>FET information</source>
-        <translation type="unfinished">FET - Πληροφορίες</translation>
+        <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="410"/>
         <source>You can control the random behaviour of FET with this function</source>
-        <translation type="unfinished"></translation>
+        <translation>Μπορείτε να ελέγξετε την συμπεριφοφά της γεννήτριας τυχαίων αριθμών με αυτήν την συνάρτηση</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="411"/>
         <source>The random seed is the state of the random number generator.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο &quot;σπόρος&quot; είναι η αρχική κατάσταση της γεννήτριας τυχαίων αριθμών.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="412"/>
         <source>It has two components, X and Y.</source>
-        <translation type="unfinished"></translation>
+        <translation>Έχει δύο στοιχεία (συνιστώσες), το Χ και το Υ.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="413"/>
         <source>X is a value at least %1 and at most %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το Χ είναι τουλάχιστον %1 και το πολύ %2.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="414"/>
         <source>Y is a value at least %1 and at most %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το Υ είναι τουλάχιστον %1 και το πολύ %2.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="415"/>
         <source>The random seed before the generation of a timetable (the X and Y components) is saved on disk in the corresponding timetables directory, so that you can simulate again the same generation after that.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο &quot;σπόρος&quot; της γεννήτριας τυχαίων αριθμών πριν τη δημιουργία ωρολογίου προγράμματος (τα στοιχεία Χ και Υ) αποθηκεύεται στο δίσκο, στον αντίστοιχο κατάλογο ωρολογίων προγραμμάτων. Έτσι, έχετε τη δυνατότητα σε μεταγενέστερο χρόνο να δημιουργήσετε το ίδιο ωρολόγιο πρόγραμμα.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="417"/>
         <source>Mode of operation: to obtain the same timetable twice, give the random seed two values (say X=1234, Y=12345), then generate single, then make it again the same values (X=1234 and Y=12345), then generate single again. The timetables will be the same. If you generate multiple instead of single, the first set of timetables will be the same as the second set (if you generate the same number of timetables) but of course timetables inside each set will be different. If you enter the same random seed (X and Y) on different computers (but using the same FET version, see note below) and generate single, the timetables will be the same (if you generate multiple, the sets of timetables will correspond, the first timetable from simulation 1 with first timetable from simulation 2, etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Τρόπος λειτουργίας: για να πετύχετε την δημιουργία του ίδιου ωρολογίου προγράμματος για δεύτερη φορά, δώστε στον &quot;σπόρο&quot; της γεννήτριας τυχαίων αριθμών δύο τιμές (ας πούμε Χ=1234, Υ=12345), και στη συνέχεια δημιουργείστε ένα ωρολόγιο πρόγραμμα, έπειτα δώστε τις ίδιες τιμές στον &quot;σπόρο&quot; (Χ=1234, Υ=12345) και δημιουργείστε εκ νέου ένα ωρολόγιο πρόγραμμα. Τα ωρολόγια προγράμματα αυτά θα είναι ίδια. Αν δημιουργήσετε πολλαπλά ωρολόγια αντί για ένα, η πρώτη ομάδα ωρολογίων προγραμμάτων θα είναι η ίδια με την δεύτερη ομάδα (αν δημιουργήσετε τον ίδιο αριθμό ωρολογίων προγραμμάτων), αλλά φυσικά μεταξύ τους τα ωρολόγια προγράμματα της κάθε ομάδας θα είναι διαφορετικά. Αν δώσετε τον ίδιο &quot;σπόρο&quot; για την γεννήτρια τυχαίων αριθμών σε διαφορετικούς υπολογιστές (αλλά χρησιμοποιώντας την ίδια έκδοση του FET, βλέπε τη σημείωση παρακάτω) και δημιουργείσετε ένα ωρολόγιο πρόγραμμα, τα ωρολόγια θα είναι ίδια (αν δημιουργήσετε πολλαπλά, οι ομάδες των ωρολογίων θα αντιστοιχούν ως εξής: το πρώτο ωρολόγιο της πρώτης ομάδας με το πρώτο της δεύτερης ομάδας, κ.ο.κ.)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="426"/>
         <source>Note: of course you need exactly the same conditions to duplicate the same simulations (so, you need exactly the same data - activities, constraints, etc.).</source>
-        <translation type="unfinished"></translation>
+        <translation>Σημείωση: φυσικά θα πρέπει να έχετε ακριβώς τις ίδιες συνθήκες για να δημιουργήσετε ταυτόσημα ωρολόγια προγράμματα (δηλαδή, θα πρέπει να έχετε τα ίδια δεδομένα - δραστηριότητες, περιορισμούς, κ.λπ.).</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="428"/>
         <source>Note: for different versions of FET, the behavior of generation may be totally different, even for the same data and the same random seed (same X and same Y), due to possible changes in the algorithm. You need to consider this as a precaution.</source>
-        <translation type="unfinished"></translation>
+        <translation>Σημείωση: για διαφορετικές εκδόσεις του FET, η &quot;συμπεριφορά&quot; (&quot;απόκριση&quot;) αναφορικά με την δημιουργία ωρολογίων προγραμμάτων μπορεί να είναι τελείως διαφορετική, ακόμη και με τα ίδια δεδομένα και τον ίδιο &quot;σπόρο&quot; της γεννήτριας τυχαίων αριθμών (ίδιο Χ και Υ), εξαιτίας πιθανών αλλαγών στον αλγόριθμο. Αυτό θα πρέπει να το εκλάβετε ως προφύλαξη.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="431"/>
         <source>Note: when you start FET, each time, the random seed X is the number of seconds elapsed since 1 January 1970 and the random seed Y is the next number in the Y series, after the number of seconds elapsed since 1 January 1970</source>
-        <translation type="unfinished"></translation>
+        <translation>Σημείωση: όταν εκκινείτε το FET, κάθε φορά το στοιχείο Χ του &quot;σπόρου&quot; της γεννήτριας τυχαίων αριθμών είναι ο αριθμός των δευτερολέπτων που έχουν παρέλθει από την 1η Ιανουαρίου 1970 και το Υ του &quot;σπόρου&quot; της γεννήτριας τυχαίων αριθμών είναι ο επόμενος αριθμός στην σειρά των Υ, μετά τον αριθμό των δευτερολέπτων που έχουν παρέλθει από την 1η Ιανουαρίου 1970</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="434"/>
+        <source>It is thus very important to note that if you start two or more instances of FET when the number of seconds since 1 January 1970 is the same the initial random seeds will be identical, leading to the same timetable generation behavior for an identical input file. If you intend to generate different timetables for the same file, you need to wait at least one second between starting two succesive FET instances. Or you can change the initial random seed by hand</source>
+        <translation>Έτσι, είναι πολύ σημαντικό να σημειωθεί ότι αν εκκινήσετε ταυτόχρονα το FET εις διπλούν (ή και περισσότερες φορές) εφόσον ο αριθμός των δευτερολέπτων από την 1η Ιανουαρίου 1970 είναι ο ίδιος, οι αρχικοί &quot;σπόροι&quot; της γεννήτριας τυχαίων αριθμών θα είναι ταυτόσημοι. Δηλαδή, το FET θα οδηγηθεί στην ίδια &quot;συμπεριφορά&quot; ως προς τη δημιουργία του ωρολογίου προγράμματος, εφόσον το αρχείο που έχει εισαχθεί (ανοιχθεί) είναι ακριβώς το ίδιο. Αν προτίθεστε να δημιουργήσετε διαφορετικά ωρολόγια προγράμματα (παρόλο που το αρχείο σας είναι το ίδιο), θα πρέπει να περιμένετε τουλάχιστον για ένα δευτερόλεπτο ανάμεσα στις δύο διαδοχικές εκκινήσεις του FET. Ή μπορείτε να αλλάξετε τον αρχικό &quot;σπόρο&quot; της γεννήτριας τυχαίων αριθμών χειροκίνητα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="439"/>
         <source>After you generate (even partially), the random seed (X and Y components) will change (each call of the random number generator updates the random seed components to the next numbers in the sequence, and there are many calls to this random generating routine in the generate function)</source>
-        <translation type="unfinished"></translation>
+        <translation>Αφού δημιουργήσετε (έστω και μερικώς) ωρολόγιο πρόγραμμα, ο &quot;σπόρος&quot; της γεννήτριας τυχαίων αριθμών (στοιχεία Χ και Υ) θα αλλάξουν (κάθε κλήση της γεννήτριας τυχαίων αριθμών ενημερώνει τα στοιχεία Χ και Υ του &quot;σπόρου&quot; με τους επόμενους αριθμούς της ακολουθίας, και υπάρχουν πολλές κλήσεις της ρουτίνας τυχαίας δημιουργίας στην συνάρτηση δημιουργίας ωρολογίου προγράμματος)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="437"/>
-        <source>This setting is useful for more things, maybe one thing is bug report: send you file along with the random seed at the start of generating (the two components, X and Y, are saved in the timetable directory at the start of generation)</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/fetmainform.cpp" line="442"/>
+        <source>This setting is useful for more things, maybe one thing is bug report: send your file along with the random seed at the start of generating (the two components, X and Y, are saved in the timetable directory at the start of generation)</source>
+        <translation>Αυτή η ρύθμιση έχει και άλλες χρήσεις. Πιθανώς μία χρήση να είναι η αναφορά σφάλματος λογισμικού (bug): στείλτε το αρχείο σας μαζί με τον &quot;σπόρο&quot; της γεννήτριας τυχαίων αριθμών που χρησιμοποιήθκε κατά την έναρξη της δημιουργίας ωρολογίου προγράμματος (τα δύο στοιχεία, Χ και Υ, αποθηκεύονται στον κατάλογο ωρολογίων προγραμμάτων κατά την έναρξη της δημιουργίας ωρολογίου προγράμματος)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="446"/>
+        <location filename="../src/interface/fetmainform.cpp" line="451"/>
         <source>The random seed X component must be at least %1 and at most %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Το στοιχείο Χ του &quot;σπόρου&quot; της γεννήτριας τυχαίων αριθμών πρέπει αν είναι τουλάχιστον %1 και το πολύ %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="452"/>
+        <location filename="../src/interface/fetmainform.cpp" line="457"/>
         <source>The random seed Y component must be at least %1 and at most %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Το στοιχείο Υ του &quot;σπόρου&quot; της γεννήτριας τυχαίων αριθμών πρέπει αν είναι τουλάχιστον %1 και το πολύ %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="446"/>
-        <location filename="../src/interface/fetmainform.cpp" line="452"/>
+        <location filename="../src/interface/fetmainform.cpp" line="451"/>
+        <location filename="../src/interface/fetmainform.cpp" line="457"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET - Προειδοποίηση</translation>
+        <translation>FET - Προειδοποίηση</translation>
     </message>
 </context>
 <context>
@@ -47941,7 +47948,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="91"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="104"/>
@@ -48071,7 +48078,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/roomsform.cpp" line="290"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform.cpp" line="292"/>
@@ -48117,7 +48124,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="106"/>
         <source>Sort</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ταξινόμηση</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="113"/>
@@ -49394,7 +49401,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="133"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="140"/>
@@ -49473,315 +49480,315 @@ not added - must be a duplicate</source>
 <context>
     <name>SplitYearForm</name>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="131"/>
+        <location filename="../src/interface/splityearform.cpp" line="130"/>
         <source>Splitting year: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="203"/>
-        <location filename="../src/interface/splityearform.cpp" line="237"/>
-        <location filename="../src/interface/splityearform.cpp" line="382"/>
-        <location filename="../src/interface/splityearform.cpp" line="390"/>
-        <location filename="../src/interface/splityearform.cpp" line="464"/>
-        <location filename="../src/interface/splityearform.cpp" line="468"/>
-        <location filename="../src/interface/splityearform.cpp" line="495"/>
-        <location filename="../src/interface/splityearform.cpp" line="515"/>
-        <location filename="../src/interface/splityearform.cpp" line="735"/>
+        <location filename="../src/interface/splityearform.cpp" line="202"/>
+        <location filename="../src/interface/splityearform.cpp" line="236"/>
+        <location filename="../src/interface/splityearform.cpp" line="381"/>
+        <location filename="../src/interface/splityearform.cpp" line="389"/>
+        <location filename="../src/interface/splityearform.cpp" line="463"/>
+        <location filename="../src/interface/splityearform.cpp" line="467"/>
+        <location filename="../src/interface/splityearform.cpp" line="494"/>
+        <location filename="../src/interface/splityearform.cpp" line="514"/>
+        <location filename="../src/interface/splityearform.cpp" line="734"/>
         <source>FET information</source>
         <translation type="unfinished">FET - Πληροφορίες</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="122"/>
-        <location filename="../src/interface/splityearform.cpp" line="367"/>
-        <location filename="../src/interface/splityearform.cpp" line="416"/>
-        <location filename="../src/interface/splityearform.cpp" line="622"/>
+        <location filename="../src/interface/splityearform.cpp" line="121"/>
+        <location filename="../src/interface/splityearform.cpp" line="366"/>
+        <location filename="../src/interface/splityearform.cpp" line="415"/>
+        <location filename="../src/interface/splityearform.cpp" line="621"/>
         <source>FET warning</source>
         <translation type="unfinished">FET - Προειδοποίηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="141"/>
+        <location filename="../src/interface/splityearform.cpp" line="140"/>
         <source>Max subgroups per year: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="142"/>
+        <location filename="../src/interface/splityearform.cpp" line="141"/>
         <source>Max total subgroups: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="197"/>
+        <location filename="../src/interface/splityearform.cpp" line="196"/>
         <source>FET - Add division to category %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="198"/>
+        <location filename="../src/interface/splityearform.cpp" line="197"/>
         <source>Please input division name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="203"/>
-        <location filename="../src/interface/splityearform.cpp" line="237"/>
+        <location filename="../src/interface/splityearform.cpp" line="202"/>
+        <location filename="../src/interface/splityearform.cpp" line="236"/>
         <source>Duplicates not allowed!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="230"/>
+        <location filename="../src/interface/splityearform.cpp" line="229"/>
         <source>FET - Modify division to category %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="231"/>
+        <location filename="../src/interface/splityearform.cpp" line="230"/>
         <source>Please input the new division name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="324"/>
-        <location filename="../src/interface/splityearform.cpp" line="352"/>
-        <location filename="../src/interface/splityearform.cpp" line="616"/>
-        <location filename="../src/interface/splityearform.cpp" line="861"/>
+        <location filename="../src/interface/splityearform.cpp" line="323"/>
+        <location filename="../src/interface/splityearform.cpp" line="351"/>
+        <location filename="../src/interface/splityearform.cpp" line="615"/>
+        <location filename="../src/interface/splityearform.cpp" line="860"/>
         <source>FET confirmation</source>
         <translation type="unfinished">FET - Επιβεβαίωση</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="325"/>
+        <location filename="../src/interface/splityearform.cpp" line="324"/>
         <source>Do you want to remove division %1 from category %2?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="353"/>
+        <location filename="../src/interface/splityearform.cpp" line="352"/>
         <source>Do you really want to remove all divisions from category %1?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="382"/>
+        <location filename="../src/interface/splityearform.cpp" line="381"/>
         <source>The current number of subgroups for this year is too large (the maximum allowed value is %1, but computing up to category %2 gives %3 subgroups)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="390"/>
+        <location filename="../src/interface/splityearform.cpp" line="389"/>
         <source>Each category must contain at least one division</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="420"/>
+        <location filename="../src/interface/splityearform.cpp" line="419"/>
         <source>Are you sure you want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="464"/>
+        <location filename="../src/interface/splityearform.cpp" line="463"/>
         <source>Duplicate names not allowed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="582"/>
+        <location filename="../src/interface/splityearform.cpp" line="581"/>
         <source>Notes:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="584"/>
+        <location filename="../src/interface/splityearform.cpp" line="583"/>
         <source>Note:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="587"/>
+        <location filename="../src/interface/splityearform.cpp" line="586"/>
         <source>To keep a group, you need to keep the corresponding division name and use the same separator(s) character(s).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="594"/>
+        <location filename="../src/interface/splityearform.cpp" line="593"/>
         <source>Read the divide year dialog Help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="610"/>
+        <location filename="../src/interface/splityearform.cpp" line="609"/>
         <source>The following subgroups will no longer be available:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="725"/>
+        <location filename="../src/interface/splityearform.cpp" line="724"/>
         <source>There were removed %1 &apos;group activities in the initial order&apos; items.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="758"/>
+        <location filename="../src/interface/splityearform.cpp" line="757"/>
         <source>You might first want to consider if dividing a year is necessary and on what options. Please remember that FET can handle activities with multiple teachers/students sets. If you have say students set 9a, which is split into 2 parts: English (teacher TE) and French (teacher TF), and language activities must be simultaneous, then you might not want to divide according to this category, but add more larger activities, with students set 9a and teachers TE+TF. The only drawback is that each activity can take place only in one room in FET, so you might need to find a way to overcome that.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="766"/>
+        <location filename="../src/interface/splityearform.cpp" line="765"/>
         <source>Please choose a number of categories and in each category the number of divisions. You can choose for instance 3 categories, 5 divisions for the first category: a, b, c, d and e, 2 divisions for the second category: boys and girls, and 3 divisions for the third: English, German and French.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="780"/>
+        <location filename="../src/interface/splityearform.cpp" line="779"/>
         <source>If your number of subgroups is reasonable, probably you need not worry about empty subgroups (regarding speed of generation). But more tests need to be done. You just need to know that for the moment the maximum total number of subgroups is %1 (which can be changed, but nobody needed larger values)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="789"/>
+        <location filename="../src/interface/splityearform.cpp" line="788"/>
         <source>If you intend to divide again a year by categories and you want to keep (the majority of) the existing groups in this year, you will need to use the exact same separator character(s) for dividing this year as you used when previously dividing this year, and the same division names (any old division which is no longer entered means a group which will be removed from this year).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="795"/>
+        <location filename="../src/interface/splityearform.cpp" line="794"/>
         <source>When dividing again a year, you might get a warning about subgroups which will be removed. If you didn&apos;t explicitly use (these) subgroups in your activities or constraints, probably you can safely ignore this warning. Generally, if you use years&apos; division by categories, it is groups that matter.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="805"/>
+        <location filename="../src/interface/splityearform.cpp" line="804"/>
         <source>If you have many subgroups and you don&apos;t explicitly use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
         <translation type="unfinished">Αν έχετε πολλά υποτμήματα και δεν τα χρησιμοποιείτε ρητά, προτείνεται να χρησιμοποιήσετε τις τρεις καθολικές ρυθμίσεις: απόκρυψη υποτμημάτων στα σύνθετα πλαίσια, απόκρυψη υποτμημάτων στον προγραμματισμό δραστηριοτήτων και μη εγγραφή ωρολογίων προγραμμάτων των υποτμημάτων στον σκληρό δίσκο.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="812"/>
+        <location filename="../src/interface/splityearform.cpp" line="811"/>
         <source>(Also the conflicts timetable might take long to write, if the file is big.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="814"/>
+        <location filename="../src/interface/splityearform.cpp" line="813"/>
         <source>After that, you can re-enable writing the students timetables on the disk, and re-generate.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="817"/>
+        <location filename="../src/interface/splityearform.cpp" line="816"/>
         <source>About using a large number of categories, divisions per category and subgroups: it is highly recommended to keep these to a minimum, especially the number of categories, by using any kind of tricks. Otherwise the timetable might become impossible (taking too much time to generate).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="824"/>
+        <location filename="../src/interface/splityearform.cpp" line="823"/>
         <source>Maybe an alternative to dividing a year into many categories/subgroups would be to enter individual students as FET subgroups and add into each group the corresponding subgroups. But this is hard to do from the FET interface - maybe a solution would be to use an automatic tool to convert your institution data into a file in .fet format.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="828"/>
+        <location filename="../src/interface/splityearform.cpp" line="827"/>
         <source>Or you might use the FET feature to import students sets from comma separated values (CSV) files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="830"/>
+        <location filename="../src/interface/splityearform.cpp" line="829"/>
         <source>In such cases (individual students as FET subgroups), remember that a smaller number of total subgroups means faster generation time, so you might want to consider a single subgroup for two or more students who have the exact same activities and constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="862"/>
+        <location filename="../src/interface/splityearform.cpp" line="861"/>
         <source>Do you really want to reset the form values to defaults (empty)?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="122"/>
+        <location filename="../src/interface/splityearform.cpp" line="121"/>
         <source>You have met a minor bug in FET, please report it. FET expected to read from settings %1 divisions in category %2, but read %3. FET will now continue operation, nothing will be lost.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="570"/>
+        <location filename="../src/interface/splityearform.cpp" line="569"/>
         <source>WARNING: There are groups and subgroups which will no longer be available and which will be removed, along with the associated activities and constraints. Are you sure? See the list below.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="573"/>
+        <location filename="../src/interface/splityearform.cpp" line="572"/>
         <source>WARNING: There are groups which will no longer be available and which will be removed, along with the associated activities and constraints. Are you sure? See the list below.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="576"/>
+        <location filename="../src/interface/splityearform.cpp" line="575"/>
         <source>WARNING: There are subgroups which will no longer be available and which will be removed, along with the associated activities and constraints. Are you sure? See the list below.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="602"/>
+        <location filename="../src/interface/splityearform.cpp" line="601"/>
         <source>The following groups will no longer be available:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="884"/>
+        <location filename="../src/interface/splityearform.cpp" line="883"/>
         <source>Subgroups: %1</source>
         <comment>%1 is the number of subgroups</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="417"/>
+        <location filename="../src/interface/splityearform.cpp" line="416"/>
         <source>Please note that the current configuration will lead you to %1 total number of subgroups. The file format supports any number of students sets, but for the timetable generation to be possible the maximum allowed total number of subgroups is %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="368"/>
+        <location filename="../src/interface/splityearform.cpp" line="367"/>
         <source>You want to divide the year by %1 categories. The recommended number of categories is 2, 3 or maximum 4 (to ensure the timetable generation speed and feasibility). Are you sure?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="468"/>
+        <location filename="../src/interface/splityearform.cpp" line="467"/>
         <source>Empty names not allowed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="495"/>
+        <location filename="../src/interface/splityearform.cpp" line="494"/>
         <source>Cannot add group %1, because a set with the same name exists. Please choose another name or remove the old set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="515"/>
+        <location filename="../src/interface/splityearform.cpp" line="514"/>
         <source>Cannot add subgroup %1, because a set with the same name exists. Please choose another name or remove the old set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="591"/>
+        <location filename="../src/interface/splityearform.cpp" line="590"/>
         <source>Probably you can safely ignore the warning about the removal of the subgroups.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="617"/>
+        <location filename="../src/interface/splityearform.cpp" line="616"/>
         <source>Yes</source>
         <translation type="unfinished">Ναι</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="617"/>
+        <location filename="../src/interface/splityearform.cpp" line="616"/>
         <source>No</source>
         <translation type="unfinished">Όχι</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="622"/>
+        <location filename="../src/interface/splityearform.cpp" line="621"/>
         <source>Year %1 will be split again. All groups and subgroups of this year which will no longer exist (listed before) and the associated activities and constraints will be removed. Are you absolutely sure?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="719"/>
+        <location filename="../src/interface/splityearform.cpp" line="718"/>
         <source>There were removed %1 activities, %2 time constraints and %3 space constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="735"/>
+        <location filename="../src/interface/splityearform.cpp" line="734"/>
         <source>Split of the year complete, please check the groups and subgroups of the year to make sure that everything is OK.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="786"/>
+        <location filename="../src/interface/splityearform.cpp" line="785"/>
         <source>Please note that the dialog here will keep the last configuration of the last divided year, it will not remember the values for a specific year you need to modify.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="801"/>
+        <location filename="../src/interface/splityearform.cpp" line="800"/>
         <source>Separator character(s) is of your choice (default is space)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="808"/>
+        <location filename="../src/interface/splityearform.cpp" line="807"/>
         <source>Note that if you are only working to get a feasible timetable, without the need to obtain the students timetable (XML or HTML) on the disk at all, and if you have many total subgroups, a good idea is to disable writing the subgroups, groups AND years timetables to the hard disk, as these take a long time to compute (not only subgroups, but also groups and years!).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="821"/>
+        <location filename="../src/interface/splityearform.cpp" line="820"/>
         <source>Maybe a reasonable number of categories could be 2, 3 or maximum 4. The divide year dialog allows much higher values, but these are not at all recommended.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="836"/>
+        <location filename="../src/interface/splityearform.cpp" line="835"/>
         <source>FET - help on dividing a year</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="842"/>
+        <location filename="../src/interface/splityearform.cpp" line="841"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
 </context>
 <context>
@@ -49905,7 +49912,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="445"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="452"/>
@@ -50094,12 +50101,12 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="408"/>
         <source>NOTE: If you are using constraints of type activities same starting time or activities same starting day, it is important (after current operation) to apply the operation of removing redundant constraints.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΣΗΜΕΙΩΣΗ: Αν χρησιμοποιείτε περιορισμούς του τύπου &quot;δραστηριότητες - ίδιος χρόνος έναρξης&quot; ή &quot;δραστηριότητες - ίδια ημέρα έναρξης&quot;, είναι σημαντικό (μετά την τρέχουσα διαδικασία) να εφαρμόσετε τη διαδικασία διαγραφής περιττών περιορισμών.</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="410"/>
         <source>Read Help/Important tips - tip 2) for details.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Διαβάστε στο &quot;Βοήθεια/Σημαντικές υποδείξεις - υπόδειξη 2) για λεπτομέρειες</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="425"/>
@@ -50234,18 +50241,18 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="326"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
 </context>
 <context>
     <name>StartStatisticsPrint</name>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="106"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="107"/>
         <source>FET warning</source>
         <translation type="unfinished">FET - Προειδοποίηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="107"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="108"/>
         <source>Printing is currently not possible.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -50266,269 +50273,269 @@ Please report error. FET will now abort current operation</source>
 <context>
     <name>StatisticsExport</name>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="120"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="122"/>
         <source>Do you want to export detailed statistic files into directory %1 as html files?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="161"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="163"/>
         <source>FET Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="162"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="164"/>
         <source>Statistic files were exported to directory %1 as html files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="358"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="469"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="495"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="582"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="608"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="659"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="906"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="957"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1202"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1253"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1499"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1550"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1796"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1847"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="2093"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="2143"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="360"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="471"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="497"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="584"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="610"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="661"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="908"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="959"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1204"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1255"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1501"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1552"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1798"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1849"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="2095"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="2145"/>
         <source>FET critical</source>
         <translation type="unfinished">FET - Κρίσιμο</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="359"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="496"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="609"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="907"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1203"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1500"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1797"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="2094"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="361"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="498"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="611"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="909"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1205"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1502"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1799"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="2096"/>
         <source>Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
         <translation type="unfinished">Αδύνατο το άνοιγμα του αρχείου %1. Παρακαλώ, ελέγξτε τον ελεύθερο χώρο του δίσκου σας. Η αποθήκευση του %1 ακυρώνεται.</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="381"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="383"/>
         <source>unnamed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="382"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="384"/>
         <source>CSS Stylesheet of %1</source>
         <comment>%1 is the file name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="386"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="388"/>
         <source>To hide an element just write the following phrase into the element: %1 (without quotes).</source>
         <comment>%1 is a short phrase beginning and ending with quotes, and we want the user to be able to add it, but without quotes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="466"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="468"/>
         <source>End of file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="470"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="583"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="660"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="958"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1254"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1551"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1848"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="2144"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="472"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="585"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="662"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="960"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1256"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1553"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1850"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="2146"/>
         <source>Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="543"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="545"/>
         <source>Institution name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="544"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="546"/>
         <source>Comments</source>
         <translation type="unfinished">Σχόλια</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="550"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="552"/>
         <source>Statistics</source>
         <translation type="unfinished">Στατιστικά</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="552"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="557"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="554"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="559"/>
         <source>Teachers</source>
         <translation type="unfinished">Εκπαιδευτικοί</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="552"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="563"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="554"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="565"/>
         <source>Students</source>
         <translation type="unfinished">Μαθητές</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="552"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="569"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="554"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="571"/>
         <source>Subjects</source>
         <translation type="unfinished">Αντικείμενα</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="559"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="560"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="564"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="561"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="562"/>
         <location filename="../src/engine/statisticsexport.cpp" line="566"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="570"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="571"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="568"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="572"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="573"/>
         <source>view</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="677"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="679"/>
         <source>Teachers - Subjects Matrix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="700"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="998"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1294"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1591"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1888"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="2184"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="702"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1000"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1296"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1593"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1890"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="2186"/>
         <source>Exporting statistics</source>
         <comment>Title of a progress dialog</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="975"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="977"/>
         <source>Subjects - Teachers Matrix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="999"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1001"/>
         <source>Processing subjects with teachers...please wait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1271"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1273"/>
         <source>Teachers - Students Matrix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1865"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1867"/>
         <source>Subjects - Students Matrix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="701"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="703"/>
         <source>Processing teachers with subjects...please wait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="119"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="121"/>
         <source>FET Question</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="164"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="712"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1010"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1306"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1603"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1900"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="2196"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="166"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="714"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1012"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1308"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1605"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1902"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="2198"/>
         <source>FET warning</source>
         <translation type="unfinished">FET - Προειδοποίηση</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="165"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="167"/>
         <source>Statistics export incomplete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="384"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="386"/>
         <source>Stylesheet generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is date and time</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="393"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="395"/>
         <source>Some programs import &quot;tfoot&quot; incorrectly. So we use &quot;tr.foot&quot; instead of &quot;tfoot&quot;.</source>
         <comment>Please keep tfoot and tr.foot untranslated, as they are in the original English phrase</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="575"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="880"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1176"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1473"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1770"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="2067"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="2365"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="577"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="882"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1178"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1475"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1772"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="2069"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="2367"/>
         <source>Timetable generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is the date and time of generation</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="694"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="866"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="992"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1162"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1288"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1459"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1585"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1756"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1882"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="2053"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="2178"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="2351"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="696"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="868"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="994"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1164"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1290"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1461"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1587"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1758"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1884"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="2055"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="2180"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="2353"/>
         <source>Sum</source>
         <comment>This means the sum of more values, the total</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="712"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1010"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1306"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1603"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1900"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="2196"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="714"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1012"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1308"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1605"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1902"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="2198"/>
         <source>Canceled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1295"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1297"/>
         <source>Processing teachers with students...please wait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1568"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1570"/>
         <source>Students - Teachers Matrix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1592"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1594"/>
         <source>Processing students with teachers...please wait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1889"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1891"/>
         <source>Processing subjects with students...please wait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="2161"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="2163"/>
         <source>Students - Subjects Matrix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="2185"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="2187"/>
         <source>Processing students with subjects...please wait</source>
         <translation type="unfinished"></translation>
     </message>
@@ -50536,312 +50543,312 @@ Please report error. FET will now abort current operation</source>
 <context>
     <name>StatisticsPrintForm</name>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="115"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="116"/>
         <source>Print statistics matrix dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="125"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="126"/>
         <source>All</source>
         <comment>Refers to a list of items, select all. Please keep translation short</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="127"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="128"/>
         <source>None</source>
         <comment>Refers to a list of items, select none. Please keep translation short</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="136"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="137"/>
         <source>Print</source>
         <translation type="unfinished">Εκτύπωση</translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="138"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="139"/>
         <source>students-subjects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="139"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="140"/>
         <source>students-teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="140"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="141"/>
         <source>teachers-subjects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="141"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="142"/>
         <source>teachers-students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="142"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="143"/>
         <source>subjects-students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="143"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="144"/>
         <source>subjects-teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="154"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="155"/>
         <source>Options</source>
         <translation type="unfinished">Επιλογές</translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="158"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="159"/>
         <source>Page-break: none</source>
         <comment>No page-break between statistics. Please keep translation short</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="159"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="160"/>
         <source>Page-break: always</source>
         <comment>Page-break after each statistic. Please keep translation short</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="160"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="161"/>
         <source>Page-break: even</source>
         <comment>Page-break after each even statistic. Please keep translation short</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="174"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="175"/>
         <source>Portrait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="174"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="175"/>
         <source>Landscape</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="191"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="192"/>
         <source>Custom</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="193"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="194"/>
         <source>A0</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="194"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="195"/>
         <source>A1</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="195"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="196"/>
         <source>A2</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="196"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="197"/>
         <source>A3</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="197"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="198"/>
         <source>A4</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="198"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="199"/>
         <source>A5</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="199"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="200"/>
         <source>A6</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="200"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="201"/>
         <source>A7</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="201"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="202"/>
         <source>A8</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="202"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="203"/>
         <source>A9</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="203"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="204"/>
         <source>B0</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="204"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="205"/>
         <source>B1</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="205"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="206"/>
         <source>B2</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="206"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="207"/>
         <source>B3</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="207"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="208"/>
         <source>B4</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="208"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="209"/>
         <source>B5</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="209"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="210"/>
         <source>B6</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="210"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="211"/>
         <source>B7</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="211"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="212"/>
         <source>B8</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="212"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="213"/>
         <source>B9</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="213"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="214"/>
         <source>B10</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="214"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="215"/>
         <source>C5E</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="215"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="216"/>
         <source>Comm10E</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="216"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="217"/>
         <source>DLE</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="217"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="218"/>
         <source>Executive</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="218"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="219"/>
         <source>Folio</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="219"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="220"/>
         <source>Ledger</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="220"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="221"/>
         <source>Legal</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="221"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="222"/>
         <source>Letter</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="222"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="223"/>
         <source>Tabloid</source>
         <comment>Type of paper size</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="245"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="251"/>
         <source>Activity tags</source>
         <translation type="unfinished">Ετικέτες δραστηριοτήτων</translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="258"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="264"/>
         <source>Font size: %1 pt</source>
         <comment>pt means points for font size, when printing the statistics</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="282"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="288"/>
         <source>Activities padding: %1 px</source>
         <comment>px means pixels, when printing the statistics</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="305"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="311"/>
         <source>Space after table: +%1 px</source>
         <comment>px means pixels, when printing the statistics</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="861"/>
-        <location filename="../src/interface/statisticsprintform.cpp" line="905"/>
-        <location filename="../src/interface/statisticsprintform.cpp" line="943"/>
-        <location filename="../src/interface/statisticsprintform.cpp" line="956"/>
-        <location filename="../src/interface/statisticsprintform.cpp" line="994"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="867"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="911"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="949"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="962"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="1000"/>
         <source>FET is compiled without printer support - it is impossible to print from this dialog. Please export and open the HTML statistics from the results directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="882"/>
-        <location filename="../src/interface/statisticsprintform.cpp" line="926"/>
-        <location filename="../src/interface/statisticsprintform.cpp" line="977"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="888"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="932"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="983"/>
         <source>No margins set, because at least one value is too small. You need to enter at least:
 Left: %1
 Right: %2
@@ -50850,72 +50857,72 @@ Bottom: %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="891"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="897"/>
         <source>Print statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="328"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="334"/>
         <source>Split after: %1 names</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="351"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="357"/>
         <source>Left margin: %1 mm</source>
         <comment>mm means millimeters</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="374"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="380"/>
         <source>Top margin: %1 mm</source>
         <comment>mm means millimeters</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="397"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="403"/>
         <source>Right margin: %1 mm</source>
         <comment>mm means millimeters</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="420"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="426"/>
         <source>Bottom margin: %1 mm</source>
         <comment>mm means millimeters</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="434"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="440"/>
         <source>Teaser</source>
         <comment>Small print preview. Please keep translation short</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="435"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="441"/>
         <source>Preview</source>
         <comment>Full print preview. Please keep translation short</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="436"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="442"/>
         <source>Print</source>
         <comment>Please keep translation short</comment>
         <translation type="unfinished">Εκτύπωση</translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="438"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="444"/>
         <source>Close</source>
         <comment>Please keep translation short</comment>
         <translation type="unfinished">Κλείσιμο</translation>
     </message>
     <message>
-        <location filename="../src/interface/statisticsprintform.cpp" line="861"/>
-        <location filename="../src/interface/statisticsprintform.cpp" line="882"/>
-        <location filename="../src/interface/statisticsprintform.cpp" line="905"/>
-        <location filename="../src/interface/statisticsprintform.cpp" line="926"/>
-        <location filename="../src/interface/statisticsprintform.cpp" line="943"/>
-        <location filename="../src/interface/statisticsprintform.cpp" line="956"/>
-        <location filename="../src/interface/statisticsprintform.cpp" line="977"/>
-        <location filename="../src/interface/statisticsprintform.cpp" line="994"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="867"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="888"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="911"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="932"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="949"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="962"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="983"/>
+        <location filename="../src/interface/statisticsprintform.cpp" line="1000"/>
         <source>FET warning</source>
         <translation type="unfinished">FET - Προειδοποίηση</translation>
     </message>
@@ -50986,7 +50993,7 @@ Bottom: %4</source>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="374"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Διάρκεια</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="472"/>
@@ -51239,7 +51246,7 @@ Bottom: %4</source>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="448"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="450"/>
@@ -51431,7 +51438,7 @@ Bottom: %4</source>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="584"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="586"/>
@@ -51531,7 +51538,7 @@ Bottom: %4</source>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="170"/>
         <source>Sort</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ταξινόμηση</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="133"/>
@@ -51696,7 +51703,7 @@ Bottom: %4</source>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="317"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="319"/>
@@ -51720,7 +51727,7 @@ Bottom: %4</source>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="44"/>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Μετονομασία</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="51"/>
@@ -51752,7 +51759,7 @@ Bottom: %4</source>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="97"/>
         <source>Sort</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ταξινόμηση</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="104"/>
@@ -51780,7 +51787,7 @@ Bottom: %4</source>
     <message>
         <location filename="../src/interface/subjectsstatisticsform.cpp" line="55"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Διάρκεια</translation>
     </message>
 </context>
 <context>
@@ -51875,7 +51882,7 @@ Bottom: %4</source>
     <message>
         <location filename="../src/interface/teachersubjectsqualificationsform_template.ui" line="41"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersubjectsqualificationsform_template.ui" line="58"/>
@@ -51895,7 +51902,7 @@ Bottom: %4</source>
     <message>
         <location filename="../src/interface/teachersubjectsqualificationsform_template.ui" line="92"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersubjectsqualificationsform_template.ui" line="99"/>
@@ -52031,7 +52038,7 @@ Bottom: %4</source>
     <message>
         <location filename="../src/interface/teachersform.cpp" line="369"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform.cpp" line="371"/>
@@ -52055,7 +52062,7 @@ Bottom: %4</source>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="44"/>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Μετονομασία</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="51"/>
@@ -52099,7 +52106,7 @@ Bottom: %4</source>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="115"/>
         <source>Sort</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ταξινόμηση</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="122"/>
@@ -52127,7 +52134,7 @@ Bottom: %4</source>
     <message>
         <location filename="../src/interface/teachersstatisticsform.cpp" line="112"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Διάρκεια</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersstatisticsform.cpp" line="113"/>
@@ -53246,7 +53253,7 @@ Bottom: %4</source>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2054"/>
         <source>Subgroups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Υποτμήματα</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2057"/>
@@ -53289,12 +53296,12 @@ Bottom: %4</source>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2080"/>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Τμήματα</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2106"/>
         <source>Years</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Έτη</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2132"/>
@@ -53456,7 +53463,7 @@ Bottom: %4</source>
         <location filename="../src/interface/timetablegenerateform.cpp" line="931"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="963"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="397"/>
@@ -54001,14 +54008,14 @@ Bottom: %4</source>
 <context>
     <name>TimetablePrintForm</name>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="1320"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1325"/>
         <source>Print timetable</source>
         <translation>Εκτύπωση ωρολογίου προγράμματος</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="167"/>
         <source>Subgroups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Υποτμήματα</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="160"/>
@@ -54018,12 +54025,12 @@ Bottom: %4</source>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="168"/>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Τμήματα</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="169"/>
         <source>Years</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Έτη</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="170"/>
@@ -54042,9 +54049,9 @@ Bottom: %4</source>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="175"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="851"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="867"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="886"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="856"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="872"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="891"/>
         <source>All activities</source>
         <translation type="unfinished"></translation>
     </message>
@@ -54335,131 +54342,131 @@ Bottom: %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="309"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="314"/>
         <source>Detailed tables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="312"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="317"/>
         <source>Activity tags</source>
         <translation type="unfinished">Ετικέτες δραστηριοτήτων</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="315"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="320"/>
         <source>Repeat vertical names</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="318"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="323"/>
         <source>Colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="331"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="336"/>
         <source>Font size: %1 pt</source>
         <comment>pt means points for font size, when printing the timetable</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="355"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="360"/>
         <source>Activities padding: %1 px</source>
         <comment>px means pixels, when printing the timetable</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="378"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="383"/>
         <source>Space after table: +%1 px</source>
         <comment>px means pixels, when printing the timetable</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="401"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="406"/>
         <source>Split after: %1 names</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="424"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="429"/>
         <source>Left margin: %1 mm</source>
         <comment>mm means millimeters</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="447"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="452"/>
         <source>Top margin: %1 mm</source>
         <comment>mm means millimeters</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="470"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="475"/>
         <source>Right margin: %1 mm</source>
         <comment>mm means millimeters</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="493"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="498"/>
         <source>Bottom margin: %1 mm</source>
         <comment>mm means millimeters</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="507"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="512"/>
         <source>Teaser</source>
         <comment>Small print preview. Please keep translation short</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="508"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="513"/>
         <source>Preview</source>
         <comment>Full print preview. Please keep translation short</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="509"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="514"/>
         <source>Print</source>
         <comment>Please keep translation short</comment>
         <translation type="unfinished">Εκτύπωση</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="511"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="516"/>
         <source>Close</source>
         <comment>Please keep translation short</comment>
         <translation type="unfinished">Κλείσιμο</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="775"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="780"/>
         <source>All teachers</source>
         <translation type="unfinished">Όλοι οι εκπαιδευτικοί</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="1092"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1097"/>
         <source>Warning! Only %1 out of %2 activities placed!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="1290"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1311"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1334"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1355"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1372"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1385"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1407"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1424"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1295"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1316"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1339"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1360"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1377"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1390"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1412"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1429"/>
         <source>FET warning</source>
         <translation type="unfinished">FET - Προειδοποίηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="1290"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1334"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1372"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1385"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1424"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1295"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1339"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1377"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1390"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1429"/>
         <source>FET is compiled without printer support - it is impossible to print from this dialog. Please open the HTML timetables from the results directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableprintform.cpp" line="1311"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1355"/>
-        <location filename="../src/interface/timetableprintform.cpp" line="1407"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1316"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1360"/>
+        <location filename="../src/interface/timetableprintform.cpp" line="1412"/>
         <source>No margins set, because at least one value is too small. You need to enter at least:
 Left: %1
 Right: %2
@@ -54522,77 +54529,113 @@ Bottom: %4</source>
         <comment>refers to activity</comment>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="756"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1025"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="850"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1219"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="749"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="991"/>
-        <source>Added %1 locking time constraints.</source>
-        <comment>%1 is &gt;= 2, so constraints is plural</comment>
-        <translation type="unfinished"></translation>
+    <message numerus="yes">
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="781"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="814"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1050"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1083"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="875"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="908"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1244"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1277"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="774"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="807"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1016"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1049"/>
+        <source>Added %n locking time constraint(s).</source>
+        <comment>See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field.Also, see http://doc.qt.io/qt-5/i18n-source-translation.html, section &apos;Handling Plurals&apos;.You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts(open these files with Qt Linguist and see the translation of this field).</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="789"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="822"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1058"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1091"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="883"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="916"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1252"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1285"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="782"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="815"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1024"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1057"/>
+        <source>Added %n locking space constraint(s).</source>
+        <comment>See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field.Also, see http://doc.qt.io/qt-5/i18n-source-translation.html, section &apos;Handling Plurals&apos;.You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts(open these files with Qt Linguist and see the translation of this field).</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="797"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="830"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1066"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1099"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="891"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="924"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1260"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1293"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="790"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="823"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1032"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1065"/>
+        <source>Removed %n locking time constraint(s).</source>
+        <comment>See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field.Also, see http://doc.qt.io/qt-5/i18n-source-translation.html, section &apos;Handling Plurals&apos;.You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts(open these files with Qt Linguist and see the translation of this field).</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="805"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="838"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1074"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1107"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="899"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="932"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1268"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1301"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="798"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="831"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1040"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1073"/>
+        <source>Removed %n locking space constraint(s).</source>
+        <comment>See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field.Also, see http://doc.qt.io/qt-5/i18n-source-translation.html, section &apos;Handling Plurals&apos;.You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts(open these files with Qt Linguist and see the translation of this field).</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="762"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1031"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="856"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1225"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="755"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="997"/>
-        <source>Added %1 locking space constraints.</source>
-        <comment>%1 is &gt;= 2, so constraints is plural</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="768"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1037"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="862"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1231"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="761"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1003"/>
-        <source>Removed %1 locking time constraints.</source>
-        <comment>%1 is &gt;= 2, so constraints is plural</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="774"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1043"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="868"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1237"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="767"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1009"/>
-        <source>Removed %1 locking space constraints.</source>
-        <comment>%1 is &gt;= 2, so constraints is plural</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="785"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1054"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="879"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1248"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="778"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1020"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="856"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1125"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="950"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1319"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="849"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1091"/>
         <source>No locking constraints added or removed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="818"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1103"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="912"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1297"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="811"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1069"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="889"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1174"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="983"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1368"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="882"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1140"/>
         <source>Lock/unlock: you can select one or more activities in the table and toggle lock/unlock in time, space or both.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="820"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1105"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="914"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1299"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="813"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1071"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="891"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1176"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="985"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1370"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="884"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1142"/>
         <source>There will be added or removed locking constraints for the selected activities (they can be unlocked only if they are not permanently locked).</source>
         <translation type="unfinished"></translation>
     </message>
@@ -54641,66 +54684,22 @@ Bottom: %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="754"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1023"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="848"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1217"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="747"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="989"/>
-        <source>Added 1 locking time constraint.</source>
-        <comment>constraint is singular (only 1 constraint)</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="760"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1029"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="854"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1223"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="753"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="995"/>
-        <source>Added 1 locking space constraint.</source>
-        <comment>constraint is singular (only 1 constraint)</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="766"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1035"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="860"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1229"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="759"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1001"/>
-        <source>Removed 1 locking time constraint.</source>
-        <comment>constraint is singular (only 1 constraint)</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="772"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1041"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="866"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1235"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="765"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1007"/>
-        <source>Removed 1 locking space constraint.</source>
-        <comment>constraint is singular (only 1 constraint)</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="822"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1107"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="916"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1301"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="815"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1073"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="893"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1178"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="987"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1372"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="886"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1144"/>
         <source>Locking time constraints are constraints of type activity preferred starting time. Locking space constraints are constraints of type activity preferred room. You can see these constraints in the corresponding constraints dialogs. New locking constraints are added at the end of the list of constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="825"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1110"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="919"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1304"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="818"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1076"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="896"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1181"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="990"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1375"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="889"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1147"/>
         <source>If a cell is (permanently) locked in time or space, it contains abbreviations to show that: PLT (permanently locked time), LT (locked time), PLS (permanently locked space) or LS (locked space).</source>
         <comment>Translate the abbreviations also. Make sure the abbreviations in your language are different between themselves and the user can differentiate easily between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation type="unfinished"></translation>
@@ -54790,7 +54789,7 @@ Bottom: %4</source>
         <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="565"/>
         <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="665"/>
         <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="738"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="786"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="857"/>
         <source>FET information</source>
         <translation type="unfinished">FET - Πληροφορίες</translation>
     </message>
@@ -54879,7 +54878,7 @@ Please stop simulation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="829"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="900"/>
         <source>FET help</source>
         <translation type="unfinished">FET - Βοήθεια</translation>
     </message>
@@ -55024,7 +55023,7 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="765"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="924"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1009"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1055"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1126"/>
         <source>FET information</source>
         <translation type="unfinished">FET - Πληροφορίες</translation>
     </message>
@@ -55114,22 +55113,22 @@ Please stop simulation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1115"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1186"/>
         <source>If a whole column (day+hour) is selected, the activities with no room from that column will NOT be locked/unlocked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1118"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1189"/>
         <source>A bold font cell means that the activity is locked in time, either permanently or not.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1120"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1191"/>
         <source>An italic font cell means that the activity is locked in space, either permanently or not.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1122"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1193"/>
         <source>FET help</source>
         <translation type="unfinished">FET - Βοήθεια</translation>
     </message>
@@ -55308,7 +55307,7 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="655"/>
         <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="759"/>
         <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="832"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="880"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="951"/>
         <source>FET information</source>
         <translation type="unfinished">FET - Πληροφορίες</translation>
     </message>
@@ -55407,7 +55406,7 @@ Please stop simulation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="923"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="994"/>
         <source>FET help</source>
         <translation type="unfinished">FET - Βοήθεια</translation>
     </message>
@@ -55543,7 +55542,7 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="922"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1118"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1203"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1249"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1320"/>
         <source>FET information</source>
         <translation type="unfinished">FET - Πληροφορίες</translation>
     </message>
@@ -55633,22 +55632,22 @@ Please stop simulation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1309"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1380"/>
         <source>If a whole column (day+hour) is selected, there will be locked/unlocked also the dummy activities (activities with no students sets) from that column.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1312"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1383"/>
         <source>A bold font cell means that the activity is locked in time, either permanently or not.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1314"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1385"/>
         <source>An italic font cell means that the activity is locked in space, either permanently or not.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1316"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1387"/>
         <source>FET help</source>
         <translation type="unfinished">FET - Βοήθεια</translation>
     </message>
@@ -55811,7 +55810,7 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="562"/>
         <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="657"/>
         <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="731"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="779"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="850"/>
         <source>FET information</source>
         <translation type="unfinished">FET - Πληροφορίες</translation>
     </message>
@@ -55900,7 +55899,7 @@ Please stop simulation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="822"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="893"/>
         <source>FET help</source>
         <translation type="unfinished">FET - Βοήθεια</translation>
     </message>
@@ -56039,7 +56038,7 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="737"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="890"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="975"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1021"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1092"/>
         <source>FET information</source>
         <translation type="unfinished">FET - Πληροφορίες</translation>
     </message>
@@ -56129,22 +56128,22 @@ Please stop simulation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1081"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1152"/>
         <source>If a whole column (day+hour) is selected, there will be locked/unlocked also the dummy activities (activities with no teacher) from that column.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1084"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1155"/>
         <source>A bold font cell means that the activity is locked in time, either permanently or not.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1086"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1157"/>
         <source>An italic font cell means that the activity is locked in space, either permanently or not.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1088"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1159"/>
         <source>FET help</source>
         <translation type="unfinished">FET - Βοήθεια</translation>
     </message>
@@ -56236,17 +56235,17 @@ Please stop simulation before this.</source>
     <message>
         <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="53"/>
         <source>Subgroups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Υποτμήματα</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="63"/>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Τμήματα</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="73"/>
         <source>Years</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Έτη</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="83"/>
@@ -56316,7 +56315,7 @@ Please stop simulation before this.</source>
     <message>
         <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="255"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
 </context>
 <context>
@@ -56413,7 +56412,7 @@ Please stop simulation before this.</source>
     <message>
         <location filename="../src/interface/yearsform.cpp" line="319"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform.cpp" line="321"/>
@@ -56437,7 +56436,7 @@ Please stop simulation before this.</source>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="104"/>
         <source>Sort</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ταξινόμηση</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="67"/>
