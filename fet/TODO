@@ -12,26 +12,6 @@ code cover planning (open)
 code lesson planning (open)
 
 
-GENERAL:
-- Change "Equipments" into "Equipment"
-- Check the memory leaks. In Valgrind it shows some leakage, I don't know where from
-- Add translation in other languages
-- Command line options.
-- Add make install. Where should I place the executable?
-- Proper help files.
-- CVS support?
-- Compare this program with proprietary (non-free) applications.
-I saw that the only applications which use a text input file are "Mimosa" and,
-more recently, "Lantiv".
-- Collect results obtained by people worldwide. More input files required.
-
-
-TECHNICAL:
-- ConstraintActivitiesSameEndingTime
-- ConstraintActivitiesNotConsecutive
-- ConstraintActivityRejectedTime ?
-- ConstraintStudentsMaxGapsDaily
-
 
 WISHLIST:
 
@@ -42,9 +22,6 @@ WISHLIST:
 From Michael Towers:
 
 "
-** Why are such configuration values set as constants which are then compiled into the 
-program? Wouldn't it be better to put these into a resource file, loaded at run time?
-
 ** What about a rewrite of the front end in a scripting language - e.g. Python? It might speed 
 development and help debugging. It could also make maintenance of the code easier.
 

@@ -884,4 +884,5 @@ Versions 5.0.0 -
 	- Improvement in the optimization algorithm.
 	- Possible bugs fixes (unlikely to happen bugs).
 	- Improved Romanian translation.
-	
+- Version 5.0.0-preview26
+	- Improved documentation.

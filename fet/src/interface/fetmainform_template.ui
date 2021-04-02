@@ -30,10 +30,7 @@
      <string>&amp;Help</string>
     </property>
     <addaction name="helpInstructionsAction" />
-    <addaction name="separator" />
     <addaction name="helpFAQAction" />
-    <addaction name="helpTimeConstraintsAction" />
-    <addaction name="helpTimeConstraintsSubtagsAction" />
     <addaction name="separator" />
     <addaction name="helpAboutAction" />
    </widget>
@@ -70,19 +67,12 @@
     <addaction name="timetableViewStudentsAction" />
     <addaction name="timetableShowConflictsTimeAction" />
     <addaction name="separator" />
-    <addaction name="timetableAllocateRoomsAction" />
-    <addaction name="timetableViewTeachersWithRoomsAction" />
-    <addaction name="timetableViewStudentsWithRoomsAction" />
-    <addaction name="timetableViewRoomsAction" />
-    <addaction name="timetableShowConflictsSpaceAction" />
-    <addaction name="separator" />
     <addaction name="timetableAllocateHoursRoomsAction" />
     <addaction name="timetableViewTeachersWithRooms2Action" />
     <addaction name="timetableViewStudentsWithRooms2Action" />
     <addaction name="timetableViewRooms2Action" />
     <addaction name="timetableShowConflictsTimeSpaceAction" />
     <addaction name="separator" />
-    <addaction name="timetableExportXmlHtmlAction" />
     <addaction name="PopupMenuEditor_105" />
    </widget>
    <widget class="QMenu" name="menuStatistics" >
@@ -98,8 +88,11 @@
      <string>&amp;Data</string>
     </property>
     <widget class="QMenu" name="PopupMenuEditor_63" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
      <property name="title" >
-      <string>Space constraints (misc) - TODO</string>
+      <string>Space constraints (misc)</string>
      </property>
      <addaction name="dataSpaceConstraintsActivitiesSameRoomAction" />
      <addaction name="dataSpaceConstraintsActivityPreferredRoomAction" />
@@ -122,8 +115,11 @@
      <addaction name="dataSpaceConstraintsTeacherSubjectRequireRoomAction" />
     </widget>
     <widget class="QMenu" name="PopupMenuEditor_83" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
      <property name="title" >
-      <string>Space constraints (rooms) - TODO</string>
+      <string>Space constraints (rooms)</string>
      </property>
      <addaction name="dataSpaceConstraintsRoomNotAvailableAction" />
     </widget>
@@ -288,7 +284,7 @@
   </action>
   <action name="helpFAQAction" >
    <property name="text" >
-    <string>&amp;Frequently asked questions - OLD, DEPRECATED</string>
+    <string>&amp;Frequently asked questions</string>
    </property>
    <property name="iconText" >
     <string>Frequently asked questions</string>
@@ -413,32 +409,44 @@
    </property>
   </action>
   <action name="dataRoomsAction" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="text" >
-    <string>&amp;Rooms - TODO</string>
+    <string>&amp;Rooms</string>
    </property>
    <property name="iconText" >
     <string>Rooms</string>
    </property>
   </action>
   <action name="timetableAllocateRoomsAction" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="text" >
-    <string>Allocate &amp;rooms - TODO</string>
+    <string>Allocate &amp;rooms</string>
    </property>
    <property name="iconText" >
     <string>Allocate rooms</string>
    </property>
   </action>
   <action name="timetableViewRoomsAction" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="text" >
-    <string>View (r&amp;ooms) - TODO</string>
+    <string>View (r&amp;ooms)</string>
    </property>
    <property name="iconText" >
     <string>View (rooms)</string>
    </property>
   </action>
   <action name="timetableShowConflictsSpaceAction" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="text" >
-    <string>Show conflicts (s&amp;pace) - TODO</string>
+    <string>Show conflicts (s&amp;pace)</string>
    </property>
    <property name="iconText" >
     <string>Show conflicts (space)</string>
@@ -483,8 +491,11 @@
    </property>
   </action>
   <action name="dataEquipmentsAction" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="text" >
-    <string>&amp;Equipments - TODO</string>
+    <string>&amp;Equipments</string>
    </property>
    <property name="iconText" >
     <string>Equipments</string>
@@ -542,16 +553,22 @@
    </property>
   </action>
   <action name="timetableViewTeachersWithRoomsAction" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="text" >
-    <string>View (t&amp;eachers-with rooms) - TODO</string>
+    <string>View (t&amp;eachers-with rooms)</string>
    </property>
    <property name="iconText" >
     <string>View (teachers-with rooms)</string>
    </property>
   </action>
   <action name="timetableViewStudentsWithRoomsAction" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="text" >
-    <string>View (st&amp;udents-with rooms) - TODO</string>
+    <string>View (st&amp;udents-with rooms)</string>
    </property>
    <property name="iconText" >
     <string>View (students-with rooms)</string>
@@ -717,8 +734,11 @@
    </property>
   </action>
   <action name="dataAllSpaceConstraintsAction" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="text" >
-    <string>All s&amp;pace constraints - TODO</string>
+    <string>All s&amp;pace constraints</string>
    </property>
    <property name="iconText" >
     <string>All space constraints</string>
@@ -784,40 +804,55 @@
    </property>
   </action>
   <action name="timetableAllocateHoursRoomsAction" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="text" >
-    <string>Allocate hours and rooms simultaneously - TODO</string>
+    <string>Allocate hours and rooms</string>
    </property>
    <property name="iconText" >
     <string>Allocate hours and rooms simultaneously</string>
    </property>
   </action>
   <action name="timetableViewStudentsWithRooms2Action" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="text" >
-    <string>View (students-with rooms) - TODO</string>
+    <string>View (students-with rooms)</string>
    </property>
    <property name="iconText" >
     <string>View (students-with rooms)</string>
    </property>
   </action>
   <action name="timetableViewTeachersWithRooms2Action" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="text" >
-    <string>View (teachers-with rooms) - TODO</string>
+    <string>View (teachers-with rooms)</string>
    </property>
    <property name="iconText" >
     <string>View (teachers-with rooms)</string>
    </property>
   </action>
   <action name="timetableViewRooms2Action" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="text" >
-    <string>View (rooms) - TODO</string>
+    <string>View (rooms)</string>
    </property>
    <property name="iconText" >
     <string>View (rooms)</string>
    </property>
   </action>
   <action name="timetableShowConflictsTimeSpaceAction" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="text" >
-    <string>Show conflicts (time and space) - TODO</string>
+    <string>Show conflicts (time and space)</string>
    </property>
    <property name="iconText" >
     <string>Show conflicts (time and space)</string>
@@ -969,8 +1004,11 @@
    </property>
   </action>
   <action name="dataBuildingsAction" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="text" >
-    <string>Buildings - TODO</string>
+    <string>Buildings</string>
    </property>
    <property name="iconText" >
     <string>Buildings</string>
@@ -1154,7 +1192,7 @@
   </action>
   <action name="helpInstructionsAction" >
    <property name="text" >
-    <string>Instructions - NEW (22 July 2007)</string>
+    <string>Instructions</string>
    </property>
   </action>
   <action name="checkForUpdatesAction" >

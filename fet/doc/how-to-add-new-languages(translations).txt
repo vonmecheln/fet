@@ -1,0 +1,93 @@
+FET - How to add new translations (languages)
+---------------------------------------------
+
+PLEASE E-MAIL THE AUTHOR OR THE MAILING LIST IF YOU WANT TO
+TRANSLATE FET INTO YOUR LANGUAGE.
+
+
+
+STEP 1.
+
+Modify the file "fet-x.x.x/src/interface/interface.pro", by adding a line
+in the TRANSLATIONS section for each language (for instance, adding
+a backslash after the last translation and then "fet_it.ts" for italian).
+
+STEP 2.
+
+Enter the directory "fet-x.x.x/src/interface/" and type "lupdate interface.pro".
+This will create the needed file, named "fet-x.x.x/translations/fet_**.ts".
+
+STEP 3.
+
+Open the file "fet-x.x.x/translations/fet_**.ts" (for example, fet_it.ts)
+with the Qt Linguist and edit it, then save it.
+
+You do not have to translate all the fields. For instance, the FAQ
+is very large. Just leave the corresponding fields marked as unfinished.
+
+STEP 4.
+
+From Qt Linguist, release the translation as "fet-x.x.x/translations/fet_**.qm"
+(for instance, fet_it.qm).
+
+STEP 5.
+
+Send all the three modified files to the author. You will be added 
+as a translator, of course.
+
+
+Of course, anyone can redo/improve current translations. The best variants will be chosen.
+
+
+Some other details follow:
+
+ First of all, you need a version of Qt Linguist.
+ 
+ For GNU/Linux it is available if you type "linguist" (usually, Qt
+ is installed. If not, you can download and install it from trolltech.com,
+ the open source version). For Windows, you will have to download
+ the latest Qt from trolltech.com, the latest open source version,
+ preferably the self extracting precompiled version for mingw.
+ 
+ An alternative solution for Windows is to download:
+ http://prdownloads.sourceforge.net/psi/qtlinguist-3.0.4.zip?download
+ But this is not the latest version of the linguist.
+ 
+ fet_**.ts: You will have to open this file using Qt 
+ Linguist. The most useful keys are: Ctrl+Enter (activates current translation 
+ and jumps to the next untranslated phrase),Ctrl+1, Ctrl+2 (first or second 
+ suggestion). You can skip the large fields, like the FAQ and others. You can 
+ skip also fields you cannot translate, they will remain in English. But let them
+ marked as untranslated.
+ 
+ Please try to follow the original (English) line arrangement. That is, if you 
+ meet: "Current activity's <lf>
+ 	description"
+ you have to split your message if it is too wide (wider than the widest line). 
+ For instance, the translation would be:
+ 	"Descrierea activitatii
+ 	curente"
+ 
+ Please take care to punctuation, because Linguist requires it. You have to end 
+ each translation with the same punctuation mark as the English one. For 
+ instance:
+ 	"Compulsory conflicts:"
+ would become:
+ 	"Conflicte obligatorii:"
+ If you don't do that, you will get an exclamation mark for this translation.
+ 
+ You will have to save the file (in Qt Linguist) after you have done the 
+ modifications (I usually save it every 10 minutes).
+ 
+ It would be a good idea to send me the fet_**.ts file after only a few 
+ modifications, so I can check it if it works, so your work is not wasted. If 
+ that goes well, I will tell you so that you can continue working on it.
+ 
+ Please tell me if you do not want me to put your e-mail address in the 
+ TRANSLATORS field.
+ 
+ In order to test your translation you need to release it as fet_**.qm
+ and put it into the directory "translations". Then, rename the file as 
+ fet_ro.qm (or any other implemented translation), overwriting the old one,
+ and try the Romanian language.
+ 

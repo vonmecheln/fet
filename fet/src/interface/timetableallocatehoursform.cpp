@@ -245,8 +245,15 @@ void TimetableAllocateHoursForm::stop()
 	writeSimulationResults(c);
 
 	QString s=QObject::tr("Simulation interrupted. FET could not find a perfect timetable. "
-	 "Maybe you can consider lowering the constraints");
-	s+="\n";
+	 "Maybe you can consider lowering the constraints.");
+	 
+	s+=" ";
+	
+	s+=QObject::tr("The partial results are saved in the directory %1 in html and xml mode"
+	 " and the conflicts in txt mode").arg(OUTPUT_DIR);
+	 
+	s+="\n\n";
+
 	s+=QObject::tr("Additional information relating impossible to schedule activities:\n\n");
 	s+=QObject::tr("Please check the constraints related to the last "
 	 "activities in the list below, which might be impossible to schedule:\n\n");
@@ -339,8 +346,11 @@ void TimetableAllocateHoursForm::impossibleToSolve()
 	mutex.lock();
 
 	QString s=QObject::tr("FET could not find a timetable. "
-	 "Maybe you can consider lowering the constraints");
-	s+="\n";
+	 "Maybe you can consider lowering the constraints.");
+	s+=" ";
+	s+=QObject::tr("The partial results are saved in the directory %1 in html and xml mode"
+	 " and the conflicts in txt mode").arg(OUTPUT_DIR);
+	s+="\n\n";
 	s+=QObject::tr("Additional information relating impossible to schedule activities:\n\n");
 	/*s+=QObject::tr("Maybe your constraints are too high. Especially check your students (set) early constraint, "
 	 "because if you enter partial data there might be impossible to respect early, so you might "

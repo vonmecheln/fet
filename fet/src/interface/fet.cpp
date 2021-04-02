@@ -527,13 +527,11 @@ int main(int argc, char **argv){
 		 "Of course, you can modify the weight percentage by hand afterwards."));*/
 
 	QMessageBox::information(NULL, QObject::tr("FET important information"),
-	 QObject::tr("Please take care that this is a preview version, which does not have "
-	 "space allocation implemented yet. I hope to implement that in the near future. "
-	 "Also the space constraints are let in the old format. It is advisable that "
-	 "you do not enter rooms (space) data (or constraints), because the structure will "
-	 "change in the future and for the moment there is no rooms (space) allocation\n\n"
+	 QObject::tr("Please take care that this is a preview version, which has time (hours) allocation but does not have "
+	 "rooms allocation implemented yet (that is why rooms related data is disabled in the menu)."
+	 " I hope to implement that in the near future, so make sure to check for updates.\n\n"
 	 "It is recommended to keep backups of your input files. "
-	 "Please excuse eventual bugs, this is a new not thoroughly tested version. "
+	 "Please excuse eventual bugs, this is a new version. "
 	 "Please report bugs to the author, they will be corrected"));
 	// "\n\nMake sure to revisit web page http://lalescu.ro/liviu/fet/ often and get the updated versions"));
 	

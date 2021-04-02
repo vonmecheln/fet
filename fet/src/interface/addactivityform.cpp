@@ -645,8 +645,12 @@ void AddActivityForm::help()
 	 "If you encounter such cases, please contact the author, I'll try to fix this problem).\n\n"
 	 
 	 "Note: You cannot add 'consecutive if same day' with min n days=0. If you want this, you have to add "
-	 "min days at least 1. Please be careful, if there are three or more activities from the same constraint on the same day, FET "
-	 "cannot currently solve this (this is a very unlikely event. If you meet it, please write to the author."
+	 "min days at least 1 (and any weight percentage).\n\n"
+	 
+	 "Note: the extremely unlikely event that, "
+	 "given that 3 or more activities (from the same constraint min n days) must all be placed in the same day consecutively, "
+	 "FET will not be able to find a timetable. If you meet such cases, please write to the author. This unlikely "
+	 "to happen event can be managed, but I consider it neglectable."
 	 );
 	
 	//show the message in a dialog
