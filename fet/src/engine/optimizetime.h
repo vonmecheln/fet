@@ -69,6 +69,8 @@ signals:
 	void activityPlaced(int);
 	
 	void simulationFinished();
+	
+	void impossibleToSolve();
 };
 
 #endif

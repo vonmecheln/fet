@@ -133,6 +133,8 @@ private slots:
 	void activityPlaced(int na);
 	
 	void simulationFinished();
+	
+	void impossibleToSolve();
 };
 
 #endif

@@ -468,7 +468,10 @@ void OptimizeTime::optimize()
 					
 			if(j<0){
 				//????? invalid timetable data?
-				assert(0);
+				//assert(0);
+				mutex.unlock();
+				emit(impossibleToSolve());
+				return;
 		
 				//no predecessor to this activity - try again with another random value
 				mutex.unlock();
@@ -1290,7 +1293,9 @@ void OptimizeTime::randomswap(int ai, int level){
 			foreach(int ai2, tlistSet[t1]){
 				//if(ai!=ai2 && activitiesConflicting[ai][ai2]){
 				if(ai!=ai2 && !skipRandom(activitiesConflictingPercentage[ai][ai2])){
-					conflActivities[newtime].append(ai2);
+					if(conflActivities[newtime].indexOf(ai2)==-1){
+						conflActivities[newtime].append(ai2);
+					}
 				}
 			}
 				

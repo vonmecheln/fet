@@ -101,6 +101,8 @@ TimetableAllocateHoursForm::TimetableAllocateHoursForm()
 	 this, SLOT(activityPlaced(int)));
 	connect(&ot, SIGNAL(simulationFinished()),
 	 this, SLOT(simulationFinished()));
+	connect(&ot, SIGNAL(impossibleToSolve()),
+	 this, SLOT(impossibleToSolve()));
 
 	this->setAttribute(Qt::WA_DeleteOnClose);
 }
@@ -291,6 +293,89 @@ void TimetableAllocateHoursForm::stop()
 	//QTextEdit* te=new QTextEdit(s, this);
 	//te->show();
 	//QMessageBox::information(this, QObject::tr("FET information"), s);
+
+	startPushButton->setEnabled(TRUE);
+	stopPushButton->setDisabled(TRUE);
+	closePushButton->setEnabled(TRUE);
+	writeResultsPushButton->setDisabled(TRUE);
+}
+
+void TimetableAllocateHoursForm::impossibleToSolve()
+{
+	mutex.lock();
+	ot.abortOptimization=true;
+	mutex.unlock();
+
+	simulation_running=false;
+
+	mutex.lock();
+
+	QString s=QObject::tr("FET could not find a perfect timetable. "
+	 "Maybe you can consider lowering the constraints");
+	s+="\n";
+	s+=QObject::tr("Additional information relating impossible to schedule activities:\n\n");
+	s+=QObject::tr("Please check the constraints related to the last "
+	 "activities in the list below, which might be impossible to schedule:\n\n");
+	s+=QObject::tr("Here are the placed activities which lead to an inconsistency, "
+	 "in order from the first one to the last (the last one FET failed to schedule "
+	 "and the last ones are most likely impossible):\n\n");
+	for(int i=0; i<ot.nDifficultActivities; i++){
+		int ai=ot.difficultActivities[i];
+
+		s+=QObject::tr("No: %1").arg(i+1);
+
+		s+=", ";
+
+		s+=QObject::tr("Id: %1").arg(gt.rules.internalActivitiesList[ai].id);
+		s+=QObject::tr(" TN: ");
+		bool first=true;
+		foreach(QString tn, gt.rules.internalActivitiesList[ai].teachersNames){
+			if(!first)
+				s+=", ";
+			first=false;
+			s+=tn;
+		}
+		s+=", ";
+		s+=QObject::tr("SN: %1").arg(gt.rules.internalActivitiesList[ai].subjectName);
+		s+=", ";
+		first=true;
+		s+=QObject::tr(" StN: ");
+		foreach(QString sn, gt.rules.internalActivitiesList[ai].studentsNames){
+			if(!first)
+				s+=", ";
+			first=false;
+			s+=sn;
+		}
+
+		s+="\n";
+	}
+
+	mutex.unlock();
+
+	//show the message in a dialog
+	QDialog* dialog=new QDialog();
+
+	QVBoxLayout* vl=new QVBoxLayout(dialog);
+	QTextEdit* te=new QTextEdit();
+	te->setPlainText(s);
+	te->setReadOnly(true);
+	QPushButton* pb=new QPushButton(QObject::tr("OK"));
+
+	QHBoxLayout* hl=new QHBoxLayout(0);
+	hl->addStretch(1);
+	hl->addWidget(pb);
+
+	vl->addWidget(te);
+	vl->addLayout(hl);
+	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
+
+	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	QDesktopWidget* desktop=QApplication::desktop();
+	int xx=desktop->width()/2 - 350;
+	int yy=desktop->height()/2 - 250;
+	dialog->setGeometry(xx, yy, 700, 500);
+
+	dialog->exec();
 
 	startPushButton->setEnabled(TRUE);
 	stopPushButton->setDisabled(TRUE);
