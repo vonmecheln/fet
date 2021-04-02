@@ -28,7 +28,7 @@ Requirements:
 	
 	Microsoft Windows:
 	For running, you need only the archive of FET compiled for Windows (which contains the MinGW and Qt dlls).
-	For compiling, you need Qt and MinGW (do NOT use Qt 4.2.x or gcc 4.2.x).
+	For compiling, you need Qt and a compatible C++ compiler (MinGW probably an easy option) (do NOT use Qt 4.2.x or gcc 4.2.x).
 	
 	Important note about virtual memory: on Windows you might get the error message
 	"The paging file is too small for this operation to complete" when trying to run fet.exe .
@@ -54,32 +54,36 @@ Getting - compiling - installing GNU tools: make, gcc and gcc-g++ (or g++):
 	To verify that you have the correct packages, write "make --version", "gcc --version" and
 	"g++ --version".
 	
-	Windows: you need the MinGW compiler, which is installed automatically by Qt (see below)
+	Windows: you need a Qt compatible C++ compiler
+	(maybe the easiest option the MinGW compiler, which is installed automatically by Qt) (see below)
 
 
-Getting - compiling - installing Qt by Trolltech:
+Getting - compiling - installing Qt by Nokia (formerly by Trolltech):
 
 	You will need Qt 4.4.3 or compatible (4.3.x works, 4.2.x does NOT work) to compile FET.
-	You can get your corresponding version of Qt from http://www.trolltech.com or with your
-	package manager. Please get the opensource version of Qt.
+	You can get the corresponding version of Qt with your package manager or
+	from http://www.qtsoftware.com/ (you can get the opensource version of Qt
+	or other variants if you want).
 	
 	GNU/Linux: It is possible to use YaST (or Adept Manager) or other package managers to get
 	your version of Qt, pre-compiled. Please DO NOT use Qt 4.2.x, FET does not work with it.
-	Or you can download, compile and install Qt from trolltech.com .
+	Or you can download, compile and install Qt from http://www.qtsoftware.com/ .
 	On my OpenSUSE GNU/Linux, which has pre-compiled packages on the internet, I need to install
 	libqt4 and libqt4-devel packages (libqt4 is installed by default, I think) - to compile+run FET.
 	Additionally, to modify FET, you will need the qt3, qt3-devel and qt3-devel-tools packages
 	(qt3 is installed by default, I think).
 	
-	Windows - Download latest OpenSource Qt for MinGW from http://www.trolltech.com
-	Install and let Qt download and install MinGW.
+	Windows - Download latest Qt (maybe open source version for MinGW is the easiest option,
+	but you can try also other variants) from http://www.qtsoftware.com/
+	For MinGW version: Install and let Qt download and install MinGW.
 	Please make sure, after installing Qt and MinGW, that you have
 	an environment variable named "QTDIR" which is C:\Qt\4.4.3"
 	and you have in the PATH environmental variable the contents
 	QTDIR and C:\MinGW\bin.
 	
 	Mac OS X: 
-	Maybe you can get pre-compiled packages for Mac. If not, get Qt from trolltech.com .
+	Maybe you can get pre-compiled packages for Mac. If not, get Qt from http://www.qtsoftware.com/ (maybe open source
+	version is the easiest option).
 
 
 Compiling FET:
@@ -137,11 +141,14 @@ Compiling FET:
 	http://lists.trolltech.com/qt-interest/2007-04/thread01126-0.html
 
 	
-	Microsoft Windows: you will have to download and install Qt with MinGW from trolltech.com .
+	Microsoft Windows: MinGW C++ compiler: you will have to download and install Qt with MinGW from http://www.qtsoftware.com/ .
+	You might use other compilers if you want, please see the Qt web page http://www.qtsoftware.com/
+	for other variants. Any C++ compiler that supports Qt is OK, as long as you can use it.
 	You need to run "qmake fet.pro" or "qmake" (this command is executed very fast, so don't worry if you get
 	immediate return from it) and then "make" (this takes a long time, maybe even 1 hour) 
 	in a command line in the FET directory. 
 	Then, you can remove directories "src" and "tmp", to save up space.
+	For MinGW:
 	If you want to obtain a version which can be run on other computers, 
 	you have to copy these 7 files into the FET directory (in the same place as fet.exe):
 	C:\Qt\4.4.3\bin\mingwm10.dll,

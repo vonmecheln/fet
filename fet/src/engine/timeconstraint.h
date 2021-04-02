@@ -1404,14 +1404,14 @@ public:
 	*/
 	int hour;
 
+	bool permanentlyLocked; //if this is true, then this activity cannot be unlocked from the timetable view form
+
 	//internal variables
 	/**
 	The index of the activity in the rules (from 0 to rules.nActivities-1) - it is not the id of the activity
 	*/
 	int activityIndex;
 	
-	bool permanentlyLocked; //if this is true, then this activity cannot be unlocked from the timetable view form
-
 	ConstraintActivityPreferredStartingTime();
 
 	ConstraintActivityPreferredStartingTime(double wp, int actId, int d, int h, bool perm);

@@ -948,8 +948,6 @@ CONFIG += release \
           thread 
 DESTDIR = ../../
 TARGET = fet 
-QMAKE_CXXFLAGS_DEBUG += -Wall \
-                        -O2 
 OBJECTS_DIR = ../../tmp 
 UI_DIR = ../../tmp 
 MOC_DIR = ../../tmp 

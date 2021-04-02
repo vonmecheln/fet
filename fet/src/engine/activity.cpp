@@ -312,10 +312,14 @@ QString Activity::getXmlDescription(Rules& r)
 		assert(this->parity==PARITY_FORTNIGHTLY);
 		s+="	<Fortnightly></Fortnightly>\n";
 	}*/
-	if(this->active==true)
-		s+="	<Active>yes</Active>\n";
-	else
-		s+="	<Active>no</Active>\n";
+	if(this->active==true){
+		//s+="	<Active>yes</Active>\n";
+		s+="	<Active>true</Active>\n";
+	}
+	else{
+		//s+="	<Active>no</Active>\n";
+		s+="	<Active>false</Active>\n";
+	}
 	for(QStringList::Iterator it=this->studentsNames.begin(); it!=this->studentsNames.end(); it++)
 		s+="	<Students>" + protect(*it) + "</Students>\n";
 

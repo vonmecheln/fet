@@ -27,8 +27,8 @@
 
 #include <QSet>
 #include "lockunlock.h"
-extern QSet<int> idsOfLockedSpace;
-extern QSet<int> idsOfPermanentlyLockedSpace;
+//extern QSet<int> idsOfLockedSpace;
+//extern QSet<int> idsOfPermanentlyLockedSpace;
 
 AddConstraintActivityPreferredRoomForm::AddConstraintActivityPreferredRoomForm()
 {

@@ -1,3 +1,62 @@
+From Hatim Alahmadi:
+
+Proposed to add a constraint to prevent the succession of hard subjects or subjects science as much as possible. 
+ Such as: 
+ 1 - Mathematics - 2 - playing - 3 - Physics - 4 - History  5 - chemistry. 
+but not like: 
+ 1 - Mathematics(hard) 2 - 3 Physics(hard) - Chemistry(hard) 4 - History  5 - Biology.
+
+Answer from George Miliotis:
+
+Maybe add a tag ("hard") to those activites and create a new rule type
+"activities of this tag should not be consecutive"? Maybe this will be a
+way to implement it?
+
+Or a rule "Max number of consecutive activities for a tag"?
+
+---------------------------------------------------------------
+
+From Azu Boba:
+
+Currently there is no option in FET to set desired teaching times for a 
+teacher. You can do the opposite, set undesired/unavailable times for a 
+teacher, but it's not the same thing. Sometimes you just want a teacher 
+to teach on a specific hour (usually on his/her request) without 
+specifying the subject/class.
+E.g. teacher X wants to start teaching on the first hour every 
+Wednesday, without specifying subject/class in order to maximize 
+flexibility.
+I think this new restriction will be a very helpful addition. Currently, 
+I have to generate multiple timetables and browse the results in order 
+to pinpoint cases where the specific restrictions are met.
+
+---
+
+Thanks for looking into it!
+Yes, currently I am forcing the activities into the slots I want but 
+usually it takes a lot of restrictions (teacher not available usually) 
+that I need to remember to remove as soon as I find a desirable solution 
+in order to keep the general timetable flexible for future changes.
+Here in Greece, desired and undesired slots have about the same weight. 
+The thing is that not all teaching hours have the same time length (1st 
+hour 45min, 2nd 45min, 3rd 45min, 4th 40min, 5th 40min, 6th 40min, 7th 
+35min) and some teachers require first hours for some classes in order 
+to teach more time consuming subjects (the subject might vary but the 
+necessity for the time slot doesn't). That necessarily doesn't that they 
+object to teach late hours too.
+Also, it is easier to add only one restriction like the one I am 
+describing to drag e.g. the teaching hours of a teacher earlier in a day 
+than to add multiple not available restrictions at the late hours in 
+order to accomplish the same thing. Also, those late hour restrictions 
+might make the timetable too rigid and usually without serious reason.
+There are also many other examples but are much more complex.
+Generally I think that this is something that a lot of other timetable 
+organizers would want. Truthfully, it was the 2nd thing I noticed 
+missing after the not-so-easy lock/unlock of activities that you 
+currently solved.
+
+--------------------------------------------------------------------------------
+
 From Volker Dirr:
 
 missing constraint:
@@ -213,7 +272,7 @@ From Volker Dirr
 
 --------------------------------------------------------------------------------
 
-from Maciej Deorowicz:
+From Maciej Deorowicz:
 
 > I have idea for two features. First: possibility to disable contraint
 > without removing it. Such 'Active' checkbox like on activities dialog.

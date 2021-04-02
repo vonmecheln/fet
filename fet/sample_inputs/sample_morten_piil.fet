@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.8.0">
+<!DOCTYPE FET><FET version="5.8.1">
 
 <Institution_Name>Default institution</Institution_Name>
 
@@ -414,7 +414,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>1</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Hanna</Students>
 	<Students>Mia</Students>
 	<Students>Sigrid</Students>
@@ -430,7 +430,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>2</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Karin</Students>
 	<Students>Johanne M</Students>
 	<Students>Jurgen</Students>
@@ -447,7 +447,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>3</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Anna-Maria</Students>
 	<Students>Astrid</Students>
 	<Students>Bjorn</Students>
@@ -463,7 +463,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>4</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Mia</Students>
 	<Students>Annika</Students>
 	<Students>Johanne U</Students>
@@ -478,7 +478,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>5</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Lene</Students>
 	<Students>Helga</Students>
 	<Students>Morten</Students>
@@ -495,7 +495,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>6</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Tore</Students>
 	<Students>Hanne S</Students>
 	<Students>Grethe</Students>
@@ -516,7 +516,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>7</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Filippa</Students>
 	<Students>Aase</Students>
 	<Students>Anna L</Students>
@@ -530,7 +530,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>8</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Vibeke</Students>
 	<Students>Karen P</Students>
 	<Students>Kirsten</Students>
@@ -544,7 +544,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>9</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Anna L</Students>
 	<Students>Dorte</Students>
 	<Students>Britta</Students>
@@ -558,7 +558,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>10</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Hanne S</Students>
 	<Students>Wolfgang</Students>
 	<Students>Laurie</Students>
@@ -576,7 +576,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>11</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Tore</Students>
 	<Students>Jakob C-D</Students>
 	<Students>Ingeborg</Students>
@@ -593,7 +593,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>12</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Solvejg</Students>
 	<Students>Helge</Students>
 	<Students>Inger</Students>
@@ -607,7 +607,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>13</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Hanna</Students>
 	<Students>Nanna</Students>
 	<Students>Britta</Students>
@@ -622,7 +622,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>14</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Katharina</Students>
 	<Students>Tine</Students>
 	<Students>Elisabeth</Students>
@@ -640,7 +640,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>15</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Grethe</Students>
 	<Students>Sven</Students>
 	<Students>Inger</Students>
@@ -656,7 +656,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>16</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Filippa</Students>
 	<Students>Solvejg</Students>
 	<Students>Laurie</Students>
@@ -675,7 +675,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>17</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Helle</Students>
 </Activity>
 <Activity>
@@ -686,7 +686,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>18</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Gesa</Students>
 	<Students>Elisabeth</Students>
 	<Students>Eva</Students>
@@ -702,7 +702,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>19</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Tine</Students>
 	<Students>Marie-Louise D</Students>
 </Activity>
@@ -714,7 +714,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>20</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Patience</Students>
 	<Students>Vibeke</Students>
 	<Students>Jurgen</Students>
@@ -729,7 +729,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>21</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Patience</Students>
 	<Students>Hanne J</Students>
 	<Students>Sven</Students>
@@ -743,7 +743,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>22</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Marie-Louise D</Students>
 	<Students>Eva</Students>
 	<Students>Sigrid</Students>
@@ -757,7 +757,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>23</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Bodil</Students>
 	<Students>Lis H</Students>
 	<Students>Sine</Students>
@@ -776,7 +776,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>24</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Nina</Students>
 	<Students>Dorie</Students>
 	<Students>Johanne U</Students>
@@ -791,7 +791,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>25</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Karin</Students>
 	<Students>Magdalena</Students>
 	<Students>Helle</Students>
@@ -810,30 +810,42 @@
 <ConstraintBasicCompulsoryTime>
 	<Weight_Percentage>100</Weight_Percentage>
 </ConstraintBasicCompulsoryTime>
-<ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>0</Weight_Percentage>
 	<Activity_Id>18</Activity_Id>
-	<Preferred_Hour>13.30 - 14.30</Preferred_Hour>
-	<Permanently_Locked>true</Permanently_Locked>
-</ConstraintActivityPreferredStartingTime>
-<ConstraintActivityPreferredStartingTime>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Daily</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13.30 - 14.30</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>0</Weight_Percentage>
 	<Activity_Id>19</Activity_Id>
-	<Preferred_Hour>14.40 - 15.40</Preferred_Hour>
-	<Permanently_Locked>true</Permanently_Locked>
-</ConstraintActivityPreferredStartingTime>
-<ConstraintActivityPreferredStartingTime>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Daily</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>14.40 - 15.40</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>0</Weight_Percentage>
 	<Activity_Id>20</Activity_Id>
-	<Preferred_Hour>15.50 - 16.50</Preferred_Hour>
-	<Permanently_Locked>true</Permanently_Locked>
-</ConstraintActivityPreferredStartingTime>
-<ConstraintActivityPreferredStartingTime>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Daily</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>15.50 - 16.50</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>0</Weight_Percentage>
 	<Activity_Id>21</Activity_Id>
-	<Preferred_Hour>17.00 - 18.00</Preferred_Hour>
-	<Permanently_Locked>true</Permanently_Locked>
-</ConstraintActivityPreferredStartingTime>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Daily</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>17.00 - 18.00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
 </Time_Constraints_List>
 
 <Space_Constraints_List>

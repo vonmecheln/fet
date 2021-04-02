@@ -4390,9 +4390,16 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						}
 					}
 					bool tmp2=this->addTeacher(teacher);
-					assert(tmp2==true);
-					tmp++;
-					xmlReadingLog+="   Teacher added\n";
+					if(!tmp2){
+						QMessageBox::warning(NULL, QObject::tr("FET warning"),
+						 QObject::tr("Duplicate teacher %1 found - ignoring").arg(teacher->name));
+						xmlReadingLog+="   Teacher not added - duplicate\n";
+					}
+					else{
+						assert(tmp2==true);
+						tmp++;
+						xmlReadingLog+="   Teacher added\n";
+					}
 				}
 			}
 			assert(tmp==this->teachersList.size());
@@ -4422,9 +4429,16 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						}
 					}
 					bool tmp2=this->addSubject(subject);
-					assert(tmp2==true);
-					tmp++;
-					xmlReadingLog+="   Subject inserted\n";
+					if(!tmp2){
+						QMessageBox::warning(NULL, QObject::tr("FET warning"),
+						 QObject::tr("Duplicate subject %1 found - ignoring").arg(subject->name));
+						xmlReadingLog+="   Subject not added - duplicate\n";
+					}
+					else{
+						assert(tmp2==true);
+						tmp++;
+						xmlReadingLog+="   Subject inserted\n";
+					}
 				}
 			}
 			assert(tmp==this->subjectsList.size());
@@ -4457,9 +4471,16 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						}
 					}
 					bool tmp2=this->addActivityTag(activityTag);
-					assert(tmp2==true);
-					tmp++;
-					xmlReadingLog+="   Activity tag inserted\n";
+					if(!tmp2){
+						QMessageBox::warning(NULL, QObject::tr("FET warning"),
+						 QObject::tr("Duplicate activity tag %1 found - ignoring").arg(activityTag->name));
+						xmlReadingLog+="   Activity tag not added - duplicate\n";
+					}
+					else{
+						assert(tmp2==true);
+						tmp++;
+						xmlReadingLog+="   Activity tag inserted\n";
+					}
 				}
 			}
 			assert(tmp==this->activityTagsList.size());
@@ -4489,9 +4510,16 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						}
 					}
 					bool tmp2=this->addActivityTag(activityTag);
-					assert(tmp2==true);
-					tmp++;
-					xmlReadingLog+="   Activity tag inserted\n";
+					if(!tmp2){
+						QMessageBox::warning(NULL, QObject::tr("FET warning"),
+						 QObject::tr("Duplicate activity tag %1 found - ignoring").arg(activityTag->name));
+						xmlReadingLog+="   Activity tag not added - duplicate\n";
+					}
+					else{
+						assert(tmp2==true);
+						tmp++;
+						xmlReadingLog+="   Activity tag inserted\n";
+					}
 				}
 			}
 			assert(tmp==this->activityTagsList.size());
@@ -4803,12 +4831,18 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 							//p=PARITY_FORTNIGHTLY;
 						}
 						else if(elem4.tagName()=="Active"){
-							if(elem4.text()=="yes"){
+							if(elem4.text()=="yes" || elem4.text()=="true" || elem4.text()=="1"){
 								ac=true;
 								xmlReadingLog+="	Current activity is active\n";
 							}
 							else{
-								assert(elem4.text()=="no");
+								if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
+									QMessageBox::warning(NULL, QObject::tr("FET warning"),
+									 QObject::tr("Found activity active tag which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+									 " The activity will be considered not active",
+									 "Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
+								}
+								//assert(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0");
 								ac=false;
 								xmlReadingLog+="	Current activity is not active\n";
 							}
@@ -5030,6 +5064,8 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 			bool reportActivitiesPreferredTimesChange=true;
 			
 			bool reportUnspecifiedPermanentlyLockedTime=true;
+			
+			bool reportUnspecifiedDayOrHourPreferredStartingTime=true;
 			
 #if 0&0&0
 			bool reportIncorrectMinNDays=true;
@@ -5922,12 +5958,20 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 							xmlReadingLog+="    Adding weightPercentage="+QString::number(cn->weightPercentage)+"\n";
 						}
 						else if(elem4.tagName()=="Consecutive_If_Same_Day" || elem4.tagName()=="Adjacent_If_Broken"){
-							if(elem4.text()=="yes"){
+							if(elem4.text()=="yes" || elem4.text()=="true" || elem4.text()=="1"){
 								cn->consecutiveIfSameDay=true;
 								foundCISD=true;
 								xmlReadingLog+="    Current constraint has consecutive if same day=true\n";
 							}
 							else{
+								if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
+									QMessageBox::warning(NULL, QObject::tr("FET warning"),
+									 QObject::tr("Found constraint min n days between activities with tag consecutive if same day"
+									 " which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+									 " The tag will be considered false",
+									 "Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
+								}
+								//assert(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0");
 								cn->consecutiveIfSameDay=false;
 								foundCISD=true;
 								xmlReadingLog+="    Current constraint has consecutive if same day=false\n";
@@ -6869,11 +6913,19 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 							}
 						}
 						else if(elem4.tagName()=="Permanently_Locked"){
-							if(elem4.text()=="true"){
+							if(elem4.text()=="true" || elem4.text()=="1" || elem4.text()=="yes"){
 								xmlReadingLog+="    Permanently locked\n";
 								cn->permanentlyLocked=true;
 							}
 							else{
+								if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
+									QMessageBox::warning(NULL, QObject::tr("FET warning"),
+									 QObject::tr("Found constraint activity preferred starting time with tag permanently locked"
+									 " which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+									 " The tag will be considered false",
+									 "Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
+								}
+								//assert(elem4.text()=="false" || elem4.text()=="0" || elem4.text()=="no");
 								xmlReadingLog+="    Not permanently locked\n";
 								cn->permanentlyLocked=false;
 							}
@@ -6918,7 +6970,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 					}
 					crt_constraint=cn;
 
-					if(!foundLocked && reportUnspecifiedPermanentlyLockedTime){
+					if(cn->hour>=0 && cn->day>=0 && !foundLocked && reportUnspecifiedPermanentlyLockedTime){
 						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
 						 QObject::tr("Found constraint activity preferred starting time, with unspecified tag"
 						 " 'permanently locked' - this tag will be set to 'false' by default. You can always modify it"
@@ -6937,6 +6989,43 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
 						if(t==0)
 							reportUnspecifiedPermanentlyLockedTime=false;
+					}
+					
+					if(cn->hour==-1 || cn->day==-1){
+						if(reportUnspecifiedDayOrHourPreferredStartingTime){
+							int t=QMessageBox::information(NULL, QObject::tr("FET information"),
+							 QObject::tr("Found constraint activity preferred starting time, with unspecified day or hour."
+							  " This constraint will be transformed into constraint activity preferred starting times (a set of times, not only one)."
+							  " This change is done in FET versions 5.8.1 and higher."
+							 ),
+							  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
+							if(t==0)
+								reportUnspecifiedDayOrHourPreferredStartingTime=false;
+						}
+							
+						ConstraintActivityPreferredStartingTimes* cgood=new ConstraintActivityPreferredStartingTimes();
+						if(cn->day==-1){
+							cgood->activityId=cn->activityId;
+							cgood->weightPercentage=cn->weightPercentage;
+							cgood->nPreferredStartingTimes=this->nDaysPerWeek;
+							for(int i=0; i<cgood->nPreferredStartingTimes; i++){
+								cgood->days[i]=i;
+								cgood->hours[i]=cn->hour;
+							}
+						}
+						else{
+							assert(cn->hour==-1);
+							cgood->activityId=cn->activityId;
+							cgood->weightPercentage=cn->weightPercentage;
+							cgood->nPreferredStartingTimes=this->nHoursPerDay;
+							for(int i=0; i<cgood->nPreferredStartingTimes; i++){
+								cgood->days[i]=cn->day;
+								cgood->hours[i]=i;
+							}
+						}
+						
+						delete cn;
+						crt_constraint=cgood;
 					}
 				}
 				else if(elem3.tagName()=="ConstraintActivityPreferredStartingTime"){
@@ -6973,11 +7062,19 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 							}
 						}
 						else if(elem4.tagName()=="Permanently_Locked"){
-							if(elem4.text()=="true"){
+							if(elem4.text()=="true" || elem4.text()=="1" || elem4.text()=="yes"){
 								xmlReadingLog+="    Permanently locked\n";
 								cn->permanentlyLocked=true;
 							}
 							else{
+								if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
+									QMessageBox::warning(NULL, QObject::tr("FET warning"),
+									 QObject::tr("Found constraint activity preferred starting time with tag permanently locked"
+									 " which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+									 " The tag will be considered false",
+									 "Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
+								}
+								//assert(elem4.text()=="false" || elem4.text()=="0" || elem4.text()=="no");
 								xmlReadingLog+="    Not permanently locked\n";
 								cn->permanentlyLocked=false;
 							}
@@ -7022,7 +7119,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 					}
 					crt_constraint=cn;
 
-					if(!foundLocked && reportUnspecifiedPermanentlyLockedTime){
+					if(cn->hour>=0 && cn->day>=0 && !foundLocked && reportUnspecifiedPermanentlyLockedTime){
 						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
 						 QObject::tr("Found constraint activity preferred starting time, with unspecified tag"
 						 " 'permanently locked' - this tag will be set to 'false' by default. You can always modify it"
@@ -7041,6 +7138,43 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
 						if(t==0)
 							reportUnspecifiedPermanentlyLockedTime=false;
+					}
+
+					if(cn->hour==-1 || cn->day==-1){
+						if(reportUnspecifiedDayOrHourPreferredStartingTime){
+							int t=QMessageBox::information(NULL, QObject::tr("FET information"),
+							 QObject::tr("Found constraint activity preferred starting time, with unspecified day or hour."
+							  " This constraint will be transformed into constraint activity preferred starting times (a set of times, not only one)."
+							  " This change is done in FET versions 5.8.1 and higher."
+							 ),
+							  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
+							if(t==0)
+								reportUnspecifiedDayOrHourPreferredStartingTime=false;
+						}
+							
+						ConstraintActivityPreferredStartingTimes* cgood=new ConstraintActivityPreferredStartingTimes();
+						if(cn->day==-1){
+							cgood->activityId=cn->activityId;
+							cgood->weightPercentage=cn->weightPercentage;
+							cgood->nPreferredStartingTimes=this->nDaysPerWeek;
+							for(int i=0; i<cgood->nPreferredStartingTimes; i++){
+								cgood->days[i]=i;
+								cgood->hours[i]=cn->hour;
+							}
+						}
+						else{
+							assert(cn->hour==-1);
+							cgood->activityId=cn->activityId;
+							cgood->weightPercentage=cn->weightPercentage;
+							cgood->nPreferredStartingTimes=this->nHoursPerDay;
+							for(int i=0; i<cgood->nPreferredStartingTimes; i++){
+								cgood->days[i]=cn->day;
+								cgood->hours[i]=i;
+							}
+						}
+						
+						delete cn;
+						crt_constraint=cgood;
 					}
 				}
 				else if(elem3.tagName()=="ConstraintActivityEndsStudentsDay"){
@@ -9930,11 +10064,19 @@ corruptConstraintTime:
 							}
 						}
 						else if(elem4.tagName()=="Permanently_Locked"){
-							if(elem4.text()=="true"){
+							if(elem4.text()=="true" || elem4.text()=="1" || elem4.text()=="yes"){
 								xmlReadingLog+="    Permanently locked\n";
 								cn->permanentlyLocked=true;
 							}
 							else{
+								if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
+									QMessageBox::warning(NULL, QObject::tr("FET warning"),
+									 QObject::tr("Found constraint activity preferred room with tag permanently locked"
+									 " which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+									 " The tag will be considered false",
+									 "Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
+								}
+								//assert(elem4.text()=="false" || elem4.text()=="0" || elem4.text()=="no");
 								xmlReadingLog+="    Not permanently locked\n";
 								cn->permanentlyLocked=false;
 							}

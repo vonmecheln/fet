@@ -417,19 +417,19 @@ bool StatisticsExport::exportStatisticsIndex(QString saveTime){
 	tos<<"        <tr>\n";
 	tos<<"          <th>"+tr("Teachers")+"</th>\n";
 	tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
-	tos<<"          <td><a href=\""<<s2+TEACHERS_STUDENTS_STATISTICS<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
-	tos<<"          <td><a href=\""<<s2+TEACHERS_SUBJECTS_STATISTICS<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+TEACHERS_STUDENTS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+TEACHERS_SUBJECTS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
 	tos<<"        </tr>\n";
 	tos<<"        <tr>\n";
 	tos<<"          <th>"+tr("Students")+"</th>\n";
-	tos<<"          <td><a href=\""<<s2+STUDENTS_TEACHERS_STATISTICS<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+STUDENTS_TEACHERS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
 	tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
-	tos<<"          <td><a href=\""<<s2+STUDENTS_SUBJECTS_STATISTICS<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+STUDENTS_SUBJECTS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
 	tos<<"        </tr>\n";
 	tos<<"        <tr>\n";
 	tos<<"          <th>"+tr("Subjects")+"</th>\n";
-	tos<<"          <td><a href=\""<<s2+SUBJECTS_TEACHERS_STATISTICS<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
-	tos<<"          <td><a href=\""<<s2+SUBJECTS_STUDENTS_STATISTICS<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+SUBJECTS_TEACHERS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+SUBJECTS_STUDENTS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
 	tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
 	tos<<"        </tr>\n";
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600

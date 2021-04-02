@@ -1316,4 +1316,14 @@ Versions 5.8.0 - 5.8.x
 	- Minor improvement: the directories under Windows contain now the correct back-slash, instead of forward slash.
 	- Repaired the Turkish translation (by Liviu Lalescu), but it is still old and incomplete.
 	- Added the output of activities timetable as xml
+- Version 5.8.1
+	- Minor improvements (code cleanup) - modified a bit the xml files to contain for boolean variables only true/false values
+	instead of yes/no (following xml format recommendations).
+	- Minor improvement: the constraint activity preferred starting time must have now the day and the hour both specified,
+	so there is a clearer distinction between preferred starting time and preferred starting times.
+	- Minor improvement - when reading some kind of invalid data, instead of crashing, now FET reports the error
+	(like for instance duplicate teachers, or subjects, or wrong tags).
+	- Minor improvements in the Italian, Arabic and Spanish translations.
+	- Added a sample file from Azu Boba.
+	- The index.html links now open in the same window (suggested by daviodan).
 	

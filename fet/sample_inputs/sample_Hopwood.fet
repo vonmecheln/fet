@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.8.0">
+<!DOCTYPE FET><FET version="5.8.1">
 
 <Institution_Name>Hopwood ESOL</Institution_Name>
 
@@ -435,7 +435,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>3</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin F/T</Students>
 </Activity>
 <Activity>
@@ -446,7 +446,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>4</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Inter F/T</Students>
 </Activity>
 <Activity>
@@ -457,7 +457,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>5</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Pre-Int P/T B</Students>
 </Activity>
 <Activity>
@@ -468,7 +468,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>6</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Elem Eve A</Students>
 </Activity>
 <Activity>
@@ -479,7 +479,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>7</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>ESOL IT</Students>
 </Activity>
 <Activity>
@@ -490,7 +490,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>8</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic E1-  E3</Students>
 </Activity>
 <Activity>
@@ -501,7 +501,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>9</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Elem F/T</Students>
 </Activity>
 <Activity>
@@ -513,7 +513,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>10</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic Pre-Entry/E1</Students>
 </Activity>
 <Activity>
@@ -524,7 +524,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>12</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic P/T A</Students>
 </Activity>
 <Activity>
@@ -535,7 +535,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>13</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Pre-Int F/T</Students>
 </Activity>
 <Activity>
@@ -546,7 +546,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>14</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic F/T A</Students>
 </Activity>
 <Activity>
@@ -557,7 +557,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>15</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>ESOL IT</Students>
 </Activity>
 <Activity>
@@ -568,7 +568,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>17</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Inter P/T</Students>
 </Activity>
 <Activity>
@@ -579,7 +579,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>18</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Elem P/T B</Students>
 </Activity>
 <Activity>
@@ -590,7 +590,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>19</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic E3 - L2</Students>
 </Activity>
 <Activity>
@@ -601,7 +601,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>24</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Pre-Int P/T B</Students>
 </Activity>
 <Activity>
@@ -612,7 +612,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>25</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin Eve A</Students>
 </Activity>
 <Activity>
@@ -623,7 +623,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>27</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic Eve B</Students>
 </Activity>
 <Activity>
@@ -634,7 +634,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>28</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Pre-Int Eve A</Students>
 </Activity>
 <Activity>
@@ -645,7 +645,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>29</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Inter Eve A</Students>
 </Activity>
 <Activity>
@@ -656,7 +656,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>30</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Elem P/T A</Students>
 </Activity>
 <Activity>
@@ -667,7 +667,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>31</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Elem F/T</Students>
 </Activity>
 <Activity>
@@ -678,7 +678,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>32</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic F/T A</Students>
 </Activity>
 <Activity>
@@ -689,7 +689,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>33</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Pre-Int P/T A</Students>
 </Activity>
 <Activity>
@@ -700,7 +700,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>34</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Elem F/T</Students>
 </Activity>
 <Activity>
@@ -711,7 +711,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>35</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Pre-Int F/T</Students>
 </Activity>
 <Activity>
@@ -722,7 +722,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>36</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin Eve B</Students>
 </Activity>
 <Activity>
@@ -733,7 +733,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>38</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>ESOL new</Students>
 </Activity>
 <Activity>
@@ -744,7 +744,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>39</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin F/T</Students>
 </Activity>
 <Activity>
@@ -755,7 +755,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>45</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Pre-Int F/T</Students>
 </Activity>
 <Activity>
@@ -766,7 +766,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>47</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic F/T A</Students>
 </Activity>
 <Activity>
@@ -777,7 +777,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>48</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Inter F/T</Students>
 </Activity>
 <Activity>
@@ -788,7 +788,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>49</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin P/T B</Students>
 </Activity>
 <Activity>
@@ -799,7 +799,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>50</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>FCE</Students>
 </Activity>
 <Activity>
@@ -810,7 +810,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>52</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic P/T B</Students>
 </Activity>
 <Activity>
@@ -821,7 +821,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>62</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Elem F/T</Students>
 </Activity>
 <Activity>
@@ -832,7 +832,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>63</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic P/T B</Students>
 </Activity>
 <Activity>
@@ -843,7 +843,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>64</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic P/T B</Students>
 </Activity>
 <Activity>
@@ -854,7 +854,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>65</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin F/T</Students>
 </Activity>
 <Activity>
@@ -865,7 +865,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>66</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>ESOL new</Students>
 </Activity>
 <Activity>
@@ -876,7 +876,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>67</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Inter F/T</Students>
 </Activity>
 <Activity>
@@ -887,7 +887,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>68</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic P/T B</Students>
 </Activity>
 <Activity>
@@ -898,7 +898,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>69</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin Eve B</Students>
 </Activity>
 <Activity>
@@ -909,7 +909,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>70</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin F/T</Students>
 </Activity>
 <Activity>
@@ -920,7 +920,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>71</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Pre-Int Eve A</Students>
 </Activity>
 <Activity>
@@ -931,7 +931,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>72</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin F/T</Students>
 </Activity>
 <Activity>
@@ -942,7 +942,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>74</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Inter P/T</Students>
 </Activity>
 <Activity>
@@ -953,7 +953,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>75</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Inter F/T</Students>
 </Activity>
 <Activity>
@@ -964,7 +964,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>76</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Elem P/T A</Students>
 </Activity>
 <Activity>
@@ -975,7 +975,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>77</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic F/T A</Students>
 </Activity>
 <Activity>
@@ -986,7 +986,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>78</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Pre-Int P/T A</Students>
 </Activity>
 <Activity>
@@ -997,7 +997,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>79</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Inter F/T</Students>
 </Activity>
 <Activity>
@@ -1008,7 +1008,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>80</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic F/T A</Students>
 </Activity>
 <Activity>
@@ -1019,7 +1019,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>81</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic P/T A</Students>
 </Activity>
 <Activity>
@@ -1030,7 +1030,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>82</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Elem Eve B</Students>
 </Activity>
 <Activity>
@@ -1041,7 +1041,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>83</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin P/T B</Students>
 </Activity>
 <Activity>
@@ -1052,7 +1052,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>84</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic F/T A</Students>
 </Activity>
 <Activity>
@@ -1063,7 +1063,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>85</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic Eve A</Students>
 </Activity>
 <Activity>
@@ -1074,7 +1074,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>86</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Pre-Int P/T A</Students>
 </Activity>
 <Activity>
@@ -1085,7 +1085,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>87</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Inter F/T</Students>
 </Activity>
 <Activity>
@@ -1096,7 +1096,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>88</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin P/T A</Students>
 </Activity>
 <Activity>
@@ -1107,7 +1107,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>89</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Elem P/T B</Students>
 </Activity>
 <Activity>
@@ -1118,7 +1118,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>90</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Elem Eve B</Students>
 </Activity>
 <Activity>
@@ -1129,7 +1129,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>91</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin P/T A</Students>
 </Activity>
 <Activity>
@@ -1140,7 +1140,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>92</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Inter P/T</Students>
 </Activity>
 <Activity>
@@ -1151,7 +1151,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>95</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic Eve A</Students>
 </Activity>
 <Activity>
@@ -1162,7 +1162,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>96</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Elem P/T A</Students>
 </Activity>
 <Activity>
@@ -1173,7 +1173,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>97</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Inter Eve A</Students>
 </Activity>
 <Activity>
@@ -1184,7 +1184,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>98</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>FCE</Students>
 </Activity>
 <Activity>
@@ -1195,7 +1195,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>99</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>FCE Eve</Students>
 </Activity>
 <Activity>
@@ -1206,7 +1206,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>100</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Pre-Int F/T</Students>
 </Activity>
 <Activity>
@@ -1217,7 +1217,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>101</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Pre-Int F/T</Students>
 </Activity>
 <Activity>
@@ -1228,7 +1228,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>102</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Elem F/T</Students>
 </Activity>
 <Activity>
@@ -1240,7 +1240,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>103</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>ESOL new</Students>
 </Activity>
 <Activity>
@@ -1251,7 +1251,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>104</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Elem F/T</Students>
 </Activity>
 <Activity>
@@ -1262,7 +1262,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>105</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Pre-Int Eve B</Students>
 </Activity>
 <Activity>
@@ -1273,7 +1273,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>106</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Elem F/T</Students>
 </Activity>
 <Activity>
@@ -1284,7 +1284,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>107</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin F/T</Students>
 </Activity>
 <Activity>
@@ -1295,7 +1295,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>108</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic Eve B</Students>
 </Activity>
 <Activity>
@@ -1306,7 +1306,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>109</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic P/T A</Students>
 </Activity>
 <Activity>
@@ -1317,7 +1317,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>110</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Pre-Int P/T B</Students>
 </Activity>
 <Activity>
@@ -1328,7 +1328,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>111</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Elem Eve A</Students>
 </Activity>
 <Activity>
@@ -1339,7 +1339,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>112</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin P/T A</Students>
 </Activity>
 <Activity>
@@ -1350,7 +1350,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>113</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>FCE</Students>
 </Activity>
 <Activity>
@@ -1361,7 +1361,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>114</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin P/T B</Students>
 </Activity>
 <Activity>
@@ -1372,7 +1372,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>115</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>CAE</Students>
 </Activity>
 <Activity>
@@ -1383,7 +1383,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>116</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>CAE Eve</Students>
 </Activity>
 <Activity>
@@ -1394,7 +1394,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>117</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Inter F/T</Students>
 </Activity>
 <Activity>
@@ -1405,7 +1405,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>118</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>FCE Eve</Students>
 </Activity>
 <Activity>
@@ -1416,7 +1416,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>119</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Pre-Int F/T</Students>
 </Activity>
 <Activity>
@@ -1427,7 +1427,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>120</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>FCE</Students>
 </Activity>
 <Activity>
@@ -1438,7 +1438,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>121</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Elem P/T B</Students>
 </Activity>
 <Activity>
@@ -1449,7 +1449,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>122</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Pre-Int F/T</Students>
 </Activity>
 <Activity>
@@ -1460,7 +1460,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>123</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin P/T A</Students>
 </Activity>
 <Activity>
@@ -1471,7 +1471,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>124</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic P/T A</Students>
 </Activity>
 <Activity>
@@ -1482,7 +1482,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>125</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin P/T B</Students>
 </Activity>
 <Activity>
@@ -1493,7 +1493,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>126</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>ESOL IT</Students>
 </Activity>
 <Activity>
@@ -1504,7 +1504,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>127</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic F/T A</Students>
 </Activity>
 <Activity>
@@ -1515,7 +1515,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>128</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Pre-Int Eve B</Students>
 </Activity>
 <Activity>
@@ -1526,7 +1526,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>129</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin F/T</Students>
 </Activity>
 <Activity>
@@ -1537,7 +1537,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>130</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic F/T B</Students>
 </Activity>
 <Activity>
@@ -1548,7 +1548,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>131</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic F/T B</Students>
 </Activity>
 <Activity>
@@ -1559,7 +1559,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>133</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic F/T B</Students>
 </Activity>
 <Activity>
@@ -1570,7 +1570,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>134</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic F/T B</Students>
 </Activity>
 <Activity>
@@ -1581,7 +1581,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>135</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Inter Eve B</Students>
 </Activity>
 <Activity>
@@ -1592,7 +1592,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>136</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic F/T B</Students>
 </Activity>
 <Activity>
@@ -1603,7 +1603,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>137</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin</Students>
 </Activity>
 <Activity>
@@ -1614,7 +1614,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>138</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic ??</Students>
 </Activity>
 <Activity>
@@ -1625,7 +1625,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>139</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin Eve A</Students>
 </Activity>
 <Activity>
@@ -1636,7 +1636,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>140</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Inter Eve B</Students>
 </Activity>
 <Activity>
@@ -1647,7 +1647,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>141</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin</Students>
 </Activity>
 <Activity>
@@ -1658,7 +1658,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>142</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic plus</Students>
 </Activity>
 <Activity>
@@ -1669,7 +1669,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>143</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>ESOL new</Students>
 </Activity>
 <Activity>
@@ -1681,7 +1681,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>144</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Staff</Students>
 </Activity>
 <Activity>
@@ -1692,7 +1692,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>146</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>ESOL</Students>
 </Activity>
 <Activity>
@@ -1703,7 +1703,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>147</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>EFL</Students>
 </Activity>
 <Activity>
@@ -1714,7 +1714,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>148</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>EFL</Students>
 </Activity>
 <Activity>
@@ -1725,7 +1725,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>149</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>EAL group</Students>
 </Activity>
 <Activity>
@@ -1736,7 +1736,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>150</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>EAL group</Students>
 </Activity>
 <Activity>
@@ -1747,7 +1747,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>151</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>ESOL new</Students>
 </Activity>
 <Activity>
@@ -1758,7 +1758,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>152</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Upper Int P/T</Students>
 </Activity>
 <Activity>
@@ -1770,7 +1770,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>153</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Staff</Students>
 </Activity>
 <Activity>
@@ -1781,7 +1781,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>154</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>IELTS Inter P/T</Students>
 </Activity>
 <Activity>
@@ -1792,7 +1792,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>155</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>IELTS Found F/T</Students>
 </Activity>
 <Activity>
@@ -1803,7 +1803,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>156</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>IELTS Found F/T</Students>
 </Activity>
 <Activity>
@@ -1814,7 +1814,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>158</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Staff</Students>
 </Activity>
 <Activity>
@@ -1825,7 +1825,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>159</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>EFL</Students>
 </Activity>
 <Activity>
@@ -1836,7 +1836,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>160</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Begin</Students>
 </Activity>
 <Activity>
@@ -1847,7 +1847,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>161</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic F/T B</Students>
 </Activity>
 <Activity>
@@ -1858,7 +1858,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>163</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>IELTS Up Int P/T</Students>
 </Activity>
 <Activity>
@@ -1869,7 +1869,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>164</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>IELTS Inter P/T</Students>
 </Activity>
 <Activity>
@@ -1880,7 +1880,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>165</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>IELTS</Students>
 </Activity>
 <Activity>
@@ -1891,7 +1891,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>166</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>EAL group</Students>
 </Activity>
 <Activity>
@@ -1902,7 +1902,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>168</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>IELTS Found F/T</Students>
 </Activity>
 <Activity>
@@ -1913,7 +1913,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>169</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Inter F/T</Students>
 </Activity>
 <Activity>
@@ -1924,7 +1924,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>171</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Women Group</Students>
 </Activity>
 <Activity>
@@ -1935,7 +1935,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>172</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Women Group</Students>
 </Activity>
 <Activity>
@@ -1946,7 +1946,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>173</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>ESOL Craft (FACE)</Students>
 </Activity>
 <Activity>
@@ -1957,7 +1957,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>174</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic F/T B</Students>
 </Activity>
 <Activity>
@@ -1968,7 +1968,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>175</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic E3 - L2</Students>
 </Activity>
 <Activity>
@@ -1979,7 +1979,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>176</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic E3 - L2</Students>
 </Activity>
 <Activity>
@@ -1990,7 +1990,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>177</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic E3 - L2</Students>
 </Activity>
 <Activity>
@@ -2001,7 +2001,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>178</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic Skills</Students>
 </Activity>
 <Activity>
@@ -2012,7 +2012,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>179</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic Skills</Students>
 </Activity>
 <Activity>
@@ -2023,7 +2023,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>180</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic Pre-Entry/E2</Students>
 </Activity>
 <Activity>
@@ -2034,7 +2034,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>181</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic E3 - L2</Students>
 </Activity>
 <Activity>
@@ -2045,7 +2045,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>182</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic Pre-Entry/E1</Students>
 </Activity>
 <Activity>
@@ -2056,7 +2056,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>183</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic Skills</Students>
 </Activity>
 <Activity>
@@ -2067,7 +2067,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>184</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic Skills</Students>
 </Activity>
 <Activity>
@@ -2078,7 +2078,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>185</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic E3 - L2</Students>
 </Activity>
 <Activity>
@@ -2089,7 +2089,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>186</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic Skills</Students>
 </Activity>
 <Activity>
@@ -2100,7 +2100,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>187</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic Sk. Assess</Students>
 </Activity>
 <Activity>
@@ -2111,7 +2111,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>188</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic Skills</Students>
 </Activity>
 <Activity>
@@ -2122,7 +2122,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>189</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic L1 - L2</Students>
 </Activity>
 <Activity>
@@ -2133,7 +2133,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>190</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic E1-  E3</Students>
 </Activity>
 <Activity>
@@ -2145,7 +2145,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>191</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic Pre-Entry/E1</Students>
 </Activity>
 <Activity>
@@ -2156,7 +2156,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>192</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic Skills</Students>
 </Activity>
 <Activity>
@@ -2167,7 +2167,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>193</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic L1 - L2</Students>
 </Activity>
 <Activity>
@@ -2178,7 +2178,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>195</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic E1-  E3</Students>
 </Activity>
 <Activity>
@@ -2189,7 +2189,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>196</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic L1 - L2</Students>
 </Activity>
 <Activity>
@@ -2200,7 +2200,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>197</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic Skills</Students>
 </Activity>
 <Activity>
@@ -2211,7 +2211,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>198</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic Skills</Students>
 </Activity>
 <Activity>
@@ -2222,7 +2222,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>199</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Basic L1 - L2</Students>
 </Activity>
 </Activities_List>

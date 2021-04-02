@@ -1,13 +1,4 @@
-This file modified 1 Oct. 2007
-
-Adding 1 Oct. 2007:
-	The idea of timetable generation is good. But the implementation of algorithm is not very good right now
-	(1 Oct. 2007). There is room for many improvements. I'll try to resolve this soon, but I cannot be sure
-	of a fast solution.	If you try to understand the algorithm, do not take for granted every part of code in 
-	generate.cpp, the parts in function randomwap() which compute for each constraint the list of conflicting
-	activities is badly written. I'm sorry, ideas came after writing it. I might probably release many testing
-	versions before releasing these modifications, so if you want feel free to join mailing list to see
-	when testing versions are released.
+Adding 19 January 2009: the implementation of the algorithm is good now, I changed it in 2008.
 
 Some words about the algorithm:
 
@@ -68,21 +59,3 @@ slot if level>=5. That is, we search at level 0 all slots, at level 1 the same,
 the first (best) slot, etc., we reach level 13, then we go back to level 4 and 
 choose the next slot, etc. This is to allow FET more liberty, I think. This 
 trick was found practically to be good. It might not always be good.
-
-
-Adding - 26 Sept. 2007:
-
-Please consider that the best implemented part is teachers min hours daily, 
-please follow its mechanism and imagine other constraints should be like it
-(in file generate.cpp, function randomswap)
-
-Adding - 1 Oct. 2007:
-
-Not even teachers min hours daily is not too good implemented. I only
-consider that the replaced activities are at the beginning or end of a day.
-But it might be that I could only take an activity from the middle of a day
-because first and last are swapped already.
-
-Why don't I make this improvement right now: much testing and analysis of code 
-would be needed. I prefer to wait until I'll improve all the constraints
-to be like it, then do a lot of testing again.

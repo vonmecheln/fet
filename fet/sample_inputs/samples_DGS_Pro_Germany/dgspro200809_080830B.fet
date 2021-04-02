@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.8.0">
+<!DOCTYPE FET><FET version="5.8.1">
 
 <Institution_Name>DGS Probsteierhagen</Institution_Name>
 
@@ -407,7 +407,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>2</Id>
 	<Activity_Group_Id>2</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -418,7 +418,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>3</Id>
 	<Activity_Group_Id>2</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -429,7 +429,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>4</Id>
 	<Activity_Group_Id>2</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -440,7 +440,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>5</Id>
 	<Activity_Group_Id>2</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -451,7 +451,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>6</Id>
 	<Activity_Group_Id>2</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -468,7 +468,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>7</Id>
 	<Activity_Group_Id>7</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1</Students>
 	<Students>2</Students>
 </Activity>
@@ -486,7 +486,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>8</Id>
 	<Activity_Group_Id>7</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1</Students>
 	<Students>2</Students>
 </Activity>
@@ -504,7 +504,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>9</Id>
 	<Activity_Group_Id>7</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1</Students>
 	<Students>2</Students>
 </Activity>
@@ -516,7 +516,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>13</Id>
 	<Activity_Group_Id>13</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1a</Students>
 </Activity>
 <Activity>
@@ -527,7 +527,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>14</Id>
 	<Activity_Group_Id>13</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1a</Students>
 </Activity>
 <Activity>
@@ -538,7 +538,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>15</Id>
 	<Activity_Group_Id>15</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1b</Students>
 </Activity>
 <Activity>
@@ -549,7 +549,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>16</Id>
 	<Activity_Group_Id>15</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1b</Students>
 </Activity>
 <Activity>
@@ -560,7 +560,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>19</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2a</Students>
 </Activity>
 <Activity>
@@ -571,7 +571,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>20</Id>
 	<Activity_Group_Id>20</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2a</Students>
 </Activity>
 <Activity>
@@ -582,7 +582,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>21</Id>
 	<Activity_Group_Id>20</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2a</Students>
 </Activity>
 <Activity>
@@ -593,7 +593,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>24</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2a</Students>
 </Activity>
 <Activity>
@@ -604,7 +604,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>25</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2b</Students>
 </Activity>
 <Activity>
@@ -615,7 +615,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>30</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2b</Students>
 </Activity>
 <Activity>
@@ -627,7 +627,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>31</Id>
 	<Activity_Group_Id>31</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2c</Students>
 </Activity>
 <Activity>
@@ -639,7 +639,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>32</Id>
 	<Activity_Group_Id>31</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2c</Students>
 </Activity>
 <Activity>
@@ -650,7 +650,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>35</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1a</Students>
 </Activity>
 <Activity>
@@ -661,7 +661,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>36</Id>
 	<Activity_Group_Id>36</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1a</Students>
 </Activity>
 <Activity>
@@ -672,7 +672,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>37</Id>
 	<Activity_Group_Id>36</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1a</Students>
 </Activity>
 <Activity>
@@ -683,7 +683,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>38</Id>
 	<Activity_Group_Id>36</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1a</Students>
 </Activity>
 <Activity>
@@ -694,7 +694,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>39</Id>
 	<Activity_Group_Id>36</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1a</Students>
 </Activity>
 <Activity>
@@ -705,7 +705,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>40</Id>
 	<Activity_Group_Id>36</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1a</Students>
 </Activity>
 <Activity>
@@ -716,7 +716,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>41</Id>
 	<Activity_Group_Id>41</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1a</Students>
 </Activity>
 <Activity>
@@ -727,7 +727,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>42</Id>
 	<Activity_Group_Id>41</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1a</Students>
 </Activity>
 <Activity>
@@ -739,7 +739,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>43</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1a</Students>
 	<Students>2a</Students>
 </Activity>
@@ -751,7 +751,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>44</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1b</Students>
 </Activity>
 <Activity>
@@ -762,7 +762,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>45</Id>
 	<Activity_Group_Id>45</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1b</Students>
 </Activity>
 <Activity>
@@ -773,7 +773,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>46</Id>
 	<Activity_Group_Id>45</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1b</Students>
 </Activity>
 <Activity>
@@ -784,7 +784,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>47</Id>
 	<Activity_Group_Id>45</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1b</Students>
 </Activity>
 <Activity>
@@ -795,7 +795,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>48</Id>
 	<Activity_Group_Id>45</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1b</Students>
 </Activity>
 <Activity>
@@ -806,7 +806,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>49</Id>
 	<Activity_Group_Id>45</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1b</Students>
 </Activity>
 <Activity>
@@ -817,7 +817,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>50</Id>
 	<Activity_Group_Id>50</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1b</Students>
 </Activity>
 <Activity>
@@ -828,7 +828,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>51</Id>
 	<Activity_Group_Id>50</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1b</Students>
 </Activity>
 <Activity>
@@ -840,7 +840,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>52</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1b</Students>
 	<Students>2b</Students>
 </Activity>
@@ -852,7 +852,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>53</Id>
 	<Activity_Group_Id>53</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1b</Students>
 </Activity>
 <Activity>
@@ -863,7 +863,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>54</Id>
 	<Activity_Group_Id>53</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1b</Students>
 </Activity>
 <Activity>
@@ -874,7 +874,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>55</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1c</Students>
 </Activity>
 <Activity>
@@ -885,7 +885,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>56</Id>
 	<Activity_Group_Id>56</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1c</Students>
 </Activity>
 <Activity>
@@ -896,7 +896,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>57</Id>
 	<Activity_Group_Id>56</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1c</Students>
 </Activity>
 <Activity>
@@ -907,7 +907,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>58</Id>
 	<Activity_Group_Id>56</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1c</Students>
 </Activity>
 <Activity>
@@ -918,7 +918,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>59</Id>
 	<Activity_Group_Id>56</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1c</Students>
 </Activity>
 <Activity>
@@ -929,7 +929,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>60</Id>
 	<Activity_Group_Id>56</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1c</Students>
 </Activity>
 <Activity>
@@ -940,7 +940,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>63</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1c</Students>
 </Activity>
 <Activity>
@@ -952,7 +952,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>64</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1c</Students>
 	<Students>2c</Students>
 </Activity>
@@ -964,7 +964,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>65</Id>
 	<Activity_Group_Id>65</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1a</Students>
 </Activity>
 <Activity>
@@ -975,7 +975,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>66</Id>
 	<Activity_Group_Id>65</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1a</Students>
 </Activity>
 <Activity>
@@ -986,7 +986,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>67</Id>
 	<Activity_Group_Id>67</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1c</Students>
 </Activity>
 <Activity>
@@ -997,7 +997,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>68</Id>
 	<Activity_Group_Id>67</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1c</Students>
 </Activity>
 <Activity>
@@ -1008,7 +1008,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>74</Id>
 	<Activity_Group_Id>74</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2a</Students>
 </Activity>
 <Activity>
@@ -1019,7 +1019,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>75</Id>
 	<Activity_Group_Id>74</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2a</Students>
 </Activity>
 <Activity>
@@ -1030,7 +1030,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>78</Id>
 	<Activity_Group_Id>78</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2b</Students>
 </Activity>
 <Activity>
@@ -1041,7 +1041,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>79</Id>
 	<Activity_Group_Id>78</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2b</Students>
 </Activity>
 <Activity>
@@ -1052,7 +1052,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>80</Id>
 	<Activity_Group_Id>80</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2b</Students>
 </Activity>
 <Activity>
@@ -1063,7 +1063,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>81</Id>
 	<Activity_Group_Id>80</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2b</Students>
 </Activity>
 <Activity>
@@ -1074,7 +1074,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>82</Id>
 	<Activity_Group_Id>80</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2b</Students>
 </Activity>
 <Activity>
@@ -1085,7 +1085,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>83</Id>
 	<Activity_Group_Id>80</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2b</Students>
 </Activity>
 <Activity>
@@ -1096,7 +1096,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>84</Id>
 	<Activity_Group_Id>80</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2b</Students>
 </Activity>
 <Activity>
@@ -1107,7 +1107,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>85</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2c</Students>
 </Activity>
 <Activity>
@@ -1118,7 +1118,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>91</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2c</Students>
 </Activity>
 <Activity>
@@ -1129,7 +1129,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>93</Id>
 	<Activity_Group_Id>93</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2c</Students>
 </Activity>
 <Activity>
@@ -1140,7 +1140,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>94</Id>
 	<Activity_Group_Id>93</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2c</Students>
 </Activity>
 <Activity>
@@ -1151,7 +1151,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>96</Id>
 	<Activity_Group_Id>96</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1162,7 +1162,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>97</Id>
 	<Activity_Group_Id>96</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1173,7 +1173,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>98</Id>
 	<Activity_Group_Id>98</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1184,7 +1184,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>99</Id>
 	<Activity_Group_Id>98</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1195,7 +1195,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>100</Id>
 	<Activity_Group_Id>98</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1206,7 +1206,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>101</Id>
 	<Activity_Group_Id>98</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1217,7 +1217,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>102</Id>
 	<Activity_Group_Id>98</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1228,7 +1228,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>103</Id>
 	<Activity_Group_Id>103</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1239,7 +1239,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>104</Id>
 	<Activity_Group_Id>103</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1250,7 +1250,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>105</Id>
 	<Activity_Group_Id>103</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1261,7 +1261,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>106</Id>
 	<Activity_Group_Id>103</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1272,7 +1272,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>107</Id>
 	<Activity_Group_Id>103</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1283,7 +1283,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>108</Id>
 	<Activity_Group_Id>108</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1294,7 +1294,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>109</Id>
 	<Activity_Group_Id>108</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1305,7 +1305,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>110</Id>
 	<Activity_Group_Id>110</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1316,7 +1316,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>111</Id>
 	<Activity_Group_Id>110</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1327,7 +1327,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>112</Id>
 	<Activity_Group_Id>110</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1338,7 +1338,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>113</Id>
 	<Activity_Group_Id>110</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1349,7 +1349,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>114</Id>
 	<Activity_Group_Id>110</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1360,7 +1360,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>115</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1371,7 +1371,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>116</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1382,7 +1382,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>117</Id>
 	<Activity_Group_Id>117</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1393,7 +1393,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>118</Id>
 	<Activity_Group_Id>117</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1404,7 +1404,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>119</Id>
 	<Activity_Group_Id>119</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1415,7 +1415,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>120</Id>
 	<Activity_Group_Id>119</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1426,7 +1426,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>121</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3a</Students>
 </Activity>
 <Activity>
@@ -1441,7 +1441,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>122</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3</Students>
 </Activity>
 <Activity>
@@ -1455,7 +1455,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>123</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4</Students>
 </Activity>
 <Activity>
@@ -1468,7 +1468,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>124</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3</Students>
 </Activity>
 <Activity>
@@ -1482,7 +1482,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>125</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4</Students>
 </Activity>
 <Activity>
@@ -1496,7 +1496,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>127</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 	<Students>8</Students>
 	<Students>6/7</Students>
@@ -1509,7 +1509,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>128</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 	<Students>8</Students>
 	<Students>6/7</Students>
@@ -1522,7 +1522,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>129</Id>
 	<Activity_Group_Id>129</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1533,7 +1533,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>130</Id>
 	<Activity_Group_Id>129</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1544,7 +1544,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>131</Id>
 	<Activity_Group_Id>131</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1555,7 +1555,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>132</Id>
 	<Activity_Group_Id>131</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1566,7 +1566,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>133</Id>
 	<Activity_Group_Id>131</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1577,7 +1577,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>134</Id>
 	<Activity_Group_Id>131</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1588,7 +1588,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>135</Id>
 	<Activity_Group_Id>131</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1599,7 +1599,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>136</Id>
 	<Activity_Group_Id>136</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1610,7 +1610,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>137</Id>
 	<Activity_Group_Id>136</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1621,7 +1621,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>138</Id>
 	<Activity_Group_Id>136</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1632,7 +1632,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>139</Id>
 	<Activity_Group_Id>136</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1643,7 +1643,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>140</Id>
 	<Activity_Group_Id>136</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1654,7 +1654,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>141</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1665,7 +1665,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>142</Id>
 	<Activity_Group_Id>142</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1676,7 +1676,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>143</Id>
 	<Activity_Group_Id>142</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1687,7 +1687,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>144</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1698,7 +1698,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>145</Id>
 	<Activity_Group_Id>145</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1709,7 +1709,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>146</Id>
 	<Activity_Group_Id>145</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1720,7 +1720,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>147</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1731,7 +1731,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>148</Id>
 	<Activity_Group_Id>148</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1742,7 +1742,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>149</Id>
 	<Activity_Group_Id>148</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1753,7 +1753,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>150</Id>
 	<Activity_Group_Id>150</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1764,7 +1764,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>151</Id>
 	<Activity_Group_Id>150</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1775,7 +1775,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>152</Id>
 	<Activity_Group_Id>150</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1786,7 +1786,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>153</Id>
 	<Activity_Group_Id>150</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1797,7 +1797,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>154</Id>
 	<Activity_Group_Id>150</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3b</Students>
 </Activity>
 <Activity>
@@ -1808,7 +1808,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>155</Id>
 	<Activity_Group_Id>155</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -1819,7 +1819,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>156</Id>
 	<Activity_Group_Id>155</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -1830,7 +1830,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>157</Id>
 	<Activity_Group_Id>155</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -1841,7 +1841,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>158</Id>
 	<Activity_Group_Id>155</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -1852,7 +1852,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>159</Id>
 	<Activity_Group_Id>155</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -1863,7 +1863,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>160</Id>
 	<Activity_Group_Id>160</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -1874,7 +1874,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>161</Id>
 	<Activity_Group_Id>160</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -1885,7 +1885,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>162</Id>
 	<Activity_Group_Id>160</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -1896,7 +1896,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>163</Id>
 	<Activity_Group_Id>160</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -1907,7 +1907,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>164</Id>
 	<Activity_Group_Id>160</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -1919,7 +1919,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>165</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -1930,7 +1930,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>166</Id>
 	<Activity_Group_Id>166</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -1941,7 +1941,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>167</Id>
 	<Activity_Group_Id>166</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -1952,7 +1952,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>168</Id>
 	<Activity_Group_Id>166</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -1963,7 +1963,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>169</Id>
 	<Activity_Group_Id>166</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -1974,7 +1974,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>170</Id>
 	<Activity_Group_Id>166</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -1985,7 +1985,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>171</Id>
 	<Activity_Group_Id>171</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -1996,7 +1996,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>172</Id>
 	<Activity_Group_Id>171</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -2007,7 +2007,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>173</Id>
 	<Activity_Group_Id>173</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -2018,7 +2018,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>174</Id>
 	<Activity_Group_Id>173</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -2029,7 +2029,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>175</Id>
 	<Activity_Group_Id>175</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -2040,7 +2040,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>176</Id>
 	<Activity_Group_Id>175</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -2051,7 +2051,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>177</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -2062,7 +2062,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>178</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -2073,7 +2073,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>179</Id>
 	<Activity_Group_Id>179</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -2084,7 +2084,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>180</Id>
 	<Activity_Group_Id>179</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3c</Students>
 </Activity>
 <Activity>
@@ -2095,7 +2095,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>181</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -2106,7 +2106,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>182</Id>
 	<Activity_Group_Id>182</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -2117,7 +2117,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>183</Id>
 	<Activity_Group_Id>182</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -2128,7 +2128,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>194</Id>
 	<Activity_Group_Id>194</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -2139,7 +2139,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>195</Id>
 	<Activity_Group_Id>194</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -2150,7 +2150,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>196</Id>
 	<Activity_Group_Id>196</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -2161,7 +2161,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>197</Id>
 	<Activity_Group_Id>196</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -2172,7 +2172,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>198</Id>
 	<Activity_Group_Id>196</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -2183,7 +2183,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>199</Id>
 	<Activity_Group_Id>196</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -2194,7 +2194,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>200</Id>
 	<Activity_Group_Id>196</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -2205,7 +2205,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>201</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -2216,7 +2216,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>202</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -2227,7 +2227,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>203</Id>
 	<Activity_Group_Id>203</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -2238,7 +2238,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>204</Id>
 	<Activity_Group_Id>203</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -2249,7 +2249,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>205</Id>
 	<Activity_Group_Id>205</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -2260,7 +2260,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>206</Id>
 	<Activity_Group_Id>205</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -2271,7 +2271,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>207</Id>
 	<Activity_Group_Id>207</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -2282,7 +2282,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>208</Id>
 	<Activity_Group_Id>207</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -2293,7 +2293,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>209</Id>
 	<Activity_Group_Id>209</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -2304,7 +2304,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>210</Id>
 	<Activity_Group_Id>209</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -2315,7 +2315,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>211</Id>
 	<Activity_Group_Id>209</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -2326,7 +2326,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>212</Id>
 	<Activity_Group_Id>209</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -2337,7 +2337,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>213</Id>
 	<Activity_Group_Id>209</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -2348,7 +2348,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>218</Id>
 	<Activity_Group_Id>218</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -2359,7 +2359,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>219</Id>
 	<Activity_Group_Id>218</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -2370,7 +2370,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>220</Id>
 	<Activity_Group_Id>218</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -2381,7 +2381,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>221</Id>
 	<Activity_Group_Id>218</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -2392,7 +2392,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>222</Id>
 	<Activity_Group_Id>218</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -2403,7 +2403,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>223</Id>
 	<Activity_Group_Id>223</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -2414,7 +2414,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>224</Id>
 	<Activity_Group_Id>223</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -2425,7 +2425,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>225</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -2436,7 +2436,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>226</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -2447,7 +2447,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>227</Id>
 	<Activity_Group_Id>227</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -2458,7 +2458,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>228</Id>
 	<Activity_Group_Id>227</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -2469,7 +2469,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>229</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -2480,7 +2480,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>230</Id>
 	<Activity_Group_Id>230</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -2491,7 +2491,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>231</Id>
 	<Activity_Group_Id>230</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -2502,7 +2502,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>232</Id>
 	<Activity_Group_Id>232</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -2513,7 +2513,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>233</Id>
 	<Activity_Group_Id>232</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -2524,7 +2524,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>239</Id>
 	<Activity_Group_Id>239</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -2535,7 +2535,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>240</Id>
 	<Activity_Group_Id>239</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -2546,7 +2546,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>241</Id>
 	<Activity_Group_Id>239</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -2557,7 +2557,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>242</Id>
 	<Activity_Group_Id>239</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -2568,7 +2568,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>243</Id>
 	<Activity_Group_Id>239</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -2579,7 +2579,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>244</Id>
 	<Activity_Group_Id>244</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -2590,7 +2590,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>245</Id>
 	<Activity_Group_Id>244</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -2601,7 +2601,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>250</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -2612,7 +2612,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>251</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -2623,7 +2623,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>252</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -2634,7 +2634,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>253</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -2645,7 +2645,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>258</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -2656,7 +2656,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>259</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -2667,7 +2667,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>260</Id>
 	<Activity_Group_Id>260</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -2678,7 +2678,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>261</Id>
 	<Activity_Group_Id>260</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -2689,7 +2689,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>262</Id>
 	<Activity_Group_Id>262</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -2700,7 +2700,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>263</Id>
 	<Activity_Group_Id>262</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -2711,7 +2711,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>264</Id>
 	<Activity_Group_Id>264</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -2722,7 +2722,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>265</Id>
 	<Activity_Group_Id>264</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -2733,7 +2733,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>266</Id>
 	<Activity_Group_Id>264</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -2744,7 +2744,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>267</Id>
 	<Activity_Group_Id>264</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -2755,7 +2755,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>268</Id>
 	<Activity_Group_Id>268</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -2766,7 +2766,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>269</Id>
 	<Activity_Group_Id>268</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -2777,7 +2777,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>270</Id>
 	<Activity_Group_Id>270</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6/7</Students>
 </Activity>
 <Activity>
@@ -2788,7 +2788,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>271</Id>
 	<Activity_Group_Id>270</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6/7</Students>
 </Activity>
 <Activity>
@@ -2799,7 +2799,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>272</Id>
 	<Activity_Group_Id>272</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>7g</Students>
 </Activity>
 <Activity>
@@ -2810,7 +2810,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>273</Id>
 	<Activity_Group_Id>272</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>7g</Students>
 </Activity>
 <Activity>
@@ -2821,7 +2821,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>275</Id>
 	<Activity_Group_Id>275</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6/7</Students>
 </Activity>
 <Activity>
@@ -2832,7 +2832,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>276</Id>
 	<Activity_Group_Id>275</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6/7</Students>
 </Activity>
 <Activity>
@@ -2843,7 +2843,7 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>277</Id>
 	<Activity_Group_Id>277</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6/7</Students>
 </Activity>
 <Activity>
@@ -2854,7 +2854,7 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>278</Id>
 	<Activity_Group_Id>277</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6/7</Students>
 </Activity>
 <Activity>
@@ -2865,7 +2865,7 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>279</Id>
 	<Activity_Group_Id>277</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6/7</Students>
 </Activity>
 <Activity>
@@ -2876,7 +2876,7 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>280</Id>
 	<Activity_Group_Id>277</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6/7</Students>
 </Activity>
 <Activity>
@@ -2887,7 +2887,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>281</Id>
 	<Activity_Group_Id>281</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6/7</Students>
 </Activity>
 <Activity>
@@ -2898,7 +2898,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>282</Id>
 	<Activity_Group_Id>281</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6/7</Students>
 </Activity>
 <Activity>
@@ -2909,7 +2909,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>284</Id>
 	<Activity_Group_Id>284</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6/7</Students>
 </Activity>
 <Activity>
@@ -2920,7 +2920,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>285</Id>
 	<Activity_Group_Id>284</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6/7</Students>
 </Activity>
 <Activity>
@@ -2931,7 +2931,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>288</Id>
 	<Activity_Group_Id>288</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6/7</Students>
 </Activity>
 <Activity>
@@ -2942,7 +2942,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>289</Id>
 	<Activity_Group_Id>288</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6/7</Students>
 </Activity>
 <Activity>
@@ -2953,7 +2953,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>290</Id>
 	<Activity_Group_Id>290</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6g</Students>
 </Activity>
 <Activity>
@@ -2964,7 +2964,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>291</Id>
 	<Activity_Group_Id>290</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6g</Students>
 </Activity>
 <Activity>
@@ -2975,7 +2975,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>292</Id>
 	<Activity_Group_Id>290</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6g</Students>
 </Activity>
 <Activity>
@@ -2986,7 +2986,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>293</Id>
 	<Activity_Group_Id>293</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6g</Students>
 </Activity>
 <Activity>
@@ -2997,7 +2997,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>294</Id>
 	<Activity_Group_Id>293</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6g</Students>
 </Activity>
 <Activity>
@@ -3008,7 +3008,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>295</Id>
 	<Activity_Group_Id>295</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>7g</Students>
 </Activity>
 <Activity>
@@ -3019,7 +3019,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>296</Id>
 	<Activity_Group_Id>295</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>7g</Students>
 </Activity>
 <Activity>
@@ -3030,7 +3030,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>297</Id>
 	<Activity_Group_Id>295</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>7g</Students>
 </Activity>
 <Activity>
@@ -3041,7 +3041,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>300</Id>
 	<Activity_Group_Id>300</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3052,7 +3052,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>301</Id>
 	<Activity_Group_Id>300</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3063,7 +3063,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>302</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3074,7 +3074,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>303</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3085,7 +3085,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>304</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3096,7 +3096,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>305</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 	<Students>9</Students>
 </Activity>
@@ -3108,7 +3108,7 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>306</Id>
 	<Activity_Group_Id>306</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3119,7 +3119,7 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>307</Id>
 	<Activity_Group_Id>306</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3130,7 +3130,7 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>308</Id>
 	<Activity_Group_Id>306</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3141,7 +3141,7 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>309</Id>
 	<Activity_Group_Id>306</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3152,7 +3152,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>310</Id>
 	<Activity_Group_Id>310</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3163,7 +3163,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>311</Id>
 	<Activity_Group_Id>310</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3174,7 +3174,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>312</Id>
 	<Activity_Group_Id>310</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3185,7 +3185,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>313</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3196,7 +3196,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>314</Id>
 	<Activity_Group_Id>314</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3207,7 +3207,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>315</Id>
 	<Activity_Group_Id>314</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3218,7 +3218,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>316</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3229,7 +3229,7 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>317</Id>
 	<Activity_Group_Id>317</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3240,7 +3240,7 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>318</Id>
 	<Activity_Group_Id>317</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3251,7 +3251,7 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>319</Id>
 	<Activity_Group_Id>317</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3262,7 +3262,7 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>320</Id>
 	<Activity_Group_Id>317</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3273,7 +3273,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>321</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>8</Students>
 </Activity>
 <Activity>
@@ -3284,7 +3284,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>322</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3295,7 +3295,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>323</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3306,7 +3306,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>324</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3317,7 +3317,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>325</Id>
 	<Activity_Group_Id>325</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3328,7 +3328,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>326</Id>
 	<Activity_Group_Id>325</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3339,7 +3339,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>327</Id>
 	<Activity_Group_Id>327</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3350,7 +3350,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>328</Id>
 	<Activity_Group_Id>327</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3361,7 +3361,7 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>329</Id>
 	<Activity_Group_Id>329</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3372,7 +3372,7 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>330</Id>
 	<Activity_Group_Id>329</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3383,7 +3383,7 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>331</Id>
 	<Activity_Group_Id>329</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3394,7 +3394,7 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>332</Id>
 	<Activity_Group_Id>329</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3405,7 +3405,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>333</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3416,7 +3416,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>334</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3427,7 +3427,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>335</Id>
 	<Activity_Group_Id>335</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3438,7 +3438,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>336</Id>
 	<Activity_Group_Id>335</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3449,7 +3449,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>337</Id>
 	<Activity_Group_Id>335</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3460,7 +3460,7 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>338</Id>
 	<Activity_Group_Id>338</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3471,7 +3471,7 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>339</Id>
 	<Activity_Group_Id>338</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3482,7 +3482,7 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>340</Id>
 	<Activity_Group_Id>338</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3493,7 +3493,7 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>341</Id>
 	<Activity_Group_Id>338</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3505,7 +3505,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>342</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>9</Students>
 </Activity>
 <Activity>
@@ -3516,7 +3516,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>343</Id>
 	<Activity_Group_Id>343</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -3527,7 +3527,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>344</Id>
 	<Activity_Group_Id>343</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -3538,7 +3538,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>345</Id>
 	<Activity_Group_Id>343</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -3549,7 +3549,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>346</Id>
 	<Activity_Group_Id>343</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -3563,7 +3563,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>347</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 	<Students>4b</Students>
 	<Students>4c</Students>
@@ -3576,7 +3576,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>348</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>z</Students>
 </Activity>
 <Activity>
@@ -3587,7 +3587,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>349</Id>
 	<Activity_Group_Id>349</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1c</Students>
 </Activity>
 <Activity>
@@ -3598,7 +3598,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>350</Id>
 	<Activity_Group_Id>349</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1c</Students>
 </Activity>
 <Activity>
@@ -3609,7 +3609,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>351</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1c</Students>
 </Activity>
 <Activity>
@@ -3620,7 +3620,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>352</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2a</Students>
 </Activity>
 <Activity>
@@ -3631,7 +3631,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>353</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2a</Students>
 </Activity>
 <Activity>
@@ -3642,7 +3642,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>354</Id>
 	<Activity_Group_Id>354</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2b</Students>
 </Activity>
 <Activity>
@@ -3653,7 +3653,7 @@
 	<Total_Duration>3</Total_Duration>
 	<Id>355</Id>
 	<Activity_Group_Id>354</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2b</Students>
 </Activity>
 <Activity>
@@ -3664,7 +3664,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>356</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2b</Students>
 </Activity>
 <Activity>
@@ -3675,7 +3675,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>357</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2b</Students>
 </Activity>
 <Activity>
@@ -3686,7 +3686,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>358</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2b</Students>
 </Activity>
 <Activity>
@@ -3698,7 +3698,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>359</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2c</Students>
 </Activity>
 <Activity>
@@ -3709,7 +3709,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>360</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2c</Students>
 </Activity>
 <Activity>
@@ -3720,7 +3720,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>361</Id>
 	<Activity_Group_Id>361</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6/7</Students>
 </Activity>
 <Activity>
@@ -3731,7 +3731,7 @@
 	<Total_Duration>2</Total_Duration>
 	<Id>362</Id>
 	<Activity_Group_Id>361</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6/7</Students>
 </Activity>
 <Activity>
@@ -3743,7 +3743,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>363</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6/7</Students>
 </Activity>
 <Activity>
@@ -3755,7 +3755,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>364</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>6/7</Students>
 </Activity>
 <Activity>
@@ -3767,7 +3767,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>365</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2c</Students>
 </Activity>
 <Activity>
@@ -3778,7 +3778,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>366</Id>
 	<Activity_Group_Id>366</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -3789,7 +3789,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>367</Id>
 	<Activity_Group_Id>366</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -3800,7 +3800,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>368</Id>
 	<Activity_Group_Id>366</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -3811,7 +3811,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>369</Id>
 	<Activity_Group_Id>366</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -3822,7 +3822,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>370</Id>
 	<Activity_Group_Id>370</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2a</Students>
 </Activity>
 <Activity>
@@ -3833,7 +3833,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>371</Id>
 	<Activity_Group_Id>370</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2a</Students>
 </Activity>
 <Activity>
@@ -3844,7 +3844,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>372</Id>
 	<Activity_Group_Id>370</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2a</Students>
 </Activity>
 <Activity>
@@ -3855,7 +3855,7 @@
 	<Total_Duration>6</Total_Duration>
 	<Id>373</Id>
 	<Activity_Group_Id>370</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2a</Students>
 </Activity>
 <Activity>
@@ -3866,7 +3866,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>374</Id>
 	<Activity_Group_Id>374</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2c</Students>
 </Activity>
 <Activity>
@@ -3877,7 +3877,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>375</Id>
 	<Activity_Group_Id>374</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2c</Students>
 </Activity>
 <Activity>
@@ -3888,7 +3888,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>376</Id>
 	<Activity_Group_Id>374</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2c</Students>
 </Activity>
 <Activity>
@@ -3899,7 +3899,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>377</Id>
 	<Activity_Group_Id>374</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2c</Students>
 </Activity>
 <Activity>
@@ -3910,7 +3910,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>378</Id>
 	<Activity_Group_Id>378</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -3921,7 +3921,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>379</Id>
 	<Activity_Group_Id>378</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -3932,7 +3932,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>380</Id>
 	<Activity_Group_Id>378</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -3943,7 +3943,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>381</Id>
 	<Activity_Group_Id>378</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>3d</Students>
 </Activity>
 <Activity>
@@ -3954,7 +3954,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>391</Id>
 	<Activity_Group_Id>391</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -3965,7 +3965,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>392</Id>
 	<Activity_Group_Id>391</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -3976,7 +3976,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>393</Id>
 	<Activity_Group_Id>391</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -3987,7 +3987,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>394</Id>
 	<Activity_Group_Id>391</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -3998,7 +3998,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>395</Id>
 	<Activity_Group_Id>391</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4c</Students>
 </Activity>
 <Activity>
@@ -4009,7 +4009,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>396</Id>
 	<Activity_Group_Id>396</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -4020,7 +4020,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>397</Id>
 	<Activity_Group_Id>396</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -4031,7 +4031,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>398</Id>
 	<Activity_Group_Id>396</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -4042,7 +4042,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>399</Id>
 	<Activity_Group_Id>396</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -4053,7 +4053,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>400</Id>
 	<Activity_Group_Id>396</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4a</Students>
 </Activity>
 <Activity>
@@ -4064,7 +4064,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>401</Id>
 	<Activity_Group_Id>401</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -4075,7 +4075,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>402</Id>
 	<Activity_Group_Id>401</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -4086,7 +4086,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>403</Id>
 	<Activity_Group_Id>401</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -4097,7 +4097,7 @@
 	<Total_Duration>5</Total_Duration>
 	<Id>404</Id>
 	<Activity_Group_Id>401</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4b</Students>
 </Activity>
 <Activity>
@@ -4108,7 +4108,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>405</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1bDS</Students>
 </Activity>
 <Activity>
@@ -4119,7 +4119,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>406</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4cDS</Students>
 </Activity>
 <Activity>
@@ -4130,7 +4130,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>407</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2aDS</Students>
 </Activity>
 <Activity>
@@ -4141,7 +4141,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>408</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4aDS</Students>
 </Activity>
 <Activity>
@@ -4152,7 +4152,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>409</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1aDS_</Students>
 </Activity>
 <Activity>
@@ -4163,7 +4163,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>410</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2cDS</Students>
 </Activity>
 <Activity>
@@ -4174,7 +4174,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>411</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1aDS</Students>
 </Activity>
 <Activity>
@@ -4186,7 +4186,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>412</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Lia-Fri</Students>
 </Activity>
 <Activity>
@@ -4198,7 +4198,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>413</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Lia-Fri</Students>
 </Activity>
 <Activity>
@@ -4210,7 +4210,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>414</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Lia-ThH</Students>
 </Activity>
 <Activity>
@@ -4221,7 +4221,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>417</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1bDS</Students>
 </Activity>
 <Activity>
@@ -4233,7 +4233,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>418</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Lia-Sce</Students>
 </Activity>
 <Activity>
@@ -4244,7 +4244,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>419</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2bDS</Students>
 </Activity>
 <Activity>
@@ -4255,7 +4255,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>420</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>1cDS</Students>
 </Activity>
 <Activity>
@@ -4266,7 +4266,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>421</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>2cDS</Students>
 </Activity>
 <Activity>
@@ -4278,7 +4278,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>422</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Lia-ThH</Students>
 </Activity>
 <Activity>
@@ -4289,7 +4289,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>423</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>4bDS</Students>
 </Activity>
 <Activity>
@@ -4300,7 +4300,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>424</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Lia-Fri</Students>
 </Activity>
 <Activity>
@@ -4311,7 +4311,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>425</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Lia-ThH</Students>
 </Activity>
 <Activity>
@@ -4322,7 +4322,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>426</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Lia-Fri</Students>
 </Activity>
 <Activity>
@@ -4333,7 +4333,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>427</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Lia-Fri</Students>
 </Activity>
 <Activity>
@@ -4344,7 +4344,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>428</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Lia-Fri</Students>
 </Activity>
 <Activity>
@@ -4355,7 +4355,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>429</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>z</Students>
 </Activity>
 <Activity>
@@ -4366,7 +4366,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>430</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Lia-Fri</Students>
 </Activity>
 <Activity>
@@ -4377,7 +4377,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>431</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Lia-Fri</Students>
 </Activity>
 <Activity>
@@ -4388,7 +4388,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>432</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Lia-Sce</Students>
 </Activity>
 <Activity>
@@ -4399,7 +4399,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>433</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Lia-ThH</Students>
 </Activity>
 <Activity>
@@ -4410,7 +4410,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>434</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Lia-ThH</Students>
 </Activity>
 <Activity>
@@ -4421,7 +4421,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>435</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Lia-ThH</Students>
 </Activity>
 <Activity>
@@ -4432,7 +4432,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>436</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Lia-Sce</Students>
 </Activity>
 <Activity>
@@ -4443,7 +4443,7 @@
 	<Total_Duration>1</Total_Duration>
 	<Id>437</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>yes</Active>
+	<Active>true</Active>
 	<Students>Lia-Gar</Students>
 </Activity>
 </Activities_List>
@@ -4766,7 +4766,7 @@
 </ConstraintStudentsSetNotAvailableTimes>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>5</Number_of_Activities>
 	<Activity_Id>2</Activity_Id>
 	<Activity_Id>3</Activity_Id>
@@ -4777,7 +4777,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>7</Activity_Id>
 	<Activity_Id>8</Activity_Id>
@@ -4982,7 +4982,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>13</Activity_Id>
 	<Activity_Id>14</Activity_Id>
@@ -4990,7 +4990,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>15</Activity_Id>
 	<Activity_Id>16</Activity_Id>
@@ -4998,7 +4998,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>20</Activity_Id>
 	<Activity_Id>21</Activity_Id>
@@ -5006,7 +5006,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>31</Activity_Id>
 	<Activity_Id>32</Activity_Id>
@@ -5498,7 +5498,7 @@
 </ConstraintActivitiesPreferredTimeSlots>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>5</Number_of_Activities>
 	<Activity_Id>36</Activity_Id>
 	<Activity_Id>37</Activity_Id>
@@ -5509,7 +5509,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>41</Activity_Id>
 	<Activity_Id>42</Activity_Id>
@@ -5517,7 +5517,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>5</Number_of_Activities>
 	<Activity_Id>45</Activity_Id>
 	<Activity_Id>46</Activity_Id>
@@ -5528,7 +5528,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>50</Activity_Id>
 	<Activity_Id>51</Activity_Id>
@@ -5536,7 +5536,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>53</Activity_Id>
 	<Activity_Id>54</Activity_Id>
@@ -5544,7 +5544,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>5</Number_of_Activities>
 	<Activity_Id>56</Activity_Id>
 	<Activity_Id>57</Activity_Id>
@@ -5555,7 +5555,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>65</Activity_Id>
 	<Activity_Id>66</Activity_Id>
@@ -5563,7 +5563,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>67</Activity_Id>
 	<Activity_Id>68</Activity_Id>
@@ -5571,7 +5571,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>74</Activity_Id>
 	<Activity_Id>75</Activity_Id>
@@ -5579,7 +5579,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>78</Activity_Id>
 	<Activity_Id>79</Activity_Id>
@@ -5587,7 +5587,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>5</Number_of_Activities>
 	<Activity_Id>80</Activity_Id>
 	<Activity_Id>81</Activity_Id>
@@ -5598,7 +5598,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>93</Activity_Id>
 	<Activity_Id>94</Activity_Id>
@@ -5606,7 +5606,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>96</Activity_Id>
 	<Activity_Id>97</Activity_Id>
@@ -5614,7 +5614,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>5</Number_of_Activities>
 	<Activity_Id>98</Activity_Id>
 	<Activity_Id>99</Activity_Id>
@@ -5625,7 +5625,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>5</Number_of_Activities>
 	<Activity_Id>103</Activity_Id>
 	<Activity_Id>104</Activity_Id>
@@ -5636,7 +5636,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>108</Activity_Id>
 	<Activity_Id>109</Activity_Id>
@@ -5644,7 +5644,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>5</Number_of_Activities>
 	<Activity_Id>110</Activity_Id>
 	<Activity_Id>111</Activity_Id>
@@ -5655,7 +5655,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>117</Activity_Id>
 	<Activity_Id>118</Activity_Id>
@@ -5663,7 +5663,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>119</Activity_Id>
 	<Activity_Id>120</Activity_Id>
@@ -5851,7 +5851,7 @@
 </ConstraintActivitiesPreferredTimeSlots>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>129</Activity_Id>
 	<Activity_Id>130</Activity_Id>
@@ -5859,7 +5859,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>5</Number_of_Activities>
 	<Activity_Id>131</Activity_Id>
 	<Activity_Id>132</Activity_Id>
@@ -5870,7 +5870,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>5</Number_of_Activities>
 	<Activity_Id>136</Activity_Id>
 	<Activity_Id>137</Activity_Id>
@@ -5881,7 +5881,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>142</Activity_Id>
 	<Activity_Id>143</Activity_Id>
@@ -5889,7 +5889,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>145</Activity_Id>
 	<Activity_Id>146</Activity_Id>
@@ -5897,7 +5897,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>148</Activity_Id>
 	<Activity_Id>149</Activity_Id>
@@ -5905,7 +5905,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>5</Number_of_Activities>
 	<Activity_Id>150</Activity_Id>
 	<Activity_Id>151</Activity_Id>
@@ -5916,7 +5916,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>5</Number_of_Activities>
 	<Activity_Id>155</Activity_Id>
 	<Activity_Id>156</Activity_Id>
@@ -5927,7 +5927,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>5</Number_of_Activities>
 	<Activity_Id>160</Activity_Id>
 	<Activity_Id>161</Activity_Id>
@@ -5938,7 +5938,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>5</Number_of_Activities>
 	<Activity_Id>166</Activity_Id>
 	<Activity_Id>167</Activity_Id>
@@ -5949,7 +5949,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>171</Activity_Id>
 	<Activity_Id>172</Activity_Id>
@@ -5957,7 +5957,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>173</Activity_Id>
 	<Activity_Id>174</Activity_Id>
@@ -5965,7 +5965,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>175</Activity_Id>
 	<Activity_Id>176</Activity_Id>
@@ -5973,7 +5973,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>179</Activity_Id>
 	<Activity_Id>180</Activity_Id>
@@ -5981,7 +5981,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>182</Activity_Id>
 	<Activity_Id>183</Activity_Id>
@@ -5989,7 +5989,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>194</Activity_Id>
 	<Activity_Id>195</Activity_Id>
@@ -5997,7 +5997,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>5</Number_of_Activities>
 	<Activity_Id>196</Activity_Id>
 	<Activity_Id>197</Activity_Id>
@@ -6008,7 +6008,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>203</Activity_Id>
 	<Activity_Id>204</Activity_Id>
@@ -6016,7 +6016,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>205</Activity_Id>
 	<Activity_Id>206</Activity_Id>
@@ -6024,7 +6024,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>207</Activity_Id>
 	<Activity_Id>208</Activity_Id>
@@ -6032,7 +6032,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>5</Number_of_Activities>
 	<Activity_Id>209</Activity_Id>
 	<Activity_Id>210</Activity_Id>
@@ -6043,7 +6043,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>5</Number_of_Activities>
 	<Activity_Id>218</Activity_Id>
 	<Activity_Id>219</Activity_Id>
@@ -6054,7 +6054,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>223</Activity_Id>
 	<Activity_Id>224</Activity_Id>
@@ -6062,7 +6062,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>227</Activity_Id>
 	<Activity_Id>228</Activity_Id>
@@ -6070,7 +6070,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>230</Activity_Id>
 	<Activity_Id>231</Activity_Id>
@@ -6078,7 +6078,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>232</Activity_Id>
 	<Activity_Id>233</Activity_Id>
@@ -6086,7 +6086,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>5</Number_of_Activities>
 	<Activity_Id>239</Activity_Id>
 	<Activity_Id>240</Activity_Id>
@@ -6097,7 +6097,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>244</Activity_Id>
 	<Activity_Id>245</Activity_Id>
@@ -6105,7 +6105,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>260</Activity_Id>
 	<Activity_Id>261</Activity_Id>
@@ -6113,7 +6113,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>262</Activity_Id>
 	<Activity_Id>263</Activity_Id>
@@ -6121,7 +6121,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>264</Activity_Id>
 	<Activity_Id>265</Activity_Id>
@@ -6131,7 +6131,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>268</Activity_Id>
 	<Activity_Id>269</Activity_Id>
@@ -6139,7 +6139,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>270</Activity_Id>
 	<Activity_Id>271</Activity_Id>
@@ -6147,7 +6147,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>272</Activity_Id>
 	<Activity_Id>273</Activity_Id>
@@ -6155,7 +6155,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>275</Activity_Id>
 	<Activity_Id>276</Activity_Id>
@@ -6163,7 +6163,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>277</Activity_Id>
 	<Activity_Id>278</Activity_Id>
@@ -6173,7 +6173,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>281</Activity_Id>
 	<Activity_Id>282</Activity_Id>
@@ -6181,7 +6181,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>284</Activity_Id>
 	<Activity_Id>285</Activity_Id>
@@ -6189,7 +6189,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>288</Activity_Id>
 	<Activity_Id>289</Activity_Id>
@@ -6197,7 +6197,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>290</Activity_Id>
 	<Activity_Id>291</Activity_Id>
@@ -6206,7 +6206,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>293</Activity_Id>
 	<Activity_Id>294</Activity_Id>
@@ -6214,7 +6214,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>295</Activity_Id>
 	<Activity_Id>296</Activity_Id>
@@ -6223,7 +6223,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>300</Activity_Id>
 	<Activity_Id>301</Activity_Id>
@@ -6231,7 +6231,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>306</Activity_Id>
 	<Activity_Id>307</Activity_Id>
@@ -6241,7 +6241,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>310</Activity_Id>
 	<Activity_Id>311</Activity_Id>
@@ -6250,7 +6250,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>314</Activity_Id>
 	<Activity_Id>315</Activity_Id>
@@ -6258,7 +6258,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>317</Activity_Id>
 	<Activity_Id>318</Activity_Id>
@@ -6268,7 +6268,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>325</Activity_Id>
 	<Activity_Id>326</Activity_Id>
@@ -6276,7 +6276,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>327</Activity_Id>
 	<Activity_Id>328</Activity_Id>
@@ -6284,7 +6284,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>329</Activity_Id>
 	<Activity_Id>330</Activity_Id>
@@ -6294,7 +6294,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>335</Activity_Id>
 	<Activity_Id>336</Activity_Id>
@@ -6303,7 +6303,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>338</Activity_Id>
 	<Activity_Id>339</Activity_Id>
@@ -6358,7 +6358,7 @@
 </ConstraintActivityPreferredTimeSlots>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>343</Activity_Id>
 	<Activity_Id>344</Activity_Id>
@@ -6570,7 +6570,7 @@
 </ConstraintActivitiesPreferredTimeSlots>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>349</Activity_Id>
 	<Activity_Id>350</Activity_Id>
@@ -6578,7 +6578,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>354</Activity_Id>
 	<Activity_Id>355</Activity_Id>
@@ -6586,7 +6586,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>361</Activity_Id>
 	<Activity_Id>362</Activity_Id>
@@ -6604,7 +6604,7 @@
 </ConstraintTeacherMaxDaysPerWeek>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>366</Activity_Id>
 	<Activity_Id>367</Activity_Id>
@@ -6614,7 +6614,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>370</Activity_Id>
 	<Activity_Id>371</Activity_Id>
@@ -6924,7 +6924,7 @@
 </ConstraintActivitiesPreferredTimeSlots>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>374</Activity_Id>
 	<Activity_Id>375</Activity_Id>
@@ -6934,7 +6934,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>378</Activity_Id>
 	<Activity_Id>379</Activity_Id>
@@ -7068,7 +7068,7 @@
 </ConstraintTeacherMaxGapsPerWeek>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>5</Number_of_Activities>
 	<Activity_Id>391</Activity_Id>
 	<Activity_Id>392</Activity_Id>
@@ -7079,7 +7079,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>5</Number_of_Activities>
 	<Activity_Id>396</Activity_Id>
 	<Activity_Id>397</Activity_Id>
@@ -7090,7 +7090,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>401</Activity_Id>
 	<Activity_Id>402</Activity_Id>

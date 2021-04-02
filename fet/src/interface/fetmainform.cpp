@@ -477,10 +477,12 @@ void FetMainForm::on_fileOpenAction_activated()
 	if(confirm){
 		QString s = QFileDialog::getOpenFileName(this, tr("Choose a file"),
 			WORKING_DIRECTORY, 
-			tr("FET xml files (*.fet)\nAll files (*)",
+			tr("FET XML files", "Instructions for translators: FET XML is a type of file format (using text mode). "
+			"So this field means files in the FET XML format")+" (*.fet)\n"+tr("All files")+" (*)");
+			/*tr("FET xml files (*.fet)\nAll files (*)",
 			"Instructions for translators, IMPORTANT: There are 2 file filters, on "
 			"2 separate lines, so make sure you have a 'new line' character after the first filter "
-			"(follow the source text format). Please keep the string *.fet unmodified, with lowercase letters."));
+			"(follow the source text format). Please keep the string *.fet unmodified, with lowercase letters."));*/
 		if(s.isNull())
 			return;
 
@@ -538,10 +540,12 @@ void FetMainForm::on_fileOpenAction_activated()
 void FetMainForm::on_fileSaveAsAction_activated()
 {
 	QString s = QFileDialog::getSaveFileName(this, tr("Choose a filename to save under"),
-		INPUT_FILENAME_XML, tr("FET xml files (*.fet)\nAll files (*)",
+		INPUT_FILENAME_XML, tr("FET XML files", "Instructions for translators: FET XML is a type of file format (using text mode). "
+		"So this field means files in the FET XML format")+" (*.fet)\n"+tr("All files")+" (*)",
+			/*tr("FET xml files (*.fet)\nAll files (*)",
 			"Instructions for translators, IMPORTANT: There are 2 file filters, on "
 			"2 separate lines, so make sure you have a 'new line' character after the first filter "
-			"(follow the source text format). Please keep the string *.fet unmodified, with lowercase letters."),
+			"(follow the source text format). Please keep the string *.fet unmodified, with lowercase letters."),*/
 		0, QFileDialog::DontConfirmOverwrite);
 	if(s==QString::null)
 		return;
@@ -724,10 +728,12 @@ void FetMainForm::on_timetableSaveTimetableAsAction_activated()
 
 	for(;;){
 		s = QFileDialog::getSaveFileName(this, tr("Choose a filename to save under" ), 
-			INPUT_FILENAME_XML, tr("FET xml files (*.fet)\nAll files (*)",
+			INPUT_FILENAME_XML, tr("FET XML files", "Instructions for translators: FET XML is a type of file format (using text mode). "
+			"So this field means files in the FET XML format")+" (*.fet)\n"+tr("All files")+" (*)",
+			/*tr("FET xml files (*.fet)\nAll files (*)",
 			"Instructions for translators, IMPORTANT: There are 2 file filters, on "
 			"2 separate lines, so make sure you have a 'new line' character after the first filter "
-			"(follow the source text format). Please keep the string *.fet unmodified, with lowercase letters."),
+			"(follow the source text format). Please keep the string *.fet unmodified, with lowercase letters."),*/
 			0, QFileDialog::DontConfirmOverwrite);
 		if(s==QString::null)
 			return;

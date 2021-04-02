@@ -34,7 +34,7 @@ on a separate file, as text, html or OpenOffice.org document and send it to me.
 It will be put in doc/ directory and a notice will be put in Help - Menu "Help in other languages"
 
 There are a few comments in the translation file, they are not to be translated, they just help you.
-You can see that for instance in the "fet files (*.fet)..." field.
+You can see that for instance in the "FET xml files" field.
 
 STEP 3.
 
