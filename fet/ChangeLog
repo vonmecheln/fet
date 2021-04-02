@@ -1104,4 +1104,10 @@ Versions 5.4.0 - 5.4.
 - Version 5.4.11
 	- Arabic translation (partial), by Hatim Ali
 	- Small bug fixes in export to html by Volker Dirr
+- Version 5.4.12
+	- Greek translation update by Dimitrios Ropokis
+	- Arabic better support
+	- Arabic translation update by Hatim Ali
+	- Code cleanup
+	- Switched to Qt 4.3.2
 	

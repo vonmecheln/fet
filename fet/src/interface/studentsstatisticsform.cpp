@@ -59,8 +59,9 @@ void StudentsStatisticsForm::checkBoxesModified()
 			if(showGroupsCheckBox->isChecked())
 				nStudentsSets++;
 			foreach(StudentsSubgroup* subgroup, group->subgroupsList){
-				if(subgroup)
-					;
+				Q_UNUSED(subgroup);
+				//if(subgroup)
+				//	;
 				if(showSubgroupsCheckBox->isChecked())
 					nStudentsSets++;
 			}

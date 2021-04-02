@@ -44,8 +44,9 @@ RoomsForm::~RoomsForm()
 
 bool RoomsForm::filterOk(Room* rm)
 {
-	if(rm!=NULL)
-		;
+	Q_UNUSED(rm);
+	//if(rm!=NULL)
+	//	;
 
 	bool ok=true;
 

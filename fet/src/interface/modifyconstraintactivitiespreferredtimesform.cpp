@@ -84,8 +84,10 @@ ModifyConstraintActivitiesPreferredTimesForm::~ModifyConstraintActivitiesPreferr
 
 void ModifyConstraintActivitiesPreferredTimesForm::tableClicked(int row, int col, int button, const QPoint& mousePos)
 {
-	if(&button!=NULL && &mousePos!=NULL)
-		; //to avoid "unused parameter" compiler warning
+	Q_UNUSED(button);
+	Q_UNUSED(mousePos);
+	//if(&button!=NULL && &mousePos!=NULL)
+	//	; //to avoid "unused parameter" compiler warning
 
 	//row--; col--;
 	if(row>=0 && row<gt.rules.nHoursPerDay && col>=0 && col<gt.rules.nDaysPerWeek){

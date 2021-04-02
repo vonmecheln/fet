@@ -245,16 +245,18 @@ void AddActivityForm::updatePreferredHoursComboBox()
 
 void AddActivityForm::subjectChanged(const QString& dummy)
 {
-	if(dummy=="")
-		;
+	Q_UNUSED(dummy);
+	//if(dummy=="")
+	//	;
 
 	activityChanged();
 }
 
 void AddActivityForm::subjectTagChanged(const QString& dummy)
 {
-	if(dummy=="")
-		;
+	Q_UNUSED(dummy);
+	//if(dummy=="")
+	//	;
 
 	activityChanged();
 }

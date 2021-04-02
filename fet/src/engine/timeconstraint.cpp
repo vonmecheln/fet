@@ -100,16 +100,19 @@ ConstraintBasicCompulsoryTime::ConstraintBasicCompulsoryTime(double wp): TimeCon
 
 bool ConstraintBasicCompulsoryTime::computeInternalStructure(Rules& r)
 {
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 	/*do nothing*/
+	
 	return true;
 }
 
 QString ConstraintBasicCompulsoryTime::getXmlDescription(Rules& r)
 {
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s = "<ConstraintBasicCompulsoryTime>\n";
 	s += "	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -123,18 +126,19 @@ QString ConstraintBasicCompulsoryTime::getXmlDescription(Rules& r)
 
 QString ConstraintBasicCompulsoryTime::getDescription(Rules& r)
 {
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	return QObject::tr("Basic compulsory constraints (time)") +
 		" " + QObject::tr("WP:%1\%").arg(this->weightPercentage);
-;
 }
 
 QString ConstraintBasicCompulsoryTime::getDetailedDescription(Rules& r)
 {
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);	
+	//if(&r!=NULL)
+	//	;
 
 	QString s=QObject::tr("These are the basic compulsory constraints\n"
 		"(referring to time allocation) for any timetable\n");
@@ -398,42 +402,49 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 
 bool ConstraintBasicCompulsoryTime::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
 
 bool ConstraintBasicCompulsoryTime::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintBasicCompulsoryTime::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintBasicCompulsoryTime::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintBasicCompulsoryTime::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }
@@ -603,8 +614,9 @@ double ConstraintTeacherNotAvailable::fitness(Solution& c, Rules& r, QList<doubl
 
 bool ConstraintTeacherNotAvailable::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	/*if(a)
+		;*/
 
 	return false;
 }
@@ -618,26 +630,30 @@ bool ConstraintTeacherNotAvailable::isRelatedToTeacher(Teacher* t)
 
 bool ConstraintTeacherNotAvailable::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	/*if(s)
+		;*/
 
 	return false;
 }
 
 bool ConstraintTeacherNotAvailable::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	/*if(s)
+		;*/
 
 	return false;
 }
 
 bool ConstraintTeacherNotAvailable::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }
@@ -856,32 +872,36 @@ double ConstraintStudentsSetNotAvailable::fitness(Solution& c, Rules& r, QList<d
 
 bool ConstraintStudentsSetNotAvailable::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsSetNotAvailable::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	/*if(t)
+		;*/
 
 	return false;
 }
 
 bool ConstraintStudentsSetNotAvailable::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	/*if(s)
+		;*/
 
 	return false;
 }
 
 bool ConstraintStudentsSetNotAvailable::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	/*if(s)
+		;*/
 
 	return false;
 }
@@ -966,8 +986,9 @@ void ConstraintActivitiesSameStartingTime::removeUseless(Rules& r)
 }
 
 QString ConstraintActivitiesSameStartingTime::getXmlDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	/*if(&r!=NULL)
+		;*/
 
 	QString s="<ConstraintActivitiesSameStartingTime>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -980,8 +1001,9 @@ QString ConstraintActivitiesSameStartingTime::getXmlDescription(Rules& r){
 }
 
 QString ConstraintActivitiesSameStartingTime::getDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	/*if(&r!=NULL)
+		;*/
 
 	QString s;
 	s+=QObject::tr("Activities same starting time");s+=", ";
@@ -996,8 +1018,9 @@ QString ConstraintActivitiesSameStartingTime::getDescription(Rules& r){
 }
 
 QString ConstraintActivitiesSameStartingTime::getDetailedDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	/*if(&r!=NULL)
+		;*/
 
 	QString s;
 	
@@ -1162,34 +1185,39 @@ bool ConstraintActivitiesSameStartingTime::isRelatedToActivity(Activity* a)
 
 bool ConstraintActivitiesSameStartingTime::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivitiesSameStartingTime::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivitiesSameStartingTime::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivitiesSameStartingTime::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }
@@ -1269,8 +1297,9 @@ void ConstraintActivitiesNotOverlapping::removeUseless(Rules& r)
 }
 
 QString ConstraintActivitiesNotOverlapping::getXmlDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	/*if(&r!=NULL)
+		;*/
 
 	QString s="<ConstraintActivitiesNotOverlapping>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -1283,8 +1312,9 @@ QString ConstraintActivitiesNotOverlapping::getXmlDescription(Rules& r){
 }
 
 QString ConstraintActivitiesNotOverlapping::getDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	/*if(&r!=NULL)
+		;*/
 
 	QString s;
 	s+=QObject::tr("Activities not overlapping");s+=", ";
@@ -1299,8 +1329,9 @@ QString ConstraintActivitiesNotOverlapping::getDescription(Rules& r){
 }
 
 QString ConstraintActivitiesNotOverlapping::getDetailedDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	/*if(&r!=NULL)
+		;*/
 
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=QObject::tr("Activities must not overlap");s+="\n";
@@ -1503,34 +1534,39 @@ bool ConstraintActivitiesNotOverlapping::isRelatedToActivity(Activity* a)
 
 bool ConstraintActivitiesNotOverlapping::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivitiesNotOverlapping::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivitiesNotOverlapping::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivitiesNotOverlapping::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }
@@ -1630,8 +1666,9 @@ void ConstraintMinNDaysBetweenActivities::removeUseless(Rules& r)
 }
 
 QString ConstraintMinNDaysBetweenActivities::getXmlDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	/*if(&r!=NULL)
+		;*/
 
 	QString s="<ConstraintMinNDaysBetweenActivities>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -1646,8 +1683,9 @@ QString ConstraintMinNDaysBetweenActivities::getXmlDescription(Rules& r){
 }
 
 QString ConstraintMinNDaysBetweenActivities::getDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s;
 	s+=QObject::tr("Min N days between activities");s+=", ";
@@ -1664,8 +1702,9 @@ QString ConstraintMinNDaysBetweenActivities::getDescription(Rules& r){
 }
 
 QString ConstraintMinNDaysBetweenActivities::getDetailedDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=QObject::tr("Minimum N days between activities");s+="\n";
@@ -1916,34 +1955,39 @@ bool ConstraintMinNDaysBetweenActivities::isRelatedToActivity(Activity* a)
 
 bool ConstraintMinNDaysBetweenActivities::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintMinNDaysBetweenActivities::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintMinNDaysBetweenActivities::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintMinNDaysBetweenActivities::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }
@@ -1968,14 +2012,17 @@ ConstraintTeachersMaxHoursDaily::ConstraintTeachersMaxHoursDaily(double wp, int 
 
 bool ConstraintTeachersMaxHoursDaily::computeInternalStructure(Rules& r)
 {
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	/*if(&r!=NULL)
+		;*/
+
 	return true;
 }
 
 QString ConstraintTeachersMaxHoursDaily::getXmlDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s="<ConstraintTeachersMaxHoursDaily>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -1986,8 +2033,9 @@ QString ConstraintTeachersMaxHoursDaily::getXmlDescription(Rules& r){
 }
 
 QString ConstraintTeachersMaxHoursDaily::getDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s;
 	s+=(QObject::tr("Teachers max %1 hours daily").arg(this->maxHoursDaily));s+=", ";
@@ -1998,8 +2046,9 @@ QString ConstraintTeachersMaxHoursDaily::getDescription(Rules& r){
 }
 
 QString ConstraintTeachersMaxHoursDaily::getDetailedDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=(QObject::tr("Teachers must not have more than %1 hours daily").arg(this->maxHoursDaily));s+="\n";
@@ -2085,42 +2134,48 @@ double ConstraintTeachersMaxHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 
 bool ConstraintTeachersMaxHoursDaily::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
 
 bool ConstraintTeachersMaxHoursDaily::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return true;
 }
 
 bool ConstraintTeachersMaxHoursDaily::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintTeachersMaxHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintTeachersMaxHoursDaily::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }
@@ -2152,8 +2207,9 @@ bool ConstraintTeacherMaxHoursDaily::computeInternalStructure(Rules& r)
 }
 
 QString ConstraintTeacherMaxHoursDaily::getXmlDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s="<ConstraintTeacherMaxHoursDaily>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -2165,8 +2221,9 @@ QString ConstraintTeacherMaxHoursDaily::getXmlDescription(Rules& r){
 }
 
 QString ConstraintTeacherMaxHoursDaily::getDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s;
 	s+=(QObject::tr("Teacher max %1 hours daily").arg(this->maxHoursDaily));s+=", ";
@@ -2178,8 +2235,9 @@ QString ConstraintTeacherMaxHoursDaily::getDescription(Rules& r){
 }
 
 QString ConstraintTeacherMaxHoursDaily::getDetailedDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=QObject::tr("Teacher %1 must not have more than %2 hours daily").arg(this->teacherName).arg(this->maxHoursDaily);s+="\n";
@@ -2267,8 +2325,9 @@ double ConstraintTeacherMaxHoursDaily::fitness(Solution& c, Rules& r, QList<doub
 
 bool ConstraintTeacherMaxHoursDaily::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
@@ -2282,26 +2341,30 @@ bool ConstraintTeacherMaxHoursDaily::isRelatedToTeacher(Teacher* t)
 
 bool ConstraintTeacherMaxHoursDaily::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintTeacherMaxHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintTeacherMaxHoursDaily::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }
@@ -2332,8 +2395,9 @@ bool ConstraintTeacherMaxDaysPerWeek::computeInternalStructure(Rules& r)
 
 QString ConstraintTeacherMaxDaysPerWeek::getXmlDescription(Rules& r)
 {
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s="<ConstraintTeacherMaxDaysPerWeek>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -2345,8 +2409,9 @@ QString ConstraintTeacherMaxDaysPerWeek::getXmlDescription(Rules& r)
 }
 
 QString ConstraintTeacherMaxDaysPerWeek::getDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s=QObject::tr("Teacher max days per week");s+=", ";
 	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));s+=", ";
@@ -2358,8 +2423,9 @@ QString ConstraintTeacherMaxDaysPerWeek::getDescription(Rules& r){
 }
 
 QString ConstraintTeacherMaxDaysPerWeek::getDetailedDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=QObject::tr("Teacher max. days per week");s+="\n";
@@ -2469,8 +2535,9 @@ double ConstraintTeacherMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<dou
 
 bool ConstraintTeacherMaxDaysPerWeek::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
@@ -2484,26 +2551,30 @@ bool ConstraintTeacherMaxDaysPerWeek::isRelatedToTeacher(Teacher* t)
 
 bool ConstraintTeacherMaxDaysPerWeek::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintTeacherMaxDaysPerWeek::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintTeacherMaxDaysPerWeek::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }
@@ -2526,8 +2597,9 @@ ConstraintTeachersMaxGapsPerWeek::ConstraintTeachersMaxGapsPerWeek(double wp, in
 
 bool ConstraintTeachersMaxGapsPerWeek::computeInternalStructure(Rules& r)
 {
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	/*if(&r!=NULL)
+		;*/
 
 	/*do nothing*/
 	return true;
@@ -2535,8 +2607,9 @@ bool ConstraintTeachersMaxGapsPerWeek::computeInternalStructure(Rules& r)
 
 QString ConstraintTeachersMaxGapsPerWeek::getXmlDescription(Rules& r){
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	/*if(&r==NULL)
+		;*/
 
 	QString s="<ConstraintTeachersMaxGapsPerWeek>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -2548,8 +2621,9 @@ QString ConstraintTeachersMaxGapsPerWeek::getXmlDescription(Rules& r){
 
 QString ConstraintTeachersMaxGapsPerWeek::getDescription(Rules& r){
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	/*if(&r==NULL)
+		;*/
 
 	QString s;
 	s+=QObject::tr("Teachers max gaps per week");s+=", ";
@@ -2562,8 +2636,9 @@ QString ConstraintTeachersMaxGapsPerWeek::getDescription(Rules& r){
 
 QString ConstraintTeachersMaxGapsPerWeek::getDetailedDescription(Rules& r){
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	/*if(&r==NULL)
+		;*/
 
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=QObject::tr("Teachers max gaps per week");s+="\n";
@@ -2637,42 +2712,48 @@ double ConstraintTeachersMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<do
 
 bool ConstraintTeachersMaxGapsPerWeek::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
 
 bool ConstraintTeachersMaxGapsPerWeek::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return true;
 }
 
 bool ConstraintTeachersMaxGapsPerWeek::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintTeachersMaxGapsPerWeek::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintTeachersMaxGapsPerWeek::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }
@@ -2703,8 +2784,9 @@ bool ConstraintTeacherMaxGapsPerWeek::computeInternalStructure(Rules& r)
 
 QString ConstraintTeacherMaxGapsPerWeek::getXmlDescription(Rules& r){
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s="<ConstraintTeacherMaxGapsPerWeek>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -2717,8 +2799,9 @@ QString ConstraintTeacherMaxGapsPerWeek::getXmlDescription(Rules& r){
 
 QString ConstraintTeacherMaxGapsPerWeek::getDescription(Rules& r){
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s;
 	s+=QObject::tr("Teacher max gaps per week");s+=", ";
@@ -2732,8 +2815,9 @@ QString ConstraintTeacherMaxGapsPerWeek::getDescription(Rules& r){
 
 QString ConstraintTeacherMaxGapsPerWeek::getDetailedDescription(Rules& r){
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s=QObject::tr("Time constraint"); s+="\n";
 	s+=QObject::tr("Teacher max gaps per week"); s+="\n";
@@ -2809,8 +2893,9 @@ double ConstraintTeacherMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<dou
 
 bool ConstraintTeacherMaxGapsPerWeek::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
@@ -2824,26 +2909,30 @@ bool ConstraintTeacherMaxGapsPerWeek::isRelatedToTeacher(Teacher* t)
 
 bool ConstraintTeacherMaxGapsPerWeek::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintTeacherMaxGapsPerWeek::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintTeacherMaxGapsPerWeek::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }
@@ -2903,8 +2992,9 @@ QString ConstraintBreak::getDetailedDescription(Rules& r){
 
 bool ConstraintBreak::computeInternalStructure(Rules& r)
 {
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 		
 	if(this->d >= r.nDaysPerWeek){
 		QMessageBox::information(NULL, QObject::tr("FET information"),
@@ -3031,42 +3121,48 @@ double ConstraintBreak::fitness(Solution& c, Rules& r, QList<double>& cl, QList<
 
 bool ConstraintBreak::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
 
 bool ConstraintBreak::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintBreak::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintBreak::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintBreak::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }
@@ -3088,8 +3184,9 @@ ConstraintStudentsNoGaps::ConstraintStudentsNoGaps(double wp)
 
 bool ConstraintStudentsNoGaps::computeInternalStructure(Rules& r)
 {
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	/*do nothing*/
 	return true;
@@ -3098,8 +3195,9 @@ bool ConstraintStudentsNoGaps::computeInternalStructure(Rules& r)
 QString ConstraintStudentsNoGaps::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s="<ConstraintStudentsNoGaps>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -3111,12 +3209,13 @@ QString ConstraintStudentsNoGaps::getXmlDescription(Rules& r)
 QString ConstraintStudentsNoGaps::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s;
 	s+=QObject::tr("Students no gaps");s+=", ";
-	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));s+=", ";
+	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));//s+=", ";
 	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));
 
 	return s;
@@ -3125,8 +3224,9 @@ QString ConstraintStudentsNoGaps::getDescription(Rules& r)
 QString ConstraintStudentsNoGaps::getDetailedDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=QObject::tr("Students must not have gaps");s+="\n";
@@ -3201,42 +3301,48 @@ double ConstraintStudentsNoGaps::fitness(Solution& c, Rules& r, QList<double>& c
 
 bool ConstraintStudentsNoGaps::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsNoGaps::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsNoGaps::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsNoGaps::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsNoGaps::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return true;
 }
@@ -3308,8 +3414,9 @@ bool ConstraintStudentsSetNoGaps::computeInternalStructure(Rules& r){
 
 QString ConstraintStudentsSetNoGaps::getXmlDescription(Rules& r){
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s="<ConstraintStudentsSetNoGaps>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -3321,8 +3428,9 @@ QString ConstraintStudentsSetNoGaps::getXmlDescription(Rules& r){
 
 QString ConstraintStudentsSetNoGaps::getDescription(Rules& r){
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s;
 	s+=QObject::tr("Students set no gaps"); s+=", ";
@@ -3335,8 +3443,9 @@ QString ConstraintStudentsSetNoGaps::getDescription(Rules& r){
 
 QString ConstraintStudentsSetNoGaps::getDetailedDescription(Rules& r){
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=QObject::tr("Students set must not have gaps");s+="\n";
@@ -3414,32 +3523,36 @@ double ConstraintStudentsSetNoGaps::fitness(Solution& c, Rules& r, QList<double>
 
 bool ConstraintStudentsSetNoGaps::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsSetNoGaps::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsSetNoGaps::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsSetNoGaps::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
@@ -3466,8 +3579,9 @@ ConstraintStudentsEarly::ConstraintStudentsEarly(double wp)
 
 bool ConstraintStudentsEarly::computeInternalStructure(Rules& r)
 {
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	/*do nothing*/
 	
@@ -3477,8 +3591,9 @@ bool ConstraintStudentsEarly::computeInternalStructure(Rules& r)
 QString ConstraintStudentsEarly::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s="<ConstraintStudentsEarly>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -3490,8 +3605,9 @@ QString ConstraintStudentsEarly::getXmlDescription(Rules& r)
 QString ConstraintStudentsEarly::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s;
 	s+=QObject::tr("Students must begin their courses as early as possible (permitted by breaks and students not available)");s+=", ";
@@ -3504,8 +3620,9 @@ QString ConstraintStudentsEarly::getDescription(Rules& r)
 QString ConstraintStudentsEarly::getDetailedDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=QObject::tr("Students must begin their courses as early as possible (permitted by breaks and students not available)");s+="\n";
@@ -3575,42 +3692,48 @@ double ConstraintStudentsEarly::fitness(Solution& c, Rules& r, QList<double>& cl
 
 bool ConstraintStudentsEarly::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsEarly::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsEarly::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsEarly::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsEarly::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return true;
 }
@@ -3683,8 +3806,9 @@ bool ConstraintStudentsSetEarly::computeInternalStructure(Rules& r)
 QString ConstraintStudentsSetEarly::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s="<ConstraintStudentsSetEarly>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -3697,8 +3821,9 @@ QString ConstraintStudentsSetEarly::getXmlDescription(Rules& r)
 QString ConstraintStudentsSetEarly::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s;
 	s+=QObject::tr("Students set must begin their courses as early as possible (permitted by breaks and students not available)");s+=", ";
@@ -3712,8 +3837,9 @@ QString ConstraintStudentsSetEarly::getDescription(Rules& r)
 QString ConstraintStudentsSetEarly::getDetailedDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=QObject::tr("Students set must begin their courses as early as possible (permitted by breaks and students not available)");s+="\n";
@@ -3787,32 +3913,36 @@ double ConstraintStudentsSetEarly::fitness(Solution& c, Rules& r, QList<double>&
 
 bool ConstraintStudentsSetEarly::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsSetEarly::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsSetEarly::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsSetEarly::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
@@ -3841,8 +3971,9 @@ ConstraintStudentsMaxHoursDaily::ConstraintStudentsMaxHoursDaily(double wp, int 
 
 bool ConstraintStudentsMaxHoursDaily::computeInternalStructure(Rules& r)
 {
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	/*do nothing*/
 	
@@ -3852,8 +3983,9 @@ bool ConstraintStudentsMaxHoursDaily::computeInternalStructure(Rules& r)
 QString ConstraintStudentsMaxHoursDaily::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s="<ConstraintStudentsMaxHoursDaily>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -3869,8 +4001,9 @@ QString ConstraintStudentsMaxHoursDaily::getXmlDescription(Rules& r)
 QString ConstraintStudentsMaxHoursDaily::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s;
 	s+=QObject::tr("Students max hours daily");s+=", ";
@@ -3887,8 +4020,9 @@ QString ConstraintStudentsMaxHoursDaily::getDescription(Rules& r)
 QString ConstraintStudentsMaxHoursDaily::getDetailedDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=QObject::tr("All students sets must have the maximum number of hours daily");s+="\n";
@@ -3986,42 +4120,48 @@ double ConstraintStudentsMaxHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 
 bool ConstraintStudentsMaxHoursDaily::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsMaxHoursDaily::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsMaxHoursDaily::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsMaxHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsMaxHoursDaily::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return true;
 }
@@ -4047,8 +4187,9 @@ ConstraintStudentsSetMaxHoursDaily::ConstraintStudentsSetMaxHoursDaily(double wp
 QString ConstraintStudentsSetMaxHoursDaily::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s="<ConstraintStudentsSetMaxHoursDaily>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -4063,8 +4204,9 @@ QString ConstraintStudentsSetMaxHoursDaily::getXmlDescription(Rules& r)
 QString ConstraintStudentsSetMaxHoursDaily::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s;
 	s+=QObject::tr("Students set max hours daily");s+=", ";
@@ -4085,8 +4227,9 @@ QString ConstraintStudentsSetMaxHoursDaily::getDescription(Rules& r)
 QString ConstraintStudentsSetMaxHoursDaily::getDetailedDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=QObject::tr("Students set must respect the maximum number of hours daily");s+="\n";
@@ -4239,32 +4382,36 @@ double ConstraintStudentsSetMaxHoursDaily::fitness(Solution& c, Rules& r, QList<
 
 bool ConstraintStudentsSetMaxHoursDaily::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsSetMaxHoursDaily::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsSetMaxHoursDaily::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsSetMaxHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
@@ -4293,8 +4440,9 @@ ConstraintStudentsMinHoursDaily::ConstraintStudentsMinHoursDaily(double wp, int 
 
 bool ConstraintStudentsMinHoursDaily::computeInternalStructure(Rules& r)
 {
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	/*do nothing*/
 	
@@ -4304,8 +4452,9 @@ bool ConstraintStudentsMinHoursDaily::computeInternalStructure(Rules& r)
 QString ConstraintStudentsMinHoursDaily::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s="<ConstraintStudentsMinHoursDaily>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -4321,8 +4470,9 @@ QString ConstraintStudentsMinHoursDaily::getXmlDescription(Rules& r)
 QString ConstraintStudentsMinHoursDaily::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s;
 	s+=QObject::tr("Students min hours daily");s+=", ";
@@ -4339,8 +4489,9 @@ QString ConstraintStudentsMinHoursDaily::getDescription(Rules& r)
 QString ConstraintStudentsMinHoursDaily::getDetailedDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=QObject::tr("All students sets must have the minimum number of hours daily");s+="\n";
@@ -4416,42 +4567,48 @@ double ConstraintStudentsMinHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 
 bool ConstraintStudentsMinHoursDaily::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsMinHoursDaily::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsMinHoursDaily::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsMinHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsMinHoursDaily::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return true;
 }
@@ -4477,8 +4634,9 @@ ConstraintStudentsSetMinHoursDaily::ConstraintStudentsSetMinHoursDaily(double wp
 QString ConstraintStudentsSetMinHoursDaily::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s="<ConstraintStudentsSetMinHoursDaily>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -4493,8 +4651,9 @@ QString ConstraintStudentsSetMinHoursDaily::getXmlDescription(Rules& r)
 QString ConstraintStudentsSetMinHoursDaily::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s;
 	s+=QObject::tr("Students set min hours daily");s+=", ";
@@ -4515,8 +4674,9 @@ QString ConstraintStudentsSetMinHoursDaily::getDescription(Rules& r)
 QString ConstraintStudentsSetMinHoursDaily::getDetailedDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=QObject::tr("Students set must respect the minimum number of hours daily");s+="\n";
@@ -4641,32 +4801,36 @@ double ConstraintStudentsSetMinHoursDaily::fitness(Solution& c, Rules& r, QList<
 
 bool ConstraintStudentsSetMinHoursDaily::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsSetMinHoursDaily::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsSetMinHoursDaily::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintStudentsSetMinHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
@@ -4754,8 +4918,9 @@ bool ConstraintActivityPreferredTime::computeInternalStructure(Rules& r)
 QString ConstraintActivityPreferredTime::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s="<ConstraintActivityPreferredTime>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -4772,8 +4937,9 @@ QString ConstraintActivityPreferredTime::getXmlDescription(Rules& r)
 QString ConstraintActivityPreferredTime::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s;
 	s+=(QObject::tr("Act. id:%1").arg(this->activityId));
@@ -4956,34 +5122,39 @@ bool ConstraintActivityPreferredTime::isRelatedToActivity(Activity* a)
 
 bool ConstraintActivityPreferredTime::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivityPreferredTime::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivityPreferredTime::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivityPreferredTime::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 		
 	return false;
 }
@@ -5058,8 +5229,9 @@ bool ConstraintActivityPreferredTimes::computeInternalStructure(Rules& r)
 QString ConstraintActivityPreferredTimes::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	//Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s="<ConstraintActivityPreferredTimes>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -5081,8 +5253,9 @@ QString ConstraintActivityPreferredTimes::getXmlDescription(Rules& r)
 QString ConstraintActivityPreferredTimes::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	//Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s;
 	s+=(QObject::tr("Act. id:%1").arg(this->activityId));
@@ -5305,34 +5478,39 @@ bool ConstraintActivityPreferredTimes::isRelatedToActivity(Activity* a)
 
 bool ConstraintActivityPreferredTimes::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivityPreferredTimes::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivityPreferredTimes::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivityPreferredTimes::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 		
 	return false;
 }
@@ -5447,8 +5625,9 @@ bool ConstraintActivitiesPreferredTimes::computeInternalStructure(Rules& r)
 QString ConstraintActivitiesPreferredTimes::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	//Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s="<ConstraintActivitiesPreferredTimes>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -5477,8 +5656,9 @@ QString ConstraintActivitiesPreferredTimes::getXmlDescription(Rules& r)
 QString ConstraintActivitiesPreferredTimes::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	//Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s;
 	s+=QObject::tr("Activities with ");
@@ -5708,34 +5888,39 @@ bool ConstraintActivitiesPreferredTimes::isRelatedToActivity(Activity* a)
 
 bool ConstraintActivitiesPreferredTimes::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivitiesPreferredTimes::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivitiesPreferredTimes::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivitiesPreferredTimes::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 		
 	return false;
 }
@@ -5815,8 +6000,9 @@ void ConstraintActivitiesSameStartingHour::removeUseless(Rules& r)
 }
 
 QString ConstraintActivitiesSameStartingHour::getXmlDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s="<ConstraintActivitiesSameStartingHour>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -5829,8 +6015,9 @@ QString ConstraintActivitiesSameStartingHour::getXmlDescription(Rules& r){
 }
 
 QString ConstraintActivitiesSameStartingHour::getDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s;
 	s+=QObject::tr("Activities same starting hour");s+=", ";
@@ -5845,8 +6032,9 @@ QString ConstraintActivitiesSameStartingHour::getDescription(Rules& r){
 }
 
 QString ConstraintActivitiesSameStartingHour::getDetailedDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s;
 	
@@ -6011,34 +6199,39 @@ bool ConstraintActivitiesSameStartingHour::isRelatedToActivity(Activity* a)
 
 bool ConstraintActivitiesSameStartingHour::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivitiesSameStartingHour::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivitiesSameStartingHour::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivitiesSameStartingHour::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 		
 	return false;
 }
@@ -6110,8 +6303,9 @@ bool Constraint2ActivitiesConsecutive::computeInternalStructure(Rules& r)
 QString Constraint2ActivitiesConsecutive::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s="<Constraint2ActivitiesConsecutive>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -6125,8 +6319,9 @@ QString Constraint2ActivitiesConsecutive::getXmlDescription(Rules& r)
 QString Constraint2ActivitiesConsecutive::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s;
 	
@@ -6316,34 +6511,39 @@ bool Constraint2ActivitiesConsecutive::isRelatedToActivity(Activity* a)
 
 bool Constraint2ActivitiesConsecutive::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool Constraint2ActivitiesConsecutive::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool Constraint2ActivitiesConsecutive::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool Constraint2ActivitiesConsecutive::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 		
 	return false;
 }
@@ -6388,8 +6588,9 @@ bool ConstraintActivityEndsStudentsDay::computeInternalStructure(Rules& r)
 QString ConstraintActivityEndsStudentsDay::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s="<ConstraintActivityEndsStudentsDay>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -6402,8 +6603,9 @@ QString ConstraintActivityEndsStudentsDay::getXmlDescription(Rules& r)
 QString ConstraintActivityEndsStudentsDay::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
-	if(&r==NULL)
-		;
+	//Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
 
 	QString s;
 	s+=(QObject::tr("Act. id:%1 must end students' day").arg(this->activityId));
@@ -6571,34 +6773,39 @@ bool ConstraintActivityEndsStudentsDay::isRelatedToActivity(Activity* a)
 
 bool ConstraintActivityEndsStudentsDay::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivityEndsStudentsDay::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivityEndsStudentsDay::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivityEndsStudentsDay::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 		
 	return false;
 }
@@ -6623,14 +6830,17 @@ ConstraintTeachersMinHoursDaily::ConstraintTeachersMinHoursDaily(double wp, int 
 
 bool ConstraintTeachersMinHoursDaily::computeInternalStructure(Rules& r)
 {
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
+	
 	return true;
 }
 
 QString ConstraintTeachersMinHoursDaily::getXmlDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s="<ConstraintTeachersMinHoursDaily>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -6640,8 +6850,9 @@ QString ConstraintTeachersMinHoursDaily::getXmlDescription(Rules& r){
 }
 
 QString ConstraintTeachersMinHoursDaily::getDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s;
 	s+=(QObject::tr("Teachers min %1 hours daily").arg(this->minHoursDaily));s+=", ";
@@ -6651,8 +6862,9 @@ QString ConstraintTeachersMinHoursDaily::getDescription(Rules& r){
 }
 
 QString ConstraintTeachersMinHoursDaily::getDetailedDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=(QObject::tr("Teachers must not have less than %1 hours daily").arg(this->minHoursDaily));s+="\n";
@@ -6741,42 +6953,48 @@ double ConstraintTeachersMinHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 
 bool ConstraintTeachersMinHoursDaily::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
 
 bool ConstraintTeachersMinHoursDaily::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return true;
 }
 
 bool ConstraintTeachersMinHoursDaily::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintTeachersMinHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintTeachersMinHoursDaily::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }
@@ -6808,8 +7026,9 @@ bool ConstraintTeacherMinHoursDaily::computeInternalStructure(Rules& r)
 }
 
 QString ConstraintTeacherMinHoursDaily::getXmlDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s="<ConstraintTeacherMinHoursDaily>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -6820,8 +7039,9 @@ QString ConstraintTeacherMinHoursDaily::getXmlDescription(Rules& r){
 }
 
 QString ConstraintTeacherMinHoursDaily::getDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s;
 	s+=(QObject::tr("Teacher min %1 hours daily").arg(this->minHoursDaily));s+=", ";
@@ -6832,8 +7052,9 @@ QString ConstraintTeacherMinHoursDaily::getDescription(Rules& r){
 }
 
 QString ConstraintTeacherMinHoursDaily::getDetailedDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=QObject::tr("Teacher %1 must not have less than %2 hours daily").arg(this->teacherName).arg(this->minHoursDaily);s+="\n";
@@ -6919,8 +7140,9 @@ double ConstraintTeacherMinHoursDaily::fitness(Solution& c, Rules& r, QList<doub
 
 bool ConstraintTeacherMinHoursDaily::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
@@ -6934,26 +7156,30 @@ bool ConstraintTeacherMinHoursDaily::isRelatedToTeacher(Teacher* t)
 
 bool ConstraintTeacherMinHoursDaily::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintTeacherMinHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintTeacherMinHoursDaily::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }

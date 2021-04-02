@@ -164,8 +164,10 @@ void ModifyConstraintActivityPreferredTimesForm::filterChanged()
 
 void ModifyConstraintActivityPreferredTimesForm::tableClicked(int row, int col, int button, const QPoint& mousePos)
 {
-	if(&button!=NULL && &mousePos!=NULL)
-		;
+	Q_UNUSED(button);
+	Q_UNUSED(mousePos);
+	//if(&button!=NULL && &mousePos!=NULL)
+	//	;
 
 	//row--; col--;
 	if(row>=0 && row<gt.rules.nHoursPerDay && col>=0 && col<gt.rules.nDaysPerWeek){

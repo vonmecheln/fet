@@ -121,8 +121,9 @@ void TimetableViewStudentsForm::groupChanged(const QString &groupName)
 
 void TimetableViewStudentsForm::subgroupChanged(const QString &subgroupName)
 {
-	if(subgroupName!="")
-		;	
+	Q_UNUSED(subgroupName);
+	//if(subgroupName!="")
+	//	;	
 
 	updateStudentsTimetableTable();
 }

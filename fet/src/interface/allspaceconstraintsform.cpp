@@ -49,8 +49,9 @@ AllSpaceConstraintsForm::~AllSpaceConstraintsForm()
 
 bool AllSpaceConstraintsForm::filterOk(SpaceConstraint* ctr)
 {
-	if(ctr!=NULL) //to avoid "unused parameter" warning
-		;
+	Q_UNUSED(ctr);
+	//if(ctr!=NULL) //to avoid "unused parameter" warning
+	//	;
 
 	return true;
 }

@@ -232,7 +232,7 @@ void FetMainForm::on_checkForUpdatesAction_toggled()
 void FetMainForm::httpDone(bool error)
 {
 	if(error){
-		QMessageBox::warning(this, QObject::tr("FET warning"), QObject::tr(
+		QMessageBox::warning(this, tr("FET warning"), tr(
 		 "Could not search for possible updates on internet - error message is: %1. "
 		 "I am searching for the file http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt . "
 		 "Maybe the current structure on web page was changed. Please visit FET web page"
@@ -251,8 +251,8 @@ void FetMainForm::httpDone(bool error)
 		}
 	
 		if(internetVersion!=FET_VERSION){
-			QMessageBox::information(this, QObject::tr("FET information"),
-			 QObject::tr("Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/\n\n"
+			QMessageBox::information(this, tr("FET information"),
+			 tr("Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/\n\n"
 			 "You have to manually download and install (open the FET webpage in an internet browser). "
 			 "Please read the information on web page regarding the newer version and choose whether to keep your current version or upgrade "
 			 "(the recommended option is to upgrade). You might need to hit Refresh in your web browser if links do not work"
@@ -269,12 +269,12 @@ void FetMainForm::closeEvent(QCloseEvent* event)
 	settings.setValue("fetmainformgeometry", rect);
 	cout<<"wrote x()=="<<x()<<", y()=="<<y()<<endl;
 	
-	if(event!=NULL)
-		;
+	//if(event!=NULL)
+	//	;
 
-	switch(QMessageBox::information( this, QObject::tr("FET - exiting"),
-	 QObject::tr("File might have been changed - do you want to save it?"),
-	 QObject::tr("&Yes"), QObject::tr("&No"), QObject::tr("&Cancel"), 0 , 2 )){
+	switch(QMessageBox::information( this, tr("FET - exiting"),
+	 tr("File might have been changed - do you want to save it?"),
+	 tr("&Yes"), tr("&No"), tr("&Cancel"), 0 , 2 )){
 	 	case 0: 
 			this->on_fileSaveAction_activated();
 			event->accept();
@@ -298,8 +298,8 @@ FetMainForm::~FetMainForm()
 void FetMainForm::on_fileExitAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -309,15 +309,15 @@ void FetMainForm::on_fileExitAction_activated()
 void FetMainForm::on_fileNewAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
 	int confirm=0;
-	switch( QMessageBox::information( this, QObject::tr("FET application"),
-	 QObject::tr("Are you sure you want to load new data (rules) ?"),
-	 QObject::tr("&Yes"), QObject::tr("&No"), 0 , 1 ) ) {
+	switch( QMessageBox::information( this, tr("FET application"),
+	 tr("Are you sure you want to load new data (rules) ?"),
+	 tr("&Yes"), tr("&No"), 0 , 1 ) ) {
 	case 0: // Yes
 		confirm=1;
 		break;
@@ -329,7 +329,7 @@ void FetMainForm::on_fileNewAction_activated()
 	if(confirm){
 		INPUT_FILENAME_XML="";
 	
-		setWindowTitle(QObject::tr("FET - a free evolutionary timetabling program"));
+		setWindowTitle(tr("FET - a free evolutionary timetabling program"));
 
 		if(gt.rules.initialized)
 			gt.rules.kill();
@@ -349,16 +349,16 @@ void FetMainForm::on_fileNewAction_activated()
 void FetMainForm::on_fileOpenAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
 	int confirm=1;
 
 	if(confirm){
-		QString s = Q3FileDialog::getOpenFileName(WORKING_DIRECTORY, QObject::tr("FET xml files (*.fet);;Old FET xml files (*.xml);;All files (*)"),
-			this, QObject::tr("open file dialog"), QObject::tr("Choose a file"));
+		QString s = Q3FileDialog::getOpenFileName(WORKING_DIRECTORY, tr("FET xml files (*.fet);;Old FET xml files (*.xml);;All files (*)", "Comment for translators (do not translate this comment): This field is for File/Open dialog. Please keep ;; without spaces before, between and after (it is a separator), and consider that the first must be *.fet. In special right to left languages, you might need to leave this field untranslated"),
+			this, tr("open file dialog"), tr("Choose a file"));
 		if(s.isNull())
 			return;
 
@@ -366,25 +366,25 @@ void FetMainForm::on_fileOpenAction_activated()
 		QString s2=s.right(s.length()-tmp2-1);
 			
 		if(s2.indexOf("\"") >= 0){
-			QMessageBox::warning(this, QObject::tr("FET info"), 
-			 QObject::tr("Please do not use quotation marks \" in filename, the html css code does not work."
+			QMessageBox::warning(this, tr("FET info"), 
+			 tr("Please do not use quotation marks \" in filename, the html css code does not work."
 			  " File was not loaded. Please rename it, removing not allowed characters and open it after that with FET."));
 			return;
 		}		
 		if(s2.indexOf(";") >= 0){
-			QMessageBox::warning(this, QObject::tr("FET info"), 
-			 QObject::tr("Please do not use semicolon ; in filename, the html css code does not work."
+			QMessageBox::warning(this, tr("FET info"), 
+			 tr("Please do not use semicolon ; in filename, the html css code does not work."
 			  " File was not loaded. Please rename it, removing not allowed characters and open it after that with FET."));
 			return;
 		}
 		if(s2.indexOf("#") >= 0){
-			QMessageBox::warning(this, QObject::tr("FET info"), 
-			 QObject::tr("Please do not use # in filename, the html css code does not work."
+			QMessageBox::warning(this, tr("FET info"), 
+			 tr("Please do not use # in filename, the html css code does not work."
 			  " File was not loaded. Please rename it, removing not allowed characters and open it after that with FET."));
 			return;
 		}
 		/*if(s2.indexOf("(") >= 0 || s2.indexOf(")")>=0){
-			QMessageBox::information(this, QObject::tr("FET info"), QObject::tr("Please do not use parentheses () in filename, the html css code does not work"));
+			QMessageBox::information(this, tr("FET info"), tr("Please do not use parentheses () in filename, the html css code does not work"));
 			return;
 		}*/
 		else{
@@ -396,22 +396,22 @@ void FetMainForm::on_fileOpenAction_activated()
 				INPUT_FILENAME_XML = s;
 			}
 			else{
-				QMessageBox::information(this, QObject::tr("FET info"), QObject::tr("Invalid file"), QObject::tr("&OK"));
+				QMessageBox::information(this, tr("FET info"), tr("Invalid file"), tr("&OK"));
 			}
 		}
 		//get the directory
 		int tmp=s.findRev("/");
 		WORKING_DIRECTORY=s.left(tmp+1);
 		
-		setWindowTitle(QObject::tr("FET - %1").arg(s.right(s.length()-tmp-1)));
+		setWindowTitle(tr("FET - %1").arg(s.right(s.length()-tmp-1)));
 	}
 }
 
 void FetMainForm::on_fileSaveAsAction_activated()
 {
 	QString s = Q3FileDialog::getSaveFileName(
-		INPUT_FILENAME_XML, QObject::tr("FET xml files (*.fet);;All files (*)"),
-		this, QObject::tr("Save file dialog"), QObject::tr("Choose a filename to save under" ));
+		INPUT_FILENAME_XML, tr("FET xml files (*.fet);;All files (*)", "Comment for translators (do not translate this comment): This field is for File/Save as dialog. Please keep ;; without spaces before, between and after (it is a separator), and consider that the first must be *.fet. In special right to left languages, you might need to leave this field untranslated"),
+		this, tr("Save file dialog"), tr("Choose a filename to save under" ));
 	if(s==QString::null)
 		return;
 
@@ -419,19 +419,19 @@ void FetMainForm::on_fileSaveAsAction_activated()
 	QString s2=s.right(s.length()-tmp2-1);
 			
 	if(s2.indexOf("\"") >= 0){
-		QMessageBox::warning(this, QObject::tr("FET info"), QObject::tr("Please do not use quotation marks \" in filename, the html css code does not work"));
+		QMessageBox::warning(this, tr("FET info"), tr("Please do not use quotation marks \" in filename, the html css code does not work"));
 		return;
 	}
 	if(s2.indexOf(";") >= 0){
-		QMessageBox::warning(this, QObject::tr("FET info"), QObject::tr("Please do not use semicolon ; in filename, the html css code does not work"));
+		QMessageBox::warning(this, tr("FET info"), tr("Please do not use semicolon ; in filename, the html css code does not work"));
 		return;
 	}
 	if(s2.indexOf("#") >= 0){
-		QMessageBox::warning(this, QObject::tr("FET info"), QObject::tr("Please do not use # in filename, the html css code does not work"));
+		QMessageBox::warning(this, tr("FET info"), tr("Please do not use # in filename, the html css code does not work"));
 		return;
 	}
 	/*if(s2.indexOf("(") >= 0 || s2.indexOf(")")>=0){
-		QMessageBox::information(this, QObject::tr("FET info"), QObject::tr("Please do not use parentheses () in filename, the html css code does not work"));
+		QMessageBox::information(this, tr("FET info"), tr("Please do not use parentheses () in filename, the html css code does not work"));
 		return;
 	}*/
 		
@@ -442,14 +442,14 @@ void FetMainForm::on_fileSaveAsAction_activated()
 	WORKING_DIRECTORY=s.left(tmp+1);
 
 	if(QFile::exists(s))
-		if(QMessageBox::information( this, QObject::tr("FET"),
-		 QObject::tr("File exists - are you sure you want to overwrite existing file?"),
-		 QObject::tr("&Yes"), QObject::tr("&No"), 0 , 1 ) == 1)
+		if(QMessageBox::information( this, tr("FET"),
+		 tr("File exists - are you sure you want to overwrite existing file?"),
+		 tr("&Yes"), tr("&No"), 0 , 1 ) == 1)
 		 	return;
 			
 	INPUT_FILENAME_XML = s;
 	
-	setWindowTitle(QObject::tr("FET - %1").arg(s.right(s.length()-tmp-1)));
+	setWindowTitle(tr("FET - %1").arg(s.right(s.length()-tmp-1)));
 	
 	gt.rules.write(INPUT_FILENAME_XML);
 }
@@ -477,8 +477,8 @@ void FetMainForm::on_dataCommentsAction_activated()
 void FetMainForm::on_dataDaysAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -489,8 +489,8 @@ void FetMainForm::on_dataDaysAction_activated()
 void FetMainForm::on_dataHoursAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -501,8 +501,8 @@ void FetMainForm::on_dataHoursAction_activated()
 void FetMainForm::on_dataTeachersAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -519,8 +519,8 @@ void FetMainForm::on_dataTeachersStatisticsAction_activated()
 void FetMainForm::on_dataSubjectsAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -537,8 +537,8 @@ void FetMainForm::on_dataSubjectsStatisticsAction_activated()
 void FetMainForm::on_dataSubjectTagsAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -549,8 +549,8 @@ void FetMainForm::on_dataSubjectTagsAction_activated()
 void FetMainForm::on_dataYearsAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -561,8 +561,8 @@ void FetMainForm::on_dataYearsAction_activated()
 void FetMainForm::on_dataGroupsAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -573,8 +573,8 @@ void FetMainForm::on_dataGroupsAction_activated()
 void FetMainForm::on_dataSubgroupsAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -616,6 +616,20 @@ void FetMainForm::on_dataHelpOnStatisticsAction_activated()
 	 " are interpreted in a wrong manner (if subgroup has only 2 activities, then these must"
 	 " be placed in the first hours, which is too hard and wrong)."
 	 );
+	 
+	 s+="\n\n";
+	 s+=tr("If you started simulation before inputting all the necessary students structure,"
+	  " FET might have added special groups/subgroups, ending in WHOLE_YEAR or WHOLE_GROUP."
+	  " These special groups/subgroups are needed if the year/group contains only them and otherwise would be empty,"
+	  " but not needed when year/group contains other groups/subgroups."
+	  " It is highly recommended to remove them if your year/group contain other groups/subgroups."
+	  " If a special subgroup named for instance 5_WHOLE_YEAR_WHOLE_GROUP has only 2 hours per day,"
+	  " you might get an impossible timetable, because early and no gaps must be respected for this subgroup also,"
+	  ", which might be impossible"
+	  );
+	 s+="\n\n";
+	 s+=tr("The idea is that you have to delete unnecessary groups/subgroups containing WHOLE_YEAR or WHOLE_GROUP"
+	  " (unnecessary means that they are not the only one group/subgroup of higher year/group");
 
 	//QMessageBox::information(this, tr("FET information about statistics"), s);
 
@@ -650,8 +664,8 @@ void FetMainForm::on_dataHelpOnStatisticsAction_activated()
 void FetMainForm::on_dataActivitiesAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -662,8 +676,8 @@ void FetMainForm::on_dataActivitiesAction_activated()
 void FetMainForm::on_dataRoomsAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -674,8 +688,8 @@ void FetMainForm::on_dataRoomsAction_activated()
 void FetMainForm::on_dataAllTimeConstraintsAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -686,8 +700,8 @@ void FetMainForm::on_dataAllTimeConstraintsAction_activated()
 void FetMainForm::on_dataAllSpaceConstraintsAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -698,8 +712,8 @@ void FetMainForm::on_dataAllSpaceConstraintsAction_activated()
 void FetMainForm::on_dataTimeConstraints2ActivitiesConsecutiveAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -710,8 +724,8 @@ void FetMainForm::on_dataTimeConstraints2ActivitiesConsecutiveAction_activated()
 void FetMainForm::on_dataTimeConstraintsActivitiesPreferredTimesAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -722,8 +736,8 @@ void FetMainForm::on_dataTimeConstraintsActivitiesPreferredTimesAction_activated
 void FetMainForm::on_dataTimeConstraintsActivityEndsStudentsDayAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -734,8 +748,8 @@ void FetMainForm::on_dataTimeConstraintsActivityEndsStudentsDayAction_activated(
 void FetMainForm::on_dataTimeConstraintsActivitiesSameStartingTimeAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -746,8 +760,8 @@ void FetMainForm::on_dataTimeConstraintsActivitiesSameStartingTimeAction_activat
 void FetMainForm::on_dataTimeConstraintsActivitiesSameStartingHourAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -758,8 +772,8 @@ void FetMainForm::on_dataTimeConstraintsActivitiesSameStartingHourAction_activat
 void FetMainForm::on_dataTimeConstraintsTeacherNotAvailableAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -770,8 +784,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherNotAvailableAction_activated()
 void FetMainForm::on_dataTimeConstraintsBasicCompulsoryTimeAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -782,8 +796,8 @@ void FetMainForm::on_dataTimeConstraintsBasicCompulsoryTimeAction_activated()
 void FetMainForm::on_dataSpaceConstraintsBasicCompulsorySpaceAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -794,8 +808,8 @@ void FetMainForm::on_dataSpaceConstraintsBasicCompulsorySpaceAction_activated()
 void FetMainForm::on_dataSpaceConstraintsRoomNotAvailableAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -806,8 +820,8 @@ void FetMainForm::on_dataSpaceConstraintsRoomNotAvailableAction_activated()
 void FetMainForm::on_dataSpaceConstraintsActivityPreferredRoomAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -818,8 +832,8 @@ void FetMainForm::on_dataSpaceConstraintsActivityPreferredRoomAction_activated()
 void FetMainForm::on_dataSpaceConstraintsActivityPreferredRoomsAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -830,8 +844,8 @@ void FetMainForm::on_dataSpaceConstraintsActivityPreferredRoomsAction_activated(
 void FetMainForm::on_dataSpaceConstraintsSubjectPreferredRoomAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -842,8 +856,8 @@ void FetMainForm::on_dataSpaceConstraintsSubjectPreferredRoomAction_activated()
 void FetMainForm::on_dataSpaceConstraintsSubjectPreferredRoomsAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -854,8 +868,8 @@ void FetMainForm::on_dataSpaceConstraintsSubjectPreferredRoomsAction_activated()
 void FetMainForm::on_dataSpaceConstraintsSubjectSubjectTagPreferredRoomAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -866,8 +880,8 @@ void FetMainForm::on_dataSpaceConstraintsSubjectSubjectTagPreferredRoomAction_ac
 void FetMainForm::on_dataSpaceConstraintsSubjectSubjectTagPreferredRoomsAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -878,8 +892,8 @@ void FetMainForm::on_dataSpaceConstraintsSubjectSubjectTagPreferredRoomsAction_a
 void FetMainForm::on_dataTimeConstraintsStudentsSetNotAvailableAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -890,8 +904,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetNotAvailableAction_activated(
 void FetMainForm::on_dataTimeConstraintsBreakAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -902,8 +916,8 @@ void FetMainForm::on_dataTimeConstraintsBreakAction_activated()
 void FetMainForm::on_dataTimeConstraintsTeacherMaxDaysPerWeekAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -914,8 +928,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxDaysPerWeekAction_activated()
 void FetMainForm::on_dataTimeConstraintsTeachersMaxHoursDailyAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -926,8 +940,8 @@ void FetMainForm::on_dataTimeConstraintsTeachersMaxHoursDailyAction_activated()
 void FetMainForm::on_dataTimeConstraintsTeacherMaxHoursDailyAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -938,8 +952,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxHoursDailyAction_activated()
 void FetMainForm::on_dataTimeConstraintsTeachersMinHoursDailyAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -950,8 +964,8 @@ void FetMainForm::on_dataTimeConstraintsTeachersMinHoursDailyAction_activated()
 void FetMainForm::on_dataTimeConstraintsTeacherMinHoursDailyAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -962,8 +976,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherMinHoursDailyAction_activated()
 void FetMainForm::on_dataTimeConstraintsActivityPreferredTimeAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -974,8 +988,8 @@ void FetMainForm::on_dataTimeConstraintsActivityPreferredTimeAction_activated()
 void FetMainForm::on_dataTimeConstraintsStudentsSetNoGapsAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -986,8 +1000,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetNoGapsAction_activated()
 void FetMainForm::on_dataTimeConstraintsStudentsNoGapsAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -998,8 +1012,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsNoGapsAction_activated()
 void FetMainForm::on_dataTimeConstraintsTeachersMaxGapsPerWeekAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -1010,8 +1024,8 @@ void FetMainForm::on_dataTimeConstraintsTeachersMaxGapsPerWeekAction_activated()
 void FetMainForm::on_dataTimeConstraintsTeacherMaxGapsPerWeekAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -1022,8 +1036,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxGapsPerWeekAction_activated()
 void FetMainForm::on_dataTimeConstraintsStudentsEarlyAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -1034,8 +1048,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsEarlyAction_activated()
 void FetMainForm::on_dataTimeConstraintsStudentsSetEarlyAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -1046,8 +1060,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetEarlyAction_activated()
 void FetMainForm::on_dataTimeConstraintsStudentsSetMaxHoursDailyAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -1058,8 +1072,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetMaxHoursDailyAction_activated
 void FetMainForm::on_dataTimeConstraintsStudentsMaxHoursDailyAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -1070,8 +1084,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsMaxHoursDailyAction_activated()
 void FetMainForm::on_dataTimeConstraintsStudentsSetMinHoursDailyAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -1082,8 +1096,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetMinHoursDailyAction_activated
 void FetMainForm::on_dataTimeConstraintsStudentsMinHoursDailyAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -1094,8 +1108,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsMinHoursDailyAction_activated()
 void FetMainForm::on_dataTimeConstraintsActivitiesNotOverlappingAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -1106,8 +1120,8 @@ void FetMainForm::on_dataTimeConstraintsActivitiesNotOverlappingAction_activated
 void FetMainForm::on_dataTimeConstraintsMinNDaysBetweenActivitiesAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -1118,8 +1132,8 @@ void FetMainForm::on_dataTimeConstraintsMinNDaysBetweenActivitiesAction_activate
 void FetMainForm::on_dataTimeConstraintsActivityPreferredTimesAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -1185,8 +1199,8 @@ void FetMainForm::on_helpInOtherLanguagesAction_activated()
 void FetMainForm::on_timetableGenerateAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
@@ -1199,7 +1213,7 @@ void FetMainForm::on_timetableGenerateAction_activated()
 		}
 	}
 	if(count<2){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Please input at least two active activities before generating"));
+		QMessageBox::information(this, tr("FET information"), tr("Please input at least two active activities before generating"));
 		return;
 	}
 	TimetableGenerateForm *form=new TimetableGenerateForm();
@@ -1209,14 +1223,14 @@ void FetMainForm::on_timetableGenerateAction_activated()
 void FetMainForm::on_timetableGenerateMultipleAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
 	if(INPUT_FILENAME_XML==""){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Current file (data) has no name. Please save file under a certain name before proceeding"));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Current file (data) has no name. Please save file under a certain name before proceeding"));
 		return;
 	}
 
@@ -1229,7 +1243,7 @@ void FetMainForm::on_timetableGenerateMultipleAction_activated()
 		}
 	}
 	if(count<2){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Please input at least two active activities before generating multiple"));
+		QMessageBox::information(this, tr("FET information"), tr("Please input at least two active activities before generating multiple"));
 		return;
 	}
 	TimetableGenerateMultipleForm *form=new TimetableGenerateMultipleForm();
@@ -1239,7 +1253,7 @@ void FetMainForm::on_timetableGenerateMultipleAction_activated()
 void FetMainForm::on_timetableViewStudentsAction_activated()
 {
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Please generate, firstly"));
+		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
 	}
 
@@ -1250,7 +1264,7 @@ void FetMainForm::on_timetableViewStudentsAction_activated()
 void FetMainForm::on_timetableViewTeachersAction_activated()
 {
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Please generate, firstly"));
+		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
 	}
 
@@ -1261,7 +1275,7 @@ void FetMainForm::on_timetableViewTeachersAction_activated()
 void FetMainForm::on_timetableShowConflictsAction_activated()
 {
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Please generate, firstly"));
+		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
 	}
 
@@ -1272,7 +1286,7 @@ void FetMainForm::on_timetableShowConflictsAction_activated()
 void FetMainForm::on_timetableViewRoomsAction_activated()
 {
 	if(!rooms_schedule_ready){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Please generate, firstly"));
+		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
 	}
 
@@ -1282,8 +1296,8 @@ void FetMainForm::on_timetableViewRoomsAction_activated()
 
 void FetMainForm::on_languageEnglishAction_activated()
 {
-	QMessageBox::information(this, QObject::tr("FET information"), 
-	 QObject::tr("Please exit and restart FET to activate language change"));
+	QMessageBox::information(this, tr("FET information"), 
+	 tr("Please exit and restart FET to activate language change"));
 
 	FET_LANGUAGE="en_GB";
 	
@@ -1294,8 +1308,8 @@ void FetMainForm::on_languageEnglishAction_activated()
 
 void FetMainForm::on_languageFrenchAction_activated()
 {
-	QMessageBox::information(this, QObject::tr("FET information"), 
-	 QObject::tr("Please exit and restart FET to activate language change"));
+	QMessageBox::information(this, tr("FET information"), 
+	 tr("Please exit and restart FET to activate language change"));
 	
 	FET_LANGUAGE="fr";
 	
@@ -1306,8 +1320,8 @@ void FetMainForm::on_languageFrenchAction_activated()
 
 void FetMainForm::on_languageCatalanAction_activated()
 {
-	QMessageBox::information(this, QObject::tr("FET information"), 
-	 QObject::tr("Please exit and restart FET to activate language change"));
+	QMessageBox::information(this, tr("FET information"), 
+	 tr("Please exit and restart FET to activate language change"));
 
 	FET_LANGUAGE="ca";
 	
@@ -1318,8 +1332,8 @@ void FetMainForm::on_languageCatalanAction_activated()
 
 void FetMainForm::on_languageRomanianAction_activated()
 {
-	QMessageBox::information(this, QObject::tr("FET information"), 
-	 QObject::tr("Please exit and restart FET to activate language change"));
+	QMessageBox::information(this, tr("FET information"), 
+	 tr("Please exit and restart FET to activate language change"));
 	
 	FET_LANGUAGE="ro";
 	
@@ -1330,8 +1344,8 @@ void FetMainForm::on_languageRomanianAction_activated()
 
 void FetMainForm::on_languageMalayAction_activated()
 {
-	QMessageBox::information(this, QObject::tr("FET information"), 
-	 QObject::tr("Please exit and restart FET to activate language change"));
+	QMessageBox::information(this, tr("FET information"), 
+	 tr("Please exit and restart FET to activate language change"));
 	
 	FET_LANGUAGE="ms";
 	
@@ -1342,8 +1356,8 @@ void FetMainForm::on_languageMalayAction_activated()
 
 void FetMainForm::on_languagePolishAction_activated()
 {
-	QMessageBox::information(this, QObject::tr("FET information"), 
-	 QObject::tr("Please exit and restart FET to activate language change"));
+	QMessageBox::information(this, tr("FET information"), 
+	 tr("Please exit and restart FET to activate language change"));
 	
 	FET_LANGUAGE="pl";
 	
@@ -1354,8 +1368,8 @@ void FetMainForm::on_languagePolishAction_activated()
 
 void FetMainForm::on_languageTurkishAction_activated()
 {
-	QMessageBox::information(this, QObject::tr("FET information"), 
-	 QObject::tr("Please exit and restart FET to activate language change"));
+	QMessageBox::information(this, tr("FET information"), 
+	 tr("Please exit and restart FET to activate language change"));
 	
 	FET_LANGUAGE="tr";
 	
@@ -1366,8 +1380,8 @@ void FetMainForm::on_languageTurkishAction_activated()
 
 void FetMainForm::on_languageDutchAction_activated()
 {
-	QMessageBox::information(this, QObject::tr("FET information"), 
-	 QObject::tr("Please exit and restart FET to activate language change"));
+	QMessageBox::information(this, tr("FET information"), 
+	 tr("Please exit and restart FET to activate language change"));
 	
 	FET_LANGUAGE="nl";
 	
@@ -1378,8 +1392,8 @@ void FetMainForm::on_languageDutchAction_activated()
 
 void FetMainForm::on_languageGermanAction_activated()
 {
-	QMessageBox::information(this, QObject::tr("FET information"), 
-	 QObject::tr("Please exit and restart FET to activate language change"));
+	QMessageBox::information(this, tr("FET information"), 
+	 tr("Please exit and restart FET to activate language change"));
 	
 	FET_LANGUAGE="de";
 	
@@ -1390,8 +1404,8 @@ void FetMainForm::on_languageGermanAction_activated()
 
 void FetMainForm::on_languageHungarianAction_activated()
 {
-	QMessageBox::information(this, QObject::tr("FET information"), 
-	 QObject::tr("Please exit and restart FET to activate language change"));
+	QMessageBox::information(this, tr("FET information"), 
+	 tr("Please exit and restart FET to activate language change"));
 	
 	FET_LANGUAGE="hu";
 	
@@ -1402,8 +1416,8 @@ void FetMainForm::on_languageHungarianAction_activated()
 
 void FetMainForm::on_languageMacedonianAction_activated()
 {
-	QMessageBox::information(this, QObject::tr("FET information"), 
-	 QObject::tr("Please exit and restart FET to activate language change"));
+	QMessageBox::information(this, tr("FET information"), 
+	 tr("Please exit and restart FET to activate language change"));
 	
 	FET_LANGUAGE="mk";
 	
@@ -1414,8 +1428,8 @@ void FetMainForm::on_languageMacedonianAction_activated()
 
 void FetMainForm::on_languageSpanishAction_activated()
 {
-	QMessageBox::information(this, QObject::tr("FET information"), 
-	 QObject::tr("Please exit and restart FET to activate language change"));
+	QMessageBox::information(this, tr("FET information"), 
+	 tr("Please exit and restart FET to activate language change"));
 	
 	FET_LANGUAGE="es";
 	
@@ -1426,8 +1440,8 @@ void FetMainForm::on_languageSpanishAction_activated()
 
 void FetMainForm::on_languageGreekAction_activated()
 {
-	QMessageBox::information(this, QObject::tr("FET information"), 
-	 QObject::tr("Please exit and restart FET to activate language change"));
+	QMessageBox::information(this, tr("FET information"), 
+	 tr("Please exit and restart FET to activate language change"));
 	
 	FET_LANGUAGE="el";
 	
@@ -1438,8 +1452,8 @@ void FetMainForm::on_languageGreekAction_activated()
 
 void FetMainForm::on_languageArabicAction_activated()
 {
-	QMessageBox::information(this, QObject::tr("FET information"), 
-	 QObject::tr("Please exit and restart FET to activate language change"));
+	QMessageBox::information(this, tr("FET information"), 
+	 tr("Please exit and restart FET to activate language change"));
 	
 	FET_LANGUAGE="ar";
 	
@@ -1450,8 +1464,8 @@ void FetMainForm::on_languageArabicAction_activated()
 
 void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 {
-	QString s=QObject::tr("Are you sure you want to reset all settings to defaults?\n\n");
-	s+=QObject::tr("(these are:\n"
+	QString s=tr("Are you sure you want to reset all settings to defaults?\n\n");
+	s+=tr("(these are:\n"
 	  "1. Mainform geometry will be reset to default\n"
 	  "2. Check for updates at startup will be disabled\n"
 	  "3. Language will be en_GB (restart needed to activate language change)\n"
@@ -1459,16 +1473,16 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 	  "5. Timetable html level will be 2)"
 	 );
 
-	switch( QMessageBox::information( this, QObject::tr("FET application"), s,
-	 QObject::tr("&Yes"), QObject::tr("&No"), 0 , 1 ) ) {
+	switch( QMessageBox::information( this, tr("FET application"), s,
+	 tr("&Yes"), tr("&No"), 0 , 1 ) ) {
 	case 0: // Yes
 		break;
 	case 1: // No
 		return;
 	}
 
-	/*QMessageBox::information(this, QObject::tr("FET information"), 
-	 QObject::tr("Settings reset to defaults:\n\n"
+	/*QMessageBox::information(this, tr("FET information"), 
+	 tr("Settings reset to defaults:\n\n"
 	  "1. Mainform geometry will be reset\n"
 	  "2. Check for updates is disabled\n"
 	  "3. Language = en_GB (please restart FET to activate language change)\n"
@@ -1498,8 +1512,8 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 void FetMainForm::on_settingsTimetableHtmlLevelAction_activated()
 {
 	if(simulation_running){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 

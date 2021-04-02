@@ -251,16 +251,18 @@ void ModifyActivityForm::removeStudents()
 
 void ModifyActivityForm::subjectChanged(const QString& dummy)
 {
-	if(dummy=="")
-		;
+	Q_UNUSED(dummy);
+	//if(dummy=="")
+	//	;
 
 	activityChanged();
 }
 
 void ModifyActivityForm::subjectTagChanged(const QString& dummy)
 {
-	if(dummy=="")
-		;
+	Q_UNUSED(dummy);
+	//if(dummy=="")
+	//	;
 
 	activityChanged();
 }

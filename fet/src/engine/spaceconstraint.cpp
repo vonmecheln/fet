@@ -90,8 +90,9 @@ ConstraintBasicCompulsorySpace::ConstraintBasicCompulsorySpace(double wp)
 
 bool ConstraintBasicCompulsorySpace::computeInternalStructure(Rules& r)
 {
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 	/*do nothing*/
 	
 	return true;
@@ -99,8 +100,9 @@ bool ConstraintBasicCompulsorySpace::computeInternalStructure(Rules& r)
 
 QString ConstraintBasicCompulsorySpace::getXmlDescription(Rules& r)
 {
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s = "<ConstraintBasicCompulsorySpace>\n";
 	s += "	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -110,8 +112,9 @@ QString ConstraintBasicCompulsorySpace::getXmlDescription(Rules& r)
 
 QString ConstraintBasicCompulsorySpace::getDescription(Rules& r)
 {
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 	
 	QString s = QObject::tr("Basic compulsory constraints (space), WP:%1\%").arg(this->weightPercentage);
 	
@@ -120,8 +123,9 @@ QString ConstraintBasicCompulsorySpace::getDescription(Rules& r)
 
 QString ConstraintBasicCompulsorySpace::getDetailedDescription(Rules& r)
 {
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s=QObject::tr("These are the basic compulsory constraints \n"
 			"(referring to rooms allocation) for any timetable\n");
@@ -324,50 +328,57 @@ double ConstraintBasicCompulsorySpace::fitness(
 
 bool ConstraintBasicCompulsorySpace::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
 
 bool ConstraintBasicCompulsorySpace::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintBasicCompulsorySpace::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintBasicCompulsorySpace::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintBasicCompulsorySpace::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }
 
 bool ConstraintBasicCompulsorySpace::isRelatedToRoom(Room* r)
 {
-	if(r)
-		;
+	Q_UNUSED(r);
+	//if(r)
+	//	;
 
 	return false;
 }
@@ -546,42 +557,48 @@ double ConstraintRoomNotAvailable::fitness(
 
 bool ConstraintRoomNotAvailable::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
 
 bool ConstraintRoomNotAvailable::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintRoomNotAvailable::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintRoomNotAvailable::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintRoomNotAvailable::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }
@@ -642,8 +659,9 @@ bool ConstraintActivityPreferredRoom::computeInternalStructure(Rules& r)
 }
 
 QString ConstraintActivityPreferredRoom::getXmlDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s="<ConstraintActivityPreferredRoom>\n";
 	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
@@ -656,8 +674,9 @@ QString ConstraintActivityPreferredRoom::getXmlDescription(Rules& r){
 }
 
 QString ConstraintActivityPreferredRoom::getDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s="Activity preferred room"; s+=", ";
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
@@ -709,8 +728,9 @@ QString ConstraintActivityPreferredRoom::getDescription(Rules& r){
 }
 
 QString ConstraintActivityPreferredRoom::getDetailedDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s=QObject::tr("Space constraint"); s+="\n";
 	s+=QObject::tr("Activity preferred room"); s+="\n";
@@ -827,34 +847,39 @@ bool ConstraintActivityPreferredRoom::isRelatedToActivity(Activity* a)
 
 bool ConstraintActivityPreferredRoom::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivityPreferredRoom::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivityPreferredRoom::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivityPreferredRoom::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }
@@ -912,8 +937,9 @@ bool ConstraintActivityPreferredRooms::computeInternalStructure(Rules& r)
 }
 
 QString ConstraintActivityPreferredRooms::getXmlDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s="<ConstraintActivityPreferredRooms>\n";
 	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
@@ -928,8 +954,9 @@ QString ConstraintActivityPreferredRooms::getXmlDescription(Rules& r){
 }
 
 QString ConstraintActivityPreferredRooms::getDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	//Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s="Activity preferred rooms"; s+=", ";
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
@@ -982,8 +1009,9 @@ QString ConstraintActivityPreferredRooms::getDescription(Rules& r){
 }
 
 QString ConstraintActivityPreferredRooms::getDetailedDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	//Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s=QObject::tr("Space constraint"); s+="\n";
 	s+=QObject::tr("Activity preferred rooms"); s+="\n";
@@ -1109,34 +1137,39 @@ bool ConstraintActivityPreferredRooms::isRelatedToActivity(Activity* a)
 
 bool ConstraintActivityPreferredRooms::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivityPreferredRooms::isRelatedToSubject(Subject* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivityPreferredRooms::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintActivityPreferredRooms::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }
@@ -1182,8 +1215,9 @@ bool ConstraintSubjectPreferredRoom::computeInternalStructure(Rules& r)
 }
 
 QString ConstraintSubjectPreferredRoom::getXmlDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s="<ConstraintSubjectPreferredRoom>\n";
 	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
@@ -1196,8 +1230,9 @@ QString ConstraintSubjectPreferredRoom::getXmlDescription(Rules& r){
 }
 
 QString ConstraintSubjectPreferredRoom::getDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s="Subject preferred room"; s+=", ";
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
@@ -1208,8 +1243,9 @@ QString ConstraintSubjectPreferredRoom::getDescription(Rules& r){
 }
 
 QString ConstraintSubjectPreferredRoom::getDetailedDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s=QObject::tr("Space constraint"); s+="\n";
 	s+=QObject::tr("Subject preferred room"); s+="\n";
@@ -1289,16 +1325,18 @@ double ConstraintSubjectPreferredRoom::fitness(
 
 bool ConstraintSubjectPreferredRoom::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
 
 bool ConstraintSubjectPreferredRoom::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
@@ -1312,18 +1350,21 @@ bool ConstraintSubjectPreferredRoom::isRelatedToSubject(Subject* s)
 
 bool ConstraintSubjectPreferredRoom::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintSubjectPreferredRoom::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }
@@ -1375,8 +1416,9 @@ bool ConstraintSubjectPreferredRooms::computeInternalStructure(Rules& r)
 }
 
 QString ConstraintSubjectPreferredRooms::getXmlDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s="<ConstraintSubjectPreferredRooms>\n";
 	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
@@ -1391,8 +1433,9 @@ QString ConstraintSubjectPreferredRooms::getXmlDescription(Rules& r){
 }
 
 QString ConstraintSubjectPreferredRooms::getDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s="Subject preferred rooms"; s+=", ";
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
@@ -1406,8 +1449,9 @@ QString ConstraintSubjectPreferredRooms::getDescription(Rules& r){
 }
 
 QString ConstraintSubjectPreferredRooms::getDetailedDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s=QObject::tr("Space constraint"); s+="\n";
 	s+=QObject::tr("Subject preferred rooms"); s+="\n";
@@ -1493,16 +1537,18 @@ double ConstraintSubjectPreferredRooms::fitness(
 
 bool ConstraintSubjectPreferredRooms::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
 
 bool ConstraintSubjectPreferredRooms::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
@@ -1516,18 +1562,21 @@ bool ConstraintSubjectPreferredRooms::isRelatedToSubject(Subject* s)
 
 bool ConstraintSubjectPreferredRooms::isRelatedToSubjectTag(SubjectTag* s)
 {
-	if(s)
-		;
+	Q_UNUSED(s);
+	//if(s)
+	//	;
 
 	return false;
 }
 
 bool ConstraintSubjectPreferredRooms::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }
@@ -1575,8 +1624,9 @@ bool ConstraintSubjectSubjectTagPreferredRoom::computeInternalStructure(Rules& r
 }
 
 QString ConstraintSubjectSubjectTagPreferredRoom::getXmlDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s="<ConstraintSubjectSubjectTagPreferredRoom>\n";
 	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
@@ -1590,8 +1640,9 @@ QString ConstraintSubjectSubjectTagPreferredRoom::getXmlDescription(Rules& r){
 }
 
 QString ConstraintSubjectSubjectTagPreferredRoom::getDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s="Subject subject tag preferred room"; s+=", ";
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
@@ -1603,8 +1654,9 @@ QString ConstraintSubjectSubjectTagPreferredRoom::getDescription(Rules& r){
 }
 
 QString ConstraintSubjectSubjectTagPreferredRoom::getDetailedDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s=QObject::tr("Space constraint"); s+="\n";
 	s+=QObject::tr("Subject subject tag preferred room"); s+="\n";
@@ -1686,16 +1738,18 @@ double ConstraintSubjectSubjectTagPreferredRoom::fitness(
 
 bool ConstraintSubjectSubjectTagPreferredRoom::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
 
 bool ConstraintSubjectSubjectTagPreferredRoom::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
@@ -1716,10 +1770,12 @@ bool ConstraintSubjectSubjectTagPreferredRoom::isRelatedToSubjectTag(SubjectTag*
 
 bool ConstraintSubjectSubjectTagPreferredRoom::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }
@@ -1773,8 +1829,9 @@ bool ConstraintSubjectSubjectTagPreferredRooms::computeInternalStructure(Rules& 
 }
 
 QString ConstraintSubjectSubjectTagPreferredRooms::getXmlDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s="<ConstraintSubjectSubjectTagPreferredRooms>\n";
 	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
@@ -1790,8 +1847,9 @@ QString ConstraintSubjectSubjectTagPreferredRooms::getXmlDescription(Rules& r){
 }
 
 QString ConstraintSubjectSubjectTagPreferredRooms::getDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s="Subject subject tag preferred rooms"; s+=", ";
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
@@ -1806,8 +1864,9 @@ QString ConstraintSubjectSubjectTagPreferredRooms::getDescription(Rules& r){
 }
 
 QString ConstraintSubjectSubjectTagPreferredRooms::getDetailedDescription(Rules& r){
-	if(&r!=NULL)
-		;
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
 
 	QString s=QObject::tr("Space constraint"); s+="\n";
 	s+=QObject::tr("Subject subject tag preferred rooms"); s+="\n";
@@ -1895,16 +1954,18 @@ double ConstraintSubjectSubjectTagPreferredRooms::fitness(
 
 bool ConstraintSubjectSubjectTagPreferredRooms::isRelatedToActivity(Activity* a)
 {
-	if(a)
-		;
+	Q_UNUSED(a);
+	//if(a)
+	//	;
 
 	return false;
 }
 
 bool ConstraintSubjectSubjectTagPreferredRooms::isRelatedToTeacher(Teacher* t)
 {
-	if(t)
-		;
+	Q_UNUSED(t);
+	//if(t)
+	//	;
 
 	return false;
 }
@@ -1925,10 +1986,12 @@ bool ConstraintSubjectSubjectTagPreferredRooms::isRelatedToSubjectTag(SubjectTag
 
 bool ConstraintSubjectSubjectTagPreferredRooms::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	if(s)
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
 		;
 	if(&r)
-		;
+		;*/
 
 	return false;
 }

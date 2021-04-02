@@ -143,83 +143,15 @@ int main(int argc, char **argv){
 	//translator stuff
 	QDir d("/usr/share/fet/translations");
 	
-	if(FET_LANGUAGE=="ro"){
+	bool translation_loaded;
+	
+	if(FET_LANGUAGE=="ar" || FET_LANGUAGE=="ca" || FET_LANGUAGE=="de" || FET_LANGUAGE=="es" || FET_LANGUAGE=="el" || FET_LANGUAGE=="fr"
+	 || FET_LANGUAGE=="hu" || FET_LANGUAGE=="mk" || FET_LANGUAGE=="ms" || FET_LANGUAGE=="nl" || FET_LANGUAGE=="pl" || FET_LANGUAGE=="ro"
+	 || FET_LANGUAGE=="tr"){
 		if(d.exists())
-			translator.load("fet_ro", "/usr/share/fet/translations");
+			translation_loaded=translator.load("fet_"+FET_LANGUAGE, "/usr/share/fet/translations");
 		else
-			translator.load("fet_ro", "translations");
-	}
-	else if(FET_LANGUAGE=="fr"){
-		if(d.exists())
-			translator.load("fet_fr", "/usr/share/fet/translations");
-		else
-			translator.load("fet_fr", "translations");
-	}
-	else if(FET_LANGUAGE=="ca"){
-		if(d.exists())
-			translator.load("fet_ca", "/usr/share/fet/translations");
-		else
-			translator.load("fet_ca", "translations");
-	}
-	else if(FET_LANGUAGE=="ms"){
-		if(d.exists())
-			translator.load("fet_ms", "/usr/share/fet/translations");
-		else
-			translator.load("fet_ms", "translations");
-	}
-	else if(FET_LANGUAGE=="pl"){
-		if(d.exists())
-			translator.load("fet_pl", "/usr/share/fet/translations");
-		else
-			translator.load("fet_pl", "translations");
-	}
-	else if(FET_LANGUAGE=="tr"){
-		if(d.exists())
-			translator.load("fet_tr", "/usr/share/fet/translations");
-		else
-			translator.load("fet_tr", "translations");
-	}
-	else if(FET_LANGUAGE=="nl"){
-		if(d.exists())
-			translator.load("fet_nl", "/usr/share/fet/translations");
-		else
-			translator.load("fet_nl", "translations");
-	}
-	else if(FET_LANGUAGE=="de"){
-		if(d.exists())
-			translator.load("fet_de", "/usr/share/fet/translations");
-		else
-			translator.load("fet_de", "translations");
-	}
-	else if(FET_LANGUAGE=="hu"){
-		if(d.exists())
-			translator.load("fet_hu", "/usr/share/fet/translations");
-		else
-			translator.load("fet_hu", "translations");
-	}
-	else if(FET_LANGUAGE=="mk"){
-		if(d.exists())
-			translator.load("fet_mk", "/usr/share/fet/translations");
-		else
-			translator.load("fet_mk", "translations");
-	}
-	else if(FET_LANGUAGE=="es"){
-		if(d.exists())
-			translator.load("fet_es", "/usr/share/fet/translations");
-		else
-			translator.load("fet_es", "translations");
-	}
-	else if(FET_LANGUAGE=="el"){
-		if(d.exists())
-			translator.load("fet_el", "/usr/share/fet/translations");
-		else
-			translator.load("fet_el", "translations");
-	}
-	else if(FET_LANGUAGE=="ar"){
-		if(d.exists())
-			translator.load("fet_ar", "/usr/share/fet/translations");
-		else
-			translator.load("fet_ar", "translations");
+			translation_loaded=translator.load("fet_"+FET_LANGUAGE, qapplication.applicationDirPath()+"/translations");
 	}
 	else{
 		if(FET_LANGUAGE!="en_GB"){
@@ -229,6 +161,14 @@ int main(int argc, char **argv){
 		}
 		
 		assert(FET_LANGUAGE=="en_GB");
+		
+		translation_loaded=true;
+	}
+	
+	if(!translation_loaded){
+		QMessageBox::warning(NULL, QObject::tr("FET warning"), 
+		 QObject::tr("Translation for specified language not loaded - this is an error, maybe translation file is missing - making language en_GB (English)"));
+		FET_LANGUAGE="en_GB";
 	}
 	
 	if(FET_LANGUAGE=="ar" || FET_LANGUAGE=="he" /* or others??? */){
@@ -249,6 +189,12 @@ int main(int argc, char **argv){
 		LANGUAGE_FOR_HTML=FET_LANGUAGE.left(2);
 		
 	qapplication.installTranslator(&translator);	
+	
+	/*QTranslator qtTranslator;
+	qtTranslator.load("qt_" + FET_LANGUAGE, qapplication.applicationDirPath());
+	qapplication.installTranslator(&qtTranslator);*/
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==true)
+		qapplication.setLayoutDirection(Qt::RightToLeft);
 	
 	if(checkForUpdates==-1){
 		/*int t=QMessageBox::question(NULL, QObject::tr("FET question"),
