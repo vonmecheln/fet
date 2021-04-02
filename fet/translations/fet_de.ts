@@ -10492,105 +10492,105 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>AllSpaceConstraintsForm</name>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="562"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="567"/>
         <source>%1 Space Constraints</source>
         <comment>%1 represents the number of constraints</comment>
         <translation>%1 Raumeinschränkungen</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="308"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="512"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="646"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="686"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="756"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="517"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="651"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="696"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="771"/>
         <source>FET information</source>
         <translation>FET-Information</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="285"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="676"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="721"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="684"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="734"/>
         <source>%1 / %2 space constraints</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation>%1 / %2 Raumeinschränkungen</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="308"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="512"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="646"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="686"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="756"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="517"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="651"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="696"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="771"/>
         <source>Invalid selected constraint</source>
         <translation>Ungültige Einschränkung</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="489"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="492"/>
         <source>FET critical</source>
         <translation>FET Kritische Meldung</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="489"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="492"/>
         <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recognized in all space constraints dialog. FET will skip this error, so that you can continue work. Probably the constraint can be modified from the specific constraint dialog.</source>
         <translation>Sie haben einen Fehler in FET aufgedeckt! Bitte teilen Sie den Fehler mit. Diese Art von Einschränkung wird vom Dialog „Raumeinschränkungen“ nicht erkannt. Sie können mit FET aber weiterarbeiten, da ihre Daten wahrscheinlich nicht betroffen sind. Vermutlich kann die Einschränkung im entsprechenden Dialog bearbeitet werden.</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="519"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="524"/>
         <source>Remove constraint?</source>
         <translation>Einschränkung entfernen?</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="527"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="532"/>
         <source>FET confirmation</source>
         <translation>FET-Rückmeldung</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="528"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="533"/>
         <source>Yes</source>
         <translation>Ja</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="528"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="533"/>
         <source>No</source>
         <translation>Nein</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="536"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="541"/>
         <source>Do you really want to remove the basic compulsory space constraint?</source>
         <translation>Möchten Sie wirklich die grundlegende Raumeinschränkung löschen?</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="538"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="543"/>
         <source>You cannot generate a timetable without this constraint.</source>
         <translation>Sie können keinen Stundenplan ohne diese Einschränkung erstellen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="540"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="545"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
         <translation>Bemerkung: Diese Art von Einschränkung kann über das Menü „Daten-&gt;Raumeinschränkungen-&gt;Verschiedenes-&gt;Grundlegende verpflichtende Einschränkungen von Räumen“ setzen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="543"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="695"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="548"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="708"/>
         <source>FET warning</source>
         <translation>FET-Warnung</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="695"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="708"/>
         <source>You are not allowed to deactivate the basic compulsory space constraints</source>
         <translation>Die grundlegenden Pflichteinschränkungen dürfen nicht deaktiviert werden!</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="765"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="780"/>
         <source>Constraint comments</source>
         <translation>Kommentar der Einschränkung</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="767"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="782"/>
         <source>OK</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="769"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="784"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
@@ -10660,105 +10660,105 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>AllTimeConstraintsForm</name>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="841"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="846"/>
         <source>%1 Time Constraints</source>
         <comment>%1 represents the number of constraints</comment>
         <translation>%1 Zeiteinschränkungen</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="356"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="788"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="925"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="965"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1035"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="793"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="930"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="975"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1050"/>
         <source>FET information</source>
         <translation>FET-Information</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="333"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="955"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1000"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="963"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1013"/>
         <source>%1 / %2 time constraints</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation>%1 / %2 Zeiteinschränkungen</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="356"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="788"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="925"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="965"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1035"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="793"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="930"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="975"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1050"/>
         <source>Invalid selected constraint</source>
         <translation>Ungültige Einschränkung</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="765"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="768"/>
         <source>FET critical</source>
         <translation>FET Kritische Meldung</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="765"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="768"/>
         <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recognized in all time constraints dialog. FET will skip this error, so that you can continue work. Probably the constraint can be modified from the specific constraint dialog.</source>
         <translation>Sie haben einen Fehler in FET aufgedeckt! Bitte teilen Sie den Fehler mit. Diese Art von Einschränkung wird vom Dialog „Alle Zeiteinschränkungen“ nicht erkannt. Sie können mit FET aber weiterarbeiten, da ihre Daten wahrscheinlich nicht betroffen sind. Vermutlich kann die Einschränkung im entsprechenden Dialog bearbeitet werden.</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="796"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="801"/>
         <source>Remove constraint?</source>
         <translation>Einschränkung entfernen?</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="806"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="811"/>
         <source>FET confirmation</source>
         <translation>FET-Rückmeldung</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="807"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="812"/>
         <source>Yes</source>
         <translation>Ja</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="807"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="812"/>
         <source>No</source>
         <translation>Nein</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="815"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="820"/>
         <source>Do you really want to remove the basic compulsory time constraint?</source>
         <translation>Möchten Sie wirklich die grundlegende Zeiteinschränkung löschen?</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="817"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="822"/>
         <source>You cannot generate a timetable without this constraint.</source>
         <translation>Sie können keinen Stundenplan ohne diese Einschränkung erstellen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="819"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="824"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
         <translation>Bemerkung: Diese Art Einschränkung kann über das Menü „Daten-&gt;Zeiteinschränkungen-&gt;Verschiedenes-&gt;Grundlegende verpflichtende Einschränkungen von Zeit“ wieder gesetzt werden.</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="822"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="974"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="827"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="987"/>
         <source>FET warning</source>
         <translation>FET-Warnung</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="974"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="987"/>
         <source>You are not allowed to deactivate the basic compulsory time constraints</source>
         <translation>Die grundlegenden Pflichteinschränkungen von Zeit dürfen nicht deaktiviert werden!</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1044"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1059"/>
         <source>Constraint comments</source>
         <translation>Kommentar der Einschränkung</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1046"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1061"/>
         <source>OK</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1048"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1063"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
@@ -28592,7 +28592,7 @@ Der Datenimport ist mit diesen Werten einfacher.</translation>
 <context>
     <name>FetMainForm</name>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2030"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2032"/>
         <source>Statistics for students might be the most difficult to understand. If you are using divisions of years: probably the most relevant statistics are the ones for each subgroup (so you may check only subgroups check box). You may see more hours for the years or groups, but these are not significant, please ignore them, because each year or group will count also activities of all contained subgroups.
 
 Each subgroup should have a number of hours per week close to the average of all subgroups and close to the normal number of working hours of each students set. If a subgroup has a much lower value, maybe you used incorrectly the years/groups/subgroups for activities.
@@ -28609,564 +28609,564 @@ Sie werden im FAQ eine detaillierte Beschreibung der Funktionsweise von Aufteilu
 Wenn eine Teilgruppe zuwenig Lektionen pro Woche aufweist, bedeutet es wohl, dass die Aktivitäten nicht richtig eingerichtet wurden oder evtl. gewisse Einschränkungen wie „keine (oder keine frühe) Freistunden pro Tag“ oder „min. Anzahl an Stunden pro Tag“ falsch interpretiert werden (wenn eine Teilgruppe nur 2 Aktivitäten hat, müssen diese in den ersten Stunden verplant werden, was zu schwer und nicht richtig ist).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2066"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2068"/>
         <source>FET - information about statistics</source>
         <translation>FET - Information über Statistik</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3754"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3756"/>
         <source>OK</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="797"/>
-        <location filename="../src/interface/fetmainform.cpp" line="818"/>
-        <location filename="../src/interface/fetmainform.cpp" line="962"/>
-        <location filename="../src/interface/fetmainform.cpp" line="979"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1005"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1580"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3443"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3453"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3463"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3580"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3601"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3605"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3641"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3662"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3666"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3786"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3843"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4388"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4438"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4468"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4493"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4515"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4542"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4564"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4585"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4609"/>
+        <location filename="../src/interface/fetmainform.cpp" line="799"/>
+        <location filename="../src/interface/fetmainform.cpp" line="820"/>
+        <location filename="../src/interface/fetmainform.cpp" line="964"/>
+        <location filename="../src/interface/fetmainform.cpp" line="981"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1007"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1582"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3445"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3455"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3465"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3582"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3603"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3607"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3643"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3664"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3668"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3788"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3845"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4390"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4440"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4470"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4495"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4517"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4544"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4566"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4587"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4611"/>
         <source>FET warning</source>
         <translation>FET-Warnung</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="776"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1000"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1093"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1154"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1166"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1238"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1283"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1289"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1295"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1368"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1372"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1376"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1418"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1427"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1436"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1445"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1460"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1469"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1478"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1554"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1558"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1562"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1690"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1765"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1778"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1791"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1804"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1817"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1837"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1857"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1870"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1883"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1896"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2019"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2072"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2085"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2098"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2111"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2124"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2137"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2150"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2163"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2176"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2189"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2202"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2215"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2228"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2241"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2254"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2267"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2280"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2293"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2306"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2319"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2332"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2345"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2358"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2371"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2384"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2397"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2410"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2423"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2436"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2449"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2462"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2476"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2489"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2503"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2516"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2530"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2543"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2556"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2569"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2582"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2595"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2608"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2620"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2633"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2646"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2659"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2672"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2685"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2698"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2711"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2724"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2737"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2750"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2763"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2776"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2789"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2802"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2815"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2828"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2841"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2854"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2867"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2880"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2893"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2906"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2919"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2932"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2945"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2963"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2981"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2994"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3007"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3020"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3033"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3046"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3058"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3071"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3089"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3107"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3120"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3133"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3146"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3159"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3172"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3185"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3198"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3211"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3224"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3237"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3250"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3263"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3281"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3299"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3312"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3325"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3338"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3351"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3364"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3377"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3390"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3404"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3418"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3519"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3531"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3544"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3550"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3562"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3575"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3596"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3621"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3636"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3657"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3681"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3692"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3705"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3716"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3729"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3739"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4203"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4236"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4263"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4336"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4347"/>
+        <location filename="../src/interface/fetmainform.cpp" line="778"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1002"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1095"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1156"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1168"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1240"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1285"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1291"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1297"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1370"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1374"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1378"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1420"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1429"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1438"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1447"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1462"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1471"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1480"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1556"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1560"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1564"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1692"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1767"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1780"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1793"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1806"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1819"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1839"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1859"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1872"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1885"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1898"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2021"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2074"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2087"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2100"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2113"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2126"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2139"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2152"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2165"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2178"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2191"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2204"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2217"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2230"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2243"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2256"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2269"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2282"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2295"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2308"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2321"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2334"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2347"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2360"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2373"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2386"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2399"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2412"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2425"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2438"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2451"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2464"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2478"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2491"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2505"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2518"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2532"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2545"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2558"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2571"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2584"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2597"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2610"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2622"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2635"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2648"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2661"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2674"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2687"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2700"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2713"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2726"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2739"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2752"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2765"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2778"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2791"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2804"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2817"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2830"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2843"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2856"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2869"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2882"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2895"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2908"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2921"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2934"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2947"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2965"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2983"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2996"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3009"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3022"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3035"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3048"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3060"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3073"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3091"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3109"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3122"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3135"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3148"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3161"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3174"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3187"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3200"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3213"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3226"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3239"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3252"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3265"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3283"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3301"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3314"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3327"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3340"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3353"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3366"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3379"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3392"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3406"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3420"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3521"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3533"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3546"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3552"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3564"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3577"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3598"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3623"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3638"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3659"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3683"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3694"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3707"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3718"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3731"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3741"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4205"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4238"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4265"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4338"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4349"/>
         <source>FET information</source>
         <translation>FET-Information</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="768"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3054"/>
+        <location filename="../src/interface/fetmainform.cpp" line="770"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3056"/>
         <source>Explanation:</source>
         <translation>Erklärung:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="772"/>
+        <location filename="../src/interface/fetmainform.cpp" line="774"/>
         <source>For some situations, the generation of the timetable may take too long or be impossible.</source>
         <translation>Das erstellen eines Planes kann sehr lange dauern oder sogar unmöglich sein.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="774"/>
+        <location filename="../src/interface/fetmainform.cpp" line="776"/>
         <source>Use with caution.</source>
         <translation>Benutze es daher nur mir Vorsicht.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="957"/>
+        <location filename="../src/interface/fetmainform.cpp" line="959"/>
         <source>Searching for file %1.</source>
         <translation>Suche nach Datei %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="972"/>
+        <location filename="../src/interface/fetmainform.cpp" line="974"/>
         <source>The file %1 from the FET homepage, indicating the current FET version, is incorrect.</source>
         <translation>Die Datei %1 von der FET Homepage ist fehlerhaft.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="997"/>
+        <location filename="../src/interface/fetmainform.cpp" line="999"/>
         <source>Additional comments: %1</source>
         <translation>Zusätzliche Bemerkungen: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1034"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1036"/>
         <source>FET - exiting</source>
         <translation>FET - Beenden</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4036"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4038"/>
         <source>&amp;Yes</source>
         <translation>&amp;Ja</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4036"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4038"/>
         <source>&amp;No</source>
         <translation>&amp;No</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4275"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4296"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4277"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4298"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Abbrechen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1094"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1155"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1167"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1239"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1419"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1428"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1437"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1446"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1461"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1470"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1479"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1766"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1779"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1792"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1805"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1818"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1838"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1858"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1871"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1884"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1897"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2073"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2086"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2099"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2112"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2125"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2138"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2151"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2164"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2177"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2190"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2203"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2216"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2229"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2242"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2255"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2268"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2281"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2294"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2307"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2320"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2333"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2346"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2359"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2372"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2385"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2398"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2411"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2424"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2437"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2450"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2463"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2477"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2490"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2504"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2517"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2531"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2544"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2557"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2570"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2583"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2596"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2609"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2621"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2634"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2647"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2660"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2673"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2686"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2699"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2712"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2725"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2738"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2751"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2764"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2777"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2790"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2803"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2816"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2829"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2842"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2855"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2868"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2881"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2894"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2907"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2920"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2933"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2946"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2964"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2982"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2995"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3008"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3021"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3034"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3047"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3072"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3090"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3108"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3121"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3134"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3147"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3160"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3173"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3186"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3199"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3212"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3225"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3238"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3251"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3264"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3282"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3300"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3313"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3326"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3339"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3352"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3365"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3378"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3391"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3405"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3419"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3520"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3545"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4204"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4237"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4264"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4337"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4348"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1096"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1157"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1169"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1241"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1421"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1430"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1439"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1448"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1463"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1472"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1481"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1768"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1781"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1794"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1807"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1820"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1840"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1860"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1873"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1886"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1899"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2075"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2088"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2101"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2114"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2127"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2140"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2153"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2166"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2179"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2192"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2205"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2218"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2231"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2244"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2257"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2270"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2283"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2296"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2309"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2322"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2335"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2348"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2361"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2374"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2387"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2400"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2413"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2426"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2439"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2452"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2465"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2479"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2492"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2506"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2519"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2533"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2546"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2559"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2572"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2585"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2598"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2611"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2623"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2636"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2649"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2662"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2675"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2688"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2701"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2714"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2727"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2740"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2753"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2766"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2779"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2792"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2805"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2818"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2831"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2844"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2857"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2870"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2883"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2896"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2909"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2922"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2935"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2948"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2966"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2984"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2997"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3010"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3023"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3036"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3049"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3074"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3092"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3110"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3123"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3136"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3149"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3162"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3175"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3188"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3201"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3214"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3227"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3240"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3253"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3266"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3284"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3302"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3315"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3328"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3341"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3354"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3367"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3380"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3393"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3407"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3421"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3522"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3547"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4206"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4239"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4266"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4339"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4350"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>Berechnung läuft.
 Bitte stoppe vorher die Berechnung.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1176"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1248"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1178"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1250"/>
         <source>FET application</source>
         <translation>FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1284"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1286"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Bitte keine Anführungszeichen &quot; im Dateinamen benutzen, die html und css Dateien funktionieren sonst nicht. Die Datei wurde nicht geladen. Bitte benenne sie um und öffne sie erneut.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1290"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1292"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Bitte keine Semikolon ; im Dateinamen benutzen, die html und css Dateien funktionieren sonst nicht. Die Datei wurde nicht geladen. Bitte benenne sie um und öffne sie erneut.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1296"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1298"/>
         <source>Please do not use # in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Bitte keine Raute # im Dateinamen benutzen, die html und css Dateien funktionieren sonst nicht. Die Datei wurde nicht geladen. Bitte benenne sie um und öffne sie erneut.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1357"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1359"/>
         <source>Choose a filename to save under</source>
         <translation>Wählen Sie einen Dateinamen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1368"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1554"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1370"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1556"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work</source>
         <translation>Bitte keine Anführungszeichen &quot; im Dateinamen beutzen, weil die html und css Dateien sonst nicht funktionieren</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1372"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1558"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1374"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1560"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work</source>
         <translation>Bitte keine Semikolon ; im Dateinamen beutzen, weil die html und css Dateien sonst nicht funktionieren</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1376"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1562"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1378"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1564"/>
         <source>Please do not use # in filename, the html css code does not work</source>
         <translation>Bitte keine Raute # im Dateinamen beutzen, weil die html und css Dateien sonst nicht funktionieren</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1387"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1389"/>
         <source>FET</source>
         <translation>FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1543"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1545"/>
         <source>Choose a filename for data and timetable</source>
         <translation>Wähle einen Dateinamen für Daten und Stundenplan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1654"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1679"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1656"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1681"/>
         <source>Added to the saved file:</source>
         <comment>It refers to a constraint</comment>
         <translation>Zur gespeicherten Datei hinzugefügt:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1656"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1681"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1658"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1683"/>
         <source>NOT added to the saved file (already existing):</source>
         <comment>It refers to a constraint</comment>
         <translation>NICHT zur gespeicherten Datei hinzugefügt:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1690"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1692"/>
         <source>Added %1 locking time constraints and %2 locking space constraints to saved file, ignored %3 activities which were already fixed in time and %4 activities which were already fixed in space.</source>
         <translation>Es wurden %1 sperrende Zeiteinschränkungen und %2 sperrende Raumeinschränkungen zur gespeicherten Datei hinzugefügt.%3 Zeiteinschränkungen und %4 Raumeinschränkungen wurden nicht hinzugefügt, weil diese Aktivitäten schon gesperrt waren.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1692"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1694"/>
         <source>Detailed information about each locking constraint which was added or not (if already existing) to the saved file:</source>
         <translation>Einzelheiten über jede sperrende Einschränkung, die zur gespeicherten Datei hinzugefügt wurde (falls nicht schon vorhanden):</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1693"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1695"/>
         <source>Your current data file remained untouched (no locking constraints were added), so you can save it also, or generate different timetables.</source>
         <translation>Die aktuelle Datei ist nicht verändert worden (keine sperrenden Einschränkungen wurden hinzugefügt). Sie können sie entweder speichern oder auch neue Stundenpläne generieren.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1938"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1940"/>
         <source>Seed of random number generator: please read the help in the dialog of this option</source>
         <translation>Startwert des Zufallsgenerators: Bitte lesen Sie den Hilfedialog für diese Option</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1941"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1943"/>
         <source>Interface - use colors: the places with colors in FET interface are in:</source>
         <translation>Oberfläche mit Farben: Die Orte, an denen FET Farben benutzt sind:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1948"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1950"/>
         <source>activities and subactivities dialogs, the inactive activities will have a distinctive background color</source>
         <translation>Aktivitäten und Teilaktivitäten Dialoge. Inaktive Aktivitäten haben eine Hintergrundfarbe</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1957"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1959"/>
         <source>Enable activity tag max hours daily:</source>
         <translation>Ermögliche maximale Anzahl an Stunden für eine Aktivitätskennzeichnung pro Tag:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1959"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1961"/>
         <source>This will enable the menu for 4 constraints: teacher(s) or students (set) activity tag max hours daily. These 4 constraints are good, but not perfect and may bring slow down of generation or impossible timetables if used unproperly. Select only if you know what you&apos;re doing.</source>
         <translation>Dieser Vorgang aktiviert das Menü für 4 Einschränkungen „Max. n Stunden pro Tag“ für Lehrer, Schüler(gruppen) und Aktivitätskennzeichnungen. Diese vier Einschränkungen sind gut, aber nicht perfekt; möglicherweise wird die Stundenplanberechnung verlangsamt oder verunmöglicht, falls sie nicht richtig eingerichtet wurden. Setzen Sie sie also nur dann ein, wenn Sie deren Funktionsweise verstehen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1962"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1964"/>
         <source>Enable students max gaps per day:</source>
         <translatorcomment>Ermögliche maximale Anzahl an Freistunden pro Tag für Schüler:</translatorcomment>
         <translation>Aktivieren von „Max. n Freistunden pro Tag“ für Schüler:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1964"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1966"/>
         <source>This will enable the menu for 2 constraints: students (set) max gaps per day. These 2 constraints are good, but not perfect and may bring slow down of generation or impossible timetables if used unproperly. Select only if you know what you&apos;re doing.</source>
         <translation>Dieser Vorgang aktiviert das Menü für 2 Einschränkungen „Max. n Freistunden pro Tag“ für Schüler(gruppen). Diese zwei Einschränkungen sind gut, aber nicht perfekt; möglicherweise wird die Stundenplanberechnung verlangsamt oder verunmöglicht, falls sie nicht richtig eingerichtet wurden. Setzen Sie sie also nur dann ein, wenn Sie deren Funktionsweise verstehen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1968"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1970"/>
         <source>Warn if using not perfect constraints:</source>
         <comment>this is a warning if user uses not perfect constraints</comment>
         <translation>Warne wenn nicht perferkte Einschränkungen benutzt werden:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2026"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2028"/>
         <source>You will find in the statistics only active activities count. The inactive ones are not counted.</source>
         <translation>In der Statistik steht nur die Anzahl der aktiven Aktivitäten; deaktivierte Aktivitäten werden nicht gezählt.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3473"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3475"/>
         <source>FET homepage: %1</source>
         <comment>%1 is FET homepage, begins with http://...</comment>
         <translation>FET-Webseite: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3477"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3479"/>
         <source>Forum: %1</source>
         <comment>%1 is web page of FET forum, begins with http://...</comment>
         <translation>Forum: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3479"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3481"/>
         <source>Additionally, you may find on the FET homepage other contact information.</source>
         <translation>Außerdem finden Sie auf der FET-Webseite andere Kontaktmöglichkeiten.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3575"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3596"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3621"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3636"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3657"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3681"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3705"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3729"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3739"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3577"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3598"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3623"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3638"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3659"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3683"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3707"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3731"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3741"/>
         <source>Please generate, firstly</source>
         <translation>Bitte erst einen Plan generieren</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3580"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3601"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3641"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3662"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3582"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3603"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3643"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3664"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation>Der Stundenplan kann nicht angezeigt werden, weil Räume hinzugefügt oder gelöscht wurden. Bitte (re-)generieren Sie zuerst einen Plan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3605"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3666"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3607"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3668"/>
         <source>Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it</source>
         <translation>Der Stundenplan kann nicht angezeigt werden, weil Lehrer hinzugefügt oder gelöscht wurden. Bitte (re-)generieren Sie zuerst einen Plan</translation>
     </message>
@@ -29186,545 +29186,545 @@ Bitte stoppe vorher die Berechnung.</translation>
         <translation>Galizisch</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3882"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3884"/>
         <source>Use colors in FET graphical user interface will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Benutze Farben in der Oberfläche wird %1 sein</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3886"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3907"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3888"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3909"/>
         <source>Language will be %1</source>
         <comment>%1 is the default language</comment>
         <translation>Die Sprache wird %1 sein</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3950"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3952"/>
         <source>Warn if using not perfect constraints will be %1</source>
         <comment>%1 is true or false. This is a warning if user uses not perfect constraints</comment>
         <translation>Warne bei nicht perfekten Einschränkungen wird %1 sein</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3953"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3955"/>
         <source>Enable constraints students min hours daily with empty days will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Ermögliche „Min. Stunden pro Tag“ bei Schülern mit freien (leeren) Tagen wird: = %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3967"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3969"/>
         <source>Confirm save data and timetable as will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Bestätigen des Speicherns von Daten und Stundenplan wird: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4429"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4459"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4431"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4461"/>
         <source>These kinds of constraints are good, but not perfectly optimized. Adding such constraints may make your timetable solve too slow or even impossible.</source>
         <translation>Diese Einschränkungen sind möglich, aber wurden nicht perfekt implementiert. Solche Einschränkungen machen das Lösen der Pläne sehr langsam oder unmöglich.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4432"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4462"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4434"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4464"/>
         <source>It is recommended to use such constraints only at the end, after you generated successfully with all the other constraints.</source>
         <translation>Es wird empfohlen, solche Einschränkungen erst am Schluß, nach erfolgreicher Generierung mit allen anderen Einschränkungen einzusetzen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4434"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4464"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4436"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4466"/>
         <source>If your timetable is too difficult, it may be from these kinds of constraints, so you may need to remove them and retry.</source>
         <translation>Wenn der Stundenplan zu schwierig wird, kann es an diesen Einschränkungen liegen. Entfernen Sie diese und versuchen Sie es erneut.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4436"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4466"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4540"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4583"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4438"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4468"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4542"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4585"/>
         <source>Continue only if you know what you are doing.</source>
         <translation>Bitte, diesen Vorgang nur mit Bedacht fortsetzen!</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4487"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4509"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4558"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4603"/>
-        <source>It is recommended to keep this warning active, but if you really want, you can disable it.</source>
-        <translation>Es wird empfohlen, diese Warnung aktiviert zu lassen. Sie können sie aber auch deaktivieren, wenn Sie es wirklich möchten.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="4489"/>
         <location filename="../src/interface/fetmainform.cpp" line="4511"/>
         <location filename="../src/interface/fetmainform.cpp" line="4560"/>
         <location filename="../src/interface/fetmainform.cpp" line="4605"/>
-        <source>Disable it only if you know what you are doing.</source>
-        <translation>Bitte, nur mit Bedacht deaktivieren!</translation>
+        <source>It is recommended to keep this warning active, but if you really want, you can disable it.</source>
+        <translation>Es wird empfohlen, diese Warnung aktiviert zu lassen. Sie können sie aber auch deaktivieren, wenn Sie es wirklich möchten.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="4491"/>
         <location filename="../src/interface/fetmainform.cpp" line="4513"/>
         <location filename="../src/interface/fetmainform.cpp" line="4562"/>
         <location filename="../src/interface/fetmainform.cpp" line="4607"/>
+        <source>Disable it only if you know what you are doing.</source>
+        <translation>Bitte, nur mit Bedacht deaktivieren!</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4493"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4515"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4564"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4609"/>
         <source>Are you sure you want to disable it?</source>
         <translation>Sind Sie sicher, dass Sie sie deaktivieren möchten?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3531"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3533"/>
         <source>Please input at least one active activity before generating</source>
         <translation>Bitte geben Sie mindestens eine Aktivität ein bevor sie einen Plan generieren</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3562"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3564"/>
         <source>Please input at least one active activity before generating multiple</source>
         <translation>Bitte geben Sie mindestens eine Aktivität ein bevor Sie Pläne generieren</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1489"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1499"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1507"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1491"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1501"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1509"/>
         <source>FET - Warning</source>
         <translation>FET-Warnung</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1489"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1491"/>
         <source>You have not yet generated a timetable - please generate firstly</source>
         <translation>Sie haben noch keinen Plan erstellen lassen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1499"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1507"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1501"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1509"/>
         <source>It seems that you have an incomplete timetable. Saving of timetable does not work for incomplete timetables. Please generate a complete timetable</source>
         <translation>Der Plan ist noch nicht vollständig gelöst. Speichern eines Planes funktioniert nur mit gelösten Plänen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1573"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1575"/>
         <source>File exists</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1575"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1577"/>
         <source>For safety (so you don&apos;t lose work), it is not allowed to overwrite an existing file with locking and saving a current data+timetable</source>
         <translation>Zur Sicherheit (um Datenverlust zu vermeiden) ist es nicht erlaubt eine existierende Datei mit gestgelegten Zeiten zu überschreiben</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1578"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1580"/>
         <source>Please choose a non-existing name</source>
         <translation>Bitte wähle einen nicht existierenden Namen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3863"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3865"/>
         <source>Are you sure you want to reset all settings to defaults?</source>
         <translation>Sollen alle Einstellungen zurückgesetzt werden?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1219"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1221"/>
         <source>New file generated</source>
         <translation>Eine neue Datei wurde erstellt</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="766"/>
+        <location filename="../src/interface/fetmainform.cpp" line="768"/>
         <source>Constraint is not enabled. To use this type of constraint you must enable it from the Settings-&gt;Advanced menu.</source>
         <translation>Die Einschränkung ist deaktiviert. Um diese Art von Einschränkung zu verwenden, muss sie zuerst im Menü „Einstellungen/Erweitert“ aktiviert werden.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1123"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1125"/>
         <source>%1[*] - FET</source>
         <comment>The title of the main window, %1 is the name of the current file. Please keep the string [*] unmodified (three characters) - it is used to make the difference between modified files and unmodified files.</comment>
         <translation>%1[*] - FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1323"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1325"/>
         <source>File opened</source>
         <translation>Datei wurde geöffnet</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1401"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1748"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1403"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1750"/>
         <source>File saved</source>
         <translation>Datei wurde gespeichert</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1970"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1972"/>
         <source>If you use a not perfect constraint (activity tag max hours daily or students max gaps per day), you&apos;ll get a warning before generating. Uncheck this option to get rid of that warning (it is recommended to keep the warning).</source>
         <translation>Wenn eine Einschränkung nicht perfekt ist („Max. Stunden pro Tag für Aktivitätskennzeichnungen“ oder „Max. Freistunden pro Tag für Schüler“), wird vor der Generierung eine Warnung ausgegeben. Entfernen Sie das Häkchen, um diese Warnung abzuschalten (obwohl es empfohlen wird, sie aktiviert zu lassen).</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="729"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3886"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3888"/>
         <source>US English</source>
         <translation>US-Englisch</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3786"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3788"/>
         <source>Invalid current language - making it en_US (US English)</source>
         <translation>Ungültige Sprache - US-Englisch (en_US) wird verwendet</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3843"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3845"/>
         <source>Invalid language selected - making it en_US (US English)</source>
         <translation>Ungültige Sprachauswahl - US-Englisch (en_US) wird verwendet</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3872"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3926"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3929"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3941"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3950"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3957"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3961"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3874"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3928"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3931"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3943"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3952"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3959"/>
         <location filename="../src/interface/fetmainform.cpp" line="3963"/>
         <location filename="../src/interface/fetmainform.cpp" line="3965"/>
         <location filename="../src/interface/fetmainform.cpp" line="3967"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3973"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3977"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3969"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3975"/>
         <location filename="../src/interface/fetmainform.cpp" line="3979"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3984"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3988"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3991"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3994"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3997"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4000"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4003"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4007"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4010"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4013"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4016"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4019"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4022"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4025"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4028"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4032"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3981"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3986"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3990"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3993"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3996"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3999"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4002"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4005"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4009"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4012"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4015"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4018"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4021"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4024"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4027"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4030"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4034"/>
         <source>true</source>
         <translation>wahr</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3872"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3874"/>
         <source>Show shortcut buttons in main window will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>„Zeige Schnellzugriffstasten“ im Hauptfenster wird: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3875"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3877"/>
         <source>In the shortcuts tab from the main window, the first section will be selected/shown</source>
         <comment>Option refers to the main window tab widget for shortcuts, which currently contains 5 tabs: File, Data, Time, Space, Timetable (so it will select/show File tab).</comment>
         <translation>Erste Registerseite unter der Reiterleiste im Hauptfenster wird angezeigt</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3879"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3881"/>
         <source>Check for updates at startup will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>„Nach aktuelleren Versionen beim Starten suchen“ wird: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3914"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3916"/>
         <source>Working directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>Das Arbeitsverzeichnis ist nun %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3917"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3919"/>
         <source>Output directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>Das Ausgabeverzeichnis ist nun %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3920"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3922"/>
         <source>Import directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>Das Importverzeichnis ist nun %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3923"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3925"/>
         <source>Html level of the timetables will be %1</source>
         <comment>%1 is default html level</comment>
         <translation>HTML Stufe für Stundenpläne ist nun %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3926"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3928"/>
         <source>Mark not available slots with -x- in timetables will be %1</source>
         <comment>%1 is true or false. Lowercase -x-</comment>
         <translation>Markierte Zellen von nicht verfügbaren Zeiten mit -x- in den Stundenplänen wird %1 sein</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3929"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3931"/>
         <source>Mark break slots with -X- in timetables will be %1</source>
         <comment>%1 is true or false. Uppercase -X-</comment>
         <translation>Markiere Zellen von Pausen mit -X- in den Stundenplänen wird %1 sein</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3932"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3934"/>
         <source>Divide html timetables with time-axis by days will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>„Teile HTML-Stundenpläne mit Zeitachsen nach Tagen“ wird: %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3935"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3937"/>
         <source>Duplicate vertical headers to the right will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>„Zeilenüberschriften auf der rechten Seite duplizieren“ wird: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3938"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3940"/>
         <source>Print activities with same starting time will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Drucke gekoppelte Aktivitäten in die Pläne wird %1 sein</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3944"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3946"/>
         <source>Enable activity tag max hours daily will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Ermögliche maximale Anzahl an Stunden für eine Aktivitätskennzeichnung pro Tag wird %1 sein</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3947"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3949"/>
         <source>Enable students max gaps per day will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Ermögliche maximale Anzahl an Freistunden pro Tag für Schüler wird %1 sein</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4024"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4026"/>
         <source>44</source>
         <translation>44</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4027"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4029"/>
         <source>45</source>
         <translation>45</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4030"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4032"/>
         <source>Show tool tips for constraints with tables will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>„ToolTip-Texte für Einschränkungen mit Tabellen einblenden“ wird: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4030"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4032"/>
         <source>46</source>
         <translation>46</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4032"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4034"/>
         <source>Show warning for subgroups with the same activities will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>„Warne bei Teilgruppen mit gleichen Aktivitäten“ wird: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4032"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4034"/>
         <source>47</source>
         <translation>47</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4270"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4272"/>
         <source>You have more than 6 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation>Sie haben mehr als 6 Tage pro Woche, daher benötigen Sie diese Option wahrscheinlcih nicht. Möchten Sie trozdem fortfahren?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4273"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4294"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4275"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4296"/>
         <source>FET question</source>
         <translation>FET-Frage</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4275"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4296"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4277"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4298"/>
         <source>&amp;Continue</source>
         <translation>&amp;Weiter</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4291"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4293"/>
         <source>You have less than 5 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation>Sie haben weniger als 5 Tage pro Woche, daher benötigen Sie diese Option wahrscheinlcih nicht. Möchten Sie trozdem fortfahren?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1273"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1359"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1545"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1275"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1361"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1547"/>
         <source>All files</source>
         <translation>Alle Dateien</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="770"/>
+        <location filename="../src/interface/fetmainform.cpp" line="772"/>
         <source>Constraints of this type are good, working, but they are not perfectly optimized.</source>
         <translation>Einschränkungen von diesem Typ funktionieren zwar, sind aber nicht speziell optimiert.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="955"/>
+        <location filename="../src/interface/fetmainform.cpp" line="957"/>
         <source>Could not search for possible updates on the internet - error message is: %1.</source>
         <translation>Suchen nach Aktualisierungen im Internet fehlgeschlagen - Fehlermeldung ist: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="959"/>
+        <location filename="../src/interface/fetmainform.cpp" line="961"/>
         <source>Possible actions: check your network connection, try again later, try to visit FET homepage: %1, or try to search for the new FET page on the internet (maybe it has changed).</source>
         <translation>Mögliches Vorgehen: Internet-Verbindung überprüfen; später nochmals versuchen; FET-Webseite aufsuchen (%1); oder im Internet nach einem neuen Standort der FET-Webseite durchsuchen (falls umgezogen).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="974"/>
+        <location filename="../src/interface/fetmainform.cpp" line="976"/>
         <source>Maybe the FET homepage has some temporary problems, so try again later. Or maybe the current structure on FET homepage was changed. You may visit FET homepage: %1, and get latest version or, if it does not work, try to search for the new FET page on the internet (maybe it has changed).</source>
         <translation>Versuchen Sie später nochmals, falls es bei der FET-Webseite vorübergehende Störungen gibt. Evtl. hat sich aber die Verzeichnisstruktur der FET-Seite geändert. Die neueste Version von FET bekommen Sie auf der Homepage: %1. Falls es nicht gelingt, die Seite aufzurufen, suchen Sie im Internet nach einer geänderter Adresse (falls umgezogen).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="992"/>
+        <location filename="../src/interface/fetmainform.cpp" line="994"/>
         <source>Another version: %1, is available on the FET homepage: %2</source>
         <comment>%1 is new version, %2 is FET homepage</comment>
         <translation>Eine neue Version (%1) der FET-Software steht hier zum Herunterladen bereit: %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="994"/>
+        <location filename="../src/interface/fetmainform.cpp" line="996"/>
         <source>You may need to hit Refresh in your web browser.</source>
         <translation>Evtl. müssen Sie in Ihrem Browser die Seite neu laden.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="994"/>
+        <location filename="../src/interface/fetmainform.cpp" line="996"/>
         <source>Would you like to open the FET homepage now?</source>
         <translation>Möchten Sie jetzt die FET-Webseite öffnen?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1005"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3443"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3453"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3463"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1007"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3445"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3455"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3465"/>
         <source>Could not start the default internet browser (trying to open the link %1). Maybe you can try to manually start your browser and open this link.</source>
         <translation>Der Standard-Internet-Browser konnte nicht gestartet werden (Link: %1). Evtl. können Sie Ihren Browser manuell öffnen und die Adresse öffnen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1035"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1037"/>
         <source>Your data file has been modified - do you want to save it?</source>
         <translation>Die Daten wurden modifiziert. Möchten Sie es speichern?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1177"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1179"/>
         <source>Your current data file has been modified. Are you sure you want to reset to new empty data?</source>
         <translation>Die aktuellen Daten wurden modifiziert. Möchten Sie diese Änderungen verwerfen und mit einem leeren Datensatz neu starten?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1249"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1251"/>
         <source>Your current data file has been modified. Are you sure you want to open another data file?</source>
         <translation>Die aktuellen Daten wurden modifiziert. Möchten Sie diese Änderungen verwerfen und eine andere Datei öffnen?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1270"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1272"/>
         <source>Choose a file to open</source>
         <translation>Wähle eine zu öffnende Datei</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1272"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1358"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1544"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1274"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1360"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1546"/>
         <source>FET XML files</source>
         <comment>Instructions for translators: FET XML is a type of file format (using text mode). So this field means files in the FET XML format</comment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1307"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1309"/>
         <source>Loading...</source>
         <comment>This is a message in the status bar, that we are loading the file</comment>
         <translation>Lade...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1388"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1390"/>
         <source>File %1 exists - are you sure you want to overwrite it?</source>
         <translation>Datei %1 existiert bereits. Soll die Datei überschrieben werden?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1944"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1946"/>
         <source>add/modify constraints break, not available, preferred starting times or time slots, occupy max time slots from selection or max simultaneous in selected time slots (the table cells will have green or red colors).</source>
         <translation>Hinzufügen oder Modifizieren von den Einschränkungen „Pausen“, „nicht verfügbare Stunden“, „bevorzugte Startzeiten“, „max. Zeitfelder aus Auswahl“, oder „max. gleichzeitig in ausgewählten Zeitfeldern“ (Tabellenzellen werden grün oder rot angezeigt).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1951"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1953"/>
         <source>all time constraints and all space constraints dialogs, the inactive constraints will have a distinctive background color</source>
         <translation>Alle Zeiteinschränkungen und alle Raumeinschränkungen, die deaktiviert sind, werden mit einer besonderen Hintergrundfarbe angezeigt.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1954"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1956"/>
         <source>group activities in initial order items, the inactive items will have a distinctive background color</source>
         <translation>Zusammenfassen von Aktivitäten für die Anfangsordnung: Die deaktivierten Objekte werden mit einer besonderen Hintergrundfarbe dargestellt.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1974"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1976"/>
         <source>Enable students min hours daily with empty days:</source>
         <translation>Ermögliche freie Tage bei Schülern mit min n Stunden pro Tag:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1976"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1978"/>
         <source>This will enable you to modify the students min hours daily constraints, to allow empty days. It is IMPERATIVE (for performance reasons) to allow empty days for students min hours daily only if your institution allows empty days for students and if a solution with empty days is possible. Select only if you know what you&apos;re doing.</source>
         <translation>Einschränkungen „Min. n Stunden pro Tag“ für Schüler können freie (leere) Tage zulassen. Wählen Sie diese Option nur aus, falls Ihre Bildungsstätte auch freie (leere) Tage bei Schülerstundenplänen zulässt. Sonst sollte man diese Option aus Performance-Gründen AUF KEINEN FALL aktivieren. Aktivieren Sie diese Option also nur mit Bedacht.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1980"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1982"/>
         <source>Warn if using students min hours daily with empty days:</source>
         <comment>this is a warning if user has constraints min hours daily for students with allowed empty days</comment>
         <translation>Warne wenn Schüler freie Tage mit min n Stunden pro Tag erhalten können:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1982"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1984"/>
         <source>If you use constraints students min hours daily with allowed empty days, you&apos;ll get a warning before generating. Uncheck this option to get rid of that warning (it is recommended to keep the warning).</source>
         <translation>Beim Setzen von „freie (leere) Tage zulassen“ bei der Einschränkung „Minimale Anzahl an Stunden pro Tag“ wird eine Warnung ausgegeben. Sie können diese Warnung hier deaktivieren (empfohlen wird, diese aktiviert zu lassen).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1987"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1989"/>
         <source>Confirmations: unselect the corresponding check boxes if you want to skip introduction and confirmation to various advanced dialogs.</source>
         <translation>Rückmeldungen: Entfernen Sie das Häkchen bei den folgenden Optionen, wenn Sie Einführungshinweise und Bestätigungsabfragen bei verschiedenen weiterführenden Dialogen überspringen möchten.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1991"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1993"/>
         <source>Duplicate vertical headers to the right (in timetable settings) - select this if you want the timetables to duplicate the table left vertical headers to the right part of the tables</source>
         <translation>Zeilenüberschriften auf der rechten Seite duplizieren (bei den Stundenplaneinstellungen): Wählen Sie diese Option aus, wenn Sie die Zeilenüberschriften (links in der 1. Spalte der Tabelle) auch auf der rechten Seite doppelt einblenden möchten.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2059"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2061"/>
         <source>Activities rooms statistics: this menu will show the activities which may be scheduled in an unspecified room, if they are referred to by space constraints with weight under 100.0%, and the activities which will certainly be scheduled in an unspecified room, if they are not referred to by any space constraints. Remember that home rooms constraints are effective only on activities which have only the exact specified teacher or students set (activities with more teachers or students sets are not affected by home rooms constraints, you need to have preferred rooms constraints for such activities to ensure they will not end up in an unspecified room).</source>
         <translation>Raumstatistik für Aktivitäten:
 Dieses Menü zeigt Aktivitäten an, die Raumeinschränkungen mit einer Gewichtung von weniger als 100% haben und in einen unbestimmten Raum plaziert werden können, sowie Aktivitäten, die keine Raumeinschränkungen haben und deshalb mit Bestimmtheit in einen unbestimmten Raum plaziert werden. Bitte beachten Sie, dass Klassenraum-Einschränkungen nur bei Aktivitäten wirksam sind, die genau solche Lehrer und/oder Schülergruppen haben, und dass Aktivitäten mit anderen Lehrern oder Schülergruppen von Klassenraum-Einschränkungen nicht betroffen werden (für diese muss man Einschränkungen der Art „bevorzugte Räume“ einsetzen, damit sie nicht in zufällig ausgewählte Räume verplant werden).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3052"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3054"/>
         <source>Feature is not enabled. To use this type of feature you must enable it from the Settings-&gt;Advanced menu.</source>
         <translation>Diese Funktion ist deaktiviert. Um diese Art Funktion zu verwenden, muss sie zuerst im Menü „Einstellungen/Erweitert“ aktiviert werden.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3056"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3058"/>
         <source>The feature must be used with caution, by experienced users.</source>
         <translation>Diese Funktion sollte nur mit Bedacht und von erfahrenen Anwendern eingesetzt werden.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3471"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3473"/>
         <source>In case the Help/Online menus do not function, please write down these addresses and open them in an internet browser:</source>
         <translation>Falls die Online-Hilfe nicht funktioniert, können Sie diese Adressen aufschreiben und in einem Internet-Browser evtl. manuell aufsuchen:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3475"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3477"/>
         <source>Documentation (online help contents): %1</source>
         <comment>%1 is web page of FET Doc(umentation), which is the contents of the online help, it begins with http://...</comment>
         <translation>Dokumentation (Inhaltsseite der Online-Hilfe): %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3481"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3483"/>
         <source>In case these addresses do not function, maybe the FET webpage has temporary problems, so try again later. Or maybe the FET webpage has changed, so search for the new page on the internet.</source>
         <translation>Versuchen Sie später nochmals, falls es bei der FET-Webseite vorübergehende Störungen gibt. Wenn es nicht gelingt, die Seite aufzurufen, suchen Sie im Internet nach einer geänderter Adresse (falls umgezogen).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3483"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3485"/>
         <source>FET web addresses</source>
         <translation>FET Webseiten-Adressen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3551"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3553"/>
         <source>Your current data has no name. Please save it as a file with a certain name before proceeding.</source>
         <translation>Der aktuelle Datensatz hat keinen Namen. Bitte, speichern Sie diese Daten in einer Datei mit einem beliebigen Namen, bevor Sie fortfahren.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3692"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3716"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3694"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3718"/>
         <source>The timetable is not generated, but anyway FET will proceed now</source>
         <translation>Der Stundenplan wurde noch nicht generiert; trotzdem wird FET mit der Verarbeitung jetzt fortfahren.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3749"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3792"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3751"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3794"/>
         <source>Please select FET language</source>
         <translation>Bitte wählen Sie die Sprache aus</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3753"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3755"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
@@ -29859,449 +29859,459 @@ Dieses Menü zeigt Aktivitäten an, die Raumeinschränkungen mit einer Gewichtun
         <translation>Chinesisch (traditionell)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="792"/>
+        <location filename="../src/interface/fetmainform.cpp" line="761"/>
+        <source>Basque</source>
+        <translation>Baskisch</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="762"/>
+        <source>Czech</source>
+        <translation>Tschechisch</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="794"/>
         <source>Note: if you disable this option, you will not be able to add/modify constraints for subgroups, and you will not be able to make filters using a particular subgroup, when selecting activities.</source>
         <translation>Bemerkung: Wenn diese Option deaktiviert ist, kann man keine Einschränkungen für Teilgruppen hinzufügen oder bearbeiten. Außerdem können keine Filter mit einer bestimmten Teilgruppe bei der Auswahl von Aktivitäten erstellt werden.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="813"/>
+        <location filename="../src/interface/fetmainform.cpp" line="815"/>
         <source>Note: if you disable this option, you will not be able to view activities for subgroups in the activity planning dialog.</source>
         <translation>Bemerkung: Wenn diese Option deaktiviert wird, werden keine Aktivitäten von Teilgruppen im Aktivitätenplanungsdialog angezeigt.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1996"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1998"/>
         <source>If you have many subgroups and you don&apos;t explicitely use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
         <translation>Falls viele Teilgruppen definiert wurden, die nicht ausdrücklich verwendet werden, gibt es drei empfehlenswerte Einstellungen: Teilgruppen in Auswahlfeldern und bei der Aktivitätenplanung verstecken, und Teilgruppen nicht auf Festplatte speichern.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1999"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2001"/>
         <source>Note that using the global menu setting to hide subgroups in activity planning is a different thing from the check box in the activity planning dialog, and the global setting works better and faster.</source>
         <translation>Die globale Option „Teilgruppen bei der Aktivitätenplanung verstecken“ ist nicht das gleiche, wie das Häkchen im Aktivitätendialog zu setzen. Die globale Einstellung ist viel effizienter.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2002"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2004"/>
         <source>If you hide subgroups in combo boxes, the affected dialogs (like the activities dialog or the add constraint students set not available times dialog) will load much faster if you have many subgroups.</source>
         <translation>Wenn Teilgruppen in Auswahlfeldern versteckt werden, können die betroffenen Dialoge (Aktivitätendialog, Dialog „nicht verfügbare Zeiten für Schülergruppe“) viel schneller öffnen, falls es viele Teilgruppen gibt.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2007"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2009"/>
         <source>If you are only working on a timetable, and you do not need to publish it, you may want to disable writing some categories of timetables on the hard disk, for operativity (the generation speed is not affected, only the overhead to write the partial/complete timetables when stopping/finishing the simulation). The timetables taking the longest time are the subgroups, groups AND years ones.</source>
         <translation>Wenn Sie an einem Stundenplan arbeiten, diesen aber noch nicht veröffentlichen müssen, kann man durch das Deaktivieren der Ausgabe von einigen Stundenplanarten auf der Festplatte etwas schneller arbeiten (die Stundenplanberechnungszeit wird nicht beeinflusst, nur die Zeit zum Speichern der Stundenpläne und Teilstundenpläne nach Beendigung der Berechnung). Am längsten dauert die Ausgabe der Stundenpläne der Teilgruppen, Gruppen UND Jahrgänge.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2011"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2013"/>
         <source>(Also the conflicts timetable might take long to write, if the file is large.)</source>
         <translation>(Der Stundenplan der Konfliktfälle, je nach Dateigrösse, könnte auch etwas länger dauern).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2013"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2015"/>
         <source>After that, you can re-enable writing of the timetables and re-generate.</source>
         <translation>Nachher kann man das Speichern der Stundenpläne wieder aktivieren und sie neu generieren.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2016"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2018"/>
         <source>Show tool tips for constraints with tables: in the add/modify constraint dialogs which use tables, like the &apos;not available times&apos; ones, each table cell will have a tool tip to show the current day/hour (column/row name).</source>
         <translation>ToolTip-Texte für Einschränkungen mit Tabellen einblenden: Bei den Dialogen, wo Einschränkungen hinzugefügt oder bearbeitet werden (z.B. „nicht verfügbare Stunden“) und mit einer Tabellenansicht gearbeitet wird, wird der aktuelle Tag und die Zeit in einem Tooltip für jede Zelle eingeblendet.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3866"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3868"/>
         <source>That means:</source>
         <translation>Das bedeutet:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3869"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3871"/>
         <source>The geometry and any other saved settings of all the windows and dialogs will be reset to default</source>
         <translation>Die Geometrie und andere Einstellungen aller Fenster und Dialoge werden auf die Vorgabewerte zurückgesetzt.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3869"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3871"/>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3872"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3874"/>
         <source>2</source>
         <translation>2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3875"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3877"/>
         <source>3</source>
         <translation>3</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3879"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3881"/>
         <source>4</source>
         <translation>4</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3882"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3884"/>
         <source>5</source>
         <translation>5</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3886"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3907"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3888"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3909"/>
         <source>6</source>
         <translation>6</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3911"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3913"/>
         <source>The list of recently used files will be cleared</source>
         <translation>Die Liste der kürzlich genutzten Dateien wird gelöscht</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3911"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3913"/>
         <source>7</source>
         <translation>7</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3914"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3916"/>
         <source>8</source>
         <translation>8</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3917"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3919"/>
         <source>9</source>
         <translation>9</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3920"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3922"/>
         <source>10</source>
         <translation>10</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3923"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3925"/>
         <source>11</source>
         <translation>11</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3926"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3928"/>
         <source>12</source>
         <translation>12</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3929"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3931"/>
         <source>13</source>
         <translation>13</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3932"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3934"/>
         <source>14</source>
         <translation>14</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3935"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3937"/>
         <source>15</source>
         <translation>15</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3938"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3940"/>
         <source>16</source>
         <translation>16</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3941"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3943"/>
         <source>Print activities tags will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Unterrichtskennzeichnung drucken wird %1 sein</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3941"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3943"/>
         <source>17</source>
         <translation>17</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3944"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3946"/>
         <source>18</source>
         <translation>18</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3947"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3949"/>
         <source>19</source>
         <translation>19</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3950"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3952"/>
         <source>20</source>
         <translation>20</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3953"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3955"/>
         <source>21</source>
         <translation>21</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3956"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3958"/>
         <source>Warn if using constraints students min hours daily with empty days will be %1</source>
         <comment>%1 is true or false. This is a warning if user uses a nonstandard constraint students min hours daily with allowed empty days</comment>
         <translation>„Warne wenn Schüler freie Tage mit min n Stunden pro Tag erhalten können“ wird: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3956"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3958"/>
         <source>22</source>
         <translation>22</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3961"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3963"/>
         <source>Confirm activity planning will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>„Bestätige Aktivitätenplanung“ wird: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3961"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3963"/>
         <source>23</source>
         <translation>23</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3963"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3965"/>
         <source>Confirm spread activities over the week will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>„Bestätige gleichmäßig verteilte Aktivitäten über der Woche“ wird: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3963"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3965"/>
         <source>24</source>
         <translation>24</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3965"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3967"/>
         <source>Confirm remove redundant constraints will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>„Bestätige das Entfernen redundanter Einschränkungen“ wird: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3965"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3967"/>
         <source>25</source>
         <translation>25</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3967"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3969"/>
         <source>26</source>
         <translation>26</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3971"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3973"/>
         <source>Enable group activities in the initial order of generation will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>„Erlaube das Zusammenfassen von Aktivitäten für die Anfangsordnung“ wird: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3971"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3973"/>
         <source>27</source>
         <translation>27</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3973"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3975"/>
         <source>Warn if using group activities in the initial order of generation will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>„Warne bei Benutzung der Zusammenfassung von Aktivitäten für die Anfangsordnung“ wird: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3973"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3975"/>
         <source>28</source>
         <translation>28</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3977"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3979"/>
         <source>29</source>
         <translation>29</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3977"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3979"/>
         <source>Show subgroups in combo boxes will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>„Zeige Teilgruppen in Auswahlfeldern“ wird: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3979"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3981"/>
         <source>30</source>
         <translation>30</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3979"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3981"/>
         <source>Show subgroups in activity planning will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>„Zeige Teilgruppen in Aktivitätenplanung“ wird: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3983"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3985"/>
         <source>31</source>
         <translation>31</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3983"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3985"/>
         <source>Write on disk the %1 timetable will be %2</source>
         <comment>%1 is a category of timetables, like conflicts, %2 is true or false</comment>
         <translation>„%1-Stundenplan auf Festplatte speichern“ wird: %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3984"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3986"/>
         <source>conflicts</source>
         <translatorcomment>wird mit dem vorherigen Text verwendet, also: &quot;Konflikten-Stundenplan&quot; (nicht: Konflikte-Stundenplan)</translatorcomment>
         <translation>Konflikten</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3987"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3990"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3993"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3996"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3999"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4002"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4006"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4009"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4012"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4015"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4018"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4021"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4024"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4027"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3989"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3992"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3995"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3998"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4001"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4004"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4008"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4011"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4014"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4017"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4020"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4023"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4026"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4029"/>
         <source>Write on disk the %1 timetables will be %2</source>
         <comment>%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false</comment>
         <translation>„%1-Stundenpläne auf Festplatte speichern“ wird: %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3988"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3990"/>
         <source>statistics</source>
         <translation>Statistik</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3991"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3993"/>
         <source>XML</source>
         <translation>XML</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3987"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3989"/>
         <source>32</source>
         <translation>32</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3994"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3996"/>
         <source>days horizontal</source>
         <translation>Horizontal-Tage</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3990"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3992"/>
         <source>33</source>
         <translation>33</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3997"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3999"/>
         <source>days vertical</source>
         <translation>Vertikal-Tage</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3993"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3995"/>
         <source>34</source>
         <translation>34</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4000"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4002"/>
         <source>time horizontal</source>
         <translation>Horizontal-Zeit</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3996"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3998"/>
         <source>35</source>
         <translation>35</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4003"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4005"/>
         <source>time vertical</source>
         <translation>Vertikal-Zeit</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3999"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4001"/>
         <source>36</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4007"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4009"/>
         <source>subgroups</source>
         <translation>Teilgruppen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4002"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4004"/>
         <source>37</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4010"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4012"/>
         <source>groups</source>
         <translation>Gruppen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4006"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4008"/>
         <source>38</source>
         <translation>38</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4013"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4015"/>
         <source>years</source>
         <translation>Jahrgänge</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4009"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4011"/>
         <source>39</source>
         <translation>39</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4016"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4018"/>
         <source>teachers</source>
         <translation>Lehrer</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4012"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4014"/>
         <source>40</source>
         <translation>40</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4019"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4021"/>
         <source>teachers free periods</source>
         <translatorcomment>Achtung: Dieser Text wird mit anderen Texte im Code kombiniert; das Ergebnis sollte nachher sein: &quot;Lehrer-Freistunden-Stundenpläne&quot; o.ä.</translatorcomment>
         <translation>Lehrer-Freistunden</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4015"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4017"/>
         <source>41</source>
         <translation>41</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4022"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4024"/>
         <source>rooms</source>
         <translation>Räume</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4018"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4020"/>
         <source>42</source>
         <translation>42</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4025"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4027"/>
         <source>subjects</source>
         <translation>Unterrichtsfächer</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4021"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4023"/>
         <source>43</source>
         <translation>43</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4028"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4030"/>
         <source>activities</source>
         <translation>Aktivitäten</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4532"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4534"/>
         <source>This kind of constraint is good, but only in the right case. Adding such constraints in the wrong circumstance may make your timetable solve too slow or even impossible.</source>
         <translation>Diese Art von Einschränkung ist nur in bestimmten Fällen zu empfehlen. Bei ungeeignetem Einsatz kann die Stundenplanberechnung verlangsamt oder sogar verunmöglicht werden.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4535"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4537"/>
         <source>Please use such constraints only if you are sure that there exists a timetable with empty days for students. If your instution requires each day for the students to be not empty, or if there does not exist a solution with empty days for students, it is IMPERATIVE (for performance reasons) that you use the standard constraint which does not allow empty days. Otherwise, the timetable may be impossible to find.</source>
         <translation>Setzen Sie solche Einschränkungen nur dann ein, wenn Ihre Bildungsstätte auch freie (leere) Tage bei Schülerstundenplänen zulässt. Sonst sollte man aus Performance-Gründen AUF JEDEN FALL die Standardeinschränkung einsetzen, die keine freien Tage erlaubt. Andernfalls könnte FET evtl. keine Stundenplan-Lösung finden.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4580"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4582"/>
         <source>This kind of option is good, but only in the right case. Adding such an option in the wrong circumstance may make your timetable solve too slow or even impossible.</source>
         <translation>Diese Option ist nur unter bestimmten Bedingungen zu empfehlen. Ein ungeeigneter Einsatz könnte die Stundenplanberechnung verlangsamen oder sogar verunmöglichen.</translation>
     </message>
@@ -30316,61 +30326,61 @@ Dieses Menü zeigt Aktivitäten an, die Raumeinschränkungen mit einer Gewichtun
         <translation>Persisch</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4379"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4381"/>
         <source>Choose results (output) directory</source>
         <translation>Wähle das Ausgabeverzeichnis</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4388"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4390"/>
         <source>You don&apos;t have write permissions in this directory</source>
         <translation>Sie haben keine Schreibberechtigung für das Verzeichnis</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2052"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2054"/>
         <source>Students&apos; statistics form contains a check box named &apos;%1&apos;. This has effect only if you have overlapping groups/years, and means that FET will show the complete tree structure, even if that means that some subgroups/groups will appear twice or more in the table, with the same information. For instance, if you have year Y1, groups G1 and G2, subgroups S1, S2, S3, with structure: Y1 (G1 (S1, S2), G2 (S1, S3)), S1 will appear twice in the table</source>
         <translation>Im Dialog „Schülerstatistik“ gibt es eine Option mit Häkchen: „%1“. Die Wirkung dieser Option zeigt sich nur bei sich überlappenden Gruppen oder Jahrgängen. In diesen Fällen zeigt FET die gesamte Baumstruktur an, auch wenn einige Gruppen oder Teilgruppen mit der gleichen Information mehrmals eingeblendet werden. Zum Beispiel: bei Jahrgang J1, Gruppen G1 und G2, Teilgruppen T1, T2 und T3 mit diser Struktur: J1 (G1 (T1, T2), G2 (T1, T3)), wird T1 in der Tabelle zweimal angezeigt.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2056"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2058"/>
         <source>Show duplicates</source>
         <translation>Zeige Duplikate</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3879"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3882"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3932"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3935"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3938"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3944"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3947"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3953"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3971"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4030"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3881"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3884"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3934"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3937"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3940"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3946"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3949"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3955"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3973"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4032"/>
         <source>false</source>
         <translation>falsch</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4035"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4037"/>
         <source>FET confirmation</source>
         <translation>FET-Rückmeldung</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1933"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1935"/>
         <source>Option &apos;Print activities with same starting time in timetables&apos;: selecting it means that the html timetables will contain for each slot all the activities which have the same starting time (fact specified by your constraints) as the activity(ies) which are normally shown in this slot. If you don&apos;t use constraints activities same starting time, this option has no effect for you.</source>
         <translation>Die Option „Drucke Aktivitäten mit gleicher Startzeit in die Pläne“ bewirkt, dass alle Aktivitäten mit der gleichen Startzeit (gemäss Ihrer Einschränkungen) bei den HTML-Stundenplänen zusätzlich zu den normalerweise hier ausgedruckten Aktivitäten in den Zeitfeldern zusammen erscheinen. Wenn Sie keine Einschränkungen wie „gleiche Startzeit“ einsetzen, bleibt diese Option ohne Wirkung.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1926"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1928"/>
         <source>Option &apos;Divide html timetables with time-axis by days&apos;: This means simply that the html timetables of type &apos;time horizontal&apos; or &apos;time vertical&apos; (see the generated html timetables) should be or not divided according to the days.</source>
         <translation>Die Option „Teile HTML-Stundenpläne mit Zeitachsen nach Tagen“ bewirkt, falls gesetzt, dass die Stundenpläne mit Zeitachsen im HTML-Format nach Tagen aufgeteilt wird.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1930"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1932"/>
         <source>If the &apos;time horizontal&apos; or &apos;time vertical&apos; html timetables are too large for you, then you might need to select this option</source>
         <translation>Wenn die Stundenpläne mit „Zeitachse vertikal“ oder „Zeitachse horizontal“ zu groß werden, kann diese Option nützlich sein.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1924"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1926"/>
         <source>Probably some settings which are more difficult to understand are these ones:</source>
         <translation>Die folgenden Einstellungen sind wahrscheinlich eher schwierig zu verstehen:</translation>
     </message>
@@ -31792,7 +31802,7 @@ Dieses Menü zeigt Aktivitäten an, die Raumeinschränkungen mit einer Gewichtun
     <name>FetTranslate</name>
     <message>
         <location filename="../src/interface/fet.cpp" line="254"/>
-        <location filename="../src/interface/fet.cpp" line="775"/>
+        <location filename="../src/interface/fet.cpp" line="777"/>
         <source>FET warning</source>
         <translation>FET-Warnung</translation>
     </message>
@@ -31802,55 +31812,55 @@ Dieses Menü zeigt Aktivitäten an, die Raumeinschränkungen mit einer Gewichtun
         <translation>Das Ausgabeverzeichnis %1 existiert nicht und can nicht erstellt werden. Es wird nun folgendes Verzeichnis genommen: %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="736"/>
-        <location filename="../src/interface/fet.cpp" line="745"/>
+        <location filename="../src/interface/fet.cpp" line="738"/>
+        <location filename="../src/interface/fet.cpp" line="747"/>
         <source>FET critical</source>
         <translation>FET Kritische Meldung</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="775"/>
+        <location filename="../src/interface/fet.cpp" line="777"/>
         <source>To start FET in interface mode, please do not give any command-line parameters to the FET executable</source>
         <translation>Um FET im grafischen Modus zu starten dürfen keine Parameter der ausführbaren Datei übergeben werden</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1055"/>
+        <location filename="../src/interface/fet.cpp" line="1057"/>
         <source>This is the list of max placed activities, chronologically. If FET could reach maximum n-th activity, look at the n+1-st activity in the initial order of the activities</source>
         <translation>Dies ist die chronoclogische Liste der maximal gesetzen Aktivitäten. Wenn FET maximal n Aktivitäten gesetzt hat, dann schauen Sie sich die n+1 Aktivität der ursprünglichen Ordnung an um Fehler zu entdecken</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1254"/>
+        <location filename="../src/interface/fet.cpp" line="1256"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see initial order of placing the activities in the corresponding output file. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
         <translation>FET konnte die ersten %1 Aktivitäten setzen. Sie können sich die Reihenfolge der Aktivitäten angucken. Die Aktivität, welche schwierigkeiten bereitet, ist die Aktivität danach. Die Aktivität ist:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1261"/>
-        <location filename="../src/interface/fet.cpp" line="1281"/>
+        <location filename="../src/interface/fet.cpp" line="1263"/>
+        <location filename="../src/interface/fet.cpp" line="1283"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation>ID: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1266"/>
+        <location filename="../src/interface/fet.cpp" line="1268"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
         <translation>Schwierige Aktivitäten kann nicht berechnet werden - Bitte melden Sie diesen Fehler mit</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1270"/>
+        <location filename="../src/interface/fet.cpp" line="1272"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):</source>
         <translation>Hier ist die Liste der gesetzen Aktivitäten - geordenet von der Ersten zur Letzten (Die Letzte konnte von FET nicht gesetzt werden und ist daher nicht möglich):</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1277"/>
+        <location filename="../src/interface/fet.cpp" line="1279"/>
         <source>No: %1</source>
         <translation>Nr.: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="736"/>
+        <location filename="../src/interface/fet.cpp" line="738"/>
         <source>Cannot create or use %1 directory (where the results should be stored) - you can continue operation, but you might not be able to work with FET. Maybe you can try to change the output directory from the &apos;Settings&apos; menu. If this is a bug - please report it.</source>
         <translation>Das Verzeichnis %1 kann nicht erstellt bzw. benutzt werden. Sie können fortfahren, aber wahrscheinlich so nicht sinnvoll arbeiten. Versuchen Sie in den &quot;Einstellungen&quot; das Verzeichnis zu ändern. Bitte teilen Sie diesen Fehler mit.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="745"/>
+        <location filename="../src/interface/fet.cpp" line="747"/>
         <source>You don&apos;t have write permissions in the output directory (FET cannot open or create file %1) - you might not be able to work correctly with FET. Maybe you can try to change the output directory from the &apos;Settings&apos; menu. If this is a bug - please report it.</source>
         <translation>Sie haben keine Schreibberechtigung in dem Verzeichnis (FET kann die Datei %1 nicht erstellt bzw. öffnen). Sie können fortfahren, aber wahrscheinlich so nicht sinnvoll arbeiten. Versuchen Sie in den &quot;Einstellungen&quot; das Verzeichnis zu ändern. Bitte teilen Sie diesen Fehler mit.</translation>
     </message>
@@ -33616,21 +33626,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Activity planning dialog.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Print timetable dialog.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Liviu Lalescu (http://lalescu.ro/liviu/)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Volker Dirr (http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- XHTML timetable export.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- CSV import and export.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Advanced statistics print/export.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Speed improvements in the timetable generation.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Locking the activities.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Activity planning dialog.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Print timetable dialog.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="112"/>
@@ -33651,6 +33647,9 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Sílvia Lag (to contact Sílvia visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Catalan translation, or contact forum user silvia)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;cs - Czech translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Pavel Fric (pavelfric AT seznam.cz)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;da - Danish translation&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	David Lamhauge (davidlamhauge AT gmail.com)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
@@ -33666,6 +33665,9 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;es - Spanish translation&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	José César Fernández López (cesar.fernandez.lopez AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;eu - Basque translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Asier Urio Larrea (asieriko AT gmail.com)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fa - Persian translation&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Hamed SadeghiNeshat (ha_sadeghi AT ce.sharif.edu)&lt;/span&gt;&lt;/p&gt;
@@ -33759,24 +33761,19 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="257"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="263"/>
         <source>References</source>
         <translation>Quellenangabe</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="278"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="284"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;You may find references for the algorithms and techniques used in this program on the FET documentation web page, &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/doc/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/doc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Über die Algorithmen und andere technische Einzelheiten, die hier zum Einsatz kommen, können Sie in der FET-Webseite mehr erfahren: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/doc/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/doc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="69"/>
@@ -33798,7 +33795,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2015 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.27.6 (July 2015).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.27.7 (August 2015).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
@@ -33807,12 +33804,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="291"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="297"/>
         <source>Thanks to</source>
         <translation>Dank an</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="312"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="318"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -34216,11 +34213,15 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;youssouf - suggestion.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Pascal Cohen - French translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Asier Urio Larrea - Basque translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Pavel Fric - Czech translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="741"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="751"/>
         <source>Close</source>
         <translation>Schließen</translation>
     </message>
@@ -44575,52 +44576,52 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>QDialogButtonBox</name>
     <message>
-        <location filename="../src/interface/fet.cpp" line="638"/>
+        <location filename="../src/interface/fet.cpp" line="640"/>
         <source>&amp;OK</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation>&amp;OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="640"/>
+        <location filename="../src/interface/fet.cpp" line="642"/>
         <source>OK</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="643"/>
+        <location filename="../src/interface/fet.cpp" line="645"/>
         <source>&amp;Cancel</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation>&amp;Abbrechen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="645"/>
+        <location filename="../src/interface/fet.cpp" line="647"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="648"/>
+        <location filename="../src/interface/fet.cpp" line="650"/>
         <source>&amp;Yes</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation>&amp;Ja</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="650"/>
+        <location filename="../src/interface/fet.cpp" line="652"/>
         <source>Yes to &amp;All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation>Ja (für &amp;alle)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="654"/>
+        <location filename="../src/interface/fet.cpp" line="656"/>
         <source>N&amp;o to All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation>N&amp;ein (für alle)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="657"/>
+        <location filename="../src/interface/fet.cpp" line="659"/>
         <source>Help</source>
         <translation>Hilfe</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="652"/>
+        <location filename="../src/interface/fet.cpp" line="654"/>
         <source>&amp;No</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation>&amp;Nein</translation>
@@ -44629,13 +44630,13 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>QGnomeTheme</name>
     <message>
-        <location filename="../src/interface/fet.cpp" line="683"/>
+        <location filename="../src/interface/fet.cpp" line="685"/>
         <source>&amp;OK</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation>&amp;Ok</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="685"/>
+        <location filename="../src/interface/fet.cpp" line="687"/>
         <source>&amp;Cancel</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation>&amp;Abbrechen</translation>
@@ -44644,53 +44645,53 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../src/interface/fet.cpp" line="661"/>
+        <location filename="../src/interface/fet.cpp" line="663"/>
         <source>&amp;OK</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation>&amp;Ok</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="663"/>
+        <location filename="../src/interface/fet.cpp" line="665"/>
         <source>OK</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="666"/>
+        <location filename="../src/interface/fet.cpp" line="668"/>
         <source>&amp;Cancel</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation>A&amp;bbrechen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="668"/>
+        <location filename="../src/interface/fet.cpp" line="670"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="671"/>
+        <location filename="../src/interface/fet.cpp" line="673"/>
         <source>&amp;Yes</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation>&amp;Ja</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="673"/>
+        <location filename="../src/interface/fet.cpp" line="675"/>
         <source>Yes to &amp;All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation>Ja (für &amp;alle)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="675"/>
+        <location filename="../src/interface/fet.cpp" line="677"/>
         <source>&amp;No</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation>&amp;Nein</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="677"/>
+        <location filename="../src/interface/fet.cpp" line="679"/>
         <source>N&amp;o to All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation>N&amp;ein (für alle)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="680"/>
+        <location filename="../src/interface/fet.cpp" line="682"/>
         <source>Help</source>
         <translation>Hilfe</translation>
     </message>
