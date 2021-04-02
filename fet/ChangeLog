@@ -976,5 +976,8 @@ Versions 5.2.0 - 5.2.
 	- Bug fix in conflicts reporting in conflicts.txt for single timetable generation
 - Version 5.2.2
 	- Small bug fix (when aborting generation or generation is impossible, correct conflicts are
-	written on hard disk).
+	written on hard disk)
+- Version 5.2.3
+	- Small bug fix - when clicking cancel on exit, the filename is preserved correctly
+	- Small corrections
 	

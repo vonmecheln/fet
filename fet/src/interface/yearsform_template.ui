@@ -90,7 +90,7 @@
                 <cstring>divisionsPushButton</cstring>
             </property>
             <property name="text">
-                <string>NEW: Divide year automatically by selecting categories</string>
+                <string>Divide year automatically by selecting categories</string>
             </property>
         </widget>
         <widget class="QPushButton" row="4" column="0" rowspan="1" colspan="2">

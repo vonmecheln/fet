@@ -5065,7 +5065,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.2.0 (August 2007)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.2.3 (August 2007)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
@@ -9310,7 +9310,7 @@ Va rugam vorbiti cu autorul sau mariti variabila MAX_ACTIVITIES</translation>
         <translation>&amp;Anuleaza</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1287"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1293"/>
         <source>Please exit and restart FET to activate language change</source>
         <translation>Va rugam iesiti si reporniti FET pentru a activa schimbarea de limba</translation>
     </message>
@@ -10138,7 +10138,7 @@ It is advisable to generate the timetable without the rooms, then, if a solution
         <translation>Va rog introduceti cel putin 2 activitati active inainte de generare</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1076"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1082"/>
         <source>Please generate, firstly</source>
         <translation>Va rog generati, intai</translation>
     </message>
@@ -10434,7 +10434,7 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1033"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1039"/>
         <source>Please input at least two active activities before generating multiple</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10476,7 +10476,7 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="117"/>
         <source>2 activities consecutive</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">2 activitati consecutive</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="167"/>
@@ -10496,6 +10496,11 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform.cpp" line="244"/>
         <source>Constraint NOT added - error?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="1026"/>
+        <source>Current file (data) has no name. Please save file under a certain name before proceeding</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10876,67 +10881,67 @@ salile &quot;acasa&quot; ale studentilor sau profesorilor nu sunt necesare</tran
 <context>
     <name>TimetableExport</name>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="282"/>
+        <location filename="../src/engine/timetableexport.cpp" line="283"/>
         <source>Conflicts of %1</source>
         <translation>Conflicte ale %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1665"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1666"/>
         <source>Warning! Only %1 out of %2 activities placed!</source>
         <translation>Atentie! Doar %1 din %2 activitati sunt plasate!</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="285"/>
+        <location filename="../src/engine/timetableexport.cpp" line="286"/>
         <source>Generated with FET %1 on %2</source>
         <translation>Generat cu FET %1 in %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="291"/>
+        <location filename="../src/engine/timetableexport.cpp" line="292"/>
         <source>End of file.</source>
         <translation>Sfarsit fisier.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="458"/>
+        <location filename="../src/engine/timetableexport.cpp" line="459"/>
         <source>CSS Stylesheet of %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="461"/>
+        <location filename="../src/engine/timetableexport.cpp" line="462"/>
         <source>Stylesheet generated with FET %1 on %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="463"/>
+        <location filename="../src/engine/timetableexport.cpp" line="464"/>
         <source>To do a page-break only after every second timetable, cut line %1 and paste it into line %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1460"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1461"/>
         <source>Table of content</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="637"/>
+        <location filename="../src/engine/timetableexport.cpp" line="638"/>
         <source>Year</source>
         <translation>An</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="640"/>
+        <location filename="../src/engine/timetableexport.cpp" line="641"/>
         <source>Group</source>
         <translation>Grup</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1684"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1685"/>
         <source>Timetable generated with FET %1 on %2</source>
         <translation>Orar generat cu FET %1 la %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1530"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1531"/>
         <source>back to the top</source>
         <translation>inapoi la inceput</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1668"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1669"/>
         <source>No rooms recorded in fet for %1.</source>
         <translation>Nu sunt sali inregistrate in FET pentru %1.</translation>
     </message>
@@ -11249,14 +11254,9 @@ pe hard disc, in format xml si html.</translation>
 <context>
     <name>TimetableGenerateMultipleForm</name>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="307"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="311"/>
         <source>FET information</source>
         <translation>FET - informatie</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="164"/>
-        <source>Notice: you can only see generated timetables on the hard disk, in html or xml format, or latest timetable in the FET Timetable/View menu. It is needed that the directory %1 to be emptied+deleted before proceeeding. Please note that multiple generation is a new feature (20 Aug. 2007) so it may have problems. Please report any bug.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="174"/>
@@ -11296,34 +11296,34 @@ Pentru mai multe informatii adresati-va autorului</translation>
         <translation>Orar nr.: %1 =&gt; %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="244"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="248"/>
         <source>Conflicts listing (in decreasing order):
 </source>
         <translation>Lista conflictelor(in ordine descrescatoare):
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="258"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="262"/>
         <source>Simulation stopped but the simulation is not running. This should not happen. Maybe you aborted simulation previously. Please report possible bug to author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="269"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="273"/>
         <source>Simulation interrupted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="276"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="280"/>
         <source>The results for the generated timetables are saved in the directory %1 in html and xml mode and the conflicts in txt mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="297"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="301"/>
         <source>Simulation finished but the simulation is not running. This should not happen. Maybe you aborted simulation previously. Please report possible bug to author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="309"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="313"/>
         <source>Simulation terminated successfully. The results are saved in directory %1 in html and xml mode.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11333,14 +11333,16 @@ Pentru mai multe informatii adresati-va autorului</translation>
         <translation>Nu pot sa incep, directorul %1 exista si poate sa nu fie gol, (poate contine fisiere vechi). Trebuie sa stergeti manual continutul directorului SI directorul insusi (sau sa il redenumiti)</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="199"/>
-        <source></source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="331"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="335"/>
         <source>Current timetable: %1 out of %2 activities placed, %3h %4m %5s</source>
         <translation>Orar curent: %1 din %2 activitati plasate, %3h %4m %5s</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="164"/>
+        <source>Notice: you can only see generated timetables on the hard disk, in html or xml format, or latest timetable in the FET Timetable/View menu. It is needed that the directory %1 to be emptied+deleted before proceeeding.
+
+Please note that each timetable might occupy 1 MB of hard disk space or more, so make sure you have enough space.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11600,7 +11602,12 @@ selectate (doar timpul)</translation>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="93"/>
         <source>NEW: Divide year automatically by selecting categories</source>
-        <translation>NOU: Imparte anul automat selectand categoriile</translation>
+        <translation type="obsolete">NOU: Imparte anul automat selectand categoriile</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/yearsform_template.ui" line="93"/>
+        <source>Divide year automatically by selecting categories</source>
+        <translation>Imparte anul automat selectand categoriile</translation>
     </message>
 </context>
 </TS>

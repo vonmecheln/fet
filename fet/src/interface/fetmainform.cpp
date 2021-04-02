@@ -249,7 +249,7 @@ void FetMainForm::closeEvent(QCloseEvent* event)
 
 	switch(QMessageBox::information( this, QObject::tr("FET - exiting"),
 	 QObject::tr("File not saved - do you want to save it?"),
-	 QObject::tr("&Yes"), QObject::tr("&No"), QObject::tr("&Cancel"), 0 , 2 )){	 
+	 QObject::tr("&Yes"), QObject::tr("&No"), QObject::tr("&Cancel"), 0 , 2 )){
 	 	case 0: 
 			this->on_fileSaveAction_activated();
 			event->accept();
@@ -262,7 +262,7 @@ void FetMainForm::closeEvent(QCloseEvent* event)
 			break;
 	}
 
-	INPUT_FILENAME_XML = "";
+	//INPUT_FILENAME_XML = "";
 }
 
 FetMainForm::~FetMainForm()
@@ -1018,6 +1018,12 @@ void FetMainForm::on_timetableGenerateMultipleAction_activated()
 	if(simulation_running){
 		QMessageBox::information(this, QObject::tr("FET information"),
 			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	if(INPUT_FILENAME_XML==""){
+		QMessageBox::information(this, QObject::tr("FET information"),
+			QObject::tr("Current file (data) has no name. Please save file under a certain name before proceeding"));
 		return;
 	}
 
