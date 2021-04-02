@@ -315,115 +315,115 @@
 <context>
     <name>Activity</name>
     <message>
-        <location filename="../src/engine/activity.cpp" line="496"/>
+        <location filename="../src/engine/activity.cpp" line="500"/>
         <source>no teachers</source>
         <translation>sen profesores</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="506"/>
+        <location filename="../src/engine/activity.cpp" line="510"/>
         <source>no students</source>
         <translation>sen estudantes</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="651"/>
+        <location filename="../src/engine/activity.cpp" line="655"/>
         <source>yes</source>
         <translation>si</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="653"/>
+        <location filename="../src/engine/activity.cpp" line="657"/>
         <source>no</source>
         <translation>non</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="585"/>
+        <location filename="../src/engine/activity.cpp" line="589"/>
         <source>Activity:</source>
         <translation>Actividade:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="605"/>
+        <location filename="../src/engine/activity.cpp" line="609"/>
         <source>No teachers for this activity</source>
         <translation>Non hai profesores para esta actividade</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="610"/>
+        <location filename="../src/engine/activity.cpp" line="614"/>
         <source>Teacher=%1</source>
         <translation>Profesor=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="614"/>
+        <location filename="../src/engine/activity.cpp" line="618"/>
         <source>Subject=%1</source>
         <translation>Materia=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="618"/>
+        <location filename="../src/engine/activity.cpp" line="622"/>
         <source>Activity tag=%1</source>
         <translation>Tipo actividade=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="623"/>
+        <location filename="../src/engine/activity.cpp" line="627"/>
         <source>No students sets for this activity</source>
         <translation>Non hai grupo para esta actividade</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="628"/>
+        <location filename="../src/engine/activity.cpp" line="632"/>
         <source>Students=%1</source>
         <translation>Estudantes=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="655"/>
+        <location filename="../src/engine/activity.cpp" line="659"/>
         <source>Active=%1</source>
         <comment>Represents a boolean value, if activity is active or not, %1 is yes or no</comment>
         <translation>Activo=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="589"/>
+        <location filename="../src/engine/activity.cpp" line="593"/>
         <source>Id=%1</source>
         <translation>Id=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="592"/>
+        <location filename="../src/engine/activity.cpp" line="596"/>
         <source>Activity group id=%1</source>
         <translation>Grupo actividade id=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="597"/>
+        <location filename="../src/engine/activity.cpp" line="601"/>
         <source>Duration=%1</source>
         <translation>Duración=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="600"/>
+        <location filename="../src/engine/activity.cpp" line="604"/>
         <source>Total duration=%1</source>
         <translation>Duración total=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="639"/>
         <location filename="../src/engine/activity.cpp" line="643"/>
+        <location filename="../src/engine/activity.cpp" line="647"/>
         <source>Total number of students=%1</source>
         <translation>Número total de estudantes=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="644"/>
+        <location filename="../src/engine/activity.cpp" line="648"/>
         <source>specified</source>
         <comment>Specified means that the total number of students was specified separately for the activity</comment>
         <translation>especificado</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="661"/>
+        <location filename="../src/engine/activity.cpp" line="665"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="673"/>
+        <location filename="../src/engine/activity.cpp" line="677"/>
         <source>Time constraints directly related to this activity:</source>
         <translation>Restricións de tempo relacionadas con esta actividade:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="684"/>
+        <location filename="../src/engine/activity.cpp" line="688"/>
         <source>Space constraints directly related to this activity:</source>
         <translation>Restricións de espazo relacionadas con esta actividade:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="696"/>
+        <location filename="../src/engine/activity.cpp" line="700"/>
         <source>Timetable generation options directly related to this activity:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1044,233 +1044,233 @@
 <context>
     <name>AddActivityForm</name>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="559"/>
-        <location filename="../src/interface/addactivityform.cpp" line="616"/>
-        <location filename="../src/interface/addactivityform.cpp" line="658"/>
-        <location filename="../src/interface/addactivityform.cpp" line="660"/>
-        <location filename="../src/interface/addactivityform.cpp" line="738"/>
-        <location filename="../src/interface/addactivityform.cpp" line="743"/>
+        <location filename="../src/interface/addactivityform.cpp" line="574"/>
+        <location filename="../src/interface/addactivityform.cpp" line="643"/>
+        <location filename="../src/interface/addactivityform.cpp" line="685"/>
+        <location filename="../src/interface/addactivityform.cpp" line="687"/>
+        <location filename="../src/interface/addactivityform.cpp" line="765"/>
+        <location filename="../src/interface/addactivityform.cpp" line="770"/>
         <source>FET information</source>
         <translation>FET información</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="560"/>
+        <location filename="../src/interface/addactivityform.cpp" line="575"/>
         <source>Invalid weight (percentage) for added constraint min days between activities</source>
         <translation>Porcentaxe non válida para regras de mínimo de días entre actividades</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="567"/>
-        <location filename="../src/interface/addactivityform.cpp" line="599"/>
-        <location filename="../src/interface/addactivityform.cpp" line="643"/>
+        <location filename="../src/interface/addactivityform.cpp" line="582"/>
+        <location filename="../src/interface/addactivityform.cpp" line="619"/>
+        <location filename="../src/interface/addactivityform.cpp" line="670"/>
         <source>FET question</source>
         <translation>FET pregunta</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="586"/>
+        <location filename="../src/interface/addactivityform.cpp" line="604"/>
         <source>Invalid subject</source>
         <translation>Materia non válida</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="568"/>
+        <location filename="../src/interface/addactivityform.cpp" line="583"/>
         <source>Do you really want to add an activity without teacher(s)?</source>
         <translation>Está completamente seguro de que desexa eliminar a actividade sen profesor(es)?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="585"/>
+        <location filename="../src/interface/addactivityform.cpp" line="603"/>
         <source>FET warning</source>
         <translation>Aviso FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="600"/>
+        <location filename="../src/interface/addactivityform.cpp" line="620"/>
         <source>Do you really want to add an activity without student set(s)?</source>
         <translation>Está completamente seguro de que desexa eliminar a actividade sen estudant(es)?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="617"/>
+        <location filename="../src/interface/addactivityform.cpp" line="644"/>
         <source>Invalid duration</source>
         <translation>Duración non válida</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="646"/>
-        <location filename="../src/interface/addactivityform.cpp" line="683"/>
+        <location filename="../src/interface/addactivityform.cpp" line="673"/>
+        <location filename="../src/interface/addactivityform.cpp" line="710"/>
         <source>Yes</source>
         <translation>Si</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="646"/>
-        <location filename="../src/interface/addactivityform.cpp" line="683"/>
+        <location filename="../src/interface/addactivityform.cpp" line="673"/>
+        <location filename="../src/interface/addactivityform.cpp" line="710"/>
         <source>No</source>
         <translation>Non</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="658"/>
+        <location filename="../src/interface/addactivityform.cpp" line="685"/>
         <source>Activity added</source>
         <translation>Actividade engadida</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="660"/>
+        <location filename="../src/interface/addactivityform.cpp" line="687"/>
         <source>Activity NOT added - please report error</source>
         <translation>Actividade NON engadida - informe do erro</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="666"/>
+        <location filename="../src/interface/addactivityform.cpp" line="693"/>
         <source>You want to add a container activity split into more than the number of days per week and also add a constraint min days between activities. This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).</source>
         <translation>Vostede desexa engadir un separador de actividades en máis do número de días por semana e tamén engadir unha regra de mínimo de días entre actividades. Esta é unha mala práctica dende a perspectiva en que traballa o algoritmo de xeración (fai máis lenta a xeración e máis difícil atopar unha solución).</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="671"/>
+        <location filename="../src/interface/addactivityform.cpp" line="698"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min days between activities up to 100%)</source>
         <translation>1. Se engade &apos;forzar consecutivas se son o mesmo día&apos;, entón emparelle as actividades extra para obter un número de actividades igual ao número de días por semana. Por exemplo: 7 actividades con duración 1 en semanas de 5 días, entón se transformarán en 5 actividades con duracións: 2, 2, 1, 1, 1 e engada un contedor simple con eses 5 compoñentes (posiblemente acadando unha ponderación de mínimo días entre actividades superior ao 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="675"/>
+        <location filename="../src/interface/addactivityform.cpp" line="702"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
         <translation>2. Se non engade &apos;forzar consecutivas se son o mesmo día&apos;, entón engada unha actividade longa separada nun número de actividades iufal que o número de días por semana e os restantes compoñentes noutras actividades longas. Por exemplo, supoñendo que precisa engadir 7 actividades con duración 1 en semanas de 5 días. Engada 2 contedores, o primeiro dividio en 5 actividades con duración 1 e o segundo dividido en dúas actividades de duaración 1 (posiblemente obterá unha ponderación de regras de mínimo de días entre actividades de cada contedor superior ao 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="738"/>
+        <location filename="../src/interface/addactivityform.cpp" line="765"/>
         <source>Split activity added. Please note that FET currently cannot check for duplicates when adding split activities. It is advisable to check the statistics after adding all the activities</source>
         <translation>Engadida actividade partida. FET actualmente non pode comprobar duplicados neste caso. Sexa coidadoso e comprobe as estatísticas despois de engadir todas as actividades</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="743"/>
+        <location filename="../src/interface/addactivityform.cpp" line="770"/>
         <source>Split activity NOT added - error???</source>
         <translation>Actividade partida NON engadida - erro???</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="768"/>
+        <location filename="../src/interface/addactivityform.cpp" line="795"/>
         <source>Abbreviations in this dialog:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="784"/>
+        <location filename="../src/interface/addactivityform.cpp" line="811"/>
         <source>A first notice: If you use a 5 days week: when adding an activity split into only 2 components per week, the best practice is to add min days between activities to be 2. If you split an activity into 3 components per week - please read FAQ question Q1-5-September-2008</source>
         <translation>Un primer aviso: se emprega unha semana de 5 días: cando engada unha actividade divídaa só en 2 compoñentes por semana, a mellor práctica é engadir mínimo de días entre actividades 2. Se divide unha actividade en 3 compoñentes por semana - por favor lea as PMF pregunta 1-5-setembro-2008</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="770"/>
+        <location filename="../src/interface/addactivityform.cpp" line="797"/>
         <source>&apos;Students&apos; (the text near the spin box), means &apos;Number of students (-1 for automatic)&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="772"/>
+        <location filename="../src/interface/addactivityform.cpp" line="799"/>
         <source>&apos;Split&apos; means &apos;Split into ... activities per week&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="774"/>
+        <location filename="../src/interface/addactivityform.cpp" line="801"/>
         <source>&apos;Min days&apos; means &apos;The minimum required distance in days between each pair of activities&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="776"/>
+        <location filename="../src/interface/addactivityform.cpp" line="803"/>
         <source>&apos;Weight %&apos; means &apos;Percentage of added constraint (min days between activities constraint). Recommended: 95.0%-100.0%&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="778"/>
+        <location filename="../src/interface/addactivityform.cpp" line="805"/>
         <source>&apos;Consecutive&apos; means &apos;If activities on same day, force consecutive?&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="780"/>
+        <location filename="../src/interface/addactivityform.cpp" line="807"/>
         <source>The &apos;Duration&apos; spin box and the &apos;Active&apos; check box refer to each component of current activity, you can change them for each component, separately, by selecting the corresponding tab in the tab widget.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="791"/>
+        <location filename="../src/interface/addactivityform.cpp" line="818"/>
         <source>You can select a teacher from all the teachers with the mouse or with the keyboard tab/up/down, then double click it to add it to the selected teachers for current activity. You can then choose to remove a teacher from the selected teachers. You can highlight it with the mouse or with the keyboard, then double click it to remove this teacher from the selected teachers.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="798"/>
+        <location filename="../src/interface/addactivityform.cpp" line="825"/>
         <source>The same procedure (double click) applies to students sets and activity tags.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="802"/>
+        <location filename="../src/interface/addactivityform.cpp" line="829"/>
         <source>You can check/uncheck show years, show groups or show subgroups.</source>
         <translation>Pode marcar/desmarcar os cursos amosados, amosar grupos ou subgrupos.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="805"/>
+        <location filename="../src/interface/addactivityform.cpp" line="832"/>
         <source>If you split a larger activity into more activities per week, you have a multitude of choices:
 You can choose the minimum distance in days between each pair of activities. Please note that a minimum distance of 1 means that the activities must not be in the same day, a minimum distance of 2 means that the activities must be separated by one day (distance from Monday to Wednesday for instance is 2 days), etc.</source>
         <translation>Se ten que dividir unha actividade grande en máis actividades semanais, ten moitas opcións:
 Pode seleccionar a distancia mínima en días entre cada par de actividades. Por favor, teña en conta que a distancia mínima de 1 implica que as actividades non deben ser o mesmo día, a distancia mínima de 2 implica que as actividades deben estar separadas por un día (distancia de luns a mércores por exemplo será 2 días), etc.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="813"/>
+        <location filename="../src/interface/addactivityform.cpp" line="840"/>
         <source>If you have for instance an activity with 2 lessons per week and you want to spread them to at least 2 days distance, you can add a constraint min days with min days = 2 and weight 95% (or higher). If you want also to ensure that activities will be separated by at least one day, you can use this feature: add a constraint min days with minimum days 2 and weight 95% or lower, and after that you&apos;ll get the possibility to add another constraint with min 1 days and weight 95% or higher. It works if you first select in the dialog the min days &gt;= 2 and click Add activities. Or you can add manually the constraints (difficult this way). Important: it is best practice to consider both constraints to have 95% weight. The combination assures that the resultant is 99.75% weight</source>
         <translation>Se ten por exemplo unha actividade con 2 clases por semana e desexada telas a mínimo dous días de distancia, pode engadir unha regra de mínimo de días entre actividades con mínimo de días = 2 e ponderación 95% (ou superior). Se desexa asegurar que as actividades irán separadas por un día, pode empregar esta funcionalidade: engadir unha regra de mínimo de días con mínimo 2 e ponderación 95% ou inferior, e despois terá a posibilidade de engadir outra regra con mínimo 1 día e ponderación 95% ou superior. Funciona se primeiro selecciona na ventá o mínimo de días &gt;= 2 e fai clic en Engadir actividades. Ou pode engadir manualmente as regras (camiño difícil). Importante: é mellor considerar ambas regras cunha ponderación de 95%. A combinación asegura que o resultado será unha ponderación de 99.75%</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="826"/>
+        <location filename="../src/interface/addactivityform.cpp" line="853"/>
         <source>Please note that the min days distance is a time constraint and you can only see/modify it in the time constraints dialogs, not in the modify activity dialog. Additionally, you can see the constraints for each activity in the details text box of each activity</source>
         <translation>Por favor, teña en conta que a distancia de mínimo de días é unha regra de tempo e que só pode vela/modificala nas ventás de regras de tempo, non nas de modificar actividade. Tamén pode ver as regras para cada actividade caixa de texto polo miúdo de cada actividade</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="832"/>
+        <location filename="../src/interface/addactivityform.cpp" line="859"/>
         <source>If you choose a value greater or equal with 1 for min days, a time constraint min days between activities will be added automatically (you can see this constraint in the time constraints list or you can see this constraint in the detailed description of the activity). You can select a weight percentage for this constraint. If you select 100%, the constraint must be respected all the time. If you select 95%, there is a small chance that the timetable will not respect this constraint. Recommended values are 95.0%-100.0% (maybe you could try with 95%, then 99.75%, or even 100.0%, but the generation time might be larger). Generally, 99.75% might be a good value. Note: if you put a value less than 100% and the constraint is too tough, FET is able to find that this constraint is impossible and will break it. 99.75% might be better than 95% but possibly slower. The percentage is subjective (if you put 95% you may get 6 soft conflicts and if you put 99.75% you may get 3 soft conflicts). Starting with FET-5.3.6, it is possible to change this value for all constraints in one click, in constraint min days between activities dialog.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="846"/>
+        <location filename="../src/interface/addactivityform.cpp" line="873"/>
         <source>There is another option, if the activities are in the same day, force consecutive activities. You can select this option for instance if you have 5 lessons of math in 5 days, and there is no timetable which respects fully the days separation. Then, you can set the weight percent of the min days constraint to 95% and add consecutive if same day. You will have as results say 3 lessons with duration 1 and a 2 hours lesson in another day. Please be careful: if the activities are on the same day, even if the constraint has 0% weight, then the activities are forced to be consecutive.</source>
         <translation>Hai outra opción, se as actividades teñen lugar o mesmo día, force acitividades en días consecutivos. Pode seleccionar esta opción por exemplo se ten 5 clases de matemáticas en 5 días, e non hai horario que respecte completamente a separación. Entón pode establecer a porcentaxe de ponderación da regra de mínimo de días a 95% e engadir consecutivas se son o mesmo día. Terá como resultado 3 clases con duración 1 e 2 horas noutro día. Por favor, teña coidado: se as actividades son o mesmo día, aínda que a regra teña unha ponderación do 0%, entón as actividades son forzadas a ir consecutivas.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="855"/>
+        <location filename="../src/interface/addactivityform.cpp" line="882"/>
         <source>Current algorithm cannot schedule 3 activities in the same day if consecutive is checked, so you will get no solution in such extreme cases (for instance, if you have 3 lessons and a teacher which works only 1 day per week, and select &apos;force consecutive if same day&apos;, you will get an imposssible timetable. But these are extremely unlikely cases).</source>
         <translation>O actual algoritmo non pode planificar 3 actividades no mesmo día se están marcadas como consecutivas, así non terá obterá solución neses casos extremos (por exemplo, se ten 3 clases e un profesor que traballa só 1 día por semana, e selecciona &apos;forzar consecutivas se son o mesmo día&apos;, vostede obterá un horario imposible. Pero estes son casos extemos pouco comúns).</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="861"/>
+        <location filename="../src/interface/addactivityform.cpp" line="888"/>
         <source>Note: You cannot add &apos;consecutive if same day&apos; with min days=0. If you want this, you have to add min days at least 1 (and any weight percentage).</source>
         <translation>Nota: Non pode engadir &apos;consecutivas se son o mesmo día&apos; con mínimo de días cero. Se o desexa, ten que engadir un mínimo de 1 días (e calquera porcentaxe de ponderación).</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="866"/>
+        <location filename="../src/interface/addactivityform.cpp" line="893"/>
         <source>Starting with version 5.0.0, it is possible to add activities with no students or no teachers</source>
         <translation>Comezando coa versión 5.0.0, é posible engadir actividades sen estudantes ou profesores</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="870"/>
+        <location filename="../src/interface/addactivityform.cpp" line="897"/>
         <source>If you select a number of min days above 1 (say this number is n), you will get the possibility to add a second constraint min days between activities, with min days = n-1 and a percentage of your choice. Just click Add activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="877"/>
+        <location filename="../src/interface/addactivityform.cpp" line="904"/>
         <source>FET - help on adding activity(ies)</source>
         <translation>FET - axuda para engadir actividade(s)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="883"/>
+        <location filename="../src/interface/addactivityform.cpp" line="910"/>
         <source>OK</source>
         <translation>Vale</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="681"/>
+        <location filename="../src/interface/addactivityform.cpp" line="708"/>
         <source>Do you want to add current activities as they are now (not recommended) or cancel and edit them as instructed?</source>
         <translation>Quere engadir as actividades actuais tal como están agora (non recomendado) ou cancelar e editalas como se indica?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="669"/>
+        <location filename="../src/interface/addactivityform.cpp" line="696"/>
         <source>The best way to add the activities would be:</source>
         <translation>A mellor forma de engadir as actividades sería:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="645"/>
+        <location filename="../src/interface/addactivityform.cpp" line="672"/>
         <source>A similar activity already exists. Do you want to insert current activity?</source>
         <translation>Unha actividade similar xa existe. Quere inserir a actividade?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="664"/>
+        <location filename="../src/interface/addactivityform.cpp" line="691"/>
         <source>FET confirmation</source>
         <translation>FET confirmación</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="665"/>
+        <location filename="../src/interface/addactivityform.cpp" line="692"/>
         <source>Possible incorrect setting. Are you sure you want to add current activity? See details below:</source>
         <translation>Axuste posiblemente incorrecto. Está certo de querer engadir a actividade? Polo miúdo abaixo:</translation>
     </message>
@@ -11006,17 +11006,17 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ChooseFieldsDialog</name>
     <message>
-        <location filename="../src/engine/import.cpp" line="139"/>
+        <location filename="../src/engine/import.cpp" line="144"/>
         <source>FET - Import from CSV file</source>
         <translation>FET - Importar dende arquivo CSV</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="276"/>
+        <location filename="../src/engine/import.cpp" line="281"/>
         <source>OK</source>
         <translation>Vale</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="277"/>
+        <location filename="../src/engine/import.cpp" line="282"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -28430,27 +28430,27 @@ A importación será máis doada con eles.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="239"/>
+        <location filename="../src/engine/messageboxes.cpp" line="247"/>
         <source>Progress title: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="245"/>
+        <location filename="../src/engine/messageboxes.cpp" line="253"/>
         <source>Progress label: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="251"/>
+        <location filename="../src/engine/messageboxes.cpp" line="259"/>
         <source>Progress range: %1..%2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="258"/>
+        <location filename="../src/engine/messageboxes.cpp" line="266"/>
         <source>Progress setModal(true)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="260"/>
+        <location filename="../src/engine/messageboxes.cpp" line="268"/>
         <source>Progress setModal(false)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -33371,11 +33371,11 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2015 Liviu Lalescu, Volker Dirr&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2015 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.25.0 (January 2015).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.26.0 (January 2015).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under GNU GPL v2 or later.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -34020,6 +34020,13 @@ A: The activities are indented for easier visualization. The non-indented ones a
 R: Para facilitar a visualización. As non identadas son representativas de actividades longas divididas (o seu id é o id do grupo), mentres que as identadas son compoñentes da actividade longa.</translation>
     </message>
     <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="123"/>
+        <source>Q: Is it possible to use non-integer weights for constraints?
+
+A: Yes. If a constraint is allowed values under 100%, you can use any weight, even fractional numbers like 99.75%. It might help in constraints like min days, preferred rooms or max hours daily. The precision in FET is limited to %1 decimal digits after the decimal point, but probably nobody will use such a fine precision.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/helpfaqform.cpp" line="132"/>
         <source>Q: Help on ConstraintStudentsEarlyMaxBeginningsAtSecondHour.
 
@@ -34223,16 +34230,7 @@ R: Tal e como foi concebida, a xeración automática é rápida se emprega grupo
 Cada regra de tipo non dispoñible ou tempos preferidos que filtre sesións imposibles levará a unha mellora de rendemento.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="323"/>
-        <source>Q: Is it allowed to use non-integer weights?
-
-A: If a constraint is allowed values under 100%, you can use any weight, even fractional numbers like 99.75%. It might help in constraints like min days, preferred rooms or max hours daily.</source>
-        <translation>P: Permítense valores non enteiros nas ponderacións?
-
-R: Se unha regra permite valores baixo 100%, pode empregar calquera ponderación, mesmo fraccional como 99.75%. Podería axudar en regras de mínimo de días, aulas preferidas ou máximo de horas diario.</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="360"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="351"/>
         <source>Q: How does FET care about weights. What do they mean?
 
 A: The weights under 100% are subjective, because FET can skip them if necessary.
@@ -34250,7 +34248,7 @@ This is not 100% correct. Activities might get unallocated, and cycle reopened.<
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="378"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="369"/>
         <source>Q: Help on constraint activities preferred starting or preferred time slots (a set of activities has a set of preferred starting or time slots)
 
 A: You can specify a set of activities by selecting a teacher (if empty - all teachers), a students set (if empty - all students), a subject (if empty - all subjects) and an activity tag (if empty, all activity tags) and a set of allowed time slots.
@@ -34261,7 +34259,7 @@ Time slots means more restrictive, that activity may only start and end and take
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="502"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="493"/>
         <source>Q: What I need is a way to make the following constraint:
 
 If Activity1 comes first, then Activity2 can be consecutive. But, if Activity2 comes first, then Activity1 must have at least 1 period in between.
@@ -34280,7 +34278,7 @@ There is only a small problem: A2 cannot be put in the last period. To correct t
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="521"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="512"/>
         <source>Q: What is the difference between preferred starting times and preferred time slots?
 
 A: Time slots is more restrictive, means all hours of an activity must be in the allowed intervals.
@@ -34289,7 +34287,7 @@ Example: Preferred times Monday 8,9 and 10. If activity A has duration 2, then s
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="551"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="542"/>
         <source>Q: Help on constraint subactivities preferred starting or preferred time slots (a set of subactivities has a set of preferred starting or time slots)
 
 A: You select the component number of certain activities (say, if you have an activity split into 5 activities per week, you have components 1, 2, 3, 4 or 5). Only the selected number of this split activity (the corresponding component activity) will be constrained.
@@ -34306,7 +34304,7 @@ Another thing: if you have 1 or 2 lessons per week for a subject, say biology, a
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="588"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="579"/>
         <source>Q: At our school there are a lot of teachers which work only a few hours a week. Of course it is really nasty to drive for one our to the school. So we set the constraint that every teacher should work at least 2 hours a day. Unfortunately we have this year a teacher which only works 1h a week. As a result of this FET doesn&apos;t start to create a timetable. Any suggestions how to fix the problem without defining a constraint for every singular teacher?
 
 A: I have a nice trick: add a dummy activity, 1 hour duration, with only this teacher (no students sets, any subject), additional to the real activity.
@@ -34315,7 +34313,7 @@ This trick just passed through my mind as I was trying to write you that you hav
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="646"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="637"/>
         <source>Q: (by Horatiu Halmajan) I met a situation: a teacher asks for maximum 2 working days, but these days should not be consecutive. Is there a way to implement it in .fet?
 
 The only (manual) way I could think of is to set the teacher as unavailable on Tuesdays and Thursdays, thus leaving him available on Monday, Wednesday and Friday (any two of these are unconsecutive).
@@ -34328,7 +34326,7 @@ Or add a dummy activity for this teacher, split into 2 per week, min days = 2, w
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="781"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="772"/>
         <source>Q: This is a problem that probably will never appear in practice, but it is possible. Say the user generates a timetable successfully, locks a few activities, then tries to generate again, but FET stops at a certain activity and reports impossible timetable.
 
 A: Indeed, this is a potential problem in FET (but probably will never show up in practice). It may happen if you have constraints with weight under 100%, which may be broken when you generate the timetable.
@@ -34348,12 +34346,12 @@ Practical solution to case 2)? Reduce weights of constraints which have weight b
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="807"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="798"/>
         <source>Q: I tried to work on a fixed timetable, to move an activity to another time slot. Now I got stuck - FET says: impossible to generate.</source>
         <translation>P: Tentei traballar nun horario arranxado, para mover a actividade a outra hora. Agora teño o erro: imposible de xerar.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="809"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="800"/>
         <source>A: There is this potential problem. Suppose you have max hours daily for students = 4 hours, 99%. You generated successfully (maybe you got some days with more than 4 hours, it does not matter for our discussion). Now, if you have a day with 4 hours and try to move another activity to this day, some students will have 5 hours in this day. If in this day all activities have more students sets, FET may report an impossible timetable. Why? Because if you have an activity with say 4 subgroups, 99% is assumed for each subgroup, resulting in a very strong constraint for this activity. (100%-(1%^4)). Even if FET retries more times for each activity, it is not enough.
 
  A solution: lower the weight of this constraint from 99% to 90% or less.</source>
@@ -34362,27 +34360,27 @@ Practical solution to case 2)? Reduce weights of constraints which have weight b
 Unha solución: rebaixar a ponderación desta regra de 99% a 90% ou menos.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="823"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="814"/>
         <source>Q: A trick to deal with fortnightly activities (my institution has a lot of fortnightly activities):</source>
         <translation>P: Un truco para manexar actividades quincenais (o meu centro ten moitas actividades quincenais):</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="825"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="816"/>
         <source>A: I divided hours in two, the first half (8.00 to 8.30, 9.00 to 9.30, ...) represents week A, the second half (8.30 to 9.00, 9.30 to 10.00, ...) represents week B, fortnightly activities have duration 1, weekly activities have duration 2.</source>
         <translation>R: Dividíronse as horas en 2, a primeira metade (8:00 a 8:30, 9:00 a 9:30, ...) representa a semana A, a segunda metade (8:30 a 9:00, 9:30 a 10:00, ...) representa a semana B, quincenalmente as actividades teñen duración 1, semanalmente as actividades teñen duración 2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="829"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="820"/>
         <source>I created an activity tag &apos;Start hour&apos;. It should be added to each weekly activity to make sure they start at the same time (same day + same hour) on each week. Otherwise, an activity with duration 2 can start on a second half of hour in the timetable, so this activity is placed on a certain day and at a certain hour on week A, and on the same day but at the next hour on week B.</source>
         <translation>Creouse un tipo de actividade &apos;Hora de comezo&apos;. Debería engadirse a cada actividade semanal para asegurar que comezan ao mesmo tempo (mesmo día e mesma hora) en cada semana. Senón unha actividade con duración 2 pode comezar na segunda metade dunha hora no horario, así esta actividade emprázase en certo día e hora nunha semana A, e no mesmo día pero na próxima hora na semana B.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="843"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="834"/>
         <source>Q: I need to add a split activity with total duration 4, which can be either 2+2 or 2+1+1 (two hours in a day and two hours in another day, or two hours in a day, one hour in another day and one hour in another day).</source>
         <translation>P: Preciso engadir unha actividade dividida cunha duración 4, que pode ser tanto 2+2 como 2+1+1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="846"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="837"/>
         <source>A: Add 3 activities (let us assume that their id-s are 1, 2 and 3), with durations respectively 2, 1 and 1. It is preferable to add them as 3 single/independent activities (see note below).
 
 Add two constraints min 1 day between activities with id-s 1 and 2 and between activities with id-s 1 and 3, 100% weight percentage.
@@ -34395,164 +34393,164 @@ Engada 2 regras de mínimo 1 día entre actividades con id-s 1 e 2 e entre activ
 Engada outra regra: mínimo 1 día entre actividades con id-s 2 e 3, consecutivas se son o mesmo día = si, ponderación 0%.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="851"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="842"/>
         <source>Note: It is advisable to add the 3 activities as single/independent ones (not a larger split activity with 3 components). The reason is that if you want to apply spreading of activities over the week, this operation won&apos;t add/remove constraints of type min days between activities for these 3 activities. Also, if you add a split activity, you need to take care not to add a default constraint min days between the 3 components.</source>
         <translation>Nota: Recoméndase engadir as 3 actividades independentes (non unha grande con 3 compoñentes). A razón é que se desexa distribuílas na semana, esta operación non engadirá ou eliminará regras do tipo de mínimo de días entre actividades para estas 3. Tameń se  engade unha actividade dividida, cómpre ter coidado de engadir por defecto unha regra de mínimo de días entre os 3 compoñentes.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="861"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="852"/>
         <source>Q: I would like to specify that a teacher should have activities in certain time slots, no matter which activities.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="863"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="854"/>
         <source>A: Please use constraint activities occupy max time slots from selection (the exact menu entry is &apos;A set of activities occupies max time slots from selection&apos;. See that constraint&apos;s Help button for more details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="870"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="861"/>
         <source>Q: How to easily find the activities with unspecified room in the timetable (after the timetable was generated)?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="872"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="863"/>
         <source>A: A trick is this: open the file representing the activities timetable in XML form (this file can be found in the results directory, with a name like: file_activities.xml) with a text editor, and search for the text &lt;Room&gt;&lt;/Room&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="879"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="870"/>
         <source>Q: The students and/or teachers should have in each day some activities without interruption, then some continuous gaps, then again some activities without interruption. This situation can appear in these cases: schools in Morocco and Algeria, which have morning and afternoon shifts, and also in some universities in which students would prefer to have at most a single cluster of gaps, no matter how long, in each day. How to treat such situations in FET?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="885"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="876"/>
         <source>A: A nice way to treat such situations would be to consider the number of FET days = 2 * the number of real days. Each real day corresponds to two FET days, one for the morning and one for the afternoon. Then, add constraints max zero gaps, and maybe min two hours daily with allow empty days true. You may need to devise some other tricks, in addition.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="893"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="884"/>
         <source>Q: How can I add a comment to a (sub)activity or to a constraint?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="895"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="886"/>
         <source>A: You can add a comment to a (sub)activity by clicking the &apos;Comments&apos; button in the (sub)activities dialog. You can add a comment to a constraint by clicking the &apos;Comments&apos; button in the all time/space constraints dialogs.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="902"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="893"/>
         <source>Q: How can I activate/deactivate a constraint?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="904"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="895"/>
         <source>A: You can activate/deactivate a constraint by clicking the &apos;Activate&apos;/&apos;Deactivate&apos; buttons in the all time/space constraints dialogs.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="911"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="902"/>
         <source>Q: How can I sort the constraints?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="913"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="904"/>
         <source>A: You can sort the constraints in the all time/space constraints dialogs. Sorting is done ascending, according to each constraints&apos; comments. You can add suitable comments to obtain a desired order, like: &apos;rank #1 ... other comments&apos; and &apos;rank #2 ... other different comments&apos;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="921"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="912"/>
         <source>Q: How can I specify that some activities must be in the same room (at different time slots, of course, because a single room can hold a single activity in a certain time slot)? This is needed for instance to constrain the Physics activities of a certain students set to take place in the same room, be it Lab-1 or Lab-2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="925"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="916"/>
         <source>A: You can use the constraint activities occupy max different rooms, with max different rooms = 1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="931"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="922"/>
         <source>Q: How can I backup/restore the FET settings on a computer, or share them between different computers?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="933"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="924"/>
         <source>A: GNU/Linux: Usually, in your %1 directory you will find a directory &quot;%2&quot; containing the file &quot;%3&quot;. If you copy this file to another computer, the FET settings will be copied. You can also make a backup of this file and copy it on the same computer, later, to restore the previous settings. If you remove this file, all FET settings on this computer will be reset to defaults.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="939"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="930"/>
         <source>Mac OS X: It seems that the configuration file might be %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="941"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="932"/>
         <source>Windows: Run regedit.exe (Registry Editor) and search for the key &quot;%1&quot;. You will find a section with this name, with the subsection &quot;%2&quot;. You can export this section to a file, and import it from this file on the same or another computer. If you remove this section, all FET settings will be reset to defaults.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="949"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="940"/>
         <source>Q: I have many subgroups and I don&apos;t explicitely use them. Can I hide them in the combo boxes, to add easier the constraints? Also, can I make the FET interface work faster?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="952"/>
-        <location filename="../src/interface/helpfaqform.cpp" line="979"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="943"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="970"/>
         <source>A:</source>
         <comment>Answer</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="954"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="945"/>
         <source>If you have many subgroups and you don&apos;t explicitely use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="957"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="948"/>
         <source>Note that using the global menu setting to hide subgroups in activity planning is a different thing from the check box in the activity planning dialog, and the global setting works better and faster.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="960"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="951"/>
         <source>If you hide subgroups in combo boxes, the affected dialogs (like the activities dialog or the add constraint students set not available times dialog) will load much faster if you have many subgroups.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="965"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="956"/>
         <source>If you are only working on a timetable, and you do not need to publish it, you may want to disable writing some categories of timetables on the hard disk, for operativity (the generation speed is not affected, only the overhead to write the partial/complete timetables when stopping/finishing the simulation). The timetables taking the longest time are the subgroups, groups AND years ones.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="969"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="960"/>
         <source>(Also the conflicts timetable might take long to write, if the file is large.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="971"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="962"/>
         <source>After that, you can re-enable writing of the timetables and re-generate.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="977"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="968"/>
         <source>Q: How about dividing a students year automatically into many subgroups?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="981"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="972"/>
         <source>About using a large number of categories, divisions per category and subgroups: it is highly recommended to keep these to a minimum, especially the number of categories, by using any kind of tricks. Otherwise the timetable might become impossible (taking too much time to generate).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="985"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="976"/>
         <source>Maybe a reasonable number of categories could be 2, 3 or maximum 4. The divide year dialog allows much higher values, but these are not at all recommended.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="988"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="979"/>
         <source>Maybe an alternative to dividing a year into many categories/subgroups would be to enter individual students as FET subgroups and add into each group the corresponding subgroups. But this is hard to do from the FET interface - maybe a solution would be to use an automatic tool to convert your instition data into a file in .fet format.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="834"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="825"/>
         <source>Add time constraint: activities with all teachers, all students, all subjects, activity tag = &apos;Start hour&apos; have a set of preferred starting times: Monday 8.00, Monday 9.00, ...</source>
         <translation>Engada regra de tempo: actividades con todos os profesores, todos os estudantes, todas as materias, tipo de actividade = &apos;Hora de comezo&apos; ten un conxunto de horas de comezo preferidas: Luns 8:00, Luns 9:00, ....</translation>
     </message>
@@ -34562,22 +34560,22 @@ Engada outra regra: mínimo 1 día entre actividades con id-s 2 e 3, consecutiva
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="821"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="812"/>
         <source>-- This entry by Regis Bouguin --</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="837"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="828"/>
         <source>It works fine and I got good timetables with strong teachers time constraints.</source>
         <translation>Funciona ben e obtivo bos horarios con regras de tempo para profesores fortes.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="855"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="846"/>
         <source>There may be other solutions possible, but this one seems perfect with respect to efficiency.</source>
         <translation>Habería outras solucións, pero esta semella perfecta respecto á eficiencia.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="332"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="323"/>
         <source>Q: I have a sports room which allows more than 1 activity simultaneously in it. How to make the preferred room constraints? Can FET accept more than one activity at the same time in a single room?
 
 A: Each room can host a single activity at the same time. How to implement what you need? You can add more rooms (sport1, sport2, sport3) and instead of a single preferred room add more preferred rooms.</source>
@@ -34606,13 +34604,6 @@ R: Cada aula pode ter unha actividade soa ao mesmo tempo. Como implementas o que
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="123"/>
-        <source>Q: Is it possible to use non-integer weights for constraints?
-
-A: Yes. Using values like 99.75% might be good sometimes. The precision in FET is limited to %1 decimal digits after the decimal point, but probably nobody will use such a fine precision</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/helpfaqform.cpp" line="220"/>
         <source>Q: Help on ConstraintMinDaysBetweenActivities.
 
@@ -34637,7 +34628,7 @@ A: Yes, you have to add more constraint students set not available accordingly (
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="341"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="332"/>
         <source>Q: I got an impossible to solve timetable!
 
 A: If you get an impossible timetable, maybe the constraints students (set) early are too difficult. Maybe you can allow more arrivals at second hour. Also teachers&apos; min hours daily might be too strong. Please also check the statistics to be correct. Remove other constraints until you get a possible timetable.</source>
@@ -34646,7 +34637,7 @@ A: If you get an impossible timetable, maybe the constraints students (set) earl
 R: Se ten un horario imposible, pode ser que as regras de grupos para primeiras horas sexan moi complexas. Podería permitir máis chegadas a segunda hora. Tamén a regra de mínimo de horas diario para profesores debe ser forte. Por favor comprobe que as estatísticas sexan correctas. Elimine outras regras ata obter un horario posible.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="350"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="341"/>
         <source>Q: Is it possible to work with 0 hour?
 
 A: A bit difficult. You have to choose a day for this 0 hour. Then add breaks or not available to prevent other activities in other days at hour 0, then add students set not available to prevent other students set from having hours at this hour 0. Or variants of this.
@@ -34659,7 +34650,7 @@ R: Resulta algo difícil. Ten que seleccionar un día para esta hora cero. Entó
 O señor Zsolt Udvari emprega outro truco: considera que a última hora será a hora cero. Pero isto non pode aplicarse sempre.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="389"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="380"/>
         <source>Q: Help on statistics menu
 
 A: The statistics are important to check your data before generating.
@@ -34672,7 +34663,7 @@ R: As estatísticas son importantes para comprobar os datos antes da xeración.
 Cando está vendo as estatísticas de estudantes, probablemente o máis útil será para subgrupos. Cada subgrupo debería ter unha cantidade de horas razoable, e se ten subgrupos con poucas horas, como 2 por semana, probablemente tivo un erro na notación FET. Cada subgrupo é independente dos outros e debería ter un número de horas por semana próximo á media de todos os subgrupos. Non insira grupos baleiros con poucas actividades.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="400"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="391"/>
         <source>Q: What if I enter accidentally duplicate constraints?
 
 A: It is not a good practice to allow unnecessary duplicate constraints. For min days between activities and other constraints, the combined weight becomes very high. For instance, if you have 2 constraints with weight 95%, the outcome is a constraint with weight 100%-5%*5%=99.75%, very high. You might get an impossible timetable with duplicates, so beware. For constraint activity(ies) preferred (starting time(s) or time slots) the chosen weight is the largest value, so you can use more constraints of this type for same activities.</source>
@@ -34681,7 +34672,7 @@ A: It is not a good practice to allow unnecessary duplicate constraints. For min
 R: Non é unha boa práctica duplicar regras. Para a regra de mínimo de días entre actividades e outras regras, a ponderación combinada chegará a ser moi alta .Por exemplo, se ten 2 regras con ponderación 95%, a saída será unha regra con ponderación 100%-5%*5%=99.75%, moi alta. Podería obter un horario imposible con duplicados, así que coidado. Para unha regra de horas de comezo ou sesións de actividade(s) preferidas, a ponderación elixida será o valor maior, así que pode empregar máis regras deste tipo para as mesmas actividades.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="411"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="402"/>
         <source>Q: More information about students&apos; structure
 
 A: The students&apos; structure is very flexible and permits any institution structure.
@@ -34769,7 +34760,7 @@ Currently, the interface for students is difficult to use. I am thinking of that
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="479"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="470"/>
         <source>Q: Example: I have 7 hours of Maths per 5 days week (7 is larger than 5). How to add correctly this split activity?
 
 Complete Question: I have a large container activity split into more activities than the number of days per week. How to add it and constraint min days between activities?
@@ -34784,7 +34775,7 @@ The best way to add the activities would be:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="531"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="522"/>
         <source>Q: What means constraint min gaps (hours) between a set of activities?
 
 A: I had many users wanting to put a gap between activities of same teachers or between activities with same teacher and subject, if they are on the same day. This constraint does that. If you want for instance to make teacher John to have at least one gap between all his activities, select filter &apos;John&apos; and add all his activities to a constraint of this type. If you want to make teacher John to have at least one gap between all his Math activities, select filter &apos;John&apos; and &apos;Math&apos; and add all these activities to a constraint of this type.
@@ -34793,14 +34784,14 @@ Please take care that the selected activities are not forced consecutive by cons
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="544"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="535"/>
         <source>Q: What type of files uses FET?
 
 A: FET uses text files, xml or html or txt or csv (comma separated values - for import/export). The used encoding is UTF-8.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="570"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="561"/>
         <source>Q: Help on constraints teacher(s) or students (set) hourly interval max days per week
 
 A: This is a constraint suggested by users, to allow you to specify an hourly interval for students or teachers, and to say that in this interval they must work at most max days per week. This is useful if for instance you want teachers not to have more than 2 days per week activities in the last 2 hours of the day.</source>
@@ -34809,7 +34800,7 @@ A: This is a constraint suggested by users, to allow you to specify an hourly in
 R: Esta regra foi suxerida polos usuarios, para permitir especificar un intervalo horario para estudantes ou profesores, e para dicir que neste intervalo deben traballar en como moito ese máximo semanal. Resulta útil por exemplo se desexa que os profesores non teñan máis de 2 días por semana actividaes nas 2 últimas horas do día.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="579"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="570"/>
         <source>Q: Help on constraint activities end students day (or activity ends students day).
 
 A: If you have activities which you want to put in the last slots of a day (like say the meetings with the class master), please use the new constraint a set of activities end students day (or singular activity ends students day). This constraint can have weight only 100%, because of the way the algorithm works.</source>
@@ -34818,12 +34809,12 @@ A: If you have activities which you want to put in the last slots of a day (like
 R: Se ten actividades que desexa poñer nas últimas horas do día (como as titorías), por favor empregue a nova regra para final do día en conxuntos de actividades (ou actividades simples). Esta regra pode ter unha ponderación de 100%, pola forma en que funciona o algoritmo.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="779"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="770"/>
         <source>This is an advanced question which probably will never appear in practice, you may skip it at first reading.</source>
         <translation>Esta é unha pregunta avanzada que probablemente nunca ocorrerá na práctica, pode saltala nunha primeira lectura.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="600"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="591"/>
         <source>Q: What about the automatic search for updates? Should I enable it?
 
 A: It is recommended to enable automatic search for updates. I didn&apos;t set it as default because people might be annoyed if I release too fast new versions. But if you can cope with that, it is recommended to always have the latest version and enable searching for updates at startup.</source>
@@ -34837,19 +34828,19 @@ R: Recoméndase facelo. Non se fai por defecto por se lle parece mal a alguén.<
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="477"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="468"/>
         <source>Q-1-27-March-2008</source>
         <comment>Mnemonic name for a particular question in the FAQ</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="500"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="491"/>
         <source>Q-1-6-June-2008</source>
         <comment>Mnemonic name for a particular question in the FAQ</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="609"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="600"/>
         <source>Q: I have a double duration activity. Is it possible that it is spread over the break period, like:
 
 Activity Math, duration 2, id say 100
@@ -34870,7 +34861,7 @@ Hora 12:00 Matemáticas (segunda hora de actividade 100)?
 R: Non, a actividade debe respectar o recreo, así debe ir con todas as súas horas antes ou despois del.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="620"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="611"/>
         <source>Q and A From Anestis Vovos: A very difficult to diagnose unresolved case
 
 Since I started working on our school&apos;s timetable I had a problem with a specific day and teacher. No matter what I tried in FET I couldn&apos;t reduce the in-school hours for this specific teacher and day down from 7 (7 hours is the full school day, so he had 6 teaching hours and 1 gap). It was too much (other teachers have 5 teaching hours max) but he didn&apos;t mind so we kept FET solution.Just a month ago this teacher had some major operation and couldn&apos;t teach so much hours in one day anymore. So I started again to experiment with the timetable and what was wrong. After a LOT of test and failures the idea hit me just as I was waking up to go to school; I hadn&apos;t enough teachers for early and late hours! I checked and it was true! Let me explain. We have 6 classes in total and every class has 7 hours per day. This means that I need 6 teachers for the first hour and 6 teachers for the 7th hour, a total of 12 teachers. But I only had 11 teachers to cover first and last hour! I had 16 teachers in total for that day but their restrictions prevented 6 of them to teach first and last hours (and it wasn&apos;t just cases of teacher not available but usually restrictions on teaching on specific hours and max gaps, so it was very difficult to look through it). So this specific teacher (because of the restrictions on the other teachers and the loose restrictions on himself) had to teach 6 hours with 1 gap so that he could cover a first and a last hour!
@@ -34883,7 +34874,7 @@ Dende que comecei a traballar no horario do meu centro teño un problema con un 
 ...Non caerei de novo nelo pero baseandome na dificultade do diagnóstico pola miña parte, axudará a outros a resolver o mesmo problema.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="638"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="629"/>
         <source>Q: I want to define hard subjects (Math, Physics and Chemistry) and I want students not to have more than 1 (or another variant 2) difficult subjects in a row.
 
 A: Define activity tag &apos;Difficult&apos; and add it to all MA, PH and CH lessons. Then add constraint maximum 1 (or 2) hours continuously for all students and an activity tag &apos;Difficult&apos;. Please take care if you may have double lessons.</source>
@@ -34892,7 +34883,7 @@ A: Define activity tag &apos;Difficult&apos; and add it to all MA, PH and CH les
 R: Definia un tipo de actividade &apos;Difícil&apos; e engada nel Mat, Fís e Quím. Entón engada unha regra de máximo 1 (ou 2) horas seguidas para todos os estudantes e un tipo de actividade &apos;Difícil&apos;. Por favor teña coidado de ter leccións dobres.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="662"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="653"/>
         <source>Q: (by Horatiu Halmajan) The students must have max 4 gaps per week, maximum 2 per day, continuous gaps. How to solve this?
 
 A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, duration 1, min days between activities 1, weight 0%, select consecutive if same day. FET will never put more than 2 of these dummy activities in a day. Add max gaps for students = 0 per week.</source>
@@ -34901,13 +34892,13 @@ A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, d
 R: Engada para cada subgrupo unha actividade tonta (sen profesores) divídaa en 4 por semana, duración 1, mínimo de días entre actividades 1, ponderación 0%, seleccione consecutivas se son o mesmo día. FET nunca porá máis de 2 destas actividades tontas nun día. Engada máximo de ocos para estudantes = 0 por semana.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="671"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="662"/>
         <source>Advice: to treat gaps for students or teachers, if FET constraints are not enough, you can use dummy activities. For instance, if a students set can have maximum 3 gaps, add an activity split into 3 per week, with no teachers.</source>
         <translation>Aviso: para tratar ocos para estudantes ou profesores, se as regras de FET non son suficientes, pode empregar actividades tontas. Por exemplo, se un grupo ten mínimo 3 ocos, engada unha actividade dividida en 3 por semana, sen profesores.
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="678"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="669"/>
         <source>Question 1/16 August 2009: How to add constraint two activities grouped, two activities consecutive and three activities grouped if the activities are constrained not to be in the same day by constraints min days between activities?
 
 If A1 and A2 are constrained not to be in the same day with 95% weight or any other weight, it is a bad practice to add a constraint grouped or consecutive to them. If they are constrained with weight 100% not to be in the same day, the timetable is impossible; if the weight is under 100%, the timetable is more difficult to find than using the correct way.
@@ -34916,7 +34907,7 @@ The correct way would probably be to consider A1 and A2 = a single activity A12&
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="691"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="682"/>
         <source>Question 1/25 September 2009: An observation for constraint teacher(s) or students (set) activity tag max hours daily:
 
 This constraint is implemented correctly and is working good, but it is not perfect, which means that in unusual, extreme cases the time needed to generate a timetable might be longer or much longer than really necessary. You should give FET a hand in these extreme situations.
@@ -34937,62 +34928,62 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="725"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="716"/>
         <source>3 hints from an anonymous Polish user, who uses FET for very large data:</source>
         <translation>3 suxestións dun usuario polaco anónimo, que empregou FET con moitos datos:</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="727"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="718"/>
         <source>The first hint for other users is to start with minimum number of constraints and if FET would generate the plan then thinking about adding the next ones.</source>
         <translation type="unfinished">A primeira suxestión para outros usuarios é comezar co mínimo de regras e FET xerará o plan que mellor se adapte engadindo a continuación as seguintes.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="730"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="721"/>
         <source>The second hint is not to change too many constraints in one simulation as it may lead to impossible timetable and then it is difficult to say which particular constraint was too much.</source>
         <translation type="unfinished">A segunda suxestión é non cambiar moitas regras nunha simulación e pode levar a horarios imposibles sendo máis difícil dicir que regra o provocou.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="733"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="724"/>
         <source>For instance even when two consecutive activities are placed at one day (the same group and the same teacher) sometimes they are placed at different rooms what would force them to needless changing room. I guess that FET is focused on fulfilling constraints but not on optimizing timetable. Sometimes simple changing of two activities makes plan better both for students and teachers. I think that manually improving generated plan is faster than creating many many more constraints and repeating simulations. And this is the third hint.</source>
         <translation type="unfinished">Por exemplo incluso cando dúas actividades consecutivas se emprazan no mesmo día (mesmo grupo e mesmo profesor) algunhas veces se emprazan en diferentes aulas o que podería forzar a un necesario cambio de aula. A pregunta sería se FET se centra en autocompletar regras pero non nun horario optimizado. Algunhas veces simplemente cambiando dúas actividades faise unha planificación maior para profesores e estudantes. Coido que mellorar o plan manualmente é máis rápido que crear moitísimas regras e repetir as simulacións. E este é a terceira suxestión.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="743"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="734"/>
         <source>Q: Why the constraints activity tag max hours daily and students max gaps per day are disabled in the FET menu?</source>
         <translation>P: Que regras de máximo de horas diario para tipo de actividade e máximo de ocos diario para estudantes están desactivadas no menú de FET?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="745"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="736"/>
         <source>A: These 6 constraints (4 for activity tag and 2 for students max gaps per day) are the only ones which are not perfectly optimized in FET. For some combinations of constraints, they may slow down the generation or even make the timetable impossible. That is why they are not enabled by default. You need to activate them from the advanced settings menu. It is recommended to add such constraints at the end of your work, after you added all the other constraints and verified that your timetable is possible.</source>
         <translation>R: Estas 6 regras (4 para tipo de actividade e 2 para máximo de ocos por día para estudantes) son só as únicas que non están perfectamente optimizadas en FET. Para algunhas combinacións, poderían relentizar a xeración ou mesmo dar lugar a horarios imposibles. Iso é porque non están activadas por defecto. Necesita activalas dende o menú de opcións avanzadas. Recoméndase engadir esas regras ao final do seu traballo, despois de engadir todas as outras regras e verificar se o horario é posible.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="750"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="741"/>
         <source>If these constraints are disabled, they have an icon attached in the menu to signify that. If they are enabled, they have another icon attached to them, to signify that they are enabled, but must be used with caution.</source>
         <translation>Se estas regras están desactivadas, teñen unha icona indicándoo. Se están activadas, teñen outra icona diferente, pero debe empregarse con precaución.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="753"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="744"/>
         <source>Use these constraints with caution, not to obtain impossible timetables.</source>
         <translation>Empregue estas regras con coidado, non para obter horarios imposibles.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="759"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="750"/>
         <source>Q: Why don&apos;t you implement the not perfect constraints (activity tag max hours daily and students max gaps per day) in a perfect way?</source>
         <translation>P: Por que non implementas as regras imperfectas (máximo de horas diario para tipos de actividade e máximo de ocos diario para estudantes) de forma correcta?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="761"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="752"/>
         <source>A: Activity tag max hours daily cannot be implemented perfectly, generation would take too much (because of complexity of checks). Students max gaps per day can be implemented perfectly, but it would change the algorithm for students a lot and I am afraid to change something that is working well. Very much testing would be needed, and I have not enough sample files. While changing the algorithm, it would be easy to make critical bugs and some files may not solve anymore.</source>
         <translation>R: O tipo de actividade máximo de horas diario non pode implementarse correctamente, a xeración levará demasiado (pola comprobación da proba). Máximo de ocos para estudantes por día pode implementarse correctamente, pero podería cambiar moito o algoritmo para estudantes e mesmo algo que estea funcionando ben. Precísanse máis probas, e non teño suficientes arquivos de exemplo. Metras se cambia o algoritmo, sería máis doado facelo para erros críticos e algúns arquivos poderían resolverse como consecuencia.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="772"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="763"/>
         <source>A: More users asked for shortcut buttons for the most commonly used functions. It is possible to show such buttons, if you select the corresponding option from the Settings-&gt;Interface menu (shortcuts are shown, by default).</source>
         <translation>R: Máis usuario preguntaron polos atallos de teclado para as funcións máis habituais. Poderían amosarse eses botóns, se selecciona a opción correspondente no menú Opcións-&gt; Interfaz (os atallos de teclado amósanse por defecto).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="770"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="761"/>
         <source>Q: Help on shortcut buttons in the main form.</source>
         <translation>P: Axuda nos atallos de teclado no formulario principal.</translation>
     </message>
@@ -35744,665 +35735,656 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
 <context>
     <name>Import</name>
     <message>
-        <location filename="../src/engine/import.cpp" line="100"/>
+        <location filename="../src/engine/import.cpp" line="105"/>
         <source>Line</source>
         <translation>liña</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="101"/>
+        <location filename="../src/engine/import.cpp" line="106"/>
         <source>Year</source>
         <translation>Curso</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="103"/>
+        <location filename="../src/engine/import.cpp" line="108"/>
         <source>Group</source>
         <translation>Grupo</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="105"/>
+        <location filename="../src/engine/import.cpp" line="110"/>
         <source>Subgroup</source>
         <translation>Subgrupo</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="107"/>
+        <location filename="../src/engine/import.cpp" line="112"/>
         <source>Subject</source>
         <translation>Materia</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="108"/>
+        <location filename="../src/engine/import.cpp" line="113"/>
         <source>Activity Tag</source>
         <translation>Tipo de actividade</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="109"/>
+        <location filename="../src/engine/import.cpp" line="114"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="110"/>
+        <location filename="../src/engine/import.cpp" line="115"/>
         <source>Building</source>
         <translation>Construción</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="111"/>
+        <location filename="../src/engine/import.cpp" line="116"/>
         <source>Room Name</source>
         <translation>Nome de aula</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="112"/>
+        <location filename="../src/engine/import.cpp" line="117"/>
         <source>Room Capacity</source>
         <translation>Capacidade de aula</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="115"/>
+        <location filename="../src/engine/import.cpp" line="120"/>
         <source>Total Duration</source>
         <translation>Duración total</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="116"/>
+        <location filename="../src/engine/import.cpp" line="121"/>
         <source>Split Duration</source>
         <translation>Duración da parte</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="127"/>
+        <location filename="../src/engine/import.cpp" line="132"/>
         <source>line</source>
         <translation>liña</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="152"/>
+        <location filename="../src/engine/import.cpp" line="157"/>
         <source>Please specify the %1 field:</source>
         <translation>Especifique o campo %1:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="154"/>
+        <location filename="../src/engine/import.cpp" line="159"/>
         <source>Don&apos;t import &quot;%1&quot;.</source>
         <translation>Non importar &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="155"/>
+        <location filename="../src/engine/import.cpp" line="160"/>
         <source>Import this field from CSV:</source>
         <translation>Importar este campo dende CSV:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="158"/>
+        <location filename="../src/engine/import.cpp" line="163"/>
         <source>Set always the same name:</source>
         <translation>Por sempre o mesmo nome:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="162"/>
-        <location filename="../src/engine/import.cpp" line="163"/>
+        <location filename="../src/engine/import.cpp" line="167"/>
+        <location filename="../src/engine/import.cpp" line="168"/>
         <source>Set always the same value:</source>
         <translation>Por sempre o mesmo valor:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="178"/>
+        <location filename="../src/engine/import.cpp" line="183"/>
         <source>Please modify this text.</source>
         <translation>Modificar este texto.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="481"/>
-        <location filename="../src/engine/import.cpp" line="1264"/>
+        <location filename="../src/engine/import.cpp" line="486"/>
+        <location filename="../src/engine/import.cpp" line="1274"/>
         <source>activity tags</source>
         <translation>tipos de actividade</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="485"/>
-        <location filename="../src/engine/import.cpp" line="1266"/>
+        <location filename="../src/engine/import.cpp" line="490"/>
+        <location filename="../src/engine/import.cpp" line="1276"/>
         <source>buildings and rooms</source>
         <translation>construcións e aulas</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="489"/>
-        <location filename="../src/engine/import.cpp" line="1268"/>
+        <location filename="../src/engine/import.cpp" line="494"/>
+        <location filename="../src/engine/import.cpp" line="1278"/>
         <source>teachers</source>
         <translation>profesores</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="493"/>
-        <location filename="../src/engine/import.cpp" line="1270"/>
+        <location filename="../src/engine/import.cpp" line="498"/>
+        <location filename="../src/engine/import.cpp" line="1280"/>
         <source>subjects</source>
         <translation>materias</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="497"/>
-        <location filename="../src/engine/import.cpp" line="1272"/>
+        <location filename="../src/engine/import.cpp" line="502"/>
+        <location filename="../src/engine/import.cpp" line="1282"/>
         <source>years, groups and subgroups</source>
         <translation>cursos, grupos e subgrupos</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="501"/>
-        <location filename="../src/engine/import.cpp" line="1274"/>
+        <location filename="../src/engine/import.cpp" line="506"/>
+        <location filename="../src/engine/import.cpp" line="1284"/>
         <source>activities</source>
         <translation>actividades</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="505"/>
-        <location filename="../src/engine/import.cpp" line="637"/>
+        <location filename="../src/engine/import.cpp" line="510"/>
+        <location filename="../src/engine/import.cpp" line="642"/>
         <source>FET - Import %1 from CSV file</source>
         <translation>FET - Importado %1 dende arquivo CSV</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="508"/>
+        <location filename="../src/engine/import.cpp" line="513"/>
         <source>no separator</source>
         <translation>sen separador</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="510"/>
+        <location filename="../src/engine/import.cpp" line="515"/>
         <source>no textquote</source>
         <translation>sen acotado de texto</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="526"/>
+        <location filename="../src/engine/import.cpp" line="531"/>
         <source>The first line of the file is empty. Please fix this.</source>
         <translation>A primeira liña do arquivo está baleira. Arránxeo, por favor.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="653"/>
+        <location filename="../src/engine/import.cpp" line="658"/>
         <source>Please specify the used separator between fields:</source>
         <translation>Indique o separador empregado entre campos:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="660"/>
+        <location filename="../src/engine/import.cpp" line="665"/>
         <source>Used field separator:</source>
         <translation>Separador de campos usado:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="667"/>
+        <location filename="../src/engine/import.cpp" line="672"/>
         <source>Please specify the used text quote of text fields:</source>
         <translation>Indique o acotador de textos dos campos:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="674"/>
+        <location filename="../src/engine/import.cpp" line="679"/>
         <source>Used textquote:</source>
         <translation>Acotador de texto usado:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="683"/>
+        <location filename="../src/engine/import.cpp" line="688"/>
         <source>The first line is the heading. Don&apos;t import that line.</source>
         <translation>A primeira liña é a cabecera. Non importar esa liña.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="684"/>
+        <location filename="../src/engine/import.cpp" line="689"/>
         <source>The first line contains data. Import that line.</source>
         <translation>A primeira liña contén datos. Importala.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="690"/>
+        <location filename="../src/engine/import.cpp" line="695"/>
         <source>OK</source>
         <translation>Vale</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="526"/>
-        <location filename="../src/engine/import.cpp" line="775"/>
-        <location filename="../src/engine/import.cpp" line="784"/>
-        <location filename="../src/engine/import.cpp" line="833"/>
-        <location filename="../src/engine/import.cpp" line="2006"/>
+        <location filename="../src/engine/import.cpp" line="531"/>
+        <location filename="../src/engine/import.cpp" line="780"/>
+        <location filename="../src/engine/import.cpp" line="789"/>
+        <location filename="../src/engine/import.cpp" line="838"/>
+        <location filename="../src/engine/import.cpp" line="2110"/>
         <source>FET warning</source>
         <translation>FET advertencia</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="117"/>
+        <location filename="../src/engine/import.cpp" line="122"/>
         <source>Min Days</source>
         <translation>Mínimo de días</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="118"/>
+        <location filename="../src/engine/import.cpp" line="123"/>
         <source>Min Days Weight</source>
         <translation>Ponderación de mínimo de días</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="119"/>
+        <location filename="../src/engine/import.cpp" line="124"/>
         <source>Min Days Consecutive</source>
         <translation>Mínimo de días consecutivos</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="833"/>
+        <location filename="../src/engine/import.cpp" line="838"/>
         <source>Empty filename.</source>
         <translation>Sin nome de arquivo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="837"/>
+        <location filename="../src/engine/import.cpp" line="842"/>
         <source>Error! Can&apos;t open file.</source>
         <translation>Erro! Non podo abrir o arquivo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="846"/>
-        <location filename="../src/engine/import.cpp" line="1678"/>
-        <location filename="../src/engine/import.cpp" line="1737"/>
-        <location filename="../src/engine/import.cpp" line="1810"/>
-        <location filename="../src/engine/import.cpp" line="2279"/>
+        <location filename="../src/engine/import.cpp" line="851"/>
+        <location filename="../src/engine/import.cpp" line="1713"/>
+        <location filename="../src/engine/import.cpp" line="1772"/>
+        <location filename="../src/engine/import.cpp" line="1845"/>
+        <location filename="../src/engine/import.cpp" line="2414"/>
         <source>Importing</source>
         <comment>Title of a progress dialog</comment>
         <translation>Importando</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="847"/>
+        <location filename="../src/engine/import.cpp" line="852"/>
         <source>Loading file</source>
         <translation>Cargando arquivo</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="863"/>
+        <location filename="../src/engine/import.cpp" line="868"/>
         <source>Loading canceled by user.</source>
         <translation>Carga cancelada polo usuario.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1140"/>
+        <location filename="../src/engine/import.cpp" line="1145"/>
         <source>FET import %1 question</source>
         <translation>FET pregunta de importación %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1176"/>
+        <location filename="../src/engine/import.cpp" line="1181"/>
         <source>Following data found in the file:</source>
         <translation>Siguiendo os datos atopados no arquivo:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1178"/>
+        <location filename="../src/engine/import.cpp" line="1183"/>
         <source>There is no usable data in the file.</source>
         <translation>Non hai datos utis no arquivo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1187"/>
+        <location filename="../src/engine/import.cpp" line="1195"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1211"/>
+        <location filename="../src/engine/import.cpp" line="1221"/>
         <source>FET noticed %1 warning with the current data.</source>
         <translation>FET Advertencia %1 cos datos actuais.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1213"/>
+        <location filename="../src/engine/import.cpp" line="1223"/>
         <source>FET noticed %1 warnings with the current data.</source>
         <translation>FET Advertencia %1 cos datos actuais.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1224"/>
+        <location filename="../src/engine/import.cpp" line="1234"/>
         <source>&amp;Import</source>
         <translation>&amp;Importar</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1225"/>
+        <location filename="../src/engine/import.cpp" line="1235"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1330"/>
-        <location filename="../src/engine/import.cpp" line="1427"/>
-        <location filename="../src/engine/import.cpp" line="1436"/>
-        <location filename="../src/engine/import.cpp" line="1532"/>
-        <location filename="../src/engine/import.cpp" line="1603"/>
+        <location filename="../src/engine/import.cpp" line="1341"/>
+        <location filename="../src/engine/import.cpp" line="1443"/>
+        <location filename="../src/engine/import.cpp" line="1453"/>
+        <location filename="../src/engine/import.cpp" line="1558"/>
+        <location filename="../src/engine/import.cpp" line="1634"/>
         <source>%1 is already in FET data.</source>
         <translation>%1 xa está nos datos de FET.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1350"/>
-        <location filename="../src/engine/import.cpp" line="1482"/>
-        <location filename="../src/engine/import.cpp" line="1554"/>
-        <location filename="../src/engine/import.cpp" line="1624"/>
-        <location filename="../src/engine/import.cpp" line="2346"/>
-        <location filename="../src/engine/import.cpp" line="2400"/>
+        <location filename="../src/engine/import.cpp" line="1365"/>
+        <location filename="../src/engine/import.cpp" line="1507"/>
+        <location filename="../src/engine/import.cpp" line="1584"/>
+        <location filename="../src/engine/import.cpp" line="1659"/>
+        <location filename="../src/engine/import.cpp" line="2490"/>
+        <location filename="../src/engine/import.cpp" line="2544"/>
         <source>FET information</source>
         <translation>FET información</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1350"/>
-        <source>%1 activity tags added. Please check activity tag form.</source>
-        <translation>%1 tipos de actividade engadidos. Compróbeos.</translation>
+        <location filename="../src/engine/import.cpp" line="1508"/>
+        <source>%1 rooms added. Please check rooms form.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1554"/>
-        <location filename="../src/engine/import.cpp" line="2250"/>
+        <location filename="../src/engine/import.cpp" line="1584"/>
+        <location filename="../src/engine/import.cpp" line="2379"/>
         <source>%1 subjects added. Please check subjects form.</source>
         <translation>%1 materias engadidas. Compróbeas.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1624"/>
-        <location filename="../src/engine/import.cpp" line="2235"/>
+        <location filename="../src/engine/import.cpp" line="1659"/>
+        <location filename="../src/engine/import.cpp" line="2358"/>
         <source>%1 teachers added. Please check teachers form.</source>
         <translation>%1 profesores engadidos. Compróbeos.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1680"/>
+        <location filename="../src/engine/import.cpp" line="1715"/>
         <source>Checking CSV</source>
         <translation>Comprobando CSV</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1687"/>
+        <location filename="../src/engine/import.cpp" line="1722"/>
         <source>Checking CSV canceled by user.</source>
         <translation>Comprobación do CSV cancelada polo usuario.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1738"/>
+        <location filename="../src/engine/import.cpp" line="1773"/>
         <source>Checking data</source>
         <translation>Comprobando datos</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1748"/>
-        <location filename="../src/engine/import.cpp" line="1763"/>
-        <location filename="../src/engine/import.cpp" line="1780"/>
+        <location filename="../src/engine/import.cpp" line="1783"/>
+        <location filename="../src/engine/import.cpp" line="1798"/>
+        <location filename="../src/engine/import.cpp" line="1815"/>
         <source>Checking data canceled by user.</source>
         <translation>Comprobación de datos cancelada polo usuario.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1753"/>
+        <location filename="../src/engine/import.cpp" line="1788"/>
         <source>Year %1 is already in FET data.</source>
         <translation>O curso %1 xa está nos datos de FET.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1755"/>
+        <location filename="../src/engine/import.cpp" line="1790"/>
         <source>Can&apos;t import group %1. Name is already taken for a year.</source>
         <translation>Non podo importar o grupo %1. O nome xa está en uso.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1757"/>
+        <location filename="../src/engine/import.cpp" line="1792"/>
         <source>Can&apos;t import subgroup %1. Name is already taken for a year.</source>
         <translation>Nom podo importar o subgrupo %1. O nome xa está nun curso.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1769"/>
+        <location filename="../src/engine/import.cpp" line="1804"/>
         <source>Can&apos;t import year %1. Name is already taken for a group.</source>
         <translation>Non podo importar o curso %1. O nome xa está nun grupo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1771"/>
-        <source>Group name %1 is already in FET data (In the same or in an other year).</source>
-        <translation>o grupo de nome %1 xa está nos datos de FET (no mesmo ou noutro curso).</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/import.cpp" line="1773"/>
+        <location filename="../src/engine/import.cpp" line="1808"/>
         <source>Can&apos;t import subgroup %1. Name is already taken for a group.</source>
         <translation>Non podo importar o subgrupo %1. O nome xa existe nun grupo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1786"/>
+        <location filename="../src/engine/import.cpp" line="1821"/>
         <source>Can&apos;t import year %1. Name is already taken for a subgroup.</source>
         <translation>Non podo importar o subgrupo %1. O nome xa está nun subgrupo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1788"/>
+        <location filename="../src/engine/import.cpp" line="1823"/>
         <source>Can&apos;t import group %1. Name is taken for a subgroup.</source>
         <translation>Non podo importar grupo %1. o nome existe para un subgrupo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1790"/>
-        <source>Subgroup name %1 is already in FET data (In the same or in an other group).</source>
-        <translation>O subgrupo nome %1 xa existe nos datos de FET (o mesmo ou noutro grupo).</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/import.cpp" line="1811"/>
+        <location filename="../src/engine/import.cpp" line="1846"/>
         <source>Importing data</source>
         <translation>Importando datos</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1820"/>
-        <location filename="../src/engine/import.cpp" line="2290"/>
+        <location filename="../src/engine/import.cpp" line="1870"/>
+        <location filename="../src/engine/import.cpp" line="2425"/>
         <source>Importing data canceled by user.</source>
         <translation>Importación interrompida polo usuario.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2006"/>
+        <location filename="../src/engine/import.cpp" line="2110"/>
         <source>FET needs to know %1 or %2 if you import %3.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2124"/>
+        <location filename="../src/engine/import.cpp" line="2241"/>
         <source>I recommend to import also teachers, rooms, buildings, subjects and activity tags before importing activities. It is not needed, because FET will automatically do it, but you can check the activity csv file by that.</source>
         <translation>Recoméndae importar tamén profesores, aulas, construcións, materias e etiquetas de actividades antes de importar actividades. Non é preciso, porque FET atuomaticamente o fará, pero pode comprobar o arquivo csv para elo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2280"/>
+        <location filename="../src/engine/import.cpp" line="2415"/>
         <source>Importing activities</source>
         <translation>Importando actividades</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2346"/>
+        <location filename="../src/engine/import.cpp" line="2490"/>
         <source>Activity NOT added - please report error</source>
         <translation>Actividade NON engadida - informe do erro</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="681"/>
+        <location filename="../src/engine/import.cpp" line="2558"/>
+        <source>%1 container activities (%2 total activities) added. Please check activities form.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/import.cpp" line="686"/>
         <source>Please specify the contents of the first line:</source>
         <translation>Indique o contido da primeira liña:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="775"/>
+        <location filename="../src/engine/import.cpp" line="780"/>
         <source>Missing field separator or text quote in first line. Import might be incorrect.</source>
         <translation>Separador de campos ou acotador de texto non atopado na primeira liña. A importación pode ser incorrecta.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="784"/>
+        <location filename="../src/engine/import.cpp" line="789"/>
         <source>Missing closing text quote in first line. Import might be incorrect.</source>
         <translation>Acotador de peche de texto non atopado na primeira liña. Importación incorrecta.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="888"/>
+        <location filename="../src/engine/import.cpp" line="893"/>
         <source>Warning: FET expected field separator or text separator in line %1. Import might be incorrect.</source>
         <translation>Advertencia: FET agardaba separadores de campo na liña %1. A importación pode ser incorrecta.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="896"/>
+        <location filename="../src/engine/import.cpp" line="901"/>
         <source>Warning: FET expected closing text separator in line %1. Import might be incorrect.</source>
         <translation>Advertencia: FET agardaba separadores de peche de texto na liña %1. A importación pode ser incorrecta.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="922"/>
+        <location filename="../src/engine/import.cpp" line="927"/>
         <source>Skipped line %1: FET expected %2 fields but found %3 fields.</source>
         <translation>Ignorada liña %1: FET agardaba %2 campos pero atopou %3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="931"/>
-        <location filename="../src/engine/import.cpp" line="949"/>
-        <location filename="../src/engine/import.cpp" line="956"/>
-        <location filename="../src/engine/import.cpp" line="962"/>
-        <location filename="../src/engine/import.cpp" line="987"/>
-        <location filename="../src/engine/import.cpp" line="1322"/>
-        <location filename="../src/engine/import.cpp" line="1414"/>
-        <location filename="../src/engine/import.cpp" line="1420"/>
-        <location filename="../src/engine/import.cpp" line="1524"/>
-        <location filename="../src/engine/import.cpp" line="1595"/>
+        <location filename="../src/engine/import.cpp" line="936"/>
+        <location filename="../src/engine/import.cpp" line="954"/>
+        <location filename="../src/engine/import.cpp" line="961"/>
+        <location filename="../src/engine/import.cpp" line="967"/>
+        <location filename="../src/engine/import.cpp" line="992"/>
+        <location filename="../src/engine/import.cpp" line="1332"/>
+        <location filename="../src/engine/import.cpp" line="1429"/>
+        <location filename="../src/engine/import.cpp" line="1435"/>
+        <location filename="../src/engine/import.cpp" line="1549"/>
+        <location filename="../src/engine/import.cpp" line="1625"/>
         <source>Skipped line %1: Field &apos;%2&apos; is empty.</source>
         <translation>Ignorada liña %1: o campo &apos;%2&apos; está baleiro.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1000"/>
-        <location filename="../src/engine/import.cpp" line="1024"/>
-        <location filename="../src/engine/import.cpp" line="1035"/>
+        <location filename="../src/engine/import.cpp" line="1005"/>
+        <location filename="../src/engine/import.cpp" line="1029"/>
+        <location filename="../src/engine/import.cpp" line="1040"/>
         <source>Skipped line %1: Field &apos;%2&apos; doesn&apos;t contain an integer value.</source>
         <translation>Ignorada liña %1: o campo &apos;%2&apos; non contén valores enteros.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1018"/>
+        <location filename="../src/engine/import.cpp" line="1023"/>
         <source>Warning in line %1: Field with building name doesn&apos;t affect to a room</source>
         <translation>Advertencia en liña %1: o campo con nome de construción non afecta a un aula</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1063"/>
+        <location filename="../src/engine/import.cpp" line="1068"/>
         <source>Skipped line %1: Field &apos;%2&apos; contain an unknown value.</source>
         <translation>Ignorada liña %1: o campo &apos;%2&apos; contén un valor descoñecido.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1082"/>
+        <location filename="../src/engine/import.cpp" line="1087"/>
         <source>Skipped line %1: Data was already in a previous line.</source>
         <translation>Ignorada liña %1: os datos xa estaban nunha liña previa.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1098"/>
+        <location filename="../src/engine/import.cpp" line="1103"/>
         <source>Line %1 is: %2</source>
         <translation>A liña %1 é: %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1396"/>
-        <location filename="../src/engine/import.cpp" line="1405"/>
+        <location filename="../src/engine/import.cpp" line="1411"/>
+        <location filename="../src/engine/import.cpp" line="1420"/>
         <source>Skipped line %1: Field &apos;%2&apos; is already in a previous line.</source>
         <translation>Ignorada liña %1: o campo &apos;%2&apos; xa está nunha liña previa.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1483"/>
-        <source>%1 buildings added. Please check rooms form.</source>
-        <translation>engadidos %1 construcións. Comprobe o formulario de aulas.</translation>
+        <location filename="../src/engine/import.cpp" line="1508"/>
+        <source>%1 buildings added. Please check buildings form.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1483"/>
-        <source>%2 rooms added. Please check rooms form.</source>
-        <translation>engadidas %2 aulas. Comprobe o formulario de aulas.</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/import.cpp" line="1714"/>
+        <location filename="../src/engine/import.cpp" line="1749"/>
         <source>Problem in line %1: Year name %2 is taken for a group - please consider another name</source>
         <translation>Problema na liña %1: o curso con nome %2 usouse para un grupo - probe outro nome</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1722"/>
+        <location filename="../src/engine/import.cpp" line="1757"/>
         <source>Problem in line %1: Subgroup name %2 is taken for a year - please consider another name</source>
         <translation>Problema na liña %1: O subgrupo nome %2 usouse para un curso - probe outro nome</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1724"/>
+        <location filename="../src/engine/import.cpp" line="1759"/>
         <source>Problem in line %1: Subgroup name %2 is taken for a group - please consider another name</source>
         <translation>Problema na liña %1: O subgrupo nome %2 usouse para un grupo - probe outro nome</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1726"/>
+        <location filename="../src/engine/import.cpp" line="1761"/>
         <source>Problem in line %1: Group name %2 is taken for a subgroup - please consider another name</source>
         <translation>Problema na liña %1: o grupo nome %2 usouse para un subgrupo - probe outro nome</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1728"/>
+        <location filename="../src/engine/import.cpp" line="1763"/>
         <source>Problem in line %1: Year name %2 is taken for a subgroup - please consider another name</source>
         <translation>Problema na liña %1: o curso nome %2 usouse para un subgrupo - probe outro nome</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1880"/>
-        <location filename="../src/engine/import.cpp" line="1883"/>
+        <location filename="../src/engine/import.cpp" line="1806"/>
+        <source>Group name %1 is already in FET data (in the same or in another year).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/import.cpp" line="1825"/>
+        <source>Subgroup name %1 is already in FET data (in the same or in another group).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/import.cpp" line="1952"/>
+        <location filename="../src/engine/import.cpp" line="1955"/>
         <source>Group name %1 exists in another year. It means that some years share the same group.</source>
         <translation>o grupo con nome %1 usouse para outro curso. Isto ocurre porque algunos cursos comparten grupo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1924"/>
+        <location filename="../src/engine/import.cpp" line="2008"/>
         <source>Subgroup name %1 exists in another group. It means that some groups share the same subgroup.</source>
         <translation>O subgrupo con nome %1 usouse para outro grupo. Isto ocurre porque algunos grupos comparten subgrupo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1951"/>
-        <location filename="../src/engine/import.cpp" line="2412"/>
+        <location filename="../src/engine/import.cpp" line="2053"/>
+        <location filename="../src/engine/import.cpp" line="2556"/>
         <source>Notes:</source>
         <translation>Notas:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1952"/>
+        <location filename="../src/engine/import.cpp" line="2054"/>
         <source>%1 subgroups added. Please check subgroups form.</source>
         <translation>%1 subgrupos engadidos. Comprobe os subgrupos.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1953"/>
+        <location filename="../src/engine/import.cpp" line="2055"/>
         <source>%1 groups added. Please check groups form.</source>
         <translation>%1 grupos engadidos. Comprobe os grupos.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1954"/>
+        <location filename="../src/engine/import.cpp" line="2056"/>
         <source>%1 years added. Please check years form.</source>
         <translation>%1 cursos engadidos. Comprobe os cursos.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2129"/>
+        <location filename="../src/engine/import.cpp" line="2246"/>
         <source>Student set %1 doesn&apos;t exist. You must add (or import) years, groups and subgroups first.</source>
         <translation>o grupo %1 non existe. Debe engadir (ou importar) cursos, grupos e subgrupos antes.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2265"/>
+        <location filename="../src/engine/import.cpp" line="1365"/>
+        <location filename="../src/engine/import.cpp" line="2400"/>
         <source>%1 activity tags added. Please check activity tags form.</source>
         <translation>%1 tipos de actividade engadidas. Compróbeos na caixa de diálogo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2336"/>
-        <source>Activity %1 already exists. A duplicate activity is imported. Please check the dataset!</source>
-        <translation>A actividade %1 xa existe. Duplicouse unha actividade. Comprobe os datos!</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/import.cpp" line="2400"/>
+        <location filename="../src/engine/import.cpp" line="2544"/>
         <source>Split activity NOT added - error???</source>
         <translation>Actividade partida NON engadida - erro???</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2408"/>
+        <location filename="../src/engine/import.cpp" line="2552"/>
         <source>Warning: found tags for the &apos;consecutive&apos; field of min days which are not a valid boolean value (%1) - making them %2</source>
         <translation>Aviso: atopáronse etiquetas para o campo &apos;consecutivo&apos; de mínimo d ías que non teñen un valor válido (%1) - fanse %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2414"/>
-        <source>%1 container activities (%2 total activities) added. Please check activity form.</source>
-        <translation>%1 contedor de actividades (%2 en total) engadíronse. Comprobe as actividades.</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/import.cpp" line="1007"/>
+        <location filename="../src/engine/import.cpp" line="1012"/>
         <source>Skipped line %1: Fields &apos;%2&apos; and &apos;%3&apos; haven&apos;t the same value.</source>
         <translation>Ignorada liña %1: Os campos &apos;%2&apos; e &apos;%3&apos; non teñen o mesmo valor.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1712"/>
+        <location filename="../src/engine/import.cpp" line="1747"/>
         <source>Problem in line %1: Group name %2 is taken for a year - please consider another name</source>
         <translation>Problema na liña %1: o grupo con nome %2 usouse para un curso - probe outro nome</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2122"/>
+        <location filename="../src/engine/import.cpp" line="2239"/>
         <source>FET can&apos;t import activities, because FET needs to know the stucture of the students sets. You must add (or import) years, groups and subgroups first.</source>
         <translation>FET non pode importar as actividades porque precisa saber a estrutura dos grupos de estudantes. Debe engadir (ou importar) os cursos, grupos e subgrupos antes.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2166"/>
-        <location filename="../src/engine/import.cpp" line="2183"/>
-        <location filename="../src/engine/import.cpp" line="2205"/>
+        <location filename="../src/engine/import.cpp" line="2283"/>
+        <location filename="../src/engine/import.cpp" line="2300"/>
+        <location filename="../src/engine/import.cpp" line="2322"/>
         <source>%1 %2 will be added.</source>
         <comment>For instance &apos;Subject Math will be added&apos;, so use singular</comment>
         <translation>%1 %2 será engadido.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="113"/>
+        <location filename="../src/engine/import.cpp" line="118"/>
         <source>Students Sets</source>
         <translation>Grupos</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="114"/>
+        <location filename="../src/engine/import.cpp" line="119"/>
         <source>Teachers</source>
         <translation>Profesores</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1080"/>
+        <location filename="../src/engine/import.cpp" line="1085"/>
         <source>Note about line %1: Data was already in a previous line. So this data will be imported once again.</source>
         <translation>Nota sobre a líña %1: os datos xa estaban en liñas previas. Será importado unha vez máis.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="102"/>
+        <location filename="../src/engine/import.cpp" line="107"/>
         <source>Number of Students per Year</source>
         <translation>Número de estudantes por Curso</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="104"/>
+        <location filename="../src/engine/import.cpp" line="109"/>
         <source>Number of Students per Group</source>
         <translation>Número de estudantes por Grupo</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="106"/>
+        <location filename="../src/engine/import.cpp" line="111"/>
         <source>Number of Students per Subgroup</source>
         <translation>Número de estudantes por Subgrupo</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1027"/>
+        <location filename="../src/engine/import.cpp" line="1032"/>
         <source>Skipped line %1: Field &apos;%2&apos; contains an invalid integer value.</source>
         <translation>Ignorada liña %1: o campo &apos;%2&apos; contén un valor enteiro non válido.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1044"/>
+        <location filename="../src/engine/import.cpp" line="1049"/>
         <source>Skipped line %1: Field &apos;%2&apos; doesn&apos;t contain a number (double) value.</source>
         <translation>Ignorada liña %1: o campo &apos;%2&apos; non contén un valor númerico (doble).</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1047"/>
+        <location filename="../src/engine/import.cpp" line="1052"/>
         <source>Skipped line %1: Field &apos;%2&apos; contains an number (double) value.</source>
         <translation>Ignorada liña %1: o campo &apos;%2&apos; contén un valor numerico (doble).</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="646"/>
+        <location filename="../src/engine/import.cpp" line="651"/>
         <source>The first line of file
 %1
 is:</source>
@@ -36411,51 +36393,51 @@ is:</source>
 es:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1151"/>
+        <location filename="../src/engine/import.cpp" line="1156"/>
         <source>There are several problems in file
 %1</source>
         <translation>Hai varios problemas no arquivo
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1153"/>
+        <location filename="../src/engine/import.cpp" line="1158"/>
         <source>There are no problems in file
 %1</source>
         <translation>Non hai problemas en el archvio
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1012"/>
+        <location filename="../src/engine/import.cpp" line="1017"/>
         <source>Skipped line %1: Field &apos;%2&apos; contains too many subactivities.</source>
         <translation>Ignorada liña %1: o campo &apos;%2&apos; contén demasiadas subactividades.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="979"/>
+        <location filename="../src/engine/import.cpp" line="984"/>
         <source>Skipped line %1: Field &apos;%2&apos; produces too many subactivities.</source>
         <translation>Ignorada liña %1: o campo &apos;%2&apos; producen demasiadas subactividades.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="120"/>
+        <location filename="../src/engine/import.cpp" line="125"/>
         <source>Activity Tags</source>
         <translation>Tipos de actividade</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="506"/>
+        <location filename="../src/engine/import.cpp" line="511"/>
         <source>Text Files</source>
         <translation>Arquivo de texto</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="506"/>
+        <location filename="../src/engine/import.cpp" line="511"/>
         <source>All Files</source>
         <translation>Todos os arquivos</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="691"/>
+        <location filename="../src/engine/import.cpp" line="696"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="983"/>
+        <location filename="../src/engine/import.cpp" line="988"/>
         <source>Skipped line %1: Field &apos;%2&apos; contain incorrect data.</source>
         <translation>Ignorada liña %1: o campo &apos;%2&apos; contén un valor incorrecto.</translation>
     </message>
@@ -36497,13 +36479,13 @@ a simulación. Detéñaa antes</translation>
 <context>
     <name>LastWarningsDialog</name>
     <message>
-        <location filename="../src/engine/import.cpp" line="438"/>
+        <location filename="../src/engine/import.cpp" line="443"/>
         <source>FET - import %1 comment</source>
         <comment>The comment of the importing of the category named %1</comment>
         <translation>FET - comentario importación %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="449"/>
+        <location filename="../src/engine/import.cpp" line="454"/>
         <source>&amp;OK</source>
         <translation>&amp;Vale</translation>
     </message>
@@ -36543,58 +36525,58 @@ a simulación. Detéñaa antes</translation>
 <context>
     <name>ModifyActivityForm</name>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="431"/>
-        <location filename="../src/interface/modifyactivityform.cpp" line="464"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="446"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="484"/>
         <source>FET question</source>
         <translation>FET pregunta</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="432"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="447"/>
         <source>Do you really want to have the activity without teacher(s)?</source>
         <translation>Está completamente seguro de que desexa eliminar a subactividade sen profesores?</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="449"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="467"/>
         <source>FET information</source>
         <translation>FET información</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="450"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="468"/>
         <source>Invalid subject</source>
         <translation>Materia non válida</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="465"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="485"/>
         <source>Do you really want to have the activity without student set(s)?</source>
         <translation>Está completamente seguro de que desexa eliminar a subactividade sen estudantes?</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="533"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="558"/>
         <source>Abbreviations in this dialog:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="535"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="560"/>
         <source>&apos;Students&apos; (the text near the spin box), means &apos;Number of students (-1 for automatic)&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="537"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="562"/>
         <source>&apos;Split&apos; means &apos;Is split into ... activities per week&apos;. This value cannot be changed. If you need to modify it, please remove the corresponding activities and add a new split activity.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="540"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="565"/>
         <source>The &apos;Duration&apos; spin box and the &apos;Active&apos; check box refer to each component of current activity, you can change them for each component, separately, by selecting the corresponding tab in the tab widget.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="546"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="571"/>
         <source>FET - help on modifying activity(ies)</source>
         <translation>FET - axuda para engadir actividade(s)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="552"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="577"/>
         <source>OK</source>
         <translation>Vale</translation>
     </message>
@@ -43903,48 +43885,48 @@ Nota: as horas non dispoñibles e as pausas dun profesor non se contan como ocos
 <context>
     <name>ModifySubactivityForm</name>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="321"/>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="354"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="336"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="374"/>
         <source>FET question</source>
         <translation>FET pregunta</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="322"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="337"/>
         <source>Do you really want to have the subactivity without teacher(s)?</source>
         <translation>Está completamente seguro de que desexa eliminar a subactividade sen profesores?</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="339"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="357"/>
         <source>FET information</source>
         <translation>FET información</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="340"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="358"/>
         <source>Invalid subject</source>
         <translation>Materia non válida</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="355"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="375"/>
         <source>Do you really want to have the subactivity without student set(s)?</source>
         <translation>Está completamente seguro de que desexa eliminar a subactividade sen estudantes?</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="410"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="435"/>
         <source>Abbreviations in this dialog:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="412"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="437"/>
         <source>&apos;Students&apos; (the text near the spin box), means &apos;Number of students (-1 for automatic)&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="418"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="443"/>
         <source>FET - help on modifying subactivity(ies)</source>
         <translation>FET - axuda para engadir subactividade(s)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="424"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="449"/>
         <source>OK</source>
         <translation>Vale</translation>
     </message>
@@ -44484,285 +44466,264 @@ Nota: as horas non dispoñibles e as pausas dun profesor non se contan como ocos
     <name>Rules</name>
     <message>
         <location filename="../src/engine/rules.cpp" line="105"/>
-        <location filename="../src/engine/rules.cpp" line="4137"/>
+        <location filename="../src/engine/rules.cpp" line="4318"/>
         <source>Monday</source>
         <translation>Luns</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="106"/>
-        <location filename="../src/engine/rules.cpp" line="4138"/>
+        <location filename="../src/engine/rules.cpp" line="4319"/>
         <source>Tuesday</source>
         <translation>Martes</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="107"/>
-        <location filename="../src/engine/rules.cpp" line="4139"/>
+        <location filename="../src/engine/rules.cpp" line="4320"/>
         <source>Wednesday</source>
         <translation>Mércores</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="108"/>
-        <location filename="../src/engine/rules.cpp" line="4140"/>
+        <location filename="../src/engine/rules.cpp" line="4321"/>
         <source>Thursday</source>
         <translation>Xoves</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="109"/>
-        <location filename="../src/engine/rules.cpp" line="4141"/>
+        <location filename="../src/engine/rules.cpp" line="4322"/>
         <source>Friday</source>
         <translation>Venres</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="101"/>
-        <location filename="../src/engine/rules.cpp" line="4133"/>
+        <location filename="../src/engine/rules.cpp" line="4314"/>
         <source>Default institution</source>
         <translation>Nome do centro</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="102"/>
-        <location filename="../src/engine/rules.cpp" line="4134"/>
+        <location filename="../src/engine/rules.cpp" line="4315"/>
         <source>Default comments</source>
         <translation>Algún comentario</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="159"/>
-        <location filename="../src/engine/rules.cpp" line="302"/>
-        <location filename="../src/engine/rules.cpp" line="316"/>
-        <location filename="../src/engine/rules.cpp" line="323"/>
-        <location filename="../src/engine/rules.cpp" line="330"/>
-        <location filename="../src/engine/rules.cpp" line="475"/>
-        <location filename="../src/engine/rules.cpp" line="581"/>
-        <location filename="../src/engine/rules.cpp" line="609"/>
-        <location filename="../src/engine/rules.cpp" line="663"/>
-        <location filename="../src/engine/rules.cpp" line="691"/>
-        <location filename="../src/engine/rules.cpp" line="751"/>
-        <location filename="../src/engine/rules.cpp" line="4111"/>
-        <location filename="../src/engine/rules.cpp" line="4123"/>
-        <location filename="../src/engine/rules.cpp" line="4449"/>
-        <location filename="../src/engine/rules.cpp" line="5270"/>
-        <location filename="../src/engine/rules.cpp" line="5317"/>
-        <location filename="../src/engine/rules.cpp" line="5455"/>
-        <location filename="../src/engine/rules.cpp" line="5517"/>
-        <location filename="../src/engine/rules.cpp" line="5538"/>
-        <location filename="../src/engine/rules.cpp" line="5568"/>
-        <location filename="../src/engine/rules.cpp" line="5582"/>
+        <location filename="../src/engine/rules.cpp" line="161"/>
+        <location filename="../src/engine/rules.cpp" line="304"/>
+        <location filename="../src/engine/rules.cpp" line="318"/>
+        <location filename="../src/engine/rules.cpp" line="325"/>
+        <location filename="../src/engine/rules.cpp" line="332"/>
+        <location filename="../src/engine/rules.cpp" line="477"/>
+        <location filename="../src/engine/rules.cpp" line="583"/>
+        <location filename="../src/engine/rules.cpp" line="611"/>
+        <location filename="../src/engine/rules.cpp" line="665"/>
+        <location filename="../src/engine/rules.cpp" line="693"/>
+        <location filename="../src/engine/rules.cpp" line="753"/>
+        <location filename="../src/engine/rules.cpp" line="4292"/>
+        <location filename="../src/engine/rules.cpp" line="4304"/>
+        <location filename="../src/engine/rules.cpp" line="4634"/>
+        <location filename="../src/engine/rules.cpp" line="5563"/>
         <location filename="../src/engine/rules.cpp" line="5610"/>
-        <location filename="../src/engine/rules.cpp" line="5627"/>
-        <location filename="../src/engine/rules.cpp" line="5644"/>
-        <location filename="../src/engine/rules.cpp" line="5714"/>
-        <location filename="../src/engine/rules.cpp" line="5743"/>
-        <location filename="../src/engine/rules.cpp" line="6003"/>
-        <location filename="../src/engine/rules.cpp" line="7086"/>
-        <location filename="../src/engine/rules.cpp" line="7202"/>
-        <location filename="../src/engine/rules.cpp" line="7297"/>
-        <location filename="../src/engine/rules.cpp" line="7337"/>
-        <location filename="../src/engine/rules.cpp" line="7403"/>
-        <location filename="../src/engine/rules.cpp" line="7519"/>
-        <location filename="../src/engine/rules.cpp" line="9832"/>
-        <location filename="../src/engine/rules.cpp" line="9854"/>
-        <location filename="../src/engine/rules.cpp" line="10010"/>
-        <location filename="../src/engine/rules.cpp" line="10032"/>
-        <location filename="../src/engine/rules.cpp" line="13698"/>
+        <location filename="../src/engine/rules.cpp" line="5748"/>
+        <location filename="../src/engine/rules.cpp" line="5810"/>
+        <location filename="../src/engine/rules.cpp" line="5831"/>
+        <location filename="../src/engine/rules.cpp" line="5861"/>
+        <location filename="../src/engine/rules.cpp" line="5875"/>
+        <location filename="../src/engine/rules.cpp" line="5903"/>
+        <location filename="../src/engine/rules.cpp" line="5920"/>
+        <location filename="../src/engine/rules.cpp" line="5937"/>
+        <location filename="../src/engine/rules.cpp" line="6007"/>
+        <location filename="../src/engine/rules.cpp" line="6036"/>
+        <location filename="../src/engine/rules.cpp" line="6296"/>
+        <location filename="../src/engine/rules.cpp" line="7379"/>
+        <location filename="../src/engine/rules.cpp" line="7495"/>
+        <location filename="../src/engine/rules.cpp" line="7590"/>
+        <location filename="../src/engine/rules.cpp" line="7630"/>
+        <location filename="../src/engine/rules.cpp" line="7696"/>
+        <location filename="../src/engine/rules.cpp" line="7812"/>
+        <location filename="../src/engine/rules.cpp" line="10125"/>
+        <location filename="../src/engine/rules.cpp" line="10147"/>
+        <location filename="../src/engine/rules.cpp" line="10303"/>
+        <location filename="../src/engine/rules.cpp" line="10325"/>
+        <location filename="../src/engine/rules.cpp" line="13991"/>
         <source>FET information</source>
         <translation>FET información</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="458"/>
+        <location filename="../src/engine/rules.cpp" line="460"/>
         <source>Processing internally the activities ... please wait</source>
         <translation>Procesando as actividades ... agarde por favor</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="475"/>
-        <location filename="../src/engine/rules.cpp" line="609"/>
-        <location filename="../src/engine/rules.cpp" line="691"/>
+        <location filename="../src/engine/rules.cpp" line="477"/>
+        <location filename="../src/engine/rules.cpp" line="611"/>
+        <location filename="../src/engine/rules.cpp" line="693"/>
         <source>Canceled</source>
         <translation>Cancelado</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="577"/>
+        <location filename="../src/engine/rules.cpp" line="579"/>
         <source>The following time constraint is ignored, because it refers to inactive activities:</source>
         <translation>A seguinte restrición de tempo ignorouse, porque refírese a actividades non usadas:</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="582"/>
-        <location filename="../src/engine/rules.cpp" line="664"/>
-        <location filename="../src/engine/rules.cpp" line="4585"/>
-        <location filename="../src/engine/rules.cpp" line="4639"/>
-        <location filename="../src/engine/rules.cpp" line="4708"/>
-        <location filename="../src/engine/rules.cpp" line="4801"/>
-        <location filename="../src/engine/rules.cpp" line="4824"/>
-        <location filename="../src/engine/rules.cpp" line="4847"/>
-        <location filename="../src/engine/rules.cpp" line="5273"/>
-        <location filename="../src/engine/rules.cpp" line="5320"/>
-        <location filename="../src/engine/rules.cpp" line="5391"/>
-        <location filename="../src/engine/rules.cpp" line="5402"/>
-        <location filename="../src/engine/rules.cpp" line="5413"/>
-        <location filename="../src/engine/rules.cpp" line="5459"/>
-        <location filename="../src/engine/rules.cpp" line="5507"/>
-        <location filename="../src/engine/rules.cpp" line="5523"/>
-        <location filename="../src/engine/rules.cpp" line="5541"/>
-        <location filename="../src/engine/rules.cpp" line="5573"/>
-        <location filename="../src/engine/rules.cpp" line="5587"/>
-        <location filename="../src/engine/rules.cpp" line="5615"/>
-        <location filename="../src/engine/rules.cpp" line="5632"/>
-        <location filename="../src/engine/rules.cpp" line="5650"/>
+        <location filename="../src/engine/rules.cpp" line="584"/>
+        <location filename="../src/engine/rules.cpp" line="666"/>
+        <location filename="../src/engine/rules.cpp" line="5566"/>
+        <location filename="../src/engine/rules.cpp" line="5613"/>
         <location filename="../src/engine/rules.cpp" line="5684"/>
         <location filename="../src/engine/rules.cpp" line="5695"/>
-        <location filename="../src/engine/rules.cpp" line="5746"/>
-        <location filename="../src/engine/rules.cpp" line="5760"/>
-        <location filename="../src/engine/rules.cpp" line="5772"/>
-        <location filename="../src/engine/rules.cpp" line="5785"/>
-        <location filename="../src/engine/rules.cpp" line="5797"/>
-        <location filename="../src/engine/rules.cpp" line="5809"/>
-        <location filename="../src/engine/rules.cpp" line="5821"/>
-        <location filename="../src/engine/rules.cpp" line="5833"/>
-        <location filename="../src/engine/rules.cpp" line="5851"/>
-        <location filename="../src/engine/rules.cpp" line="5900"/>
-        <location filename="../src/engine/rules.cpp" line="5912"/>
-        <location filename="../src/engine/rules.cpp" line="5924"/>
-        <location filename="../src/engine/rules.cpp" line="5936"/>
-        <location filename="../src/engine/rules.cpp" line="9847"/>
-        <location filename="../src/engine/rules.cpp" line="9859"/>
-        <location filename="../src/engine/rules.cpp" line="10025"/>
-        <location filename="../src/engine/rules.cpp" line="10037"/>
-        <location filename="../src/engine/rules.cpp" line="13713"/>
+        <location filename="../src/engine/rules.cpp" line="5706"/>
+        <location filename="../src/engine/rules.cpp" line="5752"/>
+        <location filename="../src/engine/rules.cpp" line="5800"/>
+        <location filename="../src/engine/rules.cpp" line="5816"/>
+        <location filename="../src/engine/rules.cpp" line="5834"/>
+        <location filename="../src/engine/rules.cpp" line="5866"/>
+        <location filename="../src/engine/rules.cpp" line="5880"/>
+        <location filename="../src/engine/rules.cpp" line="5908"/>
+        <location filename="../src/engine/rules.cpp" line="5925"/>
+        <location filename="../src/engine/rules.cpp" line="5943"/>
+        <location filename="../src/engine/rules.cpp" line="5977"/>
+        <location filename="../src/engine/rules.cpp" line="5988"/>
+        <location filename="../src/engine/rules.cpp" line="6039"/>
+        <location filename="../src/engine/rules.cpp" line="6053"/>
+        <location filename="../src/engine/rules.cpp" line="6065"/>
+        <location filename="../src/engine/rules.cpp" line="6078"/>
+        <location filename="../src/engine/rules.cpp" line="6090"/>
+        <location filename="../src/engine/rules.cpp" line="6102"/>
+        <location filename="../src/engine/rules.cpp" line="6114"/>
+        <location filename="../src/engine/rules.cpp" line="6126"/>
+        <location filename="../src/engine/rules.cpp" line="6144"/>
+        <location filename="../src/engine/rules.cpp" line="6193"/>
+        <location filename="../src/engine/rules.cpp" line="6205"/>
+        <location filename="../src/engine/rules.cpp" line="6217"/>
+        <location filename="../src/engine/rules.cpp" line="6229"/>
+        <location filename="../src/engine/rules.cpp" line="10140"/>
+        <location filename="../src/engine/rules.cpp" line="10152"/>
+        <location filename="../src/engine/rules.cpp" line="10318"/>
+        <location filename="../src/engine/rules.cpp" line="10330"/>
+        <location filename="../src/engine/rules.cpp" line="14006"/>
         <source>Skip rest</source>
         <translation>Saltar resto</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="582"/>
-        <location filename="../src/engine/rules.cpp" line="664"/>
-        <location filename="../src/engine/rules.cpp" line="4585"/>
-        <location filename="../src/engine/rules.cpp" line="4639"/>
-        <location filename="../src/engine/rules.cpp" line="4708"/>
-        <location filename="../src/engine/rules.cpp" line="4801"/>
-        <location filename="../src/engine/rules.cpp" line="4824"/>
-        <location filename="../src/engine/rules.cpp" line="4847"/>
-        <location filename="../src/engine/rules.cpp" line="5273"/>
-        <location filename="../src/engine/rules.cpp" line="5320"/>
-        <location filename="../src/engine/rules.cpp" line="5391"/>
-        <location filename="../src/engine/rules.cpp" line="5402"/>
-        <location filename="../src/engine/rules.cpp" line="5413"/>
-        <location filename="../src/engine/rules.cpp" line="5459"/>
-        <location filename="../src/engine/rules.cpp" line="5507"/>
-        <location filename="../src/engine/rules.cpp" line="5523"/>
-        <location filename="../src/engine/rules.cpp" line="5541"/>
-        <location filename="../src/engine/rules.cpp" line="5573"/>
-        <location filename="../src/engine/rules.cpp" line="5587"/>
-        <location filename="../src/engine/rules.cpp" line="5615"/>
-        <location filename="../src/engine/rules.cpp" line="5632"/>
-        <location filename="../src/engine/rules.cpp" line="5650"/>
+        <location filename="../src/engine/rules.cpp" line="584"/>
+        <location filename="../src/engine/rules.cpp" line="666"/>
+        <location filename="../src/engine/rules.cpp" line="5566"/>
+        <location filename="../src/engine/rules.cpp" line="5613"/>
         <location filename="../src/engine/rules.cpp" line="5684"/>
         <location filename="../src/engine/rules.cpp" line="5695"/>
-        <location filename="../src/engine/rules.cpp" line="5746"/>
-        <location filename="../src/engine/rules.cpp" line="5760"/>
-        <location filename="../src/engine/rules.cpp" line="5772"/>
-        <location filename="../src/engine/rules.cpp" line="5785"/>
-        <location filename="../src/engine/rules.cpp" line="5797"/>
-        <location filename="../src/engine/rules.cpp" line="5809"/>
-        <location filename="../src/engine/rules.cpp" line="5821"/>
-        <location filename="../src/engine/rules.cpp" line="5833"/>
-        <location filename="../src/engine/rules.cpp" line="5851"/>
-        <location filename="../src/engine/rules.cpp" line="5900"/>
-        <location filename="../src/engine/rules.cpp" line="5912"/>
-        <location filename="../src/engine/rules.cpp" line="5924"/>
-        <location filename="../src/engine/rules.cpp" line="5936"/>
-        <location filename="../src/engine/rules.cpp" line="9847"/>
-        <location filename="../src/engine/rules.cpp" line="9859"/>
-        <location filename="../src/engine/rules.cpp" line="10025"/>
-        <location filename="../src/engine/rules.cpp" line="10037"/>
-        <location filename="../src/engine/rules.cpp" line="13713"/>
+        <location filename="../src/engine/rules.cpp" line="5706"/>
+        <location filename="../src/engine/rules.cpp" line="5752"/>
+        <location filename="../src/engine/rules.cpp" line="5800"/>
+        <location filename="../src/engine/rules.cpp" line="5816"/>
+        <location filename="../src/engine/rules.cpp" line="5834"/>
+        <location filename="../src/engine/rules.cpp" line="5866"/>
+        <location filename="../src/engine/rules.cpp" line="5880"/>
+        <location filename="../src/engine/rules.cpp" line="5908"/>
+        <location filename="../src/engine/rules.cpp" line="5925"/>
+        <location filename="../src/engine/rules.cpp" line="5943"/>
+        <location filename="../src/engine/rules.cpp" line="5977"/>
+        <location filename="../src/engine/rules.cpp" line="5988"/>
+        <location filename="../src/engine/rules.cpp" line="6039"/>
+        <location filename="../src/engine/rules.cpp" line="6053"/>
+        <location filename="../src/engine/rules.cpp" line="6065"/>
+        <location filename="../src/engine/rules.cpp" line="6078"/>
+        <location filename="../src/engine/rules.cpp" line="6090"/>
+        <location filename="../src/engine/rules.cpp" line="6102"/>
+        <location filename="../src/engine/rules.cpp" line="6114"/>
+        <location filename="../src/engine/rules.cpp" line="6126"/>
+        <location filename="../src/engine/rules.cpp" line="6144"/>
+        <location filename="../src/engine/rules.cpp" line="6193"/>
+        <location filename="../src/engine/rules.cpp" line="6205"/>
+        <location filename="../src/engine/rules.cpp" line="6217"/>
+        <location filename="../src/engine/rules.cpp" line="6229"/>
+        <location filename="../src/engine/rules.cpp" line="10140"/>
+        <location filename="../src/engine/rules.cpp" line="10152"/>
+        <location filename="../src/engine/rules.cpp" line="10318"/>
+        <location filename="../src/engine/rules.cpp" line="10330"/>
+        <location filename="../src/engine/rules.cpp" line="14006"/>
         <source>See next</source>
         <translation>Ver seguinte</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="597"/>
+        <location filename="../src/engine/rules.cpp" line="599"/>
         <source>Processing internally the time constraints ... please wait</source>
         <translation>Procesando as restricións de tempo ... agarde</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="659"/>
+        <location filename="../src/engine/rules.cpp" line="661"/>
         <source>The following space constraint is ignored, because it refers to inactive activities:</source>
         <translation>A seguinte restrición de lugar ignorouse, porque refírese a actividades non usadas:</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="679"/>
+        <location filename="../src/engine/rules.cpp" line="681"/>
         <source>Processing internally the space constraints ... please wait</source>
         <translation>Procesando as restricións de espazo ... agarde</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2295"/>
-        <location filename="../src/engine/rules.cpp" line="2300"/>
-        <location filename="../src/engine/rules.cpp" line="2305"/>
-        <location filename="../src/engine/rules.cpp" line="2340"/>
-        <location filename="../src/engine/rules.cpp" line="2345"/>
-        <location filename="../src/engine/rules.cpp" line="2350"/>
-        <location filename="../src/engine/rules.cpp" line="2388"/>
-        <location filename="../src/engine/rules.cpp" line="2393"/>
-        <location filename="../src/engine/rules.cpp" line="2398"/>
-        <location filename="../src/engine/rules.cpp" line="3929"/>
-        <location filename="../src/engine/rules.cpp" line="3946"/>
-        <location filename="../src/engine/rules.cpp" line="3957"/>
-        <location filename="../src/engine/rules.cpp" line="4042"/>
-        <location filename="../src/engine/rules.cpp" line="4069"/>
-        <location filename="../src/engine/rules.cpp" line="4105"/>
-        <location filename="../src/engine/rules.cpp" line="4374"/>
-        <location filename="../src/engine/rules.cpp" line="4422"/>
-        <location filename="../src/engine/rules.cpp" line="4473"/>
-        <location filename="../src/engine/rules.cpp" line="4521"/>
-        <location filename="../src/engine/rules.cpp" line="4584"/>
-        <location filename="../src/engine/rules.cpp" line="4638"/>
-        <location filename="../src/engine/rules.cpp" line="4707"/>
-        <location filename="../src/engine/rules.cpp" line="4800"/>
-        <location filename="../src/engine/rules.cpp" line="4823"/>
-        <location filename="../src/engine/rules.cpp" line="4846"/>
-        <location filename="../src/engine/rules.cpp" line="4972"/>
-        <location filename="../src/engine/rules.cpp" line="5112"/>
-        <location filename="../src/engine/rules.cpp" line="5144"/>
-        <location filename="../src/engine/rules.cpp" line="5215"/>
-        <location filename="../src/engine/rules.cpp" line="5389"/>
-        <location filename="../src/engine/rules.cpp" line="5400"/>
-        <location filename="../src/engine/rules.cpp" line="5411"/>
-        <location filename="../src/engine/rules.cpp" line="5505"/>
+        <location filename="../src/engine/rules.cpp" line="2433"/>
+        <location filename="../src/engine/rules.cpp" line="2438"/>
+        <location filename="../src/engine/rules.cpp" line="2443"/>
+        <location filename="../src/engine/rules.cpp" line="2569"/>
+        <location filename="../src/engine/rules.cpp" line="2574"/>
+        <location filename="../src/engine/rules.cpp" line="2579"/>
+        <location filename="../src/engine/rules.cpp" line="4110"/>
+        <location filename="../src/engine/rules.cpp" line="4127"/>
+        <location filename="../src/engine/rules.cpp" line="4138"/>
+        <location filename="../src/engine/rules.cpp" line="4223"/>
+        <location filename="../src/engine/rules.cpp" line="4250"/>
+        <location filename="../src/engine/rules.cpp" line="4286"/>
+        <location filename="../src/engine/rules.cpp" line="4555"/>
+        <location filename="../src/engine/rules.cpp" line="4605"/>
+        <location filename="../src/engine/rules.cpp" line="4658"/>
+        <location filename="../src/engine/rules.cpp" line="4708"/>
+        <location filename="../src/engine/rules.cpp" line="5261"/>
+        <location filename="../src/engine/rules.cpp" line="5401"/>
+        <location filename="../src/engine/rules.cpp" line="5433"/>
+        <location filename="../src/engine/rules.cpp" line="5506"/>
         <location filename="../src/engine/rules.cpp" line="5682"/>
         <location filename="../src/engine/rules.cpp" line="5693"/>
-        <location filename="../src/engine/rules.cpp" line="5758"/>
-        <location filename="../src/engine/rules.cpp" line="5770"/>
-        <location filename="../src/engine/rules.cpp" line="5783"/>
-        <location filename="../src/engine/rules.cpp" line="5795"/>
-        <location filename="../src/engine/rules.cpp" line="5807"/>
-        <location filename="../src/engine/rules.cpp" line="5819"/>
-        <location filename="../src/engine/rules.cpp" line="5831"/>
-        <location filename="../src/engine/rules.cpp" line="5849"/>
-        <location filename="../src/engine/rules.cpp" line="5898"/>
-        <location filename="../src/engine/rules.cpp" line="5910"/>
-        <location filename="../src/engine/rules.cpp" line="5922"/>
-        <location filename="../src/engine/rules.cpp" line="5934"/>
-        <location filename="../src/engine/rules.cpp" line="6079"/>
-        <location filename="../src/engine/rules.cpp" line="7908"/>
-        <location filename="../src/engine/rules.cpp" line="8047"/>
-        <location filename="../src/engine/rules.cpp" line="8952"/>
-        <location filename="../src/engine/rules.cpp" line="9029"/>
-        <location filename="../src/engine/rules.cpp" line="9600"/>
-        <location filename="../src/engine/rules.cpp" line="9691"/>
-        <location filename="../src/engine/rules.cpp" line="9769"/>
-        <location filename="../src/engine/rules.cpp" line="9947"/>
-        <location filename="../src/engine/rules.cpp" line="13655"/>
+        <location filename="../src/engine/rules.cpp" line="5704"/>
+        <location filename="../src/engine/rules.cpp" line="5798"/>
+        <location filename="../src/engine/rules.cpp" line="5975"/>
+        <location filename="../src/engine/rules.cpp" line="5986"/>
+        <location filename="../src/engine/rules.cpp" line="6051"/>
+        <location filename="../src/engine/rules.cpp" line="6063"/>
+        <location filename="../src/engine/rules.cpp" line="6076"/>
+        <location filename="../src/engine/rules.cpp" line="6088"/>
+        <location filename="../src/engine/rules.cpp" line="6100"/>
+        <location filename="../src/engine/rules.cpp" line="6112"/>
+        <location filename="../src/engine/rules.cpp" line="6124"/>
+        <location filename="../src/engine/rules.cpp" line="6142"/>
+        <location filename="../src/engine/rules.cpp" line="6191"/>
+        <location filename="../src/engine/rules.cpp" line="6203"/>
+        <location filename="../src/engine/rules.cpp" line="6215"/>
+        <location filename="../src/engine/rules.cpp" line="6227"/>
+        <location filename="../src/engine/rules.cpp" line="6372"/>
+        <location filename="../src/engine/rules.cpp" line="8201"/>
+        <location filename="../src/engine/rules.cpp" line="8340"/>
+        <location filename="../src/engine/rules.cpp" line="9245"/>
+        <location filename="../src/engine/rules.cpp" line="9322"/>
+        <location filename="../src/engine/rules.cpp" line="9893"/>
+        <location filename="../src/engine/rules.cpp" line="9984"/>
+        <location filename="../src/engine/rules.cpp" line="10062"/>
+        <location filename="../src/engine/rules.cpp" line="10240"/>
+        <location filename="../src/engine/rules.cpp" line="13948"/>
         <source>FET warning</source>
         <translation>FET advertencia</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3929"/>
+        <location filename="../src/engine/rules.cpp" line="4110"/>
         <source>Could not open file - not existing or in use</source>
         <translation>Non se pode abrir o arquivo - non existe ou está en uso</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5097"/>
+        <location filename="../src/engine/rules.cpp" line="5386"/>
         <source>The activity with id=%1 contains incorrect data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6080"/>
+        <location filename="../src/engine/rules.cpp" line="6373"/>
         <source>Could not read file - XML parse error at line %1, column %2:
 %3</source>
         <comment>The error description is %3</comment>
@@ -44770,56 +44731,56 @@ Nota: as horas non dispoñibles e as pausas dun profesor non se contan como ocos
 %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3946"/>
-        <location filename="../src/engine/rules.cpp" line="3957"/>
+        <location filename="../src/engine/rules.cpp" line="4127"/>
+        <location filename="../src/engine/rules.cpp" line="4138"/>
         <source>Cannot create or use directory %1 - cannot continue</source>
         <translation>Non podo crear ou usar o directorio %1 - non se pode continuar</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3987"/>
+        <location filename="../src/engine/rules.cpp" line="4168"/>
         <source>FET cannot open the log file %1 for writing. This might mean that you don&apos;t have write permissions in this location. You can continue operation, but you might not be able to save the generated timetables as html files</source>
         <translation>FET non pode abrir o arquivo de log %1 para escritura. Esto significa que non ten permisos nesta localización. Pode continuar a operación, pero debería ser capaz de gadar os arquivos xerados como html</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3990"/>
+        <location filename="../src/engine/rules.cpp" line="4171"/>
         <source>A solution is to remove that file (if it exists already) or set its permissions to allow writing</source>
         <translation>A solución é eliminar ese arquivo (se existe) ou mudar os permisos para permitir escritura</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3991"/>
+        <location filename="../src/engine/rules.cpp" line="4172"/>
         <source>Please report possible bug</source>
         <translation>Informe dun posible error</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3992"/>
-        <location filename="../src/engine/rules.cpp" line="6109"/>
-        <location filename="../src/engine/rules.cpp" line="6152"/>
-        <location filename="../src/engine/rules.cpp" line="6278"/>
+        <location filename="../src/engine/rules.cpp" line="4173"/>
+        <location filename="../src/engine/rules.cpp" line="6402"/>
+        <location filename="../src/engine/rules.cpp" line="6445"/>
+        <location filename="../src/engine/rules.cpp" line="6571"/>
         <source>FET critical</source>
         <translation>FET crítico</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4042"/>
+        <location filename="../src/engine/rules.cpp" line="4223"/>
         <source>File contains a version numbering scheme which is not matched by v.v.va (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are adviced to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it</source>
         <translation>O arquivo contén unha versión de FET non respecta o formato v.v.va (3 números separados por puntos, seguidos dunha cadea de texto que debe ir baleira).O arquivo será aberto, pero recoméndarse comprobar a versió do arquivo .fet. Probablemente sexa un erro en FET - por favor informe do mesmo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4045"/>
+        <location filename="../src/engine/rules.cpp" line="4226"/>
         <source>If you are opening a file older than FET format version 5, it will be converted to latest FET data format</source>
         <translation>Se abre un arquivo máis antigo que a versión 5 de FET, será convertido ao ultimo formato de datos</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4069"/>
+        <location filename="../src/engine/rules.cpp" line="4250"/>
         <source>FET version does not respect the format v.v.va (3 numbers separated by points, followed by any string a, which may be empty). This is probably a bug in FET - please report it</source>
         <translation>A versión de FET non respecta o formato v.v.va (3 números separados por puntos, seguidos dunha cadea de texto que debe ir baleira). Probablemente sexa un erro en FET - por favor informe do mesmo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4105"/>
+        <location filename="../src/engine/rules.cpp" line="4286"/>
         <source>File does not have a corresponding beginning tag - it should be %1 or %2. File is incorrect...it cannot be opened</source>
         <translation>O arquivo non ten a correspondente etiqueta de comezo - debería ser %1 ou %2. Arquivo incorrecto... non pode ser aberto</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4112"/>
+        <location filename="../src/engine/rules.cpp" line="4293"/>
         <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are adviced to make a backup of your old file before saving in new format.
 
 Please note that the default weight percentage of constraints min days between activities will be 95% (mainly satisfied, not always) and &apos;force consecutive if same day&apos; will be set to true (meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity). If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
@@ -44828,461 +44789,425 @@ Please note that the default weight percentage of constraints min days between a
 Por favor teña en conta que a ponderación por defecto de regras de mínimo dde días entre actividades será 95% (satisfaise case sempre) e &apos;forzar consecutivas se o mesmo día&apos; será verdadeiro (implica que se as actividades son no mesmo día aparecerán unha a continuación da outra, nunha actividade de duración maior). Se o desexa, pode modificar esta porcentaxe a 100%, manualmente no arquivo de entrada de FET ou dende a interfaz</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4124"/>
+        <location filename="../src/engine/rules.cpp" line="4305"/>
         <source>Opening a file generated with a newer version than your current FET software ... file will be opened but it is recommended to update your FET software to the latest version</source>
         <translation>Abrindo un arquivo xerado coa nova versión actual de FET ... o arquivo será aberto pero recoméndase actualizar FET á última versión</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4125"/>
+        <location filename="../src/engine/rules.cpp" line="4306"/>
         <source>Your FET version: %1, file version: %2</source>
         <translation>A súa versión de FET: %1, versión de arquivo: %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4194"/>
-        <location filename="../src/engine/rules.cpp" line="4275"/>
-        <location filename="../src/engine/rules.cpp" line="4391"/>
-        <location filename="../src/engine/rules.cpp" line="4439"/>
-        <location filename="../src/engine/rules.cpp" line="4490"/>
-        <location filename="../src/engine/rules.cpp" line="4538"/>
-        <location filename="../src/engine/rules.cpp" line="5065"/>
-        <location filename="../src/engine/rules.cpp" line="5067"/>
-        <location filename="../src/engine/rules.cpp" line="5069"/>
-        <location filename="../src/engine/rules.cpp" line="5161"/>
-        <location filename="../src/engine/rules.cpp" line="5232"/>
-        <location filename="../src/engine/rules.cpp" line="6799"/>
-        <location filename="../src/engine/rules.cpp" line="6876"/>
-        <location filename="../src/engine/rules.cpp" line="6921"/>
-        <location filename="../src/engine/rules.cpp" line="6970"/>
-        <location filename="../src/engine/rules.cpp" line="7015"/>
-        <location filename="../src/engine/rules.cpp" line="7840"/>
-        <location filename="../src/engine/rules.cpp" line="9092"/>
-        <location filename="../src/engine/rules.cpp" line="9158"/>
-        <location filename="../src/engine/rules.cpp" line="9229"/>
-        <location filename="../src/engine/rules.cpp" line="9295"/>
-        <location filename="../src/engine/rules.cpp" line="9347"/>
-        <location filename="../src/engine/rules.cpp" line="9404"/>
-        <location filename="../src/engine/rules.cpp" line="9456"/>
-        <location filename="../src/engine/rules.cpp" line="9513"/>
-        <location filename="../src/engine/rules.cpp" line="9585"/>
-        <location filename="../src/engine/rules.cpp" line="9671"/>
-        <location filename="../src/engine/rules.cpp" line="10710"/>
-        <location filename="../src/engine/rules.cpp" line="10849"/>
-        <location filename="../src/engine/rules.cpp" line="10988"/>
-        <location filename="../src/engine/rules.cpp" line="11254"/>
-        <location filename="../src/engine/rules.cpp" line="11964"/>
-        <location filename="../src/engine/rules.cpp" line="12085"/>
-        <location filename="../src/engine/rules.cpp" line="12273"/>
-        <location filename="../src/engine/rules.cpp" line="12443"/>
-        <location filename="../src/engine/rules.cpp" line="12613"/>
-        <location filename="../src/engine/rules.cpp" line="12790"/>
-        <location filename="../src/engine/rules.cpp" line="12966"/>
-        <location filename="../src/engine/rules.cpp" line="13090"/>
-        <location filename="../src/engine/rules.cpp" line="13230"/>
-        <location filename="../src/engine/rules.cpp" line="13578"/>
+        <location filename="../src/engine/rules.cpp" line="4375"/>
+        <location filename="../src/engine/rules.cpp" line="4456"/>
+        <location filename="../src/engine/rules.cpp" line="4574"/>
+        <location filename="../src/engine/rules.cpp" line="4624"/>
+        <location filename="../src/engine/rules.cpp" line="4677"/>
+        <location filename="../src/engine/rules.cpp" line="4727"/>
+        <location filename="../src/engine/rules.cpp" line="5354"/>
+        <location filename="../src/engine/rules.cpp" line="5356"/>
+        <location filename="../src/engine/rules.cpp" line="5358"/>
+        <location filename="../src/engine/rules.cpp" line="5452"/>
+        <location filename="../src/engine/rules.cpp" line="5525"/>
+        <location filename="../src/engine/rules.cpp" line="7092"/>
+        <location filename="../src/engine/rules.cpp" line="7169"/>
+        <location filename="../src/engine/rules.cpp" line="7214"/>
+        <location filename="../src/engine/rules.cpp" line="7263"/>
+        <location filename="../src/engine/rules.cpp" line="7308"/>
+        <location filename="../src/engine/rules.cpp" line="8133"/>
+        <location filename="../src/engine/rules.cpp" line="9385"/>
+        <location filename="../src/engine/rules.cpp" line="9451"/>
+        <location filename="../src/engine/rules.cpp" line="9522"/>
+        <location filename="../src/engine/rules.cpp" line="9588"/>
+        <location filename="../src/engine/rules.cpp" line="9640"/>
+        <location filename="../src/engine/rules.cpp" line="9697"/>
+        <location filename="../src/engine/rules.cpp" line="9749"/>
+        <location filename="../src/engine/rules.cpp" line="9806"/>
+        <location filename="../src/engine/rules.cpp" line="9878"/>
+        <location filename="../src/engine/rules.cpp" line="9964"/>
+        <location filename="../src/engine/rules.cpp" line="11003"/>
+        <location filename="../src/engine/rules.cpp" line="11142"/>
+        <location filename="../src/engine/rules.cpp" line="11281"/>
+        <location filename="../src/engine/rules.cpp" line="11547"/>
+        <location filename="../src/engine/rules.cpp" line="12257"/>
+        <location filename="../src/engine/rules.cpp" line="12378"/>
+        <location filename="../src/engine/rules.cpp" line="12566"/>
+        <location filename="../src/engine/rules.cpp" line="12736"/>
+        <location filename="../src/engine/rules.cpp" line="12906"/>
+        <location filename="../src/engine/rules.cpp" line="13083"/>
+        <location filename="../src/engine/rules.cpp" line="13259"/>
+        <location filename="../src/engine/rules.cpp" line="13383"/>
+        <location filename="../src/engine/rules.cpp" line="13523"/>
+        <location filename="../src/engine/rules.cpp" line="13871"/>
         <source>%1 is incorrect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4197"/>
-        <location filename="../src/engine/rules.cpp" line="4278"/>
+        <location filename="../src/engine/rules.cpp" line="4378"/>
+        <location filename="../src/engine/rules.cpp" line="4459"/>
         <source>%1 is too large. Maximum allowed is %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4207"/>
-        <location filename="../src/engine/rules.cpp" line="4225"/>
-        <location filename="../src/engine/rules.cpp" line="4288"/>
-        <location filename="../src/engine/rules.cpp" line="4306"/>
+        <location filename="../src/engine/rules.cpp" line="4388"/>
+        <location filename="../src/engine/rules.cpp" line="4406"/>
+        <location filename="../src/engine/rules.cpp" line="4469"/>
+        <location filename="../src/engine/rules.cpp" line="4487"/>
         <source>Too many %1 items. Maximum allowed is %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4252"/>
-        <location filename="../src/engine/rules.cpp" line="4335"/>
-        <location filename="../src/engine/rules.cpp" line="4342"/>
+        <location filename="../src/engine/rules.cpp" line="4433"/>
+        <location filename="../src/engine/rules.cpp" line="4516"/>
+        <location filename="../src/engine/rules.cpp" line="4523"/>
         <source>%1: %2 and the number of %3 read do not correspond</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4375"/>
+        <location filename="../src/engine/rules.cpp" line="4556"/>
         <source>Duplicate teacher %1 found - ignoring</source>
         <translation>Profesor duplicado %1 - ignorando</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4423"/>
+        <location filename="../src/engine/rules.cpp" line="4606"/>
         <source>Duplicate subject %1 found - ignoring</source>
         <translation>Materia duplicada %1 - ignorada</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4449"/>
+        <location filename="../src/engine/rules.cpp" line="4634"/>
         <source>Your file contains subject tags list, which is named in versions&gt;=5.5.0 activity tags list</source>
         <translation>O arquivo contén unha lista de tipo de materias, que se renomeou nas versións &gt;=5.5.0 como unha lista de tipo de actividades</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4474"/>
-        <location filename="../src/engine/rules.cpp" line="4522"/>
+        <location filename="../src/engine/rules.cpp" line="4659"/>
+        <location filename="../src/engine/rules.cpp" line="4709"/>
         <source>Duplicate activity tag %1 found - ignoring</source>
         <translation>Tipo de actividade duplicada %1 - ignorando</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4578"/>
-        <source>Trying to add year %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
-        <translation>Se tenta engadir o curso %1, que xa foi engadido coma outro curso - o seu arquivo será cargado pero probablemente contén erros, arránxeos despois da carga</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4580"/>
-        <source>Trying to add year %1, which is already added as another group - your file will be loaded but probably contains errors, please correct them after loading</source>
-        <translation>Se tenta engadir o curso %1, que xa foi engadido coma outro grupo - o seu arquivo será cargado pero probablemente contén erros, arránxeos despois da carga</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4582"/>
-        <source>Trying to add year %1, which is already added as another subgroup - your file will be loaded but probably contains errors, please correct them after loading</source>
-        <translation>Se tenta engadir o curso %1, que xa foi engadido coma outro subgrupo - o seu arquivo será cargado pero probablemente contén erros, arránxeos despois da carga</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4625"/>
-        <source>Trying to add group %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
-        <translation>Se tenta engadir o grupo %1, que xa foi engadido coma outro curso - o seu arquivo será cargado pero probablemente contén erros, arránxeos despois da carga</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4628"/>
-        <source>Trying to add group %1 in year %2 but it is already added - your file will be loaded but probably contains errors, please correct them after loading</source>
-        <translation>Se tenta engadir o grupo %1 en o curso %2 que xa fora engadido - o seu arquivo será cargado pero probablemente contén erros, arránxeos despois da carga</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4634"/>
-        <source>Trying to add group %1, which is already added as another subgroup - your file will be loaded but probably contains errors, please correct them after loading</source>
-        <translation>Se tenta engadir o grupo %1, que xa foi engadido coma otro subgrupo - o seu arquivo será cargado pero probablemente contén erros, arránxeos despois da carga</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4694"/>
-        <source>Trying to add subgroup %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
-        <translation>Se tenta engadir o subgrupo %1, que xa foi engadido coma outro curso - o seu arquivo será cargado pero probablemente contén erros, arránxeos despois da carga</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4696"/>
-        <source>Trying to add subgroup %1, which is already added as another group - your file will be loaded but probably contains errors, please correct them after loading</source>
-        <translation>Se tenta engadir o subgrupo %1, que xa foi engadido coma outro grupo - o seu arquivo será cargado pero probablemente contén erros, arránxeos despois da carga</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4699"/>
-        <source>Trying to add subgroup %1 in year %2, group %3 but it is already added - your file will be loaded but probably contains errors, please correct them after loading</source>
-        <translation>Se tenta engadir o subgrupo %1, en o curso %2, grupo %3 pero xa está engadido - o seu arquivo será cargado pero probablemente contén erros, arránxeos despois da carga</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="252"/>
+        <location filename="../src/engine/rules.cpp" line="254"/>
         <source>Automatic Group</source>
         <comment>Please keep the translation short. It is used when a year contains no groups and an automatic group is added in the year, in the timetable (when viewing the students timetable from FET and also in the html timetables for students groups or subgroups). In the empty year there will be added a group with name = yearName+a space character+your translation of &apos;Automatic Group&apos;.</comment>
         <translation>Grupo automático</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="113"/>
-        <location filename="../src/engine/rules.cpp" line="4144"/>
+        <location filename="../src/engine/rules.cpp" line="4325"/>
         <source>08:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="114"/>
-        <location filename="../src/engine/rules.cpp" line="4145"/>
+        <location filename="../src/engine/rules.cpp" line="4326"/>
         <source>09:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="115"/>
-        <location filename="../src/engine/rules.cpp" line="4146"/>
+        <location filename="../src/engine/rules.cpp" line="4327"/>
         <source>10:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="116"/>
-        <location filename="../src/engine/rules.cpp" line="4147"/>
+        <location filename="../src/engine/rules.cpp" line="4328"/>
         <source>11:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="117"/>
-        <location filename="../src/engine/rules.cpp" line="4148"/>
+        <location filename="../src/engine/rules.cpp" line="4329"/>
         <source>12:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="118"/>
-        <location filename="../src/engine/rules.cpp" line="4149"/>
+        <location filename="../src/engine/rules.cpp" line="4330"/>
         <source>13:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="119"/>
-        <location filename="../src/engine/rules.cpp" line="4150"/>
+        <location filename="../src/engine/rules.cpp" line="4331"/>
         <source>14:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="120"/>
-        <location filename="../src/engine/rules.cpp" line="4151"/>
+        <location filename="../src/engine/rules.cpp" line="4332"/>
         <source>15:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="121"/>
-        <location filename="../src/engine/rules.cpp" line="4152"/>
+        <location filename="../src/engine/rules.cpp" line="4333"/>
         <source>16:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="122"/>
-        <location filename="../src/engine/rules.cpp" line="4153"/>
+        <location filename="../src/engine/rules.cpp" line="4334"/>
         <source>17:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="123"/>
-        <location filename="../src/engine/rules.cpp" line="4154"/>
+        <location filename="../src/engine/rules.cpp" line="4335"/>
         <source>18:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="124"/>
-        <location filename="../src/engine/rules.cpp" line="4155"/>
+        <location filename="../src/engine/rules.cpp" line="4336"/>
         <source>19:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="160"/>
+        <location filename="../src/engine/rules.cpp" line="162"/>
         <source>You have too many teachers. You need to increase the variable MAX_TEACHERS (which is currently %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="265"/>
+        <location filename="../src/engine/rules.cpp" line="267"/>
         <source>Automatic Subgroup</source>
         <comment>Please keep the translation short. It is used when a group contains no subgroups and an automatic subgroup is added in the group, in the timetable (when viewing the students timetable from FET and also in the html timetables for students subgroups). In the empty group there will be added a subgroup with name = groupName+a space character+your translation of &apos;Automatic Subgroup&apos;.</comment>
         <translation>Subgrupo automático</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="303"/>
+        <location filename="../src/engine/rules.cpp" line="305"/>
         <source>You have too many total subgroups. You need to increase the variable MAX_TOTAL_SUBGROUPS (which is currently %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="317"/>
+        <location filename="../src/engine/rules.cpp" line="319"/>
         <source>You have too many active activities. You need to increase the variable MAX_ACTIVITIES (which is currently %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="324"/>
+        <location filename="../src/engine/rules.cpp" line="326"/>
         <source>You have too many buildings. You need to increase the variable MAX_BUILDINGS (which is currently %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="331"/>
+        <location filename="../src/engine/rules.cpp" line="333"/>
         <source>You have too many rooms. You need to increase the variable MAX_ROOMS (which is currently %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="457"/>
+        <location filename="../src/engine/rules.cpp" line="459"/>
         <source>Computing internal structure</source>
         <comment>Title of a progress dialog</comment>
         <translation>Estrutura de cálculo interna</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="732"/>
+        <location filename="../src/engine/rules.cpp" line="734"/>
         <source>All &apos;group activities in the initial order for timetable generation&apos; items should contain at least two activities ids. This is not true for item number %1. Please report potential bug.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2295"/>
-        <location filename="../src/engine/rules.cpp" line="2340"/>
+        <location filename="../src/engine/rules.cpp" line="2433"/>
         <source>Activity with Id=%1 contains %2 duplicate teachers - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2300"/>
-        <location filename="../src/engine/rules.cpp" line="2345"/>
+        <location filename="../src/engine/rules.cpp" line="2438"/>
         <source>Activity with Id=%1 contains %2 duplicate students sets - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2305"/>
-        <location filename="../src/engine/rules.cpp" line="2350"/>
+        <location filename="../src/engine/rules.cpp" line="2443"/>
         <source>Activity with Id=%1 contains %2 duplicate activity tags - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2388"/>
+        <location filename="../src/engine/rules.cpp" line="2569"/>
         <source>Activities with group_Id=%1 contain %2 duplicate teachers - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2393"/>
+        <location filename="../src/engine/rules.cpp" line="2574"/>
         <source>Activities with group_Id=%1 contain %2 duplicate students sets - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2398"/>
+        <location filename="../src/engine/rules.cpp" line="2579"/>
         <source>Activities with group_Id=%1 contain %2 duplicate activity tags - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4792"/>
-        <source>Minor problem found and corrected: year %1 has different number of students in two places (%2 and %3)</source>
-        <comment>%2 and %3 are number of students</comment>
-        <translation>Problema menor atopado e arranxado: o curso %1 ten diferente número de estudantes en dous lugares (%2 e %3)</translation>
+        <location filename="../src/engine/rules.cpp" line="4774"/>
+        <source>Trying to add year %1, which is already added as another year.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4796"/>
-        <source>Explanation: this is a minor problem, which appears if using overlapping students set, due to a bug in FET previous to version %1. FET will now correct this problem by setting the number of students for this year, in all places where it appears, to the number that was found in the first appearance (%2). It is advisable to check the number of students for this year.</source>
-        <translation>Explicación: este é un problema menor, que aparece se usa solapamento de grupos, a pesar dun erro en versións previas de FET %1. FET arranxará este problema establecendo o número de estudantes para este curso, en todos os lugares onde aparece, ao número que se atopou en primeiro lugar (%2). Recoméndase comprobar o número de estudantes para este curso.</translation>
+        <location filename="../src/engine/rules.cpp" line="4776"/>
+        <source>Trying to add year %1, which is already added as another group.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4815"/>
-        <source>Minor problem found and corrected: group %1 has different number of students in two places (%2 and %3)</source>
-        <comment>%2 and %3 are number of students</comment>
-        <translation>Problema menor atopado e arranxado: o grupo %1 ten diferente número de estudantes en dous lugares (%2 e %3)</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4819"/>
-        <source>Explanation: this is a minor problem, which appears if using overlapping students set, due to a bug in FET previous to version %1. FET will now correct this problem by setting the number of students for this group, in all places where it appears, to the number that was found in the first appearance (%2). It is advisable to check the number of students for this group.</source>
-        <translation>Explicación: este é un problema menor, que aparece se usa solapamento de grupos, a pesar dun erro en versións previas de FET %1. FET arranxará este problema establecendo o número de estudantes para este grupo, en todos os lugares onde aparece, ao número que se atopou en primeiro lugar (%2). Recoméndase comprobar o número de estudantes para este grupo.</translation>
+        <location filename="../src/engine/rules.cpp" line="4778"/>
+        <source>Trying to add year %1, which is already added as another subgroup.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4838"/>
-        <source>Minor problem found and corrected: subgroup %1 has different number of students in two places (%2 and %3)</source>
-        <comment>%2 and %3 are number of students</comment>
-        <translation>Problema menor atopado e arranxado: o subgrupo %1 ten diferente número de estudantes en dous lugares (%2 e %3)</translation>
+        <source>Trying to add group %1, which is already added as another year.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4842"/>
-        <source>Explanation: this is a minor problem, which appears if using overlapping students set, due to a bug in FET previous to version %1. FET will now correct this problem by setting the number of students for this subgroup, in all places where it appears, to the number that was found in the first appearance (%2). It is advisable to check the number of students for this subgroup.</source>
-        <translation>Explicación: este é un problema menor, que aparece se usa solapamento de grupos, a pesar dun erro en versións previas de FET %1. FET arranxará este problema establecendo o número de estudantes para este subgrupo, en todos os lugares onde aparece, ao número que se atopou en primeiro lugar (%2). Recoméndase comprobar o número de estudantes para este subgrupo.</translation>
+        <location filename="../src/engine/rules.cpp" line="4843"/>
+        <source>Trying to add group %1 in year %2 but it is already added.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4973"/>
+        <location filename="../src/engine/rules.cpp" line="4852"/>
+        <source>Trying to add group %1, which is already added as another subgroup.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="4944"/>
+        <source>Trying to add subgroup %1, which is already added as another year.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="4948"/>
+        <source>Trying to add subgroup %1, which is already added as another group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="4953"/>
+        <source>Trying to add subgroup %1 in year %2, group %3 but it is already added.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="5262"/>
         <source>Found activity active tag which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The activity will be considered not active</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Atopada unha actividade marcada cun campo de activo que non é &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; ou &apos;0&apos;. Considerarase non activa</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5113"/>
+        <location filename="../src/engine/rules.cpp" line="5402"/>
         <source>File contains deprecated equipments list - will be ignored</source>
         <translation>O arquivo contén material antigo - ignorarase</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5145"/>
+        <location filename="../src/engine/rules.cpp" line="5434"/>
         <source>Duplicate building %1 found - ignoring</source>
         <translation>Construción %1 duplicada encontrada - ignorar</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5216"/>
+        <location filename="../src/engine/rules.cpp" line="5507"/>
         <source>Duplicate room %1 found - ignoring</source>
         <translation>Aula %1 duplicada encontrada - ignorar</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5271"/>
+        <location filename="../src/engine/rules.cpp" line="5564"/>
         <source>File contains constraint teacher not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint teacher not available times (a matrix).</source>
         <translation>O Arquivos conteñen restricións de profesor non dispoñible, que é antiga (mellorouse en FET 5.5.0), e será convertida a unha restrición do tipo, hora de profesor non dispoñible (unha matriz).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5318"/>
+        <location filename="../src/engine/rules.cpp" line="5611"/>
         <source>File contains constraint students set not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set not available times (a matrix).</source>
         <translation>O arquivo contén restricións obsoletas do tipo grupo non dispoñible (mellorouse en FET 5.5.0). e será convertido en restricións similares para grupos de estudantes (en matriz).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5390"/>
+        <location filename="../src/engine/rules.cpp" line="5683"/>
         <source>File contains deprecated constraint teachers subgroups max hours daily - will be ignored
 </source>
         <translation>O arquivo contén datos antigos sobre restricións de máximo de horas diario - ignorado
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5401"/>
+        <location filename="../src/engine/rules.cpp" line="5694"/>
         <source>File contains deprecated constraint students n hours daily - will be ignored
 </source>
         <translation>O arquivo contén datos antigos sobre restricións de mínimo de horas para estudantes - ignorado
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5412"/>
+        <location filename="../src/engine/rules.cpp" line="5705"/>
         <source>File contains deprecated constraint students set n hours daily - will be ignored
 </source>
         <translation>O arquivo contén datos antigos sobre restricións de mínimo de horas diario para grupos de estudantes - ignorado
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5456"/>
+        <location filename="../src/engine/rules.cpp" line="5749"/>
         <source>File contains old constraint type activity preferred time, which will be converted to the newer similar constraint of this type, constraint activity preferred STARTING time. This improvement is done in versions 5.5.9 and above</source>
         <translation>O arquivo contén restricións antigas do tipo de actividade con tempo preferido, que será convertida á nova restrición similar, actividade con tempo de inicio preferido. Esta mellora está en versións 5.5.9 e seguintes</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5506"/>
+        <location filename="../src/engine/rules.cpp" line="5799"/>
         <source>File contains deprecated constraint activity ends day - will be ignored
 </source>
         <translation>Arquivo contén datos antigos de final de actividade - ignorado
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5518"/>
+        <location filename="../src/engine/rules.cpp" line="5811"/>
         <source>Your file contains old constraint activity preferred times, which will be converted to new equivalent constraint activity preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of an activity (constraint activity preferred starting times) or: 2. the accepted time slots (constraint activity preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
         <translation>o seu arquivo contén restricións de tempos preferidos antigas, que serán convertidas ás equivalentes actuais de tempo de inicio preferido. A partir de FET-5.5.9 é posible especificar: 1. os tempos de inicio preferidos dunha actividade ou 2: as casiñas aceptadas no horario. Se o que precisa é o segundo tipo, debe engadila a través do interface.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5539"/>
+        <location filename="../src/engine/rules.cpp" line="5832"/>
         <source>File contains constraint break, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint break times (a matrix).</source>
         <translation>O arquivo contén pausas, o que está obsoleto (mellorouse en FET 5.5.0), e será convertido en restricións similares deste tipo, usando unha matriz de tempos pausa.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5569"/>
+        <location filename="../src/engine/rules.cpp" line="5862"/>
         <source>File contains constraint students no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation>O arquivo contén restricións de estudantes sen ocos que é antigo. Foi mellorado en FET 5.5.0, e será convertido nunha restrición similar deste tipo, unha de máximo de ocos por semana, cun máximo de 0. Se quere pode modificar a restrición para permitir más, (aínda que normalmente non sexa aceptado nos centros)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5583"/>
+        <location filename="../src/engine/rules.cpp" line="5876"/>
         <source>File contains constraint students set no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation>O arquivo contén restricións de grupos de estudantes sen ocos que é antigo. Foi mellorado en FET 5.5.0, e será convertido nunha restrición similar deste tipo, unha de máximo de ocos por semana, cun máximo de 0. Se quere pode modificar a restrición para permitir máis, (aínda que normalmente non é aceptado nos centros)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5611"/>
+        <location filename="../src/engine/rules.cpp" line="5904"/>
         <source>File contains constraint students early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation>O arquivo contén restricións de estudantes comezando a primeira hora, que está obsoleto (foi mellorado en FET 5.5.5) e será convertido en restricións equivalentes de comezar como máximo a segunda hora, cun valor de 0. Se o desexa pode cambialo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5628"/>
+        <location filename="../src/engine/rules.cpp" line="5921"/>
         <source>File contains constraint students set early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation>O arquivo contén restricións de grupos de estudantes comezando a primeira hora, que está obsoleto (foi mellorado en FET 5.5.5) e será convertido en restricións equivalentes de comezar como máximo a segunda hora, cun valor de 0. Se o desexa pode cambialo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5645"/>
+        <location filename="../src/engine/rules.cpp" line="5938"/>
         <source>Your file contains old constraint activities preferred times, which will be converted to new equivalent constraint activities preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of several activities (constraint activities preferred starting times) or: 2. the accepted time slots (constraint activities preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
         <translation>o seu arquivo contén restricións de tempos preferidos antigas, que serán convertidas ás equivalentes actuais de tempo de inicio preferido. A partir de FET-5.5.9 pódese especificar: 1. os tempos de inicio preferidos de varias actividades ou 2: as casiñas aceptadas no horario. Se o que precisa é o segundo tipo, debe engadila a través do interface.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5683"/>
+        <location filename="../src/engine/rules.cpp" line="5976"/>
         <source>File contains deprecated constraint teachers subject tags max hours continuously - will be ignored
 </source>
         <translation>Arquivo contendo restricións antigas será ignorado - máximo horas continuo profesorado
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5694"/>
+        <location filename="../src/engine/rules.cpp" line="5987"/>
         <source>File contains deprecated constraint teachers subject tag max hours continuously - will be ignored
 </source>
         <translation>Arquivo contendo restricións antigas será ignorado - máximo horas materia id continuo profesores
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5715"/>
-        <location filename="../src/engine/rules.cpp" line="6004"/>
+        <location filename="../src/engine/rules.cpp" line="6008"/>
+        <location filename="../src/engine/rules.cpp" line="6297"/>
         <source>Constraint
 %1
 not added - must be a duplicate</source>
@@ -45291,371 +45216,371 @@ not added - must be a duplicate</source>
 no engadida - duplicada</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5744"/>
+        <location filename="../src/engine/rules.cpp" line="6037"/>
         <source>File contains constraint room not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint room not available times (a matrix).</source>
         <translation>O arquivo contén restricións de aula non dispoñible, que está obsoleto (mellorouse en FET 5.5.5), e será convertido a unha restrición similar, cunha matriz de horas non dispoñible.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5759"/>
+        <location filename="../src/engine/rules.cpp" line="6052"/>
         <source>File contains deprecated constraint room type not allowed subjects - will be ignored
 </source>
         <translation>Arquivo contendo restricións antigas será ignorado - aula non permitida
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5771"/>
+        <location filename="../src/engine/rules.cpp" line="6064"/>
         <source>File contains deprecated constraint subject requires equipments - will be ignored
 </source>
         <translation>Arquivo contendo restricións antigas será ignorado - equipos
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5784"/>
+        <location filename="../src/engine/rules.cpp" line="6077"/>
         <source>File contains deprecated constraint subject tag requires equipments - will be ignored
 </source>
         <translation>Arquivo contendo restricións antigas será ignorado - identificador de materias
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5796"/>
+        <location filename="../src/engine/rules.cpp" line="6089"/>
         <source>File contains deprecated constraint teacher requires room - will be ignored
 </source>
         <translation>Arquivo contendo restricións antigas será ignorado - profesores
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5808"/>
+        <location filename="../src/engine/rules.cpp" line="6101"/>
         <source>File contains deprecated constraint teacher subject require room - will be ignored
 </source>
         <translation>Arquivo contendo restricións antigas será ignorado - materias profesorado
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5820"/>
+        <location filename="../src/engine/rules.cpp" line="6113"/>
         <source>File contains deprecated constraint minimize number of rooms for students - will be ignored
 </source>
         <translation>Arquivo contendo restricións antigas será ignorado - aulas número mínimo
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5832"/>
+        <location filename="../src/engine/rules.cpp" line="6125"/>
         <source>File contains deprecated constraint minimize number of rooms for teachers - will be ignored
 </source>
         <translation>Arquivo contendo restricións antigas será ignorado - mímizar número de aulas
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5850"/>
+        <location filename="../src/engine/rules.cpp" line="6143"/>
         <source>File contains deprecated constraint activities same room - will be ignored
 </source>
         <translation>Arquivo contendo restricións antigas será ignorado - actividades na mesma aula
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5899"/>
+        <location filename="../src/engine/rules.cpp" line="6192"/>
         <source>File contains deprecated constraint max building changes per day for teachers - will be ignored
 </source>
         <translation>Arquivo contendo restricións antigas será ignorado - máximo construcións cambios/día
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5911"/>
+        <location filename="../src/engine/rules.cpp" line="6204"/>
         <source>File contains deprecated constraint max building changes per day for students - will be ignored
 </source>
         <translation>Arquivo contendo restricións antigas será ignorado - máximo cambio de construción/alumno
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5923"/>
+        <location filename="../src/engine/rules.cpp" line="6216"/>
         <source>File contains deprecated constraint max room changes per day for teachers - will be ignored
 </source>
         <translation>Arquivo contendo restricións antigas será ignorado - cambios aula/profesor</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5935"/>
+        <location filename="../src/engine/rules.cpp" line="6228"/>
         <source>File contains deprecated constraint max room changes per day for students - will be ignored
 </source>
         <translation>Arquivo contendo restricións antigas será ignorado - máximo cambio aulas por alumno/día
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6056"/>
-        <location filename="../src/engine/rules.cpp" line="6817"/>
-        <location filename="../src/engine/rules.cpp" line="7858"/>
-        <location filename="../src/engine/rules.cpp" line="7965"/>
-        <location filename="../src/engine/rules.cpp" line="8104"/>
-        <location filename="../src/engine/rules.cpp" line="8194"/>
-        <location filename="../src/engine/rules.cpp" line="8249"/>
-        <location filename="../src/engine/rules.cpp" line="8319"/>
-        <location filename="../src/engine/rules.cpp" line="8389"/>
-        <location filename="../src/engine/rules.cpp" line="8459"/>
-        <location filename="../src/engine/rules.cpp" line="8510"/>
-        <location filename="../src/engine/rules.cpp" line="10724"/>
-        <location filename="../src/engine/rules.cpp" line="10863"/>
-        <location filename="../src/engine/rules.cpp" line="11002"/>
-        <location filename="../src/engine/rules.cpp" line="11266"/>
-        <location filename="../src/engine/rules.cpp" line="12287"/>
-        <location filename="../src/engine/rules.cpp" line="12457"/>
-        <location filename="../src/engine/rules.cpp" line="12627"/>
-        <location filename="../src/engine/rules.cpp" line="12804"/>
-        <location filename="../src/engine/rules.cpp" line="12980"/>
-        <location filename="../src/engine/rules.cpp" line="13110"/>
-        <location filename="../src/engine/rules.cpp" line="13117"/>
-        <location filename="../src/engine/rules.cpp" line="13250"/>
-        <location filename="../src/engine/rules.cpp" line="13257"/>
-        <location filename="../src/engine/rules.cpp" line="13596"/>
-        <location filename="../src/engine/rules.cpp" line="13797"/>
-        <location filename="../src/engine/rules.cpp" line="13925"/>
-        <location filename="../src/engine/rules.cpp" line="14063"/>
-        <location filename="../src/engine/rules.cpp" line="14201"/>
-        <location filename="../src/engine/rules.cpp" line="14292"/>
-        <location filename="../src/engine/rules.cpp" line="14382"/>
-        <location filename="../src/engine/rules.cpp" line="14472"/>
-        <location filename="../src/engine/rules.cpp" line="14954"/>
-        <location filename="../src/engine/rules.cpp" line="15008"/>
+        <location filename="../src/engine/rules.cpp" line="6349"/>
+        <location filename="../src/engine/rules.cpp" line="7110"/>
+        <location filename="../src/engine/rules.cpp" line="8151"/>
+        <location filename="../src/engine/rules.cpp" line="8258"/>
+        <location filename="../src/engine/rules.cpp" line="8397"/>
+        <location filename="../src/engine/rules.cpp" line="8487"/>
+        <location filename="../src/engine/rules.cpp" line="8542"/>
+        <location filename="../src/engine/rules.cpp" line="8612"/>
+        <location filename="../src/engine/rules.cpp" line="8682"/>
+        <location filename="../src/engine/rules.cpp" line="8752"/>
+        <location filename="../src/engine/rules.cpp" line="8803"/>
+        <location filename="../src/engine/rules.cpp" line="11017"/>
+        <location filename="../src/engine/rules.cpp" line="11156"/>
+        <location filename="../src/engine/rules.cpp" line="11295"/>
+        <location filename="../src/engine/rules.cpp" line="11559"/>
+        <location filename="../src/engine/rules.cpp" line="12580"/>
+        <location filename="../src/engine/rules.cpp" line="12750"/>
+        <location filename="../src/engine/rules.cpp" line="12920"/>
+        <location filename="../src/engine/rules.cpp" line="13097"/>
+        <location filename="../src/engine/rules.cpp" line="13273"/>
+        <location filename="../src/engine/rules.cpp" line="13403"/>
+        <location filename="../src/engine/rules.cpp" line="13410"/>
+        <location filename="../src/engine/rules.cpp" line="13543"/>
+        <location filename="../src/engine/rules.cpp" line="13550"/>
+        <location filename="../src/engine/rules.cpp" line="13889"/>
+        <location filename="../src/engine/rules.cpp" line="14090"/>
+        <location filename="../src/engine/rules.cpp" line="14218"/>
+        <location filename="../src/engine/rules.cpp" line="14356"/>
+        <location filename="../src/engine/rules.cpp" line="14494"/>
+        <location filename="../src/engine/rules.cpp" line="14585"/>
+        <location filename="../src/engine/rules.cpp" line="14675"/>
+        <location filename="../src/engine/rules.cpp" line="14765"/>
+        <location filename="../src/engine/rules.cpp" line="15247"/>
+        <location filename="../src/engine/rules.cpp" line="15301"/>
         <source>%1 does not coincide with the number of read %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6110"/>
+        <location filename="../src/engine/rules.cpp" line="6403"/>
         <source>Saving of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space</source>
         <translation>O gardado da información deu un código de erro %1, o que significa que non pode ler o arquivo. Comprobe o espazo libre en disco</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6153"/>
+        <location filename="../src/engine/rules.cpp" line="6446"/>
         <source>Cannot open %1 for writing ... please check write permissions of the selected directory or your disk free space. Saving of file aborted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6279"/>
+        <location filename="../src/engine/rules.cpp" line="6572"/>
         <source>Saved file gave error code %1, which means saving is compromised. Please check your disk free space</source>
         <translation>O gardado de arquivo deu un código de erro %1 Comprobe o espazo en disco</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6557"/>
-        <location filename="../src/engine/rules.cpp" line="7600"/>
-        <location filename="../src/engine/rules.cpp" line="11026"/>
+        <location filename="../src/engine/rules.cpp" line="6850"/>
+        <location filename="../src/engine/rules.cpp" line="7893"/>
+        <location filename="../src/engine/rules.cpp" line="11319"/>
         <source>Weight percentage incorrect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6579"/>
-        <location filename="../src/engine/rules.cpp" line="6753"/>
-        <location filename="../src/engine/rules.cpp" line="7622"/>
-        <location filename="../src/engine/rules.cpp" line="7794"/>
-        <location filename="../src/engine/rules.cpp" line="9792"/>
-        <location filename="../src/engine/rules.cpp" line="9970"/>
-        <location filename="../src/engine/rules.cpp" line="10665"/>
-        <location filename="../src/engine/rules.cpp" line="10803"/>
-        <location filename="../src/engine/rules.cpp" line="10942"/>
-        <location filename="../src/engine/rules.cpp" line="11048"/>
-        <location filename="../src/engine/rules.cpp" line="11210"/>
-        <location filename="../src/engine/rules.cpp" line="12221"/>
-        <location filename="../src/engine/rules.cpp" line="12391"/>
-        <location filename="../src/engine/rules.cpp" line="12561"/>
-        <location filename="../src/engine/rules.cpp" line="12738"/>
-        <location filename="../src/engine/rules.cpp" line="12914"/>
-        <location filename="../src/engine/rules.cpp" line="13046"/>
-        <location filename="../src/engine/rules.cpp" line="13186"/>
-        <location filename="../src/engine/rules.cpp" line="13208"/>
-        <location filename="../src/engine/rules.cpp" line="13365"/>
-        <location filename="../src/engine/rules.cpp" line="13532"/>
+        <location filename="../src/engine/rules.cpp" line="6872"/>
+        <location filename="../src/engine/rules.cpp" line="7046"/>
+        <location filename="../src/engine/rules.cpp" line="7915"/>
+        <location filename="../src/engine/rules.cpp" line="8087"/>
+        <location filename="../src/engine/rules.cpp" line="10085"/>
+        <location filename="../src/engine/rules.cpp" line="10263"/>
+        <location filename="../src/engine/rules.cpp" line="10958"/>
+        <location filename="../src/engine/rules.cpp" line="11096"/>
+        <location filename="../src/engine/rules.cpp" line="11235"/>
+        <location filename="../src/engine/rules.cpp" line="11341"/>
+        <location filename="../src/engine/rules.cpp" line="11503"/>
+        <location filename="../src/engine/rules.cpp" line="12514"/>
+        <location filename="../src/engine/rules.cpp" line="12684"/>
+        <location filename="../src/engine/rules.cpp" line="12854"/>
+        <location filename="../src/engine/rules.cpp" line="13031"/>
+        <location filename="../src/engine/rules.cpp" line="13207"/>
+        <location filename="../src/engine/rules.cpp" line="13339"/>
+        <location filename="../src/engine/rules.cpp" line="13479"/>
+        <location filename="../src/engine/rules.cpp" line="13501"/>
+        <location filename="../src/engine/rules.cpp" line="13658"/>
+        <location filename="../src/engine/rules.cpp" line="13825"/>
         <source>Day %1 is inexistent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6598"/>
-        <location filename="../src/engine/rules.cpp" line="7640"/>
-        <location filename="../src/engine/rules.cpp" line="11065"/>
-        <location filename="../src/engine/rules.cpp" line="13383"/>
+        <location filename="../src/engine/rules.cpp" line="6891"/>
+        <location filename="../src/engine/rules.cpp" line="7933"/>
+        <location filename="../src/engine/rules.cpp" line="11358"/>
+        <location filename="../src/engine/rules.cpp" line="13676"/>
         <source>Hour %1 is the last hour - impossible</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6602"/>
-        <location filename="../src/engine/rules.cpp" line="6625"/>
-        <location filename="../src/engine/rules.cpp" line="6774"/>
-        <location filename="../src/engine/rules.cpp" line="7103"/>
-        <location filename="../src/engine/rules.cpp" line="7219"/>
-        <location filename="../src/engine/rules.cpp" line="7420"/>
-        <location filename="../src/engine/rules.cpp" line="7535"/>
-        <location filename="../src/engine/rules.cpp" line="7644"/>
-        <location filename="../src/engine/rules.cpp" line="7666"/>
-        <location filename="../src/engine/rules.cpp" line="7815"/>
-        <location filename="../src/engine/rules.cpp" line="9811"/>
-        <location filename="../src/engine/rules.cpp" line="9989"/>
-        <location filename="../src/engine/rules.cpp" line="10688"/>
-        <location filename="../src/engine/rules.cpp" line="10826"/>
-        <location filename="../src/engine/rules.cpp" line="10965"/>
-        <location filename="../src/engine/rules.cpp" line="11069"/>
-        <location filename="../src/engine/rules.cpp" line="11090"/>
-        <location filename="../src/engine/rules.cpp" line="11230"/>
-        <location filename="../src/engine/rules.cpp" line="12247"/>
-        <location filename="../src/engine/rules.cpp" line="12417"/>
-        <location filename="../src/engine/rules.cpp" line="12587"/>
-        <location filename="../src/engine/rules.cpp" line="12764"/>
-        <location filename="../src/engine/rules.cpp" line="12940"/>
-        <location filename="../src/engine/rules.cpp" line="13068"/>
-        <location filename="../src/engine/rules.cpp" line="13387"/>
-        <location filename="../src/engine/rules.cpp" line="13409"/>
-        <location filename="../src/engine/rules.cpp" line="13553"/>
+        <location filename="../src/engine/rules.cpp" line="6895"/>
+        <location filename="../src/engine/rules.cpp" line="6918"/>
+        <location filename="../src/engine/rules.cpp" line="7067"/>
+        <location filename="../src/engine/rules.cpp" line="7396"/>
+        <location filename="../src/engine/rules.cpp" line="7512"/>
+        <location filename="../src/engine/rules.cpp" line="7713"/>
+        <location filename="../src/engine/rules.cpp" line="7828"/>
+        <location filename="../src/engine/rules.cpp" line="7937"/>
+        <location filename="../src/engine/rules.cpp" line="7959"/>
+        <location filename="../src/engine/rules.cpp" line="8108"/>
+        <location filename="../src/engine/rules.cpp" line="10104"/>
+        <location filename="../src/engine/rules.cpp" line="10282"/>
+        <location filename="../src/engine/rules.cpp" line="10981"/>
+        <location filename="../src/engine/rules.cpp" line="11119"/>
+        <location filename="../src/engine/rules.cpp" line="11258"/>
+        <location filename="../src/engine/rules.cpp" line="11362"/>
+        <location filename="../src/engine/rules.cpp" line="11383"/>
+        <location filename="../src/engine/rules.cpp" line="11523"/>
+        <location filename="../src/engine/rules.cpp" line="12540"/>
+        <location filename="../src/engine/rules.cpp" line="12710"/>
+        <location filename="../src/engine/rules.cpp" line="12880"/>
+        <location filename="../src/engine/rules.cpp" line="13057"/>
+        <location filename="../src/engine/rules.cpp" line="13233"/>
+        <location filename="../src/engine/rules.cpp" line="13361"/>
+        <location filename="../src/engine/rules.cpp" line="13680"/>
+        <location filename="../src/engine/rules.cpp" line="13702"/>
+        <location filename="../src/engine/rules.cpp" line="13846"/>
         <source>Hour %1 is inexistent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6621"/>
-        <location filename="../src/engine/rules.cpp" line="7662"/>
-        <location filename="../src/engine/rules.cpp" line="11086"/>
-        <location filename="../src/engine/rules.cpp" line="13405"/>
+        <location filename="../src/engine/rules.cpp" line="6914"/>
+        <location filename="../src/engine/rules.cpp" line="7955"/>
+        <location filename="../src/engine/rules.cpp" line="11379"/>
+        <location filename="../src/engine/rules.cpp" line="13698"/>
         <source>Hour %1 is the first hour - impossible</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6653"/>
-        <location filename="../src/engine/rules.cpp" line="6657"/>
-        <location filename="../src/engine/rules.cpp" line="6661"/>
-        <location filename="../src/engine/rules.cpp" line="7693"/>
-        <location filename="../src/engine/rules.cpp" line="7697"/>
-        <location filename="../src/engine/rules.cpp" line="7701"/>
-        <location filename="../src/engine/rules.cpp" line="11111"/>
-        <location filename="../src/engine/rules.cpp" line="11115"/>
-        <location filename="../src/engine/rules.cpp" line="11119"/>
-        <location filename="../src/engine/rules.cpp" line="13432"/>
-        <location filename="../src/engine/rules.cpp" line="13436"/>
-        <location filename="../src/engine/rules.cpp" line="13440"/>
+        <location filename="../src/engine/rules.cpp" line="6946"/>
+        <location filename="../src/engine/rules.cpp" line="6950"/>
+        <location filename="../src/engine/rules.cpp" line="6954"/>
+        <location filename="../src/engine/rules.cpp" line="7986"/>
+        <location filename="../src/engine/rules.cpp" line="7990"/>
+        <location filename="../src/engine/rules.cpp" line="7994"/>
+        <location filename="../src/engine/rules.cpp" line="11404"/>
+        <location filename="../src/engine/rules.cpp" line="11408"/>
+        <location filename="../src/engine/rules.cpp" line="11412"/>
+        <location filename="../src/engine/rules.cpp" line="13725"/>
+        <location filename="../src/engine/rules.cpp" line="13729"/>
+        <location filename="../src/engine/rules.cpp" line="13733"/>
         <source>Field missing: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7128"/>
-        <location filename="../src/engine/rules.cpp" line="7244"/>
-        <location filename="../src/engine/rules.cpp" line="7445"/>
-        <location filename="../src/engine/rules.cpp" line="7560"/>
+        <location filename="../src/engine/rules.cpp" line="7421"/>
+        <location filename="../src/engine/rules.cpp" line="7537"/>
+        <location filename="../src/engine/rules.cpp" line="7738"/>
+        <location filename="../src/engine/rules.cpp" line="7853"/>
         <source>Hour %1 is inexistent (it is also not void, to specify end of the day)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7087"/>
+        <location filename="../src/engine/rules.cpp" line="7380"/>
         <source>Constraint TeacherIntervalMaxDaysPerWeek max days corrupt for teacher %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation>A restrición de intervalo máximo de días por semana para profesor é errónea para o profesor %1, máximo de días %2&gt;nDíasPorSemana, restrición engadida, arranxe a regra</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7203"/>
+        <location filename="../src/engine/rules.cpp" line="7496"/>
         <source>Constraint TeachersIntervalMaxDaysPerWeek max days corrupt, max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7298"/>
+        <location filename="../src/engine/rules.cpp" line="7591"/>
         <source>Constraint StudentsSetMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7338"/>
+        <location filename="../src/engine/rules.cpp" line="7631"/>
         <source>Constraint StudentsMaxDaysPerWeek max days corrupt, max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7520"/>
+        <location filename="../src/engine/rules.cpp" line="7813"/>
         <source>Constraint StudentsIntervalMaxDaysPerWeek max days corrupt: max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7404"/>
+        <location filename="../src/engine/rules.cpp" line="7697"/>
         <source>Constraint StudentsSetIntervalMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation>A restrición de intervalo máximo de días por semana para estudantes é errónea para o grupo %1, máximo de días %2&gt;nDíasPorSemana, restrición engadida, arranxe a regra</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="739"/>
+        <location filename="../src/engine/rules.cpp" line="741"/>
         <source>All &apos;group activities in the initial order for timetable generation&apos; items should have different activities ids. (Each activity id must appear at most once in all the items.) This is not true for item number %1 and activity id %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7909"/>
-        <location filename="../src/engine/rules.cpp" line="8048"/>
+        <location filename="../src/engine/rules.cpp" line="8202"/>
+        <location filename="../src/engine/rules.cpp" line="8341"/>
         <source>Found constraint min days between activities with tag consecutive if same day which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Atopada regra de mínimo de días entre actividades coa etiqueta consecutivas se son o mesmo día &apos;verdadeiro&apos;, &apos;falso&apos;, &apos;si&apos;, &apos;non&apos;, &apos;1&apos; ou &apos;0&apos;. A etiqueta será considerada &apos;falso&apos;</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8953"/>
+        <location filename="../src/engine/rules.cpp" line="9246"/>
         <source>Found constraint teachers min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Atopada regra de mínimo de días diario para profesores coa etiqueta permitir días baleiros que non é &apos;verdadeiro&apos;, &apos;falso&apos;, &apos;si&apos;, &apos;non&apos;, &apos;1&apos; ou &apos;0&apos;. A etiqueta será considerada &apos;falso&apos;</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9030"/>
+        <location filename="../src/engine/rules.cpp" line="9323"/>
         <source>Found constraint teacher min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Atopada regra de mínimo de días diario para profesor coa etiqueta permitir días baleiros que non é &apos;verdadeiro&apos;, &apos;falso&apos;, &apos;si&apos;, &apos;non&apos;, &apos;1&apos; ou &apos;0&apos;. A etiqueta será considerada &apos;falso&apos;</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4248"/>
-        <location filename="../src/engine/rules.cpp" line="4329"/>
-        <location filename="../src/engine/rules.cpp" line="9105"/>
-        <location filename="../src/engine/rules.cpp" line="9176"/>
-        <location filename="../src/engine/rules.cpp" line="9242"/>
-        <location filename="../src/engine/rules.cpp" line="9313"/>
-        <location filename="../src/engine/rules.cpp" line="9370"/>
-        <location filename="../src/engine/rules.cpp" line="9422"/>
-        <location filename="../src/engine/rules.cpp" line="9479"/>
-        <location filename="../src/engine/rules.cpp" line="9531"/>
-        <location filename="../src/engine/rules.cpp" line="9617"/>
-        <location filename="../src/engine/rules.cpp" line="9708"/>
-        <location filename="../src/engine/rules.cpp" line="11990"/>
-        <location filename="../src/engine/rules.cpp" line="12116"/>
+        <location filename="../src/engine/rules.cpp" line="4429"/>
+        <location filename="../src/engine/rules.cpp" line="4510"/>
+        <location filename="../src/engine/rules.cpp" line="9398"/>
+        <location filename="../src/engine/rules.cpp" line="9469"/>
+        <location filename="../src/engine/rules.cpp" line="9535"/>
+        <location filename="../src/engine/rules.cpp" line="9606"/>
+        <location filename="../src/engine/rules.cpp" line="9663"/>
+        <location filename="../src/engine/rules.cpp" line="9715"/>
+        <location filename="../src/engine/rules.cpp" line="9772"/>
+        <location filename="../src/engine/rules.cpp" line="9824"/>
+        <location filename="../src/engine/rules.cpp" line="9910"/>
+        <location filename="../src/engine/rules.cpp" line="10001"/>
+        <location filename="../src/engine/rules.cpp" line="12283"/>
+        <location filename="../src/engine/rules.cpp" line="12409"/>
         <source>%1 not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9601"/>
+        <location filename="../src/engine/rules.cpp" line="9894"/>
         <source>Found constraint students min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Atopada regra de mínimo de días diario para estudantes coa etiqueta permitir días baleiros que non é &apos;verdadeiro&apos;, &apos;falso&apos;, &apos;si&apos;, &apos;non&apos;, &apos;1&apos; ou &apos;0&apos;. A etiqueta será considerada &apos;falso&apos;</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9692"/>
+        <location filename="../src/engine/rules.cpp" line="9985"/>
         <source>Found constraint students set min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Atopada regra de mínimo de días diario para grupos coa etiqueta permitir días baleiros que non é &apos;verdadeiro&apos;, &apos;falso&apos;, &apos;si&apos;, &apos;non&apos;, &apos;1&apos; ou &apos;0&apos;. A etiqueta será considerada &apos;falso&apos;</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9770"/>
-        <location filename="../src/engine/rules.cpp" line="9948"/>
+        <location filename="../src/engine/rules.cpp" line="10063"/>
+        <location filename="../src/engine/rules.cpp" line="10241"/>
         <source>Found constraint activity preferred starting time with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Atopada unha restrición de actividade con tempo de inicio preferido marcada cun bloqueo permanente que non é &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; ou &apos;0&apos;. Considerarase falsa</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9833"/>
-        <location filename="../src/engine/rules.cpp" line="10011"/>
+        <location filename="../src/engine/rules.cpp" line="10126"/>
+        <location filename="../src/engine/rules.cpp" line="10304"/>
         <source>Found constraint activity preferred starting time, with unspecified tag &apos;permanently locked&apos; - this tag will be set to &apos;false&apos; by default. You can always modify it by editing the constraint in the &apos;Data&apos; menu</source>
         <translation>Atopada unha regra de actividade con tempo de inicio preferido, cunha etiqueta non específica de &apos;permanentemente bloqueado&apos; - esta etiqueta será axustada a &apos;falso&apos; por omisión. Pódese modificar isto editándoo no menú de &apos;Datos&apos;</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9836"/>
-        <location filename="../src/engine/rules.cpp" line="10014"/>
+        <location filename="../src/engine/rules.cpp" line="10129"/>
+        <location filename="../src/engine/rules.cpp" line="10307"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred starting time has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
         <translation>Explicación: a partir da versión 5.8.0 (Enero 2009), a regra de actividade con tempo de inicio preferido ten unha nova característica, &apos;permanentemente bloqueado&apos; (true ou false, é dicir certo ou falso). Recoméndase activar &apos;permanentemente bloqueado&apos; con true, para as restricións que non se precisan modificar dende o menú &apos;Horario&apos; e deixalo en false para se poidan modificar dende este. (O bloqueo permanente pódese modificar editando a restrición dende o menú &apos;Datos&apos;). Desta forma, cando estemos vendo o horario e bloqueando/desbloqueando algunhas actividades, non se poderán desbloquear as restricións que precisan estar bloqueadas sempre.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9855"/>
-        <location filename="../src/engine/rules.cpp" line="10033"/>
+        <location filename="../src/engine/rules.cpp" line="10148"/>
+        <location filename="../src/engine/rules.cpp" line="10326"/>
         <source>Found constraint activity preferred starting time, with unspecified day or hour. This constraint will be transformed into constraint activity preferred starting times (a set of times, not only one). This change is done in FET versions 5.8.1 and higher.</source>
         <translation>Atopada restrición de actividade con tempo de inicio preferida, cun día ou hora non especificado. Esta restrición será transformada nunha actividade con tempos de inicio preferido (un grupo de tempos, non un en concreto). Este troco fíxose en FET versión 5.8.1 e superiores.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13656"/>
+        <location filename="../src/engine/rules.cpp" line="13949"/>
         <source>Found constraint activity preferred room with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Atopada unha restrición de actividade con aula preferida marcada cun bloqueo permanente que non é &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; ou &apos;0&apos;. Considerarase false</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13699"/>
+        <location filename="../src/engine/rules.cpp" line="13992"/>
         <source>Found constraint activity preferred room, with unspecified tag &apos;permanently locked&apos; - this tag will be set to &apos;false&apos; by default. You can always modify it by editing the constraint in the &apos;Data&apos; menu</source>
         <translation>Atopada unha regra de actividade con aula preferida, cunha etiqueta non específica de &apos;permanentemente bloqueado&apos; - esta etiqueta será axustada a &apos;falso&apos; por omisión. Pódese modificar isto editándoo no menú de &apos;Datos&apos;</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13702"/>
+        <location filename="../src/engine/rules.cpp" line="13995"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred room has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
         <translation>Explicación: a partir da versión 5.8.0 (Xaneiro 2009), a regra de actividade con aula preferida ten unha nova característica, &apos;permanentemente bloqueado&apos; (true ou false, é dicir certo ou falso). Recoméndase activar &apos;permanentemente bloqueado&apos; con true, para as restricións que non se precisan modificar dende o menú &apos;Horario&apos; e deixalo en false para se poidan modificar dende este. (O bloqueo permanente pódese modificar editando a restrición dende o menú &apos;Datos&apos;). Desta forma, cando esteamos vendo o horario e bloqueando/desbloqueando algunhas actividades, non se poderán desbloquear as restricións que precisan estar bloqueadas sempre.</translation>
     </message>
@@ -45714,47 +45639,47 @@ no engadida - duplicada</translation>
 <context>
     <name>SecondMinDaysDialog</name>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="462"/>
+        <location filename="../src/interface/addactivityform.cpp" line="477"/>
         <source>Add a second constraint or not?</source>
         <translation>Engadir unha segunda restrición?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="472"/>
+        <location filename="../src/interface/addactivityform.cpp" line="487"/>
         <source>Yes</source>
         <translation>Si</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="475"/>
+        <location filename="../src/interface/addactivityform.cpp" line="490"/>
         <source>No</source>
         <translation>Non</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="545"/>
+        <location filename="../src/interface/addactivityform.cpp" line="560"/>
         <source>FET information</source>
         <translation>FET información</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="546"/>
+        <location filename="../src/interface/addactivityform.cpp" line="561"/>
         <source>Invalid weight (percentage) - must be &gt;=0 and &lt;=100.0</source>
         <translation>Ponderación non válida - ten que ser &gt;=0.0 e &lt;=100.0</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="444"/>
+        <location filename="../src/interface/addactivityform.cpp" line="459"/>
         <source>You selected min days between activities %1 (above 1) and weight %2 (under 100.0). Would you like to add also a second constraint to ensure that almost certainly the distance between activities is at least %3 (%1-1) days? If yes, please select weight (recommended 95.0%-100.0%) and click Yes. If no, please click No (only one constraint will be added)</source>
         <translation>Seleccionou un mínimo de días entre actividades %1 e porcentaxe %2 (sobre 100.0). Desexa engadir unha segunda restrición para asegurar que polo menos a distancia entre as actividadades sexa %3 (%1-1) días? De ser así, seleccione unha porcentaxe (recomendado entre 95.0%-100.0%) e faga clic en Si. En caso contrario prema clic en Non (só se engadirá unha restrición)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="460"/>
+        <location filename="../src/interface/addactivityform.cpp" line="475"/>
         <source>Recommended answer is Yes, 95% (or higher).</source>
         <translation>A resposta recomendada é Si, 95% (ou maior).</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="449"/>
+        <location filename="../src/interface/addactivityform.cpp" line="464"/>
         <source>(Yes means to add an additional constraint min %1 days between activities, weight 0.0%-100.0%. If you say Yes, you will have 2 constraints min days added for current activities. Adding the second constraint might lead to impossible timetables if the condition is too tight, but you can remove the second constraint at any time).</source>
         <translation>(Se quere dicir que se engada unha restrición adicional de mínimo %1 días entre actividades, cunha porcentaxe entre 0.0%-100.0%. Se responde Si, terá 2 restricións de mínimo de días engadidas para a actividade actual. Engadir a segunda restrición pode ocasionar horarios imposibles se a regra é demasiado alta, pero pode eliminala en calquera momento).</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="454"/>
+        <location filename="../src/interface/addactivityform.cpp" line="469"/>
         <source>Note: 95% is usually enough for min days constraints referring to same activities. The weights are cumulated if referring to the same activities. If you have 2 constraints with say 95% (say min n days and min n-1 days), the min n days constraint is skipped with probability 5%, then min n-1 days constraint is skipped with probability 0.25%=5%*5%, so you&apos;ll get in 99.75% cases the min n-1 days constraint respected.</source>
         <translation>Nota: 95% é polo xeral suficiente para a restrición de mínimo de días con respecto á mesma actividade. As porcentaxes son acumuladas se se refieren á mesma actividade. Se ten 2 restricións cun 95% (con mínimo n días e mínimo n-1 días), a restrición mínimo n é ignorada cunha probabilidade do 5%, entón a restrición mínimo n-1 días é ignorada cunha probabilidade do 0.25%=5%*5%, así que conseguirá nun 99.75% de casos que a restrición de mínimo n-1 días sexa respectada.</translation>
     </message>
@@ -45907,7 +45832,7 @@ no engadida - duplicada</translation>
         <location filename="../src/interface/splityearform.cpp" line="390"/>
         <location filename="../src/interface/splityearform.cpp" line="417"/>
         <location filename="../src/interface/splityearform.cpp" line="437"/>
-        <location filename="../src/interface/splityearform.cpp" line="655"/>
+        <location filename="../src/interface/splityearform.cpp" line="657"/>
         <source>FET information</source>
         <translation>FET información</translation>
     </message>
@@ -45915,7 +45840,7 @@ no engadida - duplicada</translation>
         <location filename="../src/interface/splityearform.cpp" line="114"/>
         <location filename="../src/interface/splityearform.cpp" line="289"/>
         <location filename="../src/interface/splityearform.cpp" line="338"/>
-        <location filename="../src/interface/splityearform.cpp" line="541"/>
+        <location filename="../src/interface/splityearform.cpp" line="544"/>
         <source>FET warning</source>
         <translation>FET advertencia</translation>
     </message>
@@ -45958,8 +45883,8 @@ no engadida - duplicada</translation>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="246"/>
         <location filename="../src/interface/splityearform.cpp" line="274"/>
-        <location filename="../src/interface/splityearform.cpp" line="535"/>
-        <location filename="../src/interface/splityearform.cpp" line="776"/>
+        <location filename="../src/interface/splityearform.cpp" line="538"/>
+        <location filename="../src/interface/splityearform.cpp" line="778"/>
         <source>FET confirmation</source>
         <translation type="unfinished">FET confirmación</translation>
     </message>
@@ -45989,47 +45914,47 @@ no engadida - duplicada</translation>
         <translation type="unfinished">Está certo de que desexa continuar?</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="489"/>
+        <location filename="../src/interface/splityearform.cpp" line="492"/>
         <source>WARNING: There are groups and subgroups which will no longer be available and which will be removed, along with the associated activities and constraints. Are you sure? See the list below.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="492"/>
+        <location filename="../src/interface/splityearform.cpp" line="495"/>
         <source>WARNING: There are groups which will no longer be available and which will be removed, along with the associated activities and constraints. Are you sure? See the list below.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="495"/>
+        <location filename="../src/interface/splityearform.cpp" line="498"/>
         <source>WARNING: There are subgroups which will no longer be available and which will be removed, along with the associated activities and constraints. Are you sure? See the list below.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="501"/>
+        <location filename="../src/interface/splityearform.cpp" line="504"/>
         <source>Notes:</source>
         <translation type="unfinished">Notas:</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="503"/>
+        <location filename="../src/interface/splityearform.cpp" line="506"/>
         <source>Note:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="506"/>
+        <location filename="../src/interface/splityearform.cpp" line="509"/>
         <source>To keep a group, you need to keep the corresponding division name and use the same separator(s) character(s).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="513"/>
+        <location filename="../src/interface/splityearform.cpp" line="516"/>
         <source>Read the divide year dialog Help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="521"/>
+        <location filename="../src/interface/splityearform.cpp" line="524"/>
         <source>The following groups will no longer be available:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="645"/>
+        <location filename="../src/interface/splityearform.cpp" line="647"/>
         <source>There were removed %1 &apos;group activities in the initial order&apos; items.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -46039,42 +45964,42 @@ no engadida - duplicada</translation>
         <translation>Os nomes duplicados non están permitidos</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="686"/>
+        <location filename="../src/interface/splityearform.cpp" line="688"/>
         <source>Please choose a number of categories and in each category the number of divisions. You can choose for instance 3 categories, 5 divisions for the first category: a, b, c, d and e, 2 divisions for the second category: boys and girls, and 3 divisions for the third: English, German and French.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="700"/>
+        <location filename="../src/interface/splityearform.cpp" line="702"/>
         <source>If your number of subgroups is reasonable, probably you need not worry about empty subgroups (regarding speed of generation). But more tests need to be done. You just need to know that for the moment the maximum total number of subgroups is %1 (which can be changed, but nobody needed larger values)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="725"/>
+        <location filename="../src/interface/splityearform.cpp" line="727"/>
         <source>If you have many subgroups and you don&apos;t explicitely use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="732"/>
+        <location filename="../src/interface/splityearform.cpp" line="734"/>
         <source>(Also the conflicts timetable might take long to write, if the file is big.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="734"/>
+        <location filename="../src/interface/splityearform.cpp" line="736"/>
         <source>After that, you can re-enable writing the students timetables on the disk, and re-generate.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="737"/>
+        <location filename="../src/interface/splityearform.cpp" line="739"/>
         <source>About using a large number of categories, divisions per category and subgroups: it is highly recommended to keep these to a minimum, especially the number of categories, by using any kind of tricks. Otherwise the timetable might become impossible (taking too much time to generate).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="777"/>
+        <location filename="../src/interface/splityearform.cpp" line="779"/>
         <source>Do you really want to reset the form values to defaults (empty)?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="799"/>
+        <location filename="../src/interface/splityearform.cpp" line="801"/>
         <source>Subgroups: %1</source>
         <comment>%1 is the number of subgroups</comment>
         <translation type="unfinished"></translation>
@@ -46105,87 +46030,87 @@ no engadida - duplicada</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="510"/>
+        <location filename="../src/interface/splityearform.cpp" line="513"/>
         <source>Probably you can safely ignore the warning about the removal of the subgroups.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="529"/>
+        <location filename="../src/interface/splityearform.cpp" line="532"/>
         <source>The following subgroups will no longer be available:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="536"/>
+        <location filename="../src/interface/splityearform.cpp" line="539"/>
         <source>Yes</source>
         <translation type="unfinished">Si</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="536"/>
+        <location filename="../src/interface/splityearform.cpp" line="539"/>
         <source>No</source>
         <translation type="unfinished">Non</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="541"/>
+        <location filename="../src/interface/splityearform.cpp" line="544"/>
         <source>Year %1 will be split again. All groups and subgroups of this year which will no longer exist (listed before) and the associated activities and constraints will be removed. Are you absolutely sure?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="639"/>
+        <location filename="../src/interface/splityearform.cpp" line="641"/>
         <source>There were removed %1 activities, %2 time constraints and %3 space constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="655"/>
+        <location filename="../src/interface/splityearform.cpp" line="657"/>
         <source>Split of the year complete, please check the groups and subgroups of the year to make sure that everything is OK.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="706"/>
+        <location filename="../src/interface/splityearform.cpp" line="708"/>
         <source>Please note that the dialog here will keep the last configuration of the last divided year, it will not remember the values for a specific year you need to modify.</source>
         <translation>O diálogo manterá a última configuración do último curso dividido, pero non lembrará os valores para un curso específico que se precise modificar.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="709"/>
+        <location filename="../src/interface/splityearform.cpp" line="711"/>
         <source>If you intend to divide again a year by categories and you want to keep (the majority of) the existing groups in this year, you will need to use the exact same separator character(s) for dividing this year as you used when previously dividing this year, and the same division names (any old division which is no longer entered means a group which will be removed from this year).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="715"/>
+        <location filename="../src/interface/splityearform.cpp" line="717"/>
         <source>When dividing again a year, you might get a warning about subgroups which will be removed. If you didn&apos;t explicitely use (these) subgroups in your activities or constraints, probably you can safely ignore this warning. Generally, if you use years&apos; division by categories, it is groups that matter.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="721"/>
+        <location filename="../src/interface/splityearform.cpp" line="723"/>
         <source>Separator character(s) is of your choice (default is space)</source>
         <translation>O carácter de separación (o normal é un espazo)</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="728"/>
+        <location filename="../src/interface/splityearform.cpp" line="730"/>
         <source>Note that if you are only working to get a feasible timetable, without the need to obtain the students timetable (XML or HTML) on the disk at all, and if you have many total subgroups, a good idea is to disable writing the subgroups, groups AND years timetables to the hard disk, as these take a long time to compute (not only subgroups, but also groups and years!).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="741"/>
+        <location filename="../src/interface/splityearform.cpp" line="743"/>
         <source>Maybe a reasonable number of categories could be 2, 3 or maximum 4. The divide year dialog allows much higher values, but these are not at all recommended.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="744"/>
+        <location filename="../src/interface/splityearform.cpp" line="746"/>
         <source>Maybe an alternative to dividing a year into many categories/subgroups would be to enter individual students as FET subgroups and add into each group the corresponding subgroups. But this is hard to do from the FET interface - maybe a solution would be to use an automatic tool to convert your instition data into a file in .fet format.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="751"/>
+        <location filename="../src/interface/splityearform.cpp" line="753"/>
         <source>FET - help on dividing a year</source>
         <translation>FET - axuda sobre división de cursos</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="757"/>
+        <location filename="../src/interface/splityearform.cpp" line="759"/>
         <source>OK</source>
         <translation>Vale</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="678"/>
+        <location filename="../src/interface/splityearform.cpp" line="680"/>
         <source>You might first want to consider if dividing a year is necessary and on what options. Please remember that FET can handle activities with multiple teachers/students sets. If you have say students set 9a, which is split into 2 parts: English (teacher TE) and French (teacher TF), and language activities must be simultaneous, then you might not want to divide according to this category, but add more larger activities, with students set 9a and teachers TE+TF. The only drawback is that each activity can take place only in one room in FET, so you might need to find a way to overcome that.</source>
         <translation>Pode primeiro considerar se dividir un curso é necesario e en que condicións. Lembre que FET pode soportar actividades con múltiples grupos de estudantes/profesores. Se ten un grupo 9a, que é partido en 2: Inglés (profesor PE) e Francés (profesor PF), e as actividades de idioma deben ser simultáneas, entón pode non querer dividir de acordo a esta categoría, senón, engadir máis actividades máis grandes, con grupos de estudantes 9a e profesores PE+PF. O único problema estaría en que cada actividade tería que ser colocada nun aula en FET, así que podes precisar outra forma para realizar eso.</translation>
     </message>

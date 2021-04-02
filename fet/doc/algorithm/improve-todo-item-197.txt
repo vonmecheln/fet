@@ -2,7 +2,7 @@
 
 For TODO item #197 (suggested by nouvakis), referring to max occurences of max hours daily.
 
-Just an idea of how modified code should be. Unstable code, to be added in src/engine/generate.cpp. By Liviu Lalescu, license GNU GPL v2 or later.
+Just an idea of how modified code should be. Unstable code, to be added in src/engine/generate.cpp. By Liviu Lalescu, license GNU AGPL v3 or later.
 
 I am relying on max hours daily to check the gaps, and on a new added procedure to take care of the max occurences.
 

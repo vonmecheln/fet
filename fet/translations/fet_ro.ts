@@ -315,115 +315,115 @@
 <context>
     <name>Activity</name>
     <message>
-        <location filename="../src/engine/activity.cpp" line="496"/>
+        <location filename="../src/engine/activity.cpp" line="500"/>
         <source>no teachers</source>
         <translation>fără profesori</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="506"/>
+        <location filename="../src/engine/activity.cpp" line="510"/>
         <source>no students</source>
         <translation>fără studenţi</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="651"/>
+        <location filename="../src/engine/activity.cpp" line="655"/>
         <source>yes</source>
         <translation>da</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="653"/>
+        <location filename="../src/engine/activity.cpp" line="657"/>
         <source>no</source>
         <translation>nu</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="585"/>
+        <location filename="../src/engine/activity.cpp" line="589"/>
         <source>Activity:</source>
         <translation>Activitate:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="605"/>
+        <location filename="../src/engine/activity.cpp" line="609"/>
         <source>No teachers for this activity</source>
         <translation>Fără profesori pentru această activitate</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="610"/>
+        <location filename="../src/engine/activity.cpp" line="614"/>
         <source>Teacher=%1</source>
         <translation>Profesor=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="614"/>
+        <location filename="../src/engine/activity.cpp" line="618"/>
         <source>Subject=%1</source>
         <translation>Disciplină=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="618"/>
+        <location filename="../src/engine/activity.cpp" line="622"/>
         <source>Activity tag=%1</source>
         <translation>Etichetă activitate=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="623"/>
+        <location filename="../src/engine/activity.cpp" line="627"/>
         <source>No students sets for this activity</source>
         <translation>Fără studenţi pentru această activitate</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="628"/>
+        <location filename="../src/engine/activity.cpp" line="632"/>
         <source>Students=%1</source>
         <translation>Studenţi=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="655"/>
+        <location filename="../src/engine/activity.cpp" line="659"/>
         <source>Active=%1</source>
         <comment>Represents a boolean value, if activity is active or not, %1 is yes or no</comment>
         <translation>Activă=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="589"/>
+        <location filename="../src/engine/activity.cpp" line="593"/>
         <source>Id=%1</source>
         <translation>Id=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="592"/>
+        <location filename="../src/engine/activity.cpp" line="596"/>
         <source>Activity group id=%1</source>
         <translation>Id grup activitate=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="597"/>
+        <location filename="../src/engine/activity.cpp" line="601"/>
         <source>Duration=%1</source>
         <translation>Durată=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="600"/>
+        <location filename="../src/engine/activity.cpp" line="604"/>
         <source>Total duration=%1</source>
         <translation>Durată totală=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="639"/>
         <location filename="../src/engine/activity.cpp" line="643"/>
+        <location filename="../src/engine/activity.cpp" line="647"/>
         <source>Total number of students=%1</source>
         <translation>Numărul total de studenţi=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="644"/>
+        <location filename="../src/engine/activity.cpp" line="648"/>
         <source>specified</source>
         <comment>Specified means that the total number of students was specified separately for the activity</comment>
         <translation>specificat</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="661"/>
+        <location filename="../src/engine/activity.cpp" line="665"/>
         <source>Comments=%1</source>
         <translation>Comentarii=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="673"/>
+        <location filename="../src/engine/activity.cpp" line="677"/>
         <source>Time constraints directly related to this activity:</source>
         <translation>Constrângeri de timp în legătură directă cu această activitate:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="684"/>
+        <location filename="../src/engine/activity.cpp" line="688"/>
         <source>Space constraints directly related to this activity:</source>
         <translation>Constrângeri de spaţiu în legătură directă cu această activitate:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="696"/>
+        <location filename="../src/engine/activity.cpp" line="700"/>
         <source>Timetable generation options directly related to this activity:</source>
         <translation>Opţiuni de generare a orarului în legătură directă cu această activitate:</translation>
     </message>
@@ -1044,233 +1044,233 @@
 <context>
     <name>AddActivityForm</name>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="559"/>
-        <location filename="../src/interface/addactivityform.cpp" line="616"/>
-        <location filename="../src/interface/addactivityform.cpp" line="658"/>
-        <location filename="../src/interface/addactivityform.cpp" line="660"/>
-        <location filename="../src/interface/addactivityform.cpp" line="738"/>
-        <location filename="../src/interface/addactivityform.cpp" line="743"/>
+        <location filename="../src/interface/addactivityform.cpp" line="574"/>
+        <location filename="../src/interface/addactivityform.cpp" line="643"/>
+        <location filename="../src/interface/addactivityform.cpp" line="685"/>
+        <location filename="../src/interface/addactivityform.cpp" line="687"/>
+        <location filename="../src/interface/addactivityform.cpp" line="765"/>
+        <location filename="../src/interface/addactivityform.cpp" line="770"/>
         <source>FET information</source>
         <translation>FET - informaţie</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="567"/>
-        <location filename="../src/interface/addactivityform.cpp" line="599"/>
-        <location filename="../src/interface/addactivityform.cpp" line="643"/>
+        <location filename="../src/interface/addactivityform.cpp" line="582"/>
+        <location filename="../src/interface/addactivityform.cpp" line="619"/>
+        <location filename="../src/interface/addactivityform.cpp" line="670"/>
         <source>FET question</source>
         <translation>FET - întrebare</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="585"/>
+        <location filename="../src/interface/addactivityform.cpp" line="603"/>
         <source>FET warning</source>
         <translation>FET - avertisment</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="586"/>
+        <location filename="../src/interface/addactivityform.cpp" line="604"/>
         <source>Invalid subject</source>
         <translation>Disciplină invalidă</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="617"/>
+        <location filename="../src/interface/addactivityform.cpp" line="644"/>
         <source>Invalid duration</source>
         <translation>Durată invalidă</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="646"/>
-        <location filename="../src/interface/addactivityform.cpp" line="683"/>
+        <location filename="../src/interface/addactivityform.cpp" line="673"/>
+        <location filename="../src/interface/addactivityform.cpp" line="710"/>
         <source>Yes</source>
         <translation>Da</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="646"/>
-        <location filename="../src/interface/addactivityform.cpp" line="683"/>
+        <location filename="../src/interface/addactivityform.cpp" line="673"/>
+        <location filename="../src/interface/addactivityform.cpp" line="710"/>
         <source>No</source>
         <translation>Nu</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="658"/>
+        <location filename="../src/interface/addactivityform.cpp" line="685"/>
         <source>Activity added</source>
         <translation>Activitate adăugată</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="660"/>
+        <location filename="../src/interface/addactivityform.cpp" line="687"/>
         <source>Activity NOT added - please report error</source>
         <translation>Activitate NEadăugată - vă rugăm raportaţi eroarea</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="738"/>
+        <location filename="../src/interface/addactivityform.cpp" line="765"/>
         <source>Split activity added. Please note that FET currently cannot check for duplicates when adding split activities. It is advisable to check the statistics after adding all the activities</source>
         <translation>Activitate împărţită adăugată. Vă rugăm să luaţi aminte că FET în versiunea actuală nu poate verifica duplicatele când adăugaţi activităţi împărţite. Este recomandat să vedeţi statisticile după ce aţi adăugat toate activităţile</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="743"/>
+        <location filename="../src/interface/addactivityform.cpp" line="770"/>
         <source>Split activity NOT added - error???</source>
         <translation>Activitate împărţită NEadăugată - eroare???</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="768"/>
+        <location filename="../src/interface/addactivityform.cpp" line="795"/>
         <source>Abbreviations in this dialog:</source>
         <translation>Abrevieri în acest dialog:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="770"/>
+        <location filename="../src/interface/addactivityform.cpp" line="797"/>
         <source>&apos;Students&apos; (the text near the spin box), means &apos;Number of students (-1 for automatic)&apos;</source>
         <translation>&apos;Studenţi&apos; (textul de lângă spin box), înseamnă &apos;Număr de studenţi (-1 pentru automatic)&apos;</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="772"/>
+        <location filename="../src/interface/addactivityform.cpp" line="799"/>
         <source>&apos;Split&apos; means &apos;Split into ... activities per week&apos;</source>
         <translation>&apos;Divide&apos; înseamnă &apos;Împarte în ... activităţi pe săptămână&apos;</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="774"/>
+        <location filename="../src/interface/addactivityform.cpp" line="801"/>
         <source>&apos;Min days&apos; means &apos;The minimum required distance in days between each pair of activities&apos;</source>
         <translation>&apos;Min zile&apos; înseamnă &apos;Distanţa minimă necesară în zile între fiecare pereche de activităţi&apos;</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="776"/>
+        <location filename="../src/interface/addactivityform.cpp" line="803"/>
         <source>&apos;Weight %&apos; means &apos;Percentage of added constraint (min days between activities constraint). Recommended: 95.0%-100.0%&apos;</source>
         <translation>&apos;Importanţa %&apos; înseamnă &apos;Procentajul constrângerii adăugate (constrângere min zile între activităţi). Recomandat: 95.0%-100.0%&apos;</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="778"/>
+        <location filename="../src/interface/addactivityform.cpp" line="805"/>
         <source>&apos;Consecutive&apos; means &apos;If activities on same day, force consecutive?&apos;</source>
         <translation>&apos;Consecutive&apos; înseamnă &apos;Dacă activităţile sunt în aceeaşi zi, forţează consecutive?&apos;</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="780"/>
+        <location filename="../src/interface/addactivityform.cpp" line="807"/>
         <source>The &apos;Duration&apos; spin box and the &apos;Active&apos; check box refer to each component of current activity, you can change them for each component, separately, by selecting the corresponding tab in the tab widget.</source>
         <translation>Spin box-ul &apos;Durată&apos; şi check box-ul &apos;Activă&apos; se referă la fiecare componentă a activităţii curente, puteţi să le schimbaţi pentru fiecare componentă, separat, selectând tab-ul corespunzător în componenta de tab-uri.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="784"/>
+        <location filename="../src/interface/addactivityform.cpp" line="811"/>
         <source>A first notice: If you use a 5 days week: when adding an activity split into only 2 components per week, the best practice is to add min days between activities to be 2. If you split an activity into 3 components per week - please read FAQ question Q1-5-September-2008</source>
         <translation>O primă notificare: Dacă folosiţi o săptămână de 5 zile: când adăugaţi o activitate împărţită în doar 2 componente pe săptămână, cea mai bună practică este să adăugaţi min zile între activităţi să fie 2. Dacă împărţiţi activitatea în 3 componente pe săptămână - vă rugăm citiţi întrebarea din FAQ Q1-5-Septembrie-2008</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="791"/>
+        <location filename="../src/interface/addactivityform.cpp" line="818"/>
         <source>You can select a teacher from all the teachers with the mouse or with the keyboard tab/up/down, then double click it to add it to the selected teachers for current activity. You can then choose to remove a teacher from the selected teachers. You can highlight it with the mouse or with the keyboard, then double click it to remove this teacher from the selected teachers.</source>
         <translation>Puteţi selecta un profesor dintre toţi profesorii cu mouse-ul sau cu tastele tab/sus/jos, apoi faceţi dublu click pe el pentru a îl adăuga la profesorii selectaţi pentru activitatea curentă. Puteţi apoi alege să ştergeţi un profesor din profesorii selectaţi. Puteţi să îl selectaţi cu mouse-ul sau cu tastatura, apoi faceţi dublu click pe el pentru a şterge acest profesor din profesorii selectaţi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="798"/>
+        <location filename="../src/interface/addactivityform.cpp" line="825"/>
         <source>The same procedure (double click) applies to students sets and activity tags.</source>
         <translation>Aceeaşi procedură (dublu click) se aplică seturilor de studenţi şi etichetelor activitate.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="802"/>
+        <location filename="../src/interface/addactivityform.cpp" line="829"/>
         <source>You can check/uncheck show years, show groups or show subgroups.</source>
         <translation>Puteţi selecta/deselecta afişează anii, afişează grupurile sau afişează subgrupurile.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="805"/>
+        <location filename="../src/interface/addactivityform.cpp" line="832"/>
         <source>If you split a larger activity into more activities per week, you have a multitude of choices:
 You can choose the minimum distance in days between each pair of activities. Please note that a minimum distance of 1 means that the activities must not be in the same day, a minimum distance of 2 means that the activities must be separated by one day (distance from Monday to Wednesday for instance is 2 days), etc.</source>
         <translation>Dacă împărţiţi o activitate mai mare în mai multe activităţi pe săptămână, aveţi o multitudine de alegeri:
 Puteţi alege distanţa minimă în zile între fiecare pereche de activităţi. Vă rugăm luaţi aminte că o distanţa minimă 1 înseamnă că activităţile nu trebuie să fie în aceeaşi zi, o distanţa minimă 2 înseamnă că activităţile trebuie să fie separate de o zi (distanţa de la luni la miercuri de exemplu este 2 zile), etc.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="813"/>
+        <location filename="../src/interface/addactivityform.cpp" line="840"/>
         <source>If you have for instance an activity with 2 lessons per week and you want to spread them to at least 2 days distance, you can add a constraint min days with min days = 2 and weight 95% (or higher). If you want also to ensure that activities will be separated by at least one day, you can use this feature: add a constraint min days with minimum days 2 and weight 95% or lower, and after that you&apos;ll get the possibility to add another constraint with min 1 days and weight 95% or higher. It works if you first select in the dialog the min days &gt;= 2 and click Add activities. Or you can add manually the constraints (difficult this way). Important: it is best practice to consider both constraints to have 95% weight. The combination assures that the resultant is 99.75% weight</source>
         <translation>Dacă aveţi de exemplu o activitate cu 2 componente pe săptămână şi doriţi să le „împrăştiaţi” la cel puţin 2 zile distanţă, puteţi adăuga o constrângere min zile cu min zile = 2 şi importanţa 95% (sau mai mare). Dacă de asemenea doriţi să vă asiguraţi ca activităţile vor fi separate de cel puţin o zi, puteţi folosi această facilitate: adăugaţi o  constrângere min zile cu minimum zile 2 şi importanţa 95% sau mai puţin, şi după aceasta veţi avea posibilitatea să adăugaţi o altă constrângere cu min 1 zile şi importanţa 95% sau mai mare. Funcţionează dacă întâi selectaţi în dialog min zile &gt;= 2 şi faceţi click pe Adaugă activităţi. Sau puteţi să adăugaţi manual constrângerile (dificil în acest fel). Important: este cea mai bună practică să consideraţi amândouă constrângerile având importanţa 95%. Această combinaţie asigură că rezultanta are importanţa 99.75%</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="826"/>
+        <location filename="../src/interface/addactivityform.cpp" line="853"/>
         <source>Please note that the min days distance is a time constraint and you can only see/modify it in the time constraints dialogs, not in the modify activity dialog. Additionally, you can see the constraints for each activity in the details text box of each activity</source>
         <translation>Vă rugăm să luaţi la cunoştinţă că distanţa min zile este o constrângere de timp şi o puteţi vedea/modifica doar în dialogurile de constrângeri de timp, nu în dialogul de modificare a activităţii. Adiţional, puteţi vedea constrângerile pentru fiecare activitate în căsuţa text cu detalii pentru fiecare activitate</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="832"/>
+        <location filename="../src/interface/addactivityform.cpp" line="859"/>
         <source>If you choose a value greater or equal with 1 for min days, a time constraint min days between activities will be added automatically (you can see this constraint in the time constraints list or you can see this constraint in the detailed description of the activity). You can select a weight percentage for this constraint. If you select 100%, the constraint must be respected all the time. If you select 95%, there is a small chance that the timetable will not respect this constraint. Recommended values are 95.0%-100.0% (maybe you could try with 95%, then 99.75%, or even 100.0%, but the generation time might be larger). Generally, 99.75% might be a good value. Note: if you put a value less than 100% and the constraint is too tough, FET is able to find that this constraint is impossible and will break it. 99.75% might be better than 95% but possibly slower. The percentage is subjective (if you put 95% you may get 6 soft conflicts and if you put 99.75% you may get 3 soft conflicts). Starting with FET-5.3.6, it is possible to change this value for all constraints in one click, in constraint min days between activities dialog.</source>
         <translation>Dacă alegeţi o valoare mai mare sau egală cu 1 pentru min zile, o constrângere de timp min zile între activităţi va fi adăugată automat (puteţi vedea această constrângere în lista constrângerilor de timp sau puteţi vedea această constrângere în descrierea detaliată a activităţii). Puteţi selecta o importanţă procentuală pentru această constrângere. Dacă selectaţi 100%, constrângerea trebuie respectată tot timpul. Dacă selectaţi 95%, există o mică şansă că orarul nu va respecta această constrângere. Valorile recomandate sunt 95%-100% (aţi putea încerca cu 95%, apoi 99.75%, sau chiar 100.05%, dar timpul de generare ar putea fi mai mare). În general, 99.75% ar putea fi o valoare bună.Notă: dacă puneţi o valoare mai mică decât 100% şi constrângerea este prea puternică, FET va putea să descopere că această constrângere este imposibilă şi o va încălca. 99.75% ar putea fi mai bună decât 95%, dar posibil mai înceată. Procentajul este subiectiv (dacă puneţi 95%, aţi putea obţine 6 conflicte „uşoare” şi dacă puneţi 99.75% aţi putea obţine 3 conflicte „uşoare”). Începând cu FET 5.3.6, este posibil să schimbaţi această valoare pentru toate constrângerile cu un singur click, în dialogul de constrângeri min zile între activităţi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="846"/>
+        <location filename="../src/interface/addactivityform.cpp" line="873"/>
         <source>There is another option, if the activities are in the same day, force consecutive activities. You can select this option for instance if you have 5 lessons of math in 5 days, and there is no timetable which respects fully the days separation. Then, you can set the weight percent of the min days constraint to 95% and add consecutive if same day. You will have as results say 3 lessons with duration 1 and a 2 hours lesson in another day. Please be careful: if the activities are on the same day, even if the constraint has 0% weight, then the activities are forced to be consecutive.</source>
         <translation>Există o altă opţiune, dacă activităţile sunt în aceeaşi zi, forţează activităţile consecutive. Puteţi selecta această opţiune dacă aveţi de exemplu 5 lecţii de matematică în 5 zile, şi nu există orar care respectă complet separarea pe zile. Atunci, puteţi seta importanţa procentuală a constrângerii min zile la 95% şi să adăugaţi consecutive dacă în aceeaşi zi. Veţi avea ca rezultat să zicem 3 lecţii cu durata 1 şi o lecţie cu durata de 2 ore în altă zi. Vă rugăm fiţi atenţi: dacă activităţile sunt în aceeaşi zi, chiar dacă constrângerea are importanţa 0, activităţile sunt forţate să fie consecutive.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="855"/>
+        <location filename="../src/interface/addactivityform.cpp" line="882"/>
         <source>Current algorithm cannot schedule 3 activities in the same day if consecutive is checked, so you will get no solution in such extreme cases (for instance, if you have 3 lessons and a teacher which works only 1 day per week, and select &apos;force consecutive if same day&apos;, you will get an imposssible timetable. But these are extremely unlikely cases).</source>
         <translation>Algoritmul curent nu poate să programeze 3 activităţi în aceeaşi zi dacă consecutive este selectat, aşa că nu veţi obţine soluţie în aceste cazuri extreme (de exemplu, dacă aveţi 3 lecţii şi un profesor care lucrează doar 1 zi pe săptămână, şi selectaţi &apos;forţează consecutive dacă în aceeaşi zi&apos;, veţi obţine un orar imposibil. Dar acestea sunt cazuri extrem de improbabile).</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="861"/>
+        <location filename="../src/interface/addactivityform.cpp" line="888"/>
         <source>Note: You cannot add &apos;consecutive if same day&apos; with min days=0. If you want this, you have to add min days at least 1 (and any weight percentage).</source>
         <translation>Notă: Nu puteţi adăuga &apos;consecutive dacă în aceeaşi zi&apos; cu min zile=0. Dacă doriţi aceasta, trebuie să adăugaţi min zile cel puţin 1 (şi orice importanţă procentuală).</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="866"/>
+        <location filename="../src/interface/addactivityform.cpp" line="893"/>
         <source>Starting with version 5.0.0, it is possible to add activities with no students or no teachers</source>
         <translation>Începând cu versiunea 5.0.0, este posibil să adăugaţi activităţi fără studenţi sau fără profesori</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="870"/>
+        <location filename="../src/interface/addactivityform.cpp" line="897"/>
         <source>If you select a number of min days above 1 (say this number is n), you will get the possibility to add a second constraint min days between activities, with min days = n-1 and a percentage of your choice. Just click Add activities</source>
         <translation>Dacă selectaţi un număr min zile peste 1 (să zicem că acest număr este n), veţi avea posibilitatea să adăugaţi o a doua constrângere min zile între activităţi, cu min zile = n-1 şi un procentaj ales de dvs. Trebuie doar să faceţi click pe Adaugă activităţi</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="877"/>
+        <location filename="../src/interface/addactivityform.cpp" line="904"/>
         <source>FET - help on adding activity(ies)</source>
         <translation>FET - ajutor la adăugare activitate(activităţi)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="883"/>
+        <location filename="../src/interface/addactivityform.cpp" line="910"/>
         <source>OK</source>
         <translation>Bine</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="681"/>
+        <location filename="../src/interface/addactivityform.cpp" line="708"/>
         <source>Do you want to add current activities as they are now (not recommended) or cancel and edit them as instructed?</source>
         <translation>Doriţi să adăugaţi activităţile curente aşa cum sunt (nerecomandat) sau abandonaţi şi le editaţi după cum vi s-a recomandat?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="669"/>
+        <location filename="../src/interface/addactivityform.cpp" line="696"/>
         <source>The best way to add the activities would be:</source>
         <translation>Cel mai bun mod de a adăuga activităţile ar fi:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="645"/>
+        <location filename="../src/interface/addactivityform.cpp" line="672"/>
         <source>A similar activity already exists. Do you want to insert current activity?</source>
         <translation>O activitate similară există deja. Vreţi să inseraţi activitatea curentă?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="664"/>
+        <location filename="../src/interface/addactivityform.cpp" line="691"/>
         <source>FET confirmation</source>
         <translation>FET - confirmare</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="665"/>
+        <location filename="../src/interface/addactivityform.cpp" line="692"/>
         <source>Possible incorrect setting. Are you sure you want to add current activity? See details below:</source>
         <translation>Setări posibil incorecte. Sunteţi sigur că vreţi să adăugaţi activitatea curentă? Vedeţi detalii mai jos:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="560"/>
+        <location filename="../src/interface/addactivityform.cpp" line="575"/>
         <source>Invalid weight (percentage) for added constraint min days between activities</source>
         <translation>Importanţă (procentaj) invalidă pentru constrângerea min zile între activităţi adăugată</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="568"/>
+        <location filename="../src/interface/addactivityform.cpp" line="583"/>
         <source>Do you really want to add an activity without teacher(s)?</source>
         <translation>Chiar doriţi să adăugaţi o activitate fără profesor(i)?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="600"/>
+        <location filename="../src/interface/addactivityform.cpp" line="620"/>
         <source>Do you really want to add an activity without student set(s)?</source>
         <translation>Chiar doriţi să adăugaţi o activitate fără studenţi?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="666"/>
+        <location filename="../src/interface/addactivityform.cpp" line="693"/>
         <source>You want to add a container activity split into more than the number of days per week and also add a constraint min days between activities. This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).</source>
         <translation>Doriţi să adăugaţi o activitate container împărţită în mai mult decât numărul de zile pe săptămână şi de asemenea să adăugaţi o constrângere min zile între activităţi. Aceasta este o foarte proastă practică din punctul de vedere al funcţionării algoritmului (încetineşte generarea şi face mai greu de găsit o soluţie).</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="671"/>
+        <location filename="../src/interface/addactivityform.cpp" line="698"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min days between activities up to 100%)</source>
         <translation>1. Dacă adăugaţi &apos;forţează consecutiv dacă în aceeaşi zi&apos;, atunci cuplaţi activităţile în plus în perechi pentru a obţine un număr de activităţi egal cu numărul de zile pe săptămână. Exemplu: 7 activităţi cu durata 1 într-o săptămână cu 5 zile, atunci transformaţi în 5 activităţi cu duratele: 2,2,1,1,1 şi adăugaţi o singură activitate container cu aceste 5 componente (posibil mărind importanţa constrângerii min zile între activităţi adăugate până la 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="675"/>
+        <location filename="../src/interface/addactivityform.cpp" line="702"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
         <translation>2. Dacă nu adăugaţi &apos;forţează consecutive dacă în aceeaşi zi&apos;, atunci adăugaţi o activitate mai mare împărţită într-un număr de activităţi egale cu numărul de zile pe săptămână şi restul componentelor în altă activitate mai mare împărţită. De exemplu, presupunem că trebuie adăugate 7 activităţi cu durata 1 într-o săptămână de 5 zile. Adăugaţi 2 activităţi mai mari, prima împărţită în 5 activităţi cu durata 1 şi a doua împărţită în 2 activităţi cu durata 1 (posibil mărind importanţa constrângerilor min zile între activităţi adăugate pentru fiecare dintre cele 2 containere până la 100%)</translation>
     </message>
@@ -11009,17 +11009,17 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ChooseFieldsDialog</name>
     <message>
-        <location filename="../src/engine/import.cpp" line="139"/>
+        <location filename="../src/engine/import.cpp" line="144"/>
         <source>FET - Import from CSV file</source>
         <translation>FET - Importare din fişierul CSV</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="276"/>
+        <location filename="../src/engine/import.cpp" line="281"/>
         <source>OK</source>
         <translation>Bine</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="277"/>
+        <location filename="../src/engine/import.cpp" line="282"/>
         <source>Cancel</source>
         <translation>Anulează</translation>
     </message>
@@ -28472,27 +28472,27 @@ Importul datelor va fi mai simplu cu aceste setări.</translation>
         <translation>Apăs butonul predefinit %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="239"/>
+        <location filename="../src/engine/messageboxes.cpp" line="247"/>
         <source>Progress title: %1</source>
         <translation>Titlu progres: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="245"/>
+        <location filename="../src/engine/messageboxes.cpp" line="253"/>
         <source>Progress label: %1</source>
         <translation>Etichetă progres: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="251"/>
+        <location filename="../src/engine/messageboxes.cpp" line="259"/>
         <source>Progress range: %1..%2</source>
         <translation>Domeniu progres: %1..%2</translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="258"/>
+        <location filename="../src/engine/messageboxes.cpp" line="266"/>
         <source>Progress setModal(true)</source>
         <translation>Progress setModal(true)</translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="260"/>
+        <location filename="../src/engine/messageboxes.cpp" line="268"/>
         <source>Progress setModal(false)</source>
         <translation>Progress setModal(false)</translation>
     </message>
@@ -33940,11 +33940,11 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2015 Liviu Lalescu, Volker Dirr&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2015 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.25.0 (January 2015).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.26.0 (January 2015).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under GNU GPL v2 or later.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -34059,6 +34059,15 @@ A: The activities are indented for easier visualization. The non-indented ones a
         <translation>Î: De ce unele activităţi apar indentate şi altele nu?
 
 R: Activităţile sunt indentate pentru o mai uşoară vizualizare. Cele neindentate sunt reprezentantele unei activităţi mai mari împărţite (id-ul lor este id-ul de grup al activităţii mai mari împărţite), pe când cele indentate sunt celelalte componente ale acestei activităţi mai mari împărţite.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="123"/>
+        <source>Q: Is it possible to use non-integer weights for constraints?
+
+A: Yes. If a constraint is allowed values under 100%, you can use any weight, even fractional numbers like 99.75%. It might help in constraints like min days, preferred rooms or max hours daily. The precision in FET is limited to %1 decimal digits after the decimal point, but probably nobody will use such a fine precision.</source>
+        <translation>Î: Este posibil de folosit importanţe care nu sunt numere întregi pentru constrângeri?
+
+R: Da. Dacă o constrângere are permise valori sub 100%, puteţi folosi orice importanţă, chiar numere fracţionare ca 99.75%. Ar putea ajuta în constrângeri precum min zile, săli preferate sau max ore zilnic.. Precizia în FET este limitată la %1 cifre zecimale după punctul zecimal, dar probabil nimeni nu va folosi o asemenea precizie fină.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="132"/>
@@ -34267,7 +34276,7 @@ R: Din modul de concepere a algoritmului, generarea automată este mai rapidă d
 Fiecare constrângere de tipul indisponibil sau timpi preferaţi care filtrează sloturi imposibile poate aduce o îmbunătăţire a vitezei.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="544"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="535"/>
         <source>Q: What type of files uses FET?
 
 A: FET uses text files, xml or html or txt or csv (comma separated values - for import/export). The used encoding is UTF-8.</source>
@@ -34276,12 +34285,12 @@ A: FET uses text files, xml or html or txt or csv (comma separated values - for 
 R: FET foloseşte fişiere text, xml sau html sau txt sau csv (valori separate de virgulă - pentru import/export). Codarea folosită este UTF-8.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="733"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="724"/>
         <source>For instance even when two consecutive activities are placed at one day (the same group and the same teacher) sometimes they are placed at different rooms what would force them to needless changing room. I guess that FET is focused on fulfilling constraints but not on optimizing timetable. Sometimes simple changing of two activities makes plan better both for students and teachers. I think that manually improving generated plan is faster than creating many many more constraints and repeating simulations. And this is the third hint.</source>
         <translation>De exemplu chiar când două activităţi consecutive sunt plasate într-o zi (acelaşi grup şi acelaşi profesor) câteodată sunt plasate în săli diferite ceea ce le-ar forţa să schimbe fără folos sala. Cred că FET este concentrat pe respectarea constrângerilor dar nu pe optimizarea orarului. Câteodată simpla schimbare a două activităţi face planificarea mai bună şi pentru studenţi şi pentru profesori. Cred că îmbunătăţirea manuală a orarului generat este mai rapidă decât crearea a multor multor constrângeri şi simulări repetate. Şi aceasta este a treia indicaţie.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="781"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="772"/>
         <source>Q: This is a problem that probably will never appear in practice, but it is possible. Say the user generates a timetable successfully, locks a few activities, then tries to generate again, but FET stops at a certain activity and reports impossible timetable.
 
 A: Indeed, this is a potential problem in FET (but probably will never show up in practice). It may happen if you have constraints with weight under 100%, which may be broken when you generate the timetable.
@@ -34316,12 +34325,12 @@ Iată un exemplu care să explice aceasta (este un exemplu nepractic, dar este m
 Soluţie practică la cazul 2)? Reduceţi importanţa constrângerilor care au importanţa sub 100% sau blocaţi (într-un slot corespunzător) activitatea care corespunde la A1 în fişierul dvs. de date.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="807"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="798"/>
         <source>Q: I tried to work on a fixed timetable, to move an activity to another time slot. Now I got stuck - FET says: impossible to generate.</source>
         <translation>Î: Am încercat să lucrez pe un orar fixat, să mut o activitate în alt slot de timp. Acum s-a împotmolit - FET spune: imposibil de generat.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="809"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="800"/>
         <source>A: There is this potential problem. Suppose you have max hours daily for students = 4 hours, 99%. You generated successfully (maybe you got some days with more than 4 hours, it does not matter for our discussion). Now, if you have a day with 4 hours and try to move another activity to this day, some students will have 5 hours in this day. If in this day all activities have more students sets, FET may report an impossible timetable. Why? Because if you have an activity with say 4 subgroups, 99% is assumed for each subgroup, resulting in a very strong constraint for this activity. (100%-(1%^4)). Even if FET retries more times for each activity, it is not enough.
 
  A solution: lower the weight of this constraint from 99% to 90% or less.</source>
@@ -34330,27 +34339,27 @@ Soluţie practică la cazul 2)? Reduceţi importanţa constrângerilor care au i
  O soluţie: Micşoraţi importanţa acestei constrângeri de la 99% la 90% sau mai puţin.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="823"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="814"/>
         <source>Q: A trick to deal with fortnightly activities (my institution has a lot of fortnightly activities):</source>
         <translation>Î: Un truc pentru a lucra cu activităţile la două săptămâni (instituţia mea are o mulţime de activităţi la două săptămâni):</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="825"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="816"/>
         <source>A: I divided hours in two, the first half (8.00 to 8.30, 9.00 to 9.30, ...) represents week A, the second half (8.30 to 9.00, 9.30 to 10.00, ...) represents week B, fortnightly activities have duration 1, weekly activities have duration 2.</source>
         <translation>R: Eu am împărţit orele în două, prima jumătate (de la 8.00 la 8.30, de la 9.00 la 9.30, ...) reprezintă săptămâna A, a doua jumătate (de la 8.30 la 9.00, de la 9.30 la 10.00, ...) reprezintă săptămâna B, activităţile la două săptămâni au durata 1, activităţile săptămânale au durata 2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="829"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="820"/>
         <source>I created an activity tag &apos;Start hour&apos;. It should be added to each weekly activity to make sure they start at the same time (same day + same hour) on each week. Otherwise, an activity with duration 2 can start on a second half of hour in the timetable, so this activity is placed on a certain day and at a certain hour on week A, and on the same day but at the next hour on week B.</source>
         <translation>Am creat o etichetă activitate &apos;Ora de început&apos;. Ea ar trebui adăugată fiecărei activităţi săptămânale pentru a fi sigur că ele încep în acelaşi timp (aceeaşi zi + aceeaşi oră) în fiecare săptămână. Altfel, o activitate cu durata 2 poate începe la o a doua jumătate de oră în orar, aşa că această activitate este plasată într-o anumită zi şi la o anumită oră în săptămâna A, şi în aceeaşi zi dar următoarea oră în săptămâna B.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="843"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="834"/>
         <source>Q: I need to add a split activity with total duration 4, which can be either 2+2 or 2+1+1 (two hours in a day and two hours in another day, or two hours in a day, one hour in another day and one hour in another day).</source>
         <translation>Î: Am nevoie să adaug o activitate împărţită cu durata totală 4, care poate fi ori 2+2 ori 2+1+1 (două ore într-o zi şi două ore în altă zi, sau două ore într-o zi, o oră în altă zi şi o oră în altă zi).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="846"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="837"/>
         <source>A: Add 3 activities (let us assume that their id-s are 1, 2 and 3), with durations respectively 2, 1 and 1. It is preferable to add them as 3 single/independent activities (see note below).
 
 Add two constraints min 1 day between activities with id-s 1 and 2 and between activities with id-s 1 and 3, 100% weight percentage.
@@ -34363,164 +34372,164 @@ Adăugaţi două constrângeri min 1 zi între activităţile cu id-urile 1 şi 
 Adăugaţi altă constrângere: min 1 zi între activităţile cu id-urile 2 şi 3, consecutive dacă în aceeaşi zi = da, 0% importanţa procentuală.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="851"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="842"/>
         <source>Note: It is advisable to add the 3 activities as single/independent ones (not a larger split activity with 3 components). The reason is that if you want to apply spreading of activities over the week, this operation won&apos;t add/remove constraints of type min days between activities for these 3 activities. Also, if you add a split activity, you need to take care not to add a default constraint min days between the 3 components.</source>
         <translation>Notă: Este recomandat să adăugaţi cele 3 activităţi ca singure/independente (nu o activitate mai mare împărţită cu 3 componente). Motivul este că dacă vreţi să aplicaţi distribuirea activităţilor de-a lungul săptămânii, această operaţie nu o să adauge/şteargă constrângeri de tipul min zile între activităţi pentru aceste 3 activităţi. De asemenea, dacă adăugaţi o activitate împărţită, trebuie să aveţi grijă să nu adăugaţi o constrângere predefinită min zile între cele 3 componente.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="861"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="852"/>
         <source>Q: I would like to specify that a teacher should have activities in certain time slots, no matter which activities.</source>
         <translation>Î: Aş dori să specific că un profesor ar trebui să aibă activităţi în anumite sloturi de timp, nu contează ce activităţi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="863"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="854"/>
         <source>A: Please use constraint activities occupy max time slots from selection (the exact menu entry is &apos;A set of activities occupies max time slots from selection&apos;. See that constraint&apos;s Help button for more details.</source>
         <translation>R: Vă rog folosiţi constrângerea activităţi ocupă max sloturi de timp din selecţie (elementul de meniu exact este &apos;Un set de activităţi ocupă max sloturi de timp din selecţie&apos;. Vedeţi butonul Ajutor al constrângerii pentru mai multe detalii.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="870"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="861"/>
         <source>Q: How to easily find the activities with unspecified room in the timetable (after the timetable was generated)?</source>
         <translation>Î: Cum să găsesc uşor activităţile cu sală nespecificată în orar (după ce orarul a fost generat)?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="872"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="863"/>
         <source>A: A trick is this: open the file representing the activities timetable in XML form (this file can be found in the results directory, with a name like: file_activities.xml) with a text editor, and search for the text &lt;Room&gt;&lt;/Room&gt;</source>
         <translation>R: Un truc este acesta: deschideţi fişierul reprezentând orarul activităţilor în format XML (acest fişier poate fi găsit în directorul rezultate, cu un nume precum: fişier_activities.xml) cu un editor text, şi căutaţi textul &lt;Room&gt;&lt;/Room&gt;</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="879"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="870"/>
         <source>Q: The students and/or teachers should have in each day some activities without interruption, then some continuous gaps, then again some activities without interruption. This situation can appear in these cases: schools in Morocco and Algeria, which have morning and afternoon shifts, and also in some universities in which students would prefer to have at most a single cluster of gaps, no matter how long, in each day. How to treat such situations in FET?</source>
         <translation>Î: Studenţii şi/sau profesorii trebuie să aibă în fiecare zi câteva activităţi fără întrerupere, apoi câteva ferestre continue, apoi din nou câteva activităţi fără întrerupere. Această situaţie poate apărea în aceste cazuri: şcolile din Maroc şi din Algeria, care au schimburi de dimineaţă şi de după-amiază, şi de asemenea în unele universităţi în care studenţii ar prefera să aibă cel mult un singur grup de ferestre. nu contează cât de lung, în fiecare zi. Cum să tratăm asemenea situaţii în FET?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="885"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="876"/>
         <source>A: A nice way to treat such situations would be to consider the number of FET days = 2 * the number of real days. Each real day corresponds to two FET days, one for the morning and one for the afternoon. Then, add constraints max zero gaps, and maybe min two hours daily with allow empty days true. You may need to devise some other tricks, in addition.</source>
         <translation>R: Un mod plăcut de a trata asemenea situaţii ar fi să consideraţi numărul de zile FET = 2 * numărul de zile reale. Fiecare zi reală corespunde la două zile FET, una pentru dimineaţă şi una pentru după-amiază. Apoi, adăugaţi constrângeri max zero ferestre, şi poate min două ore zilnic cu permite zile libere adevărat. S-ar putea să fie nevoie să inventaţi alte trucuri, adiţional.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="893"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="884"/>
         <source>Q: How can I add a comment to a (sub)activity or to a constraint?</source>
         <translation>Î: Cum pot adăuga un comentariu la o (sub)activitate sau la o constrângere?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="895"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="886"/>
         <source>A: You can add a comment to a (sub)activity by clicking the &apos;Comments&apos; button in the (sub)activities dialog. You can add a comment to a constraint by clicking the &apos;Comments&apos; button in the all time/space constraints dialogs.</source>
         <translation>R: Puteţi adăuga un comentariu unei (sub)activităţi făcând click pe butonul &apos;Comentarii&apos; în dialogul (sub)activităţilor. Puteţi adăuga un comentariu unei constrângeri făcând click pe butonul &apos;Comentarii&apos; în dialogurile toate constrângerile de timp/spaţiu.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="902"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="893"/>
         <source>Q: How can I activate/deactivate a constraint?</source>
         <translation>Î: Cum pot activa/dezactiva o constrângere?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="904"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="895"/>
         <source>A: You can activate/deactivate a constraint by clicking the &apos;Activate&apos;/&apos;Deactivate&apos; buttons in the all time/space constraints dialogs.</source>
         <translation>R: Puteţi activa/dezactiva o constrângere făcând click pe butoanele &apos;Activează&apos;/&apos;Dezactivează&apos; în dialogurile toate constrângerile de timp/spaţiu.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="911"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="902"/>
         <source>Q: How can I sort the constraints?</source>
         <translation>Î: Cum pot sorta constrângerile?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="913"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="904"/>
         <source>A: You can sort the constraints in the all time/space constraints dialogs. Sorting is done ascending, according to each constraints&apos; comments. You can add suitable comments to obtain a desired order, like: &apos;rank #1 ... other comments&apos; and &apos;rank #2 ... other different comments&apos;.</source>
         <translation>R: Puteţi sorta constrângerile în dialogurile toate constrângerile de timp/spaţiu. Sortarea este făcută crescător, după comentariile fiecărei constrângeri. Puteţi adăuga comentarii corespunzătoare pentru a obţine o ordine dorită, ca de exemplu: &apos;rang #1 ... alte comentarii&apos; şi &apos;rang #2 ... alte comentarii diferite&apos;.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="921"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="912"/>
         <source>Q: How can I specify that some activities must be in the same room (at different time slots, of course, because a single room can hold a single activity in a certain time slot)? This is needed for instance to constrain the Physics activities of a certain students set to take place in the same room, be it Lab-1 or Lab-2</source>
         <translation>Î: Cum pot specifica faptul că unele activităţi trebuie să fie în aceeaşi sală (la momente de timp diferite, desigur, pentru că o singură sală poate găzdui o singură activitate într-un slot de timp specificat)? Aceasta este necesar de exemplu pentru a constrânge activităţile de fizică ale unor studenţi specificaţi să aibă loc în aceeaşi sală, fie Lab-1 sau Lab-2</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="925"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="916"/>
         <source>A: You can use the constraint activities occupy max different rooms, with max different rooms = 1.</source>
         <translation>R: Puteţi folosi constrângerea activităţi ocupă max săli diferite, cu max săli diferite = 1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="931"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="922"/>
         <source>Q: How can I backup/restore the FET settings on a computer, or share them between different computers?</source>
         <translation>Î: Cum pot salva/restaura setările FET pe un computer, sau să le împărtăşesc între computere diferite?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="933"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="924"/>
         <source>A: GNU/Linux: Usually, in your %1 directory you will find a directory &quot;%2&quot; containing the file &quot;%3&quot;. If you copy this file to another computer, the FET settings will be copied. You can also make a backup of this file and copy it on the same computer, later, to restore the previous settings. If you remove this file, all FET settings on this computer will be reset to defaults.</source>
         <translation>R: GNU/Linux: De obicei, în directorul dvs. %1 veţi găsi un director „%2” conţinând fişierul „%3”. Dacă copiaţi acest fişier pe alt computer, setările FET vor fi copiate. Puteţi de asemenea face o rezerva cu acest fişier şi să o copiaţi pe acelaşi calculator, mai târziu, pentru a restaura setările precedente. Dacă ştergeţi acest fişier, toate setările FET de pe acest computer vor fi resetate la valorile predefinite.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="939"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="930"/>
         <source>Mac OS X: It seems that the configuration file might be %1</source>
         <translation>Mac OS X: Se pare că fişierul de configurare ar putea fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="941"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="932"/>
         <source>Windows: Run regedit.exe (Registry Editor) and search for the key &quot;%1&quot;. You will find a section with this name, with the subsection &quot;%2&quot;. You can export this section to a file, and import it from this file on the same or another computer. If you remove this section, all FET settings will be reset to defaults.</source>
         <translation>Windows: Rulaţi regedit.exe (editorul de regiştri) şi cautaţi cheia „%1”. Veţi găsi o secţiune cu acest nume, cu subsecţiunea „%2”. Puteţi exporta această secţiune către un fişier, şi să importaţi dinspre acest fişier către acelaşi sau alt computer. Dacă ştergeţi această secţiune, toate setările FET vor fi resetate la cele predefinite.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="949"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="940"/>
         <source>Q: I have many subgroups and I don&apos;t explicitely use them. Can I hide them in the combo boxes, to add easier the constraints? Also, can I make the FET interface work faster?</source>
         <translation>Î: Am multe subgrupuri şi nu le folosesc în mod explicit. Pot să le ascund în combo-box-uri, pentru a adăuga mai uşor constrângerile? De asemenea, pot face interfaţa FET să meargă mai rapid?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="952"/>
-        <location filename="../src/interface/helpfaqform.cpp" line="979"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="943"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="970"/>
         <source>A:</source>
         <comment>Answer</comment>
         <translation>R:</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="954"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="945"/>
         <source>If you have many subgroups and you don&apos;t explicitely use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
         <translation>Dacă aveţi multe subgrupuri şi nu le utilizaţi în mod explicit, este recomandat să folosiţi cele trei setări globale: ascunde subgrupurile în combo-box-uri, ascunde subgrupurile în planificarea activităţii, şi nu scrie orarele subgrupurilor pe discul fix.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="957"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="948"/>
         <source>Note that using the global menu setting to hide subgroups in activity planning is a different thing from the check box in the activity planning dialog, and the global setting works better and faster.</source>
         <translation>Notaţi că utilizarea setării globale din meniu pentru a ascunde subgrupurile în planificarea activităţii este un lucru diferit de check-box-ul din dialogul de planificare a activităţii, şi setarea globală funcţionează mai bine şi mai rapid.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="960"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="951"/>
         <source>If you hide subgroups in combo boxes, the affected dialogs (like the activities dialog or the add constraint students set not available times dialog) will load much faster if you have many subgroups.</source>
         <translation>Dacă ascundeţi subgrupurile în combo-box-uri, dialogurile afectate (cum ar fi dialogul activităţi sau adaugă constrângere set de studenţi timpi indisponibili) se vor încărca mult mai rapid dacă aveţi multe subgrupuri.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="965"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="956"/>
         <source>If you are only working on a timetable, and you do not need to publish it, you may want to disable writing some categories of timetables on the hard disk, for operativity (the generation speed is not affected, only the overhead to write the partial/complete timetables when stopping/finishing the simulation). The timetables taking the longest time are the subgroups, groups AND years ones.</source>
         <translation>Dacă doar lucraţi la un orar, şi nu aveţi nevoie să îl publicaţi, s-ar putea să doriţi să dezactivaţi scrierea câtorva categorii de orare pe discul fix, pentru operativitate (viteza de generare nu este afectată, doar durata scrierii orarelor parţiale/complete când opriţi/se termină simularea). Orarele care durează cel mai mult sunt cele ale subgrupurilor, grupurilor ŞI anilor.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="969"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="960"/>
         <source>(Also the conflicts timetable might take long to write, if the file is large.)</source>
         <translation>(De asemenea conflictele orarului pot dura mult până să fie scrise, dacă fişierul este mare.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="971"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="962"/>
         <source>After that, you can re-enable writing of the timetables and re-generate.</source>
         <translation>După aceasta, puteţi re-activa scrierea orarului studenţilor pe disc, şi re-generaţi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="977"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="968"/>
         <source>Q: How about dividing a students year automatically into many subgroups?</source>
         <translation>Î: Ce puteţi spune despre divizarea unui an automat în multe subgrupuri?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="981"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="972"/>
         <source>About using a large number of categories, divisions per category and subgroups: it is highly recommended to keep these to a minimum, especially the number of categories, by using any kind of tricks. Otherwise the timetable might become impossible (taking too much time to generate).</source>
         <translation>Despre folosirea unui număr mare de categorii, diviziuni pe categorie şi subgrupuri: este recomandat cu insistenţă să le păstraţi la un minimum, în mod special numărul de categorii, folosind orice fel de trucuri. Altfel orarul ar putea deveni imposibil (durând prea mult pentru a fi generat).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="985"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="976"/>
         <source>Maybe a reasonable number of categories could be 2, 3 or maximum 4. The divide year dialog allows much higher values, but these are not at all recommended.</source>
         <translation>Poate că un număr rezonabil de categorii ar fi 2, 3 sau maximum 4. Dialogul divide an permite valori mult mai mari, dar acestea nu sunt recomandate deloc.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="988"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="979"/>
         <source>Maybe an alternative to dividing a year into many categories/subgroups would be to enter individual students as FET subgroups and add into each group the corresponding subgroups. But this is hard to do from the FET interface - maybe a solution would be to use an automatic tool to convert your instition data into a file in .fet format.</source>
         <translation>Poate o alternativa la divizarea unui an în multe categorii/subgrupuri ar fi introducerea studenţilor individuali ca subgrupuri FET şi adăugarea în fiecare grup a subgrupurilor corespunzătoare. Dar aceasta este greu de făcut din interfaţa FET - poate o soluţie ar fi să folosiţi o unealtă automată pentru a converti datele instituţiei dvs. în formatul de fişier .fet.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="834"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="825"/>
         <source>Add time constraint: activities with all teachers, all students, all subjects, activity tag = &apos;Start hour&apos; have a set of preferred starting times: Monday 8.00, Monday 9.00, ...</source>
         <translation>Adăugaţi constrângerea de timp: activităţile cu toţi profesorii, toţi studenţii, toate disciplinele, etichetă activitate = &apos;Oră de start&apos; au un set de timpi de start preferaţi: luni 8.00, luni 9.00, ...</translation>
     </message>
@@ -34530,31 +34539,22 @@ Adăugaţi altă constrângere: min 1 zi între activităţile cu id-urile 2 şi
         <translation>Întrebări frecvente.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="323"/>
-        <source>Q: Is it allowed to use non-integer weights?
-
-A: If a constraint is allowed values under 100%, you can use any weight, even fractional numbers like 99.75%. It might help in constraints like min days, preferred rooms or max hours daily.</source>
-        <translation>Î: Este permis să folosesc importanţe care nu sunt numere întregi?
-
-R: Dacă o constrângere are permise valori sub 100%, puteţi folosi orice importanţă, chiar numere fracţionare ca 99.75%. Ar putea ajuta în constrângeri precum min zile, săli preferate sau max ore zilnic.</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="821"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="812"/>
         <source>-- This entry by Regis Bouguin --</source>
         <translation>-- Această intrare de către Regis Bouguin --</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="837"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="828"/>
         <source>It works fine and I got good timetables with strong teachers time constraints.</source>
         <translation>Funcţionează bine şi am obţinut orare bune cu constrângeri puternice de timp pentru profesori.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="855"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="846"/>
         <source>There may be other solutions possible, but this one seems perfect with respect to efficiency.</source>
         <translation>Se poate să existe alte soluţii posibile, dar aceasta pare perfectă din punctul de vedere al eficienţei.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="332"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="323"/>
         <source>Q: I have a sports room which allows more than 1 activity simultaneously in it. How to make the preferred room constraints? Can FET accept more than one activity at the same time in a single room?
 
 A: Each room can host a single activity at the same time. How to implement what you need? You can add more rooms (sport1, sport2, sport3) and instead of a single preferred room add more preferred rooms.</source>
@@ -34581,15 +34581,6 @@ R: Fiecare sală poate găzdui o singură activitate în acelaşi timp. Cum să 
         <location filename="../src/interface/helpfaqform.cpp" line="108"/>
         <source>Virtually unlimited number of space constraints</source>
         <translation>Un număr virtual nelimitat de constrângeri de spaţiu</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="123"/>
-        <source>Q: Is it possible to use non-integer weights for constraints?
-
-A: Yes. Using values like 99.75% might be good sometimes. The precision in FET is limited to %1 decimal digits after the decimal point, but probably nobody will use such a fine precision</source>
-        <translation>Î: Este posibil de folosit importanţe care nu sunt numere întregi pentru constrângeri?
-
-R: Da. Folosirea valorilor precum 99.75% ar putea fi bună uneori. Precizia în FET este limitată la %1 cifre zecimale după punctul zecimal, dar probabil nimeni nu va folosi o asemenea precizie fină</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="220"/>
@@ -34621,7 +34612,7 @@ Puteţi specifica consecutiv dacă în aceeaşi zi. Vă rog aveţi grijă, chiar
 În prezent, FET poate pune maximum 2 activităţi în aceeaşi zi dacă &apos;consecutive dacă în aceeaşi zi&apos; este adevărată. FET nu poate pune 3 sau mai multe activităţi în aceeaşi zi dacă &apos;consecutive dacă în aceeaşi zi&apos; este adevărată.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="350"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="341"/>
         <source>Q: Is it possible to work with 0 hour?
 
 A: A bit difficult. You have to choose a day for this 0 hour. Then add breaks or not available to prevent other activities in other days at hour 0, then add students set not available to prevent other students set from having hours at this hour 0. Or variants of this.
@@ -34634,7 +34625,7 @@ R: Un pic dificil. Va trebui să alegeţi o zi pentru această oră 0. Apoi adă
 Dl. Zsolt Udvari a folosit alt truc: a considerat ultima oră ca fiind ora 0. Dar aceasta nu este mereu aplicabil.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="360"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="351"/>
         <source>Q: How does FET care about weights. What do they mean?
 
 A: The weights under 100% are subjective, because FET can skip them if necessary.
@@ -34665,7 +34656,7 @@ importanţa = 99.99% înseamnă: În medie FET încearcă de 10000 de ori să pl
 Aceasta nu este 100% corect. Activităţile pot fi de-alocate, şi ciclul repornit.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="378"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="369"/>
         <source>Q: Help on constraint activities preferred starting or preferred time slots (a set of activities has a set of preferred starting or time slots)
 
 A: You can specify a set of activities by selecting a teacher (if empty - all teachers), a students set (if empty - all students), a subject (if empty - all subjects) and an activity tag (if empty, all activity tags) and a set of allowed time slots.
@@ -34682,7 +34673,7 @@ De start înseamnă că o activitate poate începe doar la aceste perioade.
 Sloturi de timp înseamnă mai restrictiv, că o activitate poate doar începe şi să se sfârşească şi să aibă loc în aceste intervale (dacă activitatea are durata 2 şi luni este permis 8:00, 9:00 şi 10:00, atunci activitatea poate începe doar la 8:00 sau la 9:00).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="389"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="380"/>
         <source>Q: Help on statistics menu
 
 A: The statistics are important to check your data before generating.
@@ -34695,7 +34686,7 @@ R: Statisticile sunt importante pentru a verifica datele dvs. înainte de a gene
 Când vedeţi statisticile pentru studenţi, probabil cele mai folositoare sunt pentru subgrupuri. Fiecare subgrup ar trebui să aibă un număr rezonabil de ore, şi dacă aveţi subgrupuri cu prea puţine ore, cum ar fi 2 pe săptămână, probabil aţi înţeles greşit notaţia FET. Fiecare subgrup este independent de celelalte şi ar trebui să aibă un număr de ore pe săptămână apropiat de media tuturor subgrupurilor. Nu introduceţi subgrupuri goale cu doar câteva activităţi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="400"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="391"/>
         <source>Q: What if I enter accidentally duplicate constraints?
 
 A: It is not a good practice to allow unnecessary duplicate constraints. For min days between activities and other constraints, the combined weight becomes very high. For instance, if you have 2 constraints with weight 95%, the outcome is a constraint with weight 100%-5%*5%=99.75%, very high. You might get an impossible timetable with duplicates, so beware. For constraint activity(ies) preferred (starting time(s) or time slots) the chosen weight is the largest value, so you can use more constraints of this type for same activities.</source>
@@ -34704,7 +34695,7 @@ A: It is not a good practice to allow unnecessary duplicate constraints. For min
 R: Nu este o practică bună să permiteţi constrângeri duplicat care nu sunt necesare. Pentru min zile între activităţi şi alte constrângeri, importanţa combinată devine foarte ridicată. De exemplu, dacă aveţi 2 constrângeri cu importanţa 95%, rezultatul este o constrângere cu importanţa 100%-5%*5%=99.75%, foarte ridicată. Aţi putea obţine un orar imposibil cu duplicate, aşa că feriţi-vă. Pentru constrângerea activitate(activităţi) (timpi de start sau sloturi de timp) preferate importanţa aleasă este cea mai mare valoare, aşa că puteţi folosi mai multe constrângeri de acest tip pentru aceleaşi activităţi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="411"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="402"/>
         <source>Q: More information about students&apos; structure
 
 A: The students&apos; structure is very flexible and permits any institution structure.
@@ -34875,7 +34866,7 @@ Veţi avea posibilitatea să adăugaţi orice activitate, pentru un an sau un gr
 În prezent, interfaţa pentru studenţi este dificil de folosit. Mă gândesc la aceasta. Poate este mai uşor pentru dvs. dacă încercaţi să lucraţi pe fişierul .fet xml.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="479"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="470"/>
         <source>Q: Example: I have 7 hours of Maths per 5 days week (7 is larger than 5). How to add correctly this split activity?
 
 Complete Question: I have a large container activity split into more activities than the number of days per week. How to add it and constraint min days between activities?
@@ -34900,7 +34891,7 @@ Cel mai bun mod de adăuga activităţile ar fi:
 2. Dacă nu adăugaţi &apos;forţează consecutive dacă în aceeaşi zi&apos;, atunci adăugaţi o activitate mai mare împărţită într-un număr de activităţi egal cu numărul de zile pe săptămână şi activităţile care rămân într-o altă activitate mai mare împărţită. De exemplu, presupunem că trebuie să adăugaţi 7 activităţi cu durata 1 într-o săptămână cu 5 zile. Adăugaţi 2 activităţi mai mari container, prima împărţită în 5 activităţi cu durata 1 şi a doua împărţită în 2 activităţi cu durata 1 (posibil mărind importanţa constrângerilor adăugate min zile între activităţi pentru fiecare dintre cele 2 containere până la 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="502"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="493"/>
         <source>Q: What I need is a way to make the following constraint:
 
 If Activity1 comes first, then Activity2 can be consecutive. But, if Activity2 comes first, then Activity1 must have at least 1 period in between.
@@ -34933,7 +34924,7 @@ Să zicem că aveţi activităţile A1 şi A2. Adăugaţi fictivă A3, cu durata
 Există o singură mică problemă: A2 nu poate fi pusă în ultima perioadă. Pentru a corecta aceasta: măriţi numărul de ore cu 1 şi constrângeţi toate activităţile reale (fără A3) să aibă loc în primele perioade. Puteţi face aceasta adăugând o etichetă activitate la A1 şi A2 numită Devreme şi o etichetă activitate la A3 numită Oricare, şi constrângerea activităţi sloturi de timp preferate pentru eticheta activitate Devreme să fie în primele n-1 sloturi ale fiecărei zile.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="521"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="512"/>
         <source>Q: What is the difference between preferred starting times and preferred time slots?
 
 A: Time slots is more restrictive, means all hours of an activity must be in the allowed intervals.
@@ -34946,7 +34937,7 @@ R: Sloturi de timp este mai restrictivă, înseamnă că toate orele unei activi
 Exemplu: Timpi preferaţi luni 8,9 şi 10. Dacă activitatea A are durata 2, atunci start înseamnă că activitatea A poate începe la 8, 9 sau 10 luni, pe când sloturi de timp înseamnă că activitatea A poate începe luni la 8 sau la 9 (10 nu e permisă, deoarece ultima oră a activităţii nu e permisă acolo).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="531"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="522"/>
         <source>Q: What means constraint min gaps (hours) between a set of activities?
 
 A: I had many users wanting to put a gap between activities of same teachers or between activities with same teacher and subject, if they are on the same day. This constraint does that. If you want for instance to make teacher John to have at least one gap between all his activities, select filter &apos;John&apos; and add all his activities to a constraint of this type. If you want to make teacher John to have at least one gap between all his Math activities, select filter &apos;John&apos; and &apos;Math&apos; and add all these activities to a constraint of this type.
@@ -34959,7 +34950,7 @@ R: Am avut mulţi utilizatori care au dorit să pună o fereastră între activi
 Vă rog luaţi aminte ca activităţile selectate să nu fie forţate consecutive de către o constrângere două activităţi consecutive sau de către o constrângere min zile între activităţi care are consecutive dacă în aceeaşi zi selectată.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="551"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="542"/>
         <source>Q: Help on constraint subactivities preferred starting or preferred time slots (a set of subactivities has a set of preferred starting or time slots)
 
 A: You select the component number of certain activities (say, if you have an activity split into 5 activities per week, you have components 1, 2, 3, 4 or 5). Only the selected number of this split activity (the corresponding component activity) will be constrained.
@@ -34988,7 +34979,7 @@ Acest lucru este folositor dacă aveţi nevoie, de exemplu, dacă orele de matem
 Încă un lucru: dacă aveţi 1 sau 2 lecţii pe săptămână pentru o disciplină, să zicem biologie, şi doriţi să constrângeţi una din componente dacă sunt 2 pe săptămână, şi niciuna dacă este doar 1, puteţi adaugă o asemenea constrângere pentru componenta numărul=2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="570"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="561"/>
         <source>Q: Help on constraints teacher(s) or students (set) hourly interval max days per week
 
 A: This is a constraint suggested by users, to allow you to specify an hourly interval for students or teachers, and to say that in this interval they must work at most max days per week. This is useful if for instance you want teachers not to have more than 2 days per week activities in the last 2 hours of the day.</source>
@@ -34997,7 +34988,7 @@ A: This is a constraint suggested by users, to allow you to specify an hourly in
 R: Aceasta este o constrângere sugerată de utilizatori, pentru a vă permite să specificaţi un interval orar pentru studenţi sau profesori, şi să ziceţi că în acest interval ei trebuie să lucreze cel mult max zile pe săptămână. Aceasta este folositoare de exemplu dacă doriţi ca profesorii să nu aibă mai mult de 2 zile pe săptămână activităţi în ultimele 2 ore ale zilei.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="579"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="570"/>
         <source>Q: Help on constraint activities end students day (or activity ends students day).
 
 A: If you have activities which you want to put in the last slots of a day (like say the meetings with the class master), please use the new constraint a set of activities end students day (or singular activity ends students day). This constraint can have weight only 100%, because of the way the algorithm works.</source>
@@ -35006,7 +34997,7 @@ A: If you have activities which you want to put in the last slots of a day (like
 R: Dacă aveţi activităţi pe care doriţi să le puneţi în ultimele sloturi ale unei zile (ca, să zicem, întâlnirile cu dirigintele), vă rog folosiţi noua constrângere un set de activităţi încheie ziua studenţilor (sau la singular, activitate încheie ziua studenţilor). Această constrângere poate avea importanţa doar 100%, din cauza modului de operare a algoritmului.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="588"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="579"/>
         <source>Q: At our school there are a lot of teachers which work only a few hours a week. Of course it is really nasty to drive for one our to the school. So we set the constraint that every teacher should work at least 2 hours a day. Unfortunately we have this year a teacher which only works 1h a week. As a result of this FET doesn&apos;t start to create a timetable. Any suggestions how to fix the problem without defining a constraint for every singular teacher?
 
 A: I have a nice trick: add a dummy activity, 1 hour duration, with only this teacher (no students sets, any subject), additional to the real activity.
@@ -35019,17 +35010,17 @@ R: Am un truc drăguţ: adăugaţi o activitate fictivă, durata 1 oră, cu doar
 Acest truc tocmai mi-a trecut prin minte pe când încercam să vă scriu că trebuie să o faceţi în modul dificil (adăugaţi constrângeri pentru fiecare profesor)</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="725"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="716"/>
         <source>3 hints from an anonymous Polish user, who uses FET for very large data:</source>
         <translation>3 indicaţii de la un utilizator polonez anonim, care foloseşte FET pentru date foarte mari:</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="779"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="770"/>
         <source>This is an advanced question which probably will never appear in practice, you may skip it at first reading.</source>
         <translation>Aceasta este o întrebare avansată, care probabil nu va apărea niciodată în practică, o puteţi sări la o primă lecturare.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="600"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="591"/>
         <source>Q: What about the automatic search for updates? Should I enable it?
 
 A: It is recommended to enable automatic search for updates. I didn&apos;t set it as default because people might be annoyed if I release too fast new versions. But if you can cope with that, it is recommended to always have the latest version and enable searching for updates at startup.</source>
@@ -35052,7 +35043,7 @@ A: You have to use some tricks. It would be difficult to consider fortnightly ac
 R: Trebuie să folosiţi nişte trucuri. Ar fi dificil de considerat activităţile la două săptămâni în noul algoritm FET (de la 5.0.0 în sus). Dar cred că puteţi aplica aceasta: de exemplu, presupun că aţi dori prima săptămână să aibă activitatea A1 (profesor T1, studenţi S1) şi A2 (T2, S2), şi a doua săptămână A3 (T1, S2) şi A4 (T2, S1) (simultane). Aţi putea defini o activitate săptămânală A (T1, T2, S1, S2). Dacă aveţi nevoie de 2 săli pentru A, atunci puteţi defini fictiva A&apos; (fără profesori, fără studenţi) şi constrângerea activităţi acelaşi timp de start A şi A&apos; şi adăugaţi săli pentru A şi A&apos;.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="341"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="332"/>
         <source>Q: I got an impossible to solve timetable!
 
 A: If you get an impossible timetable, maybe the constraints students (set) early are too difficult. Maybe you can allow more arrivals at second hour. Also teachers&apos; min hours daily might be too strong. Please also check the statistics to be correct. Remove other constraints until you get a possible timetable.</source>
@@ -35061,19 +35052,19 @@ A: If you get an impossible timetable, maybe the constraints students (set) earl
 R: Dacă obţineţi un orar imposibil, poate că constrângerile (set de) studenţi devreme sunt prea dificile. Poate puteţi permite mai multe începeri la ora a doua. De asemenea min ore zilnic pentru profesori ar putea fi prea puternice. Vă rog verificaţi de asemenea statisticile să fie corecte. Ştergeţi alte constrângeri până când obţineţi un orar posibil.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="477"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="468"/>
         <source>Q-1-27-March-2008</source>
         <comment>Mnemonic name for a particular question in the FAQ</comment>
         <translation>Q-1-27-March-2008</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="500"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="491"/>
         <source>Q-1-6-June-2008</source>
         <comment>Mnemonic name for a particular question in the FAQ</comment>
         <translation>Q-1-6-June-2008</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="609"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="600"/>
         <source>Q: I have a double duration activity. Is it possible that it is spread over the break period, like:
 
 Activity Math, duration 2, id say 100
@@ -35094,7 +35085,7 @@ Ora 12:00 matematică (a doua oră a activităţii 100)?
 R: Nu, activitatea trebuie să respecte pauza, aşa încât să fie înainte sau după pauză cu toate orele în ea.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="620"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="611"/>
         <source>Q and A From Anestis Vovos: A very difficult to diagnose unresolved case
 
 Since I started working on our school&apos;s timetable I had a problem with a specific day and teacher. No matter what I tried in FET I couldn&apos;t reduce the in-school hours for this specific teacher and day down from 7 (7 hours is the full school day, so he had 6 teaching hours and 1 gap). It was too much (other teachers have 5 teaching hours max) but he didn&apos;t mind so we kept FET solution.Just a month ago this teacher had some major operation and couldn&apos;t teach so much hours in one day anymore. So I started again to experiment with the timetable and what was wrong. After a LOT of test and failures the idea hit me just as I was waking up to go to school; I hadn&apos;t enough teachers for early and late hours! I checked and it was true! Let me explain. We have 6 classes in total and every class has 7 hours per day. This means that I need 6 teachers for the first hour and 6 teachers for the 7th hour, a total of 12 teachers. But I only had 11 teachers to cover first and last hour! I had 16 teachers in total for that day but their restrictions prevented 6 of them to teach first and last hours (and it wasn&apos;t just cases of teacher not available but usually restrictions on teaching on specific hours and max gaps, so it was very difficult to look through it). So this specific teacher (because of the restrictions on the other teachers and the loose restrictions on himself) had to teach 6 hours with 1 gap so that he could cover a first and a last hour!
@@ -35107,7 +35098,7 @@ De când am început să lucrez la orarul şcolii noastre am avut o problemă cu
 ...Nu că voi mai cădea din nou în capcana ei dar, bazându-mă pe dificultatea de a o diagnostica din partea mea, va ajuta pe alţii care ar putea avea aceeaşi problemă.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="638"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="629"/>
         <source>Q: I want to define hard subjects (Math, Physics and Chemistry) and I want students not to have more than 1 (or another variant 2) difficult subjects in a row.
 
 A: Define activity tag &apos;Difficult&apos; and add it to all MA, PH and CH lessons. Then add constraint maximum 1 (or 2) hours continuously for all students and an activity tag &apos;Difficult&apos;. Please take care if you may have double lessons.</source>
@@ -35116,7 +35107,7 @@ A: Define activity tag &apos;Difficult&apos; and add it to all MA, PH and CH les
 R: Definiţi etichetele activitate &apos;Dificil&apos; şi adăugaţi-le tuturor lecţiilor matematică, fizică şi chimie. Apoi adăugaţi constrângerea maximum 1 (sau 2) ore continuu pentru toţi studenţii şi o etichetă activitate &apos;Dificil&apos;. Vă rog aveţi grijă dacă puteţi avea lecţii duble.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="646"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="637"/>
         <source>Q: (by Horatiu Halmajan) I met a situation: a teacher asks for maximum 2 working days, but these days should not be consecutive. Is there a way to implement it in .fet?
 
 The only (manual) way I could think of is to set the teacher as unavailable on Tuesdays and Thursdays, thus leaving him available on Monday, Wednesday and Friday (any two of these are unconsecutive).
@@ -35137,7 +35128,7 @@ R: Am o altă idee: alegeţi 2 activităţi ale acestui profesor care clar nu po
 Sau adăugaţi o activitate fictivă pentru acest profesor, împărţită în 2 pe săptămână, min zile  = 2, cu 100%. Trebuie doar să aveţi grijă ca acest profesor are loc pentru aceste activităţi fictive (destule sloturi pe zi) şi să consideraţi aceste activităţi ca posibile ferestre, aşa că dacă acest profesor are max 2 ferestre să faceţi max ferestre pentru el 0.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="662"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="653"/>
         <source>Q: (by Horatiu Halmajan) The students must have max 4 gaps per week, maximum 2 per day, continuous gaps. How to solve this?
 
 A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, duration 1, min days between activities 1, weight 0%, select consecutive if same day. FET will never put more than 2 of these dummy activities in a day. Add max gaps for students = 0 per week.</source>
@@ -35146,12 +35137,12 @@ A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, d
 R: Adăugaţi pentru fiecare subgrup o activitate fictivă (fără profesori) împărţită în 4 pe săptămână, durata 1, min zile între activităţi 1, importanţa 0%, selectaţi consecutive dacă în aceeaşi zi. FET nu va pune niciodată mai mult de 2 dintre aceste activităţi fictive într-o zi. Adăugaţi max ferestre pentru studenţi = 0 pe săptămână.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="671"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="662"/>
         <source>Advice: to treat gaps for students or teachers, if FET constraints are not enough, you can use dummy activities. For instance, if a students set can have maximum 3 gaps, add an activity split into 3 per week, with no teachers.</source>
         <translation>Sfat: pentru a trata ferestrele pentru studenţi sau profesori, dacă constrângerile FET nu sunt destul, puteţi folosi activităţi fictive. De exemplu, dacă un set de studenţi poate avea maximum 3 ferestre, adăugaţi o activitate împărţită în 3 pe săptămână, fără profesori.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="678"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="669"/>
         <source>Question 1/16 August 2009: How to add constraint two activities grouped, two activities consecutive and three activities grouped if the activities are constrained not to be in the same day by constraints min days between activities?
 
 If A1 and A2 are constrained not to be in the same day with 95% weight or any other weight, it is a bad practice to add a constraint grouped or consecutive to them. If they are constrained with weight 100% not to be in the same day, the timetable is impossible; if the weight is under 100%, the timetable is more difficult to find than using the correct way.
@@ -35164,7 +35155,7 @@ Dacă A1 şi A2 sunt constrânse să nu fie în aceeaşi zi cu 95% importanţă 
 Modul corect ar fi probabil să consideraţi A1 şi A2 = o singură activitate A12&apos;, sau să modificaţi constrângerea min zile între activităţi referitoare la ele. Sau poate găsiţi alte metode.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="691"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="682"/>
         <source>Question 1/25 September 2009: An observation for constraint teacher(s) or students (set) activity tag max hours daily:
 
 This constraint is implemented correctly and is working good, but it is not perfect, which means that in unusual, extreme cases the time needed to generate a timetable might be longer or much longer than really necessary. You should give FET a hand in these extreme situations.
@@ -35201,52 +35192,52 @@ Aşadar, este o foarte proastă idee să faceţi toate activităţile (ale unui 
 Probabil, în practică această problemă nu va apărea şi nu trebuie să vă îngrijoraţi. Dar teoretic ea există.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="727"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="718"/>
         <source>The first hint for other users is to start with minimum number of constraints and if FET would generate the plan then thinking about adding the next ones.</source>
         <translation>Prima indicaţie pentru alţi utilizatori este de a începe cu numărul minim de constrângeri şi dacă FET generează planul apoi să vă gândiţi la adăugarea următoarelor.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="730"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="721"/>
         <source>The second hint is not to change too many constraints in one simulation as it may lead to impossible timetable and then it is difficult to say which particular constraint was too much.</source>
         <translation>A doua indicaţie este să nu schimbaţi prea multe constrângeri într-o simulare căci s-ar putea să ducă la orare imposibile şi apoi este dificil de spus care constrângere particulară a fost prea mult.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="743"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="734"/>
         <source>Q: Why the constraints activity tag max hours daily and students max gaps per day are disabled in the FET menu?</source>
         <translation>Î: De ce constrângerile etichetă activitate max ore zilnic şi studenţi max ferestre pe zi sunt dezactivate în meniul FET?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="745"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="736"/>
         <source>A: These 6 constraints (4 for activity tag and 2 for students max gaps per day) are the only ones which are not perfectly optimized in FET. For some combinations of constraints, they may slow down the generation or even make the timetable impossible. That is why they are not enabled by default. You need to activate them from the advanced settings menu. It is recommended to add such constraints at the end of your work, after you added all the other constraints and verified that your timetable is possible.</source>
         <translation>R: Aceste 6 constrângeri (4 pentru etichetă activitate şi 2 pentru studenţi max ferestre pe zi) sunt singurele care nu sunt perfect optimizate în FET. Pentru unele combinaţii ale constrângerilor, ele pot încetini generarea sau chiar face orarul imposibil. De aceea ele nu sunt activate în mod predefinit. Trebuie să le activaţi din meniul setări avansate. Este recomandat să adăugaţi asemenea constrângeri la sfârşitul lucrului dvs., după ce aţi adăugat toate celelalte constrângeri şi aţi verificat că orarul dvs. este posibil.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="750"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="741"/>
         <source>If these constraints are disabled, they have an icon attached in the menu to signify that. If they are enabled, they have another icon attached to them, to signify that they are enabled, but must be used with caution.</source>
         <translation>Dacă aceste constrângeri sunt dezactivate, ele au o iconiţă ataşată la meniu pentru a arăta aceasta. Dacă ele sunt activate, ele au o altă iconiţă ataşată lor, pentru a arăta că ele sunt activate, dar trebuie folosite cu precauţie.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="753"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="744"/>
         <source>Use these constraints with caution, not to obtain impossible timetables.</source>
         <translation>Folosiţi aceste constrângeri cu precauţie, pentru a nu obţine orare imposibile.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="759"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="750"/>
         <source>Q: Why don&apos;t you implement the not perfect constraints (activity tag max hours daily and students max gaps per day) in a perfect way?</source>
         <translation>Î: De ce nu implementaţi constrângerile ne-perfecte (etichetă activitate max ore zilnic şi studenţi max ferestre pe zi) într-un mod perfect?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="761"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="752"/>
         <source>A: Activity tag max hours daily cannot be implemented perfectly, generation would take too much (because of complexity of checks). Students max gaps per day can be implemented perfectly, but it would change the algorithm for students a lot and I am afraid to change something that is working well. Very much testing would be needed, and I have not enough sample files. While changing the algorithm, it would be easy to make critical bugs and some files may not solve anymore.</source>
         <translation>R: Etichetă activitate max ore zilnic nu poate fi implementată perfect, generarea ar dura prea mult (din cauza complexităţii verificărilor). Studenţi max ferestre pe zi poate fi implementată perfect, dar ar schimba mult algoritmul pentru studenţi şi îmi este teamă să schimb ceva ce funcţionează bine. Ar fi nevoie de foarte multe testări, şi nu am destule fişiere de exemple. Schimbând algoritmul, ar fi uşor de făcut erori critice şi unele fişiere s-ar putea să nu mai fie rezolvabile.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="772"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="763"/>
         <source>A: More users asked for shortcut buttons for the most commonly used functions. It is possible to show such buttons, if you select the corresponding option from the Settings-&gt;Interface menu (shortcuts are shown, by default).</source>
         <translation>R: Mai mulţi utilizatori au cerut butoane scurtătura pentru funcţiile cele mai folosite. Este posibil de arătat asemenea butoane, dacă selectaţi opţiunea corespunzătoare din meniul Setări-&gt;Interfaţă (scurtăturile sunt arătate, predefinit).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="770"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="761"/>
         <source>Q: Help on shortcut buttons in the main form.</source>
         <translation>Î: Ajutor la butoanele scurtătură din fereastra principală.</translation>
     </message>
@@ -35998,655 +35989,646 @@ Probabil, în practică această problemă nu va apărea şi nu trebuie să vă 
 <context>
     <name>Import</name>
     <message>
-        <location filename="../src/engine/import.cpp" line="100"/>
+        <location filename="../src/engine/import.cpp" line="105"/>
         <source>Line</source>
         <translation>Linie</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="101"/>
+        <location filename="../src/engine/import.cpp" line="106"/>
         <source>Year</source>
         <translation>An</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="103"/>
+        <location filename="../src/engine/import.cpp" line="108"/>
         <source>Group</source>
         <translation>Grup</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="105"/>
+        <location filename="../src/engine/import.cpp" line="110"/>
         <source>Subgroup</source>
         <translation>Subgrup</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="107"/>
+        <location filename="../src/engine/import.cpp" line="112"/>
         <source>Subject</source>
         <translation>Disciplină</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="108"/>
+        <location filename="../src/engine/import.cpp" line="113"/>
         <source>Activity Tag</source>
         <translation>Etichetă activitate</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="109"/>
+        <location filename="../src/engine/import.cpp" line="114"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="110"/>
+        <location filename="../src/engine/import.cpp" line="115"/>
         <source>Building</source>
         <translation>Clădire</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="111"/>
+        <location filename="../src/engine/import.cpp" line="116"/>
         <source>Room Name</source>
         <translation>Nume sală</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="112"/>
+        <location filename="../src/engine/import.cpp" line="117"/>
         <source>Room Capacity</source>
         <translation>Capacitate sală</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="115"/>
+        <location filename="../src/engine/import.cpp" line="120"/>
         <source>Total Duration</source>
         <translation>Durată totală</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="116"/>
+        <location filename="../src/engine/import.cpp" line="121"/>
         <source>Split Duration</source>
         <translation>Durată împărţită</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="127"/>
+        <location filename="../src/engine/import.cpp" line="132"/>
         <source>line</source>
         <translation>linie</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="152"/>
+        <location filename="../src/engine/import.cpp" line="157"/>
         <source>Please specify the %1 field:</source>
         <translation>Vă rog specificaţi câmpul %1:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="154"/>
+        <location filename="../src/engine/import.cpp" line="159"/>
         <source>Don&apos;t import &quot;%1&quot;.</source>
         <translation>Nu importa „%1”.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="155"/>
+        <location filename="../src/engine/import.cpp" line="160"/>
         <source>Import this field from CSV:</source>
         <translation>Importă acest câmp din CSV:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="158"/>
+        <location filename="../src/engine/import.cpp" line="163"/>
         <source>Set always the same name:</source>
         <translation>Setează mereu acelaşi nume:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="162"/>
-        <location filename="../src/engine/import.cpp" line="163"/>
+        <location filename="../src/engine/import.cpp" line="167"/>
+        <location filename="../src/engine/import.cpp" line="168"/>
         <source>Set always the same value:</source>
         <translation>Setează mereu aceeaşi valoare:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="178"/>
+        <location filename="../src/engine/import.cpp" line="183"/>
         <source>Please modify this text.</source>
         <translation>Vă rog modificaţi acest text.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="481"/>
-        <location filename="../src/engine/import.cpp" line="1264"/>
+        <location filename="../src/engine/import.cpp" line="486"/>
+        <location filename="../src/engine/import.cpp" line="1274"/>
         <source>activity tags</source>
         <translation>etichete activitate</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="485"/>
-        <location filename="../src/engine/import.cpp" line="1266"/>
+        <location filename="../src/engine/import.cpp" line="490"/>
+        <location filename="../src/engine/import.cpp" line="1276"/>
         <source>buildings and rooms</source>
         <translation>clădiri şi săli</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="489"/>
-        <location filename="../src/engine/import.cpp" line="1268"/>
+        <location filename="../src/engine/import.cpp" line="494"/>
+        <location filename="../src/engine/import.cpp" line="1278"/>
         <source>teachers</source>
         <translation>profesori</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="493"/>
-        <location filename="../src/engine/import.cpp" line="1270"/>
+        <location filename="../src/engine/import.cpp" line="498"/>
+        <location filename="../src/engine/import.cpp" line="1280"/>
         <source>subjects</source>
         <translation>discipline</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="497"/>
-        <location filename="../src/engine/import.cpp" line="1272"/>
+        <location filename="../src/engine/import.cpp" line="502"/>
+        <location filename="../src/engine/import.cpp" line="1282"/>
         <source>years, groups and subgroups</source>
         <translation>ani, grupuri şi subgrupuri</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="501"/>
-        <location filename="../src/engine/import.cpp" line="1274"/>
+        <location filename="../src/engine/import.cpp" line="506"/>
+        <location filename="../src/engine/import.cpp" line="1284"/>
         <source>activities</source>
         <translation>activităţi</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="505"/>
-        <location filename="../src/engine/import.cpp" line="637"/>
+        <location filename="../src/engine/import.cpp" line="510"/>
+        <location filename="../src/engine/import.cpp" line="642"/>
         <source>FET - Import %1 from CSV file</source>
         <translation>FET - Importă %1 din fişierul CSV</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="508"/>
+        <location filename="../src/engine/import.cpp" line="513"/>
         <source>no separator</source>
         <translation>fără separator</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="510"/>
+        <location filename="../src/engine/import.cpp" line="515"/>
         <source>no textquote</source>
         <translation>fără ghilimele</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="653"/>
+        <location filename="../src/engine/import.cpp" line="658"/>
         <source>Please specify the used separator between fields:</source>
         <translation>Vă rog specificaţi separatorul folosit între câmpuri:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="660"/>
+        <location filename="../src/engine/import.cpp" line="665"/>
         <source>Used field separator:</source>
         <translation>Separator de câmpuri folosit:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="667"/>
+        <location filename="../src/engine/import.cpp" line="672"/>
         <source>Please specify the used text quote of text fields:</source>
         <translation>Vă rog specificaţi ghilimelele text folosite la câmpurile text:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="674"/>
+        <location filename="../src/engine/import.cpp" line="679"/>
         <source>Used textquote:</source>
         <translation>Ghilimele text folosite:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="683"/>
+        <location filename="../src/engine/import.cpp" line="688"/>
         <source>The first line is the heading. Don&apos;t import that line.</source>
         <translation>Prima linie este titlu. Nu importa această linie.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="684"/>
+        <location filename="../src/engine/import.cpp" line="689"/>
         <source>The first line contains data. Import that line.</source>
         <translation>Prima linie conţine date. Importă această linie.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="690"/>
+        <location filename="../src/engine/import.cpp" line="695"/>
         <source>OK</source>
         <translation>Bine</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="526"/>
-        <location filename="../src/engine/import.cpp" line="775"/>
-        <location filename="../src/engine/import.cpp" line="784"/>
-        <location filename="../src/engine/import.cpp" line="833"/>
-        <location filename="../src/engine/import.cpp" line="2006"/>
+        <location filename="../src/engine/import.cpp" line="531"/>
+        <location filename="../src/engine/import.cpp" line="780"/>
+        <location filename="../src/engine/import.cpp" line="789"/>
+        <location filename="../src/engine/import.cpp" line="838"/>
+        <location filename="../src/engine/import.cpp" line="2110"/>
         <source>FET warning</source>
         <translation>FET - avertisment</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="117"/>
+        <location filename="../src/engine/import.cpp" line="122"/>
         <source>Min Days</source>
         <translation>Min zile</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="118"/>
+        <location filename="../src/engine/import.cpp" line="123"/>
         <source>Min Days Weight</source>
         <translation>Importanţă min zile</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="119"/>
+        <location filename="../src/engine/import.cpp" line="124"/>
         <source>Min Days Consecutive</source>
         <translation>Min zile consecutive</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="833"/>
+        <location filename="../src/engine/import.cpp" line="838"/>
         <source>Empty filename.</source>
         <translation>Nume fişier gol.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="837"/>
+        <location filename="../src/engine/import.cpp" line="842"/>
         <source>Error! Can&apos;t open file.</source>
         <translation>Eroare! Nu pot deschide fişierul.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="846"/>
-        <location filename="../src/engine/import.cpp" line="1678"/>
-        <location filename="../src/engine/import.cpp" line="1737"/>
-        <location filename="../src/engine/import.cpp" line="1810"/>
-        <location filename="../src/engine/import.cpp" line="2279"/>
+        <location filename="../src/engine/import.cpp" line="851"/>
+        <location filename="../src/engine/import.cpp" line="1713"/>
+        <location filename="../src/engine/import.cpp" line="1772"/>
+        <location filename="../src/engine/import.cpp" line="1845"/>
+        <location filename="../src/engine/import.cpp" line="2414"/>
         <source>Importing</source>
         <comment>Title of a progress dialog</comment>
         <translation>Importare</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="847"/>
+        <location filename="../src/engine/import.cpp" line="852"/>
         <source>Loading file</source>
         <translation>Încarc fişierul</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="863"/>
+        <location filename="../src/engine/import.cpp" line="868"/>
         <source>Loading canceled by user.</source>
         <translation>Încărcare abandonată de utilizator.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1140"/>
+        <location filename="../src/engine/import.cpp" line="1145"/>
         <source>FET import %1 question</source>
         <translation>FET import %1 întrebare</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1176"/>
+        <location filename="../src/engine/import.cpp" line="1181"/>
         <source>Following data found in the file:</source>
         <translation>Am găsit următoarele date în fişier:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1178"/>
+        <location filename="../src/engine/import.cpp" line="1183"/>
         <source>There is no usable data in the file.</source>
         <translation>Nu sunt date folositoare în fişier.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1187"/>
+        <location filename="../src/engine/import.cpp" line="1195"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1211"/>
+        <location filename="../src/engine/import.cpp" line="1221"/>
         <source>FET noticed %1 warning with the current data.</source>
         <translation>FET a găsit %1 avertisment în datele curente.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1213"/>
+        <location filename="../src/engine/import.cpp" line="1223"/>
         <source>FET noticed %1 warnings with the current data.</source>
         <translation>FET a găsit %1 avertismente în datele curente.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1224"/>
+        <location filename="../src/engine/import.cpp" line="1234"/>
         <source>&amp;Import</source>
         <translation>&amp;Importă</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1225"/>
+        <location filename="../src/engine/import.cpp" line="1235"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Anulează</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1330"/>
-        <location filename="../src/engine/import.cpp" line="1427"/>
-        <location filename="../src/engine/import.cpp" line="1436"/>
-        <location filename="../src/engine/import.cpp" line="1532"/>
-        <location filename="../src/engine/import.cpp" line="1603"/>
+        <location filename="../src/engine/import.cpp" line="1341"/>
+        <location filename="../src/engine/import.cpp" line="1443"/>
+        <location filename="../src/engine/import.cpp" line="1453"/>
+        <location filename="../src/engine/import.cpp" line="1558"/>
+        <location filename="../src/engine/import.cpp" line="1634"/>
         <source>%1 is already in FET data.</source>
         <translation>%1 este deja în datele FET.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1350"/>
-        <location filename="../src/engine/import.cpp" line="1482"/>
-        <location filename="../src/engine/import.cpp" line="1554"/>
-        <location filename="../src/engine/import.cpp" line="1624"/>
-        <location filename="../src/engine/import.cpp" line="2346"/>
-        <location filename="../src/engine/import.cpp" line="2400"/>
+        <location filename="../src/engine/import.cpp" line="1365"/>
+        <location filename="../src/engine/import.cpp" line="1507"/>
+        <location filename="../src/engine/import.cpp" line="1584"/>
+        <location filename="../src/engine/import.cpp" line="1659"/>
+        <location filename="../src/engine/import.cpp" line="2490"/>
+        <location filename="../src/engine/import.cpp" line="2544"/>
         <source>FET information</source>
         <translation>FET - informaţie</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1350"/>
-        <source>%1 activity tags added. Please check activity tag form.</source>
-        <translation>%1 etichete activitate adăugate. Vă rog verificaţi dialogul etichete activitate.</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/import.cpp" line="1554"/>
-        <location filename="../src/engine/import.cpp" line="2250"/>
+        <location filename="../src/engine/import.cpp" line="1584"/>
+        <location filename="../src/engine/import.cpp" line="2379"/>
         <source>%1 subjects added. Please check subjects form.</source>
         <translation>%1 discipline adăugate. Vă rog verificaţi dialogul disciplinelor.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1624"/>
-        <location filename="../src/engine/import.cpp" line="2235"/>
+        <location filename="../src/engine/import.cpp" line="1659"/>
+        <location filename="../src/engine/import.cpp" line="2358"/>
         <source>%1 teachers added. Please check teachers form.</source>
         <translation>%1 profesori adăugaţi. Vă rog verificaţi dialogul profesorilor.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1680"/>
+        <location filename="../src/engine/import.cpp" line="1715"/>
         <source>Checking CSV</source>
         <translation>Verific CSV</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1687"/>
+        <location filename="../src/engine/import.cpp" line="1722"/>
         <source>Checking CSV canceled by user.</source>
         <translation>Verificare CSV anulată de user.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1738"/>
+        <location filename="../src/engine/import.cpp" line="1773"/>
         <source>Checking data</source>
         <translation>Verific datele</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1748"/>
-        <location filename="../src/engine/import.cpp" line="1763"/>
-        <location filename="../src/engine/import.cpp" line="1780"/>
+        <location filename="../src/engine/import.cpp" line="1783"/>
+        <location filename="../src/engine/import.cpp" line="1798"/>
+        <location filename="../src/engine/import.cpp" line="1815"/>
         <source>Checking data canceled by user.</source>
         <translation>Verificare date întrerupta de utilizator.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1753"/>
+        <location filename="../src/engine/import.cpp" line="1788"/>
         <source>Year %1 is already in FET data.</source>
         <translation>Anul %1 este deja în datele FET.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1755"/>
+        <location filename="../src/engine/import.cpp" line="1790"/>
         <source>Can&apos;t import group %1. Name is already taken for a year.</source>
         <translation>Nu pot importa grupul %1. Numele este deja luat de un an.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1757"/>
+        <location filename="../src/engine/import.cpp" line="1792"/>
         <source>Can&apos;t import subgroup %1. Name is already taken for a year.</source>
         <translation>Nu pot importa subgrupul %1. Numele este deja luat de un an.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1769"/>
+        <location filename="../src/engine/import.cpp" line="1804"/>
         <source>Can&apos;t import year %1. Name is already taken for a group.</source>
         <translation>Nu pot importa anul %1. Numele este luat de un grup.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1771"/>
-        <source>Group name %1 is already in FET data (In the same or in an other year).</source>
+        <location filename="../src/engine/import.cpp" line="1806"/>
+        <source>Group name %1 is already in FET data (in the same or in another year).</source>
         <translation>Grupul cu numele %1 este deja în datele FET (în acelaşi an sau în alt an).</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1773"/>
+        <location filename="../src/engine/import.cpp" line="1808"/>
         <source>Can&apos;t import subgroup %1. Name is already taken for a group.</source>
         <translation>Nu pot importa subgrupul %1. Numele este luat de un grup.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1786"/>
+        <location filename="../src/engine/import.cpp" line="1821"/>
         <source>Can&apos;t import year %1. Name is already taken for a subgroup.</source>
         <translation>Nu pot importa anul %1. Numele este luat de un subgrup.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1788"/>
+        <location filename="../src/engine/import.cpp" line="1823"/>
         <source>Can&apos;t import group %1. Name is taken for a subgroup.</source>
         <translation>Nu pot importa grupul %1. Numele este luat de un subgrup.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1790"/>
-        <source>Subgroup name %1 is already in FET data (In the same or in an other group).</source>
+        <location filename="../src/engine/import.cpp" line="1825"/>
+        <source>Subgroup name %1 is already in FET data (in the same or in another group).</source>
         <translation>Subgrupul cu numele %1 este deja în datele FET (în acelaşi sau în alt grup).</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1811"/>
+        <location filename="../src/engine/import.cpp" line="1846"/>
         <source>Importing data</source>
         <translation>Import datele</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1820"/>
-        <location filename="../src/engine/import.cpp" line="2290"/>
+        <location filename="../src/engine/import.cpp" line="1870"/>
+        <location filename="../src/engine/import.cpp" line="2425"/>
         <source>Importing data canceled by user.</source>
         <translation>Importare date întreruptă de utilizator.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2124"/>
+        <location filename="../src/engine/import.cpp" line="2241"/>
         <source>I recommend to import also teachers, rooms, buildings, subjects and activity tags before importing activities. It is not needed, because FET will automatically do it, but you can check the activity csv file by that.</source>
         <translation>Recomand de asemenea să importaţi profesorii, sălile, clădirile, disciplinele şi etichetele activitate înainte de importarea activităţilor. Nu este necesar, pentru că FET va face aceasta automat, dar puteţi verifica fişierul csv prin aceasta.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2280"/>
+        <location filename="../src/engine/import.cpp" line="2415"/>
         <source>Importing activities</source>
         <translation>Import activităţile</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2346"/>
+        <location filename="../src/engine/import.cpp" line="2490"/>
         <source>Activity NOT added - please report error</source>
         <translation>Activitate NEadăugată - eroare</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2400"/>
+        <location filename="../src/engine/import.cpp" line="2544"/>
         <source>Split activity NOT added - error???</source>
         <translation>Activitatea împărţită NU poate fi adăugată - eroare???</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="681"/>
+        <location filename="../src/engine/import.cpp" line="686"/>
         <source>Please specify the contents of the first line:</source>
         <translation>Vă rog specificaţi conţinutul primei linii:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="775"/>
+        <location filename="../src/engine/import.cpp" line="780"/>
         <source>Missing field separator or text quote in first line. Import might be incorrect.</source>
         <translation>Lipseşte separatorul de câmpuri sau ghilimelele în prima linie. Importul poate fi incorect.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="784"/>
+        <location filename="../src/engine/import.cpp" line="789"/>
         <source>Missing closing text quote in first line. Import might be incorrect.</source>
         <translation>Lipsesc ghilimelele de închidere în prima linie. Importarea poate fi incorectă.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="888"/>
+        <location filename="../src/engine/import.cpp" line="893"/>
         <source>Warning: FET expected field separator or text separator in line %1. Import might be incorrect.</source>
         <translation>Atenţie: FET aştepta separator de câmp sau separator text în linia %1. Importul poate fi incorect.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="896"/>
+        <location filename="../src/engine/import.cpp" line="901"/>
         <source>Warning: FET expected closing text separator in line %1. Import might be incorrect.</source>
         <translation>Atenţie: FET aştepta separator text de închidere în linia %1. Importul poate fi incorect.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="922"/>
+        <location filename="../src/engine/import.cpp" line="927"/>
         <source>Skipped line %1: FET expected %2 fields but found %3 fields.</source>
         <translation>Sărit peste linia %1: FET aştepta %2 câmpuri dar a găsit %3 câmpuri.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="931"/>
-        <location filename="../src/engine/import.cpp" line="949"/>
-        <location filename="../src/engine/import.cpp" line="956"/>
-        <location filename="../src/engine/import.cpp" line="962"/>
-        <location filename="../src/engine/import.cpp" line="987"/>
-        <location filename="../src/engine/import.cpp" line="1322"/>
-        <location filename="../src/engine/import.cpp" line="1414"/>
-        <location filename="../src/engine/import.cpp" line="1420"/>
-        <location filename="../src/engine/import.cpp" line="1524"/>
-        <location filename="../src/engine/import.cpp" line="1595"/>
+        <location filename="../src/engine/import.cpp" line="936"/>
+        <location filename="../src/engine/import.cpp" line="954"/>
+        <location filename="../src/engine/import.cpp" line="961"/>
+        <location filename="../src/engine/import.cpp" line="967"/>
+        <location filename="../src/engine/import.cpp" line="992"/>
+        <location filename="../src/engine/import.cpp" line="1332"/>
+        <location filename="../src/engine/import.cpp" line="1429"/>
+        <location filename="../src/engine/import.cpp" line="1435"/>
+        <location filename="../src/engine/import.cpp" line="1549"/>
+        <location filename="../src/engine/import.cpp" line="1625"/>
         <source>Skipped line %1: Field &apos;%2&apos; is empty.</source>
         <translation>Ignorat linia %1: câmpul &apos;%2&apos; este gol.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1000"/>
-        <location filename="../src/engine/import.cpp" line="1024"/>
-        <location filename="../src/engine/import.cpp" line="1035"/>
+        <location filename="../src/engine/import.cpp" line="1005"/>
+        <location filename="../src/engine/import.cpp" line="1029"/>
+        <location filename="../src/engine/import.cpp" line="1040"/>
         <source>Skipped line %1: Field &apos;%2&apos; doesn&apos;t contain an integer value.</source>
         <translation>Ignorat linia %1: câmpul &apos;%2&apos; nu conţine valoare întreagă.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1018"/>
+        <location filename="../src/engine/import.cpp" line="1023"/>
         <source>Warning in line %1: Field with building name doesn&apos;t affect to a room</source>
         <translation>Avertisment în linia %1: câmpul cu numele clădirii nu afectează sala</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1063"/>
+        <location filename="../src/engine/import.cpp" line="1068"/>
         <source>Skipped line %1: Field &apos;%2&apos; contain an unknown value.</source>
         <translation>Ignorat linia %1: câmpul &apos;%2&apos; conţine valoare necunoscută.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1082"/>
+        <location filename="../src/engine/import.cpp" line="1087"/>
         <source>Skipped line %1: Data was already in a previous line.</source>
         <translation>Ignorat linia %1: data există deja pe o linie anterioară.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1098"/>
+        <location filename="../src/engine/import.cpp" line="1103"/>
         <source>Line %1 is: %2</source>
         <translation>Linia %1 este: %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1396"/>
-        <location filename="../src/engine/import.cpp" line="1405"/>
+        <location filename="../src/engine/import.cpp" line="1411"/>
+        <location filename="../src/engine/import.cpp" line="1420"/>
         <source>Skipped line %1: Field &apos;%2&apos; is already in a previous line.</source>
         <translation>Ignorat linia %1: câmpul &apos;%2&apos; există deja pe o linie precedentă.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1483"/>
-        <source>%1 buildings added. Please check rooms form.</source>
-        <translation>%1 clădiri adăugate. Vă rog verificaţi dialogul sălilor.</translation>
+        <location filename="../src/engine/import.cpp" line="1508"/>
+        <source>%1 rooms added. Please check rooms form.</source>
+        <translation>%1 săli adăugate. Vă rog verificaţi dialogul sălilor.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1483"/>
-        <source>%2 rooms added. Please check rooms form.</source>
-        <translation>%2 săli adăugate. Vă rog verificaţi dialogul sălilor.</translation>
+        <location filename="../src/engine/import.cpp" line="1508"/>
+        <source>%1 buildings added. Please check buildings form.</source>
+        <translation>%1 clădiri adăugate. Vă rog verificaţi dialogul clădirilor.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1714"/>
+        <location filename="../src/engine/import.cpp" line="1749"/>
         <source>Problem in line %1: Year name %2 is taken for a group - please consider another name</source>
         <translation>Problemă în linia %1: numele anului %2 este luat de un grup - vă rog consideraţi un alt nume</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1722"/>
+        <location filename="../src/engine/import.cpp" line="1757"/>
         <source>Problem in line %1: Subgroup name %2 is taken for a year - please consider another name</source>
         <translation>Problemă în linia %1: numele subgrupului %2 este luat de un an - vă rog consideraţi un alt nume</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1724"/>
+        <location filename="../src/engine/import.cpp" line="1759"/>
         <source>Problem in line %1: Subgroup name %2 is taken for a group - please consider another name</source>
         <translation>Problemă în linia %1: numele subgrupului %2 este luat de un grup - vă rog consideraţi un alt nume</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1726"/>
+        <location filename="../src/engine/import.cpp" line="1761"/>
         <source>Problem in line %1: Group name %2 is taken for a subgroup - please consider another name</source>
         <translation>Problemă în linia %1: numele grupului %2 este luat de un subgrup - vă rog consideraţi un alt nume</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1728"/>
+        <location filename="../src/engine/import.cpp" line="1763"/>
         <source>Problem in line %1: Year name %2 is taken for a subgroup - please consider another name</source>
         <translation>Problemă în linia %1: numele anului %2 este luat de un subgrup - vă rog consideraţi un alt nume</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1880"/>
-        <location filename="../src/engine/import.cpp" line="1883"/>
+        <location filename="../src/engine/import.cpp" line="1952"/>
+        <location filename="../src/engine/import.cpp" line="1955"/>
         <source>Group name %1 exists in another year. It means that some years share the same group.</source>
         <translation>Grupul %1 există în alt an. Înseamnă că unii ani împărtăşesc acelaşi grup.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1924"/>
+        <location filename="../src/engine/import.cpp" line="2008"/>
         <source>Subgroup name %1 exists in another group. It means that some groups share the same subgroup.</source>
         <translation>Subgrupul %1 există în alt grup. Înseamnă că unele grupuri împărtăşesc acelaşi subgrup.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1951"/>
-        <location filename="../src/engine/import.cpp" line="2412"/>
+        <location filename="../src/engine/import.cpp" line="2053"/>
+        <location filename="../src/engine/import.cpp" line="2556"/>
         <source>Notes:</source>
         <translation>Note:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1952"/>
+        <location filename="../src/engine/import.cpp" line="2054"/>
         <source>%1 subgroups added. Please check subgroups form.</source>
         <translation>%1 subgrupuri adăugate. Vă rog verificaţi dialogul subgrupurilor.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1953"/>
+        <location filename="../src/engine/import.cpp" line="2055"/>
         <source>%1 groups added. Please check groups form.</source>
         <translation>%1 grupuri adăugate. Vă rog verificaţi dialogul grupurilor.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1954"/>
+        <location filename="../src/engine/import.cpp" line="2056"/>
         <source>%1 years added. Please check years form.</source>
         <translation>%1 ani adăugaţi. Vă rog verificaţi dialogul anilor.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2129"/>
+        <location filename="../src/engine/import.cpp" line="2246"/>
         <source>Student set %1 doesn&apos;t exist. You must add (or import) years, groups and subgroups first.</source>
         <translation>Setul de studenţi %1 nu există. Trebuie să adăugaţi (sau importaţi) ani, grupuri şi subgrupuri întâi.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2265"/>
+        <location filename="../src/engine/import.cpp" line="1365"/>
+        <location filename="../src/engine/import.cpp" line="2400"/>
         <source>%1 activity tags added. Please check activity tags form.</source>
         <translation>%1 etichete activitate adăugate. Vă rog verificaţi dialogul etichetelor activitate.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2336"/>
-        <source>Activity %1 already exists. A duplicate activity is imported. Please check the dataset!</source>
-        <translation>Activitatea %1 există deja. O activitate duplicat este importată. Vă rog verificaţi setul de date!</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/import.cpp" line="2414"/>
-        <source>%1 container activities (%2 total activities) added. Please check activity form.</source>
+        <location filename="../src/engine/import.cpp" line="2558"/>
+        <source>%1 container activities (%2 total activities) added. Please check activities form.</source>
         <translation>%1 activităţi container (%2 activităţi totale) adăugate. Vă rog verificaţi dialogul activităţilor.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1007"/>
+        <location filename="../src/engine/import.cpp" line="1012"/>
         <source>Skipped line %1: Fields &apos;%2&apos; and &apos;%3&apos; haven&apos;t the same value.</source>
         <translation>Ignorat linia %1: câmpurile &apos;%2&apos; şi &apos;%3&apos; nu au aceeaşi valoare.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1712"/>
+        <location filename="../src/engine/import.cpp" line="1747"/>
         <source>Problem in line %1: Group name %2 is taken for a year - please consider another name</source>
         <translation>Problemă în linia %1: grupul %2 este luat de un an - vă rog consideraţi un alt nume</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2122"/>
+        <location filename="../src/engine/import.cpp" line="2239"/>
         <source>FET can&apos;t import activities, because FET needs to know the stucture of the students sets. You must add (or import) years, groups and subgroups first.</source>
         <translation>FET nu poate importa activităţile, pentru că FET trebuie să ştie structura seturilor de studenţi. Trebuie să adăugaţi (sau importaţi) ani, grupuri şi subgrupuri înainte.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2166"/>
-        <location filename="../src/engine/import.cpp" line="2183"/>
-        <location filename="../src/engine/import.cpp" line="2205"/>
+        <location filename="../src/engine/import.cpp" line="2283"/>
+        <location filename="../src/engine/import.cpp" line="2300"/>
+        <location filename="../src/engine/import.cpp" line="2322"/>
         <source>%1 %2 will be added.</source>
         <comment>For instance &apos;Subject Math will be added&apos;, so use singular</comment>
         <translation>%1 %2 va fi adăugat.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="113"/>
+        <location filename="../src/engine/import.cpp" line="118"/>
         <source>Students Sets</source>
         <translation>Seturi de studenţi</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="114"/>
+        <location filename="../src/engine/import.cpp" line="119"/>
         <source>Teachers</source>
         <translation>Profesori</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1080"/>
+        <location filename="../src/engine/import.cpp" line="1085"/>
         <source>Note about line %1: Data was already in a previous line. So this data will be imported once again.</source>
         <translation>Notă despre linia %1: date existente în o linie precedentă. Aşa că datele vor fi importate din nou.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2006"/>
+        <location filename="../src/engine/import.cpp" line="2110"/>
         <source>FET needs to know %1 or %2 if you import %3.</source>
         <translation>FET trebuie să ştie %1 sau %2 dacă importaţi %3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="102"/>
+        <location filename="../src/engine/import.cpp" line="107"/>
         <source>Number of Students per Year</source>
         <translation>Număr de studenţi pe an</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="104"/>
+        <location filename="../src/engine/import.cpp" line="109"/>
         <source>Number of Students per Group</source>
         <translation>Număr de studenţi pe grup</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="106"/>
+        <location filename="../src/engine/import.cpp" line="111"/>
         <source>Number of Students per Subgroup</source>
         <translation>Număr de studenţi pe subgrup</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1027"/>
+        <location filename="../src/engine/import.cpp" line="1032"/>
         <source>Skipped line %1: Field &apos;%2&apos; contains an invalid integer value.</source>
         <translation>Ignorat linia %1: câmpul &apos;%2&apos; conţine valoare întreaga invalidă.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1044"/>
+        <location filename="../src/engine/import.cpp" line="1049"/>
         <source>Skipped line %1: Field &apos;%2&apos; doesn&apos;t contain a number (double) value.</source>
         <translation>Ignorat linia %1: câmpul &apos;%2&apos; nu conţine un număr (double).</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1047"/>
+        <location filename="../src/engine/import.cpp" line="1052"/>
         <source>Skipped line %1: Field &apos;%2&apos; contains an number (double) value.</source>
         <translation>Ignorat linia %1: câmpul &apos;%2&apos; conţine număr (double) invalid.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="646"/>
+        <location filename="../src/engine/import.cpp" line="651"/>
         <source>The first line of file
 %1
 is:</source>
@@ -36655,61 +36637,61 @@ is:</source>
 este:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1151"/>
+        <location filename="../src/engine/import.cpp" line="1156"/>
         <source>There are several problems in file
 %1</source>
         <translation>Sunt mai multe probleme în fişierul
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1153"/>
+        <location filename="../src/engine/import.cpp" line="1158"/>
         <source>There are no problems in file
 %1</source>
         <translation>Nu sunt probleme în fişierul
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1012"/>
+        <location filename="../src/engine/import.cpp" line="1017"/>
         <source>Skipped line %1: Field &apos;%2&apos; contains too many subactivities.</source>
         <translation>Am ignorat linia %1: câmpul &apos;%2&apos; conţine prea multe subactivităţi.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="979"/>
+        <location filename="../src/engine/import.cpp" line="984"/>
         <source>Skipped line %1: Field &apos;%2&apos; produces too many subactivities.</source>
         <translation>Am ignorat linia %1: câmpul &apos;%2&apos; produce prea multe subactivităţi.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="120"/>
+        <location filename="../src/engine/import.cpp" line="125"/>
         <source>Activity Tags</source>
         <translation>Etichete activitate</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="506"/>
+        <location filename="../src/engine/import.cpp" line="511"/>
         <source>Text Files</source>
         <translation>Fişiere text</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="506"/>
+        <location filename="../src/engine/import.cpp" line="511"/>
         <source>All Files</source>
         <translation>Toate fişierele</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="691"/>
+        <location filename="../src/engine/import.cpp" line="696"/>
         <source>Cancel</source>
         <translation>Anulează</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="983"/>
+        <location filename="../src/engine/import.cpp" line="988"/>
         <source>Skipped line %1: Field &apos;%2&apos; contain incorrect data.</source>
         <translation>Am trecut peste linia %1: Câmpul %2 conţine date incorecte.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="526"/>
+        <location filename="../src/engine/import.cpp" line="531"/>
         <source>The first line of the file is empty. Please fix this.</source>
         <translation>Prima linie a fişierului este goala. Vă rugăm reparaţi aceasta.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2408"/>
+        <location filename="../src/engine/import.cpp" line="2552"/>
         <source>Warning: found tags for the &apos;consecutive&apos; field of min days which are not a valid boolean value (%1) - making them %2</source>
         <translation>Atenţie: am găsit taguri pentru câmpul &apos;consecutiv&apos; al constrângerilor min zile care nu sunt o valoare booleană validă (%1) - le facem %2</translation>
     </message>
@@ -36751,13 +36733,13 @@ Vă rog opriţi simularea înainte de aceasta</translation>
 <context>
     <name>LastWarningsDialog</name>
     <message>
-        <location filename="../src/engine/import.cpp" line="438"/>
+        <location filename="../src/engine/import.cpp" line="443"/>
         <source>FET - import %1 comment</source>
         <comment>The comment of the importing of the category named %1</comment>
         <translation>FET - comentariu importare %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="449"/>
+        <location filename="../src/engine/import.cpp" line="454"/>
         <source>&amp;OK</source>
         <translation>&amp;Bine</translation>
     </message>
@@ -36797,58 +36779,58 @@ Vă rog opriţi simularea înainte de aceasta</translation>
 <context>
     <name>ModifyActivityForm</name>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="431"/>
-        <location filename="../src/interface/modifyactivityform.cpp" line="464"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="446"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="484"/>
         <source>FET question</source>
         <translation>FET - întrebare</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="432"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="447"/>
         <source>Do you really want to have the activity without teacher(s)?</source>
         <translation>Chiar doriţi să aveţi activitatea fără profesor(i)?</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="449"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="467"/>
         <source>FET information</source>
         <translation>FET - informaţie</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="450"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="468"/>
         <source>Invalid subject</source>
         <translation>Disciplină invalidă</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="465"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="485"/>
         <source>Do you really want to have the activity without student set(s)?</source>
         <translation>Chiar doriţi să aveţi activitatea fără studenţi?</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="533"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="558"/>
         <source>Abbreviations in this dialog:</source>
         <translation>Abrevieri în acest dialog:</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="535"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="560"/>
         <source>&apos;Students&apos; (the text near the spin box), means &apos;Number of students (-1 for automatic)&apos;</source>
         <translation>&apos;Studenţi&apos; (textul de lângă spin box), înseamnă &apos;Număr de studenţi (-1 pentru automatic)&apos;</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="537"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="562"/>
         <source>&apos;Split&apos; means &apos;Is split into ... activities per week&apos;. This value cannot be changed. If you need to modify it, please remove the corresponding activities and add a new split activity.</source>
         <translation>&apos;Divizare&apos; înseamnă &apos;Este divizată în ... activităţi pe săptămână&apos;. Această valoare nu poate fi schimbată. Dacă aveţi nevoie să o modificaţi, vă rog ştergeţi activităţile corespunzătoare şi adăugaţi o nouă activitate divizată.</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="540"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="565"/>
         <source>The &apos;Duration&apos; spin box and the &apos;Active&apos; check box refer to each component of current activity, you can change them for each component, separately, by selecting the corresponding tab in the tab widget.</source>
         <translation>Spin box-ul &apos;Durată&apos; şi check box-ul &apos;Activă&apos; se referă la fiecare componentă a activităţii curente, puteţi să le schimbaţi pentru fiecare componentă, separat, selectând tab-ul corespunzător în componenta de tab-uri.</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="546"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="571"/>
         <source>FET - help on modifying activity(ies)</source>
         <translation>FET - ajutor la modificarea activităţii(lor)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="552"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="577"/>
         <source>OK</source>
         <translation>Bine</translation>
     </message>
@@ -44160,48 +44142,48 @@ Notă: profesor indisponibil şi pauză nu sunt socotite ca ferestre.</translati
 <context>
     <name>ModifySubactivityForm</name>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="321"/>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="354"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="336"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="374"/>
         <source>FET question</source>
         <translation>FET - întrebare</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="322"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="337"/>
         <source>Do you really want to have the subactivity without teacher(s)?</source>
         <translation>Chiar doriţi să aveţi subactivitatea fără profesor(i)?</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="339"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="357"/>
         <source>FET information</source>
         <translation>FET - informaţie</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="340"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="358"/>
         <source>Invalid subject</source>
         <translation>Disciplină invalidă</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="355"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="375"/>
         <source>Do you really want to have the subactivity without student set(s)?</source>
         <translation>Chiar doriţi să aveţi subactivitatea fără studenţi?</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="410"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="435"/>
         <source>Abbreviations in this dialog:</source>
         <translation>Abrevieri în acest dialog:</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="412"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="437"/>
         <source>&apos;Students&apos; (the text near the spin box), means &apos;Number of students (-1 for automatic)&apos;</source>
         <translation>&apos;Studenţi&apos; (textul de lângă spin box), înseamnă &apos;Număr de studenţi (-1 pentru automatic)&apos;</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="418"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="443"/>
         <source>FET - help on modifying subactivity(ies)</source>
         <translation>FET - ajutor la modificarea subactivităţii(lor)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="424"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="449"/>
         <source>OK</source>
         <translation>Bine</translation>
     </message>
@@ -44741,285 +44723,264 @@ Notă: profesor indisponibil şi pauză nu sunt socotite ca ferestre.</translati
     <name>Rules</name>
     <message>
         <location filename="../src/engine/rules.cpp" line="105"/>
-        <location filename="../src/engine/rules.cpp" line="4137"/>
+        <location filename="../src/engine/rules.cpp" line="4318"/>
         <source>Monday</source>
         <translation>Luni</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="106"/>
-        <location filename="../src/engine/rules.cpp" line="4138"/>
+        <location filename="../src/engine/rules.cpp" line="4319"/>
         <source>Tuesday</source>
         <translation>Marţi</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="107"/>
-        <location filename="../src/engine/rules.cpp" line="4139"/>
+        <location filename="../src/engine/rules.cpp" line="4320"/>
         <source>Wednesday</source>
         <translation>Miercuri</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="108"/>
-        <location filename="../src/engine/rules.cpp" line="4140"/>
+        <location filename="../src/engine/rules.cpp" line="4321"/>
         <source>Thursday</source>
         <translation>Joi</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="109"/>
-        <location filename="../src/engine/rules.cpp" line="4141"/>
+        <location filename="../src/engine/rules.cpp" line="4322"/>
         <source>Friday</source>
         <translation>Vineri</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="101"/>
-        <location filename="../src/engine/rules.cpp" line="4133"/>
+        <location filename="../src/engine/rules.cpp" line="4314"/>
         <source>Default institution</source>
         <translation>Instituţie implicită</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="102"/>
-        <location filename="../src/engine/rules.cpp" line="4134"/>
+        <location filename="../src/engine/rules.cpp" line="4315"/>
         <source>Default comments</source>
         <translation>Comentarii implicite</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="159"/>
-        <location filename="../src/engine/rules.cpp" line="302"/>
-        <location filename="../src/engine/rules.cpp" line="316"/>
-        <location filename="../src/engine/rules.cpp" line="323"/>
-        <location filename="../src/engine/rules.cpp" line="330"/>
-        <location filename="../src/engine/rules.cpp" line="475"/>
-        <location filename="../src/engine/rules.cpp" line="581"/>
-        <location filename="../src/engine/rules.cpp" line="609"/>
-        <location filename="../src/engine/rules.cpp" line="663"/>
-        <location filename="../src/engine/rules.cpp" line="691"/>
-        <location filename="../src/engine/rules.cpp" line="751"/>
-        <location filename="../src/engine/rules.cpp" line="4111"/>
-        <location filename="../src/engine/rules.cpp" line="4123"/>
-        <location filename="../src/engine/rules.cpp" line="4449"/>
-        <location filename="../src/engine/rules.cpp" line="5270"/>
-        <location filename="../src/engine/rules.cpp" line="5317"/>
-        <location filename="../src/engine/rules.cpp" line="5455"/>
-        <location filename="../src/engine/rules.cpp" line="5517"/>
-        <location filename="../src/engine/rules.cpp" line="5538"/>
-        <location filename="../src/engine/rules.cpp" line="5568"/>
-        <location filename="../src/engine/rules.cpp" line="5582"/>
+        <location filename="../src/engine/rules.cpp" line="161"/>
+        <location filename="../src/engine/rules.cpp" line="304"/>
+        <location filename="../src/engine/rules.cpp" line="318"/>
+        <location filename="../src/engine/rules.cpp" line="325"/>
+        <location filename="../src/engine/rules.cpp" line="332"/>
+        <location filename="../src/engine/rules.cpp" line="477"/>
+        <location filename="../src/engine/rules.cpp" line="583"/>
+        <location filename="../src/engine/rules.cpp" line="611"/>
+        <location filename="../src/engine/rules.cpp" line="665"/>
+        <location filename="../src/engine/rules.cpp" line="693"/>
+        <location filename="../src/engine/rules.cpp" line="753"/>
+        <location filename="../src/engine/rules.cpp" line="4292"/>
+        <location filename="../src/engine/rules.cpp" line="4304"/>
+        <location filename="../src/engine/rules.cpp" line="4634"/>
+        <location filename="../src/engine/rules.cpp" line="5563"/>
         <location filename="../src/engine/rules.cpp" line="5610"/>
-        <location filename="../src/engine/rules.cpp" line="5627"/>
-        <location filename="../src/engine/rules.cpp" line="5644"/>
-        <location filename="../src/engine/rules.cpp" line="5714"/>
-        <location filename="../src/engine/rules.cpp" line="5743"/>
-        <location filename="../src/engine/rules.cpp" line="6003"/>
-        <location filename="../src/engine/rules.cpp" line="7086"/>
-        <location filename="../src/engine/rules.cpp" line="7202"/>
-        <location filename="../src/engine/rules.cpp" line="7297"/>
-        <location filename="../src/engine/rules.cpp" line="7337"/>
-        <location filename="../src/engine/rules.cpp" line="7403"/>
-        <location filename="../src/engine/rules.cpp" line="7519"/>
-        <location filename="../src/engine/rules.cpp" line="9832"/>
-        <location filename="../src/engine/rules.cpp" line="9854"/>
-        <location filename="../src/engine/rules.cpp" line="10010"/>
-        <location filename="../src/engine/rules.cpp" line="10032"/>
-        <location filename="../src/engine/rules.cpp" line="13698"/>
+        <location filename="../src/engine/rules.cpp" line="5748"/>
+        <location filename="../src/engine/rules.cpp" line="5810"/>
+        <location filename="../src/engine/rules.cpp" line="5831"/>
+        <location filename="../src/engine/rules.cpp" line="5861"/>
+        <location filename="../src/engine/rules.cpp" line="5875"/>
+        <location filename="../src/engine/rules.cpp" line="5903"/>
+        <location filename="../src/engine/rules.cpp" line="5920"/>
+        <location filename="../src/engine/rules.cpp" line="5937"/>
+        <location filename="../src/engine/rules.cpp" line="6007"/>
+        <location filename="../src/engine/rules.cpp" line="6036"/>
+        <location filename="../src/engine/rules.cpp" line="6296"/>
+        <location filename="../src/engine/rules.cpp" line="7379"/>
+        <location filename="../src/engine/rules.cpp" line="7495"/>
+        <location filename="../src/engine/rules.cpp" line="7590"/>
+        <location filename="../src/engine/rules.cpp" line="7630"/>
+        <location filename="../src/engine/rules.cpp" line="7696"/>
+        <location filename="../src/engine/rules.cpp" line="7812"/>
+        <location filename="../src/engine/rules.cpp" line="10125"/>
+        <location filename="../src/engine/rules.cpp" line="10147"/>
+        <location filename="../src/engine/rules.cpp" line="10303"/>
+        <location filename="../src/engine/rules.cpp" line="10325"/>
+        <location filename="../src/engine/rules.cpp" line="13991"/>
         <source>FET information</source>
         <translation>FET - informaţie</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="458"/>
+        <location filename="../src/engine/rules.cpp" line="460"/>
         <source>Processing internally the activities ... please wait</source>
         <translation>Procesez intern activităţile ... vă rog aşteptaţi</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="475"/>
-        <location filename="../src/engine/rules.cpp" line="609"/>
-        <location filename="../src/engine/rules.cpp" line="691"/>
+        <location filename="../src/engine/rules.cpp" line="477"/>
+        <location filename="../src/engine/rules.cpp" line="611"/>
+        <location filename="../src/engine/rules.cpp" line="693"/>
         <source>Canceled</source>
         <translation>Anulat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="577"/>
+        <location filename="../src/engine/rules.cpp" line="579"/>
         <source>The following time constraint is ignored, because it refers to inactive activities:</source>
         <translation>Următoarea constrângere de timp este ignorată, pentru că se referă la activităţi inactive:</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="582"/>
-        <location filename="../src/engine/rules.cpp" line="664"/>
-        <location filename="../src/engine/rules.cpp" line="4585"/>
-        <location filename="../src/engine/rules.cpp" line="4639"/>
-        <location filename="../src/engine/rules.cpp" line="4708"/>
-        <location filename="../src/engine/rules.cpp" line="4801"/>
-        <location filename="../src/engine/rules.cpp" line="4824"/>
-        <location filename="../src/engine/rules.cpp" line="4847"/>
-        <location filename="../src/engine/rules.cpp" line="5273"/>
-        <location filename="../src/engine/rules.cpp" line="5320"/>
-        <location filename="../src/engine/rules.cpp" line="5391"/>
-        <location filename="../src/engine/rules.cpp" line="5402"/>
-        <location filename="../src/engine/rules.cpp" line="5413"/>
-        <location filename="../src/engine/rules.cpp" line="5459"/>
-        <location filename="../src/engine/rules.cpp" line="5507"/>
-        <location filename="../src/engine/rules.cpp" line="5523"/>
-        <location filename="../src/engine/rules.cpp" line="5541"/>
-        <location filename="../src/engine/rules.cpp" line="5573"/>
-        <location filename="../src/engine/rules.cpp" line="5587"/>
-        <location filename="../src/engine/rules.cpp" line="5615"/>
-        <location filename="../src/engine/rules.cpp" line="5632"/>
-        <location filename="../src/engine/rules.cpp" line="5650"/>
+        <location filename="../src/engine/rules.cpp" line="584"/>
+        <location filename="../src/engine/rules.cpp" line="666"/>
+        <location filename="../src/engine/rules.cpp" line="5566"/>
+        <location filename="../src/engine/rules.cpp" line="5613"/>
         <location filename="../src/engine/rules.cpp" line="5684"/>
         <location filename="../src/engine/rules.cpp" line="5695"/>
-        <location filename="../src/engine/rules.cpp" line="5746"/>
-        <location filename="../src/engine/rules.cpp" line="5760"/>
-        <location filename="../src/engine/rules.cpp" line="5772"/>
-        <location filename="../src/engine/rules.cpp" line="5785"/>
-        <location filename="../src/engine/rules.cpp" line="5797"/>
-        <location filename="../src/engine/rules.cpp" line="5809"/>
-        <location filename="../src/engine/rules.cpp" line="5821"/>
-        <location filename="../src/engine/rules.cpp" line="5833"/>
-        <location filename="../src/engine/rules.cpp" line="5851"/>
-        <location filename="../src/engine/rules.cpp" line="5900"/>
-        <location filename="../src/engine/rules.cpp" line="5912"/>
-        <location filename="../src/engine/rules.cpp" line="5924"/>
-        <location filename="../src/engine/rules.cpp" line="5936"/>
-        <location filename="../src/engine/rules.cpp" line="9847"/>
-        <location filename="../src/engine/rules.cpp" line="9859"/>
-        <location filename="../src/engine/rules.cpp" line="10025"/>
-        <location filename="../src/engine/rules.cpp" line="10037"/>
-        <location filename="../src/engine/rules.cpp" line="13713"/>
+        <location filename="../src/engine/rules.cpp" line="5706"/>
+        <location filename="../src/engine/rules.cpp" line="5752"/>
+        <location filename="../src/engine/rules.cpp" line="5800"/>
+        <location filename="../src/engine/rules.cpp" line="5816"/>
+        <location filename="../src/engine/rules.cpp" line="5834"/>
+        <location filename="../src/engine/rules.cpp" line="5866"/>
+        <location filename="../src/engine/rules.cpp" line="5880"/>
+        <location filename="../src/engine/rules.cpp" line="5908"/>
+        <location filename="../src/engine/rules.cpp" line="5925"/>
+        <location filename="../src/engine/rules.cpp" line="5943"/>
+        <location filename="../src/engine/rules.cpp" line="5977"/>
+        <location filename="../src/engine/rules.cpp" line="5988"/>
+        <location filename="../src/engine/rules.cpp" line="6039"/>
+        <location filename="../src/engine/rules.cpp" line="6053"/>
+        <location filename="../src/engine/rules.cpp" line="6065"/>
+        <location filename="../src/engine/rules.cpp" line="6078"/>
+        <location filename="../src/engine/rules.cpp" line="6090"/>
+        <location filename="../src/engine/rules.cpp" line="6102"/>
+        <location filename="../src/engine/rules.cpp" line="6114"/>
+        <location filename="../src/engine/rules.cpp" line="6126"/>
+        <location filename="../src/engine/rules.cpp" line="6144"/>
+        <location filename="../src/engine/rules.cpp" line="6193"/>
+        <location filename="../src/engine/rules.cpp" line="6205"/>
+        <location filename="../src/engine/rules.cpp" line="6217"/>
+        <location filename="../src/engine/rules.cpp" line="6229"/>
+        <location filename="../src/engine/rules.cpp" line="10140"/>
+        <location filename="../src/engine/rules.cpp" line="10152"/>
+        <location filename="../src/engine/rules.cpp" line="10318"/>
+        <location filename="../src/engine/rules.cpp" line="10330"/>
+        <location filename="../src/engine/rules.cpp" line="14006"/>
         <source>Skip rest</source>
         <translation>Trec peste restul</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="582"/>
-        <location filename="../src/engine/rules.cpp" line="664"/>
-        <location filename="../src/engine/rules.cpp" line="4585"/>
-        <location filename="../src/engine/rules.cpp" line="4639"/>
-        <location filename="../src/engine/rules.cpp" line="4708"/>
-        <location filename="../src/engine/rules.cpp" line="4801"/>
-        <location filename="../src/engine/rules.cpp" line="4824"/>
-        <location filename="../src/engine/rules.cpp" line="4847"/>
-        <location filename="../src/engine/rules.cpp" line="5273"/>
-        <location filename="../src/engine/rules.cpp" line="5320"/>
-        <location filename="../src/engine/rules.cpp" line="5391"/>
-        <location filename="../src/engine/rules.cpp" line="5402"/>
-        <location filename="../src/engine/rules.cpp" line="5413"/>
-        <location filename="../src/engine/rules.cpp" line="5459"/>
-        <location filename="../src/engine/rules.cpp" line="5507"/>
-        <location filename="../src/engine/rules.cpp" line="5523"/>
-        <location filename="../src/engine/rules.cpp" line="5541"/>
-        <location filename="../src/engine/rules.cpp" line="5573"/>
-        <location filename="../src/engine/rules.cpp" line="5587"/>
-        <location filename="../src/engine/rules.cpp" line="5615"/>
-        <location filename="../src/engine/rules.cpp" line="5632"/>
-        <location filename="../src/engine/rules.cpp" line="5650"/>
+        <location filename="../src/engine/rules.cpp" line="584"/>
+        <location filename="../src/engine/rules.cpp" line="666"/>
+        <location filename="../src/engine/rules.cpp" line="5566"/>
+        <location filename="../src/engine/rules.cpp" line="5613"/>
         <location filename="../src/engine/rules.cpp" line="5684"/>
         <location filename="../src/engine/rules.cpp" line="5695"/>
-        <location filename="../src/engine/rules.cpp" line="5746"/>
-        <location filename="../src/engine/rules.cpp" line="5760"/>
-        <location filename="../src/engine/rules.cpp" line="5772"/>
-        <location filename="../src/engine/rules.cpp" line="5785"/>
-        <location filename="../src/engine/rules.cpp" line="5797"/>
-        <location filename="../src/engine/rules.cpp" line="5809"/>
-        <location filename="../src/engine/rules.cpp" line="5821"/>
-        <location filename="../src/engine/rules.cpp" line="5833"/>
-        <location filename="../src/engine/rules.cpp" line="5851"/>
-        <location filename="../src/engine/rules.cpp" line="5900"/>
-        <location filename="../src/engine/rules.cpp" line="5912"/>
-        <location filename="../src/engine/rules.cpp" line="5924"/>
-        <location filename="../src/engine/rules.cpp" line="5936"/>
-        <location filename="../src/engine/rules.cpp" line="9847"/>
-        <location filename="../src/engine/rules.cpp" line="9859"/>
-        <location filename="../src/engine/rules.cpp" line="10025"/>
-        <location filename="../src/engine/rules.cpp" line="10037"/>
-        <location filename="../src/engine/rules.cpp" line="13713"/>
+        <location filename="../src/engine/rules.cpp" line="5706"/>
+        <location filename="../src/engine/rules.cpp" line="5752"/>
+        <location filename="../src/engine/rules.cpp" line="5800"/>
+        <location filename="../src/engine/rules.cpp" line="5816"/>
+        <location filename="../src/engine/rules.cpp" line="5834"/>
+        <location filename="../src/engine/rules.cpp" line="5866"/>
+        <location filename="../src/engine/rules.cpp" line="5880"/>
+        <location filename="../src/engine/rules.cpp" line="5908"/>
+        <location filename="../src/engine/rules.cpp" line="5925"/>
+        <location filename="../src/engine/rules.cpp" line="5943"/>
+        <location filename="../src/engine/rules.cpp" line="5977"/>
+        <location filename="../src/engine/rules.cpp" line="5988"/>
+        <location filename="../src/engine/rules.cpp" line="6039"/>
+        <location filename="../src/engine/rules.cpp" line="6053"/>
+        <location filename="../src/engine/rules.cpp" line="6065"/>
+        <location filename="../src/engine/rules.cpp" line="6078"/>
+        <location filename="../src/engine/rules.cpp" line="6090"/>
+        <location filename="../src/engine/rules.cpp" line="6102"/>
+        <location filename="../src/engine/rules.cpp" line="6114"/>
+        <location filename="../src/engine/rules.cpp" line="6126"/>
+        <location filename="../src/engine/rules.cpp" line="6144"/>
+        <location filename="../src/engine/rules.cpp" line="6193"/>
+        <location filename="../src/engine/rules.cpp" line="6205"/>
+        <location filename="../src/engine/rules.cpp" line="6217"/>
+        <location filename="../src/engine/rules.cpp" line="6229"/>
+        <location filename="../src/engine/rules.cpp" line="10140"/>
+        <location filename="../src/engine/rules.cpp" line="10152"/>
+        <location filename="../src/engine/rules.cpp" line="10318"/>
+        <location filename="../src/engine/rules.cpp" line="10330"/>
+        <location filename="../src/engine/rules.cpp" line="14006"/>
         <source>See next</source>
         <translation>Văd următoarea</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="597"/>
+        <location filename="../src/engine/rules.cpp" line="599"/>
         <source>Processing internally the time constraints ... please wait</source>
         <translation>Procesez intern constrângerile de timp ... vă rog aşteptaţi</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="659"/>
+        <location filename="../src/engine/rules.cpp" line="661"/>
         <source>The following space constraint is ignored, because it refers to inactive activities:</source>
         <translation>Următoarea constrângere de spaţiu este ignorată, pentru că se referă la activităţi inactive:</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="679"/>
+        <location filename="../src/engine/rules.cpp" line="681"/>
         <source>Processing internally the space constraints ... please wait</source>
         <translation>Procesez intern constrângerile de spaţiu ... vă rog aşteptaţi</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2295"/>
-        <location filename="../src/engine/rules.cpp" line="2300"/>
-        <location filename="../src/engine/rules.cpp" line="2305"/>
-        <location filename="../src/engine/rules.cpp" line="2340"/>
-        <location filename="../src/engine/rules.cpp" line="2345"/>
-        <location filename="../src/engine/rules.cpp" line="2350"/>
-        <location filename="../src/engine/rules.cpp" line="2388"/>
-        <location filename="../src/engine/rules.cpp" line="2393"/>
-        <location filename="../src/engine/rules.cpp" line="2398"/>
-        <location filename="../src/engine/rules.cpp" line="3929"/>
-        <location filename="../src/engine/rules.cpp" line="3946"/>
-        <location filename="../src/engine/rules.cpp" line="3957"/>
-        <location filename="../src/engine/rules.cpp" line="4042"/>
-        <location filename="../src/engine/rules.cpp" line="4069"/>
-        <location filename="../src/engine/rules.cpp" line="4105"/>
-        <location filename="../src/engine/rules.cpp" line="4374"/>
-        <location filename="../src/engine/rules.cpp" line="4422"/>
-        <location filename="../src/engine/rules.cpp" line="4473"/>
-        <location filename="../src/engine/rules.cpp" line="4521"/>
-        <location filename="../src/engine/rules.cpp" line="4584"/>
-        <location filename="../src/engine/rules.cpp" line="4638"/>
-        <location filename="../src/engine/rules.cpp" line="4707"/>
-        <location filename="../src/engine/rules.cpp" line="4800"/>
-        <location filename="../src/engine/rules.cpp" line="4823"/>
-        <location filename="../src/engine/rules.cpp" line="4846"/>
-        <location filename="../src/engine/rules.cpp" line="4972"/>
-        <location filename="../src/engine/rules.cpp" line="5112"/>
-        <location filename="../src/engine/rules.cpp" line="5144"/>
-        <location filename="../src/engine/rules.cpp" line="5215"/>
-        <location filename="../src/engine/rules.cpp" line="5389"/>
-        <location filename="../src/engine/rules.cpp" line="5400"/>
-        <location filename="../src/engine/rules.cpp" line="5411"/>
-        <location filename="../src/engine/rules.cpp" line="5505"/>
+        <location filename="../src/engine/rules.cpp" line="2433"/>
+        <location filename="../src/engine/rules.cpp" line="2438"/>
+        <location filename="../src/engine/rules.cpp" line="2443"/>
+        <location filename="../src/engine/rules.cpp" line="2569"/>
+        <location filename="../src/engine/rules.cpp" line="2574"/>
+        <location filename="../src/engine/rules.cpp" line="2579"/>
+        <location filename="../src/engine/rules.cpp" line="4110"/>
+        <location filename="../src/engine/rules.cpp" line="4127"/>
+        <location filename="../src/engine/rules.cpp" line="4138"/>
+        <location filename="../src/engine/rules.cpp" line="4223"/>
+        <location filename="../src/engine/rules.cpp" line="4250"/>
+        <location filename="../src/engine/rules.cpp" line="4286"/>
+        <location filename="../src/engine/rules.cpp" line="4555"/>
+        <location filename="../src/engine/rules.cpp" line="4605"/>
+        <location filename="../src/engine/rules.cpp" line="4658"/>
+        <location filename="../src/engine/rules.cpp" line="4708"/>
+        <location filename="../src/engine/rules.cpp" line="5261"/>
+        <location filename="../src/engine/rules.cpp" line="5401"/>
+        <location filename="../src/engine/rules.cpp" line="5433"/>
+        <location filename="../src/engine/rules.cpp" line="5506"/>
         <location filename="../src/engine/rules.cpp" line="5682"/>
         <location filename="../src/engine/rules.cpp" line="5693"/>
-        <location filename="../src/engine/rules.cpp" line="5758"/>
-        <location filename="../src/engine/rules.cpp" line="5770"/>
-        <location filename="../src/engine/rules.cpp" line="5783"/>
-        <location filename="../src/engine/rules.cpp" line="5795"/>
-        <location filename="../src/engine/rules.cpp" line="5807"/>
-        <location filename="../src/engine/rules.cpp" line="5819"/>
-        <location filename="../src/engine/rules.cpp" line="5831"/>
-        <location filename="../src/engine/rules.cpp" line="5849"/>
-        <location filename="../src/engine/rules.cpp" line="5898"/>
-        <location filename="../src/engine/rules.cpp" line="5910"/>
-        <location filename="../src/engine/rules.cpp" line="5922"/>
-        <location filename="../src/engine/rules.cpp" line="5934"/>
-        <location filename="../src/engine/rules.cpp" line="6079"/>
-        <location filename="../src/engine/rules.cpp" line="7908"/>
-        <location filename="../src/engine/rules.cpp" line="8047"/>
-        <location filename="../src/engine/rules.cpp" line="8952"/>
-        <location filename="../src/engine/rules.cpp" line="9029"/>
-        <location filename="../src/engine/rules.cpp" line="9600"/>
-        <location filename="../src/engine/rules.cpp" line="9691"/>
-        <location filename="../src/engine/rules.cpp" line="9769"/>
-        <location filename="../src/engine/rules.cpp" line="9947"/>
-        <location filename="../src/engine/rules.cpp" line="13655"/>
+        <location filename="../src/engine/rules.cpp" line="5704"/>
+        <location filename="../src/engine/rules.cpp" line="5798"/>
+        <location filename="../src/engine/rules.cpp" line="5975"/>
+        <location filename="../src/engine/rules.cpp" line="5986"/>
+        <location filename="../src/engine/rules.cpp" line="6051"/>
+        <location filename="../src/engine/rules.cpp" line="6063"/>
+        <location filename="../src/engine/rules.cpp" line="6076"/>
+        <location filename="../src/engine/rules.cpp" line="6088"/>
+        <location filename="../src/engine/rules.cpp" line="6100"/>
+        <location filename="../src/engine/rules.cpp" line="6112"/>
+        <location filename="../src/engine/rules.cpp" line="6124"/>
+        <location filename="../src/engine/rules.cpp" line="6142"/>
+        <location filename="../src/engine/rules.cpp" line="6191"/>
+        <location filename="../src/engine/rules.cpp" line="6203"/>
+        <location filename="../src/engine/rules.cpp" line="6215"/>
+        <location filename="../src/engine/rules.cpp" line="6227"/>
+        <location filename="../src/engine/rules.cpp" line="6372"/>
+        <location filename="../src/engine/rules.cpp" line="8201"/>
+        <location filename="../src/engine/rules.cpp" line="8340"/>
+        <location filename="../src/engine/rules.cpp" line="9245"/>
+        <location filename="../src/engine/rules.cpp" line="9322"/>
+        <location filename="../src/engine/rules.cpp" line="9893"/>
+        <location filename="../src/engine/rules.cpp" line="9984"/>
+        <location filename="../src/engine/rules.cpp" line="10062"/>
+        <location filename="../src/engine/rules.cpp" line="10240"/>
+        <location filename="../src/engine/rules.cpp" line="13948"/>
         <source>FET warning</source>
         <translation>FET - avertisment</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3929"/>
+        <location filename="../src/engine/rules.cpp" line="4110"/>
         <source>Could not open file - not existing or in use</source>
         <translation>Nu pot deschide fişierul - nu există sau este în uz</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5097"/>
+        <location filename="../src/engine/rules.cpp" line="5386"/>
         <source>The activity with id=%1 contains incorrect data</source>
         <translation>Activitatea cu id=%1 conţine date incorecte</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6080"/>
+        <location filename="../src/engine/rules.cpp" line="6373"/>
         <source>Could not read file - XML parse error at line %1, column %2:
 %3</source>
         <comment>The error description is %3</comment>
@@ -45027,56 +44988,56 @@ Notă: profesor indisponibil şi pauză nu sunt socotite ca ferestre.</translati
 %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3946"/>
-        <location filename="../src/engine/rules.cpp" line="3957"/>
+        <location filename="../src/engine/rules.cpp" line="4127"/>
+        <location filename="../src/engine/rules.cpp" line="4138"/>
         <source>Cannot create or use directory %1 - cannot continue</source>
         <translation>Nu pot crea sau folosi directorul %1 - nu pot continua</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3987"/>
+        <location filename="../src/engine/rules.cpp" line="4168"/>
         <source>FET cannot open the log file %1 for writing. This might mean that you don&apos;t have write permissions in this location. You can continue operation, but you might not be able to save the generated timetables as html files</source>
         <translation>FET nu poate deschide fişierul de log %1 pentru scriere. Aceasta poate însemna că nu aveţi permisiuni de scriere în acel loc. Puteţi continua operaţiunea, dar s-ar putea să nu puteţi salva orarele generate ca fişiere html</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3990"/>
+        <location filename="../src/engine/rules.cpp" line="4171"/>
         <source>A solution is to remove that file (if it exists already) or set its permissions to allow writing</source>
         <translation>O soluţie este să ştergeţi acel fişier (dacă el există deja) sau să setaţi permisiunile lui pentru a permite scrierea</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3991"/>
+        <location filename="../src/engine/rules.cpp" line="4172"/>
         <source>Please report possible bug</source>
         <translation>Vă rog raportaţi posibila eroare</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3992"/>
-        <location filename="../src/engine/rules.cpp" line="6109"/>
-        <location filename="../src/engine/rules.cpp" line="6152"/>
-        <location filename="../src/engine/rules.cpp" line="6278"/>
+        <location filename="../src/engine/rules.cpp" line="4173"/>
+        <location filename="../src/engine/rules.cpp" line="6402"/>
+        <location filename="../src/engine/rules.cpp" line="6445"/>
+        <location filename="../src/engine/rules.cpp" line="6571"/>
         <source>FET critical</source>
         <translation>FET - critic</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4042"/>
+        <location filename="../src/engine/rules.cpp" line="4223"/>
         <source>File contains a version numbering scheme which is not matched by v.v.va (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are adviced to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it</source>
         <translation>Fişierul conţine o schema de numerotare a versiunii care nu se potriveşte cu v.v.va (3 numere separate de puncte, urmate de orice şir a, care poate fi vid). Fişierul va fi deschis, dar sunteţi sfătuit să verificaţi versiunea fişierului .fet (la începutul fişierului). Dacă este o eroare FET, vă rog raportaţi-o</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4045"/>
+        <location filename="../src/engine/rules.cpp" line="4226"/>
         <source>If you are opening a file older than FET format version 5, it will be converted to latest FET data format</source>
         <translation>Dacă deschideţi un fişier mai vechi decât formatul FET versiunea 5, el va fi convertit la cel mai nou format de date FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4069"/>
+        <location filename="../src/engine/rules.cpp" line="4250"/>
         <source>FET version does not respect the format v.v.va (3 numbers separated by points, followed by any string a, which may be empty). This is probably a bug in FET - please report it</source>
         <translation>Versiunea FET nu respectă formatul v.v.va (3 numere separate de puncte, urmate de orice şir a, care poate fi vid). Aceasta este probabil o eroare în FET - vă rog raportaţi-o</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4105"/>
+        <location filename="../src/engine/rules.cpp" line="4286"/>
         <source>File does not have a corresponding beginning tag - it should be %1 or %2. File is incorrect...it cannot be opened</source>
         <translation>Fişierul nu are o etichetă corespunzătoare de început - ar trebui să fie %1 sau %2. Fişierul este incorect...nu poate fi deschis</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4112"/>
+        <location filename="../src/engine/rules.cpp" line="4293"/>
         <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are adviced to make a backup of your old file before saving in new format.
 
 Please note that the default weight percentage of constraints min days between activities will be 95% (mainly satisfied, not always) and &apos;force consecutive if same day&apos; will be set to true (meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity). If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
@@ -45085,455 +45046,419 @@ Please note that the default weight percentage of constraints min days between a
 Vă rog luaţi aminte că importanţa procentuală predefinită a constrângerilor min zile între activităţi va fi 95% (în principal satisfăcută, nu totdeauna) şi &apos;forţează consecutive dacă în aceeaşi zi&apos; va fi setată la adevărat (însemnând că dacă activităţile sunt în aceeaşi zi ,ele vor fi plasate continuu, într-o activitate cu durată mai mare). Dacă doriţi, puteţi modifica acest procent să fie 100%, manual în fişierul fet de intrare sau din interfaţă</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4124"/>
+        <location filename="../src/engine/rules.cpp" line="4305"/>
         <source>Opening a file generated with a newer version than your current FET software ... file will be opened but it is recommended to update your FET software to the latest version</source>
         <translation>Deschid un fişier generat cu o versiune mai nouă decât programul FET curent al dvs. ... fişierul va fi deschis dar este recomandat să aduceţi la zi programul FET al dvs. (la cea mai nouă versiune)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4125"/>
+        <location filename="../src/engine/rules.cpp" line="4306"/>
         <source>Your FET version: %1, file version: %2</source>
         <translation>Programul FET al dvs. are versiunea: %1, fişierul are versiunea: %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4194"/>
-        <location filename="../src/engine/rules.cpp" line="4275"/>
-        <location filename="../src/engine/rules.cpp" line="4391"/>
-        <location filename="../src/engine/rules.cpp" line="4439"/>
-        <location filename="../src/engine/rules.cpp" line="4490"/>
-        <location filename="../src/engine/rules.cpp" line="4538"/>
-        <location filename="../src/engine/rules.cpp" line="5065"/>
-        <location filename="../src/engine/rules.cpp" line="5067"/>
-        <location filename="../src/engine/rules.cpp" line="5069"/>
-        <location filename="../src/engine/rules.cpp" line="5161"/>
-        <location filename="../src/engine/rules.cpp" line="5232"/>
-        <location filename="../src/engine/rules.cpp" line="6799"/>
-        <location filename="../src/engine/rules.cpp" line="6876"/>
-        <location filename="../src/engine/rules.cpp" line="6921"/>
-        <location filename="../src/engine/rules.cpp" line="6970"/>
-        <location filename="../src/engine/rules.cpp" line="7015"/>
-        <location filename="../src/engine/rules.cpp" line="7840"/>
-        <location filename="../src/engine/rules.cpp" line="9092"/>
-        <location filename="../src/engine/rules.cpp" line="9158"/>
-        <location filename="../src/engine/rules.cpp" line="9229"/>
-        <location filename="../src/engine/rules.cpp" line="9295"/>
-        <location filename="../src/engine/rules.cpp" line="9347"/>
-        <location filename="../src/engine/rules.cpp" line="9404"/>
-        <location filename="../src/engine/rules.cpp" line="9456"/>
-        <location filename="../src/engine/rules.cpp" line="9513"/>
-        <location filename="../src/engine/rules.cpp" line="9585"/>
-        <location filename="../src/engine/rules.cpp" line="9671"/>
-        <location filename="../src/engine/rules.cpp" line="10710"/>
-        <location filename="../src/engine/rules.cpp" line="10849"/>
-        <location filename="../src/engine/rules.cpp" line="10988"/>
-        <location filename="../src/engine/rules.cpp" line="11254"/>
-        <location filename="../src/engine/rules.cpp" line="11964"/>
-        <location filename="../src/engine/rules.cpp" line="12085"/>
-        <location filename="../src/engine/rules.cpp" line="12273"/>
-        <location filename="../src/engine/rules.cpp" line="12443"/>
-        <location filename="../src/engine/rules.cpp" line="12613"/>
-        <location filename="../src/engine/rules.cpp" line="12790"/>
-        <location filename="../src/engine/rules.cpp" line="12966"/>
-        <location filename="../src/engine/rules.cpp" line="13090"/>
-        <location filename="../src/engine/rules.cpp" line="13230"/>
-        <location filename="../src/engine/rules.cpp" line="13578"/>
+        <location filename="../src/engine/rules.cpp" line="4375"/>
+        <location filename="../src/engine/rules.cpp" line="4456"/>
+        <location filename="../src/engine/rules.cpp" line="4574"/>
+        <location filename="../src/engine/rules.cpp" line="4624"/>
+        <location filename="../src/engine/rules.cpp" line="4677"/>
+        <location filename="../src/engine/rules.cpp" line="4727"/>
+        <location filename="../src/engine/rules.cpp" line="5354"/>
+        <location filename="../src/engine/rules.cpp" line="5356"/>
+        <location filename="../src/engine/rules.cpp" line="5358"/>
+        <location filename="../src/engine/rules.cpp" line="5452"/>
+        <location filename="../src/engine/rules.cpp" line="5525"/>
+        <location filename="../src/engine/rules.cpp" line="7092"/>
+        <location filename="../src/engine/rules.cpp" line="7169"/>
+        <location filename="../src/engine/rules.cpp" line="7214"/>
+        <location filename="../src/engine/rules.cpp" line="7263"/>
+        <location filename="../src/engine/rules.cpp" line="7308"/>
+        <location filename="../src/engine/rules.cpp" line="8133"/>
+        <location filename="../src/engine/rules.cpp" line="9385"/>
+        <location filename="../src/engine/rules.cpp" line="9451"/>
+        <location filename="../src/engine/rules.cpp" line="9522"/>
+        <location filename="../src/engine/rules.cpp" line="9588"/>
+        <location filename="../src/engine/rules.cpp" line="9640"/>
+        <location filename="../src/engine/rules.cpp" line="9697"/>
+        <location filename="../src/engine/rules.cpp" line="9749"/>
+        <location filename="../src/engine/rules.cpp" line="9806"/>
+        <location filename="../src/engine/rules.cpp" line="9878"/>
+        <location filename="../src/engine/rules.cpp" line="9964"/>
+        <location filename="../src/engine/rules.cpp" line="11003"/>
+        <location filename="../src/engine/rules.cpp" line="11142"/>
+        <location filename="../src/engine/rules.cpp" line="11281"/>
+        <location filename="../src/engine/rules.cpp" line="11547"/>
+        <location filename="../src/engine/rules.cpp" line="12257"/>
+        <location filename="../src/engine/rules.cpp" line="12378"/>
+        <location filename="../src/engine/rules.cpp" line="12566"/>
+        <location filename="../src/engine/rules.cpp" line="12736"/>
+        <location filename="../src/engine/rules.cpp" line="12906"/>
+        <location filename="../src/engine/rules.cpp" line="13083"/>
+        <location filename="../src/engine/rules.cpp" line="13259"/>
+        <location filename="../src/engine/rules.cpp" line="13383"/>
+        <location filename="../src/engine/rules.cpp" line="13523"/>
+        <location filename="../src/engine/rules.cpp" line="13871"/>
         <source>%1 is incorrect</source>
         <translation>%1 este incorect</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4197"/>
-        <location filename="../src/engine/rules.cpp" line="4278"/>
+        <location filename="../src/engine/rules.cpp" line="4378"/>
+        <location filename="../src/engine/rules.cpp" line="4459"/>
         <source>%1 is too large. Maximum allowed is %2.</source>
         <translation>%1 este prea mare. Maximul permis este %2.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4207"/>
-        <location filename="../src/engine/rules.cpp" line="4225"/>
-        <location filename="../src/engine/rules.cpp" line="4288"/>
-        <location filename="../src/engine/rules.cpp" line="4306"/>
+        <location filename="../src/engine/rules.cpp" line="4388"/>
+        <location filename="../src/engine/rules.cpp" line="4406"/>
+        <location filename="../src/engine/rules.cpp" line="4469"/>
+        <location filename="../src/engine/rules.cpp" line="4487"/>
         <source>Too many %1 items. Maximum allowed is %2.</source>
         <translation>Prea multe elemente %1. Maximul permis este %2.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4252"/>
-        <location filename="../src/engine/rules.cpp" line="4335"/>
-        <location filename="../src/engine/rules.cpp" line="4342"/>
+        <location filename="../src/engine/rules.cpp" line="4433"/>
+        <location filename="../src/engine/rules.cpp" line="4516"/>
+        <location filename="../src/engine/rules.cpp" line="4523"/>
         <source>%1: %2 and the number of %3 read do not correspond</source>
         <translation>%1: %2 şi numărul de %3 citite nu corespunde</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4375"/>
+        <location filename="../src/engine/rules.cpp" line="4556"/>
         <source>Duplicate teacher %1 found - ignoring</source>
         <translation>Profesor duplicat %1 întâlnit - este ignorat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4423"/>
+        <location filename="../src/engine/rules.cpp" line="4606"/>
         <source>Duplicate subject %1 found - ignoring</source>
         <translation>Disciplină duplicat %1 întâlnită - este ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4449"/>
+        <location filename="../src/engine/rules.cpp" line="4634"/>
         <source>Your file contains subject tags list, which is named in versions&gt;=5.5.0 activity tags list</source>
         <translation>Fişierul dvs. conţine lista de etichete disciplină, care este numită în versiuni &gt;=5.5.0 lista de etichete activitate</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4474"/>
-        <location filename="../src/engine/rules.cpp" line="4522"/>
+        <location filename="../src/engine/rules.cpp" line="4659"/>
+        <location filename="../src/engine/rules.cpp" line="4709"/>
         <source>Duplicate activity tag %1 found - ignoring</source>
         <translation>Etichetă activitate duplicat %1 întâlnită - este ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4578"/>
-        <source>Trying to add year %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
-        <translation>Încerc să adaug anul %1, care este deja adăugat ca alt an - fişierul dvs. va fi încărcat dar probabil conţine erori, vă rog corectaţi-le după încărcare</translation>
+        <location filename="../src/engine/rules.cpp" line="4774"/>
+        <source>Trying to add year %1, which is already added as another year.</source>
+        <translation>Încerc să adaug anul %1, care este deja adăugat ca alt an.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4580"/>
-        <source>Trying to add year %1, which is already added as another group - your file will be loaded but probably contains errors, please correct them after loading</source>
-        <translation>Încerc să adaug anul %1, care este deja adăugat ca alt grup - fişierul dvs. va fi încărcat dar probabil conţine erori, vă rog corectaţi-le după încărcare</translation>
+        <location filename="../src/engine/rules.cpp" line="4776"/>
+        <source>Trying to add year %1, which is already added as another group.</source>
+        <translation>Încerc să adaug anul %1, care este deja adăugat ca alt grup.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4582"/>
-        <source>Trying to add year %1, which is already added as another subgroup - your file will be loaded but probably contains errors, please correct them after loading</source>
-        <translation>Încerc să adaug anul %1, care este deja adăugat ca alt subgrup - fişierul dvs. va fi încărcat dar probabil conţine erori, vă rog corectaţi-le după încărcare</translation>
+        <location filename="../src/engine/rules.cpp" line="4778"/>
+        <source>Trying to add year %1, which is already added as another subgroup.</source>
+        <translation>Încerc să adaug anul %1, care este deja adăugat ca alt subgrup.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4625"/>
-        <source>Trying to add group %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
-        <translation>Încerc să adaug grupul %1, care este deja adăugat ca alt an - fişierul dvs. va fi încărcat dar probabil conţine erori, vă rog corectaţi-le după încărcare</translation>
+        <location filename="../src/engine/rules.cpp" line="4838"/>
+        <source>Trying to add group %1, which is already added as another year.</source>
+        <translation>Încerc să adaug grupul %1, care este deja adăugat ca alt an.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4628"/>
-        <source>Trying to add group %1 in year %2 but it is already added - your file will be loaded but probably contains errors, please correct them after loading</source>
-        <translation>Încerc să adaug grupul %1 în anul %2, dar el este deja adăugat - fişierul dvs. va fi încărcat dar probabil conţine erori, vă rog corectaţi-le după încărcare</translation>
+        <location filename="../src/engine/rules.cpp" line="4843"/>
+        <source>Trying to add group %1 in year %2 but it is already added.</source>
+        <translation>Încerc să adaug grupul %1 în anul %2, dar el este deja adăugat.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4634"/>
-        <source>Trying to add group %1, which is already added as another subgroup - your file will be loaded but probably contains errors, please correct them after loading</source>
-        <translation>Încerc să adaug grupul %1, care este deja adăugat ca alt subgrup - fişierul dvs. va fi încărcat dar probabil conţine erori, vă rog corectaţi-le după încărcare</translation>
+        <location filename="../src/engine/rules.cpp" line="4852"/>
+        <source>Trying to add group %1, which is already added as another subgroup.</source>
+        <translation>Încerc să adaug grupul %1, care este deja adăugat ca alt subgrup.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4694"/>
-        <source>Trying to add subgroup %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
-        <translation>Încerc să adaug subgrupul %1, care este deja adăugat ca alt an - fişierul dvs. va fi încărcat dar probabil conţine erori, vă rog corectaţi-le după încărcare</translation>
+        <location filename="../src/engine/rules.cpp" line="4944"/>
+        <source>Trying to add subgroup %1, which is already added as another year.</source>
+        <translation>Încerc să adaug subgrupul %1, care este deja adăugat ca alt an.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4696"/>
-        <source>Trying to add subgroup %1, which is already added as another group - your file will be loaded but probably contains errors, please correct them after loading</source>
-        <translation>Încerc să adaug subgrupul %1, care este deja adăugat ca alt grup - fişierul dvs. va fi încărcat dar probabil conţine erori, vă rog corectaţi-le după încărcare</translation>
+        <location filename="../src/engine/rules.cpp" line="4948"/>
+        <source>Trying to add subgroup %1, which is already added as another group.</source>
+        <translation>Încerc să adaug subgrupul %1, care este deja adăugat ca alt grup.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4699"/>
-        <source>Trying to add subgroup %1 in year %2, group %3 but it is already added - your file will be loaded but probably contains errors, please correct them after loading</source>
-        <translation>Încerc să adaug subgrupul %1 în anul %2, grupul %3, dar este deja adăugat - fişierul dvs. va fi încărcat dar probabil conţine erori, vă rog corectaţi-le după încărcare</translation>
+        <location filename="../src/engine/rules.cpp" line="4953"/>
+        <source>Trying to add subgroup %1 in year %2, group %3 but it is already added.</source>
+        <translation>Încerc să adaug subgrupul %1 în anul %2, grupul %3, dar este deja adăugat.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="252"/>
+        <location filename="../src/engine/rules.cpp" line="254"/>
         <source>Automatic Group</source>
         <comment>Please keep the translation short. It is used when a year contains no groups and an automatic group is added in the year, in the timetable (when viewing the students timetable from FET and also in the html timetables for students groups or subgroups). In the empty year there will be added a group with name = yearName+a space character+your translation of &apos;Automatic Group&apos;.</comment>
         <translation>Grup automat</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="113"/>
-        <location filename="../src/engine/rules.cpp" line="4144"/>
+        <location filename="../src/engine/rules.cpp" line="4325"/>
         <source>08:00</source>
         <comment>Hour name</comment>
         <translation>08:00</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="114"/>
-        <location filename="../src/engine/rules.cpp" line="4145"/>
+        <location filename="../src/engine/rules.cpp" line="4326"/>
         <source>09:00</source>
         <comment>Hour name</comment>
         <translation>09:00</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="115"/>
-        <location filename="../src/engine/rules.cpp" line="4146"/>
+        <location filename="../src/engine/rules.cpp" line="4327"/>
         <source>10:00</source>
         <comment>Hour name</comment>
         <translation>10:00</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="116"/>
-        <location filename="../src/engine/rules.cpp" line="4147"/>
+        <location filename="../src/engine/rules.cpp" line="4328"/>
         <source>11:00</source>
         <comment>Hour name</comment>
         <translation>11:00</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="117"/>
-        <location filename="../src/engine/rules.cpp" line="4148"/>
+        <location filename="../src/engine/rules.cpp" line="4329"/>
         <source>12:00</source>
         <comment>Hour name</comment>
         <translation>12:00</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="118"/>
-        <location filename="../src/engine/rules.cpp" line="4149"/>
+        <location filename="../src/engine/rules.cpp" line="4330"/>
         <source>13:00</source>
         <comment>Hour name</comment>
         <translation>13:00</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="119"/>
-        <location filename="../src/engine/rules.cpp" line="4150"/>
+        <location filename="../src/engine/rules.cpp" line="4331"/>
         <source>14:00</source>
         <comment>Hour name</comment>
         <translation>14:00</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="120"/>
-        <location filename="../src/engine/rules.cpp" line="4151"/>
+        <location filename="../src/engine/rules.cpp" line="4332"/>
         <source>15:00</source>
         <comment>Hour name</comment>
         <translation>15:00</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="121"/>
-        <location filename="../src/engine/rules.cpp" line="4152"/>
+        <location filename="../src/engine/rules.cpp" line="4333"/>
         <source>16:00</source>
         <comment>Hour name</comment>
         <translation>16:00</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="122"/>
-        <location filename="../src/engine/rules.cpp" line="4153"/>
+        <location filename="../src/engine/rules.cpp" line="4334"/>
         <source>17:00</source>
         <comment>Hour name</comment>
         <translation>17:00</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="123"/>
-        <location filename="../src/engine/rules.cpp" line="4154"/>
+        <location filename="../src/engine/rules.cpp" line="4335"/>
         <source>18:00</source>
         <comment>Hour name</comment>
         <translation>18:00</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="124"/>
-        <location filename="../src/engine/rules.cpp" line="4155"/>
+        <location filename="../src/engine/rules.cpp" line="4336"/>
         <source>19:00</source>
         <comment>Hour name</comment>
         <translation>19:00</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="160"/>
+        <location filename="../src/engine/rules.cpp" line="162"/>
         <source>You have too many teachers. You need to increase the variable MAX_TEACHERS (which is currently %1).</source>
         <translation>Aveţi prea mulţi profesori. Trebuie să măriţi variabila MAX_TEACHERS (care este acum %1).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="265"/>
+        <location filename="../src/engine/rules.cpp" line="267"/>
         <source>Automatic Subgroup</source>
         <comment>Please keep the translation short. It is used when a group contains no subgroups and an automatic subgroup is added in the group, in the timetable (when viewing the students timetable from FET and also in the html timetables for students subgroups). In the empty group there will be added a subgroup with name = groupName+a space character+your translation of &apos;Automatic Subgroup&apos;.</comment>
         <translation>Subgrup automat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="303"/>
+        <location filename="../src/engine/rules.cpp" line="305"/>
         <source>You have too many total subgroups. You need to increase the variable MAX_TOTAL_SUBGROUPS (which is currently %1).</source>
         <translation>Aveţi prea multe subgrupuri în total. Trebuie să măriţi variabila MAX_TOTAL_SUBGROUPS (care este acum %1).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="317"/>
+        <location filename="../src/engine/rules.cpp" line="319"/>
         <source>You have too many active activities. You need to increase the variable MAX_ACTIVITIES (which is currently %1).</source>
         <translation>Aveţi prea multe activităţi active. Trebuie să măriţi variabila MAX_ACTIVITIES (care este acum %1).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="324"/>
+        <location filename="../src/engine/rules.cpp" line="326"/>
         <source>You have too many buildings. You need to increase the variable MAX_BUILDINGS (which is currently %1).</source>
         <translation>Aveţi prea multe clădiri. Trebuie să măriţi variabila MAX_BUILDINGS (care este acum %1).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="331"/>
+        <location filename="../src/engine/rules.cpp" line="333"/>
         <source>You have too many rooms. You need to increase the variable MAX_ROOMS (which is currently %1).</source>
         <translation>Aveţi prea multe săli. Trebuie să măriţi variabila MAX_ROOMS (care este acum %1).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="457"/>
+        <location filename="../src/engine/rules.cpp" line="459"/>
         <source>Computing internal structure</source>
         <comment>Title of a progress dialog</comment>
         <translation>Calculez structura internă</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="732"/>
+        <location filename="../src/engine/rules.cpp" line="734"/>
         <source>All &apos;group activities in the initial order for timetable generation&apos; items should contain at least two activities ids. This is not true for item number %1. Please report potential bug.</source>
         <translation>Toate elementele &apos;grupează activităţile în ordinea iniţială pentru generarea orarului&apos; trebuie să conţină cel puţin două id-uri de activităţi. Acest lucru nu este respectat pentru elementul numărul %1. Vă rog raportaţi potenţiala eroare.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2295"/>
-        <location filename="../src/engine/rules.cpp" line="2340"/>
+        <location filename="../src/engine/rules.cpp" line="2433"/>
         <source>Activity with Id=%1 contains %2 duplicate teachers - please correct that</source>
         <translation>Activitatea cu Id=%1 conţine %2 profesori duplicat - vă rog corectaţi aceasta</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2300"/>
-        <location filename="../src/engine/rules.cpp" line="2345"/>
+        <location filename="../src/engine/rules.cpp" line="2438"/>
         <source>Activity with Id=%1 contains %2 duplicate students sets - please correct that</source>
         <translation>Activitatea cu Id=%1 conţine %2 seturi de studenţi duplicat - vă rog corectaţi aceasta</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2305"/>
-        <location filename="../src/engine/rules.cpp" line="2350"/>
+        <location filename="../src/engine/rules.cpp" line="2443"/>
         <source>Activity with Id=%1 contains %2 duplicate activity tags - please correct that</source>
         <translation>Activitatea cu Id=%1 conţine %2 etichete activitate duplicat - vă rog corectaţi aceasta</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2388"/>
+        <location filename="../src/engine/rules.cpp" line="2569"/>
         <source>Activities with group_Id=%1 contain %2 duplicate teachers - please correct that</source>
         <translation>Activităţile cu Id grup=%1 conţin %2 profesori duplicat - vă rog corectaţi aceasta</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2393"/>
+        <location filename="../src/engine/rules.cpp" line="2574"/>
         <source>Activities with group_Id=%1 contain %2 duplicate students sets - please correct that</source>
         <translation>Activităţile cu Id grup=%1 conţin %2 seturi de studenţi duplicat - vă rog corectaţi aceasta</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2398"/>
+        <location filename="../src/engine/rules.cpp" line="2579"/>
         <source>Activities with group_Id=%1 contain %2 duplicate activity tags - please correct that</source>
         <translation>Activităţile cu Id grup=%1 conţin %2 etichete activitate duplicat - vă rog corectaţi aceasta</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4792"/>
-        <source>Minor problem found and corrected: year %1 has different number of students in two places (%2 and %3)</source>
-        <comment>%2 and %3 are number of students</comment>
-        <translation>Problemă minoră găsită şi corectată: anul %1 are număr diferit de studenţi în două locuri (%2 şi %3)</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4796"/>
-        <source>Explanation: this is a minor problem, which appears if using overlapping students set, due to a bug in FET previous to version %1. FET will now correct this problem by setting the number of students for this year, in all places where it appears, to the number that was found in the first appearance (%2). It is advisable to check the number of students for this year.</source>
-        <translation>Explicaţie: aceasta este o problemă minoră, care apare dacă folosiţi seturi de studenţi care se suprapun, din cauza unei erori FET dinainte de versiunea %1. FET va corecta acum această problemă setând numărul de studenţi pentru acest an, în toate locurile în care apare, la numărul care a fost găsit la prima apariţie (%2). Este recomandat să verificaţi numărul de studenţi pentru acest an.</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4815"/>
-        <source>Minor problem found and corrected: group %1 has different number of students in two places (%2 and %3)</source>
-        <comment>%2 and %3 are number of students</comment>
-        <translation>Problemă minoră găsită şi corectată: grupul %1 are număr diferit de studenţi în două locuri (%2 şi %3)</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4819"/>
-        <source>Explanation: this is a minor problem, which appears if using overlapping students set, due to a bug in FET previous to version %1. FET will now correct this problem by setting the number of students for this group, in all places where it appears, to the number that was found in the first appearance (%2). It is advisable to check the number of students for this group.</source>
-        <translation>Explicaţie: aceasta este o problemă minoră, care apare dacă folosiţi seturi de studenţi care se suprapun, din cauza unei erori FET dinainte de versiunea %1. FET va corecta acum această problemă setând numărul de studenţi pentru acest grup, în toate locurile în care apare, la numărul care a fost găsit la prima apariţie (%2). Este recomandat să verificaţi numărul de studenţi pentru acest grup.</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4838"/>
-        <source>Minor problem found and corrected: subgroup %1 has different number of students in two places (%2 and %3)</source>
-        <comment>%2 and %3 are number of students</comment>
-        <translation>Problemă minoră găsită şi corectată: subgrupul %1 are număr diferit de studenţi în două locuri (%2 şi %3)</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4842"/>
-        <source>Explanation: this is a minor problem, which appears if using overlapping students set, due to a bug in FET previous to version %1. FET will now correct this problem by setting the number of students for this subgroup, in all places where it appears, to the number that was found in the first appearance (%2). It is advisable to check the number of students for this subgroup.</source>
-        <translation>Explicaţie: aceasta este o problemă minoră, care apare dacă folosiţi seturi de studenţi care se suprapun, din cauza unei erori FET dinainte de versiunea %1. FET va corecta acum această problemă setând numărul de studenţi pentru acest subgrup, în toate locurile în care apare, la numărul care a fost găsit la prima apariţie (%2). Este recomandat să verificaţi numărul de studenţi pentru acest subgrup.</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4973"/>
+        <location filename="../src/engine/rules.cpp" line="5262"/>
         <source>Found activity active tag which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The activity will be considered not active</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Am găsit etichetă activă a activităţii care nu este &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; sau &apos;0&apos;. Activitatea va fi considerată inactivă</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5113"/>
+        <location filename="../src/engine/rules.cpp" line="5402"/>
         <source>File contains deprecated equipments list - will be ignored</source>
         <translation>Fişierul conţine lista de echipamente - depreciată - va fi ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5145"/>
+        <location filename="../src/engine/rules.cpp" line="5434"/>
         <source>Duplicate building %1 found - ignoring</source>
         <translation>Clădire duplicat %1 întâlnită - este ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5216"/>
+        <location filename="../src/engine/rules.cpp" line="5507"/>
         <source>Duplicate room %1 found - ignoring</source>
         <translation>Sală duplicat %1 întâlnită - este ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5271"/>
+        <location filename="../src/engine/rules.cpp" line="5564"/>
         <source>File contains constraint teacher not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint teacher not available times (a matrix).</source>
         <translation>Fişierul dvs. conţine constrângere profesor indisponibil, care este veche (a fost îmbunătăţită în FET 5.5.0) şi va fi convertită la o constrângere similară, constrângerea profesor timpi de indisponibilitate (o matrice).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5318"/>
+        <location filename="../src/engine/rules.cpp" line="5611"/>
         <source>File contains constraint students set not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set not available times (a matrix).</source>
         <translation>Fişierul dvs. conţine constrângere set de studenţi indisponibil, care este veche (a fost îmbunătăţită în FET 5.5.0) şi va fi convertită la o constrângere similară, constrângerea set de studenţi timpi de indisponibilitate (o matrice).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5390"/>
+        <location filename="../src/engine/rules.cpp" line="5683"/>
         <source>File contains deprecated constraint teachers subgroups max hours daily - will be ignored
 </source>
         <translation>Fişierul conţine constrângerea profesori subgrupuri max ore zilnic - depreciată - va fi ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5401"/>
+        <location filename="../src/engine/rules.cpp" line="5694"/>
         <source>File contains deprecated constraint students n hours daily - will be ignored
 </source>
         <translation>Fişierul conţine constrângerea studenţi n ore zilnic - depreciată - va fi ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5412"/>
+        <location filename="../src/engine/rules.cpp" line="5705"/>
         <source>File contains deprecated constraint students set n hours daily - will be ignored
 </source>
         <translation>Fişierul conţine constrângerea set de studenţi n ore zilnic - depreciată - va fi ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5456"/>
+        <location filename="../src/engine/rules.cpp" line="5749"/>
         <source>File contains old constraint type activity preferred time, which will be converted to the newer similar constraint of this type, constraint activity preferred STARTING time. This improvement is done in versions 5.5.9 and above</source>
         <translation>Fişierul conţine constrângerea veche de tip activitate timp preferat, care va fi convertită la noua constrângere similară de acest tip, constrângere activitate timp preferat DE START. Această îmbunătăţire este făcută în versiunile 5.5.9 şi mai mari</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5506"/>
+        <location filename="../src/engine/rules.cpp" line="5799"/>
         <source>File contains deprecated constraint activity ends day - will be ignored
 </source>
         <translation>Fişierul conţine constrângerea activitate încheie ziua - depreciată - va fi ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5518"/>
+        <location filename="../src/engine/rules.cpp" line="5811"/>
         <source>Your file contains old constraint activity preferred times, which will be converted to new equivalent constraint activity preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of an activity (constraint activity preferred starting times) or: 2. the accepted time slots (constraint activity preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
         <translation>Fişierul dvs. conţine constrângerea veche activitate timpi preferaţi, care va fi convertită la noua constrângere echivalentă activitate timpi de start preferaţi. Începând cu FET-5.5.9 este posibil să specificaţi: 1. timpii de start ai unei activităţi (constrângere activitate timpi de start preferaţi) sau: 2. sloturile de timp acceptate (constrângere activitate sloturi de timp preferate). Dacă aveţi nevoie de tipul 2 al acestei constrângeri, trebuie să o adăugaţi dumneavoastră din interfaţa.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5539"/>
+        <location filename="../src/engine/rules.cpp" line="5832"/>
         <source>File contains constraint break, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint break times (a matrix).</source>
         <translation>Fişierul dvs. conţine constrângere pauză, care este veche (a fost îmbunătăţită în FET 5.5.0) şi va fi convertită la o constrângere similară, constrângerea timpi de pauză (o matrice).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5569"/>
+        <location filename="../src/engine/rules.cpp" line="5862"/>
         <source>File contains constraint students no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation>Fişierul dvs. conţine constrângerea studenţi fără ferestre, care este veche (a fost îmbunătăţită în FET 5.5.0) şi va fi convertită la o constrângere similară, constrângere studenţi max ferestre pe săptămână, cu max ferestre=0. Dacă vreţi, puteţi modifica această constrângere pentru a permite mai multe ferestre pe săptămână (normal neacceptat în şcoli)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5583"/>
+        <location filename="../src/engine/rules.cpp" line="5876"/>
         <source>File contains constraint students set no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation>Fişierul dvs. conţine constrângerea set de studenţi fără ferestre, care este veche (a fost îmbunătăţită în FET 5.5.0) şi va fi convertită la o constrângere similară, constrângere set de studenţi max ferestre pe săptămână, cu max ferestre=0. Dacă vreţi, puteţi modifica această constrângere pentru a permite mai multe ferestre pe săptămână (normal neacceptat în şcoli)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5611"/>
+        <location filename="../src/engine/rules.cpp" line="5904"/>
         <source>File contains constraint students early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation>Fişierul dvs. conţine constrângere studenţi devreme, care este veche (a fost îmbunătăţită în FET 5.5.0) şi va fi convertită la o constrângere similară de acest tip, constrângere studenţi devreme max începeri la ora a doua, cu max începeri=0. Dacă doriţi, puteţi modifica această constrângere pentru a permite mai multe începuturi la ora a doua (peste 0, aceasta va face orarul mai uşor)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5628"/>
+        <location filename="../src/engine/rules.cpp" line="5921"/>
         <source>File contains constraint students set early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation>Fişierul dvs. conţine constrângere set de studenţi devreme, care este veche (a fost îmbunătăţită în FET 5.5.0) şi va fi convertită la o constrângere similară de acest tip, constrângere set de studenţi devreme max începeri la ora a doua, cu max începeri=0. Dacă doriţi, puteţi modifica această constrângere pentru a permite mai multe începuturi la ora a doua (peste 0, aceasta va face orarul mai uşor)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5645"/>
+        <location filename="../src/engine/rules.cpp" line="5938"/>
         <source>Your file contains old constraint activities preferred times, which will be converted to new equivalent constraint activities preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of several activities (constraint activities preferred starting times) or: 2. the accepted time slots (constraint activities preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
         <translation>Fişierul dvs. conţine constrângerea veche activităţi timpi preferaţi, care va fi convertită la noua constrângere echivalentă activităţi timpi de start preferaţi. Începând cu FET-5.5.9 este posibil să specificaţi: 1. timpii de start ai unor activităţi (constrângere activităţi timpi de start preferaţi) sau: 2. sloturile de timp acceptate (constrângere activităţi sloturi de timp preferate). Dacă aveţi nevoie de tipul 2 al acestei constrângeri, trebuie să o adăugaţi dumneavoastră din interfaţă.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5683"/>
+        <location filename="../src/engine/rules.cpp" line="5976"/>
         <source>File contains deprecated constraint teachers subject tags max hours continuously - will be ignored
 </source>
         <translation>Fişierul conţine constrângerea profesori etichete disciplină max ore continuu - depreciată - va fi ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5694"/>
+        <location filename="../src/engine/rules.cpp" line="5987"/>
         <source>File contains deprecated constraint teachers subject tag max hours continuously - will be ignored
 </source>
         <translation>Fişierul conţine constrângerea profesori etichetă disciplină max ore continuu - depreciată - va fi ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5715"/>
-        <location filename="../src/engine/rules.cpp" line="6004"/>
+        <location filename="../src/engine/rules.cpp" line="6008"/>
+        <location filename="../src/engine/rules.cpp" line="6297"/>
         <source>Constraint
 %1
 not added - must be a duplicate</source>
@@ -45542,360 +45467,360 @@ not added - must be a duplicate</source>
 neadăugată - trebuie să fie un duplicat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5744"/>
+        <location filename="../src/engine/rules.cpp" line="6037"/>
         <source>File contains constraint room not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint room not available times (a matrix).</source>
         <translation>Fişierul dvs. conţine constrângere sală indisponibilă, care este veche (a fost îmbunătăţită în FET 5.5.0) şi va fi convertită la o constrângere similară, constrângerea sală timpi de indisponibilitate (o matrice).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5759"/>
+        <location filename="../src/engine/rules.cpp" line="6052"/>
         <source>File contains deprecated constraint room type not allowed subjects - will be ignored
 </source>
         <translation>Fişierul conţine constrângerea tip de sală discipline nepermise - depreciată - va fi ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5771"/>
+        <location filename="../src/engine/rules.cpp" line="6064"/>
         <source>File contains deprecated constraint subject requires equipments - will be ignored
 </source>
         <translation>Fişierul conţine constrângerea disciplină necesită echipamente - depreciată - va fi ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5784"/>
+        <location filename="../src/engine/rules.cpp" line="6077"/>
         <source>File contains deprecated constraint subject tag requires equipments - will be ignored
 </source>
         <translation>Fişierul conţine constrângerea etichetă disciplină necesită echipamente - depreciată - va fi ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5796"/>
+        <location filename="../src/engine/rules.cpp" line="6089"/>
         <source>File contains deprecated constraint teacher requires room - will be ignored
 </source>
         <translation>Fişierul conţine constrângerea profesor necesită sală - depreciată - va fi ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5808"/>
+        <location filename="../src/engine/rules.cpp" line="6101"/>
         <source>File contains deprecated constraint teacher subject require room - will be ignored
 </source>
         <translation>Fişierul conţine constrângerea profesor disciplină necesită sală - depreciată - va fi ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5820"/>
+        <location filename="../src/engine/rules.cpp" line="6113"/>
         <source>File contains deprecated constraint minimize number of rooms for students - will be ignored
 </source>
         <translation>Fişierul conţine constrângerea minimizează numărul de săli pentru studenţi - depreciată - va fi ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5832"/>
+        <location filename="../src/engine/rules.cpp" line="6125"/>
         <source>File contains deprecated constraint minimize number of rooms for teachers - will be ignored
 </source>
         <translation>Fişierul conţine constrângerea minimizează numărul de săli pentru profesori - depreciată - va fi ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5850"/>
+        <location filename="../src/engine/rules.cpp" line="6143"/>
         <source>File contains deprecated constraint activities same room - will be ignored
 </source>
         <translation>Fişierul conţine constrângerea activităţi aceeaşi sală - depreciată - va fi ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5899"/>
+        <location filename="../src/engine/rules.cpp" line="6192"/>
         <source>File contains deprecated constraint max building changes per day for teachers - will be ignored
 </source>
         <translation>Fişierul conţine constrângerea max schimbări de clădire pe zi pentru profesori - depreciată - va fi ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5911"/>
+        <location filename="../src/engine/rules.cpp" line="6204"/>
         <source>File contains deprecated constraint max building changes per day for students - will be ignored
 </source>
         <translation>Fişierul conţine constrângerea max schimbări de clădire pe zi pentru studenţi - depreciată - va fi ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5923"/>
+        <location filename="../src/engine/rules.cpp" line="6216"/>
         <source>File contains deprecated constraint max room changes per day for teachers - will be ignored
 </source>
         <translation>Fişierul conţine constrângerea max schimbări de sală pe zi pentru profesori - depreciată - va fi ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5935"/>
+        <location filename="../src/engine/rules.cpp" line="6228"/>
         <source>File contains deprecated constraint max room changes per day for students - will be ignored
 </source>
         <translation>Fişierul conţine constrângerea max schimbări de sală pe zi pentru studenţi - depreciată - va fi ignorată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6056"/>
-        <location filename="../src/engine/rules.cpp" line="6817"/>
-        <location filename="../src/engine/rules.cpp" line="7858"/>
-        <location filename="../src/engine/rules.cpp" line="7965"/>
-        <location filename="../src/engine/rules.cpp" line="8104"/>
-        <location filename="../src/engine/rules.cpp" line="8194"/>
-        <location filename="../src/engine/rules.cpp" line="8249"/>
-        <location filename="../src/engine/rules.cpp" line="8319"/>
-        <location filename="../src/engine/rules.cpp" line="8389"/>
-        <location filename="../src/engine/rules.cpp" line="8459"/>
-        <location filename="../src/engine/rules.cpp" line="8510"/>
-        <location filename="../src/engine/rules.cpp" line="10724"/>
-        <location filename="../src/engine/rules.cpp" line="10863"/>
-        <location filename="../src/engine/rules.cpp" line="11002"/>
-        <location filename="../src/engine/rules.cpp" line="11266"/>
-        <location filename="../src/engine/rules.cpp" line="12287"/>
-        <location filename="../src/engine/rules.cpp" line="12457"/>
-        <location filename="../src/engine/rules.cpp" line="12627"/>
-        <location filename="../src/engine/rules.cpp" line="12804"/>
-        <location filename="../src/engine/rules.cpp" line="12980"/>
-        <location filename="../src/engine/rules.cpp" line="13110"/>
-        <location filename="../src/engine/rules.cpp" line="13117"/>
-        <location filename="../src/engine/rules.cpp" line="13250"/>
-        <location filename="../src/engine/rules.cpp" line="13257"/>
-        <location filename="../src/engine/rules.cpp" line="13596"/>
-        <location filename="../src/engine/rules.cpp" line="13797"/>
-        <location filename="../src/engine/rules.cpp" line="13925"/>
-        <location filename="../src/engine/rules.cpp" line="14063"/>
-        <location filename="../src/engine/rules.cpp" line="14201"/>
-        <location filename="../src/engine/rules.cpp" line="14292"/>
-        <location filename="../src/engine/rules.cpp" line="14382"/>
-        <location filename="../src/engine/rules.cpp" line="14472"/>
-        <location filename="../src/engine/rules.cpp" line="14954"/>
-        <location filename="../src/engine/rules.cpp" line="15008"/>
+        <location filename="../src/engine/rules.cpp" line="6349"/>
+        <location filename="../src/engine/rules.cpp" line="7110"/>
+        <location filename="../src/engine/rules.cpp" line="8151"/>
+        <location filename="../src/engine/rules.cpp" line="8258"/>
+        <location filename="../src/engine/rules.cpp" line="8397"/>
+        <location filename="../src/engine/rules.cpp" line="8487"/>
+        <location filename="../src/engine/rules.cpp" line="8542"/>
+        <location filename="../src/engine/rules.cpp" line="8612"/>
+        <location filename="../src/engine/rules.cpp" line="8682"/>
+        <location filename="../src/engine/rules.cpp" line="8752"/>
+        <location filename="../src/engine/rules.cpp" line="8803"/>
+        <location filename="../src/engine/rules.cpp" line="11017"/>
+        <location filename="../src/engine/rules.cpp" line="11156"/>
+        <location filename="../src/engine/rules.cpp" line="11295"/>
+        <location filename="../src/engine/rules.cpp" line="11559"/>
+        <location filename="../src/engine/rules.cpp" line="12580"/>
+        <location filename="../src/engine/rules.cpp" line="12750"/>
+        <location filename="../src/engine/rules.cpp" line="12920"/>
+        <location filename="../src/engine/rules.cpp" line="13097"/>
+        <location filename="../src/engine/rules.cpp" line="13273"/>
+        <location filename="../src/engine/rules.cpp" line="13403"/>
+        <location filename="../src/engine/rules.cpp" line="13410"/>
+        <location filename="../src/engine/rules.cpp" line="13543"/>
+        <location filename="../src/engine/rules.cpp" line="13550"/>
+        <location filename="../src/engine/rules.cpp" line="13889"/>
+        <location filename="../src/engine/rules.cpp" line="14090"/>
+        <location filename="../src/engine/rules.cpp" line="14218"/>
+        <location filename="../src/engine/rules.cpp" line="14356"/>
+        <location filename="../src/engine/rules.cpp" line="14494"/>
+        <location filename="../src/engine/rules.cpp" line="14585"/>
+        <location filename="../src/engine/rules.cpp" line="14675"/>
+        <location filename="../src/engine/rules.cpp" line="14765"/>
+        <location filename="../src/engine/rules.cpp" line="15247"/>
+        <location filename="../src/engine/rules.cpp" line="15301"/>
         <source>%1 does not coincide with the number of read %2</source>
         <translation>%1 nu coincide cu numărul de %2 citite</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6110"/>
+        <location filename="../src/engine/rules.cpp" line="6403"/>
         <source>Saving of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space</source>
         <translation>Salvarea logului a dat codul de eroare %1, ceea ce înseamnă că nu puteţi vedea logul citirii fişierului. Vă rog verificaţi spaţiul liber al discului dvs</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6153"/>
+        <location filename="../src/engine/rules.cpp" line="6446"/>
         <source>Cannot open %1 for writing ... please check write permissions of the selected directory or your disk free space. Saving of file aborted</source>
         <translation>Nu pot deschide %1 pentru scriere ... vă rog verificaţi permisiunile de scriere ale directorului selectat sau spaţiul liber al discului dvs. Salvarea fişierului abandonată</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6279"/>
+        <location filename="../src/engine/rules.cpp" line="6572"/>
         <source>Saved file gave error code %1, which means saving is compromised. Please check your disk free space</source>
         <translation>Fişierul salvat a dat codul de eroare %1, ceea ce înseamnă că salvarea este compromisă. Vă rog verificaţi spaţiul liber al fişierului dvs</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6557"/>
-        <location filename="../src/engine/rules.cpp" line="7600"/>
-        <location filename="../src/engine/rules.cpp" line="11026"/>
+        <location filename="../src/engine/rules.cpp" line="6850"/>
+        <location filename="../src/engine/rules.cpp" line="7893"/>
+        <location filename="../src/engine/rules.cpp" line="11319"/>
         <source>Weight percentage incorrect</source>
         <translation>Importanţa procentuală este incorectă</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6579"/>
-        <location filename="../src/engine/rules.cpp" line="6753"/>
-        <location filename="../src/engine/rules.cpp" line="7622"/>
-        <location filename="../src/engine/rules.cpp" line="7794"/>
-        <location filename="../src/engine/rules.cpp" line="9792"/>
-        <location filename="../src/engine/rules.cpp" line="9970"/>
-        <location filename="../src/engine/rules.cpp" line="10665"/>
-        <location filename="../src/engine/rules.cpp" line="10803"/>
-        <location filename="../src/engine/rules.cpp" line="10942"/>
-        <location filename="../src/engine/rules.cpp" line="11048"/>
-        <location filename="../src/engine/rules.cpp" line="11210"/>
-        <location filename="../src/engine/rules.cpp" line="12221"/>
-        <location filename="../src/engine/rules.cpp" line="12391"/>
-        <location filename="../src/engine/rules.cpp" line="12561"/>
-        <location filename="../src/engine/rules.cpp" line="12738"/>
-        <location filename="../src/engine/rules.cpp" line="12914"/>
-        <location filename="../src/engine/rules.cpp" line="13046"/>
-        <location filename="../src/engine/rules.cpp" line="13186"/>
-        <location filename="../src/engine/rules.cpp" line="13208"/>
-        <location filename="../src/engine/rules.cpp" line="13365"/>
-        <location filename="../src/engine/rules.cpp" line="13532"/>
+        <location filename="../src/engine/rules.cpp" line="6872"/>
+        <location filename="../src/engine/rules.cpp" line="7046"/>
+        <location filename="../src/engine/rules.cpp" line="7915"/>
+        <location filename="../src/engine/rules.cpp" line="8087"/>
+        <location filename="../src/engine/rules.cpp" line="10085"/>
+        <location filename="../src/engine/rules.cpp" line="10263"/>
+        <location filename="../src/engine/rules.cpp" line="10958"/>
+        <location filename="../src/engine/rules.cpp" line="11096"/>
+        <location filename="../src/engine/rules.cpp" line="11235"/>
+        <location filename="../src/engine/rules.cpp" line="11341"/>
+        <location filename="../src/engine/rules.cpp" line="11503"/>
+        <location filename="../src/engine/rules.cpp" line="12514"/>
+        <location filename="../src/engine/rules.cpp" line="12684"/>
+        <location filename="../src/engine/rules.cpp" line="12854"/>
+        <location filename="../src/engine/rules.cpp" line="13031"/>
+        <location filename="../src/engine/rules.cpp" line="13207"/>
+        <location filename="../src/engine/rules.cpp" line="13339"/>
+        <location filename="../src/engine/rules.cpp" line="13479"/>
+        <location filename="../src/engine/rules.cpp" line="13501"/>
+        <location filename="../src/engine/rules.cpp" line="13658"/>
+        <location filename="../src/engine/rules.cpp" line="13825"/>
         <source>Day %1 is inexistent</source>
         <translation>Ziua %1 este inexistentă</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6598"/>
-        <location filename="../src/engine/rules.cpp" line="7640"/>
-        <location filename="../src/engine/rules.cpp" line="11065"/>
-        <location filename="../src/engine/rules.cpp" line="13383"/>
+        <location filename="../src/engine/rules.cpp" line="6891"/>
+        <location filename="../src/engine/rules.cpp" line="7933"/>
+        <location filename="../src/engine/rules.cpp" line="11358"/>
+        <location filename="../src/engine/rules.cpp" line="13676"/>
         <source>Hour %1 is the last hour - impossible</source>
         <translation>Ora %1 este ultima oră - imposibil</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6602"/>
-        <location filename="../src/engine/rules.cpp" line="6625"/>
-        <location filename="../src/engine/rules.cpp" line="6774"/>
-        <location filename="../src/engine/rules.cpp" line="7103"/>
-        <location filename="../src/engine/rules.cpp" line="7219"/>
-        <location filename="../src/engine/rules.cpp" line="7420"/>
-        <location filename="../src/engine/rules.cpp" line="7535"/>
-        <location filename="../src/engine/rules.cpp" line="7644"/>
-        <location filename="../src/engine/rules.cpp" line="7666"/>
-        <location filename="../src/engine/rules.cpp" line="7815"/>
-        <location filename="../src/engine/rules.cpp" line="9811"/>
-        <location filename="../src/engine/rules.cpp" line="9989"/>
-        <location filename="../src/engine/rules.cpp" line="10688"/>
-        <location filename="../src/engine/rules.cpp" line="10826"/>
-        <location filename="../src/engine/rules.cpp" line="10965"/>
-        <location filename="../src/engine/rules.cpp" line="11069"/>
-        <location filename="../src/engine/rules.cpp" line="11090"/>
-        <location filename="../src/engine/rules.cpp" line="11230"/>
-        <location filename="../src/engine/rules.cpp" line="12247"/>
-        <location filename="../src/engine/rules.cpp" line="12417"/>
-        <location filename="../src/engine/rules.cpp" line="12587"/>
-        <location filename="../src/engine/rules.cpp" line="12764"/>
-        <location filename="../src/engine/rules.cpp" line="12940"/>
-        <location filename="../src/engine/rules.cpp" line="13068"/>
-        <location filename="../src/engine/rules.cpp" line="13387"/>
-        <location filename="../src/engine/rules.cpp" line="13409"/>
-        <location filename="../src/engine/rules.cpp" line="13553"/>
+        <location filename="../src/engine/rules.cpp" line="6895"/>
+        <location filename="../src/engine/rules.cpp" line="6918"/>
+        <location filename="../src/engine/rules.cpp" line="7067"/>
+        <location filename="../src/engine/rules.cpp" line="7396"/>
+        <location filename="../src/engine/rules.cpp" line="7512"/>
+        <location filename="../src/engine/rules.cpp" line="7713"/>
+        <location filename="../src/engine/rules.cpp" line="7828"/>
+        <location filename="../src/engine/rules.cpp" line="7937"/>
+        <location filename="../src/engine/rules.cpp" line="7959"/>
+        <location filename="../src/engine/rules.cpp" line="8108"/>
+        <location filename="../src/engine/rules.cpp" line="10104"/>
+        <location filename="../src/engine/rules.cpp" line="10282"/>
+        <location filename="../src/engine/rules.cpp" line="10981"/>
+        <location filename="../src/engine/rules.cpp" line="11119"/>
+        <location filename="../src/engine/rules.cpp" line="11258"/>
+        <location filename="../src/engine/rules.cpp" line="11362"/>
+        <location filename="../src/engine/rules.cpp" line="11383"/>
+        <location filename="../src/engine/rules.cpp" line="11523"/>
+        <location filename="../src/engine/rules.cpp" line="12540"/>
+        <location filename="../src/engine/rules.cpp" line="12710"/>
+        <location filename="../src/engine/rules.cpp" line="12880"/>
+        <location filename="../src/engine/rules.cpp" line="13057"/>
+        <location filename="../src/engine/rules.cpp" line="13233"/>
+        <location filename="../src/engine/rules.cpp" line="13361"/>
+        <location filename="../src/engine/rules.cpp" line="13680"/>
+        <location filename="../src/engine/rules.cpp" line="13702"/>
+        <location filename="../src/engine/rules.cpp" line="13846"/>
         <source>Hour %1 is inexistent</source>
         <translation>Ora %1 este inexistentă</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6621"/>
-        <location filename="../src/engine/rules.cpp" line="7662"/>
-        <location filename="../src/engine/rules.cpp" line="11086"/>
-        <location filename="../src/engine/rules.cpp" line="13405"/>
+        <location filename="../src/engine/rules.cpp" line="6914"/>
+        <location filename="../src/engine/rules.cpp" line="7955"/>
+        <location filename="../src/engine/rules.cpp" line="11379"/>
+        <location filename="../src/engine/rules.cpp" line="13698"/>
         <source>Hour %1 is the first hour - impossible</source>
         <translation>Ora %1 este prima oră - imposibil</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6653"/>
-        <location filename="../src/engine/rules.cpp" line="6657"/>
-        <location filename="../src/engine/rules.cpp" line="6661"/>
-        <location filename="../src/engine/rules.cpp" line="7693"/>
-        <location filename="../src/engine/rules.cpp" line="7697"/>
-        <location filename="../src/engine/rules.cpp" line="7701"/>
-        <location filename="../src/engine/rules.cpp" line="11111"/>
-        <location filename="../src/engine/rules.cpp" line="11115"/>
-        <location filename="../src/engine/rules.cpp" line="11119"/>
-        <location filename="../src/engine/rules.cpp" line="13432"/>
-        <location filename="../src/engine/rules.cpp" line="13436"/>
-        <location filename="../src/engine/rules.cpp" line="13440"/>
+        <location filename="../src/engine/rules.cpp" line="6946"/>
+        <location filename="../src/engine/rules.cpp" line="6950"/>
+        <location filename="../src/engine/rules.cpp" line="6954"/>
+        <location filename="../src/engine/rules.cpp" line="7986"/>
+        <location filename="../src/engine/rules.cpp" line="7990"/>
+        <location filename="../src/engine/rules.cpp" line="7994"/>
+        <location filename="../src/engine/rules.cpp" line="11404"/>
+        <location filename="../src/engine/rules.cpp" line="11408"/>
+        <location filename="../src/engine/rules.cpp" line="11412"/>
+        <location filename="../src/engine/rules.cpp" line="13725"/>
+        <location filename="../src/engine/rules.cpp" line="13729"/>
+        <location filename="../src/engine/rules.cpp" line="13733"/>
         <source>Field missing: %1</source>
         <translation>Lipseşte câmpul: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7128"/>
-        <location filename="../src/engine/rules.cpp" line="7244"/>
-        <location filename="../src/engine/rules.cpp" line="7445"/>
-        <location filename="../src/engine/rules.cpp" line="7560"/>
+        <location filename="../src/engine/rules.cpp" line="7421"/>
+        <location filename="../src/engine/rules.cpp" line="7537"/>
+        <location filename="../src/engine/rules.cpp" line="7738"/>
+        <location filename="../src/engine/rules.cpp" line="7853"/>
         <source>Hour %1 is inexistent (it is also not void, to specify end of the day)</source>
         <translation>Ora %1 este inexistentă (de asemenea, nu este vidă, pentru a specifica sfârşitul zilei)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7087"/>
+        <location filename="../src/engine/rules.cpp" line="7380"/>
         <source>Constraint TeacherIntervalMaxDaysPerWeek max days corrupt for teacher %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation>Constrângerea ProfesorIntervalMaxZilePeSăptămână max zile coruptă pentru profesorul %1, max zile %2 &gt;nZilePeSăptămână, constrângerea adăugată, vă rog corectaţi constrângerea</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7203"/>
+        <location filename="../src/engine/rules.cpp" line="7496"/>
         <source>Constraint TeachersIntervalMaxDaysPerWeek max days corrupt, max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation>Constrângerea ProfesoriIntervalMaxZilePeSăptămână max zile coruptă, max zile %1 &gt;nZilePeSăptămână, constrângerea adăugată, vă rog corectaţi constrângerea</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7298"/>
+        <location filename="../src/engine/rules.cpp" line="7591"/>
         <source>Constraint StudentsSetMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation>Constrângere set de studenţi max zile pe săptămână max zile corupte pentru setul de studenţi %1, max zile %2 &gt;n zile pe săptămână, constrângere adăugată, vă rog corectaţi constrângerea</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7338"/>
+        <location filename="../src/engine/rules.cpp" line="7631"/>
         <source>Constraint StudentsMaxDaysPerWeek max days corrupt, max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation>Constrângere studenţi max zile pe săptămână max zile corupte, max zile %1 &gt;n zile pe săptămână, constrângere adăugată, vă rog corectaţi constrângerea</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7520"/>
+        <location filename="../src/engine/rules.cpp" line="7813"/>
         <source>Constraint StudentsIntervalMaxDaysPerWeek max days corrupt: max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation>Constrângerea StudenţiIntervalMaxZilePeSăptămână max zile coruptă, max zile %1 &gt;nZilePeSăptămână, constrângerea adăugată, vă rog corectaţi constrângerea</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7404"/>
+        <location filename="../src/engine/rules.cpp" line="7697"/>
         <source>Constraint StudentsSetIntervalMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation>Constrângerea SetDeStudenţiIntervalMaxZilePeSăptămână max zile coruptă pentru setul de studenţi %1, max zile %2 &gt;nZilePeSăptămână, constrângerea adăugată, vă rog corectaţi constrângerea</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="739"/>
+        <location filename="../src/engine/rules.cpp" line="741"/>
         <source>All &apos;group activities in the initial order for timetable generation&apos; items should have different activities ids. (Each activity id must appear at most once in all the items.) This is not true for item number %1 and activity id %2.</source>
         <translation>Toate elementele &apos;grupează activităţile în ordinea iniţială pentru generarea orarului&apos; trebuie să aibă id-uri de activitate diferite. (Fiecare id activitate trebuie să apară cel mult o dată în toate elementele.) Aceasta nu este adevărat pentru elementul numărul %1 şi activitatea cu id-ul %2.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7909"/>
-        <location filename="../src/engine/rules.cpp" line="8048"/>
+        <location filename="../src/engine/rules.cpp" line="8202"/>
+        <location filename="../src/engine/rules.cpp" line="8341"/>
         <source>Found constraint min days between activities with tag consecutive if same day which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Am găsit constrângerea min zile între activităţi cu etichetă consecutive dacă în aceeaşi zi care nu este &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; sau &apos;0&apos;. Eticheta va fi considerată falsă</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8953"/>
+        <location filename="../src/engine/rules.cpp" line="9246"/>
         <source>Found constraint teachers min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Am găsit constrângerea profesori min ore zilnic cu etichetă permite zile libere care nu este &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; sau &apos;0&apos;. Eticheta va fi considerată falsă</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9030"/>
+        <location filename="../src/engine/rules.cpp" line="9323"/>
         <source>Found constraint teacher min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Am găsit constrângerea profesor min ore zilnic cu etichetă permite zile libere care nu este &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; sau &apos;0&apos;. Eticheta va fi considerată falsă</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4248"/>
-        <location filename="../src/engine/rules.cpp" line="4329"/>
-        <location filename="../src/engine/rules.cpp" line="9105"/>
-        <location filename="../src/engine/rules.cpp" line="9176"/>
-        <location filename="../src/engine/rules.cpp" line="9242"/>
-        <location filename="../src/engine/rules.cpp" line="9313"/>
-        <location filename="../src/engine/rules.cpp" line="9370"/>
-        <location filename="../src/engine/rules.cpp" line="9422"/>
-        <location filename="../src/engine/rules.cpp" line="9479"/>
-        <location filename="../src/engine/rules.cpp" line="9531"/>
-        <location filename="../src/engine/rules.cpp" line="9617"/>
-        <location filename="../src/engine/rules.cpp" line="9708"/>
-        <location filename="../src/engine/rules.cpp" line="11990"/>
-        <location filename="../src/engine/rules.cpp" line="12116"/>
+        <location filename="../src/engine/rules.cpp" line="4429"/>
+        <location filename="../src/engine/rules.cpp" line="4510"/>
+        <location filename="../src/engine/rules.cpp" line="9398"/>
+        <location filename="../src/engine/rules.cpp" line="9469"/>
+        <location filename="../src/engine/rules.cpp" line="9535"/>
+        <location filename="../src/engine/rules.cpp" line="9606"/>
+        <location filename="../src/engine/rules.cpp" line="9663"/>
+        <location filename="../src/engine/rules.cpp" line="9715"/>
+        <location filename="../src/engine/rules.cpp" line="9772"/>
+        <location filename="../src/engine/rules.cpp" line="9824"/>
+        <location filename="../src/engine/rules.cpp" line="9910"/>
+        <location filename="../src/engine/rules.cpp" line="10001"/>
+        <location filename="../src/engine/rules.cpp" line="12283"/>
+        <location filename="../src/engine/rules.cpp" line="12409"/>
         <source>%1 not found</source>
         <translation>%1 negăsit</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9601"/>
+        <location filename="../src/engine/rules.cpp" line="9894"/>
         <source>Found constraint students min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Am găsit constrângerea studenţi min ore zilnic cu etichetă permite zile libere care nu este &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; sau &apos;0&apos;. Eticheta va fi considerată falsă</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9692"/>
+        <location filename="../src/engine/rules.cpp" line="9985"/>
         <source>Found constraint students set min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Am găsit constrângerea set de studenţi min ore zilnic cu etichetă permite zile libere care nu este &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; sau &apos;0&apos;. Eticheta va fi considerată falsă</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9770"/>
-        <location filename="../src/engine/rules.cpp" line="9948"/>
+        <location filename="../src/engine/rules.cpp" line="10063"/>
+        <location filename="../src/engine/rules.cpp" line="10241"/>
         <source>Found constraint activity preferred starting time with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Am găsit constrângerea activitate timp de start preferat cu eticheta permanent blocată care nu este &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; sau &apos;0&apos;. Eticheta va fi considerată falsă</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9833"/>
-        <location filename="../src/engine/rules.cpp" line="10011"/>
+        <location filename="../src/engine/rules.cpp" line="10126"/>
+        <location filename="../src/engine/rules.cpp" line="10304"/>
         <source>Found constraint activity preferred starting time, with unspecified tag &apos;permanently locked&apos; - this tag will be set to &apos;false&apos; by default. You can always modify it by editing the constraint in the &apos;Data&apos; menu</source>
         <translation>Am găsit constrângere activitate timp de start preferat, cu eticheta &apos;permanent blocată&apos; nespecificată - această etichetă va fi setată &apos;fals&apos; predefinit. Puteţi să o modificaţi oricând editând constrângerea în meniul &apos;Date&apos;</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9836"/>
-        <location filename="../src/engine/rules.cpp" line="10014"/>
+        <location filename="../src/engine/rules.cpp" line="10129"/>
+        <location filename="../src/engine/rules.cpp" line="10307"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred starting time has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
         <translation>Explicaţie: începând cu versiunea 5.8.0 (ianuarie 2009), constrângerea activitate timp de start preferat are o nouă etichetă, &apos;permanent blocată&apos; (adevărat sau fals). Este recomandat să faceţi eticheta &apos;permanent blocată&apos; adevărată pentru constrângerile care trebuie să fie ne-modificabile din meniul &apos;Orar&apos; şi să lăsaţi această etichetă falsă pentru constrângerile care trebuie să fie modificabile din meniul &apos;Orar&apos; (această etichetă poate fi modificată editând constrângerea din meniul &apos;Date&apos;). În acest fel, când vizualizaţi orarul şi blocaţi/deblocaţi câteva activităţi, nu veţi debloca constrângerile care trebuie să fie blocate tot timpul.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9855"/>
-        <location filename="../src/engine/rules.cpp" line="10033"/>
+        <location filename="../src/engine/rules.cpp" line="10148"/>
+        <location filename="../src/engine/rules.cpp" line="10326"/>
         <source>Found constraint activity preferred starting time, with unspecified day or hour. This constraint will be transformed into constraint activity preferred starting times (a set of times, not only one). This change is done in FET versions 5.8.1 and higher.</source>
         <translation>Am găsit constrângerea activitate timp de start preferat, cu zi sau oră nespecificată. Această constrângere va fi transformată în constrângere de tip activitate timpi de start preferaţi (un set de timpi, nu unul singur). Această schimbare este făcută în FET versiunile 5.8.1 şi ulterioare.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13656"/>
+        <location filename="../src/engine/rules.cpp" line="13949"/>
         <source>Found constraint activity preferred room with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Am găsit constrângerea activitate sală preferată cu eticheta permanent blocată care nu este &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; sau &apos;0&apos;. Eticheta va fi considerată falsă</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13699"/>
+        <location filename="../src/engine/rules.cpp" line="13992"/>
         <source>Found constraint activity preferred room, with unspecified tag &apos;permanently locked&apos; - this tag will be set to &apos;false&apos; by default. You can always modify it by editing the constraint in the &apos;Data&apos; menu</source>
         <translation>Am găsit constrângere activitate sală preferată, cu eticheta &apos;permanent blocată&apos; nespecificată - această etichetă va fi setată &apos;fals&apos; predefinit. Puteţi să o modificaţi oricând editând constrângerea în meniul &apos;Date&apos;</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13702"/>
+        <location filename="../src/engine/rules.cpp" line="13995"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred room has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
         <translation>Explicaţie: începând cu versiunea 5.8.0 (ianuarie 2009), constrângerea activitate sală preferată are o nouă etichetă, &apos;permanent blocată&apos; (adevărat sau fals). Este recomandat să faceţi eticheta &apos;permanent blocată&apos; adevărată pentru constrângerile care trebuie să fie ne-modificabile din meniul &apos;Orar&apos; şi să lăsaţi această etichetă falsă pentru constrângerile care trebuie să fie modificabile din meniul &apos;Orar&apos; (această etichetă poate fi modificată editând constrângerea din meniul &apos;Date&apos;). În acest fel, când vizualizaţi orarul şi blocaţi/deblocaţi câteva activităţi, nu veţi debloca constrângerile care trebuie să fie blocate tot timpul.</translation>
     </message>
@@ -45954,47 +45879,47 @@ neadăugată - trebuie să fie un duplicat</translation>
 <context>
     <name>SecondMinDaysDialog</name>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="462"/>
+        <location filename="../src/interface/addactivityform.cpp" line="477"/>
         <source>Add a second constraint or not?</source>
         <translation>Adaug a doua constrângere sau nu?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="472"/>
+        <location filename="../src/interface/addactivityform.cpp" line="487"/>
         <source>Yes</source>
         <translation>Da</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="475"/>
+        <location filename="../src/interface/addactivityform.cpp" line="490"/>
         <source>No</source>
         <translation>Nu</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="545"/>
+        <location filename="../src/interface/addactivityform.cpp" line="560"/>
         <source>FET information</source>
         <translation>FET - informaţie</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="546"/>
+        <location filename="../src/interface/addactivityform.cpp" line="561"/>
         <source>Invalid weight (percentage) - must be &gt;=0 and &lt;=100.0</source>
         <translation>Importanţă invalidă (procentaj) - trebuie să fie &gt;=0 şi &lt;=100.0</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="444"/>
+        <location filename="../src/interface/addactivityform.cpp" line="459"/>
         <source>You selected min days between activities %1 (above 1) and weight %2 (under 100.0). Would you like to add also a second constraint to ensure that almost certainly the distance between activities is at least %3 (%1-1) days? If yes, please select weight (recommended 95.0%-100.0%) and click Yes. If no, please click No (only one constraint will be added)</source>
         <translation>Aţi selectat min zile între activităţi %1 (peste 1) şi importanţa %2 (sub 100.0). Aţi vrea să adăugaţi o a doua constrângere pentru a asigura faptul că aproape cert distanţa între activităţi este cel puţin %3 (%1-1) zile? Dacă da, vă rog selectaţi importanţa (recomandat 95%-100%) şi apăsaţi Da. Dacă nu, vă rog apăsaţi Nu (doar o constrângere va fi adăugată)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="460"/>
+        <location filename="../src/interface/addactivityform.cpp" line="475"/>
         <source>Recommended answer is Yes, 95% (or higher).</source>
         <translation>Răspuns recomandat: Da, 95% (sau mai mult).</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="449"/>
+        <location filename="../src/interface/addactivityform.cpp" line="464"/>
         <source>(Yes means to add an additional constraint min %1 days between activities, weight 0.0%-100.0%. If you say Yes, you will have 2 constraints min days added for current activities. Adding the second constraint might lead to impossible timetables if the condition is too tight, but you can remove the second constraint at any time).</source>
         <translation>(Da înseamnă adăugarea unei constrângeri adiţionale min %1 zile între activităţi, importanţă 0.0%-100.0%. Dacă spuneţi Da, veţi avea 2 constrângeri min zile adăugate pentru activităţile curente. Adăugarea celei de-a doua constrângeri ar putea să ducă la orare imposibile dacă condiţia este prea puternică, dar puteţi şterge a doua constrângere în orice moment).</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="454"/>
+        <location filename="../src/interface/addactivityform.cpp" line="469"/>
         <source>Note: 95% is usually enough for min days constraints referring to same activities. The weights are cumulated if referring to the same activities. If you have 2 constraints with say 95% (say min n days and min n-1 days), the min n days constraint is skipped with probability 5%, then min n-1 days constraint is skipped with probability 0.25%=5%*5%, so you&apos;ll get in 99.75% cases the min n-1 days constraint respected.</source>
         <translation>Notă: 95% este de obicei destul pentru constrângerile min zile care se referă la aceleaşi activităţi. Importanţele sunt cumulate dacă se referă la aceleaşi activităţi. Dacă aveţi 2 constrângeri cu să zicem 95% (să zicem min n zile şi min n-1 zile), constrângerea cu min n zile este ocolită cu probabilitatea 5%, apoi constrângerea min n-1 zile este ocolită cu probabilitatea 0.25%=5%*5%, aşa că veţi obţine în 99.75% cazuri constrângerea cu min n-1 zile respectată.</translation>
     </message>
@@ -46147,7 +46072,7 @@ neadăugată - trebuie să fie un duplicat</translation>
         <location filename="../src/interface/splityearform.cpp" line="390"/>
         <location filename="../src/interface/splityearform.cpp" line="417"/>
         <location filename="../src/interface/splityearform.cpp" line="437"/>
-        <location filename="../src/interface/splityearform.cpp" line="655"/>
+        <location filename="../src/interface/splityearform.cpp" line="657"/>
         <source>FET information</source>
         <translation>FET - informaţie</translation>
     </message>
@@ -46155,7 +46080,7 @@ neadăugată - trebuie să fie un duplicat</translation>
         <location filename="../src/interface/splityearform.cpp" line="114"/>
         <location filename="../src/interface/splityearform.cpp" line="289"/>
         <location filename="../src/interface/splityearform.cpp" line="338"/>
-        <location filename="../src/interface/splityearform.cpp" line="541"/>
+        <location filename="../src/interface/splityearform.cpp" line="544"/>
         <source>FET warning</source>
         <translation>FET - avertisment</translation>
     </message>
@@ -46198,8 +46123,8 @@ neadăugată - trebuie să fie un duplicat</translation>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="246"/>
         <location filename="../src/interface/splityearform.cpp" line="274"/>
-        <location filename="../src/interface/splityearform.cpp" line="535"/>
-        <location filename="../src/interface/splityearform.cpp" line="776"/>
+        <location filename="../src/interface/splityearform.cpp" line="538"/>
+        <location filename="../src/interface/splityearform.cpp" line="778"/>
         <source>FET confirmation</source>
         <translation>FET - confirmare</translation>
     </message>
@@ -46214,37 +46139,37 @@ neadăugată - trebuie să fie un duplicat</translation>
         <translation>Chiar doriţi să ştergeţi toate diviziunile din categoria %1?</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="501"/>
+        <location filename="../src/interface/splityearform.cpp" line="504"/>
         <source>Notes:</source>
         <translation>Note:</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="503"/>
+        <location filename="../src/interface/splityearform.cpp" line="506"/>
         <source>Note:</source>
         <translation>Notă:</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="506"/>
+        <location filename="../src/interface/splityearform.cpp" line="509"/>
         <source>To keep a group, you need to keep the corresponding division name and use the same separator(s) character(s).</source>
         <translation>Pentru a menţine un grup, trebuie să menţineţi numele corespunzător al diviziunii şi să folosiţi acel(e)aşi caracter(e) separator(e).</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="513"/>
+        <location filename="../src/interface/splityearform.cpp" line="516"/>
         <source>Read the divide year dialog Help for details.</source>
         <translation>Citiţi Ajutorul dialogului divide an pentru detalii.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="639"/>
+        <location filename="../src/interface/splityearform.cpp" line="641"/>
         <source>There were removed %1 activities, %2 time constraints and %3 space constraints.</source>
         <translation>Au fost şterse %1 activităţi, %2 constrângeri de timp şi %3 constrângeri de spaţiu.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="645"/>
+        <location filename="../src/interface/splityearform.cpp" line="647"/>
         <source>There were removed %1 &apos;group activities in the initial order&apos; items.</source>
         <translation>Au fost şterse %1 elemente &apos;grupează activităţile în ordinea iniţială&apos;.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="655"/>
+        <location filename="../src/interface/splityearform.cpp" line="657"/>
         <source>Split of the year complete, please check the groups and subgroups of the year to make sure that everything is OK.</source>
         <translation>Diviziunea anului s-a încheiat cu succes, vă rog verificaţi grupurile şi subgrupurile acestui an pentru a vă asigura că totul este bine.</translation>
     </message>
@@ -46279,97 +46204,97 @@ neadăugată - trebuie să fie un duplicat</translation>
         <translation>Numele vide nu sunt admise</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="489"/>
+        <location filename="../src/interface/splityearform.cpp" line="492"/>
         <source>WARNING: There are groups and subgroups which will no longer be available and which will be removed, along with the associated activities and constraints. Are you sure? See the list below.</source>
         <translation>AVERTISMENT: Sunt grupuri şi subgrupuri care nu vor mai fi disponibile şi care vor fi şterse, împreună cu activităţile şi constrângerile asociate. Sunteţi sigur? Vedeţi lista de mai jos.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="492"/>
+        <location filename="../src/interface/splityearform.cpp" line="495"/>
         <source>WARNING: There are groups which will no longer be available and which will be removed, along with the associated activities and constraints. Are you sure? See the list below.</source>
         <translation>AVERTISMENT: Sunt grupuri care nu vor mai fi disponibile şi care vor fi şterse, împreună cu activităţile şi constrângerile asociate. Sunteţi sigur? Vedeţi lista de mai jos.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="495"/>
+        <location filename="../src/interface/splityearform.cpp" line="498"/>
         <source>WARNING: There are subgroups which will no longer be available and which will be removed, along with the associated activities and constraints. Are you sure? See the list below.</source>
         <translation>AVERTISMENT: Sunt subgrupuri care nu vor mai fi disponibile şi care vor fi şterse, împreună cu activităţile şi constrângerile asociate. Sunteţi sigur? Vedeţi lista de mai jos.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="510"/>
+        <location filename="../src/interface/splityearform.cpp" line="513"/>
         <source>Probably you can safely ignore the warning about the removal of the subgroups.</source>
         <translation>Probabil că puteţi ignora în siguranţă avertismentul despre ştergerea subgrupurilor.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="521"/>
+        <location filename="../src/interface/splityearform.cpp" line="524"/>
         <source>The following groups will no longer be available:</source>
         <translation>Următoarele grupuri nu vor mai fi disponibile:</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="529"/>
+        <location filename="../src/interface/splityearform.cpp" line="532"/>
         <source>The following subgroups will no longer be available:</source>
         <translation>Următoarele subgrupuri nu vor mai fi disponibile:</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="536"/>
+        <location filename="../src/interface/splityearform.cpp" line="539"/>
         <source>Yes</source>
         <translation>Da</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="536"/>
+        <location filename="../src/interface/splityearform.cpp" line="539"/>
         <source>No</source>
         <translation>Nu</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="541"/>
+        <location filename="../src/interface/splityearform.cpp" line="544"/>
         <source>Year %1 will be split again. All groups and subgroups of this year which will no longer exist (listed before) and the associated activities and constraints will be removed. Are you absolutely sure?</source>
         <translation>Anul %1 va fi împărţit din nou. Toate grupurile şi subgrupurile acestui an care nu mai există (listate mai devreme) şi activităţile şi constrângerile asociate vor fi şterse. Sunteţi absolut sigur?</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="686"/>
+        <location filename="../src/interface/splityearform.cpp" line="688"/>
         <source>Please choose a number of categories and in each category the number of divisions. You can choose for instance 3 categories, 5 divisions for the first category: a, b, c, d and e, 2 divisions for the second category: boys and girls, and 3 divisions for the third: English, German and French.</source>
         <translation>Vă rog alegeţi un număr de categorii şi în fiecare categorie numărul de diviziuni. Puteţi alege de exemplu 3 categorii, 5 diviziuni pentru prima categorie: a, b, c, d şi e, 2 diviziuni pentru a doua categorie: băieţi şi fete, şi 3 diviziuni pentru a treia: engleză, germană şi franceză.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="700"/>
+        <location filename="../src/interface/splityearform.cpp" line="702"/>
         <source>If your number of subgroups is reasonable, probably you need not worry about empty subgroups (regarding speed of generation). But more tests need to be done. You just need to know that for the moment the maximum total number of subgroups is %1 (which can be changed, but nobody needed larger values)</source>
         <translation>Dacă numărul de subgrupuri este rezonabil, probabil că nu trebuie să vă îngrijoraţi de subgrupurile vide (în legătură cu viteza de generare). Dar mai multe teste trebuie făcute. Trebuie să ştiţi doar că pentru moment numărul maxim de subgrupuri este %1 (care poate fi schimbat, dar nimeni nu a avut nevoie de valori mai mari)</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="709"/>
+        <location filename="../src/interface/splityearform.cpp" line="711"/>
         <source>If you intend to divide again a year by categories and you want to keep (the majority of) the existing groups in this year, you will need to use the exact same separator character(s) for dividing this year as you used when previously dividing this year, and the same division names (any old division which is no longer entered means a group which will be removed from this year).</source>
         <translation>Dacă intenţionaţi să divideţi un an prin categorii şi doriţi să menţineţi (majoritatea) grupurilor existente în acesta an, va trebui să folosiţi exact acelaşi (aceleaşi) caracter(e) separatoare pentru a divide acest an ca atunci când aţi divizat anul mai devreme, şi aceleaşi nume de diviziuni (orice diviziune veche care nu mai este introdusă înseamnă un grup care va fi şters din acest an).</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="715"/>
+        <location filename="../src/interface/splityearform.cpp" line="717"/>
         <source>When dividing again a year, you might get a warning about subgroups which will be removed. If you didn&apos;t explicitely use (these) subgroups in your activities or constraints, probably you can safely ignore this warning. Generally, if you use years&apos; division by categories, it is groups that matter.</source>
         <translation>Când împăţiţi din nou un an, s-ar putea să primiţi un avertisment despre subgrupuri care vor fi şterse. Dacă nu aţi folosit în mod explicit (aceste) subgrupuri în activităţile sau constrângerile dvs., probabil că puteţi ignora în siguranţă acest avertisment. În general, dacă folosiţi divizarea anilor după categorii, grupurile contează.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="725"/>
+        <location filename="../src/interface/splityearform.cpp" line="727"/>
         <source>If you have many subgroups and you don&apos;t explicitely use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
         <translation>Dacă aveţi multe subgrupuri şi nu le folosiţi în mod explicit, este recomandat să folosiţi cele trei setări globale: ascunde subgrupurile în combo-box-uri, ascunde subgrupurile în planificarea activităţii, şi nu scrie orarele subgrupurilor pe discul fix.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="728"/>
+        <location filename="../src/interface/splityearform.cpp" line="730"/>
         <source>Note that if you are only working to get a feasible timetable, without the need to obtain the students timetable (XML or HTML) on the disk at all, and if you have many total subgroups, a good idea is to disable writing the subgroups, groups AND years timetables to the hard disk, as these take a long time to compute (not only subgroups, but also groups and years!).</source>
         <translation>Luaţi la cunoştinţă că dacă lucraţi doar ca să obţineţi un orar fezabil, fără să aveţi nevoie deloc să obţineţi orarul studenţilor (XML sau HTML) pe disc, şi dacă aveţi multe subgrupuri în total, o idee bună este să dezactivaţi scrierea orarelor subgrupurilor, grupurilor ŞI anilor pe discul fix, pentru că acestea durează un timp lung pentru a fi calculate (nu doar subgrupurile, ci şi grupurile şi anii!).</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="732"/>
+        <location filename="../src/interface/splityearform.cpp" line="734"/>
         <source>(Also the conflicts timetable might take long to write, if the file is big.)</source>
         <translation>(De asemenea conflictele orarului pot dura mult până să fie scrise, dacă fişierul este mare.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="734"/>
+        <location filename="../src/interface/splityearform.cpp" line="736"/>
         <source>After that, you can re-enable writing the students timetables on the disk, and re-generate.</source>
         <translation>După aceasta, puteţi re-activa scrierea orarului studenţilor pe disc, şi re-generaţi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="741"/>
+        <location filename="../src/interface/splityearform.cpp" line="743"/>
         <source>Maybe a reasonable number of categories could be 2, 3 or maximum 4. The divide year dialog allows much higher values, but these are not at all recommended.</source>
         <translation>Poate că un număr rezonabil de categorii ar fi 2, 3 sau maximum 4. Dialogul divide an permite valori mult mai mari, dar acestea nu sunt recomandate deloc.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="777"/>
+        <location filename="../src/interface/splityearform.cpp" line="779"/>
         <source>Do you really want to reset the form values to defaults (empty)?</source>
         <translation>Chiar doriţi să resetaţi valorile dialogului la cele predefinite (vide)?</translation>
     </message>
@@ -46384,12 +46309,12 @@ neadăugată - trebuie să fie un duplicat</translation>
         <translation>Doriţi să împărţiţi anul prin %1 categorii. Numărul recomandat de categorii este 2, 3 sau maximum 4 (pentru a asigura viteza şi fezabilitatea generării orarului). Sunteţi sigur?</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="737"/>
+        <location filename="../src/interface/splityearform.cpp" line="739"/>
         <source>About using a large number of categories, divisions per category and subgroups: it is highly recommended to keep these to a minimum, especially the number of categories, by using any kind of tricks. Otherwise the timetable might become impossible (taking too much time to generate).</source>
         <translation>Despre folosirea unui număr mare de categorii, diviziuni pe categorie şi subgrupuri: este recomandat cu insistenţă să le păstraţi la un minimum, în mod special numărul de categorii, folosind orice fel de trucuri. Altfel orarul ar putea deveni imposibil (durând prea mult pentru a fi generat).</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="799"/>
+        <location filename="../src/interface/splityearform.cpp" line="801"/>
         <source>Subgroups: %1</source>
         <comment>%1 is the number of subgroups</comment>
         <translation>Subgrupuri: %1</translation>
@@ -46405,32 +46330,32 @@ neadăugată - trebuie să fie un duplicat</translation>
         <translation>Nu pot să adaug subgrupul %1, deoarece un set cu acelaşi nume există. Vă rog alegeţi un alt nume sau ştergeţi setul vechi</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="706"/>
+        <location filename="../src/interface/splityearform.cpp" line="708"/>
         <source>Please note that the dialog here will keep the last configuration of the last divided year, it will not remember the values for a specific year you need to modify.</source>
         <translation>Vă rog luaţi aminte că dialogul de aici va păstra ultima configuraţie a ultimului an divizat, el nu va ţine minte valorile pentru un an pe care trebuie să îl modificaţi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="721"/>
+        <location filename="../src/interface/splityearform.cpp" line="723"/>
         <source>Separator character(s) is of your choice (default is space)</source>
         <translation>Caracterul(-ele) separator este alegerea dvs. (predefinit este spaţiu)</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="744"/>
+        <location filename="../src/interface/splityearform.cpp" line="746"/>
         <source>Maybe an alternative to dividing a year into many categories/subgroups would be to enter individual students as FET subgroups and add into each group the corresponding subgroups. But this is hard to do from the FET interface - maybe a solution would be to use an automatic tool to convert your instition data into a file in .fet format.</source>
         <translation>Poate o alternativa la divizarea unui an în multe categorii/subgrupuri ar fi introducerea studenţilor individuali ca subgrupuri FET şi adăugarea în fiecare grup a subgrupurilor corespunzătoare. Dar aceasta este greu de făcut din interfaţa FET - poate o soluţie ar fi să folosiţi o unealtă automată pentru a converti datele instituţiei dvs. în formatul de fişier .fet.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="751"/>
+        <location filename="../src/interface/splityearform.cpp" line="753"/>
         <source>FET - help on dividing a year</source>
         <translation>FET - ajutor la divizarea unui an</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="757"/>
+        <location filename="../src/interface/splityearform.cpp" line="759"/>
         <source>OK</source>
         <translation>Bine</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="678"/>
+        <location filename="../src/interface/splityearform.cpp" line="680"/>
         <source>You might first want to consider if dividing a year is necessary and on what options. Please remember that FET can handle activities with multiple teachers/students sets. If you have say students set 9a, which is split into 2 parts: English (teacher TE) and French (teacher TF), and language activities must be simultaneous, then you might not want to divide according to this category, but add more larger activities, with students set 9a and teachers TE+TF. The only drawback is that each activity can take place only in one room in FET, so you might need to find a way to overcome that.</source>
         <translation>Poate veţi vrea întâi să vă gândiţi dacă divizarea unui an este necesară şi cu ce opţiuni. Vă rog amintiţi-vă că FET poate lucra cu activităţi cu multipli profesori/seturi de studenţi. Dacă aveţi să zicem setul de studenţi 9a, care este împărţit în 2 părţi: engleză (profesorul TE) şi franceză (profesorul TF), şi activităţile de limbă trebuie să fie simultane, atunci poate veţi vrea să nu împărţiţi după categorii, dar să adăugaţi activităţi mai mari, cu studenţii 9a şi profesorii TE+TF. Singurul dezavantaj este că fiecare activitate poate să aibă loc în doar o singură sală în FET, aşa că poate este nevoie să găsiţi un mod de a compensa aceasta.</translation>
     </message>

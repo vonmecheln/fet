@@ -10,7 +10,7 @@ I prefer current stability, that is why I don't try to add this code.
 
 WARNING: this code is old and unstable/may contain critical bugs. It is not part of official FET sources, it is just given as a model/inspiration source.
 
-Copyright (C) 2009 Liviu Lalescu, licensed under GNU GPL v2 or later.
+Copyright (C) 2009 Liviu Lalescu, licensed under GNU AGPL v3 or later.
 
 CODE BY Liviu Lalescu, 2009, modified from generate.cpp. Unstable code, it is given only as a sample. This is an idea of how the code should look like
 so that the constraint students max gaps per day is perfect (so warnings about using this type of not perfect constraint in FET can be removed).
