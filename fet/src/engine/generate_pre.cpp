@@ -1333,7 +1333,7 @@ bool computeNHoursPerTeacher()
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 			 QObject::tr("Cannot optimize for teacher %1, because the number of hours for teacher is %2 "
 			  " and you have only %3 free slots from constraints teacher not available and/or break. Maybe you inputted wrong constraints teacher"
-			  " not available or break or the number of hours per day is less with 1, because of a misunderstanding")
+			  " not available or break or the number of hours per week is less because of a misunderstanding")
 			 .arg(gt.rules.internalTeachersList[i]->name)
 			 .arg(nHoursPerTeacher[i])
 			 .arg(freeSlots),
@@ -1705,7 +1705,7 @@ bool computeNHoursPerSubgroup()
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 			 QObject::tr("Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 "
 			  " and you have only %3 free slots from constraints students set not available and/or break. Maybe you inputted wrong constraints students set"
-			  " not available or break or the number of hours per day is less with 1, because of a misunderstanding")
+			  " not available or break or the number of hours per week is less because of a misunderstanding")
 			 .arg(gt.rules.internalSubgroupsList[i]->name)
 			 .arg(nHoursPerSubgroup[i])
 			 .arg(freeSlots),

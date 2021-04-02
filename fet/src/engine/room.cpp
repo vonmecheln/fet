@@ -15,6 +15,8 @@
 
 Room::Room()
 {
+	this->capacity=MAX_ROOM_CAPACITY;
+	this->building="";
 }
 
 Room::~Room()

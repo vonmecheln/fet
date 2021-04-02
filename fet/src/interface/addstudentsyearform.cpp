@@ -50,10 +50,32 @@ void AddStudentsYearForm::addStudentsYear()
 		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Incorrect name"));
 		return;
 	}
+
+	StudentsSet* ss=gt.rules.searchStudentsSet(nameLineEdit->text());
+	if(ss!=NULL){
+		if(ss->type==STUDENTS_SUBGROUP){
+			QMessageBox::information( this, QObject::tr("Year insertion dialog"),
+				QObject::tr("This name is taken for a subgroup - please consider another name"));
+			return;
+		}
+		else if(ss->type==STUDENTS_GROUP){
+			QMessageBox::information( this, QObject::tr("Year insertion dialog"),
+				QObject::tr("This name is taken for a group - please consider another name"));
+			return;
+		}
+		else if(ss->type==STUDENTS_YEAR){
+			QMessageBox::information( this, QObject::tr("Year insertion dialog"),
+				QObject::tr("This name is taken for a year - please consider another name"));
+			return;
+		}
+		else
+			assert(0);
+	}
+
 	StudentsYear* sy=new StudentsYear();
 	sy->name=nameLineEdit->text();
 	sy->numberOfStudents=numberSpinBox->value();
-
+	
 	if(gt.rules.searchYear(sy->name) >=0 ){
 		QMessageBox::information( this, QObject::tr("Year insertion dialog"),
 		QObject::tr("Could not insert item. Must be a duplicate"));

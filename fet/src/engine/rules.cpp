@@ -3526,6 +3526,8 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 	this->comments=QObject::tr("Default comments");
 
 	bool skipDeprecatedConstraints=false;
+	
+	bool skipDuplicatedStudentsSets=false;
 
 	for(QDomNode node2=elem1.firstChild(); !node2.isNull(); node2=node2.nextSibling()){
 		QDomElement elem2=node2.toElement();
@@ -3741,6 +3743,28 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						}
 						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
 						if(elem4.tagName()=="Name"){
+							if(!skipDuplicatedStudentsSets){
+								QString nn=elem4.text();
+								StudentsSet* ss=this->searchStudentsSet(nn);
+								if(ss!=NULL){
+									QString str;
+									
+									if(ss->type==STUDENTS_YEAR)
+										str=QObject::tr("Trying to add year %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading").arg(nn);
+									else if(ss->type==STUDENTS_GROUP)
+										str=QObject::tr("Trying to add year %1, which is already added as another group - your file will be loaded but probably contains errors, please correct them after loading").arg(nn);
+									else if(ss->type==STUDENTS_SUBGROUP)
+										str=QObject::tr("Trying to add year %1, which is already added as another subgroup - your file will be loaded but probably contains errors, please correct them after loading").arg(nn);
+								
+									int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), str,
+									 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+									 1, 0 );
+				 	
+									if(t==0)
+										skipDuplicatedStudentsSets=true;
+								}
+							}						
+						
 							sty->name=elem4.text();
 							xmlReadingLog+="    Read year name: "+sty->name+"\n";
 						}
@@ -3764,6 +3788,36 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 								}
 								xmlReadingLog+="     Found "+elem5.tagName()+" tag\n";
 								if(elem5.tagName()=="Name"){
+									if(!skipDuplicatedStudentsSets){
+										QString nn=elem5.text();
+										StudentsSet* ss=this->searchStudentsSet(nn);
+										if(ss!=NULL){
+											QString str;
+									
+											if(ss->type==STUDENTS_YEAR)
+												str=QObject::tr("Trying to add group %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading").arg(nn);
+											else if(ss->type==STUDENTS_GROUP){
+												if(this->searchGroup(sty->name, nn)>=0){
+													str=QObject::tr("Trying to add group %1 in year %2 but it is already added - your file will be loaded but probably contains errors, please correct them after loading").arg(nn).arg(sty->name);
+												}
+												else
+													str="";
+											}
+											else if(ss->type==STUDENTS_SUBGROUP)
+												str=QObject::tr("Trying to add group %1, which is already added as another subgroup - your file will be loaded but probably contains errors, please correct them after loading").arg(nn);
+								
+											int t=1;
+											if(str!=""){
+												t=QMessageBox::warning(NULL, QObject::tr("FET warning"), str,
+												 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+												 1, 0 );
+											}
+				 	
+											if(t==0)
+												skipDuplicatedStudentsSets=true;
+										}
+									}						
+
 									stg->name=elem5.text();
 									xmlReadingLog+="     Read group name: "+stg->name+"\n";
 									if(stg->name.right(11)==" WHOLE YEAR"){
@@ -3809,6 +3863,36 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 										}
 										xmlReadingLog+="     Found "+elem6.tagName()+" tag\n";
 										if(elem6.tagName()=="Name"){
+											if(!skipDuplicatedStudentsSets){
+												QString nn=elem6.text();
+												StudentsSet* ss=this->searchStudentsSet(nn);
+												if(ss!=NULL){
+													QString str;
+									
+													if(ss->type==STUDENTS_YEAR)
+														str=QObject::tr("Trying to add subgroup %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading").arg(nn);
+													else if(ss->type==STUDENTS_GROUP)
+														str=QObject::tr("Trying to add subgroup %1, which is already added as another group - your file will be loaded but probably contains errors, please correct them after loading").arg(nn);
+													else if(ss->type==STUDENTS_SUBGROUP){
+														if(this->searchSubgroup(sty->name, stg->name, nn)>=0){
+															str=QObject::tr("Trying to add subgroup %1 in year %2, group %3 but it is already added - your file will be loaded but probably contains errors, please correct them after loading").arg(nn).arg(sty->name).arg(stg->name);
+														}
+														else
+															str="";
+													}
+								
+													int t=1;
+													if(str!=""){
+														t=QMessageBox::warning(NULL, QObject::tr("FET warning"), str,
+														 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+														 1, 0 );
+													}
+						 	
+													if(t==0)
+														skipDuplicatedStudentsSets=true;
+												}
+											}						
+
 											sts->name=elem6.text();
 											xmlReadingLog+="     Read subgroup name: "+sts->name+"\n";
 
@@ -4160,6 +4244,10 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 			bool reportStudentsSetNotAvailableChange=true;
 			bool reportTeacherNotAvailableChange=true;
 			bool reportBreakChange=true;
+			
+#if 0&0&0
+			bool reportIncorrectMinNDays=true;
+#endif
 		
 			int nc=0;
 			TimeConstraint *crt_constraint;
@@ -4217,7 +4305,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 					QList<int> days;
 					QList<int> hours;
 					QString teacher;
-					double weightPercentage=-1;
+					double weightPercentage=100;
 					int d=-1, h1=-1, h2=-1;
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
@@ -4469,7 +4557,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 					QList<int> days;
 					QList<int> hours;
 					QString students;
-					double weightPercentage=-1;
+					double weightPercentage=100;
 					int d=-1, h1=-1, h2=-1;
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
@@ -4724,6 +4812,37 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 					}
 					assert(n_act==cn->n_activities);
 					crt_constraint=cn;
+#if 0&0&0
+					if(0 && reportIncorrectMinNDays && cn->n_activities > this->nDaysPerWeek){
+						QString s=QObject::tr("You have a constraint min n days between activities with more activities than the number of days per week.");
+						s+=" ";
+						s+=QObject::tr("Constraint is:");
+						s+="\n";
+						s+=crt_constraint->getDescription(*this);
+						s+="\n";
+						s+=QObject::tr("This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).");
+			 			s+="\n\n";
+						s+=QObject::tr("To improve your file, you are advised to remove the corresponding activities and constraint and add activities again, respecting the following rules:");
+			 			s+="\n\n";
+						s+=QObject::tr("1. If you add 'force consecutive if same day', then couple extra activities in pairs to obtain a number of activities equal to the number of days per week"
+			  			 ". Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components"
+						 " (possibly raising the weight of added constraint min n days between activities up to 100%)");
+			 			s+="\n\n";
+
+						s+=QObject::tr("2. If you don't add 'force consecutive if same day', then add a larger activity splitted into a number of"
+						  " activities equal with the number of days per week and the remaining components into other larger splitted activity."
+						  " For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities,"
+						  " first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1"
+						  " (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)");
+						
+					 	int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s,
+						 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+						 1, 0 );
+													 
+						if(t==0)
+							reportIncorrectMinNDays=false;
+					}
+#endif
 				}
 				else if(elem3.tagName()=="ConstraintActivitiesNotOverlapping"){
 					ConstraintActivitiesNotOverlapping* cn=new ConstraintActivitiesNotOverlapping();
@@ -5694,7 +5813,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 
 					QList<int> days;
 					QList<int> hours;
-					double weightPercentage=-1;
+					double weightPercentage=100;
 					int d=-1, h1=-1, h2=-1;
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
@@ -7056,7 +7175,7 @@ corruptConstraintTime:
 					QList<int> days;
 					QList<int> hours;
 					QString room;
-					double weightPercentage=-1;
+					double weightPercentage=100;
 					int d=-1, h1=-1, h2=-1;
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();

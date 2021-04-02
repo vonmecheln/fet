@@ -5128,6 +5128,8 @@ QString ConstraintStudentsMinHoursDaily::getDetailedDescription(Rules& r)
 	}
 	else
 		assert(0);
+	s+=QObject::tr("Note: FET considers that each day of the week must have the minimum number of working hours, so you cannot have empty days for affected students (constraint is not flexible)");
+	s+="\n";
 
 	return s;
 }
@@ -5323,6 +5325,8 @@ QString ConstraintStudentsSetMinHoursDaily::getDetailedDescription(Rules& r)
 	//if(this->minHoursDaily>=0)
 	//	s+=(QObject::tr("Minimum recommended hours daily=%1").arg(this->minHoursDaily));s+="\n";
 	s+=(QObject::tr("Students set=%1").arg(this->students));s+="\n";
+	s+=QObject::tr("Note: FET considers that each day of the week must have the minimum number of working hours, so you cannot have empty days for affected students (constraint is not flexible)");
+	s+="\n";
 
 	return s;
 }

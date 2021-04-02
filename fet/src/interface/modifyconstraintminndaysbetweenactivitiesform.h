@@ -37,6 +37,8 @@
 #include <QList>
 
 class ModifyConstraintMinNDaysBetweenActivitiesForm : public ModifyConstraintMinNDaysBetweenActivitiesForm_template  {
+	Q_OBJECT	
+
 public:
 	ModifyConstraintMinNDaysBetweenActivitiesForm(ConstraintMinNDaysBetweenActivities* ctr);
 	~ModifyConstraintMinNDaysBetweenActivitiesForm();

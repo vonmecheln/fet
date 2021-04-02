@@ -1168,7 +1168,11 @@ Versions 5.5.0 - 5.5.x
 	- Small improvements in the interface.
 - Version 5.5.2
 	- Small improvements in the interface.
-	- Updated German translation.
+	- Updated German and Indonesian translation.
 	- Possibility to save current timetable in .fet form, with activities locked on their places
 	(suggested by Horatiu Halmajan)
+- Version 5.5.3
+	- Crash bug fix - when adding a year with same name as a group or subgroup (reported by Volker Dirr)
+	- Small interface improvements
+	- Added checks to ensure that duplicate students sets are reported (suggested by Volker Dirr)
 	

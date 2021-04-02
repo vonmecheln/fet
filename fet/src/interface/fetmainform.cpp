@@ -500,20 +500,20 @@ void FetMainForm::on_timetableSaveTimetableAsAction_activated()
 	Solution* tc=&best_solution;
 	
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
-		Activity* act=&gt.rules.internalActivitiesList[ai];
+		//Activity* act=&gt.rules.internalActivitiesList[ai];
 		int time=tc->times[ai];
 		if(time==UNALLOCATED_TIME){
 			QMessageBox::warning(this, tr("FET - Warning"), tr("It seems that you have an incomplete timetable."
-			 " Saving of timetable does not work for incomplete timetables. Please generate a complete timetable")
-			 .arg(act->id));
+			 " Saving of timetable does not work for incomplete timetables. Please generate a complete timetable"));
+			 //.arg(act->id));
 			return;	
 		}
 		
 		int ri=tc->rooms[ai];
 		if(ri==UNALLOCATED_SPACE){
 			QMessageBox::warning(this, tr("FET - Warning"), tr("It seems that you have an incomplete timetable."
-			 " Saving of timetable does not work for incomplete timetables. Please generate a complete timetable")
-			 .arg(act->id));
+			 " Saving of timetable does not work for incomplete timetables. Please generate a complete timetable"));
+			 //.arg(act->id));
 			return;	
 		}
 	}

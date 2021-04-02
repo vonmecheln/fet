@@ -524,6 +524,31 @@ void AddActivityForm::addActivity()
 			QMessageBox::critical(this, tr("FET information"), tr("Activity NOT added - please report error"));
 	}
 	else{ //split activity
+		if(minDayDistanceSpinBox->value()>0 && splitSpinBox->value()>gt.rules.nDaysPerWeek){
+			int t=QMessageBox::warning(this, tr("FET warning"),	
+			 tr("You want to add a container activity split into more than the number of days per week and also add a constraint min n days between activities."
+			  " This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).")+
+			 "\n\n"+
+			 tr("The best way to add the activities would be:")+
+			 "\n\n"+
+			 tr("1. If you add 'force consecutive if same day', then couple extra activities in pairs to obtain a number of activities equal to the number of days per week"
+			  ". Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components"
+			  " (possibly raising the weight of added constraint min n days between activities up to 100%)")+
+			  "\n\n"+
+			 tr("2. If you don't add 'force consecutive if same day', then add a larger activity splitted into a number of"
+			  " activities equal with the number of days per week and the remaining components into other larger splitted activity."
+			  " For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities,"
+			  " first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1"
+			  " (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)")+
+		  	 "\n\n"+
+			 tr("Do you want to add current activities as they are now (not recommended) or cancel and edit them as instructed?")
+			  ,
+			 QMessageBox::Yes, QMessageBox::Cancel);
+
+			if(t==QMessageBox::Cancel)
+				return;
+		}
+
 		int totalduration;
 		int durations[10];
 		//int parities[8];
@@ -646,7 +671,7 @@ void AddActivityForm::help()
 	 
 	 "Starting with version 5.0.0, it is possible to add activities with no students or no teachers"
 	 );
-	
+	 
 	//show the message in a dialog
 	QDialog* dialog=new QDialog();
 	
