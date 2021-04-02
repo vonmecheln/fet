@@ -4969,7 +4969,7 @@ to be added at the end of the function "bool computeTeachersMinHoursDaily(QWidge
 304---------------------------------------------------------
 From jillali elghazoui:
 
-(Also suggested by bachiri401)
+(Also suggested by bachiri401 and Benahmed Abdelkrim)
 
 In the Add activity dialog, add a check box near Selected (students) list widget. The check box may be called "Activities separately"
 and, if selected, will add more activities, one for each selected students set.

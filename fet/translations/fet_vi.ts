@@ -13353,21 +13353,15 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>AllSpaceConstraintsForm</name>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="794"/>
-        <source>%1 Space Constraints</source>
-        <comment>%1 represents the number of constraints</comment>
-        <translation>%1 RB phòng học</translation>
-    </message>
-    <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="288"/>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="292"/>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="344"/>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="348"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="462"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="744"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="878"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="923"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="998"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="461"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="743"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="883"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="941"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1029"/>
         <source>FET information</source>
         <translation>Thông tin</translation>
     </message>
@@ -13384,90 +13378,92 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="439"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="911"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="961"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="438"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="796"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="929"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="992"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1097"/>
         <source>%1 / %2 space constraints</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation>%1 / %2 RB phòng học</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="462"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="744"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="878"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="923"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="998"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="461"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="743"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="883"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="941"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1029"/>
         <source>Invalid selected constraint</source>
         <translation>RB được chọn không đúng</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="719"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="718"/>
         <source>FET critical</source>
         <translation>Điểm quan trọng</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="719"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="718"/>
         <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recognized in all space constraints dialog. FET will skip this error, so that you can continue work. Probably the constraint can be modified from the specific constraint dialog.</source>
         <translation>Có lỗi trong phần mềm lập TKB. Hãy liên lạc với đơn vị phát triển phần mềm. Phần mềm sẽ bỏ qua lỗi này và tiếp tục. Bạn có lẽ cần thay đổi một vài RB.</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="751"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="750"/>
         <source>Remove constraint?</source>
         <translation>Xóa RB?</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="759"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="758"/>
         <source>FET confirmation</source>
         <translation>Xác nhận</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="760"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="759"/>
         <source>Yes</source>
         <translation>Đồng ý</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="760"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="759"/>
         <source>No</source>
         <translation>Không</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="768"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="765"/>
         <source>Do you really want to remove the basic compulsory space constraint?</source>
         <translation>Bạn có chắc chắn xóa những RB phòng học căn bản?</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="770"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="767"/>
         <source>You cannot generate a timetable without this constraint.</source>
         <translation>Bạn không thể lập TKB mà thiếu RB này.</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="772"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="769"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
         <translation>Lưu ý: Bạn có thể thêm lại một RB của loại này từ menu &apos;Dữ liệu&apos;-&gt;RB phòng học-&gt;Khác-&gt;Những RB phòng học căn bản.</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="775"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="935"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="772"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="953"/>
         <source>FET warning</source>
         <translation>Cảnh báo</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="935"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="953"/>
         <source>You are not allowed to deactivate the basic compulsory space constraints</source>
         <translation>Không được phép vô hiệu hóa RB phòng học căn bản</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1007"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1038"/>
         <source>Constraint comments</source>
         <translation>Ghi chú của RB</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1009"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1040"/>
         <source>OK</source>
         <translation>Đồng ý</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1011"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1042"/>
         <source>Cancel</source>
         <translation>Thoát</translation>
     </message>
@@ -13549,40 +13545,36 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>AllTimeConstraintsForm</name>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1135"/>
-        <source>%1 Time Constraints</source>
-        <comment>%1 represents the number of constraints</comment>
-        <translation>%1 RB về mặt thời gian</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="347"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="351"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="403"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="407"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="348"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="352"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="404"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="408"/>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="521"/>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="1082"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1219"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1264"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1339"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1225"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1283"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1371"/>
         <source>FET information</source>
         <translation>Thông tin</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="347"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="403"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="348"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="404"/>
         <source>To move a time constraint, the &apos;Filter&apos; check box must not be checked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="351"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="407"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="352"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="408"/>
         <source>To move a time constraint, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="498"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1252"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1302"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1138"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1271"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1334"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1439"/>
         <source>%1 / %2 time constraints</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation>%1 / %2 RB thời gian</translation>
@@ -13590,9 +13582,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="521"/>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="1082"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1219"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1264"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1339"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1225"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1283"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1371"/>
         <source>Invalid selected constraint</source>
         <translation>RB được chọn không đúng</translation>
     </message>
@@ -13627,43 +13619,43 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <translation>Không</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1109"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1107"/>
         <source>Do you really want to remove the basic compulsory time constraint?</source>
         <translation>Bạn có chắc chắn xóa những RB thời gian căn bản?</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1111"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1109"/>
         <source>You cannot generate a timetable without this constraint.</source>
         <translation>Bạn không thể lập TKB mà thiếu RB này.</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1113"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1111"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
         <translation>Lưu ý: Bạn có thể thêm lại một RB của loại này từ menu &apos;Dữ liệu&apos;-&gt;RB phòng học-&gt;Khác-&gt;Những RB thời gian căn bản.</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1116"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1276"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1114"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1295"/>
         <source>FET warning</source>
         <translation>Cảnh báo</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1276"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1295"/>
         <source>You are not allowed to deactivate the basic compulsory time constraints</source>
         <translation>Không được phép vô hiệu hóa RB thời gian căn bản</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1348"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1380"/>
         <source>Constraint comments</source>
         <translation>Ghi chú của RB</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1350"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1382"/>
         <source>OK</source>
         <translation>Đồng ý</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1352"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1384"/>
         <source>Cancel</source>
         <translation>Thoát</translation>
     </message>
@@ -58131,16 +58123,6 @@ not added - must be a duplicate</source>
         <location filename="../src/interface/settingstimetablehtmllevelform.cpp" line="81"/>
         <source>No level selected</source>
         <translation>Chưa cấp nào được chọn</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/settingstimetablehtmllevelform.cpp" line="88"/>
-        <source>FET information</source>
-        <translation>Thông tin</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/settingstimetablehtmllevelform.cpp" line="88"/>
-        <source>This level might generate very large timetables, maybe 1 MB per file and 20 MB for all files of a timetable or even more. Are you sure you have enough disk space?</source>
-        <translation>Cấp độ này có thể tạo TKB kích thước lớn, có lẽ 1 MB/tệp và 20 MB/tất cả tệp của 1 TKB. Bạn có chắc chắn đĩa đủ dung lượng?</translation>
     </message>
 </context>
 <context>

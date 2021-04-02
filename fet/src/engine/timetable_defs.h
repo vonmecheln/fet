@@ -328,8 +328,9 @@ const int STUDENTS_COMBO_BOXES_STYLE_CATEGORIZED=2;
 extern int STUDENTS_COMBO_BOXES_STYLE;
 
 ///////tricks to save work to reconvert old code
-const int CUSTOM_DOUBLE_PRECISION=6; //number of digits after the decimal dot for the weights
+const int CUSTOM_DOUBLE_PRECISION=6; //the maximum number of significant digits after the decimal dot for the weights
 const int MULTIPLICANT_DOUBLE_PRECISION=100000000; //10^(2+CUSTOM_DOUBLE_PRECISION)
+const int HALF_MULTIPLICANT_DOUBLE_PRECISION=MULTIPLICANT_DOUBLE_PRECISION/2;
 
 void weight_sscanf(const QString& str, const char* fmt, double* result);
 

@@ -1904,7 +1904,7 @@ bool skipRandom(double weightPercentage)
 	
 	qint64 tt=qint64(t*double(MULTIPLICANT_DOUBLE_PRECISION));
 	tt*=rng.m1;
-	tt+=MULTIPLICANT_DOUBLE_PRECISION/2; //rounded
+	tt+=HALF_MULTIPLICANT_DOUBLE_PRECISION; //round the result of the division below
 	tt/=MULTIPLICANT_DOUBLE_PRECISION;
 	assert(tt>=0 && tt<rng.m1);
 	unsigned int ttu=(unsigned int)(tt);

@@ -87,8 +87,8 @@
 #endif
 
 #include <QListWidget>
+#include <QListWidgetItem>
 #include <QScrollBar>
-
 #include <QAbstractItemView>
 
 #include <QSplitter>
@@ -403,7 +403,7 @@ void AllSpaceConstraintsForm::sortedChanged(bool checked)
 
 static int spaceConstraintsAscendingByDescription(SpaceConstraint* s1, SpaceConstraint* s2)
 {
-//	return s1->getDescription(gt.rules) < s2->getDescription(gt.rules);
+	//return s1->getDescription(gt.rules) < s2->getDescription(gt.rules);
 	//by rodolforg
 	return s1->getDescription(gt.rules).localeAwareCompare(s2->getDescription(gt.rules))<0;
 }
@@ -424,13 +424,12 @@ void AllSpaceConstraintsForm::filterChanged()
 		assert(filterOk(ctr));
 		constraintsListWidget->addItem(ctr->getDescription(gt.rules));
 
-		if(USE_GUI_COLORS && !ctr->active)
-			constraintsListWidget->item(constraintsListWidget->count()-1)->setBackground(constraintsListWidget->palette().alternateBase());
-
 		if(ctr->active)
 			n_active++;
+		else if(USE_GUI_COLORS)
+			constraintsListWidget->item(constraintsListWidget->count()-1)->setBackground(constraintsListWidget->palette().alternateBase());
 	}
-		
+	
 	if(constraintsListWidget->count()<=0)
 		currentConstraintTextEdit->setPlainText("");
 	else
@@ -759,9 +758,7 @@ void AllSpaceConstraintsForm::removeConstraint()
 	int lres=LongTextMessageBox::confirmation( this, tr("FET confirmation"),
 		s, tr("Yes"), tr("No"), 0, 0, 1 );
 		
-	if(lres==0){
-		//The user clicked the OK button or pressed Enter
-		
+	if(lres==0){ //The user clicked the OK button or pressed Enter
 		QMessageBox::StandardButton wr=QMessageBox::Yes;
 		
 		if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_SPACE){ //additional confirmation for this one
@@ -791,7 +788,16 @@ void AllSpaceConstraintsForm::removeConstraint()
 			item=constraintsListWidget->takeItem(i);
 			delete item;
 			
-			constraintsTextLabel->setText(tr("%1 Space Constraints", "%1 represents the number of constraints").arg(visibleSpaceConstraintsList.count()));
+			int n_active=0;
+			for(SpaceConstraint* ctr2 : qAsConst(visibleSpaceConstraintsList))
+				if(ctr2->active)
+					n_active++;
+		
+			constraintsTextLabel->setText(tr("%1 / %2 space constraints",
+			 "%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints")
+			 .arg(n_active).arg(visibleSpaceConstraintsList.count()));
+
+			//constraintsTextLabel->setText(tr("%1 Space Constraints", "%1 represents the number of constraints").arg(visibleSpaceConstraintsList.count()));
 	
 			if(recompute){
 				LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
@@ -799,8 +805,7 @@ void AllSpaceConstraintsForm::removeConstraint()
 			}
 		}
 	}
-	//else if(lres==1){
-		//The user clicked the Cancel button or pressed Escape
+	//else if(lres==1){ //The user clicked the Cancel button or pressed Escape
 	//}
 	
 	if(i>=constraintsListWidget->count())
@@ -891,10 +896,25 @@ void AllSpaceConstraintsForm::activateConstraint()
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
-		constraintsListWidget->currentItem()->setText(ctr->getDescription(gt.rules));
-		if(USE_GUI_COLORS)
-			constraintsListWidget->currentItem()->setBackground(constraintsListWidget->palette().base());
-		constraintChanged();
+		if(!filterOk(ctr)){ //Maybe the constraint is no longer visible in the list widget, because of the filter.
+			visibleSpaceConstraintsList.removeAt(i);
+			constraintsListWidget->setCurrentRow(-1);
+			QListWidgetItem* item=constraintsListWidget->takeItem(i);
+			delete item;
+
+			if(i>=constraintsListWidget->count())
+				i=constraintsListWidget->count()-1;
+			if(i>=0)
+				constraintsListWidget->setCurrentRow(i);
+			else
+				currentConstraintTextEdit->setPlainText(QString(""));
+		}
+		else{
+			constraintsListWidget->currentItem()->setText(ctr->getDescription(gt.rules));
+			if(USE_GUI_COLORS)
+				constraintsListWidget->currentItem()->setBackground(constraintsListWidget->palette().base());
+			constraintChanged();
+		}
 		
 		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
 			LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
@@ -902,11 +922,9 @@ void AllSpaceConstraintsForm::activateConstraint()
 		}
 	
 		int n_active=0;
-		for(SpaceConstraint* ctr2 : qAsConst(gt.rules.spaceConstraintsList))
-			if(filterOk(ctr2)){
-				if(ctr2->active)
-					n_active++;
-			}
+		for(SpaceConstraint* ctr2 : qAsConst(visibleSpaceConstraintsList))
+			if(ctr2->active)
+				n_active++;
 		
 		constraintsTextLabel->setText(tr("%1 / %2 space constraints",
 		 "%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints")
@@ -941,10 +959,25 @@ void AllSpaceConstraintsForm::deactivateConstraint()
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
-		constraintsListWidget->currentItem()->setText(ctr->getDescription(gt.rules));
-		if(USE_GUI_COLORS)
-			constraintsListWidget->currentItem()->setBackground(constraintsListWidget->palette().alternateBase());
-		constraintChanged();
+		if(!filterOk(ctr)){ //Maybe the constraint is no longer visible in the list widget, because of the filter.
+			visibleSpaceConstraintsList.removeAt(i);
+			constraintsListWidget->setCurrentRow(-1);
+			QListWidgetItem* item=constraintsListWidget->takeItem(i);
+			delete item;
+
+			if(i>=constraintsListWidget->count())
+				i=constraintsListWidget->count()-1;
+			if(i>=0)
+				constraintsListWidget->setCurrentRow(i);
+			else
+				currentConstraintTextEdit->setPlainText(QString(""));
+		}
+		else{
+			constraintsListWidget->currentItem()->setText(ctr->getDescription(gt.rules));
+			if(USE_GUI_COLORS)
+				constraintsListWidget->currentItem()->setBackground(constraintsListWidget->palette().alternateBase());
+			constraintChanged();
+		}
 		
 		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
 			LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
@@ -952,11 +985,9 @@ void AllSpaceConstraintsForm::deactivateConstraint()
 		}
 	
 		int n_active=0;
-		for(SpaceConstraint* ctr2 : qAsConst(gt.rules.spaceConstraintsList))
-			if(filterOk(ctr2)){
-				if(ctr2->active)
-					n_active++;
-			}
+		for(SpaceConstraint* ctr2 : qAsConst(visibleSpaceConstraintsList))
+			if(ctr2->active)
+				n_active++;
 		
 		constraintsTextLabel->setText(tr("%1 / %2 space constraints",
 		 "%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints")
@@ -1045,7 +1076,31 @@ void AllSpaceConstraintsForm::constraintComments()
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
-		constraintsListWidget->currentItem()->setText(ctr->getDescription(gt.rules));
-		constraintChanged();
+		if(!filterOk(ctr)){ //Maybe the constraint is no longer visible in the list widget, because of the filter.
+			visibleSpaceConstraintsList.removeAt(i);
+			constraintsListWidget->setCurrentRow(-1);
+			QListWidgetItem* item=constraintsListWidget->takeItem(i);
+			delete item;
+
+			if(i>=constraintsListWidget->count())
+				i=constraintsListWidget->count()-1;
+			if(i>=0)
+				constraintsListWidget->setCurrentRow(i);
+			else
+				currentConstraintTextEdit->setPlainText(QString(""));
+
+			int n_active=0;
+			for(SpaceConstraint* ctr2 : qAsConst(visibleSpaceConstraintsList))
+				if(ctr2->active)
+					n_active++;
+		
+			constraintsTextLabel->setText(tr("%1 / %2 space constraints",
+			 "%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints")
+			 .arg(n_active).arg(visibleSpaceConstraintsList.count()));
+		}
+		else{
+			constraintsListWidget->currentItem()->setText(ctr->getDescription(gt.rules));
+			constraintChanged();
+		}
 	}
 }

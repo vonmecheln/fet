@@ -147,6 +147,7 @@
 #endif
 
 #include <QListWidget>
+#include <QListWidgetItem>
 #include <QScrollBar>
 #include <QAbstractItemView>
 
@@ -462,7 +463,7 @@ void AllTimeConstraintsForm::sortedChanged(bool checked)
 
 static int timeConstraintsAscendingByDescription(TimeConstraint* t1, TimeConstraint* t2)
 {
-//	return t1->getDescription(gt.rules) < t2->getDescription(gt.rules);
+	//return t1->getDescription(gt.rules) < t2->getDescription(gt.rules);
 	//by rodolforg
 	return t1->getDescription(gt.rules).localeAwareCompare(t2->getDescription(gt.rules))<0;
 }
@@ -482,12 +483,11 @@ void AllTimeConstraintsForm::filterChanged()
 	for(TimeConstraint* ctr : qAsConst(visibleTimeConstraintsList)){
 		assert(filterOk(ctr));
 		constraintsListWidget->addItem(ctr->getDescription(gt.rules));
-			
-		if(USE_GUI_COLORS && !ctr->active)
-			constraintsListWidget->item(constraintsListWidget->count()-1)->setBackground(constraintsListWidget->palette().alternateBase());
 		
 		if(ctr->active)
 			n_active++;
+		else if(USE_GUI_COLORS)
+			constraintsListWidget->item(constraintsListWidget->count()-1)->setBackground(constraintsListWidget->palette().alternateBase());
 	}
 	
 	if(constraintsListWidget->count()<=0)
@@ -1100,9 +1100,7 @@ void AllTimeConstraintsForm::removeConstraint()
 	int lres=LongTextMessageBox::confirmation( this, tr("FET confirmation"),
 		s, tr("Yes"), tr("No"), 0, 0, 1 );
 		
-	if(lres==0){
-		//The user clicked the OK button or pressed Enter
-		
+	if(lres==0){ //The user clicked the OK button or pressed Enter
 		QMessageBox::StandardButton wr=QMessageBox::Yes;
 		
 		if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_TIME){ //additional confirmation for this one
@@ -1131,8 +1129,17 @@ void AllTimeConstraintsForm::removeConstraint()
 			constraintsListWidget->setCurrentRow(-1);
 			item=constraintsListWidget->takeItem(i);
 			delete item;
-		
-			constraintsTextLabel->setText(tr("%1 Time Constraints", "%1 represents the number of constraints").arg(visibleTimeConstraintsList.count()));
+
+			int n_active=0;
+			for(TimeConstraint* ctr2 : qAsConst(visibleTimeConstraintsList))
+				if(ctr2->active)
+					n_active++;
+	
+			constraintsTextLabel->setText(tr("%1 / %2 time constraints",
+			 "%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints")
+			 .arg(n_active).arg(visibleTimeConstraintsList.count()));
+
+			//constraintsTextLabel->setText(tr("%1 Time Constraints", "%1 represents the number of constraints").arg(visibleTimeConstraintsList.count()));
 		
 			if(recompute){
 				LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
@@ -1140,8 +1147,7 @@ void AllTimeConstraintsForm::removeConstraint()
 			}
 		}
 	}
-	//else if(lres==1){
-		//The user clicked the Cancel button or pressed Escape
+	//else if(lres==1){ //The user clicked the Cancel button or pressed Escape
 	//}
 
 	if(i>=constraintsListWidget->count())
@@ -1232,10 +1238,25 @@ void AllTimeConstraintsForm::activateConstraint()
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
-		constraintsListWidget->currentItem()->setText(ctr->getDescription(gt.rules));
-		if(USE_GUI_COLORS)
-			constraintsListWidget->currentItem()->setBackground(constraintsListWidget->palette().base());
-		constraintChanged();
+		if(!filterOk(ctr)){ //Maybe the constraint is no longer visible in the list widget, because of the filter.
+			visibleTimeConstraintsList.removeAt(i);
+			constraintsListWidget->setCurrentRow(-1);
+			QListWidgetItem* item=constraintsListWidget->takeItem(i);
+			delete item;
+
+			if(i>=constraintsListWidget->count())
+				i=constraintsListWidget->count()-1;
+			if(i>=0)
+				constraintsListWidget->setCurrentRow(i);
+			else
+				currentConstraintTextEdit->setPlainText(QString(""));
+		}
+		else{
+			constraintsListWidget->currentItem()->setText(ctr->getDescription(gt.rules));
+			if(USE_GUI_COLORS)
+				constraintsListWidget->currentItem()->setBackground(constraintsListWidget->palette().base());
+			constraintChanged();
+		}
 		
 		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
 			LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
@@ -1243,11 +1264,9 @@ void AllTimeConstraintsForm::activateConstraint()
 		}
 		
 		int n_active=0;
-		for(TimeConstraint* ctr2 : qAsConst(gt.rules.timeConstraintsList))
-			if(filterOk(ctr2)){
-				if(ctr2->active)
-					n_active++;
-			}
+		for(TimeConstraint* ctr2 : qAsConst(visibleTimeConstraintsList))
+			if(ctr2->active)
+				n_active++;
 	
 		constraintsTextLabel->setText(tr("%1 / %2 time constraints",
 		 "%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints")
@@ -1282,10 +1301,25 @@ void AllTimeConstraintsForm::deactivateConstraint()
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
-		constraintsListWidget->currentItem()->setText(ctr->getDescription(gt.rules));
-		if(USE_GUI_COLORS)
-			constraintsListWidget->currentItem()->setBackground(constraintsListWidget->palette().alternateBase());
-		constraintChanged();
+		if(!filterOk(ctr)){ //Maybe the constraint is no longer visible in the list widget, because of the filter.
+			visibleTimeConstraintsList.removeAt(i);
+			constraintsListWidget->setCurrentRow(-1);
+			QListWidgetItem* item=constraintsListWidget->takeItem(i);
+			delete item;
+
+			if(i>=constraintsListWidget->count())
+				i=constraintsListWidget->count()-1;
+			if(i>=0)
+				constraintsListWidget->setCurrentRow(i);
+			else
+				currentConstraintTextEdit->setPlainText(QString(""));
+		}
+		else{
+			constraintsListWidget->currentItem()->setText(ctr->getDescription(gt.rules));
+			if(USE_GUI_COLORS)
+				constraintsListWidget->currentItem()->setBackground(constraintsListWidget->palette().alternateBase());
+			constraintChanged();
+		}
 		
 		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
 			LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
@@ -1293,11 +1327,9 @@ void AllTimeConstraintsForm::deactivateConstraint()
 		}
 
 		int n_active=0;
-		for(TimeConstraint* ctr2 : qAsConst(gt.rules.timeConstraintsList))
-			if(filterOk(ctr2)){
-				if(ctr2->active)
-					n_active++;
-			}
+		for(TimeConstraint* ctr2 : qAsConst(visibleTimeConstraintsList))
+			if(ctr2->active)
+				n_active++;
 	
 		constraintsTextLabel->setText(tr("%1 / %2 time constraints",
 		 "%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints")
@@ -1386,7 +1418,31 @@ void AllTimeConstraintsForm::constraintComments()
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
-		constraintsListWidget->currentItem()->setText(ctr->getDescription(gt.rules));
-		constraintChanged();
+		if(!filterOk(ctr)){ //Maybe the constraint is no longer visible in the list widget, because of the filter.
+			visibleTimeConstraintsList.removeAt(i);
+			constraintsListWidget->setCurrentRow(-1);
+			QListWidgetItem* item=constraintsListWidget->takeItem(i);
+			delete item;
+
+			if(i>=constraintsListWidget->count())
+				i=constraintsListWidget->count()-1;
+			if(i>=0)
+				constraintsListWidget->setCurrentRow(i);
+			else
+				currentConstraintTextEdit->setPlainText(QString(""));
+
+			int n_active=0;
+			for(TimeConstraint* ctr2 : qAsConst(visibleTimeConstraintsList))
+				if(ctr2->active)
+					n_active++;
+	
+			constraintsTextLabel->setText(tr("%1 / %2 time constraints",
+			 "%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints")
+			 .arg(n_active).arg(visibleTimeConstraintsList.count()));
+		}
+		else{
+			constraintsListWidget->currentItem()->setText(ctr->getDescription(gt.rules));
+			constraintChanged();
+		}
 	}
 }

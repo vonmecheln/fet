@@ -2262,3 +2262,9 @@ Versions 5.44.0 - 5.44.v
 	- Code improvements.
 - Version 5.44.5
 	- Minor fixes and code cleanup.
+- Version 5.44.6
+	- Minor fixes in the all time/space constraints dialogs.
+	- Removed the warning that was issued when the user selected a higher HTML level for the generated timetables (if the selected HTML level was 3 or higher,
+	the program warned of possible large file sizes).
+	- Minor code improvements.
+	- Code cleanup.
