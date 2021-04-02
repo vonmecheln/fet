@@ -2439,6 +2439,16 @@ bool Rules::read(const QString& filename)
 	////////////////////////////////////////
 
 	//logging part
+	QDir dir;
+	bool t=true;
+	if(!dir.exists(OUTPUT_DIR))
+		t=dir.mkdir(OUTPUT_DIR);
+	if(!t){
+		QMessageBox::warning(NULL, QObject::tr("FET warning"), QObject::tr("Cannot create or use directory %1 - cannot continue").arg(OUTPUT_DIR));
+		return false;
+	}
+	assert(t);
+	
 	QString xmlReadingLog="";
 	QString tmp=OUTPUT_DIR+FILE_SEP+XML_PARSING_LOG_FILENAME;
 	QFile file2(tmp);

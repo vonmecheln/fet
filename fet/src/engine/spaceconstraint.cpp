@@ -429,6 +429,43 @@ QString ConstraintRoomNotAvailable::getDetailedDescription(Rules& r){
 
 bool ConstraintRoomNotAvailable::computeInternalStructure(Rules& r){
 	this->room_ID=r.searchRoom(this->roomName);
+	
+	if(this->room_ID<0){
+		QMessageBox::warning(NULL, QObject::tr("FET warning"),
+		 QObject::tr("Constraint room not available is wrong because it refers to inexistent room."
+		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}	
+	if(this->d >= r.nDaysPerWeek){
+		QMessageBox::information(NULL, QObject::tr("FET information"),
+		 QObject::tr("Constraint room not available is wrong because it refers to removed day. Please correct"
+		 " and try again. Correcting means editing it and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}
+	if(this->h1 > r.nHoursPerDay){
+		QMessageBox::information(NULL, QObject::tr("FET information"),
+		 QObject::tr("Constraint room not available is wrong because it refers to removed start hour. Please correct"
+		 " and try again. Correcting means editing it and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}
+	if(this->h2 > r.nHoursPerDay){
+		QMessageBox::information(NULL, QObject::tr("FET information"),
+		 QObject::tr("Constraint room not available is wrong because it refers to removed end hour. Please correct"
+		 " and try again. Correcting means editing it and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}
+	if(this->h1 >= this->h2){
+		QMessageBox::information(NULL, QObject::tr("FET information"),
+		 QObject::tr("Constraint room not available is wrong because start hour >= end hour. Please correct"
+		 " and try again. Correcting means editing it and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}
+	
 	assert(this->room_ID>=0);
 	
 	return true;

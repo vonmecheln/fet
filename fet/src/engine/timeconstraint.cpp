@@ -499,6 +499,43 @@ QString ConstraintTeacherNotAvailable::getDetailedDescription(Rules& r){
 
 bool ConstraintTeacherNotAvailable::computeInternalStructure(Rules& r){
 	this->teacher_ID=r.searchTeacher(this->teacherName);
+
+	if(this->teacher_ID<0){
+		QMessageBox::warning(NULL, QObject::tr("FET warning"),
+		 QObject::tr("Constraint teacher not available is wrong because it refers to inexistent teacher."
+		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}	
+	if(this->d >= r.nDaysPerWeek){
+		QMessageBox::information(NULL, QObject::tr("FET information"),
+		 QObject::tr("Constraint teacher not available is wrong because it refers to removed day. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}
+	if(this->h1 > r.nHoursPerDay){
+		QMessageBox::information(NULL, QObject::tr("FET information"),
+		 QObject::tr("Constraint teacher not available is wrong because it refers to removed start hour. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}
+	if(this->h2 > r.nHoursPerDay){
+		QMessageBox::information(NULL, QObject::tr("FET information"),
+		 QObject::tr("Constraint teacher not available is wrong because it refers to removed end hour. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}
+	if(this->h1 >= this->h2){
+		QMessageBox::information(NULL, QObject::tr("FET information"),
+		 QObject::tr("Constraint teacher not available is wrong because start hour >= end hour. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}
+
 	assert(this->teacher_ID>=0);
 	return true;
 }
@@ -627,6 +664,43 @@ ConstraintStudentsSetNotAvailable::ConstraintStudentsSetNotAvailable(double wp, 
 
 bool ConstraintStudentsSetNotAvailable::computeInternalStructure(Rules& r){
 	StudentsSet* ss=r.searchStudentsSet(this->students);
+	
+	if(!ss<0){
+		QMessageBox::warning(NULL, QObject::tr("FET warning"),
+		 QObject::tr("Constraint students set not available is wrong because it refers to inexistent students set."
+		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}	
+	if(this->d >= r.nDaysPerWeek){
+		QMessageBox::information(NULL, QObject::tr("FET information"),
+		 QObject::tr("Constraint students set not available is wrong because it refers to removed day. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}
+	if(this->h1 > r.nHoursPerDay){
+		QMessageBox::information(NULL, QObject::tr("FET information"),
+		 QObject::tr("Constraint students set not available is wrong because it refers to removed start hour. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}
+	if(this->h2 > r.nHoursPerDay){
+		QMessageBox::information(NULL, QObject::tr("FET information"),
+		 QObject::tr("Constraint students set not available is wrong because it refers to removed end hour. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}
+	if(this->h1 >= this->h2){
+		QMessageBox::information(NULL, QObject::tr("FET information"),
+		 QObject::tr("Constraint students set not available is wrong because start hour >= end hour. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}
+	
 	assert(ss);
 
 	this->nSubgroups=0;
@@ -2803,6 +2877,35 @@ bool ConstraintBreak::computeInternalStructure(Rules& r)
 	if(&r!=NULL)
 		;
 		
+	if(this->d >= r.nDaysPerWeek){
+		QMessageBox::information(NULL, QObject::tr("FET information"),
+		 QObject::tr("Constraint break is wrong because it refers to removed day. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}
+	if(this->h1 > r.nHoursPerDay){
+		QMessageBox::information(NULL, QObject::tr("FET information"),
+		 QObject::tr("Constraint break is wrong because it refers to removed start hour. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}
+	if(this->h2 > r.nHoursPerDay){
+		QMessageBox::information(NULL, QObject::tr("FET information"),
+		 QObject::tr("Constraint break is wrong because it refers to removed end hour. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}
+	if(this->h1 >= this->h2){
+		QMessageBox::information(NULL, QObject::tr("FET information"),
+		 QObject::tr("Constraint break is wrong because start hour >= end hour. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}
+
 	return true;
 }
 
@@ -4581,7 +4684,22 @@ bool ConstraintActivityPreferredTime::computeInternalStructure(Rules& r)
 	if(i==r.nInternalActivities){	
 		//assert(0);
 		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-			QObject ::tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
+			QObject ::tr("Following constraint is wrong (because it refers to invalid activity id. Please correct (maybe removing it is a solution)):\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
+
+	if(this->day >= r.nDaysPerWeek){
+		QMessageBox::information(NULL, QObject::tr("FET information"),
+		 QObject::tr("Constraint activity preferred time is wrong because it refers to removed day. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}
+	if(this->hour >= r.nHoursPerDay){
+		QMessageBox::information(NULL, QObject::tr("FET information"),
+		 QObject::tr("Constraint activity preferred time is wrong because it refers to removed hour. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
 		return false;
 	}
 
@@ -4847,9 +4965,26 @@ bool ConstraintActivityPreferredTimes::computeInternalStructure(Rules& r)
 
 	if(i==r.nInternalActivities){
 		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-			QObject ::tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
+			QObject ::tr("Following constraint is wrong (because it refers to invalid activity id. Please correct it (maybe removing it is a solution)):\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
+	}
+
+	for(int k=0; k<nPreferredTimes; k++){
+		if(this->days[k] >= r.nDaysPerWeek){
+			QMessageBox::information(NULL, QObject::tr("FET information"),
+			 QObject::tr("Constraint activity preferred times is wrong because it refers to removed day. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+			return false;
+		}
+		if(this->hours[k] >= r.nHoursPerDay){
+			QMessageBox::information(NULL, QObject::tr("FET information"),
+			 QObject::tr("Constraint activity preferred times is wrong because it refers to removed hour. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+			return false;
+		}
 	}
 
 	this->activityIndex=i;	
@@ -5169,6 +5304,25 @@ bool ConstraintActivitiesPreferredTimes::computeInternalStructure(Rules& r)
 		assert(this->nActivities < MAX_ACTIVITIES);	
 		this->activitiesIndices[this->nActivities++]=i;
 	}
+
+	//////////////////////	
+	for(int k=0; k<nPreferredTimes; k++){
+		if(this->days[k] >= r.nDaysPerWeek){
+			QMessageBox::information(NULL, QObject::tr("FET information"),
+			 QObject::tr("Constraint activities preferred times is wrong because it refers to removed day. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+			return false;
+		}
+		if(this->hours[k] >= r.nHoursPerDay){
+			QMessageBox::information(NULL, QObject::tr("FET information"),
+			 QObject::tr("Constraint activities preferred times is wrong because it refers to removed hour. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+			return false;
+		}
+	}
+	///////////////////////
 	
 	if(this->nActivities>0)
 		return true;

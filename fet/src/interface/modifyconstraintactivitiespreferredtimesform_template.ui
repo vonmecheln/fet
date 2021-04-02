@@ -61,12 +61,6 @@
                     <property name="name">
                         <cstring>weightLineEdit</cstring>
                     </property>
-                    <property name="frameShape">
-                        <enum>LineEditPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                        <enum>Sunken</enum>
-                    </property>
                     <property name="text">
                         <string>100</string>
                     </property>

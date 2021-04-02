@@ -40,7 +40,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include <iostream>
 using namespace std;
 
-extern bool students_schedule_ready, teachers_schedule_ready;
+extern bool students_schedule_ready, teachers_schedule_ready, rooms_schedule_ready;
 
 extern QMutex mutex;
 
@@ -119,24 +119,25 @@ int main(int argc, char **argv){
 	QDir dir;
 	
 	bool t=true;
-
 	//make sure that the output directory exists
 	if(!dir.exists(OUTPUT_DIR))
 		t=dir.mkdir(OUTPUT_DIR);
-	if(!t){
-		assert(0);
-		exit(1);
-	}
-
 	readSimulationParameters();
 
 	students_schedule_ready=0;
 	teachers_schedule_ready=0;
+	rooms_schedule_ready=0;
 
 	QApplication qapplication(argc, argv);
 	
 	QObject::connect(&qapplication, SIGNAL(lastWindowClosed()), &qapplication, SLOT(quit()));
 	
+	if(!t){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"), QObject::tr("Cannot create or use %1 directory - FET will now abort").arg(OUTPUT_DIR));
+		assert(0);
+		exit(1);
+	}
+
 	//translator stuff
 	QDir d("/usr/share/fet/translations");
 	

@@ -54,7 +54,7 @@ You might want to choose different weights for different constraint min n days (
 
 2) If you have a course lesson with say 4 activities per week, difficult lessons, which you would like to schedule in the beginning of the day (say 3 out of 4 need to be in the first half of the day), you can add constraint activity preferred times for the first three activities, with preferred times in the first half of the day. This approach worked with the sample German high-school data.
 
-3) For teachers' gaps: please try to use 100% weight. You could try with a large value for max allowed gaps, and lower it as you find possible timetables.
+3) For teachers' gaps: you have to use 100% weight. You could try with a rather large value for max allowed gaps, and lower it as you find possible timetables.
 
 4) Please only input the special rooms with constraints. Home rooms are not necessary (teachers' or students' rooms). You might firstly try togenerate a timetable without rooms, to see if it is possible, then add rooms and rooms related constraints.
 

@@ -172,13 +172,13 @@ const int MAX_SPACE_CONSTRAINTS = 10000;
 The maximum number of preferred times that can be considered
 in this kind of constraint
 */
-const int MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES = 100;
+const int MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES = 120;
 
 /**
 The maximum number of preferred times that can be considered
 in this kind of constraint
 */
-const int MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES = 100;
+const int MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES = 120;
 
 /**
 The maximum number of activities that can be put in
@@ -241,23 +241,12 @@ const int MAX_CONSTRAINT_ACTIVITIES_SAME_ROOM=20;
 /**
 The maximum number of activities which share the same subject name.
 */
-const int MAX_ACTIVITIES_FOR_A_SUBJECT=200;
-
-/**
-The maximum number of activities which share the same subject tag name.
-*/
-const int MAX_ACTIVITIES_FOR_A_SUBJECT_TAG=1000;
+const int MAX_ACTIVITIES_FOR_A_SUBJECT=500;
 
 /**
 The maximum number of activities which share the same subject+subject tag name.
 */
-const int MAX_ACTIVITIES_FOR_A_SUBJECT_SUBJECT_TAG=200;
-
-/**
-The maximum number of activities which share the same teacher name.
-This constant is used (for now) in ConstraintTeacherRequiresRoom.
-*/
-const int MAX_ACTIVITIES_FOR_A_TEACHER=200;
+const int MAX_ACTIVITIES_FOR_A_SUBJECT_SUBJECT_TAG=500;
 
 
 /**

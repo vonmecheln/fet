@@ -102,6 +102,10 @@ void DaysForm::ok()
 		QObject::tr("Please note that FET will NOT take care\n"
 		"of old constraints using erased days\n"
 		"(only renamed days will be handled correctly)\n"));
+		
+	//remove old names
+	for(int i=nDays; i<gt.rules.nDaysPerWeek; i++)
+		gt.rules.daysOfTheWeek[i]="";
 
 	gt.rules.nDaysPerWeek=nDays;
 	for(int i=0; i<nDays; i++)

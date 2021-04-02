@@ -485,7 +485,7 @@ void TimetableGenerateForm::help()
 	 " Please report to author contrary cases");
 	s+="\n";
 	s+=TimetableGenerateForm::tr("It is recommended to strengthen the constraints step by step (for"
-	 " intance min n days or teachers max gaps), as you obtain feasible timetables.");
+	 " intance min n days or teachers' max gaps), as you obtain feasible timetables.");
 	 
 	QMessageBox::information(this, tr("FET help"), s);
 }

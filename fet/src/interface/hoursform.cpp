@@ -129,6 +129,10 @@ void HoursForm::ok()
 	if(t==QMessageBox::Cancel)
 		return;
 
+	//remove old names
+	for(int i=nHours+1; i<=gt.rules.nHoursPerDay; i++)
+		gt.rules.hoursOfTheDay[i]="";
+		
 	gt.rules.nHoursPerDay=nHours;
 	for(int i=0; i<=nHours; i++)
 		gt.rules.hoursOfTheDay[i]=hoursNames[i]->text();

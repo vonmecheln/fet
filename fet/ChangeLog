@@ -1000,4 +1000,8 @@ Versions 5.2.0 - 5.2.
 	- Small improvements in interface
 	- The teachers max gaps can have now only 100% weight
 	- Improvements in Romanian translation
+- Version 5.2.11
+	- Small potential bug fixes - when reducing the number of hours or days, the old constraints
+	referring to old variables now are reported as wrong
+	- Small bug fix - crashed if user removed directory "results" while program was running
 	
