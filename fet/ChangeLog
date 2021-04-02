@@ -2171,7 +2171,7 @@ Versions 5.40.0 - 5.40.3
 	- Code cleanup.
 	- Added two new example files from Syria, by Zafar Allah Askar.
 ---------------------------------------------------------------------------------
-Versions 5.41.0 - 5.41.v
+Version 5.41.0
 - Version 5.41.0
 	- Implemented these types of constraints: teacher(s)/students (set) activity tag min hours daily (suggested by Chafik Graiguer, Pietro,
 	Vangelis Karafillidis, Benahmed Abdelkrim, s.lanore, and maybe other users). These constraints types are not perfect and must be enabled
@@ -2191,3 +2191,16 @@ Versions 5.41.0 - 5.41.v
 	- Removed a useless computation that was done after the generation (suggested by Marco Diego Aurélio Mesquita).
 	- Various other code improvements/cleanup.
 	- Added a new example file from Algeria, by Lysso.
+---------------------------------------------------------------------------------
+Versions 5.42.0 - 5.42.v
+- Version 5.42.0
+	- Updated to Qt 5.14.0.
+	- Corrected many warnings appearing with the new Qt 5.14.0 (about using deprecated Qt functions).
+	- Minor speed improvements when using the constraints involving room/building changes for students/teachers.
+	- Crash bug fixed when reading a file which was not in the FET XML format (probably not met in practice). Now FET reports that it is an
+	incorrect file.
+	- Bug fix: when opening the students' timetable view days horizontal dialog with the subgroups list variant selected, the details for the
+	current activity were not shown. Also, in this case, locking the selected activities did not work. Reported by math.
+	- Minor bug fixes in the activity planning dialog: when swapping the teachers/students, their initial order in the affected activities
+	might not have been preserved.
+	- Code cleanup.

@@ -174,7 +174,7 @@ TimetableViewTeachersDaysHorizontalForm::TimetableViewTeachersDaysHorizontalForm
 	//if(!columnResizeModeInitialized){
 	teachersTimetableTable->horizontalHeader()->setMinimumSectionSize(teachersTimetableTable->horizontalHeader()->defaultSectionSize());
 	//	columnResizeModeInitialized=true;
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 	teachersTimetableTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 #else
 	teachersTimetableTable->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
@@ -295,7 +295,7 @@ void TimetableViewTeachersDaysHorizontalForm::newTimetableGenerated()
 	//if(!columnResizeModeInitialized){
 	teachersTimetableTable->horizontalHeader()->setMinimumSectionSize(teachersTimetableTable->horizontalHeader()->defaultSectionSize());
 	//	columnResizeModeInitialized=true;
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 	teachersTimetableTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 #else
 	teachersTimetableTable->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
@@ -919,7 +919,7 @@ void TimetableViewTeachersDaysHorizontalForm::lock(bool lockTime, bool lockSpace
 		}
 	}
 	else{
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 		if(addedT>0){
 			added << QCoreApplication::translate("TimetableViewForm", "Added %n locking time constraint(s).",
 			 "See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field."

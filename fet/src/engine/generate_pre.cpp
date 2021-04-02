@@ -1134,9 +1134,13 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 #endif
 		}
 	}
-
+	
 	if(SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME && !fixedVirtualSpaceNonZeroButNotTimeActivities.isEmpty()){
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+		QList<int> tl(fixedVirtualSpaceNonZeroButNotTimeActivities.begin(), fixedVirtualSpaceNonZeroButNotTimeActivities.end());
+#else
 		QList<int> tl=fixedVirtualSpaceNonZeroButNotTimeActivities.toList();
+#endif
 		std::stable_sort(tl.begin(), tl.end());
 		
 		QStringList tlids;
@@ -7524,11 +7528,19 @@ bool computeActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* parent)
 			
 			ActivitiesOccupyMaxTimeSlotsFromSelection_item item;
 			item.activitiesList=cn->_activitiesIndices;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.activitiesSet=QSet<int>(item.activitiesList.begin(), item.activitiesList.end());
+#else
 			item.activitiesSet=item.activitiesList.toSet();
+#endif
 			item.maxOccupiedTimeSlots=cn->maxOccupiedTimeSlots;
 			for(int t=0; t < cn->selectedDays.count(); t++)
 				item.selectedTimeSlotsList.append(cn->selectedDays.at(t)+cn->selectedHours.at(t)*gt.rules.nDaysPerWeek);
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.begin(), item.selectedTimeSlotsList.end());
+#else
 			item.selectedTimeSlotsSet=item.selectedTimeSlotsList.toSet();
+#endif
 			
 			aomtsList.append(item);
 			ActivitiesOccupyMaxTimeSlotsFromSelection_item* p_item=&aomtsList[aomtsList.count()-1];
@@ -7612,11 +7624,19 @@ bool computeActivitiesOccupyMinTimeSlotsFromSelection(QWidget* parent)
 			
 			ActivitiesOccupyMinTimeSlotsFromSelection_item item;
 			item.activitiesList=cn->_activitiesIndices;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.activitiesSet=QSet<int>(item.activitiesList.begin(), item.activitiesList.end());
+#else
 			item.activitiesSet=item.activitiesList.toSet();
+#endif
 			item.minOccupiedTimeSlots=cn->minOccupiedTimeSlots;
 			for(int t=0; t < cn->selectedDays.count(); t++)
 				item.selectedTimeSlotsList.append(cn->selectedDays.at(t)+cn->selectedHours.at(t)*gt.rules.nDaysPerWeek);
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.begin(), item.selectedTimeSlotsList.end());
+#else
 			item.selectedTimeSlotsSet=item.selectedTimeSlotsList.toSet();
+#endif
 			
 			aomintsList.append(item);
 			ActivitiesOccupyMinTimeSlotsFromSelection_item* p_item=&aomintsList[aomintsList.count()-1];
@@ -7664,11 +7684,19 @@ bool computeActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget* parent)
 			
 			ActivitiesMaxSimultaneousInSelectedTimeSlots_item item;
 			item.activitiesList=cn->_activitiesIndices;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.activitiesSet=QSet<int>(item.activitiesList.begin(), item.activitiesList.end());
+#else
 			item.activitiesSet=item.activitiesList.toSet();
+#endif
 			item.maxSimultaneous=cn->maxSimultaneous;
 			for(int t=0; t < cn->selectedDays.count(); t++)
 				item.selectedTimeSlotsList.append(cn->selectedDays.at(t)+cn->selectedHours.at(t)*gt.rules.nDaysPerWeek);
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.begin(), item.selectedTimeSlotsList.end());
+#else
 			item.selectedTimeSlotsSet=item.selectedTimeSlotsList.toSet();
+#endif
 			
 			amsistsList.append(item);
 			ActivitiesMaxSimultaneousInSelectedTimeSlots_item* p_item=&amsistsList[amsistsList.count()-1];
@@ -7739,11 +7767,19 @@ bool computeActivitiesMinSimultaneousInSelectedTimeSlots(QWidget* parent)
 			
 			ActivitiesMinSimultaneousInSelectedTimeSlots_item item;
 			item.activitiesList=cn->_activitiesIndices;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.activitiesSet=QSet<int>(item.activitiesList.begin(), item.activitiesList.end());
+#else
 			item.activitiesSet=item.activitiesList.toSet();
+#endif
 			item.minSimultaneous=cn->minSimultaneous;
 			for(int t=0; t < cn->selectedDays.count(); t++)
 				item.selectedTimeSlotsList.append(cn->selectedDays.at(t)+cn->selectedHours.at(t)*gt.rules.nDaysPerWeek);
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.begin(), item.selectedTimeSlotsList.end());
+#else
 			item.selectedTimeSlotsSet=item.selectedTimeSlotsList.toSet();
+#endif
 			item.allowEmptySlots=cn->allowEmptySlots;
 			
 			aminsistsList.append(item);
@@ -7787,7 +7823,11 @@ bool computeStudentsMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 				continue;
 			
 			StudentsMinGapsBetweenOrderedPairOfActivityTags_item item;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.canonicalSetOfSubgroups=QSet<int>(cn->canonicalSubgroupsList.begin(), cn->canonicalSubgroupsList.end());
+#else
 			item.canonicalSetOfSubgroups=cn->canonicalSubgroupsList.toSet();
+#endif
 			item.minGaps=cn->minGaps;
 			item.firstActivityTag=cn->_firstActivityTagIndex;
 			item.secondActivityTag=cn->_secondActivityTagIndex;
@@ -7798,7 +7838,11 @@ bool computeStudentsMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
 
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+				QSet<int> studentsSet(act->iSubgroupsList.begin(), act->iSubgroupsList.end());
+#else
 				QSet<int> studentsSet=act->iSubgroupsList.toSet();
+#endif
 				studentsSet.intersect(item.canonicalSetOfSubgroups);
 				if(studentsSet.isEmpty())
 					continue;
@@ -7858,7 +7902,11 @@ bool computeStudentsMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 				continue;
 
 			StudentsMinGapsBetweenOrderedPairOfActivityTags_item item;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.canonicalSetOfSubgroups=QSet<int>(cn->canonicalSubgroupsList.begin(), cn->canonicalSubgroupsList.end());
+#else
 			item.canonicalSetOfSubgroups=cn->canonicalSubgroupsList.toSet();
+#endif
 			item.minGaps=cn->minGaps;
 			item.firstActivityTag=cn->_firstActivityTagIndex;
 			item.secondActivityTag=cn->_secondActivityTagIndex;
@@ -7869,7 +7917,11 @@ bool computeStudentsMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
 
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+				QSet<int> studentsSet(act->iSubgroupsList.begin(), act->iSubgroupsList.end());
+#else
 				QSet<int> studentsSet=act->iSubgroupsList.toSet();
+#endif
 				studentsSet.intersect(item.canonicalSetOfSubgroups);
 				if(studentsSet.isEmpty())
 					continue;
@@ -7945,7 +7997,11 @@ bool computeTeachersMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 			assert(cn->canonicalTeachersList.count()==1);
 			
 			TeachersMinGapsBetweenOrderedPairOfActivityTags_item item;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.canonicalSetOfTeachers=QSet<int>(cn->canonicalTeachersList.begin(), cn->canonicalTeachersList.end());
+#else
 			item.canonicalSetOfTeachers=cn->canonicalTeachersList.toSet();
+#endif
 			item.minGaps=cn->minGaps;
 			item.firstActivityTag=cn->_firstActivityTagIndex;
 			item.secondActivityTag=cn->_secondActivityTagIndex;
@@ -8014,7 +8070,11 @@ bool computeTeachersMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 				continue;
 
 			TeachersMinGapsBetweenOrderedPairOfActivityTags_item item;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.canonicalSetOfTeachers=QSet<int>(cn->canonicalTeachersList.begin(), cn->canonicalTeachersList.end());
+#else
 			item.canonicalSetOfTeachers=cn->canonicalTeachersList.toSet();
+#endif
 			item.minGaps=cn->minGaps;
 			item.firstActivityTag=cn->_firstActivityTagIndex;
 			item.secondActivityTag=cn->_secondActivityTagIndex;
@@ -8025,7 +8085,11 @@ bool computeTeachersMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
 
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+				QSet<int> teachersSet(act->iTeachersList.begin(), act->iTeachersList.end());
+#else
 				QSet<int> teachersSet=act->iTeachersList.toSet();
+#endif
 				teachersSet.intersect(item.canonicalSetOfTeachers);
 				if(teachersSet.isEmpty())
 					continue;
@@ -8098,7 +8162,11 @@ bool computeActivitiesOccupyMaxDifferentRooms(QWidget* parent)
 			
 			ActivitiesOccupyMaxDifferentRooms_item item;
 			item.activitiesList=cn->_activitiesIndices;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.activitiesSet=QSet<int>(item.activitiesList.begin(), item.activitiesList.end());
+#else
 			item.activitiesSet=item.activitiesList.toSet();
+#endif
 			item.maxDifferentRooms=cn->maxDifferentRooms;
 			
 			aomdrList.append(item);
@@ -8140,7 +8208,11 @@ bool computeActivitiesSameRoomIfConsecutive(QWidget* parent)
 			
 			ActivitiesSameRoomIfConsecutive_item item;
 			item.activitiesList=cn->_activitiesIndices;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.activitiesSet=QSet<int>(item.activitiesList.begin(), item.activitiesList.end());
+#else
 			item.activitiesSet=item.activitiesList.toSet();
+#endif
 			
 			asricList.append(item);
 			ActivitiesSameRoomIfConsecutive_item* p_item=&asricList[asricList.count()-1];
@@ -8852,11 +8924,19 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 					ConstraintSubjectPreferredRooms* spr=(ConstraintSubjectPreferredRooms*)ctr;
 					
 					if(begin){
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+						it.preferredRooms=QSet<int>(spr->_rooms.begin(), spr->_rooms.end());
+#else
 						it.preferredRooms=spr->_rooms.toSet();
+#endif
 						begin=false;
 					}
 					else{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+						it.preferredRooms.intersect(QSet<int>(spr->_rooms.begin(), spr->_rooms.end()));
+#else
 						it.preferredRooms.intersect(spr->_rooms.toSet());
+#endif
 					}
 				}
 				else if(ctr->type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOM){
@@ -8876,11 +8956,19 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 					ConstraintSubjectActivityTagPreferredRooms* spr=(ConstraintSubjectActivityTagPreferredRooms*)ctr;
 					
 					if(begin){
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+						it.preferredRooms=QSet<int>(spr->_rooms.begin(), spr->_rooms.end());
+#else
 						it.preferredRooms=spr->_rooms.toSet();
+#endif
 						begin=false;
 					}
 					else{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+						it.preferredRooms.intersect(QSet<int>(spr->_rooms.begin(), spr->_rooms.end()));
+#else
 						it.preferredRooms.intersect(spr->_rooms.toSet());
+#endif
 					}
 				}
 				else if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM){
@@ -8900,11 +8988,19 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 					ConstraintActivityTagPreferredRooms* spr=(ConstraintActivityTagPreferredRooms*)ctr;
 					
 					if(begin){
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+						it.preferredRooms=QSet<int>(spr->_rooms.begin(), spr->_rooms.end());
+#else
 						it.preferredRooms=spr->_rooms.toSet();
+#endif
 						begin=false;
 					}
 					else{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+						it.preferredRooms.intersect(QSet<int>(spr->_rooms.begin(), spr->_rooms.end()));
+#else
 						it.preferredRooms.intersect(spr->_rooms.toSet());
+#endif
 					}
 				}
 				else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
@@ -8924,11 +9020,19 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 					ConstraintActivityPreferredRooms* spr=(ConstraintActivityPreferredRooms*)ctr;
 					
 					if(begin){
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+						it.preferredRooms=QSet<int>(spr->_rooms.begin(), spr->_rooms.end());
+#else
 						it.preferredRooms=spr->_rooms.toSet();
+#endif
 						begin=false;
 					}
 					else{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+						it.preferredRooms.intersect(QSet<int>(spr->_rooms.begin(), spr->_rooms.end()));
+#else
 						it.preferredRooms.intersect(spr->_rooms.toSet());
+#endif
 					}
 				}
 			}
@@ -9976,7 +10080,8 @@ bool computeFixedActivities(QWidget* parent)
 		fixedSpaceActivity[ai]=false;
 		for(const PreferredRoomsItem& it : qAsConst(activitiesPreferredRoomsList[ai]))
 			if(it.percentage==100.0 && it.preferredRooms.count()==1){
-				int rm=it.preferredRooms.toList().at(0);
+				//int rm=it.preferredRooms.toList().at(0);
+				int rm=*(it.preferredRooms.begin());
 				assert(rm>=0 && rm<gt.rules.nInternalRooms);
 				
 				/*

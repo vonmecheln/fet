@@ -103,10 +103,10 @@ TimetableViewStudentsDaysHorizontalForm::TimetableViewStudentsDaysHorizontalForm
 	groupsListWidget->clear();
 	subgroupsListWidget->clear();
 	
-	//This connect should be lower in the code
+	//These connect-s should be lower in the code
 	//connect(yearsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(yearChanged(const QString&)));
-	connect(groupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(groupChanged(const QString&)));
-	connect(subgroupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(subgroupChanged(const QString&)));
+	//connect(groupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(groupChanged(const QString&)));
+	//connect(subgroupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(subgroupChanged(const QString&)));
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 	connect(studentsTimetableTable, SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)), this, SLOT(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)));
 	connect(lockTimePushButton, SIGNAL(clicked()), this, SLOT(lockTime()));
@@ -183,7 +183,7 @@ TimetableViewStudentsDaysHorizontalForm::TimetableViewStudentsDaysHorizontalForm
 	//if(!columnResizeModeInitialized){
 	studentsTimetableTable->horizontalHeader()->setMinimumSectionSize(studentsTimetableTable->horizontalHeader()->defaultSectionSize());
 	//	columnResizeModeInitialized=true;
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 	studentsTimetableTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 #else
 	studentsTimetableTable->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
@@ -191,15 +191,32 @@ TimetableViewStudentsDaysHorizontalForm::TimetableViewStudentsDaysHorizontalForm
 	//}
 	///////////////
 	
+	//2019-12-11: so that the years' and groups' list widgets are not void, even if selecting to view by groups or subgroups.
 	yearsListWidget->clear();
 	for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
 		StudentsYear* sty=gt.rules.augmentedYearsList[i];
 		yearsListWidget->addItem(sty->name);
 	}
-	if(yearsListWidget->count()>0)
+	if(yearsListWidget->count()>0){
 		yearsListWidget->setCurrentRow(0);
-	connect(yearsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(yearChanged(const QString&)));
 		
+		groupsListWidget->clear();
+		for(StudentsGroup* stg : qAsConst(gt.rules.augmentedYearsList[0]->groupsList))
+			groupsListWidget->addItem(stg->name);
+		if(groupsListWidget->count()>0){
+			groupsListWidget->setCurrentRow(0);
+			
+			subgroupsListWidget->clear();
+			for(StudentsSubgroup* sts : qAsConst(gt.rules.augmentedYearsList[0]->groupsList.at(0)->subgroupsList))
+				subgroupsListWidget->addItem(sts->name);
+			if(subgroupsListWidget->count()>0)
+				subgroupsListWidget->setCurrentRow(0);
+		}
+	}
+	connect(yearsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(yearChanged(const QString&)));
+	connect(groupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(groupChanged(const QString&)));
+	connect(subgroupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(subgroupChanged(const QString&)));
+	
 	shownComboBox->addItem(tr("Years"));
 	shownComboBox->addItem(tr("Groups"));
 	shownComboBox->addItem(tr("Subgroups"));
@@ -328,7 +345,7 @@ void TimetableViewStudentsDaysHorizontalForm::newTimetableGenerated()
 	//if(!columnResizeModeInitialized){
 /*	studentsTimetableTable->horizontalHeader()->setMinimumSectionSize(studentsTimetableTable->horizontalHeader()->defaultSectionSize());
 	//	columnResizeModeInitialized=true;
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 	studentsTimetableTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 #else
 	studentsTimetableTable->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
@@ -610,9 +627,12 @@ void TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable(){
 
 	assert(sts);
 	int i;
-	for(i=0; i<gt.rules.nInternalSubgroups; i++)
+	/*for(i=0; i<gt.rules.nInternalSubgroups; i++)
 		if(gt.rules.internalSubgroupsList[i]==sts)
 			break;
+	assert(i==sts->indexInInternalSubgroupsList);*/
+	i=sts->indexInInternalSubgroupsList;
+	assert(i>=0);
 	assert(i<gt.rules.nInternalSubgroups);
 	for(int j=0; j<gt.rules.nHoursPerDay && j<studentsTimetableTable->rowCount(); j++){
 		for(int k=0; k<gt.rules.nDaysPerWeek && k<studentsTimetableTable->columnCount(); k++){
@@ -785,35 +805,54 @@ void TimetableViewStudentsDaysHorizontalForm::detailActivity(QTableWidgetItem* i
 	}
 
 	QString s;
-	QString yearname;
-	QString groupname;
+	//QString yearname; //not really necessary
+	//QString groupname; //not really necessary
 	QString subgroupname;
-
-	if(yearsListWidget->currentRow()<0 || yearsListWidget->currentRow()>=yearsListWidget->count())
-		return;
-	if(groupsListWidget->currentRow()<0 || groupsListWidget->currentRow()>=groupsListWidget->count())
-		return;
+	
+	//Note: the years and the groups list widgets might contain useless information if the user selected to see only groups or subgroups.
+	//However, in this case they are not void and the currentRow() will be 0 (first year) for the year list widget and, if the variant is
+	//to show only the subgroups, the same for the groups list widget (initialized in the dialog's constructor).
+	
+	//if(yearsListWidget->currentRow()<0 || yearsListWidget->currentRow()>=yearsListWidget->count())
+	//	return;
+	//if(groupsListWidget->currentRow()<0 || groupsListWidget->currentRow()>=groupsListWidget->count())
+	//	return;
 	if(subgroupsListWidget->currentRow()<0 || subgroupsListWidget->currentRow()>=subgroupsListWidget->count())
 		return;
 
-	yearname = yearsListWidget->currentItem()->text();
-	groupname = groupsListWidget->currentItem()->text();
+	//yearname = yearsListWidget->currentItem()->text();
+	//groupname = groupsListWidget->currentItem()->text();
 	subgroupname = subgroupsListWidget->currentItem()->text();
 
-	StudentsSubgroup* sts=(StudentsSubgroup*)gt.rules.searchAugmentedStudentsSet(subgroupname);
+	StudentsSet* ss=gt.rules.searchAugmentedStudentsSet(subgroupname);
+	if(ss==NULL){
+		QMessageBox::information(this, tr("FET warning"), tr("Inexistent subgroup - please reload this dialog"));
+		return;
+	}
+	if(ss->type!=STUDENTS_SUBGROUP){
+		QMessageBox::warning(this, tr("FET warning"), tr("Incorrect subgroup settings - please reload this dialog"));
+		return;
+	}
+	StudentsSubgroup* sts=(StudentsSubgroup*)ss;
+
+	/*StudentsSubgroup* sts=(StudentsSubgroup*)gt.rules.searchAugmentedStudentsSet(subgroupname);
 	if(!sts){
 		QMessageBox::warning(this, tr("FET warning"), tr("Invalid students set - please close this dialog and open a new view students timetable dialog"));
 		return;
-	}
+	}*/
+	
 	assert(sts);
 	int i;
-	for(i=0; i<gt.rules.nInternalSubgroups; i++)
+	/*for(i=0; i<gt.rules.nInternalSubgroups; i++)
 		if(gt.rules.internalSubgroupsList[i]==sts)
 			break;
+	assert(i==sts->indexInInternalSubgroupsList);*/
 /*	if(!(i<gt.rules.nInternalSubgroups)){
 		QMessageBox::warning(this, tr("FET warning"), tr("Invalid students set - please close this dialog and open a new view students dialog"));
 		return;
 	}*/
+	i=sts->indexInInternalSubgroupsList;
+	assert(i>=0);
 	assert(i<gt.rules.nInternalSubgroups);
 	int j=item->row();
 	int k=item->column();
@@ -838,8 +877,8 @@ void TimetableViewStudentsDaysHorizontalForm::detailActivity(QTableWidgetItem* i
 						tsl.append(gt.rules.internalRoomsList[i]->name);
 					s+=QString(" (")+tsl.join(", ")+QString(")");
 				}
-                
-                if(gt.rules.internalRoomsList[r]->building!=""){
+
+				if(gt.rules.internalRoomsList[r]->building!=""){
 					s+="\n";
 					s+=tr("Building=%1").arg(gt.rules.internalRoomsList[r]->building);
 				}
@@ -919,39 +958,58 @@ void TimetableViewStudentsDaysHorizontalForm::lock(bool lockTime, bool lockSpace
 		return;
 	}
 
-	QString yearname;
-	QString groupname;
+	//QString yearname; //not really necessary
+	//QString groupname; //not really necessary
 	QString subgroupname;
 	
-	if(yearsListWidget->currentRow()<0 || yearsListWidget->currentRow()>=yearsListWidget->count()){
+	//Note: the years and the groups list widgets might contain useless information if the user selected to see only groups or subgroups.
+	//However, in this case they are not void and the currentRow() will be 0 (first year) for the year list widget and, if the variant is
+	//to show only the subgroups, the same for the groups list widget (initialized in the dialog's constructor).
+	
+	/*if(yearsListWidget->currentRow()<0 || yearsListWidget->currentRow()>=yearsListWidget->count()){
 		QMessageBox::information(this, tr("FET information"), tr("Please select a year"));
 		return;
 	}
 	if(groupsListWidget->currentRow()<0 || groupsListWidget->currentRow()>=groupsListWidget->count()){
 		QMessageBox::information(this, tr("FET information"), tr("Please select a group"));
 		return;
-	}
+	}*/
 	if(subgroupsListWidget->currentRow()<0 || subgroupsListWidget->currentRow()>=subgroupsListWidget->count()){
 		QMessageBox::information(this, tr("FET information"), tr("Please select a subgroup"));
 		return;
 	}
 
-	yearname = yearsListWidget->currentItem()->text();
-	groupname = groupsListWidget->currentItem()->text();
+	//yearname = yearsListWidget->currentItem()->text();
+	//groupname = groupsListWidget->currentItem()->text();
 	subgroupname = subgroupsListWidget->currentItem()->text();
 
 	Solution* tc=&best_solution;
 
-	StudentsSubgroup* sts=(StudentsSubgroup*)gt.rules.searchAugmentedStudentsSet(subgroupname);
+	StudentsSet* ss=gt.rules.searchAugmentedStudentsSet(subgroupname);
+	if(ss==NULL){
+		QMessageBox::information(this, tr("FET warning"), tr("Inexistent subgroup - please reload this dialog"));
+		return;
+	}
+	if(ss->type!=STUDENTS_SUBGROUP){
+		QMessageBox::warning(this, tr("FET warning"), tr("Incorrect subgroup settings - please reload this dialog"));
+		return;
+	}
+	StudentsSubgroup* sts=(StudentsSubgroup*)ss;
+
+	/*StudentsSubgroup* sts=(StudentsSubgroup*)gt.rules.searchAugmentedStudentsSet(subgroupname);
 	if(!sts){
 		QMessageBox::warning(this, tr("FET warning"), tr("Invalid students set - please close this dialog and open a new view students timetable dialog"));
 		return;
-	}
+	}*/
+	
 	assert(sts);
 	int i;
-	for(i=0; i<gt.rules.nInternalSubgroups; i++)
+	/*for(i=0; i<gt.rules.nInternalSubgroups; i++)
 		if(gt.rules.internalSubgroupsList[i]==sts)
 			break;
+	assert(i==sts->indexInInternalSubgroupsList);*/
+	i=sts->indexInInternalSubgroupsList;
+	assert(i>=0);
 	assert(i<gt.rules.nInternalSubgroups);
 
 	bool report=false; //the messages are annoying
@@ -1159,7 +1217,7 @@ void TimetableViewStudentsDaysHorizontalForm::lock(bool lockTime, bool lockSpace
 		}
 	}
 	else{
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 		if(addedT>0){
 			added << QCoreApplication::translate("TimetableViewForm", "Added %n locking time constraint(s).",
 			 "See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field."

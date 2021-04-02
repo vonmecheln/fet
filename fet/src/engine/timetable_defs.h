@@ -33,7 +33,7 @@ File timetable_defs.h
 
 #include "centerwidgetonscreen.h"
 
-#if QT_VERSION < 0x050700
+#if QT_VERSION < QT_VERSION_CHECK(5,7,0)
 #include <type_traits>
 namespace std
 {

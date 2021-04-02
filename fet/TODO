@@ -3,9 +3,6 @@ From Liviu Lalescu:
 
 These are some rather technical problems, for developers, referring to some possible improvements in the generation code:
 
-In generate.cpp, improve the stack memory for variables which are using int[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]
-and int[MAX_HOURS_PER_WEEK] (but be careful, I tried this and it seemed to slow down the generation.)
-
 In the initial order, in nIncompatible, consider also teachers(students)intervalMaxDaysPerWeek, like in teacherMaxDaysPerWeek
 
 Make students max gaps per day perfect. This is very difficult/complicated. Any bug/mistake would be critical.
@@ -1044,6 +1041,7 @@ a list) The lists are mentained from subsequent generations and saved with
 data.
 
 58---------------------------------------------------------
+(see also items #149, #368, and #396)
 From Massimo Mancini:
 
 I have another suggestion: an history file where you record all the actions
@@ -1051,7 +1049,7 @@ of the timetabler and theirs effects. If the history was visible in a a frame
 in the View timetable forms, I would see scroll the messages without interruption
 and with the opportunity to review them (please don't answer that is too
 complicated... you can use a tab widget, a tab for the current situation
-another for history... the right answer is: GREAT! I add it in TODO! ;-))). 
+another for history... the right answer is: GREAT! I add it in TODO! ;-))).
 In general an history file should be a great thing and the base for
 undo/rollup features.
 
@@ -2325,6 +2323,7 @@ So I want to avoid those two hour lessons for all 1+1+1+1 and 1+1+1 and 1+1 acti
 Liviu Lalescu: I think the best is a new constraint, students/teachers max building changes in a time interval, and each room is in a different building in your case.
 
 149---------------------------------------------------------
+(see also items #58, #368, and #396)
 From uni_instructor (on forum):
 
 Finding a good optimized timetable means playing around with the parameters and constraints.
@@ -5115,7 +5114,7 @@ Teacher(s) min span per day;
 Teacher(s) min span per week;
 Teacher(s) min gaps per day;
 Teacher(s) min gaps per week;
-A set of activities has min common time slots with another set of activities.
+A set of activities has min common time slots with another set of activities ( https://lalescu.ro/liviu/fet/forum/index.php?topic=3101.msg16795#msg16795 )
 
 DONE SINCE FET 5.41.0 on 2019-11-16: Min simultaneous activities from a set in selected time slots.
 
@@ -6337,6 +6336,7 @@ Anthony Siaudeau:
 I understand the risks for soft users. Is it possible to add in advanced settings an unlock button for active check boxes ?
 
 368---------------------------------------------------------
+(see also items #58, #149, and #396)
 From Anthony Siaudeau:
 
 I know an undo button isn't possible but is it possible to have a change 
@@ -6668,3 +6668,171 @@ This behaviour would be beneficial for community activities, e.g. jour fixe meet
 if they are actually teaching this semester or not. By analyzing the active flag, FET would only schedule active teachers to these activities.
 
 The other option to handle this situation would be to reject toggling a teacher as inactive while he/she has activities.
+
+395---------------------------------------------------------
+From Nagendra (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4365.0
+
+Say, activities are created with students and subjects (without teachers).
+
+Currently, FET assigns these activities to rooms (subjected to the constraints).
+
+Similarly, you can include an option to assign teachers automatically, if a user wants FET to do so. User may be given option to toggle/untoggle
+the feature of assigning teachers automatically.
+
+This way the official FET can be used for both regular as well as exam timetables.
+
+396---------------------------------------------------------
+(see also items #58, #149, and #368)
+From uni_instructor (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4367.0
+
+You wrote to another request concerning this topic:
+"Unfortunately, there is no Undo button, because it is too difficult to implement one now"
+
+As I see there a a few requests related to the missing UNDO function. (my own request included).
+Some users made suggestions concerning possible solutions by using powerful CVS approaches like GIT or Mercurial.
+
+I know implementing a reasonable CVS in FET would be a tough job. So why not keeping it simple?
+I remember there was a suggestion that I should do a manual versioning by saving my project data into new FET-files. That is what I am currently doing. Additionally I keep manual (paper) records and comments of my changes.
+But it is always a hassle and error-prone to keep all my manual recordings up to date.
+
+So I would like to suggest a simpler approach:
+
+FET uses internal data structures to store all basic data and planing constraints and FET can save these data structures into a .FET file.
+
+How much programming effort does it cost to create dynamic duplicates in memory of these data structures? I know it will cost additional system-memory and a little bit of time for storing the data-duplicates, but modern computers are fast and provide Gigabytes of memory, so why should we care about a few hundred Megabytes of additional memory consumption? Actually the real additional memory consumption should be rather low, as I found from my own tests an measurements, since FET has a rather small memory footprint.
+
+I conceive that it should be possible to implement a mechanism for creating/duplicating and switching dynamically between these data structures. In that way it will be possible to keep a history of all (or the last #n) changes and to step back to an earlier planning stage if necessary. A step back would also delete all succeeding planning stages / sets of planning/constraint data.
+Additionally it is possible to store in parallel some short (UNDO-) information that gives the user a hint about the last change steps. Furthermore the whole super-data structure (containing the current set of planning/constraint data and its predecessors ) could be saved into an extended .FET file, so that we can revert to previous planning stages even after a program restart.
+
+Below I added some figures illustrating my idea.
+
+  Dynamic pointer array/ buffer of max n stages
+    \
+     \
+      \
+  O    \
+  |     \
+  |     +--+
+  +---->|#1|------|EOL
+        +--+
+         |  +-------+
+         o--XInfo #1|
+         |  +-------+
+         |
+         |
+         |Step 1
+     +---X-----+
+     |Data #1  |
+     |+---++--+|
+     || A ||  ||
+     |+---+|T ||
+     |+---+|C ||
+     || R ||  ||
+     |+---++--+|
+     +---------+
+          A   Current stage
+          |
+          +----Data set containing
+               room/activities/time
+               constraints etc.
+======================================================================
+ Data structure after #n change steps
+
+  Dynamic pointer array/ buffer of max n stages
+    \
+     \                    UNDO/Revert back to step #2
+      \                +---------------------------------+
+  O    \               |                                 |
+  |     \              V                                 |
+  |     +--+          +--+          +--+                +--+
+  +---->|#1|--------->|#2|--------->|#3|--------------->|#n|------|EOL
+        +--+          +--+          +--+                +--+
+         |  +-------+  |  +-------+  |  +-------+        |  +-------+
+         o--XInfo #1|  o--XInfo #2|  o--XInfo #3|        o--XInfo #n|
+         |  +-------+  |  +-------+  |  +-------+        |  +-------+
+         |             |             |                   |
+         |             |             |                   |
+         |Step 1       |Step 2       |Step 3             |Step n
+     +---X-----+   +---X-----+   +---X-----+         +---X-----+
+     |Data #1  |   |Data #2  |   |Data #3  |         |Data #n  |
+     |+---++--+|   |+---++--+|   |+---++--+|         |+---++--+|
+     || A ||  ||   || A ||  ||   || A ||  ||         || A ||  ||
+     |+---+|T ||   |+---+|T ||   |+---+|T || *  *  * |+---+|T ||
+     |+---+|C ||   |+---+|C ||   |+---+|C ||         |+---+|C ||
+     || R ||  ||   || R ||  ||   || R ||  ||         || R ||  ||
+     |+---++--+|   |+---++--+|   |+---++--+|         |+---++--+|
+     +---------+   +---------+   +---------+         +---------+
+                                                     Current stage
+
+======================================================================
+ Data structure after UNDO and revert to change step #2
+
+  Dynamic pointer array/ buffer of max n stages
+    \
+     \
+      \
+  O    \
+  |     \
+  |     +--+          +--+
+  +---->|#1|--------->|#2| -----|EOL
+        +--+          +--+
+         |  +-------+  |  +-------+
+         o--XInfo #1|  o--XInfo #2|
+         |  +-------+  |  +-------+
+         |             |
+         |             |
+         |Step 1       |Step 2
+     +---X-----+   +---X-----+
+     |Data #1  |   |Data #2  |
+     |+---++--+|   |+---++--+|
+     || A ||  ||   || A ||  ||
+     |+---+|T ||   |+---+|T ||
+     |+---+|C ||   |+---+|C ||
+     || R ||  ||   || R ||  ||
+     |+---++--+|   |+---++--+|
+     +---------+   +---------+
+                   Current stage
+
+----------
+
+Liviu Lalescu:
+	Your ideas are interesting. I added your complete post in the TODO file. Thank you!
+uni_instructor:
+	Nice to read!   :)
+	At least it would be a possibility to implement an UNDO feature without a complete rewrite of FET.
+
+Liviu Lalescu:
+	To make a complete and perfect and memory efficient undo function would be a titanic task now, after all the code was written without undo in mind. And I admit I have no good knowledge of how to implement an undo function.
+uni_instructor:
+	I know, my suggested approach is not memory efficient and sophisticated, nevertheless it is a feasible approach.
+
+Liviu Lalescu:
+	To implement what you are suggesting is also complicated. But I do not quite like it because of the memory waste. And saving a file with say 1000 undo versions might lead to a 1 GB file if the file has 1 MB (the internal memory consumption is lower than the .fet XML file).
+uni_instructor:
+	I don't think that all FET users will need an UNDO with 1000 levels. Even MS-Office does not offer an infinite UNDO. But as I wrote, modern computers have a lot of memory - so who cares.
+	The number of UNDO-levels can be restricted, maybe an a user-defined setting. I think max. 10-25 UNDO-levels by default should be sufficient and this would not be such a significant memory waste.
+
+397---------------------------------------------------------
+From Corfiot (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4368.0
+
+Corfiot:
+
+Would it be possible to add rule groups that one could enable/disable? This would be a ui-side thing and groups could be stored in the XML file separately from rules, so the rule storage schema is not affected.
+
+This would help a lot with creation of difficult timetables, you could group "easy"/"important" rules together, fiddle to get a schedule, then add more rules, fiddle, and repeat, adding more optional/nice to have restrictions.
+
+The UI would be about creating a group (name it) and then in the filter dialog of any rule display dialog add an option to add these rules to a group. Finally, a small dialog to display/delete rules from a group.
+
+How feasible is this?
+
+Liviu Lalescu:
+
+It is an interesting idea. The problem is that constraints do not have an ID, so you cannot specify exactly the constraints in a group.
+
+But Anthony Siaudeau and I have better ideas (there is an older custom version created for Anthony Siaudeau based on his suggestion). He suggested that a constraint can have a weight or a weight name. Weight names have modifiable values. You can create more weight names and assign them to the constraints. Then with only a click you can change the value of a weight name and thus modify the weights of more constraints at once. My idea is to do this also to enable/disable constraints (add some Boolean variables to be attached as the "enabled" state of some constraints). This is because many constraints can have only 100% weight, and they need to be disabled if you want this - their weight cannot simply be made 0.

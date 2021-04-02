@@ -1952,8 +1952,9 @@ inline bool Generate::checkBuildingChanges(int sbg, int tch, const QList<int>& g
 		}
 	}
 			
-	if(buildings[h]==-1) //no problem
-		return true;
+	assert(buildings[h]!=-1); //because we checked this before calling the function checkBuildingChanges(...)
+	//if(buildings[h]==-1) //no problem
+	//	return true;
 			
 	//min gaps
 	double perc;
@@ -2287,8 +2288,9 @@ inline bool Generate::checkRoomChanges(int sbg, int tch, const QList<int>& globa
 		}
 	}
 			
-	if(rooms[h]==-1) //no problem
-		return true;
+	assert(rooms[h]!=-1); //because we checked this before calling the function checkRoomChanges(...)
+	//if(rooms[h]==-1) //no problem
+	//	return true;
 			
 	//min gaps
 	double perc;
@@ -2754,7 +2756,11 @@ inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& g
 		assert(canEmptyRoom.at(indexToRemove)==true);
 		
 		//To keep the generation identical on all computers - 2013-01-03
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+		QList<int> tmpListFromSet=QList<int>(activitiesInRoom.at(indexToRemove).begin(), activitiesInRoom.at(indexToRemove).end());
+#else
 		QList<int> tmpListFromSet=activitiesInRoom.at(indexToRemove).toList();
+#endif
 		//qSort(tmpListFromSet);
 		std::stable_sort(tmpListFromSet.begin(), tmpListFromSet.end());
 		//Randomize list
@@ -2963,7 +2969,11 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 						//New comment (in addition to the old one above, parts of which remain correct): we find a maximum bipartite matching
 						//so that the preferred rooms are those with lowest conflicts. This is possible in O(VE) with depth first search.
 					
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+						acceptedRoomsList=QList<int>(acceptedRoomsSet.begin(), acceptedRoomsSet.end());
+#else
 						acceptedRoomsList=acceptedRoomsSet.toList();
+#endif
 						nRealRooms=acceptedRoomsList.count();
 						nSets=nrrsl.count();
 						NIL_NODE=nRealRooms+nSets;
@@ -3078,65 +3088,70 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 			}
 
 			if(dur2==act->duration){
-				//2019-11-14
-				//see room changes
-				
-				//room changes for students
 				bool ok=true;
-				for(int sbg : qAsConst(act->iSubgroupsList)){
-					if(minGapsBetweenRoomChangesForStudentsPercentages[sbg]>=0 || maxRoomChangesPerDayForStudentsPercentages[sbg]>=0
-					  || maxRoomChangesPerWeekForStudentsPercentages[sbg]>=0){
-						ok=checkRoomChanges(sbg, -1, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
-						if(!ok)
-							break;
-					}
-				}
 
-				if(!ok)
-					continue;
-			
-				//room changes for teachers
-				for(int tch : qAsConst(act->iTeachersList)){
-					if(minGapsBetweenRoomChangesForTeachersPercentages[tch]>=0 || maxRoomChangesPerDayForTeachersPercentages[tch]>=0
-					  || maxRoomChangesPerWeekForTeachersPercentages[tch]>=0){
-						ok=checkRoomChanges(-1, tch, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
-						if(!ok)
-							break;
-					}
-				}
-
-				if(!ok)
-					continue;
-			
-				//see building changes
+				if(rm!=UNALLOCATED_SPACE && rm!=UNSPECIFIED_ROOM){
+					//2019-11-14
+					//check the room changes for the students and for the teachers
 				
-				//building changes for students
-				ok=true;
-				for(int sbg : qAsConst(act->iSubgroupsList)){
-					if(minGapsBetweenBuildingChangesForStudentsPercentages[sbg]>=0 || maxBuildingChangesPerDayForStudentsPercentages[sbg]>=0
-					  || maxBuildingChangesPerWeekForStudentsPercentages[sbg]>=0){
-						ok=checkBuildingChanges(sbg, -1, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
+					//room changes for students
+					for(int sbg : qAsConst(act->iSubgroupsList)){
+						if(minGapsBetweenRoomChangesForStudentsPercentages[sbg]>=0 || maxRoomChangesPerDayForStudentsPercentages[sbg]>=0
+						  || maxRoomChangesPerWeekForStudentsPercentages[sbg]>=0){
+							ok=checkRoomChanges(sbg, -1, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
+							if(!ok)
+								break;
+						}
+					}
+
+					if(!ok)
+						continue;
+			
+					//room changes for teachers
+					for(int tch : qAsConst(act->iTeachersList)){
+						if(minGapsBetweenRoomChangesForTeachersPercentages[tch]>=0 || maxRoomChangesPerDayForTeachersPercentages[tch]>=0
+						  || maxRoomChangesPerWeekForTeachersPercentages[tch]>=0){
+							ok=checkRoomChanges(-1, tch, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
+							if(!ok)
+								break;
+						}
+					}
+
+					if(!ok)
+						continue;
+
+					assert(rm!=UNALLOCATED_SPACE && rm!=UNSPECIFIED_ROOM);
+					if(gt.rules.internalRoomsList[rm]->buildingIndex!=-1){
+						//check the building changes for the students and for the teachers
+						
+						//building changes for students
+						for(int sbg : qAsConst(act->iSubgroupsList)){
+							if(minGapsBetweenBuildingChangesForStudentsPercentages[sbg]>=0 || maxBuildingChangesPerDayForStudentsPercentages[sbg]>=0
+							  || maxBuildingChangesPerWeekForStudentsPercentages[sbg]>=0){
+								ok=checkBuildingChanges(sbg, -1, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
+								if(!ok)
+									break;
+							}
+						}
+
 						if(!ok)
-							break;
+							continue;
+			
+						//building changes for teachers
+						for(int tch : qAsConst(act->iTeachersList)){
+							if(minGapsBetweenBuildingChangesForTeachersPercentages[tch]>=0 || maxBuildingChangesPerDayForTeachersPercentages[tch]>=0
+							  || maxBuildingChangesPerWeekForTeachersPercentages[tch]>=0){
+								ok=checkBuildingChanges(-1, tch, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
+								if(!ok)
+									break;
+							}
+						}
+
+						if(!ok)
+							continue;
 					}
 				}
 
-				if(!ok)
-					continue;
-			
-				//building changes for teachers
-				for(int tch : qAsConst(act->iTeachersList)){
-					if(minGapsBetweenBuildingChangesForTeachersPercentages[tch]>=0 || maxBuildingChangesPerDayForTeachersPercentages[tch]>=0
-					  || maxBuildingChangesPerWeekForTeachersPercentages[tch]>=0){
-						ok=checkBuildingChanges(-1, tch, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
-						if(!ok)
-							break;
-					}
-				}
-
-				if(!ok)
-					continue;
-			
 				//max occupied rooms for a set of activities - 2012-04-29
 				if(aomdrListForActivity[ai].count()>0)
 					ok=checkActivitiesOccupyMaxDifferentRooms(globalConflActivities, rm, level, ai, tmp_list);
@@ -3144,7 +3159,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 				if(!ok)
 					continue;
 					
-				//activities same room if consecutive - introduced on 2013-09-14
+				//activities same room if consecutive - 2013-09-14
 				if(asricListForActivity[ai].count()>0)
 					ok=checkActivitiesSameRoomIfConsecutive(globalConflActivities, rm, level, ai, d, h, tmp_list);
 				
@@ -8482,7 +8497,11 @@ impossiblestudentsminhoursdaily:
 								goto impossiblestudentsactivitytagminhoursdaily;
 							}
 							else{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+								QList<int> candidatesList(candidatesSet.begin(), candidatesSet.end());
+#else
 								QList<int> candidatesList=candidatesSet.toList();
+#endif
 								std::stable_sort(candidatesList.begin(), candidatesList.end()); //To keep the generation identical on all computers.
 							
 								int ai2;
@@ -11015,7 +11034,11 @@ impossibleteachersmindaysperweek:
 								goto impossibleteachersactivitytagminhoursdaily;
 							}
 							else{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+								QList<int> candidatesList(candidatesSet.begin(), candidatesSet.end());
+#else
 								QList<int> candidatesList=candidatesSet.toList();
+#endif
 								std::stable_sort(candidatesList.begin(), candidatesList.end()); //To keep the generation identical on all computers.
 							
 								int ai2;
@@ -11245,7 +11268,11 @@ impossibleteachersmingapsbetweenorderedpairofactivitytags:
 						if(slotSetOfActivities[t].count()+1 <= item->maxSimultaneous)
 							continue;
 
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+						slotSetOfActivities[t].subtract(QSet<int>(conflActivities[newtime].begin(), conflActivities[newtime].end()));
+#else
 						slotSetOfActivities[t].subtract(conflActivities[newtime].toSet());
+#endif
 						
 						if(slotSetOfActivities[t].count()+1 <= item->maxSimultaneous)
 							continue;
@@ -11289,7 +11316,11 @@ impossibleteachersmingapsbetweenorderedpairofactivitytags:
 						int tc=candidates.count();
 						
 						//To keep the generation identical on all computers - 2013-01-03
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+						QList<int> tmpSortedList=QList<int>(allCandidates.begin(), allCandidates.end());
+#else
 						QList<int> tmpSortedList=allCandidates.toList();
+#endif
 						//qSort(tmpSortedList);
 						std::stable_sort(tmpSortedList.begin(), tmpSortedList.end());
 						
@@ -11445,7 +11476,11 @@ impossibleactivitiesmaxsimultaneousinselectedtimeslots:
 						}
 						
 						//To keep the generation identical on all computers - 2013-01-03
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+						QList<int> tmpSortedList=QList<int>(candidates.begin(), candidates.end());
+#else
 						QList<int> tmpSortedList=candidates.toList();
+#endif
 						//qSort(tmpSortedList);
 						std::stable_sort(tmpSortedList.begin(), tmpSortedList.end());
 
@@ -11507,7 +11542,11 @@ impossibleactivitiesmaxsimultaneousinselectedtimeslots:
 						
 						QSet<int> tmpSet=slotSetOfActivities[t];
 						//To keep the generation identical on all computers - 2013-01-03
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+						QList<int> tmpListFromSet=QList<int>(tmpSet.begin(), tmpSet.end());
+#else
 						QList<int> tmpListFromSet=tmpSet.toList();
+#endif
 						//qSort(tmpListFromSet);
 						std::stable_sort(tmpListFromSet.begin(), tmpListFromSet.end());
 						//Randomize list
@@ -11570,7 +11609,11 @@ impossibleactivitiesoccupymaxtimeslotsfromselection:
 		okactivitiesoccupymintimeslotsfromselection=true;
 
 		if(!aomintsListForActivity[ai].isEmpty())
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			conflActivitiesSet=QSet<int>(conflActivities[newtime].begin(), conflActivities[newtime].end());
+#else
 			conflActivitiesSet=conflActivities[newtime].toSet();
+#endif
 
 		for(ActivitiesOccupyMinTimeSlotsFromSelection_item* item : qAsConst(aomintsListForActivity[ai])){
 			int availableDuration=0;
@@ -11721,7 +11764,11 @@ impossibleactivitiesoccupymintimeslotsfromselection:
 		okactivitiesminsimultaneousinselectedtimeslots=true;
 
 		if(!aminsistsListForActivity[ai].isEmpty())
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			conflActivitiesSet=QSet<int>(conflActivities[newtime].begin(), conflActivities[newtime].end());
+#else
 			conflActivitiesSet=conflActivities[newtime].toSet();
+#endif
 		
 		for(ActivitiesMinSimultaneousInSelectedTimeSlots_item* item : qAsConst(aminsistsListForActivity[ai])){
 			int totalRequired;

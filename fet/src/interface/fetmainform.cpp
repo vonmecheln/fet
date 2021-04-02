@@ -268,7 +268,7 @@ using namespace std;
 
 #include <QSysInfo>
 
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QGuiApplication>
 #include <QScreen>
 #else
@@ -286,7 +286,7 @@ using namespace std;
 #include <QNetworkReply>
 #include <QSslSocket>
 
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 #else
@@ -600,7 +600,7 @@ FetMainForm::FetMainForm()
 	QRect rect=mainFormSettingsRect;
 	if(rect.isValid()){
 		bool ok=false;
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 		for(QScreen* screen : QGuiApplication::screens()){
 			if(screen->availableGeometry().intersects(rect)){
 #else
@@ -698,10 +698,10 @@ FetMainForm::FetMainForm()
 			//As on https://stackoverflow.com/questions/14416786/webpage-returning-http-406-error-only-when-connecting-from-qt
 			//and http://amin-ahmadi.com/2016/06/13/fix-modsecurity-issues-in-qt-network-module-download-functionality/ ,
 			//to avoid code 406 from the server.
-#if QT_VERSION >= 0x050400
+#if QT_VERSION >= QT_VERSION_CHECK(5,4,0)
 			req.setHeader(QNetworkRequest::UserAgentHeader, QString("FET")+QString(" ")+FET_VERSION+
 			 QString(" (")+QSysInfo::prettyProductName()+QString("; ")+QSysInfo::currentCpuArchitecture()+QString(")"));
-#elif QT_VERSION >= 0x050000
+#elif QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 			req.setHeader(QNetworkRequest::UserAgentHeader, QString("FET")+QString(" ")+FET_VERSION);
 #else
 			req.setRawHeader("User-Agent", (QString("FET")+QString(" ")+FET_VERSION).toUtf8());
@@ -1050,7 +1050,7 @@ void FetMainForm::replyFinished(QNetworkReply* networkReply)
 		QString internetVersion;
 		QString additionalComments;
 		
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 		QRegularExpression regExp("^\\s*(\\S+)(.*)$");
 		QRegularExpressionMatch match=regExp.match(QString(networkReply->readAll()));
 		if(!match.hasMatch()){

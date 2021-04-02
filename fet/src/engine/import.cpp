@@ -31,7 +31,7 @@ File import.cpp
 
 #include <QtGlobal>
 
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QtWidgets>
 #else
 #include <QtGui>
@@ -1415,7 +1415,11 @@ void Import::importCSVActivityTags(QWidget* parent){
 	//check empty fields (end)
 
 	//check if already in memory (start)
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	QSet<QString> tmpSet=QSet<QString>(fieldList[FIELD_ACTIVITY_TAG_NAME].begin(), fieldList[FIELD_ACTIVITY_TAG_NAME].end());
+#else
 	QSet<QString> tmpSet=fieldList[FIELD_ACTIVITY_TAG_NAME].toSet();
+#endif
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* a=gt.rules.activityTagsList[i];
 		if(tmpSet.contains(a->name))
@@ -1517,7 +1521,11 @@ void Import::importCSVRoomsAndBuildings(QWidget* parent){
 	//check empty buildings (end)
 
 	//check if rooms are already in memory (start)
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	QSet<QString> tmpSet=QSet<QString>(fieldList[FIELD_ROOM_NAME].begin(), fieldList[FIELD_ROOM_NAME].end());
+#else
 	QSet<QString> tmpSet=fieldList[FIELD_ROOM_NAME].toSet();
+#endif
 	for(int i=0; i<gt.rules.roomsList.size(); i++){
 		Room* r=gt.rules.roomsList[i];
 		if(tmpSet.contains(r->name))
@@ -1527,7 +1535,11 @@ void Import::importCSVRoomsAndBuildings(QWidget* parent){
 
 	//check if buildings are already in memory (start)
 	if(fieldNumber[FIELD_ROOM_NAME]<0){
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+		tmpSet=QSet<QString>(fieldList[FIELD_BUILDING_NAME].begin(), fieldList[FIELD_BUILDING_NAME].end());
+#else
 		tmpSet=fieldList[FIELD_BUILDING_NAME].toSet();
+#endif
 		for(int i=0; i<gt.rules.buildingsList.size(); i++){
 			Building* b=gt.rules.buildingsList[i];
 			if(tmpSet.contains(b->name))
@@ -1634,7 +1646,11 @@ void Import::importCSVSubjects(QWidget* parent){
 	//check empty fields (end)
 
 	//check if already in memory (start)
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	QSet<QString> tmpSet(fieldList[FIELD_SUBJECT_NAME].begin(), fieldList[FIELD_SUBJECT_NAME].end());
+#else
 	QSet<QString> tmpSet=fieldList[FIELD_SUBJECT_NAME].toSet();
+#endif
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* s=gt.rules.subjectsList[i];
 		if(tmpSet.contains(s->name))
@@ -1710,7 +1726,11 @@ void Import::importCSVTeachers(QWidget* parent){
 	//check empty fields (end)
 
 	//check if already in memory (start)
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	QSet<QString> tmpSet(fieldList[FIELD_TEACHER_NAME].begin(), fieldList[FIELD_TEACHER_NAME].end());
+#else
 	QSet<QString> tmpSet=fieldList[FIELD_TEACHER_NAME].toSet();
+#endif
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* t=gt.rules.teachersList[i];
 		if(tmpSet.contains(t->name))

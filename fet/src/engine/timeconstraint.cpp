@@ -1990,8 +1990,13 @@ bool ConstraintActivityTagsNotOverlapping::isRelatedToActivity(Rules& r, Activit
 {
 	Q_UNUSED(r);
 	
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	QSet<QString> ats(activityTagsNames.begin(), activityTagsNames.end());
+	QSet<QString> aats(a->activityTagsNames.begin(), a->activityTagsNames.end());
+#else
 	QSet<QString> ats=activityTagsNames.toSet();
 	QSet<QString> aats=a->activityTagsNames.toSet();
+#endif
 	ats.intersect(aats);
 
 	if(ats.count()>0)
@@ -2016,7 +2021,11 @@ bool ConstraintActivityTagsNotOverlapping::isRelatedToSubject(Subject* s)
 
 bool ConstraintActivityTagsNotOverlapping::isRelatedToActivityTag(ActivityTag* s)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	QSet<QString> ats(activityTagsNames.begin(), activityTagsNames.end());
+#else
 	QSet<QString> ats=activityTagsNames.toSet();
+#endif
 	if(ats.contains(s->name))
 		return true;
 

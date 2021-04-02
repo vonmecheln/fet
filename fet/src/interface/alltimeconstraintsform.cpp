@@ -137,7 +137,7 @@
 
 #include <QPlainTextEdit>
 
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 #else
@@ -294,7 +294,7 @@ bool AllTimeConstraintsForm::filterOk(TimeConstraint* ctr)
 		else if(contains.at(i)==DOESNOTCONTAIN){
 			okPartial.append(!(s.contains(t, csens)));
 		}
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 		else if(contains.at(i)==REGEXP){
 			QRegularExpression regExp(t);
 			if(!caseSensitive)

@@ -31,7 +31,7 @@
 
 // BE CAREFUL: DON'T USE INTERNAL VARIABLES HERE, because maybe computeInternalStructure() is not done!
 
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QtWidgets>
 #else
 #include <QtGui>
@@ -358,7 +358,7 @@ ActivityPlanningForm::ActivityPlanningForm(QWidget *parent): QDialog(parent)
 
 	activitiesTableView->setSelectionMode(QAbstractItemView::SingleSelection);
 	
-	//maybe disable AlternatingColors as soon as mouseTracking work correct?!
+	//maybe disable AlternatingColors as soon as mouseTracking works correctly?!
 	activitiesTableView->setAlternatingRowColors(true);
 
 	teachersTableView->setAlternatingRowColors(true); //by Liviu
@@ -873,18 +873,18 @@ void ActivityPlanningForm::swapTeachers(int studentsActivity1, int subjectActivi
 	
 	//check if same teachers
 	QSet<QString> teacherSet1;
+	QStringList teachersList1;
 	if(aiList.count()>0){
 		act=gt.rules.activitiesList[aiList.at(0)];
-		//for(const QString& t : qAsConst(act->teachersNames)){
-		for(QString t : qAsConst(act->teachersNames)){
+		teachersList1=act->teachersNames;
+		for(const QString& t : qAsConst(act->teachersNames)){
 			teacherSet1<<t;
 		}
 	}
 	for(int tmp : qAsConst(aiList)){
 		act=gt.rules.activitiesList[tmp];
 		QSet<QString> tmpSet;
-		//for(const QString& t : qAsConst(act->teachersNames)){
-		for(QString t : qAsConst(act->teachersNames)){
+		for(const QString& t : qAsConst(act->teachersNames)){
 			tmpSet<<t;
 		}
 		if(tmpSet!=teacherSet1){
@@ -894,8 +894,10 @@ void ActivityPlanningForm::swapTeachers(int studentsActivity1, int subjectActivi
 		}
 	}
 	QSet<QString> teacherSet2;
+	QStringList teachersList2;
 	if(aiList2.count()>0){
 		act2=gt.rules.activitiesList[aiList2.at(0)];
+		teachersList2=act2->teachersNames;
 		for(const QString& t : qAsConst(act2->teachersNames)){
 			teacherSet2<<t;
 		}
@@ -912,7 +914,6 @@ void ActivityPlanningForm::swapTeachers(int studentsActivity1, int subjectActivi
 			return;
 		}
 	}
-	
 	
 	if(!tmpIdentifySet.isEmpty() || !tmpIdentifySet2.isEmpty()){
 		//activities1
@@ -990,8 +991,7 @@ void ActivityPlanningForm::swapTeachers(int studentsActivity1, int subjectActivi
 						break;
 					}
 					
-					//QStringList teachers_names=act->teachersNames;
-					QStringList teachers_names=teachers_names.fromSet(teacherSet2);
+					QStringList teachers_names=teachersList2;
 					QString subject_name=act->subjectName;
 					QStringList activity_tags_names=act->activityTagsNames;
 					QStringList students_names=act->studentsNames;
@@ -1014,8 +1014,7 @@ void ActivityPlanningForm::swapTeachers(int studentsActivity1, int subjectActivi
 						break;
 					}
 					
-					//QStringList teachers_names=act->teachersNames;
-					QStringList teachers_names=teachers_names.fromSet(teacherSet1);
+					QStringList teachers_names=teachersList1;
 					QString subject_name=act->subjectName;
 					QStringList activity_tags_names=act->activityTagsNames;
 					QStringList students_names=act->studentsNames;
@@ -1033,7 +1032,7 @@ void ActivityPlanningForm::swapTeachers(int studentsActivity1, int subjectActivi
 }
 
 void ActivityPlanningForm::swapStudents(int studentsActivity1, int subjectActivity1, int studentsActivity2, int subjectActivity2){
-	//this is very similar to swap teachers. So do the same changes there. Maybe i can even merge both funtions into a single one?
+	//this is very similar to swap teachers. So do the same changes there. Maybe I can even merge both funtions into a single one?
 	//care about set 1
 	//bool affectOtherStudents=false;
 	QList<int> aiList;
@@ -1122,19 +1121,19 @@ void ActivityPlanningForm::swapStudents(int studentsActivity1, int subjectActivi
 	
 	//check if same students
 	QSet<QString> studentsSet1;
+	QStringList studentsList1;
 	if(aiList.count()>0){
 		act=gt.rules.activitiesList[aiList.at(0)];
-		//for(const QString& t : qAsConst(act->studentsNames)){
-		for(QString t : qAsConst(act->studentsNames)){
-			studentsSet1<<t;
+		studentsList1=act->studentsNames;
+		for(const QString& s : qAsConst(act->studentsNames)){
+			studentsSet1<<s;
 		}
 	}
 	for(int tmp : qAsConst(aiList)){
 		act=gt.rules.activitiesList[tmp];
 		QSet<QString> tmpSet;
-		//for(const QString& t : qAsConst(act->studentsNames)){
-		for(QString t : qAsConst(act->studentsNames)){
-			tmpSet<<t;
+		for(const QString& s : qAsConst(act->studentsNames)){
+			tmpSet<<s;
 		}
 		if(tmpSet!=studentsSet1){
 			QMessageBox::warning(this, tr("FET information"),
@@ -1143,17 +1142,19 @@ void ActivityPlanningForm::swapStudents(int studentsActivity1, int subjectActivi
 		}
 	}
 	QSet<QString> studentsSet2;
+	QStringList studentsList2;
 	if(aiList2.count()>0){
 		act2=gt.rules.activitiesList[aiList2.at(0)];
-		for(const QString& t : qAsConst(act2->studentsNames)){
-			studentsSet2<<t;
+		studentsList2=act2->studentsNames;
+		for(const QString& s : qAsConst(act2->studentsNames)){
+			studentsSet2<<s;
 		}
 	}
 	for(int tmp : qAsConst(aiList2)){
 		act2=gt.rules.activitiesList[tmp];
 		QSet<QString> tmpSet;
-		for(const QString& t : qAsConst(act2->studentsNames)){
-			tmpSet<<t;
+		for(const QString& s : qAsConst(act2->studentsNames)){
+			tmpSet<<s;
 		}
 		if(tmpSet!=studentsSet2){
 			QMessageBox::warning(this, tr("FET information"),
@@ -1238,9 +1239,8 @@ void ActivityPlanningForm::swapStudents(int studentsActivity1, int subjectActivi
 						//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
 						break;
 					}
-					
-					QStringList students_names=students_names.fromSet(studentsSet2);
-					QString subject_name=act->subjectName;		//TODO rethink: maybe it is better to swap also the subject here? i am not sure. but then the name of the function is also wrong
+					QStringList students_names=studentsList2;
+					QString subject_name=act->subjectName;		//TODO rethink: maybe it is better to swap also the subject here? I am not sure. But then the name of the function is also wrong
 					QStringList activity_tags_names=act->activityTagsNames;
 					QStringList teachers_names=act->teachersNames;
 					int duration=act->duration;
@@ -1261,9 +1261,8 @@ void ActivityPlanningForm::swapStudents(int studentsActivity1, int subjectActivi
 						//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
 						break;
 					}
-					
-					QStringList students_names=students_names.fromSet(studentsSet1);
-					QString subject_name=act->subjectName;		//TODO rethink: maybe it is better to swap also the subject here? i am not sure. but then the name of the function is also wrong
+					QStringList students_names=studentsList1;
+					QString subject_name=act->subjectName;		//TODO rethink: maybe it is better to swap also the subject here? I am not sure. But then the name of the function is also wrong
 					QStringList activity_tags_names=act->activityTagsNames;
 					QStringList teachers_names=act->teachersNames;
 					int duration=act->duration;
@@ -2207,12 +2206,13 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 			
 			assert(tmpActivities.count()==1);
 			
-			for(int tmpAct : qAsConst(tmpActivities)){
+			int tmpAct=tmpActivities.at(0);
+			//for(int tmpAct : qAsConst(tmpActivities)){
 				Activity* act=gt.rules.activitiesList[tmpAct];
 				if(act->isSplit()){
-					//similar to activitiesform.cpp by Liviu Lalescu(start)
-					//maybe TODO: write a function int activityCheckedManualy in activity.cpp, because we use this already 3 times (me even 5 times)
-					//            here, in activitiesform.cpp, in csv export and also in willi2 export and winplan export.
+					//similarly to activitiesform.cpp by Liviu Lalescu (start)
+					//maybe TODO: write a function 'bool activityChangedManually(...)' in activity.cpp, because we use this already 3 times:
+					//            here, in activitiesform.cpp, and in the CSV export.
 					QStringList _teachers=act->teachersNames;
 					bool _diffTeachers=false;
 				
@@ -2297,7 +2297,7 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 				modifyActivityForm.exec();
 				//similar to activitiesform.cpp (end)
 				return;
-			}
+			//}
 		}
 		//else if(tmpSubactivities.count()>=1){
 		else{
@@ -3870,7 +3870,6 @@ void ActivityPlanningForm::updateTablesVisual(int unneeded){
 
 	assert(studentsDuplicates.count()==statisticValues.allStudentsNames.count());
 	assert(studentsDuplicates.count()==yearORgroupORsubgroup.count());
-	
 	
 	activitiesTableView->setUpdatesEnabled(false);
 	teachersTableView->setUpdatesEnabled(false);

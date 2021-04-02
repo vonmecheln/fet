@@ -40,7 +40,7 @@ File centerwidgetonscreen.cpp
 #include <QApplication>
 #include <QWidgetList>
 
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QGuiApplication>
 #include <QScreen>
 #else
@@ -153,7 +153,7 @@ void restoreFETDialogGeometry(QWidget* widget, const QString& alternativeName)
 		QRect rect=settings.value(name+QString("/geometry")).toRect();
 		if(rect.isValid()){
 			bool ok=false;
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 			for(QScreen* screen : QGuiApplication::screens()){
 				if(screen->availableGeometry().intersects(rect)){
 #else
@@ -188,7 +188,7 @@ void setParentAndOtherThings(QWidget* widget, QWidget* parent)
 
 void setStretchAvailabilityTableNicely(QTableWidget* notAllowedTimesTable)
 {
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 	notAllowedTimesTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 #else
 	notAllowedTimesTable->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
@@ -197,7 +197,7 @@ void setStretchAvailabilityTableNicely(QTableWidget* notAllowedTimesTable)
 	int q=notAllowedTimesTable->horizontalHeader()->defaultSectionSize();
 	notAllowedTimesTable->horizontalHeader()->setMinimumSectionSize(q);
 
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 	notAllowedTimesTable->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 #else
 	notAllowedTimesTable->verticalHeader()->setResizeMode(QHeaderView::Stretch);
@@ -294,7 +294,7 @@ int populateStudentsComboBox(QComboBox* studentsComboBox, const QString& selecte
 			selectedIndex=currentIndex;
 		currentIndex++;
 		if(STUDENTS_COMBO_BOXES_STYLE==STUDENTS_COMBO_BOXES_STYLE_CATEGORIZED && gt.rules.yearsList.count()>0){
-#if QT_VERSION >= 0x040400
+#if QT_VERSION >= QT_VERSION_CHECK(4,4,0)
 			studentsComboBox->insertSeparator(studentsComboBox->count());
 			currentIndex++;
 #endif
@@ -363,7 +363,7 @@ int populateStudentsComboBox(QComboBox* studentsComboBox, const QString& selecte
 		}
 		
 		if(haveGroups){
-#if QT_VERSION >= 0x040400
+#if QT_VERSION >= QT_VERSION_CHECK(4,4,0)
 			studentsComboBox->insertSeparator(studentsComboBox->count());
 			currentIndex++;
 #endif
@@ -387,7 +387,7 @@ int populateStudentsComboBox(QComboBox* studentsComboBox, const QString& selecte
 			}
 
 			if(SHOW_SUBGROUPS_IN_COMBO_BOXES && haveSubgroups){
-#if QT_VERSION >= 0x040400
+#if QT_VERSION >= QT_VERSION_CHECK(4,4,0)
 				studentsComboBox->insertSeparator(studentsComboBox->count());
 				currentIndex++;
 #endif

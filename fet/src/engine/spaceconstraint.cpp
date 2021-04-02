@@ -743,7 +743,12 @@ ConstraintActivityPreferredRoom::ConstraintActivityPreferredRoom(double wp, int 
 bool ConstraintActivityPreferredRoom::operator==(ConstraintActivityPreferredRoom& c){
 	if(this->roomName!=c.roomName)
 		return false;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	if(QSet<QString>(this->preferredRealRoomsNames.begin(), this->preferredRealRoomsNames.end()) !=
+	 QSet<QString>(c.preferredRealRoomsNames.begin(), c.preferredRealRoomsNames.end()))
+#else
 	if(this->preferredRealRoomsNames.toSet()!=c.preferredRealRoomsNames.toSet())
+#endif
 		return false;
 	if(this->activityId!=c.activityId)
 		return false;
@@ -960,7 +965,11 @@ double ConstraintActivityPreferredRoom::fitness(
 		if(!preferredRealRooms.isEmpty()){
 			assert(this->weightPercentage==100.0);
 		
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			if(preferredRealRooms!=QSet<int>(c.realRoomsList[this->_activity].begin(), c.realRoomsList[this->_activity].end())){
+#else
 			if(preferredRealRooms!=c.realRoomsList[this->_activity].toSet()){
+#endif
 				ok=false;
 
 				if(conflictsString!=NULL){

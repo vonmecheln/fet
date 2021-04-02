@@ -1332,8 +1332,8 @@ int main(int argc, char **argv)
 	
 		bool t=gt.rules.read(NULL, filename, true, initialDir);
 		if(!t){
-			cout<<"fet: cannot read input file (not existing or in use) - aborting"<<endl;
-			out<<"Cannot read input file (not existing or in use) - aborting"<<endl;
+			cout<<"fet-cl: cannot read input file (not existing, in use, or incorrect file) - aborting"<<endl;
+			out<<"Cannot read input file (not existing, in use, or incorrect file) - aborting"<<endl;
 			logFile.close();
 			return 1;
 		}

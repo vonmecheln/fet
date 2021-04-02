@@ -33,7 +33,7 @@
 
 #include "longtextmessagebox.h"
 
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QtWidgets>
 #else
 #include <QtGui>
@@ -1305,7 +1305,7 @@ void TimetablePrintForm::print(){
 		case 1: printer.setOrientation(QPrinter::Landscape); break;
 		default: assert(0==1);
 	}
-#if QT_VERSION >= 0x050300
+#if QT_VERSION >= QT_VERSION_CHECK(5,3,0)
 	QMarginsF printerMargins;
 	printerMargins.setLeft(leftPageMargin->value());
 	printerMargins.setRight(rightPageMargin->value());
@@ -1349,7 +1349,7 @@ void TimetablePrintForm::printPreviewFull(){
 		case 1: printer.setOrientation(QPrinter::Landscape); break;
 		default: assert(0==1);
 	}
-#if QT_VERSION >= 0x050300
+#if QT_VERSION >= QT_VERSION_CHECK(5,3,0)
 	QMarginsF printerMargins;
 	printerMargins.setLeft(leftPageMargin->value());
 	printerMargins.setRight(rightPageMargin->value());
@@ -1401,7 +1401,7 @@ void TimetablePrintForm::printPreviewSmall(){
 		default: assert(0==1);
 	}
 	
-#if QT_VERSION >= 0x050300
+#if QT_VERSION >= QT_VERSION_CHECK(5,3,0)
 	QMarginsF printerMargins;
 	printerMargins.setLeft(leftPageMargin->value());
 	printerMargins.setRight(rightPageMargin->value());

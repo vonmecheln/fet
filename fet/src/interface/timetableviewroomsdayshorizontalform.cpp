@@ -187,7 +187,7 @@ TimetableViewRoomsDaysHorizontalForm::TimetableViewRoomsDaysHorizontalForm(QWidg
 	//if(!columnResizeModeInitialized){
 	roomsTimetableTable->horizontalHeader()->setMinimumSectionSize(roomsTimetableTable->horizontalHeader()->defaultSectionSize());
 	//	columnResizeModeInitialized=true;
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 	roomsTimetableTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 #else
 	roomsTimetableTable->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
@@ -320,7 +320,7 @@ void TimetableViewRoomsDaysHorizontalForm::newTimetableGenerated()
 	//if(!columnResizeModeInitialized){
 	roomsTimetableTable->horizontalHeader()->setMinimumSectionSize(roomsTimetableTable->horizontalHeader()->defaultSectionSize());
 	//	columnResizeModeInitialized=true;
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 	roomsTimetableTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 #else
 	roomsTimetableTable->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
@@ -936,7 +936,7 @@ void TimetableViewRoomsDaysHorizontalForm::lock(bool lockTime, bool lockSpace)
 		}
 	}
 	else{
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 		if(addedT>0){
 			added << QCoreApplication::translate("TimetableViewForm", "Added %n locking time constraint(s).",
 			 "See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field."

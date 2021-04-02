@@ -53,7 +53,7 @@ using namespace std;
 #include <QProgressDialog>
 #endif
 
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 #else
@@ -3157,7 +3157,11 @@ void Rules::removeActivities(const QList<int>& _idsList, bool updateConstraints)
 	if(_idsList.count()==0)
 		return;
 
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	QSet<int> _removedIdsSet=QSet<int>(_idsList.begin(), _idsList.end());
+#else
 	QSet<int> _removedIdsSet=_idsList.toSet();
+#endif
 	
 	QSet<int> _groupIdsSet;
 	for(Activity* act : qAsConst(activitiesList))
@@ -3939,7 +3943,11 @@ bool Rules::removeTimeConstraint(TimeConstraint* ctr)
 
 bool Rules::removeTimeConstraints(QList<TimeConstraint*> _tcl)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	QSet<TimeConstraint*> _tcs=QSet<TimeConstraint*>(_tcl.begin(), _tcl.end());
+#else
 	QSet<TimeConstraint*> _tcs=_tcl.toSet();
+#endif
 	QList<TimeConstraint*> remaining;
 
 	for(int i=0; i<this->timeConstraintsList.size(); i++){
@@ -4160,7 +4168,11 @@ bool Rules::removeSpaceConstraint(SpaceConstraint* ctr)
 
 bool Rules::removeSpaceConstraints(QList<SpaceConstraint*> _scl)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	QSet<SpaceConstraint*> _scs=QSet<SpaceConstraint*>(_scl.begin(), _scl.end());
+#else
 	QSet<SpaceConstraint*> _scs=_scl.toSet();
+#endif
 	QList<SpaceConstraint*> remaining;
 
 	for(int i=0; i<this->spaceConstraintsList.size(); i++){
@@ -4988,7 +5000,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 			QString version=a.value();
 			file_version=version;*/
 			
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 			QRegularExpression fileVerReCap("^(\\d+)\\.(\\d+)\\.(\\d+)(.*)$");
 			QRegularExpressionMatch match=fileVerReCap.match(file_version);
 			filev[0]=filev[1]=filev[2]=-1;
@@ -5102,13 +5114,16 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				version5AndAbove=true;
 		}
 	}
+	else{
+		okAbove3_12_17=false;
+	}
 	if(!okAbove3_12_17){
 		if(VERBOSE){
-			cout<<"Invalid fet 3.12.17 or above"<<endl;
+			cout<<"Invalid fet 3.12.17 or above input file"<<endl;
 		}
+		file.close();
 		file2.close();
-		RulesIrreconcilableMessage::warning(parent, tr("FET warning"), tr("File does not have a corresponding beginning tag - it should be %1 or %2. File is incorrect..."
-			"it cannot be opened").arg("fet").arg("FET"));
+		RulesIrreconcilableMessage::warning(parent, tr("FET warning"), tr("File is incorrect...it cannot be opened"));
 		return false;
 	}
 	
