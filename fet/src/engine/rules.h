@@ -153,6 +153,8 @@ public:
 	*/
 	SpaceConstraintsList spaceConstraintsList;
 	
+	GroupActivitiesInInitialOrderList groupActivitiesInInitialOrderList;
+	
 	//For faster operation
 	//not internal, based on activity id / teacher name / students set name and constraints list
 	QHash<int, Activity*> activitiesPointerHash; //first is id, second is pointer to Rules::activitiesList

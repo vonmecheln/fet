@@ -1761,8 +1761,8 @@ void ActivityPlanningForm::updateTables_Teachers(){	//similar to statisticsexpor
 		
 		//new (start)
 		QList<int> tmpActivities;
-		QMap<QString, int> tmpSubjectsNumberOfHours;		//using map, because it sort alphabeticly
-		QMap<QString, int> tmpStudentsNumberOfHours;		//using map, because it sort alphabeticly
+		QMap<QString, int> tmpSubjectsNumberOfHours;		//using map, because it sorts alphabetically
+		QMap<QString, int> tmpStudentsNumberOfHours;		//using map, because it sorts alphabetically
 		tmpActivities.clear();
 		tmpActivities=teachersActivities.values(statisticValues.allTeachersNames.at(teacher));
 		foreach(int aidx, tmpActivities){

@@ -34,6 +34,9 @@ extern Timetable gt;
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 
+#include <algorithm>
+using namespace std;
+
 RemoveRedundantForm::RemoveRedundantForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
@@ -122,7 +125,8 @@ void RemoveRedundantForm::wasAccepted()
 			a1List.append(m);
 		}
 		
-		qSort(a1List);
+		//qSort(a1List);
+		std::stable_sort(a1List.begin(), a1List.end());
 		
 		for(int j=i+1; j<mdcList.count(); j++){
 			ConstraintMinDaysBetweenActivities* c2=mdcList.at(j);
@@ -134,7 +138,8 @@ void RemoveRedundantForm::wasAccepted()
 				a2List.append(m);
 			}
 			
-			qSort(a2List);
+			//qSort(a2List);
+			std::stable_sort(a2List.begin(), a2List.end());
 			
 			bool equal=true;
 			

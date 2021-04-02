@@ -720,42 +720,63 @@
                </property>
               </widget>
              </item>
-             <item row="2" column="0">
+             <item row="3" column="0">
               <widget class="QPushButton" name="shortcutViewTeachersPushButton">
                <property name="text">
                 <string comment="It is on the shortcuts tab buttons, so keep translation short">Teachers</string>
                </property>
               </widget>
              </item>
-             <item row="2" column="1">
+             <item row="3" column="1">
               <widget class="QPushButton" name="shortcutViewStudentsPushButton">
                <property name="text">
                 <string comment="It is on the shortcuts tab buttons, so keep translation short">Students</string>
                </property>
               </widget>
              </item>
-             <item row="4" column="0">
-              <widget class="QPushButton" name="shortcutViewRoomsPushButton">
-               <property name="text">
-                <string comment="It is on the shortcuts tab buttons, so keep translation short">Rooms</string>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="1">
+             <item row="0" column="2">
               <widget class="QPushButton" name="shortcutShowSoftConflictsPushButton">
                <property name="text">
                 <string comment="It means show soft conflicts, but I want to keep field short. It is on the shortcuts tab buttons, so keep translation short">Conflicts</string>
                </property>
               </widget>
              </item>
-             <item row="1" column="0" colspan="2">
+             <item row="5" column="2">
+              <widget class="QPushButton" name="shortcutsTimetableAdvancedPushButton">
+               <property name="text">
+                <string>Advanced</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="2">
+              <widget class="QPushButton" name="shortcutViewRoomsPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Rooms</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QPushButton" name="shortcutsTimetablePrintPushButton">
+               <property name="text">
+                <string>Print</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QPushButton" name="shortcutsTimetableLockingPushButton">
+               <property name="text">
+                <string comment="Refers to timetable locking, means locking/unlocking activities, but we need to keep the field short.">Locking</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0" colspan="3">
               <widget class="Line" name="line_5">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
               </widget>
              </item>
-             <item row="3" column="0" colspan="2">
+             <item row="4" column="0" colspan="3">
               <widget class="Line" name="line_6">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
@@ -1206,6 +1227,9 @@
      <addaction name="separator"/>
      <addaction name="enableStudentsMinHoursDailyWithAllowEmptyDaysAction"/>
      <addaction name="showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction"/>
+     <addaction name="separator"/>
+     <addaction name="enableGroupActivitiesInInitialOrderAction"/>
+     <addaction name="showWarningForGroupActivitiesInInitialOrderAction"/>
     </widget>
     <widget class="QMenu" name="menuFET_interface">
      <property name="title">
@@ -1267,6 +1291,8 @@
     <addaction name="spreadActivitiesAction"/>
     <addaction name="separator"/>
     <addaction name="removeRedundantConstraintsAction"/>
+    <addaction name="separator"/>
+    <addaction name="groupActivitiesInInitialOrderAction"/>
    </widget>
    <addaction name="fileMenu"/>
    <addaction name="dataMenu"/>
@@ -2329,6 +2355,33 @@
    </property>
    <property name="text">
     <string>Duplicate vertical headers to the right</string>
+   </property>
+  </action>
+  <action name="groupActivitiesInInitialOrderAction">
+   <property name="text">
+    <string>Group activities in the initial order of generation</string>
+   </property>
+  </action>
+  <action name="enableGroupActivitiesInInitialOrderAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Enable group activities in initial order</string>
+   </property>
+  </action>
+  <action name="showWarningForGroupActivitiesInInitialOrderAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Warn if using group activities in initial order</string>
    </property>
   </action>
  </widget>

@@ -174,7 +174,7 @@ void usage(QTextStream* out, const QString& error)
 		"Command line usage: \"fet-cl --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] "
 		"[--printactivitytags=a] [--printnotavailable=u] [--printbreak=b] [--dividetimeaxisbydays=v] [--duplicateverticalheaders=e] "
 		"[--printsimultaneousactivities=w] [--randomseedx=rx --randomseedy=ry] [--warnifusingnotperfectconstraints=s] "
-		"[--warnifusingstudentsminhoursdailywithallowemptydays=p] [--verbose=r]\",\n"
+		"[--warnifusingstudentsminhoursdailywithallowemptydays=p] [--warnifusinggroupactivitiesininitialorder=g] [--verbose=r]\",\n"
 		"where:\nx is the input file, for instance \"data.fet\"\n"
 		"d is the path to results directory, without trailing slash or backslash (default is current working path). "
 		"Make sure you have write permissions there.\n"
@@ -198,6 +198,8 @@ void usage(QTextStream* out, const QString& error)
 		"(activity tag max hours daily or students max gaps per day) (default true).\n"
 		"p is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains nonstandard constraints "
 		"students min hours daily with allow empty days (default true).\n"
+		"g is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains nonstandard timetable "
+		"generation options to group activities in the initial order (default true).\n"
 		"r is either true or false, represents whether you want additional generation messages and other messages to be shown on the command line (default false)."
 		"\n"
 		"Alternatively, you can run \"fet-cl --version [--outputdir=d]\" to get the current FET version. "
@@ -285,6 +287,9 @@ void readSimulationParameters()
 	ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=newSettings.value("enable-students-min-hours-daily-with-allow-empty-days", "false").toBool();
 	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=newSettings.value("warn-if-using-students-min-hours-daily-with-allow-empty-days", "true").toBool();
 	
+	ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER=newSettings.value("enable-group-activities-in-initial-order", "false").toBool();
+	SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=newSettings.value("warn-if-using-group-activities-in-initial-order", "true").toBool();
+	
 	//main form
 	QRect rect=newSettings.value("FetMainForm/geometry", QRect(0,0,0,0)).toRect();
 	mainFormSettingsRect=rect;
@@ -329,6 +334,9 @@ void writeSimulationParameters()
 	settings.setValue("warn-if-using-not-perfect-constraints", SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS);
 	settings.setValue("enable-students-min-hours-daily-with-allow-empty-days", ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
 	settings.setValue("warn-if-using-students-min-hours-daily-with-allow-empty-days", SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
+
+	settings.setValue("enable-group-activities-in-initial-order", ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
+	settings.setValue("warn-if-using-group-activities-in-initial-order", SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 
 	//main form
 	settings.setValue("FetMainForm/geometry", mainFormSettingsRect);
@@ -657,6 +665,8 @@ int main(int argc, char **argv)
 		
 		SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
 		
+		SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=true;
+		
 		bool showVersion=false;
 		
 		for(int i=1; i<_args.count(); i++){
@@ -714,6 +724,10 @@ int main(int argc, char **argv)
 			else if(s.left(53)=="--warnifusingstudentsminhoursdailywithallowemptydays="){
 				if(s.right(5)=="false")
 					SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=false;
+			}
+			else if(s.left(43)=="--warnifusinggroupactivitiesininitialorder="){
+				if(s.right(5)=="false")
+					SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=false;
 			}
 			else if(s.left(10)=="--verbose="){
 				if(s.right(4)=="true")

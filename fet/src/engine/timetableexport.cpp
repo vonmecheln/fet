@@ -811,6 +811,8 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 
 	rules2.apstHash=gt.rules.apstHash;
 	rules2.aprHash=gt.rules.aprHash;
+	
+	rules2.groupActivitiesInInitialOrderList=gt.rules.groupActivitiesInInitialOrderList;
 
 	//add locking constraints
 	TimeConstraintsList lockTimeConstraintsList;
@@ -936,6 +938,8 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 	rules2.apstHash.clear();
 	rules2.aprHash.clear();
 	
+	rules2.groupActivitiesInInitialOrderList.clear();
+
 	if(!result){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"), tr("Could not save the data + timetable file on the hard disk - maybe hard disk is full"));
 	}

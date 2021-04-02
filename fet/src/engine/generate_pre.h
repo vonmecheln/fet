@@ -56,7 +56,7 @@ extern Matrix1D<QHash<int, int> > activitiesConflictingPercentage;
 bool computeActivitiesConflictingPercentage(QWidget* parent);
 //void computeActivitiesConflicting();
 
-void sortActivities(const QHash<int, int> & reprSameStartingTime, const QHash<int, QSet<int> > & reprSameActivitiesSet, QTextStream* initialOrderStream=NULL);
+void sortActivities(QWidget* parent, const QHash<int, int> & reprSameStartingTime, const QHash<int, QSet<int> > & reprSameActivitiesSet, QTextStream* initialOrderStream=NULL);
 ////////END   BASIC TIME CONSTRAINTS
 
 

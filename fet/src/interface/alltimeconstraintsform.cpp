@@ -128,6 +128,9 @@
 
 #include <QtAlgorithms>
 
+#include <algorithm>
+using namespace std;
+
 extern const QString COMPANY;
 extern const QString PROGRAM;
 
@@ -918,18 +921,18 @@ void AllTimeConstraintsForm::activateConstraint()
 			LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
 			LockUnlock::increaseCommunicationSpinBox();
 		}
+		
+		int n_active=0;
+		foreach(TimeConstraint* ctr2, gt.rules.timeConstraintsList)
+			if(filterOk(ctr2)){
+				if(ctr2->active)
+					n_active++;
+			}
+	
+		constraintsTextLabel->setText(tr("%1 / %2 time constraints",
+		 "%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints")
+		 .arg(n_active).arg(visibleTimeConstraintsList.count()));
 	}
-	
-	int n_active=0;
-	foreach(TimeConstraint* ctr, gt.rules.timeConstraintsList)
-		if(filterOk(ctr)){
-			if(ctr->active)
-				n_active++;
-		}
-	
-	constraintsTextLabel->setText(tr("%1 / %2 time constraints",
-	 "%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints")
-	 .arg(n_active).arg(visibleTimeConstraintsList.count()));
 }
 
 void AllTimeConstraintsForm::deactivateConstraint()
@@ -963,18 +966,18 @@ void AllTimeConstraintsForm::deactivateConstraint()
 			LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
 			LockUnlock::increaseCommunicationSpinBox();
 		}
-	}
 
-	int n_active=0;
-	foreach(TimeConstraint* ctr, gt.rules.timeConstraintsList)
-		if(filterOk(ctr)){
-			if(ctr->active)
-				n_active++;
-		}
+		int n_active=0;
+		foreach(TimeConstraint* ctr2, gt.rules.timeConstraintsList)
+			if(filterOk(ctr2)){
+				if(ctr2->active)
+					n_active++;
+			}
 	
-	constraintsTextLabel->setText(tr("%1 / %2 time constraints",
-	 "%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints")
-	 .arg(n_active).arg(visibleTimeConstraintsList.count()));
+		constraintsTextLabel->setText(tr("%1 / %2 time constraints",
+		 "%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints")
+		 .arg(n_active).arg(visibleTimeConstraintsList.count()));
+	}
 }
 
 static int timeConstraintsAscendingByComments(const TimeConstraint* t1, const TimeConstraint* t2)
@@ -994,7 +997,8 @@ void AllTimeConstraintsForm::sortConstraintsByComments()
 	if(t==QMessageBox::Cancel)
 		return;
 	
-	qStableSort(gt.rules.timeConstraintsList.begin(), gt.rules.timeConstraintsList.end(), timeConstraintsAscendingByComments);
+	//qStableSort(gt.rules.timeConstraintsList.begin(), gt.rules.timeConstraintsList.end(), timeConstraintsAscendingByComments);
+	std::stable_sort(gt.rules.timeConstraintsList.begin(), gt.rules.timeConstraintsList.end(), timeConstraintsAscendingByComments);
 
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

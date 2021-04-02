@@ -2141,7 +2141,8 @@ inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& g
 		
 		//To keep generation identical on all computers - 2013-01-03
 		QList<int> tmpListFromSet=activitiesInRoom.at(indexToRemove).toList();
-		qSort(tmpListFromSet);
+		//qSort(tmpListFromSet);
+		std::stable_sort(tmpListFromSet.begin(), tmpListFromSet.end());
 		//Randomize list
 		for(int i=0; i<tmpListFromSet.count(); i++){
 			int t=tmpListFromSet.at(i);
@@ -2431,7 +2432,8 @@ inline bool Generate::getPreferredRoom(const QList<int>& globalConflActivities, 
 	QList<int> allowedRoomsList;
 	foreach(int rm, allowedRooms)
 		allowedRoomsList.append(rm);
-	qSort(allowedRoomsList); //To keep generation identical on all computers - 2013-01-03
+	//qSort(allowedRoomsList); //To keep generation identical on all computers - 2013-01-03
+	std::stable_sort(allowedRoomsList.begin(), allowedRoomsList.end()); //To keep generation identical on all computers - 2013-01-03
 	//Randomize list
 	for(int i=0; i<allowedRoomsList.count(); i++){
 		int t=allowedRoomsList.at(i);
@@ -8772,7 +8774,8 @@ impossibleteachersmindaysperweek:
 						
 						//To keep generation identical on all computers - 2013-01-03
 						QList<int> tmpSortedList=allCandidates.toList();
-						qSort(tmpSortedList);
+						//qSort(tmpSortedList);
+						std::stable_sort(tmpSortedList.begin(), tmpSortedList.end());
 						int ai2=tmpSortedList.at(q);
 						//int ai2=allCandidates.toList().at(q);
 						
@@ -8902,14 +8905,16 @@ impossibleactivitiesmaxsimultaneousinselectedtimeslots:
 						
 						//To keep generation identical on all computers - 2013-01-03
 						QList<int> tmpSortedList=candidates.toList();
-						qSort(tmpSortedList);
+						//qSort(tmpSortedList);
+						std::stable_sort(tmpSortedList.begin(), tmpSortedList.end());
 						int t=tmpSortedList.at(q);
 						//int t=candidates.toList().at(q);
 						
 						QSet<int> tmpSet=slotSetOfActivities[t];
 						//To keep generation identical on all computers - 2013-01-03
 						QList<int> tmpListFromSet=tmpSet.toList();
-						qSort(tmpListFromSet);
+						//qSort(tmpListFromSet);
+						std::stable_sort(tmpListFromSet.begin(), tmpListFromSet.end());
 						//Randomize list
 						for(int i=0; i<tmpListFromSet.count(); i++){
 							int t=tmpListFromSet.at(i);
@@ -9085,7 +9090,8 @@ skip_here_if_already_allocated_in_time:
 			
 	//O(n*log(n)) stable sorting
 	currentLevel=level;
-	qStableSort(perm+0, perm+gt.rules.nHoursPerWeek, compareFunctionGenerate);
+	//qStableSort(perm+0, perm+gt.rules.nHoursPerWeek, compareFunctionGenerate);
+	std::stable_sort(perm+0, perm+gt.rules.nHoursPerWeek, compareFunctionGenerate);
 			
 	/*cout<<"perm[i]: ";
 	for(int i=0; i<gt.rules.nHoursPerWeek; i++)
@@ -9450,7 +9456,7 @@ if(this->isThreaded){
 			
 			assert(!foundGoodSwap);
 			
-			if(level>=5) //7 also might be used? This is a value found practically, has no theoretical meaning probably
+			if(level>=5) //7 also might be used? This is a value found practically.
 				return;
 		}
 	}

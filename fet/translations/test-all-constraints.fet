@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.21.0">
+<fet version="5.23.0">
 
 <Institution_Name>Default institution</Institution_Name>
 
@@ -1762,5 +1762,16 @@
 	<Comments></Comments>
 </ConstraintActivitiesSameRoomIfConsecutive>
 </Space_Constraints_List>
+
+<Timetable_Generation_Options_List>
+<GroupActivitiesInInitialOrder>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>1</Activity_Id>
+	<Activity_Id>2</Activity_Id>
+	<Activity_Id>3</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</GroupActivitiesInInitialOrder>
+</Timetable_Generation_Options_List>
 
 </fet>

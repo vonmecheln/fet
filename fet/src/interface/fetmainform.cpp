@@ -69,6 +69,7 @@ using namespace std;
 
 #include "fet.h"
 
+#include "groupactivitiesininitialorderitemsform.h"
 #include "constraintactivityendsstudentsdayform.h"
 #include "constraintactivitiesendstudentsdayform.h"
 #include "constrainttwoactivitiesconsecutiveform.h"
@@ -285,6 +286,9 @@ bool ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=false;
 
 bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
 
+bool ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER=false;
+bool SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=true;
+
 bool CONFIRM_ACTIVITY_PLANNING=true;
 bool CONFIRM_SPREAD_ACTIVITIES=true;
 bool CONFIRM_REMOVE_REDUNDANT=true;
@@ -450,6 +454,8 @@ FetMainForm::FetMainForm()
 	shortcutAdvancedTimeMenu->addAction(spreadActivitiesAction);
 	shortcutAdvancedTimeMenu->addSeparator();
 	shortcutAdvancedTimeMenu->addAction(removeRedundantConstraintsAction);
+	//shortcutAdvancedTimeMenu->addSeparator();
+	//shortcutAdvancedTimeMenu->addAction(groupActivitiesInInitialOrderAction);
 	
 	shortcutDataSpaceMenu=new QMenu();
 	shortcutDataSpaceMenu->addAction(dataBuildingsAction);
@@ -464,6 +470,20 @@ FetMainForm::FetMainForm()
 	shortcutDataAdvancedMenu->addAction(dataStudentsStatisticsAction);
 	shortcutDataAdvancedMenu->addSeparator();
 	shortcutDataAdvancedMenu->addAction(dataActivitiesRoomsStatisticsAction);
+	
+	//2014-07-01
+	shortcutTimetableLockingMenu=new QMenu();
+	shortcutTimetableLockingMenu->addAction(timetableLockAllActivitiesAction);
+	shortcutTimetableLockingMenu->addAction(timetableUnlockAllActivitiesAction);
+	shortcutTimetableLockingMenu->addSeparator();
+	shortcutTimetableLockingMenu->addAction(timetableLockActivitiesDayAction);
+	shortcutTimetableLockingMenu->addAction(timetableUnlockActivitiesDayAction);
+	shortcutTimetableLockingMenu->addSeparator();
+	shortcutTimetableLockingMenu->addAction(timetableLockActivitiesEndStudentsDayAction);
+	shortcutTimetableLockingMenu->addAction(timetableUnlockActivitiesEndStudentsDayAction);
+	
+	shortcutTimetableAdvancedMenu=new QMenu();
+	shortcutTimetableAdvancedMenu->addAction(groupActivitiesInInitialOrderAction);
 	
 	ORIGINAL_WIDTH=width();
 	ORIGINAL_HEIGHT=height();
@@ -557,12 +577,25 @@ FetMainForm::FetMainForm()
 	LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
 	LockUnlock::increaseCommunicationSpinBox();
 	
+	enableActivityTagMaxHoursDailyAction->setCheckable(true);
+	enableStudentsMaxGapsPerDayAction->setCheckable(true);
+	showWarningForNotPerfectConstraintsAction->setCheckable(true);
+
+	enableStudentsMinHoursDailyWithAllowEmptyDaysAction->setCheckable(true);
+	showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction->setCheckable(true);
+	
+	enableGroupActivitiesInInitialOrderAction->setCheckable(true);
+	showWarningForGroupActivitiesInInitialOrderAction->setCheckable(true);
+	
 	enableActivityTagMaxHoursDailyAction->setChecked(ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
 	enableStudentsMaxGapsPerDayAction->setChecked(ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
 	showWarningForNotPerfectConstraintsAction->setChecked(SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS);
 
 	enableStudentsMinHoursDailyWithAllowEmptyDaysAction->setChecked(ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
 	showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction->setChecked(SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
+
+	enableGroupActivitiesInInitialOrderAction->setChecked(ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
+	showWarningForGroupActivitiesInInitialOrderAction->setChecked(SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 	
 	connect(enableActivityTagMaxHoursDailyAction, SIGNAL(toggled(bool)), this, SLOT(enableActivityTagMaxHoursDailyToggled(bool)));
 	connect(enableStudentsMaxGapsPerDayAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMaxGapsPerDayToggled(bool)));
@@ -570,6 +603,9 @@ FetMainForm::FetMainForm()
 
 	connect(enableStudentsMinHoursDailyWithAllowEmptyDaysAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool)));
 	connect(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool)));
+
+	connect(enableGroupActivitiesInInitialOrderAction, SIGNAL(toggled(bool)), this, SLOT(enableGroupActivitiesInInitialOrderToggled(bool)));
+	connect(showWarningForGroupActivitiesInInitialOrderAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForGroupActivitiesInInitialOrderToggled(bool)));
 
 	dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction->setIconVisibleInMenu(true);
 	dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction->setIconVisibleInMenu(true);
@@ -579,6 +615,8 @@ FetMainForm::FetMainForm()
 	dataTimeConstraintsStudentsSetMaxGapsPerDayAction->setIconVisibleInMenu(true);
 	dataTimeConstraintsStudentsMaxGapsPerDayAction->setIconVisibleInMenu(true);
 
+	groupActivitiesInInitialOrderAction->setIconVisibleInMenu(true);
+
 	setEnabledIcon(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
 	setEnabledIcon(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
 	setEnabledIcon(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
@@ -586,6 +624,8 @@ FetMainForm::FetMainForm()
 
 	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerDayAction, ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
 	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerDayAction, ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
+
+	setEnabledIcon(groupActivitiesInInitialOrderAction, ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 }
 
 void FetMainForm::setEnabledIcon(QAction* action, bool enabled)
@@ -667,12 +707,12 @@ void FetMainForm::replyFinished(QNetworkReply* networkReply)
 {
 	if(networkReply->error()!=QNetworkReply::NoError){
 		QString s=QString("");
-		s+=tr("Could not search for possible updates on Internet - error message is: %1.").arg(networkReply->errorString());
+		s+=tr("Could not search for possible updates on the internet - error message is: %1.").arg(networkReply->errorString());
 		s+=QString("\n\n");
 		s+=tr("Searching for file %1.").arg("http://lalescu.ro/liviu/fet/crtversion/crtversion.txt");
 		s+=QString("\n\n");
 		s+=tr("Possible actions: check your network connection, try again later, try to visit FET homepage: %1, or"
-		 " try to search for the new FET page on the Internet (maybe it has changed).").arg("http://lalescu.ro/liviu/fet/");
+		 " try to search for the new FET page on the internet (maybe it has changed).").arg("http://lalescu.ro/liviu/fet/");
 
 		QMessageBox::warning(this, tr("FET warning"), s);
 	}
@@ -688,7 +728,7 @@ void FetMainForm::replyFinished(QNetworkReply* networkReply)
 			s+=QString("\n\n");
 			s+=tr("Maybe the FET homepage has some temporary problems, so try again later."
 			 " Or maybe the current structure on FET homepage was changed. You may visit FET homepage: %1, and get latest version or,"
-			 " if it does not work, try to search for the new FET page on the Internet (maybe it has changed).")
+			 " if it does not work, try to search for the new FET page on the internet (maybe it has changed).")
 			  .arg("http://lalescu.ro/liviu/fet/");
 
 			QMessageBox::warning(this, tr("FET warning"), s);
@@ -717,7 +757,7 @@ void FetMainForm::replyFinished(QNetworkReply* networkReply)
 				if(button==QMessageBox::Yes){
 					bool tds=QDesktopServices::openUrl(QUrl("http://lalescu.ro/liviu/fet/"));
 					if(!tds){
-						QMessageBox::warning(this, tr("FET warning"), tr("Could not start the default Internet browser (trying to open the link %1)."
+						QMessageBox::warning(this, tr("FET warning"), tr("Could not start the default internet browser (trying to open the link %1)."
 							" Maybe you can try to manually start your browser and open this link.").arg("http://lalescu.ro/liviu/fet/"));
 					}
 				}
@@ -793,6 +833,13 @@ FetMainForm::~FetMainForm()
 
 	shortcutDataAdvancedMenu->clear();
 	delete shortcutDataAdvancedMenu;
+	
+	//2014-07-01
+	shortcutTimetableLockingMenu->clear();
+	delete shortcutTimetableLockingMenu;
+	
+	shortcutTimetableAdvancedMenu->clear();
+	delete shortcutTimetableAdvancedMenu;
 }
 
 void FetMainForm::on_fileExitAction_triggered()
@@ -1317,6 +1364,8 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 		rules2.apstHash=gt.rules.apstHash;
 		rules2.aprHash=gt.rules.aprHash;
 
+		rules2.groupActivitiesInInitialOrderList=gt.rules.groupActivitiesInInitialOrderList;
+
 		//add locking constraints
 		TimeConstraintsList lockTimeConstraintsList;
 		SpaceConstraintsList lockSpaceConstraintsList;
@@ -1422,6 +1471,8 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 
 		rules2.apstHash.clear();
 		rules2.aprHash.clear();
+
+		rules2.groupActivitiesInInitialOrderList.clear();
 	}
 	
 	if(pc_form!=NULL)
@@ -1632,13 +1683,17 @@ void FetMainForm::on_helpSettingsAction_triggered()
 	s+=tr("Interface - use colors: the places with colors in FET interface are in:");
 	s+="\n";
 	s+=" -";
-	s+=tr("add/modify constraints break, not available, preferred starting times or time slots (the table cells will have green or red colors).");
+	s+=tr("add/modify constraints break, not available, preferred starting times or time slots, occupy max time slots from selection or"
+		" max simultaneous in selected time slots (the table cells will have green or red colors).");
 	s+="\n";
 	s+=" -";
 	s+=tr("activities and subactivities dialogs, the inactive activities will have a distinctive background color");
 	s+="\n";
 	s+=" -";
 	s+=tr("all time constraints and all space constraints dialogs, the inactive constraints will have a distinctive background color");
+	s+="\n";
+	s+=" -";
+	s+=tr("group activities in initial order items, the inactive items will have a distinctive background color");
 	
 	s+="\n\n";
 	s+=tr("Enable activity tag max hours daily:");
@@ -2702,6 +2757,31 @@ void FetMainForm::on_dataTimeConstraintsStudentsMaxGapsPerWeekAction_triggered()
 	form.exec();
 }
 
+void FetMainForm::on_groupActivitiesInInitialOrderAction_triggered()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	if(!ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER){
+		QString s=tr("Feature is not enabled. To use this type of feature you must enable it from the Settings->Advanced menu.");
+		s+="\n\n";
+		s+=tr("Explanation:");
+		s+=" ";
+		s+=tr("The feature must be used with caution, by experienced users.");
+
+		QMessageBox::information(this, tr("FET information"), s);
+
+		return;
+	}
+
+	GroupActivitiesInInitialOrderItemsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
 void FetMainForm::on_dataTimeConstraintsStudentsSetMaxGapsPerDayAction_triggered()
 {
 	if(simulation_running){
@@ -3077,7 +3157,7 @@ void FetMainForm::on_helpHomepageAction_triggered()
 	bool tds=QDesktopServices::openUrl(QUrl("http://lalescu.ro/liviu/fet/"));
 
 	if(!tds){
-		QMessageBox::warning(this, tr("FET warning"), tr("Could not start the default Internet browser (trying to open the link %1)."
+		QMessageBox::warning(this, tr("FET warning"), tr("Could not start the default internet browser (trying to open the link %1)."
 		" Maybe you can try to manually start your browser and open this link.").arg("http://lalescu.ro/liviu/fet/"));
 	}
 }
@@ -3087,7 +3167,7 @@ void FetMainForm::on_helpContentsAction_triggered()
 	bool tds=QDesktopServices::openUrl(QUrl("http://lalescu.ro/liviu/fet/doc/"));
 
 	if(!tds){
-		QMessageBox::warning(this, tr("FET warning"), tr("Could not start the default Internet browser (trying to open the link %1)."
+		QMessageBox::warning(this, tr("FET warning"), tr("Could not start the default internet browser (trying to open the link %1)."
 		" Maybe you can try to manually start your browser and open this link.").arg("http://lalescu.ro/liviu/fet/doc/"));
 	}
 }
@@ -3097,7 +3177,7 @@ void FetMainForm::on_helpForumAction_triggered()
 	bool tds=QDesktopServices::openUrl(QUrl("http://lalescu.ro/liviu/fet/forum/"));
 
 	if(!tds){
-		QMessageBox::warning(this, tr("FET warning"), tr("Could not start the default Internet browser (trying to open the link %1)."
+		QMessageBox::warning(this, tr("FET warning"), tr("Could not start the default internet browser (trying to open the link %1)."
 		" Maybe you can try to manually start your browser and open this link.").arg("http://lalescu.ro/liviu/fet/forum/"));
 	}
 }
@@ -3105,7 +3185,7 @@ void FetMainForm::on_helpForumAction_triggered()
 void FetMainForm::on_helpAddressesAction_triggered()
 {
 	QString s="";
-	s+=tr("In case the Help/Online menus do not function, please write down these addresses and open them in an Internet browser:");
+	s+=tr("In case the Help/Online menus do not function, please write down these addresses and open them in an internet browser:");
 	s+="\n\n";
 	s+=tr("FET homepage: %1", "%1 is FET homepage, begins with http://...").arg("http://lalescu.ro/liviu/fet/");
 	s+="\n";
@@ -3115,7 +3195,7 @@ void FetMainForm::on_helpAddressesAction_triggered()
 	s+="\n\n";
 	s+=tr("Additionally, you may find on the FET homepage other contact information.");
 	s+="\n\n";
-	s+=tr("In case these addresses do not function, maybe the FET webpage has temporary problems, so try again later. Or maybe the FET webpage has changed, so search for the new page on the Internet.");
+	s+=tr("In case these addresses do not function, maybe the FET webpage has temporary problems, so try again later. Or maybe the FET webpage has changed, so search for the new page on the internet.");
 
 	LongTextMessageBox::largeInformation(this, tr("FET web addresses"), s);
 }
@@ -3609,9 +3689,15 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	s+=QString("25. ")+tr("Confirm remove redundant constraints will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 	s+=QString("26. ")+tr("Confirm save data and timetable as will be %1", "%1 is true or false").arg(tr("true"));
-	//s+="\n";
+	s+="\n";
 	///////////////
-
+	
+	s+=QString("27. ")+tr("Enable group activities in the initial order of generation will be %1", "%1 is true or false").arg(tr("false"));
+	s+="\n";
+	s+=QString("28. ")+tr("Warn if using group activities in the initial order of generation will be %1", "%1 is true or false").arg(tr("true"));
+	s+="\n";
+	///////////////
+	
 	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,
 	 tr("&Yes"), tr("&No"), QString(), 0 , 1 ) ) {
 	case 0: // Yes
@@ -3668,6 +3754,11 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=true;
 	showWarningForNotPerfectConstraintsAction->setChecked(SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS);
 	
+	ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER=false;
+	SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=true;
+	enableGroupActivitiesInInitialOrderAction->setChecked(ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
+	showWarningForGroupActivitiesInInitialOrderAction->setChecked(SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
+	
 	setEnabledIcon(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
 	setEnabledIcon(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
 	setEnabledIcon(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
@@ -3675,6 +3766,8 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 
 	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerDayAction, ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
 	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerDayAction, ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
+
+	setEnabledIcon(groupActivitiesInInitialOrderAction, ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 
 	ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=false;
 	enableStudentsMinHoursDailyWithAllowEmptyDaysAction->setChecked(ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
@@ -4071,6 +4164,51 @@ void FetMainForm::showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled(b
 	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=checked;
 }
 
+void FetMainForm::enableGroupActivitiesInInitialOrderToggled(bool checked)
+{
+	if(checked==true){
+		QString s=tr("This kind of option is good, but only in the right case. Adding such an option in the wrong circumstance may make your"
+		 " timetable solve too slow or even impossible.");
+		s+="\n\n";
+		s+=tr("Continue only if you know what you are doing.");
+	
+		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok);
+	
+		if(b!=QMessageBox::Ok){
+			disconnect(enableGroupActivitiesInInitialOrderAction, SIGNAL(toggled(bool)), this, SLOT(enableGroupActivitiesInInitialOrderToggled(bool)));
+			enableGroupActivitiesInInitialOrderAction->setChecked(false);
+			connect(enableGroupActivitiesInInitialOrderAction, SIGNAL(toggled(bool)), this, SLOT(enableGroupActivitiesInInitialOrderToggled(bool)));
+			return;
+		}
+	}
+
+	ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER=checked;
+
+	setEnabledIcon(groupActivitiesInInitialOrderAction, ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
+}
+
+void FetMainForm::showWarningForGroupActivitiesInInitialOrderToggled(bool checked)
+{
+	if(checked==false){
+		QString s=tr("It is recommended to keep this warning active, but if you really want, you can disable it.");
+		s+="\n\n";
+		s+=tr("Disable it only if you know what you are doing.");
+		s+="\n\n";
+		s+=tr("Are you sure you want to disable it?");
+	
+		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Yes);
+	
+		if(b!=QMessageBox::Yes){
+			disconnect(showWarningForGroupActivitiesInInitialOrderAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForGroupActivitiesInInitialOrderToggled(bool)));
+			showWarningForGroupActivitiesInInitialOrderAction->setChecked(true);
+			connect(showWarningForGroupActivitiesInInitialOrderAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForGroupActivitiesInInitialOrderToggled(bool)));
+			return;
+		}
+	}
+	
+	SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=checked;
+}
+
 
 //time constraints
 void FetMainForm::on_shortcutAllTimeConstraintsPushButton_clicked()
@@ -4176,6 +4314,22 @@ void FetMainForm::on_shortcutShowSoftConflictsPushButton_clicked()
 	on_timetableShowConflictsAction_triggered();
 }
 
+//2014-07-01
+void FetMainForm::on_shortcutsTimetableAdvancedPushButton_clicked()
+{
+	shortcutTimetableAdvancedMenu->popup(QCursor::pos());
+}
+
+void FetMainForm::on_shortcutsTimetablePrintPushButton_clicked()
+{
+	on_timetablePrintAction_triggered();
+}
+
+void FetMainForm::on_shortcutsTimetableLockingPushButton_clicked()
+{
+	shortcutTimetableLockingMenu->popup(QCursor::pos());
+}
+
 //data shortcut
 void FetMainForm::on_shortcutBasicPushButton_clicked()
 {
@@ -4251,4 +4405,5 @@ void FetMainForm::on_shortcutSaveAsPushButton_clicked()
 #else
 bool SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=true;
 bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
+bool SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=true;
 #endif

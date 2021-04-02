@@ -80,6 +80,9 @@
 
 #include <QtAlgorithms>
 
+#include <algorithm>
+using namespace std;
+
 extern const QString COMPANY;
 extern const QString PROGRAM;
 
@@ -639,18 +642,18 @@ void AllSpaceConstraintsForm::activateConstraint()
 			LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
 			LockUnlock::increaseCommunicationSpinBox();
 		}
-	}
 	
-	int n_active=0;
-	foreach(SpaceConstraint* ctr, gt.rules.spaceConstraintsList)
-		if(filterOk(ctr)){
-			if(ctr->active)
-				n_active++;
-		}
+		int n_active=0;
+		foreach(SpaceConstraint* ctr2, gt.rules.spaceConstraintsList)
+			if(filterOk(ctr2)){
+				if(ctr2->active)
+					n_active++;
+			}
 		
-	constraintsTextLabel->setText(tr("%1 / %2 space constraints",
-	 "%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints")
-	 .arg(n_active).arg(visibleSpaceConstraintsList.count()));
+		constraintsTextLabel->setText(tr("%1 / %2 space constraints",
+		 "%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints")
+		 .arg(n_active).arg(visibleSpaceConstraintsList.count()));
+	}
 }
 
 void AllSpaceConstraintsForm::deactivateConstraint()
@@ -684,18 +687,18 @@ void AllSpaceConstraintsForm::deactivateConstraint()
 			LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
 			LockUnlock::increaseCommunicationSpinBox();
 		}
-	}
 	
-	int n_active=0;
-	foreach(SpaceConstraint* ctr, gt.rules.spaceConstraintsList)
-		if(filterOk(ctr)){
-			if(ctr->active)
-				n_active++;
-		}
+		int n_active=0;
+		foreach(SpaceConstraint* ctr2, gt.rules.spaceConstraintsList)
+			if(filterOk(ctr2)){
+				if(ctr2->active)
+					n_active++;
+			}
 		
-	constraintsTextLabel->setText(tr("%1 / %2 space constraints",
-	 "%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints")
-	 .arg(n_active).arg(visibleSpaceConstraintsList.count()));
+		constraintsTextLabel->setText(tr("%1 / %2 space constraints",
+		 "%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints")
+		 .arg(n_active).arg(visibleSpaceConstraintsList.count()));
+	}
 }
 
 static int spaceConstraintsAscendingByComments(const SpaceConstraint* s1, const SpaceConstraint* s2)
@@ -715,7 +718,8 @@ void AllSpaceConstraintsForm::sortConstraintsByComments()
 	if(t==QMessageBox::Cancel)
 		return;
 	
-	qStableSort(gt.rules.spaceConstraintsList.begin(), gt.rules.spaceConstraintsList.end(), spaceConstraintsAscendingByComments);
+	//qStableSort(gt.rules.spaceConstraintsList.begin(), gt.rules.spaceConstraintsList.end(), spaceConstraintsAscendingByComments);
+	std::stable_sort(gt.rules.spaceConstraintsList.begin(), gt.rules.spaceConstraintsList.end(), spaceConstraintsAscendingByComments);
 
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

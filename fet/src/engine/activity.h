@@ -39,6 +39,25 @@ class Activity;
 
 typedef QList<Activity*> ActivitiesList;
 
+class GroupActivitiesInInitialOrderItem{
+	Q_DECLARE_TR_FUNCTIONS(GroupActivitiesInInitialOrderItem)
+
+public:
+	GroupActivitiesInInitialOrderItem();
+	~GroupActivitiesInInitialOrderItem();
+
+	QString comments;
+	bool active;
+
+	QList<int> ids;
+	QList<int> indices; //in the rules internal activities list
+
+	QString getXmlDescription(Rules& r);
+	QString getDescription(Rules& r);
+	QString getDetailedDescription(Rules& r);
+};
+
+typedef QList<GroupActivitiesInInitialOrderItem> GroupActivitiesInInitialOrderList;
 
 /**
 This class represents an activity.

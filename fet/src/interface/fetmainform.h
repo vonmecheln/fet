@@ -86,6 +86,9 @@ private:
 	QMenu* shortcutDataSpaceMenu;
 	QMenu* shortcutDataAdvancedMenu;
 	QMenu* shortcutAdvancedTimeMenu;
+	//2014-07-01
+	QMenu* shortcutTimetableLockingMenu;
+	QMenu* shortcutTimetableAdvancedMenu;
 	
 	QNetworkAccessManager* networkManager;
 	
@@ -162,6 +165,11 @@ public slots:
 
 	void enableStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool checked);
 	void showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool checked);
+	
+	void enableGroupActivitiesInInitialOrderToggled(bool checked);
+	void showWarningForGroupActivitiesInInitialOrderToggled(bool checked);
+	
+	void on_groupActivitiesInInitialOrderAction_triggered();
 	
 	void on_dataActivitiesAction_triggered();
 	void on_dataSubactivitiesAction_triggered();
@@ -366,6 +374,10 @@ public slots:
 	void on_shortcutViewStudentsPushButton_clicked();
 	void on_shortcutViewRoomsPushButton_clicked();
 	void on_shortcutShowSoftConflictsPushButton_clicked();
+	//2014-07-01
+	void on_shortcutsTimetableAdvancedPushButton_clicked();
+	void on_shortcutsTimetablePrintPushButton_clicked();
+	void on_shortcutsTimetableLockingPushButton_clicked();
 	
 	void on_shortcutBasicPushButton_clicked();
 	void on_shortcutSubjectsPushButton_clicked();

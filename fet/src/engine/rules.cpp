@@ -27,6 +27,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 #include <QDir>
 
+#include <algorithm>
 #include <iostream>
 using namespace std;
 
@@ -776,6 +777,44 @@ bool Rules::computeInternalStructure(QWidget* parent)
 	}
 	assert(_c>=this->nInternalSpaceConstraints); //because some constraints may have toSkipSpace false, but computeInternalStructure also false
 	//assert(this->nInternalSpaceConstraints<=MAX_SPACE_CONSTRAINTS);
+	
+	//group activities in initial order
+	if(groupActivitiesInInitialOrderList.count()>0){
+		QStringList fetBugs;
+		QStringList userErrors;
+	
+		QSet<int> visitedIds;
+		for(int j=0; j<groupActivitiesInInitialOrderList.count(); j++){
+			GroupActivitiesInInitialOrderItem &item=groupActivitiesInInitialOrderList[j];
+			
+			if(!item.active)
+				continue;
+			
+			if(item.ids.count()<2){
+				fetBugs.append(tr("All 'group activities in the initial order for timetable generation' items should contain at least two activities ids."
+				 " This is not true for item number %1. Please report potential bug.").arg(j+1));
+			}
+
+			item.indices.clear();
+			foreach(int id, item.ids){
+				if(visitedIds.contains(id)){
+					userErrors.append(tr("All 'group activities in the initial order for timetable generation' items should have different activities ids."
+					 " (Each activity id must appear at most once in all the items.) This is not true for item number %1 and activity id %2.").arg(j+1).arg(id));
+				}
+				else{
+					visitedIds.insert(id);
+					int index=activitiesHash.value(id, -1);
+					if(index>=0)
+						item.indices.append(index);
+				}
+			}
+
+			if(!fetBugs.isEmpty() || !userErrors.isEmpty()){
+				RulesImpossible::warning(parent, tr("FET information"), fetBugs.join("\n\n")+userErrors.join("\n\n"));
+				return false;
+			}
+		}
+	}
 
 	//done.
 	this->internalStructureComputed=ok;
@@ -882,6 +921,8 @@ void Rules::kill() //clears memory for the rules, destroys them
 	//Rooms
 	while(!roomsList.isEmpty())
 		delete roomsList.takeFirst();
+		
+	groupActivitiesInInitialOrderList.clear();
 
 	activitiesPointerHash.clear();
 	bctSet.clear();
@@ -1408,7 +1449,8 @@ bool Rules::modifyTeacher(const QString& initialTeacherName, const QString& fina
 
 void Rules::sortTeachersAlphabetically()
 {
-	qSort(this->teachersList.begin(), this->teachersList.end(), teachersAscending);
+	//qSort(this->teachersList.begin(), this->teachersList.end(), teachersAscending);
+	std::stable_sort(this->teachersList.begin(), this->teachersList.end(), teachersAscending);
 
 	this->internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(this);
@@ -1686,7 +1728,8 @@ bool Rules::modifySubject(const QString& initialSubjectName, const QString& fina
 
 void Rules::sortSubjectsAlphabetically()
 {
-	qSort(this->subjectsList.begin(), this->subjectsList.end(), subjectsAscending);
+	//qSort(this->subjectsList.begin(), this->subjectsList.end(), subjectsAscending);
+	std::stable_sort(this->subjectsList.begin(), this->subjectsList.end(), subjectsAscending);
 
 	this->internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(this);
@@ -2097,7 +2140,8 @@ bool Rules::modifyActivityTag(const QString& initialActivityTagName, const QStri
 
 void Rules::sortActivityTagsAlphabetically()
 {
-	qSort(this->activityTagsList.begin(), this->activityTagsList.end(), activityTagsAscending);
+	//qSort(this->activityTagsList.begin(), this->activityTagsList.end(), activityTagsAscending);
+	std::stable_sort(this->activityTagsList.begin(), this->activityTagsList.end(), activityTagsAscending);
 
 	this->internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(this);
@@ -2682,7 +2726,8 @@ bool Rules::modifyYear(const QString& initialYearName, const QString& finalYearN
 
 void Rules::sortYearsAlphabetically()
 {
-	qSort(this->yearsList.begin(), this->yearsList.end(), yearsAscending);
+	//qSort(this->yearsList.begin(), this->yearsList.end(), yearsAscending);
+	std::stable_sort(this->yearsList.begin(), this->yearsList.end(), yearsAscending);
 
 	this->internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(this);
@@ -3194,7 +3239,8 @@ void Rules::sortGroupsAlphabetically(const QString& yearName)
 	StudentsYear* sty=this->yearsList[this->searchYear(yearName)];
 	assert(sty);
 
-	qSort(sty->groupsList.begin(), sty->groupsList.end(), groupsAscending);
+	//qSort(sty->groupsList.begin(), sty->groupsList.end(), groupsAscending);
+	std::stable_sort(sty->groupsList.begin(), sty->groupsList.end(), groupsAscending);
 
 	this->internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(this);
@@ -3672,7 +3718,8 @@ void Rules::sortSubgroupsAlphabetically(const QString& yearName, const QString& 
 	StudentsGroup* stg=sty->groupsList.at(this->searchGroup(yearName, groupName));
 	assert(stg);
 
-	qSort(stg->subgroupsList.begin(), stg->subgroupsList.end(), subgroupsAscending);
+	//qSort(stg->subgroupsList.begin(), stg->subgroupsList.end(), subgroupsAscending);
+	std::stable_sort(stg->subgroupsList.begin(), stg->subgroupsList.end(), subgroupsAscending);
 	
 	this->internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(this);
@@ -3838,6 +3885,20 @@ void Rules::removeActivity(int _id)
 	for(int i=0; i<this->activitiesList.size(); i++){
 		Activity* act=this->activitiesList[i];
 		if(_id==act->id){
+			if(groupActivitiesInInitialOrderList.count()>0){
+				for(int i=0; i<groupActivitiesInInitialOrderList.count(); i++){
+					GroupActivitiesInInitialOrderItem& item=groupActivitiesInInitialOrderList[i];
+					if(item.ids.contains(act->id)){
+						int t=item.ids.removeAll(act->id);
+						assert(t==1);
+						if(item.ids.count()<2){
+							groupActivitiesInInitialOrderList.removeAt(i);
+						}
+						break; //The activity must be used only once in all items.
+					}
+				}
+			}
+
 			assert(activitiesPointerHash.contains(act->id));
 			activitiesPointerHash.remove(act->id);
 			
@@ -4057,7 +4118,7 @@ void Rules::removeActivity(int _id)
 	if(recomputeTime || recomputeSpace){
 		LockUnlock::increaseCommunicationSpinBox();
 	}
-
+	
 	this->internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(this);
 }
@@ -4071,6 +4132,20 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 		Activity* act=this->activitiesList[i];
 
 		if(_id==act->id || (_activityGroupId>0 && _activityGroupId==act->activityGroupId)){
+			if(groupActivitiesInInitialOrderList.count()>0){
+				for(int i=0; i<groupActivitiesInInitialOrderList.count(); i++){
+					GroupActivitiesInInitialOrderItem& item=groupActivitiesInInitialOrderList[i];
+					if(item.ids.contains(act->id)){
+						int t=item.ids.removeAll(act->id);
+						assert(t==1);
+						if(item.ids.count()<2){
+							groupActivitiesInInitialOrderList.removeAt(i);
+						}
+						break; //The activity must be used only once in all items.
+					}
+				}
+			}
+
 			assert(activitiesPointerHash.contains(act->id));
 			activitiesPointerHash.remove(act->id);
 
@@ -4784,7 +4859,8 @@ bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomN
 
 void Rules::sortRoomsAlphabetically()
 {
-	qSort(this->roomsList.begin(), this->roomsList.end(), roomsAscending);
+	//qSort(this->roomsList.begin(), this->roomsList.end(), roomsAscending);
+	std::stable_sort(this->roomsList.begin(), this->roomsList.end(), roomsAscending);
 
 	this->internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(this);
@@ -4874,7 +4950,8 @@ bool Rules::modifyBuilding(const QString& initialBuildingName, const QString& fi
 
 void Rules::sortBuildingsAlphabetically()
 {
-	qSort(this->buildingsList.begin(), this->buildingsList.end(), buildingsAscending);
+	//qSort(this->buildingsList.begin(), this->buildingsList.end(), buildingsAscending);
+	std::stable_sort(this->buildingsList.begin(), this->buildingsList.end(), buildingsAscending);
 
 	this->internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(this);
@@ -7282,8 +7359,51 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 			xmlReadingLog+="  Added "+CustomFETString::number(nc)+" space constraints\n";
 			reducedXmlLog+="Added "+CustomFETString::number(nc)+" space constraints\n";
 		}
-	}
+		else if(elem2.tagName()=="Timetable_Generation_Options_List"){
+			for(QDomNode node3=elem2.firstChild(); !node3.isNull(); node3=node3.nextSibling()){
+				QDomElement elem3=node3.toElement();
+				if(elem3.isNull()){
+					xmlReadingLog+="   Null node here\n";
+					continue;
+				}
+				xmlReadingLog+="   Found "+elem3.tagName()+" tag\n";
+				
+				if(elem3.tagName()=="GroupActivitiesInInitialOrder"){
+					GroupActivitiesInInitialOrderItem item;
+					int nActs=-1;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="   Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
 
+						if(elem4.tagName()=="Number_of_Activities"){
+							nActs=elem4.text().toInt();
+							xmlReadingLog+="    Read n_activities="+CustomFETString::number(nActs)+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Id"){
+							int id=elem4.text().toInt();
+							xmlReadingLog+="    Activity id="+CustomFETString::number(id)+"\n";
+							item.ids.append(id);
+						}
+						else if(elem4.tagName()=="Active"){
+							if(elem4.text()=="false"){
+								item.active=false;
+							}
+						}
+						else if(elem4.tagName()=="Comments"){
+							item.comments=elem4.text();
+						}
+					}
+					assert(nActs==item.ids.count());
+					groupActivitiesInInitialOrderList.append(item);
+				}
+			}
+		}
+	}
+	
 	this->internalStructureComputed=false;
 	
 	/*reducedXmlLog+="\n";
@@ -7442,6 +7562,15 @@ bool Rules::write(QWidget* parent, const QString& filename)
 		tos << ctr->getXmlDescription(*this);
 	}
 	tos << "</Space_Constraints_List>\n\n";
+	
+	if(groupActivitiesInInitialOrderList.count()>0){
+		tos << "<Timetable_Generation_Options_List>\n";
+		for(int i=0; i<groupActivitiesInInitialOrderList.count(); i++){
+			GroupActivitiesInInitialOrderItem& item=groupActivitiesInInitialOrderList[i];
+			tos << item.getXmlDescription(*this);
+		}
+		tos << "</Timetable_Generation_Options_List>\n\n";
+	}
 
 //	tos<<"</FET>\n";
 	tos<<"</fet>\n";

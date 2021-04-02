@@ -1692,7 +1692,7 @@ Versions 5.21.0 - 5.21.3
 - Version 5.21.3
 	- Updated the Windows version to Qt 5.2.1.
 ---------------------------------------------------------------------------------
-Versions 5.22.0 - 5.22.v
+Version 5.22.0
 - Version 5.22.0
 	- Updated to Qt 5.3.0.
 	- Many improvements on memory and speed in pre-generating and after-generating.
@@ -1700,3 +1700,12 @@ Versions 5.22.0 - 5.22.v
 	- Now you can unlock all activities or activities of a single day without generating the timetable (suggested by Volker Dirr).
 	- Increased the maximum number of divisions in the first and second categories when dividing a year (suggested by Bobby Wise).
 	- Added a new Morocco example file, by Mohamed Bahaj.
+---------------------------------------------------------------------------------
+Versions 5.23.0 - 5.23.v
+- Version 5.23.0
+	- Updated to Qt 5.3.1.
+	- Added a new timetabling generation option, to group selected activities in the initial order, next to the activity which is
+	placed the earliest (suggested by Yush Yuen). This is useful in very rare cases of peculiar usage of constraint activities
+	occupy max time slots from selection, or if you want to change the initial order of the activities by bringing some activities
+	into front.
+	- Improved the timetable shortcuts tab, by adding the print, locking and advanced push buttons.

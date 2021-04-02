@@ -383,6 +383,10 @@ SOURCES += \
 	interface/addconstraintmindaysbetweenactivitiesform.cpp \
 	interface/modifyconstraintmindaysbetweenactivitiesform.cpp \
 	\
+	interface/groupactivitiesininitialorderitemsform.cpp \
+	interface/addgroupactivitiesininitialorderitemform.cpp \
+	interface/modifygroupactivitiesininitialorderitemform.cpp \
+	\
 	interface/constraintmaxdaysbetweenactivitiesform.cpp \
 	interface/addconstraintmaxdaysbetweenactivitiesform.cpp \
 	interface/modifyconstraintmaxdaysbetweenactivitiesform.cpp \
@@ -812,6 +816,10 @@ HEADERS += \
 	interface/addconstraintmindaysbetweenactivitiesform.h \
 	interface/modifyconstraintmindaysbetweenactivitiesform.h \
 	\
+	interface/groupactivitiesininitialorderitemsform.h \
+	interface/addgroupactivitiesininitialorderitemform.h \
+	interface/modifygroupactivitiesininitialorderitemform.h \
+	\
 	interface/constraintmaxdaysbetweenactivitiesform.h \
 	interface/addconstraintmaxdaysbetweenactivitiesform.h \
 	interface/modifyconstraintmaxdaysbetweenactivitiesform.h \
@@ -1230,6 +1238,10 @@ FORMS += \
 	interface/constraintmindaysbetweenactivitiesform_template.ui \
 	interface/addconstraintmindaysbetweenactivitiesform_template.ui \
 	interface/modifyconstraintmindaysbetweenactivitiesform_template.ui \
+	\
+	interface/groupactivitiesininitialorderitemsform_template.ui \
+	interface/addgroupactivitiesininitialorderitemform_template.ui \
+	interface/modifygroupactivitiesininitialorderitemform_template.ui \
 	\
 	interface/constraintmaxdaysbetweenactivitiesform_template.ui \
 	interface/addconstraintmaxdaysbetweenactivitiesform_template.ui \
