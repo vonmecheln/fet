@@ -1075,7 +1075,11 @@ int Import::readFields(QWidget* parent){
 									ok=false;
 								}
 							} else {
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+								QStringList splitList=itemOfField[FIELD_SPLIT_DURATION].split("+", Qt::SkipEmptyParts);
+#else
 								QStringList splitList=itemOfField[FIELD_SPLIT_DURATION].split("+", QString::SkipEmptyParts);
+#endif
 								if(splitList.size()<MAX_SPLIT_OF_AN_ACTIVITY){
 									int tmpInt=0;
 									for(const QString& split : qAsConst(splitList)){
@@ -2330,7 +2334,11 @@ void Import::importCSVActivities(QWidget* parent){
 		line.clear();
 		line=fieldList[FIELD_STUDENTS_SET][i];
 		students.clear();
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+		students=line.split("+", Qt::SkipEmptyParts);
+#else
 		students=line.split("+", QString::SkipEmptyParts);
+#endif
 		if(!fieldList[FIELD_STUDENTS_SET][i].isEmpty()){
 			for(int s=0; s<students.size(); s++){
 				//StudentsSet* ss=gt.rules.searchStudentsSet(students[s]);
@@ -2375,7 +2383,11 @@ void Import::importCSVActivities(QWidget* parent){
 		line.clear();
 		line=fieldList[FIELD_TEACHERS_SET][i];
 		teachers.clear();
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+		teachers=line.split("+", Qt::SkipEmptyParts);
+#else
 		teachers=line.split("+", QString::SkipEmptyParts);
+#endif
 		for(int t=0; t<teachers.size(); t++){
 			bool add=true;
 			if(tmpSet.contains(teachers[t]) || teachers[t]=="")
@@ -2414,7 +2426,11 @@ void Import::importCSVActivities(QWidget* parent){
 		line.clear();
 		line=fieldList[FIELD_ACTIVITY_TAGS_SET][i];
 		activityTags.clear();
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+		activityTags=line.split("+", Qt::SkipEmptyParts);
+#else
 		activityTags=line.split("+", QString::SkipEmptyParts);
+#endif
 		for(int at=0; at<activityTags.size(); at++){
 			bool add=true;
 			if(tmpSet.contains(activityTags[at]) || activityTags[at]=="")
@@ -2537,7 +2553,11 @@ void Import::importCSVActivities(QWidget* parent){
 
 		QStringList teachers_namesFromFile;
 		if(!fieldList[FIELD_TEACHERS_SET][i].isEmpty())
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			teachers_namesFromFile = fieldList[FIELD_TEACHERS_SET][i].split("+", Qt::SkipEmptyParts);
+#else
 			teachers_namesFromFile = fieldList[FIELD_TEACHERS_SET][i].split("+", QString::SkipEmptyParts);
+#endif
 		
 		QStringList teachers_names;
 		QSet<QString> _teachersSet;
@@ -2555,7 +2575,11 @@ void Import::importCSVActivities(QWidget* parent){
 		
 		QStringList activity_tags_namesFromFile;
 		if(!fieldList[FIELD_ACTIVITY_TAGS_SET][i].isEmpty())
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			activity_tags_namesFromFile = fieldList[FIELD_ACTIVITY_TAGS_SET][i].split("+", Qt::SkipEmptyParts);
+#else
 			activity_tags_namesFromFile = fieldList[FIELD_ACTIVITY_TAGS_SET][i].split("+", QString::SkipEmptyParts);
+#endif
 		
 		QStringList activity_tags_names;
 		QSet<QString> _activityTagsSet;
@@ -2571,7 +2595,11 @@ void Import::importCSVActivities(QWidget* parent){
 		
 		QStringList students_namesFromFile;
 		if(!fieldList[FIELD_STUDENTS_SET][i].isEmpty())
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			students_namesFromFile = fieldList[FIELD_STUDENTS_SET][i].split("+", Qt::SkipEmptyParts);
+#else
 			students_namesFromFile = fieldList[FIELD_STUDENTS_SET][i].split("+", QString::SkipEmptyParts);
+#endif
 
 		int numberOfStudents=0;
 		QStringList students_names;
@@ -2590,7 +2618,11 @@ void Import::importCSVActivities(QWidget* parent){
 		QStringList splitDurationList;
 		splitDurationList.clear();
 		assert(!fieldList[FIELD_SPLIT_DURATION][i].isEmpty());
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+		splitDurationList = fieldList[FIELD_SPLIT_DURATION][i].split("+", Qt::SkipEmptyParts);
+#else
 		splitDurationList = fieldList[FIELD_SPLIT_DURATION][i].split("+", QString::SkipEmptyParts);
+#endif
 		int nsplit=splitDurationList.size();
 		if(nsplit==1){
 			int duration=fieldList[FIELD_TOTAL_DURATION][i].toInt(&ok2, 10);

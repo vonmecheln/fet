@@ -2233,3 +2233,9 @@ Versions 5.43.0 - 5.43.v
 	Reported by bachiri401.
 	- Slightly improved the dialogs for the constraints of type activity/subject/activity tag/subject+activity tag preferred room(s) (suggested by bachiri401).
 	- Code update/cleanup.
+- Version 5.43.2
+	- Corrected a compiler error appearing with the future Qt versions (this bug was introduced in FET version 5.43.0: the function
+	QNetworkReply::error() will not be obsolete and the replacement function QNetworkReply::networkError() was dropped. So we needed
+	to revert this also in the FET code, otherwise we would get a compiler error with the future Qt versions).
+	- Updated the code for the future Qt versions: removed usage of the soon-to-be obsolete constant QString::SkipEmptyParts
+	(the future constant will be Qt::SkipEmptyParts).

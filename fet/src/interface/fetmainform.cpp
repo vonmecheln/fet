@@ -1036,11 +1036,7 @@ void FetMainForm::on_studentsComboBoxesStyleAction_triggered()
 
 void FetMainForm::replyFinished(QNetworkReply* networkReply)
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-	if(networkReply->networkError()!=QNetworkReply::NoError){
-#else
 	if(networkReply->error()!=QNetworkReply::NoError){
-#endif
 		QString s=QString("");
 		s+=tr("Could not search for possible updates on the internet - error message is: %1.").arg(networkReply->errorString());
 		s+=QString("\n\n");
