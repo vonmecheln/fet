@@ -157,16 +157,20 @@ void AddConstraintActivitiesPreferredTimesForm::addConstraint()
 		assert(gt.rules.searchSubjectTag(subjectTag)>=0);
 		
 	if(teacher=="" && students=="" && subject=="" && subjectTag==""){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Please be careful - you are considering all the activities"
-			"\n(no teacher, students, subject or subject tag specified)"));
+		int t=QMessageBox::question(this, tr("FET question"),
+		 tr("Are you sure you want to add this constraint for all activities?"
+		 " (no teacher, students, subject or subject tag specified)"),
+		 QMessageBox::Yes, QMessageBox::Cancel);
+						 
+		if(t==QMessageBox::Cancel)
+				return;
 	}
 
 	int days[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES];
 	int hours[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES];
 	int n=0;
-	for(int i=0; i<gt.rules.nHoursPerDay; i++)
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+	for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+		for(int i=0; i<gt.rules.nHoursPerDay; i++)
 			if(preferredTimesTable->text(i, j)==YES){
 				if(n>=MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES){
 					QString s=QObject::tr("Not enough slots (too many \"Yes\" values).");
@@ -174,7 +178,7 @@ void AddConstraintActivitiesPreferredTimesForm::addConstraint()
 					s+=QObject::tr("Please increase the variable MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES");
 					s+="\n";
 					s+=QObject::tr("Currently, it is %1").arg(MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES);
-					QMessageBox::critical(this, QObject::tr("FET information"), s);
+					QMessageBox::warning(this, QObject::tr("FET information"), s);
 					
 					return;
 				}
@@ -183,6 +187,15 @@ void AddConstraintActivitiesPreferredTimesForm::addConstraint()
 				hours[n]=i;
 				n++;
 			}
+
+	if(n<=0){
+		int t=QMessageBox::question(this, tr("FET question"),
+		 tr("Warning: 0 slots selected. Are you sure?"),
+		 QMessageBox::Yes, QMessageBox::Cancel);
+						 
+		if(t==QMessageBox::Cancel)
+				return;
+	}
 
 	ctr=new ConstraintActivitiesPreferredTimes(weight, /*compulsory,*/ teacher, students, subject, subjectTag, n, days, hours);
 

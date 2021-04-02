@@ -243,8 +243,8 @@ void ModifyConstraintActivityPreferredTimesForm::ok()
 	int days[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES];
 	int hours[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES];
 	int n=0;
-	for(i=0; i<gt.rules.nHoursPerDay; i++)
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+	for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+		for(i=0; i<gt.rules.nHoursPerDay; i++)
 			if(preferredTimesTable->text(i, j)==YES){
 				if(n>=MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES){
 					QString s=QObject::tr("Not enough slots (too many \"Yes\" values).");
@@ -261,6 +261,15 @@ void ModifyConstraintActivityPreferredTimesForm::ok()
 				hours[n]=i;
 				n++;
 			}
+
+	if(n<=0){
+		int t=QMessageBox::question(this, tr("FET question"),
+		 tr("Warning: 0 slots selected. Are you sure?"),
+		 QMessageBox::Yes, QMessageBox::Cancel);
+						 
+		if(t==QMessageBox::Cancel)
+				return;
+	}
 
 	this->_ctr->weightPercentage=weight;
 	//this->_ctr->compulsory=compulsory;

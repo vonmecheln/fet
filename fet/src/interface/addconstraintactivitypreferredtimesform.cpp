@@ -204,8 +204,8 @@ void AddConstraintActivityPreferredTimesForm::addConstraint()
 	int days[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES];
 	int hours[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES];
 	int n=0;
-	for(i=0; i<gt.rules.nHoursPerDay; i++)
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+	for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+		for(i=0; i<gt.rules.nHoursPerDay; i++)
 			if(preferredTimesTable->text(i, j)==YES){
 				if(n>=MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES){
 					QString s=QObject::tr("Not enough slots (too many \"Yes\" values).");
@@ -222,6 +222,28 @@ void AddConstraintActivityPreferredTimesForm::addConstraint()
 				hours[n]=i;
 				n++;
 			}
+
+	if(n<=0){
+		int t=QMessageBox::question(this, tr("FET question"),
+		 tr("Warning: 0 slots selected. Are you sure?"),
+		 QMessageBox::Yes, QMessageBox::Cancel);
+						 
+		if(t==QMessageBox::Cancel)
+				return;
+	}
+
+	foreach(TimeConstraint* tc, gt.rules.timeConstraintsList){
+		if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_TIMES){
+			ConstraintActivityPreferredTimes* c=(ConstraintActivityPreferredTimes*) tc;
+			if(c->activityId==id){
+				QMessageBox::warning(this, QObject::tr("FET information"),
+				 QObject::tr("This activity id has other constraint of this type attached\n"
+				 "Please remove the other constraints of type activity preferred times\n"
+				 "referring to this activity before proceeding"));
+				return;
+			}
+		}
+	}
 
 	ctr=new ConstraintActivityPreferredTimes(weight, /*compulsory,*/ /*act->*/id, n, days, hours);
 

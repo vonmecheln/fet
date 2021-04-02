@@ -338,11 +338,32 @@ void FetMainForm::on_fileOpenAction_activated()
 			this, QObject::tr("open file dialog"), QObject::tr("Choose a file"));
 		if(s.isNull())
 			return;
+
+		int tmp2=s.findRev("/");
+		QString s2=s.right(s.length()-tmp2-1);
 			
-		if(s.indexOf("(") >= 0 || s.indexOf(")")>=0){
-			QMessageBox::information(this, QObject::tr("FET info"), QObject::tr("Please do not use parantheses () in filename, the html code does not work"));
+		if(s2.indexOf("\"") >= 0){
+			QMessageBox::warning(this, QObject::tr("FET info"), 
+			 QObject::tr("Please do not use quotation marks \" in filename, the html css code does not work."
+			  " File was not loaded. Please rename it, removing not allowed characters and open it after that with FET."));
+			return;
+		}		
+		if(s2.indexOf(";") >= 0){
+			QMessageBox::warning(this, QObject::tr("FET info"), 
+			 QObject::tr("Please do not use semicolon ; in filename, the html css code does not work."
+			  " File was not loaded. Please rename it, removing not allowed characters and open it after that with FET."));
 			return;
 		}
+		if(s2.indexOf("#") >= 0){
+			QMessageBox::warning(this, QObject::tr("FET info"), 
+			 QObject::tr("Please do not use # in filename, the html css code does not work."
+			  " File was not loaded. Please rename it, removing not allowed characters and open it after that with FET."));
+			return;
+		}
+		/*if(s2.indexOf("(") >= 0 || s2.indexOf(")")>=0){
+			QMessageBox::information(this, QObject::tr("FET info"), QObject::tr("Please do not use parentheses () in filename, the html css code does not work"));
+			return;
+		}*/
 		else{
 			if(gt.rules.read(s)){
 				students_schedule_ready=false;
@@ -371,10 +392,25 @@ void FetMainForm::on_fileSaveAsAction_activated()
 	if(s==QString::null)
 		return;
 
-	if(s.indexOf("(") >= 0 || s.indexOf(")")>=0){
-		QMessageBox::information(this, QObject::tr("FET info"), QObject::tr("Please do not use parantheses () in filename, the html code does not work"));
+	int tmp2=s.findRev("/");
+	QString s2=s.right(s.length()-tmp2-1);
+			
+	if(s2.indexOf("\"") >= 0){
+		QMessageBox::warning(this, QObject::tr("FET info"), QObject::tr("Please do not use quotation marks \" in filename, the html css code does not work"));
 		return;
 	}
+	if(s2.indexOf(";") >= 0){
+		QMessageBox::warning(this, QObject::tr("FET info"), QObject::tr("Please do not use semicolon ; in filename, the html css code does not work"));
+		return;
+	}
+	if(s2.indexOf("#") >= 0){
+		QMessageBox::warning(this, QObject::tr("FET info"), QObject::tr("Please do not use # in filename, the html css code does not work"));
+		return;
+	}
+	/*if(s2.indexOf("(") >= 0 || s2.indexOf(")")>=0){
+		QMessageBox::information(this, QObject::tr("FET info"), QObject::tr("Please do not use parentheses () in filename, the html css code does not work"));
+		return;
+	}*/
 		
 	if(s.right(4)!=".fet")
 		s+=".fet";

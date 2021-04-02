@@ -26,6 +26,22 @@ it would be really very helpfull for me.
 
 ----------------------------------------------------------------------------------
 
+From Danail Svoboden:
+
+> Another sweet feature of FET will be the ability to load its data from
+> CSV or simple text files. This will make import from other programs a
+> lot easy, and it is not so hard to implement. For example I can export
+> my teachers in a simple text file, one teacher per line, but I have to
+> enter them in FET one by one. Same for the subjects, and for the rooms.
+> For activities I can export them in CSV file, in form "teacher, class,
+> subject, hours", but I cannot import this in FET.
+
+
+> And another simple feature - to remember and open the last timetable
+> file :-)
+
+----------------------------------------------------------------------------------
+
 From Volker Dirr (16 September 2007):
 
 > i saw at les timetable, that he call hour==period.

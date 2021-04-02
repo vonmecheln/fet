@@ -1,3 +1,4 @@
+
 /***************************************************************************
                           modifyconstraintactivitiespreferredtimesform.cpp  -  description
                              -------------------
@@ -216,16 +217,21 @@ void ModifyConstraintActivitiesPreferredTimesForm::ok()
 	if(subjectTag!="")
 		assert(gt.rules.searchSubjectTag(subjectTag)>=0);
 		
-	if(teacher=="" && students=="" && subject=="" && subjectTag=="")
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Please be careful - you are considering all the activities"
-			"\n(no teacher, students, subject or subject tag specified)"));
+	if(teacher=="" && students=="" && subject=="" && subjectTag==""){
+		int t=QMessageBox::question(this, tr("FET question"),
+		 tr("Are you sure you want to add this constraint for all activities?"
+		 " (no teacher, students, subject or subject tag specified)"),
+		 QMessageBox::Yes, QMessageBox::Cancel);
+						 
+		if(t==QMessageBox::Cancel)
+				return;
+	}
 
 	int days[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES];
 	int hours[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES];
 	int n=0;
-	for(int i=0; i<gt.rules.nHoursPerDay; i++)
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+	for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+		for(int i=0; i<gt.rules.nHoursPerDay; i++)
 			if(preferredTimesTable->text(i, j)==YES){
 				if(n>=MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES){
 					QString s=QObject::tr("Not enough slots (too many \"Yes\" values).");
@@ -242,6 +248,15 @@ void ModifyConstraintActivitiesPreferredTimesForm::ok()
 				hours[n]=i;
 				n++;
 			}
+
+	if(n<=0){
+		int t=QMessageBox::question(this, tr("FET question"),
+		 tr("Warning: 0 slots selected. Are you sure?"),
+		 QMessageBox::Yes, QMessageBox::Cancel);
+						 
+		if(t==QMessageBox::Cancel)
+				return;
+	}
 
 	this->_ctr->weightPercentage=weight;
 	//this->_ctr->compulsory=compulsory;

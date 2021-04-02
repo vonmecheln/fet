@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>670</width>
-            <height>609</height>
+            <width>664</width>
+            <height>575</height>
         </rect>
     </property>
     <property name="caption">
@@ -19,23 +19,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QPushButton" row="3" column="0">
-            <property name="name">
-                <cstring>addConstraintPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Add constraint</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="3" column="1">
-            <property name="name">
-                <cstring>closePushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Close</string>
-            </property>
-        </widget>
-        <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="2">
+        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout19</cstring>
             </property>
@@ -67,7 +51,7 @@
                 </widget>
             </hbox>
         </widget>
-        <widget class="QTable" row="1" column="0" rowspan="1" colspan="2">
+        <widget class="QTable" row="2" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>preferredTimesTable</cstring>
             </property>
@@ -81,7 +65,23 @@
                 <bool>true</bool>
             </property>
         </widget>
-        <widget class="QLayoutWidget" row="0" column="0" rowspan="1" colspan="2">
+        <widget class="QPushButton" row="4" column="1">
+            <property name="name">
+                <cstring>closePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Close</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="4" column="0">
+            <property name="name">
+                <cstring>addConstraintPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Add constraint</string>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget" row="1" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout3</cstring>
             </property>
@@ -142,6 +142,15 @@
                     </property>
                 </widget>
             </grid>
+        </widget>
+        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>instructionsTextLabel</cstring>
+            </property>
+            <property name="text">
+                <string>Instructions: you can choose a set of activities with a certain teacher (or
+blank for all teachers), students set, subject and subject tag.</string>
+            </property>
         </widget>
     </grid>
 </widget>

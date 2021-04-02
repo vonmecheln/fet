@@ -221,6 +221,10 @@ void TimetableGenerateForm::stop()
 		s+=", ";
 		s+=TimetableGenerateForm::tr("SN: %1").arg(gt.rules.internalActivitiesList[ai].subjectName);
 		s+=", ";
+		if(gt.rules.internalActivitiesList[ai].subjectTagName!=""){
+			s+=TimetableGenerateForm::tr("ST: %1").arg(gt.rules.internalActivitiesList[ai].subjectTagName);
+			s+=", ";
+		}
 		first=true;
 		s+=TimetableGenerateForm::tr(" StN: ");
 		foreach(QString sn, gt.rules.internalActivitiesList[ai].studentsNames){
@@ -341,6 +345,10 @@ void TimetableGenerateForm::impossibleToSolve()
 		s+=", ";
 		s+=TimetableGenerateForm::tr("SN: %1").arg(gt.rules.internalActivitiesList[ai].subjectName);
 		s+=", ";
+		if(gt.rules.internalActivitiesList[ai].subjectTagName!=""){
+			s+=TimetableGenerateForm::tr("ST: %1").arg(gt.rules.internalActivitiesList[ai].subjectTagName);
+			s+=", ";
+		}
 		first=true;
 		s+=TimetableGenerateForm::tr(" StN: ");
 		foreach(QString sn, gt.rules.internalActivitiesList[ai].studentsNames){

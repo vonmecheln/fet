@@ -5146,8 +5146,8 @@ QString ConstraintActivityPreferredTimes::getDescription(Rules& r)
 	s+=", ";
 	s+=QObject::tr("must be scheduled at: ");
 	for(int i=0; i<this->nPreferredTimes; i++){
-		s+=QString::number(i+1);
-		s+=":";
+		//s+=QString::number(i+1);
+		//s+=":";
 		if(this->days[i]>=0){
 			s+=r.daysOfTheWeek[this->days[i]];
 			s+=" ";
@@ -5155,7 +5155,7 @@ QString ConstraintActivityPreferredTimes::getDescription(Rules& r)
 		if(this->hours[i]>=0){
 			s+=r.hoursOfTheDay[this->hours[i]];
 		}
-		s+=";";
+		s+="; ";
 	}
 
 	s+=(QObject::tr("WP:%1").arg(this->weightPercentage));//s+=", ";
@@ -5212,8 +5212,8 @@ QString ConstraintActivityPreferredTimes::getDetailedDescription(Rules& r)
 	s+="\n";
 	s+=QObject::tr("must be scheduled at:\n");
 	for(int i=0; i<this->nPreferredTimes; i++){
-		s+=QString::number(i+1);
-		s+=". ";
+		//s+=QString::number(i+1);
+		//s+=". ";
 		if(this->days[i]>=0){
 			s+=r.daysOfTheWeek[this->days[i]];
 			s+=" ";
@@ -5221,8 +5221,10 @@ QString ConstraintActivityPreferredTimes::getDetailedDescription(Rules& r)
 		if(this->hours[i]>=0){
 			s+=r.hoursOfTheDay[this->hours[i]];
 		}
-		s+="\n";
+		//s+="\n";
+		s+=";  ";
 	}
+	s+="\n";
 
 	s+=(QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage));s+="\n";
 	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
@@ -5274,7 +5276,32 @@ double ConstraintActivityPreferredTimes::fitness(Solution& c, Rules& r, QList<do
 		QString s=QObject::tr("Time constraint activity preferred times broken for activity with id=%1, increases conflicts total by %2")
 		 .arg(this->activityId)
 		 .arg(weightPercentage/100*nbroken);
+
+
 		 
+		s+=" ";
+		QString tn;
+		foreach(QString t, r.internalActivitiesList[this->activityIndex].teachersNames){
+			tn+=t;
+			tn+=" ";
+		}
+		QString sn;
+		foreach(QString t, r.internalActivitiesList[this->activityIndex].studentsNames){
+			sn+=t;
+			sn+=" ";
+		}
+		s+="(";
+		s+=QObject::tr("teachers %1, students sets %2, subject %3")
+		 .arg(tn)
+		 .arg(sn)
+		 .arg(r.internalActivitiesList[this->activityIndex].subjectName);
+		if(r.internalActivitiesList[this->activityIndex].subjectTagName!="")
+			s+=QObject::tr(", subject tag %4").arg(r.internalActivitiesList[this->activityIndex].subjectTagName);
+
+		s+=")";
+
+
+
 		dl.append(s);
 		cl.append(weightPercentage/100*nbroken);
 	
@@ -5490,8 +5517,8 @@ QString ConstraintActivitiesPreferredTimes::getDescription(Rules& r)
 		s+=QObject::tr("all subject tags, ");
 	s+=QObject::tr("must be scheduled at: ");
 	for(int i=0; i<this->nPreferredTimes; i++){
-		s+=QString::number(i+1);
-		s+=":";
+		//s+=QString::number(i+1);
+		//s+=":";
 		if(this->days[i]>=0){
 			s+=r.daysOfTheWeek[this->days[i]];
 			s+=" ";
@@ -5499,7 +5526,7 @@ QString ConstraintActivitiesPreferredTimes::getDescription(Rules& r)
 		if(this->hours[i]>=0){
 			s+=r.hoursOfTheDay[this->hours[i]];
 		}
-		s+=";";
+		s+="; ";
 	}
 
 	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));s+=", ";
@@ -5532,8 +5559,8 @@ QString ConstraintActivitiesPreferredTimes::getDetailedDescription(Rules& r)
 
 	s+=QObject::tr("must be scheduled at:\n");
 	for(int i=0; i<this->nPreferredTimes; i++){
-		s+=QString::number(i+1);
-		s+=". ";
+		//s+=QString::number(i+1);
+		//s+=". ";
 		if(this->days[i]>=0){
 			s+=r.daysOfTheWeek[this->days[i]];
 			s+=" ";
@@ -5541,8 +5568,9 @@ QString ConstraintActivitiesPreferredTimes::getDetailedDescription(Rules& r)
 		if(this->hours[i]>=0){
 			s+=r.hoursOfTheDay[this->hours[i]];
 		}
-		s+="\n";
+		s+=";  ";
 	}
+	s+="\n";
 
 	s+=(QObject::tr("Weight (percentage)=%1").arg(this->weightPercentage));s+="\n";
 	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
@@ -5630,6 +5658,32 @@ double ConstraintActivitiesPreferredTimes::fitness(Solution& c, Rules& r, QList<
 				 " increases conflicts total by %2")
 				 .arg(r.internalActivitiesList[ai].id)
 				 .arg(weightPercentage/100*tmp);
+
+
+		 
+				s+=" ";
+				QString tn;
+				foreach(QString t, r.internalActivitiesList[ai].teachersNames){
+					tn+=t;
+					tn+=" ";
+				}
+				QString sn;
+				foreach(QString t, r.internalActivitiesList[ai].studentsNames){
+					sn+=t;
+					sn+=" ";
+				}
+				s+="(";
+				s+=QObject::tr("teachers %1, students sets %2, subject %3")
+				 .arg(tn)
+				 .arg(sn)
+				 .arg(r.internalActivitiesList[ai].subjectName);
+				if(r.internalActivitiesList[ai].subjectTagName!="")
+					s+=QObject::tr(", subject tag %4").arg(r.internalActivitiesList[ai].subjectTagName);
+	
+				s+=")";
+
+
+
 				 
 				dl.append(s);
 				cl.append(weightPercentage/100*tmp);
