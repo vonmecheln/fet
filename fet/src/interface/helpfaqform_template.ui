@@ -81,9 +81,9 @@ Important note: please do the correct division of a year from the beginning. Eac
 
 Q: Help on ConstraintStudentsEarly.
 
-A: Constraint students (set) early: this constraint is a very restrictive/difficult one, saying that the students MUST have hours beginning at the first free slot (possible from breaks and students set not available constraints). You might get an impossible timetable if using this constraint. In the case that early is too strong, you might have to use constraints students set not available or other constraints instead.
+A: Constraint students (set) early: this constraint is a very restrictive one, saying that the students must have hours beginning at the first free slot (possible from breaks and students set not available constraints). If your school accepts beginning lessons at later hours, and some "early" constraints are too strong, you might have to use constraints students set not available/break in the last slots of the days or other constraints instead. You might try with constraint early only on some students sets.
 
-For instance, if students X are not available on Monday from 8 to 9 and available in rest and you add students set early X, they MUST begin each day (without Monday) at 8 and Monday at 9, not even a bit later. If this constraint is too heavy, you will get an impossible timetable. It is recommended in this case to make use of other constraints instead (students set not available might help).
+For instance, if students X are not available on Monday from 8 to 9 and available in rest and you add students set early X, they must begin each day (without Monday) at 8 and Monday at 9, not even a bit later.
 
 If you input only partial data, please use with caution. You might for instance input only 4+4 hourly activities of math with the same teacher for 2 students sets (each group of 4 activities must be ballanced - in different days). Then it is clear that you cannot place all 8 activities in a 5 days week without breaking the students early constraint, so you will get no possible timetable.
 

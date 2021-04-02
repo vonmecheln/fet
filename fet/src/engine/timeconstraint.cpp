@@ -3510,12 +3510,9 @@ QString ConstraintStudentsEarly::getDetailedDescription(Rules& r)
 	s+=QObject::tr("Please note that for each subgroup, you must have: 1. only no gaps or 2. no gaps and early, with the same weight percentage");
 	s+="\n";
 
-	s+=QObject::tr("WARNING: Strong constraint. If you get impossible timetables, you might need to remove it and add other constraints, like students set not available.");
-	s+=" ";
-	s+=QObject::tr("For instance, if students X are available all the time, they MUST begin their activities at first hour, not a bit later. This might be sometimes too strong");
+	s+=QObject::tr("This is a strong constraint (for instance, if students X are available all the time, they must begin "
+	 "their activities at first hour, not a bit later)");
 	s+="\n";
-
-	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
 
 	return s;
 }
@@ -3723,12 +3720,10 @@ QString ConstraintStudentsSetEarly::getDetailedDescription(Rules& r)
 	s+=QObject::tr("Please note that for each subgroup, you must have: 1. only no gaps or 2. no gaps and early, with the same weight percentage");
 	s+="\n";
 
-	s+=QObject::tr("WARNING: Strong constraint. If you get impossible timetables, you might need to remove it and add other constraints, like students set not available.");
-	s+=" ";
-	s+=QObject::tr("For instance, if students X are available all the time, they MUST begin their activities at first hour, not a bit later. This might be sometimes too strong");
+	s+=QObject::tr("This is a strong constraint (for instance, if students X are available all the time, they must begin "
+	 "their activities at first hour, not a bit later)");
 	s+="\n";
 
-	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
 	return s;
 }
 

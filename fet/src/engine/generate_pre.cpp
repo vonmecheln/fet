@@ -969,6 +969,24 @@ bool computeTeachersMinHoursDaily()
 			}
 			//////////
 
+			//////////
+			if(tmd->minHoursDaily>gt.rules.nHoursPerDay){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with"
+				 " %2 min hours daily, and the number of working hours per day is only %3. Please correct and try again")
+				 .arg(tmd->teacherName)
+				 .arg(tmd->minHoursDaily)
+				 .arg(gt.rules.nHoursPerDay),
+				 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			//////////
+
 			if(teachersMinHoursDailyMinHours[tmd->teacher_ID]==-1 || teachersMinHoursDailyMinHours[tmd->teacher_ID]<tmd->minHoursDaily){
 				teachersMinHoursDailyMinHours[tmd->teacher_ID]=tmd->minHoursDaily;
 				teachersMinHoursDailyPercentages[tmd->teacher_ID]=100;
@@ -993,6 +1011,22 @@ bool computeTeachersMinHoursDaily()
 			}
 			//////////
 
+			//////////
+			if(tmd->minHoursDaily>gt.rules.nHoursPerDay){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize, because you have constraint teachers min hours daily with"
+				 " %1 min hours daily, and the number of working hours per day is only %2. Please correct and try again")
+				 .arg(tmd->minHoursDaily)
+				 .arg(gt.rules.nHoursPerDay),
+				 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			//////////
 			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
 				if(teachersMinHoursDailyMinHours[tch]==-1 || teachersMinHoursDailyMinHours[tch]<tmd->minHoursDaily)
 					teachersMinHoursDailyMinHours[tch]=tmd->minHoursDaily;
@@ -1004,7 +1038,7 @@ bool computeTeachersMinHoursDaily()
 	for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
 		if(teachersMinHoursDailyPercentages[tc]==100){
 			assert(teachersMinHoursDailyMinHours[tc]>=0);
-			if(teachersMinHoursDailyMinHours[tc]>nHoursPerTeacher[tc]){
+			if(nHoursPerTeacher[tc]>0 && teachersMinHoursDailyMinHours[tc]>nHoursPerTeacher[tc]){
 				ok=false;
 
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),

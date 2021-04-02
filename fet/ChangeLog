@@ -1062,4 +1062,6 @@ Versions 5.3.0 - 5.3.6
 	- Additional checking the min n days for impossible situations
 	- Constraint teacher(s) min hours daily, suggested by Daniel Chiriac
 	- Crash bug fix when using teachers max gaps for only some of the teachers (reported by Volker Dirr)
-	
+- Version 5.4.1
+	- Improvement in Spanish translation by Jose Cesar Fernandez Lopez
+	- The min hours per day for teachers works even when a teacher has 0 hours in a week

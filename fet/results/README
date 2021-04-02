@@ -1,1 +1,3 @@
-This directory should contain the generated timetables.
+This directory should contain the generated timetables
+(under GNU/Linux or other systems, you might find the generated timetables
+in ~/fet-results, not here)

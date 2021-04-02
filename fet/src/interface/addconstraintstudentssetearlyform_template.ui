@@ -191,11 +191,12 @@ gaps (early gaps).</string>
                 <enum>Plain</enum>
             </property>
             <property name="text">
-                <string>WARNING: this constraint is very restrictive. It means that the students MUST
-begin their activities at the first available slot (allowed from breaks and
-students set not available). You might get impossible timetables using 
-this constraint, in which case you might need to use students not available
-or other constraints instead.</string>
+                <string>This constraint is restrictive. It means that the students must begin their
+activities at the first available slot (allowed from breaks and students set
+not available). If students X are available on all the time, they must begin
+school at first hour in each day, not a bit later. If your school accepts later
+beginning and early constraints prove too hard, you may replace some of
+them with not available/breaks in the last slots of the days</string>
             </property>
         </widget>
     </grid>
