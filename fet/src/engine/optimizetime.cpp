@@ -53,8 +53,9 @@ static bool foundGoodSwap;
 
 static QSet<int> tlistSet[MAX_HOURS_PER_WEEK];
 
-static int restoreActIndex[MAX_ACTIVITIES]; //the index of the act. to restore
-static int restoreTime[MAX_ACTIVITIES]; //the time when to restore
+//not sure, it might be necessary 10*...
+static int restoreActIndex[10*MAX_ACTIVITIES]; //the index of the act. to restore
+static int restoreTime[10*MAX_ACTIVITIES]; //the time when to restore
 static int nRestore;
 
 static int pred[MAX_ACTIVITIES];
@@ -79,12 +80,35 @@ int nHoursScheduledForTeacher[MAX_TEACHERS];
 QList<int> activitiesForTeacher[MAX_TEACHERS][MAX_HOURS_PER_WEEK];
 
 //for students (set) n hours daily
-QList<int> studentsActivitiesForDay[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK];
+//QList<int> studentsActivitiesForDay[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK];
 
 
 //QList<qint16> impossibleTimes[MAX_ACTIVITIES];
-QSet<int> impossibleTimes[MAX_ACTIVITIES];
+//static QSet<int> impossibleTimes[MAX_ACTIVITIES];
 
+
+//if level==0, choose best position with lowest number
+//of conflicting activities
+static QList<int> conflActivitiesTimeSlot;
+static int timeSlot;
+
+//static bool fixedActivity[MAX_ACTIVITIES];
+
+//static QList<int> triedTimes[MAX_ACTIVITIES];
+
+//static QSet<int> triedRemovals[MAX_ACTIVITIES];
+static int triedRemovals[MAX_ACTIVITIES][MAX_HOURS_PER_WEEK];
+
+/*const int TABU=1000;
+static int tabuActivities[TABU];
+static int tabuTimes[TABU];
+int crtTabuPos;*/
+
+static int impossibleActivity;
+
+static int invPermutation[MAX_ACTIVITIES];
+
+const int INF=2000000000;
 
 bool skipRandom(int weightPercentage)
 {
@@ -126,6 +150,21 @@ bool OptimizeTime::precompute()
 
 void OptimizeTime::optimize()
 {
+	impossibleActivity=false;
+
+	//for(int i=0; i<gt.rules.nInternalActivities; i++)
+	//	triedRemovals[i].clear();
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		for(int j=0; j<gt.rules.nHoursPerWeek; j++)
+			triedRemovals[i][j]=0;
+
+	//for(int i=0; i<gt.rules.nInternalActivities; i++)
+	//	impossibleTimes[i].clear();
+
+	/*for(int i=0; i<TABU; i++)
+		tabuActivities[i]=tabuTimes[i]=-1;
+	crtTabuPos=0;*/
+
 	abortOptimization=false;
 
 	c.makeTimesUnallocated(gt.rules);
@@ -137,6 +176,9 @@ void OptimizeTime::optimize()
 
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		pred[i]=-1;
+		
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		invPermutation[permutation[i]]=i;
 
 	tzset();
 	time_t start_time;
@@ -149,6 +191,9 @@ void OptimizeTime::optimize()
 	//ATENTION TO REPAIRING IN HARD FITNESS ROUTINE
 	
 	//int act_max=0, act_max_pos=-1;
+	
+	//for(int i=0; i<gt.rules.nInternalActivities; i++)
+	//	fixedActivity[i]=false;
 	
 	for(int added_act=0; added_act<gt.rules.nInternalActivities; added_act++){
 		prevvalue:
@@ -184,9 +229,13 @@ void OptimizeTime::optimize()
 
 		for(int i=0; i<gt.rules.nHoursPerWeek; i++)
 			tlistSet[i].clear();
-		for(int i=0; i<added_act; i++)
+		for(int i=0; i<added_act; i++){
+			if(c.times[permutation[i]]==UNALLOCATED_TIME)
+				cout<<"ERROR: act with id=="<<gt.rules.internalActivitiesList[permutation[i]].id<<" has time unallocated"<<endl;
+			assert(c.times[permutation[i]]!=UNALLOCATED_TIME);
 			for(int j=0; j<gt.rules.internalActivitiesList[permutation[i]].duration; j++)
 				tlistSet[c.times[permutation[i]]+j*gt.rules.nDaysPerWeek].insert(permutation[i]);
+		}
 				
 		//care for students (set) n hours daily
 		/*foreach(int sg, studentsSubgroupsWithNHoursDaily){
@@ -206,7 +255,7 @@ void OptimizeTime::optimize()
 		}*/
 		
 		///////////////care for teachers information (to help with gaps)
-		if(teachersMaxGapsMaxGaps>=0){
+		if(true /*teachersMaxGapsMaxGaps>=0*/){
 			for(int i=0; i<gt.rules.nInternalTeachers; i++){
 				nHoursScheduledForTeacher[i]=0;
 				for(int j=0; j<gt.rules.nHoursPerWeek; j++)
@@ -323,6 +372,8 @@ void OptimizeTime::optimize()
 		assert(!swappedActivities[permutation[added_act]]);
 		swappedActivities[permutation[added_act]]=true;
 
+		//timeSlot=-1;
+		//conflActivitiesTimeSlot.clear();
 		nRestore=0;
 		randomswap(permutation[added_act], 0);
 			
@@ -368,12 +419,156 @@ void OptimizeTime::optimize()
 		}*/
 
 		if(!foundGoodSwap){
+			if(impossibleActivity){
+				mutex.unlock();
+				emit(impossibleToSolve());
+				nDifficultActivities=1;
+				difficultActivities[0]=permutation[added_act];
+				
+				return;
+			}
+		
 			//update difficult activities (activities which are placed correctly so far, together with added_act
 			nDifficultActivities=added_act+1;
 			cout<<"nDifficultActivities=="<<nDifficultActivities<<endl;
 			for(int j=0; j<=added_act; j++)
 				difficultActivities[j]=permutation[j];
-		
+			
+//////////////////////	
+			assert(conflActivitiesTimeSlot.count()>0);
+			
+			cout<<"conflActivitiesTimeSlot.count()=="<<conflActivitiesTimeSlot.count()<<endl;
+			foreach(int i, conflActivitiesTimeSlot){
+				cout<<"Confl activity id:"<<gt.rules.internalActivitiesList[i].id;
+				cout<<" time of this activity:"<<c.times[i]<<endl;
+			}
+			//cout<<endl;
+			cout<<"timeSlot=="<<timeSlot<<endl;
+
+			QList<int> ok;
+			QList<int> confl;
+			for(int j=0; j<added_act; j++)
+				if(conflActivitiesTimeSlot.indexOf(permutation[j])!=-1){
+					if(triedRemovals[permutation[j]][c.times[permutation[j]]]>0){
+						cout<<"Warning - explored removal: id=="<<
+						 gt.rules.internalActivitiesList[permutation[j]].id<<", time=="<<c.times[permutation[j]]
+						 <<", times=="<<triedRemovals[permutation[j]][c.times[permutation[j]]]<<endl;
+					}
+					//assert(!triedRemovals[permutation[j]].contains(c.times[permutation[j]]));
+					//triedRemovals[permutation[j]].insert(c.times[permutation[j]]);
+					triedRemovals[permutation[j]][c.times[permutation[j]]]++;
+				
+					confl.append(permutation[j]);
+					
+					/*if(!impossibleTimes[permutation[j]].contains(c.times[permutation[j]])){
+						impossibleTimes[permutation[j]].insert(c.times[permutation[j]]);
+					}*/
+					/*for(int t=timeSlot-(gt.rules.internalActivitiesList[permutation[j]].duration-1)*gt.rules.nDaysPerWeek;
+					 t<timeSlot+gt.rules.internalActivitiesList[permutation[added_act]].duration*gt.rules.nDaysPerWeek;
+					 t+=gt.rules.nDaysPerWeek){
+						if(t>=0 && t<gt.rules.nHoursPerWeek){
+							if(!impossibleTimes[permutation[j]].contains(t)){
+								impossibleTimes[permutation[j]].insert(t);
+							}
+						}
+					}*/
+				}
+				else
+					ok.append(permutation[j]);
+				
+			/*if(confl.count()!=conflActivitiesTimeSlot.count()){
+				cout<<"confl.count()=="<<confl.count()<<", conflActivitiesTimeSlot.count()=="<<conflActivitiesTimeSlot.count()<<endl;
+				foreach(int k, conflActivitiesTimeSlot)
+					cout<<"id of permutation in conflActivitiesTimeSlot: "<<gt.rules.internalActivitiesList[k].id<<endl;
+				foreach(int k, confl)
+					cout<<"id of permutation in confl: "<<gt.rules.internalActivitiesList[k].id<<endl;
+			}*/
+			assert(confl.count()==conflActivitiesTimeSlot.count());
+			
+			int j=0;
+			int tmp=permutation[added_act];
+			foreach(int k, ok){
+				permutation[j]=k;
+				invPermutation[k]=j;
+				j++;
+			}
+			int q=j;
+			cout<<"q=="<<q<<endl;
+			permutation[j]=tmp;
+			invPermutation[tmp]=j;
+			j++;
+			cout<<"id of permutation[j=="<<j-1<<"]=="<<gt.rules.internalActivitiesList[permutation[j-1]].id<<endl;
+			cout<<"conflicting:"<<endl;
+			foreach(int k, confl){
+				permutation[j]=k;
+				invPermutation[k]=j;
+				j++;
+				cout<<"id of permutation[j=="<<j-1<<"]=="<<gt.rules.internalActivitiesList[permutation[j-1]].id<<endl;
+
+				//assert(!impossibleTimes[k].contains(c.times[k]));
+				//impossibleTimes[k].insert(c.times[k]);
+			}
+			assert(j==added_act+1);
+			
+			//check
+			/*int pv[MAX_ACTIVITIES];
+			for(int i=0; i<gt.rules.nInternalActivities; i++)
+				pv[i]=0;
+			for(int i=0; i<gt.rules.nInternalActivities; i++)
+				pv[permutation[i]]++;
+			for(int i=0; i<gt.rules.nInternalActivities; i++)
+				assert(pv[i]==1);*/
+			//
+
+			//c.times[permutation[q]]=timeSlot;
+			cout<<"tmp represents activity with id=="<<gt.rules.internalActivitiesList[tmp].id;
+			cout<<" initial time: "<<c.times[tmp];
+			cout<<" final time: "<<timeSlot<<endl;
+			c.times[tmp]=timeSlot;
+			//fixedActivity[tmp]=true;
+			
+			//do not insert it again, if existing
+			//else insert in tabu list
+			/*int ii;
+			for(ii=0; ii<TABU; ii++)
+				if(tabuActivities[(crtTabuPos+ii)%TABU]==permutation[q] && tabuTimes[(crtTabuPos+ii)%TABU]==timeSlot)
+					break;
+			if(ii==TABU){
+				tabuActivities[crtTabuPos%TABU]=permutation[q];
+				tabuTimes[crtTabuPos%TABU]=timeSlot;
+				crtTabuPos=(crtTabuPos+1)%TABU;
+			}*/
+			
+			//////////////
+			/*if(triedTimes[permutation[q]].indexOf(timeSlot)>=0){
+				//assert(triedTimes[permutation[q]].indexOf(timeSlot)==0);
+				int t=triedTimes[permutation[q]].removeAll(timeSlot);
+				assert(t==1);
+			}
+			triedTimes[permutation[q]].append(timeSlot);*/
+			//////////////
+				
+			//impossibleTimes[permutation[q]].insert(timeSlot);
+			for(int i=q+1; i<=added_act; i++){
+				c.times[permutation[i]]=UNALLOCATED_TIME;
+				//fixedActivity[permutation[i]]=false;
+			}
+			c._fitness=-1;
+			c.timeChangedForMatrixCalculation=true;			
+				
+			added_act=q+1;
+			mutex.unlock();
+			//cout<<"mutex unlocked - optimizetime 411"<<endl;
+	
+			emit(activityPlaced(q+1));
+			semaphoreTime.acquire();
+
+			goto prevvalue;
+//////////////////////
+			
+	
+//////////////////////////////	
+#if 0			
 			//compute pred list and find the point to backtrack
 			//jump one time to pred
 			int pred_pos=-1;
@@ -431,6 +626,7 @@ void OptimizeTime::optimize()
 					if(j==added_act){
 						//assert(impossibleTimes[permutation[k]].indexOf(c.times[permutation[k]])==-1);
 						//impossibleTimes[permutation[k]].append(c.times[permutation[k]]);
+						
 						assert(!impossibleTimes[permutation[k]].contains(c.times[permutation[k]]));
 						impossibleTimes[permutation[k]].insert(c.times[permutation[k]]);
 					}
@@ -445,6 +641,7 @@ void OptimizeTime::optimize()
 					if(pred[permutation[k]]>=0){
 						//assert(impossibleTimes[permutation[k]].indexOf(c.times[permutation[k]])==-1);
 						//impossibleTimes[permutation[k]].append(c.times[permutation[k]]);
+						
 						assert(!impossibleTimes[permutation[k]].contains(c.times[permutation[k]]));
 						impossibleTimes[permutation[k]].insert(c.times[permutation[k]]);
 					}
@@ -468,10 +665,7 @@ void OptimizeTime::optimize()
 					
 			if(j<0){
 				//????? invalid timetable data?
-				//assert(0);
-				mutex.unlock();
-				emit(impossibleToSolve());
-				return;
+				assert(0);
 		
 				//no predecessor to this activity - try again with another random value
 				mutex.unlock();
@@ -493,8 +687,10 @@ void OptimizeTime::optimize()
 				
 			added_act=j;
 			mutex.unlock();
-			//cout<<"mutex unlocked - optimizetime 376"<<endl;
+			//cout<<"mutex unlocked - optimizetime 523"<<endl;
+
 			goto prevvalue;
+#endif
 		}
 
 		else{ //if foundGoodSwap==true
@@ -518,6 +714,16 @@ void OptimizeTime::optimize()
 				//cout<<"mutex unlocked - optimizetime 397"<<endl;
 				break;
 			}
+			
+			bool ok=true;
+			for(int i=0; i<=added_act; i++){
+				if(c.times[permutation[i]]==UNALLOCATED_TIME){
+					cout<<"ERROR: act with id=="<<gt.rules.internalActivitiesList[permutation[i]].id<<" has time unallocated"<<endl;
+					ok=false;
+				}
+				//assert(c.times[permutation[i]]!=UNALLOCATED_TIME);
+			}
+			assert(ok);
 		}
 
 		mutex.unlock();	
@@ -600,7 +806,7 @@ void OptimizeTime::moveActivity(int ai, int fromslot, int toslot)
 		
 		//update teachers' count of occupied activities
 		/////////////////
-		if(teachersMaxGapsMaxGaps>=0){
+		if(true /*teachersMaxGapsMaxGaps>=0*/){
 			for(int i=0; i<act->nTeachers; i++){
 				int tc=act->teachers[i];
 	
@@ -770,7 +976,7 @@ void OptimizeTime::moveActivity(int ai, int fromslot, int toslot)
 		
 		//update teachers' count of occupied activities
 		/////////////////
-		if(teachersMaxGapsMaxGaps>=0){
+		if(true /*teachersMaxGapsMaxGaps>=0*/){
 			for(int i=0; i<act->nTeachers; i++){
 				int tc=act->teachers[i];
 	
@@ -816,8 +1022,8 @@ void OptimizeTime::moveActivity(int ai, int fromslot, int toslot)
 				
 				nHoursScheduledForTeacher[tc]+=cntfinal;
 			
-				if(teachersMaxGapsPercentage==100)
-					assert(nHoursScheduledForTeacher[tc] <= nHoursPerTeacher[tc] + teachersMaxGapsMaxGaps);
+				if(teachersMaxGapsPercentage[tc]==100)
+					assert(nHoursScheduledForTeacher[tc] <= nHoursPerTeacher[tc] + teachersMaxGapsMaxGaps[tc]);
 			}
 		}
 		/////////////////////
@@ -918,6 +1124,13 @@ void OptimizeTime::moveActivity(int ai, int fromslot, int toslot)
 }
 
 void OptimizeTime::randomswap(int ai, int level){
+	//cout<<"level=="<<level<<endl;
+
+	if(level==0){
+		conflActivitiesTimeSlot.clear();
+		timeSlot=-1;
+	}
+
 	if(level>=level_limit)
 		return;
 	
@@ -964,12 +1177,16 @@ void OptimizeTime::randomswap(int ai, int level){
 	
 	for(int n=0; n<gt.rules.nHoursPerWeek; n++){
 		int newtime=perm[n];
+		
+		nConflActivities[newtime]=0;
 
 		///////////////////
-		if(impossibleTimes[ai].contains(newtime)){
-			nConflActivities[newtime]=MAX_ACTIVITIES;
-			continue;
-		}
+		/*if(level>0){
+			if(impossibleTimes[ai].contains(newtime)){
+				nConflActivities[newtime]=MAX_ACTIVITIES;
+				continue;
+			}
+		}*/
 		///////////////////
 
 		//not too late
@@ -995,15 +1212,21 @@ void OptimizeTime::randomswap(int ai, int level){
 			int perc=activitiesSameStartingTimePercentages[ai].at(i);
 			if(c.times[ai2]!=UNALLOCATED_TIME){
 				if(newtime!=c.times[ai2] && !skipRandom(perc)){
-					oksamestartingtime=false;
-					break;
+					assert(ai2!=ai);
+					if(conflActivities[newtime].indexOf(ai2)==-1){
+						conflActivities[newtime].append(ai2);
+						nConflActivities[newtime]++;
+						assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+					}
+					//oksamestartingtime=false;
+					//break;
 				}
 			}
 		}
-		if(!oksamestartingtime){
+		/*if(!oksamestartingtime){
 			nConflActivities[newtime]=MAX_ACTIVITIES;
 			continue;
-		}
+		}*/
 		
 		//allowed from same starting hour
 		bool oksamestartinghour=true;
@@ -1012,15 +1235,20 @@ void OptimizeTime::randomswap(int ai, int level){
 			int perc=activitiesSameStartingHourPercentages[ai].at(i);
 			if(c.times[ai2]!=UNALLOCATED_TIME){
 				if((newtime/gt.rules.nDaysPerWeek)!=(c.times[ai2]/gt.rules.nDaysPerWeek) && !skipRandom(perc)){
-					oksamestartinghour=false;
-					break;
+					if(conflActivities[newtime].indexOf(ai2)==-1){
+						conflActivities[newtime].append(ai2);
+						nConflActivities[newtime]++;
+						assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+					}
+					/*oksamestartinghour=false;
+					break;*/
 				}
 			}
 		}
-		if(!oksamestartinghour){
+		/*if(!oksamestartinghour){
 			nConflActivities[newtime]=MAX_ACTIVITIES;
 			continue;
-		}
+		}*/
 		
 		//allowed from not overlapping
 		bool oknotoverlapping=true;
@@ -1037,16 +1265,22 @@ void OptimizeTime::randomswap(int ai, int level){
 					int st2=c.times[ai2];
 					int en2=st2+gt.rules.nDaysPerWeek*gt.rules.internalActivitiesList[ai2].duration;
 					if(!(en<=st2 || en2<=st) && !skipRandom(perc)){
-						oknotoverlapping=false;
-						break;
+						assert(ai2!=ai);
+						if(conflActivities[newtime].indexOf(ai2)==-1){
+							conflActivities[newtime].append(ai2);
+							nConflActivities[newtime]++;
+							assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+						}
+						/*oknotoverlapping=false;
+						break;*/
 					}
 				}
 			}
 		}
-		if(!oknotoverlapping){
+		/*if(!oknotoverlapping){
 			nConflActivities[newtime]=MAX_ACTIVITIES;
 			continue;
-		}
+		}*/
 		
 		//allowed for students (set) n hours daily
 		int k;
@@ -1072,7 +1306,7 @@ void OptimizeTime::randomswap(int ai, int level){
 		/////////////////
 		//int d=fromslot%gt.rules.nDaysPerWeek;
 		//int h=fromslot/gt.rules.nDaysPerWeek;
-		if(teachersMaxGapsMaxGaps>=0){
+		if(true /*teachersMaxGapsMaxGaps>=0*/){
 			int k;
 			for(k=0; k<act->nTeachers; k++){
 				int tc=act->teachers[k];
@@ -1113,24 +1347,40 @@ void OptimizeTime::randomswap(int ai, int level){
 	
 				if(cntfinal==0){
 				}
-				else if(nHoursScheduledForTeacher[tc]+cntfinal<=nHoursPerTeacher[tc]+teachersMaxGapsMaxGaps){
+				else if(nHoursScheduledForTeacher[tc]+cntfinal<=nHoursPerTeacher[tc]+teachersMaxGapsMaxGaps[tc]){
 				//if(nHoursScheduledForTeacher[tc]+cntfinal<=nHoursPerTeacher[tc]+teachersMaxGapsMaxGaps){
 				}
-				else if(skipRandom(teachersMaxGapsPercentage)){
+				else if(skipRandom(teachersMaxGapsPercentage[tc])){
 				}
-				else //illegal
-					break;
+				else{ //illegal
+					for(int i=0; i<gt.rules.nHoursPerWeek; i++){
+						assert(activitiesForTeacher[tc][i].count()<=1);
+
+						if(activitiesForTeacher[tc][i].count()==0)
+							continue;
+
+						int ai2=activitiesForTeacher[tc][i].at(0);
+						
+						if(conflActivities[newtime].indexOf(ai2)==-1){
+							conflActivities[newtime].append(ai2);
+							nConflActivities[newtime]++;
+							assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+						}
+					}
+					//break;
+				}
 				//if(nHoursScheduledForTeacher[tc]+cntfinal>nHoursPerTeacher[tc]+MAX_GAPS_PER_TEACHER)
 				//	break;
 			}
 			if(k<act->nTeachers){
+				assert(0);
 				nConflActivities[newtime]=MAX_ACTIVITIES;
 				continue;
 			}
 		}
 		/////////////////////
 		
-		//not causing students gaps (final gaps)
+		//not causing students' gaps (final gaps)
 		//////////////////
 		for(k=0; k<act->nSubgroups; k++){
 			int isg=act->subgroups[k];
@@ -1162,14 +1412,88 @@ void OptimizeTime::randomswap(int ai, int level){
 					ok=true;
 				}
 				else{
-					if(nHoursScheduledForSubgroup[isg]+cnt>nHoursPerSubgroup[isg])
+					if(nHoursScheduledForSubgroup[isg]+cnt>nHoursPerSubgroup[isg]){
 						ok=skipRandom(subgroupsNoGapsPercentage[isg]);
+						
+						/////////////////////////////added in 5.0.0-preview11
+						if(!ok){
+							for(int i=0; i<gt.rules.nHoursPerWeek; i++){
+								assert(activitiesForSubgroup[isg][i].count()<=1);
+								
+								if(activitiesForSubgroup[isg][i].count()==0)
+									continue;
+
+								int ai2=activitiesForSubgroup[isg][i].at(0);
+								
+								if(conflActivities[newtime].indexOf(ai2)==-1){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+									assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+								}
+							}
+							
+							/*int hoursToSubtract=-nHoursPerSubgroup[isg]+nHoursScheduledForSubgroup[isg]+cnt;
+						
+							ok=true;
+						
+							int optNWrong=gt.rules.nInternalActivities;
+							int optNConfl=gt.rules.nInternalActivities;
+							QList<int> conflActs[MAX_DAYS_PER_WEEK];
+							int nWrong[MAX_DAYS_PER_WEEK];
+						
+							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+								nWrong[d2]=-1;
+								if(d2!=d){
+									int h2;
+									for(h2=gt.rules.nHoursPerDay-1; h2>=0; h2--)
+										if(activitiesForSubgroup[isg][d2+h2*gt.rules.nDaysPerWeek].count()>0)
+											break;
+									if(h2+1>=hoursToSubtract){
+										conflActs[d2].clear();
+										nWrong[d2]=0;
+										for(int k=0; k<hoursToSubtract; k++)
+											foreach(int a2, activitiesForSubgroup[isg][d2+(h2-k)*gt.rules.nDaysPerWeek])
+												if(conflActs[d2].indexOf(a2)==-1){
+													conflActs[d2].append(a2);
+													nWrong[d2]+=triedRemovals[a2][c.times[a2]];
+												}
+													
+										if(nWrong[d2]<optNWrong || nWrong[d2]==optNWrong && conflActs[d2].count()<optNConfl){
+											optNWrong=nWrong[d2];
+											optNConfl=conflActs[d2].count();
+										}
+									}
+									else
+										continue;
+								}
+							}
+							assert(optNWrong<gt.rules.nInternalActivities);
+							assert(optNWrong>=0);
+							QList<int> optDays;
+							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
+								if(nWrong[d2]==optNWrong && conflActs[d2].count()==optNConfl)
+									optDays.append(d2);
+							assert(optDays.count()>0);
+							int rnd=rand()%optDays.count();
+							int d2=optDays.at(rnd);
+							
+							foreach(int ai2, conflActs[d2]){
+								assert(ai2!=ai);
+								if(conflActivities[newtime].indexOf(ai2)==-1){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+									assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+								}
+							}*/
+						}
+						/////////////////////////////
+					}
 					else
 						ok=true;
 				}
 				
-				if(!ok)
-					break;
+				//if(!ok)
+				//	break;
 			}
 			else if(subgroupsEarlyPercentage[isg]==-1 && subgroupsNoGapsPercentage[isg]>=0){
 			//only students no gaps
@@ -1212,26 +1536,307 @@ void OptimizeTime::randomswap(int ai, int level){
 					ok=true;
 				}
 				else{
-					if(nHoursScheduledForSubgroup[isg]+cntfinal>nHoursPerSubgroup[isg])
+					//cout<<"cntfinal=="<<cntfinal<<endl;
+				
+					if(nHoursScheduledForSubgroup[isg]+cntfinal>nHoursPerSubgroup[isg]){
 						ok=skipRandom(subgroupsNoGapsPercentage[isg]);
+
+						/////////////////////////////added in 5.0.0-preview11
+						if(!ok){
+							for(int i=0; i<gt.rules.nHoursPerWeek; i++){
+								assert(activitiesForSubgroup[isg][i].count()<=1);
+
+								if(activitiesForSubgroup[isg][i].count()==0)
+									continue;
+
+								int ai2=activitiesForSubgroup[isg][i].at(0);
+								
+								if(conflActivities[newtime].indexOf(ai2)==-1){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+									assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+								}
+							}
+
+							/*
+							int hoursToSubtract=-nHoursPerSubgroup[isg]+nHoursScheduledForSubgroup[isg]+cntfinal;
+
+							ok=true;
+						
+							int optNWrong=gt.rules.nInternalActivities;
+							int optNConfl=gt.rules.nInternalActivities;
+							QList<int> conflActsBegin[MAX_DAYS_PER_WEEK];
+							int nWrongBegin[MAX_DAYS_PER_WEEK];
+							QList<int> conflActsEnd[MAX_DAYS_PER_WEEK];
+							int nWrongEnd[MAX_DAYS_PER_WEEK];
+						
+							//remove from the beginning of day
+							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+								nWrongBegin[d2]=-1;
+								if(d2!=d){
+									int h2;
+									for(h2=0; h2<gt.rules.nHoursPerDay; h2++)
+										if(activitiesForSubgroup[isg][d2+h2*gt.rules.nDaysPerWeek].count()>0)
+											break;
+									if(h2+hoursToSubtract<=gt.rules.nHoursPerDay){
+										//////////////////
+										int q;
+										assert(hoursToSubtract>0);
+										for(q=h2+hoursToSubtract-1; q<gt.rules.nHoursPerDay; q++)
+											if(activitiesForSubgroup[isg][d2+q*gt.rules.nDaysPerWeek].count()>0)
+												break;
+										if(q==gt.rules.nHoursPerDay)
+											continue; //not enough hours
+										///////////////////
+									
+										conflActsBegin[d2].clear();
+										nWrongBegin[d2]=0;
+										for(int k=0; k<hoursToSubtract; k++)
+											foreach(int a2, activitiesForSubgroup[isg][d2+(h2+k)*gt.rules.nDaysPerWeek])
+												if(conflActsBegin[d2].indexOf(a2)==-1){
+													conflActsBegin[d2].append(a2);
+													nWrongBegin[d2]+=triedRemovals[a2][c.times[a2]];
+												}
+													
+										if(nWrongBegin[d2]<optNWrong || nWrongBegin[d2]==optNWrong && conflActsBegin[d2].count()<optNConfl){
+											optNWrong=nWrongBegin[d2];
+											optNConfl=conflActsBegin[d2].count();
+										}
+									}
+									else
+										continue;
+								}
+								else{ //if d==d2
+									int h2;
+									for(h2=0; h2<gt.rules.nHoursPerDay; h2++)
+										if(activitiesForSubgroup[isg][d2+h2*gt.rules.nDaysPerWeek].count()>0)
+											break;
+									if(h2+hoursToSubtract<=gt.rules.nHoursPerDay){
+										//////////////////
+										int q;
+										assert(hoursToSubtract>0);
+										for(q=h2+hoursToSubtract-1; q<gt.rules.nHoursPerDay; q++)
+											if(activitiesForSubgroup[isg][d2+q*gt.rules.nDaysPerWeek].count()>0 || q>=h && q<h+act->duration)
+												break;
+										if(q==gt.rules.nHoursPerDay)
+											continue; //not enough hours
+										///////////////////
+										
+										///////////////////
+										for(q=h2; q<h2+hoursToSubtract; q++)
+											if(q>=h && q<h+act->duration) //the current activity intervenes, we cannot place in today slot
+												break;
+										if(q<h2+hoursToSubtract)
+											continue;
+										///////////////////
+									
+										conflActsBegin[d2].clear();
+										nWrongBegin[d2]=0;
+										for(int k=0; k<hoursToSubtract; k++)
+											foreach(int a2, activitiesForSubgroup[isg][d2+(h2+k)*gt.rules.nDaysPerWeek])
+												if(conflActsBegin[d2].indexOf(a2)==-1){
+													conflActsBegin[d2].append(a2);
+													nWrongBegin[d2]+=triedRemovals[a2][c.times[a2]];
+												}
+													
+										if(nWrongBegin[d2]<optNWrong || nWrongBegin[d2]==optNWrong && conflActsBegin[d2].count()<optNConfl){
+											optNWrong=nWrongBegin[d2];
+											optNConfl=conflActsBegin[d2].count();
+										}
+									}
+									else
+										continue;
+								}
+							}
+
+							//or remove from the end of the day
+							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+								nWrongEnd[d2]=-1;
+								if(d2!=d){
+									int h2;
+									for(h2=gt.rules.nHoursPerDay-1; h2>=0; h2--)
+										if(activitiesForSubgroup[isg][d2+h2*gt.rules.nDaysPerWeek].count()>0)
+											break;
+									if(h2+1>=hoursToSubtract){
+										//////////////////
+										int q;
+										assert(hoursToSubtract>0);
+										for(q=h2-hoursToSubtract+1; q>=0; q--)
+											if(activitiesForSubgroup[isg][d2+q*gt.rules.nDaysPerWeek].count()>0)
+												break;
+										if(q==-1)
+											continue; //not enough hours
+										///////////////////
+
+										conflActsEnd[d2].clear();
+										nWrongEnd[d2]=0;
+										for(int k=0; k<hoursToSubtract; k++)
+											foreach(int a2, activitiesForSubgroup[isg][d2+(h2-k)*gt.rules.nDaysPerWeek])
+												if(conflActsEnd[d2].indexOf(a2)==-1){
+													conflActsEnd[d2].append(a2);
+													nWrongEnd[d2]+=triedRemovals[a2][c.times[a2]];
+												}
+													
+										if(nWrongEnd[d2]<optNWrong || nWrongEnd[d2]==optNWrong && conflActsEnd[d2].count()<optNConfl){
+											optNWrong=nWrongEnd[d2];
+											optNConfl=conflActsEnd[d2].count();
+										}
+									}
+									else
+										continue;
+								}
+								else{ //d==d2
+									int h2;
+									for(h2=gt.rules.nHoursPerDay-1; h2>=0; h2--)
+										if(activitiesForSubgroup[isg][d2+h2*gt.rules.nDaysPerWeek].count()>0)
+											break;
+									if(h2+1>=hoursToSubtract){
+										//////////////////
+										int q;
+										assert(hoursToSubtract>0);
+										for(q=h2-hoursToSubtract+1; q>=0; q--)
+											if(activitiesForSubgroup[isg][d2+q*gt.rules.nDaysPerWeek].count()>0 || q>=h && q<h+act->duration)
+												break;
+										if(q==-1)
+											continue; //not enough hours
+										///////////////////
+										
+										///////////////////
+										for(q=h2; q>=h2-hoursToSubtract+1; q--)
+											if(q>=h && q<h+act->duration) //the current activity intervenes, we cannot place in today slot
+												break;
+										if(q>=h2-hoursToSubtract+1)
+											continue;
+										///////////////////
+
+										conflActsEnd[d2].clear();
+										nWrongEnd[d2]=0;
+										for(int k=0; k<hoursToSubtract; k++)
+											foreach(int a2, activitiesForSubgroup[isg][d2+(h2-k)*gt.rules.nDaysPerWeek])
+												if(conflActsEnd[d2].indexOf(a2)==-1){
+													conflActsEnd[d2].append(a2);
+													nWrongEnd[d2]+=triedRemovals[a2][c.times[a2]];
+												}
+													
+										if(nWrongEnd[d2]<optNWrong || nWrongEnd[d2]==optNWrong && conflActsEnd[d2].count()<optNConfl){
+											optNWrong=nWrongEnd[d2];
+											optNConfl=conflActsEnd[d2].count();
+										}
+									}
+									else
+										continue;
+								}
+							}
+							if(optNWrong==gt.rules.nInternalActivities){
+								cout<<"NO possible slots."<<endl;
+								for(int i=0; i<gt.rules.nHoursPerWeek; i++){
+									cout<<"  time slot: "<<i<<", activities: ";
+									foreach(int a1, activitiesForSubgroup[isg][i])
+										cout<<" id:"<<gt.rules.internalActivitiesList[a1].id;
+									cout<<endl;
+								}
+								cout<<"Trying to place activity with id: "<<gt.rules.internalActivitiesList[ai].id
+								 <<" at time slot: "<<newtime<<endl;
+								cout<<"hoursToSubtract=="<<hoursToSubtract<<endl;
+							}
+							assert(optNWrong<gt.rules.nInternalActivities);
+							assert(optNWrong>=0);
+							QList<int> optDays;
+							QList<bool> begin; //begin or end
+							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+								if(nWrongBegin[d2]==optNWrong && conflActsBegin[d2].count()==optNConfl){
+									optDays.append(d2);
+									begin.append(true);
+								}
+								if(nWrongEnd[d2]==optNWrong && conflActsEnd[d2].count()==optNConfl){
+									optDays.append(d2);
+									begin.append(false);
+								}
+							}
+							assert(optDays.count()>0);
+							assert(optDays.count()==begin.count());
+							int rnd=rand()%optDays.count();
+							int d2=optDays.at(rnd);
+							bool beg=begin.at(rnd);
+							
+							if(beg){
+								//cout<<"here begin"<<endl;
+								foreach(int ai2, conflActsBegin[d2]){
+									assert(ai2!=ai);
+									if(conflActivities[newtime].indexOf(ai2)==-1){
+										conflActivities[newtime].append(ai2);
+										nConflActivities[newtime]++;
+										assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+									}
+								}
+							}
+							else{
+								//cout<<"here end"<<endl;
+								foreach(int ai2, conflActsEnd[d2]){
+									assert(ai2!=ai);
+									if(conflActivities[newtime].indexOf(ai2)==-1){
+										conflActivities[newtime].append(ai2);
+										nConflActivities[newtime]++;
+										assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+									}
+								}
+							}
+
+							if(d==d2){
+								cout<<"d=="<<d<<", chosen d2=="<<d2<<endl;
+								
+								for(int i=0; i<gt.rules.nHoursPerWeek; i++){
+									cout<<"  time slot: "<<i<<", activities: ";
+									foreach(int a1, activitiesForSubgroup[isg][i])
+										cout<<" id:"<<gt.rules.internalActivitiesList[a1].id;
+									cout<<endl;
+								}
+								cout<<"Trying to place activity with id: "<<gt.rules.internalActivitiesList[ai].id
+								 <<" at time slot: "<<newtime<<endl;
+								cout<<"hoursToSubtract=="<<hoursToSubtract<<endl;
+								
+								if(beg){
+									cout<<"Begin: conflActsBegin: ";
+									foreach(int ai2, conflActsBegin[d2])
+										cout<<" id=="<<gt.rules.internalActivitiesList[ai2].id;
+									cout<<endl;
+								}
+								else{
+									assert(!beg);
+									cout<<"End: conflActsEnd: ";
+									foreach(int ai2, conflActsEnd[d2])
+										cout<<" id=="<<gt.rules.internalActivitiesList[ai2].id;
+									cout<<endl;
+								}
+								
+								cout<<"conflActivities[newtime]: ";
+								foreach(int ai2, conflActivities[newtime])
+									cout<<" id=="<<gt.rules.internalActivitiesList[ai2].id;
+								cout<<endl;
+							}*/
+						}
+						/////////////////////////////
+					}
 					else
 						ok=true;
 				}
 				
-				if(!ok)
-					break;
+				/*if(!ok)
+					break;*/
 			}
 			else
 				assert(subgroupsEarlyPercentage[isg]==-1 && subgroupsNoGapsPercentage[isg]==-1);
 		}
 		if(k<act->nSubgroups){
+			assert(0);
+			
 			nConflActivities[newtime]=MAX_ACTIVITIES;
 			continue;
 		}
 		
 		//not breaking the teacher max days per week constraints
 		////////////////////////////BEGIN max days per week for teachers
-		bool ok=true;
+		//bool ok=true;
 		foreach(int t, teachersWithMaxDaysPerWeekForActivities[ai]){
 		//for(int i=0; i<act->nTeachers; i++){
 			//int t=act->teachers[i];
@@ -1239,6 +1844,15 @@ void OptimizeTime::randomswap(int ai, int level){
 			assert(maxDays>=0); //the list contains real information
 			if(maxDays>=0){
 				assert(maxDays>0);
+
+				/*int mi=gt.rules.nInternalActivities;
+				int mipos=-1;
+				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+					if(teacherActivitiesOfTheDay[t][j].count()>0)
+						if(mi > teacherActivitiesOfTheDay[t][j].count()){
+							mi=teacherActivitiesOfTheDay[t][j].count();
+							mipos=j;
+						}*/
 				
 				int ndinitial=0;
 				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
@@ -1257,35 +1871,66 @@ void OptimizeTime::randomswap(int ai, int level){
 				}
 				else if(skipRandom(teachersMaxDaysPerWeekWeightPercentages[t])){
 				}
-				else
-					ok=false;
-				
-				/*bool dayOccupied[MAX_DAYS_PER_WEEK];
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					dayOccupied[j]=false;
-				
-				foreach(int ai2, activitiesForTeachers[t])
-					if(ai2!=ai && c.times[ai2]!=UNALLOCATED_TIME)
-						dayOccupied[c.times[ai2]%gt.rules.nDaysPerWeek]=true;
+				else{
+					//ok=false;
+					/*foreach(int k, teacherActivitiesOfTheDay[t][mipos]){
+						conflActivities[newtime].append(k);
+					}*/
 					
-				int nd=0;	
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					if(dayOccupied[j])
-						nd++;
+					///////////////////////////
+					int optNWrong=gt.rules.nInternalActivities;
+					int optNConfl=gt.rules.nInternalActivities;
+					QList<int> conflActs[MAX_DAYS_PER_WEEK];
+					int nWrong[MAX_DAYS_PER_WEEK];
+						
+					for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+						nWrong[d2]=-1;
+						if(d2!=d){
+							conflActs[d2].clear();
+							nWrong[d2]=0;
+							foreach(int a, teacherActivitiesOfTheDay[t][d2])
+								if(conflActs[d2].indexOf(a)==-1){
+									conflActs[d2].append(a);
+									nWrong[d2]+=triedRemovals[a][c.times[a]];
+								}
+							
+							if(nWrong[d2]<optNWrong || nWrong[d2]==optNWrong && conflActs[d2].count()<optNConfl){
+								optNWrong=nWrong[d2];
+								optNConfl=conflActs[d2].count();
+							}
+						}
+						else
+							continue;
+					}
+					assert(optNWrong<gt.rules.nInternalActivities);
+					assert(optNWrong>=0);
+					QList<int> optDays;
+					for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
+						if(nWrong[d2]==optNWrong && conflActs[d2].count()==optNConfl)
+							optDays.append(d2);
+					assert(optDays.count()>0);
+					int rnd=rand()%optDays.count();
+					int d2=optDays.at(rnd);
+							
+					foreach(int ai2, conflActs[d2]){
+						assert(ai2!=ai);
+						if(conflActivities[newtime].indexOf(ai2)==-1){
+							conflActivities[newtime].append(ai2);
+							nConflActivities[newtime]++;
+							assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+						}
+					}
+					///////////////////////////
+				}
 				
-				assert(nd<=maxDays);
-				
-				if(!(nd==maxDays && dayOccupied[d] || nd<maxDays))
-					ok=false;*/
-					
-				if(!ok)
-					break;
+				//if(!ok)
+				//	break;
 			}
 		}
-		if(!ok){
-			nConflActivities[newtime]=MAX_ACTIVITIES;
-			continue;
-		}
+		//if(!ok){
+		//	nConflActivities[newtime]=MAX_ACTIVITIES;
+		//	continue;
+		//}
 		////////////////////////////END max days per week
 		
 		//care about basic time constraints
@@ -1366,6 +2011,132 @@ void OptimizeTime::randomswap(int ai, int level){
 	//for(int i=1; i<gt.rules.nHoursPerWeek; i++)
 	//	assert(nConflActivities[conflPerm[perm[i-1]]]<=nConflActivities[conflPerm[perm[i]]]);
 	
+	if(level==0){
+		/*cout<<"impossibleTimes[ai]: ";
+		foreach(int i, impossibleTimes[ai])
+			cout<<i<<" ";
+		cout<<endl;*/
+		
+		int minIndexAct[MAX_HOURS_PER_WEEK];
+		int nWrong[MAX_HOURS_PER_WEEK];
+		int minWrong[MAX_HOURS_PER_WEEK];
+		for(int i=0; i<gt.rules.nHoursPerWeek; i++){
+			minIndexAct[i]=gt.rules.nInternalActivities;
+			nWrong[i]=INF;
+			minWrong[i]=INF;
+		}
+		
+		QList<int> tim;
+		for(int i=0; i<gt.rules.nHoursPerWeek; i++)
+			if(nConflActivities[conflPerm[perm[i]]]>0 && nConflActivities[conflPerm[perm[i]]]<MAX_ACTIVITIES)
+				tim.append(conflPerm[perm[i]]);
+		if(tim.count()==0 && nConflActivities[conflPerm[perm[0]]]==MAX_ACTIVITIES){
+			cout<<"optimizetime.cpp line 1969 - WARNING - no possible timeslots for activity with id=="<<
+			 gt.rules.internalActivitiesList[ai].id<<endl;
+			 
+			impossibleActivity=true;
+
+			//assert(0);
+		}
+		if(tim.count()>0){
+			/*int M=-1;
+			int Mpos=-1;*/
+			//int cnt=0;
+			foreach(int i, tim){ //if(!impossibleTimes[ai].contains(i)){
+				int cnt=0;
+				int m=gt.rules.nInternalActivities;
+				foreach(int aii, conflActivities[i]){
+					//if(triedRemovals[aii].contains(c.times[aii]))
+					//	cnt++;
+					if(triedRemovals[aii][c.times[aii]]>0)
+						cnt+=triedRemovals[aii][c.times[aii]];
+						
+					if(minWrong[i]>triedRemovals[aii][c.times[aii]])
+						minWrong[i]=triedRemovals[aii][c.times[aii]];
+						
+					int j=invPermutation[aii];
+					/*for(j=0; j<gt.rules.nInternalActivities; j++)
+						if(permutation[j]==aii)
+							break;*/
+					assert(j<gt.rules.nInternalActivities);
+					if(m>j)
+						m=j;
+				}
+				/*if(M<m){
+					M=m;
+					Mpos=i;
+				}*/
+				minIndexAct[i]=m;
+				nWrong[i]=cnt;
+				
+				//cout<<"Possible slot: i=="<<i<<", cnt=="<<cnt<<endl;
+			}
+			
+			int optMinIndex=-1;
+			int optNWrong=INF;
+			int optMinWrong=INF;
+			int optNConflActs=gt.rules.nInternalActivities;
+			int j=-1;
+			foreach(int i, tim)
+				//choose a random time out of these with minimum number of wrongly replaced activities
+				//if(optNWrong>nWrong[i] || optNWrong==nWrong[i] && optNConflActs>nConflActivities[i]){
+				/*if(optNWrong>nWrong[i]
+				 || optNWrong==nWrong[i] && minWrong[i]<optMinWrong
+				 || optNWrong==nWrong[i] && minWrong[i]==optMinWrong && optNConflActs>nConflActivities[i]){*/
+				if(minWrong[i]<optMinWrong
+				 || optNWrong>nWrong[i] && minWrong[i]==optMinWrong
+				 || optNWrong==nWrong[i] && minWrong[i]==optMinWrong && optNConflActs>nConflActivities[i]){
+					optNWrong=nWrong[i];
+					optMinWrong=minWrong[i];
+					optMinIndex=minIndexAct[i];
+					optNConflActs=nConflActivities[i];
+					j=i;
+					
+					//timeSlot=i;
+					//conflActivitiesTimeSlot=conflActivities[i];
+				}
+			assert(j>=0);
+			QList<int> tim2;
+			foreach(int i, tim)
+				if(optNWrong==nWrong[i] && minWrong[i]==optMinWrong && optNConflActs==nConflActivities[i])
+					tim2.append(i);
+			assert(tim2.count()>0);
+			int rnd=rand()%tim2.count();
+			j=tim2.at(rnd);
+			/*QList<int> candTime;
+			foreach(int i, tim)
+				if(optNFixedWrong==nFixedWrong[i])
+					candTime.append(i);
+			assert(candTime.count()>0);
+			int rnd=random()%candTime.count();
+			
+			timeSlot=candTime.at(rnd);*/
+			assert(j>=0);
+			timeSlot=j;
+			conflActivitiesTimeSlot=conflActivities[timeSlot];
+			
+			/*if(Mpos>=0){
+				conflActivitiesTimeSlot=conflActivities[Mpos];
+				timeSlot=Mpos;
+			}
+			else{
+				cout<<"Warning - optimizetime.cpp line 1566, all times are explored, choosing best one"<<endl;
+				assert(tim.count()>0);
+				int r=rand()%tim.count();
+				Mpos=tim.at(r);
+				
+				if(Mpos>=0){
+					conflActivitiesTimeSlot=conflActivities[Mpos];
+					timeSlot=Mpos;
+				}
+				else{
+					cout<<"Warning - optimizetime.cpp line 1576, Mpos==-1"<<endl;
+					assert(0);
+				}
+			}*/
+		}
+	}
+	
 	for(int i=0; i<gt.rules.nHoursPerWeek; i++){
 		int newtime=conflPerm[perm[i]]; //the considered time
 		if(nConflActivities[newtime]>=MAX_ACTIVITIES)
@@ -1386,12 +2157,49 @@ void OptimizeTime::randomswap(int ai, int level){
 			restoreTime[nRestore]=c.times[ai];
 			nRestore++;
 			
-			moveActivity(ai, c.times[ai], newtime);
+			//cout<<"level=="<<level<<", activity with id=="<<gt.rules.internalActivitiesList[ai].id<<
+			// " goes free from time: "<<c.times[ai]<<" to time: "<<newtime<<endl;
 			
+			moveActivity(ai, c.times[ai], newtime);
+
 			foundGoodSwap=true;
 			return;
 		}
 		else{
+			//sort activities in decreasing order of difficulty.
+			//if the index of the activity in "permutation" is smaller, the act. is more difficult
+			QList<int> sorted;
+			QList<int> conflActs=conflActivities[newtime];
+			while(conflActs.count()>0){
+				int m=gt.rules.nInternalActivities;
+				int j=-1;
+				for(int k=0; k<conflActs.count(); k++){
+					int a=conflActs.at(k);
+					if(invPermutation[a]<m){
+						m=invPermutation[a];
+						j=k;
+					}
+				}
+				assert(j>=0);
+				sorted.append(conflActs.at(j));
+				int a=conflActs.at(j);
+				int t=conflActs.removeAll(a);
+				assert(t==1);
+			}
+			assert(sorted.count()==conflActivities[newtime].count());
+			conflActivities[newtime]=sorted;
+		
+			/*if(timeSlot==-1 && level==0){
+				assert(conflActivitiesTimeSlot.count()==0);
+				conflActivitiesTimeSlot=conflActivities[newtime];
+				timeSlot=newtime;
+			}*/
+			/*if(conflActivities[newtime].count()>1 && conflActivitiesTimeSlot.count()<=1 && level==0){
+				//assert(conflActivitiesTimeSlot.count()==0);
+				conflActivitiesTimeSlot=conflActivities[newtime];
+				timeSlot=newtime;
+			}*/
+
 			int ok=true;
 			foreach(int a, conflActivities[newtime])
 				if(swappedActivities[a] /*|| gt.rules.activitiesSimilar[ai][a] || gt.rules.activityContained[ai][a]*/){
@@ -1401,66 +2209,125 @@ void OptimizeTime::randomswap(int ai, int level){
 			
 			if(!ok)
 				continue;
-
+				
 			//////////////place it at a new time
+			
 			int oldNRestore=nRestore;
 			
-			restoreActIndex[nRestore]=ai;
+			////////////////
+			QList<int> oldacts;
+			QList<int> oldtimes;
+			
+			if(1 /*ok*/){
+				assert(conflActivities[newtime].size()>0);
+				
+				foreach(int a, conflActivities[newtime]){
+					//cout<<"Level=="<<level<<", conflicting act. id=="<<gt.rules.internalActivitiesList[a].id<<", old time=="<<c.times[a]<<endl;
+					
+					restoreActIndex[nRestore]=a;
+					restoreTime[nRestore]=c.times[a];
+					nRestore++;
+					
+					oldacts.append(a);
+					oldtimes.append(c.times[a]);
+					assert(c.times[a]!=UNALLOCATED_TIME);
+					//cout<<"level=="<<level<<", unallocating activity with id=="<<gt.rules.internalActivitiesList[a].id<<endl;
+					moveActivity(a, c.times[a], UNALLOCATED_TIME);
+				}
+			}
+			assert(oldacts.count()==conflActivities[newtime].count());
+			assert(oldtimes.count()==conflActivities[newtime].count());
+			////////////////
+
 			int oldtime=c.times[ai];
-			restoreTime[nRestore]=oldtime;
-			nRestore++;
+			//if(c.times[ai]!=UNALLOCATED_TIME){
+				restoreActIndex[nRestore]=ai;
+				restoreTime[nRestore]=oldtime;
+				nRestore++;
+			//}
+			
+			//cout<<"Level=="<<level<<", act. id=="<<gt.rules.internalActivitiesList[ai].id<<", old time=="<<c.times[ai]<<endl;
 
 			moveActivity(ai, oldtime, newtime);
+			//cout<<"level=="<<level<<", activity with id=="<<gt.rules.internalActivitiesList[ai].id<<
+			// " goes from time: "<<oldtime<<" to time: "<<newtime<<endl;
 			//////////////////
 			
-			bool all_not_visited=true;
-			foreach(int a, conflActivities[newtime])
-				if(swappedActivities[a]){
-					all_not_visited=false;
-					break;
-				}
-				
-			if(all_not_visited)
+			if(1)
 				foreach(int a, conflActivities[newtime])
 					swappedActivities[a]=true;
 
 			foundGoodSwap=false;
 			
 			ok=false;
-			if(all_not_visited){
+			if(1){
 				assert(conflActivities[newtime].size()>0);
 				ok=true;
-			
+				
 				foreach(int a, conflActivities[newtime]){
 					randomswap(a, level+1);
 					if(!foundGoodSwap){
 						ok=false;
 						break;
 					}
+					assert(c.times[a]!=UNALLOCATED_TIME);
 					assert(foundGoodSwap);
 					foundGoodSwap=false;
 				}
 			}
-
+			
 			if(ok){
+				foreach(int a, conflActivities[newtime])
+					assert(c.times[a]!=UNALLOCATED_TIME);
+				assert(c.times[ai]!=UNALLOCATED_TIME);
+			
 				foundGoodSwap=true;
 				return;
 			}
 
-			if(all_not_visited)
+			if(1)
 				foreach(int a, conflActivities[newtime])
 					swappedActivities[a]=false;
 			
 			//////////////restore times from the restore list
 			for(int j=nRestore-1; j>=oldNRestore; j--){
-				assert(c.times[ai]!=UNALLOCATED_TIME);
+				//assert(c.times[ai]!=UNALLOCATED_TIME);
 				
-				ai=restoreActIndex[j];
+				int aii=restoreActIndex[j];
 				oldtime=restoreTime[j];
 				
-				moveActivity(ai, c.times[ai], oldtime);
+				//assert(oldtime!=UNALLOCATED_TIME);
+				
+				//cout<<"level=="<<level<<", activity with id=="<<gt.rules.internalActivitiesList[aii].id<<
+				// " restored from time: "<<c.times[aii]<<" to time: "<<oldtime<<endl;
+				moveActivity(aii, c.times[aii], oldtime);
+
+				//cout<<"Level=="<<level<<", act. id=="<<gt.rules.internalActivitiesList[ai].id<<", restoring old time=="<<c.times[ai]<<endl;
+				
+				//assert(oldtime!=UNALLOCATED_TIME);
 			}
 			nRestore=oldNRestore;
+
+			/*
+			if(!ok){
+				cout<<"Beginning to restore previously unallocated activities"<<endl;
+				for(int i=0; i<oldacts.count(); i++){
+					int a=oldacts.at(i);
+					int t=oldtimes.at(i);
+					assert(t!=UNALLOCATED_TIME);
+					//assert(c.times[a]==UNALLOCATED_TIME);
+					int nt=c.times[a];
+					moveActivity(a, nt, t);
+					cout<<"level=="<<level<<", activity with id=="<<gt.rules.internalActivitiesList[a].id<<
+					 " restored (unallocated) from time: "<<nt<<" to time: "<<t<<endl;
+				}
+				cout<<"Ended restoring previously unallocated activities"<<endl;
+			}*/
+			
+			//////////////////////////////
+			foreach(int a, conflActivities[newtime])
+				assert(c.times[a]!=UNALLOCATED_TIME);
+			//////////////////////////////
 			
 			assert(!foundGoodSwap);
 			//the return below means no backtracking, if executed
@@ -1468,4 +2335,3 @@ void OptimizeTime::randomswap(int ai, int level){
 		}
 	}
 }
-

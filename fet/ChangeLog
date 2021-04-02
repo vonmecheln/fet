@@ -839,3 +839,7 @@ Versions 5.0.0 -
 	- Raised the limits of max number of activities, constraints,
 	max activities for each constraint activities not overlapping and others
 	- Improved the solving of activities not overlapping
+- Version 5.0.0-preview10
+- Version 5.0.0-preview11
+	- Improved the algorithm
+	- Fixed bug for constraint teachers max gaps per week

@@ -310,15 +310,12 @@ void TimetableAllocateHoursForm::impossibleToSolve()
 
 	mutex.lock();
 
-	QString s=QObject::tr("FET could not find a perfect timetable. "
+	QString s=QObject::tr("FET could not find a timetable. "
 	 "Maybe you can consider lowering the constraints");
 	s+="\n";
 	s+=QObject::tr("Additional information relating impossible to schedule activities:\n\n");
-	s+=QObject::tr("Please check the constraints related to the last "
-	 "activities in the list below, which might be impossible to schedule:\n\n");
-	s+=QObject::tr("Here are the placed activities which lead to an inconsistency, "
-	 "in order from the first one to the last (the last one FET failed to schedule "
-	 "and the last ones are most likely impossible):\n\n");
+	s+=QObject::tr("Please check the constraints related to the "
+	 "activity below, which might be impossible to schedule:\n\n");
 	for(int i=0; i<ot.nDifficultActivities; i++){
 		int ai=ot.difficultActivities[i];
 
@@ -475,7 +472,8 @@ void TimetableAllocateHoursForm::activityPlaced(int na){
 	s+=QObject::tr("The process of searching is semi-randomized, which means that "
 	 "you will get different timetables and running times each time. You can choose the best timetable from several runs");
 	s+="\n";
-	s+=QObject::tr("There is no need to stop and restart the search, even if the algorithm seems stucked");
+	s+=QObject::tr("Usually, there is no need to stop and restart the search, even if the algorithm seems stucked."
+	 " Please report to author contrary cases");
 
 	mutex.unlock();
 

@@ -80,8 +80,8 @@ QList<int> teachersWithMaxDaysPerWeekForActivities[MAX_ACTIVITIES];
 
 /////////////////care for teachers max gaps
 int nHoursPerTeacher[MAX_TEACHERS];
-int teachersMaxGapsPercentage;
-int teachersMaxGapsMaxGaps;
+int teachersMaxGapsPercentage[MAX_TEACHERS];
+int teachersMaxGapsMaxGaps[MAX_TEACHERS];
 
 //students (set) n hours daily
 int studentsNHoursDailyMinHours[MAX_TOTAL_SUBGROUPS];
@@ -533,26 +533,78 @@ void computeNHoursPerTeacher()
 
 bool computeTeachersMaxGapsPercentage()
 {
-	teachersMaxGapsPercentage=-1;
+	for(int j=0; j<gt.rules.nInternalTeachers; j++){
+		teachersMaxGapsMaxGaps[j]=-1;
+		teachersMaxGapsPercentage[j]=-1;
+	}
+	
+	bool ok=true;
 	
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK){
 			ConstraintTeachersMaxGapsPerWeek* tg=(ConstraintTeachersMaxGapsPerWeek*)gt.rules.internalTimeConstraintsList[i];
-			if(teachersMaxGapsPercentage==-1){
-				teachersMaxGapsPercentage=int(tg->weightPercentage);
-				teachersMaxGapsMaxGaps=tg->maxGaps;
+			
+			for(int j=0; j<gt.rules.nInternalTeachers; j++){
+				if(teachersMaxGapsMaxGaps[j]==-1 
+				 ||	teachersMaxGapsMaxGaps[j]>=0 && teachersMaxGapsMaxGaps[j]>=tg->maxGaps && teachersMaxGapsPercentage[j]<=tg->weightPercentage){
+					teachersMaxGapsMaxGaps[j]=tg->maxGaps;
+					teachersMaxGapsPercentage[j]=int(tg->weightPercentage);
+				}
+				else if(teachersMaxGapsMaxGaps[j]>=0 && teachersMaxGapsMaxGaps[j]<=tg->maxGaps && teachersMaxGapsPercentage[j]>=tg->weightPercentage){
+					//do nothing
+				}
+				else{
+					ok=false;
+
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("Cannot optimize for teacher %1, because there are two constraints"
+					 "\nof type max gaps relating to him, and the weight percentage is higher on the constraint"
+					 "\nwith more gaps allowed. You are allowed only to have for each teacher"
+					 "\nthe most important constraint with maximum weight percentage and minimum gaps allowed"
+					 "\nPlease modify your data accordingly and try again"
+					 "\nFor more details, join the mailing list or email the author")
+					 .arg(gt.rules.internalTeachersList[j]->name),
+					 "Skip rest of max gaps problems", "See next incompatibility max gaps", QString(),
+					 1, 0 );
+			 	
+					if(t==0)
+						return false;
+				}
+			}
+		}
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK){
+			ConstraintTeacherMaxGapsPerWeek* tg=(ConstraintTeacherMaxGapsPerWeek*)gt.rules.internalTimeConstraintsList[i];
+			
+			int j=tg->teacherIndex;
+			if(teachersMaxGapsMaxGaps[j]==-1 
+			 ||	teachersMaxGapsMaxGaps[j]>=0 && teachersMaxGapsMaxGaps[j]>=tg->maxGaps && teachersMaxGapsPercentage[j]<=tg->weightPercentage){
+				teachersMaxGapsMaxGaps[j]=tg->maxGaps;
+				teachersMaxGapsPercentage[j]=int(tg->weightPercentage);
+			}
+			else if(teachersMaxGapsMaxGaps[j]>=0 && teachersMaxGapsMaxGaps[j]<=tg->maxGaps && teachersMaxGapsPercentage[j]>=tg->weightPercentage){
+				//do nothing
 			}
 			else{
-				QMessageBox::warning(NULL, QObject::tr("FET warning"),
-				 QObject::tr("Cannot optimize, because you have more than one constraint teachers max gaps per week"
-				 "\nPlease modify your data correspondingly (leave maximum one constraint of this type)"));
-			 
-				return false;
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize for teacher %1, because there are two constraints"
+				 "\nof type max gaps relating to him, and the weight percentage is higher on the constraint"
+				 "\nwith more gaps allowed. You are allowed only to have for each teacher"
+				 "\nthe most important constraint with maximum weight percentage and minimum gaps allowed"
+				 "\nPlease modify your data accordingly and try again"
+				 "\nFor more details, join the mailing list or email the author")
+				 .arg(gt.rules.internalTeachersList[j]->name),
+				 "Skip rest of max gaps problems", "See next incompatibility max gaps", QString(),
+				 1, 0 );
+		 	
+				if(t==0)
+					return false;
 			}
 		}
 	}
 	
-	return true;
+	return ok;
 }
 /////////////////
 

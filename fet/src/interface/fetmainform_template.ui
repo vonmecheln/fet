@@ -151,14 +151,6 @@
      <addaction name="dataTimeConstraintsBasicCompulsoryTimeAction" />
      <addaction name="dataTimeConstraintsBreakAction" />
     </widget>
-    <widget class="QMenu" name="PopupMenuEditor_35" >
-     <property name="title" >
-      <string>Time constraints (teachers)</string>
-     </property>
-     <addaction name="dataTimeConstraintsTeacherMaxDaysPerWeekAction" />
-     <addaction name="dataTimeConstraintsTeachersMaxGapsPerWeekAction" />
-     <addaction name="dataTimeConstraintsTeacherNotAvailableAction" />
-    </widget>
     <widget class="QMenu" name="PopupMenuEditor_41" >
      <property name="title" >
       <string>Time constraints (students)</string>
@@ -179,6 +171,15 @@
      <addaction name="dataTimeConstraintsActivityPreferredTimeAction" />
      <addaction name="dataTimeConstraintsActivityPreferredTimesAction" />
      <addaction name="dataTimeConstraintsMinNDaysBetweenActivitiesAction" />
+    </widget>
+    <widget class="QMenu" name="PopupMenuEditor_35" >
+     <property name="title" >
+      <string>Time constraints (teachers)</string>
+     </property>
+     <addaction name="dataTimeConstraintsTeacherMaxDaysPerWeekAction" />
+     <addaction name="dataTimeConstraintsTeacherMaxGapsPerWeekAction" />
+     <addaction name="dataTimeConstraintsTeachersMaxGapsPerWeekAction" />
+     <addaction name="dataTimeConstraintsTeacherNotAvailableAction" />
     </widget>
     <addaction name="dataInstitutionNameAction" />
     <addaction name="dataCommentsAction" />
@@ -1070,6 +1071,11 @@
    </property>
    <property name="toolTip" >
     <string>Teachers max gaps per week</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeacherMaxGapsPerWeekAction" >
+   <property name="text" >
+    <string>Teacher max gaps per week</string>
    </property>
   </action>
  </widget>

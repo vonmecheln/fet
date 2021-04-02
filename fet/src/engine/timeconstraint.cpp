@@ -3034,6 +3034,203 @@ bool ConstraintTeachersMaxGapsPerWeek::isRelatedToStudentsSet(Rules& r, Students
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
+ConstraintTeacherMaxGapsPerWeek::ConstraintTeacherMaxGapsPerWeek()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK;
+}
+
+ConstraintTeacherMaxGapsPerWeek::ConstraintTeacherMaxGapsPerWeek(double wp, QString tn, int mg)
+	: TimeConstraint(wp)
+{
+	this->type = CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK;
+	this->teacherName=tn;
+	this->maxGaps=mg;
+}
+
+bool ConstraintTeacherMaxGapsPerWeek::computeInternalStructure(Rules& r)
+{
+	this->teacherIndex=r.searchTeacher(this->teacherName);
+	assert(this->teacherIndex>=0);
+	return true;
+}
+
+QString ConstraintTeacherMaxGapsPerWeek::getXmlDescription(Rules& r){
+	//to avoid non-used parameter warning
+	if(&r==NULL)
+		;
+
+	QString s="<ConstraintTeacherMaxGapsPerWeek>\n";
+	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Max_Gaps>"+QString::number(this->maxGaps)+"</Max_Gaps>\n";
+	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
+	s+="</ConstraintTeacherMaxGapsPerWeek>\n";
+	return s;
+}
+
+QString ConstraintTeacherMaxGapsPerWeek::getDescription(Rules& r){
+	//to avoid non-used parameter warning
+	if(&r==NULL)
+		;
+
+	QString s;
+	s+=QObject::tr("Teacher max gaps per week");s+=", ";
+	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=QObject::tr("T:%1").arg(this->teacherName); s+=", ";
+	s+=QObject::tr("MG:%1").arg(this->maxGaps);
+	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));
+
+	return s;
+}
+
+QString ConstraintTeacherMaxGapsPerWeek::getDetailedDescription(Rules& r){
+	//to avoid non-used parameter warning
+	if(&r==NULL)
+		;
+
+	QString s=QObject::tr("Time constraint"); s+="\n";
+	s+=QObject::tr("Teacher max gaps per week"); s+="\n";
+	s+=QObject::tr("Teacher: %1").arg(this->teacherName); s+="\n";
+	s+=QObject::tr("Max gaps per week: %1").arg(this->maxGaps); s+="\n";
+	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage); s+="\n";
+	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
+
+	return s;
+}
+
+//critical function here - must be optimized for speed
+double ConstraintTeacherMaxGapsPerWeek::fitness(TimeChromosome& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+{ 
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.timeChangedForMatrixCalculation){
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		crt_chrom=&c;
+		crt_rules=&r;
+		
+		c.timeChangedForMatrixCalculation=false;
+	}
+	
+	int tg;
+	int i, j, k;
+	int totalGaps;
+
+	//without logging
+	if(conflictsString==NULL){
+		totalGaps=0;
+		
+		i=this->teacherIndex;
+		
+		tg=0;
+		for(j=0; j<r.nDaysPerWeek; j++){
+			for(k=0; k<r.nHoursPerDay; k++)
+				if(teachersMatrix[i][j][k]>0)
+					break;
+
+			int cnt=0;
+			for(; k<r.nHoursPerDay; k++){
+				if(teachersMatrix[i][j][k]>0){
+					tg+=cnt;
+					cnt=0;
+				}
+				else
+					cnt++;
+			}
+		}
+		if(tg>this->maxGaps){
+			totalGaps+=tg-maxGaps;
+			//assert(this->weightPercentage<100); partial solutions might break this rule
+		}
+	}
+	//with logging
+	else{
+		totalGaps=0;
+		
+		i=this->teacherIndex;
+		
+		tg=0;
+		for(j=0; j<r.nDaysPerWeek; j++){
+			for(k=0; k<r.nHoursPerDay; k++)
+				if(teachersMatrix[i][j][k]>0)
+					break;
+
+			int cnt=0;
+			for(; k<r.nHoursPerDay; k++){
+				if(teachersMatrix[i][j][k]>0){
+					tg+=cnt;
+					cnt=0;
+				}
+				else
+					cnt++;
+			}
+		}
+		if(tg>this->maxGaps){
+			totalGaps+=tg-maxGaps;
+			//assert(this->weightPercentage<100); partial solutions might break this rule
+			if(conflictsString!=NULL){
+				QString s=QObject::tr("Time constraint teacher max gaps per week broken: teacher: %1, conflicts factor increase=%2")
+					.arg(r.internalTeachersList[i]->name)
+					.arg((tg-maxGaps)*weightPercentage/100);
+						
+				*conflictsString+= s+"\n";
+							
+				dl.append(s);
+				cl.append((tg-maxGaps)*weightPercentage/100);
+			}
+		}
+	}
+
+	//if(weightPercentage==100)
+	//	assert(totalGaps==0); for partial solutions this rule might be broken
+	return weightPercentage/100 * totalGaps;
+}
+
+bool ConstraintTeacherMaxGapsPerWeek::isRelatedToActivity(Activity* a)
+{
+	if(a)
+		;
+
+	return false;
+}
+
+bool ConstraintTeacherMaxGapsPerWeek::isRelatedToTeacher(Teacher* t)
+{
+	if(this->teacherName==t->name)
+		return true;
+	return false;
+}
+
+bool ConstraintTeacherMaxGapsPerWeek::isRelatedToSubject(Subject* s)
+{
+	if(s)
+		;
+
+	return false;
+}
+
+bool ConstraintTeacherMaxGapsPerWeek::isRelatedToSubjectTag(SubjectTag* s)
+{
+	if(s)
+		;
+
+	return false;
+}
+
+bool ConstraintTeacherMaxGapsPerWeek::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	if(s)
+		;
+	if(&r)
+		;
+
+	return false;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
 ConstraintBreak::ConstraintBreak()
 	: TimeConstraint()
 {

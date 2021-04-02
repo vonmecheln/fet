@@ -1,8 +1,8 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>AddConstraintTeachersMaxGapsPerWeekForm_template</class>
+<class>AddConstraintTeacherMaxGapsPerWeekForm_template</class>
 <widget class="QDialog">
     <property name="name">
-        <cstring>AddConstraintTeachersMaxGapsPerWeekForm_template</cstring>
+        <cstring>AddConstraintTeacherMaxGapsPerWeekForm_template</cstring>
     </property>
     <property name="geometry">
         <rect>
@@ -13,13 +13,13 @@
         </rect>
     </property>
     <property name="caption">
-        <string>FET - Add new constraint teachers max gaps per week dialog</string>
+        <string>FET - Add new constraint teacher max gaps per week dialog</string>
     </property>
     <grid>
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QPushButton" row="3" column="0" rowspan="1" colspan="2">
+        <widget class="QPushButton" row="5" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>addConstraintPushButton</cstring>
             </property>
@@ -27,7 +27,7 @@
                 <string>Add current constraint</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="3" column="2">
+        <widget class="QPushButton" row="5" column="2">
             <property name="name">
                 <cstring>closePushButton</cstring>
             </property>
@@ -35,7 +35,7 @@
                 <string>Close</string>
             </property>
         </widget>
-        <widget class="QLabel" row="0" column="2">
+        <widget class="QLabel" row="0" column="2" rowspan="3" colspan="1">
             <property name="name">
                 <cstring>currentConstraintTextLabel</cstring>
             </property>
@@ -49,7 +49,7 @@
                 <string>Current constraint</string>
             </property>
         </widget>
-        <widget class="QTextEdit" row="1" column="2" rowspan="2" colspan="1">
+        <widget class="QTextEdit" row="3" column="2" rowspan="2" colspan="1">
             <property name="name">
                 <cstring>currentConstraintTextEdit</cstring>
             </property>
@@ -57,7 +57,7 @@
                 <bool>true</bool>
             </property>
         </widget>
-        <widget class="QLabel" row="2" column="0">
+        <widget class="QLabel" row="4" column="0">
             <property name="name">
                 <cstring>weightTextLabel</cstring>
             </property>
@@ -71,12 +71,25 @@
                 <string>Weight (recommended: 100%)</string>
             </property>
         </widget>
-        <widget class="QLineEdit" row="2" column="1">
+        <widget class="QLineEdit" row="4" column="1">
             <property name="name">
                 <cstring>weightLineEdit</cstring>
             </property>
             <property name="text">
                 <string>100</string>
+            </property>
+        </widget>
+        <widget class="QSpinBox" row="3" column="1">
+            <property name="name">
+                <cstring>maxGapsSpinBox</cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="3" column="0">
+            <property name="name">
+                <cstring>textLabel1</cstring>
+            </property>
+            <property name="text">
+                <string>Max gaps per week</string>
             </property>
         </widget>
         <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
@@ -90,25 +103,41 @@
                 <enum>Plain</enum>
             </property>
             <property name="text">
-                <string>It is necessary to use only one constraint
-of this type for the optimization to be possible
-Please try to use weight percentage 100%, because
+                <string>Please try to use weight percentage 100%, because
 otherwise you will get poor timetables. Try to fix firstly
 a rather large value for max gaps per week and
 lower it as you find new timetables.</string>
             </property>
         </widget>
-        <widget class="QSpinBox" row="1" column="1">
+        <widget class="QLabel" row="1" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>maxGapsSpinBox</cstring>
+                <cstring>teacherTextLabel</cstring>
             </property>
-        </widget>
-        <widget class="QLabel" row="1" column="0">
-            <property name="name">
-                <cstring>textLabel1</cstring>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
             </property>
             <property name="text">
-                <string>Max gaps per week</string>
+                <string>Teacher</string>
+            </property>
+        </widget>
+        <widget class="QComboBox" row="2" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>teachersComboBox</cstring>
+            </property>
+            <property name="editable">
+                <bool>false</bool>
+            </property>
+            <property name="insertionPolicy">
+                <enum>NoInsertion</enum>
+            </property>
+            <property name="autoCompletion">
+                <bool>false</bool>
+            </property>
+            <property name="duplicatesEnabled">
+                <bool>false</bool>
             </property>
         </widget>
     </grid>
@@ -117,25 +146,31 @@ lower it as you find new timetables.</string>
     <connection>
         <sender>weightLineEdit</sender>
         <signal>textChanged(const QString&amp;)</signal>
-        <receiver>AddConstraintTeachersMaxGapsPerWeekForm_template</receiver>
+        <receiver>AddConstraintTeacherMaxGapsPerWeekForm_template</receiver>
         <slot>constraintChanged()</slot>
     </connection>
     <connection>
         <sender>addConstraintPushButton</sender>
         <signal>clicked()</signal>
-        <receiver>AddConstraintTeachersMaxGapsPerWeekForm_template</receiver>
+        <receiver>AddConstraintTeacherMaxGapsPerWeekForm_template</receiver>
         <slot>addCurrentConstraint()</slot>
     </connection>
     <connection>
         <sender>closePushButton</sender>
         <signal>clicked()</signal>
-        <receiver>AddConstraintTeachersMaxGapsPerWeekForm_template</receiver>
+        <receiver>AddConstraintTeacherMaxGapsPerWeekForm_template</receiver>
         <slot>close()</slot>
     </connection>
     <connection>
         <sender>maxGapsSpinBox</sender>
         <signal>valueChanged(int)</signal>
-        <receiver>AddConstraintTeachersMaxGapsPerWeekForm_template</receiver>
+        <receiver>AddConstraintTeacherMaxGapsPerWeekForm_template</receiver>
+        <slot>constraintChanged()</slot>
+    </connection>
+    <connection>
+        <sender>teachersComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>AddConstraintTeacherMaxGapsPerWeekForm_template</receiver>
         <slot>constraintChanged()</slot>
     </connection>
 </connections>

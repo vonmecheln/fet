@@ -505,7 +505,9 @@ int main(int argc, char **argv){
 	 QObject::tr("Please take care that this is a preview version, which does not have\n"
 	 "space allocation implemented yet. I hope to implement that in the near future\n"
 	 "Also the space constraints are let in the old format.\n\n"
-	 "Please keep backups of your input files.\n"));
+	 "Please keep backups of your input files.\n"
+	 "Please excuse eventual bugs, this is a new not thoroughly tested version\n"
+	 "Please report bugs to the author, they will be corrected"));
 	
 	pqapplication=&qapplication;
 	FetMainForm fetMainForm;

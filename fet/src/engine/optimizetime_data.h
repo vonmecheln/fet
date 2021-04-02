@@ -94,8 +94,8 @@ bool computeMaxDaysPerWeekForTeachers();
 
 ////////BEGIN teachers max gaps per week
 extern QList<int> activitiesForTeachers[MAX_TEACHERS];
-extern int teachersMaxGapsPercentage;
-extern int teachersMaxGapsMaxGaps;
+extern int teachersMaxGapsPercentage[MAX_TEACHERS];
+extern int teachersMaxGapsMaxGaps[MAX_TEACHERS];
 extern int nHoursPerTeacher[MAX_TEACHERS];
 void computeNHoursPerTeacher();
 bool computeTeachersMaxGapsPercentage();

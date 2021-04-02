@@ -200,8 +200,11 @@ SOURCES += fet.cpp \
 		   addconstraintstudentsnogapsform.cpp \
 		   modifyconstraintstudentsnogapsform.cpp \
 		   constraintteachersmaxgapsperweekform.cpp \
+		   constraintteachermaxgapsperweekform.cpp \
 		   addconstraintteachersmaxgapsperweekform.cpp \
 		   modifyconstraintteachersmaxgapsperweekform.cpp \
+		   addconstraintteachermaxgapsperweekform.cpp \
+		   modifyconstraintteachermaxgapsperweekform.cpp \
 		   constraintstudentsearlyform.cpp \
 		   addconstraintstudentsearlyform.cpp \
 		   modifyconstraintstudentsearlyform.cpp \
@@ -433,6 +436,9 @@ HEADERS += fet.h \
 		   constraintteachersmaxgapsperweekform.h \
 		   addconstraintteachersmaxgapsperweekform.h \
 		   modifyconstraintteachersmaxgapsperweekform.h \
+		   constraintteachermaxgapsperweekform.h \
+		   addconstraintteachermaxgapsperweekform.h \
+		   modifyconstraintteachermaxgapsperweekform.h \
 		   constraintstudentsearlyform.h \
 		   addconstraintstudentsearlyform.h \
 		   modifyconstraintstudentsearlyform.h \
@@ -655,6 +661,9 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintteachersmaxgapsperweekform_template.ui \
 		   addconstraintteachersmaxgapsperweekform_template.ui \
 		   modifyconstraintteachersmaxgapsperweekform_template.ui \
+		   constraintteachermaxgapsperweekform_template.ui \
+		   addconstraintteachermaxgapsperweekform_template.ui \
+		   modifyconstraintteachermaxgapsperweekform_template.ui \
 		   constraintstudentsearlyform_template.ui \
 		   addconstraintstudentsearlyform_template.ui \
 		   modifyconstraintstudentsearlyform_template.ui \

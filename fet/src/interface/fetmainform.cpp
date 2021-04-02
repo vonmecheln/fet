@@ -90,6 +90,7 @@ using namespace std;
 #include "constraintstudentssetnogapsform.h"
 #include "constraintstudentsnogapsform.h"
 #include "constraintteachersmaxgapsperweekform.h"
+#include "constraintteachermaxgapsperweekform.h"
 #include "constraintstudentsearlyform.h"
 #include "constraintstudentssetintervalmaxdaysperweekform.h"
 #include "constraintteacherintervalmaxdaysperweekform.h"
@@ -1029,6 +1030,18 @@ void FetMainForm::on_dataTimeConstraintsTeachersMaxGapsPerWeekAction_activated()
 	}
 
 	ConstraintTeachersMaxGapsPerWeekForm* form=new ConstraintTeachersMaxGapsPerWeekForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsTeacherMaxGapsPerWeekAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, QObject::tr("FET information"),
+			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMaxGapsPerWeekForm* form=new ConstraintTeacherMaxGapsPerWeekForm();
 	form->exec();
 }
 

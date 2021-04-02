@@ -1,4 +1,4 @@
-<!DOCTYPE FET><FET version="5.0.0-preview11">
+<!DOCTYPE FET><FET version="5.0.0-preview9">
 
 <Institution_Name>german secondary school</Institution_Name>
 
@@ -29465,6 +29465,32 @@ The teachersnames are replaced by other random names.
 	<Weight_Percentage>100</Weight_Percentage>
 	<Max_Gaps>3</Max_Gaps>
 </ConstraintTeachersMaxGapsPerWeek>
+<ConstraintActivitiesNotOverlapping>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>22</Number_of_Activities>
+	<Activity_Id>267</Activity_Id>
+	<Activity_Id>268</Activity_Id>
+	<Activity_Id>269</Activity_Id>
+	<Activity_Id>270</Activity_Id>
+	<Activity_Id>361</Activity_Id>
+	<Activity_Id>362</Activity_Id>
+	<Activity_Id>363</Activity_Id>
+	<Activity_Id>364</Activity_Id>
+	<Activity_Id>365</Activity_Id>
+	<Activity_Id>366</Activity_Id>
+	<Activity_Id>487</Activity_Id>
+	<Activity_Id>488</Activity_Id>
+	<Activity_Id>489</Activity_Id>
+	<Activity_Id>490</Activity_Id>
+	<Activity_Id>491</Activity_Id>
+	<Activity_Id>492</Activity_Id>
+	<Activity_Id>551</Activity_Id>
+	<Activity_Id>552</Activity_Id>
+	<Activity_Id>553</Activity_Id>
+	<Activity_Id>554</Activity_Id>
+	<Activity_Id>555</Activity_Id>
+	<Activity_Id>556</Activity_Id>
+</ConstraintActivitiesNotOverlapping>
 </Time_Constraints_List>
 
 <Space_Constraints_List>
