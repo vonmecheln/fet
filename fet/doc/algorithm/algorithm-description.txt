@@ -14,7 +14,8 @@ have the same teacher or the same students);
 C2) Lots of other constraints (excluded here, for simplicity).
 
 
-The timetabling algorithm (which I named "recursive swapping"):
+The timetabling algorithm (which I named "recursive swapping", though it might be related to the algorithm known
+as "ejection chain"):
 
 1) Sort activities, most difficult first. Not critical step, but speeds up the algorithm maybe 10 times or more.
 
