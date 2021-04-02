@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>564</width>
-            <height>456</height>
+            <height>511</height>
         </rect>
     </property>
     <property name="caption">
@@ -19,7 +19,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="3">
+        <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="4">
             <property name="name">
                 <cstring>layout6</cstring>
             </property>
@@ -73,23 +73,6 @@
                 </spacer>
             </hbox>
         </widget>
-        <spacer row="5" column="1">
-            <property name="name">
-                <cstring>spacer3</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Vertical</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>20</width>
-                    <height>41</height>
-                </size>
-            </property>
-        </spacer>
         <spacer row="1" column="0">
             <property name="name">
                 <cstring>spacer6</cstring>
@@ -107,7 +90,7 @@
                 </size>
             </property>
         </spacer>
-        <spacer row="3" column="2">
+        <spacer row="3" column="3">
             <property name="name">
                 <cstring>spacer5</cstring>
             </property>
@@ -124,169 +107,223 @@
                 </size>
             </property>
         </spacer>
-        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+        <widget class="QGroupBox" row="4" column="0" rowspan="1" colspan="4">
             <property name="name">
-                <cstring>splitYearTextLabel</cstring>
+                <cstring>category1GroupBox</cstring>
             </property>
-            <property name="text">
-                <string>Splitting year:</string>
+            <property name="title">
+                <string>Category 1</string>
             </property>
-        </widget>
-        <widget class="QLayoutWidget" row="4" column="0" rowspan="1" colspan="3">
-            <property name="name">
-                <cstring>layout5</cstring>
-            </property>
-            <vbox>
+            <hbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QGroupBox">
+                <widget class="QSpinBox">
                     <property name="name">
-                        <cstring>category1GroupBox</cstring>
+                        <cstring>category1SpinBox</cstring>
                     </property>
-                    <property name="title">
-                        <string>Category 1</string>
+                    <property name="maxValue">
+                        <number>6</number>
                     </property>
-                    <grid>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="QSpinBox" row="0" column="0">
-                            <property name="name">
-                                <cstring>category1SpinBox</cstring>
-                            </property>
-                            <property name="maxValue">
-                                <number>3</number>
-                            </property>
-                            <property name="minValue">
-                                <number>2</number>
-                            </property>
-                        </widget>
-                        <widget class="QLineEdit" row="0" column="1">
-                            <property name="name">
-                                <cstring>category1Division1LineEdit</cstring>
-                            </property>
-                            <property name="text">
-                                <string></string>
-                            </property>
-                        </widget>
-                        <widget class="QLineEdit" row="0" column="2">
-                            <property name="name">
-                                <cstring>category1Division2LineEdit</cstring>
-                            </property>
-                            <property name="text">
-                                <string></string>
-                            </property>
-                        </widget>
-                        <widget class="QLineEdit" row="0" column="3">
-                            <property name="name">
-                                <cstring>category1Division3LineEdit</cstring>
-                            </property>
-                            <property name="text">
-                                <string></string>
-                            </property>
-                        </widget>
-                    </grid>
+                    <property name="minValue">
+                        <number>2</number>
+                    </property>
                 </widget>
-                <widget class="QGroupBox">
+                <widget class="QLineEdit">
                     <property name="name">
-                        <cstring>category2GroupBox</cstring>
+                        <cstring>category1Division1LineEdit</cstring>
                     </property>
-                    <property name="title">
-                        <string>Category 2</string>
+                    <property name="text">
+                        <string></string>
                     </property>
-                    <grid>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="QSpinBox" row="0" column="0">
-                            <property name="name">
-                                <cstring>category2SpinBox</cstring>
-                            </property>
-                            <property name="maxValue">
-                                <number>3</number>
-                            </property>
-                            <property name="minValue">
-                                <number>2</number>
-                            </property>
-                        </widget>
-                        <widget class="QLineEdit" row="0" column="1">
-                            <property name="name">
-                                <cstring>category2Division1LineEdit</cstring>
-                            </property>
-                            <property name="text">
-                                <string></string>
-                            </property>
-                        </widget>
-                        <widget class="QLineEdit" row="0" column="2">
-                            <property name="name">
-                                <cstring>category2Division2LineEdit</cstring>
-                            </property>
-                            <property name="text">
-                                <string></string>
-                            </property>
-                        </widget>
-                        <widget class="QLineEdit" row="0" column="3">
-                            <property name="name">
-                                <cstring>category2Division3LineEdit</cstring>
-                            </property>
-                            <property name="text">
-                                <string></string>
-                            </property>
-                        </widget>
-                    </grid>
                 </widget>
-                <widget class="QGroupBox">
+                <widget class="QLineEdit">
                     <property name="name">
-                        <cstring>category3GroupBox</cstring>
+                        <cstring>category1Division2LineEdit</cstring>
                     </property>
-                    <property name="title">
-                        <string>Category 3</string>
+                    <property name="text">
+                        <string></string>
                     </property>
-                    <grid>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="QSpinBox" row="0" column="0">
-                            <property name="name">
-                                <cstring>category3SpinBox</cstring>
-                            </property>
-                            <property name="maxValue">
-                                <number>3</number>
-                            </property>
-                            <property name="minValue">
-                                <number>2</number>
-                            </property>
-                        </widget>
-                        <widget class="QLineEdit" row="0" column="1">
-                            <property name="name">
-                                <cstring>category3Division1LineEdit</cstring>
-                            </property>
-                            <property name="text">
-                                <string></string>
-                            </property>
-                        </widget>
-                        <widget class="QLineEdit" row="0" column="2">
-                            <property name="name">
-                                <cstring>category3Division2LineEdit</cstring>
-                            </property>
-                            <property name="text">
-                                <string></string>
-                            </property>
-                        </widget>
-                        <widget class="QLineEdit" row="0" column="3">
-                            <property name="name">
-                                <cstring>category3Division3LineEdit</cstring>
-                            </property>
-                            <property name="text">
-                                <string></string>
-                            </property>
-                        </widget>
-                    </grid>
                 </widget>
-            </vbox>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>category1Division3LineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>category1Division4LineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>category1Division5LineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>category1Division6LineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+            </hbox>
         </widget>
-        <widget class="QLayoutWidget" row="6" column="0" rowspan="1" colspan="3">
+        <widget class="QGroupBox" row="5" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>category2GroupBox</cstring>
+            </property>
+            <property name="title">
+                <string>Category 2</string>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QSpinBox">
+                    <property name="name">
+                        <cstring>category2SpinBox</cstring>
+                    </property>
+                    <property name="maxValue">
+                        <number>6</number>
+                    </property>
+                    <property name="minValue">
+                        <number>2</number>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>category2Division1LineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>category2Division2LineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>category2Division3LineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>category2Division4LineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>category2Division5LineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>category2Division6LineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QGroupBox" row="6" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>category3GroupBox</cstring>
+            </property>
+            <property name="title">
+                <string>Category 3</string>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QSpinBox">
+                    <property name="name">
+                        <cstring>category3SpinBox</cstring>
+                    </property>
+                    <property name="maxValue">
+                        <number>6</number>
+                    </property>
+                    <property name="minValue">
+                        <number>2</number>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>category3Division1LineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>category3Division2LineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>category3Division3LineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>category3Division4LineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>category3Division5LineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>category3Division6LineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QLayoutWidget" row="10" column="0" rowspan="1" colspan="4">
             <property name="name">
                 <cstring>layout5</cstring>
             </property>
@@ -320,6 +357,86 @@
                 </widget>
             </hbox>
         </widget>
+        <spacer row="7" column="2">
+            <property name="name">
+                <cstring>spacer3</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <spacer row="9" column="2">
+            <property name="name">
+                <cstring>spacer3_2</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>splitYearTextLabel</cstring>
+            </property>
+            <property name="text">
+                <string>Splitting year:</string>
+            </property>
+        </widget>
+        <widget class="QGroupBox" row="8" column="0">
+            <property name="name">
+                <cstring>groupBox5</cstring>
+            </property>
+            <property name="title">
+                <string>Separator character(s)</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLineEdit" row="0" column="0">
+                    <property name="name">
+                        <cstring>separatorLineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string> </string>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+        <spacer row="8" column="1">
+            <property name="name">
+                <cstring>spacer6_2</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>110</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
     </grid>
 </widget>
 <connections>
@@ -348,6 +465,12 @@
         <slot>category1Changed()</slot>
     </connection>
     <connection>
+        <sender>pushButton3</sender>
+        <signal>clicked()</signal>
+        <receiver>SplitYearForm_template</receiver>
+        <slot>help()</slot>
+    </connection>
+    <connection>
         <sender>category2SpinBox</sender>
         <signal>valueChanged(int)</signal>
         <receiver>SplitYearForm_template</receiver>
@@ -359,12 +482,6 @@
         <receiver>SplitYearForm_template</receiver>
         <slot>category3Changed()</slot>
     </connection>
-    <connection>
-        <sender>pushButton3</sender>
-        <signal>clicked()</signal>
-        <receiver>SplitYearForm_template</receiver>
-        <slot>help()</slot>
-    </connection>
 </connections>
 <tabstops>
     <tabstop>categoriesSpinBox</tabstop>
@@ -372,14 +489,6 @@
     <tabstop>category1Division1LineEdit</tabstop>
     <tabstop>category1Division2LineEdit</tabstop>
     <tabstop>category1Division3LineEdit</tabstop>
-    <tabstop>category2SpinBox</tabstop>
-    <tabstop>category2Division1LineEdit</tabstop>
-    <tabstop>category2Division2LineEdit</tabstop>
-    <tabstop>category2Division3LineEdit</tabstop>
-    <tabstop>category3SpinBox</tabstop>
-    <tabstop>category3Division1LineEdit</tabstop>
-    <tabstop>category3Division2LineEdit</tabstop>
-    <tabstop>category3Division3LineEdit</tabstop>
     <tabstop>okPushButton</tabstop>
     <tabstop>cancelPushButton</tabstop>
 </tabstops>

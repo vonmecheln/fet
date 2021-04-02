@@ -124,9 +124,6 @@
                     <property name="text">
                         <string>All rooms (dbl. click adds)</string>
                     </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>roomsComboBox</cstring>
-                    </property>
                 </widget>
                 <widget class="QListBox">
                     <item>
@@ -160,9 +157,6 @@
                     </property>
                     <property name="text">
                         <string>Selected rooms (dbl. click removes)</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>roomsComboBox</cstring>
                     </property>
                 </widget>
                 <widget class="QListBox">
