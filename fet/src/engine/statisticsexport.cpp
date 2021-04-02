@@ -35,6 +35,8 @@ File statisticsexport.cpp
 #include <QHash>
 #include <QMultiHash>
 #include <QMap>
+#include <QSet>
+#include <QList>
 
 #include <QMessageBox>
 

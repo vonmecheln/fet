@@ -8,5 +8,5 @@ students max span per day, if students early max beginnings >= 1 - if we try to 
 generate more timetables, the speed seems to decrease with 25%-50%.)
 
 The old stable code should be the one from the official FET-5.37.1. You can use a diff tool such as KDiff3 to compare with the new and theoretically
-better code, to see the changes which could and better should be done in the future, but not after very heavy testing. And after solving the
+better code, to see the changes which could and better should be done in the future, but after very heavy testing. And after solving the
 problem with the above problematic input file.

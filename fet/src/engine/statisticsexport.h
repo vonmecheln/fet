@@ -26,6 +26,12 @@ File statisticsexport.h
 #define STATISTICEXPORT_H
 
 #include <QString>
+#include <QStringList>
+
+#include <QHash>
+#include <QMultiHash>
+
+class QWidget;
 
 #include "timetable.h"		//needed?
 #include "timetable_defs.h"	//needed?

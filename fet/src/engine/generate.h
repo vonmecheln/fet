@@ -27,6 +27,8 @@ File generate.h
 
 #include <QTextStream>
 
+#include <QList>
+
 class Activity;
 
 class QWidget;

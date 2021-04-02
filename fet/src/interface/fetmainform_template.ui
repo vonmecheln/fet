@@ -875,7 +875,9 @@
     <addaction name="helpTipsAction"/>
     <addaction name="helpFAQAction"/>
     <addaction name="separator"/>
-    <addaction name="helpAboutAction"/>
+    <addaction name="helpAboutFETAction"/>
+    <addaction name="helpAboutQtAction"/>
+    <addaction name="helpAboutLibrariesAction"/>
    </widget>
    <widget class="QMenu" name="fileMenu">
     <property name="title">
@@ -1431,9 +1433,9 @@
     <string/>
    </property>
   </action>
-  <action name="helpAboutAction">
+  <action name="helpAboutFETAction">
    <property name="text">
-    <string>About...</string>
+    <string>About FET</string>
    </property>
    <property name="shortcut">
     <string/>
@@ -2779,6 +2781,16 @@
    </property>
    <property name="text">
     <string>Print virtual rooms in timetables</string>
+   </property>
+  </action>
+  <action name="helpAboutQtAction">
+   <property name="text">
+    <string>About Qt</string>
+   </property>
+  </action>
+  <action name="helpAboutLibrariesAction">
+   <property name="text">
+    <string>About libraries</string>
    </property>
   </action>
  </widget>

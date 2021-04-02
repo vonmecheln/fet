@@ -2204,3 +2204,8 @@ Versions 5.42.0 - 5.42.v
 	- Minor bug fixes in the activity planning dialog: when swapping the teachers/students, their initial order in the affected activities
 	might not have been preserved.
 	- Code cleanup.
+- Version 5.42.1
+	- Bug fix: the command-line version of FET did not remove the file logs/difficult_activities.txt before a new generation, if it was written
+	by a previous unsuccessful generation.
+	- Minor code improvements and cleanup.
+	- Added more proper acknowledgments and references for the used libraries.

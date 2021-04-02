@@ -19,11 +19,29 @@ File generate.cpp
  *                                                                         *
  ***************************************************************************/
 
-//Note 2018-07-28: The code for students max span per day, students early max beginnings at second hour, students/teachers max gaps per day/week,
-//students/teachers min/max hours daily can and should be theoretically corrected. But it is very risky. Many examples and variants should be tested.
-//See the directory doc/algorithm/2018-07-28-should-improve-theoretically for a better generate file, but which behaves much worse on at least a file,
-//examples/Romania/Pedagogic-High-School-Tg-Mures/2007-2008_sem1-d-test-students-max-span-per-day.fet (because of the new code in
-//students max span per day).
+/*Note 2018-07-28: The code for students max span per day, students early max beginnings at second hour, students/teachers max gaps per day/week,
+students/teachers min/max hours daily can and should be theoretically corrected. But it is very risky. Many examples and variants should be tested.
+See the directory doc/algorithm/2018-07-28-should-improve-theoretically for a better generate file, but which behaves much worse on at least a file,
+examples/Romania/Pedagogic-High-School-Tg-Mures/2007-2008_sem1-d-test-students-max-span-per-day.fet (because of the new code in
+students max span per day).*/
+
+/*
+Note: TODO item #398
+(In fact this is an anti-TODO):
+
+Qt documentation recommends the use of QVector instead of QList. I tried on many files and indeed in many of them it improves the speed with even 10%.
+But for some files, among which some from the Economics Faculty of Timisoara, it is much slower, even with 20% slower.
+
+The file examples/Romania/Faculty-Econ-Timisoara-difficult/2007-2008-sem-2/Econ-Timisoara.fet :
+	starting with random seed X=1234, Y=1234 (ending with random seed X=2061125487, Y=844641195 for FET-5.42.0 official)
+		it takes 18 minutes 51 seconds with QList
+		it takes 23 minutes 53 seconds with QVector
+The file examples/Romania/Faculty-Econ-Timisoara-difficult/2009-2010-sem-1/Econ-v0.8.fet :
+	starting with random seed X=1234, Y=1234 (ending with random seed X=48863282, Y=367996316 for FET-5.42.0 official)
+		it takes 11 minutes 52 seconds with QList
+		it takes 13 minutes 17 seconds with QVector
+
+So at least for now FET will use QList.*/
 
 #include <ctime>
 
@@ -740,8 +758,8 @@ inline bool Generate::teacherRemoveAnActivityFromBeginOrEnd(int tch, int level, 
 					tl.append(q);
 			}
 			
-			assert(tl.size()>=1);
-			int mpos=tl.at(randomKnuth(tl.size()));
+			assert(tl.count()>=1);
+			int mpos=tl.at(randomKnuth(tl.count()));
 			
 			assert(mpos>=0 && mpos<acts.count());
 			t=mpos;
@@ -920,8 +938,8 @@ inline bool Generate::teacherRemoveAnActivityFromAnywhere(int tch, int level, in
 					tl.append(q);
 			}
 			
-			assert(tl.size()>=1);
-			int mpos=tl.at(randomKnuth(tl.size()));
+			assert(tl.count()>=1);
+			int mpos=tl.at(randomKnuth(tl.count()));
 			
 			assert(mpos>=0 && mpos<acts.count());
 			t=mpos;
@@ -991,8 +1009,8 @@ inline bool Generate::teacherRemoveAnActivityFromAnywhereCertainDay(int tch, int
 					tl.append(q);
 			}
 			
-			assert(tl.size()>=1);
-			int mpos=tl.at(randomKnuth(tl.size()));
+			assert(tl.count()>=1);
+			int mpos=tl.at(randomKnuth(tl.count()));
 			
 			assert(mpos>=0 && mpos<acts.count());
 			t=mpos;
@@ -1062,8 +1080,8 @@ inline bool Generate::teacherRemoveAnActivityFromAnywhereCertainDayCertainActivi
 					tl.append(q);
 			}
 			
-			assert(tl.size()>=1);
-			int mpos=tl.at(randomKnuth(tl.size()));
+			assert(tl.count()>=1);
+			int mpos=tl.at(randomKnuth(tl.count()));
 			
 			assert(mpos>=0 && mpos<acts.count());
 			t=mpos;
@@ -1270,8 +1288,8 @@ inline bool Generate::subgroupRemoveAnActivityFromBeginOrEnd(int sbg, int level,
 					tl.append(q);
 			}
 			
-			assert(tl.size()>=1);
-			int mpos=tl.at(randomKnuth(tl.size()));
+			assert(tl.count()>=1);
+			int mpos=tl.at(randomKnuth(tl.count()));
 			
 			assert(mpos>=0 && mpos<acts.count());
 			t=mpos;
@@ -1377,8 +1395,8 @@ inline bool Generate::subgroupRemoveAnActivityFromBegin(int sbg, int level, int 
 					tl.append(q);
 			}
 			
-			assert(tl.size()>=1);
-			int mpos=tl.at(randomKnuth(tl.size()));
+			assert(tl.count()>=1);
+			int mpos=tl.at(randomKnuth(tl.count()));
 			
 			assert(mpos>=0 && mpos<acts.count());
 			t=mpos;
@@ -1502,8 +1520,8 @@ inline bool Generate::subgroupRemoveAnActivityFromEnd(int sbg, int level, int ai
 					tl.append(q);
 			}
 			
-			assert(tl.size()>=1);
-			int mpos=tl.at(randomKnuth(tl.size()));
+			assert(tl.count()>=1);
+			int mpos=tl.at(randomKnuth(tl.count()));
 			
 			assert(mpos>=0 && mpos<acts.count());
 			t=mpos;
@@ -1619,8 +1637,8 @@ inline bool Generate::subgroupRemoveAnActivityFromAnywhere(int sbg, int level, i
 					tl.append(q);
 			}
 			
-			assert(tl.size()>=1);
-			int mpos=tl.at(randomKnuth(tl.size()));
+			assert(tl.count()>=1);
+			int mpos=tl.at(randomKnuth(tl.count()));
 			
 			assert(mpos>=0 && mpos<acts.count());
 			t=mpos;
@@ -1690,8 +1708,8 @@ inline bool Generate::subgroupRemoveAnActivityFromAnywhereCertainDay(int sbg, in
 					tl.append(q);
 			}
 			
-			assert(tl.size()>=1);
-			int mpos=tl.at(randomKnuth(tl.size()));
+			assert(tl.count()>=1);
+			int mpos=tl.at(randomKnuth(tl.count()));
 			
 			assert(mpos>=0 && mpos<acts.count());
 			t=mpos;
@@ -1842,8 +1860,8 @@ inline bool Generate::subgroupRemoveAnActivityFromAnywhereCertainDayCertainActiv
 					tl.append(q);
 			}
 			
-			assert(tl.size()>=1);
-			int mpos=tl.at(randomKnuth(tl.size()));
+			assert(tl.count()>=1);
+			int mpos=tl.at(randomKnuth(tl.count()));
 			
 			assert(mpos>=0 && mpos<acts.count());
 			t=mpos;
@@ -5489,8 +5507,8 @@ impossibletwoactivitiesgrouped:
 									tl.append(q);
 							}
 				
-							assert(tl.size()>=1);
-							int mpos=tl.at(randomKnuth(tl.size()));
+							assert(tl.count()>=1);
+							int mpos=tl.at(randomKnuth(tl.count()));
 					
 							assert(mpos>=0 && mpos<acts.count());
 							t=mpos;
@@ -7700,8 +7718,8 @@ impossiblestudentsmaxhoursdaily:
 									tl.append(q);
 							}
 			
-							assert(tl.size()>=1);
-							j=tl.at(randomKnuth(tl.size()));
+							assert(tl.count()>=1);
+							j=tl.at(randomKnuth(tl.count()));
 			
 							assert(j>=0 && j<removableActs.count());
 						}
@@ -8053,8 +8071,8 @@ impossiblestudentsactivitytagmaxhoursdaily:
 										tl.append(q);
 								}
 				
-								assert(tl.size()>=1);
-								j=tl.at(randomKnuth(tl.size()));
+								assert(tl.count()>=1);
+								j=tl.at(randomKnuth(tl.count()));
 				
 								assert(j>=0 && j<removableActs.count());
 							}
@@ -10081,8 +10099,8 @@ impossibleteachersmaxhoursdaily:
 									tl.append(q);
 							}
 			
-							assert(tl.size()>=1);
-							j=tl.at(randomKnuth(tl.size()));
+							assert(tl.count()>=1);
+							j=tl.at(randomKnuth(tl.count()));
 			
 							assert(j>=0 && j<removableActs.count());
 						}
@@ -10432,8 +10450,8 @@ impossibleteachersactivitytagmaxhoursdaily:
 										tl.append(q);
 								}
 				
-								assert(tl.size()>=1);
-								j=tl.at(randomKnuth(tl.size()));
+								assert(tl.count()>=1);
+								j=tl.at(randomKnuth(tl.count()));
 			
 								assert(j>=0 && j<removableActs.count());
 							}
@@ -12256,7 +12274,7 @@ if(this->isThreaded){
 			QList<QList<int> > oldRealRoomsLists;
 			
 			if(1 /*ok*/){
-				assert(conflActivities[newtime].size()>0);
+				assert(conflActivities[newtime].count()>0);
 				
 				for(int a : qAsConst(conflActivities[newtime])){
 					//cout<<"Level=="<<level<<", conflicting act. id=="<<gt.rules.internalActivitiesList[a].id<<", old time=="<<c.times[a]<<endl;
@@ -12314,7 +12332,7 @@ if(this->isThreaded){
 			
 			ok=false;
 			if(1){
-				assert(conflActivities[newtime].size()>0);
+				assert(conflActivities[newtime].count()>0);
 				ok=true;
 				
 				for(int a : qAsConst(conflActivities[newtime])){

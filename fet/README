@@ -1,4 +1,4 @@
-This is FET version 5.42.0
+This is FET version 5.42.1
 
 
 Program description:
@@ -16,7 +16,7 @@ Requirements:
 
 	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.3.12, Xfce 4.14,
 	Midnight Commander 4.8.23, KDiff3 0.9.98, Qt 5.14.0, gcc 9.2.1, g++ 9.2.1, make 4.2.1, sed 4.7,
-	Valgrind 3.15.0, Coverity Scan 2019.03, Cppcheck 1.89, other great free tools.
+	Valgrind 3.15.0, Coverity Scan 2019.03, Cppcheck 1.90, other great free tools.
 
 	FET is a C++ application and uses Qt, a C++ toolkit for cross-platform application development.
 	FET can be run on any platform supported by Qt (GNU/Linux, Windows, Mac OS X, and maybe others).
@@ -33,7 +33,7 @@ Requirements:
 		Note: You need a C++11 compliant C++ compiler. You might be able to use the Clang C++ compiler or other C++ compiler instead of gcc and g++.
 
 	Windows:
-	For running, you need only the archive of FET compiled for Windows (which contains the GNU (L)GPL licensed MinGW and Qt dll-s).
+	For running, you need only the archive of FET compiled for Windows (which contains the necessary dll-s).
 	For compiling, you need Qt and a compatible C++ compiler complying with the C++11 standard (MinGW is a possibility).
 
 
@@ -64,23 +64,24 @@ Getting - compiling - installing Qt:
 	Qt homepage: https://www.qt.io/
 
 	You will need Qt 5.14.0 or compatible to compile FET (The authors also tried to maintain backwards source compatibility with Qt 4.v.v).
-	You can get the corresponding version of Qt with your package manager or from the Qt homepage.
+	You can get the corresponding version of Qt with your package manager or from the internet (preferably from the Qt homepage).
 	Qt can be used with the GNU (L)GPL or commercial license (The authors chose the GNU (L)GPL license).
 
 	GNU/Linux: It is possible to use YaST (or Adept Manager) or other package managers to get your version of Qt, pre-compiled.
-	Or you can download, (possibly) compile and install Qt from its homepage.
+	Or you can download, (possibly) compile and install Qt from the internet (preferably from its homepage).
 	A possible name for the precompiled package is libqt5.
 	A user reported that on Ubuntu "sudo apt-get install qt5-default" without quotes should work.
 
-	Windows - Download latest Qt from its homepage. There are available precompiled packages, but the authors chose to compile Qt from the sources
-	using the additional configure option "-schannel". This is done to ensure that SSL will work in FET using the available SSL dll-s from Windows.
-	For a faster Qt configuration, the authors download/compile/install only the qtbase component, with a configure command which might look like:
+	Windows - Download latest Qt from the internet (preferably from its homepage). There are available precompiled packages, but the authors chose
+	to compile Qt from the sources using the additional configure option "-schannel". This is done to ensure that SSL will work in FET using the
+	available SSL dll-s from Windows. For a faster Qt configuration, the authors download/compile/install only the qtbase component,
+	with a configure command which might look like:
 	"configure.bat -opensource -confirm-license -platform win32-g++ -schannel -opengl desktop -release -nomake examples -nomake tests".
 	Note that to be able to open ui files with Qt Designer or ts files with Qt Linguist you need to install the Qt component qttools
 	(or the whole Qt package).
 
 	Mac OS X:
-	Maybe you can get pre-compiled Qt packages for Mac OS X. If not, get Qt from its homepage.
+	Maybe you can get pre-compiled Qt packages for Mac OS X. If not, get Qt from the internet (preferably from its homepage).
 
 	Note about the Qt "QMAKESPEC" variable: advanced topic, read this if you get Qt errors about the environment not being set, or environment
 	variable QMAKESPEC not being set, or if the Qt environment is not set correctly: Qt needs to know the environment you are using. It is usually
@@ -197,7 +198,7 @@ Compiling FET:
 
 
 	Windows: MinGW C++ compiler: you need Qt 5.14.0 or compatible, and MinGW.
-	You might use other compilers if you want, please see the Qt homepage.
+	You might use other compilers if you want, please see the Qt documentation.
 	for other variants. Any C++ compiler that supports Qt should be good.
 	You need to run "qmake fet.pro" or "qmake" (this command is executed very fast, so don't worry if you get
 	immediate return from it) and then, if you are using MinGW, "mingw32-make" (this takes a long time, maybe even 1 hour)

@@ -55,6 +55,7 @@ static QSet<QString> languagesSet;
 #include "fetmainform.h"
 
 #include "helpaboutform.h"
+#include "helpaboutlibrariesform.h"
 #include "helpfaqform.h"
 #include "helptipsform.h"
 #include "helpinstructionsform.h"
@@ -89,6 +90,7 @@ static QSet<QString> languagesSet;
 
 #ifdef FET_COMMAND_LINE
 #include <csignal>
+#include <QtGlobal>
 #endif
 
 #include <iostream>
@@ -271,13 +273,13 @@ void usage(QTextStream* out, const QString& error)
 		"fscsv is one value from the set [comma|semicolon|verticalbar] (write a single value from these three exactly as it is written here). The default value is "
 		"comma.\n"
 		"svr is either true or false, represents whether you want to show virtual rooms in the timetables (default false).\n"
-		"wanftfs is either true or false, represents whether you want the program to issue a warning if you are using activites which are not fixed in time,"
+		"wanftfs is either true or false, represents whether you want the program to issue a warning if you are using activites which are not fixed in time, "
 		"but are fixed in space in a virtual room, specifying also the real rooms (which is not recommended) (default true).\n"
 		"r is either true or false, represents whether you want additional generation messages and other messages to be shown on the command line (default false).\n"
 		"Alternatively, you can run \"fet-cl --version [--outputdir=d]\" to get the current FET version, "
 		"where\nd is the path to results directory, without trailing slash or backslash (default is current working path). "
 		"Make sure you have write permissions there.\n"
-		"(If you specify the \"--version argument\", FET just prints version number on the command line prompt and in the output directory and exits.)\n"
+		"(If you specify the \"--version\" argument, FET just prints version number on the command line prompt and in the output directory and exits.)\n"
 		"\n"
 		"You can ask the FET command line process to stop the timetable generation, by sending it the SIGTERM (or SIGBREAK, on Windows) signal. "
 		"FET will then write the current timetable and the highest stage timetable and exit. "
@@ -654,6 +656,12 @@ void setLanguage(QCoreApplication& qapplication, QWidget* parent)
 			HelpAboutForm* aboutf=qobject_cast<HelpAboutForm*>(wi);
 			if(aboutf!=NULL){
 				aboutf->retranslateUi(aboutf);
+				continue;
+			}
+
+			HelpAboutLibrariesForm* aboutlibsf=qobject_cast<HelpAboutLibrariesForm*>(wi);
+			if(aboutlibsf!=NULL){
+				aboutlibsf->retranslateUi(aboutlibsf);
 				continue;
 			}
 
@@ -1187,6 +1195,14 @@ int main(int argc, char **argv)
 		QTextStream out(&logFile);
 		///////
 		
+		//Cleanup the previous unsuccessful generation, if any. No need to remove the other previous files, they are overwritten.
+		QFile oldDifficultActivitiesFile(logsDir+"difficult_activities.txt");
+		if(oldDifficultActivitiesFile.exists()){
+			bool t=oldDifficultActivitiesFile.remove();
+			if(!t)
+				cout<<"Cannot remove the old existing file "<<qPrintable(logsDir)<<"difficult_activities.txt"<<endl;
+		}
+		
 		setLanguage(qCoreApplication, NULL);
 		
 		if(showVersion){
@@ -1198,17 +1214,23 @@ int main(int argc, char **argv)
 			QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
 			out<<"FET command line request for version started on "<<qPrintable(sTime)<<endl<<endl;
 	
-			//QString qv=qVersion();
 			out<<"FET version "<<qPrintable(FET_VERSION)<<endl;
 			out<<"Free timetabling software, licensed under the GNU Affero General Public License version 3 or later"<<endl;
 			out<<"Copyright (C) 2002-2019 Liviu Lalescu, Volker Dirr"<<endl;
 			out<<"Homepage: https://lalescu.ro/liviu/fet/"<<endl;
-			//out<<" (Using Qt version "<<qPrintable(qv)<<")"<<endl;
+			out<<"This program uses Qt version "<<qVersion()<<", Copyright (C) The Qt Company Ltd and other contributors."<<endl;
+			out<<"Depending on the platform and compiler, this program may use libraries from:"<<endl;
+			out<<"  gcc, Copyright (C) Free Software Foundation, Inc."<<endl;
+			out<<"  mingw-w64, Copyright (c) by the mingw-w64 project"<<endl;
+
 			cout<<"FET version "<<qPrintable(FET_VERSION)<<endl;
 			cout<<"Free timetabling software, licensed under the GNU Affero General Public License version 3 or later"<<endl;
 			cout<<"Copyright (C) 2002-2019 Liviu Lalescu, Volker Dirr"<<endl;
 			cout<<"Homepage: https://lalescu.ro/liviu/fet/"<<endl;
-			//cout<<" (Using Qt version "<<qPrintable(qv)<<")"<<endl;
+			cout<<"This program uses Qt version "<<qVersion()<<", Copyright (C) The Qt Company Ltd and other contributors."<<endl;
+			cout<<"Depending on the platform and compiler, this program may use libraries from:"<<endl;
+			cout<<"  gcc, Copyright (C) Free Software Foundation, Inc."<<endl;
+			cout<<"  mingw-w64, Copyright (c) by the mingw-w64 project"<<endl;
 
 			if(unrecognizedOptions.count()>0){
 				out<<endl;

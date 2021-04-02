@@ -362,7 +362,9 @@ public slots:
 	void on_removeRedundantConstraintsAction_triggered();
 
 	//about
-	void on_helpAboutAction_triggered();
+	void on_helpAboutFETAction_triggered();
+	void on_helpAboutQtAction_triggered();
+	void on_helpAboutLibrariesAction_triggered();
 	//offline
 	void on_helpFAQAction_triggered();
 	void on_helpTipsAction_triggered();

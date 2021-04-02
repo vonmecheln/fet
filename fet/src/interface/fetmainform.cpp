@@ -64,6 +64,7 @@ using namespace std;
 #include "alltimeconstraintsform.h"
 #include "allspaceconstraintsform.h"
 #include "helpaboutform.h"
+#include "helpaboutlibrariesform.h"
 #include "helpfaqform.h"
 #include "helptipsform.h"
 #include "helpinstructionsform.h"
@@ -1897,10 +1898,16 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 		
 		Q_UNUSED(result);
 		
-		while(!lockTimeConstraintsList.isEmpty())
-			delete lockTimeConstraintsList.takeFirst();
-		while(!lockSpaceConstraintsList.isEmpty())
-			delete lockSpaceConstraintsList.takeFirst();
+		for(TimeConstraint* tc : qAsConst(lockTimeConstraintsList))
+			delete tc;
+		lockTimeConstraintsList.clear();
+		for(SpaceConstraint* sc : qAsConst(lockSpaceConstraintsList))
+			delete sc;
+		lockSpaceConstraintsList.clear();
+		//while(!lockTimeConstraintsList.isEmpty())
+		//	delete lockTimeConstraintsList.takeFirst();
+		//while(!lockSpaceConstraintsList.isEmpty())
+		//	delete lockSpaceConstraintsList.takeFirst();
 
 		rules2.nHoursPerDay=0;
 		rules2.nDaysPerWeek=0;
@@ -4109,9 +4116,24 @@ void FetMainForm::on_dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction_t
 	form.exec();
 }
 
-void FetMainForm::on_helpAboutAction_triggered()
+void FetMainForm::on_helpAboutFETAction_triggered()
 {
 	HelpAboutForm* form=new HelpAboutForm(this);
+	form->setWindowFlags(Qt::Window);
+	form->setAttribute(Qt::WA_DeleteOnClose);
+	forceCenterWidgetOnScreen(form);
+	restoreFETDialogGeometry(form);
+	form->show();
+}
+
+void FetMainForm::on_helpAboutQtAction_triggered()
+{
+	QMessageBox::aboutQt(this);
+}
+
+void FetMainForm::on_helpAboutLibrariesAction_triggered()
+{
+	HelpAboutLibrariesForm* form=new HelpAboutLibrariesForm(this);
 	form->setWindowFlags(Qt::Window);
 	form->setAttribute(Qt::WA_DeleteOnClose);
 	forceCenterWidgetOnScreen(form);

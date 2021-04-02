@@ -1,3 +1,11 @@
+This document was written by Liviu Lalescu. Fair use of this document is expected.
+
+Begin: 2011.
+Last modified on: 22 December 2019.
+
+
+This is the description of the timetable generation algorithm used by FET.
+
 The algorithm is heuristic.
 
 Input: a set of activities A_1...A_n and the constraints.

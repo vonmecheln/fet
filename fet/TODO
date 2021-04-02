@@ -6836,3 +6836,22 @@ Liviu Lalescu:
 It is an interesting idea. The problem is that constraints do not have an ID, so you cannot specify exactly the constraints in a group.
 
 But Anthony Siaudeau and I have better ideas (there is an older custom version created for Anthony Siaudeau based on his suggestion). He suggested that a constraint can have a weight or a weight name. Weight names have modifiable values. You can create more weight names and assign them to the constraints. Then with only a click you can change the value of a weight name and thus modify the weights of more constraints at once. My idea is to do this also to enable/disable constraints (add some Boolean variables to be attached as the "enabled" state of some constraints). This is because many constraints can have only 100% weight, and they need to be disabled if you want this - their weight cannot simply be made 0.
+
+398---------------------------------------------------------
+From Liviu Lalescu:
+
+(In fact this is an anti-TODO):
+
+Qt documentation recommends the use of QVector instead of QList. I tried on many files and indeed in many of them it improves the speed with even 10%. But for some files,
+among which some from the Economics Faculty of Timisoara, it is much slower, even with 20% slower.
+
+The file examples/Romania/Faculty-Econ-Timisoara-difficult/2007-2008-sem-2/Econ-Timisoara.fet :
+	starting with random seed X=1234, Y=1234 (ending with random seed X=2061125487, Y=844641195 for FET-5.42.0 official)
+		it takes 18 minutes 51 seconds with QList
+		it takes 23 minutes 53 seconds with QVector
+The file examples/Romania/Faculty-Econ-Timisoara-difficult/2009-2010-sem-1/Econ-v0.8.fet :
+	starting with random seed X=1234, Y=1234 (ending with random seed X=48863282, Y=367996316 for FET-5.42.0 official)
+		it takes 11 minutes 52 seconds with QList
+		it takes 13 minutes 17 seconds with QVector
+
+So at least for now FET will use QList.

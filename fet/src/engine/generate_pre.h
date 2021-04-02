@@ -30,6 +30,7 @@ File generate_pre.h
 #include <QSet>
 #include <QHash>
 #include <QList>
+#include <QLinkedList>
 #include <QPair>
 
 #include <QTextStream>
@@ -557,7 +558,10 @@ public:
 	int maxOccupiedTimeSlots;
 };
 
-extern QList<ActivitiesOccupyMaxTimeSlotsFromSelection_item> aomtsList;
+//The next variable should not be a QVector!!!
+//We need the references to the elements to be valid, so we need this to be a QLinkedList
+//(or a QList, but make sure it allocates on the heap, which might not be always true).
+extern QLinkedList<ActivitiesOccupyMaxTimeSlotsFromSelection_item> aomtsList;
 extern Matrix1D<QList<ActivitiesOccupyMaxTimeSlotsFromSelection_item*> > aomtsListForActivity;
 
 bool computeActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* parent);
@@ -575,7 +579,10 @@ public:
 	int minOccupiedTimeSlots;
 };
 
-extern QList<ActivitiesOccupyMinTimeSlotsFromSelection_item> aomintsList;
+//The next variable should not be a QVector!!!
+//We need the references to the elements to be valid, so we need this to be a QLinkedList
+//(or a QList, but make sure it allocates on the heap, which might not be always true).
+extern QLinkedList<ActivitiesOccupyMinTimeSlotsFromSelection_item> aomintsList;
 extern Matrix1D<QList<ActivitiesOccupyMinTimeSlotsFromSelection_item*> > aomintsListForActivity;
 
 bool computeActivitiesOccupyMinTimeSlotsFromSelection(QWidget* parent);
@@ -593,7 +600,10 @@ public:
 	int maxSimultaneous;
 };
 
-extern QList<ActivitiesMaxSimultaneousInSelectedTimeSlots_item> amsistsList;
+//The next variable should not be a QVector!!!
+//We need the references to the elements to be valid, so we need this to be a QLinkedList
+//(or a QList, but make sure it allocates on the heap, which might not be always true).
+extern QLinkedList<ActivitiesMaxSimultaneousInSelectedTimeSlots_item> amsistsList;
 extern Matrix1D<QList<ActivitiesMaxSimultaneousInSelectedTimeSlots_item*> > amsistsListForActivity;
 
 bool computeActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget* parent);
@@ -613,7 +623,10 @@ public:
 	bool allowEmptySlots;
 };
 
-extern QList<ActivitiesMinSimultaneousInSelectedTimeSlots_item> aminsistsList;
+//The next variable should not be a QVector!!!
+//We need the references to the elements to be valid, so we need this to be a QLinkedList
+//(or a QList, but make sure it allocates on the heap, which might not be always true).
+extern QLinkedList<ActivitiesMinSimultaneousInSelectedTimeSlots_item> aminsistsList;
 extern Matrix1D<QList<ActivitiesMinSimultaneousInSelectedTimeSlots_item*> > aminsistsListForActivity;
 
 bool computeActivitiesMinSimultaneousInSelectedTimeSlots(QWidget* parent);
@@ -635,7 +648,10 @@ public:
 	int secondActivityTag;
 };
 
-extern QList<StudentsMinGapsBetweenOrderedPairOfActivityTags_item> smgbopoatList;
+//The next variable should not be a QVector!!!
+//We need the references to the elements to be valid, so we need this to be a QLinkedList
+//(or a QList, but make sure it allocates on the heap, which might not be always true).
+extern QLinkedList<StudentsMinGapsBetweenOrderedPairOfActivityTags_item> smgbopoatList;
 extern Matrix1D<QList<StudentsMinGapsBetweenOrderedPairOfActivityTags_item*> > smgbopoatListForActivity;
 
 bool computeStudentsMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent);
@@ -651,7 +667,10 @@ public:
 	int secondActivityTag;
 };
 
-extern QList<TeachersMinGapsBetweenOrderedPairOfActivityTags_item> tmgbopoatList;
+//The next variable should not be a QVector!!!
+//We need the references to the elements to be valid, so we need this to be a QLinkedList
+//(or a QList, but make sure it allocates on the heap, which might not be always true).
+extern QLinkedList<TeachersMinGapsBetweenOrderedPairOfActivityTags_item> tmgbopoatList;
 extern Matrix1D<QList<TeachersMinGapsBetweenOrderedPairOfActivityTags_item*> > tmgbopoatListForActivity;
 
 bool computeTeachersMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent);
@@ -667,7 +686,10 @@ public:
 	int maxDifferentRooms;
 };
 
-extern QList<ActivitiesOccupyMaxDifferentRooms_item> aomdrList;
+//The next variable should not be a QVector!!!
+//We need the references to the elements to be valid, so we need this to be a QLinkedList
+//(or a QList, but make sure it allocates on the heap, which might not be always true).
+extern QLinkedList<ActivitiesOccupyMaxDifferentRooms_item> aomdrList;
 extern Matrix1D<QList<ActivitiesOccupyMaxDifferentRooms_item*> > aomdrListForActivity;
 
 bool computeActivitiesOccupyMaxDifferentRooms(QWidget* parent);
@@ -682,7 +704,10 @@ public:
 	QSet<int> activitiesSet;
 };
 
-extern QList<ActivitiesSameRoomIfConsecutive_item> asricList;
+//The next variable should not be a QVector!!!
+//We need the references to the elements to be valid, so we need this to be a QLinkedList
+//(or a QList, but make sure it allocates on the heap, which might not be always true).
+extern QLinkedList<ActivitiesSameRoomIfConsecutive_item> asricList;
 extern Matrix1D<QList<ActivitiesSameRoomIfConsecutive_item*> > asricListForActivity;
 
 bool computeActivitiesSameRoomIfConsecutive(QWidget* parent);
@@ -699,7 +724,10 @@ public:
 	int durationOfActivitiesWithActivityTagForSubgroup;
 };
 
-extern QList<SubgroupActivityTagMinHoursDaily_item> satmhdList;
+//The next variable should not be a QVector!!!
+//We need the references to the elements to be valid, so we need this to be a QLinkedList
+//(or a QList, but make sure it allocates on the heap, which might not be always true).
+extern QLinkedList<SubgroupActivityTagMinHoursDaily_item> satmhdList;
 extern Matrix1D<QList<SubgroupActivityTagMinHoursDaily_item*> > satmhdListForSubgroup;
 extern bool haveStudentsActivityTagMinHoursDaily;
 
@@ -715,7 +743,10 @@ public:
 	int durationOfActivitiesWithActivityTagForTeacher;
 };
 
-extern QList<TeacherActivityTagMinHoursDaily_item> tatmhdList;
+//The next variable should not be a QVector!!!
+//We need the references to the elements to be valid, so we need this to be a QLinkedList
+//(or a QList, but make sure it allocates on the heap, which might not be always true).
+extern QLinkedList<TeacherActivityTagMinHoursDaily_item> tatmhdList;
 extern Matrix1D<QList<TeacherActivityTagMinHoursDaily_item*> > tatmhdListForTeacher;
 extern bool haveTeachersActivityTagMinHoursDaily;
 

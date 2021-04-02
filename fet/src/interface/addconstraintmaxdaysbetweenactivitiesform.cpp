@@ -19,8 +19,6 @@
 
 #include <QMessageBox>
 
-
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintmaxdaysbetweenactivitiesform.h"

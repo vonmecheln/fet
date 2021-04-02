@@ -23,6 +23,7 @@ SOURCES += \
 	\
 	interface/fet.cpp \
 	interface/helpaboutform.cpp \
+	interface/helpaboutlibrariesform.cpp \
 	interface/helpfaqform.cpp \
 	interface/helptipsform.cpp \
 	interface/helpinstructionsform.cpp \
@@ -575,6 +576,7 @@ HEADERS += \
 	\
 	interface/fet.h \
 	interface/helpaboutform.h \
+	interface/helpaboutlibrariesform.h \
 	interface/helpfaqform.h \
 	interface/helptipsform.h \
 	interface/helpinstructionsform.h \
@@ -1106,6 +1108,7 @@ HEADERS += \
 FORMS += \
 	interface/fetmainform_template.ui \
 	interface/helpaboutform_template.ui \
+	interface/helpaboutlibrariesform_template.ui \
 	interface/teachersstatisticsform_template.ui \
 	interface/subjectsstatisticsform_template.ui \
 	interface/studentsstatisticsform_template.ui \

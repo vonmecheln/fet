@@ -1039,10 +1039,16 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 		
 	bool result=rules2.write(parent, filename);
 	
-	while(!lockTimeConstraintsList.isEmpty())
-		delete lockTimeConstraintsList.takeFirst();
-	while(!lockSpaceConstraintsList.isEmpty())
-		delete lockSpaceConstraintsList.takeFirst();
+	for(TimeConstraint* tc : qAsConst(lockTimeConstraintsList))
+		delete tc;
+	lockTimeConstraintsList.clear();
+	for(SpaceConstraint* sc : qAsConst(lockSpaceConstraintsList))
+		delete sc;
+	lockSpaceConstraintsList.clear();
+	//while(!lockTimeConstraintsList.isEmpty())
+	//	delete lockTimeConstraintsList.takeFirst();
+	//while(!lockSpaceConstraintsList.isEmpty())
+	//	delete lockSpaceConstraintsList.takeFirst();
 
 	//if(result)
 	//	QMessageBox::information(parent, tr("FET information"),

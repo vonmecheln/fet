@@ -40,6 +40,8 @@ using namespace std;
 #include <QSet>
 #include <QHash>
 #include <QQueue>
+#include <QList>
+#include <QLinkedList>
 
 extern Timetable gt;
 
@@ -415,22 +417,22 @@ bool mustComputeTimetableTeacher[MAX_TEACHERS];
 
 
 //2011-09-25 - Constraint activities occupy max time slots from selection
-QList<ActivitiesOccupyMaxTimeSlotsFromSelection_item> aomtsList;
+QLinkedList<ActivitiesOccupyMaxTimeSlotsFromSelection_item> aomtsList;
 Matrix1D<QList<ActivitiesOccupyMaxTimeSlotsFromSelection_item*> > aomtsListForActivity;
 //bool computeActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* parent);
 
 //2019-11-16 - Constraint activities occupy min time slots from selection
-QList<ActivitiesOccupyMinTimeSlotsFromSelection_item> aomintsList;
+QLinkedList<ActivitiesOccupyMinTimeSlotsFromSelection_item> aomintsList;
 Matrix1D<QList<ActivitiesOccupyMinTimeSlotsFromSelection_item*> > aomintsListForActivity;
 //bool computeActivitiesOccupyMinTimeSlotsFromSelection(QWidget* parent);
 
 //2011-09-30 - Constraint activities max simultaneous in selected time slots
-QList<ActivitiesMaxSimultaneousInSelectedTimeSlots_item> amsistsList;
+QLinkedList<ActivitiesMaxSimultaneousInSelectedTimeSlots_item> amsistsList;
 Matrix1D<QList<ActivitiesMaxSimultaneousInSelectedTimeSlots_item*> > amsistsListForActivity;
 //bool computeActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget* parent);
 
 //2019-11-16 - Constraint activities min simultaneous in selected time slots
-QList<ActivitiesMinSimultaneousInSelectedTimeSlots_item> aminsistsList;
+QLinkedList<ActivitiesMinSimultaneousInSelectedTimeSlots_item> aminsistsList;
 Matrix1D<QList<ActivitiesMinSimultaneousInSelectedTimeSlots_item*> > aminsistsListForActivity;
 //bool computeActivitiesMinSimultaneousInSelectedTimeSlots(QWidget* parent);
 
@@ -441,33 +443,33 @@ bool haveActivitiesMaxSimultaneousConstraints;
 bool activityHasMaxSimultaneousConstraints[MAX_ACTIVITIES];
 
 //2019-06-08 - Constraint students (set) min gaps between ordered pair of activity tags
-QList<StudentsMinGapsBetweenOrderedPairOfActivityTags_item> smgbopoatList;
+QLinkedList<StudentsMinGapsBetweenOrderedPairOfActivityTags_item> smgbopoatList;
 Matrix1D<QList<StudentsMinGapsBetweenOrderedPairOfActivityTags_item*> > smgbopoatListForActivity;
 //bool computeStudentsMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent);
 
 //2019-06-08 - Constraint teachers(s) min gaps between ordered pair of activity tags
-QList<TeachersMinGapsBetweenOrderedPairOfActivityTags_item> tmgbopoatList;
+QLinkedList<TeachersMinGapsBetweenOrderedPairOfActivityTags_item> tmgbopoatList;
 Matrix1D<QList<TeachersMinGapsBetweenOrderedPairOfActivityTags_item*> > tmgbopoatListForActivity;
 //bool computeTeachersMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent);
 
 //2012-04-29 - Constraint activities occupy max different rooms
-QList<ActivitiesOccupyMaxDifferentRooms_item> aomdrList;
+QLinkedList<ActivitiesOccupyMaxDifferentRooms_item> aomdrList;
 Matrix1D<QList<ActivitiesOccupyMaxDifferentRooms_item*> > aomdrListForActivity;
 //bool computeActivitiesOccupyMaxDifferentRooms(QWidget* parent);
 
 //2013-09-14 - Constraint activities same room if consecutive
-QList<ActivitiesSameRoomIfConsecutive_item> asricList;
+QLinkedList<ActivitiesSameRoomIfConsecutive_item> asricList;
 Matrix1D<QList<ActivitiesSameRoomIfConsecutive_item*> > asricListForActivity;
 //bool computeActivitiesSameRoomIfConsecutive(QWidget* parent);
 
 //2019-11-20
-QList<SubgroupActivityTagMinHoursDaily_item> satmhdList;
+QLinkedList<SubgroupActivityTagMinHoursDaily_item> satmhdList;
 Matrix1D<QList<SubgroupActivityTagMinHoursDaily_item*> > satmhdListForSubgroup;
 bool haveStudentsActivityTagMinHoursDaily;
 //bool computeStudentsActivityTagMinHoursDaily(QWidget* parent);
 
 //2019-11-20
-QList<TeacherActivityTagMinHoursDaily_item> tatmhdList;
+QLinkedList<TeacherActivityTagMinHoursDaily_item> tatmhdList;
 Matrix1D<QList<TeacherActivityTagMinHoursDaily_item*> > tatmhdListForTeacher;
 bool haveTeachersActivityTagMinHoursDaily;
 //bool computeTeachersActivityTagMinHoursDaily(QWidget* parent);
@@ -2721,7 +2723,8 @@ bool computeStudentsActivityTagMinHoursDaily(QWidget* parent)
 						item.allowEmptyDays=smd->allowEmptyDays;
 						
 						satmhdList.append(item);
-						satmhdListForSubgroup[sbg].append(&satmhdList[satmhdList.count()-1]);
+						//satmhdListForSubgroup[sbg].append(&satmhdList[satmhdList.count()-1]);
+						satmhdListForSubgroup[sbg].append(&satmhdList.last());
 						
 						if(!item.allowEmptyDays && item.durationOfActivitiesWithActivityTagForSubgroup<gt.rules.nDaysPerWeek*item.minHoursDaily){
 							ok=false;
@@ -2763,7 +2766,8 @@ bool computeStudentsActivityTagMinHoursDaily(QWidget* parent)
 						item.allowEmptyDays=smd->allowEmptyDays;
 						
 						satmhdList.append(item);
-						satmhdListForSubgroup[sbg].append(&satmhdList[satmhdList.count()-1]);
+						//satmhdListForSubgroup[sbg].append(&satmhdList[satmhdList.count()-1]);
+						satmhdListForSubgroup[sbg].append(&satmhdList.last());
 						
 						if(!item.allowEmptyDays && item.durationOfActivitiesWithActivityTagForSubgroup<gt.rules.nDaysPerWeek*item.minHoursDaily){
 							ok=false;
@@ -3999,7 +4003,8 @@ bool computeTeachersActivityTagMinHoursDaily(QWidget* parent)
 						item.allowEmptyDays=tmd->allowEmptyDays;
 						
 						tatmhdList.append(item);
-						tatmhdListForTeacher[tch].append(&tatmhdList[tatmhdList.count()-1]);
+						//tatmhdListForTeacher[tch].append(&tatmhdList[tatmhdList.count()-1]);
+						tatmhdListForTeacher[tch].append(&tatmhdList.last());
 						
 						if(!item.allowEmptyDays && item.durationOfActivitiesWithActivityTagForTeacher<gt.rules.nDaysPerWeek*item.minHoursDaily){
 							ok=false;
@@ -4041,7 +4046,8 @@ bool computeTeachersActivityTagMinHoursDaily(QWidget* parent)
 						item.allowEmptyDays=tmd->allowEmptyDays;
 						
 						tatmhdList.append(item);
-						tatmhdListForTeacher[tch].append(&tatmhdList[tatmhdList.count()-1]);
+						//tatmhdListForTeacher[tch].append(&tatmhdList[tatmhdList.count()-1]);
+						tatmhdListForTeacher[tch].append(&tatmhdList.last());
 						
 						if(!item.allowEmptyDays && item.durationOfActivitiesWithActivityTagForTeacher<gt.rules.nDaysPerWeek*item.minHoursDaily){
 							ok=false;
@@ -7543,7 +7549,8 @@ bool computeActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* parent)
 #endif
 			
 			aomtsList.append(item);
-			ActivitiesOccupyMaxTimeSlotsFromSelection_item* p_item=&aomtsList[aomtsList.count()-1];
+			//ActivitiesOccupyMaxTimeSlotsFromSelection_item* p_item=&aomtsList[aomtsList.count()-1];
+			ActivitiesOccupyMaxTimeSlotsFromSelection_item* p_item=&aomtsList.last();
 			for(int ai : qAsConst(cn->_activitiesIndices)){
 				aomtsListForActivity[ai].append(p_item);
 				
@@ -7639,7 +7646,8 @@ bool computeActivitiesOccupyMinTimeSlotsFromSelection(QWidget* parent)
 #endif
 			
 			aomintsList.append(item);
-			ActivitiesOccupyMinTimeSlotsFromSelection_item* p_item=&aomintsList[aomintsList.count()-1];
+			//ActivitiesOccupyMinTimeSlotsFromSelection_item* p_item=&aomintsList[aomintsList.count()-1];
+			ActivitiesOccupyMinTimeSlotsFromSelection_item* p_item=&aomintsList.last();
 			for(int ai : qAsConst(cn->_activitiesIndices))
 				aomintsListForActivity[ai].append(p_item);
 		}
@@ -7699,7 +7707,8 @@ bool computeActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget* parent)
 #endif
 			
 			amsistsList.append(item);
-			ActivitiesMaxSimultaneousInSelectedTimeSlots_item* p_item=&amsistsList[amsistsList.count()-1];
+			//ActivitiesMaxSimultaneousInSelectedTimeSlots_item* p_item=&amsistsList[amsistsList.count()-1];
+			ActivitiesMaxSimultaneousInSelectedTimeSlots_item* p_item=&amsistsList.last();
 			for(int ai : qAsConst(cn->_activitiesIndices)){
 				amsistsListForActivity[ai].append(p_item);
 				
@@ -7783,7 +7792,8 @@ bool computeActivitiesMinSimultaneousInSelectedTimeSlots(QWidget* parent)
 			item.allowEmptySlots=cn->allowEmptySlots;
 			
 			aminsistsList.append(item);
-			ActivitiesMinSimultaneousInSelectedTimeSlots_item* p_item=&aminsistsList[aminsistsList.count()-1];
+			//ActivitiesMinSimultaneousInSelectedTimeSlots_item* p_item=&aminsistsList[aminsistsList.count()-1];
+			ActivitiesMinSimultaneousInSelectedTimeSlots_item* p_item=&aminsistsList.last();
 			for(int ai : qAsConst(cn->_activitiesIndices))
 				aminsistsListForActivity[ai].append(p_item);
 		}
@@ -7833,7 +7843,8 @@ bool computeStudentsMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 			item.secondActivityTag=cn->_secondActivityTagIndex;
 			
 			smgbopoatList.append(item);
-			StudentsMinGapsBetweenOrderedPairOfActivityTags_item* p_item=&smgbopoatList[smgbopoatList.count()-1];
+			//StudentsMinGapsBetweenOrderedPairOfActivityTags_item* p_item=&smgbopoatList[smgbopoatList.count()-1];
+			StudentsMinGapsBetweenOrderedPairOfActivityTags_item* p_item=&smgbopoatList.last();
 			
 			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -7912,7 +7923,8 @@ bool computeStudentsMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 			item.secondActivityTag=cn->_secondActivityTagIndex;
 			
 			smgbopoatList.append(item);
-			StudentsMinGapsBetweenOrderedPairOfActivityTags_item* p_item=&smgbopoatList[smgbopoatList.count()-1];
+			//StudentsMinGapsBetweenOrderedPairOfActivityTags_item* p_item=&smgbopoatList[smgbopoatList.count()-1];
+			StudentsMinGapsBetweenOrderedPairOfActivityTags_item* p_item=&smgbopoatList.last();
 			
 			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -8007,7 +8019,8 @@ bool computeTeachersMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 			item.secondActivityTag=cn->_secondActivityTagIndex;
 			
 			tmgbopoatList.append(item);
-			TeachersMinGapsBetweenOrderedPairOfActivityTags_item* p_item=&tmgbopoatList[tmgbopoatList.count()-1];
+			//TeachersMinGapsBetweenOrderedPairOfActivityTags_item* p_item=&tmgbopoatList[tmgbopoatList.count()-1];
+			TeachersMinGapsBetweenOrderedPairOfActivityTags_item* p_item=&tmgbopoatList.last();
 			
 			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -8080,7 +8093,8 @@ bool computeTeachersMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 			item.secondActivityTag=cn->_secondActivityTagIndex;
 			
 			tmgbopoatList.append(item);
-			TeachersMinGapsBetweenOrderedPairOfActivityTags_item* p_item=&tmgbopoatList[tmgbopoatList.count()-1];
+			//TeachersMinGapsBetweenOrderedPairOfActivityTags_item* p_item=&tmgbopoatList[tmgbopoatList.count()-1];
+			TeachersMinGapsBetweenOrderedPairOfActivityTags_item* p_item=&tmgbopoatList.last();
 			
 			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -8170,7 +8184,8 @@ bool computeActivitiesOccupyMaxDifferentRooms(QWidget* parent)
 			item.maxDifferentRooms=cn->maxDifferentRooms;
 			
 			aomdrList.append(item);
-			ActivitiesOccupyMaxDifferentRooms_item* p_item=&aomdrList[aomdrList.count()-1];
+			//ActivitiesOccupyMaxDifferentRooms_item* p_item=&aomdrList[aomdrList.count()-1];
+			ActivitiesOccupyMaxDifferentRooms_item* p_item=&aomdrList.last();
 			for(int ai : qAsConst(cn->_activitiesIndices))
 				aomdrListForActivity[ai].append(p_item);
 		}
@@ -8215,7 +8230,8 @@ bool computeActivitiesSameRoomIfConsecutive(QWidget* parent)
 #endif
 			
 			asricList.append(item);
-			ActivitiesSameRoomIfConsecutive_item* p_item=&asricList[asricList.count()-1];
+			//ActivitiesSameRoomIfConsecutive_item* p_item=&asricList[asricList.count()-1];
+			ActivitiesSameRoomIfConsecutive_item* p_item=&asricList.last();
 			for(int ai : qAsConst(cn->_activitiesIndices))
 				asricListForActivity[ai].append(p_item);
 		}
@@ -9125,12 +9141,27 @@ jumpOverPrefRoomsNStudents:
 			bool okinitial=true;
 			if(activitiesHomeRoomsHomeRooms[i].count()==0)
 				okinitial=false;
-			QList<int> tmp=activitiesHomeRoomsHomeRooms[i];
+/*			QList<int> tmp=activitiesHomeRoomsHomeRooms[i];
 			for(int r : qAsConst(tmp)){
 				if(gt.rules.internalRoomsList[r]->capacity < gt.rules.internalActivitiesList[i].nTotalStudents){
-					activitiesHomeRoomsHomeRooms[i].removeAll(r);
+#if QT_VERSION >= QT_VERSION_CHECK(5,4,0)
+					int t=activitiesHomeRoomsHomeRooms[i].removeAll(r);
+					assert(t==1);
+#else
+					int _t=activitiesHomeRoomsHomeRooms[i].indexOf(r);
+					int _t2=activitiesHomeRoomsHomeRooms[i].lastIndexOf(r);
+					assert(_t>=0 && _t2>=0 && _t==_t2);
+					activitiesHomeRoomsHomeRooms[i].remove(_t);
+#endif
 				}
-			}
+			}*/
+			//Better:
+			QList<int> tmp;
+			for(int r : qAsConst(activitiesHomeRoomsHomeRooms[i]))
+				if(gt.rules.internalRoomsList[r]->capacity >= gt.rules.internalActivitiesList[i].nTotalStudents)
+					tmp.append(r);
+			activitiesHomeRoomsHomeRooms[i]=tmp;
+			
 			if(okinitial && activitiesHomeRoomsHomeRooms[i].count()==0){
 				ok=false;
 				

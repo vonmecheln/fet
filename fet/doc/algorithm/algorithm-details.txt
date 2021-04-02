@@ -1,3 +1,9 @@
+This document was written by Liviu Lalescu. Fair use of this document is expected.
+
+Begin: 2007.
+Last modified on: 22 December 2019.
+
+
 Added on 19 January 2009: the implementation of the algorithm is good now, I changed it in 2008.
 
 Some words about the algorithm:
@@ -52,7 +58,7 @@ them to the list of unallocated activities. added_act might decrease this
 way. Now I keep track of old tried removals and avoid them (they are in the
 tabu list - with size tabu_size (nInternalActivities*nHoursPerWeek for now)) - to avoid cycles.
 
-The routine random_swap will only search (recursively) the first (best) 
+The routine random_swap will only search (recursively) the first (best)
 slot if level>=5. That is, we search at level 0 all slots, at level 1 the same,
 ..., at level 4 the same, at level 5 only the first (best) slot, at level 6 only
 the first (best) slot, etc., we reach level 13, then we go back to level 4 and

@@ -893,16 +893,25 @@ bool Rules::computeInternalStructure(QWidget* parent)
 void Rules::kill() //clears memory for the rules, destroys them
 {
 	//Teachers
-	while(!teachersList.isEmpty())
-		delete teachersList.takeFirst();
+	for(Teacher* tch : qAsConst(teachersList))
+		delete tch;
+	teachersList.clear();
+	//while(!teachersList.isEmpty())
+	//	delete teachersList.takeFirst();
 
 	//Subjects
-	while(!subjectsList.isEmpty())
-		delete subjectsList.takeFirst();
+	for(Subject* sbj : qAsConst(subjectsList))
+		delete sbj;
+	subjectsList.clear();
+	//while(!subjectsList.isEmpty())
+	//	delete subjectsList.takeFirst();
 
 	//Activity tags
-	while(!activityTagsList.isEmpty())
-		delete activityTagsList.takeFirst();
+	for(ActivityTag* at : qAsConst(activityTagsList))
+		delete at;
+	activityTagsList.clear();
+	//while(!activityTagsList.isEmpty())
+	//	delete activityTagsList.takeFirst();
 
 	//Years
 	/*while(!yearsList.isEmpty())
@@ -973,27 +982,45 @@ void Rules::kill() //clears memory for the rules, destroys them
 	//////////////////
 	
 	//Activities
-	while(!activitiesList.isEmpty())
-		delete activitiesList.takeFirst();
+	for(Activity* act : qAsConst(activitiesList))
+		delete act;
+	activitiesList.clear();
+	//while(!activitiesList.isEmpty())
+	//	delete activitiesList.takeFirst();
 
 	//Time constraints
-	while(!timeConstraintsList.isEmpty())
-		delete timeConstraintsList.takeFirst();
+	for(TimeConstraint* tc : qAsConst(timeConstraintsList))
+		delete tc;
+	timeConstraintsList.clear();
+	//while(!timeConstraintsList.isEmpty())
+	//	delete timeConstraintsList.takeFirst();
 
 	//Space constraints
-	while(!spaceConstraintsList.isEmpty())
-		delete spaceConstraintsList.takeFirst();
+	for(SpaceConstraint* sc : qAsConst(spaceConstraintsList))
+		delete sc;
+	spaceConstraintsList.clear();
+	//while(!spaceConstraintsList.isEmpty())
+	//	delete spaceConstraintsList.takeFirst();
 
 	//Buildings
-	while(!buildingsList.isEmpty())
-		delete buildingsList.takeFirst();
+	for(Building* bu : qAsConst(buildingsList))
+		delete bu;
+	buildingsList.clear();
+	//while(!buildingsList.isEmpty())
+	//	delete buildingsList.takeFirst();
 
 	//Rooms
-	while(!roomsList.isEmpty())
-		delete roomsList.takeFirst();
+	for(Room* rm : qAsConst(roomsList))
+		delete rm;
+	roomsList.clear();
+	//while(!roomsList.isEmpty())
+	//	delete roomsList.takeFirst();
 		
-	while(!groupActivitiesInInitialOrderList.isEmpty())
-		delete groupActivitiesInInitialOrderList.takeFirst();
+	for(GroupActivitiesInInitialOrderItem* ga : qAsConst(groupActivitiesInInitialOrderList))
+		delete ga;
+	groupActivitiesInInitialOrderList.clear();
+	//while(!groupActivitiesInInitialOrderList.isEmpty())
+	//	delete groupActivitiesInInitialOrderList.takeFirst();
 
 	activitiesPointerHash.clear();
 	bctSet.clear();
@@ -3192,8 +3219,11 @@ void Rules::removeActivities(const QList<int>& _idsList, bool updateConstraints)
 		}
 	}
 
-	while(!toBeRemoved.isEmpty())
-		delete toBeRemoved.takeFirst();
+	for(Activity* act : qAsConst(toBeRemoved))
+		delete act;
+	toBeRemoved.clear();
+	//while(!toBeRemoved.isEmpty())
+	//	delete toBeRemoved.takeFirst();
 		
 	activitiesList=newActivitiesList;
 	
@@ -4231,8 +4261,12 @@ void Rules::updateGroupActivitiesInInitialOrderAfterRemoval()
 	}
 	
 	groupActivitiesInInitialOrderList=newList;
-	while(!toBeRemovedList.isEmpty())
-		delete toBeRemovedList.takeFirst();
+	
+	for(GroupActivitiesInInitialOrderItem* ga : qAsConst(toBeRemovedList))
+		delete ga;
+	toBeRemovedList.clear();
+	//while(!toBeRemovedList.isEmpty())
+	//	delete toBeRemovedList.takeFirst();
 }
 
 void Rules::updateActivitiesWhenRemovingStudents(const QSet<StudentsSet*>& studentsSets, bool updateConstraints)

@@ -1,3 +1,9 @@
+This document was written by Liviu Lalescu. Fair use of this document is expected.
+
+Begin: 2003.
+Last modified on: 22 December 2019.
+
+
 FET - How to add new translations (languages):
 
 VERY IMPORTANT: Please announce your intention if you want to translate FET into your language.

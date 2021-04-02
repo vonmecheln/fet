@@ -1075,13 +1075,10 @@ int Import::readFields(QWidget* parent){
 									ok=false;
 								}
 							} else {
-								QStringList splitList;
-								if(itemOfField[FIELD_SPLIT_DURATION].count("+")<MAX_SPLIT_OF_AN_ACTIVITY){
-									splitList = itemOfField[FIELD_SPLIT_DURATION].split("+", QString::SkipEmptyParts);
+								QStringList splitList=itemOfField[FIELD_SPLIT_DURATION].split("+", QString::SkipEmptyParts);
+								if(splitList.size()<MAX_SPLIT_OF_AN_ACTIVITY){
 									int tmpInt=0;
-									QString split;
-									while(ok && !splitList.isEmpty()){
-										split=splitList.takeFirst();
+									for(const QString& split : qAsConst(splitList)){
 										tmpInt+=split.toInt(&ok, 10);
 										if(!ok)
 											warnText+=Import::tr("Skipped line %1: Field '%2' doesn't contain an integer value.").arg(lineNumber).arg(fieldName[FIELD_SPLIT_DURATION])+"\n";
