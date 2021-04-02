@@ -3342,42 +3342,42 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
 <context>
     <name>AddConstraintActivityPreferredStartingTimeForm</name>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="189"/>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="196"/>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="202"/>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="212"/>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="223"/>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="230"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="187"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="194"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="200"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="210"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="221"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="228"/>
         <source>FET information</source>
         <translation>Informasi FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="190"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="188"/>
         <source>Invalid weight (percentage)</source>
         <translation>Bobot (persentasi) yang salah</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="197"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="195"/>
         <source>Invalid day</source>
         <translation>Hari salah</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="203"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="201"/>
         <source>Invalid start hour</source>
         <translation>Jam mulai salah</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="213"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="211"/>
         <source>Invalid activity</source>
         <translation>Kegiatan salah</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="224"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="222"/>
         <source>Constraint added:</source>
         <translation>Batasan ditambah:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="231"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="229"/>
         <source>Constraint NOT added - duplicate</source>
         <translation>Batasan TIDAK ditambah - duplikasi</translation>
     </message>
@@ -33740,7 +33740,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2016 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.29.5 (June 2016).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.29.6 (June 2016).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
