@@ -4178,6 +4178,8 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 	bool version5AndAbove=false;
 	bool warning=false;
 	
+	QString file_version;
+	
 	if(elem1.tagName()!="FET")
 		okAbove3_12_17=false;
 	else{
@@ -4187,14 +4189,24 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 		else{
 			QDomAttr a=elem1.attributeNode("version");
 			QString version=a.value();
+			file_version=version;
 			int v[3];
 			//cout<<"version=|"<<version<<"|"<<endl;
 			int t=sscanf((const char*)(version), "%d.%d.%d", &v[0], &v[1], &v[2]);
-			assert(t==3);
+			if(t!=3){
+				QMessageBox::warning(NULL, QObject::tr("FET warning"), QObject::tr("File contains a version numbering scheme which"
+				" is not matched by x.x.x (3 numbers separated by points). File will be opened, but you are adviced"
+				" to check the version of the .fet file (in the beginning of the file)"));
+			}
+			//assert(t==3);
 			
 			int w[3];
 			t=sscanf((const char*)(FET_VERSION), "%d.%d.%d", &w[0], &w[1], &w[2]);
-			assert(t==3);
+			if(t!=3){
+				QMessageBox::warning(NULL, QObject::tr("FET warning"), QObject::tr("FET version does not respect the format x.x.x"
+				" (3 numbers separated by points). This is probably a bug in FET - please report it"));
+			}
+			//assert(t==3);
 			
 			if(v[0]>w[0] || (v[0]==w[0] && v[1]>w[1]) || (v[0]==w[0]&&v[1]==w[1]&&v[2]>w[2]))
 				warning=true;
@@ -4225,7 +4237,8 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 	
 	if(warning){
 		QMessageBox::warning(NULL, QObject::tr("FET information"), 
-		 QObject::tr("Opening a newer FET version file ... file will be opened but it is recommended to update your FET software to the latest version"));
+		 QObject::tr("Opening a newer FET version file ... file will be opened but it is recommended to update your FET software to the latest version")
+		 +"\n\n"+QObject::tr("Your FET version: %1, file version: %2").arg(FET_VERSION).arg(file_version));
 	}
 	
 	this->nHoursPerDay=12;

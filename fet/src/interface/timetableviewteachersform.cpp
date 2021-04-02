@@ -47,6 +47,9 @@ extern Solution best_solution;
 
 extern bool simulation_running;
 
+extern bool teacherNotAvailableDayHour[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+
 TimetableViewTeachersForm::TimetableViewTeachersForm()
 {
 	//setWindowFlags(Qt::Window);
@@ -127,6 +130,10 @@ void TimetableViewTeachersForm::updateTeachersTimetableTable(){
 						s+=QObject::tr("R:")+gt.rules.internalRoomsList[r]->name;
 					}
 				}
+				else{
+					if(teacherNotAvailableDayHour[teacher][k][j] || breakDayHour[k][j])
+						s+="-x-";
+				}
 				teachersTimetableTable->setText(j, k, s);
 			}
 		}
@@ -173,6 +180,16 @@ void TimetableViewTeachersForm::detailActivity(int row, int col){
 				if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 					s+="\n";
 					s+=QObject::tr("Room: ")+gt.rules.internalRoomsList[r]->name;
+					s+="\n";
+				}
+			}
+			else{
+				if(teacherNotAvailableDayHour[teacher][k][j]){
+					s+=tr("Teacher is not available 100% in this slot");
+					s+="\n";
+				}
+				if(breakDayHour[k][j]){
+					s+=tr("Break with weight 100% in this slot");
 					s+="\n";
 				}
 			}

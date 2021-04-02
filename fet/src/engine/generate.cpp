@@ -1916,8 +1916,11 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 				
 	assert(nConflActivitiesRooms.at(t)==conflActivitiesRooms.at(t).count());
 				
+	localConflActivities.clear(); /////Liviu: added 22 august 2008, nasty crash bug fix
+				
 	foreach(int a, conflActivitiesRooms.at(t)){
 		assert(!globalConflActivities.contains(a));
+		assert(!localConflActivities.contains(a)); ///////////Liviu: added 22 august 2008
 		localConflActivities.append(a);
 	}
 	

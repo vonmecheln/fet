@@ -504,6 +504,11 @@ A function used in html saving
 QString protect2id(const QString& str);
 
 /**
+A function used in html saving
+*/
+QString protect2java(const QString& str);
+
+/**
 A function used in iCal saving
 */
 QString protect3(const QString& str);

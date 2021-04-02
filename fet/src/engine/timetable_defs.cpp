@@ -27,7 +27,7 @@ QString internetVersion;
 /**
 FET version
 */
-const QString FET_VERSION="5.6.2";
+const QString FET_VERSION="5.6.3";
 
 /**
 FET language
@@ -98,6 +98,22 @@ QString protect2id(const QString& str) //used for html
 	p.replace(">", "&gt;");
 	p.replace("<", "&lt;");
 	//p.replace("'", "&apos;");
+	p.replace(" ", "_");		// id must be a single token
+	p.replace(",", "_");		// looks like this makes trouble
+	return p;
+}
+
+//protect2java is very similar to protect2
+//protect2java code contributed by Volker Dirr
+
+QString protect2java(const QString& str) //used for java-script function call (NOT the class id!)
+{
+	QString p=str;
+	p.replace("&", "&amp;");
+	p.replace("\"", "&quot;");
+	p.replace(">", "&gt;");
+	p.replace("<", "&lt;");
+	p.replace("'", "\\'");
 	p.replace(" ", "_");		// id must be a single token
 	p.replace(",", "_");		// looks like this makes trouble
 	return p;

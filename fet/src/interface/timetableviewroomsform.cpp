@@ -51,6 +51,9 @@ extern bool simulation_running;
 extern Solution best_solution;
 extern SpaceChromosome best_space_chromosome;
 
+extern double notAllowedRoomTimePercentages[MAX_ROOMS][MAX_HOURS_PER_WEEK];
+extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+
 TimetableViewRoomsForm::TimetableViewRoomsForm()
 {
 	//setWindowFlags(Qt::Window);
@@ -119,6 +122,15 @@ void TimetableViewRoomsForm::updateRoomsTimetableTable(){
 				assert(act!=NULL);
 				s += act->subjectName + " " + act->activityTagName;
 			}
+			else{
+				if(notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]>=0 || breakDayHour[k][j])
+					s+="-x-";
+				/*if(!breakDayHour[k][j] && notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]>=0 && notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]<100.0){
+					s+="\n";
+					s+=QString::number(notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]);
+					s+="%";
+				}*/
+			}
 			roomsTimetableTable->setText(j, k, s);
 		}
 	}
@@ -152,6 +164,16 @@ void TimetableViewRoomsForm::detailActivity(int row, int col){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
 			assert(act!=NULL);
 			s += act->getDetailedDescriptionWithConstraints(gt.rules);
+		}
+		else{
+			if(notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]>=0){
+				s+=tr("Room is not available with weight %1%").arg(notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]);
+				s+="\n";
+			}
+			if(breakDayHour[k][j]){
+				s+=tr("Break with weight 100% in this slot");
+				s+="\n";
+			}
 		}
 	}
 	detailsTextEdit->setText(s);

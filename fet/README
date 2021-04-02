@@ -25,6 +25,9 @@ Requirements:
 	For running, you need only the archive of FET compiled for Windows (which contains
 	the MinGW and Qt dlls).
 	For compiling, you need Qt and MinGW (do NOT use Qt 4.2.x or gcc 4.2.x).
+	
+	Note: it seems that on GNU/Linux FET runs faster than on Windows. Maybe because compilation
+	is done for the specific platform and with a more recent gcc compiler.
 
 
 Download:

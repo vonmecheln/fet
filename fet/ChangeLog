@@ -1244,3 +1244,8 @@ Versions 5.6.0 - 5.6.x
 	should end the day for students (for instance for meetings with the class master) - suggested by Zsolt Udvari.
 	- Bug fix - when modifying a constraints (sub)activities preferred starting times or time slots, the activity tag
 	is now correctly updated.
+- Version 5.6.3
+	- Crash bug fix (probably rare)
+	- Added an -x- in the not available slots in teachers', students' and rooms' timetables
+	(suggested by George Miliotis [Ionio]), added by Volker Dirr.
+	- Added Lithuanian translation by Darius Staigys (incomplete yet).

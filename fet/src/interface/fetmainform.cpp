@@ -174,7 +174,7 @@ Rules rules2;
 static int ORIGINAL_WIDTH, ORIGINAL_HEIGHT;
 
 //English has to be counted also
-const int NUMBER_OF_LANGUAGES=16;
+const int NUMBER_OF_LANGUAGES=17;
 
 const int LANGUAGE_EN_GB_POSITION=0;
 const int LANGUAGE_AR_POSITION=1;
@@ -186,12 +186,13 @@ const int LANGUAGE_FR_POSITION=6;
 const int LANGUAGE_HU_POSITION=7;
 const int LANGUAGE_ID_POSITION=8;
 const int LANGUAGE_IT_POSITION=9;
-const int LANGUAGE_MK_POSITION=10;
-const int LANGUAGE_MS_POSITION=11;
-const int LANGUAGE_NL_POSITION=12;
-const int LANGUAGE_PL_POSITION=13;
-const int LANGUAGE_RO_POSITION=14;
-const int LANGUAGE_TR_POSITION=15;
+const int LANGUAGE_LT_POSITION=10;
+const int LANGUAGE_MK_POSITION=11;
+const int LANGUAGE_MS_POSITION=12;
+const int LANGUAGE_NL_POSITION=13;
+const int LANGUAGE_PL_POSITION=14;
+const int LANGUAGE_RO_POSITION=15;
+const int LANGUAGE_TR_POSITION=16;
 
 
 FetMainForm::FetMainForm()
@@ -253,6 +254,8 @@ FetMainForm::FetMainForm()
 		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_ID_POSITION), true);
 	else if(FET_LANGUAGE=="it")
 		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_IT_POSITION), true);
+	else if(FET_LANGUAGE=="lt")
+		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_LT_POSITION), true);
 
 	//new data
 	if(gt.rules.initialized)
@@ -2299,6 +2302,18 @@ void FetMainForm::on_languageItalianAction_activated()
 	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
 		languageMenu->setItemChecked(languageMenu->idAt(i), false);
 	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_IT_POSITION), true);
+}
+
+void FetMainForm::on_languageLithuanianAction_activated()
+{
+	QMessageBox::information(this, tr("FET information"), 
+	 tr("Please exit and restart FET to activate language change"));
+	
+	FET_LANGUAGE="lt";
+	
+	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
+		languageMenu->setItemChecked(languageMenu->idAt(i), false);
+	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_LT_POSITION), true);
 }
 
 void FetMainForm::on_settingsRestoreDefaultsAction_activated()

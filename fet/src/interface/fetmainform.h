@@ -181,6 +181,7 @@ public slots:
 	void on_languageArabicAction_activated();
 	void on_languageIndonesianAction_activated();
 	void on_languageItalianAction_activated();
+	void on_languageLithuanianAction_activated();
 	
 	void on_checkForUpdatesAction_toggled();
 

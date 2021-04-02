@@ -698,3 +698,37 @@ From Baker
 
 What about viewing the schedule by period?  I'd really like to see a list, or grid, 
 of all the courses scheduled into a particular period.  Is that possible?
+
+21---------------------------------------------------------
+From Niels (gesamtschule)
+
+yesterday evening we run in to trouble, because we had defined some constraint which makes the problem unsolvable.
+To analyze such a situation it would be extremely helpful, if it become possible to filter all constraints.
+For example give me all constraints for activity x. This means all which was directly defined to the activity
+and all which defined for the subject and the teacher. Is it possible to realize this quickly? Otherwise 
+I will start to write an own solution based on the xml-file.
+Niels
+
+22---------------------------------------------------------
+From George Miliotis [Ionio]
+
+I have a very easy suggestion for FET. It would be extremely helpful if 
+we could visualize the times when rooms or teachers or student sets are 
+not available. So,
+* in option "view(Teachers)" we would have a different background colour 
+or a "-X-" in boxes where this teacher is NOT available.
+* in option "view(Rooms)" we would have a similar indication of when a 
+room is not available.
+* in options "view(students)" we would have a similar indication when 
+student sets are not available.
+
+This way I can reserve a room for another department here at the 
+university (room not available times) and also SEE where I can fit 
+things that come up late in the process.
+
+It would also be nice to have these displayed in the HTML output (maybe 
+a CLASS="room_not_avail" I can skin?)
+
+Thanks again for the software
+--GM
+Ionian University

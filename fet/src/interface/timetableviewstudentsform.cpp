@@ -47,6 +47,9 @@ extern bool simulation_running;
 
 extern Solution best_solution;
 
+extern bool subgroupNotAvailableDayHour[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+
 TimetableViewStudentsForm::TimetableViewStudentsForm()
 {
 	//setWindowFlags(Qt::Window);
@@ -191,6 +194,10 @@ void TimetableViewStudentsForm::updateStudentsTimetableTable(){
 					s+=QObject::tr("R:")+gt.rules.internalRoomsList[r]->name;
 				}
 			}
+			else{
+				if(subgroupNotAvailableDayHour[i][k][j] || breakDayHour[k][j])
+					s+="-x-";
+			}
 			studentsTimetableTable->setText(j, k, s);
 		}
 	}
@@ -242,6 +249,16 @@ void TimetableViewStudentsForm::detailActivity(int row, int col)
 			if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 				s+="\n";
 				s+=QObject::tr("Room: ")+gt.rules.internalRoomsList[r]->name;
+				s+="\n";
+			}
+		}
+		else{
+			if(subgroupNotAvailableDayHour[i][k][j]){
+				s+=tr("Students subgroup is not available 100% in this slot");
+				s+="\n";
+			}
+			if(breakDayHour[k][j]){
+				s+=tr("Break with weight 100% in this slot");
 				s+="\n";
 			}
 		}

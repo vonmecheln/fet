@@ -323,6 +323,7 @@
      <addaction name="languageHungarianAction" />
      <addaction name="languageIndonesianAction" />
      <addaction name="languageItalianAction" />
+     <addaction name="languageLithuanianAction" />
      <addaction name="languageMacedonianAction" />
      <addaction name="languageMalayAction" />
      <addaction name="languageDutchAction" />
@@ -1348,6 +1349,14 @@
   <action name="dataTimeConstraintsActivitiesEndStudentsDayAction" >
    <property name="text" >
     <string>A set of activities end students day</string>
+   </property>
+  </action>
+  <action name="languageLithuanianAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>lt (Lithuanian)</string>
    </property>
   </action>
  </widget>
