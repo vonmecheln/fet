@@ -84,13 +84,10 @@ TimetableViewStudentsForm::TimetableViewStudentsForm(QWidget* parent): QDialog(p
 
 	//columnResizeModeInitialized=false;
 
-	QList<int> tmpList2;
-	tmpList2<<10000<<2500;
-	verticalStudentsTableDetailsSplitter->setSizes(tmpList2);
-	
-	QList<int> tmpList3;
-	tmpList3<<3000<<10000;
-	horizontalSplitter->setSizes(tmpList3);
+	verticalStudentsTableDetailsSplitter->setStretchFactor(0, 4);
+	verticalStudentsTableDetailsSplitter->setStretchFactor(1, 1);
+	horizontalSplitter->setStretchFactor(0, 3);
+	horizontalSplitter->setStretchFactor(1, 10);
 	
 	studentsTimetableTable->setSelectionMode(QAbstractItemView::ExtendedSelection);
 	

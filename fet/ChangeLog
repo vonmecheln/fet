@@ -1683,3 +1683,9 @@ Versions 5.21.0 - 5.21.x
 	- Updated the Brazilian Portuguese translation, by Cloves das Neves.
 	- Added two example files from Brazil, by Werner Bruns.
 	- Added another sample file from Argentina, by pedrobordon.
+- Version 5.21.1
+	- Updated the sources to Qt 5.2.1 (but the precompiled Windows version still uses Qt 4.8.5, because of various problems).
+	- Added an Albanian translation, by Artur Lugu.
+	- Minor interface improvements.
+- Version 5.21.2
+	- Corrected a bug in two of the Brazil examples (the bug was introduced in the previous version).

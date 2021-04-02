@@ -181,7 +181,7 @@ void usage(QTextStream* out, const QString& error)
 		"y is integer (seconds) (default 2000000000, which is practically infinite).\n"
 		"z is integer from 0 to 6 and represents the detail level for the generated HTML timetables "
 		"(default 2, larger values have more details/facilities and larger file sizes).\n"
-		"t is one of en_US, ar, ca, da, de, el, es, fa, fr, gl, he, hu, id, it, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sr, tr, uk, uz, vi (default en_US).\n"
+		"t is one of en_US, ar, ca, da, de, el, es, fa, fr, gl, he, hu, id, it, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sq, sr, tr, uk, uz, vi (default en_US).\n"
 		"a is either true or false and represets if you want activity tags to be present in the final HTML timetables (default true).\n"
 		"u is either true or false and represents if you want -x- (for true) or --- (for false) in the generated timetables for the "
 		"not available slots (default true).\n"
@@ -365,7 +365,8 @@ void setLanguage(QCoreApplication& qapplication, QWidget* parent)
 	 || FET_LANGUAGE=="tr" || FET_LANGUAGE=="id" || FET_LANGUAGE=="it" || FET_LANGUAGE=="lt"
 	 || FET_LANGUAGE=="ru" || FET_LANGUAGE=="fa" || FET_LANGUAGE=="uk" || FET_LANGUAGE=="pt_BR"
 	 || FET_LANGUAGE=="da" || FET_LANGUAGE=="si" || FET_LANGUAGE=="sk" || FET_LANGUAGE=="he"
-	 || FET_LANGUAGE=="sr" || FET_LANGUAGE=="gl" || FET_LANGUAGE=="vi" || FET_LANGUAGE=="uz"){
+	 || FET_LANGUAGE=="sr" || FET_LANGUAGE=="gl" || FET_LANGUAGE=="vi" || FET_LANGUAGE=="uz"
+	 || FET_LANGUAGE=="sq"){
 
 		translation_loaded=translator.load("fet_"+FET_LANGUAGE, qapplication.applicationDirPath());
 		if(!translation_loaded){
@@ -775,12 +776,12 @@ int main(int argc, char **argv)
 			//QString qv=qVersion();
 			out<<"FET version "<<qPrintable(FET_VERSION)<<endl;
 			out<<"Free timetabling software, licensed under GNU GPL v2 or later"<<endl;
-			out<<"Copyright (C) 2002-2013 Liviu Lalescu, Volker Dirr"<<endl;
+			out<<"Copyright (C) 2002-2014 Liviu Lalescu, Volker Dirr"<<endl;
 			out<<"Homepage: http://lalescu.ro/liviu/fet/"<<endl;
 			//out<<" (Using Qt version "<<qPrintable(qv)<<")"<<endl;
 			cout<<"FET version "<<qPrintable(FET_VERSION)<<endl;
 			cout<<"Free timetabling software, licensed under GNU GPL v2 or later"<<endl;
-			cout<<"Copyright (C) 2002-2013 Liviu Lalescu, Volker Dirr"<<endl;
+			cout<<"Copyright (C) 2002-2014 Liviu Lalescu, Volker Dirr"<<endl;
 			cout<<"Homepage: http://lalescu.ro/liviu/fet/"<<endl;
 			//cout<<" (Using Qt version "<<qPrintable(qv)<<")"<<endl;
 

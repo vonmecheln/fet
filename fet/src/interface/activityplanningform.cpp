@@ -207,23 +207,19 @@ ActivityPlanningForm::ActivityPlanningForm(QWidget *parent): QDialog(parent)
 	QHBoxLayout* wholeDialog=new QHBoxLayout(this);
 	
 	leftSplitter=new QSplitter(Qt::Vertical);
-	//leftSplitter->setMinimumSize(650, 600);
+	//leftSplitter->setChildrenCollapsible(false);
 	
 	activitiesTableView= new SparseTableView;
 
 	teachersTableView= new SparseTableView;
-	
+
 	leftSplitter->addWidget(activitiesTableView);
 	leftSplitter->addWidget(teachersTableView);
-	
-	//begin added by Liviu
-	QList<int> list;
-	list<<10000<<4100;
-	leftSplitter->setSizes(list);
-	//end added by Liviu
-	
+
+	leftSplitter->setStretchFactor(0, 10);
+	leftSplitter->setStretchFactor(1, 4);
 	leftSplitter->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-	
+
 	QVBoxLayout* rightDialog=new QVBoxLayout();
 	
 	/*QGroupBox**/ actionsBox=new QGroupBox(tr("Action", "It means the kind of action the user selects"));

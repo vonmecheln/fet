@@ -4662,8 +4662,8 @@ QString ConstraintTeachersMaxGapsPerWeek::getDetailedDescription(Rules& r){
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum number of gaps per week");s+="\n";
 	s+=tr("(breaks and teacher not available not counted)");s+="\n";
-	s+=tr("Maximum gaps per week=%1").arg(this->maxGaps); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Maximum gaps per week=%1").arg(this->maxGaps); s+="\n";
 
 	if(!active){
 		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));

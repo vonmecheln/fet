@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.16.0">
+<fet version="5.21.2">
 
 <Institution_Name>Institutie implicita</Institution_Name>
 
@@ -189,7 +189,7 @@
 	<Name>Geografia</Name>
 </Subject>
 <Subject>
-	<Name>Educccao Fisica</Name>
+	<Name>Educcacao Fisica</Name>
 </Subject>
 <Subject>
 	<Name>Artes</Name>
@@ -2398,7 +2398,7 @@
 </Activity>
 <Activity>
 	<Teacher>Anderson</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>203</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2409,7 +2409,7 @@
 </Activity>
 <Activity>
 	<Teacher>Anderson</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>203</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2420,7 +2420,7 @@
 </Activity>
 <Activity>
 	<Teacher>Anderson</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>204</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2431,7 +2431,7 @@
 </Activity>
 <Activity>
 	<Teacher>Anderson</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>204</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2442,7 +2442,7 @@
 </Activity>
 <Activity>
 	<Teacher>Anderson</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>205</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2453,7 +2453,7 @@
 </Activity>
 <Activity>
 	<Teacher>Anderson</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>205</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2464,7 +2464,7 @@
 </Activity>
 <Activity>
 	<Teacher>Anderson</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>206</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2475,7 +2475,7 @@
 </Activity>
 <Activity>
 	<Teacher>Anderson</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>206</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2486,7 +2486,7 @@
 </Activity>
 <Activity>
 	<Teacher>Anderson</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>301</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2497,7 +2497,7 @@
 </Activity>
 <Activity>
 	<Teacher>Anderson</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>301</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2508,7 +2508,7 @@
 </Activity>
 <Activity>
 	<Teacher>Anderson</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>302</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2519,7 +2519,7 @@
 </Activity>
 <Activity>
 	<Teacher>Anderson</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>302</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2530,7 +2530,7 @@
 </Activity>
 <Activity>
 	<Teacher>Anderson</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>303</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2541,7 +2541,7 @@
 </Activity>
 <Activity>
 	<Teacher>Anderson</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>303</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2552,7 +2552,7 @@
 </Activity>
 <Activity>
 	<Teacher>Anderson</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>304</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2563,7 +2563,7 @@
 </Activity>
 <Activity>
 	<Teacher>Anderson</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>304</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2574,7 +2574,7 @@
 </Activity>
 <Activity>
 	<Teacher>Anderson</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>305</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2585,7 +2585,7 @@
 </Activity>
 <Activity>
 	<Teacher>Anderson</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>305</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2596,7 +2596,7 @@
 </Activity>
 <Activity>
 	<Teacher>Renata</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>101</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2607,7 +2607,7 @@
 </Activity>
 <Activity>
 	<Teacher>Renata</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>101</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2618,7 +2618,7 @@
 </Activity>
 <Activity>
 	<Teacher>Renata</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>102</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2629,7 +2629,7 @@
 </Activity>
 <Activity>
 	<Teacher>Renata</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>102</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2640,7 +2640,7 @@
 </Activity>
 <Activity>
 	<Teacher>Renata</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>103</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2651,7 +2651,7 @@
 </Activity>
 <Activity>
 	<Teacher>Renata</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>103</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2662,7 +2662,7 @@
 </Activity>
 <Activity>
 	<Teacher>Renata</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>104</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2673,7 +2673,7 @@
 </Activity>
 <Activity>
 	<Teacher>Renata</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>104</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2684,7 +2684,7 @@
 </Activity>
 <Activity>
 	<Teacher>Renata</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>111</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2695,7 +2695,7 @@
 </Activity>
 <Activity>
 	<Teacher>Renata</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>111</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2706,7 +2706,7 @@
 </Activity>
 <Activity>
 	<Teacher>Renata</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>201</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2717,7 +2717,7 @@
 </Activity>
 <Activity>
 	<Teacher>Renata</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>201</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2728,7 +2728,7 @@
 </Activity>
 <Activity>
 	<Teacher>Renata</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>202</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -2739,7 +2739,7 @@
 </Activity>
 <Activity>
 	<Teacher>Renata</Teacher>
-	<Subject>Educccao Fisica</Subject>
+	<Subject>Educcacao Fisica</Subject>
 	<Students>202</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>

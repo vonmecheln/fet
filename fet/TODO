@@ -1583,11 +1583,11 @@ Activities preferred times constraints need also need "duration".
 times. by this new feature it will be very easy to add (just one
 constraint - instead of adding a tag to every activity with duration 2).
 
-96---------------------------------------------------------
+96--------------------------DONE---------------------------
 From liquid (on forum):
 
-Consider a split activity 2/5 - 1/5 - 1/5 - 1/5. FET places my 2 hour activity part in the same room. However in case of soft conflict when FET cannot place other 3 hours separately, it places them consecutively but not in the same room.
-I might agree with FET in some cases when it cannot do desired split but if FET must join some activities consecutively let it do this in the same room. How to tell it to do in such way in case of soft conflict?
+DONE---> Consider a split activity 2/5 - 1/5 - 1/5 - 1/5. FET places my 2 hour activity part in the same room. However in case of soft conflict when FET cannot place other 3 hours separately, it places them consecutively but not in the same room.
+I might agree with FET in some cases when it cannot do desired split but if FET must join some activities consecutively let it do this in the same room. How to tell it to do in such way in case of soft conflict? <---DONE
 
 97---------------------------------------------------------
 From liquid (on forum):
@@ -2829,3 +2829,32 @@ Nangombe			English					5a					6
 Total		34
 
 <-- DONE
+
+182---------------------------------------------------------
+From Bobby Wise (on forum):
+
+I think it would be a good idea if the printing of All Activities could be in consecutive order from the lowest grade to the highest, or in alphabetical order. Similar to the Activity Planning.
+
+I think that the print order now is in Activity sequence.
+
+183---------------------------------------------------------
+From nouvakis (on forum):
+
+The Min days between activities constraint has a weight percentage which I set to 95%.
+
+I think that there should be another weight percentage for the option "if activities in same day, force activities consecutive" (when checked) because you handle it as a 100%.
+
+If this is possible, then the word force should be replaced by something else.
+
+184---------------------------------------------------------
+From Tonny Chan:
+
+Please add a multiple select and then add to FET, then I need not to click the students one by one to a course.
+
+185---------------------------------------------------------
+From Volker Dirr:
+
+There should be comment to the teachers, rooms, students and activities.
+(Maybe even instead of using the activity constraints). These comments
+should be visible (or accessible by a pushbutton) in the constraints
+dialogs.

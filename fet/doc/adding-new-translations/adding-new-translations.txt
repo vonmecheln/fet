@@ -64,11 +64,7 @@ First of all, you need a version of Qt Linguist.
 
 Qt homepage: http://qt-project.org/
 
-For GNU/Linux it is available if you type "linguist" (this is part of Qt,
-probably in package libqt4-devel - probably you can install from your package manager,
-or from the Qt homepage).
-Note for Ubuntu GNU/Linux: a translator reported that Qt Linguist may be found in
-the package qt4-dev-tools .
+For GNU/Linux it is available if you type "linguist" (this is part of Qt development tools).
 For Windows, you will have to download the latest Qt from the Qt homepage.
 For Mac OS X, maybe you have Qt linguist precompiled available for download from your package manager,
 or you can download the latest Qt from the Qt homepage.

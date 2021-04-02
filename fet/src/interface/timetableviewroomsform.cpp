@@ -44,7 +44,6 @@
 #include <QListWidget>
 
 #include <QList>
-#include <QSplitter>
 
 #include <QCoreApplication>
 #include <QApplication>
@@ -88,13 +87,10 @@ TimetableViewRoomsForm::TimetableViewRoomsForm(QWidget* parent): QDialog(parent)
 
 	//columnResizeModeInitialized=false;
 
-	QList<int> tmpList;
-	tmpList<<5000<<5000;
-	verticalSplitter->setSizes(tmpList);
-
-	QList<int> tmpList2;
-	tmpList2<<3000<<10000;
-	horizontalSplitter->setSizes(tmpList2);
+	//verticalSplitter->setStretchFactor(0, 1);	//unneeded, because both have the same value
+	//verticalSplitter->setStretchFactor(1, 1);	//unneeded, because both have the same value
+	horizontalSplitter->setStretchFactor(0, 3);
+	horizontalSplitter->setStretchFactor(1, 10);
 	
 	roomsTimetableTable->setSelectionMode(QAbstractItemView::ExtendedSelection);
 

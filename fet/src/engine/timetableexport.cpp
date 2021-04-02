@@ -2819,7 +2819,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalHtml(QWidget* paren
 
 	tos<<writeHead(true, placedActivities, false);
 
-tos<<singleAllActivitiesTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_REPEAT_NAMES);
+	tos<<singleAllActivitiesTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_REPEAT_NAMES);
 
 	tos<<"  </body>\n</html>\n";
 

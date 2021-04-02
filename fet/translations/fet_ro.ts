@@ -514,343 +514,343 @@
         <translation>Dialog de planificare a activităţii</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="229"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="225"/>
         <source>Action</source>
         <comment>It means the kind of action the user selects</comment>
         <translation>Acţiune</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="231"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="227"/>
         <source>Activities</source>
         <comment>Please keep translation short</comment>
         <translation>Activităţi</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="232"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="228"/>
         <source>Subactivities</source>
         <comment>Please keep translation short</comment>
         <translation>Subactivităţi</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="233"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="229"/>
         <source>Add activity</source>
         <comment>Please keep translation short</comment>
         <translation>Adaugă activitate</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="234"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="230"/>
         <source>Modify activity</source>
         <comment>Please keep translation short</comment>
         <translation>Modifică activitate</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="235"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="231"/>
         <source>Delete activities</source>
         <comment>Please keep translation short</comment>
         <translation>Şterge activităţi</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="245"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="241"/>
         <source>Options</source>
         <translation>Opţiuni</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="255"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="251"/>
         <source>Show years</source>
         <comment>Please keep translation short</comment>
         <translation>Afişează anii</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="257"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="253"/>
         <source>Show groups</source>
         <comment>Please keep translation short</comment>
         <translation>Afişează grupurile</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="259"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="255"/>
         <source>Show subgroups</source>
         <comment>Please keep translation short</comment>
         <translation>Afişează subgrupurile</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="261"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="257"/>
         <source>Show teachers</source>
         <comment>Please keep translation short</comment>
         <translation>Afişează profesorii</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="266"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="262"/>
         <source>Show duplicates</source>
         <comment>Please keep translation short</comment>
         <translation>Afişează duplicatele</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="268"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="264"/>
         <source>Hide empty lines</source>
         <comment>Please keep translation short</comment>
         <translation>Ascunde liniile goale</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="273"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="269"/>
         <source>Swap axes</source>
         <comment>Please keep translation short</comment>
         <translation>Schimbă axele</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="275"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="271"/>
         <source>Pseudo activities</source>
         <comment>Please keep translation short. It means activities without teachers and/or students sets</comment>
         <translation>Pseudo activităţi</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="291"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="287"/>
         <source>Close</source>
         <comment>Please keep translation short</comment>
         <translation>Închide</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="249"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="245"/>
         <source>Active</source>
         <comment>It refers to active activities. Please keep translation short</comment>
         <translation>Active</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="250"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="246"/>
         <source>Inactive</source>
         <comment>It refers to inactive activities. Please keep translation short</comment>
         <translation>Inactive</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="251"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="247"/>
         <source>All</source>
         <comment>It refers to all activities. Please keep translation short</comment>
         <translation>Toate</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="264"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="260"/>
         <source>Show tags</source>
         <comment>Please keep translation short. It refers to activity tags, but I want to keep it shorter, because there is not enough space.</comment>
         <translation>Afişează etichetele</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="270"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="266"/>
         <source>Hide full teachers</source>
         <comment>This field is for the moment not shown in FET, but we translate it for maybe future versions. It refers to teachers who have their number of hours fulfilled. Please keep translation short</comment>
         <translation>Ascunde profesorii &apos;plini&apos;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="278"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="274"/>
         <source>Delete all</source>
         <comment>Refers to activities. Please keep translation short</comment>
         <translation>Şterge toate</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1950"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1953"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1946"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1949"/>
         <source>Delete all?</source>
         <comment>It refers to activities</comment>
         <translation>Şterge toate?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="726"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="934"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="722"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="930"/>
         <source>Delete %1 activities of students set %2?</source>
         <translation>Şterg %1 activităţi ale setului de studenţi %2?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="466"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="462"/>
         <source>B</source>
         <comment>Abbreviation for &apos;Buttons&apos;. Please keep translation very short (probably only one letter). There is an option to hide the buttons in the planning activity dialog, so that the tables can have larger visible parts. This button (B) will remain there after the user hides the other buttons. The user then can press this button to show again all the buttons. We need this &apos;B&apos; button to be very small, so keep translation abbreviated to the initial only</comment>
         <translation>B</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="734"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="769"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="909"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="942"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1373"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1509"/>
-        <source>Delete multiple?</source>
-        <comment>It refers to activities</comment>
-        <translation>Şterg multiple?</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="739"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="947"/>
-        <source>There are activities affecting other students sets. Should the related activities also be deleted?</source>
-        <translation>Sunt activităţi care afectează alte seturi de studenţi. Trebuie şterse de asemenea şi activităţile aferente?</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="760"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="900"/>
-        <source>Delete %1 activities of subject %2?</source>
-        <translation>Şterg %1 activităţi ale disciplinei %2?</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="739"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="774"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="914"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="947"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1255"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1261"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1377"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1513"/>
-        <source>Delete related?</source>
-        <comment>It refers to activities</comment>
-        <translation>Şterge înrudite?</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1094"/>
-        <source>FET information</source>
-        <translation>FET - informaţie</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="284"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="482"/>
-        <source>Hide buttons</source>
-        <comment>Please keep translation short. This is an option to hide some buttons in the planning activity dialog, so that the tables are more visible.</comment>
-        <translation>Ascunde butoanele</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningform.cpp" line="730"/>
         <location filename="../src/interface/activityplanningform.cpp" line="765"/>
         <location filename="../src/interface/activityplanningform.cpp" line="905"/>
         <location filename="../src/interface/activityplanningform.cpp" line="938"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1222"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1246"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1370"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1506"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1369"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1505"/>
+        <source>Delete multiple?</source>
+        <comment>It refers to activities</comment>
+        <translation>Şterg multiple?</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activityplanningform.cpp" line="735"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="943"/>
+        <source>There are activities affecting other students sets. Should the related activities also be deleted?</source>
+        <translation>Sunt activităţi care afectează alte seturi de studenţi. Trebuie şterse de asemenea şi activităţile aferente?</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activityplanningform.cpp" line="756"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="896"/>
+        <source>Delete %1 activities of subject %2?</source>
+        <translation>Şterg %1 activităţi ale disciplinei %2?</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activityplanningform.cpp" line="735"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="770"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="910"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="943"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1251"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1257"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1373"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1509"/>
+        <source>Delete related?</source>
+        <comment>It refers to activities</comment>
+        <translation>Şterge înrudite?</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activityplanningform.cpp" line="1090"/>
+        <source>FET information</source>
+        <translation>FET - informaţie</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activityplanningform.cpp" line="280"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="478"/>
+        <source>Hide buttons</source>
+        <comment>Please keep translation short. This is an option to hide some buttons in the planning activity dialog, so that the tables are more visible.</comment>
+        <translation>Ascunde butoanele</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activityplanningform.cpp" line="726"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="761"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="901"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="934"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1218"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1242"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1366"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1502"/>
         <source>Because you have individually modified the components, there will be removed an additional number of %1 activities (which are in the same larger split activities as the selected activities).</source>
         <translation>Pentru că aţi modificat individual componentele, vor fi şterse un număr adiţional de %1 activităţi (care sunt în aceleaşi activităţi mai mari împărţite ca activităţile selectate).</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="774"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="914"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="770"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="910"/>
         <source>There are activities affecting other subjects. Should the related activities also be deleted?</source>
         <translation>Sunt activităţi care afectează şi alte discipline. Trebuie şterse de asemenea şi activităţile aferente?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1214"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1240"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1210"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1236"/>
         <source>subject=%1</source>
         <translation>disciplină=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1216"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1238"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1212"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1234"/>
         <source>students=%1</source>
         <translation>studenţi=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1262"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1258"/>
         <source>This cell contains activities that relate to other subjects. Should the related activities also be deleted?</source>
         <translation>Această celulă conţine activităţi care afectează alte discipline. Trebuie şterse de asemenea şi activităţile aferente?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1377"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1513"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1373"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1509"/>
         <source>There are activities affecting other teachers. Should the related activities also be deleted?</source>
         <translation>Sunt activităţi care afectează alţi profesori. Trebuie şterse de asemenea şi activităţile aferente?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1950"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1946"/>
         <source>Are you sure you want to remove ALL the %1 activities and related constraints?</source>
         <comment>%1 is the number of total activities</comment>
         <translation>Sunteţi sigur că doriţi să ştergeţi TOATE cele %1 activităţi şi constrângerile aferente?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1212"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1236"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1208"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1232"/>
         <source>Delete %1 activities from selected cell?</source>
         <translation>Şterg %1 activităţi din celula selectată?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1095"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1091"/>
         <source>Cannot modify this large activity, because it contains more than %1 activities.</source>
         <translation>Nu pot modifica această activitate mare, deoarece ea conţine mai mult de %1 activităţi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1251"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1247"/>
         <source>Delete activities?</source>
         <translation>Şterg activităţile?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1256"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1252"/>
         <source>This cell contains activities that relate to other students. Should the related activities also be deleted?</source>
         <translation>Această celulă conţine activităţi care sunt în legătură cu alţi studenţi. Trebuie şterse de asemenea şi aceste activităţi înrudite?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1366"/>
-        <location filename="../src/interface/activityplanningform.cpp" line="1502"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1362"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1498"/>
         <source>Delete %1 activities of teacher %2?</source>
         <translation>Şterg %1 activităţi ale profesorului %2?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1401"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1397"/>
         <source>Please enter the target number of hours:</source>
         <comment>This field is for the moment inactive in FET, but we translate it for possible future use</comment>
         <translation>Vă rog introduceţi numărul de ore obiectiv:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1747"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1743"/>
         <source>Target</source>
         <comment>Please keep translation short. This field is for the moment inactive in FET, we keep it for possible future use</comment>
         <translation>Obiectiv</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1953"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1949"/>
         <source>Are you absolutely sure you want to remove ALL activities and related constraints from your data?</source>
         <translation>Sunteţi absolut sigur că doriţi să ştergeţi TOATE activităţile şi constrângerile aferente din datele dvs.?</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1985"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1981"/>
         <source>There are no activities without teachers and without students.</source>
         <translation>Nu sunt activităţi fără profesori şi fără studenţi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1987"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1983"/>
         <source>Activities without teachers and without students:</source>
         <translation>Activităţi fără profesori şi fără studenţi:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1401"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1397"/>
         <source>FET question</source>
         <translation>FET - întrebare</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1748"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1744"/>
         <source>Subjects</source>
         <comment>Please keep translation short</comment>
         <translation>Discipline</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1749"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1745"/>
         <source>Students</source>
         <comment>Please keep translation short</comment>
         <translation>Studenţi</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1990"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1986"/>
         <source>There are no activities without teachers.</source>
         <translation>Nu sunt activităţi fără profesori.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1992"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1988"/>
         <source>Activities without teachers:</source>
         <translation>Activităţi fără profesori:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1995"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1991"/>
         <source>There are no activities without students.</source>
         <translation>Nu sunt activităţi fără studenţi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1997"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1993"/>
         <source>Activities without students:</source>
         <translation>Activităţi fără studenţi:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activityplanningform.cpp" line="1999"/>
+        <location filename="../src/interface/activityplanningform.cpp" line="1995"/>
         <source>Information about pseudo activities</source>
         <comment>Pseudo activities means activities without teachers and/or students sets</comment>
         <translation>Informaţie despre pseudo activităţi</translation>
@@ -26267,12 +26267,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <translation>(pauze şi profesori indisponibili ne-socotite)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4665"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4666"/>
         <source>Maximum gaps per week=%1</source>
         <translation>Maxim ferestre pe săptămână=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4666"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4665"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Importanţă (procent)=%1%</translation>
     </message>
@@ -28469,14 +28469,14 @@ A avea un subgrup cu prea puţine ore de lucru pe săptămână înseamnă că a
         <location filename="../src/interface/fetmainform.cpp" line="3272"/>
         <location filename="../src/interface/fetmainform.cpp" line="3293"/>
         <location filename="../src/interface/fetmainform.cpp" line="3297"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3438"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3495"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3892"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3942"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3972"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3997"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4024"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4046"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3439"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3496"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3893"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3943"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3973"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3998"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4025"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4047"/>
         <source>FET warning</source>
         <translation>FET - avertisment</translation>
     </message>
@@ -28631,11 +28631,11 @@ A avea un subgrup cu prea puţine ore de lucru pe săptămână înseamnă că a
         <location filename="../src/interface/fetmainform.cpp" line="3342"/>
         <location filename="../src/interface/fetmainform.cpp" line="3352"/>
         <location filename="../src/interface/fetmainform.cpp" line="3362"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3707"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3740"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3767"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3840"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3851"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3708"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3741"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3768"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3841"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3852"/>
         <source>FET information</source>
         <translation>FET - informaţie</translation>
     </message>
@@ -28693,18 +28693,18 @@ A avea un subgrup cu prea puţine ore de lucru pe săptămână înseamnă că a
         <translation>FET - ieşind</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3601"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3602"/>
         <source>&amp;Yes</source>
         <translation>&amp;Da</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3601"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3602"/>
         <source>&amp;No</source>
         <translation>&amp;Nu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3779"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3800"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3780"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3801"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Anulează</translation>
     </message>
@@ -28832,11 +28832,11 @@ A avea un subgrup cu prea puţine ore de lucru pe săptămână înseamnă că a
         <location filename="../src/interface/fetmainform.cpp" line="3050"/>
         <location filename="../src/interface/fetmainform.cpp" line="3151"/>
         <location filename="../src/interface/fetmainform.cpp" line="3176"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3708"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3741"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3768"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3841"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3852"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3709"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3742"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3769"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3842"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3853"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>Alocare în curs.
@@ -29049,7 +29049,7 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3391"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3537"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3538"/>
         <source>US English</source>
         <translation>Engleză SUA</translation>
     </message>
@@ -29099,76 +29099,81 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
         <translation>Uzbecă</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3518"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3420"/>
+        <source>Albanian</source>
+        <translation>Albaneză</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="3519"/>
         <source>That means:</source>
         <translation>Aceasta înseamnă:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3524"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3555"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3558"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3570"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3579"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3586"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3590"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3592"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3594"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3596"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3525"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3556"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3559"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3571"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3580"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3587"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3591"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3593"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3595"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3597"/>
         <source>true</source>
         <translation>adevărat</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3570"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3571"/>
         <source>Print activities tags will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Tipăreşte etichetele activitate va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3596"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3597"/>
         <source>Confirm save data and timetable as will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Confirmarea salvării datelor şi orarului ca va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3933"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3963"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3934"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3964"/>
         <source>These kinds of constraints are good, but not perfectly optimized. Adding such constraints may make your timetable solve too slow or even impossible.</source>
         <translation>Aceste tipuri de constrângeri sunt bune, dar nu perfect optimizate. Adăugarea unor astfel de constrângeri ar putea face orarul dvs. să se rezolve prea încet sau chiar imposibil.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3936"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3966"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3937"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3967"/>
         <source>It is recommended to use such constraints only at the end, after you generated successfully with all the other constraints.</source>
         <translation>Este recomandat să folosiţi aşa constrângeri doar la sfârşit, după ce aţi generat cu succes cu toate celelalte constrângeri.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3938"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3968"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3939"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3969"/>
         <source>If your timetable is too difficult, it may be from these kinds of constraints, so you may need to remove them and retry.</source>
         <translation>Dacă orarul dvs. este prea dificil, poate fi de la aceste feluri de constrângeri, aşa că poate veţi fi nevoit să le ştergeţi şi să reîncercaţi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3940"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3970"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4022"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3941"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3971"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4023"/>
         <source>Continue only if you know what you are doing.</source>
         <translation>Continuaţi doar dacă ştiţi ceea ce faceţi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3991"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4040"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3992"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4041"/>
         <source>It is recommended to keep this warning active, but if you really want, you can disable it.</source>
         <translation>Este recomandat să păstraţi acest avertisment activ, dar dacă chiar vreţi, puteţi să îl dezactivaţi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3993"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4042"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3994"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4043"/>
         <source>Disable it only if you know what you are doing.</source>
         <translation>Dezactivaţi aceasta doar dacă ştiţi ce faceţi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3995"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4044"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3996"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4045"/>
         <source>Are you sure you want to disable it?</source>
         <translation>Sunteţi sigur că vreţi să îl dezactivaţi?</translation>
     </message>
@@ -29236,7 +29241,7 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
         <translation>Constrângerile de acest tip sunt bune, funcţionale, dar nu sunt perfect optimizate.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3515"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3516"/>
         <source>Are you sure you want to reset all settings to defaults?</source>
         <translation>Sigur doriţi să resetaţi toate setările la cele predefinite?</translation>
     </message>
@@ -29268,124 +29273,124 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
         <translation>Dacă folosiţi o constrângere care nu este perfectă (etichetă activitate max ore zilnic sau studenţi max ferestre pe zi), veţi primi un avertisment înainte de generare. Deselectaţi această opţiune pentru a scăpa de acel avertisment (este recomandat să păstraţi avertismentul).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3438"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3439"/>
         <source>Invalid current language - making it en_US (US English)</source>
         <translation>Limbă curentă invalidă - o fac en_US (Engleză SUA)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3495"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3496"/>
         <source>Invalid language selected - making it en_US (US English)</source>
         <translation>Limbă invalidă selectată - o fac en_US (Engleză SUA)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3524"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3525"/>
         <source>Show shortcut buttons in main window will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Arată butoanele scurtătură în fereastra principală va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3527"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3528"/>
         <source>In the shortcuts tab from the main window, the first section will be selected/shown</source>
         <comment>Option refers to the main window tab widget for shortcuts, which currently contains 5 tabs: File, Data, Time, Space, Timetable (so it will select/show File tab).</comment>
         <translation>În tab-ul de scurtături din fereastra principală, prima secţiune va fi selectată/afişată</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3531"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3532"/>
         <source>Check for updates at startup will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Verifică aduceri la zi la pornire va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3543"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3544"/>
         <source>Working directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>Directorul de lucru va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3546"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3547"/>
         <source>Output directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>Directorul de ieşire va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3549"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3550"/>
         <source>Import directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>Directorul de import va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3552"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3553"/>
         <source>Html level of the timetables will be %1</source>
         <comment>%1 is default html level</comment>
         <translation>Nivelul html al orarelor va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3555"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3556"/>
         <source>Mark not available slots with -x- in timetables will be %1</source>
         <comment>%1 is true or false. Lowercase -x-</comment>
         <translation>Marchează sloturile indisponibile cu -x- în orare va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3558"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3559"/>
         <source>Mark break slots with -X- in timetables will be %1</source>
         <comment>%1 is true or false. Uppercase -X-</comment>
         <translation>Marchează sloturile pauză cu -X- în orare va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3561"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3562"/>
         <source>Divide html timetables with time-axis by days will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Divide orarele html cu axă timp prin zile va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3567"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3568"/>
         <source>Print activities with same starting time will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Tipăreşte activităţile cu acelaşi timp de start va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3573"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3574"/>
         <source>Enable activity tag max hours daily will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Activează etichetă activitate max ore zilnic va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3576"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3577"/>
         <source>Enable students max gaps per day will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Activează studenţi max ferestre pe zi va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3582"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3583"/>
         <source>Enable constraints students min hours daily with empty days will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Activează constrângeri studenţi min ore zilnic cu zile libere va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3585"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3586"/>
         <source>Warn if using constraints students min hours daily with empty days will be %1</source>
         <comment>%1 is true or false. This is a warning if user uses a nonstandard constraint students min hours daily with allowed empty days</comment>
         <translation>Avertizează dacă sunt folosite constrângeri studenţi min ore zilnic cu zile libere va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3774"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3775"/>
         <source>You have more than 6 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation>Aveţi mai mult de 6 zile pe săptămână, aşa că probabil nu aveţi nevoie de această facilitate. Doriţi să continuaţi?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3777"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3798"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3778"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3799"/>
         <source>FET question</source>
         <translation>FET - întrebare</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3779"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3800"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3780"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3801"/>
         <source>&amp;Continue</source>
         <translation>&amp;Continuă</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3795"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3796"/>
         <source>You have less than 5 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation>Aveţi mai puţin de 5 zile pe săptămână, aşa că probabil nu aveţi nevoie de această facilitate. Doriţi să continuaţi?</translation>
     </message>
@@ -29490,7 +29495,7 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3372"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3444"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3445"/>
         <source>Please select FET language</source>
         <translation>Vă rog selectaţi limba FET</translation>
     </message>
@@ -29585,64 +29590,64 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
         <translation>Portugheză braziliană</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3521"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3522"/>
         <source>The geometry and any other saved settings of all the windows and dialogs will be reset to default</source>
         <translation>Geometria şi orice alte setări salvate ale tuturor ferestrelor şi dialogurilor vor fi resetate la valorile predefinite</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3534"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3535"/>
         <source>Use colors in FET graphical user interface will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Foloseşte culori în interfaţa grafică FET va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3537"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3538"/>
         <source>Language will be %1</source>
         <comment>%1 is the default language</comment>
         <translation>Limba va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3540"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3541"/>
         <source>The list of recently used files will be cleared</source>
         <translation>Lista de fişiere recent utilizate va fi ştearsă</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3564"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3565"/>
         <source>Duplicate vertical headers to the right will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Copiază capetele de tabele verticale la dreapta va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3579"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3580"/>
         <source>Warn if using not perfect constraints will be %1</source>
         <comment>%1 is true or false. This is a warning if user uses not perfect constraints</comment>
         <translation>Avertizează dacă foloseşte constrângeri care nu sunt perfecte va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3590"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3591"/>
         <source>Confirm activity planning will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Confirmă planificare activităţii va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3592"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3593"/>
         <source>Confirm spread activities over the week will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Confirmă distribuirea activităţilor de-a lungul săptămânii va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3594"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3595"/>
         <source>Confirm remove redundant constraints will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Confirmă ştergerea constrângerilor redundante va fi %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4014"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4015"/>
         <source>This kind of constraint is good, but only in the right case. Adding such constraints in the wrong circumstance may make your timetable solve too slow or even impossible.</source>
         <translation>Acest gen de constrângere este bun, dar doar în cazul potrivit. Dacă adăugaţi aşa constrângeri în cazurile greşite se poate să obţineţi un orar care se rezolvă prea greu sau chiar imposibil de rezolvat.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4017"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4018"/>
         <source>Please use such constraints only if you are sure that there exists a timetable with empty days for students. If your instution requires each day for the students to be not empty, or if there does not exist a solution with empty days for students, it is IMPERATIVE (for performance reasons) that you use the standard constraint which does not allow empty days. Otherwise, the timetable may be impossible to find.</source>
         <translation>Vă rugăm folosiţi acest gen de constrângeri doar dacă sunteţi sigur că există un orar cu zile libere pentru studenţi. Dacă instituţia dvs. cere ca fiecare zi pentru studenţi să nu fie goala, sau dacă nu există o soluţie cu zile libere pentru studenţi, este IMPERATIV (pentru motive de performanţă) să folosiţi constrângerea standard care nu permite zile libere. Altfel, orarul s-ar putea să fie imposibil de găsit.</translation>
     </message>
@@ -29657,12 +29662,12 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
         <translation>Persană</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3883"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3884"/>
         <source>Choose results (output) directory</source>
         <translation>Alegeţi directorul de ieşire (rezultate)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3892"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3893"/>
         <source>You don&apos;t have write permissions in this directory</source>
         <translation>Nu aveţi permisiune de scriere în acest director</translation>
     </message>
@@ -29677,19 +29682,19 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
         <translation>Afişează duplicate</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3531"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3534"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3561"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3564"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3567"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3573"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3576"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3582"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3532"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3535"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3562"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3565"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3568"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3574"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3577"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3583"/>
         <source>false</source>
         <translation>fals</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3600"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3601"/>
         <source>FET confirmation</source>
         <translation>FET - confirmare</translation>
     </message>
@@ -31024,7 +31029,7 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
     <name>FetTranslate</name>
     <message>
         <location filename="../src/interface/fet.cpp" line="231"/>
-        <location filename="../src/interface/fet.cpp" line="615"/>
+        <location filename="../src/interface/fet.cpp" line="616"/>
         <source>FET warning</source>
         <translation>FET - avertisment</translation>
     </message>
@@ -31034,55 +31039,55 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
         <translation>Directorul de ieşire %1 nu există şi nu poate fi creat - directorul de ieşire va fi făcut valoarea predefinită %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="576"/>
-        <location filename="../src/interface/fet.cpp" line="585"/>
+        <location filename="../src/interface/fet.cpp" line="577"/>
+        <location filename="../src/interface/fet.cpp" line="586"/>
         <source>FET critical</source>
         <translation>FET - critic</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="615"/>
+        <location filename="../src/interface/fet.cpp" line="616"/>
         <source>To start FET in interface mode, please do not give any command-line parameters to the FET executable</source>
         <translation>Pentru a porni FET în modul interfaţă, vă rog nu daţi niciun parametru la linia de comandă către executabilul FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="805"/>
+        <location filename="../src/interface/fet.cpp" line="806"/>
         <source>This is the list of max placed activities, chronologically. If FET could reach maximum n-th activity, look at the n+1-st activity in the initial order of the activities</source>
         <translation>Aceasta este lista activităţilor maxim plasate, cronologic. Dacă FET a putut atinge maximum a n-a activitate, uitaţi-vă la a n+1-a activitate în ordinea iniţiala a activităţilor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1004"/>
+        <location filename="../src/interface/fet.cpp" line="1005"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see initial order of placing the activities in the corresponding output file. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
         <translation>FET a reuşit să programeze corect primele %1 cele mai dificile activităţi. Puteţi vedea ordinea iniţială de plasare a activităţilor în fişierul de ieşire corespunzător. Activitatea care poate cauzează probleme s-ar putea să fie următoarea activitate în ordinea iniţială de evaluare. Această activitate este listata mai jos:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1011"/>
-        <location filename="../src/interface/fet.cpp" line="1031"/>
+        <location filename="../src/interface/fet.cpp" line="1012"/>
+        <location filename="../src/interface/fet.cpp" line="1032"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation>Id: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1016"/>
+        <location filename="../src/interface/fet.cpp" line="1017"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
         <translation>Activitate dificilă nu poate fi calculată - vă rog raportaţi posibila greşeală</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1020"/>
+        <location filename="../src/interface/fet.cpp" line="1021"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):</source>
         <translation>Acestea sunt activităţile plasate care au dus la o inconsistenţă, în ordine de la prima la ultima (pe ultima pe care FET nu a putut să o programeze şi ultimele sunt cel mai probabil imposibile):</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1027"/>
+        <location filename="../src/interface/fet.cpp" line="1028"/>
         <source>No: %1</source>
         <translation>Nr: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="576"/>
+        <location filename="../src/interface/fet.cpp" line="577"/>
         <source>Cannot create or use %1 directory (where the results should be stored) - you can continue operation, but you might not be able to work with FET. Maybe you can try to change the output directory from the &apos;Settings&apos; menu. If this is a bug - please report it.</source>
         <translation>Nu pot crea sau folosi directorul %1 (unde rezultatele ar trebui stocate) - puteţi continua operaţiunea, dar s-ar putea să nu puteţi lucra cu FET. Puteţi încerca să schimbaţi directorul de ieşire din meniul &apos;Setări&apos;. Dacă acesta este o eroare - vă rog raportaţi-o.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="585"/>
+        <location filename="../src/interface/fet.cpp" line="586"/>
         <source>You don&apos;t have write permissions in the output directory (FET cannot open or create file %1) - you might not be able to work correctly with FET. Maybe you can try to change the output directory from the &apos;Settings&apos; menu. If this is a bug - please report it.</source>
         <translation>Nu aveţi permisiuni de scriere în directorul de ieşire (FET nu poate deschide sau crea fişierul %1) - s-ar putea să nu puteţi lucra corect cu FET. Puteţi încerca să schimbaţi directorul de ieşire din meniul &apos;Setări&apos;. Dacă acesta este o eroare - vă rog raportaţi-o.</translation>
     </message>
@@ -32493,6 +32498,24 @@ Vă rog modificaţi datele dvs. corespunzător şi încercaţi din nou</translat
         <translation>Despre</translation>
     </message>
     <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="48"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2014 Liviu Lalescu, Volker Dirr&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.21.2 (March 2014).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under GNU GPL v2 or later.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="90"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -32515,6 +32538,26 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/interface/helpaboutform_template.ui" line="112"/>
         <source>Translators</source>
         <translation>Traducători</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="283"/>
+        <source>Thanks to</source>
+        <translation>Cu mulţumiri</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="673"/>
+        <source>Close</source>
+        <translation>Închide</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="249"/>
+        <source>References</source>
+        <translation>Referinţe</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="69"/>
+        <source>Authors</source>
+        <translation>Autori</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="133"/>
@@ -32605,6 +32648,9 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ondrej Gregor (to contact Ondrej visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Slovak translation, or contact forum user Ondrej)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sq - Albanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Artur Lugu (ciaoartur AT yahoo.it)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sr - Serbian translation&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ivan Starchevicy (ivanstar61 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radan Putnik (srastral AT gmail.com)&lt;/span&gt;&lt;/p&gt;
@@ -32627,12 +32673,17 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="280"/>
-        <source>Thanks to</source>
-        <translation>Cu mulţumiri</translation>
+        <location filename="../src/interface/helpaboutform_template.ui" line="270"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;You may find references for the algorithms and techniques used in this program on the FET documentation web page, &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/doc/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/doc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="301"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="304"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -32972,50 +33023,11 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Cloves das Neves - Brazilian Portuguese translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pedrobordon - sample file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Tony Chan - suggestion.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Artur Lugu - Albanian translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="666"/>
-        <source>Close</source>
-        <translation>Închide</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="246"/>
-        <source>References</source>
-        <translation>Referinţe</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="48"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2013 Liviu Lalescu, Volker Dirr&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.21.0 (December 2013).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under GNU GPL v2 or later.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="69"/>
-        <source>Authors</source>
-        <translation>Autori</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="267"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;You may find references for the algorithms and techniques used in this program on the FET documentation web page, &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/doc/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/doc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -43252,47 +43264,47 @@ Notă: profesor indisponibil şi pauză nu sunt socotite ca ferestre.</translati
 <context>
     <name>QDialogButtonBox</name>
     <message>
-        <location filename="../src/interface/fet.cpp" line="512"/>
+        <location filename="../src/interface/fet.cpp" line="513"/>
         <source>&amp;OK</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation>&amp;Bine</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="514"/>
+        <location filename="../src/interface/fet.cpp" line="515"/>
         <source>OK</source>
         <translation>Bine</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="517"/>
+        <location filename="../src/interface/fet.cpp" line="518"/>
         <source>&amp;Cancel</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation>&amp;Anulează</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="519"/>
+        <location filename="../src/interface/fet.cpp" line="520"/>
         <source>Cancel</source>
         <translation>Anulează</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="522"/>
+        <location filename="../src/interface/fet.cpp" line="523"/>
         <source>&amp;Yes</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation>&amp;Da</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="524"/>
+        <location filename="../src/interface/fet.cpp" line="525"/>
         <source>Yes to &amp;All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation>Da, la &amp;toate</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="526"/>
+        <location filename="../src/interface/fet.cpp" line="527"/>
         <source>&amp;No</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation>&amp;Nu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="528"/>
+        <location filename="../src/interface/fet.cpp" line="529"/>
         <source>N&amp;o to All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation>N&amp;u, la toate</translation>
@@ -44931,7 +44943,7 @@ neadăugată - trebuie să fie un duplicat</translation>
         <translation>Importanţă invalidă (procentaj) - trebuie să fie &gt;=0 şi &lt;=100.0</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="443"/>
+        <location filename="../src/interface/addactivityform.cpp" line="444"/>
         <source>You selected min days between activities %1 (above 1) and weight %2 (under 100.0). Would you like to add also a second constraint to ensure that almost certainly the distance between activities is at least %3 (%1-1) days? If yes, please select weight (recommended 95.0%-100.0%) and click Yes. If no, please click No (only one constraint will be added)</source>
         <translation>Aţi selectat min zile între activităţi %1 (peste 1) şi importanţa %2 (sub 100.0). Aţi vrea să adăugaţi o a doua constrângere pentru a asigura faptul că aproape cert distanţa între activităţi este cel puţin %3 (%1-1) zile? Dacă da, vă rog selectaţi importanţa (recomandat 95%-100%) şi apăsaţi Da. Dacă nu, vă rog apăsaţi Nu (doar o constrângere va fi adăugată)</translation>
     </message>
@@ -49126,165 +49138,165 @@ Vă rog raportaţi eroarea. FET va abandona acum operaţiunea curentă</translat
 <context>
     <name>TimetableViewForm</name>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="322"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="395"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="318"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="318"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="392"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="314"/>
         <source>PLT</source>
         <comment>Abbreviation for permanently locked time. There are 4 string: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>PBT</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="328"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="401"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="324"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="324"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="398"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="320"/>
         <source>LT</source>
         <comment>Abbreviation for locked time. There are 4 string: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>BT</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="334"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="407"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="330"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="330"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="404"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="326"/>
         <source>PLS</source>
         <comment>Abbreviation for permanently locked space. There are 4 string: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>PBS</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="339"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="412"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="335"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="335"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="409"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="331"/>
         <source>LS</source>
         <comment>Abbreviation for locked space. There are 4 string: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>BS</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="439"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="531"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="442"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="435"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="528"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="438"/>
         <source>permanently locked time</source>
         <comment>refers to activity</comment>
         <translation>permanent blocată timp</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="443"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="535"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="446"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="439"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="532"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="442"/>
         <source>locked time</source>
         <comment>refers to activity</comment>
         <translation>blocată timp</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="447"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="539"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="450"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="443"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="536"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="446"/>
         <source>permanently locked space</source>
         <comment>refers to activity</comment>
         <translation>permanent blocată spaţiu</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="450"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="542"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="453"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="446"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="539"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="449"/>
         <source>locked space</source>
         <comment>refers to activity</comment>
         <translation>blocată spaţiu</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="702"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="808"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="704"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="698"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="805"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="700"/>
         <source>Added 1 locking time constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
         <translation>Adăugată 1 constrângere de blocare timp.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="708"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="814"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="710"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="704"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="811"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="706"/>
         <source>Added 1 locking space constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
         <translation>Adăugată 1 constrângere de blocare spaţiu.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="714"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="820"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="716"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="710"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="817"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="712"/>
         <source>Removed 1 locking time constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
         <translation>Ştearsă 1 constrângere de blocare timp.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="720"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="826"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="722"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="716"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="823"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="718"/>
         <source>Removed 1 locking space constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
         <translation>Ştearsă 1 constrângere de blocare spaţiu.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="704"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="810"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="706"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="700"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="807"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="702"/>
         <source>Added %1 locking time constraints.</source>
         <comment>%1 is &gt;= 2, so constraints is plural</comment>
         <translation>Adăugate %1 constrângeri de blocare timp.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="710"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="816"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="712"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="706"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="813"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="708"/>
         <source>Added %1 locking space constraints.</source>
         <comment>%1 is &gt;= 2, so constraints is plural</comment>
         <translation>Adăugate %1 constrângeri de blocare spaţiu.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="716"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="822"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="718"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="712"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="819"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="714"/>
         <source>Removed %1 locking time constraints.</source>
         <comment>%1 is &gt;= 2, so constraints is plural</comment>
         <translation>Şterse %1 constrângeri de blocare timp.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="722"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="828"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="724"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="718"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="825"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="720"/>
         <source>Removed %1 locking space constraints.</source>
         <comment>%1 is &gt;= 2, so constraints is plural</comment>
         <translation>Şterse %1 constrângeri de blocare spaţiu.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="733"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="839"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="735"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="729"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="836"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="731"/>
         <source>No locking constraints added or removed.</source>
         <translation>Nu au fost adăugate sau şterse constrângeri de blocare.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="766"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="872"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="768"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="762"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="869"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="764"/>
         <source>Lock/unlock: you can select one or more activities in the table and toggle lock/unlock in time, space or both.</source>
         <translation>Blocare/deblocare: puteţi să selectaţi una sau mai multe activităţi în tabelă şi să comutaţi blocare/deblocare în timp, spaţiu sau amândouă.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="768"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="874"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="770"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="764"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="871"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="766"/>
         <source>There will be added or removed locking constraints for the selected activities (they can be unlocked only if they are not permanently locked).</source>
         <translation>Vor fi adăugate sau şterse constrângeri de blocare pentru activităţile selectate (ele pot fi deblocate numai dacă nu sunt blocate permanent).</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="770"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="876"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="772"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="766"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="873"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="768"/>
         <source>Locking time constraints are constraints of type activity preferred starting time. Locking space constraints are constraints of type activity preferred room. You can see these constraints in the corresponding constraints dialogs. New locking constraints are added at the end of the list of constraints.</source>
         <translation>Constrângerile de blocare de timp sunt constrângeri de tip activitate timp de start preferat. Constrângerile de blocare de spaţiu sunt constrângeri de tip activitate sală preferată. Puteţi să vedeţi aceste constrângeri în dialogul corespunzător al constrângerilor. Constrângerile de blocare noi sunt adăugate la sfârşitul listei constrângerilor.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="773"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="879"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="775"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="769"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="876"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="771"/>
         <source>If a cell is (permanently) locked in time or space, it contains abbreviations to show that: PLT (permanently locked time), LT (locked time), PLS (permanently locked space) or LS (locked space).</source>
         <comment>Translate the abbreviations also. Make sure the abbreviations in your language are different between themselves and the user can differentiate easily between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>Dacă o căsuţă este (permanent) blocată în timp sau spaţiu, ea conţine abrevieri care să arate aceasta: PBT (permanent blocată timp), BT (blocată timp), PBS (permanent blocată spaţiu) sau BS (blocată spaţiu).</translation>
@@ -49293,172 +49305,172 @@ Vă rog raportaţi eroarea. FET va abandona acum operaţiunea curentă</translat
 <context>
     <name>TimetableViewRoomsForm</name>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="557"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="631"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="553"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="627"/>
         <source>Added the following constraint:</source>
         <translation>Am adăugat constrângerea următoare:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="493"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="512"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="613"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="686"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="734"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="489"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="508"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="609"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="682"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="730"/>
         <source>FET information</source>
         <translation>FET - informaţie</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="614"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="687"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="610"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="683"/>
         <source>Skip information</source>
         <translation>Treci peste informaţie</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="614"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="687"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="610"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="683"/>
         <source>See next</source>
         <translation>Văd următoarea</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="200"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="196"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="232"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="236"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="240"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="251"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="260"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="265"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="283"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="391"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="247"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="256"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="261"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="279"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="387"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="393"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="397"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="401"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="420"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="416"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="495"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="499"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="503"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="519"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="525"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="572"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="584"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="598"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="646"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="658"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="672"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="515"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="521"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="568"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="580"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="594"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="642"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="654"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="668"/>
         <source>FET warning</source>
         <translation>FET - avertisment</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="465"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="461"/>
         <source>Break with weight 100% in this slot</source>
         <translation>Pauză cu importanţa 100% în acest slot</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="461"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="457"/>
         <source>Room is not available with weight %1%</source>
         <translation>Sala este indisponibilă cu importanţa %1%</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="200"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="196"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation>Nu pot să afişez orarul, pentru că aţi adăugat sau şters nişte săli. Vă rog regeneraţi orarul şi apoi vizualizaţi-l</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="777"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="773"/>
         <source>FET help</source>
         <translation>FET - ajutor</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="283"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="279"/>
         <source>You have an old timetable view rooms dialog opened - please close it</source>
         <translation>Aveţi un dialog vechi de vizualizare săli deschis - vă rog închideţi-l</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="601"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="675"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="597"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="671"/>
         <source>The following constraint will be deleted:</source>
         <translation>Constrângerea următoare va fi ştearsă:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="579"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="653"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="575"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="649"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation>Constrângerea %1 nu va fi ştearsă, pentru că este permanent blocată. Dacă vreţi să o deblocaţi trebuie să mergeţi la meniul constrângeri.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="574"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="586"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="648"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="660"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="570"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="582"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="644"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="656"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation>O posibilă problemă poate fi sincronizarea - aşa că poate să încercaţi să închideţi dialogul vizualizare orar şi să îl deschideţi din nou</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="572"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="584"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="646"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="658"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="568"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="580"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="642"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="654"/>
         <source>Small problem detected</source>
         <translation>Mică problemă detectată</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="573"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="585"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="569"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="581"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation>O posibilă problemă poate fi că aveţi 2 sau mai multe constrângeri de tip activitate timp de start preferat cu importanţa 100% pentru activitatea cu id %1, vă rog lăsaţi doar una dintre ele</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="575"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="587"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="649"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="661"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="571"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="583"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="645"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="657"/>
         <source>Please report possible bug</source>
         <translation>Vă rog raportaţi posibila eroare</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="598"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="672"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="594"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="668"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation>Aţi putea avea o problemă, deoarece FET se aştepta să şteargă 1 constrângere, dar va şterge %1 constrângeri</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="647"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="659"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="643"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="655"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation>O posibilă problemă poate fi că aveţi 2 sau mai multe constrângeri de tip activitate sală preferată cu importanţa 100% pentru activitatea cu id %1, vă rog lăsaţi doar una dintre ele</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="251"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="525"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="247"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="521"/>
         <source>Invalid room - please close this dialog and open a new view rooms timetable dialog</source>
         <translation>Sală invalidă - vă rog închideţi acest dialog şi deschideţi un nou dialog vizualizare orar după săli</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="420"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="416"/>
         <source>Invalid room - please close this dialog and open a new view rooms dialog</source>
         <translation>Sală invalidă - vă rog închideţi dialogul şi deschideţi un nou dialog orar vizualizare după săli</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="512"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="508"/>
         <source>Please select a room</source>
         <translation>Vă rog selectaţi o sală</translation>
     </message>
     <message>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="232"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="236"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="240"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="393"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="397"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="401"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="495"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="499"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="503"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="519"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="515"/>
         <source>Timetable not available in view rooms timetable dialog - please generate a new timetable</source>
         <translation>Orar indisponibil în dialogul de vizualizare orar după săli - vă rog generaţi un nou orar</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="260"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="265"/>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="391"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="256"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="261"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="387"/>
         <source>Timetable not available in view rooms timetable dialog - please generate a new timetable or close the timetable view rooms dialog</source>
         <translation>Orar indisponibil în dialogul de vizualizare orar după săli - vă rog generaţi un nou orar sau închideţi dialogul vizualizare orar după săli</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="494"/>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="490"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>Alocare în curs.
@@ -49516,198 +49528,198 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
 <context>
     <name>TimetableViewStudentsForm</name>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="662"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="736"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="659"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="733"/>
         <source>Added the following constraint:</source>
         <translation>Am adăugat constrângerea următoare:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="583"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="605"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="609"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="613"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="718"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="792"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="840"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="580"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="602"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="606"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="610"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="715"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="789"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="837"/>
         <source>FET information</source>
         <translation>FET - informaţie</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="719"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="793"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="716"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="790"/>
         <source>Skip information</source>
         <translation>Treci peste informaţie</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="719"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="793"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="716"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="790"/>
         <source>See next</source>
         <translation>Văd următoarea</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="228"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="237"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="259"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="270"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="277"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="310"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="317"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="338"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="462"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="468"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="474"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="496"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="590"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="596"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="625"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="677"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="689"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="703"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="751"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="763"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="777"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="225"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="234"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="256"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="267"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="274"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="307"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="314"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="335"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="459"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="465"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="471"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="493"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="587"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="593"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="622"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="674"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="686"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="700"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="748"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="760"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="774"/>
         <source>FET warning</source>
         <translation>FET - avertisment</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="553"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="550"/>
         <source>Students subgroup is not available 100% in this slot</source>
         <translation>Subgrupul de studenţi este indisponibil 100% în acest slot</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="557"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="554"/>
         <source>Break with weight 100% in this slot</source>
         <translation>Pauză cu importanţa 100% în acest slot</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="317"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="474"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="596"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="314"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="471"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="593"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation>Nu pot să afişez orarul, pentru că aţi adăugat sau şters nişte săli. Vă rog regeneraţi orarul şi apoi vizualizaţi-l</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="525"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="522"/>
         <source>Room: %1</source>
         <translation>Sală: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="883"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="880"/>
         <source>FET help</source>
         <translation>FET - ajutor</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="338"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="335"/>
         <source>You have an old timetable view students dialog opened - please close it</source>
         <translation>Aveţi un dialog vechi de vizualizare studenţi deschis - vă rog închideţi-l</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="706"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="780"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="703"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="777"/>
         <source>The following constraint will be deleted:</source>
         <translation>Constrângerea următoare va fi ştearsă:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="684"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="758"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="681"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="755"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation>Constrângerea %1 nu va fi ştearsă, pentru că este permanent blocată. Dacă vreţi să o deblocaţi trebuie să mergeţi la meniul constrângeri.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="679"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="691"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="753"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="765"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="676"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="688"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="750"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="762"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation>A posibilă problemă poate fi sincronizarea - aşa că poate să încercaţi să închideţi dialogul vizualizare orar şi să îl deschideţi din nou</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="674"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="686"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="748"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="760"/>
+        <source>Small problem detected</source>
+        <translation>Mică problemă detectată</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="675"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="687"/>
+        <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
+        <translation>O posibilă problemă poate fi că aveţi 2 sau mai multe constrângeri de tip activitate timp de start preferat cu importanţa 100% pentru activitatea cu id %1, vă rog lăsaţi doar una dintre ele</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="677"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="689"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="751"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="763"/>
-        <source>Small problem detected</source>
-        <translation>Mică problemă detectată</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="678"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="690"/>
-        <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
-        <translation>O posibilă problemă poate fi că aveţi 2 sau mai multe constrângeri de tip activitate timp de start preferat cu importanţa 100% pentru activitatea cu id %1, vă rog lăsaţi doar una dintre ele</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="680"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="692"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="754"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="766"/>
         <source>Please report possible bug</source>
         <translation>Vă rog raportaţi posibila eroare</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="703"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="777"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="700"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="774"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation>Aţi putea avea o problemă, deoarece FET se aştepta să şteargă 1 constrângere, dar va şterge %1 constrângeri</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="752"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="764"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="749"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="761"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation>O posibilă problemă poate fi că aveţi 2 sau mai multe constrângeri de tip activitate sală preferată cu importanţa 100% pentru activitatea cu id %1, vă rog lăsaţi doar una dintre ele</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="237"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="270"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="234"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="267"/>
         <source>Invalid year - please close this dialog and open a new students view timetable dialog</source>
         <translation>An invalid - vă rog închideţi acest dialog şi deschideţi un nou dialog orar vizualizare după studenţi</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="496"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="625"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="493"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="622"/>
         <source>Invalid students set - please close this dialog and open a new view students timetable dialog</source>
         <translation>Set de studenţi invalid - vă rog închideţi acest dialog şi deschideţi un nou dialog orar vizualizare după studenţi</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="278"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="275"/>
         <source>Invalid group in the selected year, or the groups of the current year are not updated</source>
         <translation>Grup invalid în anul selectat, sau grupurile anului curent nu sunt aduse la zi</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="280"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="277"/>
         <source>Solution: please try to select a different year and after that select the current year again, to refresh the groups list, or close this dialog and open again the students view timetable dialog</source>
         <translation>Soluţie: încercaţi să selectaţi un alt an şi după aceea selectaţi anul curent din nou, pentru a reîmprospăta lista grupurilor, sau închideţi acest dialog şi deschideţi din nou dialogul de vizualizare orar studenţi</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="605"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="602"/>
         <source>Please select a year</source>
         <translation>Vă rog selectaţi un an</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="609"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="606"/>
         <source>Please select a group</source>
         <translation>Vă rog selectaţi un grup</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="613"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="610"/>
         <source>Please select a subgroup</source>
         <translation>Vă rog selectaţi un subgrup</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="228"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="259"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="468"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="590"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="225"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="256"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="465"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="587"/>
         <source>Timetable not available in view students timetable dialog - please generate a new timetable</source>
         <translation>Orar indisponibil în dialogul de vizualizare orar după studenţi - vă rog generaţi un nou orar</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="310"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="462"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="307"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="459"/>
         <source>Timetable not available in view students timetable dialog - please generate a new timetable or close the timetable view students dialog</source>
         <translation>Orar indisponibil în dialogul de vizualizare orar după studenţi - vă rog generaţi un orar nou sau închideţi dialogul vizualizare orar după studenţi</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="584"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="581"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>Alocare în curs.
@@ -49770,183 +49782,183 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
 <context>
     <name>TimetableViewTeachersForm</name>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="558"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="632"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="554"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="628"/>
         <source>Added the following constraint:</source>
         <translation>Am adăugat constrângerea următoare:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="278"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="497"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="517"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="614"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="688"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="736"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="274"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="493"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="513"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="610"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="684"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="732"/>
         <source>FET information</source>
         <translation>FET - informaţie</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="615"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="689"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="611"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="685"/>
         <source>Skip information</source>
         <translation>Treci peste informaţie</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="615"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="689"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="611"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="685"/>
         <source>See next</source>
         <translation>Văd următoarea</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="186"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="222"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="232"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="241"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="248"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="261"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="386"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="392"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="398"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="416"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="503"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="509"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="525"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="573"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="585"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="599"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="647"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="659"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="673"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="182"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="218"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="228"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="237"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="244"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="257"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="382"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="388"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="394"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="412"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="499"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="505"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="521"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="569"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="581"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="595"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="643"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="655"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="669"/>
         <source>FET warning</source>
         <translation>FET - avertisment</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="464"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="460"/>
         <source>Teacher is not available 100% in this slot</source>
         <translation>Profesorul este indisponibil 100% în acest slot</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="468"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="464"/>
         <source>Break with weight 100% in this slot</source>
         <translation>Pauză cu importanţa 100% în acest slot</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="186"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="182"/>
         <source>Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it</source>
         <translation>Nu pot să afişez orarul, pentru că aţi adăugat sau şters nişte profesori. Vă rog regeneraţi orarul şi apoi vizualizaţi-l</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="248"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="398"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="509"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="244"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="394"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="505"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation>Nu pot să afişez orarul, pentru că aţi adăugat sau şters nişte săli. Vă rog regeneraţi orarul şi apoi vizualizaţi-l</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="436"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="432"/>
         <source>Room: %1</source>
         <translation>Sală: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="779"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="775"/>
         <source>FET help</source>
         <translation>FET - ajutor</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="261"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="257"/>
         <source>You have an old timetable view teachers dialog opened - please close it</source>
         <translation>Aveţi un dialog vechi de vizualizare profesori deschis - vă rog închideţi-l</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="602"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="676"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="598"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="672"/>
         <source>The following constraint will be deleted:</source>
         <translation>Constrângerea următoare va fi ştearsă:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="580"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="654"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="576"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="650"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation>Constrângerea %1 nu va fi ştearsă, pentru că este permanent blocată. Dacă vreţi să o deblocaţi trebuie să mergeţi la meniul constrângeri.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="575"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="587"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="649"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="661"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="571"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="583"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="645"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="657"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation>O posibilă problemă poate fi sincronizarea - aşa că poate să încercaţi să închideţi dialogul vizualizare orar şi să îl deschideţi din nou</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="573"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="585"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="647"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="659"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="569"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="581"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="643"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="655"/>
         <source>Small problem detected</source>
         <translation>Mică problemă detectată</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="574"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="586"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="570"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="582"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation>O posibilă problemă poate fi că aveţi 2 sau mai multe constrângeri de tip activitate timp de start preferat cu importanţa 100% pentru activitatea cu id %1, vă rog lăsaţi doar una dintre ele</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="576"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="588"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="650"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="662"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="572"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="584"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="646"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="658"/>
         <source>Please report possible bug</source>
         <translation>Vă rog raportaţi posibila eroare</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="599"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="673"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="595"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="669"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation>Aţi putea avea o problemă, deoarece FET se aştepta să şteargă 1 constrângere, dar va şterge %1 constrângeri</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="648"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="660"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="644"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="656"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation>O posibilă problemă poate fi că aveţi 2 sau mai multe constrângeri de tip activitate sală preferată cu importanţa 100% pentru activitatea cu id %1, vă rog lăsaţi doar una dintre ele</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="232"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="525"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="228"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="521"/>
         <source>Invalid teacher - please close this dialog and open a new view teachers dialog</source>
         <translation>Profesor invalid - vă rog închideţi dialogul şi deschideţi un nou dialog orar vizualizare după profesori</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="517"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="513"/>
         <source>Please select a teacher</source>
         <translation>Vă rog selectaţi un profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="222"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="392"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="503"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="218"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="388"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="499"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable</source>
         <translation>Orar indisponibil în dialogul de vizualizare orar după profesori - vă rog generaţi un nou orar</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="241"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="386"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="237"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="382"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable or close the timetable view teachers dialog</source>
         <translation>Orar indisponibil în dialogul de vizualizare orar după profesori - vă rog generaţi un orar nou sau închideţi dialogul vizualizare orar după profesori</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="279"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="275"/>
         <source>The teacher&apos;s timetable cannot be printed, because the teacher is invalid</source>
         <translation>Orarul profesorului nu poate fi tipărit, pentru că profesorul este invalid</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="416"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="412"/>
         <source>The teacher is invalid - please close this dialog and open a new view teachers timetable</source>
         <translation>Profesor invalid - vă rog închideţi acest dialog şi deschideţi un nou dialog orar vizualizare după profesori</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="498"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="494"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>Alocare în curs.
