@@ -165,7 +165,7 @@ FetMainForm::FetMainForm()
 	QRect rect=settings.value("fetmainformgeometry", QRect(0,0,0,0)).toRect();
 	
 	if(!rect.isValid()){
-		setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+		//setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 		QDesktopWidget* desktop=QApplication::desktop();
 		int xx=desktop->width()/2 - frameGeometry().width()/2;
 		int yy=desktop->height()/2 - frameGeometry().height()/2;
@@ -173,6 +173,7 @@ FetMainForm::FetMainForm()
 	}
 	else{
 		move(rect.topLeft());
+		cout<<"read rect.x()=="<<rect.x()<<", rect.y()=="<<rect.y()<<endl;
 		resize(rect.size());
 	}
 
@@ -294,6 +295,11 @@ void FetMainForm::httpDone(bool error)
 
 void FetMainForm::closeEvent(QCloseEvent* event)
 {
+	QSettings settings("FET free software", "FET");
+	QRect rect(x(), y(), width(), height());
+	settings.setValue("fetmainformgeometry", rect);
+	cout<<"wrote x()=="<<x()<<", y()=="<<y()<<endl;
+	
 	if(event!=NULL)
 		;
 
@@ -321,9 +327,6 @@ FetMainForm::~FetMainForm()
 	//if(!finishedSearchingForUpdates)
 	//	getter->http.close();
 	//delete getter;
-	
-	QSettings settings("FET free software", "FET");
-	settings.setValue("fetmainformgeometry", geometry());
 	
 	//pqapplication->quit();
 }

@@ -337,7 +337,7 @@ there will be problems.
 #ifdef WIN32
 const QString OUTPUT_DIR="results";
 #else
-const QString OUTPUT_DIR=QDir::homeDirPath()+"/.fet/results";
+const QString OUTPUT_DIR=QDir::homeDirPath()+"/fet-results";
 #endif
 
 /**

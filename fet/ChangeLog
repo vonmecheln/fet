@@ -893,3 +893,5 @@ Versions 5.0.0 -
 - Version 5.0.0-preview28
 	- Small changes in saving the xhtml timetables on disk, by Volker Dirr
 	- Improved the algorithm (maybe speed improvements)
+- Version 5.0.0-preview29
+	- Geometry of main form now saved correctly (suggested by Volker Dirr).

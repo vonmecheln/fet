@@ -2491,14 +2491,14 @@ impossibleteachersmaxhoursdaily:
 							if(optNWrong==INF || optNWrong==-1){
 								if(level==0){
 									cout<<"WARNING - unlikely case, optimizetime.cpp line 2492"<<endl;
-									cout<<"excessHours=="<<excessHours<<endl;
+									/*cout<<"excessHours=="<<excessHours<<endl;
 									cout<<"Students set name: "<<qPrintable(gt.rules.internalSubgroupsList[isg]->name)<<endl;
 									cout<<"newtime=="<<newtime<<" (d=="<<d<<", h=="<<h<<")"<<endl;
 									for(int hh=0; hh<gt.rules.nHoursPerDay; hh++){
 										for(int dd=0; dd<gt.rules.nDaysPerWeek; dd++)
 											cout<<setw(5)<<subgroupsTimetable[isg][dd][hh];
 										cout<<endl;
-									}
+									}*/
 								}
 								break; //impossible slot
 							}
@@ -2814,26 +2814,26 @@ impossibleteachermaxdaysperweek:
 				nWrong[i]=cnt;
 			}
 			
+			int optMinIndex=-1;
 			int optNWrong=INF;
 			int optMinWrong=INF;
 			int optNConflActs=gt.rules.nInternalActivities;
-			int optIndex=-1;
 			int j=-1;
 			foreach(int i, tim)
 				//choose a random time out of these with minimum number of wrongly replaced activities
-				if(minWrong[i]<optMinWrong || minWrong[i]==optMinWrong && optIndex<minIndexAct[i]
-				 || optNWrong>nWrong[i] && minWrong[i]==optMinWrong && optIndex==minIndexAct[i]
-				 || optIndex==minIndexAct[i] && optNWrong==nWrong[i] && minWrong[i]==optMinWrong && optNConflActs>nConflActivities[i]){
+				if(minWrong[i]<optMinWrong
+				 || optNWrong>nWrong[i] && minWrong[i]==optMinWrong
+				 || optNWrong==nWrong[i] && minWrong[i]==optMinWrong && optNConflActs>nConflActivities[i]){
 					optNWrong=nWrong[i];
 					optMinWrong=minWrong[i];
-					optIndex=minIndexAct[i];
+					optMinIndex=minIndexAct[i];
 					optNConflActs=nConflActivities[i];
 					j=i;
 				}
 			assert(j>=0);
 			QList<int> tim2;
 			foreach(int i, tim)
-				if(optNWrong==nWrong[i] && optIndex==minIndexAct[i] && minWrong[i]==optMinWrong && optNConflActs==nConflActivities[i])
+				if(optNWrong==nWrong[i] && minWrong[i]==optMinWrong && optNConflActs==nConflActivities[i])
 					tim2.append(i);
 			assert(tim2.count()>0);
 			int rnd=rand()%tim2.count();

@@ -400,14 +400,14 @@ int main(int argc, char **argv){
 
 	//make sure that the input directory exists - only for GNU/Linux
 	//For Windows, I make a "fet.ini" in the current working directory
-#ifndef WIN32
+/*#ifndef WIN32
 	if(!dir.exists(QDir::homeDirPath()+"/.fet"))
 		t=dir.mkdir(QDir::homeDirPath()+"/.fet");
 	if(!t){
 		assert(0);
 		exit(1);
 	}
-#endif
+#endif*/
 
 	//make sure that the output directory exists
 	if(!dir.exists(OUTPUT_DIR))
