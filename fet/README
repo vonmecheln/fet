@@ -1,4 +1,4 @@
-FET (c) 2002-2007 Liviu Lalescu
+FET (c) 2002-2008 Liviu Lalescu
 
 
 Program description:
@@ -112,9 +112,7 @@ Compiling FET:
 	you'll have to solve them by yourselves. Command "make" belongs to MinGW I think,
 	so you need a correct MinGW working.
 	You need to run "qmake" and then "make" in a command line in the FET directory. 
-	You will need to move the file fet.exe from the directory "fet-x.x.x\src\" to the "fet-x.x.x\"
-	directory (this is a small Qt bug). Then, you can remove directories "src" and "tmp",
-	to save up space.
+	Then, you can remove directories "src" and "tmp", to save up space.
 	If you want to obtain a version which can be run on other computers, 
 	you have to copy these 7 files into the FET directory:
 	C:\MinGW\bin\mingwm10.dll (this file can be found also in Qt directory bin),

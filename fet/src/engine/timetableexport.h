@@ -202,6 +202,18 @@ public:
 	Time vertical version
 	*/
 	static void writeSubjectsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+
+	/**
+	Function writing the teachers' free periods timetable in html format
+	Days horizontal version
+	*/
+	static void writeTeachersFreePeriodsTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+
+	/**
+	Function writing the teachers' free periods timetable in html format
+	Days vertical version
+	*/
+	static void writeTeachersFreePeriodsTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 };
 
 #endif

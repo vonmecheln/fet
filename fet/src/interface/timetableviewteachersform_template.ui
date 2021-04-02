@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>757</width>
-            <height>490</height>
+            <height>518</height>
         </rect>
     </property>
     <property name="caption">
@@ -25,16 +25,7 @@
         <property name="spacing">
             <number>6</number>
         </property>
-        <widget class="QPushButton" row="0" column="2" rowspan="2" colspan="1">
-            <property name="name">
-                <cstring>lockPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Lock selected activities
-(only time)</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="2">
+        <widget class="QPushButton" row="4" column="2">
             <property name="name">
                 <cstring>closePushButton</cstring>
             </property>
@@ -50,7 +41,7 @@
                 <string>Details</string>
             </property>
         </widget>
-        <widget class="QTable" row="4" column="0" rowspan="1" colspan="3">
+        <widget class="QTable" row="6" column="0" rowspan="1" colspan="3">
             <property name="name">
                 <cstring>teachersTimetableTable</cstring>
             </property>
@@ -64,7 +55,7 @@
                 <bool>true</bool>
             </property>
         </widget>
-        <widget class="QLabel" row="3" column="0" rowspan="1" colspan="3">
+        <widget class="QLabel" row="5" column="0" rowspan="1" colspan="3">
             <property name="name">
                 <cstring>teacherNameTextLabel</cstring>
             </property>
@@ -72,7 +63,7 @@
                 <string>Teacher's name</string>
             </property>
         </widget>
-        <widget class="QTextEdit" row="1" column="1" rowspan="2" colspan="1">
+        <widget class="QTextEdit" row="1" column="1" rowspan="4" colspan="1">
             <property name="name">
                 <cstring>detailsTextEdit</cstring>
             </property>
@@ -91,7 +82,7 @@
                 <string>Teacher</string>
             </property>
         </widget>
-        <widget class="QListBox" row="1" column="0" rowspan="2" colspan="1">
+        <widget class="QListBox" row="1" column="0" rowspan="4" colspan="1">
             <item>
                 <property name="text">
                     <string>New Item</string>
@@ -99,6 +90,36 @@
             </item>
             <property name="name">
                 <cstring>teachersListBox</cstring>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="2" column="2">
+            <property name="name">
+                <cstring>lockSpacePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Lock selected activities
+(only space)</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="0" column="2" rowspan="2" colspan="1">
+            <property name="name">
+                <cstring>lockTimePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Lock selected activities
+(only time)</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="3" column="2">
+            <property name="name">
+                <cstring>lockTimeSpacePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Lock selected activities
+(time&amp;&amp;space)</string>
+            </property>
+            <property name="accel">
+                <string></string>
             </property>
         </widget>
     </grid>
@@ -123,23 +144,37 @@
         <slot>detailActivity(int,int)</slot>
     </connection>
     <connection>
-        <sender>lockPushButton</sender>
+        <sender>lockTimePushButton</sender>
         <signal>clicked()</signal>
         <receiver>TimetableViewTeachersForm_template</receiver>
-        <slot>lock()</slot>
+        <slot>lockTime()</slot>
+    </connection>
+    <connection>
+        <sender>lockSpacePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>TimetableViewTeachersForm_template</receiver>
+        <slot>lockSpace()</slot>
+    </connection>
+    <connection>
+        <sender>lockTimeSpacePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>TimetableViewTeachersForm_template</receiver>
+        <slot>lockTimeSpace()</slot>
     </connection>
 </connections>
 <tabstops>
     <tabstop>teachersListBox</tabstop>
     <tabstop>teachersTimetableTable</tabstop>
-    <tabstop>lockPushButton</tabstop>
+    <tabstop>lockTimePushButton</tabstop>
     <tabstop>closePushButton</tabstop>
     <tabstop>detailsTextEdit</tabstop>
 </tabstops>
 <slots>
     <slot>detailActivity(int, int)</slot>
     <slot>teacherChanged(const QString&amp;)</slot>
-    <slot>lock()</slot>
+    <slot>lockTime()</slot>
+    <slot>lockSpace()</slot>
+    <slot>lockTimeSpace()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

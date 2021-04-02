@@ -142,8 +142,8 @@ public:
 	matrix keeps the activity scheduled for the second week.
 	The arrays a1 and a2 will contain the index of the activity in the rules.
 	*/
-	void getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
-
+	void getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY], QList<qint16> b[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	
 	/**
 	OLD COMMENT BELOW, now FET has no fortnightly activities, 
 	only one matrix is now used.

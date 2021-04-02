@@ -32,6 +32,10 @@ ModifyStudentsYearForm::ModifyStudentsYearForm(const QString& initialYearName, i
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);
 
+	numberSpinBox->setMaxValue(MAX_ROOM_CAPACITY);
+	numberSpinBox->setMinValue(0);
+	numberSpinBox->setValue(0);
+
 	this->_initialYearName=initialYearName;
 	this->_initialNumberOfStudents=initialNumberOfStudents;
 	numberSpinBox->setValue(initialNumberOfStudents);

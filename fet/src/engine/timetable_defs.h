@@ -87,6 +87,8 @@ The maximum total number of different subgroups of students
 */
 const int MAX_TOTAL_SUBGROUPS=15000;//MAX_YEARS*MAX_GROUPS_PER_YEAR*MAX_SUBGROUPS_PER_GROUP;
 
+const int MAX_ROOM_CAPACITY=15000;
+
 /**
 This constant represents the maximum number of total allowed subgroups
 for any activity.
@@ -525,6 +527,37 @@ QString protect2id(const QString& str);
 A function used in iCal saving
 */
 QString protect3(const QString& str);
+
+/**
+This constants represents free periods of a teacher in the teachers free periods timetable
+*/
+const qint16 TEACHER_HAS_SINGLE_GAP =0;
+const qint16 TEACHER_HAS_BORDER_GAP =1;
+const qint16 TEACHER_HAS_BIG_GAP =2;
+
+const qint16 TEACHER_MUST_COME_EARLIER =4;
+const qint16 TEACHER_MUST_COME_MUCH_EARLIER =6;
+
+const qint16 TEACHER_MUST_STAY_LONGER =3;
+const qint16 TEACHER_MUST_STAY_MUCH_LONGER =5;		// BE CAREFULL, I just print into LESS_DETAILED timetable, if it's smaller then TEACHER_MUST_STAY_MUCH_LONGER
+
+const qint16 TEACHER_HAS_A_FREE_DAY =7;
+
+const qint16 TEACHER_IS_NOT_AVAILABLE =8;
+
+const int TEACHERS_FREE_PERIODS_N_CATEGORIES=9;
+
+/**
+An output file containing the timetable for free periods of teachers, arranged in html format.
+Days horizontal version.
+*/
+const QString TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="teachers_free_periods_timetable_days_horizontal.html";
+
+/**
+An output file containing the timetable for free periods of teachers, arranged in html format.
+Days vertical version.
+*/
+const QString TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="teachers_free_periods_timetable_days_vertical.html";
 
 //functions below are used in iCal exporting functions
 bool isLeapYear(int year);

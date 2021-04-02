@@ -21,6 +21,7 @@
 #include "timetableviewteachersform_template.h"
 
 class TimetableViewTeachersForm : public TimetableViewTeachersForm_template  {
+	Q_OBJECT
 public: 
 	TimetableViewTeachersForm();
 	~TimetableViewTeachersForm();
@@ -31,7 +32,11 @@ public:
 	
 	void detailActivity(int row, int col);
 	
-	void lock();
+	void lock(bool lockTime, bool lockSpace);
+public slots:
+	void lockTime();
+	void lockSpace();
+	void lockTimeSpace();
 };
 
 #endif

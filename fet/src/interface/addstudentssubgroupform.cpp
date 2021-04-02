@@ -34,6 +34,10 @@ AddStudentsSubgroupForm::AddStudentsSubgroupForm()
 
 	nameLineEdit->selectAll();
 	nameLineEdit->setFocus();
+
+	numberSpinBox->setMaxValue(MAX_ROOM_CAPACITY);
+	numberSpinBox->setMinValue(0);
+	numberSpinBox->setValue(0);
 }
 
 AddStudentsSubgroupForm::~AddStudentsSubgroupForm()

@@ -106,6 +106,10 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 	else
 		currentActivityTextLabel->setText(tr("Current activities"));
 	
+	nStudentsSpinBox->setMinValue(-1);
+	nStudentsSpinBox->setMaxValue(MAX_ROOM_CAPACITY);
+	nStudentsSpinBox->setValue(-1);
+				
 	if(this->_activity->computeNTotalStudents==false)
 		nStudentsSpinBox->setValue(this->_activity->nTotalStudents);
 	

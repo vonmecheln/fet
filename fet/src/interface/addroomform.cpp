@@ -51,6 +51,10 @@ AddRoomForm::AddRoomForm()
 	buildingsComboBox->insertItem("");
 	for(int i=0; i<gt.rules.buildingsList.size(); i++)
 		buildingsComboBox->insertItem(gt.rules.buildingsList.at(i)->name);*/
+		
+	capacitySpinBox->setMinValue(1);
+	capacitySpinBox->setMaxValue(MAX_ROOM_CAPACITY);
+	capacitySpinBox->setValue(MAX_ROOM_CAPACITY);
 }
 
 AddRoomForm::~AddRoomForm()

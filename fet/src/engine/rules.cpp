@@ -2762,12 +2762,24 @@ bool Rules::read(const QString& filename)
 
 	QFile file(filename);
 	if(!file.open(QIODevice::ReadOnly)){
+		cout<<"Could not open file - not existing or in use\n";
+		QMessageBox::warning(NULL, QObject::tr("FET warning"), QObject::tr("Could not open file - not existing or in use"));
 		return false;
 	}
 	QDomDocument doc("xml_rules");
-	if(!doc.setContent(&file)){
+	
+	QString errorStr;
+	int errorLine;
+	int errorColumn;
+	
+	if(!doc.setContent(&file, true, &errorStr, &errorLine, &errorColumn)){	
+		QMessageBox::warning(NULL, QObject::tr("FET warning"), 
+		 QObject::tr("Could not read file - XML parse error at line %1, column %2:\n%3")
+		 .arg(errorLine)
+		 .arg(errorColumn)
+		 .arg(errorStr));
+	
 		file.close();
-		cout<<"Could not open file - not existing or in use\n";
 		return false;
 	}
 	file.close();
@@ -3431,7 +3443,7 @@ bool Rules::read(const QString& filename)
 					Room* rm=new Room();
 					rm->name="";
 					//rm->type="";
-					rm->capacity=1000; //infinite, if not specified
+					rm->capacity=MAX_ROOM_CAPACITY; //infinite, if not specified
 					//rm->building="";
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
@@ -6616,6 +6628,8 @@ void Rules::write(const QString& filename)
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
 	//tos.setEncoding(QTextStream::UnicodeUTF8);
+	
+	s+="<?xml version=\"1.0\" encoding=\"utf-8\"?>\n\n";
 
 	s+="<!DOCTYPE FET><FET version=\""+FET_VERSION+"\">\n\n";
 	

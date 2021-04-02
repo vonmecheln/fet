@@ -33,11 +33,16 @@ ModifyRoomForm::ModifyRoomForm(const QString& initialRoomName/*, const QString& 
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);
 
+	capacitySpinBox->setMinValue(1);
+	capacitySpinBox->setMaxValue(MAX_ROOM_CAPACITY);
+	capacitySpinBox->setValue(MAX_ROOM_CAPACITY);
+
 	this->_initialRoomName=initialRoomName;
 	//this->_initialRoomType=initialRoomType;
 	//this->_initialRoomBuilding=initialRoomBuilding;
 	this->_initialRoomCapacity=initialRoomCapacity;
 	capacitySpinBox->setValue(initialRoomCapacity);
+
 	nameLineEdit->setText(initialRoomName);
 	nameLineEdit->selectAll();
 	nameLineEdit->setFocus();

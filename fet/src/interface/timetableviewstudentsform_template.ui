@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>719</width>
-            <height>503</height>
+            <height>534</height>
         </rect>
     </property>
     <property name="caption">
@@ -49,7 +49,7 @@
                 <string>Subgroup</string>
             </property>
         </widget>
-        <widget class="QListBox" row="1" column="2" rowspan="2" colspan="1">
+        <widget class="QListBox" row="1" column="2" rowspan="3" colspan="1">
             <item>
                 <property name="text">
                     <string>New Item</string>
@@ -59,7 +59,7 @@
                 <cstring>subgroupsListBox</cstring>
             </property>
         </widget>
-        <widget class="QLabel" row="3" column="0" rowspan="1" colspan="3">
+        <widget class="QLabel" row="4" column="0" rowspan="1" colspan="3">
             <property name="name">
                 <cstring>classNameTextLabel</cstring>
             </property>
@@ -67,7 +67,7 @@
                 <string>Class name</string>
             </property>
         </widget>
-        <widget class="QListBox" row="1" column="0" rowspan="2" colspan="1">
+        <widget class="QListBox" row="1" column="0" rowspan="3" colspan="1">
             <item>
                 <property name="text">
                     <string>New Item</string>
@@ -77,7 +77,7 @@
                 <cstring>yearsListBox</cstring>
             </property>
         </widget>
-        <widget class="QListBox" row="1" column="1" rowspan="2" colspan="1">
+        <widget class="QListBox" row="1" column="1" rowspan="3" colspan="1">
             <item>
                 <property name="text">
                     <string>New Item</string>
@@ -87,7 +87,7 @@
                 <cstring>groupsListBox</cstring>
             </property>
         </widget>
-        <widget class="QTable" row="4" column="0" rowspan="2" colspan="3">
+        <widget class="QTable" row="5" column="0" rowspan="3" colspan="3">
             <property name="name">
                 <cstring>studentsTimetableTable</cstring>
             </property>
@@ -101,15 +101,34 @@
                 <bool>true</bool>
             </property>
         </widget>
-        <widget class="QLabel" row="4" column="3">
+        <widget class="QPushButton" row="0" column="3" rowspan="2" colspan="1">
             <property name="name">
-                <cstring>detailsTextLabel</cstring>
+                <cstring>lockTimePushButton</cstring>
             </property>
             <property name="text">
-                <string>Details</string>
+                <string>Lock selected activities
+(only the time)</string>
             </property>
         </widget>
-        <widget class="QTextEdit" row="5" column="3">
+        <widget class="QPushButton" row="3" column="3" rowspan="2" colspan="1">
+            <property name="name">
+                <cstring>lockTimeSpacePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Lock selected activities
+(time&amp;&amp;space)</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="2" column="3">
+            <property name="name">
+                <cstring>lockSpacePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Lock selected activities
+(only the space)</string>
+            </property>
+        </widget>
+        <widget class="QTextEdit" row="7" column="3">
             <property name="name">
                 <cstring>detailsTextEdit</cstring>
             </property>
@@ -120,21 +139,20 @@
                 <bool>true</bool>
             </property>
         </widget>
-        <widget class="QPushButton" row="2" column="3">
+        <widget class="QLabel" row="6" column="3">
+            <property name="name">
+                <cstring>detailsTextLabel</cstring>
+            </property>
+            <property name="text">
+                <string>Details</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="5" column="3">
             <property name="name">
                 <cstring>closePushButton</cstring>
             </property>
             <property name="text">
                 <string>Close</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="1" column="3">
-            <property name="name">
-                <cstring>lockPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Lock selected activities
-(only the time)</string>
             </property>
         </widget>
     </grid>
@@ -171,10 +189,22 @@
         <slot>detailActivity(int,int)</slot>
     </connection>
     <connection>
-        <sender>lockPushButton</sender>
+        <sender>lockTimePushButton</sender>
         <signal>clicked()</signal>
         <receiver>TimetableViewStudentsForm_template</receiver>
-        <slot>lock()</slot>
+        <slot>lockTime()</slot>
+    </connection>
+    <connection>
+        <sender>lockSpacePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>TimetableViewStudentsForm_template</receiver>
+        <slot>lockSpace()</slot>
+    </connection>
+    <connection>
+        <sender>lockTimeSpacePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>TimetableViewStudentsForm_template</receiver>
+        <slot>lockTimeSpace()</slot>
     </connection>
 </connections>
 <tabstops>
@@ -182,7 +212,7 @@
     <tabstop>groupsListBox</tabstop>
     <tabstop>subgroupsListBox</tabstop>
     <tabstop>studentsTimetableTable</tabstop>
-    <tabstop>lockPushButton</tabstop>
+    <tabstop>lockTimePushButton</tabstop>
     <tabstop>closePushButton</tabstop>
     <tabstop>detailsTextEdit</tabstop>
 </tabstops>
@@ -191,7 +221,9 @@
     <slot>detailActivity(int, int)</slot>
     <slot>subgroupChanged(const QString&amp;)</slot>
     <slot>yearChanged(const QString&amp;)</slot>
-    <slot>lock()</slot>
+    <slot>lockTime()</slot>
+    <slot>lockSpace()</slot>
+    <slot>lockTimeSpace()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

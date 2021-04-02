@@ -28,6 +28,7 @@
 //                - TIMETABLE_HTML_LEVEL
 //                - print groups and years timetable
 //                - print subjects timetable
+//                - print teachers free periods timetable
 
 
 #include "timetable_defs.h"
@@ -49,6 +50,10 @@ using namespace std;
 
 #include <QMessageBox>
 
+#include <QLocale>
+#include <QTime>
+#include <QDate>
+
 
 //Represents the current status of the simulation - running or stopped.
 extern bool simulation_running;
@@ -65,6 +70,8 @@ extern Timetable gt;
 extern qint16 teachers_timetable_weekly[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];		//the getXXXmatrix have only qint 8
 extern qint16 students_timetable_weekly[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];	//the getXXXmatrix have only qint 8
 extern qint16 rooms_timetable_weekly[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];			//the getXXXmatrix have only qint 8
+
+extern QList<qint16> teachers_free_periods_timetable_weekly[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
 
 QList<qint16> activitiesForCurrentSubject[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
@@ -95,7 +102,8 @@ void TimetableExport::getTeachersTimetable(Solution &c){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 
 	//assert(c.HFitness()==0); - for perfect solutions
-	c.getTeachersTimetable(gt.rules, teachers_timetable_weekly);
+	//c.getTeachersTimetable(gt.rules, teachers_timetable_weekly);
+	c.getTeachersTimetable(gt.rules, teachers_timetable_weekly, teachers_free_periods_timetable_weekly);
 	best_solution.copy(gt.rules, c);
 	teachers_schedule_ready=true;
 }
@@ -136,14 +144,18 @@ void TimetableExport::writeSimulationResults(){
 	writeTeachersTimetableXml(s);
 
 	//now get the time. TODO: maybe write it in xml too? so do it a few lines earlier!
-	time_t ltime;
+	/*time_t ltime;
 	tzset();
 	time(&ltime);
 	QString sTime=ctime(&ltime);
 	//remove the endl, because it looks awful in html and css file(by Volker Dirr)
 	int sTs=sTime.size();sTs--;
 	if(sTime[sTs]=='\n')
-		sTime.remove(sTs,1);
+		sTime.remove(sTs,1);*/
+	QDate dat=QDate::currentDate();
+	QTime tim=QTime::currentTime();
+	QLocale loc(FET_LANGUAGE);
+	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
 
 	//now get the number of placed activities. TODO: maybe write it in xml too? so do it a few lines earlier!
 	int na=0;
@@ -215,6 +227,12 @@ void TimetableExport::writeSimulationResults(){
 	s=OUTPUT_DIR+FILE_SEP+s2+"_"+SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 	writeSubjectsTimetableTimeVerticalHtml(s, sTime, na);
 	
+	//teachers free periods
+	s=OUTPUT_DIR+FILE_SEP+s2+"_"+TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	writeTeachersFreePeriodsTimetableDaysHorizontalHtml(s, sTime, na);
+	s=OUTPUT_DIR+FILE_SEP+s2+"_"+TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	writeTeachersFreePeriodsTimetableDaysVerticalHtml(s, sTime, na);
+					
 	cout<<"Writing simulation results to disk completed successfully"<<endl;
 }
 
@@ -258,14 +276,18 @@ void TimetableExport::writeSimulationResults(int n){
 	writeTeachersTimetableXml(s);
 
 	//now get the time. TODO: maybe write it in xml too? so do it a few lines earlier!
-	time_t ltime;
+	/*time_t ltime;
 	tzset();
 	time(&ltime);
 	QString sTime=ctime(&ltime);
 	//remove the endl, because it looks awful in html and css file (by Volker Dirr)
 	int sTs=sTime.size();sTs--;
 	if(sTime[sTs]=='\n')
-		sTime.remove(sTs,1);
+		sTime.remove(sTs,1);*/
+	QDate dat=QDate::currentDate();
+	QTime tim=QTime::currentTime();
+	QLocale loc(FET_LANGUAGE);
+	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
 
 	//now get the number of placed activities. TODO: maybe write it in xml too? so do it a few lines earlier!
 	int na=0;
@@ -337,6 +359,12 @@ void TimetableExport::writeSimulationResults(int n){
 	s=finalDestDir+SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 	writeSubjectsTimetableTimeVerticalHtml(s, sTime, na);
 	
+	//teachers free periods
+	s=finalDestDir+TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	writeTeachersFreePeriodsTimetableDaysHorizontalHtml(s, sTime, na);
+	s=finalDestDir+TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	writeTeachersFreePeriodsTimetableDaysVerticalHtml(s, sTime, na);
+					
 	cout<<"Writing multiple simulation results to disk completed successfully"<<endl;
 }
 
@@ -622,6 +650,22 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, QString sa
 		tos<<"tr.line1, div.line1 {\n\n}\n\n";
 		tos<<"tr.line2, div.line2 {\n  font-size: smaller;\n  color: grey;\n}\n\n";
 		tos<<"tr.line3, div.line3 {\n  font-size: smaller;\n  color: grey;\n}\n\n";
+	}
+	
+	tos<<endl<<"/* "<<TimetableExport::tr("Style the teachers free periods")<<" */\n\n";
+	if(TIMETABLE_HTML_LEVEL>=2){
+		tos<<"div.DESCRIPTION {\n  text-align: left;\n  font-size: smaller;\n}\n\n";
+	}
+	if(TIMETABLE_HTML_LEVEL>=3){
+		tos<<"div.TEACHER_HAS_SINGLE_GAP {\n  color: black;\n}\n\n";
+		tos<<"div.TEACHER_HAS_BORDER_GAP {\n  color: gray;\n}\n\n";
+		tos<<"div.TEACHER_HAS_BIG_GAP {\n  color: silver;\n}\n\n";
+		tos<<"div.TEACHER_MUST_COME_EARLIER {\n  color: purple;\n}\n\n";
+		tos<<"div.TEACHER_MUST_COME_MUCH_EARLIER {\n  font-size: smaller;\n  color: fuchsia;\n}\n\n";
+		tos<<"div.TEACHER_MUST_STAY_LONGER {\n  color: teal;\n}\n\n";
+		tos<<"div.TEACHER_MUST_STAY_MUCH_LONGER {\n  font-size: smaller;\n  color: aqua;\n}\n\n";
+		tos<<"div.TEACHER_HAS_A_FREE_DAY {\n  font-size: smaller;\n  color: red;\n}\n\n";
+		tos<<"div.TEACHER_IS_NOT_AVAILABLE {\n  font-size: smaller;\n  color: olive;\n}\n\n";
 	}
 	tos<<endl<<"/* "<<TimetableExport::tr("End of file.")<<" */\n\n";
 
@@ -6587,3 +6631,373 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(const QString& ht
 	}
 	file.close();
 }
+
+// Now print the teachers free periods. Code by Volker Dirr (http://timetabling.de/)
+/**
+Function writing the teachers' free periods timetable html format to a file.
+Days horizontal.
+*/
+void TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
+	//assert(gt.timePopulation.initialized);
+	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
+
+	//Now we print the results to an HTML file
+	QFile file(htmlfilename);
+	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
+		return;
+		assert(0);
+	}
+	QTextStream tos(&file);
+	tos.setCodec("UTF-8");
+	tos.setGenerateByteOrderMark(true);
+
+	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
+	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
+
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
+	tos<<"  <head>\n";
+	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
+	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	}
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
+		tos<<"    <script type=\"text/javascript\">\n";
+		tos<<"      function highlight(classval) {\n";
+		tos<<"        var spans = document.getElementsByTagName('span');\n";
+		tos<<"        for(var i=0;spans.length>i;i++) {\n";
+		tos<<"          if (spans[i].className == classval) {\n";
+		tos<<"            spans[i].style.backgroundColor = 'lime';\n";
+		tos<<"          } else {\n";
+		tos<<"            spans[i].style.backgroundColor = 'white';\n";
+		tos<<"          }\n";
+		tos<<"        }\n";
+		tos<<"      }\n";
+		tos<<"    </script>\n";
+	}
+	tos<<"  </head>\n\n";
+
+	tos<<"  <body id=\"top\">\n";
+
+	if(placedActivities!=gt.rules.nInternalActivities)
+		tos<<"    <h1>"<<TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+
+	tos<<"    <p>\n      <strong>"<<TimetableExport::tr("Institution name")<<":</strong> "<<protect2(gt.rules.institutionName)<<"<br />\n";
+	tos<<"      <strong>"<<TimetableExport::tr("Comments")<<":</strong> "<<protect2(gt.rules.comments)<<"\n    </p>\n"; 
+
+	tos<<"    <ul>\n";
+	tos<<"      <li><a href=\""<<"#table_DETAILED\">"<<TimetableExport::tr("Teachers' Free Periods")<<" ("<<tr("Detailed")<<")</a></li>\n";
+	tos<<"      <li><a href=\""<<"#table_LESS_DETAILED\">"<<TimetableExport::tr("Teachers' Free Periods")<<" ("<<tr("Less detailed")<<")</a></li>\n";
+	tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
+
+	tos<<"    <div class=\"TEACHER_HAS_SINGLE_GAP\">"<<TimetableExport::tr("Teacher has a single gap")<<"</div>\n";
+	tos<<"    <div class=\"TEACHER_HAS_BORDER_GAP\">"<<TimetableExport::tr("Teacher has a border gap")<<"</div>\n";
+	tos<<"    <div class=\"TEACHER_HAS_BIG_GAP\">"<<TimetableExport::tr("Teacher has a big gap")<<"</div>\n";
+	tos<<"    <div class=\"TEACHER_MUST_COME_EARLIER\">"<<TimetableExport::tr("Teacher must come earlier")<<"</div>\n";
+	tos<<"    <div class=\"TEACHER_MUST_COME_MUCH_EARLIER\">"<<TimetableExport::tr("Teacher must come much earlier")<<"</div>\n";
+	tos<<"    <div class=\"TEACHER_MUST_STAY_LONGER\">"<<TimetableExport::tr("Teacher must stay longer")<<"</div>\n";
+	tos<<"    <div class=\"TEACHER_MUST_STAY_MUCH_LONGER\">"<<TimetableExport::tr("Teacher must stay much longer")<<"</div>\n";
+	tos<<"    <div class=\"TEACHER_HAS_A_FREE_DAY\">"<<TimetableExport::tr("Teacher has a free day")<<"</div>\n";
+	tos<<"    <div class=\"TEACHER_IS_NOT_AVAILABLE\">"<<TimetableExport::tr("Teacher is not available")<<"</div>\n";
+
+	tos<<"    <p>&nbsp;</p>\n\n";
+	
+	bool PRINT_DETAILED=true;
+	do{
+		if(PRINT_DETAILED==true)
+			tos<<"    <table id=\"table_DETAILED\" border=\"1\">\n";
+		else
+			tos<<"    <table id=\"table_LESS_DETAILED\" border=\"1\">\n";
+		
+		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
+
+		if(PRINT_DETAILED==true)
+			tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Teachers' Free Periods")<<" ("<<tr("Detailed")<<")</th></tr>\n";
+		else	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Teachers' Free Periods")<<" ("<<tr("Less detailed")<<")</th></tr>\n";
+
+		tos<<"        <tr>\n          <!-- span -->\n";
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+			if(TIMETABLE_HTML_LEVEL>=2)
+				tos<<"          <th class=\"xAxis\">";
+			else
+				tos<<"          <th>";
+			tos<<protect2(gt.rules.daysOfTheWeek[j])<<"</th>\n";
+		}
+		tos<<"        </tr>\n";
+		tos<<"      </thead>\n";
+		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		*/
+		tos<<"      <tbody>\n";
+		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			tos<<"        <tr>\n";
+			if(TIMETABLE_HTML_LEVEL>=2)
+				tos<<"          <th class=\"yAxis\">";
+			else
+				tos<<"          <th>";
+			tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
+			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+				tos<<"          <td>";
+				for(int tfp=0; tfp<TEACHERS_FREE_PERIODS_N_CATEGORIES; tfp++){
+					if(teachers_free_periods_timetable_weekly[tfp][k][j].size()>0){
+						if(TIMETABLE_HTML_LEVEL>=2)
+							tos<<"<div class=\"DESCRIPTION\">";
+						switch(tfp){
+							case TEACHER_HAS_SINGLE_GAP		: tos<<TimetableExport::tr("Single gap"); break;
+							case TEACHER_HAS_BORDER_GAP		: tos<<TimetableExport::tr("Border gap"); break;
+							case TEACHER_HAS_BIG_GAP		: tos<<TimetableExport::tr("Big gap"); break;
+							case TEACHER_MUST_COME_EARLIER		: tos<<TimetableExport::tr("Must come earlier"); break;
+							case TEACHER_MUST_STAY_LONGER		: tos<<TimetableExport::tr("Must stay longer"); break;
+							case TEACHER_MUST_COME_MUCH_EARLIER	: tos<<TimetableExport::tr("Must come much earlier"); break;
+							case TEACHER_MUST_STAY_MUCH_LONGER	: tos<<TimetableExport::tr("Must stay much longer"); break;
+							case TEACHER_HAS_A_FREE_DAY		: tos<<TimetableExport::tr("Free day"); break;
+							case TEACHER_IS_NOT_AVAILABLE		: tos<<TimetableExport::tr("Not available"); break;
+							default: assert(0==1); break;
+						}
+						if(TIMETABLE_HTML_LEVEL>=2)
+							tos<<":</div>";
+						else tos<<":<br />";
+						if(TIMETABLE_HTML_LEVEL>=3)
+							switch(tfp){
+								case TEACHER_HAS_SINGLE_GAP		: tos<<"<div class=\"TEACHER_HAS_SINGLE_GAP\">"; break;
+								case TEACHER_HAS_BORDER_GAP		: tos<<"<div class=\"TEACHER_HAS_BORDER_GAP\">"; break;
+								case TEACHER_HAS_BIG_GAP		: tos<<"<div class=\"TEACHER_HAS_BIG_GAP\">"; break;
+								case TEACHER_MUST_COME_EARLIER		: tos<<"<div class=\"TEACHER_MUST_COME_EARLIER\">"; break;
+								case TEACHER_MUST_STAY_LONGER		: tos<<"<div class=\"TEACHER_MUST_STAY_LONGER\">"; break;
+								case TEACHER_MUST_COME_MUCH_EARLIER	: tos<<"<div class=\"TEACHER_MUST_COME_MUCH_EARLIER\">"; break;
+								case TEACHER_MUST_STAY_MUCH_LONGER	: tos<<"<div class=\"TEACHER_MUST_STAY_MUCH_LONGER\">"; break;
+								case TEACHER_HAS_A_FREE_DAY		: tos<<"<div class=\"TEACHER_HAS_A_FREE_DAY\">"; break;
+								case TEACHER_IS_NOT_AVAILABLE		: tos<<"<div class=\"TEACHER_IS_NOT_AVAILABLE\">"; break;
+								default: assert(0==1); break;
+							}
+						for(int t=0; t<teachers_free_periods_timetable_weekly[tfp][k][j].size(); t++){
+							QString teacher_name = gt.rules.internalTeachersList[teachers_free_periods_timetable_weekly[tfp][k][j].at(t)]->name;
+								switch(TIMETABLE_HTML_LEVEL){
+									case 4 : tos<<"<span class=\"teacher_"<<protect2id(teacher_name)<<"\">"<<protect2(teacher_name)<<"</span>"; break;
+									case 5 : tos<<"<span class=\"teacher_"<<protect2id(teacher_name)<<"\" onmouseover=\"highlight('teacher_"<<protect2id(teacher_name)<<"')\">"<<protect2(teacher_name)<<"</span>"; break;
+									default: tos<<protect2(teacher_name); break;
+								}
+							tos<<"<br />";
+						}
+						if(TIMETABLE_HTML_LEVEL>=3)
+							tos<<"</div>";
+					}
+					if(PRINT_DETAILED==false&&tfp>=TEACHER_MUST_COME_EARLIER) tfp=TEACHER_IS_NOT_AVAILABLE+1;
+				}//TODO: check if i must write "---"!!!
+				tos<<"</td>\n";
+			}
+			tos<<"        </tr>\n";
+		}
+		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		//workaround end.
+		tos<<"      </tbody>\n    </table>\n    <p>&nbsp;</p>\n";
+		tos<<"    <p><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n";
+		tos<<"    <p>&nbsp;</p>\n\n";
+		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
+		else PRINT_DETAILED=true;
+	} while(PRINT_DETAILED!=true);
+	tos<<"      </tbody>\n";
+	tos<<"    </table>\n";
+	tos<<"  </body>\n</html>\n\n";
+
+	if(file.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+	}
+	file.close();
+}
+
+//XHTML generation code by Volker Dirr (http://timetabling.de/)
+/**
+Function writing the teachers' free periods timetable html format to a file.
+Days vertical.
+*/
+void TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
+	//assert(gt.timePopulation.initialized);
+	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
+
+	//Now we print the results to an HTML file
+	QFile file(htmlfilename);
+	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
+		return;
+		assert(0);
+	}
+	QTextStream tos(&file);
+	tos.setCodec("UTF-8");
+	tos.setGenerateByteOrderMark(true);
+
+	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
+	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
+
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
+	tos<<"  <head>\n";
+	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
+	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	}
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
+		tos<<"    <script type=\"text/javascript\">\n";
+		tos<<"      function highlight(classval) {\n";
+		tos<<"        var spans = document.getElementsByTagName('span');\n";
+		tos<<"        for(var i=0;spans.length>i;i++) {\n";
+		tos<<"          if (spans[i].className == classval) {\n";
+		tos<<"            spans[i].style.backgroundColor = 'lime';\n";
+		tos<<"          } else {\n";
+		tos<<"            spans[i].style.backgroundColor = 'white';\n";
+		tos<<"          }\n";
+		tos<<"        }\n";
+		tos<<"      }\n";
+		tos<<"    </script>\n";
+	}
+	tos<<"  </head>\n\n";
+
+	tos<<"  <body id=\"top\">\n";
+
+	if(placedActivities!=gt.rules.nInternalActivities)
+		tos<<"    <h1> "<<TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+
+	tos<<"    <p>\n      <strong>"<<TimetableExport::tr("Institution name")<<":</strong> "<<protect2(gt.rules.institutionName)<<"<br />\n";
+	tos<<"      <strong>"<<TimetableExport::tr("Comments")<<":</strong> "<<protect2(gt.rules.comments)<<"\n    </p>\n"; 
+
+	tos<<"    <ul>\n";
+	tos<<"      <li><a href=\""<<"#table_DETAILED\">"<<TimetableExport::tr("Teachers' Free Periods")<<" ("<<tr("Detailed")<<")</a></li>\n";
+	tos<<"      <li><a href=\""<<"#table_LESS_DETAILED\">"<<TimetableExport::tr("Teachers' Free Periods")<<" ("<<tr("Less detailed")<<")</a></li>\n";
+	tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
+
+	tos<<"    <div class=\"TEACHER_HAS_SINGLE_GAP\">"<<TimetableExport::tr("Teacher has a single gap")<<"</div>\n";
+	tos<<"    <div class=\"TEACHER_HAS_BORDER_GAP\">"<<TimetableExport::tr("Teacher has a border gap")<<"</div>\n";
+	tos<<"    <div class=\"TEACHER_HAS_BIG_GAP\">"<<TimetableExport::tr("Teacher has a big gap")<<"</div>\n";
+	tos<<"    <div class=\"TEACHER_MUST_COME_EARLIER\">"<<TimetableExport::tr("Teacher must come earlier")<<"</div>\n";
+	tos<<"    <div class=\"TEACHER_MUST_COME_MUCH_EARLIER\">"<<TimetableExport::tr("Teacher must come much earlier")<<"</div>\n";
+	tos<<"    <div class=\"TEACHER_MUST_STAY_LONGER\">"<<TimetableExport::tr("Teacher must stay longer")<<"</div>\n";
+	tos<<"    <div class=\"TEACHER_MUST_STAY_MUCH_LONGER\">"<<TimetableExport::tr("Teacher must stay much longer")<<"</div>\n";
+	tos<<"    <div class=\"TEACHER_HAS_A_FREE_DAY\">"<<TimetableExport::tr("Teacher has a free day")<<"</div>\n";
+	tos<<"    <div class=\"TEACHER_IS_NOT_AVAILABLE\">"<<TimetableExport::tr("Teacher is not available")<<"</div>\n";
+
+	tos<<"    <p>&nbsp;</p>\n\n";
+
+	bool PRINT_DETAILED=true;
+	do{
+		if(PRINT_DETAILED==true)
+			tos<<"    <table id=\"table_DETAILED\" border=\"1\">\n";
+		else
+			tos<<"    <table id=\"table_LESS_DETAILED\" border=\"1\">\n";
+		
+		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
+
+		if(PRINT_DETAILED==true)
+			tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Teachers' Free Periods")<<" ("<<tr("Detailed")<<")</th></tr>\n";
+		else	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Teachers' Free Periods")<<" ("<<tr("Less detailed")<<")</th></tr>\n";
+
+		tos<<"        <tr>\n          <!-- span -->\n";
+		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			if(TIMETABLE_HTML_LEVEL>=2)
+				tos<<"          <th class=\"xAxis\">";
+			else
+				tos<<"          <th>";
+			tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
+		}
+		tos<<"        </tr>\n";
+		tos<<"      </thead>\n";
+		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		*/
+		tos<<"      <tbody>\n";
+		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+			tos<<"        <tr>\n";
+			if(TIMETABLE_HTML_LEVEL>=2)
+				tos<<"          <th class=\"yAxis\">";
+			else
+				tos<<"          <th>";
+			tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
+			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+				tos<<"          <td>";
+				for(int tfp=0; tfp<TEACHERS_FREE_PERIODS_N_CATEGORIES; tfp++){
+					if(teachers_free_periods_timetable_weekly[tfp][k][j].size()>0){
+						if(TIMETABLE_HTML_LEVEL>=2)
+							tos<<"<div class=\"DESCRIPTION\">";
+						switch(tfp){
+							case TEACHER_HAS_SINGLE_GAP		: tos<<TimetableExport::tr("Single gap"); break;
+							case TEACHER_HAS_BORDER_GAP		: tos<<TimetableExport::tr("Border gap"); break;
+							case TEACHER_HAS_BIG_GAP		: tos<<TimetableExport::tr("Big gap"); break;
+							case TEACHER_MUST_COME_EARLIER		: tos<<TimetableExport::tr("Must come earlier"); break;
+							case TEACHER_MUST_STAY_LONGER		: tos<<TimetableExport::tr("Must stay longer"); break;
+							case TEACHER_MUST_COME_MUCH_EARLIER	: tos<<TimetableExport::tr("Must come much earlier"); break;
+							case TEACHER_MUST_STAY_MUCH_LONGER	: tos<<TimetableExport::tr("Must stay much longer"); break;
+							case TEACHER_HAS_A_FREE_DAY		: tos<<TimetableExport::tr("Free day"); break;
+							case TEACHER_IS_NOT_AVAILABLE		: tos<<TimetableExport::tr("Not available"); break;
+							default: assert(0==1); break;
+						}
+						if(TIMETABLE_HTML_LEVEL>=2)
+							tos<<":</div>";
+						else tos<<":<br />";
+						if(TIMETABLE_HTML_LEVEL>=3)
+							switch(tfp){
+								case TEACHER_HAS_SINGLE_GAP		: tos<<"<div class=\"TEACHER_HAS_SINGLE_GAP\">"; break;
+								case TEACHER_HAS_BORDER_GAP		: tos<<"<div class=\"TEACHER_HAS_BORDER_GAP\">"; break;
+								case TEACHER_HAS_BIG_GAP		: tos<<"<div class=\"TEACHER_HAS_BIG_GAP\">"; break;
+								case TEACHER_MUST_COME_EARLIER		: tos<<"<div class=\"TEACHER_MUST_COME_EARLIER\">"; break;
+								case TEACHER_MUST_STAY_LONGER		: tos<<"<div class=\"TEACHER_MUST_STAY_LONGER\">"; break;
+								case TEACHER_MUST_COME_MUCH_EARLIER	: tos<<"<div class=\"TEACHER_MUST_COME_MUCH_EARLIER\">"; break;
+								case TEACHER_MUST_STAY_MUCH_LONGER	: tos<<"<div class=\"TEACHER_MUST_STAY_MUCH_LONGER\">"; break;
+								case TEACHER_HAS_A_FREE_DAY		: tos<<"<div class=\"TEACHER_HAS_A_FREE_DAY\">"; break;
+								case TEACHER_IS_NOT_AVAILABLE		: tos<<"<div class=\"TEACHER_IS_NOT_AVAILABLE\">"; break;
+								default: assert(0==1); break;
+							}
+						for(int t=0; t<teachers_free_periods_timetable_weekly[tfp][k][j].size(); t++){
+							QString teacher_name = gt.rules.internalTeachersList[teachers_free_periods_timetable_weekly[tfp][k][j].at(t)]->name;
+								switch(TIMETABLE_HTML_LEVEL){
+									case 4 : tos<<"<span class=\"teacher_"<<protect2id(teacher_name)<<"\">"<<protect2(teacher_name)<<"</span>"; break;
+									case 5 : tos<<"<span class=\"teacher_"<<protect2id(teacher_name)<<"\" onmouseover=\"highlight('teacher_"<<protect2id(teacher_name)<<"')\">"<<protect2(teacher_name)<<"</span>"; break;
+									default: tos<<protect2(teacher_name); break;
+								}
+							tos<<"<br />";
+						}
+						if(TIMETABLE_HTML_LEVEL>=3)
+							tos<<"</div>";
+					}
+					if(PRINT_DETAILED==false&&tfp>=TEACHER_MUST_COME_EARLIER) tfp=TEACHER_IS_NOT_AVAILABLE+1;
+				}//TODO: check if i must write "---"!!!
+				tos<<"</td>\n";
+			}
+			tos<<"        </tr>\n";
+		}
+		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		//workaround end.
+		tos<<"      </tbody>\n    </table>\n    <p>&nbsp;</p>\n";
+		tos<<"    <p><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n";
+		tos<<"    <p>&nbsp;</p>\n\n";
+		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
+		else PRINT_DETAILED=true;
+	} while(PRINT_DETAILED!=true);
+	tos<<"      </tbody>\n";
+	tos<<"    </table>\n";
+	tos<<"  </body>\n</html>\n\n";
+
+	if(file.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+	}
+	file.close();
+}
+
+

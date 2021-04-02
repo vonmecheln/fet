@@ -31,6 +31,13 @@ AddStudentsGroupForm::AddStudentsGroupForm()
 	int xx=desktop->width()/2 - frameGeometry().width()/2;
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);
+	
+	nameLineEdit->selectAll();
+	nameLineEdit->setFocus();
+	
+	numberSpinBox->setMaxValue(MAX_ROOM_CAPACITY);
+	numberSpinBox->setMinValue(0);
+	numberSpinBox->setValue(0);
 }
 
 AddStudentsGroupForm::~AddStudentsGroupForm()

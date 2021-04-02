@@ -409,7 +409,8 @@ void FetMainForm::on_fileOpenAction_activated()
 		int tmp=s.findRev("/");
 		WORKING_DIRECTORY=s.left(tmp+1);
 		
-		setWindowTitle(tr("FET - %1").arg(s.right(s.length()-tmp-1)));
+		if(INPUT_FILENAME_XML!="")
+			setWindowTitle(tr("FET - %1").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev("/")-1)));
 	}
 }
 
@@ -1155,9 +1156,13 @@ void FetMainForm::on_helpInOtherLanguagesAction_activated()
 {
 	QString s=tr("You can see help translated into other languages in the directory doc/ of FET");
 	s+="\n\n";	
-	s+=tr("Currently (4 Oct. 2007), there are:");	
+	s+=tr("Currently (11 Jan. 2008), there are:");	
 	s+="\n\n";	
 	s+=tr("1. es - Spanish - Instructions");
+	s+="\n\n";	
+	s+=tr("2. it - Italian - Instructions");
+	s+="\n\n";	
+	s+=tr("3. it - Italian - FAQ");
 
 	//show the message in a dialog
 	QDialog* dialog=new QDialog();

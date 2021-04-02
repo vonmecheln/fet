@@ -86,6 +86,10 @@ AddActivityForm::AddActivityForm()
 	forceAdjacentCheckBox->setEnabled(nSplit>=2);
 	
 	subactivitiesTabWidget->setCurrentIndex(0);
+	
+	nStudentsSpinBox->setMinValue(-1);
+	nStudentsSpinBox->setMaxValue(MAX_ROOM_CAPACITY);
+	nStudentsSpinBox->setValue(-1);
 }
 
 AddActivityForm::~AddActivityForm()

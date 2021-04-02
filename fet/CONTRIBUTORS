@@ -17,3 +17,6 @@ Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/) - implemen
 		- print rooms timetable
 		- TIMETABLE_HTML_LEVEL
 		- print groups and years timetable
+		- print subjects timetable
+		- print teachers' free periods timetable
+		

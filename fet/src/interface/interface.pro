@@ -500,7 +500,8 @@ CONFIG += release \
           warn_on \
           qt \
           thread 
-TARGET = ../../fet 
+DESTDIR = ../../
+TARGET = fet 
 QMAKE_CXXFLAGS_DEBUG += -Wall \
                         -O2 
 OBJECTS_DIR = ../../tmp 

@@ -32,6 +32,10 @@ ModifyStudentsGroupForm::ModifyStudentsGroupForm(const QString& yearName, const 
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);
 
+	numberSpinBox->setMaxValue(MAX_ROOM_CAPACITY);
+	numberSpinBox->setMinValue(0);
+	numberSpinBox->setValue(0);
+				
 	this->_yearName=yearName;
 	this->_initialGroupName=initialGroupName;
 	this->_initialNumberOfStudents=initialNumberOfStudents;

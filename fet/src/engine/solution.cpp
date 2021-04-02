@@ -36,6 +36,8 @@ using namespace std;
 #include "rules.h"
 #include "timeconstraint.h"
 
+extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern bool teacherNotAvailableDayHour[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
 //critical function here - must be optimized for speed
 void Solution::copy(Rules& r, Solution& c){
@@ -374,7 +376,8 @@ int Solution::getSubgroupsMatrix(Rules& r, qint8 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS
 
 //The following 2 functions (GetTeachersTimetable & GetSubgroupsTimetable)
 //are very similar to the above 2 ones (GetTeachersMatrix & GetSubgroupsMatrix)
-void Solution::getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
+void Solution::getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY], QList<qint16> b[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
+//void Solution::getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
 	//assert(HFitness()==0); //This is only for perfect solutions, that do not have any non-satisfied hard constrains
 
 	assert(r.initialized);
@@ -404,6 +407,101 @@ void Solution::getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PE
 					a[tch][day][hour+dd]=i;
 				}
 		}
+
+	//Prepare teachers free periods timetable.
+	//Code contributed by Volker Dirr (http://timetabling.de/) BEGIN
+	int d,h,tch;
+	for(d=0; d<r.nDaysPerWeek; d++){
+		for(h=0; h<r.nHoursPerDay; h++){
+			for(int tfp=0; tfp<TEACHERS_FREE_PERIODS_N_CATEGORIES; tfp++){
+				b[tfp][d][h].clear();
+			}
+		}
+	}
+	for(tch=0; tch<r.nInternalTeachers; tch++){
+		for(d=0; d<r.nDaysPerWeek; d++){
+			int firstPeriod=-1;
+			int lastPeriod=-1;
+			for(h=0; h<r.nHoursPerDay; h++){
+				if(a[tch][d][h]!=UNALLOCATED_ACTIVITY){
+					if(firstPeriod==-1)
+						firstPeriod=h;
+					lastPeriod=h;
+				}
+			}
+			if(firstPeriod==-1){
+				for(h=0; h<r.nHoursPerDay; h++){
+					b[TEACHER_HAS_A_FREE_DAY][d][h]<<tch;
+				}
+			} else {
+				for(h=0; h<firstPeriod; h++){
+					if(firstPeriod-h==1){
+						b[TEACHER_MUST_COME_EARLIER][d][h]<<tch;
+					}
+					else {
+						b[TEACHER_MUST_COME_MUCH_EARLIER][d][h]<<tch;
+					}
+				}
+				for(; h<lastPeriod+1; h++){
+					if(a[tch][d][h]==UNALLOCATED_ACTIVITY){
+						if(a[tch][d][h+1]==UNALLOCATED_ACTIVITY){
+							if(a[tch][d][h-1]==UNALLOCATED_ACTIVITY){
+								b[TEACHER_HAS_BIG_GAP][d][h]<<tch;
+							} else {
+								b[TEACHER_HAS_BORDER_GAP][d][h]<<tch;
+							}
+						} else {
+							if(a[tch][d][h-1]==UNALLOCATED_ACTIVITY){
+								b[TEACHER_HAS_BORDER_GAP][d][h]<<tch;
+							} else {
+								b[TEACHER_HAS_SINGLE_GAP][d][h]<<tch;
+							}
+						}
+					}
+				}
+				for(; h<r.nHoursPerDay; h++){
+					if(lastPeriod-h==-1){
+						b[TEACHER_MUST_STAY_LONGER][d][h]<<tch;
+					}
+					else {
+						b[TEACHER_MUST_STAY_MUCH_LONGER][d][h]<<tch;
+					}
+				}
+			}
+		}
+	}
+	//care about not available teacher and breaks
+	for(tch=0; tch<r.nInternalTeachers; tch++){
+		for(d=0; d<r.nDaysPerWeek; d++){
+			for(h=0; h<r.nHoursPerDay; h++){
+				if(teacherNotAvailableDayHour[tch][d][h]==true || breakDayHour[d][h]==true){
+					int removed=0;
+					for(int tfp=0; tfp<TEACHER_IS_NOT_AVAILABLE; tfp++){
+						if(b[tfp][d][h].contains(tch)){
+							removed+=b[tfp][d][h].removeAll(tch);
+							if(breakDayHour[d][h]==false)
+								b[TEACHER_IS_NOT_AVAILABLE][d][h]<<tch;
+						}
+					}
+					assert(removed==1);
+				}
+			}
+		}
+	}
+	//END of Code contributed by Volker Dirr (http://timetabling.de/) END
+	bool visited[MAX_TEACHERS];
+	for(d=0; d<r.nDaysPerWeek; d++){
+		for(h=0; h<r.nHoursPerDay; h++){
+			for(tch=0; tch<r.nInternalTeachers; tch++)
+				visited[tch]=false;
+			for(int tfp=0; tfp<TEACHERS_FREE_PERIODS_N_CATEGORIES; tfp++){
+				foreach(int tch, b[tfp][d][h]){
+					assert(!visited[tch]);
+					visited[tch]=true;
+				}
+			}
+		}
+	}
 }
 
 void Solution::getSubgroupsTimetable(Rules& r, qint16 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
