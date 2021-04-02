@@ -106,6 +106,9 @@ void DaysForm::ok()
 	gt.rules.nDaysPerWeek=nDays;
 	for(int i=0; i<nDays; i++)
 		gt.rules.daysOfTheWeek[i]=daysNames[i]->text();
+		
+	gt.rules.nHoursPerWeek=gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay; //not needed
+	gt.rules.internalStructureComputed=false;
 
 	this->close();
 }

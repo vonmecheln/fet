@@ -43,19 +43,19 @@ void Rules::init() //initializes the rules (empty, but with default hours and da
 {
 	//defaults
 	this->nHoursPerDay=12;
-	this->hoursOfTheDay[0]="0";
-	this->hoursOfTheDay[1]="1";
-	this->hoursOfTheDay[2]="2";
-	this->hoursOfTheDay[3]="3";
-	this->hoursOfTheDay[4]="4";
-	this->hoursOfTheDay[5]="5";
-	this->hoursOfTheDay[6]="6";
-	this->hoursOfTheDay[7]="7";
-	this->hoursOfTheDay[8]="8";
-	this->hoursOfTheDay[9]="9";
-	this->hoursOfTheDay[10]="10";
-	this->hoursOfTheDay[11]="11";
-	this->hoursOfTheDay[12]="12";
+	this->hoursOfTheDay[0]="08:00";
+	this->hoursOfTheDay[1]="09:00";
+	this->hoursOfTheDay[2]="10:00";
+	this->hoursOfTheDay[3]="11:00";
+	this->hoursOfTheDay[4]="12:00";
+	this->hoursOfTheDay[5]="13:00";
+	this->hoursOfTheDay[6]="14:00";
+	this->hoursOfTheDay[7]="15:00";
+	this->hoursOfTheDay[8]="16:00";
+	this->hoursOfTheDay[9]="17:00";
+	this->hoursOfTheDay[10]="18:00";
+	this->hoursOfTheDay[11]="19:00";
+	this->hoursOfTheDay[12]="20:00";
 
 	this->nDaysPerWeek=5;
 	this->daysOfTheWeek[0] = QObject::tr("Monday");
@@ -2505,19 +2505,19 @@ bool Rules::read(const QString& filename)
 	}
 	
 	this->nHoursPerDay=12;
-	this->hoursOfTheDay[0]="0";
-	this->hoursOfTheDay[1]="1";
-	this->hoursOfTheDay[2]="2";
-	this->hoursOfTheDay[3]="3";
-	this->hoursOfTheDay[4]="4";
-	this->hoursOfTheDay[5]="5";
-	this->hoursOfTheDay[6]="6";
-	this->hoursOfTheDay[7]="7";
-	this->hoursOfTheDay[8]="8";
-	this->hoursOfTheDay[9]="9";
-	this->hoursOfTheDay[10]="10";
-	this->hoursOfTheDay[11]="11";
-	this->hoursOfTheDay[12]="12";
+	this->hoursOfTheDay[0]="08:00";
+	this->hoursOfTheDay[1]="09:00";
+	this->hoursOfTheDay[2]="10:00";
+	this->hoursOfTheDay[3]="11:00";
+	this->hoursOfTheDay[4]="12:00";
+	this->hoursOfTheDay[5]="13:00";
+	this->hoursOfTheDay[6]="14:00";
+	this->hoursOfTheDay[7]="15:00";
+	this->hoursOfTheDay[8]="16:00";
+	this->hoursOfTheDay[9]="17:00";
+	this->hoursOfTheDay[10]="18:00";
+	this->hoursOfTheDay[11]="19:00";
+	this->hoursOfTheDay[12]="20:00";
 
 	this->nDaysPerWeek=5;
 	this->daysOfTheWeek[0] = QObject::tr("Monday");
@@ -3116,6 +3116,14 @@ bool Rules::read(const QString& filename)
 							for(cn->d=0; cn->d<this->nDaysPerWeek; cn->d++)
 								if(this->daysOfTheWeek[cn->d]==elem4.text())
 									break;
+							if(cn->d>=this->nDaysPerWeek){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint TeacherNotAvailable day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint")
+								 .arg(cn->teacherName)
+								 .arg(elem4.text()));
+								cn=NULL;
+								goto corruptConstraintTime;
+							}
 							assert(cn->d<this->nDaysPerWeek);
 							xmlReadingLog+="    Crt. day="+this->daysOfTheWeek[cn->d]+"\n";
 						}
@@ -3123,6 +3131,14 @@ bool Rules::read(const QString& filename)
 							for(cn->h1=0; cn->h1 < this->nHoursPerDay; cn->h1++)
 								if(this->hoursOfTheDay[cn->h1]==elem4.text())
 									break;
+							if(cn->h1>=this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint TeacherNotAvailable start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint")
+								 .arg(cn->teacherName)
+								 .arg(elem4.text()));
+								cn=NULL;
+								goto corruptConstraintTime;
+							}
 							assert(cn->h1>=0 && cn->h1 < this->nHoursPerDay);
 							xmlReadingLog+="    Start hour="+this->hoursOfTheDay[cn->h1]+"\n";
 						}
@@ -3130,6 +3146,14 @@ bool Rules::read(const QString& filename)
 							for(cn->h2=0; cn->h2 < this->nHoursPerDay; cn->h2++)
 								if(this->hoursOfTheDay[cn->h2]==elem4.text())
 									break;
+							if(cn->h2<=0 || cn->h2>this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint TeacherNotAvailable end hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint")
+								 .arg(cn->teacherName)
+								 .arg(elem4.text()));
+								cn=NULL;
+								goto corruptConstraintTime;
+							}
 							assert(cn->h2>0 && cn->h2 <= this->nHoursPerDay);
 							xmlReadingLog+="    End hour="+this->hoursOfTheDay[cn->h2]+"\n";
 						}
@@ -3212,6 +3236,14 @@ bool Rules::read(const QString& filename)
 							for(cn->d=0; cn->d<this->nDaysPerWeek; cn->d++)
 								if(this->daysOfTheWeek[cn->d]==elem4.text())
 									break;
+							if(cn->d>=this->nDaysPerWeek){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint StudentsSetNotAvailable day corrupt for students %1, day %2 is inexistent ... ignoring constraint")
+								 .arg(cn->students)
+								 .arg(elem4.text()));
+								cn=NULL;
+								goto corruptConstraintTime;
+							}
 							assert(cn->d<this->nDaysPerWeek);
 							xmlReadingLog+="    Crt. day="+this->daysOfTheWeek[cn->d]+"\n";
 						}
@@ -3219,6 +3251,14 @@ bool Rules::read(const QString& filename)
 							for(cn->h1=0; cn->h1 < this->nHoursPerDay; cn->h1++)
 								if(this->hoursOfTheDay[cn->h1]==elem4.text())
 									break;
+							if(cn->h1>=this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint StudentsSetNotAvailable start hour corrupt for students set %1, hour %2 is inexistent ... ignoring constraint")
+								 .arg(cn->students)
+								 .arg(elem4.text()));
+								cn=NULL;
+								goto corruptConstraintTime;
+							}
 							assert(cn->h1>=0 && cn->h1 < this->nHoursPerDay);
 							xmlReadingLog+="    Start hour="+this->hoursOfTheDay[cn->h1]+"\n";
 						}
@@ -3226,6 +3266,14 @@ bool Rules::read(const QString& filename)
 							for(cn->h2=0; cn->h2 < this->nHoursPerDay; cn->h2++)
 								if(this->hoursOfTheDay[cn->h2]==elem4.text())
 									break;
+							if(cn->h2<=0 || cn->h2>this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint StudentsSetNotAvailable end hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint")
+								 .arg(cn->students)
+								 .arg(elem4.text()));
+								cn=NULL;
+								goto corruptConstraintTime;
+							}
 							assert(cn->h2>0 && cn->h2 <= this->nHoursPerDay);
 							xmlReadingLog+="    End hour="+this->hoursOfTheDay[cn->h2]+"\n";
 						}
@@ -3966,6 +4014,14 @@ bool Rules::read(const QString& filename)
 							for(cn->day=0; cn->day<this->nDaysPerWeek; cn->day++)
 								if(this->daysOfTheWeek[cn->day]==elem4.text())
 									break;
+							if(cn->day>=this->nDaysPerWeek){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint ActivityPreferredTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
+								 .arg(cn->activityId)
+								 .arg(elem4.text()));
+								cn=NULL;
+								goto corruptConstraintTime;
+							}
 							assert(cn->day<this->nDaysPerWeek);
 							xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->day]+"\n";
 						}
@@ -3973,6 +4029,14 @@ bool Rules::read(const QString& filename)
 							for(cn->hour=0; cn->hour < this->nHoursPerDay; cn->hour++)
 								if(this->hoursOfTheDay[cn->hour]==elem4.text())
 									break;
+							if(cn->hour>=this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint ActivityPreferredTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
+								 .arg(cn->activityId)
+								 .arg(elem4.text()));
+								cn=NULL;
+								goto corruptConstraintTime;
+							}
 							assert(cn->hour>=0 && cn->hour < this->nHoursPerDay);
 							xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hour]+"\n";
 						}
@@ -4124,6 +4188,16 @@ bool Rules::read(const QString& filename)
 									for(cn->days[i]=0; cn->days[i]<this->nDaysPerWeek; cn->days[i]++)
 										if(this->daysOfTheWeek[cn->days[i]]==elem5.text())
 											break;
+
+									if(cn->days[i]>=this->nDaysPerWeek){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivityPreferredTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
+										 .arg(cn->activityId)
+										 .arg(elem5.text()));
+										cn=NULL;
+										goto corruptConstraintTime;
+									}
+						
 									assert(cn->days[i]<this->nDaysPerWeek);
 									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->days[i]]+"("+QString::number(i)+")"+"\n";
 								}
@@ -4131,6 +4205,16 @@ bool Rules::read(const QString& filename)
 									for(cn->hours[i]=0; cn->hours[i] < this->nHoursPerDay; cn->hours[i]++)
 										if(this->hoursOfTheDay[cn->hours[i]]==elem5.text())
 											break;
+									
+									if(cn->hours[i]>=this->nHoursPerDay){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivityPreferredTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
+										 .arg(cn->activityId)
+										 .arg(elem5.text()));
+										cn=NULL;
+										goto corruptConstraintTime;
+									}
+									
 									assert(cn->hours[i]>=0 && cn->hours[i] < this->nHoursPerDay);
 									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hours[i]]+"\n";
 								}
@@ -4176,6 +4260,15 @@ bool Rules::read(const QString& filename)
 							for(cn->d=0; cn->d<this->nDaysPerWeek; cn->d++)
 								if(this->daysOfTheWeek[cn->d]==elem4.text())
 									break;
+									
+							if(cn->d>=this->nDaysPerWeek){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint Break day corrupt,  day %1 is inexistent ... ignoring constraint")
+								 .arg(elem4.text()));
+								cn=NULL;
+								goto corruptConstraintTime;
+							}
+									
 							assert(cn->d<this->nDaysPerWeek);
 							xmlReadingLog+="    Crt. day="+this->daysOfTheWeek[cn->d]+"\n";
 						}
@@ -4183,6 +4276,15 @@ bool Rules::read(const QString& filename)
 							for(cn->h1=0; cn->h1 < this->nHoursPerDay; cn->h1++)
 								if(this->hoursOfTheDay[cn->h1]==elem4.text())
 									break;
+									
+							if(cn->h1>=this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint Break start hour corrupt, hour %! is inexistent ... ignoring constraint")
+								 .arg(elem4.text()));
+								cn=NULL;
+								goto corruptConstraintTime;
+							}
+									
 							assert(cn->h1>=0 && cn->h1 < this->nHoursPerDay);
 							xmlReadingLog+="    Start hour="+this->hoursOfTheDay[cn->h1]+"\n";
 						}
@@ -4190,6 +4292,15 @@ bool Rules::read(const QString& filename)
 							for(cn->h2=0; cn->h2 < this->nHoursPerDay; cn->h2++)
 								if(this->hoursOfTheDay[cn->h2]==elem4.text())
 									break;
+									
+							if(cn->h2<=0 || cn->h2>this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint Break end hour corrupt, hour %1 is inexistent ... ignoring constraint")
+								 .arg(elem4.text()));
+								cn=NULL;
+								goto corruptConstraintTime;
+							}
+
 							assert(cn->h2>0 && cn->h2 <= this->nHoursPerDay);
 							xmlReadingLog+="    End hour="+this->hoursOfTheDay[cn->h2]+"\n";
 						}
@@ -4760,6 +4871,19 @@ bool Rules::read(const QString& filename)
 									for(cn->days[i]=0; cn->days[i]<this->nDaysPerWeek; cn->days[i]++)
 										if(this->daysOfTheWeek[cn->days[i]]==elem5.text())
 											break;
+											
+									if(cn->days[i]>=this->nDaysPerWeek){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivitiesPreferredTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, subject tag name=%4, day %5 is inexistent ... ignoring constraint")
+										 .arg(cn->teacherName)
+										 .arg(cn->studentsName)
+										 .arg(cn->subjectName)
+										 .arg(cn->subjectTagName)
+										 .arg(elem5.text()));
+										cn=NULL;
+										goto corruptConstraintTime;
+									}
+											
 									assert(cn->days[i]<this->nDaysPerWeek);
 									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->days[i]]+"("+QString::number(i)+")"+"\n";
 								}
@@ -4767,6 +4891,19 @@ bool Rules::read(const QString& filename)
 									for(cn->hours[i]=0; cn->hours[i] < this->nHoursPerDay; cn->hours[i]++)
 										if(this->hoursOfTheDay[cn->hours[i]]==elem5.text())
 											break;
+											
+									if(cn->hours[i]>=this->nHoursPerDay){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivitiesPreferredTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, subject tag name=%4, hour %5 is inexistent ... ignoring constraint")
+										 .arg(cn->teacherName)
+										 .arg(cn->studentsName)
+										 .arg(cn->subjectName)
+										 .arg(cn->subjectTagName)
+										 .arg(elem5.text()));
+										cn=NULL;
+										goto corruptConstraintTime;
+									}
+											
 									assert(cn->hours[i]>=0 && cn->hours[i] < this->nHoursPerDay);
 									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hours[i]]+"\n";
 								}
@@ -4876,6 +5013,8 @@ bool Rules::read(const QString& filename)
 					*/
 					crt_constraint=NULL;
 				}
+
+corruptConstraintTime:
 
 				if(crt_constraint!=NULL){
 					assert(crt_constraint!=NULL);
@@ -5003,6 +5142,16 @@ bool Rules::read(const QString& filename)
 							for(cn->d=0; cn->d<this->nDaysPerWeek; cn->d++)
 								if(this->daysOfTheWeek[cn->d]==elem4.text())
 									break;
+
+							if(cn->d>=this->nDaysPerWeek){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint RoomNotAvailable day corrupt for room %1, day %2 is inexistent ... ignoring constraint")
+								 .arg(cn->roomName)
+								 .arg(elem4.text()));
+								cn=NULL;
+								goto corruptConstraintSpace;
+							}
+
 							assert(cn->d<this->nDaysPerWeek);
 							xmlReadingLog+="    Crt. day="+this->daysOfTheWeek[cn->d]+"\n";
 						}
@@ -5010,6 +5159,16 @@ bool Rules::read(const QString& filename)
 							for(cn->h1=0; cn->h1 < this->nHoursPerDay; cn->h1++)
 								if(this->hoursOfTheDay[cn->h1]==elem4.text())
 									break;
+
+							if(cn->h1>=this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint RoomNotAvailable start hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint")
+								 .arg(cn->roomName)
+								 .arg(elem4.text()));
+								cn=NULL;
+								goto corruptConstraintSpace;
+							}
+
 							assert(cn->h1>=0 && cn->h1 < this->nHoursPerDay);
 							xmlReadingLog+="    Start hour="+this->hoursOfTheDay[cn->h1]+"\n";
 						}
@@ -5017,6 +5176,16 @@ bool Rules::read(const QString& filename)
 							for(cn->h2=0; cn->h2 < this->nHoursPerDay; cn->h2++)
 								if(this->hoursOfTheDay[cn->h2]==elem4.text())
 									break;
+
+							if(cn->h2<=0 || cn->h2>this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint RoomNotAvailable end hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint")
+								 .arg(cn->roomName)
+								 .arg(elem4.text()));
+								cn=NULL;
+								goto corruptConstraintSpace;
+							}
+
 							assert(cn->h2>0 && cn->h2 <= this->nHoursPerDay);
 							xmlReadingLog+="    End hour="+this->hoursOfTheDay[cn->h2]+"\n";
 						}
@@ -5887,6 +6056,8 @@ bool Rules::read(const QString& filename)
 					crt_constraint=cn;*/
 					crt_constraint=NULL;
 				}
+
+corruptConstraintSpace:
 
 				if(crt_constraint!=NULL){
 					assert(crt_constraint!=NULL);

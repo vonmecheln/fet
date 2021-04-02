@@ -120,10 +120,21 @@ void HoursForm::ok()
 		QObject::tr("Please note that FET will NOT take care\n"
 		"of old constraints using erased hours\n"
 		"(only renamed hours will be handled correctly)\n"));
+				
+	int t=QMessageBox::question(this, QObject::tr("FET question"),
+		QObject::tr("Are you sure that the number of working periods per day is %1? (there were lots of misunderstandings here)")
+		.arg(nHours),
+		QMessageBox::Yes, QMessageBox::Cancel
+		);		
+	if(t==QMessageBox::Cancel)
+		return;
 
 	gt.rules.nHoursPerDay=nHours;
 	for(int i=0; i<=nHours; i++)
 		gt.rules.hoursOfTheDay[i]=hoursNames[i]->text();
+		
+	gt.rules.nHoursPerWeek=gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek; //not needed
+	gt.rules.internalStructureComputed=false;
 
 	this->close();
 }

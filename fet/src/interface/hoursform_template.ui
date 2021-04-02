@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>541</width>
-            <height>532</height>
+            <height>562</height>
         </rect>
     </property>
     <property name="caption">
@@ -445,7 +445,9 @@
             <property name="text">
                 <string>Number of start hours (periods) per day
 (please specify also the name of the last hour of the day)
-Please be careful, you will have to input n+1 names</string>
+Please be careful, you will have to input n+1 names
+It is recommended to use names like 08:00 or 13:45 for instance,
+not the interval (not like 08:00-09:00 or like 13:45-14:55)</string>
             </property>
         </widget>
         <widget class="QSpinBox" row="0" column="4">

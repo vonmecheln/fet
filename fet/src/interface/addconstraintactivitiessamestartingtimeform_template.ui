@@ -50,13 +50,14 @@
                 <cstring>blockCheckBox</cstring>
             </property>
             <property name="text">
-                <string>Block (please click here if you want to input only the
+                <string>Block (please select this if you want to input only the
 representatives of sub-activities. There will be added more
 ConstraintActivitiesSameStartingTime-s, one for each corresponding
-tuple)</string>
+tuple. But the number of sub-activities must match and please be 
+careful at the order, it might be different from what you need)</string>
             </property>
             <property name="checked">
-                <bool>true</bool>
+                <bool>false</bool>
             </property>
         </widget>
         <widget class="QLayoutWidget" row="1" column="0">

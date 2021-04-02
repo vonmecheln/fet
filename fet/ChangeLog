@@ -987,4 +987,8 @@ Versions 5.2.0 - 5.2.
 - Version 5.2.6
 	- Minor interface improvements (the conflicts are now named soft conflicts, as they should)
 	- Small speed improvement, by changing the timetable generate dialog
+- Version 5.2.7
+	- Interface improvement
+	- Small bug fix (when modifying hours or days)
+	- Crash bugs fixed - reported by mantas
 	

@@ -157,7 +157,9 @@ bool processTimeConstraints()
 	///////////////////////////////////////////////////////////////
 	
 	/////4. students no gaps and early
-	computeNHoursPerSubgroup();
+	t=computeNHoursPerSubgroup();
+	if(!t)
+		return false;
 	t=computeSubgroupsEarlyAndNoGapsPercentages();
 	if(!t)
 		return false;
@@ -171,7 +173,9 @@ bool processTimeConstraints()
 	
 	
 	/////6. TEACHERS MAX GAPS PER WEEK
-	computeNHoursPerTeacher();
+	t=computeNHoursPerTeacher();
+	if(!t)
+		return false;
 	t=computeTeachersMaxGapsPercentage();
 	if(!t)
 		return false;
@@ -630,7 +634,7 @@ void computeActivitiesSameStartingHour()
 }
 
 ////////////teachers' no gaps
-void computeNHoursPerTeacher()
+bool computeNHoursPerTeacher()
 {
 	for(int i=0; i<gt.rules.nInternalTeachers; i++)
 		nHoursPerTeacher[i]=0;
@@ -641,6 +645,28 @@ void computeNHoursPerTeacher()
 			nHoursPerTeacher[tc]+=act->duration;
 		}
 	}
+	
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalTeachers; i++)
+		if(nHoursPerTeacher[i]>gt.rules.nHoursPerWeek){
+			ok=false;
+
+			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+			 QObject::tr("Cannot optimize for teacher %1, because the number of hours for teacher is %1 "
+			  " and you have only %2 days x %3 hours in a week. Probably you need to increase with 1 the number"
+			  " of hours per day (probably you misunderstood my hours notation)")
+			 .arg(nHoursPerTeacher[i])
+			 .arg(gt.rules.nDaysPerWeek)
+			 .arg(gt.rules.nHoursPerDay),
+			 QObject::tr("Skip rest of such problems"), QObject::tr("See next problem"), QString(),
+			 1, 0 );
+		 	
+			if(t==0)
+				break;
+		}
+	
+	return ok;
 }
 
 bool computeTeachersMaxGapsPercentage()
@@ -722,7 +748,7 @@ bool computeTeachersMaxGapsPercentage()
 
 
 ///////students' no gaps and early (part 1)
-void computeNHoursPerSubgroup()
+bool computeNHoursPerSubgroup()
 {
 	for(int i=0; i<gt.rules.nInternalSubgroups; i++)
 		nHoursPerSubgroup[i]=0;
@@ -733,6 +759,27 @@ void computeNHoursPerSubgroup()
 			nHoursPerSubgroup[isg]+=act->duration;
 		}
 	}
+	
+	bool ok=true;
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++)
+		if(nHoursPerSubgroup[i]>gt.rules.nHoursPerWeek){
+			ok=false;
+
+			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+			 QObject::tr("Cannot optimize for subgroup %1, because the number of hours for subgroup is %1 "
+			  " and you have only %2 days x %3 hours in a week. Probably you need to increase with 1 the number"
+			  " of hours per day (probably you misunderstood my hours notation)")
+			 .arg(nHoursPerSubgroup[i])
+			 .arg(gt.rules.nDaysPerWeek)
+			 .arg(gt.rules.nHoursPerDay),
+			 QObject::tr("Skip rest of such problems"), QObject::tr("See next problem"), QString(),
+			 1, 0 );
+		 	
+			if(t==0)
+				break;
+		}
+	
+	return ok;
 }
 
 

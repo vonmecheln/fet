@@ -87,7 +87,7 @@ bool computeAllowedTimesPercentages();
 
 
 ////////BEGIN students no gaps and early
-void computeNHoursPerSubgroup();
+bool computeNHoursPerSubgroup();
 bool computeSubgroupsEarlyAndNoGapsPercentages();
 
 extern double subgroupsEarlyPercentage[MAX_TOTAL_SUBGROUPS];
@@ -114,7 +114,7 @@ extern QList<int> activitiesForTeachers[MAX_TEACHERS];
 extern double teachersMaxGapsPercentage[MAX_TEACHERS];
 extern int teachersMaxGapsMaxGaps[MAX_TEACHERS];
 extern int nHoursPerTeacher[MAX_TEACHERS];
-void computeNHoursPerTeacher();
+bool computeNHoursPerTeacher();
 bool computeTeachersMaxGapsPercentage();
 ////////END   teachers max gaps per week
 
