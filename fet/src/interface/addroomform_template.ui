@@ -76,7 +76,7 @@
         </widget>
         <widget class="QLayoutWidget" row="2" column="0">
             <property name="name">
-                <cstring>layout3</cstring>
+                <cstring>layout4</cstring>
             </property>
             <hbox>
                 <property name="name">
@@ -84,18 +84,13 @@
                 </property>
                 <widget class="QPushButton">
                     <property name="name">
-                        <cstring>pushButton3</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Help</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton">
-                    <property name="name">
                         <cstring>addRoomPushButton</cstring>
                     </property>
                     <property name="text">
                         <string>Add room</string>
+                    </property>
+                    <property name="default">
+                        <bool>true</bool>
                     </property>
                 </widget>
                 <widget class="QPushButton">
@@ -106,17 +101,19 @@
                         <string>Close</string>
                     </property>
                 </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>pushButton3</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Help</string>
+                    </property>
+                </widget>
             </hbox>
         </widget>
     </grid>
 </widget>
 <connections>
-    <connection>
-        <sender>addRoomPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>addRoomForm_template</receiver>
-        <slot>addRoom()</slot>
-    </connection>
     <connection>
         <sender>closePushButton</sender>
         <signal>clicked()</signal>
@@ -129,13 +126,19 @@
         <receiver>addRoomForm_template</receiver>
         <slot>help()</slot>
     </connection>
+    <connection>
+        <sender>addRoomPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>addRoomForm_template</receiver>
+        <slot>addRoom()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>nameLineEdit</tabstop>
     <tabstop>capacitySpinBox</tabstop>
-    <tabstop>pushButton3</tabstop>
     <tabstop>addRoomPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
+    <tabstop>pushButton3</tabstop>
 </tabstops>
 <slots>
     <slot>addRoom()</slot>

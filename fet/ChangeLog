@@ -1115,4 +1115,7 @@ Versions 5.4.0 - 5.4.
 	- Indonesian translation by Nirwan Yus
 	- Italian translation by Marco Barsotti
 	- Arabic translation update by Hatim Ali
+- Version 5.4.14
+	- Minor interface improvement - in add rooms dialog, pressing Enter now works correctly, it adds a room,
+	not display Help
 	

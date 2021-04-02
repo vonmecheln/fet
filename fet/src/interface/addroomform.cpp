@@ -100,6 +100,12 @@ void AddRoomForm::help()
 	 "special rooms needed (no need to input home rooms for teachers or students)\n\n"
 	 "It is advisable to generate the timetable without the rooms, then, if a solution is possible, to add rooms"
 	 );
+	 
+	s+="\n\n";
+	
+	s+=QObject::tr("Please note that each room can hold a single activity at a specified period. If you"
+	 " have a very large room, which can hold more activities at one time, please add more rooms,"
+	 " representing this larger room");
 	
 	//show the message in a dialog
 	QDialog* dialog=new QDialog();
