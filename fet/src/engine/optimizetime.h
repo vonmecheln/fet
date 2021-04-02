@@ -29,7 +29,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include "timechromosome.h"
 
 //a probabilistic function to say if we can skip a constraint based on its percentage weight
-bool skipRandom(int weightPercentage);
+inline bool skipRandom(int weightPercentage);
 
 /**
 This class represents the solving of time

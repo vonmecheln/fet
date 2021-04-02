@@ -895,3 +895,6 @@ Versions 5.0.0 -
 	- Improved the algorithm (maybe speed improvements)
 - Version 5.0.0-preview29
 	- Geometry of main form now saved correctly (suggested by Volker Dirr).
+- Version 5.0.0-preview30
+	- Improvements in optimization algorithm.
+	

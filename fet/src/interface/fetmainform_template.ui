@@ -10,7 +10,7 @@
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>FET - a free evolutionary timetabling program</string>
+   <string>FET - a free timetabling program</string>
   </property>
   <property name="windowIcon" >
    <iconset/>

@@ -52,7 +52,7 @@ static bool swappedActivities[MAX_ACTIVITIES];
 
 static bool foundGoodSwap;
 
-static QSet<int> tlistSet[MAX_HOURS_PER_WEEK];
+//static QSet<int> tlistSet[MAX_HOURS_PER_WEEK];
 
 //not sure, it might be necessary 10*...
 static int restoreActIndex[10*MAX_ACTIVITIES]; //the index of the act. to restore
@@ -104,7 +104,7 @@ static int invPermutation[MAX_ACTIVITIES];
 
 const int INF=2000000000;
 
-bool skipRandom(int weightPercentage)
+inline bool skipRandom(int weightPercentage)
 {
 	if(weightPercentage==-1)
 		return true; //non-existing constraint
@@ -228,17 +228,18 @@ void OptimizeTime::optimize()
 	 
 		assert(c.times[permutation[added_act]]==UNALLOCATED_TIME);
 
-		for(int i=0; i<gt.rules.nHoursPerWeek; i++)
-			tlistSet[i].clear();
+		/*for(int i=0; i<gt.rules.nHoursPerWeek; i++)
+			tlistSet[i].clear();*/
 		for(int i=0; i<added_act; i++){
 			if(c.times[permutation[i]]==UNALLOCATED_TIME)
 				cout<<"ERROR: act with id=="<<gt.rules.internalActivitiesList[permutation[i]].id<<" has time unallocated"<<endl;
 			assert(c.times[permutation[i]]!=UNALLOCATED_TIME);
-			for(int j=0; j<gt.rules.internalActivitiesList[permutation[i]].duration; j++)
-				tlistSet[c.times[permutation[i]]+j*gt.rules.nDaysPerWeek].insert(permutation[i]);
+			/*for(int j=0; j<gt.rules.internalActivitiesList[permutation[i]].duration; j++)
+				tlistSet[c.times[permutation[i]]+j*gt.rules.nDaysPerWeek].insert(permutation[i]);*/
 		}
 				
 		///////////////care for student (set) max hours daily
+		//timetable is important for other purposes
 		for(int i=0; i<gt.rules.nInternalSubgroups; i++)
 			for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 				for(int k=0; k<gt.rules.nHoursPerDay; k++)
@@ -598,12 +599,13 @@ void OptimizeTime::moveActivity(int ai, int fromslot, int toslot)
 		int d=fromslot%gt.rules.nDaysPerWeek;
 		int h=fromslot/gt.rules.nDaysPerWeek;
 		
-		for(int t=fromslot; t<fromslot+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
+		/*for(int t=fromslot; t<fromslot+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
 			int tt=tlistSet[t].remove(ai);
 			assert(tt==1);
-		}
+		}*/
 
 		//update for students (set) max hours daily
+		//careful: timetable is used for other purposes
 		for(int q=0; q<act->nSubgroups; q++){
 			int sb=act->subgroups[q];	
 			//if(1 || subgroupsMaxHoursDailyMaxHours[sb]>=0){
@@ -843,10 +845,10 @@ void OptimizeTime::moveActivity(int ai, int fromslot, int toslot)
 		int d=toslot%gt.rules.nDaysPerWeek;
 		int h=toslot/gt.rules.nDaysPerWeek;
 		
-		for(int t=toslot; t<toslot+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
+		/*for(int t=toslot; t<toslot+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
 			assert(!tlistSet[t].contains(ai));
 			tlistSet[t].insert(ai);
-		}
+		}*/
 
 		//update for students (set) max hours daily
 		for(int q=0; q<act->nSubgroups; q++){
@@ -1148,7 +1150,60 @@ void OptimizeTime::randomswap(int ai, int level){
 
 		//care about basic time constraints
 		bool okbasictime=true;
-		for(int t1=newtime; t1<newtime+act->duration*gt.rules.nDaysPerWeek; t1+=gt.rules.nDaysPerWeek)
+
+		///////////////////////////////////
+		//added in 5.0.0-preview30
+		//same teacher?
+		for(int dur=0; dur<act->duration; dur++){
+			assert(h+dur<gt.rules.nHoursPerDay);
+			for(int q=0; q<act->nTeachers; q++){
+				int tch=act->teachers[q];
+				if(teachersTimetable[tch][d][h+dur]>=0){
+					int ai2=teachersTimetable[tch][d][h+dur];
+					assert(ai2!=ai);
+				
+					if(!skipRandom(activitiesConflictingPercentage[ai][ai2])){
+						if(swappedActivities[ai2]){
+							okbasictime=false;
+							goto impossiblebasictime;
+						}
+
+						if(conflActivities[newtime].indexOf(ai2)==-1){
+							conflActivities[newtime].append(ai2);
+							nConflActivities[newtime]++;
+							assert(nConflActivities[newtime]==conflActivities[newtime].count());
+						}
+					}
+				}
+			}
+		}
+		//same subgroup?
+		for(int dur=0; dur<act->duration; dur++){
+			assert(h+dur<gt.rules.nHoursPerDay);
+			for(int q=0; q<act->nSubgroups; q++){
+				int sbg=act->subgroups[q];
+				if(subgroupsTimetable[sbg][d][h+dur]>=0){
+					int ai2=subgroupsTimetable[sbg][d][h+dur];
+					assert(ai2!=ai);
+			
+					if(!skipRandom(activitiesConflictingPercentage[ai][ai2])){
+						if(swappedActivities[ai2]){
+							okbasictime=false;
+							goto impossiblebasictime;
+						}
+
+						if(conflActivities[newtime].indexOf(ai2)==-1){
+							conflActivities[newtime].append(ai2);
+							nConflActivities[newtime]++;
+							assert(nConflActivities[newtime]==conflActivities[newtime].count());
+						}
+					}
+				}
+			}
+		}
+		///////////////////////////////////
+				
+/*		for(int t1=newtime; t1<newtime+act->duration*gt.rules.nDaysPerWeek; t1+=gt.rules.nDaysPerWeek)
 			foreach(int ai2, tlistSet[t1]){
 				if(ai!=ai2 && !skipRandom(activitiesConflictingPercentage[ai][ai2])){
 					if(swappedActivities[ai2]){
@@ -1162,7 +1217,9 @@ void OptimizeTime::randomswap(int ai, int level){
 						assert(nConflActivities[newtime]==conflActivities[newtime].count());
 					}
 				}
-			}
+			}*/
+			
+			
 impossiblebasictime:
 		if(!okbasictime){
 			nConflActivities[newtime]=MAX_ACTIVITIES;
@@ -1693,7 +1750,7 @@ impossibleteachersmaxhoursdaily:
 										okswapped=false;
 									}
 									
-									if(conflActs1[d2].indexOf(ttt)==-1)
+									if(conflActs1[d2].indexOf(ttt)==-1 && conflActivities[newtime].indexOf(ttt)==-1)
 										conflActs1[d2].append(ttt);
 												
 										nWrong1[d2]+=triedRemovals[ttt][c.times[ttt]];
@@ -1741,7 +1798,7 @@ impossibleteachersmaxhoursdaily:
 									if(swappedActivities[ttt])
 										okswapped=false;
 								
-									if(conflActs1[d2].indexOf(ttt)==-1)
+									if(conflActs1[d2].indexOf(ttt)==-1 && conflActivities[newtime].indexOf(ttt)==-1)
 										conflActs1[d2].append(ttt);
 												
 										nWrong1[d2]+=triedRemovals[ttt][c.times[ttt]];
@@ -1805,7 +1862,7 @@ impossibleteachersmaxhoursdaily:
 									if(swappedActivities[ttt])
 										okswapped=false;
 								
-									if(conflActs2[d2].indexOf(ttt)==-1)
+									if(conflActs2[d2].indexOf(ttt)==-1 && conflActivities[newtime].indexOf(ttt)==-1)
 										conflActs2[d2].append(ttt);
 												
 										nWrong2[d2]+=triedRemovals[ttt][c.times[ttt]];
@@ -1853,7 +1910,7 @@ impossibleteachersmaxhoursdaily:
 									if(swappedActivities[ttt])
 										okswapped=false;
 									
-									if(conflActs2[d2].indexOf(ttt)==-1)
+									if(conflActs2[d2].indexOf(ttt)==-1 && conflActivities[newtime].indexOf(ttt)==-1)
 										conflActs2[d2].append(ttt);
 												
 										nWrong2[d2]+=triedRemovals[ttt][c.times[ttt]];
@@ -1943,7 +2000,7 @@ impossibleteachersmaxhoursdaily:
 						int w=where.at(rnd);
 						assert(d2>=0);
 								
-						bool ok=false;
+						bool ok=false; //TODO: remove this variable
 						if(w==1)
 							foreach(int ai2, conflActs1[d2]){
 								ok=true;
@@ -1954,6 +2011,8 @@ impossibleteachersmaxhoursdaily:
 									nConflActivities[newtime]++;
 									assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 								}
+								else
+									assert(0);
 							}
 						else{
 							assert(w==2);
@@ -1966,9 +2025,11 @@ impossibleteachersmaxhoursdaily:
 									nConflActivities[newtime]++;
 									assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 								}
+								else
+									assert(0);
 							}
 						}
-						assert(ok);
+						//assert(ok);
 					}
 					/////////////////////////////////////////////////////////////////////////////////////////
 
@@ -2080,7 +2141,7 @@ impossibleteachersmaxhoursdaily:
 										if(ttt>=0){
 											if(swappedActivities[ttt])
 												okswapped=false;
-											if(conflActs[d2].indexOf(ttt)==-1)
+											if(conflActs[d2].indexOf(ttt)==-1 && conflActivities[newtime].indexOf(ttt)==-1)
 												conflActs[d2].append(ttt);
 												
 												nWrong[d2]+=triedRemovals[ttt][c.times[ttt]];
@@ -2121,7 +2182,7 @@ impossibleteachersmaxhoursdaily:
 										if(ttt>=0){
 											if(swappedActivities[ttt])
 												okswapped=false;
-											if(conflActs[d2].indexOf(ttt)==-1)
+											if(conflActs[d2].indexOf(ttt)==-1 && conflActivities[newtime].indexOf(ttt)==-1)
 												conflActs[d2].append(ttt);
 												
 												nWrong[d2]+=triedRemovals[ttt][c.times[ttt]];
@@ -2177,8 +2238,10 @@ impossibleteachersmaxhoursdaily:
 									nConflActivities[newtime]++;
 									assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 								}
+								else
+									assert(0);
 							}
-							assert(ok);
+							//assert(ok);
 							/////////////////////////////////////////////////////////////////////////////////////////
 												
 							/*if(h!=0){
@@ -2297,7 +2360,7 @@ impossibleteachersmaxhoursdaily:
 										if(ttt>=0){
 											if(swappedActivities[ttt])
 												okswapped=false;
-											if(conflActs1[d2].indexOf(ttt)==-1)
+											if(conflActs1[d2].indexOf(ttt)==-1 && conflActivities[newtime].indexOf(ttt)==-1)
 												conflActs1[d2].append(ttt);
 												
 												nWrong1[d2]+=triedRemovals[ttt][c.times[ttt]];
@@ -2344,7 +2407,7 @@ impossibleteachersmaxhoursdaily:
 										if(ttt>=0){
 											if(swappedActivities[ttt])
 												okswapped=false;
-											if(conflActs1[d2].indexOf(ttt)==-1)
+											if(conflActs1[d2].indexOf(ttt)==-1 && conflActivities[newtime].indexOf(ttt)==-1)
 												conflActs1[d2].append(ttt);
 												
 												nWrong1[d2]+=triedRemovals[ttt][c.times[ttt]];
@@ -2407,7 +2470,7 @@ impossibleteachersmaxhoursdaily:
 										if(ttt>=0){
 											if(swappedActivities[ttt])
 												okswapped=false;
-											if(conflActs2[d2].indexOf(ttt)==-1)
+											if(conflActs2[d2].indexOf(ttt)==-1 && conflActivities[newtime].indexOf(ttt)==-1)
 												conflActs2[d2].append(ttt);
 												
 												nWrong2[d2]+=triedRemovals[ttt][c.times[ttt]];
@@ -2454,7 +2517,7 @@ impossibleteachersmaxhoursdaily:
 										if(ttt>=0){
 											if(swappedActivities[ttt])
 												okswapped=false;
-											if(conflActs2[d2].indexOf(ttt)==-1)
+											if(conflActs2[d2].indexOf(ttt)==-1 && conflActivities[newtime].indexOf(ttt)==-1)
 												conflActs2[d2].append(ttt);
 												
 												nWrong2[d2]+=triedRemovals[ttt][c.times[ttt]];
@@ -2525,7 +2588,7 @@ impossibleteachersmaxhoursdaily:
 							int w=where.at(rnd);
 							assert(d2>=0);
 							
-							bool ok=false;
+							bool ok=false; //TODO: remove this variable
 							if(w==1)
 								foreach(int ai2, conflActs1[d2]){
 									ok=true;
@@ -2536,6 +2599,8 @@ impossibleteachersmaxhoursdaily:
 										nConflActivities[newtime]++;
 										assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 									}
+									else
+										assert(0);
 								}
 							else{
 								assert(w==2);
@@ -2548,9 +2613,11 @@ impossibleteachersmaxhoursdaily:
 										nConflActivities[newtime]++;
 										assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 									}
+									else
+										assert(0);
 								}
 							}
-							assert(ok);
+							//assert(ok);
 							/////////////////////////////////////////////////////////////////////////////////////////
 
 							/*for(int i=0; i<gt.rules.nHoursPerWeek; i++){
@@ -2634,7 +2701,7 @@ impossibleteachersmaxhoursdaily:
 							nWrong[d2]=0;
 							minWrong[d2]=INF;
 							foreach(int a, teacherActivitiesOfTheDay[tc][d2])
-								if(conflActs[d2].indexOf(a)==-1){
+								if(conflActs[d2].indexOf(a)==-1 && conflActivities[newtime].indexOf(a)==-1){
 									if(swappedActivities[a])
 										okswapped=false;
 								
@@ -2679,7 +2746,7 @@ impossibleteachersmaxhoursdaily:
 					int d2=optDays.at(rnd);
 					assert(d2>=0);
 
-					bool ok=false;
+					bool ok=false; //TODO: remove this variable
 					foreach(int ai2, conflActs[d2]){
 						ok=true;
 						assert(ai2!=ai);
@@ -2689,8 +2756,10 @@ impossibleteachersmaxhoursdaily:
 							nConflActivities[newtime]++;
 							assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 						}
+						else
+							assert(0);
 					}
-					assert(ok);
+					//assert(ok);
 				}
 			}
 		}
