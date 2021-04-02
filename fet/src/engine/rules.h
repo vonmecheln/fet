@@ -34,6 +34,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include "room.h"
 #include "building.h"
 
+#include <QSet>
+
 #include <qstring.h>
 #include <qfile.h>
 #include <qtextstream.h>
@@ -219,6 +221,8 @@ public:
 	*/
 	int nInternalActivities;
 	Activity internalActivitiesList[MAX_ACTIVITIES];
+	
+	QSet<int> inactiveActivities;
 	
 	QList<int> activitiesForSubject[MAX_SUBJECTS];
 

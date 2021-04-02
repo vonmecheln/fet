@@ -105,6 +105,13 @@ bool ConstraintBasicCompulsorySpace::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool ConstraintBasicCompulsorySpace::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
+}
+
 QString ConstraintBasicCompulsorySpace::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
@@ -411,6 +418,13 @@ ConstraintRoomNotAvailableTimes::ConstraintRoomNotAvailableTimes(double wp, cons
 	this->type=CONSTRAINT_ROOM_NOT_AVAILABLE_TIMES;
 }
 
+bool ConstraintRoomNotAvailableTimes::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
+}
+
 QString ConstraintRoomNotAvailableTimes::getXmlDescription(Rules& r){
 	QString s="<ConstraintRoomNotAvailableTimes>\n";
 	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
@@ -705,6 +719,14 @@ bool ConstraintActivityPreferredRoom::computeInternalStructure(Rules& r)
 	assert(this->_room>=0);
 	
 	return true;
+}
+
+bool ConstraintActivityPreferredRoom::hasInactiveActivities(Rules& r)
+{
+	if(r.inactiveActivities.contains(this->activityId))
+		return true;
+
+	return false;
 }
 
 QString ConstraintActivityPreferredRoom::getXmlDescription(Rules& r){
@@ -1002,6 +1024,14 @@ bool ConstraintActivityPreferredRooms::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool ConstraintActivityPreferredRooms::hasInactiveActivities(Rules& r)
+{
+	if(r.inactiveActivities.contains(this->activityId))
+		return true;
+
+	return false;
+}
+
 QString ConstraintActivityPreferredRooms::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
@@ -1281,6 +1311,13 @@ bool ConstraintStudentsSetHomeRoom::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool ConstraintStudentsSetHomeRoom::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
+}
+
 QString ConstraintStudentsSetHomeRoom::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 	//if(&r!=NULL)
@@ -1528,6 +1565,13 @@ bool ConstraintStudentsSetHomeRooms::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool ConstraintStudentsSetHomeRooms::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
+}
+
 QString ConstraintStudentsSetHomeRooms::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 	//if(&r!=NULL)
@@ -1755,6 +1799,13 @@ bool ConstraintTeacherHomeRoom::computeInternalStructure(Rules& r)
 	assert(this->_room>=0);
 	
 	return true;
+}
+
+bool ConstraintTeacherHomeRoom::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
 }
 
 QString ConstraintTeacherHomeRoom::getXmlDescription(Rules& r){
@@ -1998,6 +2049,13 @@ bool ConstraintTeacherHomeRooms::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool ConstraintTeacherHomeRooms::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
+}
+
 QString ConstraintTeacherHomeRooms::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 	//if(&r!=NULL)
@@ -2217,6 +2275,13 @@ bool ConstraintSubjectPreferredRoom::computeInternalStructure(Rules& r)
 	assert(this->_room>=0);
 	
 	return true;
+}
+
+bool ConstraintSubjectPreferredRoom::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
 }
 
 QString ConstraintSubjectPreferredRoom::getXmlDescription(Rules& r){
@@ -2442,6 +2507,13 @@ bool ConstraintSubjectPreferredRooms::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool ConstraintSubjectPreferredRooms::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
+}
+
 QString ConstraintSubjectPreferredRooms::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 	//if(&r!=NULL)
@@ -2665,6 +2737,13 @@ bool ConstraintSubjectActivityTagPreferredRoom::computeInternalStructure(Rules& 
 	assert(this->_room>=0);
 	
 	return true;
+}
+
+bool ConstraintSubjectActivityTagPreferredRoom::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
 }
 
 QString ConstraintSubjectActivityTagPreferredRoom::getXmlDescription(Rules& r){
@@ -2893,6 +2972,13 @@ bool ConstraintSubjectActivityTagPreferredRooms::computeInternalStructure(Rules&
 	}*/
 	
 	return true;
+}
+
+bool ConstraintSubjectActivityTagPreferredRooms::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
 }
 
 QString ConstraintSubjectActivityTagPreferredRooms::getXmlDescription(Rules& r){
@@ -3133,6 +3219,13 @@ bool ConstraintStudentsSetMaxBuildingChangesPerDay::computeInternalStructure(Rul
 	return true;
 }
 
+bool ConstraintStudentsSetMaxBuildingChangesPerDay::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
+}
+
 QString ConstraintStudentsSetMaxBuildingChangesPerDay::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
@@ -3305,6 +3398,13 @@ bool ConstraintStudentsMaxBuildingChangesPerDay::computeInternalStructure(Rules&
 	Q_UNUSED(r);
 	
 	return true;
+}
+
+bool ConstraintStudentsMaxBuildingChangesPerDay::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
 }
 
 QString ConstraintStudentsMaxBuildingChangesPerDay::getXmlDescription(Rules& r){
@@ -3525,6 +3625,13 @@ bool ConstraintStudentsSetMaxBuildingChangesPerWeek::computeInternalStructure(Ru
 	return true;
 }
 
+bool ConstraintStudentsSetMaxBuildingChangesPerWeek::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
+}
+
 QString ConstraintStudentsSetMaxBuildingChangesPerWeek::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
@@ -3696,6 +3803,13 @@ bool ConstraintStudentsMaxBuildingChangesPerWeek::computeInternalStructure(Rules
 	Q_UNUSED(r);
 
 	return true;
+}
+
+bool ConstraintStudentsMaxBuildingChangesPerWeek::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
 }
 
 QString ConstraintStudentsMaxBuildingChangesPerWeek::getXmlDescription(Rules& r){
@@ -3915,6 +4029,13 @@ bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::computeInternalStructur
 	return true;
 }
 
+bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
+}
+
 QString ConstraintStudentsSetMinGapsBetweenBuildingChanges::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
@@ -4099,6 +4220,13 @@ bool ConstraintStudentsMinGapsBetweenBuildingChanges::computeInternalStructure(R
 	Q_UNUSED(r);
 		
 	return true;
+}
+
+bool ConstraintStudentsMinGapsBetweenBuildingChanges::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
 }
 
 QString ConstraintStudentsMinGapsBetweenBuildingChanges::getXmlDescription(Rules& r){
@@ -4294,6 +4422,13 @@ bool ConstraintTeacherMaxBuildingChangesPerDay::computeInternalStructure(Rules& 
 	return true;
 }
 
+bool ConstraintTeacherMaxBuildingChangesPerDay::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
+}
+
 QString ConstraintTeacherMaxBuildingChangesPerDay::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
@@ -4467,6 +4602,13 @@ bool ConstraintTeachersMaxBuildingChangesPerDay::computeInternalStructure(Rules&
 	Q_UNUSED(r);
 
 	return true;
+}
+
+bool ConstraintTeachersMaxBuildingChangesPerDay::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
 }
 
 QString ConstraintTeachersMaxBuildingChangesPerDay::getXmlDescription(Rules& r){
@@ -4648,6 +4790,13 @@ bool ConstraintTeacherMaxBuildingChangesPerWeek::computeInternalStructure(Rules&
 	return true;
 }
 
+bool ConstraintTeacherMaxBuildingChangesPerWeek::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
+}
+
 QString ConstraintTeacherMaxBuildingChangesPerWeek::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
@@ -4821,6 +4970,13 @@ bool ConstraintTeachersMaxBuildingChangesPerWeek::computeInternalStructure(Rules
 	Q_UNUSED(r);
 
 	return true;
+}
+
+bool ConstraintTeachersMaxBuildingChangesPerWeek::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
 }
 
 QString ConstraintTeachersMaxBuildingChangesPerWeek::getXmlDescription(Rules& r){
@@ -5000,6 +5156,13 @@ bool ConstraintTeacherMinGapsBetweenBuildingChanges::computeInternalStructure(Ru
 	}	
 
 	return true;
+}
+
+bool ConstraintTeacherMinGapsBetweenBuildingChanges::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
 }
 
 QString ConstraintTeacherMinGapsBetweenBuildingChanges::getXmlDescription(Rules& r){
@@ -5187,6 +5350,13 @@ bool ConstraintTeachersMinGapsBetweenBuildingChanges::computeInternalStructure(R
 	Q_UNUSED(r);
 
 	return true;
+}
+
+bool ConstraintTeachersMinGapsBetweenBuildingChanges::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
 }
 
 QString ConstraintTeachersMinGapsBetweenBuildingChanges::getXmlDescription(Rules& r){

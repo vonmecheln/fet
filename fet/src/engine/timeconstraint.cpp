@@ -108,6 +108,12 @@ bool ConstraintBasicCompulsoryTime::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool ConstraintBasicCompulsoryTime::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
 QString ConstraintBasicCompulsoryTime::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
@@ -595,6 +601,12 @@ bool ConstraintTeacherNotAvailableTimes::computeInternalStructure(Rules& r){
 	return true;
 }
 
+bool ConstraintTeacherNotAvailableTimes::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
 double ConstraintTeacherNotAvailableTimes::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString *conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
@@ -821,6 +833,12 @@ bool ConstraintStudentsSetNotAvailableTimes::computeInternalStructure(Rules& r){
 	else
 		assert(0);
 	return true;
+}
+
+bool ConstraintStudentsSetNotAvailableTimes::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
 }
 
 QString ConstraintStudentsSetNotAvailableTimes::getXmlDescription(Rules& r){
@@ -1061,6 +1079,14 @@ void ConstraintActivitiesSameStartingTime::removeUseless(Rules& r)
 		if(this->_activities[j]>=0) //valid activity
 			this->activitiesId[i++]=this->_activities[j];
 	this->n_activities=i;
+}
+
+bool ConstraintActivitiesSameStartingTime::hasInactiveActivities(Rules& r)
+{
+	for(int i=0; i<this->n_activities; i++)
+		if(r.inactiveActivities.contains(this->activitiesId[i]))
+			return true;
+	return false;
 }
 
 QString ConstraintActivitiesSameStartingTime::getXmlDescription(Rules& r){
@@ -1372,6 +1398,14 @@ void ConstraintActivitiesNotOverlapping::removeUseless(Rules& r)
 		if(this->_activities[j]>=0) //valid activity
 			this->activitiesId[i++]=this->_activities[j];
 	this->n_activities=i;
+}
+
+bool ConstraintActivitiesNotOverlapping::hasInactiveActivities(Rules& r)
+{
+	for(int i=0; i<this->n_activities; i++)
+		if(r.inactiveActivities.contains(this->activitiesId[i]))
+			return true;
+	return false;
 }
 
 QString ConstraintActivitiesNotOverlapping::getXmlDescription(Rules& r){
@@ -1743,6 +1777,14 @@ void ConstraintMinNDaysBetweenActivities::removeUseless(Rules& r)
 	this->n_activities=i;
 }
 
+bool ConstraintMinNDaysBetweenActivities::hasInactiveActivities(Rules& r)
+{
+	for(int i=0; i<this->n_activities; i++)
+		if(r.inactiveActivities.contains(this->activitiesId[i]))
+			return true;
+	return false;
+}
+
 QString ConstraintMinNDaysBetweenActivities::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 	/*if(&r!=NULL)
@@ -2097,6 +2139,12 @@ bool ConstraintTeachersMaxHoursDaily::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool ConstraintTeachersMaxHoursDaily::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
 QString ConstraintTeachersMaxHoursDaily::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 	//if(&r!=NULL)
@@ -2282,6 +2330,12 @@ bool ConstraintTeacherMaxHoursDaily::computeInternalStructure(Rules& r)
 	this->teacher_ID=r.searchTeacher(this->teacherName);
 	assert(this->teacher_ID>=0);
 	return true;
+}
+
+bool ConstraintTeacherMaxHoursDaily::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
 }
 
 QString ConstraintTeacherMaxHoursDaily::getXmlDescription(Rules& r){
@@ -2472,6 +2526,12 @@ bool ConstraintTeachersMaxHoursContinuously::computeInternalStructure(Rules& r)
 		;*/
 
 	return true;
+}
+
+bool ConstraintTeachersMaxHoursContinuously::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
 }
 
 QString ConstraintTeachersMaxHoursContinuously::getXmlDescription(Rules& r){
@@ -2670,6 +2730,12 @@ bool ConstraintTeacherMaxHoursContinuously::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool ConstraintTeacherMaxHoursContinuously::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
 QString ConstraintTeacherMaxHoursContinuously::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 	//if(&r!=NULL)
@@ -2863,6 +2929,12 @@ bool ConstraintTeacherMaxDaysPerWeek::computeInternalStructure(Rules& r)
 	this->teacher_ID=r.searchTeacher(this->teacherName);
 	assert(this->teacher_ID>=0);
 	return true;
+}
+
+bool ConstraintTeacherMaxDaysPerWeek::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
 }
 
 QString ConstraintTeacherMaxDaysPerWeek::getXmlDescription(Rules& r)
@@ -3077,6 +3149,12 @@ bool ConstraintTeachersMaxGapsPerWeek::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool ConstraintTeachersMaxGapsPerWeek::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
 QString ConstraintTeachersMaxGapsPerWeek::getXmlDescription(Rules& r){
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
@@ -3277,6 +3355,12 @@ bool ConstraintTeacherMaxGapsPerWeek::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool ConstraintTeacherMaxGapsPerWeek::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
 QString ConstraintTeacherMaxGapsPerWeek::getXmlDescription(Rules& r){
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
@@ -3465,6 +3549,12 @@ bool ConstraintTeachersMaxGapsPerDay::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool ConstraintTeachersMaxGapsPerDay::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
 QString ConstraintTeachersMaxGapsPerDay::getXmlDescription(Rules& r){
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
@@ -3645,6 +3735,12 @@ bool ConstraintTeacherMaxGapsPerDay::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool ConstraintTeacherMaxGapsPerDay::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
 QString ConstraintTeacherMaxGapsPerDay::getXmlDescription(Rules& r){
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
@@ -3818,6 +3914,12 @@ ConstraintBreakTimes::ConstraintBreakTimes(double wp, QList<int> d, QList<int> h
 	this->days = d;
 	this->hours = h;
 	this->type = CONSTRAINT_BREAK_TIMES;
+}
+
+bool ConstraintBreakTimes::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
 }
 
 QString ConstraintBreakTimes::getXmlDescription(Rules& r){
@@ -4069,6 +4171,12 @@ bool ConstraintStudentsMaxGapsPerWeek::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool ConstraintStudentsMaxGapsPerWeek::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
 QString ConstraintStudentsMaxGapsPerWeek::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
@@ -4301,6 +4409,12 @@ bool ConstraintStudentsSetMaxGapsPerWeek::computeInternalStructure(Rules& r){
 	return true;
 }
 
+bool ConstraintStudentsSetMaxGapsPerWeek::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
 QString ConstraintStudentsSetMaxGapsPerWeek::getXmlDescription(Rules& r){
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
@@ -4464,6 +4578,12 @@ bool ConstraintStudentsEarlyMaxBeginningsAtSecondHour::computeInternalStructure(
 	Q_UNUSED(r);
 	
 	return true;
+}
+
+bool ConstraintStudentsEarlyMaxBeginningsAtSecondHour::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
 }
 
 QString ConstraintStudentsEarlyMaxBeginningsAtSecondHour::getXmlDescription(Rules& r)
@@ -4757,6 +4877,12 @@ bool ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::computeInternalStructu
 	return true;
 }
 
+bool ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
 QString ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
@@ -4980,6 +5106,12 @@ bool ConstraintStudentsMaxHoursDaily::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool ConstraintStudentsMaxHoursDaily::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
 QString ConstraintStudentsMaxHoursDaily::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
@@ -5162,6 +5294,12 @@ ConstraintStudentsSetMaxHoursDaily::ConstraintStudentsSetMaxHoursDaily(double wp
 	this->maxHoursDaily = maxnh;
 	this->students = s;
 	this->type = CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY;
+}
+
+bool ConstraintStudentsSetMaxHoursDaily::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
 }
 
 QString ConstraintStudentsSetMaxHoursDaily::getXmlDescription(Rules& r)
@@ -5427,6 +5565,12 @@ bool ConstraintStudentsMaxHoursContinuously::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool ConstraintStudentsMaxHoursContinuously::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
 QString ConstraintStudentsMaxHoursContinuously::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
@@ -5632,6 +5776,12 @@ ConstraintStudentsSetMaxHoursContinuously::ConstraintStudentsSetMaxHoursContinuo
 	this->maxHoursContinuously = maxnh;
 	this->students = s;
 	this->type = CONSTRAINT_STUDENTS_SET_MAX_HOURS_CONTINUOUSLY;
+}
+
+bool ConstraintStudentsSetMaxHoursContinuously::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
 }
 
 QString ConstraintStudentsSetMaxHoursContinuously::getXmlDescription(Rules& r)
@@ -5918,6 +6068,12 @@ bool ConstraintStudentsMinHoursDaily::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool ConstraintStudentsMinHoursDaily::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
 QString ConstraintStudentsMinHoursDaily::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
@@ -6108,6 +6264,12 @@ ConstraintStudentsSetMinHoursDaily::ConstraintStudentsSetMinHoursDaily(double wp
 	this->minHoursDaily = minnh;
 	this->students = s;
 	this->type = CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY;
+}
+
+bool ConstraintStudentsSetMinHoursDaily::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
 }
 
 QString ConstraintStudentsSetMinHoursDaily::getXmlDescription(Rules& r)
@@ -6422,6 +6584,13 @@ bool ConstraintActivityPreferredTime::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool ConstraintActivityPreferredTime::hasInactiveActivities(Rules& r)
+{
+	if(r.inactiveActivities.contains(this->activityId))
+		return true;
+	return false;
+}
+
 QString ConstraintActivityPreferredTime::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
@@ -6731,6 +6900,13 @@ bool ConstraintActivityPreferredTimes::computeInternalStructure(Rules& r)
 
 	this->activityIndex=i;	
 	return true;
+}
+
+bool ConstraintActivityPreferredTimes::hasInactiveActivities(Rules& r)
+{
+	if(r.inactiveActivities.contains(this->activityId))
+		return true;
+	return false;
 }
 
 QString ConstraintActivityPreferredTimes::getXmlDescription(Rules& r)
@@ -7129,6 +7305,12 @@ bool ConstraintActivitiesPreferredTimes::computeInternalStructure(Rules& r)
 	}
 }
 
+bool ConstraintActivitiesPreferredTimes::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
 QString ConstraintActivitiesPreferredTimes::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
@@ -7506,6 +7688,14 @@ void ConstraintActivitiesSameStartingHour::removeUseless(Rules& r)
 	this->n_activities=i;
 }
 
+bool ConstraintActivitiesSameStartingHour::hasInactiveActivities(Rules& r)
+{
+	for(int i=0; i<this->n_activities; i++)
+		if(r.inactiveActivities.contains(this->activitiesId[i]))
+			return true;
+	return false;
+}
+
 QString ConstraintActivitiesSameStartingHour::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 	//if(&r!=NULL)
@@ -7817,6 +8007,14 @@ void ConstraintActivitiesSameStartingDay::removeUseless(Rules& r)
 	this->n_activities=i;
 }
 
+bool ConstraintActivitiesSameStartingDay::hasInactiveActivities(Rules& r)
+{
+	for(int i=0; i<this->n_activities; i++)
+		if(r.inactiveActivities.contains(this->activitiesId[i]))
+			return true;
+	return false;
+}
+
 QString ConstraintActivitiesSameStartingDay::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 	//if(&r!=NULL)
@@ -8096,6 +8294,15 @@ bool Constraint2ActivitiesConsecutive::computeInternalStructure(Rules& r)
 	assert(firstActivityIndex!=secondActivityIndex);
 	
 	return true;
+}
+
+bool Constraint2ActivitiesConsecutive::hasInactiveActivities(Rules& r)
+{
+	if(r.inactiveActivities.contains(this->firstActivityId))
+		return true;
+	if(r.inactiveActivities.contains(this->secondActivityId))
+		return true;
+	return false;
 }
 
 QString Constraint2ActivitiesConsecutive::getXmlDescription(Rules& r)
@@ -8410,6 +8617,15 @@ bool Constraint2ActivitiesOrdered::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool Constraint2ActivitiesOrdered::hasInactiveActivities(Rules& r)
+{
+	if(r.inactiveActivities.contains(this->firstActivityId))
+		return true;
+	if(r.inactiveActivities.contains(this->secondActivityId))
+		return true;
+	return false;
+}
+
 QString Constraint2ActivitiesOrdered::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
@@ -8680,6 +8896,13 @@ bool ConstraintActivityEndsStudentsDay::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool ConstraintActivityEndsStudentsDay::hasInactiveActivities(Rules& r)
+{
+	if(r.inactiveActivities.contains(this->activityId))
+		return true;
+	return false;
+}
+
 QString ConstraintActivityEndsStudentsDay::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
@@ -8932,6 +9155,12 @@ bool ConstraintTeachersMinHoursDaily::computeInternalStructure(Rules& r)
 	return true;
 }
 
+bool ConstraintTeachersMinHoursDaily::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
 QString ConstraintTeachersMinHoursDaily::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 	//if(&r!=NULL)
@@ -9124,6 +9353,12 @@ bool ConstraintTeacherMinHoursDaily::computeInternalStructure(Rules& r)
 	this->teacher_ID=r.searchTeacher(this->teacherName);
 	assert(this->teacher_ID>=0);
 	return true;
+}
+
+bool ConstraintTeacherMinHoursDaily::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
 }
 
 QString ConstraintTeacherMinHoursDaily::getXmlDescription(Rules& r){

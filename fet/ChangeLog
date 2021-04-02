@@ -1196,4 +1196,12 @@ Versions 5.5.0 - 5.5.x
 	- Added an option to select all slots available or not available for constraints break, not available and preferred times
 	(suggested by didit).
 	- Added another Arabic sample by Hatim Alahmadi
+- Version 5.5.7
+	- Added 2 samples from Namibia (by Bobby Wise).
+	- Added 1 sample from Namibia (by Willy Henckert).
+	- Arabic and Greek translations updates.
+	- Bug fix - now inactivating some activities allows to generate the timetable, because constraints referring to
+	these activities are ignored (suggested by Yush Yuen).
+	- Improvement - activating/deactivating activities for a year/group considers also the activities of included groups/subgroups
+	(suggested by Yush Yuen).
 	

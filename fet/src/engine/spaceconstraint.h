@@ -128,6 +128,8 @@ public:
 	Computes the internal structure for this constraint
 	*/
 	virtual bool computeInternalStructure(Rules& r)=0;
+	
+	virtual bool hasInactiveActivities(Rules& r)=0;
 
 	/**
 	Returns a small description string for this constraint
@@ -182,6 +184,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -225,6 +229,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -277,6 +283,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -325,6 +333,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -366,6 +376,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -409,6 +421,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -450,6 +464,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -493,6 +509,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -538,6 +556,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -583,6 +603,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -631,6 +653,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -678,6 +702,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -718,6 +744,8 @@ public:
 
 	QString getXmlDescription(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getDescription(Rules& r);
 
 	QString getDetailedDescription(Rules& r);
@@ -750,6 +778,8 @@ public:
 
 	QString getXmlDescription(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getDescription(Rules& r);
 
 	QString getDetailedDescription(Rules& r);
@@ -788,6 +818,8 @@ public:
 
 	QString getXmlDescription(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getDescription(Rules& r);
 
 	QString getDetailedDescription(Rules& r);
@@ -820,6 +852,8 @@ public:
 
 	QString getXmlDescription(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getDescription(Rules& r);
 
 	QString getDetailedDescription(Rules& r);
@@ -858,6 +892,8 @@ public:
 
 	QString getXmlDescription(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getDescription(Rules& r);
 
 	QString getDetailedDescription(Rules& r);
@@ -890,6 +926,8 @@ public:
 
 	QString getXmlDescription(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getDescription(Rules& r);
 
 	QString getDetailedDescription(Rules& r);
@@ -928,6 +966,8 @@ public:
 
 	QString getXmlDescription(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getDescription(Rules& r);
 
 	QString getDetailedDescription(Rules& r);
@@ -958,6 +998,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -996,6 +1038,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -1028,6 +1072,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -1066,6 +1112,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -1098,6 +1146,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+	
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);

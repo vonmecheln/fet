@@ -336,6 +336,9 @@ bool Rules::computeInternalStructure()
 		
 	Activity* act;
 	counter=0;
+	
+	this->inactiveActivities.clear();
+	
 	for(int i=0; i<this->activitiesList.size(); i++){
 		act=this->activitiesList[i];
 		if(act->active){
@@ -350,6 +353,8 @@ bool Rules::computeInternalStructure()
 			counter++;
 			act->computeInternalStructure(*this);
 		}
+		else
+			inactiveActivities.insert(act->id);
 	}
 
 	for(int i=0; i<nInternalSubgroups; i++)
@@ -412,14 +417,44 @@ bool Rules::computeInternalStructure()
 	bool ok=true;
 
 	//time constraints
+	progress.reset();
+	
+	bool skipInactiveTimeConstraints=false;
+	
+	bool toSkipTime[MAX_TIME_CONSTRAINTS];
+
+	TimeConstraint* tctr;
+	
+	for(int tctrindex=0; tctrindex<this->timeConstraintsList.size(); tctrindex++){
+		tctr=this->timeConstraintsList[tctrindex];
+
+		if(tctr->hasInactiveActivities(*this)){
+			toSkipTime[tctrindex]=true;
+		
+			if(!skipInactiveTimeConstraints){
+				QString s=QObject::tr("The following time constraint is ignored, because it refers to inactive activities:");
+				s+="\n";
+				s+=tctr->getDetailedDescription(*this);
+				
+				int t=QMessageBox::information(NULL, QObject::tr("FET information"), s,
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+ 				 1, 0 );
+
+				if(t==0)
+					skipInactiveTimeConstraints=true;
+			}
+		}
+		else
+			toSkipTime[tctrindex]=false;
+	}
+	
 	progress.setLabelText(QObject::tr("Processing internally the time constraints ... please wait"));
 	progress.setRange(0, timeConstraintsList.size());
 	ttt=0;
 		
 	assert(this->timeConstraintsList.size()<=MAX_TIME_CONSTRAINTS);
-	TimeConstraint* tctr;
-	
 	int tctri=0;
+	
 	for(int tctrindex=0; tctrindex<this->timeConstraintsList.size(); tctrindex++){
 		progress.setValue(ttt);
 		pqapplication->processEvents();
@@ -430,6 +465,10 @@ bool Rules::computeInternalStructure()
 		ttt++;
 
 		tctr=this->timeConstraintsList[tctrindex];
+		
+		if(toSkipTime[tctrindex])
+			continue;
+		
 		//if the activities which refer to this constraints are not active
 		if(!tctr->computeInternalStructure(*this)){
 			//assert(0);
@@ -443,14 +482,44 @@ bool Rules::computeInternalStructure()
 	assert(this->nInternalTimeConstraints<=MAX_TIME_CONSTRAINTS);
 	
 	//space constraints
+	progress.reset();
+	
+	bool skipInactiveSpaceConstraints=false;
+	
+	bool toSkipSpace[MAX_SPACE_CONSTRAINTS];
+		
+	SpaceConstraint* sctr;
+
+	for(int sctrindex=0; sctrindex<this->spaceConstraintsList.size(); sctrindex++){
+		sctr=this->spaceConstraintsList[sctrindex];
+
+		if(sctr->hasInactiveActivities(*this)){
+			toSkipSpace[sctrindex]=true;
+		
+			if(!skipInactiveSpaceConstraints){
+				QString s=QObject::tr("The following space constraint is ignored, because it refers to inactive activities:");
+				s+="\n";
+				s+=sctr->getDetailedDescription(*this);
+				
+				int t=QMessageBox::information(NULL, QObject::tr("FET information"), s,
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+ 				 1, 0 );
+
+				if(t==0)
+					skipInactiveSpaceConstraints=true;
+			}
+		}
+		else
+			toSkipSpace[sctrindex]=false;
+	}
+	
 	progress.setLabelText(QObject::tr("Processing internally the space constraints ... please wait"));
 	progress.setRange(0, spaceConstraintsList.size());
 	ttt=0;
-		
-	SpaceConstraint* sctr;
 	assert(this->spaceConstraintsList.size()<=MAX_SPACE_CONSTRAINTS);
 
 	int sctri=0;
+
 	for(int sctrindex=0; sctrindex<this->spaceConstraintsList.size(); sctrindex++){
 		progress.setValue(ttt);
 		pqapplication->processEvents();
@@ -462,6 +531,9 @@ bool Rules::computeInternalStructure()
 
 		sctr=this->spaceConstraintsList[sctrindex];
 	
+		if(toSkipSpace[sctrindex])
+			continue;
+		
 		if(!sctr->computeInternalStructure(*this)){
 			//assert(0);
 			ok=false;
@@ -9136,13 +9208,38 @@ int Rules::activateTeacher(const QString& teacherName)
 
 int Rules::activateStudents(const QString& studentsName)
 {
+	QSet<QString> allSets;
+	
+	StudentsSet* set=this->searchStudentsSet(studentsName);
+	if(set->type==STUDENTS_SUBGROUP)
+		allSets.insert(studentsName);
+	else if(set->type==STUDENTS_GROUP){
+		allSets.insert(studentsName);
+		StudentsGroup* g=(StudentsGroup*)set;
+		foreach(StudentsSubgroup* s, g->subgroupsList)
+			allSets.insert(s->name);
+	}
+	else if(set->type==STUDENTS_YEAR){
+		allSets.insert(studentsName);
+		StudentsYear* y=(StudentsYear*)set;
+		foreach(StudentsGroup* g, y->groupsList){
+			allSets.insert(g->name);
+			foreach(StudentsSubgroup* s, g->subgroupsList)
+				allSets.insert(s->name);
+		}
+	}
+
 	int count=0;
 	for(int i=0; i<this->activitiesList.size(); i++){
 		Activity* act=this->activitiesList[i];
-		if(act->searchStudents(studentsName)){
-			if(!act->active)
-				count++;
-			act->active=true;
+		if(!act->active){
+			foreach(QString set, act->studentsNames){
+				if(allSets.contains(set)){
+					count++;
+					act->active=true;
+					break;
+				}
+			}
 		}
 	}
 
@@ -9204,13 +9301,38 @@ int Rules::deactivateTeacher(const QString& teacherName)
 
 int Rules::deactivateStudents(const QString& studentsName)
 {
+	QSet<QString> allSets;
+	
+	StudentsSet* set=this->searchStudentsSet(studentsName);
+	if(set->type==STUDENTS_SUBGROUP)
+		allSets.insert(studentsName);
+	else if(set->type==STUDENTS_GROUP){
+		allSets.insert(studentsName);
+		StudentsGroup* g=(StudentsGroup*)set;
+		foreach(StudentsSubgroup* s, g->subgroupsList)
+			allSets.insert(s->name);
+	}
+	else if(set->type==STUDENTS_YEAR){
+		allSets.insert(studentsName);
+		StudentsYear* y=(StudentsYear*)set;
+		foreach(StudentsGroup* g, y->groupsList){
+			allSets.insert(g->name);
+			foreach(StudentsSubgroup* s, g->subgroupsList)
+				allSets.insert(s->name);
+		}
+	}
+
 	int count=0;
 	for(int i=0; i<this->activitiesList.size(); i++){
 		Activity* act=this->activitiesList[i];
-		if(act->searchStudents(studentsName)){
-			if(act->active)
-				count++;
-			act->active=false;
+		if(act->active){
+			foreach(QString set, act->studentsNames){
+				if(allSets.contains(set)){
+					count++;
+					act->active=false;
+					break;
+				}
+			}
 		}
 	}
 

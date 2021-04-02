@@ -144,6 +144,8 @@ public:
 	one and it depends on only inactive activities.
 	*/
 	virtual bool computeInternalStructure(Rules& r)=0;
+	
+	virtual bool hasInactiveActivities(Rules& r)=0;
 
 	/**
 	Returns a small description string for this constraint
@@ -192,6 +194,8 @@ public:
 	ConstraintBasicCompulsoryTime(double wp);
 
 	bool computeInternalStructure(Rules& r);
+	
+	bool hasInactiveActivities(Rules& r);
 
 	QString getXmlDescription(Rules& r);
 
@@ -233,6 +237,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -272,6 +278,8 @@ public:
 	ConstraintStudentsSetNotAvailableTimes(double wp, const QString& sn, QList<int> d, QList<int> h);
 
 	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
 
 	QString getXmlDescription(Rules& r);
 
@@ -338,6 +346,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -399,6 +409,8 @@ public:
 	ConstraintActivitiesNotOverlapping(double wp, int n_act, const int act[]);
 
 	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
 
 	QString getXmlDescription(Rules& r);
 
@@ -475,6 +487,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -518,6 +532,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+
 	QString getDescription(Rules& r);
 
 	QString getDetailedDescription(Rules& r);
@@ -553,6 +569,8 @@ public:
 	QString getXmlDescription(Rules& r);
 
 	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
 
 	QString getDescription(Rules& r);
 
@@ -590,6 +608,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+
 	QString getDescription(Rules& r);
 
 	QString getDetailedDescription(Rules& r);
@@ -625,6 +645,8 @@ public:
 	QString getXmlDescription(Rules& r);
 
 	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
 
 	QString getDescription(Rules& r);
 
@@ -672,6 +694,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -707,6 +731,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -741,6 +767,8 @@ public:
 	ConstraintStudentsMaxGapsPerWeek(double wp, int mg);
 
 	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
 
 	QString getXmlDescription(Rules& r);
 
@@ -793,6 +821,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -821,6 +851,8 @@ public:
 	ConstraintTeachersMaxGapsPerWeek(double wp, int maxGaps);
 
 	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
 
 	QString getXmlDescription(Rules& r);
 
@@ -855,6 +887,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -883,6 +917,8 @@ public:
 	ConstraintTeachersMaxGapsPerDay(double wp, int maxGaps);
 
 	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
 
 	QString getXmlDescription(Rules& r);
 
@@ -916,6 +952,8 @@ public:
 	ConstraintTeacherMaxGapsPerDay(double wp, QString tn, int maxGaps);
 
 	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
 
 	QString getXmlDescription(Rules& r);
 
@@ -954,6 +992,8 @@ public:
 	ConstraintStudentsEarlyMaxBeginningsAtSecondHour(double wp, int mBSH);
 
 	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
 
 	QString getXmlDescription(Rules& r);
 
@@ -1000,6 +1040,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -1028,6 +1070,8 @@ public:
 	ConstraintStudentsMaxHoursDaily(double wp, int maxnh);
 
 	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
 
 	QString getXmlDescription(Rules& r);
 
@@ -1076,6 +1120,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -1104,6 +1150,8 @@ public:
 	ConstraintStudentsMaxHoursContinuously(double wp, int maxnh);
 
 	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
 
 	QString getXmlDescription(Rules& r);
 
@@ -1152,6 +1200,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -1180,6 +1230,8 @@ public:
 	ConstraintStudentsMinHoursDaily(double wp, int minnh);
 
 	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
 
 	QString getXmlDescription(Rules& r);
 
@@ -1227,6 +1279,8 @@ public:
 	ConstraintStudentsSetMinHoursDaily(double wp, int minnh, QString s);
 
 	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
 
 	QString getXmlDescription(Rules& r);
 
@@ -1288,6 +1342,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -1345,6 +1401,8 @@ public:
 	ConstraintActivityPreferredTimes(double wp, int actId, int nPT, int d[], int h[]);
 
 	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
 
 	QString getXmlDescription(Rules& r);
 
@@ -1429,6 +1487,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -1492,6 +1552,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -1548,6 +1610,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -1601,6 +1665,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -1649,6 +1715,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -1687,6 +1755,8 @@ public:
 
 	bool computeInternalStructure(Rules& r);
 
+	bool hasInactiveActivities(Rules& r);
+
 	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
@@ -1720,6 +1790,8 @@ public:
 	QString getXmlDescription(Rules& r);
 
 	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
 
 	QString getDescription(Rules& r);
 
@@ -1756,6 +1828,8 @@ public:
 	QString getXmlDescription(Rules& r);
 
 	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
 
 	QString getDescription(Rules& r);
 
