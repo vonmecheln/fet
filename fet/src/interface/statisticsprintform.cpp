@@ -4,9 +4,9 @@
    copyright             : (C) by Liviu Lalescu, Volker Dirr
     email                : Liviu Lalescu: see http://lalescu.ro/liviu/ , Volker Dirr: see http://www.timetabling.de/
  ***************************************************************************
-                          timetableprintform.cpp  -  description
+                          statisticsprintform.cpp  -  description
                              -------------------
-    begin                : March 2010
+    begin                : November 2013
     copyright            : (C) by Volker Dirr
                          : http://www.timetabling.de/
  ***************************************************************************
@@ -18,17 +18,13 @@
  *                                                                         *
  ***************************************************************************/
 
-//BE CAREFUL: work ONLY with INTERNAL data in this source!!!
-
-//maybe TODO: maybe use only HTML level 1 instead of 3? advantage: a bit speedup. disadvantage: no coloring
-
 #include <QtGlobal>
 
-#include "timetableprintform.h"
+#include "statisticsprintform.h"
 
 #include "timetable.h"
 #include "timetable_defs.h"
-#include "timetableexport.h"
+//#include "timetableexport.h"		//TODO: remove?!
 
 #include "longtextmessagebox.h"
 
@@ -50,16 +46,13 @@
 #endif
 
 extern Timetable gt;
-extern bool students_schedule_ready;
-extern bool teachers_schedule_ready;
-extern bool rooms_schedule_ready;
 
 extern QString generationLocalizedTime;
 
 extern const QString COMPANY;
 extern const QString PROGRAM;
 
-static int numberOfPlacedActivities1;
+//static int numberOfPlacedActivities1;
 
 #ifdef QT_NO_PRINTER
 static QMap<QString, int> paperSizesMap;
@@ -67,16 +60,14 @@ static QMap<QString, int> paperSizesMap;
 static QMap<QString, QPrinter::PaperSize> paperSizesMap;
 #endif
 
-const QString CBTablesState="/timetables-combo-box-state";
+//const QString CBTablesState="/timetables-combo-box-state";
 
-const QString RBDaysHorizontalState="/days-horizontal-radio-button-state";
-const QString RBDaysVerticalState="/days-vertical-radio-button-state";
-const QString RBTimeHorizontalState="/time-horizontal-radio-button-state";
-const QString RBTimeVerticalState="/time-vertical-radio-button-state";
-//By Liviu Lalescu - not used anymore
-//const QString CBDivideTimeAxisByDayState="/divide-time-axis-timetables-by-days";
-const QString RBTimeHorizontalDayState="/time-horizontal-per-day-radio-button-state";
-const QString RBTimeVerticalDayState="/time-vertical-per-day-radio-button-state";
+const QString studentSubjectRBState="/student-subject-state-radio-button-state";
+const QString studentTeacherRBState="/student-teacher-state-radio-button-state";
+const QString teacherSubjectRBState="/teacher-subject-state-radio-button-state";
+const QString teacherStudentRBState="/teacher-student-state-radio-button-state";
+const QString subjectStudentRBState="/subject-student-state-radio-button-state";
+const QString subjectTeacherRBState="/subject-teacher-state-radio-button-state";
 
 const QString CBBreakState="/page-break-combo-box-state";
 const QString CBWhiteSpaceState="/white-space-combo-box-state";
@@ -84,9 +75,6 @@ const QString CBprinterModeState="/printer-mode-combo-box-state";
 const QString CBpaperSizeState="/paper-size-combo-box-state";
 const QString CBorientationModeState="/orientation-mode-combo-box-state";
 
-//const QString markNotAvailableState="/mark-not-available-check-box-state";
-//const QString markBreakState="/mark-break-check-box-state";
-//const QString printSameStartingTimeState="/print-same-starting-time-box-state";
 const QString printDetailedTablesState="/print-detailed-tables-check-box-state";
 const QString printActivityTagsState="/print-activity-tags-check-box-state";
 
@@ -99,57 +87,32 @@ const QString topPageMarginState="/top-page-margin-spin-box-value-state";
 const QString rightPageMarginState="/right-page-margin-spin-box-value-state";
 const QString bottomPageMarginState="/bottom-page-margin-spin-box-value-state";
 
-//by Liviu Lalescu - unused anymore
-/*static bool dividePrefixSuffix(const QString& str, QString& left, QString& right)
+StartStatisticsPrint::StartStatisticsPrint()
 {
-	QStringList list=str.split("%1");
-	assert(list.count()>=1);
-	left=list.at(0);
-	if(list.count()>=2){
-		right=list.at(1);
-		return true;
+}
+
+StartStatisticsPrint::~StartStatisticsPrint()
+{
+}
+
+void StartStatisticsPrint::startStatisticsPrint(QWidget* parent)
+{
+	if(gt.rules.initialized){	//TODO: is this needed?
+		//prepare calculation
+		StatisticsPrintForm tpfd(parent);
+		tpfd.exec();
 	}
 	else{
-		right=QString("");
-		return false;
-	}
-}*/
-
-StartTimetablePrint::StartTimetablePrint()
-{
-}
-
-StartTimetablePrint::~StartTimetablePrint()
-{
-}
-
-void StartTimetablePrint::startTimetablePrint(QWidget* parent)
-{
-	if(gt.rules.initialized
-		&& students_schedule_ready
-		&& teachers_schedule_ready
-		&& rooms_schedule_ready
-		&& gt.rules.nInternalTeachers==gt.rules.teachersList.count()
-		&& gt.rules.nInternalRooms==gt.rules.roomsList.count()
-		&& gt.rules.internalStructureComputed){
-	
-		//prepare calculation
-		numberOfPlacedActivities1=0;
-		int numberOfPlacedActivities2=0;
-		TimetableExport::getNumberOfPlacedActivities(numberOfPlacedActivities1, numberOfPlacedActivities2);
-		
-		TimetablePrintForm tpfd(parent);
-		tpfd.exec();
-
-	} else {
 		QMessageBox::warning(parent, tr("FET warning"),
-		 tr("Printing is currently not possible, because you modified the dataset. Please generate a new timetable before printing."));
+		 tr("Printing is currently not possible."));
 	}
 }
 
-// this is very similar to statisticsexport.cpp. so please also check there if you change something here!
-TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
-	this->setWindowTitle(tr("Print timetable dialog"));
+StatisticsPrintForm::StatisticsPrintForm(QWidget *parent): QDialog(parent){
+	StatisticsExport::computeHashForIDsStatistics(&statisticValues);
+	StatisticsExport::getNamesAndHours(&statisticValues);
+	
+	this->setWindowTitle(tr("Print statistics matrix dialog"));
 	
 	//maybe TODO: add this as preview. but it must be qtextbrowser or qtextedit then?! Problem: it is currently much to slow! Solution: preview only the first page?!
 	//            this could be done by updateHTMLprintString(bool updateAll).
@@ -161,18 +124,6 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	
 	QVBoxLayout* leftDialog=new QVBoxLayout();
 
-	QStringList timetableNames;
-	timetableNames<<tr("Subgroups")
-		<<tr("Groups")
-		<<tr("Years")
-		<<tr("Teachers")
-		<<tr("Teachers Free Periods")
-		<<tr("Rooms")
-		<<tr("Subjects")
-		<<tr("All activities");
-	CBTables=new QComboBox();
-	CBTables->addItems(timetableNames);
-
 	namesList = new QListWidget();
 	namesList->setSelectionMode(QAbstractItemView::MultiSelection);
 
@@ -183,7 +134,6 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	selectUnselect->addWidget(pbSelectAll);
 	selectUnselect->addWidget(pbUnselectAll);
 
-	leftDialog->addWidget(CBTables);
 	leftDialog->addWidget(namesList);
 	leftDialog->addLayout(selectUnselect);
 	
@@ -191,35 +141,29 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	
 	/*QGroupBox**/ actionsBox=new QGroupBox(tr("Print"));
 	QGridLayout* actionsBoxGrid=new QGridLayout();
-	RBDaysHorizontal= new QRadioButton(tr("Days horizontal"));
-	RBDaysVertical= new QRadioButton(tr("Days vertical"));
-	RBTimeHorizontal= new QRadioButton(tr("Time horizontal"));
-	RBTimeVertical= new QRadioButton(tr("Time vertical"));
-	//By Liviu Lalescu - not used anymore
-	//CBDivideTimeAxisByDay=new QCheckBox(tr("Divide by days", "Refers to dividing time axis timetables by days"));
-	//CBDivideTimeAxisByDay->setChecked(false);
-	RBTimeHorizontalDay= new QRadioButton(tr("Time horizontal per day"));
-	RBTimeVerticalDay= new QRadioButton(tr("Time vertical per day"));
+	studentSubjectRB= new QRadioButton(tr("students-subjects"));
+	studentTeacherRB= new QRadioButton(tr("students-teachers"));
+	teacherSubjectRB= new QRadioButton(tr("teachers-subjects"));
+	teacherStudentRB= new QRadioButton(tr("teachers-students"));
+	subjectStudentRB= new QRadioButton(tr("subjects-students"));
+	subjectTeacherRB= new QRadioButton(tr("subjects-teachers"));
 
-	actionsBoxGrid->addWidget(RBDaysHorizontal,0,0);
-	actionsBoxGrid->addWidget(RBDaysVertical,0,1);
-	actionsBoxGrid->addWidget(RBTimeHorizontal,1,0);
-	actionsBoxGrid->addWidget(RBTimeVertical,1,1);
-	//actionsBoxGrid->addWidget(CBDivideTimeAxisByDay, 2, 0, 1, 2);
-	actionsBoxGrid->addWidget(RBTimeHorizontalDay,2,0);
-	actionsBoxGrid->addWidget(RBTimeVerticalDay,2,1);
-	RBDaysHorizontal->setChecked(true);
-	//CBDivideTimeAxisByDay->setDisabled(RBDaysHorizontal->isChecked() || RBDaysVertical->isChecked());
+	actionsBoxGrid->addWidget(studentSubjectRB,0,0);
+	actionsBoxGrid->addWidget(studentTeacherRB,0,1);
+	actionsBoxGrid->addWidget(teacherSubjectRB,1,0);
+	actionsBoxGrid->addWidget(teacherStudentRB,1,1);
+	actionsBoxGrid->addWidget(subjectStudentRB,2,0);
+	actionsBoxGrid->addWidget(subjectTeacherRB,2,1);
+	studentSubjectRB->setChecked(true);
 	actionsBox->setLayout(actionsBoxGrid);
 	
 	/*QGroupBox**/ optionsBox=new QGroupBox(tr("Options"));
 	QGridLayout* optionsBoxGrid=new QGridLayout();
 	
 	QStringList breakStrings;
-	//strings by Liviu Lalescu
-	breakStrings<<tr("Page-break: none", "No page-break between timetables. Please keep translation short")
-		<<tr("Page-break: always", "Page-break after each timetable. Please keep translation short")
-		<<tr("Page-break: even", "Page-break after each even timetable. Please keep translation short");
+	breakStrings<<tr("Page-break: none", "No page-break between statistics. Please keep translation short")
+		<<tr("Page-break: always", "Page-break after each statistic. Please keep translation short")
+		<<tr("Page-break: even", "Page-break after each even statistic. Please keep translation short");
 	CBBreak=new QComboBox();
 	CBBreak->addItems(breakStrings);
 	CBBreak->setCurrentIndex(1);
@@ -301,14 +245,11 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 //	printSameStartingTime=new QCheckBox(tr("Print same starting time"));
 //	printSameStartingTime->setChecked(false);
 
-	printDetailedTables=new QCheckBox(tr("Detailed tables"));
-	printDetailedTables->setChecked(true);
+//	printDetailedTables=new QCheckBox(tr("Detailed tables"));
+//	printDetailedTables->setChecked(true);
 	
 	printActivityTags=new QCheckBox(tr("Activity tags"));
 	printActivityTags->setChecked(false);
-	
-	repeatNames=new QCheckBox(tr("Repeat vertical names"));
-	repeatNames->setChecked(false);
 	
 	fontSizeTable=new QSpinBox;
 	fontSizeTable->setRange(4, 20);
@@ -320,7 +261,7 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	fontSizeTable->setPrefix(left);
 	fontSizeTable->setSuffix(right);*/
 	
-	QString s=tr("Font size: %1 pt", "pt means points for font size, when printing the timetable");
+	QString s=tr("Font size: %1 pt", "pt means points for font size, when printing the statistics");
 	QStringList sl=s.split("%1");
 	QString prefix=sl.at(0);
 	QString suffix;
@@ -331,7 +272,7 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	fontSizeTable->setPrefix(prefix);
 	fontSizeTable->setSuffix(suffix);
 	//fontSizeTable->setPrefix(tr("Font size:")+QString(" "));
-	//fontSizeTable->setSuffix(QString(" ")+tr("pt", "Means points for font size, when printing the timetable"));
+	//fontSizeTable->setSuffix(QString(" ")+tr("pt", "Means points for font size, when printing the statistics"));
 
 	fontSizeTable->setSizePolicy(QSizePolicy::Expanding, fontSizeTable->sizePolicy().verticalPolicy());
 	
@@ -344,7 +285,7 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	activitiesPadding->setPrefix(left);
 	activitiesPadding->setSuffix(right);*/
 
-	s=tr("Activities padding: %1 px", "px means pixels, when printing the timetable");
+	s=tr("Activities padding: %1 px", "px means pixels, when printing the statistics");
 	sl=s.split("%1");
 	prefix=sl.at(0);
 	if(sl.count()<2)
@@ -354,7 +295,7 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	activitiesPadding->setPrefix(prefix);
 	activitiesPadding->setSuffix(suffix);
 	//activitiesPadding->setPrefix(tr("Activities padding:")+QString(" "));
-	//activitiesPadding->setSuffix(QString(" ")+tr("px", "Means pixels, when printing the timetable"));
+	//activitiesPadding->setSuffix(QString(" ")+tr("px", "Means pixels, when printing the statistics"));
 
 	activitiesPadding->setSizePolicy(QSizePolicy::Expanding, activitiesPadding->sizePolicy().verticalPolicy());
 	
@@ -367,7 +308,7 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	tablePadding->setPrefix(left);
 	tablePadding->setSuffix(right);*/
 
-	s=tr("Space after table: +%1 px", "px means pixels, when printing the timetable");
+	s=tr("Space after table: +%1 px", "px means pixels, when printing the statistics");
 	sl=s.split("%1");
 	prefix=sl.at(0);
 	if(sl.count()<2)
@@ -377,7 +318,7 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	tablePadding->setPrefix(prefix);
 	tablePadding->setSuffix(suffix);
 	//tablePadding->setPrefix(tr("Space after table:")+QString(" +"));
-	//tablePadding->setSuffix(QString(" ")+tr("px", "Means pixels, when printing the timetable"));
+	//tablePadding->setSuffix(QString(" ")+tr("px", "Means pixels, when printing the statistics"));
 
 	tablePadding->setSizePolicy(QSizePolicy::Expanding, tablePadding->sizePolicy().verticalPolicy());
 	
@@ -519,19 +460,10 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	optionsBoxGrid->addWidget(CBBreak,5,1);
 //	optionsBoxGrid->addWidget(CBprinterMode,5,0);
 	optionsBoxGrid->addWidget(printActivityTags,6,0);
-	optionsBoxGrid->addWidget(printDetailedTables,6,1);
-	
-	optionsBoxGrid->addWidget(repeatNames,7,0);
+//	optionsBoxGrid->addWidget(printDetailedTables,6,1);
 
 	optionsBox->setLayout(optionsBoxGrid);
 	optionsBox->setSizePolicy(QSizePolicy::Expanding, optionsBox->sizePolicy().verticalPolicy());
-	
-// maybe TODO: be careful. the form is pretty full already!
-// be careful: these are global settings, so it will also change html output setting?! so it need parameter in each function!
-//	optionsBoxVertical->addWidget(markNotAvailable);
-//	optionsBoxVertical->addWidget(markBreak);
-//	optionsBoxVertical->addWidget(printSameStartingTime);
-// maybe TODO: select font, select color, select them also for line 0-4!
 
 	QHBoxLayout* previewPrintClose=new QHBoxLayout();
 	previewPrintClose->addStretch();
@@ -552,7 +484,6 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	
 	updateNamesList();
 	
-	connect(CBTables, SIGNAL(currentIndexChanged(int)), this, SLOT(updateNamesList()));
 	connect(pbSelectAll, SIGNAL(clicked()), this, SLOT(selectAll()));
 	connect(pbUnselectAll, SIGNAL(clicked()), this, SLOT(unselectAll()));
 	connect(pbPrint, SIGNAL(clicked()), this, SLOT(print()));
@@ -560,10 +491,12 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	connect(pbPrintPreviewFull, SIGNAL(clicked()), this, SLOT(printPreviewFull()));
 	connect(pbClose, SIGNAL(clicked()), this, SLOT(close()));
 	
-	//connect(RBDaysHorizontal, SIGNAL(toggled(bool)), this, SLOT(updateCBDivideTimeAxisByDay()));
-	//connect(RBDaysVertical, SIGNAL(toggled(bool)), this, SLOT(updateCBDivideTimeAxisByDay()));
-	//connect(RBTimeHorizontal, SIGNAL(toggled(bool)), this, SLOT(updateCBDivideTimeAxisByDay()));
-	//connect(RBTimeVertical, SIGNAL(toggled(bool)), this, SLOT(updateCBDivideTimeAxisByDay()));
+	connect(studentSubjectRB, SIGNAL(toggled(bool)), this, SLOT(updateNamesList()));
+	connect(studentTeacherRB, SIGNAL(toggled(bool)), this, SLOT(updateNamesList()));
+	connect(teacherSubjectRB, SIGNAL(toggled(bool)), this, SLOT(updateNamesList()));
+	connect(teacherStudentRB, SIGNAL(toggled(bool)), this, SLOT(updateNamesList()));
+	connect(subjectStudentRB, SIGNAL(toggled(bool)), this, SLOT(updateNamesList()));
+	connect(subjectTeacherRB, SIGNAL(toggled(bool)), this, SLOT(updateNamesList()));
 
 	int ww=this->sizeHint().width();
 	if(ww>900)
@@ -582,24 +515,19 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	restoreFETDialogGeometry(this);
 	
 	QSettings settings(COMPANY, PROGRAM);
-	
-	if(settings.contains(this->metaObject()->className()+CBTablesState))
-		CBTables->setCurrentIndex(settings.value(this->metaObject()->className()+CBTablesState).toInt());
-	
-	if(settings.contains(this->metaObject()->className()+RBDaysHorizontalState))
-		RBDaysHorizontal->setChecked(settings.value(this->metaObject()->className()+RBDaysHorizontalState).toBool());
-	if(settings.contains(this->metaObject()->className()+RBDaysVerticalState))
-		RBDaysVertical->setChecked(settings.value(this->metaObject()->className()+RBDaysVerticalState).toBool());
-	if(settings.contains(this->metaObject()->className()+RBTimeHorizontalState))
-		RBTimeHorizontal->setChecked(settings.value(this->metaObject()->className()+RBTimeHorizontalState).toBool());
-	if(settings.contains(this->metaObject()->className()+RBTimeVerticalState))
-		RBTimeVertical->setChecked(settings.value(this->metaObject()->className()+RBTimeVerticalState).toBool());
-	//if(settings.contains(this->metaObject()->className()+CBDivideTimeAxisByDayState))
-	//	CBDivideTimeAxisByDay->setChecked(settings.value(this->metaObject()->className()+CBDivideTimeAxisByDayState).toBool());
-	if(settings.contains(this->metaObject()->className()+RBTimeHorizontalDayState))
-		RBTimeHorizontalDay->setChecked(settings.value(this->metaObject()->className()+RBTimeHorizontalDayState).toBool());
-	if(settings.contains(this->metaObject()->className()+RBTimeVerticalDayState))
-		RBTimeVerticalDay->setChecked(settings.value(this->metaObject()->className()+RBTimeVerticalDayState).toBool());
+		
+	if(settings.contains(this->metaObject()->className()+studentSubjectRBState))
+		studentSubjectRB->setChecked(settings.value(this->metaObject()->className()+studentSubjectRBState).toBool());
+	if(settings.contains(this->metaObject()->className()+studentTeacherRBState))
+		studentTeacherRB->setChecked(settings.value(this->metaObject()->className()+studentTeacherRBState).toBool());
+	if(settings.contains(this->metaObject()->className()+teacherSubjectRBState))
+		teacherSubjectRB->setChecked(settings.value(this->metaObject()->className()+teacherSubjectRBState).toBool());
+	if(settings.contains(this->metaObject()->className()+teacherStudentRBState))
+		teacherStudentRB->setChecked(settings.value(this->metaObject()->className()+teacherStudentRBState).toBool());
+	if(settings.contains(this->metaObject()->className()+subjectStudentRBState))
+		subjectStudentRB->setChecked(settings.value(this->metaObject()->className()+subjectStudentRBState).toBool());
+	if(settings.contains(this->metaObject()->className()+subjectTeacherRBState))
+		subjectTeacherRB->setChecked(settings.value(this->metaObject()->className()+subjectTeacherRBState).toBool());
 	//
 	if(settings.contains(this->metaObject()->className()+CBBreakState))
 		CBBreak->setCurrentIndex(settings.value(this->metaObject()->className()+CBBreakState).toInt());
@@ -611,15 +539,8 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 		CBpaperSize->setCurrentIndex(settings.value(this->metaObject()->className()+CBpaperSizeState).toInt());
 	if(settings.contains(this->metaObject()->className()+CBorientationModeState))
 		CBorientationMode->setCurrentIndex(settings.value(this->metaObject()->className()+CBorientationModeState).toInt());
-	//
-		//if(settings.contains(this->metaObject()->className()+markNotAvailableState))
-	//	markNotAvailable->setChecked(settings.value(this->metaObject()->className()+markNotAvailableState).toBool());
-			//if(settings.contains(this->metaObject()->className()+markBreakState))
-	//	markBreak->setChecked(settings.value(this->metaObject()->className()+markBreakState).toBool());
-			//if(settings.contains(this->metaObject()->className()+printSameStartingTimeState))
-	//	printSameStartingTime->setChecked(settings.value(this->metaObject()->className()+printSameStartingTimeState).toBool());
-	if(settings.contains(this->metaObject()->className()+printDetailedTablesState))
-		printDetailedTables->setChecked(settings.value(this->metaObject()->className()+printDetailedTablesState).toBool());
+//	if(settings.contains(this->metaObject()->className()+printDetailedTablesState))
+//		printDetailedTables->setChecked(settings.value(this->metaObject()->className()+printDetailedTablesState).toBool());
 	if(settings.contains(this->metaObject()->className()+printActivityTagsState))
 		printActivityTags->setChecked(settings.value(this->metaObject()->className()+printActivityTagsState).toBool());
 	//
@@ -641,20 +562,18 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 		bottomPageMargin->setValue(settings.value(this->metaObject()->className()+bottomPageMarginState).toInt());
 }
 
-TimetablePrintForm::~TimetablePrintForm(){
+StatisticsPrintForm::~StatisticsPrintForm(){
 	saveFETDialogGeometry(this);
 	
 	QSettings settings(COMPANY, PROGRAM);
 	//save other settings
-	settings.setValue(this->metaObject()->className()+CBTablesState, CBTables->currentIndex());
-	
-	settings.setValue(this->metaObject()->className()+RBDaysHorizontalState, RBDaysHorizontal->isChecked());
-	settings.setValue(this->metaObject()->className()+RBDaysVerticalState, RBDaysVertical->isChecked());
-	settings.setValue(this->metaObject()->className()+RBTimeHorizontalState, RBTimeHorizontal->isChecked());
-	settings.setValue(this->metaObject()->className()+RBTimeVerticalState, RBTimeVertical->isChecked());
-	//settings.setValue(this->metaObject()->className()+CBDivideTimeAxisByDayState, CBDivideTimeAxisByDay->isChecked());
-	settings.setValue(this->metaObject()->className()+RBTimeHorizontalDayState, RBTimeHorizontalDay->isChecked());
-	settings.setValue(this->metaObject()->className()+RBTimeVerticalDayState, RBTimeVerticalDay->isChecked());
+
+	settings.setValue(this->metaObject()->className()+studentSubjectRBState, studentSubjectRB->isChecked());
+	settings.setValue(this->metaObject()->className()+studentTeacherRBState, studentTeacherRB->isChecked());
+	settings.setValue(this->metaObject()->className()+teacherSubjectRBState, teacherSubjectRB->isChecked());
+	settings.setValue(this->metaObject()->className()+teacherStudentRBState, teacherStudentRB->isChecked());
+	settings.setValue(this->metaObject()->className()+subjectStudentRBState, subjectStudentRB->isChecked());
+	settings.setValue(this->metaObject()->className()+subjectTeacherRBState, subjectTeacherRB->isChecked());
 	//
 	settings.setValue(this->metaObject()->className()+CBBreakState, CBBreak->currentIndex());
 	settings.setValue(this->metaObject()->className()+CBWhiteSpaceState, CBWhiteSpace->currentIndex());
@@ -662,10 +581,7 @@ TimetablePrintForm::~TimetablePrintForm(){
 	settings.setValue(this->metaObject()->className()+CBpaperSizeState, CBpaperSize->currentIndex());
 	settings.setValue(this->metaObject()->className()+CBorientationModeState, CBorientationMode->currentIndex());
 	//
-	//settings.setValue(this->metaObject()->className()+markNotAvailableState, markNotAvailable->isChecked());
-	//settings.setValue(this->metaObject()->className()+markBreakState, markBreak->isChecked());
-	//settings.setValue(this->metaObject()->className()+printSameStartingTimeState, printSameStartingTime->isChecked());
-	settings.setValue(this->metaObject()->className()+printDetailedTablesState, printDetailedTables->isChecked());
+//	settings.setValue(this->metaObject()->className()+printDetailedTablesState, printDetailedTables->isChecked());
 	settings.setValue(this->metaObject()->className()+printActivityTagsState, printActivityTags->isChecked());
 	//
 	settings.setValue(this->metaObject()->className()+activitiesPaddingState, activitiesPadding->value());
@@ -680,151 +596,47 @@ TimetablePrintForm::~TimetablePrintForm(){
 	delete textDocument;
 }
 
-void TimetablePrintForm::selectAll(){
+void StatisticsPrintForm::selectAll(){
 	namesList->selectAll();
 }
 
-void TimetablePrintForm::unselectAll(){
+void StatisticsPrintForm::unselectAll(){
 	namesList->clearSelection();
 }
 
-void TimetablePrintForm::updateNamesList(){
+void StatisticsPrintForm::updateNamesList(){
 	namesList->clear();
 	
-	/*printActivityTags->setDisabled(false);
-	printDetailedTables->setDisabled(true);
-	
-	RBTimeHorizontal->setDisabled(false);
-	RBTimeVertical->setDisabled(false);
-	CBDivideTimeAxisByDay->setDisabled(false);*/
-	//RBTimeHorizontalDay->setDisabled(false);
-	//RBTimeVerticalDay->setDisabled(false);
-	
-	if(CBTables->currentIndex()==0){
-		for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-			QString name = gt.rules.internalSubgroupsList[subgroup]->name;
-			namesList->addItem(name);
-			QListWidgetItem* tmpItem=namesList->item(subgroup);
+	if(studentSubjectRB->isChecked() || studentTeacherRB->isChecked()){
+		int count=0;
+		foreach(QString student, statisticValues.allStudentsNames){
+			namesList->addItem(student);
+			QListWidgetItem* tmpItem=namesList->item(count);
 			tmpItem->setSelected(true);
-		}
-		printActivityTags->setDisabled(false);
-		printDetailedTables->setDisabled(true);
-	
-		RBTimeHorizontal->setDisabled(false);
-		RBTimeVertical->setDisabled(false);
-		//CBDivideTimeAxisByDay->setDisabled(RBDaysHorizontal->isChecked() || RBDaysVertical->isChecked());
-		RBTimeHorizontalDay->setDisabled(false);
-		RBTimeVerticalDay->setDisabled(false);
-	} else if(CBTables->currentIndex()==1){
-		for(int group=0; group<gt.rules.internalGroupsList.size(); group++){
-			QString name = gt.rules.internalGroupsList[group]->name;
-			namesList->addItem(name);
-			QListWidgetItem* tmpItem=namesList->item(group);
+			count++;
+		}	
+	}
+	if(teacherSubjectRB->isChecked() || teacherStudentRB->isChecked()){
+		int count=0;
+		foreach(QString teacher, statisticValues.allTeachersNames){
+			namesList->addItem(teacher);
+			QListWidgetItem* tmpItem=namesList->item(count);
 			tmpItem->setSelected(true);
-		}
-		printActivityTags->setDisabled(false);
-		printDetailedTables->setDisabled(false); //this one is changed
-	
-		RBTimeHorizontal->setDisabled(false);
-		RBTimeVertical->setDisabled(false);
-		//CBDivideTimeAxisByDay->setDisabled(RBDaysHorizontal->isChecked() || RBDaysVertical->isChecked());
-		RBTimeHorizontalDay->setDisabled(false);
-		RBTimeVerticalDay->setDisabled(false);
-	} else if(CBTables->currentIndex()==2){
-		for(int year=0; year<gt.rules.augmentedYearsList.size(); year++){
-			QString name = gt.rules.augmentedYearsList[year]->name;
-			namesList->addItem(name);
-			QListWidgetItem* tmpItem=namesList->item(year);
+			count++;
+		}	
+	}
+	if(subjectStudentRB->isChecked() || subjectTeacherRB->isChecked()){
+	int count=0;
+		foreach(QString subject, statisticValues.allSubjectsNames){
+			namesList->addItem(subject);
+			QListWidgetItem* tmpItem=namesList->item(count);
 			tmpItem->setSelected(true);
-		}
-		printActivityTags->setDisabled(false);
-		printDetailedTables->setDisabled(false); //this one is changed
-	
-		RBTimeHorizontal->setDisabled(false);
-		RBTimeVertical->setDisabled(false);
-		//CBDivideTimeAxisByDay->setDisabled(RBDaysHorizontal->isChecked() || RBDaysVertical->isChecked());
-		RBTimeHorizontalDay->setDisabled(false);
-		RBTimeVerticalDay->setDisabled(false);
-	} else if(CBTables->currentIndex()==3){
-		for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-			QString teacher_name = gt.rules.internalTeachersList[teacher]->name;
-			namesList->addItem(teacher_name);
-			QListWidgetItem* tmpItem=namesList->item(teacher);
-			tmpItem->setSelected(true);
-		}
-		printActivityTags->setDisabled(false);
-		printDetailedTables->setDisabled(true);
-	
-		RBTimeHorizontal->setDisabled(false);
-		RBTimeVertical->setDisabled(false);
-		//CBDivideTimeAxisByDay->setDisabled(RBDaysHorizontal->isChecked() || RBDaysVertical->isChecked());
-		RBTimeHorizontalDay->setDisabled(false);
-		RBTimeVerticalDay->setDisabled(false);
-	} else if(CBTables->currentIndex()==4){
-		QString name = tr("All teachers");
-		namesList->addItem(name);
-		QListWidgetItem* tmpItem=namesList->item(0);
-		tmpItem->setSelected(true);
-
-		printActivityTags->setDisabled(true);
-		printDetailedTables->setDisabled(false);
-	
-		if(!RBDaysVertical->isChecked())
-			RBDaysHorizontal->setChecked(true);
-
-		RBTimeHorizontal->setDisabled(true);
-		RBTimeVertical->setDisabled(true);
-		//CBDivideTimeAxisByDay->setDisabled(RBDaysHorizontal->isChecked() || RBDaysVertical->isChecked());
-		RBTimeHorizontalDay->setDisabled(true);
-		RBTimeVerticalDay->setDisabled(true);
-	} else if(CBTables->currentIndex()==5){
-		for(int room=0; room<gt.rules.nInternalRooms; room++){
-			QString name = gt.rules.internalRoomsList[room]->name;
-			namesList->addItem(name);
-			QListWidgetItem* tmpItem=namesList->item(room);
-			tmpItem->setSelected(true);
-		}
-		printActivityTags->setDisabled(false);
-		printDetailedTables->setDisabled(true);
-	
-		RBTimeHorizontal->setDisabled(false);
-		RBTimeVertical->setDisabled(false);
-		//CBDivideTimeAxisByDay->setDisabled(RBDaysHorizontal->isChecked() || RBDaysVertical->isChecked());
-		RBTimeHorizontalDay->setDisabled(false);
-		RBTimeVerticalDay->setDisabled(false);
-	} else if(CBTables->currentIndex()==6){
-		for(int subject=0; subject<gt.rules.nInternalSubjects; subject++){
-			QString name = gt.rules.internalSubjectsList[subject]->name;
-			namesList->addItem(name);
-			QListWidgetItem* tmpItem=namesList->item(subject);
-			tmpItem->setSelected(true);
-		}
-		printActivityTags->setDisabled(false);
-		printDetailedTables->setDisabled(true);
-	
-		RBTimeHorizontal->setDisabled(false);
-		RBTimeVertical->setDisabled(false);
-		//CBDivideTimeAxisByDay->setDisabled(RBDaysHorizontal->isChecked() || RBDaysVertical->isChecked());
-		RBTimeHorizontalDay->setDisabled(false);
-		RBTimeVerticalDay->setDisabled(false);
-	} else if(CBTables->currentIndex()==7){
-		QString name = tr("All activities");
-		namesList->addItem(name);
-		QListWidgetItem* tmpItem=namesList->item(0);
-		tmpItem->setSelected(true);
-
-		printActivityTags->setDisabled(false);
-		printDetailedTables->setDisabled(true);
-	
-		RBTimeHorizontal->setDisabled(false);
-		RBTimeVertical->setDisabled(false);
-		//CBDivideTimeAxisByDay->setDisabled(RBDaysHorizontal->isChecked() || RBDaysVertical->isChecked());
-		RBTimeHorizontalDay->setDisabled(false);
-		RBTimeVerticalDay->setDisabled(false);
-	} else assert(0==1);
+			count++;
+		}	
+	}	
 }
 
-void TimetablePrintForm::updateHTMLprintString(bool printAll){
+void StatisticsPrintForm::updateHTMLprintString(bool printAll){
 	QString saveTime=generationLocalizedTime;
 
 	QString tmp;
@@ -933,15 +745,15 @@ void TimetablePrintForm::updateHTMLprintString(bool printAll){
 	tmp+="  </head>\n\n";
 	tmp+="  <body id=\"top\">\n";
 
-	if(numberOfPlacedActivities1!=gt.rules.nInternalActivities)
-		tmp+="    <h1>"+tr("Warning! Only %1 out of %2 activities placed!").arg(numberOfPlacedActivities1).arg(gt.rules.nInternalActivities)+"</h1>\n";
+	//if(numberOfPlacedActivities1!=gt.rules.nInternalActivities)
+	//	tmp+="    <h1>"+tr("Warning! Only %1 out of %2 activities placed!").arg(numberOfPlacedActivities1).arg(gt.rules.nInternalActivities)+"</h1>\n";
 
-	QList<int> includedNamesIndex;
+	//QList<int> includedNamesIndex;
 	QSet<int> excludedNamesIndex;
 	for(int nameIndex=0; nameIndex<namesList->count(); nameIndex++){
 		QListWidgetItem* tmpItem=namesList->item(nameIndex);
 		if(tmpItem->isSelected()){
-			includedNamesIndex<<nameIndex;
+			//includedNamesIndex<<nameIndex;
 		} else {
 			excludedNamesIndex<<nameIndex;
 		}
@@ -950,67 +762,10 @@ void TimetablePrintForm::updateHTMLprintString(bool printAll){
 	//maybe TODO: do the pagebreak similar in timetableexport. (so remove the odd and even table tag and use only back1 and back2 (maybe rename to odd and even))
 	//            check the GroupsTimetableDaysHorizontalHtml and Year parameter then (iNi%2) isn't needed anymore then.
 	
-	if(RBDaysHorizontal->isChecked()){
-		for(int iNi=0; iNi<includedNamesIndex.size(); iNi++){
-			switch(CBTables->currentIndex()){
-				case 0: tmp+=TimetableExport::singleSubgroupsTimetableDaysHorizontalHtml(3, includedNamesIndex.at(iNi), saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-				case 1: tmp+=TimetableExport::singleGroupsTimetableDaysHorizontalHtml(3, includedNamesIndex.at(iNi), saveTime, printActivityTags->isChecked(), printDetailedTables->isChecked(), repeatNames->isChecked()); break;
-				case 2: tmp+=TimetableExport::singleYearsTimetableDaysHorizontalHtml(3, includedNamesIndex.at(iNi), saveTime, printActivityTags->isChecked(), printDetailedTables->isChecked(), repeatNames->isChecked()); break;
-				case 3: tmp+=TimetableExport::singleTeachersTimetableDaysHorizontalHtml(3, includedNamesIndex.at(iNi), saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-				case 4: tmp+=TimetableExport::singleTeachersFreePeriodsTimetableDaysHorizontalHtml(3, saveTime, printDetailedTables->isChecked(), repeatNames->isChecked()); break;
-				case 5: tmp+=TimetableExport::singleRoomsTimetableDaysHorizontalHtml(3, includedNamesIndex.at(iNi), saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-				case 6: tmp+=TimetableExport::singleSubjectsTimetableDaysHorizontalHtml(3, includedNamesIndex.at(iNi), saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-				case 7: tmp+=TimetableExport::singleAllActivitiesTimetableDaysHorizontalHtml(3, saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-				default: assert(0==1);
-			}
-			if(iNi<includedNamesIndex.size()-1){
-				if(iNi%2==0){
-					tmp+="    <p class=\"back1\"><br /></p>\n\n";
-				} else {
-					if(!printAll) break;
-					tmp+="    <p class=\"back0\"><br /></p>\n\n";
-				}
-			}
-		}
-	}
-	if(RBDaysVertical->isChecked()){
-		for(int iNi=0; iNi<includedNamesIndex.size(); iNi++){
-			switch(CBTables->currentIndex()){
-				case 0: tmp+=TimetableExport::singleSubgroupsTimetableDaysVerticalHtml(3, includedNamesIndex.at(iNi), saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-				case 1: tmp+=TimetableExport::singleGroupsTimetableDaysVerticalHtml(3, includedNamesIndex.at(iNi), saveTime, printActivityTags->isChecked(), printDetailedTables->isChecked(), repeatNames->isChecked()); break;
-				case 2: tmp+=TimetableExport::singleYearsTimetableDaysVerticalHtml(3, includedNamesIndex.at(iNi), saveTime, printActivityTags->isChecked(), printDetailedTables->isChecked(), repeatNames->isChecked()); break;
-				case 3: tmp+=TimetableExport::singleTeachersTimetableDaysVerticalHtml(3, includedNamesIndex.at(iNi), saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-				case 4: tmp+=TimetableExport::singleTeachersFreePeriodsTimetableDaysVerticalHtml(3, saveTime, printDetailedTables->isChecked(), repeatNames->isChecked()); break;
-				case 5: tmp+=TimetableExport::singleRoomsTimetableDaysVerticalHtml(3, includedNamesIndex.at(iNi), saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-				case 6: tmp+=TimetableExport::singleSubjectsTimetableDaysVerticalHtml(3, includedNamesIndex.at(iNi), saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-				case 7: tmp+=TimetableExport::singleAllActivitiesTimetableDaysVerticalHtml(3, saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-				default: assert(0==1);
-			}
-			if(iNi<includedNamesIndex.size()-1){
-				if(iNi%2==0){
-					tmp+="    <p class=\"back1\"><br /></p>\n\n";
-				} else {
-					if(!printAll) break;
-					tmp+="    <p class=\"back0\"><br /></p>\n\n";
-				}
-			}
-		}
-	}
-	if(RBTimeHorizontal->isChecked() /*&& !CBDivideTimeAxisByDay->isChecked()*/){
+	if(studentSubjectRB->isChecked()){
 		int count=0;
 		while(excludedNamesIndex.size()<namesList->count()){
-			switch(CBTables->currentIndex()){
-				case 0: tmp+=TimetableExport::singleSubgroupsTimetableTimeHorizontalHtml(3, maxNames->value(), excludedNamesIndex, saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-				case 1: tmp+=TimetableExport::singleGroupsTimetableTimeHorizontalHtml(3, maxNames->value(), excludedNamesIndex, saveTime, printActivityTags->isChecked(), printDetailedTables->isChecked(), repeatNames->isChecked()); break;
-				case 2: tmp+=TimetableExport::singleYearsTimetableTimeHorizontalHtml(3, maxNames->value(), excludedNamesIndex, saveTime, printActivityTags->isChecked(), printDetailedTables->isChecked(), repeatNames->isChecked()); break;
-				case 3: tmp+=TimetableExport::singleTeachersTimetableTimeHorizontalHtml(3, maxNames->value(), excludedNamesIndex, saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-				case 4: /*tmp+=TimetableExport::singleTeachersFreePeriodsTimetableTimeHorizontalHtml(3, saveTime, printDetailedTables->isChecked(), repeatNames->isChecked());*/ break;
-				case 5: tmp+=TimetableExport::singleRoomsTimetableTimeHorizontalHtml(3, maxNames->value(), excludedNamesIndex, saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-				case 6: tmp+=TimetableExport::singleSubjectsTimetableTimeHorizontalHtml(3, maxNames->value(), excludedNamesIndex, saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-				case 7: tmp+=TimetableExport::singleAllActivitiesTimetableTimeHorizontalHtml(3, saveTime, printActivityTags->isChecked(), repeatNames->isChecked());
-						excludedNamesIndex<<-1; break;
-				default: assert(0==1);
-			}
+			tmp+=StatisticsExport::exportStatisticsStudentsSubjectsHtml(NULL/*parent*/, saveTime, statisticValues, 3, printActivityTags->isChecked(), maxNames->value(), &excludedNamesIndex);
 			if(excludedNamesIndex.size()<namesList->count()){
 				if(count%2==0){
 					tmp+="    <p class=\"back1\"><br /></p>\n\n";
@@ -1022,21 +777,10 @@ void TimetablePrintForm::updateHTMLprintString(bool printAll){
 			}
 		}
 	}
-	if(RBTimeVertical->isChecked() /*&& !CBDivideTimeAxisByDay->isChecked()*/){
+	if(studentTeacherRB->isChecked()){
 		int count=0;
 		while(excludedNamesIndex.size()<namesList->count()){
-			switch(CBTables->currentIndex()){
-				case 0: tmp+=TimetableExport::singleSubgroupsTimetableTimeVerticalHtml(3, maxNames->value(), excludedNamesIndex, saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-				case 1: tmp+=TimetableExport::singleGroupsTimetableTimeVerticalHtml(3, maxNames->value(), excludedNamesIndex, saveTime, printActivityTags->isChecked(), printDetailedTables->isChecked(), repeatNames->isChecked()); break;
-				case 2: tmp+=TimetableExport::singleYearsTimetableTimeVerticalHtml(3, maxNames->value(), excludedNamesIndex, saveTime, printActivityTags->isChecked(), printDetailedTables->isChecked(), repeatNames->isChecked()); break;
-				case 3: tmp+=TimetableExport::singleTeachersTimetableTimeVerticalHtml(3, maxNames->value(), excludedNamesIndex, saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-				case 4: /*tmp+=TimetableExport::singleTeachersFreePeriodsTimetableTimeVerticalHtml(3, saveTime, printDetailedTables->isChecked(), repeatNames->isChecked());*/ break;
-				case 5: tmp+=TimetableExport::singleRoomsTimetableTimeVerticalHtml(3, maxNames->value(), excludedNamesIndex, saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-				case 6: tmp+=TimetableExport::singleSubjectsTimetableTimeVerticalHtml(3, maxNames->value(), excludedNamesIndex, saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-				case 7: tmp+=TimetableExport::singleAllActivitiesTimetableTimeVerticalHtml(3, saveTime, printActivityTags->isChecked(), repeatNames->isChecked());
-						excludedNamesIndex<<-1; break;
-				default: assert(0==1);
-			}
+			tmp+=StatisticsExport::exportStatisticsStudentsTeachersHtml(NULL/*parent*/, saveTime, statisticValues, 3, printActivityTags->isChecked(), maxNames->value(), &excludedNamesIndex);
 			if(excludedNamesIndex.size()<namesList->count()){
 				if(count%2==0){
 					tmp+="    <p class=\"back1\"><br /></p>\n\n";
@@ -1048,66 +792,64 @@ void TimetablePrintForm::updateHTMLprintString(bool printAll){
 			}
 		}
 	}
-	if(RBTimeHorizontalDay->isChecked() /*&& CBDivideTimeAxisByDay->isChecked()*/){
+	if(teacherSubjectRB->isChecked()){
 		int count=0;
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			QSet<int> tmpExcludedNamesIndex;
-			tmpExcludedNamesIndex=excludedNamesIndex;
-			while(tmpExcludedNamesIndex.size()<namesList->count()){
-				switch(CBTables->currentIndex()){
-					case 0: tmp+=TimetableExport::singleSubgroupsTimetableTimeHorizontalDailyHtml(3, day, maxNames->value(), tmpExcludedNamesIndex, saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-					case 1: tmp+=TimetableExport::singleGroupsTimetableTimeHorizontalDailyHtml(3, day, maxNames->value(), tmpExcludedNamesIndex, saveTime, printActivityTags->isChecked(), printDetailedTables->isChecked(), repeatNames->isChecked()); break;
-					case 2: tmp+=TimetableExport::singleYearsTimetableTimeHorizontalDailyHtml(3, day, maxNames->value(), tmpExcludedNamesIndex, saveTime, printActivityTags->isChecked(), printDetailedTables->isChecked(), repeatNames->isChecked()); break;
-					case 3: tmp+=TimetableExport::singleTeachersTimetableTimeHorizontalDailyHtml(3, day, maxNames->value(), tmpExcludedNamesIndex, saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-					case 4: /*tmp+=TimetableExport::singleTeachersFreePeriodsTimetableTimeHorizontalDailyHtml(3, day, saveTime, printDetailedTables->isChecked(), repeatNames->isChecked());*/ break;
-					case 5: tmp+=TimetableExport::singleRoomsTimetableTimeHorizontalDailyHtml(3, day, maxNames->value(), tmpExcludedNamesIndex, saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-					case 6: tmp+=TimetableExport::singleSubjectsTimetableTimeHorizontalDailyHtml(3, day, maxNames->value(), tmpExcludedNamesIndex, saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-					case 7: tmp+=TimetableExport::singleAllActivitiesTimetableTimeHorizontalDailyHtml(3, day, saveTime, printActivityTags->isChecked(), repeatNames->isChecked());
-							tmpExcludedNamesIndex<<-1; break;
-					default: assert(0==1);
+		while(excludedNamesIndex.size()<namesList->count()){
+			tmp+=StatisticsExport::exportStatisticsTeachersSubjectsHtml(NULL/*parent*/, saveTime, statisticValues, 3, printActivityTags->isChecked(), maxNames->value(), &excludedNamesIndex);
+			if(excludedNamesIndex.size()<namesList->count()){
+				if(count%2==0){
+					tmp+="    <p class=\"back1\"><br /></p>\n\n";
+				} else {
+					if(!printAll) break;
+					tmp+="    <p class=\"back0\"><br /></p>\n\n";
 				}
-				if(!(tmpExcludedNamesIndex.size()==namesList->count() && day==gt.rules.nDaysPerWeek-1)){
-					if(count%2==0){
-						tmp+="    <p class=\"back1\"><br /></p>\n\n";
-					} else {
-						if(!printAll) break;
-						tmp+="    <p class=\"back0\"><br /></p>\n\n";
-					}
-					count++;
-				}
+				count++;
 			}
-			if(!printAll) break;
 		}
 	}
-	if(RBTimeVerticalDay->isChecked() /*&& CBDivideTimeAxisByDay->isChecked()*/){
+	if(teacherStudentRB->isChecked()){
 		int count=0;
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			QSet<int> tmpExcludedNamesIndex;
-			tmpExcludedNamesIndex=excludedNamesIndex;
-			while(tmpExcludedNamesIndex.size()<namesList->count()){
-				switch(CBTables->currentIndex()){
-					case 0: tmp+=TimetableExport::singleSubgroupsTimetableTimeVerticalDailyHtml(3, day, maxNames->value(), tmpExcludedNamesIndex, saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-					case 1: tmp+=TimetableExport::singleGroupsTimetableTimeVerticalDailyHtml(3, day, maxNames->value(), tmpExcludedNamesIndex, saveTime, printActivityTags->isChecked(), printDetailedTables->isChecked(), repeatNames->isChecked()); break;
-					case 2: tmp+=TimetableExport::singleYearsTimetableTimeVerticalDailyHtml(3, day, maxNames->value(), tmpExcludedNamesIndex, saveTime, printActivityTags->isChecked(), printDetailedTables->isChecked(), repeatNames->isChecked()); break;
-					case 3: tmp+=TimetableExport::singleTeachersTimetableTimeVerticalDailyHtml(3, day, maxNames->value(), tmpExcludedNamesIndex, saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-					case 4: /*tmp+=TimetableExport::singleTeachersFreePeriodsTimetableTimeVerticalDailyHtml(3, day, saveTime, printDetailedTables->isChecked(), repeatNames->isChecked());*/ break;
-					case 5: tmp+=TimetableExport::singleRoomsTimetableTimeVerticalDailyHtml(3, day, maxNames->value(), tmpExcludedNamesIndex, saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-					case 6: tmp+=TimetableExport::singleSubjectsTimetableTimeVerticalDailyHtml(3, day, maxNames->value(), tmpExcludedNamesIndex, saveTime, printActivityTags->isChecked(), repeatNames->isChecked()); break;
-					case 7: tmp+=TimetableExport::singleAllActivitiesTimetableTimeVerticalDailyHtml(3, day, saveTime, printActivityTags->isChecked(), repeatNames->isChecked());
-							tmpExcludedNamesIndex<<-1; break;
-					default: assert(0==1);
+		while(excludedNamesIndex.size()<namesList->count()){
+			tmp+=StatisticsExport::exportStatisticsTeachersStudentsHtml(NULL/*parent*/, saveTime, statisticValues, 3, printActivityTags->isChecked(), maxNames->value(), &excludedNamesIndex);
+			if(excludedNamesIndex.size()<namesList->count()){
+				if(count%2==0){
+					tmp+="    <p class=\"back1\"><br /></p>\n\n";
+				} else {
+					if(!printAll) break;
+					tmp+="    <p class=\"back0\"><br /></p>\n\n";
 				}
-				if(!(tmpExcludedNamesIndex.size()==namesList->count() && day==gt.rules.nDaysPerWeek-1)){
-					if(count%2==0){
-						tmp+="    <p class=\"back1\"><br /></p>\n\n";
-					} else {
-						if(!printAll) break;
-						tmp+="    <p class=\"back0\"><br /></p>\n\n";
-					}
-					count++;
-				}
+				count++;
 			}
-			if(!printAll) break;
+		}
+	}
+	if(subjectStudentRB->isChecked()){
+		int count=0;
+		while(excludedNamesIndex.size()<namesList->count()){
+			tmp+=StatisticsExport::exportStatisticsSubjectsStudentsHtml(NULL/*parent*/, saveTime, statisticValues, 3, printActivityTags->isChecked(), maxNames->value(), &excludedNamesIndex);
+			if(excludedNamesIndex.size()<namesList->count()){
+				if(count%2==0){
+					tmp+="    <p class=\"back1\"><br /></p>\n\n";
+				} else {
+					if(!printAll) break;
+					tmp+="    <p class=\"back0\"><br /></p>\n\n";
+				}
+				count++;
+			}
+		}
+	}
+	if(subjectTeacherRB->isChecked()){
+		int count=0;
+		while(excludedNamesIndex.size()<namesList->count()){
+			tmp+=StatisticsExport::exportStatisticsSubjectsTeachersHtml(NULL/*parent*/, saveTime, statisticValues, 3, printActivityTags->isChecked(), maxNames->value(), &excludedNamesIndex);
+			if(excludedNamesIndex.size()<namesList->count()){
+				if(count%2==0){
+					tmp+="    <p class=\"back1\"><br /></p>\n\n";
+				} else {
+					if(!printAll) break;
+					tmp+="    <p class=\"back0\"><br /></p>\n\n";
+				}
+				count++;
+			}
 		}
 	}
 	// end
@@ -1118,15 +860,15 @@ void TimetablePrintForm::updateHTMLprintString(bool printAll){
 	textDocument->setHtml(tmp);
 }
 
-/*void TimetablePrintForm::updateCBDivideTimeAxisByDay()
+/*void StatisticsPrintForm::updateCBDivideTimeAxisByDay()
 {
 	CBDivideTimeAxisByDay->setDisabled(RBDaysHorizontal->isChecked() || RBDaysVertical->isChecked());
 }*/
 
-void TimetablePrintForm::print(){
+void StatisticsPrintForm::print(){
 #ifdef QT_NO_PRINTER
 	QMessageBox::warning(this, tr("FET warning"), tr("FET is compiled without printer support "
-	 "- it is impossible to print from this dialog. Please open the HTML timetables from the results directory"));
+	 "- it is impossible to print from this dialog. Please export and open the HTML statistics from the results directory"));
 #else
 	QPrinter printer(QPrinter::HighResolution);	//TODO: why doesn't work this CBprinterMode->currentIndex()?
 
@@ -1141,7 +883,7 @@ void TimetablePrintForm::print(){
 	printer.setPageMargins(leftPageMargin->value(), topPageMargin->value(), rightPageMargin->value(), bottomPageMargin->value(), QPrinter::Millimeter);
 	//QPrintDialog *printDialog = new QPrintDialog(&printer, this);
 	QPrintDialog printDialog(&printer, this);
-	printDialog.setWindowTitle(tr("Print timetable"));
+	printDialog.setWindowTitle(tr("Print statistics"));
 	if (printDialog.exec() == QDialog::Accepted) {
 		updateHTMLprintString(true);
 		textDocument->print(&printer);
@@ -1151,10 +893,10 @@ void TimetablePrintForm::print(){
 #endif
 }
 
-void TimetablePrintForm::printPreviewFull(){
+void StatisticsPrintForm::printPreviewFull(){
 #ifdef QT_NO_PRINTER
 	QMessageBox::warning(this, tr("FET warning"), tr("FET is compiled without printer support "
-	 "- it is impossible to print from this dialog. Please open the HTML timetables from the results directory"));
+	 "- it is impossible to print from this dialog. Please export and open the HTML statistics from the results directory"));
 #else
 	updateHTMLprintString(true);
 
@@ -1176,21 +918,21 @@ void TimetablePrintForm::printPreviewFull(){
 #endif
 }
 
-void TimetablePrintForm::updatePreviewFull(QPrinter* printer){
+void StatisticsPrintForm::updatePreviewFull(QPrinter* printer){
 #ifdef QT_NO_PRINTER
 	Q_UNUSED(printer);
 
 	QMessageBox::warning(this, tr("FET warning"), tr("FET is compiled without printer support "
-	 "- it is impossible to print from this dialog. Please open the HTML timetables from the results directory"));
+	 "- it is impossible to print from this dialog. Please export and open the HTML statistics from the results directory"));
 #else
 	textDocument->print(printer);
 #endif
 }
 
-void TimetablePrintForm::printPreviewSmall(){
+void StatisticsPrintForm::printPreviewSmall(){
 #ifdef QT_NO_PRINTER
 	QMessageBox::warning(this, tr("FET warning"), tr("FET is compiled without printer support "
-	 "- it is impossible to print from this dialog. Please open the HTML timetables from the results directory"));
+	 "- it is impossible to print from this dialog. Please export and open the HTML statistics from the results directory"));
 #else
 	updateHTMLprintString(false);
 
@@ -1212,12 +954,12 @@ void TimetablePrintForm::printPreviewSmall(){
 #endif
 }
 
-void TimetablePrintForm::updatePreviewSmall(QPrinter* printer){
+void StatisticsPrintForm::updatePreviewSmall(QPrinter* printer){
 #ifdef QT_NO_PRINTER
 	Q_UNUSED(printer);
 
 	QMessageBox::warning(this, tr("FET warning"), tr("FET is compiled without printer support "
-	 "- it is impossible to print from this dialog. Please open the HTML timetables from the results directory"));
+	 "- it is impossible to print from this dialog. Please export and open the HTML statistics from the results directory"));
 #else
 	textDocument->print(printer);
 #endif

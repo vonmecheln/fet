@@ -327,7 +327,8 @@ public slots:
 	
 	void on_checkForUpdatesAction_toggled();
 	
-	void on_timetablesDivideByDaysAction_toggled();
+	void on_settingsDivideTimetablesByDaysAction_toggled();
+	void on_settingsDuplicateVerticalNamesAction_toggled();
 
 	void on_settingsRestoreDefaultsAction_triggered();
 
@@ -341,6 +342,7 @@ public slots:
 	void on_selectOutputDirAction_triggered();
 	
 	void on_statisticsExportToDiskAction_triggered();
+	void on_statisticsPrintAction_triggered();
 	
 	void on_shortcutAllTimeConstraintsPushButton_clicked();
 	void on_shortcutBreakTimeConstraintsPushButton_clicked();

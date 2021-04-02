@@ -424,7 +424,8 @@ SOURCES += \
 	interface/sparsetableview.cpp \
 	interface/sparseitemmodel.cpp \
 	\
-	interface/timetableprintform.cpp
+	interface/timetableprintform.cpp \
+	interface/statisticsprintform.cpp
 
 HEADERS += \
 	engine/timetableexport.h \
@@ -854,7 +855,8 @@ HEADERS += \
 	interface/sparsetableview.h \
 	interface/sparseitemmodel.h \
 	\
-	interface/timetableprintform.h
+	interface/timetableprintform.h \
+	interface/statisticsprintform.h
 
 FORMS += \
 	interface/fetmainform_template.ui \

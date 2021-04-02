@@ -1659,7 +1659,7 @@ Versions 5.19.0 - 5.19.4
 	- Added two new sample files, from Belize, by donjon.
 	- Added two new sample files, from Algeria, by Laid Messaoudi.
 ---------------------------------------------------------------------------------
-Versions 5.20.0 - 5.20.v
+Versions 5.20.0 - 5.20.2
 - Version 5.20.0
 	- Added constraint activities same room if consecutive (suggested by agemagician).
 	- Added constraints students (set) max days per week (suggested by more users).
@@ -1670,7 +1670,16 @@ Versions 5.20.0 - 5.20.v
 - Version 5.20.2
 	- Added an option to disable printing of the activity tags in the HTML generated timetables (suggested by drew and other users).
 	- Memory consumption improvement when writing advanced statistics to the hard disk.
-	- Dropped the debug console messages (potential bug reported by MarioMic, because under some GNU/Linux distributions
-	these might fill the hard disk). However, the command line version can be made verbose by the option --verbose=true.
+	- Dropped the debug console messages (potential bug reported by MarioMic), because under some GNU/Linux distributions
+	these might fill the hard disk. However, the command line version can be made verbose by the option --verbose=true.
 	- The multiple generation outputs an overall report (suggested by MarioMic).
 	- Minor improvements and source cleanup.
+---------------------------------------------------------------------------------
+Versions 5.21.0 - 5.21.x
+- Version 5.21.0
+	- Updated the sources to Qt 5.2.0 (but the precompiled Windows version still uses Qt 4.8.5, because of various problems).
+	- Added print of advanced statistics directly from FET, suggested by Bobby Wise and implemented by Volker Dirr.
+	- Added an option to duplicate vertical names in the timetables, to the right of the tables (suggested by Pietro, implemented by Volker Dirr).
+	- Updated the Brazilian Portuguese translation, by Cloves das Neves.
+	- Added two example files from Brazil, by Werner Bruns.
+	- Added another sample file from Argentina, by pedrobordon.

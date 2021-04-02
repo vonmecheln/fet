@@ -172,9 +172,9 @@ void usage(QTextStream* out, const QString& error)
 	
 	s+=QString(
 		"Command line usage: \"fet-cl --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] "
-		"[--printactivitytags=a] [--printnotavailable=u] [--printbreak=b] "
-		"[--dividetimeaxisbydays=v] [--printsimultaneousactivities=w] [--randomseedx=rx --randomseedy=ry] [--warnifusingnotperfectconstraints=s]"
-		" [--warnifusingstudentsminhoursdailywithallowemptydays=p] [--verbose=r]\",\n"
+		"[--printactivitytags=a] [--printnotavailable=u] [--printbreak=b] [--dividetimeaxisbydays=v] [--duplicateverticalheaders=e] "
+		"[--printsimultaneousactivities=w] [--randomseedx=rx --randomseedy=ry] [--warnifusingnotperfectconstraints=s] "
+		"[--warnifusingstudentsminhoursdailywithallowemptydays=p] [--verbose=r]\",\n"
 		"where:\nx is the input file, for instance \"data.fet\"\n"
 		"d is the path to results directory, without trailing slash or backslash (default is current working path). "
 		"Make sure you have write permissions there.\n"
@@ -187,8 +187,9 @@ void usage(QTextStream* out, const QString& error)
 		"not available slots (default true).\n"
 		"b is either true or false and represents if you want -X- (for true) or --- (for false) in the generated timetables for the "
 		"break slots (default true).\n"
-		"v is either true or false, represents if you want HTML timetables with time-axis divided by days (default false).\n"
-		"w is either true or false, represents if you want HTML timetables to show related activities which have constraints with same starting time (default false).\n"
+		"v is either true or false, represents if you want the HTML timetables with time-axis divided by days (default false).\n"
+		"e is either true or false, represents if you want the HTML timetables to duplicate vertical headers to the right of the tables, for easier reading (default false).\n"
+		"w is either true or false, represents if you want the HTML timetables to show related activities which have constraints with same starting time (default false).\n"
 		"(for instance, if A1 (T1, G1) and A2 (T2, G2) have constraint activities same starting time, then in T1's timetable will appear also A2, at the same slot "
 		"as A1).\n"
 		"rx is the random seed X component, minimum 1 to maximum 2147483646, ry is the random seed Y component, minimum 1 to maximum 2147483398"
@@ -267,6 +268,7 @@ void readSimulationParameters()
 	PRINT_NOT_AVAILABLE_TIME_SLOTS=newSettings.value("print-not-available", "true").toBool();
 	PRINT_BREAK_TIME_SLOTS=newSettings.value("print-break", "true").toBool();
 	DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=newSettings.value("divide-html-timetables-with-time-axis-by-days", "false").toBool();
+	TIMETABLE_HTML_REPEAT_NAMES=newSettings.value("timetables-repeat-vertical-names", "false").toBool();
 	
 	USE_GUI_COLORS=newSettings.value("use-gui-colors", "false").toBool();
 
@@ -309,6 +311,7 @@ void writeSimulationParameters()
 	settings.setValue("print-activity-tags", TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 	settings.setValue("print-activities-with-same-starting-time", PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME);
 	settings.setValue("divide-html-timetables-with-time-axis-by-days", DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS);
+	settings.setValue("timetables-repeat-vertical-names", TIMETABLE_HTML_REPEAT_NAMES);
 	settings.setValue("print-not-available", PRINT_NOT_AVAILABLE_TIME_SLOTS);
 	settings.setValue("print-break", PRINT_BREAK_TIME_SLOTS);
 	
@@ -642,6 +645,8 @@ int main(int argc, char **argv)
 		PRINT_BREAK_TIME_SLOTS=true;
 		
 		DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=false;
+		
+		TIMETABLE_HTML_REPEAT_NAMES=false;
 
 		PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME=false;
 		
@@ -681,6 +686,10 @@ int main(int argc, char **argv)
 			else if(s.left(23)=="--dividetimeaxisbydays="){
 				if(s.right(4)=="true")
 					DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=true;
+			}
+			else if(s.left(27)=="--duplicateverticalheaders="){
+				if(s.right(4)=="true")
+					TIMETABLE_HTML_REPEAT_NAMES=true;
 			}
 			else if(s.left(12)=="--outputdir="){
 				outputDirectory=QDir::fromNativeSeparators(s.right(s.length()-12));

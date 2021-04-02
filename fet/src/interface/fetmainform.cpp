@@ -36,6 +36,7 @@ using namespace std;
 #include "timetableviewroomsform.h"
 #include "timetableshowconflictsform.h"
 #include "timetableprintform.h"
+#include "statisticsprintform.h"
 
 #include "export.h"
 #include "import.h"
@@ -523,8 +524,11 @@ FetMainForm::FetMainForm()
 	settingsConfirmSaveTimetableAction->setChecked(CONFIRM_SAVE_TIMETABLE);
 	///////
 	
-	timetablesDivideByDaysAction->setCheckable(true);
-	timetablesDivideByDaysAction->setChecked(DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS);
+	settingsDivideTimetablesByDaysAction->setCheckable(true);
+	settingsDivideTimetablesByDaysAction->setChecked(DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS);
+	
+	settingsDuplicateVerticalNamesAction->setCheckable(true);
+	settingsDuplicateVerticalNamesAction->setChecked(TIMETABLE_HTML_REPEAT_NAMES);
 	
 	if(checkForUpdates){
 		networkManager=new QNetworkAccessManager(this);
@@ -649,9 +653,14 @@ void FetMainForm::on_settingsShowShortcutsOnMainWindowAction_toggled()
 	tabWidget->setVisible(SHOW_SHORTCUTS_ON_MAIN_WINDOW);
 }
 
-void FetMainForm::on_timetablesDivideByDaysAction_toggled()
+void FetMainForm::on_settingsDivideTimetablesByDaysAction_toggled()
 {
-	DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=timetablesDivideByDaysAction->isChecked();
+	DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=settingsDivideTimetablesByDaysAction->isChecked();
+}
+
+void FetMainForm::on_settingsDuplicateVerticalNamesAction_toggled()
+{
+	TIMETABLE_HTML_REPEAT_NAMES=settingsDuplicateVerticalNamesAction->isChecked();
 }
 
 void FetMainForm::replyFinished(QNetworkReply* networkReply)
@@ -1657,6 +1666,11 @@ void FetMainForm::on_helpSettingsAction_triggered()
 	s+="\n\n";
 	
 	s+=tr("Confirmations: unselect the corresponding check boxes if you want to skip introduction and confirmation to various advanced dialogs.");
+	
+	s+="\n\n";
+	
+	s+=tr("Duplicate vertical headers to the right (in timetable settings) - select this if you want the timetables to duplicate the table left vertical headers to the right"
+		" part of the tables");
 	
 	LongTextMessageBox::largeInformation(this, tr("FET information"), s);
 }
@@ -3287,6 +3301,11 @@ void FetMainForm::on_timetablePrintAction_triggered()
 	StartTimetablePrint::startTimetablePrint(this);
 }
 
+void FetMainForm::on_statisticsPrintAction_triggered()
+{
+	StartStatisticsPrint::startStatisticsPrint(this);
+}
+
 void FetMainForm::on_timetableLockAllActivitiesAction_triggered()
 {
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
@@ -3542,36 +3561,39 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	s+=QString("14. ")+tr("Divide html timetables with time-axis by days will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=QString("15. ")+tr("Print activities with same starting time will be %1", "%1 is true or false").arg(tr("false"));
+	s+=QString("15. ")+tr("Duplicate vertical headers to the right will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=QString("16. ")+tr("Print activities tags will be %1", "%1 is true or false").arg(tr("true"));
+	s+=QString("16. ")+tr("Print activities with same starting time will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=QString("17. ")+tr("Enable activity tag max hours daily will be %1", "%1 is true or false").arg(tr("false"));
+	s+=QString("17. ")+tr("Print activities tags will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
-	s+=QString("18. ")+tr("Enable students max gaps per day will be %1", "%1 is true or false").arg(tr("false"));
+	s+=QString("18. ")+tr("Enable activity tag max hours daily will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=QString("19. ")+tr("Warn if using not perfect constraints will be %1", "%1 is true or false. This is a warning if user uses not perfect constraints").arg(tr("true"));
+	s+=QString("19. ")+tr("Enable students max gaps per day will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=QString("20. ")+tr("Enable constraints students min hours daily with empty days will be %1", "%1 is true or false").arg(tr("false"));
+	s+=QString("20. ")+tr("Warn if using not perfect constraints will be %1", "%1 is true or false. This is a warning if user uses not perfect constraints").arg(tr("true"));
 	s+="\n";
 
-	s+=QString("21. ")+tr("Warn if using constraints students min hours daily with empty days will be %1", "%1 is true or false. This is a warning if user uses a nonstandard constraint"
+	s+=QString("21. ")+tr("Enable constraints students min hours daily with empty days will be %1", "%1 is true or false").arg(tr("false"));
+	s+="\n";
+
+	s+=QString("22. ")+tr("Warn if using constraints students min hours daily with empty days will be %1", "%1 is true or false. This is a warning if user uses a nonstandard constraint"
 		" students min hours daily with allowed empty days").arg(tr("true"));
 	s+="\n";
 
 	///////////////confirmations
-	s+=QString("22. ")+tr("Confirm activity planning will be %1", "%1 is true or false").arg(tr("true"));
+	s+=QString("23. ")+tr("Confirm activity planning will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
-	s+=QString("23. ")+tr("Confirm spread activities over the week will be %1", "%1 is true or false").arg(tr("true"));
+	s+=QString("24. ")+tr("Confirm spread activities over the week will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
-	s+=QString("24. ")+tr("Confirm remove redundant constraints will be %1", "%1 is true or false").arg(tr("true"));
+	s+=QString("25. ")+tr("Confirm remove redundant constraints will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
-	s+=QString("25. ")+tr("Confirm save data and timetable as will be %1", "%1 is true or false").arg(tr("true"));
+	s+=QString("26. ")+tr("Confirm save data and timetable as will be %1", "%1 is true or false").arg(tr("true"));
 	//s+="\n";
 	///////////////
 
@@ -3647,8 +3669,11 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 
 	///////////
 	
-	timetablesDivideByDaysAction->setChecked(false);
+	settingsDivideTimetablesByDaysAction->setChecked(false);
 	DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=false;
+	
+	settingsDuplicateVerticalNamesAction->setChecked(false);
+	TIMETABLE_HTML_REPEAT_NAMES=false;
 	
 	WORKING_DIRECTORY=default_working_directory;
 	

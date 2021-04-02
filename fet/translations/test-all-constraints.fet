@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.18.2">
+<fet version="5.21.0">
 
 <Institution_Name>Default institution</Institution_Name>
 
@@ -1752,6 +1752,15 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintActivitiesOccupyMaxDifferentRooms>
+<ConstraintActivitiesSameRoomIfConsecutive>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>2</Activity_Id>
+	<Activity_Id>1</Activity_Id>
+	<Activity_Id>3</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameRoomIfConsecutive>
 </Space_Constraints_List>
 
 </fet>

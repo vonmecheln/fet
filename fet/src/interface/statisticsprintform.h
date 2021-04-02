@@ -4,9 +4,9 @@
    copyright             : (C) by Liviu Lalescu, Volker Dirr
     email                : Liviu Lalescu: see http://lalescu.ro/liviu/ , Volker Dirr: see http://www.timetabling.de/
  ***************************************************************************
-                          timetableprintform.h  -  description
+                          statisticsprintform.h  -  description
                              -------------------
-    begin                : March 2010
+    begin                : November 2013
     copyright            : (C) by Volker Dirr
                          : http://www.timetabling.de/
  ***************************************************************************
@@ -18,8 +18,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef TIMETABLEPRINTFORM_H
-#define TIMETABLEPRINTFORM_H
+#ifndef STATISTICSPRINTFORM_H
+#define STATISTICSPRINTFORM_H
 
 #include <QObject>
 #include <QList>
@@ -27,6 +27,8 @@
 #include <QTextDocument> //maybe better TextEdit, so you can also edit?!
 #include <QSpinBox>
 #include <QDialog>
+
+#include "statisticsexport.h"
 
 #ifndef QT_NO_PRINTER
 #include <QPrinter>
@@ -37,46 +39,45 @@ class QRadioButton;
 class QCheckBox;
 class QPushButton;
 class QTableWidgetItem;
-class QComboBox;
 class QGroupBox;
+class QComboBox;
 class QToolButton;
 class QSizePolicy;
 class QListWidget;
 
-class StartTimetablePrint: public QObject{
+class StartStatisticsPrint: public QObject{
 	Q_OBJECT
 
 public:
-	StartTimetablePrint();
-	~StartTimetablePrint();
+	StartStatisticsPrint();
+	~StartStatisticsPrint();
 
-	static void startTimetablePrint(QWidget* parent);
+	static void startStatisticsPrint(QWidget* parent);
 };
 
-class TimetablePrintForm: public QDialog{
+class StatisticsPrintForm: public QDialog{
 	Q_OBJECT
 	
 public:
-	TimetablePrintForm(QWidget* parent);
-	~TimetablePrintForm();
+	StatisticsPrintForm(QWidget* parent);
+	~StatisticsPrintForm();
 
 private:
+	FetStatistics statisticValues;
+	
 	QTextDocument *textDocument;
 
-	QComboBox* CBTables;
 	QListWidget* namesList;
 	QPushButton* pbSelectAll;
 	QPushButton* pbUnselectAll;
 
 	QGroupBox* actionsBox;
-	QRadioButton* RBDaysHorizontal;
-	QRadioButton* RBDaysVertical;
-	QRadioButton* RBTimeHorizontal;
-	QRadioButton* RBTimeVertical;
-	//By Liviu Lalescu - unused anymore
-	//QCheckBox* CBDivideTimeAxisByDay;
-	QRadioButton* RBTimeHorizontalDay;
-	QRadioButton* RBTimeVerticalDay;
+	QRadioButton* studentSubjectRB;
+	QRadioButton* studentTeacherRB;
+	QRadioButton* teacherSubjectRB;
+	QRadioButton* teacherStudentRB;
+	QRadioButton* subjectStudentRB;
+	QRadioButton* subjectTeacherRB;
 
 	QGroupBox* optionsBox;
 	QComboBox* CBBreak;
@@ -94,13 +95,8 @@ private:
 	QSpinBox* rightPageMargin;
 	QSpinBox* bottomPageMargin;
 	
-//	QCheckBox* markNotAvailable;
-//	QCheckBox* markBreak;
-//	QCheckBox* printSameStartingTime;
-	QCheckBox* printDetailedTables;
-	QCheckBox* printActivityTags;	//TODO: to this with combo box: "always", "never", "if available".
-									//maybe TODO: do it similar with students, teachers, rooms, ...
-	QCheckBox* repeatNames;
+	//QCheckBox* printDetailedTables;	//maybe TODO: only a single number per cell if not detailed
+	QCheckBox* printActivityTags;
 	
 	QPushButton* pbPrintPreviewSmall;
 	QPushButton* pbPrintPreviewFull;
@@ -115,8 +111,6 @@ private slots:
 	void updateNamesList();
 	void updateHTMLprintString(bool printAll);
 	
-	//void updateCBDivideTimeAxisByDay();
-
 	void print();
 	void printPreviewFull();
 	void updatePreviewFull(QPrinter* printer);

@@ -89,7 +89,16 @@
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QGridLayout" name="gridLayout_16">
-           <property name="margin">
+           <property name="leftMargin">
+            <number>16</number>
+           </property>
+           <property name="topMargin">
+            <number>16</number>
+           </property>
+           <property name="rightMargin">
+            <number>16</number>
+           </property>
+           <property name="bottomMargin">
             <number>16</number>
            </property>
            <item row="0" column="0">
@@ -216,7 +225,16 @@
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QGridLayout" name="gridLayout_15">
-           <property name="margin">
+           <property name="leftMargin">
+            <number>16</number>
+           </property>
+           <property name="topMargin">
+            <number>16</number>
+           </property>
+           <property name="rightMargin">
+            <number>16</number>
+           </property>
+           <property name="bottomMargin">
             <number>16</number>
            </property>
            <item row="0" column="0">
@@ -371,7 +389,16 @@
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QGridLayout" name="gridLayout_7">
-           <property name="margin">
+           <property name="leftMargin">
+            <number>16</number>
+           </property>
+           <property name="topMargin">
+            <number>16</number>
+           </property>
+           <property name="rightMargin">
+            <number>16</number>
+           </property>
+           <property name="bottomMargin">
             <number>16</number>
            </property>
            <item row="0" column="0">
@@ -508,7 +535,16 @@
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QGridLayout" name="gridLayout_8">
-           <property name="margin">
+           <property name="leftMargin">
+            <number>16</number>
+           </property>
+           <property name="topMargin">
+            <number>16</number>
+           </property>
+           <property name="rightMargin">
+            <number>16</number>
+           </property>
+           <property name="bottomMargin">
             <number>16</number>
            </property>
            <item row="0" column="0">
@@ -656,7 +692,16 @@
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QGridLayout" name="gridLayout_9">
-           <property name="margin">
+           <property name="leftMargin">
+            <number>16</number>
+           </property>
+           <property name="topMargin">
+            <number>16</number>
+           </property>
+           <property name="rightMargin">
+            <number>16</number>
+           </property>
+           <property name="bottomMargin">
             <number>16</number>
            </property>
            <item row="0" column="0">
@@ -898,6 +943,7 @@
     <addaction name="separator"/>
     <addaction name="dataActivitiesRoomsStatisticsAction"/>
     <addaction name="separator"/>
+    <addaction name="statisticsPrintAction"/>
     <addaction name="statisticsExportToDiskAction"/>
     <addaction name="separator"/>
     <addaction name="dataHelpOnStatisticsAction"/>
@@ -1180,7 +1226,8 @@
      <addaction name="settingsPrintNotAvailableSlotsAction"/>
      <addaction name="settingsPrintBreakSlotsAction"/>
      <addaction name="separator"/>
-     <addaction name="timetablesDivideByDaysAction"/>
+     <addaction name="settingsDivideTimetablesByDaysAction"/>
+     <addaction name="settingsDuplicateVerticalNamesAction"/>
      <addaction name="separator"/>
      <addaction name="settingsPrintActivitiesWithSameStartingTimeAction"/>
     </widget>
@@ -1945,7 +1992,7 @@
     <string extracomment="Please translate in your language and also add the original English term, like: 'Idioma/Language'. This is to ensure that people mistakingly selecting an unknown language do not become stuck with it (so that they can find this setting description also in English).">Language</string>
    </property>
   </action>
-  <action name="timetablesDivideByDaysAction">
+  <action name="settingsDivideTimetablesByDaysAction">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -2266,6 +2313,22 @@
   <action name="settingsPrintActivityTagsAction">
    <property name="text">
     <string>Print activity tags in timetables</string>
+   </property>
+  </action>
+  <action name="statisticsPrintAction">
+   <property name="text">
+    <string>Print advanced statistics</string>
+   </property>
+  </action>
+  <action name="settingsDuplicateVerticalNamesAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Duplicate vertical headers to the right</string>
    </property>
   </action>
  </widget>
