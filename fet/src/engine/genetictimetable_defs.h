@@ -109,7 +109,7 @@ const int MAX_SUBJECTS=1000;
 /**
 The maximum number of activities
 */
-const int MAX_ACTIVITIES=1250;
+const int MAX_ACTIVITIES=2000;
 
 /**
 The maximum number of equipments
@@ -181,24 +181,24 @@ const short UNALLOCATED_SPACE = MAX_ROOMS;
 /**
 The maximum number of time constraints
 */
-const int MAX_TIME_CONSTRAINTS = 1500;
+const int MAX_TIME_CONSTRAINTS = 3000;
 
 /**
 The maximum number of space constraints
 */
-const int MAX_SPACE_CONSTRAINTS = 1500;
+const int MAX_SPACE_CONSTRAINTS = 3000;
 
 /**
 The maximum number of preferred times that can be considered
 in this kind of constraint
 */
-const int MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES = 50;
+const int MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES = 100;
 
 /**
 The maximum number of preferred times that can be considered
 in this kind of constraint
 */
-const int MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES = 50;
+const int MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES = 100;
 
 /**
 The maximum number of activities that can be put in
@@ -214,35 +214,35 @@ The maximum number of activities for a single
 constraint of type
 ConstraintActivitiesSameStartingTime
 */
-const int MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME=20;
+const int MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME=50;
 
 /**
 The maximum number of activities for a single
 constraint of type
 ConstraintActivitiesSameStartingHour
 */
-const int MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR=20;
+const int MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR=50;
 
 /**
 The maximum number of activities for a single
 constraint of type
 ConstraintActivitiesNotOverlapping
 */
-const int MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING=20;
+const int MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING=100;
 
 /**
 The maximum number of rooms for a single
 constraint of type
 ConstraintActivityPreferredRooms
 */
-const int MAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOMS=20;
+const int MAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOMS=50;
 
 /**
 The maximum number of rooms for a single
 constraint of type
 ConstraintSubjectPreferredRooms
 */
-const int MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOMS=20;
+const int MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOMS=50;
 
 /**
 The maximum number of rooms for a single

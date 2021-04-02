@@ -835,4 +835,7 @@ Versions 5.0.0 -
 	- Bug fix in ConstraintBreak
 - Version 5.0.0-preview8
 	- Made possible again ConstraintActivitiesNotOverlapping
-	
+- Version 5.0.0-preview9
+	- Raised the limits of max number of activities, constraints,
+	max activities for each constraint activities not overlapping and others
+	- Improved the solving of activities not overlapping

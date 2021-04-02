@@ -410,8 +410,14 @@ void OptimizeTime::optimize()
 								if(minNDaysListOfWeightPercentages[permutation[added_act]].at(ii)>=PERCENTAGE_THRESHOLD)
 									conflmind=true;
 
+						bool conflnotoverlapping=false;
+						for(int ii=0; ii<activitiesNotOverlappingActivities[permutation[added_act]].count(); ii++)
+							if(activitiesNotOverlappingActivities[permutation[added_act]].at(ii)==permutation[k])
+								if(activitiesNotOverlappingPercentages[permutation[added_act]].at(ii)>=PERCENTAGE_THRESHOLD)
+									conflnotoverlapping=true;
+
 						if(activitiesConflictingPercentage[permutation[added_act]][permutation[k]]<PERCENTAGE_THRESHOLD
-						 && !conflmind)
+						 && !conflmind && !conflnotoverlapping)
 							k--;
 						else
 							break;
