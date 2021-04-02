@@ -25,7 +25,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #ifndef ACTIVITY_H
 #define ACTIVITY_H
 
-#include "genetictimetable_defs.h"
+#include "timetable_defs.h"
 
 #include <qfile.h>
 

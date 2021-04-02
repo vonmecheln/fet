@@ -27,8 +27,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #define FET_H
 
 
-#include "genetictimetable_defs.h"
-#include "genetictimetable.h"
+#include "timetable_defs.h"
+#include "timetable.h"
 
 #include <fstream>
 using namespace std;
@@ -37,7 +37,7 @@ using namespace std;
 /**
 The one and only instantiation of the main class.
 */
-extern GeneticTimetable gt;
+extern Timetable gt;
 
 /**
 Log file
@@ -82,17 +82,17 @@ extern int max_generations;
 /**
 The timetable for the teachers
 */
-extern int16 teachers_timetable_weekly[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern qint16 teachers_timetable_weekly[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
 /**
 The timetable for the students
 */
-extern int16 students_timetable_weekly[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern qint16 students_timetable_weekly[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
 /**
 The timetable for the rooms
 */
-extern int16 rooms_timetable_weekly[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern qint16 rooms_timetable_weekly[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
 void readSimulationParameters();
 void writeSimulationParameters();

@@ -31,7 +31,6 @@ public:
 	void modifyRoom();
 	void sortRooms();
 	void roomChanged(int index);
-	void roomsEquipments();
 	void filterChanged();
 	bool filterOk(Room* rm);
 };

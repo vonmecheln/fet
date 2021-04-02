@@ -16,7 +16,7 @@
  ***************************************************************************/
 
 #include "httpget.h"
-#include "genetictimetable_defs.h"
+#include "timetable_defs.h"
 
 #include <iostream>
 using namespace std;

@@ -64,15 +64,15 @@ void AddConstraintSubjectPreferredRoomsForm::addConstraint()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0){
+	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, QObject::tr("FET information"),
 			QObject::tr("Invalid weight"));
 		return;
 	}
 
-	bool compulsory=false;
+/*	bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
 	if(selectedRoomsListBox->count()==0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
@@ -81,7 +81,7 @@ void AddConstraintSubjectPreferredRoomsForm::addConstraint()
 	}
 	if(selectedRoomsListBox->count()==1){
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Only one selected activity"));
+			QObject::tr("Only one selected room - please use constraint subject preferred room if you want a single room"));
 		return;
 	}
 	if(selectedRoomsListBox->count()>(uint)(MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOMS)){
@@ -101,7 +101,7 @@ void AddConstraintSubjectPreferredRoomsForm::addConstraint()
 	for(uint i=0; i<selectedRoomsListBox->count(); i++)
 		roomsList.append(selectedRoomsListBox->text(i));
 	
-	ctr=new ConstraintSubjectPreferredRooms(weight, compulsory, subject, roomsList);
+	ctr=new ConstraintSubjectPreferredRooms(weight, /*compulsory,*/ subject, roomsList);
 	bool tmp2=gt.rules.addSpaceConstraint(ctr);
 	
 	if(tmp2){

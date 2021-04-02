@@ -24,6 +24,8 @@
 
 #include <QMessageBox>
 
+#include <QTextEdit>
+
 AddRoomForm::AddRoomForm()
 {
 	//setWindowFlags(Qt::Window);
@@ -33,7 +35,7 @@ AddRoomForm::AddRoomForm()
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);
 
-	typesComboBox->clear();
+	/*typesComboBox->clear();
 	typesComboBox->setDuplicatesEnabled(false);
 	for(int i=0; i<gt.rules.roomsList.size(); i++){
 		Room* rm=gt.rules.roomsList[i];
@@ -48,7 +50,7 @@ AddRoomForm::AddRoomForm()
 	buildingsComboBox->clear();
 	buildingsComboBox->insertItem("");
 	for(int i=0; i<gt.rules.buildingsList.size(); i++)
-		buildingsComboBox->insertItem(gt.rules.buildingsList.at(i)->name);
+		buildingsComboBox->insertItem(gt.rules.buildingsList.at(i)->name);*/
 }
 
 AddRoomForm::~AddRoomForm()
@@ -61,18 +63,18 @@ void AddRoomForm::addRoom()
 		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Incorrect name"));
 		return;
 	}
-	if(typesComboBox->currentText().isEmpty()){
+	/*if(typesComboBox->currentText().isEmpty()){
 		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Incorrect type"));
 		return;
 	}
 	if(buildingsComboBox->currentItem()<0){
 		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Incorrect building"));
 		return;
-	}
+	}*/
 	Room* rm=new Room();
 	rm->name=nameLineEdit->text();
-	rm->type=typesComboBox->currentText();
-	rm->building=buildingsComboBox->currentText();
+	//rm->type=typesComboBox->currentText();
+	//rm->building=buildingsComboBox->currentText();
 	rm->capacity=capacitySpinBox->value();
 	if(!gt.rules.addRoom(rm)){
 		QMessageBox::information(this, QObject::tr("Room insertion dialog"),
@@ -83,9 +85,46 @@ void AddRoomForm::addRoom()
 		QMessageBox::information(this, QObject::tr("Room insertion dialog"),
 			QObject::tr("Room added"));
 			
-		typesComboBox->insertItem(rm->type);
+		//typesComboBox->insertItem(rm->type);
 	}
 
 	nameLineEdit->selectAll();
 	nameLineEdit->setFocus();
+}
+
+void AddRoomForm::help()
+{
+	QString s;
+	
+	s=QObject::tr("It is advisable to only input special rooms, which are not available, or for activities with "
+	 "special rooms needed (no need to input home rooms for teachers or students)\n\n"
+	 "It is advisable to generate the timetable without the rooms, then, if a solution is possible, to add rooms"
+	 );
+	
+	//show the message in a dialog
+	QDialog* dialog=new QDialog();
+	
+	dialog->setWindowTitle(QObject::tr("FET - help on adding room(s)"));
+
+	QVBoxLayout* vl=new QVBoxLayout(dialog);
+	QTextEdit* te=new QTextEdit();
+	te->setPlainText(s);
+	te->setReadOnly(true);
+	QPushButton* pb=new QPushButton(QObject::tr("OK"));
+
+	QHBoxLayout* hl=new QHBoxLayout(0);
+	hl->addStretch(1);
+	hl->addWidget(pb);
+
+	vl->addWidget(te);
+	vl->addLayout(hl);
+	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
+
+	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	QDesktopWidget* desktop=QApplication::desktop();
+	int xx=desktop->width()/2 - 350;
+	int yy=desktop->height()/2 - 250;
+	dialog->setGeometry(xx, yy, 700, 500);
+
+	dialog->exec();
 }

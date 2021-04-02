@@ -13,7 +13,7 @@
 #ifndef ROOM_H
 #define ROOM_H
 
-#include "genetictimetable_defs.h"
+#include "timetable_defs.h"
 
 #include <QString>
 #include <QList>
@@ -32,25 +32,25 @@ This class represents a room
 class Room{ /*classroom :-)*/
 public:
 	QString name;
-	QString type;
+	//QString type;
 	int capacity;
-	QStringList equipments;
+	//QStringList equipments;
 	/**
 	If empty string, it is ignored
 	*/
-	QString building; 
+	//QString building; 
 	
 	/**
 	Internal. If -1, it is ignored
 	*/
-	int buildingIndex;
+	//int buildingIndex;
 
 	Room();
 	~Room();
 	
-	void addEquipment(const QString& equipmentName);
+	/*void addEquipment(const QString& equipmentName);
 	void removeEquipment(const QString& equipmentName);
-	bool searchEquipment(const QString& equipmentName);
+	bool searchEquipment(const QString& equipmentName);*/
 	
 	void computeInternalStructure(Rules& r);
 

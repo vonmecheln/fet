@@ -15,9 +15,9 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "genetictimetable_defs.h"
+#include "timetable_defs.h"
 #include "fet.h"
-#include "genetictimetable.h"
+#include "timetable.h"
 
 #include "activitiesform.h"
 #include "addactivityform.h"

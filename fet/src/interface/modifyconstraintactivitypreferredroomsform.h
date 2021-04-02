@@ -19,8 +19,8 @@
 #define MODIFYCONSTRAINTACTIVITYPREFERREDROOMSFORM_H
 
 #include "modifyconstraintactivitypreferredroomsform_template.h"
-#include "genetictimetable_defs.h"
-#include "genetictimetable.h"
+#include "timetable_defs.h"
+#include "timetable.h"
 #include "fet.h"
 //#include "fetmainform.h"
 

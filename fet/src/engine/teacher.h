@@ -13,7 +13,7 @@
 #ifndef TEACHER_H
 #define TEACHER_H
 
-#include "genetictimetable_defs.h"
+#include "timetable_defs.h"
 
 #include <qstring.h>
 #include <q3ptrlist.h>

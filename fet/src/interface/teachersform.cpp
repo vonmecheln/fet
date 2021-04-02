@@ -10,8 +10,8 @@
 // Copyright: See COPYING file that comes with this distribution
 //
 //
-#include "genetictimetable_defs.h"
-#include "genetictimetable.h"
+#include "timetable_defs.h"
+#include "timetable.h"
 #include "fet.h"
 #include "teachersform.h"
 //#include "fetmainform.h"

@@ -11,18 +11,18 @@
 //
 //
 
-#include "genetictimetable_defs.h"
+#include "timetable_defs.h"
 #include "fet.h"
-//#include "fetmainform.h"
 #include "roomsform.h"
 #include "addroomform.h"
 #include "modifyroomform.h"
-#include "roomsequipmentsform.h"
 
 #include <q3listbox.h>
 #include <qinputdialog.h>
 
 #include <QDesktopWidget>
+
+#include <QMessageBox>
 
 RoomsForm::RoomsForm()
  : RoomsForm_template()
@@ -34,23 +34,6 @@ RoomsForm::RoomsForm()
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);
 
-	typesComboBox->insertItem("");
-	for(int k=0; k<gt.rules.roomsList.size(); k++){
-		Room* rm=gt.rules.roomsList[k];
-		int i;
-		for(i=0; i<typesComboBox->count(); i++)
-			if(typesComboBox->text(i)==rm->type)
-				break;
-		if(i==typesComboBox->count())
-			typesComboBox->insertItem(rm->type);
-	}
-	typesComboBox->setCurrentItem(0);
-
-	buildingsComboBox->insertItem("");
-	for(int i=0; i<gt.rules.buildingsList.size(); i++)
-		buildingsComboBox->insertItem(gt.rules.buildingsList.at(i)->name);
-	buildingsComboBox->setCurrentItem(0);
-	
 	this->filterChanged();
 }
 
@@ -61,17 +44,11 @@ RoomsForm::~RoomsForm()
 
 bool RoomsForm::filterOk(Room* rm)
 {
-	QString tn=typesComboBox->currentText();
-	QString bu=buildingsComboBox->currentText();
-	
+	if(rm!=NULL)
+		;
+
 	bool ok=true;
-	
-	if(tn!="" && tn!=rm->type)
-		ok=false;
-		
-	if(bu!="" && bu!=rm->building)
-		ok=false;
-		
+
 	return ok;
 }
 
@@ -98,19 +75,6 @@ void RoomsForm::addRoom()
 	AddRoomForm* addRoomForm=new AddRoomForm();
 	addRoomForm->exec();
 	
-	typesComboBox->clear();
-	typesComboBox->insertItem("");
-	for(int k=0; k<gt.rules.roomsList.size(); k++){
-		Room* rm=gt.rules.roomsList[k];
-		int i;
-		for(i=0; i<typesComboBox->count(); i++)
-			if(typesComboBox->text(i)==rm->type)
-				break;
-		if(i==typesComboBox->count())
-			typesComboBox->insertItem(rm->type);
-	}
-	typesComboBox->setCurrentItem(0);
-
 	filterChanged();
 	
 	roomsListBox->setCurrentItem(ind);
@@ -157,27 +121,11 @@ void RoomsForm::roomChanged(int index)
 	currentRoomTextEdit->setText(s);
 }
 
-void RoomsForm::roomsEquipments()
-{
-	int ci=roomsListBox->currentItem();
-
-	RoomsEquipmentsForm* roomsEquipmentsForm=new RoomsEquipmentsForm();
-	roomsEquipmentsForm->exec();
-
-	filterChanged();
-	
-	roomsListBox->setCurrentItem(ci);
-}
-
 void RoomsForm::sortRooms()
 {
 	gt.rules.sortRoomsAlphabetically();
 
-	roomsListBox->clear();
-	for(int i=0; i<gt.rules.roomsList.size(); i++){
-		Room* rm=gt.rules.roomsList[i];
-		roomsListBox->insertItem(rm->name);
-	}
+	filterChanged();
 }
 
 void RoomsForm::modifyRoom()
@@ -189,21 +137,8 @@ void RoomsForm::modifyRoom()
 	}
 	
 	Room* rm=visibleRoomsList.at(ci);
-	ModifyRoomForm* form=new ModifyRoomForm(rm->name, rm->type, rm->building, rm->capacity);
+	ModifyRoomForm* form=new ModifyRoomForm(rm->name, rm->capacity);
 	form->exec();
-
-	typesComboBox->clear();
-	typesComboBox->insertItem("");
-	for(int k=0; k<gt.rules.roomsList.size(); k++){
-		Room* rm=gt.rules.roomsList[k];
-		int i;
-		for(i=0; i<typesComboBox->count(); i++)
-			if(typesComboBox->text(i)==rm->type)
-				break;
-		if(i==typesComboBox->count())
-			typesComboBox->insertItem(rm->type);
-	}
-	typesComboBox->setCurrentItem(0);
 
 	filterChanged();
 	

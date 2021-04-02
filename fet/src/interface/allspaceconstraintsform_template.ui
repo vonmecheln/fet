@@ -24,7 +24,7 @@
                 <cstring>constraintsTextLabel</cstring>
             </property>
             <property name="text">
-                <string>Constraints</string>
+                <string>Constraints (dbl. click modifies)</string>
             </property>
         </widget>
         <widget class="QLabel" row="0" column="2" rowspan="1" colspan="2">
@@ -101,6 +101,12 @@
     <connection>
         <sender>modifyConstraintPushButton</sender>
         <signal>clicked()</signal>
+        <receiver>AllSpaceConstraintsForm_template</receiver>
+        <slot>modifyConstraint()</slot>
+    </connection>
+    <connection>
+        <sender>constraintsListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
         <receiver>AllSpaceConstraintsForm_template</receiver>
         <slot>modifyConstraint()</slot>
     </connection>

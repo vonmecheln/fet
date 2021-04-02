@@ -97,7 +97,7 @@
                 <cstring>lockPushButton</cstring>
             </property>
             <property name="text">
-                <string>Lock selected activities</string>
+                <string>Lock selected activities (only time)</string>
             </property>
         </widget>
     </grid>

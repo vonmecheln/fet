@@ -36,8 +36,8 @@ ModifyConstraintActivityPreferredRoomForm::ModifyConstraintActivityPreferredRoom
 
 	this->_ctr=ctr;
 	
-	compulsoryCheckBox->setChecked(ctr->compulsory);
-	weightLineEdit->setText(QString::number(ctr->weight));
+	//compulsoryCheckBox->setChecked(ctr->compulsory);
+	weightLineEdit->setText(QString::number(ctr->weightPercentage));
 
 	updateActivitiesComboBox();
 	updateRoomsComboBox();
@@ -87,15 +87,15 @@ void ModifyConstraintActivityPreferredRoomForm::ok()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0){
+	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, QObject::tr("FET information"),
 			QObject::tr("Invalid weight"));
 		return;
 	}
 
-	bool compulsory=false;
+/*	bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
 	int i=activitiesComboBox->currentItem();
 	if(i<0 || activitiesComboBox->count()<=0){
@@ -113,8 +113,8 @@ void ModifyConstraintActivityPreferredRoomForm::ok()
 	}
 	QString room=roomsComboBox->currentText();
 
-	this->_ctr->weight=weight;
-	this->_ctr->compulsory=compulsory;
+	this->_ctr->weightPercentage=weight;
+//	this->_ctr->compulsory=compulsory;
 	this->_ctr->roomName=room;
 	this->_ctr->activityId=act->id;
 

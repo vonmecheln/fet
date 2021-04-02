@@ -7,18 +7,11 @@ SOURCES += fet.cpp \
            helpaboutform.cpp \
            helpfaqform.cpp \
            helpinstructionsform.cpp \
-           helptimeconstraintsform.cpp \
-           helptimeconstraintssubtagsform.cpp \
            activitiesform.cpp \
            addactivityform.cpp \
            modifyactivityform.cpp \
            addroomform.cpp \
            modifyroomform.cpp \
-           addequipmentform.cpp \
-           modifyequipmentform.cpp \
-           buildingsform.cpp \
-           addbuildingform.cpp \
-           modifybuildingform.cpp \
            addstudentsyearform.cpp \
            modifystudentsyearform.cpp \
            addstudentsgroupform.cpp \
@@ -30,21 +23,6 @@ SOURCES += fet.cpp \
            addconstraintroomnotavailableform.cpp \
            constraintroomnotavailableform.cpp \
            modifyconstraintroomnotavailableform.cpp \
-           addconstraintroomtypenotallowedsubjectsform.cpp \
-           constraintroomtypenotallowedsubjectsform.cpp \
-           modifyconstraintroomtypenotallowedsubjectsform.cpp \
-           addconstraintsubjectrequiresequipmentsform.cpp \
-           constraintsubjectrequiresequipmentsform.cpp \
-           modifyconstraintsubjectrequiresequipmentsform.cpp \
-           addconstraintsubjectsubjecttagrequireequipmentsform.cpp \
-           constraintsubjectsubjecttagrequireequipmentsform.cpp \
-           modifyconstraintsubjectsubjecttagrequireequipmentsform.cpp \
-           addconstraintteacherrequiresroomform.cpp \
-           modifyconstraintteacherrequiresroomform.cpp \
-           constraintteacherrequiresroomform.cpp \
-           addconstraintteachersubjectrequireroomform.cpp \
-           modifyconstraintteachersubjectrequireroomform.cpp \
-           constraintteachersubjectrequireroomform.cpp \
            addconstraintactivitypreferredroomform.cpp \
            constraintactivitypreferredroomform.cpp \
            modifyconstraintactivitypreferredroomform.cpp \
@@ -54,21 +32,9 @@ SOURCES += fet.cpp \
            addconstraintsubjectpreferredroomsform.cpp \
            constraintsubjectpreferredroomsform.cpp \
            modifyconstraintsubjectpreferredroomsform.cpp \
-           addconstraintsubjectsubjecttagpreferredroomsform.cpp \
-           constraintsubjectsubjecttagpreferredroomsform.cpp \
-           modifyconstraintsubjectsubjecttagpreferredroomsform.cpp \
-           addconstraintsubjectsubjecttagpreferredroomform.cpp \
-           constraintsubjectsubjecttagpreferredroomform.cpp \
-           modifyconstraintsubjectsubjecttagpreferredroomform.cpp \
            addconstraintactivitypreferredroomsform.cpp \
            constraintactivitypreferredroomsform.cpp \
            modifyconstraintactivitypreferredroomsform.cpp \
-           addconstraintminimizenumberofroomsforstudentsform.cpp \
-           constraintminimizenumberofroomsforstudentsform.cpp \
-           modifyconstraintminimizenumberofroomsforstudentsform.cpp \
-           addconstraintminimizenumberofroomsforteachersform.cpp \
-           constraintminimizenumberofroomsforteachersform.cpp \
-           modifyconstraintminimizenumberofroomsforteachersform.cpp \
            alltimeconstraintsform.cpp \
            allspaceconstraintsform.cpp \
            groupsform.cpp \
@@ -76,40 +42,20 @@ SOURCES += fet.cpp \
            subjectsform.cpp \
            subjecttagsform.cpp \
            teachersform.cpp \
-           timetableexporticalteachersform.cpp \
-           timetableexporticalstudentsform.cpp \
-           timetableexporticalteacherswithrooms1form.cpp \
-           timetableexporticalstudentswithrooms1form.cpp \
-           timetableexporticalteacherswithrooms2form.cpp \
-           timetableexporticalstudentswithrooms2form.cpp \
-           timetableallocatehoursform.cpp \
-           timetableallocateroomsform.cpp \
-           timetableallocatehoursroomsform.cpp \
+           timetablegenerateform.cpp \
            fetmainform.cpp \
            timetableviewstudentsform.cpp \
-           timetableviewstudentswithroomsform.cpp \
-           timetableviewstudentswithrooms2form.cpp \
            timetableviewroomsform.cpp \
-           timetableviewrooms2form.cpp \
            yearsform.cpp \
-           timetableshowconflictstimeform.cpp \
-           timetableshowconflictstimespaceform.cpp \
-           timetableshowconflictsspaceform.cpp \
+           timetableshowconflictsform.cpp \
            timetableviewteachersform.cpp \
-           timetableviewteacherswithroomsform.cpp \
-           timetableviewteacherswithrooms2form.cpp \
            hoursform.cpp \
            daysform.cpp \
            ../engine/activity.cpp \
-           ../engine/timechromosome.cpp \
-           ../engine/spacechromosome.cpp \
-           ../engine/timespacechromosome.cpp \
-           ../engine/genetictimetable.cpp \
-           ../engine/timepopulation.cpp \
-           ../engine/spacepopulation.cpp \
-           ../engine/timespacepopulation.cpp \
+           ../engine/solution.cpp \
+           ../engine/timetable.cpp \
            ../engine/rules.cpp \
-           ../engine/optimizetime_data.cpp \
+           ../engine/generate_pre.cpp \
            ../engine/timeconstraint.cpp \
            ../engine/spaceconstraint.cpp \
            ../engine/studentsset.cpp \
@@ -117,50 +63,22 @@ SOURCES += fet.cpp \
            ../engine/subject.cpp \
            ../engine/subjecttag.cpp \
            ../engine/room.cpp \
-           ../engine/equipment.cpp \
-           ../engine/building.cpp \
-           ../engine/genetictimetable_defs.cpp \
-		   ../engine/optimizetime.cpp \
+           ../engine/timetable_defs.cpp \
+		   ../engine/generate.cpp \
            roomsform.cpp \
-           roomsequipmentsform.cpp \
-           equipmentsform.cpp \
-           populationnumberform.cpp \
-           constraint2activitiesconsecutiveform.cpp \
-           addconstraint2activitiesconsecutiveform.cpp \
-           modifyconstraint2activitiesconsecutiveform.cpp \
-           constraint2activitiesorderedform.cpp \
-           addconstraint2activitiesorderedform.cpp \
-           modifyconstraint2activitiesorderedform.cpp \
-           constraint2activitiesgroupedform.cpp \
-           modifyconstraint2activitiesgroupedform.cpp \
-           addconstraint2activitiesgroupedform.cpp \
            constraintactivitiespreferredtimesform.cpp \
            addconstraintactivitiespreferredtimesform.cpp \
            modifyconstraintactivitiespreferredtimesform.cpp \
            constraintactivitiessamestartingtimeform.cpp \
            addconstraintactivitiessamestartingtimeform.cpp \
            constraintactivitiessamestartinghourform.cpp \
-           constraintactivitiessameroomform.cpp \
            addconstraintactivitiessamestartinghourform.cpp \
-           addconstraintactivitiessameroomform.cpp \
 		   constraintteachernotavailableform.cpp \
 		   addconstraintteachernotavailableform.cpp \
 		   modifyconstraintteachernotavailableform.cpp \
 		   constraintbasiccompulsorytimeform.cpp \
 		   addconstraintbasiccompulsorytimeform.cpp \
 		   modifyconstraintbasiccompulsorytimeform.cpp \
-		   constraintmaxbuildingchangesperdayforteachersform.cpp \
-		   addconstraintmaxbuildingchangesperdayforteachersform.cpp \
-		   modifyconstraintmaxbuildingchangesperdayforteachersform.cpp \
-		   constraintmaxbuildingchangesperdayforstudentsform.cpp \
-		   addconstraintmaxbuildingchangesperdayforstudentsform.cpp \
-		   modifyconstraintmaxbuildingchangesperdayforstudentsform.cpp \
-		   constraintmaxroomchangesperdayforteachersform.cpp \
-		   addconstraintmaxroomchangesperdayforteachersform.cpp \
-		   modifyconstraintmaxroomchangesperdayforteachersform.cpp \
-		   constraintmaxroomchangesperdayforstudentsform.cpp \
-		   addconstraintmaxroomchangesperdayforstudentsform.cpp \
-		   modifyconstraintmaxroomchangesperdayforstudentsform.cpp \
 		   constraintbasiccompulsoryspaceform.cpp \
 		   addconstraintbasiccompulsoryspaceform.cpp \
 		   modifyconstraintbasiccompulsoryspaceform.cpp \
@@ -173,27 +91,12 @@ SOURCES += fet.cpp \
 		   constraintteachermaxdaysperweekform.cpp \
 		   addconstraintteachermaxdaysperweekform.cpp \
 		   modifyconstraintteachermaxdaysperweekform.cpp \
-		   constraintteachersmaxhourscontinuouslyform.cpp \
-		   addconstraintteachersmaxhourscontinuouslyform.cpp \
-		   modifyconstraintteachersmaxhourscontinuouslyform.cpp \
-		   constraintteacherssubjecttagsmaxhourscontinuouslyform.cpp \
-		   addconstraintteacherssubjecttagsmaxhourscontinuouslyform.cpp \
-		   modifyconstraintteacherssubjecttagsmaxhourscontinuouslyform.cpp \
-		   constraintteacherssubjecttagmaxhourscontinuouslyform.cpp \
-		   addconstraintteacherssubjecttagmaxhourscontinuouslyform.cpp \
-		   modifyconstraintteacherssubjecttagmaxhourscontinuouslyform.cpp \
 		   constraintteachersmaxhoursdailyform.cpp \
 		   addconstraintteachersmaxhoursdailyform.cpp \
 		   modifyconstraintteachersmaxhoursdailyform.cpp \
 		   constraintteachermaxhoursdailyform.cpp \
 		   addconstraintteachermaxhoursdailyform.cpp \
 		   modifyconstraintteachermaxhoursdailyform.cpp \
-		   constraintteachersminhoursdailyform.cpp \
-		   addconstraintteachersminhoursdailyform.cpp \
-		   modifyconstraintteachersminhoursdailyform.cpp \
-		   constraintteacherssubgroupsmaxhoursdailyform.cpp \
-		   addconstraintteacherssubgroupsmaxhoursdailyform.cpp \
-		   modifyconstraintteacherssubgroupsmaxhoursdailyform.cpp \
 		   constraintactivitypreferredtimeform.cpp \
 		   addconstraintactivitypreferredtimeform.cpp \
 		   modifyconstraintactivitypreferredtimeform.cpp \
@@ -215,27 +118,12 @@ SOURCES += fet.cpp \
 		   constraintstudentssetearlyform.cpp \
 		   addconstraintstudentssetearlyform.cpp \
 		   modifyconstraintstudentssetearlyform.cpp \
-		   constraintstudentssetintervalmaxdaysperweekform.cpp \
-		   addconstraintstudentssetintervalmaxdaysperweekform.cpp \
-		   modifyconstraintstudentssetintervalmaxdaysperweekform.cpp \
-		   constraintteacherintervalmaxdaysperweekform.cpp \
-		   addconstraintteacherintervalmaxdaysperweekform.cpp \
-		   modifyconstraintteacherintervalmaxdaysperweekform.cpp \
-		   constraintstudentssetnhoursdailyform.cpp \
-		   addconstraintstudentssetnhoursdailyform.cpp \
-		   modifyconstraintstudentssetnhoursdailyform.cpp \
-		   constraintstudentsnhoursdailyform.cpp \
-		   addconstraintstudentsnhoursdailyform.cpp \
-		   modifyconstraintstudentsnhoursdailyform.cpp \
 		   constraintstudentssetmaxhoursdailyform.cpp \
 		   addconstraintstudentssetmaxhoursdailyform.cpp \
 		   modifyconstraintstudentssetmaxhoursdailyform.cpp \
 		   constraintstudentsmaxhoursdailyform.cpp \
 		   addconstraintstudentsmaxhoursdailyform.cpp \
 		   modifyconstraintstudentsmaxhoursdailyform.cpp \
-		   constraintactivityendsdayform.cpp \
-		   addconstraintactivityendsdayform.cpp \
-		   modifyconstraintactivityendsdayform.cpp \
 		   constraintactivitiesnotoverlappingform.cpp \
 		   addconstraintactivitiesnotoverlappingform.cpp \
 		   modifyconstraintactivitiesnotoverlappingform.cpp \
@@ -245,7 +133,6 @@ SOURCES += fet.cpp \
 		   constraintactivitypreferredtimesform.cpp \
 		   modifyconstraintactivitiessamestartingtimeform.cpp \
 		   modifyconstraintactivitiessamestartinghourform.cpp \
-		   modifyconstraintactivitiessameroomform.cpp \
 		   institutionnameform.cpp \
 		   commentsform.cpp \
 		   teachersstatisticsform.cpp \
@@ -256,18 +143,11 @@ HEADERS += fet.h \
            helpaboutform.h \
            helpfaqform.h \
            helpinstructionsform.h \
-           helptimeconstraintsform.h \
-           helptimeconstraintssubtagsform.h \
            activitiesform.h \
            addactivityform.h \
            modifyactivityform.h \
            addroomform.h \
            modifyroomform.h \
-           addequipmentform.h \
-           modifyequipmentform.h \
-           buildingsform.h \
-           addbuildingform.h \
-           modifybuildingform.h \
            addstudentsyearform.h \
            modifystudentsyearform.h \
            addstudentsgroupform.h \
@@ -279,21 +159,6 @@ HEADERS += fet.h \
            addconstraintroomnotavailableform.h \
            constraintroomnotavailableform.h \
            modifyconstraintroomnotavailableform.h \
-           addconstraintroomtypenotallowedsubjectsform.h \
-           constraintroomtypenotallowedsubjectsform.h \
-           modifyconstraintroomtypenotallowedsubjectsform.h \
-           addconstraintsubjectrequiresequipmentsform.h \
-           constraintsubjectrequiresequipmentsform.h \
-           modifyconstraintsubjectrequiresequipmentsform.h \
-           addconstraintsubjectsubjecttagrequireequipmentsform.h \
-           constraintsubjectsubjecttagrequireequipmentsform.h \
-           modifyconstraintsubjectsubjecttagrequireequipmentsform.h \
-           addconstraintteacherrequiresroomform.h \
-           modifyconstraintteacherrequiresroomform.h \
-           constraintteacherrequiresroomform.h \
-           addconstraintteachersubjectrequireroomform.h \
-           modifyconstraintteachersubjectrequireroomform.h \
-           constraintteachersubjectrequireroomform.h \
            addconstraintactivitypreferredroomform.h \
            constraintactivitypreferredroomform.h \
            modifyconstraintactivitypreferredroomform.h \
@@ -303,21 +168,9 @@ HEADERS += fet.h \
            addconstraintsubjectpreferredroomsform.h \
            constraintsubjectpreferredroomsform.h \
            modifyconstraintsubjectpreferredroomsform.h \
-           addconstraintsubjectsubjecttagpreferredroomform.h \
-           constraintsubjectsubjecttagpreferredroomform.h \
-           modifyconstraintsubjectsubjecttagpreferredroomform.h \
-           addconstraintsubjectsubjecttagpreferredroomsform.h \
-           constraintsubjectsubjecttagpreferredroomsform.h \
-           modifyconstraintsubjectsubjecttagpreferredroomsform.h \
            addconstraintactivitypreferredroomsform.h \
            constraintactivitypreferredroomsform.h \
            modifyconstraintactivitypreferredroomsform.h \
-           addconstraintminimizenumberofroomsforstudentsform.h \
-           constraintminimizenumberofroomsforstudentsform.h \
-           modifyconstraintminimizenumberofroomsforstudentsform.h \
-           addconstraintminimizenumberofroomsforteachersform.h \
-           constraintminimizenumberofroomsforteachersform.h \
-           modifyconstraintminimizenumberofroomsforteachersform.h \
            alltimeconstraintsform.h \
            allspaceconstraintsform.h \
            groupsform.h \
@@ -325,90 +178,42 @@ HEADERS += fet.h \
            subjectsform.h \
            subjecttagsform.h \
            teachersform.h \
-           timetableexporticalteachersform.h \
-           timetableexporticalstudentsform.h \
-           timetableexporticalteacherswithrooms1form.h \
-           timetableexporticalstudentswithrooms1form.h \
-           timetableexporticalteacherswithrooms2form.h \
-           timetableexporticalstudentswithrooms2form.h \
-           timetableallocatehoursform.h \
-           timetableallocateroomsform.h \
-           timetableallocatehoursroomsform.h \
+           timetablegenerateform.h \
            fetmainform.h \
            timetableviewstudentsform.h \
-           timetableviewstudentswithroomsform.h \
-           timetableviewstudentswithrooms2form.h \
            timetableviewroomsform.h \
-           timetableviewrooms2form.h \
            yearsform.h \
-           timetableshowconflictstimeform.h \
-           timetableshowconflictstimespaceform.h \
-           timetableshowconflictsspaceform.h \
+           timetableshowconflictsform.h \
            timetableviewteachersform.h \
-           timetableviewteacherswithroomsform.h \
-           timetableviewteacherswithrooms2form.h \
            hoursform.h \
            daysform.h \
            ../engine/activity.h \
-           ../engine/timechromosome.h \
-           ../engine/spacechromosome.h \
-           ../engine/timespacechromosome.h \
-           ../engine/genetictimetable.h \
-           ../engine/timepopulation.h \
-           ../engine/spacepopulation.h \
-           ../engine/timespacepopulation.h \
+           ../engine/solution.h \
+           ../engine/timetable.h \
            ../engine/rules.h \
-           ../engine/optimizetime_data.h \
+           ../engine/generate_pre.h \
            ../engine/timeconstraint.h \
            ../engine/spaceconstraint.h \
-           ../engine/genetictimetable_defs.h \
+           ../engine/timetable_defs.h \
            ../engine/studentsset.h \
            ../engine/teacher.h \
            ../engine/subject.h \
            ../engine/subjecttag.h \
            ../engine/room.h \
-           ../engine/equipment.h \
-           ../engine/building.h \
-		   ../engine/optimizetime.h \
+		   ../engine/generate.h \
            roomsform.h \
-           roomsequipmentsform.h \
-           equipmentsform.h \
-           populationnumberform.h \
-           constraint2activitiesconsecutiveform.h \
-           addconstraint2activitiesconsecutiveform.h \
-           modifyconstraint2activitiesconsecutiveform.h \
-           constraint2activitiesorderedform.h \
-           addconstraint2activitiesorderedform.h \
-           modifyconstraint2activitiesorderedform.h \
-           constraint2activitiesgroupedform.h \
-           modifyconstraint2activitiesgroupedform.h \
-           addconstraint2activitiesgroupedform.h \
            constraintactivitiespreferredtimesform.h \
            addconstraintactivitiespreferredtimesform.h \
            constraintactivitiessamestartingtimeform.h \
            addconstraintactivitiessamestartingtimeform.h \
            constraintactivitiessamestartinghourform.h \
            addconstraintactivitiessamestartinghourform.h \
-           constraintactivitiessameroomform.h \
-           addconstraintactivitiessameroomform.h \
 		   constraintteachernotavailableform.h \
 		   addconstraintteachernotavailableform.h \
 		   modifyconstraintteachernotavailableform.h \
 		   constraintbasiccompulsorytimeform.h \
 		   addconstraintbasiccompulsorytimeform.h \
 		   modifyconstraintbasiccompulsorytimeform.h \
-		   constraintmaxbuildingchangesperdayforteachersform.h \
-		   addconstraintmaxbuildingchangesperdayforteachersform.h \
-		   modifyconstraintmaxbuildingchangesperdayforteachersform.h \
-		   constraintmaxbuildingchangesperdayforstudentsform.h \
-		   addconstraintmaxbuildingchangesperdayforstudentsform.h \
-		   modifyconstraintmaxbuildingchangesperdayforstudentsform.h \
-		   constraintmaxroomchangesperdayforteachersform.h \
-		   addconstraintmaxroomchangesperdayforteachersform.h \
-		   modifyconstraintmaxroomchangesperdayforteachersform.h \
-		   constraintmaxroomchangesperdayforstudentsform.h \
-		   addconstraintmaxroomchangesperdayforstudentsform.h \
-		   modifyconstraintmaxroomchangesperdayforstudentsform.h \
 		   constraintbasiccompulsoryspaceform.h \
 		   addconstraintbasiccompulsoryspaceform.h \
 		   modifyconstraintbasiccompulsoryspaceform.h \
@@ -421,27 +226,12 @@ HEADERS += fet.h \
 		   constraintteachermaxdaysperweekform.h \
 		   addconstraintteachermaxdaysperweekform.h \
 		   modifyconstraintteachermaxdaysperweekform.h \
-		   constraintteachersmaxhourscontinuouslyform.h \
-		   addconstraintteachersmaxhourscontinuouslyform.h \
-		   modifyconstraintteachersmaxhourscontinuouslyform.h \
-		   constraintteacherssubjecttagsmaxhourscontinuouslyform.h \
-		   addconstraintteacherssubjecttagsmaxhourscontinuouslyform.h \
-		   modifyconstraintteacherssubjecttagsmaxhourscontinuouslyform.h \
-		   constraintteacherssubjecttagmaxhourscontinuouslyform.h \
-		   addconstraintteacherssubjecttagmaxhourscontinuouslyform.h \
-		   modifyconstraintteacherssubjecttagmaxhourscontinuouslyform.h \
 		   constraintteachersmaxhoursdailyform.h \
 		   addconstraintteachersmaxhoursdailyform.h \
 		   modifyconstraintteachersmaxhoursdailyform.h \
 		   constraintteachermaxhoursdailyform.h \
 		   addconstraintteachermaxhoursdailyform.h \
 		   modifyconstraintteachermaxhoursdailyform.h \
-		   constraintteachersminhoursdailyform.h \
-		   addconstraintteachersminhoursdailyform.h \
-		   modifyconstraintteachersminhoursdailyform.h \
-		   constraintteacherssubgroupsmaxhoursdailyform.h \
-		   addconstraintteacherssubgroupsmaxhoursdailyform.h \
-		   modifyconstraintteacherssubgroupsmaxhoursdailyform.h \
 		   constraintactivitypreferredtimeform.h \
 		   addconstraintactivitypreferredtimeform.h \
 		   modifyconstraintactivitypreferredtimeform.h \
@@ -463,27 +253,12 @@ HEADERS += fet.h \
 		   constraintstudentssetearlyform.h \
 		   addconstraintstudentssetearlyform.h \
 		   modifyconstraintstudentssetearlyform.h \
-		   constraintstudentssetintervalmaxdaysperweekform.h \
-		   addconstraintstudentssetintervalmaxdaysperweekform.h \
-		   modifyconstraintstudentssetintervalmaxdaysperweekform.h \
-		   constraintteacherintervalmaxdaysperweekform.h \
-		   addconstraintteacherintervalmaxdaysperweekform.h \
-		   modifyconstraintteacherintervalmaxdaysperweekform.h \
-		   constraintstudentssetnhoursdailyform.h \
-		   addconstraintstudentssetnhoursdailyform.h \
-		   modifyconstraintstudentssetnhoursdailyform.h \
-		   constraintstudentsnhoursdailyform.h \
-		   addconstraintstudentsnhoursdailyform.h \
-		   modifyconstraintstudentsnhoursdailyform.h \
 		   constraintstudentssetmaxhoursdailyform.h \
 		   addconstraintstudentssetmaxhoursdailyform.h \
 		   modifyconstraintstudentssetmaxhoursdailyform.h \
 		   constraintstudentsmaxhoursdailyform.h \
 		   addconstraintstudentsmaxhoursdailyform.h \
 		   modifyconstraintstudentsmaxhoursdailyform.h \
-		   constraintactivityendsdayform.h \
-		   addconstraintactivityendsdayform.h \
-		   modifyconstraintactivityendsdayform.h \
 		   constraintactivitiesnotoverlappingform.h \
 		   addconstraintactivitiesnotoverlappingform.h \
 		   modifyconstraintactivitiesnotoverlappingform.h \
@@ -494,7 +269,6 @@ HEADERS += fet.h \
            modifyconstraintactivitiespreferredtimesform.h \
 		   modifyconstraintactivitiessamestartingtimeform.h \
 		   modifyconstraintactivitiessamestartinghourform.h \
-		   modifyconstraintactivitiessameroomform.h \
 		   institutionnameform.h \
 		   commentsform.h \
 		   teachersstatisticsform.h \
@@ -517,18 +291,11 @@ FORMS+=  fetmainform_template.ui \
 #The following line was changed from FORMS to FORMS3 by qt3to4
 FORMS3 += helpfaqform_template.ui \
 		 helpinstructionsform_template.ui \
-         helptimeconstraintsform_template.ui \
-         helptimeconstraintssubtagsform_template.ui \
          activitiesform_template.ui \
          addactivityform_template.ui \
          modifyactivityform_template.ui \
          addroomform_template.ui \
          modifyroomform_template.ui \
-         addequipmentform_template.ui \
-         modifyequipmentform_template.ui \
-         buildingsform_template.ui \
-         addbuildingform_template.ui \
-         modifybuildingform_template.ui \
          addstudentsyearform_template.ui \
          modifystudentsyearform_template.ui \
          addstudentsgroupform_template.ui \
@@ -540,21 +307,6 @@ FORMS3 += helpfaqform_template.ui \
          addconstraintroomnotavailableform_template.ui \
          constraintroomnotavailableform_template.ui \
          modifyconstraintroomnotavailableform_template.ui \
-         addconstraintroomtypenotallowedsubjectsform_template.ui \
-         constraintroomtypenotallowedsubjectsform_template.ui \
-         modifyconstraintroomtypenotallowedsubjectsform_template.ui \
-         addconstraintsubjectrequiresequipmentsform_template.ui \
-         constraintsubjectrequiresequipmentsform_template.ui \
-         modifyconstraintsubjectrequiresequipmentsform_template.ui \
-         addconstraintsubjectsubjecttagrequireequipmentsform_template.ui \
-         constraintsubjectsubjecttagrequireequipmentsform_template.ui \
-         modifyconstraintsubjectsubjecttagrequireequipmentsform_template.ui \
-         addconstraintteacherrequiresroomform_template.ui \
-         modifyconstraintteacherrequiresroomform_template.ui \
-         constraintteacherrequiresroomform_template.ui \
-         addconstraintteachersubjectrequireroomform_template.ui \
-         modifyconstraintteachersubjectrequireroomform_template.ui \
-         constraintteachersubjectrequireroomform_template.ui \
          addconstraintactivitypreferredroomform_template.ui \
          constraintactivitypreferredroomform_template.ui \
          modifyconstraintactivitypreferredroomform_template.ui \
@@ -564,21 +316,9 @@ FORMS3 += helpfaqform_template.ui \
          addconstraintsubjectpreferredroomsform_template.ui \
          constraintsubjectpreferredroomsform_template.ui \
          modifyconstraintsubjectpreferredroomsform_template.ui \
-         addconstraintsubjectsubjecttagpreferredroomform_template.ui \
-         constraintsubjectsubjecttagpreferredroomform_template.ui \
-         modifyconstraintsubjectsubjecttagpreferredroomform_template.ui \
-         addconstraintsubjectsubjecttagpreferredroomsform_template.ui \
-         constraintsubjectsubjecttagpreferredroomsform_template.ui \
-         modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui \
          addconstraintactivitypreferredroomsform_template.ui \
          constraintactivitypreferredroomsform_template.ui \
          modifyconstraintactivitypreferredroomsform_template.ui \
-         addconstraintminimizenumberofroomsforstudentsform_template.ui \
-         constraintminimizenumberofroomsforstudentsform_template.ui \
-         modifyconstraintminimizenumberofroomsforstudentsform_template.ui \
-         addconstraintminimizenumberofroomsforteachersform_template.ui \
-         constraintminimizenumberofroomsforteachersform_template.ui \
-         modifyconstraintminimizenumberofroomsforteachersform_template.ui \
          alltimeconstraintsform_template.ui \
          allspaceconstraintsform_template.ui \
          groupsform_template.ui \
@@ -586,68 +326,27 @@ FORMS3 += helpfaqform_template.ui \
          subjectsform_template.ui \
          subjecttagsform_template.ui \
          teachersform_template.ui \
-         timetableexporticalteachersform_template.ui \
-         timetableexporticalstudentsform_template.ui \
-         timetableexporticalteacherswithrooms1form_template.ui \
-         timetableexporticalstudentswithrooms1form_template.ui \
-         timetableexporticalteacherswithrooms2form_template.ui \
-         timetableexporticalstudentswithrooms2form_template.ui \
-         timetableallocatehoursform_template.ui \
-         timetableallocateroomsform_template.ui \
-         timetableallocatehoursroomsform_template.ui \
+         timetablegenerateform_template.ui \
          timetableviewstudentsform_template.ui \
-         timetableviewstudentswithroomsform_template.ui \
-         timetableviewstudentswithrooms2form_template.ui \
          timetableviewroomsform_template.ui \
-         timetableviewrooms2form_template.ui \
          yearsform_template.ui \
-         timetableshowconflictstimeform_template.ui \
-         timetableshowconflictstimespaceform_template.ui \
-         timetableshowconflictsspaceform_template.ui \
+         timetableshowconflictsform_template.ui \
          timetableviewteachersform_template.ui \
-         timetableviewteacherswithroomsform_template.ui \
-         timetableviewteacherswithrooms2form_template.ui \
          daysform_template.ui \
          hoursform_template.ui \
          roomsform_template.ui \
-         roomsequipmentsform_template.ui \
-         equipmentsform_template.ui \
-         populationnumberform_template.ui \
-         constraint2activitiesconsecutiveform_template.ui \
-         modifyconstraint2activitiesconsecutiveform_template.ui \
-         addconstraint2activitiesconsecutiveform_template.ui \
-         constraint2activitiesorderedform_template.ui \
-         modifyconstraint2activitiesorderedform_template.ui \
-         addconstraint2activitiesorderedform_template.ui \
-         constraint2activitiesgroupedform_template.ui \
-         modifyconstraint2activitiesgroupedform_template.ui \
-         addconstraint2activitiesgroupedform_template.ui \
          constraintactivitiespreferredtimesform_template.ui \
          addconstraintactivitiespreferredtimesform_template.ui \
          constraintactivitiessamestartingtimeform_template.ui \
          addconstraintactivitiessamestartingtimeform_template.ui \
          constraintactivitiessamestartinghourform_template.ui \
          addconstraintactivitiessamestartinghourform_template.ui \
-         constraintactivitiessameroomform_template.ui \
-         addconstraintactivitiessameroomform_template.ui \
 		 constraintteachernotavailableform_template.ui \
 		 addconstraintteachernotavailableform_template.ui \
 		 modifyconstraintteachernotavailableform_template.ui \
 		   constraintbasiccompulsorytimeform_template.ui \
 		   addconstraintbasiccompulsorytimeform_template.ui \
 		   modifyconstraintbasiccompulsorytimeform_template.ui \
-		   constraintmaxbuildingchangesperdayforteachersform_template.ui \
-		   addconstraintmaxbuildingchangesperdayforteachersform_template.ui \
-		   modifyconstraintmaxbuildingchangesperdayforteachersform_template.ui \
-		   constraintmaxbuildingchangesperdayforstudentsform_template.ui \
-		   addconstraintmaxbuildingchangesperdayforstudentsform_template.ui \
-		   modifyconstraintmaxbuildingchangesperdayforstudentsform_template.ui \
-		   constraintmaxroomchangesperdayforteachersform_template.ui \
-		   addconstraintmaxroomchangesperdayforteachersform_template.ui \
-		   modifyconstraintmaxroomchangesperdayforteachersform_template.ui \
-		   constraintmaxroomchangesperdayforstudentsform_template.ui \
-		   addconstraintmaxroomchangesperdayforstudentsform_template.ui \
-		   modifyconstraintmaxroomchangesperdayforstudentsform_template.ui \
 		   constraintbasiccompulsoryspaceform_template.ui \
 		   addconstraintbasiccompulsoryspaceform_template.ui \
 		   modifyconstraintbasiccompulsoryspaceform_template.ui \
@@ -660,27 +359,12 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintteachermaxdaysperweekform_template.ui \
 		   addconstraintteachermaxdaysperweekform_template.ui \
 		   modifyconstraintteachermaxdaysperweekform_template.ui \
-		   constraintteachersmaxhourscontinuouslyform_template.ui \
-		   addconstraintteachersmaxhourscontinuouslyform_template.ui \
-		   modifyconstraintteachersmaxhourscontinuouslyform_template.ui \
-		   constraintteacherssubjecttagsmaxhourscontinuouslyform_template.ui \
-		   addconstraintteacherssubjecttagsmaxhourscontinuouslyform_template.ui \
-		   modifyconstraintteacherssubjecttagsmaxhourscontinuouslyform_template.ui \
-		   constraintteacherssubjecttagmaxhourscontinuouslyform_template.ui \
-		   addconstraintteacherssubjecttagmaxhourscontinuouslyform_template.ui \
-		   modifyconstraintteacherssubjecttagmaxhourscontinuouslyform_template.ui \
 		   constraintteachersmaxhoursdailyform_template.ui \
 		   addconstraintteachersmaxhoursdailyform_template.ui \
 		   modifyconstraintteachersmaxhoursdailyform_template.ui \
 		   constraintteachermaxhoursdailyform_template.ui \
 		   addconstraintteachermaxhoursdailyform_template.ui \
 		   modifyconstraintteachermaxhoursdailyform_template.ui \
-		   constraintteachersminhoursdailyform_template.ui \
-		   addconstraintteachersminhoursdailyform_template.ui \
-		   modifyconstraintteachersminhoursdailyform_template.ui \
-		   constraintteacherssubgroupsmaxhoursdailyform_template.ui \
-		   addconstraintteacherssubgroupsmaxhoursdailyform_template.ui \
-		   modifyconstraintteacherssubgroupsmaxhoursdailyform_template.ui \
 		   constraintactivitypreferredtimeform_template.ui \
 		   addconstraintactivitypreferredtimeform_template.ui \
 		   modifyconstraintactivitypreferredtimeform_template.ui \
@@ -702,27 +386,12 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintstudentssetearlyform_template.ui \
 		   addconstraintstudentssetearlyform_template.ui \
 		   modifyconstraintstudentssetearlyform_template.ui \
-		   constraintstudentssetintervalmaxdaysperweekform_template.ui \
-		   addconstraintstudentssetintervalmaxdaysperweekform_template.ui \
-		   modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui \
-		   constraintteacherintervalmaxdaysperweekform_template.ui \
-		   addconstraintteacherintervalmaxdaysperweekform_template.ui \
-		   modifyconstraintteacherintervalmaxdaysperweekform_template.ui \
-		   constraintstudentssetnhoursdailyform_template.ui \
-		   addconstraintstudentssetnhoursdailyform_template.ui \
-		   modifyconstraintstudentssetnhoursdailyform_template.ui \
-		   constraintstudentsnhoursdailyform_template.ui \
-		   addconstraintstudentsnhoursdailyform_template.ui \
-		   modifyconstraintstudentsnhoursdailyform_template.ui \
 		   constraintstudentssetmaxhoursdailyform_template.ui \
 		   addconstraintstudentssetmaxhoursdailyform_template.ui \
 		   modifyconstraintstudentssetmaxhoursdailyform_template.ui \
 		   constraintstudentsmaxhoursdailyform_template.ui \
 		   addconstraintstudentsmaxhoursdailyform_template.ui \
 		   modifyconstraintstudentsmaxhoursdailyform_template.ui \
-		   constraintactivityendsdayform_template.ui \
-		   addconstraintactivityendsdayform_template.ui \
-		   modifyconstraintactivityendsdayform_template.ui \
 		   constraintactivitiesnotoverlappingform_template.ui \
 		   addconstraintactivitiesnotoverlappingform_template.ui \
 		   modifyconstraintactivitiesnotoverlappingform_template.ui \
@@ -733,7 +402,6 @@ FORMS3 += helpfaqform_template.ui \
            modifyconstraintactivitiespreferredtimesform_template.ui \
 		   modifyconstraintactivitiessamestartingtimeform_template.ui \
 		   modifyconstraintactivitiessamestartinghourform_template.ui \
-		   modifyconstraintactivitiessameroomform_template.ui \
 		   institutionnameform_template.ui \
 		   commentsform_template.ui
 TEMPLATE = app 

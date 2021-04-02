@@ -1,5 +1,5 @@
 /*
-File fet.cpp - program using the main engine "genetictimetable"
+File fet.cpp - program using the main engine "timetable"
 */
 
 /*
@@ -22,8 +22,8 @@ along with timetable; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-#include "genetictimetable_defs.h"
-#include "genetictimetable.h"
+#include "timetable_defs.h"
+#include "timetable.h"
 #include "fetmainform.h"
 
 #include <qapplication.h>
@@ -53,7 +53,7 @@ bool firstTimeRun;
 /**
 The one and only instantiation of the main class.
 */
-GeneticTimetable gt;
+Timetable gt;
 
 /**
 Log file.
@@ -99,15 +99,9 @@ It represents the maximum allowed number of generations to iterate
 */
 int max_generations;
 
-/*int16 teachers_timetable_week1[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-int16 teachers_timetable_week2[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-int16 students_timetable_week1[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-int16 students_timetable_week2[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-int16 rooms_timetable_week1[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-int16 rooms_timetable_week2[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];*/
-int16 teachers_timetable_weekly[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-int16 students_timetable_weekly[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-int16 rooms_timetable_weekly[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+qint16 teachers_timetable_weekly[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+qint16 students_timetable_weekly[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+qint16 rooms_timetable_weekly[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
 QApplication* pqapplication=NULL;
 
@@ -526,13 +520,13 @@ int main(int argc, char **argv){
 		 "requirement, based on the type of constraint and not on the specified old weight. "
 		 "Of course, you can modify the weight percentage by hand afterwards."));*/
 
-	QMessageBox::information(NULL, QObject::tr("FET important information"),
+	/*QMessageBox::information(NULL, QObject::tr("FET important information"),
 	 QObject::tr("Please take care that this is a preview version, which has time (hours) allocation but does not have "
 	 "rooms allocation implemented yet (that is why rooms related data is disabled in the menu)."
 	 " I hope to implement that in the near future, so make sure to check for updates.\n\n"
 	 "It is recommended to keep backups of your input files. "
 	 "Please excuse eventual bugs, this is a new version. "
-	 "Please report bugs to the author, they will be corrected"));
+	 "Please report bugs to the author, they will be corrected"));*/
 	// "\n\nMake sure to revisit web page http://lalescu.ro/liviu/fet/ often and get the updated versions"));
 	
 	pqapplication=&qapplication;

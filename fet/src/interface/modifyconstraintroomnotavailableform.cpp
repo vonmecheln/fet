@@ -36,8 +36,8 @@ ModifyConstraintRoomNotAvailableForm::ModifyConstraintRoomNotAvailableForm(Const
 
 	this->_ctr=ctr;
 	
-	compulsoryCheckBox->setChecked(ctr->compulsory);
-	weightLineEdit->setText(QString::number(ctr->weight));
+	//compulsoryCheckBox->setChecked(ctr->compulsory);
+	weightLineEdit->setText(QString::number(ctr->weightPercentage));
 
 	updateRoomsComboBox();
 
@@ -86,15 +86,15 @@ void ModifyConstraintRoomNotAvailableForm::ok()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<=0.0){
+	if(weight<=0.0 || weight>100){
 		QMessageBox::warning(this, QObject::tr("FET information"),
 			QObject::tr("Invalid weight"));
 		return;
 	}
 
-	bool compulsory=false;
+/*	bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
 	int i=roomsComboBox->currentItem();
 	if(i<0 || roomsComboBox->count()<=0){
@@ -128,8 +128,8 @@ void ModifyConstraintRoomNotAvailableForm::ok()
 		return;
 	}
 
-	this->_ctr->weight=weight;
-	this->_ctr->compulsory=compulsory;
+	this->_ctr->weightPercentage=weight;
+//	this->_ctr->compulsory=compulsory;
 	this->_ctr->roomName=room->name;
 	this->_ctr->d=day;
 	this->_ctr->h1=startHour;

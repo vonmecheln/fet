@@ -310,11 +310,14 @@ void AddActivityForm::activityChanged()
 {
 	QString s;
 	s+=QObject::tr("Current activity:");s+="\n";
-	for(uint i=0; i<selectedTeachersListBox->count(); i++){
-		s+=QObject::tr("Teacher=%1").arg(selectedTeachersListBox->text(i));
-		s+=selectedTeachersListBox->text(i);
-		s+="\n";
-	}
+	if(selectedTeachersListBox->count()==0)
+		s+=QObject::tr("No teachers for this activity\n");
+	else
+		for(uint i=0; i<selectedTeachersListBox->count(); i++){
+			s+=QObject::tr("Teacher=%1").arg(selectedTeachersListBox->text(i));
+			//s+=selectedTeachersListBox->text(i);
+			s+="\n";
+		}
 
 	s+=QObject::tr("Subject=%1").arg(subjectsComboBox->currentText());
 	s+="\n";
@@ -322,10 +325,13 @@ void AddActivityForm::activityChanged()
 		s+=QObject::tr("Subject tag=%1").arg(subjectTagsComboBox->currentText());
 		s+="\n";
 	}
-	for(uint i=0; i<selectedStudentsListBox->count(); i++){
-		s+=QObject::tr("Students=%1").arg(selectedStudentsListBox->text(i));
-		s+="\n";
-	}
+	if(selectedStudentsListBox->count()==0)
+		s+=QObject::tr("No students for this activity\n");
+	else
+		for(uint i=0; i<selectedStudentsListBox->count(); i++){
+			s+=QObject::tr("Students=%1").arg(selectedStudentsListBox->text(i));
+			s+="\n";
+		}
 
 	if(nStudentsSpinBox->value()>=0){
 		s+=QObject::tr("Number of students=%1").arg(nStudentsSpinBox->value());
@@ -425,9 +431,12 @@ void AddActivityForm::addActivity()
 	//teachers
 	QStringList teachers_names;
 	if(selectedTeachersListBox->count()<=0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid teacher(s)"));
-		return;
+		int t=QMessageBox::question(this, QObject::tr("FET question"),
+		 QObject::tr("Do you really want to add activity with no teacher(s)?"),
+		 QMessageBox::Yes, QMessageBox::Cancel);
+
+		if(t==QMessageBox::Cancel)
+			return;
 	}
 	else if(selectedTeachersListBox->count()>(uint)(MAX_TEACHERS_PER_ACTIVITY)){
 		QMessageBox::warning(this, QObject::tr("FET information"),
@@ -464,9 +473,12 @@ void AddActivityForm::addActivity()
 	//students
 	QStringList students_names;
 	if(selectedStudentsListBox->count()<=0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid students set(s)"));
-		return;
+		int t=QMessageBox::question(this, QObject::tr("FET question"),
+		 QObject::tr("Do you really want to add activity with no student set(s)?"),
+		 QMessageBox::Yes, QMessageBox::Cancel);
+
+		if(t==QMessageBox::Cancel)
+			return;
 	}
 	else{
 		for(uint i=0; i<selectedStudentsListBox->count(); i++){
@@ -650,7 +662,9 @@ void AddActivityForm::help()
 	 "Note: the extremely unlikely event that, "
 	 "given that 3 or more activities (from the same constraint min n days) must all be placed in the same day consecutively, "
 	 "FET will not be able to find a timetable. If you meet such cases, please write to the author. This unlikely "
-	 "to happen event can be managed, but I consider it neglectable."
+	 "to happen event can be managed, but I consider it neglectable.\n\n"
+	 
+	 "Starting with version 5.0.0, it is possible to add activities with no students or no teachers"
 	 );
 	
 	//show the message in a dialog

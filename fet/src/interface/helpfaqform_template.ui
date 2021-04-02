@@ -197,9 +197,14 @@ Q: After finding the timetable of our school, suppose that a single teacher need
 
 A: Yes, FET can deal with that. Just add many compulsory ConstraintActivityPreferredTime-s, one for each activity that you would like to be fixed (the preferred time will be the one from the previous allocation).
 
+-------------------------------------------------------------------------------
+
+Q: How to use weight percentage?
+
+A: Please use integer values. The algorithm considers all weight percentages values to be integer. I don't think anybody would need non-integer values.
 
 
-this documentation by Liviu Lalescu, reviewed and modified - 26 July 2007</string>
+this documentation by Liviu Lalescu, reviewed and modified - 1 August 2007</string>
             </property>
         </widget>
     </grid>

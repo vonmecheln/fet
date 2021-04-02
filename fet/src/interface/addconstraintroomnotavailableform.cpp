@@ -69,15 +69,15 @@ void AddConstraintRoomNotAvailableForm::addConstraint()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0){
+	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, QObject::tr("FET information"),
 			QObject::tr("Invalid weight"));
 		return;
 	}
 
-	bool compulsory=false;
+/*	bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
 	int i=roomsComboBox->currentItem();
 	if(i<0 || roomsComboBox->count()<=0){
@@ -111,7 +111,7 @@ void AddConstraintRoomNotAvailableForm::addConstraint()
 		return;
 	}
 
-	ctr=new ConstraintRoomNotAvailable(weight, compulsory, room->name, day, startHour, endHour);
+	ctr=new ConstraintRoomNotAvailable(weight/*, compulsory*/, room->name, day, startHour, endHour);
 
 	bool tmp2=gt.rules.addSpaceConstraint(ctr);
 	if(tmp2){

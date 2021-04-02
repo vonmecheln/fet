@@ -22,7 +22,7 @@ along with FET; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-#include "genetictimetable_defs.h"
+#include "timetable_defs.h"
 #include "rules.h"
 
 #include <string.h>
@@ -73,11 +73,9 @@ void Rules::init() //initializes the rules (empty, but with default hours and da
 bool Rules::computeInternalStructure()
 {
 	//The order is important - firstly the teachers, subjects and students.
-	//After that, the equipments.
 	//After that, the rooms.
 	//After that, the activities.
 	//After that, the time constraints.
-	//After that, initialization of the matrix "roomHasEquipment".
 	//After that, the space constraints.
 
 	if(this->teachersList.size()>MAX_TEACHERS){
@@ -134,19 +132,9 @@ bool Rules::computeInternalStructure()
 		return false;
 	}
 
-	if(this->equipmentsList.size()>MAX_EQUIPMENTS){
-		QMessageBox::warning(NULL, QObject::tr("FET information"),
-		 QObject::tr("You have too many equipments.\nPlease talk to the author or increase variable MAX_EQUIPMENTS"));
-		return false;
-	}
 	if(this->roomsList.size()>MAX_ROOMS){
 		QMessageBox::warning(NULL, QObject::tr("FET information"),
 		 QObject::tr("You have too many rooms.\nPlease talk to the author or increase variable MAX_ROOMS"));
-		return false;
-	}
-	if(this->buildingsList.size()>MAX_BUILDINGS){
-		QMessageBox::warning(NULL, QObject::tr("FET information"),
-		 QObject::tr("You have too many buildings.\nPlease talk to the author or increase variable MAX_BUILDINGS"));
 		return false;
 	}
 
@@ -224,20 +212,6 @@ bool Rules::computeInternalStructure()
 		}
 	}
 
-	//equipments internal list
-	this->nInternalEquipments=0;
-	assert(this->equipmentsList.size()<=MAX_EQUIPMENTS);
-	for(int i=0; i<this->equipmentsList.size(); i++)
-		this->internalEquipmentsList[this->nInternalEquipments++]=this->equipmentsList.at(i);
-	assert(this->nInternalEquipments==this->equipmentsList.count());
-
-	//buildings internal list
-	this->nInternalBuildings=0;
-	assert(this->buildingsList.size()<=MAX_BUILDINGS);
-	for(int i=0; i<this->buildingsList.size(); i++)
-		this->internalBuildingsList[this->nInternalBuildings++]=this->buildingsList.at(i);
-	assert(this->nInternalBuildings==this->buildingsList.size());
-
 	//rooms
 	this->nInternalRooms=0;
 	assert(this->roomsList.size()<=MAX_ROOMS);
@@ -272,374 +246,49 @@ bool Rules::computeInternalStructure()
 			this->internalActivitiesList[activei++]=*act;
 	}
 
+	bool ok=true;
+
 	//time constraints
 	assert(this->timeConstraintsList.size()<=MAX_TIME_CONSTRAINTS);
 	TimeConstraint* tctr;
-
-	for(int i=0; i<this->nInternalActivities; i++){
-		this->fixedDay[i]=-1;
-		this->fixedHour[i]=-1;
-		this->sameDay[i]=-1;
-		this->sameHour[i]=-1;
-	}
 	
-	//getting rid of compulsory preferred time-s, same starting hour-s & same starting time-s - 
-	//these will be used separately to repair the chromosomes (it was practically
-	//found that this is the best method).
-	//change - NOT REPAIRING ANYMORE - 26 June 2007
 	int tctri=0;
 	for(int tctrindex=0; tctrindex<this->timeConstraintsList.size(); tctrindex++){
 		tctr=this->timeConstraintsList[tctrindex];
 		//if the activities which refer to this constraints are not active
-		if(!tctr->computeInternalStructure(*this))
+		if(!tctr->computeInternalStructure(*this)){
+			//assert(0);
+			ok=false;
 			continue;
-		if(tctr->type==CONSTRAINT_ACTIVITY_PREFERRED_TIME /*&& tctr->compulsory==true*/){
-			ConstraintActivityPreferredTime* c = (ConstraintActivityPreferredTime*)tctr;
-
-			bool t1=this->fixedDay[c->activityIndex]==-1 || this->fixedDay[c->activityIndex]==c->day;
-			bool t2=this->fixedHour[c->activityIndex]==-1 || this->fixedHour[c->activityIndex]==c->hour;
-			if(!t1){
-				QMessageBox::warning(NULL, QObject::tr("FET information"), 
-				 QObject::tr("Activity with id=%1 has fixed day on %2 and %3 - impossible\n"
-				 "Please fix that")
-				 .arg(this->internalActivitiesList[c->activityIndex].id)
-				 .arg(this->daysOfTheWeek[this->fixedDay[c->activityIndex]])
-				 .arg(this->daysOfTheWeek[c->day]));
-				this->internalStructureComputed=false;
-				return false;
-			}
-			if(!t2){
-				QMessageBox::warning(NULL, QObject::tr("FET information"), 
-				 QObject::tr("Activity with id=%1 has fixed hour on %2 and %3 - impossible\n"
-				 "Please fix that")
-				 .arg(this->internalActivitiesList[c->activityIndex].id)
-				 .arg(this->hoursOfTheDay[this->fixedHour[c->activityIndex]])
-				 .arg(this->hoursOfTheDay[c->hour]));
-				this->internalStructureComputed=false;
-				return false;
-			}
-
-			this->fixedDay[c->activityIndex] = c->day;
-			this->fixedHour[c->activityIndex] = c->hour;
 		}
-		else if(tctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME /*&& tctr->compulsory==true*/){
-			ConstraintActivitiesSameStartingTime* c=(ConstraintActivitiesSameStartingTime*)tctr;
-			int ai1=c->_activities[0];
-			for(int i=1; i<c->_n_activities; i++){
-				int ai2=c->_activities[i];
-				
-				int old=sameDay[ai2];
-				if(old>=0){
-					bool visited[MAX_ACTIVITIES];
-					for(int i=0; i<this->nInternalActivities; i++)
-						visited[i]=false;					
-					visited[old]=true;
-					while(sameDay[old]>=0 && !visited[sameDay[old]]){
-						old=sameDay[old];
-						visited[old]=true;
-					}
-					this->sameDay[old]=ai1;
-				}
-				else
-					this->sameDay[ai2]=ai1;
-				
-				old=sameHour[ai2];
-				if(old>=0){
-					bool visited[MAX_ACTIVITIES];
-					for(int i=0; i<this->nInternalActivities; i++)
-						visited[i]=false;					
-					visited[old]=true;
-					while(sameHour[old]>=0 && !visited[sameHour[old]]){
-						old=sameHour[old];
-						visited[old]=true;
-					}
-					this->sameHour[old]=ai1;
-				}
-				else
-					this->sameHour[ai2]=ai1;
-			}
-		}
-		else if(tctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR /*&& tctr->compulsory==true*/){
-			ConstraintActivitiesSameStartingHour* c=(ConstraintActivitiesSameStartingHour*)tctr;
-			int ai1=c->_activities[0];
-			for(int i=1; i<c->_n_activities; i++){
-				int ai2=c->_activities[i];
-
-				int old=sameHour[ai2];
-				if(old>=0){
-					bool visited[MAX_ACTIVITIES];
-					for(int i=0; i<this->nInternalActivities; i++)
-						visited[i]=false;
-					visited[old]=true;
-					while(sameHour[old]>=0 && !visited[sameHour[old]]){
-						old=sameHour[old];
-						visited[old]=true;
-					}
-					this->sameHour[old]=ai1;
-				}
-				else
-					this->sameHour[ai2]=ai1;
-			}
-		}
-		//else{
-			this->internalTimeConstraintsList[tctri++]=tctr;
-		//}
+		this->internalTimeConstraintsList[tctri++]=tctr;
 	}
 
-	//all activities will depend on only one "head"
-	for(int i=0; i<this->nInternalActivities; i++){
-		for(int j=0; j<this->nInternalActivities; j++){
-			int k=this->sameDay[j];
-			if(k>=0 && this->sameDay[k]>=0)
-				this->sameDay[j]=this->sameDay[k];
-			k=this->sameHour[j];
-			if(k>=0 && this->sameHour[k]>=0)
-				this->sameHour[j]=this->sameHour[k];
-		}
-	}
-	//make the head have the fixed day & hour
-	for(int i=0; i<this->nInternalActivities; i++){
-		if(this->fixedDay[i]>=0 && this->sameDay[i]>=0){
-			bool t=this->fixedDay[this->sameDay[i]]==this->fixedDay[i] || this->fixedDay[this->sameDay[i]]==-1;
-			if(!t){
-				QMessageBox::warning(NULL, QObject::tr("FET information"), 
-					 QObject::tr("Activity with id=%1 has fixed day on %2 and must be scheduled on the same\n"
-					 " day with act. with id=%3, which is impossible. Please check your constraints").arg(this->internalActivitiesList[i].id)
-					 .arg(this->daysOfTheWeek[this->fixedDay[i]]).arg(this->internalActivitiesList[this->sameDay[i]].id));
-				this->internalStructureComputed=false;
-				return false;
-			}
-
-			assert(this->fixedDay[this->sameDay[i]]==this->fixedDay[i] || this->fixedDay[this->sameDay[i]]==-1);
-			this->fixedDay[this->sameDay[i]]=this->fixedDay[i];
-		}
-		if(this->fixedHour[i]>=0 && this->sameHour[i]>=0){
-			bool t=this->fixedHour[this->sameHour[i]]==this->fixedHour[i] || this->fixedHour[this->sameHour[i]]==-1;
-			if(!t){
-				QMessageBox::warning(NULL, QObject::tr("FET information"), 
-					 QObject::tr("Activity with id=%1 has fixed hour on %2 and must be scheduled on the same\n"
-					 " hour with act. with id=%3, which is impossible. Please check your constraints").arg(this->internalActivitiesList[i].id)
-					 .arg(this->hoursOfTheDay[this->fixedHour[i]]).arg(this->internalActivitiesList[this->sameHour[i]].id));
-				this->internalStructureComputed=false;
-				return false;
-			}
-
-			assert(this->fixedHour[this->sameHour[i]]==this->fixedHour[i] || this->fixedHour[this->sameHour[i]]==-1);
-			this->fixedHour[this->sameHour[i]]=this->fixedHour[i];
-		}
-	}
-	//make all have the fixed day & hour
-	for(int i=0; i<this->nInternalActivities; i++){
-		if(this->sameDay[i]>=0){
-			assert(this->fixedDay[i]==this->fixedDay[this->sameDay[i]] || this->fixedDay[i]==-1);
-			this->fixedDay[i]=this->fixedDay[this->sameDay[i]];
-		}
-		if(this->sameHour[i]>=0){
-			assert(this->fixedHour[i]==this->fixedHour[this->sameHour[i]] || this->fixedHour[i]==-1);
-			this->fixedHour[i]=this->fixedHour[this->sameHour[i]];
-		}
-	}
-	
 	this->nInternalTimeConstraints=tctri;
 	assert(this->nInternalTimeConstraints<=MAX_TIME_CONSTRAINTS);
 	
-	//roomHasEquipment
-	for(int rm=0; rm<this->nInternalRooms; rm++){
-		for(int eq=0; eq<this->nInternalEquipments; eq++){
-			this->roomHasEquipment[rm][eq] = 
-			 (this->internalRoomsList[rm])->searchEquipment(this->internalEquipmentsList[eq]->name);
-		}
-	}
-
 	//space constraints
 	SpaceConstraint* sctr;
 	assert(this->spaceConstraintsList.size()<=MAX_SPACE_CONSTRAINTS);
-
-	for(int i=0; i<this->nInternalActivities; i++){
-		this->fixedRoom[i]=-1;
-		this->sameRoom[i]=-1;
-	}
 
 	int sctri=0;
 	for(int sctrindex=0; sctrindex<this->spaceConstraintsList.size(); sctrindex++){
 		sctr=this->spaceConstraintsList[sctrindex];
 	
-		if(!sctr->computeInternalStructure(*this))
+		if(!sctr->computeInternalStructure(*this)){
+			//assert(0);
+			ok=false;
 			continue;
-		if(sctr->type==CONSTRAINT_TEACHER_REQUIRES_ROOM && sctr->compulsory==true){
-			//works by repairing
-			ConstraintTeacherRequiresRoom* ctrr=(ConstraintTeacherRequiresRoom*) sctr;
-
-			for(int i=0; i<ctrr->_nActivities; i++){
-				bool t=this->fixedRoom[ctrr->_activities[i]]==-1 || this->fixedRoom[ctrr->_activities[i]]==ctrr->_room;
-				if(!t){
-					QMessageBox::warning(NULL, QObject::tr("FET information"), 
-					 QObject::tr("ConstraintTeacherRequiresRoom: Teacher=%1,\n"
-					 "Activity with id=%2 has fixed room on %3 and %4 - impossible\n"
-					 "Please fix that")
-					 .arg(ctrr->teacherName)
-					 .arg(this->internalActivitiesList[ctrr->_activities[i]].id)
-					 .arg(this->roomsList.at(this->fixedRoom[ctrr->_activities[i]])->name)
-					 .arg(this->roomsList.at(ctrr->_room)->name));
-					this->internalStructureComputed=false;
-					return false;
-				}
-
-				this->fixedRoom[ctrr->_activities[i]]=ctrr->_room;
-			}
 		}
-		if(sctr->type==CONSTRAINT_TEACHER_SUBJECT_REQUIRE_ROOM && sctr->compulsory==true){
-			//works by repairing
-			ConstraintTeacherSubjectRequireRoom* ctrr=(ConstraintTeacherSubjectRequireRoom*) sctr;
-
-			for(int i=0; i<ctrr->_nActivities; i++){
-				bool t=this->fixedRoom[ctrr->_activities[i]]==-1 || this->fixedRoom[ctrr->_activities[i]]==ctrr->_room;
-				if(!t){
-					QMessageBox::warning(NULL, QObject::tr("FET information"), 
-					 QObject::tr("ConstraintTeacherSubjectRequireRoom: Teacher=%1, Subject=%2\n"
-					 "Activity with id=%3 has fixed room on %4 and %5 - impossible\n"
-					 "Please fix that")
-					 .arg(ctrr->teacherName)
-					 .arg(ctrr->subjectName)
-					 .arg(this->internalActivitiesList[ctrr->_activities[i]].id)
-					 .arg(this->roomsList.at(this->fixedRoom[ctrr->_activities[i]])->name)
-					 .arg(this->roomsList.at(ctrr->_room)->name));
-					this->internalStructureComputed=false;
-					return false;
-				}
-
-				this->fixedRoom[ctrr->_activities[i]]=ctrr->_room;
-			}
-		}
-		else if(sctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM && sctr->compulsory==true){
-			//works by repairing
-			ConstraintActivityPreferredRoom* capr=(ConstraintActivityPreferredRoom*) sctr;
-
-			bool t=this->fixedRoom[capr->_activity]==-1 || this->fixedRoom[capr->_activity]==capr->_room;
-			if(!t){
-				QMessageBox::warning(NULL, QObject::tr("FET information"), 
-				 QObject::tr("Activity with id=%1 has fixed room on %2 and %3 - impossible\n"
-				 "Please fix that")
-				 .arg(this->internalActivitiesList[capr->_activity].id)
-				 .arg(this->roomsList.at(this->fixedRoom[capr->_activity])->name)
-				 .arg(this->roomsList.at(capr->_room)->name));
-				this->internalStructureComputed=false;
-				return false;
-			}
-
-			this->fixedRoom[capr->_activity]=capr->_room;
-		}
-		else if(sctr->type==CONSTRAINT_ACTIVITIES_SAME_ROOM && sctr->compulsory==true){
-			ConstraintActivitiesSameRoom* c=(ConstraintActivitiesSameRoom*)sctr;
-			int ai1=c->_activities[0];
-			for(int i=1; i<c->_n_activities; i++){
-				int ai2=c->_activities[i];
-
-				int old=sameRoom[ai2];
-				if(old>=0){
-					bool visited[MAX_ACTIVITIES];
-					for(int i=0; i<this->nInternalActivities; i++)
-						visited[i]=false;					
-					visited[old]=true;
-					while(sameRoom[old]>=0 && !visited[sameRoom[old]]){
-						old=sameRoom[old];
-						visited[old]=true;
-					}
-					this->sameRoom[old]=ai1;
-				}
-				else
-					this->sameRoom[ai2]=ai1;
-			}
-		}
-		else if(sctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOM && sctr->compulsory==true){
-			//works by repairing
-			ConstraintSubjectSubjectTagPreferredRoom* c=(ConstraintSubjectSubjectTagPreferredRoom*) sctr;
-
-			for(int i=0; i<c->_nActivities; i++){
-				int ai=c->_activities[i];
-				bool t=this->fixedRoom[ai]==-1 || this->fixedRoom[ai]==c->_room;
-				if(!t){
-					QMessageBox::warning(NULL, QObject::tr("FET information"), 
-					 QObject::tr("Because of space constraint\n%1\n"
-					 "Activity with id=%2 has fixed room on %3 and %4 - impossible\n"
-					 "Please fix that")
-					 .arg(c->getDetailedDescription(*this))
-					 .arg(this->internalActivitiesList[ai].id)
-					 .arg(this->roomsList.at(this->fixedRoom[ai])->name)
-					 .arg(this->roomsList.at(c->_room)->name));
-					this->internalStructureComputed=false;
-					return false;
-				}
-
-				this->fixedRoom[ai]=c->_room;
-			}
-		}
-		else if(sctr->type==CONSTRAINT_SUBJECT_PREFERRED_ROOM && sctr->compulsory==true){
-			//works by repairing
-			ConstraintSubjectPreferredRoom* c=(ConstraintSubjectPreferredRoom*) sctr;
-
-			for(int i=0; i<c->_nActivities; i++){
-				int ai=c->_activities[i];
-				bool t=this->fixedRoom[ai]==-1 || this->fixedRoom[ai]==c->_room;
-				if(!t){
-					QMessageBox::warning(NULL, QObject::tr("FET information"), 
-					 QObject::tr("Because of space constraint\n%1\n"
-					 "Activity with id=%2 has fixed room on %3 and %4 - impossible\n"
-					 "Please fix that")
-					 .arg(c->getDetailedDescription(*this))
-					 .arg(this->internalActivitiesList[ai].id)
-					 .arg(this->roomsList.at(this->fixedRoom[ai])->name)
-					 .arg(this->roomsList.at(c->_room)->name));
-					this->internalStructureComputed=false;
-					return false;
-				}
-
-				this->fixedRoom[ai]=c->_room;
-			}
-		}
-		else
-			this->internalSpaceConstraintsList[sctri++]=sctr;
+		this->internalSpaceConstraintsList[sctri++]=sctr;
 	}
 	this->nInternalSpaceConstraints=sctri;
 	assert(this->nInternalSpaceConstraints<=MAX_SPACE_CONSTRAINTS);
 
-	//all activities will depend on only one "head"
-	for(int i=0; i<this->nInternalActivities; i++){
-		for(int j=0; j<this->nInternalActivities; j++){
-			int k=this->sameRoom[j];
-			if(k>=0 && this->sameRoom[k]>=0)
-				this->sameRoom[j]=this->sameRoom[k];
-		}
-	}
-	//make the head have the fixed room
-	for(int i=0; i<this->nInternalActivities; i++){
-		if(this->fixedRoom[i]>=0 && this->sameRoom[i]>=0){
-			bool t=this->fixedRoom[this->sameRoom[i]]==this->fixedRoom[i] || this->fixedRoom[this->sameRoom[i]]==-1;
-			if(!t){
-				QMessageBox::warning(NULL, QObject::tr("FET information"), 
-					 QObject::tr("Activity with id=%1 has fixed room in %2 and must be scheduled in the same\n"
-					 " room with act. with id=%3, which is impossible. Please check your constraints").arg(this->internalActivitiesList[i].id)
-					 .arg(this->fixedRoom[i]).arg(this->internalActivitiesList[this->sameRoom[i]].id));
-				this->internalStructureComputed=false;
-				return false;
-			}
-
-			assert(this->fixedRoom[this->sameRoom[i]]==this->fixedRoom[i] || this->fixedRoom[this->sameRoom[i]]==-1);
-			this->fixedRoom[this->sameRoom[i]]=this->fixedRoom[i];
-		}
-	}
-	//make all have the fixed room
-	for(int i=0; i<this->nInternalActivities; i++){
-		if(this->sameRoom[i]>=0){
-			assert(this->fixedRoom[i]==this->fixedRoom[this->sameRoom[i]] || this->fixedRoom[i]==-1);
-			this->fixedRoom[i]=this->fixedRoom[this->sameRoom[i]];
-		}
-	}
-
 	//done.
-	this->internalStructureComputed=true;
+	this->internalStructureComputed=ok;
 	
-	return true;
+	return ok;
 }
 
 void Rules::kill() //clears memory for the rules, destroyes them
@@ -671,14 +320,6 @@ void Rules::kill() //clears memory for the rules, destroyes them
 	//Space constraints
 	while(!spaceConstraintsList.isEmpty())
 		delete spaceConstraintsList.takeFirst();
-
-	//Equipments
-	while(!equipmentsList.isEmpty())
-		delete equipmentsList.takeFirst();
-
-	//Buildings
-	while(!buildingsList.isEmpty())
-		delete buildingsList.takeFirst();
 
 	//Rooms
 	while(!roomsList.isEmpty())
@@ -814,33 +455,6 @@ bool Rules::removeTeacher(const QString& teacherName)
 	}
 
 
-	for(int i=0; i<this->spaceConstraintsList.size(); ){
-		SpaceConstraint* ctr=this->spaceConstraintsList[i];
-		if(ctr->type==CONSTRAINT_TEACHER_REQUIRES_ROOM){
-			ConstraintTeacherRequiresRoom* crt_constraint=(ConstraintTeacherRequiresRoom*)ctr;
-			if(teacherName==crt_constraint->teacherName)
-				this->removeSpaceConstraint(ctr); //single constraint removal
-			else
-				i++;
-		}
-		else
-			i++;
-	}
-
-	for(int i=0; i<this->spaceConstraintsList.size(); ){
-		SpaceConstraint* ctr=this->spaceConstraintsList[i];
-		if(ctr->type==CONSTRAINT_TEACHER_SUBJECT_REQUIRE_ROOM){
-			ConstraintTeacherSubjectRequireRoom* crt_constraint=(ConstraintTeacherSubjectRequireRoom*)ctr;
-			if(teacherName==crt_constraint->teacherName)
-				this->removeSpaceConstraint(ctr); //single constraint removal
-			else
-				i++;
-		}
-		else
-			i++;
-	}
-
-
 	for(int i=0; i<this->teachersList.size(); i++)
 		if(this->teachersList.at(i)->name==teacherName){
 			Teacher* tch=this->teachersList[i];
@@ -913,26 +527,6 @@ bool Rules::modifyTeacher(const QString& initialTeacherName, const QString& fina
 		}
 	}
 	
-	for(int i=0; i<this->spaceConstraintsList.size(); i++){
-		SpaceConstraint* ctr=this->spaceConstraintsList[i];	
-
-		if(ctr->type==CONSTRAINT_TEACHER_REQUIRES_ROOM){
-			ConstraintTeacherRequiresRoom* crt_constraint=(ConstraintTeacherRequiresRoom*)ctr;
-			if(initialTeacherName == crt_constraint->teacherName)
-				crt_constraint->teacherName=finalTeacherName;
-		}
-	}
-
-	for(int i=0; i<this->spaceConstraintsList.size(); i++){
-		SpaceConstraint* ctr=this->spaceConstraintsList[i];	
-
-		if(ctr->type==CONSTRAINT_TEACHER_SUBJECT_REQUIRE_ROOM){
-			ConstraintTeacherSubjectRequireRoom* crt_constraint=(ConstraintTeacherSubjectRequireRoom*)ctr;
-			if(initialTeacherName == crt_constraint->teacherName)
-				crt_constraint->teacherName=finalTeacherName;
-		}
-	}
-
 	int t=0;
 	for(int i=0; i<this->teachersList.size(); i++){
 		Teacher* tch=this->teachersList[i];
@@ -1015,65 +609,8 @@ bool Rules::removeSubject(const QString& subjectName)
 	for(int i=0; i<this->spaceConstraintsList.size(); ){
 		SpaceConstraint* ctr=this->spaceConstraintsList[i];
 
-		if(ctr->type==CONSTRAINT_ROOM_TYPE_NOT_ALLOWED_SUBJECTS){
-			ConstraintRoomTypeNotAllowedSubjects* crtnas=(ConstraintRoomTypeNotAllowedSubjects*)ctr;
-			QStringList::Iterator it;
-			for(it=crtnas->subjects.begin(); it!=crtnas->subjects.end(); it++)
-				if(*it==subjectName)
-					break;
-			if(it!=crtnas->subjects.end()){
-				int tmp=crtnas->removeNotAllowedSubject(subjectName);
-				assert(tmp==1);
-			}
-
-			//remove the constraint if subjects list empty
-			if(crtnas->subjects.isEmpty())
-				this->removeSpaceConstraint(ctr);
-			else
-				i++;
-		}
-		else if(ctr->type==CONSTRAINT_SUBJECT_REQUIRES_EQUIPMENTS){
-			ConstraintSubjectRequiresEquipments* csre=(ConstraintSubjectRequiresEquipments*)ctr;
-
-			if(csre->subjectName == subjectName)
-				this->removeSpaceConstraint(ctr);
-			else
-				i++;
-		}
-		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_REQUIRE_EQUIPMENTS){
-			ConstraintSubjectSubjectTagRequireEquipments* c=(ConstraintSubjectSubjectTagRequireEquipments*)ctr;
-
-			if(c->subjectName == subjectName)
-				this->removeSpaceConstraint(ctr);
-			else
-				i++;
-		}
-		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOM){
-			ConstraintSubjectSubjectTagPreferredRoom* c=(ConstraintSubjectSubjectTagPreferredRoom*)ctr;
-
-			if(c->subjectName == subjectName)
-				this->removeSpaceConstraint(ctr);
-			else
-				i++;
-		}
-		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS){
-			ConstraintSubjectSubjectTagPreferredRooms* c=(ConstraintSubjectSubjectTagPreferredRooms*)ctr;
-
-			if(c->subjectName == subjectName)
-				this->removeSpaceConstraint(ctr);
-			else
-				i++;
-		}
-		else if(ctr->type==CONSTRAINT_SUBJECT_PREFERRED_ROOM){
+		if(ctr->type==CONSTRAINT_SUBJECT_PREFERRED_ROOM){
 			ConstraintSubjectPreferredRoom* c=(ConstraintSubjectPreferredRoom*)ctr;
-
-			if(c->subjectName == subjectName)
-				this->removeSpaceConstraint(ctr);
-			else
-				i++;
-		}
-		else if(ctr->type==CONSTRAINT_TEACHER_SUBJECT_REQUIRE_ROOM){
-			ConstraintTeacherSubjectRequireRoom* c=(ConstraintTeacherSubjectRequireRoom*)ctr;
 
 			if(c->subjectName == subjectName)
 				this->removeSpaceConstraint(ctr);
@@ -1134,42 +671,8 @@ bool Rules::modifySubject(const QString& initialSubjectName, const QString& fina
 	for(int i=0; i<this->spaceConstraintsList.size(); i++){
 		SpaceConstraint* ctr=this->spaceConstraintsList[i];
 
-		if(ctr->type==CONSTRAINT_ROOM_TYPE_NOT_ALLOWED_SUBJECTS){
-			ConstraintRoomTypeNotAllowedSubjects* crtas=(ConstraintRoomTypeNotAllowedSubjects*)ctr;
-			QStringList::Iterator it;
-			for(it=crtas->subjects.begin(); it!=crtas->subjects.end(); it++)
-				if(*it==initialSubjectName){
-					*it=finalSubjectName;
-					break;
-				}
-		}
-		else if(ctr->type==CONSTRAINT_SUBJECT_REQUIRES_EQUIPMENTS){
-			ConstraintSubjectRequiresEquipments* csre=(ConstraintSubjectRequiresEquipments*)ctr;
-			if(csre->subjectName == initialSubjectName)
-				csre->subjectName=finalSubjectName;
-		}
-		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_REQUIRE_EQUIPMENTS){
-			ConstraintSubjectSubjectTagRequireEquipments* c=(ConstraintSubjectSubjectTagRequireEquipments*)ctr;
-			if(c->subjectName == initialSubjectName)
-				c->subjectName=finalSubjectName;
-		}
-		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOM){
-			ConstraintSubjectSubjectTagPreferredRoom* c=(ConstraintSubjectSubjectTagPreferredRoom*)ctr;
-			if(c->subjectName == initialSubjectName)
-				c->subjectName=finalSubjectName;
-		}
-		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS){
-			ConstraintSubjectSubjectTagPreferredRooms* c=(ConstraintSubjectSubjectTagPreferredRooms*)ctr;
-			if(c->subjectName == initialSubjectName)
-				c->subjectName=finalSubjectName;
-		}
-		else if(ctr->type==CONSTRAINT_SUBJECT_PREFERRED_ROOM){
+		if(ctr->type==CONSTRAINT_SUBJECT_PREFERRED_ROOM){
 			ConstraintSubjectPreferredRoom* c=(ConstraintSubjectPreferredRoom*)ctr;
-			if(c->subjectName == initialSubjectName)
-				c->subjectName=finalSubjectName;
-		}
-		else if(ctr->type==CONSTRAINT_TEACHER_SUBJECT_REQUIRE_ROOM){
-			ConstraintTeacherSubjectRequireRoom* c=(ConstraintTeacherSubjectRequireRoom*)ctr;
 			if(c->subjectName == initialSubjectName)
 				c->subjectName=finalSubjectName;
 		}
@@ -1237,7 +740,7 @@ bool Rules::removeSubjectTag(const QString& subjectTagName)
 			act->subjectTagName="";
 	}
 	
-	//delete the time constraints related to this subject tag
+	//delete the constraints related to this subject tag
 	for(int i=0; i<this->timeConstraintsList.size(); ){
 		TimeConstraint* ctr=this->timeConstraintsList[i];
 		
@@ -1252,46 +755,6 @@ bool Rules::removeSubjectTag(const QString& subjectTagName)
 			i++;
 	}
 
-	//delete the space constraints related to this subject tag
-	for(int i=0; i<this->spaceConstraintsList.size(); ){
-		SpaceConstraint* ctr=this->spaceConstraintsList[i];
-
-		if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_REQUIRE_EQUIPMENTS){
-			ConstraintSubjectSubjectTagRequireEquipments* c=(ConstraintSubjectSubjectTagRequireEquipments*)ctr;
-
-			if(c->subjectTagName == subjectTagName)
-				this->removeSpaceConstraint(ctr);
-			else
-				i++;
-		}
-		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOM){
-			ConstraintSubjectSubjectTagPreferredRoom* c=(ConstraintSubjectSubjectTagPreferredRoom*)ctr;
-
-			if(c->subjectTagName == subjectTagName)
-				this->removeSpaceConstraint(ctr);
-			else
-				i++;
-		}
-		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS){
-			ConstraintSubjectSubjectTagPreferredRooms* c=(ConstraintSubjectSubjectTagPreferredRooms*)ctr;
-
-			if(c->subjectTagName == subjectTagName)
-				this->removeSpaceConstraint(ctr);
-			else
-				i++;
-		}
-		else if(ctr->type==CONSTRAINT_TEACHERS_SUBJECT_TAG_MAX_HOURS_CONTINUOUSLY){
-			ConstraintTeachersSubjectTagMaxHoursContinuously* c=(ConstraintTeachersSubjectTagMaxHoursContinuously*)ctr;
-
-			if(c->subjectTagName == subjectTagName)
-				this->removeSpaceConstraint(ctr);
-			else
-				i++;
-		}
-		else
-			i++;
-	}
-	
 	//remove the subject tag from the list
 	for(int i=0; i<this->subjectTagsList.size(); i++)
 		if(this->subjectTagsList[i]->name==subjectTagName){
@@ -1319,7 +782,7 @@ bool Rules::modifySubjectTag(const QString& initialSubjectTagName, const QString
 			act->subjectTagName=finalSubjectTagName;
 	}
 	
-	//modify the time constraints related to this subject tag
+	//modify the constraints related to this subject tag
 	for(int i=0; i<this->timeConstraintsList.size(); i++){
 		TimeConstraint* ctr=this->timeConstraintsList[i];
 	
@@ -1327,32 +790,6 @@ bool Rules::modifySubjectTag(const QString& initialSubjectTagName, const QString
 			ConstraintActivitiesPreferredTimes* crt_constraint=(ConstraintActivitiesPreferredTimes*)ctr;
 			if(initialSubjectTagName == crt_constraint->subjectTagName)
 				crt_constraint->subjectTagName=finalSubjectTagName;
-		}
-	}
-
-	//modify the space constraints related to this subject
-	for(int i=0; i<this->spaceConstraintsList.size(); i++){
-		SpaceConstraint* ctr=this->spaceConstraintsList[i];
-
-		if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_REQUIRE_EQUIPMENTS){
-			ConstraintSubjectSubjectTagRequireEquipments* c=(ConstraintSubjectSubjectTagRequireEquipments*)ctr;
-			if(c->subjectTagName == initialSubjectTagName)
-				c->subjectTagName=finalSubjectTagName;
-		}
-		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOM){
-			ConstraintSubjectSubjectTagPreferredRoom* c=(ConstraintSubjectSubjectTagPreferredRoom*)ctr;
-			if(c->subjectTagName == initialSubjectTagName)
-				c->subjectTagName=finalSubjectTagName;
-		}
-		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS){
-			ConstraintSubjectSubjectTagPreferredRooms* c=(ConstraintSubjectSubjectTagPreferredRooms*)ctr;
-			if(c->subjectTagName == initialSubjectTagName)
-				c->subjectTagName=finalSubjectTagName;
-		}
-		else if(ctr->type==CONSTRAINT_TEACHERS_SUBJECT_TAG_MAX_HOURS_CONTINUOUSLY){
-			ConstraintTeachersSubjectTagMaxHoursContinuously* c=(ConstraintTeachersSubjectTagMaxHoursContinuously*)ctr;
-			if(c->subjectTagName == initialSubjectTagName)
-				c->subjectTagName=finalSubjectTagName;
 		}
 	}
 
@@ -1386,10 +823,6 @@ bool Rules::studentsSetsRelated(const QString& studentsSet1, const QString& stud
 {
 	StudentsSet* s1=this->searchStudentsSet(studentsSet1);
 	StudentsSet* s2=this->searchStudentsSet(studentsSet2);
-	/*if(s1==NULL)
-		cout<<"s1==NULL, studentsSet1="<<(const char*)studentsSet1<<endl;
-	if(s2==NULL)
-		cout<<"s2==NULL, studentsSet2="<<(const char*)studentsSet2<<endl;*/
 	assert(s1!=NULL);
 	assert(s2!=NULL);
 	if(s1->type==STUDENTS_YEAR && s2->type==STUDENTS_YEAR){
@@ -1600,22 +1033,8 @@ bool Rules::removeYear(const QString& yearName)
 				erased=true;
 			}
 		}
-		else if(ctr->type==CONSTRAINT_STUDENTS_SET_N_HOURS_DAILY){
-			ConstraintStudentsSetNHoursDaily* crt_constraint=(ConstraintStudentsSetNHoursDaily*)ctr;
-			if(yearName == crt_constraint->students){
-				this->removeTimeConstraint(ctr);
-				erased=true;
-			}
-		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_NO_GAPS){
 			ConstraintStudentsSetNoGaps* crt_constraint=(ConstraintStudentsSetNoGaps*)ctr;
-			if(yearName == crt_constraint->students){
-				this->removeTimeConstraint(ctr);
-				erased=true;
-			}
-		}
-		else if(ctr->type==CONSTRAINT_STUDENTS_SET_INTERVAL_MAX_DAYS_PER_WEEK){
-			ConstraintStudentsSetIntervalMaxDaysPerWeek* crt_constraint=(ConstraintStudentsSetIntervalMaxDaysPerWeek*)ctr;
 			if(yearName == crt_constraint->students){
 				this->removeTimeConstraint(ctr);
 				erased=true;
@@ -1673,11 +1092,6 @@ bool Rules::modifyYear(const QString& initialYearName, const QString& finalYearN
 			if(_initialYearName == crt_constraint->students)
 				crt_constraint->students=finalYearName;
 		}
-		else if(ctr->type==CONSTRAINT_STUDENTS_SET_N_HOURS_DAILY){
-			ConstraintStudentsSetNHoursDaily* crt_constraint=(ConstraintStudentsSetNHoursDaily*)ctr;
-			if(_initialYearName == crt_constraint->students)
-				crt_constraint->students=finalYearName;
-		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
 			ConstraintStudentsSetMaxHoursDaily* crt_constraint=(ConstraintStudentsSetMaxHoursDaily*)ctr;
 			if(_initialYearName == crt_constraint->students)
@@ -1690,11 +1104,6 @@ bool Rules::modifyYear(const QString& initialYearName, const QString& finalYearN
 		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_NO_GAPS){
 			ConstraintStudentsSetNoGaps* crt_constraint=(ConstraintStudentsSetNoGaps*)ctr;
-			if(_initialYearName == crt_constraint->students)
-				crt_constraint->students=finalYearName;
-		}
-		else if(ctr->type==CONSTRAINT_STUDENTS_SET_INTERVAL_MAX_DAYS_PER_WEEK){
-			ConstraintStudentsSetIntervalMaxDaysPerWeek* crt_constraint=(ConstraintStudentsSetIntervalMaxDaysPerWeek*)ctr;
 			if(_initialYearName == crt_constraint->students)
 				crt_constraint->students=finalYearName;
 		}
@@ -1836,22 +1245,8 @@ bool Rules::removeGroup(const QString& yearName, const QString& groupName)
 				erased=true;
 			}
 		}
-		else if(ctr->type==CONSTRAINT_STUDENTS_SET_N_HOURS_DAILY){
-			ConstraintStudentsSetNHoursDaily* crt_constraint=(ConstraintStudentsSetNHoursDaily*)ctr;
-			if(groupName == crt_constraint->students){
-				this->removeTimeConstraint(ctr);
-				erased=true;
-			}
-		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_NO_GAPS){
 			ConstraintStudentsSetNoGaps* crt_constraint=(ConstraintStudentsSetNoGaps*)ctr;
-			if(groupName == crt_constraint->students){
-				this->removeTimeConstraint(ctr);
-				erased=true;
-			}
-		}
-		else if(ctr->type==CONSTRAINT_STUDENTS_SET_INTERVAL_MAX_DAYS_PER_WEEK){
-			ConstraintStudentsSetIntervalMaxDaysPerWeek* crt_constraint=(ConstraintStudentsSetIntervalMaxDaysPerWeek*)ctr;
 			if(groupName == crt_constraint->students){
 				this->removeTimeConstraint(ctr);
 				erased=true;
@@ -1944,18 +1339,8 @@ bool Rules::modifyGroup(const QString& yearName, const QString& initialGroupName
 			if(_initialGroupName == crt_constraint->students)
 				crt_constraint->students=finalGroupName;
 		}
-		else if(ctr->type==CONSTRAINT_STUDENTS_SET_N_HOURS_DAILY){
-			ConstraintStudentsSetNHoursDaily* crt_constraint=(ConstraintStudentsSetNHoursDaily*)ctr;
-			if(_initialGroupName == crt_constraint->students)
-				crt_constraint->students=finalGroupName;
-		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_NO_GAPS){
 			ConstraintStudentsSetNoGaps* crt_constraint=(ConstraintStudentsSetNoGaps*)ctr;
-			if(_initialGroupName == crt_constraint->students)
-				crt_constraint->students=finalGroupName;
-		}
-		else if(ctr->type==CONSTRAINT_STUDENTS_SET_INTERVAL_MAX_DAYS_PER_WEEK){
-			ConstraintStudentsSetIntervalMaxDaysPerWeek* crt_constraint=(ConstraintStudentsSetIntervalMaxDaysPerWeek*)ctr;
 			if(_initialGroupName == crt_constraint->students)
 				crt_constraint->students=finalGroupName;
 		}
@@ -2053,13 +1438,6 @@ bool Rules::removeSubgroup(const QString& yearName, const QString& groupName, co
 				erased=true;
 			}
 		}
-		else if(ctr->type==CONSTRAINT_STUDENTS_SET_N_HOURS_DAILY){
-			ConstraintStudentsSetNHoursDaily* crt_constraint=(ConstraintStudentsSetNHoursDaily*)ctr;
-			if(subgroupName == crt_constraint->students){
-				this->removeTimeConstraint(ctr);
-				erased=true;
-			}
-		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
 			ConstraintStudentsSetMaxHoursDaily* crt_constraint=(ConstraintStudentsSetMaxHoursDaily*)ctr;
 			if(subgroupName == crt_constraint->students){
@@ -2076,13 +1454,6 @@ bool Rules::removeSubgroup(const QString& yearName, const QString& groupName, co
 		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_NO_GAPS){
 			ConstraintStudentsSetNoGaps* crt_constraint=(ConstraintStudentsSetNoGaps*)ctr;
-			if(subgroupName == crt_constraint->students){
-				this->removeTimeConstraint(ctr);
-				erased=true;
-			}
-		}
-		else if(ctr->type==CONSTRAINT_STUDENTS_SET_INTERVAL_MAX_DAYS_PER_WEEK){
-			ConstraintStudentsSetIntervalMaxDaysPerWeek* crt_constraint=(ConstraintStudentsSetIntervalMaxDaysPerWeek*)ctr;
 			if(subgroupName == crt_constraint->students){
 				this->removeTimeConstraint(ctr);
 				erased=true;
@@ -2153,11 +1524,6 @@ bool Rules::modifySubgroup(const QString& yearName, const QString& groupName, co
 			if(_initialSubgroupName == crt_constraint->students)
 				crt_constraint->students=finalSubgroupName;
 		}
-		else if(ctr->type==CONSTRAINT_STUDENTS_SET_N_HOURS_DAILY){
-			ConstraintStudentsSetNHoursDaily* crt_constraint=(ConstraintStudentsSetNHoursDaily*)ctr;
-			if(_initialSubgroupName == crt_constraint->students)
-				crt_constraint->students=finalSubgroupName;
-		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
 			ConstraintStudentsSetMaxHoursDaily* crt_constraint=(ConstraintStudentsSetMaxHoursDaily*)ctr;
 			if(_initialSubgroupName == crt_constraint->students)
@@ -2170,11 +1536,6 @@ bool Rules::modifySubgroup(const QString& yearName, const QString& groupName, co
 		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_NO_GAPS){
 			ConstraintStudentsSetNoGaps* crt_constraint=(ConstraintStudentsSetNoGaps*)ctr;
-			if(_initialSubgroupName == crt_constraint->students)
-				crt_constraint->students=finalSubgroupName;
-		}
-		else if(ctr->type==CONSTRAINT_STUDENTS_SET_INTERVAL_MAX_DAYS_PER_WEEK){
-			ConstraintStudentsSetIntervalMaxDaysPerWeek* crt_constraint=(ConstraintStudentsSetIntervalMaxDaysPerWeek*)ctr;
 			if(_initialSubgroupName == crt_constraint->students)
 				crt_constraint->students=finalSubgroupName;
 		}
@@ -2333,66 +1694,6 @@ void Rules::removeActivity(int _id)
 				else
 					j++;
 			}
-			//removing ConstraintActivityEndsDay-s referring to this activity
-			for(int j=0; j<this->timeConstraintsList.size(); ){
-				TimeConstraint* ctr=this->timeConstraintsList[j];
-				if(ctr->type==CONSTRAINT_ACTIVITY_ENDS_DAY){
-					ConstraintActivityEndsDay *apt=(ConstraintActivityEndsDay*)ctr;
-					if(apt->activityId==act->id){
-						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
-						this->removeTimeConstraint(ctr);
-					}
-					else
-						j++;
-				}
-				else
-					j++;
-			}
-			//removing Constraint2ActivitiesConsecutive-s referring to this activity
-			for(int j=0; j<this->timeConstraintsList.size(); ){
-				TimeConstraint* ctr=this->timeConstraintsList[j];
-				if(ctr->type==CONSTRAINT_2_ACTIVITIES_CONSECUTIVE){
-					Constraint2ActivitiesConsecutive *apt=(Constraint2ActivitiesConsecutive*)ctr;
-					if(apt->firstActivityId==act->id || apt->secondActivityId==act->id){
-						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
-						this->removeTimeConstraint(ctr);
-					}
-					else
-						j++;
-				}
-				else
-					j++;
-			}
-			//removing Constraint2ActivitiesOrdered-s referring to this activity
-			for(int j=0; j<this->timeConstraintsList.size(); ){
-				TimeConstraint* ctr=this->timeConstraintsList[j];
-				if(ctr->type==CONSTRAINT_2_ACTIVITIES_ORDERED){
-					Constraint2ActivitiesOrdered *apt=(Constraint2ActivitiesOrdered*)ctr;
-					if(apt->firstActivityId==act->id || apt->secondActivityId==act->id){
-						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
-						this->removeTimeConstraint(ctr);
-					}
-					else
-						j++;
-				}
-				else
-					j++;
-			}
-			//removing Constraint2ActivitiesGrouped-s referring to this activity
-			for(int j=0; j<this->timeConstraintsList.size(); ){
-				TimeConstraint* ctr=this->timeConstraintsList[j];
-				if(ctr->type==CONSTRAINT_2_ACTIVITIES_GROUPED){
-					Constraint2ActivitiesGrouped *apt=(Constraint2ActivitiesGrouped*)ctr;
-					if(apt->firstActivityId==act->id || apt->secondActivityId==act->id){
-						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
-						this->removeTimeConstraint(ctr);
-					}
-					else
-						j++;
-				}
-				else
-					j++;
-			}
 
 			//removing ConstraintActivityPreferredRoom-s referring to this activity
 			for(int j=0; j<this->spaceConstraintsList.size(); ){
@@ -2478,19 +1779,6 @@ void Rules::removeActivity(int _id)
 			i++;
 	}
 
-	for(int i=0; i<this->spaceConstraintsList.size(); ){
-		SpaceConstraint* ctr=this->spaceConstraintsList[i];
-		if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_ROOM){
-			((ConstraintActivitiesSameRoom*)ctr)->removeUseless(*this);
-			if(((ConstraintActivitiesSameRoom*)ctr)->n_activities<2)
-				this->removeSpaceConstraint(ctr);
-			else
-				i++;
-		}
-		else
-			i++;
-	}
-
 	this->internalStructureComputed=false;
 }
 
@@ -2531,52 +1819,7 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 				else
 					j++;
 			}
-			//removing ConstraintActivityEndsDay-s referring to this activity
-			for(int j=0; j<this->timeConstraintsList.size(); ){
-				TimeConstraint* ctr=this->timeConstraintsList[j];
-				if(ctr->type==CONSTRAINT_ACTIVITY_ENDS_DAY){
-					ConstraintActivityEndsDay *apt=(ConstraintActivityEndsDay*)ctr;
-					if(apt->activityId==act->id){
-						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
-						this->removeTimeConstraint(ctr);
-					}
-					else
-						j++;
-				}
-				else
-					j++;
-			}
-			//removing Constraint2ActivitiesConsecutive-s referring to this activity
-			for(int j=0; j<this->timeConstraintsList.size(); ){
-				TimeConstraint* ctr=this->timeConstraintsList[j];
-				if(ctr->type==CONSTRAINT_2_ACTIVITIES_CONSECUTIVE){
-					Constraint2ActivitiesConsecutive *apt=(Constraint2ActivitiesConsecutive*)ctr;
-					if(apt->firstActivityId==act->id || apt->secondActivityId==act->id){
-						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
-						this->removeTimeConstraint(ctr);
-					}
-					else
-						j++;
-				}
-				else
-					j++;
-			}
-			//removing Constraint2ActivitiesGrouped-s referring to this activity
-			for(int j=0; j<this->timeConstraintsList.size(); ){
-				TimeConstraint* ctr=this->timeConstraintsList[j];
-				if(ctr->type==CONSTRAINT_2_ACTIVITIES_GROUPED){
-					Constraint2ActivitiesGrouped *apt=(Constraint2ActivitiesGrouped*)ctr;
-					if(apt->firstActivityId==act->id || apt->secondActivityId==act->id){
-						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
-						this->removeTimeConstraint(ctr);
-					}
-					else
-						j++;
-				}
-				else
-					j++;
-			}
-			
+
 			//removing ConstraintActivityPreferredRoom-s referring to this activity
 			for(int j=0; j<this->spaceConstraintsList.size(); ){
 				SpaceConstraint* ctr=this->spaceConstraintsList[j];
@@ -2661,19 +1904,6 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 			i++;
 	}
 
-	for(int i=0; i<this->spaceConstraintsList.size(); ){
-		SpaceConstraint* ctr=this->spaceConstraintsList[i];
-		if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_ROOM){
-			((ConstraintActivitiesSameRoom*)ctr)->removeUseless(*this);
-			if(((ConstraintActivitiesSameRoom*)ctr)->n_activities<2)
-				this->removeSpaceConstraint(ctr);
-			else
-				i++;
-		}
-		else
-			i++;
-	}
-
 	this->internalStructureComputed=false;
 }
 
@@ -2716,178 +1946,6 @@ void Rules::modifyActivity(
 	this->internalStructureComputed=false;
 }
 
-bool Rules::addEquipment(Equipment* eq)
-{
-	if(this->searchEquipment(eq->name) >= 0)
-		return false;
-	this->equipmentsList << eq; //append
-	this->internalStructureComputed=false;
-	return true;
-}
-
-int Rules::searchEquipment(const QString& equipmentName)
-{
-	for(int i=0; i<this->equipmentsList.size(); i++)
-		if(this->equipmentsList[i]->name==equipmentName)
-			return i;
-
-	return -1;
-}
-
-bool Rules::removeEquipment(const QString& equipmentName)
-{
-	int i=this->searchEquipment(equipmentName);
-	if(i<0)
-		return false;
-
-	Equipment* searchedEquipment=this->equipmentsList[i];
-	assert(searchedEquipment->name==equipmentName);
-	
-	//check the constraints
-	for(int j=0; j<this->spaceConstraintsList.size(); ){
-		SpaceConstraint* ctr=this->spaceConstraintsList[j];
-		if(ctr->type==CONSTRAINT_SUBJECT_REQUIRES_EQUIPMENTS){
-			ConstraintSubjectRequiresEquipments* csre=(ConstraintSubjectRequiresEquipments*)ctr;
-			QStringList::Iterator it;
-			for(it=csre->equipmentsNames.begin(); it!=csre->equipmentsNames.end(); it++)
-				if(*it==equipmentName)
-					break;
-			if(it!=csre->equipmentsNames.end()){
-				int tmp=csre->removeRequiredEquipment(equipmentName);
-				assert(tmp==1);
-			}
-
-			//remove the constraint if equipments list empty
-			if(csre->equipmentsNames.isEmpty())
-				this->removeSpaceConstraint(ctr);
-			else
-				j++;
-		}
-		else
-			j++;
-	}
-	
-	//Remove this equipment from all the rooms that posess it.
-	for(int j=0; j<this->roomsList.size(); j++)
-		this->roomsList[j]->removeEquipment(equipmentName);
-
-	delete this->equipmentsList[i];
-	this->equipmentsList.removeAt(i);
-	
-	this->internalStructureComputed=false;
-	
-	return true;
-}
-
-bool Rules::modifyEquipment(const QString& initialEquipmentName, const QString& finalEquipmentName)
-{
-	int i=this->searchEquipment(initialEquipmentName);
-	assert(i>=0);
-	assert(this->searchEquipment(finalEquipmentName)==-1 || initialEquipmentName==finalEquipmentName);
-
-	Equipment* searchedEquipment=this->equipmentsList[i];
-	assert(searchedEquipment->name==initialEquipmentName);
-	
-	//check the constraints
-	for(int j=0; j<this->spaceConstraintsList.size(); j++){
-		SpaceConstraint* ctr=this->spaceConstraintsList[j];
-		if(ctr->type==CONSTRAINT_SUBJECT_REQUIRES_EQUIPMENTS){
-			ConstraintSubjectRequiresEquipments* csre=(ConstraintSubjectRequiresEquipments*)ctr;
-			for(QStringList::Iterator it=csre->equipmentsNames.begin(); it!=csre->equipmentsNames.end(); it++)
-				if(*it==initialEquipmentName)
-					*it=finalEquipmentName;
-		}
-	}
-	
-	//Modify this equipment in all the rooms that posess it.
-	for(int j=0; j<this->roomsList.size(); j++){
-		Room* rm=this->roomsList[j];
-		for(QStringList::Iterator it=rm->equipments.begin(); it!=rm->equipments.end(); it++)
-			if(*it==initialEquipmentName)
-				*it=finalEquipmentName;
-	}
-				
-	searchedEquipment->name=finalEquipmentName;
-
-	this->internalStructureComputed=false;
-	return true;
-}
-
-void Rules::sortEquipmentsAlphabetically()
-{
-	qSort(this->equipmentsList.begin(), this->equipmentsList.end(), equipmentsAscending);
-
-	this->internalStructureComputed=false;
-}
-
-bool Rules::addBuilding(Building* bu)
-{
-	if(this->searchBuilding(bu->name) >= 0)
-		return false;
-	this->buildingsList << bu;
-	this->internalStructureComputed=false;
-	return true;
-}
-
-int Rules::searchBuilding(const QString& buildingName)
-{
-	for(int i=0; i<this->buildingsList.size(); i++)
-		if(this->buildingsList.at(i)->name==buildingName)
-			return i;
-	return -1;
-}
-
-bool Rules::removeBuilding(const QString& buildingName)
-{
-	int i=this->searchBuilding(buildingName);
-	if(i<0)
-		return false;
-
-	Building* searchedBuilding=this->buildingsList.at(i);
-	assert(searchedBuilding->name==buildingName);
-	
-	//Remove this building from all the rooms that have it.
-	for(int i=0; i<this->roomsList.size(); i++){
-		Room* rm=this->roomsList[i];
-		if(rm->building==buildingName)
-			rm->building="";
-	}
-
-	delete this->buildingsList[i];
-	this->buildingsList.removeAt(i);
-	this->internalStructureComputed=false;
-	return true;
-}
-
-bool Rules::modifyBuilding(const QString& initialBuildingName, const QString& finalBuildingName)
-{
-	int i=this->searchBuilding(initialBuildingName);
-	assert(i>=0);
-	assert(this->searchBuilding(finalBuildingName)==-1 || initialBuildingName==finalBuildingName);
-
-	Building* searchedBuilding=this->buildingsList.at(i);
-	assert(searchedBuilding->name==initialBuildingName);
-	
-	//Modify this building in all the rooms that posess it.
-	for(int j=0; j<this->roomsList.size(); j++){
-		Room* rm=this->roomsList[j];
-		if(rm->building==initialBuildingName)
-			rm->building=finalBuildingName;
-	}
-				
-	searchedBuilding->name=finalBuildingName;
-
-	this->internalStructureComputed=false;
-	return true;
-}
-
-void Rules::sortBuildingsAlphabetically()
-{
-	qSort(this->buildingsList.begin(), this->buildingsList.end(), buildingsAscending);
-
-	this->internalStructureComputed=false;
-}
-
 bool Rules::addRoom(Room* rm)
 {
 	if(this->searchRoom(rm->name) >= 0)
@@ -2915,44 +1973,11 @@ bool Rules::removeRoom(const QString& roomName)
 	Room* searchedRoom=this->roomsList[i];
 	assert(searchedRoom->name==roomName);
 
-	//Removing useless ConstraintRoomTypeNotAllowedSubjects
-	//Firstly, check whether the type of this room exists at another room
-	bool typeExisting=false;
-	
-	for(int j=0; j<this->roomsList.size(); j++){	
-		Room* rm=this->roomsList[j];
-		if(rm->name!=searchedRoom->name && rm->type==searchedRoom->type){
-			typeExisting=true;
-			break;
-		}
-	}
-		
 	for(int j=0; j<this->spaceConstraintsList.size(); ){
 		SpaceConstraint* ctr=this->spaceConstraintsList[j];
-		if(!typeExisting && ctr->type==CONSTRAINT_ROOM_TYPE_NOT_ALLOWED_SUBJECTS){
-			ConstraintRoomTypeNotAllowedSubjects* crtas=(ConstraintRoomTypeNotAllowedSubjects*)ctr;
-			if(crtas->roomType==searchedRoom->type)
-				this->removeSpaceConstraint(ctr);
-			else
-				j++;
-		}
-		else if(ctr->type==CONSTRAINT_ROOM_NOT_AVAILABLE){
+		if(ctr->type==CONSTRAINT_ROOM_NOT_AVAILABLE){
 			ConstraintRoomNotAvailable* crna=(ConstraintRoomNotAvailable*)ctr;
 			if(crna->roomName==roomName)
-				this->removeSpaceConstraint(ctr);
-			else
-				j++;
-		}
-		else if(ctr->type==CONSTRAINT_TEACHER_REQUIRES_ROOM){
-			ConstraintTeacherRequiresRoom* c=(ConstraintTeacherRequiresRoom*)ctr;
-			if(c->roomName==roomName)
-				this->removeSpaceConstraint(ctr);
-			else
-				j++;
-		}
-		else if(ctr->type==CONSTRAINT_TEACHER_SUBJECT_REQUIRE_ROOM){
-			ConstraintTeacherSubjectRequireRoom* c=(ConstraintTeacherSubjectRequireRoom*)ctr;
-			if(c->roomName==roomName)
 				this->removeSpaceConstraint(ctr);
 			else
 				j++;
@@ -2972,36 +1997,7 @@ bool Rules::removeRoom(const QString& roomName)
 				this->removeSpaceConstraint(ctr);
 			else if(t==1 && c->roomsNames.count()==1){
 				ConstraintActivityPreferredRoom* c2=new ConstraintActivityPreferredRoom
-				 (c->weight, c->compulsory, c->activityId, c->roomsNames.at(0));
-
-				QMessageBox::information(NULL, QObject::tr("FET information"), 
-				 QObject::tr("The constraint\n%1 will be modified into constraint\n%2 because"
-				 " there is only one room left in the constraint")
-				 .arg(c->getDetailedDescription(*this))
-				 .arg(c2->getDetailedDescription(*this)));
-
-				this->removeSpaceConstraint(ctr);
-				this->addSpaceConstraint(c2);
-			}
-			else
-				j++;
-		}
-		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOM){
-			ConstraintSubjectSubjectTagPreferredRoom* c=(ConstraintSubjectSubjectTagPreferredRoom*)ctr;
-			if(c->roomName==roomName)
-				this->removeSpaceConstraint(ctr);
-			else
-				j++;
-		}
-		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS){
-			ConstraintSubjectSubjectTagPreferredRooms* c=(ConstraintSubjectSubjectTagPreferredRooms*)ctr;
-			int t=c->roomsNames.remove(roomName);
-			assert(t<=1);
-			if(t==1 && c->roomsNames.count()==0)
-				this->removeSpaceConstraint(ctr);
-			else if(t==1 && c->roomsNames.count()==1){
-				ConstraintSubjectSubjectTagPreferredRoom* c2=new ConstraintSubjectSubjectTagPreferredRoom
-				 (c->weight, c->compulsory, c->subjectName, c->subjectTagName, c->roomsNames.at(0));
+				 (c->weightPercentage, c->activityId, c->roomsNames.at(0));
 
 				QMessageBox::information(NULL, QObject::tr("FET information"), 
 				 QObject::tr("The constraint\n%1 will be modified into constraint\n%2 because"
@@ -3030,7 +2026,7 @@ bool Rules::removeRoom(const QString& roomName)
 				this->removeSpaceConstraint(ctr);
 			else if(t==1 && c->roomsNames.count()==1){
 				ConstraintSubjectPreferredRoom* c2=new ConstraintSubjectPreferredRoom
-				 (c->weight, c->compulsory, c->subjectName, c->roomsNames.at(0));
+				 (c->weightPercentage, c->subjectName, c->roomsNames.at(0));
 
 				QMessageBox::information(NULL, QObject::tr("FET information"), 
 				 QObject::tr("The constraint\n%1 will be modified into constraint\n%2 because"
@@ -3054,7 +2050,7 @@ bool Rules::removeRoom(const QString& roomName)
 	return true;
 }
 
-bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomName, const QString& type, const QString& building, int capacity)
+bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomName/*, const QString& type, const QString& building*/, int capacity)
 {
 	int i=this->searchRoom(initialRoomName);
 	if(i<0)
@@ -3063,46 +2059,12 @@ bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomN
 	Room* searchedRoom=this->roomsList[i];
 	assert(searchedRoom->name==initialRoomName);
 
-	//Removing useless ConstraintRoomTypeNotAllowedSubjects
-	//Firstly, check whether the type of this room exists at another room
-	bool typeExisting=false;
-	
-	for(int j=0; j<this->roomsList.size(); j++){
-		Room* rm=this->roomsList[j];
-		if(rm->name!=searchedRoom->name && rm->type==searchedRoom->type){
-			typeExisting=true;
-			break;
-		}
-	}
-		
-	if(searchedRoom->type==type) //type unchanged, keep the constraints
-		typeExisting=true;
-
 	for(int j=0; j<this->spaceConstraintsList.size(); ){
 		SpaceConstraint* ctr=this->spaceConstraintsList[j];
-		if(!typeExisting && ctr->type==CONSTRAINT_ROOM_TYPE_NOT_ALLOWED_SUBJECTS){
-			ConstraintRoomTypeNotAllowedSubjects* crtas=(ConstraintRoomTypeNotAllowedSubjects*)ctr;
-			if(crtas->roomType==searchedRoom->type)
-				this->removeSpaceConstraint(ctr);
-			else
-				j++;
-		}
-		else if(ctr->type==CONSTRAINT_ROOM_NOT_AVAILABLE){
+		if(ctr->type==CONSTRAINT_ROOM_NOT_AVAILABLE){
 			ConstraintRoomNotAvailable* crna=(ConstraintRoomNotAvailable*)ctr;
 			if(crna->roomName==initialRoomName)
 				crna->roomName=finalRoomName;
-			j++;
-		}
-		else if(ctr->type==CONSTRAINT_TEACHER_REQUIRES_ROOM){
-			ConstraintTeacherRequiresRoom* c=(ConstraintTeacherRequiresRoom*)ctr;
-			if(c->roomName==initialRoomName)
-				c->roomName=finalRoomName;
-			j++;
-		}
-		else if(ctr->type==CONSTRAINT_TEACHER_SUBJECT_REQUIRE_ROOM){
-			ConstraintTeacherSubjectRequireRoom* c=(ConstraintTeacherSubjectRequireRoom*)ctr;
-			if(c->roomName==initialRoomName)
-				c->roomName=finalRoomName;
 			j++;
 		}
 		else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
@@ -3113,24 +2075,6 @@ bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomN
 		}
 		else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOMS){
 			ConstraintActivityPreferredRooms* c=(ConstraintActivityPreferredRooms*)ctr;
-			int t=0;
-			for(QStringList::Iterator it=c->roomsNames.begin(); it!=c->roomsNames.end(); it++){
-				if((*it)==initialRoomName){
-					*it=finalRoomName;
-					t++;
-				}
-			}
-			assert(t<=1);
-			j++;
-		}
-		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOM){
-			ConstraintSubjectSubjectTagPreferredRoom* c=(ConstraintSubjectSubjectTagPreferredRoom*)ctr;
-			if(c->roomName==initialRoomName)
-				c->roomName=finalRoomName;
-			j++;
-		}
-		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS){
-			ConstraintSubjectSubjectTagPreferredRooms* c=(ConstraintSubjectSubjectTagPreferredRooms*)ctr;
 			int t=0;
 			for(QStringList::Iterator it=c->roomsNames.begin(); it!=c->roomsNames.end(); it++){
 				if((*it)==initialRoomName){
@@ -3164,8 +2108,6 @@ bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomN
 	}
 
 	searchedRoom->name=finalRoomName;
-	searchedRoom->type=type;
-	searchedRoom->building=building;
 	searchedRoom->capacity=capacity;
 
 	this->internalStructureComputed=false;
@@ -3774,7 +2716,10 @@ bool Rules::read(const QString& filename)
 			xmlReadingLog+="  Added "+QString::number(na)+" activities\n";
 		}
 		else if(elem2.tagName()=="Equipments_List"){
-			int tmp=0;
+		 	QMessageBox::warning(NULL, QObject::tr("FET warning"),
+			 QObject::tr("File contains deprecated equipments list - will be ignored\n"));
+		
+			/*int tmp=0;
 			for(QDomNode node3=elem2.firstChild(); !node3.isNull(); node3=node3.nextSibling()){
 				QDomElement elem3=node3.toElement();
 				if(elem3.isNull()){
@@ -3805,9 +2750,12 @@ bool Rules::read(const QString& filename)
 				}
 			}
 			assert(tmp==this->equipmentsList.size());
-			xmlReadingLog+="  Added "+QString::number(tmp)+" equipments\n";
+			xmlReadingLog+="  Added "+QString::number(tmp)+" equipments\n";*/
 		}
 		else if(elem2.tagName()=="Buildings_List"){
+		 	QMessageBox::warning(NULL, QObject::tr("FET warning"),
+			 QObject::tr("File contains deprecated buildings list - will be ignored\n"));
+			/*
 			int tmp=0;
 			for(QDomNode node3=elem2.firstChild(); !node3.isNull(); node3=node3.nextSibling()){
 				QDomElement elem3=node3.toElement();
@@ -3839,7 +2787,7 @@ bool Rules::read(const QString& filename)
 				}
 			}
 			assert(tmp==this->buildingsList.size());
-			xmlReadingLog+="  Added "+QString::number(tmp)+" buildings\n";
+			xmlReadingLog+="  Added "+QString::number(tmp)+" buildings\n";*/
 		}
 		else if(elem2.tagName()=="Rooms_List"){
 			int tmp=0;
@@ -3853,9 +2801,9 @@ bool Rules::read(const QString& filename)
 				if(elem3.tagName()=="Room"){
 					Room* rm=new Room();
 					rm->name="";
-					rm->type="";
+					//rm->type="";
 					rm->capacity=1000; //infinite, if not specified
-					rm->building="";
+					//rm->building="";
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -3868,20 +2816,20 @@ bool Rules::read(const QString& filename)
 							xmlReadingLog+="    Read room name: "+rm->name+"\n";
 						}
 						else if(elem4.tagName()=="Type"){
-							rm->type=elem4.text();
-							xmlReadingLog+="    Read room type: "+rm->type+"\n";
+							//rm->type=elem4.text();
+							xmlReadingLog+="    Ignoring old tag room type:\n";
 						}
 						else if(elem4.tagName()=="Capacity"){
 							rm->capacity=elem4.text().toInt();
 							xmlReadingLog+="    Read room capacity: "+QString::number(rm->capacity)+"\n";
 						}
 						else if(elem4.tagName()=="Equipment"){
-							rm->addEquipment(elem4.text());
-							xmlReadingLog+="    Read room equipment: "+elem4.text()+"\n";
+							//rm->addEquipment(elem4.text());
+							xmlReadingLog+="    Ignoring old tag - room equipment:\n";
 						}
 						else if(elem4.tagName()=="Building"){
-							rm->building=elem4.text();
-							xmlReadingLog+="    Read room building: "+elem4.text()+"\n";
+							//rm->building=elem4.text();
+							xmlReadingLog+="    Ignoring old tag - room building:\n";
 						}
 					}
 					bool tmp2=this->addRoom(rm);
@@ -5701,8 +4649,31 @@ bool Rules::read(const QString& filename)
 							xmlReadingLog+="    Null node here\n";
 							continue;
 						}
+
 						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+
 						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						/*if(elem4.tagName()=="Weight"){
 							cn->weight=elem4.text().toDouble();
 							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
 						}
@@ -5715,7 +4686,7 @@ bool Rules::read(const QString& filename)
 								cn->compulsory=false;
 								xmlReadingLog+="    Current constraint is not compulsory\n";
 							}
-						}
+						}*/
 					}
 					crt_constraint=cn;
 				}
@@ -5729,6 +4700,27 @@ bool Rules::read(const QString& filename)
 						}
 						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
 						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						/*if(elem4.tagName()=="Weight"){
 							cn->weight=elem4.text().toDouble();
 							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
 						}
@@ -5741,7 +4733,7 @@ bool Rules::read(const QString& filename)
 								cn->compulsory=false;
 								xmlReadingLog+="    Current constraint is not compulsory\n";
 							}
-						}
+						}*/
 						else if(elem4.tagName()=="Room_Name"){
 							cn->roomName=elem4.text();
 							xmlReadingLog+="    Read room name="+cn->roomName+"\n";
@@ -5770,8 +4762,17 @@ bool Rules::read(const QString& filename)
 					}
 					crt_constraint=cn;
 				}
-				if(elem3.tagName()=="ConstraintRoomTypeNotAllowedSubjects"){
-					ConstraintRoomTypeNotAllowedSubjects* cn=new ConstraintRoomTypeNotAllowedSubjects();
+				if(elem3.tagName()=="ConstraintRoomTypeNotAllowedSubjects" && !skipDeprecatedConstraints){
+				
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("File contains deprecated constraint room type not allowed subjects - will be ignored\n"),
+					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 1, 0);
+					 
+					if(t==0)
+						skipDeprecatedConstraints=true;
+				
+					/*ConstraintRoomTypeNotAllowedSubjects* cn=new ConstraintRoomTypeNotAllowedSubjects();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -5802,10 +4803,20 @@ bool Rules::read(const QString& filename)
 							xmlReadingLog+="    Read not allowed subject="+elem4.text()+"\n";
 						}
 					}
-					crt_constraint=cn;
+					crt_constraint=cn;*/
+					crt_constraint=NULL;
 				}
-				if(elem3.tagName()=="ConstraintSubjectRequiresEquipments"){
-					ConstraintSubjectRequiresEquipments* cn=new ConstraintSubjectRequiresEquipments();
+				if(elem3.tagName()=="ConstraintSubjectRequiresEquipments" && !skipDeprecatedConstraints){
+				
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("File contains deprecated constraint subject requires equipments - will be ignored\n"),
+					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 1, 0);
+					 
+					if(t==0)
+						skipDeprecatedConstraints=true;
+				
+					/*ConstraintSubjectRequiresEquipments* cn=new ConstraintSubjectRequiresEquipments();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -5836,10 +4847,20 @@ bool Rules::read(const QString& filename)
 							xmlReadingLog+="    Read required equipment="+elem4.text()+"\n";
 						}
 					}
-					crt_constraint=cn;
+					crt_constraint=cn;*/
+					crt_constraint=NULL;
 				}
-				if(elem3.tagName()=="ConstraintSubjectSubjectTagRequireEquipments"){
-					ConstraintSubjectSubjectTagRequireEquipments* cn=new ConstraintSubjectSubjectTagRequireEquipments();
+				if(elem3.tagName()=="ConstraintSubjectSubjectTagRequireEquipments" && !skipDeprecatedConstraints){
+				
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("File contains deprecated constraint subject tag requires equipments - will be ignored\n"),
+					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 1, 0);
+					 
+					if(t==0)
+						skipDeprecatedConstraints=true;
+				
+					/*ConstraintSubjectSubjectTagRequireEquipments* cn=new ConstraintSubjectSubjectTagRequireEquipments();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -5874,10 +4895,20 @@ bool Rules::read(const QString& filename)
 							xmlReadingLog+="    Read required equipment="+elem4.text()+"\n";
 						}
 					}
-					crt_constraint=cn;
+					crt_constraint=cn;*/
+					crt_constraint=NULL;
 				}
-				if(elem3.tagName()=="ConstraintTeacherRequiresRoom"){
-					ConstraintTeacherRequiresRoom* cn=new ConstraintTeacherRequiresRoom();
+				if(elem3.tagName()=="ConstraintTeacherRequiresRoom" && !skipDeprecatedConstraints){
+				
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("File contains deprecated constraint teacher requires room - will be ignored\n"),
+					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 1, 0);
+					 
+					if(t==0)
+						skipDeprecatedConstraints=true;
+				
+					/*ConstraintTeacherRequiresRoom* cn=new ConstraintTeacherRequiresRoom();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -5909,9 +4940,20 @@ bool Rules::read(const QString& filename)
 						}
 					}
 					crt_constraint=cn;
+					*/
+					crt_constraint=NULL;
 				}
-				if(elem3.tagName()=="ConstraintTeacherSubjectRequireRoom"){
-					ConstraintTeacherSubjectRequireRoom* cn=new ConstraintTeacherSubjectRequireRoom();
+				if(elem3.tagName()=="ConstraintTeacherSubjectRequireRoom" && !skipDeprecatedConstraints){
+				
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("File contains deprecated constraint teacher subject require room - will be ignored\n"),
+					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 1, 0);
+					 
+					if(t==0)
+						skipDeprecatedConstraints=true;
+				
+					/*ConstraintTeacherSubjectRequireRoom* cn=new ConstraintTeacherSubjectRequireRoom();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -5946,10 +4988,20 @@ bool Rules::read(const QString& filename)
 							xmlReadingLog+="    Read room="+elem4.text()+"\n";
 						}
 					}
-					crt_constraint=cn;
+					crt_constraint=cn;*/
+					crt_constraint=NULL;
 				}
-				if(elem3.tagName()=="ConstraintMinimizeNumberOfRoomsForStudents"){
-					ConstraintMinimizeNumberOfRoomsForStudents* cn=new ConstraintMinimizeNumberOfRoomsForStudents();
+				if(elem3.tagName()=="ConstraintMinimizeNumberOfRoomsForStudents" && !skipDeprecatedConstraints){
+				
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("File contains deprecated constraint minimize number of rooms for students - will be ignored\n"),
+					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 1, 0);
+					 
+					if(t==0)
+						skipDeprecatedConstraints=true;
+				
+					/*ConstraintMinimizeNumberOfRoomsForStudents* cn=new ConstraintMinimizeNumberOfRoomsForStudents();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -5972,10 +5024,20 @@ bool Rules::read(const QString& filename)
 							}
 						}
 					}
-					crt_constraint=cn;
+					crt_constraint=cn;*/
+					crt_constraint=NULL;
 				}
-				if(elem3.tagName()=="ConstraintMinimizeNumberOfRoomsForTeachers"){
-					ConstraintMinimizeNumberOfRoomsForTeachers* cn=new ConstraintMinimizeNumberOfRoomsForTeachers();
+				if(elem3.tagName()=="ConstraintMinimizeNumberOfRoomsForTeachers" && !skipDeprecatedConstraints){
+				
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("File contains deprecated constraint minimize number of rooms for teachers - will be ignored\n"),
+					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 1, 0);
+					 
+					if(t==0)
+						skipDeprecatedConstraints=true;
+				
+					/*ConstraintMinimizeNumberOfRoomsForTeachers* cn=new ConstraintMinimizeNumberOfRoomsForTeachers();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -5998,7 +5060,8 @@ bool Rules::read(const QString& filename)
 							}
 						}
 					}
-					crt_constraint=cn;
+					crt_constraint=cn;*/
+					crt_constraint=NULL;
 				}
 				if(elem3.tagName()=="ConstraintActivityPreferredRoom"){
 					ConstraintActivityPreferredRoom* cn=new ConstraintActivityPreferredRoom();
@@ -6010,6 +5073,27 @@ bool Rules::read(const QString& filename)
 						}
 						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
 						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						/*if(elem4.tagName()=="Weight"){
 							cn->weight=elem4.text().toDouble();
 							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
 						}
@@ -6022,7 +5106,7 @@ bool Rules::read(const QString& filename)
 								cn->compulsory=false;
 								xmlReadingLog+="    Current constraint is not compulsory\n";
 							}
-						}
+						}*/
 						else if(elem4.tagName()=="Activity_Id"){
 							cn->activityId=elem4.text().toInt();
 							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
@@ -6044,6 +5128,27 @@ bool Rules::read(const QString& filename)
 						}
 						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
 						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						/*if(elem4.tagName()=="Weight"){
 							cn->weight=elem4.text().toDouble();
 							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
 						}
@@ -6056,7 +5161,7 @@ bool Rules::read(const QString& filename)
 								cn->compulsory=false;
 								xmlReadingLog+="    Current constraint is not compulsory\n";
 							}
-						}
+						}*/
 						else if(elem4.tagName()=="Activity_Id"){
 							cn->activityId=elem4.text().toInt();
 							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
@@ -6074,8 +5179,17 @@ bool Rules::read(const QString& filename)
 					assert(cn->_n_preferred_rooms==cn->roomsNames.count());
 					crt_constraint=cn;
 				}
-				if(elem3.tagName()=="ConstraintActivitiesSameRoom"){
-					ConstraintActivitiesSameRoom* cn=new ConstraintActivitiesSameRoom();
+				if(elem3.tagName()=="ConstraintActivitiesSameRoom" && !skipDeprecatedConstraints){
+				
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("File contains deprecated constraint activities same room - will be ignored\n"),
+					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 1, 0);
+					 
+					if(t==0)
+						skipDeprecatedConstraints=true;
+				
+					/*ConstraintActivitiesSameRoom* cn=new ConstraintActivitiesSameRoom();
 					int n_act=0;
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
@@ -6109,10 +5223,20 @@ bool Rules::read(const QString& filename)
 						}
 					}
 					assert(cn->n_activities==n_act);
-					crt_constraint=cn;
+					crt_constraint=cn;*/
+					crt_constraint=NULL;
 				}
-				if(elem3.tagName()=="ConstraintSubjectSubjectTagPreferredRoom"){
-					ConstraintSubjectSubjectTagPreferredRoom* cn=new ConstraintSubjectSubjectTagPreferredRoom();
+				if(elem3.tagName()=="ConstraintSubjectSubjectTagPreferredRoom" && !skipDeprecatedConstraints){
+				
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("File contains deprecated constraint subject subject tag preferred room - will be ignored\n"),
+					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 1, 0);
+					 
+					if(t==0)
+						skipDeprecatedConstraints=true;
+				
+					/*ConstraintSubjectSubjectTagPreferredRoom* cn=new ConstraintSubjectSubjectTagPreferredRoom();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -6147,10 +5271,20 @@ bool Rules::read(const QString& filename)
 							xmlReadingLog+="    Read room="+cn->roomName+"\n";
 						}
 					}
-					crt_constraint=cn;
+					crt_constraint=cn;*/
+					crt_constraint=NULL;
 				}
-				if(elem3.tagName()=="ConstraintSubjectSubjectTagPreferredRooms"){
-					ConstraintSubjectSubjectTagPreferredRooms* cn=new ConstraintSubjectSubjectTagPreferredRooms();
+				if(elem3.tagName()=="ConstraintSubjectSubjectTagPreferredRooms" && !skipDeprecatedConstraints){
+				
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("File contains deprecated constraint subject subject tag preferred rooms - will be ignored\n"),
+					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 1, 0);
+					 
+					if(t==0)
+						skipDeprecatedConstraints=true;
+				
+					/*ConstraintSubjectSubjectTagPreferredRooms* cn=new ConstraintSubjectSubjectTagPreferredRooms();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -6192,6 +5326,8 @@ bool Rules::read(const QString& filename)
 					}
 					assert(cn->_n_preferred_rooms==cn->roomsNames.count());
 					crt_constraint=cn;
+					*/
+					crt_constraint=NULL;
 				}
 				if(elem3.tagName()=="ConstraintSubjectPreferredRoom"){
 					ConstraintSubjectPreferredRoom* cn=new ConstraintSubjectPreferredRoom();
@@ -6203,6 +5339,27 @@ bool Rules::read(const QString& filename)
 						}
 						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
 						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						/*if(elem4.tagName()=="Weight"){
 							cn->weight=elem4.text().toDouble();
 							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
 						}
@@ -6215,7 +5372,7 @@ bool Rules::read(const QString& filename)
 								cn->compulsory=false;
 								xmlReadingLog+="    Current constraint is not compulsory\n";
 							}
-						}
+						}*/
 						else if(elem4.tagName()=="Subject"){
 							cn->subjectName=elem4.text();
 							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
@@ -6237,6 +5394,27 @@ bool Rules::read(const QString& filename)
 						}
 						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
 						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						/*if(elem4.tagName()=="Weight"){
 							cn->weight=elem4.text().toDouble();
 							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
 						}
@@ -6249,7 +5427,7 @@ bool Rules::read(const QString& filename)
 								cn->compulsory=false;
 								xmlReadingLog+="    Current constraint is not compulsory\n";
 							}
-						}
+						}*/
 						else if(elem4.tagName()=="Subject"){
 							cn->subjectName=elem4.text();
 							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
@@ -6267,8 +5445,17 @@ bool Rules::read(const QString& filename)
 					assert(cn->_n_preferred_rooms==cn->roomsNames.count());
 					crt_constraint=cn;
 				}
-				if(elem3.tagName()=="ConstraintMaxBuildingChangesPerDayForTeachers"){
-					ConstraintMaxBuildingChangesPerDayForTeachers* cn=new ConstraintMaxBuildingChangesPerDayForTeachers();
+				if(elem3.tagName()=="ConstraintMaxBuildingChangesPerDayForTeachers" && !skipDeprecatedConstraints){
+				
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("File contains deprecated constraint max building changes per day for teachers - will be ignored\n"),
+					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 1, 0);
+					 
+					if(t==0)
+						skipDeprecatedConstraints=true;
+				
+					/*ConstraintMaxBuildingChangesPerDayForTeachers* cn=new ConstraintMaxBuildingChangesPerDayForTeachers();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -6295,10 +5482,20 @@ bool Rules::read(const QString& filename)
 							xmlReadingLog+="    Adding max building changes="+QString::number(cn->maxBuildingChanges)+"\n";
 						}
 					}
-					crt_constraint=cn;
+					crt_constraint=cn;*/
+					crt_constraint=NULL;
 				}
-				if(elem3.tagName()=="ConstraintMaxBuildingChangesPerDayForStudents"){
-					ConstraintMaxBuildingChangesPerDayForStudents* cn=new ConstraintMaxBuildingChangesPerDayForStudents();
+				if(elem3.tagName()=="ConstraintMaxBuildingChangesPerDayForStudents" && !skipDeprecatedConstraints){
+				
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("File contains deprecated constraint max building changes per day for students - will be ignored\n"),
+					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 1, 0);
+					 
+					if(t==0)
+						skipDeprecatedConstraints=true;
+				
+					/*ConstraintMaxBuildingChangesPerDayForStudents* cn=new ConstraintMaxBuildingChangesPerDayForStudents();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -6325,10 +5522,20 @@ bool Rules::read(const QString& filename)
 							xmlReadingLog+="    Adding max building changes="+QString::number(cn->maxBuildingChanges)+"\n";
 						}
 					}
-					crt_constraint=cn;
+					crt_constraint=cn;*/
+					crt_constraint=NULL;
 				}
-				if(elem3.tagName()=="ConstraintMaxRoomChangesPerDayForTeachers"){
-					ConstraintMaxRoomChangesPerDayForTeachers* cn=new ConstraintMaxRoomChangesPerDayForTeachers();
+				if(elem3.tagName()=="ConstraintMaxRoomChangesPerDayForTeachers" && !skipDeprecatedConstraints){
+				
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("File contains deprecated constraint max room changes per day for teachers - will be ignored\n"),
+					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 1, 0);
+					 
+					if(t==0)
+						skipDeprecatedConstraints=true;
+				
+					/*ConstraintMaxRoomChangesPerDayForTeachers* cn=new ConstraintMaxRoomChangesPerDayForTeachers();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -6355,10 +5562,20 @@ bool Rules::read(const QString& filename)
 							xmlReadingLog+="    Adding max room changes="+QString::number(cn->maxRoomChanges)+"\n";
 						}
 					}
-					crt_constraint=cn;
+					crt_constraint=cn;*/
+					crt_constraint=NULL;
 				}
-				if(elem3.tagName()=="ConstraintMaxRoomChangesPerDayForStudents"){
-					ConstraintMaxRoomChangesPerDayForStudents* cn=new ConstraintMaxRoomChangesPerDayForStudents();
+				if(elem3.tagName()=="ConstraintMaxRoomChangesPerDayForStudents" && !skipDeprecatedConstraints){
+				
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("File contains deprecated constraint max room changes per day for students - will be ignored\n"),
+					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 1, 0);
+					 
+					if(t==0)
+						skipDeprecatedConstraints=true;
+				
+					/*ConstraintMaxRoomChangesPerDayForStudents* cn=new ConstraintMaxRoomChangesPerDayForStudents();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -6385,18 +5602,21 @@ bool Rules::read(const QString& filename)
 							xmlReadingLog+="    Adding max room changes="+QString::number(cn->maxRoomChanges)+"\n";
 						}
 					}
-					crt_constraint=cn;
+					crt_constraint=cn;*/
+					crt_constraint=NULL;
 				}
 
-				assert(crt_constraint!=NULL);
-				bool tmp=this->addSpaceConstraint(crt_constraint);
-				if(!tmp){
-					QMessageBox::warning(NULL, QObject::tr("FET information"),
-					 QObject::tr("Constraint\n%1\nnot added - must be a duplicate").
-					 arg(crt_constraint->getDetailedDescription(*this)));
-					delete crt_constraint;
+				if(crt_constraint!=NULL){
+					assert(crt_constraint!=NULL);
+					bool tmp=this->addSpaceConstraint(crt_constraint);
+					if(!tmp){
+						QMessageBox::warning(NULL, QObject::tr("FET information"),
+						 QObject::tr("Constraint\n%1\nnot added - must be a duplicate").
+						 arg(crt_constraint->getDetailedDescription(*this)));
+						delete crt_constraint;
+					}
+					nc++;
 				}
-				nc++;
 			}
 			xmlReadingLog+="  Added "+QString::number(nc)+" space constraints\n";
 		}
@@ -6487,20 +5707,6 @@ void Rules::write(const QString& filename)
 		s += "\n";
 	}
 	s += "</Activities_List>\n\n";
-
-	//equipments list
-	s += "<Equipments_List>\n";
-	for(int i=0; i<this->equipmentsList.size(); i++){
-		Equipment* eq=this->equipmentsList[i];
-		s += eq->getXmlDescription();
-	}
-	s += "</Equipments_List>\n\n";
-
-	//buildings list
-	s += "<Buildings_List>\n";
-	for(int i=0; i<this->buildingsList.size(); i++)
-		s+=this->buildingsList.at(i)->getXmlDescription();
-	s += "</Buildings_List>\n\n";
 
 	//rooms list
 	s += "<Rooms_List>\n";

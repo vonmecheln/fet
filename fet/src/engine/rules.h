@@ -23,7 +23,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #ifndef RULES_H
 #define RULES_H
 
-#include "genetictimetable_defs.h"
+#include "timetable_defs.h"
 #include "timeconstraint.h"
 #include "spaceconstraint.h"
 #include "activity.h"
@@ -31,8 +31,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include "teacher.h"
 #include "subject.h"
 #include "subjecttag.h"
-#include "equipment.h"
-#include "building.h"
 #include "room.h"
 
 #include <qstring.h>
@@ -111,16 +109,6 @@ public:
 	ActivitiesList activitiesList;
 
 	/**
-	The list of equipments
-	*/
-	EquipmentsList equipmentsList;
-
-	/**
-	The list of buildings
-	*/
-	BuildingsList buildingsList;
-
-	/**
 	The list of rooms
 	*/
 	RoomsList roomsList;
@@ -140,14 +128,14 @@ public:
 	for some activities.
 	-1 means that this activity has no fixed day
 	*/
-	int16 fixedDay[MAX_ACTIVITIES];
+	qint16 fixedDay[MAX_ACTIVITIES];
 	
 	/**
 	This is the array which specifies a fixed hour
 	for some activities.
 	-1 means that this activity has no fixed hour
 	*/
-	int16 fixedHour[MAX_ACTIVITIES];
+	qint16 fixedHour[MAX_ACTIVITIES];
 	
 	/**
 	This array specifies, for each activity (1), a reference to
@@ -170,7 +158,7 @@ public:
 	for some activities.
 	-1 means that this activity has no fixed room
 	*/
-	int16 fixedRoom[MAX_ACTIVITIES];
+	qint16 fixedRoom[MAX_ACTIVITIES];
 	
 	/**
 	This array specifies, for each activity (1), a reference to
@@ -224,12 +212,6 @@ public:
 	int nInternalActivities;
 	Activity internalActivitiesList[MAX_ACTIVITIES];
 
-	int nInternalEquipments;
-	Equipment* internalEquipmentsList[MAX_EQUIPMENTS];
-
-	int nInternalBuildings;
-	Building* internalBuildingsList[MAX_BUILDINGS];
-
 	int nInternalRooms;
 	Room* internalRoomsList[MAX_ROOMS];
 
@@ -238,8 +220,6 @@ public:
 
 	int nInternalSpaceConstraints;
 	SpaceConstraint* internalSpaceConstraintsList[MAX_SPACE_CONSTRAINTS];
-
-	bool roomHasEquipment[MAX_ROOMS][MAX_EQUIPMENTS];
 
 	////////////////////////////////////////////////////////////////////////
 
@@ -541,62 +521,6 @@ public:
 		int nTotalStudents);
 
 	/**
-	Adds a new equipment (already allocated).
-	Returns true on success, false for already existing equipments (same name).
-	*/
-	bool addEquipment(Equipment* eq);
-
-	/**
-	Returns -1 if not found or the index in the equipments list if found.
-	*/
-	int searchEquipment(const QString& equipmentName);
-
-	/**
-	Removes the equipment with this name.
-	Returns true on success, false on failure (not found).
-	*/
-	bool removeEquipment(const QString& equipmentName);
-	
-	/**
-	Modifies (renames) this equipment and takes care of all related constraints.
-	Returns true on success, false on failure (if not found)
-	*/
-	bool modifyEquipment(const QString& initialEquipmentName, const QString& finalEquipmentName);
-
-	/**
-	A function to sort the equipments alphabetically
-	*/
-	void sortEquipmentsAlphabetically();
-
-	/**
-	Adds a new building (already allocated).
-	Returns true on success, false for already existing building (same name).
-	*/
-	bool addBuilding(Building* bu);
-
-	/**
-	Returns -1 if not found or the index in the buildings list if found.
-	*/
-	int searchBuilding(const QString& buildingName);
-
-	/**
-	Removes the building with this name.
-	Returns true on success, false on failure (not found).
-	*/
-	bool removeBuilding(const QString& buildingName);
-	
-	/**
-	Modifies (renames) this building and takes care of all related constraints.
-	Returns true on success, false on failure (if not found)
-	*/
-	bool modifyBuilding(const QString& initialBuildingName, const QString& finalBuildingName);
-
-	/**
-	A function to sort the buildings alphabetically
-	*/
-	void sortBuildingsAlphabetically();
-
-	/**
 	Adds a new room (already allocated).
 	Returns true on success, false for already existing rooms (same name).
 	*/
@@ -616,9 +540,8 @@ public:
 	/**
 	Modifies this room and takes care of all related constraints.
 	Returns true on success, false on failure (if not found)
-	It does not alter the list of equipments.
 	*/
-	bool modifyRoom(const QString& initialRoomName, const QString& finalRoomName, const QString& type, const QString& building, int capacity);
+	bool modifyRoom(const QString& initialRoomName, const QString& finalRoomName, int capacity);
 
 	/**
 	A function to sort the room alphabetically, by name

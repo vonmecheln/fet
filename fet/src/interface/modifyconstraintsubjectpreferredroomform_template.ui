@@ -19,28 +19,6 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLineEdit" row="5" column="2">
-            <property name="name">
-                <cstring>weightLineEdit</cstring>
-            </property>
-            <property name="text">
-                <string>1.0</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="4" column="1" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>weightTextLabel</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
-            </property>
-            <property name="text">
-                <string>Weight (recommended: 1.0)</string>
-            </property>
-        </widget>
         <widget class="QPushButton" row="6" column="0">
             <property name="name">
                 <cstring>okPushButton</cstring>
@@ -49,7 +27,7 @@
                 <string>Ok</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="6" column="2">
+        <widget class="QPushButton" row="6" column="1">
             <property name="name">
                 <cstring>cancelPushButton</cstring>
             </property>
@@ -57,18 +35,7 @@
                 <string>Cancel</string>
             </property>
         </widget>
-        <widget class="QCheckBox" row="4" column="0" rowspan="2" colspan="1">
-            <property name="name">
-                <cstring>compulsoryCheckBox</cstring>
-            </property>
-            <property name="text">
-                <string>Compulsory</string>
-            </property>
-            <property name="checked">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QLabel" row="2" column="0" rowspan="1" colspan="2">
+        <widget class="QLabel" row="2" column="0">
             <property name="name">
                 <cstring>roomsTextLabel</cstring>
             </property>
@@ -85,12 +52,12 @@
                 <cstring>roomsComboBox</cstring>
             </property>
         </widget>
-        <widget class="QComboBox" row="3" column="0" rowspan="1" colspan="3">
+        <widget class="QComboBox" row="3" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>roomsComboBox</cstring>
             </property>
         </widget>
-        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+        <widget class="QLabel" row="0" column="0">
             <property name="name">
                 <cstring>subjectsTextLabel</cstring>
             </property>
@@ -107,9 +74,31 @@
                 <cstring>roomsComboBox</cstring>
             </property>
         </widget>
-        <widget class="QComboBox" row="1" column="0" rowspan="1" colspan="3">
+        <widget class="QComboBox" row="1" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>subjectsComboBox</cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="4" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>weightTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Weight percentage (recommended: 0%-100%)</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit" row="5" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>weightLineEdit</cstring>
+            </property>
+            <property name="text">
+                <string>-1</string>
             </property>
         </widget>
     </grid>

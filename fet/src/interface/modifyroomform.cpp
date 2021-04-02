@@ -24,7 +24,7 @@
 
 #include <QMessageBox>
 
-ModifyRoomForm::ModifyRoomForm(const QString& initialRoomName, const QString& initialRoomType, const QString& initialRoomBuilding, int initialRoomCapacity)
+ModifyRoomForm::ModifyRoomForm(const QString& initialRoomName/*, const QString& initialRoomType, const QString& initialRoomBuilding*/, int initialRoomCapacity)
 {
 	//setWindowFlags(Qt::Window);
 	setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
@@ -34,15 +34,15 @@ ModifyRoomForm::ModifyRoomForm(const QString& initialRoomName, const QString& in
 	move(xx, yy);
 
 	this->_initialRoomName=initialRoomName;
-	this->_initialRoomType=initialRoomType;
-	this->_initialRoomBuilding=initialRoomBuilding;
+	//this->_initialRoomType=initialRoomType;
+	//this->_initialRoomBuilding=initialRoomBuilding;
 	this->_initialRoomCapacity=initialRoomCapacity;
 	capacitySpinBox->setValue(initialRoomCapacity);
 	nameLineEdit->setText(initialRoomName);
 	nameLineEdit->selectAll();
 	nameLineEdit->setFocus();
 	
-	typesComboBox->clear();
+	/*typesComboBox->clear();
 	typesComboBox->setDuplicatesEnabled(false);
 	int i=0, j=-1;
 	for(int ri=0; ri<gt.rules.roomsList.size(); ri++){
@@ -75,7 +75,7 @@ ModifyRoomForm::ModifyRoomForm(const QString& initialRoomName, const QString& in
 			j=i;
 	}
 	assert(j>=0);
-	buildingsComboBox->setCurrentItem(j);
+	buildingsComboBox->setCurrentItem(j);*/
 }
 
 ModifyRoomForm::~ModifyRoomForm()
@@ -93,20 +93,20 @@ void ModifyRoomForm::ok()
 		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Incorrect name"));
 		return;
 	}
-	if(typesComboBox->currentText().isEmpty()){
+	/*if(typesComboBox->currentText().isEmpty()){
 		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Incorrect type"));
 		return;
 	}
 	if(buildingsComboBox->currentItem()<0){
 		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Incorrect building"));
 		return;
-	}
+	}*/
 	if(this->_initialRoomName!=nameLineEdit->text() && gt.rules.searchRoom(nameLineEdit->text())>=0){
 		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Name existing - please choose another"));
 		return;
 	}
 	
-	bool t=gt.rules.modifyRoom(this->_initialRoomName, nameLineEdit->text(), typesComboBox->currentText(), buildingsComboBox->currentText(), capacitySpinBox->value());
+	bool t=gt.rules.modifyRoom(this->_initialRoomName, nameLineEdit->text()/*, typesComboBox->currentText(), buildingsComboBox->currentText()*/, capacitySpinBox->value());
 	assert(t);
 	
 	this->close();

@@ -13,7 +13,7 @@
 #ifndef SUBJECT_H
 #define SUBJECT_H
 
-#include "genetictimetable_defs.h"
+#include "timetable_defs.h"
 
 #include <QList>
 #include <QString>

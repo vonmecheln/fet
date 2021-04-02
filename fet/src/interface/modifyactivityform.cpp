@@ -274,10 +274,13 @@ void ModifyActivityForm::activityChanged()
 	s+=QObject::tr("Current activity:");
 	s+="\n";
 	
-	for(uint i=0; i<selectedTeachersListBox->count(); i++){
-		s+=QObject::tr("Teacher=%1").arg(selectedTeachersListBox->text(i));
-		s+="\n";
-	}
+	if(selectedTeachersListBox->count()==0)
+		s+=QObject::tr("No teachers for this activity\n");
+	else
+		for(uint i=0; i<selectedTeachersListBox->count(); i++){
+			s+=QObject::tr("Teacher=%1").arg(selectedTeachersListBox->text(i));
+			s+="\n";
+		}
 
 	s+=QObject::tr("Subject=%1").arg(subjectsComboBox->currentText());
 	s+="\n";
@@ -285,10 +288,13 @@ void ModifyActivityForm::activityChanged()
 		s+=QObject::tr("Subject tag=%1").arg(subjectTagsComboBox->currentText());
 		s+="\n";
 	}
-	for(uint i=0; i<selectedStudentsListBox->count(); i++){
-		s+=QObject::tr("Students=%1").arg(selectedStudentsListBox->text(i));
-		s+="\n";
-	}
+	if(selectedStudentsListBox->count()==0)
+		s+=QObject::tr("No students for this activity\n");
+	else
+		for(uint i=0; i<selectedStudentsListBox->count(); i++){
+			s+=QObject::tr("Students=%1").arg(selectedStudentsListBox->text(i));
+			s+="\n";
+		}
 	
 	if(nStudentsSpinBox->value()==-1){
 		s+=QObject::tr("Number of students: computed from corresponding students sets");
@@ -355,9 +361,12 @@ void ModifyActivityForm::ok()
 	//teachers
 	QStringList teachers_names;
 	if(selectedTeachersListBox->count()<=0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid teacher(s)"));
-		return;
+		int t=QMessageBox::question(this, QObject::tr("FET question"),
+		 QObject::tr("Do you really want to have the activity with no teacher(s)?"),
+		 QMessageBox::Yes, QMessageBox::Cancel);
+
+		if(t==QMessageBox::Cancel)
+			return;
 	}
 	else if(selectedTeachersListBox->count()>(uint)(MAX_TEACHERS_PER_ACTIVITY)){
 		QMessageBox::warning(this, QObject::tr("FET information"),
@@ -394,9 +403,12 @@ void ModifyActivityForm::ok()
 	//students
 	QStringList students_names;
 	if(selectedStudentsListBox->count()<=0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid students set(s)"));
-		return;
+		int t=QMessageBox::question(this, QObject::tr("FET question"),
+		 QObject::tr("Do you really want to have the activity with no student set(s)?"),
+		 QMessageBox::Yes, QMessageBox::Cancel);
+
+		if(t==QMessageBox::Cancel)
+			return;
 	}
 	else{
 		for(uint i=0; i<selectedStudentsListBox->count(); i++){

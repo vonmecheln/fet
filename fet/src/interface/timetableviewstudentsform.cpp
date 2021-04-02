@@ -16,10 +16,10 @@
  ***************************************************************************/
 
 #include "timetableviewstudentsform.h"
-#include "genetictimetable_defs.h"
-#include "genetictimetable.h"
-//#include "fetmainform.h"
+#include "timetable_defs.h"
+#include "timetable.h"
 #include "fet.h"
+#include "solution.h"
 
 #include <q3combobox.h>
 #include <qmessagebox.h>
@@ -45,7 +45,7 @@ extern bool teachers_schedule_ready;
 
 extern bool simulation_running;
 
-extern TimeChromosome best_time_chromosome;
+extern Solution best_solution;
 
 TimetableViewStudentsForm::TimetableViewStudentsForm()
 {
@@ -177,19 +177,17 @@ void TimetableViewStudentsForm::updateStudentsTimetableTable(){
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 			s="";
 			int ai=students_timetable_weekly[i][k][j]; //activity index
-			//Activity* act=gt.rules.activitiesList.at(ai);
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
 				assert(act!=NULL);
 				s+=act->subjectName + " " + act->subjectTagName;
-			}
-			ai=UNALLOCATED_ACTIVITY;
-			//ai=students_timetable_week2[i][k][j]; //activity index
-			//act=gt.rules.activitiesList.at(ai);
-			if(ai!=UNALLOCATED_ACTIVITY){
-				Activity* act=&gt.rules.internalActivitiesList[ai];
-				assert(act!=NULL);
-				s += " / " + act->subjectName + " " + act->subjectTagName;
+				
+				//int r=rooms_timetable_weekly[i][k][j];
+				int r=best_solution.rooms[ai];
+				if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
+					s+=" ";
+					s+=QObject::tr("R:")+gt.rules.internalRoomsList[r]->name;
+				}
 			}
 			studentsTimetableTable->setText(j, k, s);
 		}
@@ -234,16 +232,16 @@ void TimetableViewStudentsForm::detailActivity(int row, int col)
 		if(ai!=UNALLOCATED_ACTIVITY){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
 			assert(act!=NULL);
-			s+=act->getDetailedDescriptionWithConstraints(gt.rules);
-		}
-		//ai=students_timetable_week2[i][k][j]; //activity index
-		ai=UNALLOCATED_ACTIVITY;
-		//act=gt.rules.activitiesList.at(ai);
-		if(ai!=UNALLOCATED_ACTIVITY){
-			Activity* act=&gt.rules.internalActivitiesList[ai];
-			assert(act!=NULL);
-			s+="/\n";
-			s+=act->getDetailedDescriptionWithConstraints(gt.rules);
+			//s+=act->getDetailedDescriptionWithConstraints(gt.rules);
+			s+=act->getDetailedDescription(gt.rules);
+
+			//int r=rooms_timetable_weekly[i][k][j];
+			int r=best_solution.rooms[ai];
+			if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
+				s+="\n";
+				s+=QObject::tr("Room: ")+gt.rules.internalRoomsList[r]->name;
+				s+="\n";
+			}
 		}
 	}
 	detailsTextEdit->setText(s);
@@ -275,7 +273,7 @@ void TimetableViewStudentsForm::lock()
 	groupname = groupsListBox->currentText();
 	subgroupname = subgroupsListBox->currentText();
 
-	TimeChromosome* tc=&best_time_chromosome;
+	Solution* tc=&best_solution;
 
 	StudentsSubgroup* sts=(StudentsSubgroup*)gt.rules.searchStudentsSet(subgroupname);
 	assert(sts);
@@ -290,27 +288,6 @@ void TimetableViewStudentsForm::lock()
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 			if(studentsTimetableTable->isSelected(j, k)){
 				int ai=students_timetable_weekly[i][k][j];
-				if(ai!=UNALLOCATED_ACTIVITY){
-					int time=tc->times[ai];
-					int hour=time/gt.rules.nDaysPerWeek;
-					int day=time%gt.rules.nDaysPerWeek;
-					//Activity* act=gt.rules.activitiesList.at(ai);
-					Activity* act=&gt.rules.internalActivitiesList[ai];
-					//ConstraintActivityPreferredTime* ctr=new ConstraintActivityPreferredTime(1, true, act->id, day, hour);
-					ConstraintActivityPreferredTime* ctr=new ConstraintActivityPreferredTime(100.0, act->id, day, hour);
-					bool t=gt.rules.addTimeConstraint(ctr);
-					if(t)
-						QMessageBox::information(this, QObject::tr("FET information"), 
-						 QObject::tr("Added the following constraint:\n%1").arg(ctr->getDetailedDescription(gt.rules)));
-					else{
-						QMessageBox::warning(this, QObject::tr("FET information"), 
-						 QObject::tr("Constraint\n%1 NOT added - duplicate").arg(ctr->getDetailedDescription(gt.rules)));
-						delete ctr;
-					}
-				}
-				
-				//ai=students_timetable_week2[i][k][j];
-				ai=UNALLOCATED_ACTIVITY;
 				if(ai!=UNALLOCATED_ACTIVITY){
 					int time=tc->times[ai];
 					int hour=time/gt.rules.nDaysPerWeek;

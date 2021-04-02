@@ -897,4 +897,12 @@ Versions 5.0.0 -
 	- Geometry of main form now saved correctly (suggested by Volker Dirr).
 - Version 5.0.0-preview30
 	- Improvements in optimization algorithm.
+- Version 5.0.0
+	- Can have activities with no teacher or no students set (suggested by Volker Dirr).
+	- Rooms and space allocation.
+	- Improved the automatic generation.
+	- Bug fix in generation in Windows (faster now on newer processors?).
+	- Speed improvement in generation.
+	- Improved algorithm in minimizing broken constraints min n days between activities.
+	- Bug fix in constraint activities preferred times.
 	

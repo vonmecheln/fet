@@ -12,9 +12,9 @@
 //
 #include "studentsset.h"
 #include "rules.h"
-#include "genetictimetable.h"
+#include "timetable.h"
 
-extern GeneticTimetable gt;
+extern Timetable gt;
 
 StudentsSet::StudentsSet()
 {

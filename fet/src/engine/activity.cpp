@@ -22,7 +22,7 @@ along with FET; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-#include "genetictimetable_defs.h"
+#include "timetable_defs.h"
 #include "activity.h"
 #include "rules.h"
 
@@ -313,14 +313,20 @@ QString Activity::getDescription(Rules& r)
 	else
 		s=QObject::tr("Sub-activity: ");
 	s+=QObject::tr("T:");
-	for(QStringList::Iterator it=this->teachersNames.begin(); it!=this->teachersNames.end(); it++)
-		s += *it + ", ";
+	if(teachersNames.count()==0)
+		s+=QObject::tr(" no teachers, ");
+	else
+		for(QStringList::Iterator it=this->teachersNames.begin(); it!=this->teachersNames.end(); it++)
+			s += *it + ", ";
 	s+=QObject::tr("S:") + this->subjectName + ", ";
 	if(this->subjectTagName!="")
 		s+=QObject::tr("ST:") + this->subjectTagName + ", ";
 	s+=QObject::tr("St:");
-	for(QStringList::Iterator it=this->studentsNames.begin(); it!=this->studentsNames.end(); it++)
-		s += *it + ", ";
+	if(studentsNames.count()==0)
+		s+=QObject::tr(" no students, ");
+	else
+		for(QStringList::Iterator it=this->studentsNames.begin(); it!=this->studentsNames.end(); it++)
+			s += *it + ", ";
 
 	s += QObject::tr("Id:") + QString::number(id) + ", ";
 	if(this->isSplit())
@@ -351,13 +357,19 @@ QString Activity::getDetailedDescription(Rules &r)
 		s=QObject::tr("Activity:\n");
 	else
 		s=QObject::tr("Sub-activity:\n");
-	for(QStringList::Iterator it=this->teachersNames.begin(); it!=this->teachersNames.end(); it++)
-		s+=QObject::tr("Teacher=") + (*it) + "\n";
+	if(teachersNames.count()==0)
+		s+=QObject::tr("No teachers for this activity\n");
+	else
+		for(QStringList::Iterator it=this->teachersNames.begin(); it!=this->teachersNames.end(); it++)
+			s+=QObject::tr("Teacher=") + (*it) + "\n";
 	s+=QObject::tr("Subject=") + this->subjectName + "\n";
 	if(this->subjectTagName!="")
 		s+=QObject::tr("Subject tag=") + this->subjectTagName + "\n";
-	for(QStringList::Iterator it=this->studentsNames.begin(); it!=this->studentsNames.end(); it++)
-		s += QObject::tr("Students=")+ (*it) + "\n";
+	if(studentsNames.count()==0)
+		s+=QObject::tr("No students sets for this activity\n");
+	else
+		for(QStringList::Iterator it=this->studentsNames.begin(); it!=this->studentsNames.end(); it++)
+			s += QObject::tr("Students=")+ (*it) + "\n";
 
 	s += QObject::tr("Id=") + QString::number(id) + "\n";
 	if(this->isSplit())

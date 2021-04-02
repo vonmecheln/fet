@@ -19,7 +19,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="3" column="2" rowspan="1" colspan="3">
+        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="4">
             <property name="name">
                 <cstring>layout4</cstring>
             </property>
@@ -38,7 +38,7 @@
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>Weight (recommended: 1.0)</string>
+                        <string>Weight percentage (recommended: 0%-100%)</string>
                     </property>
                 </widget>
                 <widget class="QLineEdit">
@@ -46,23 +46,12 @@
                         <cstring>weightLineEdit</cstring>
                     </property>
                     <property name="text">
-                        <string>1.0</string>
+                        <string>-1</string>
                     </property>
                 </widget>
             </vbox>
         </widget>
-        <widget class="QCheckBox" row="3" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>compulsoryCheckBox</cstring>
-            </property>
-            <property name="text">
-                <string>Compulsory</string>
-            </property>
-            <property name="checked">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QLayoutWidget" row="2" column="1" rowspan="1" colspan="3">
+        <widget class="QLayoutWidget" row="2" column="1" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout12</cstring>
             </property>
@@ -143,7 +132,7 @@
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>All rooms</string>
+                        <string>All rooms (dbl. click adds)</string>
                     </property>
                     <property name="buddy" stdset="0">
                         <cstring>roomsComboBox</cstring>
@@ -161,7 +150,7 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QLayoutWidget" row="2" column="4">
+        <widget class="QLayoutWidget" row="2" column="3">
             <property name="name">
                 <cstring>layout9</cstring>
             </property>
@@ -180,7 +169,7 @@
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>Selected rooms</string>
+                        <string>Selected rooms (dbl. click removes)</string>
                     </property>
                     <property name="buddy" stdset="0">
                         <cstring>roomsComboBox</cstring>
@@ -198,12 +187,12 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QComboBox" row="1" column="0" rowspan="1" colspan="5">
+        <widget class="QComboBox" row="1" column="0" rowspan="1" colspan="4">
             <property name="name">
                 <cstring>activitiesComboBox</cstring>
             </property>
         </widget>
-        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="5">
+        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="4">
             <property name="name">
                 <cstring>activitiesTextLabel</cstring>
             </property>
@@ -237,6 +226,18 @@
         <signal>clicked()</signal>
         <receiver>ModifyConstraintActivityPreferredRoomsForm_template</receiver>
         <slot>ok()</slot>
+    </connection>
+    <connection>
+        <sender>roomsListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>ModifyConstraintActivityPreferredRoomsForm_template</receiver>
+        <slot>addRoom()</slot>
+    </connection>
+    <connection>
+        <sender>selectedRoomsListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>ModifyConstraintActivityPreferredRoomsForm_template</receiver>
+        <slot>removeRoom()</slot>
     </connection>
 </connections>
 <slots>
