@@ -162,6 +162,8 @@ void TimetableGenerateForm::start(){
 	//seeHighestStagePushButton->setEnabled(TRUE);
 
 	simulation_running=true;
+	
+	gen.c.makeUnallocated(gt.rules);
 
 	generateThread.start();
 }

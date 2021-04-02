@@ -36,6 +36,11 @@ AddConstraintSubjectActivityTagPreferredRoomsForm::AddConstraintSubjectActivityT
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+
+	QSize tmp3=subjectsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp3);
+	QSize tmp4=activityTagsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp4);
 	
 	updateRoomsListBox();
 	

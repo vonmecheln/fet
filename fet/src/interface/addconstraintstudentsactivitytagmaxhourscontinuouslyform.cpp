@@ -36,6 +36,10 @@ AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::AddConstraintStudentsA
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
+	QSize tmp4=activityTagsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp4);
+	
+	
 	maxHoursSpinBox->setMinValue(1);
 	maxHoursSpinBox->setMaxValue(gt.rules.nHoursPerDay);
 	maxHoursSpinBox->setValue(gt.rules.nHoursPerDay);

@@ -29,6 +29,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include "timetable.h"
 
 #include <QSet>
+#include <QHash>
 
 extern int permutation[MAX_ACTIVITIES]; //the permutation matrix to obtain activities in
 //decreasing difficulty order
@@ -44,7 +45,7 @@ extern qint8 activitiesConflictingPercentage[MAX_ACTIVITIES][MAX_ACTIVITIES]; //
 bool computeActivitiesConflictingPercentage();
 //void computeActivitiesConflicting();
 
-void sortActivities();
+void sortActivities(const QHash<int, int>& repr);
 ////////END   BASIC TIME CONSTRAINTS
 
 
@@ -137,7 +138,7 @@ bool computeTeachersMaxGapsPerDayPercentage();
 ////////BEGIN activities same starting time
 extern QList<int> activitiesSameStartingTimeActivities[MAX_ACTIVITIES];
 extern QList<double> activitiesSameStartingTimePercentages[MAX_ACTIVITIES];
-bool computeActivitiesSameStartingTime();
+bool computeActivitiesSameStartingTime(QHash<int, int>& repr);
 ////////END   activities same starting time
 
 

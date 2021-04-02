@@ -37,10 +37,10 @@ int maxScreenWidth(QWidget* widget)
 
 int maxRecommendedWidth(QWidget* widget)
 {
-	int d=maxScreenWidth(widget)-120;
+	int d=maxScreenWidth(widget);
 	
-	if(d<680)
-		d=680;
+	if(d<800)
+		d=800;
 		
 	//if(d>1000)
 	//	d=1000;

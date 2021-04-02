@@ -37,6 +37,9 @@ AddConstraintStudentsSetHomeRoomsForm::AddConstraintStudentsSetHomeRoomsForm()
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
+	QSize tmp2=studentsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp2);
+
 	updateRoomsListBox();
 
 	studentsComboBox->clear();

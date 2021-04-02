@@ -15,7 +15,11 @@ Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/)
 		- print groups and years timetable
 		- print subjects timetable
 		- print teachers' free periods timetable
-
+		- print all activities timetable
+		- index html file
+		- print daily timetable
+		- print activities with same starting time
+ 
 	Import and export of CSV files
 	
 	Export of advanced statistics

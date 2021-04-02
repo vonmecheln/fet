@@ -235,6 +235,8 @@ public slots:
 	void on_settingsTimetableHtmlLevelAction_activated();
 	void on_settingsPrintNotAvailableSlotsAction_toggled();
 
+	void on_settingsPrintActivitiesWithSameStartingTimeAction_toggled();
+
 	void on_selectOutputDirAction_activated();
 	
 	void httpDone(bool error);

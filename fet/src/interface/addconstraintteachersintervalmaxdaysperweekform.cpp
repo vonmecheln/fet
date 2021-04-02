@@ -36,6 +36,11 @@ AddConstraintTeachersIntervalMaxDaysPerWeekForm::AddConstraintTeachersIntervalMa
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
+	QSize tmp5=startHourComboBox->minimumSizeHint();
+	Q_UNUSED(tmp5);
+	QSize tmp6=endHourComboBox->minimumSizeHint();
+	Q_UNUSED(tmp6);
+	
 	updateMaxDaysSpinBox();
 	updateStartHoursComboBox();
 	updateEndHoursComboBox();

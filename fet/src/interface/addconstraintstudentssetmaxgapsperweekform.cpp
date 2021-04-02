@@ -35,6 +35,9 @@ AddConstraintStudentsSetMaxGapsPerWeekForm::AddConstraintStudentsSetMaxGapsPerWe
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+
+	QSize tmp2=studentsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp2);
 		
 	maxGapsSpinBox->setMinValue(0);
 	maxGapsSpinBox->setMaxValue(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek);

@@ -43,6 +43,22 @@ AddConstraintActivityPreferredStartingTimeForm::AddConstraintActivityPreferredSt
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
+	QSize tmp1=teachersComboBox->minimumSizeHint();
+	Q_UNUSED(tmp1);
+	QSize tmp2=studentsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp2);
+	QSize tmp3=subjectsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp3);
+	QSize tmp4=activityTagsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp4);
+	
+	QSize tmp5=activitiesComboBox->minimumSizeHint();
+	Q_UNUSED(tmp5);
+	QSize tmp6=dayComboBox->minimumSizeHint();
+	Q_UNUSED(tmp6);
+	QSize tmp7=startHourComboBox->minimumSizeHint();
+	Q_UNUSED(tmp7);
+
 	activitiesComboBox->setMaximumWidth(maxRecommendedWidth(this));
 	
 	//permTextLabel->setWordWrap(true);

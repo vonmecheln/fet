@@ -352,7 +352,8 @@ bool processTimeConstraints()
 	//////////////////////////////////
 	
 	//must be AFTER basic time constraints (computeActivitiesConflictingPercentage)
-	t=computeActivitiesSameStartingTime();
+	QHash<int, int> repr;
+	t=computeActivitiesSameStartingTime(repr);
 	if(!t)
 		return false;
 
@@ -470,7 +471,8 @@ bool processTimeConstraints()
 	if(!t)
 		return false;
 	
-	sortActivities();
+	//must have here repr computed correctly
+	sortActivities(repr);
 	
 	bool ok=true;
 	
@@ -2047,7 +2049,7 @@ void computeActivitiesNotOverlapping()
 		}
 }
 
-bool computeActivitiesSameStartingTime()
+bool computeActivitiesSameStartingTime(QHash<int, int>& repr)
 {
 	bool reportunder100=true;
 	bool report100=true;
@@ -2154,7 +2156,8 @@ bool computeActivitiesSameStartingTime()
 			}
 		}
 		
-	QHash<int, int> repr;
+	//QHash<int, int> repr;
+	repr.clear();
 	
 	QQueue<int> queue;
 	
@@ -2204,7 +2207,6 @@ bool computeActivitiesSameStartingTime()
 				}
 			}
 	///////////end added 5.10.0, June 2009
-
 
 	return oktocontinue;
 }
@@ -5908,7 +5910,7 @@ bool homeRoomsAreOk()
 }
 
 
-void sortActivities()
+void sortActivities(const QHash<int, int>& repr)
 {
 //	const int INF  = 2000000000;
 	const int INF  = 1500000000; //INF and INF2 values of variables may be increased, so they should be INF2>>INF and INF2<<MAXINT(2147.........)
@@ -5931,10 +5933,10 @@ void sortActivities()
 			if(notAllowedRoomTimePercentages[j][k]>=THRESHOLD)
 				nRoomsIncompat[j]++;
 	}
-	int nHoursForRoom[MAX_ROOMS];	
+	double nHoursForRoom[MAX_ROOMS];	
 
 	for(int j=0; j<gt.rules.nInternalRooms; j++)
-		nHoursForRoom[j]=0;
+		nHoursForRoom[j]=0.0;
 
 	//only consider for each activity the constraint preferred room(s) with highest percentage (and then lowest number of rooms)
 	PreferredRoomsItem maxPercentagePrefRooms[MAX_ACTIVITIES];
@@ -5957,7 +5959,7 @@ void sortActivities()
 		if(it.percentage>=THRESHOLD){
 			assert(!unspecifiedPreferredRoom[j]);
 			foreach(int rm, it.preferredRooms)
-				nHoursForRoom[rm]+=gt.rules.internalActivitiesList[j].duration;
+				nHoursForRoom[rm]+=double(gt.rules.internalActivitiesList[j].duration)/double(it.preferredRooms.count());
 		}
 	}
 	
@@ -5968,7 +5970,7 @@ void sortActivities()
 		//basic
 		for(int j=0; j<gt.rules.nInternalActivities; j++)
 			if(i!=j && activitiesConflictingPercentage[i][j]>=THRESHOLD){
-				assert(activitiesConflictingPercentage[i][j]==100.0);
+				assert(activitiesConflictingPercentage[i][j]==100);
 				nIncompatible[i]+=gt.rules.internalActivitiesList[j].duration;
 			}
 				
@@ -5993,13 +5995,23 @@ void sortActivities()
 		//rooms
 		PreferredRoomsItem it=maxPercentagePrefRooms[i];
 		if(it.percentage>=THRESHOLD){
-			int cnt=0;
+			double cnt=0.0;
 			assert(!unspecifiedPreferredRoom[i]);
 			foreach(int rm, it.preferredRooms)
-				cnt+=nRoomsIncompat[rm]+nHoursForRoom[rm]-1; //-1 because we considered also current activity
-				//it seems that it should be -duration, not -1, but I am afraid to change what is functioning all right
-				
-			nIncompatible[i] += cnt / it.preferredRooms.count(); //average for all the rooms
+				cnt+=double(nRoomsIncompat[rm])+nHoursForRoom[rm]-(double(gt.rules.internalActivitiesList[i].duration)/double(it.preferredRooms.count()));
+				 //-duration because we considered also current activity
+			
+			if(cnt<0.0){
+				//assert(cnt+0.01>=0.0); //maybe rouding error, but not too high
+				if(!(cnt+0.01>=0.0)){
+					cout<<"Probable ERROR in file "<<__FILE__<<", line "<<__LINE__<<", cnt should be >=0.0"<<endl;
+				}
+				cnt=0.0;
+			}
+			
+			assert(cnt>=0.0);
+			
+			nIncompatible[i] += int(cnt / double(it.preferredRooms.count())); //average for all the rooms
 		}
 				
 		
@@ -6007,6 +6019,8 @@ void sortActivities()
 		nIncompatible[i]*=gt.rules.internalActivitiesList[i].duration;
 		
 		assert(nIncompatible[i]<INF);
+		
+		assert(nIncompatible[i]>=0);
 		
 		if(fixedTimeActivity[i]){
 			nIncompatible[i]=INF;
@@ -6022,12 +6036,86 @@ void sortActivities()
 		}
 	}
 
+	//DEPRECATED COMMENT
 	//same starting time - not computing, the algo takes care even without correct sorting
 	//it is difficult to sort about same starting time
+	
+	//IT IS POSSIBLE TO SORT ABOUT SAME STARTING TIME, see below, idea of Volker Dirr. It is much faster for some data sets.
+	//(for some data sets, it is 7 times faster)
+	
+	//take care of chains of constraints with 100% weight
+	int reprNInc[MAX_ACTIVITIES];
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		reprNInc[i]=-1;
+		
+	//repr contains the representant of each activity
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		//int MM=nIncompatible[i];
+		assert(repr.contains(i));
+		int r=repr.value(i);
+		
+		int xx=nIncompatible[i];
+		if(fixedTimeActivity[i] && fixedSpaceActivity[i]){
+			assert(xx>=INF2);
+			xx-=(INF2-INF);
+		}
+		
+		assert(xx<INF2);
+		assert(xx>=0);
+		
+		if(reprNInc[r]<xx)
+			reprNInc[r]=xx;
+	}
+
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		int r=repr.value(i);
+		assert(reprNInc[r]>=0);
+		if(nIncompatible[i]<reprNInc[r])
+			nIncompatible[i]=reprNInc[r];
+	}
+	
+	//new volker (start), modified by Liviu
+	//takes care of 100% weight constraints (not necessary - already took care above) and also <100% and >=80% weight constraints
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		TimeConstraint* tc=gt.rules.internalTimeConstraintsList[i];
+		if(tc->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME && tc->weightPercentage>=THRESHOLD){
+			ConstraintActivitiesSameStartingTime* c=(ConstraintActivitiesSameStartingTime*) tc;
+			
+			int xx=nIncompatible[c->_activities[0]];
+			if(fixedTimeActivity[c->_activities[0]] && fixedSpaceActivity[c->_activities[0]]){
+				assert(xx>=INF2);
+				xx-=(INF2-INF);
+			}
+			assert(xx>=0);
+			assert(xx<INF2);
+
+			int MM=xx;
+			
+			for(int a=1; a<c->_n_activities; a++){
+				int yy=nIncompatible[c->_activities[a]];
+				if(fixedTimeActivity[c->_activities[a]] && fixedSpaceActivity[c->_activities[a]]){
+					assert(yy>=INF2);
+					yy-=(INF2-INF);
+				}
+				assert(yy>=0);
+				assert(yy<INF2);
+
+				if(MM<yy)
+					MM=yy;
+			}
+			
+			for(int a=0; a<c->_n_activities; a++)
+				if(nIncompatible[c->_activities[a]]<MM)
+					nIncompatible[c->_activities[a]]=MM;
+		}
+	}
+	//new volker (end)
+	
 	
 	//Sort activities in in-creasing order of number of the other activities with which
 	//this activity does not conflict
 	//Selection sort, based on a permutation
+	
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		permutation[i]=i;
 		

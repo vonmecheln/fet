@@ -37,6 +37,9 @@ AddConstraintActivityTagPreferredRoomsForm::AddConstraintActivityTagPreferredRoo
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
+	QSize tmp4=activityTagsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp4);
+
 	updateRoomsListBox();
 	
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){

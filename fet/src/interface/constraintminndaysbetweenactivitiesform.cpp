@@ -36,6 +36,15 @@ ConstraintMinNDaysBetweenActivitiesForm::ConstraintMinNDaysBetweenActivitiesForm
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+
+	QSize tmp1=teachersComboBox->minimumSizeHint();
+	Q_UNUSED(tmp1);
+	QSize tmp2=studentsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp2);
+	QSize tmp3=subjectsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp3);
+	QSize tmp4=activityTagsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp4);
 	
 /////////////
 	teachersComboBox->insertItem("");
@@ -93,6 +102,9 @@ bool ConstraintMinNDaysBetweenActivitiesForm::filterOk(TimeConstraint* ctr)
 	QString sbn=subjectsComboBox->currentText();
 	QString sbtn=activityTagsComboBox->currentText();
 	QString stn=studentsComboBox->currentText();
+	
+	if(tn=="" && sbn=="" && sbtn=="" && stn=="")
+		return true;
 	
 	bool foundTeacher=false, foundStudents=false, foundSubject=false, foundActivityTag=false;
 		
@@ -286,7 +298,8 @@ void ConstraintMinNDaysBetweenActivitiesForm::changeSelectively()
 	//int w=dialog.sizeHint().width();
 	//int h=dialog.sizeHint().height();
 	//dialog.setGeometry(0,0,w,h);
-	centerWidgetOnScreen(&dialog);
+	
+	//centerWidgetOnScreen(&dialog);
 	
 	bool result=dialog.exec();
 

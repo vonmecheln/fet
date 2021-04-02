@@ -32,7 +32,10 @@ ConstraintStudentsSetIntervalMaxDaysPerWeekForm::ConstraintStudentsSetIntervalMa
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
-	
+
+	QSize tmp2=studentsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp2);
+
 	studentsComboBox->insertItem("");
 
 	for(int i=0; i<gt.rules.yearsList.size(); i++){

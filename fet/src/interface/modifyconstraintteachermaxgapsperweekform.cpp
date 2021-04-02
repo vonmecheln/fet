@@ -34,6 +34,9 @@ ModifyConstraintTeacherMaxGapsPerWeekForm::ModifyConstraintTeacherMaxGapsPerWeek
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
+	QSize tmp1=teachersComboBox->minimumSizeHint();
+	Q_UNUSED(tmp1);
+	
 	this->_ctr=ctr;
 	
 	//compulsoryCheckBox->setChecked(ctr->compulsory);

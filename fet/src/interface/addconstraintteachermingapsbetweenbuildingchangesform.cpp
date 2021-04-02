@@ -35,6 +35,9 @@ AddConstraintTeacherMinGapsBetweenBuildingChangesForm::AddConstraintTeacherMinGa
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+
+	QSize tmp1=teachersComboBox->minimumSizeHint();
+	Q_UNUSED(tmp1);
 		
 	minGapsSpinBox->setMinValue(1);
 	minGapsSpinBox->setMaxValue(gt.rules.nHoursPerDay);

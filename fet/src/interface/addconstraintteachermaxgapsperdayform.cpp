@@ -35,7 +35,10 @@ AddConstraintTeacherMaxGapsPerDayForm::AddConstraintTeacherMaxGapsPerDayForm()
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
-		
+
+	QSize tmp1=teachersComboBox->minimumSizeHint();
+	Q_UNUSED(tmp1);
+
 	maxGapsSpinBox->setMinValue(0);
 	maxGapsSpinBox->setMaxValue(gt.rules.nHoursPerDay);
 	maxGapsSpinBox->setValue(1);

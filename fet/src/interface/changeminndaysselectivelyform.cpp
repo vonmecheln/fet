@@ -25,6 +25,13 @@ ChangeMinNDaysSelectivelyForm::ChangeMinNDaysSelectivelyForm()
 {
 	setupUi(this);
 	
+	centerWidgetOnScreen(this);
+	
+	QSize tmp5=oldConsecutiveComboBox->minimumSizeHint();
+	Q_UNUSED(tmp5);
+	QSize tmp6=newConsecutiveComboBox->minimumSizeHint();
+	Q_UNUSED(tmp6);
+	
 	oldConsecutiveComboBox->clear();
 	oldConsecutiveComboBox->addItem(tr("Any"));
 	oldConsecutiveComboBox->addItem(tr("Yes"));

@@ -38,6 +38,9 @@ AddConstraintStudentsSetMinHoursDailyForm::AddConstraintStudentsSetMinHoursDaily
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
+	QSize tmp2=studentsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp2);
+
 	minHoursSpinBox->setMinValue(1);
 	minHoursSpinBox->setMaxValue(gt.rules.nHoursPerDay);
 	minHoursSpinBox->setValue(1);

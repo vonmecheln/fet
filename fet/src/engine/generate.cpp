@@ -2081,6 +2081,11 @@ inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int
 
 void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded)
 {
+if(threaded){
+		mutex.lock();
+}
+	c.makeUnallocated(gt.rules);
+
 	nDifficultActivities=0;
 
 	impossible=false;
@@ -2091,6 +2096,10 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 	impossibleActivity=false;
 	
 	maxActivitiesPlaced=0;
+
+if(threaded){
+		mutex.unlock();
+}
 
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		for(int j=0; j<gt.rules.nHoursPerWeek; j++)
@@ -2105,8 +2114,6 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 	/////////////////
 
 	//abortOptimization=false; you have to take care of this before calling this function
-
-	c.makeUnallocated(gt.rules);
 
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		invPermutation[permutation[i]]=i;

@@ -33,6 +33,11 @@ ModifyConstraint2ActivitiesGroupedForm::ModifyConstraint2ActivitiesGroupedForm(C
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+
+	QSize tmp5=firstActivitiesComboBox->minimumSizeHint();
+	Q_UNUSED(tmp5);
+	QSize tmp6=secondActivitiesComboBox->minimumSizeHint();
+	Q_UNUSED(tmp6);
 	
 	firstActivitiesComboBox->setMaximumWidth(maxRecommendedWidth(this));
 	secondActivitiesComboBox->setMaximumWidth(maxRecommendedWidth(this));

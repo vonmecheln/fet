@@ -35,7 +35,10 @@ AddConstraintStudentsSetMaxBuildingChangesPerDayForm::AddConstraintStudentsSetMa
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
-		
+
+	QSize tmp2=studentsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp2);
+	
 	maxChangesSpinBox->setMinValue(0);
 	maxChangesSpinBox->setMaxValue(10);
 	maxChangesSpinBox->setValue(1);

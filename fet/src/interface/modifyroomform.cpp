@@ -33,6 +33,9 @@ ModifyRoomForm::ModifyRoomForm(const QString& initialRoomName, const QString& in
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+
+	QSize tmp5=buildingsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp5);
 	
 	capacitySpinBox->setMinValue(1);
 	capacitySpinBox->setMaxValue(MAX_ROOM_CAPACITY);

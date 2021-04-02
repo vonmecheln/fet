@@ -170,6 +170,10 @@ void LockUnlock::lockDay()
 	taLabel->setText(tr("All activities of the selected day will be locked")+"\n\n"+tr("Please select the day to lock:"));
 
 	QComboBox* taLW=new QComboBox();
+	
+	QSize tmp=taLW->minimumSizeHint();
+	Q_UNUSED(tmp);
+	
 	taLW->addItems(days);
 	taLW->setCurrentItem(0);
 
@@ -439,6 +443,10 @@ void LockUnlock::unlockDay()
 	taLabel->setText(tr("All activities of the selected day will be unlocked (those which are not permanently locked)")+"\n\n"+tr("Please select the day to unlock:"));
 
 	QComboBox* taLW=new QComboBox();
+	
+	QSize tmp2=taLW->minimumSizeHint();
+	Q_UNUSED(tmp2);
+	
 	taLW->addItems(days);
 	taLW->setCurrentItem(0);
 

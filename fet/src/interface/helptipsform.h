@@ -22,6 +22,7 @@
 
 class HelpTipsForm : public HelpTipsForm_template
 {
+	Q_OBJECT
 public: 
 	HelpTipsForm();
 	~HelpTipsForm();

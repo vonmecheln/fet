@@ -39,6 +39,9 @@ AddConstraintTeacherNotAvailableTimesForm::AddConstraintTeacherNotAvailableTimes
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
+	QSize tmp1=teachersComboBox->minimumSizeHint();
+	Q_UNUSED(tmp1);
+
 	updateTeachersComboBox();
 
 	notAllowedTimesTable->setNumRows(gt.rules.nHoursPerDay);

@@ -37,6 +37,12 @@ AddConstraintActivityTagPreferredRoomForm::AddConstraintActivityTagPreferredRoom
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
+	QSize tmp4=activityTagsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp4);
+	
+	QSize tmp5=roomsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp5);
+
 	updateActivityTagsComboBox();
 	updateRoomsComboBox();
 }

@@ -32,6 +32,9 @@ ConstraintRoomNotAvailableTimesForm::ConstraintRoomNotAvailableTimesForm()
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+
+	QSize tmp5=roomsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp5);
 	
 	roomsComboBox->insertItem("");
 	for(int i=0; i<gt.rules.roomsList.size(); i++){

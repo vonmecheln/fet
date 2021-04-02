@@ -69,6 +69,8 @@ extern bool PRINT_NOT_AVAILABLE_TIME_SLOTS;
 
 extern bool DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS;
 
+extern bool PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME;
+
 /**
 The maximum number of different years of students
 */

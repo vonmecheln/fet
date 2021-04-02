@@ -33,6 +33,11 @@ ConstraintSubjectActivityTagPreferredRoomsForm::ConstraintSubjectActivityTagPref
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
+	QSize tmp3=subjectsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp3);
+	QSize tmp4=activityTagsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp4);
+	
 	subjectsComboBox->insertItem("");
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* sb=gt.rules.subjectsList[i];

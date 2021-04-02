@@ -56,6 +56,9 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+
+	QSize tmp3=subjectsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp3);
 	
 	this->_id=id;
 	this->_activityGroupId=activityGroupId;

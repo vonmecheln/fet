@@ -176,6 +176,8 @@ void readSimulationParameters(){
 			TIMETABLE_HTML_LEVEL=oldSettings.value("timetable-html-level", "2").toInt();
 		else
 			TIMETABLE_HTML_LEVEL=oldSettings.value("html-level", "2").toInt();
+			
+		PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME=oldSettings.value("print-activities-with-same-starting-time", "0").toInt();
 	
 		int tmp=oldSettings.value("print-not-available", "1").toInt();
 		PRINT_NOT_AVAILABLE_TIME_SLOTS=tmp;
@@ -247,6 +249,8 @@ void readSimulationParameters(){
 		else
 			TIMETABLE_HTML_LEVEL=newSettings.value("html-level", "2").toInt();
 	
+		PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME=newSettings.value("print-activities-with-same-starting-time", "0").toInt();
+	
 		int tmp=newSettings.value("print-not-available", "1").toInt();
 		PRINT_NOT_AVAILABLE_TIME_SLOTS=tmp;
 
@@ -267,6 +271,13 @@ void writeSimulationParameters(){
 	settings.setValue("check-for-updates", checkForUpdates);
 	//settings.setValue("timetable-html-level", TIMETABLE_HTML_LEVEL);
 	settings.setValue("html-level", TIMETABLE_HTML_LEVEL);
+	
+	int qq;
+	if(PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME)
+		qq=1;
+	else
+		qq=0;
+	settings.setValue("print-activities-with-same-starting-time", qq);
 
 	int k;
 	if(DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS)
@@ -495,6 +506,12 @@ int main(int argc, char **argv)
 			else if(s.left(12)=="--outputdir="){
 				outputDirectory=s.right(s.length()-12);
 			}
+			else if(s.left(30)=="--printsimultaneousactivities="){
+				if(s.right(5)=="false")
+					PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME=false;
+				else
+					PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME=true;
+			}
 		}
 		
 		INPUT_FILENAME_XML=filename;
@@ -564,30 +581,36 @@ int main(int argc, char **argv)
 		
 		if(filename==""){
 			cout<<"Incorrect parameters (input file not specified). Please see README for usage (basically,\n"
-			 "fet --inputfile=x [--outputdirectory=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]\n"
+			 "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]"
+			 " [--printsimultaneousactivities=true|false]\n"
 			 "where z is from 0 to 6 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
 			out<<"Incorrect parameters (input file not specified). Please see README for usage (basically,\n"
-			 "fet --inputfile=x [--outputdirectory=d] [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]\n"
+			 "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]"
+			 " [--printsimultaneousactivities=true|false]\n"
 			 "where z is from 0 to 6 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
 			logFile.close();
 			return 1;
 		}	
 		if(secondsLimit==0){
 			cout<<"Incorrect parameters (time limit is 0 seconds). Please see README for usage (basically,\n"
-			 "fet --inputfile=x [--outputdirectory=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]\n"
+			 "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]"
+			 " [--printsimultaneousactivities=true|false]\n"
 			 "where z is from 0 to 6 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
 			out<<"Incorrect parameters (time limit is 0 seconds). Please see README for usage (basically,\n"
-			 "fet --inputfile=x [--outputdirectory=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]\n"
+			 "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]"
+			 " [--printsimultaneousactivities=true|false]\n"
 			 "where z is from 0 to 6 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
 			logFile.close();
 			return 1;
 		}	
 		if(TIMETABLE_HTML_LEVEL>6 || TIMETABLE_HTML_LEVEL<0){
 			cout<<"Incorrect parameters (html level must be 0, 1, 2, 3, 4, 5 or 6). Please see README for usage (basically,\n"
-			 "fet --inputfile=x [--outputdirectory=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]\n"
+			 "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]"
+			 " [--printsimultaneousactivities=true|false]\n"
 			 "where z is from 0 to 6 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
 			out<<"Incorrect parameters (html level must be 0, 1, 2, 3, 4, 5 or 6). Please see README for usage (basically,\n"
-			 "fet --inputfile=x [--outputdirectory=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]\n"
+			 "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]"
+			 " [--printsimultaneousactivities=true|false]\n"
 			 "where z is from 0 to 6 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
 			logFile.close();
 			return 1;

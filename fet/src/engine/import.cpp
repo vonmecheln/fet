@@ -921,7 +921,7 @@ int Import::readFields(){
 							if(itemOfField[FIELD_SPLIT_DURATION].isEmpty()){
 								if(!itemOfField[FIELD_TOTAL_DURATION].isEmpty()){
 									int totalInt=itemOfField[FIELD_TOTAL_DURATION].toInt(&ok, 10);
-									if(ok){
+									if(ok && totalInt>=1){
 										if(totalInt<=10){							// TODO: make 10 a global variable?!
 											QString tmpString;
 											for(int n=0; n<totalInt; n++){
@@ -934,6 +934,9 @@ int Import::readFields(){
 											warnText+=Import::tr("Skipped line %1: Field '%2' produces too many subactivities.").arg(lineNumber).arg(fieldName[FIELD_TOTAL_DURATION])+"\n";
 											ok=false;
 										}
+									} else {
+										warnText+=Import::tr("Skipped line %1: Field '%2' contain incorrect data.").arg(lineNumber).arg(fieldName[FIELD_TOTAL_DURATION])+"\n";
+										ok=false;
 									}
 								} else {
 									warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(lineNumber).arg(fieldName[i])+"\n";

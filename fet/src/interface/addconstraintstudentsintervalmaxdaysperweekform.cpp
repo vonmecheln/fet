@@ -36,6 +36,11 @@ AddConstraintStudentsIntervalMaxDaysPerWeekForm::AddConstraintStudentsIntervalMa
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
+	QSize tmp1=startHourComboBox->minimumSizeHint();
+	Q_UNUSED(tmp1);
+	QSize tmp2=endHourComboBox->minimumSizeHint();
+	Q_UNUSED(tmp2);
+
 	updateMaxDaysSpinBox();
 	//updateStudentsComboBox();
 	updateStartHoursComboBox();

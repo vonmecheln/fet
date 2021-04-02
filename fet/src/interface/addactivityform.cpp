@@ -64,6 +64,9 @@ AddActivityForm::AddActivityForm()
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	
+	QSize tmp3=subjectsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp3);
 						
 	//updatePreferredDaysComboBox();
 	//updatePreferredHoursComboBox();
@@ -931,14 +934,14 @@ void AddActivityForm::help()
 
 void AddActivityForm::minDaysChanged()
 {
-	if(splitSpinBox->value()<2){
+	/*if(splitSpinBox->value()<2){
 		QMessageBox::critical(this, tr("FET critical"), tr("You found a bug in FET (file %1, line %2). "
 		 "The problem is that the split has value less than 2, but the min days button can be modified. Please report this bug. Operation will now continue")
 		 .arg(__FILE__)
 		 .arg(__LINE__));
 	}
 	else
-		assert(splitSpinBox->value()>=2);
+		assert(splitSpinBox->value()>=2);*/
 	percentageTextLabel->setEnabled(splitSpinBox->value()>=2 && minDayDistanceSpinBox->value()>0);
 	percentageLineEdit->setEnabled(splitSpinBox->value()>=2 && minDayDistanceSpinBox->value()>0);
 	percentTextLabel->setEnabled(splitSpinBox->value()>=2 && minDayDistanceSpinBox->value()>0);

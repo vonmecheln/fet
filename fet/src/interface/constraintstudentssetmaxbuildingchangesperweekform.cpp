@@ -33,6 +33,9 @@ ConstraintStudentsSetMaxBuildingChangesPerWeekForm::ConstraintStudentsSetMaxBuil
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 
+	QSize tmp2=studentsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp2);
+
 	studentsComboBox->insertItem("");
 
 	for(int i=0; i<gt.rules.yearsList.size(); i++){

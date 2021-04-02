@@ -142,24 +142,21 @@
       <addaction name="dataTimeConstraintsTeacherNotAvailableTimesAction" />
       <addaction name="separator" />
       <addaction name="dataTimeConstraintsTeacherMaxDaysPerWeekAction" />
-      <addaction name="dataTimeConstraintsTeachersMaxDaysPerWeekAction" />
-      <addaction name="separator" />
-      <addaction name="dataTimeConstraintsTeacherMaxGapsPerWeekAction" />
-      <addaction name="dataTimeConstraintsTeachersMaxGapsPerWeekAction" />
       <addaction name="dataTimeConstraintsTeacherMaxGapsPerDayAction" />
-      <addaction name="dataTimeConstraintsTeachersMaxGapsPerDayAction" />
-      <addaction name="separator" />
+      <addaction name="dataTimeConstraintsTeacherMaxGapsPerWeekAction" />
       <addaction name="dataTimeConstraintsTeacherMaxHoursDailyAction" />
-      <addaction name="dataTimeConstraintsTeachersMaxHoursDailyAction" />
       <addaction name="dataTimeConstraintsTeacherMinHoursDailyAction" />
-      <addaction name="dataTimeConstraintsTeachersMinHoursDailyAction" />
-      <addaction name="separator" />
       <addaction name="dataTimeConstraintsTeacherMaxHoursContinuouslyAction" />
-      <addaction name="dataTimeConstraintsTeachersMaxHoursContinuouslyAction" />
       <addaction name="dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction" />
-      <addaction name="dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction" />
-      <addaction name="separator" />
       <addaction name="dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction" />
+      <addaction name="separator" />
+      <addaction name="dataTimeConstraintsTeachersMaxDaysPerWeekAction" />
+      <addaction name="dataTimeConstraintsTeachersMaxGapsPerDayAction" />
+      <addaction name="dataTimeConstraintsTeachersMaxGapsPerWeekAction" />
+      <addaction name="dataTimeConstraintsTeachersMaxHoursDailyAction" />
+      <addaction name="dataTimeConstraintsTeachersMinHoursDailyAction" />
+      <addaction name="dataTimeConstraintsTeachersMaxHoursContinuouslyAction" />
+      <addaction name="dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction" />
       <addaction name="dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction" />
      </widget>
      <widget class="QMenu" name="menuStudents_time_constraints" >
@@ -169,21 +166,19 @@
       <addaction name="dataTimeConstraintsStudentsSetNotAvailableTimesAction" />
       <addaction name="separator" />
       <addaction name="dataTimeConstraintsStudentsSetMaxGapsPerWeekAction" />
-      <addaction name="dataTimeConstraintsStudentsMaxGapsPerWeekAction" />
       <addaction name="dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction" />
-      <addaction name="dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction" />
-      <addaction name="separator" />
       <addaction name="dataTimeConstraintsStudentsSetMaxHoursDailyAction" />
-      <addaction name="dataTimeConstraintsStudentsMaxHoursDailyAction" />
       <addaction name="dataTimeConstraintsStudentsSetMinHoursDailyAction" />
-      <addaction name="dataTimeConstraintsStudentsMinHoursDailyAction" />
-      <addaction name="separator" />
       <addaction name="dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction" />
-      <addaction name="dataTimeConstraintsStudentsMaxHoursContinuouslyAction" />
       <addaction name="dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction" />
-      <addaction name="dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction" />
-      <addaction name="separator" />
       <addaction name="dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction" />
+      <addaction name="separator" />
+      <addaction name="dataTimeConstraintsStudentsMaxGapsPerWeekAction" />
+      <addaction name="dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction" />
+      <addaction name="dataTimeConstraintsStudentsMaxHoursDailyAction" />
+      <addaction name="dataTimeConstraintsStudentsMinHoursDailyAction" />
+      <addaction name="dataTimeConstraintsStudentsMaxHoursContinuouslyAction" />
+      <addaction name="dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction" />
       <addaction name="dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction" />
      </widget>
      <widget class="QMenu" name="menuActivities_time_constraints" >
@@ -191,14 +186,14 @@
        <string>Activities time constraints</string>
       </property>
       <addaction name="dataTimeConstraintsActivityPreferredStartingTimeAction" />
-      <addaction name="separator" />
-      <addaction name="dataTimeConstraintsActivityPreferredTimeSlotsAction" />
-      <addaction name="dataTimeConstraintsActivitiesPreferredTimeSlotsAction" />
-      <addaction name="dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction" />
-      <addaction name="separator" />
       <addaction name="dataTimeConstraintsActivityPreferredStartingTimesAction" />
+      <addaction name="dataTimeConstraintsActivityPreferredTimeSlotsAction" />
+      <addaction name="separator" />
       <addaction name="dataTimeConstraintsActivitiesPreferredStartingTimesAction" />
+      <addaction name="dataTimeConstraintsActivitiesPreferredTimeSlotsAction" />
+      <addaction name="separator" />
       <addaction name="dataTimeConstraintsSubactivitiesPreferredStartingTimesAction" />
+      <addaction name="dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction" />
       <addaction name="separator" />
       <addaction name="dataTimeConstraintsMinNDaysBetweenActivitiesAction" />
       <addaction name="separator" />
@@ -268,10 +263,11 @@
       <addaction name="dataSpaceConstraintsStudentsSetHomeRoomsAction" />
       <addaction name="separator" />
       <addaction name="dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction" />
-      <addaction name="dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction" />
       <addaction name="dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction" />
-      <addaction name="dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction" />
       <addaction name="dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction" />
+      <addaction name="separator" />
+      <addaction name="dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction" />
+      <addaction name="dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction" />
       <addaction name="dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction" />
      </widget>
      <widget class="QMenu" name="menuTeachers_space_constraints" >
@@ -282,10 +278,11 @@
       <addaction name="dataSpaceConstraintsTeacherHomeRoomsAction" />
       <addaction name="separator" />
       <addaction name="dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction" />
-      <addaction name="dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction" />
       <addaction name="dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction" />
-      <addaction name="dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction" />
       <addaction name="dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction" />
+      <addaction name="separator" />
+      <addaction name="dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction" />
+      <addaction name="dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction" />
       <addaction name="dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction" />
      </widget>
      <widget class="QMenu" name="menuActivity_tags_space_constraints" >
@@ -357,6 +354,7 @@
     <addaction name="settingsPrintNotAvailableSlotsAction" />
     <addaction name="settingsTimetableHtmlLevelAction" />
     <addaction name="timetablesDivideByDaysAction" />
+    <addaction name="settingsPrintActivitiesWithSameStartingTimeAction" />
     <addaction name="separator" />
     <addaction name="selectOutputDirAction" />
     <addaction name="separator" />
@@ -1524,6 +1522,17 @@
   <action name="dataTimeConstraintsTeachersMaxDaysPerWeekAction" >
    <property name="text" >
     <string>Max days per week for all teachers</string>
+   </property>
+  </action>
+  <action name="settingsPrintActivitiesWithSameStartingTimeAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="checked" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>Print activities with same starting time in timetables</string>
    </property>
   </action>
  </widget>

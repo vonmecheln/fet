@@ -32,6 +32,7 @@
 //                - print all activities timetable
 //                - index html file
 //                - print daily timetable
+//                - print activities with same starting time
 
 
 #include "timetable_defs.h"
@@ -100,8 +101,8 @@ const QString STRING_NOT_AVAILABLE_SLOT="-x-";
 //QString STRING_NOT_AVAILABLE_SLOT="-x-";				//TODO: do this extern
 //QString STRING_EMPTY_SLOT="---";					//TODO: do this extern
 //QString STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES="???";	//TODO: do this extern
-//this hashs are needed to get the IDs for html and css in timetableexport and statistics
 
+//this hashs are needed to get the IDs for html and css in timetableexport and statistics
 QHash<QString, QString> hashSubjectIDsTimetable;
 QHash<QString, QString> hashActivityTagIDsTimetable;
 QHash<QString, QString> hashStudentIDsTimetable;
@@ -109,251 +110,64 @@ QHash<QString, QString> hashTeacherIDsTimetable;
 QHash<QString, QString> hashRoomIDsTimetable;
 QHash<QString, QString> hashDayIDsTimetable;
 
+//this hash is needed to care about sctivities with same starting time
+QHash<int, QList<int> >activitiesWithSameStartingTime;
 
-
-//////////////
-/**
-An output file containing the timetable for each subgroup,
-arranged in xml format
-*/
+//Now the filenames of the output files are following (for xml and all html tables)
 const QString SUBGROUPS_TIMETABLE_FILENAME_XML="subgroups.xml";
-
-/**
-An output file containing the timetable for each teacher,
-arranged in xml format
-*/
 const QString TEACHERS_TIMETABLE_FILENAME_XML="teachers.xml";
-
 const QString ACTIVITIES_TIMETABLE_FILENAME_XML="activities.xml";
-
-/**
-An output file containing the timetable for each room,
-arranged in xml format
-*/
 const QString ROOMS_TIMETABLE_FILENAME_XML="rooms.xml";
 
-/**
-An output file containing the css stylesheet for each html-file
-*/
+const QString CONFLICTS_FILENAME="soft_conflicts.txt";
+const QString INDEX_HTML="index.html";
 const QString STYLESHEET_CSS="stylesheet.css";
 
-/**
-An output file containing the index html file
-*/
-const QString INDEX_HTML="index.html";
-
-/**
-An output file containing the timetable for each subgroup, arranged in html format.
-Days horizontal version.
-*/
 const QString SUBGROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="subgroups_days_horizontal.html";
-
-/**
-An output file containing the timetable for each subgroup, arranged in html format.
-Days vertical version.
-*/
 const QString SUBGROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="subgroups_days_vertical.html";
-
-/**
-An output file containing the timetable for each subgroup, arranged in html format.
-Time horizontal version.
-*/
 const QString SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="subgroups_time_horizontal.html";
-
-/**
-An output file containing the timetable for each subgroup, arranged in html format.
-Time vertical version.
-*/
 const QString SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="subgroups_time_vertical.html";
 
-/**
-An output file containing the timetable for each group, arranged in html format.
-Days horizontal version.
-*/
 const QString GROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="groups_days_horizontal.html";
-
-/**
-An output file containing the timetable for each group, arranged in html format.
-Days vertical version.
-*/
 const QString GROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="groups_days_vertical.html";
-
-/**
-An output file containing the timetable for each group, arranged in html format.
-Time horizontal version.
-*/
 const QString GROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="groups_time_horizontal.html";
-
-/**
-An output file containing the timetable for each group, arranged in html format.
-Time vertical version.
-*/
 const QString GROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="groups_time_vertical.html";
 
-/**
-An output file containing the timetable for each year, arranged in html format.
-Days horizontal version.
-*/
 const QString YEARS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="years_days_horizontal.html";
-
-/**
-An output file containing the timetable for each year, arranged in html format.
-Days vertical version.
-*/
 const QString YEARS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="years_days_vertical.html";
-
-/**
-An output file containing the timetable for each year, arranged in html format.
-Time horizontal version.
-*/
 const QString YEARS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="years_time_horizontal.html";
-
-/**
-An output file containing the timetable for each year, arranged in html format.
-Time vertical version.
-*/
 const QString YEARS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="years_time_vertical.html";
 
-/**
-An output file containing the timetable for each teacher, arranged in html format.
-Days horizontal version.
-*/
 const QString TEACHERS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="teachers_days_horizontal.html";
-
-/**
-An output file containing the timetable for each teacher, arranged in html format.
-Days vertical version.
-*/
 const QString TEACHERS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="teachers_days_vertical.html";
-
-/**
-An output file containing the timetable for each teacher, arranged in html format.
-Time horizontal version.
-*/
 const QString TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="teachers_time_horizontal.html";
-
-/**
-An output file containing the timetable for each teacher, arranged in html format.
-Time vertical version.
-*/
 const QString TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="teachers_time_vertical.html";
 
-/**
-An output file containing the timetable for each room, arranged in html format.
-Days horizontal version.
-*/
 const QString ROOMS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="rooms_days_horizontal.html";
-
-/**
-An output file containing the timetable for each room, arranged in html format.
-Days vertical version.
-*/
 const QString ROOMS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="rooms_days_vertical.html";
-
-/**
-An output file containing the timetable for each room, arranged in html format.
-Time horizontal version.
-*/
 const QString ROOMS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="rooms_time_horizontal.html";
-
-/**
-An output file containing the timetable for each room, arranged in html format.
-Time vertical version.
-*/
 const QString ROOMS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="rooms_time_vertical.html";
 
-/**
-An output file containing the timetable for each subject, arranged in html format.
-Days horizontal version.
-*/
 const QString SUBJECTS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="subjects_days_horizontal.html";
-
-/**
-An output file containing the timetable for each subject, arranged in html format.
-Days vertical version.
-*/
 const QString SUBJECTS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="subjects_days_vertical.html";
-
-/**
-An output file containing the timetable for each subject, arranged in html format.
-Time horizontal version.
-*/
 const QString SUBJECTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="subjects_time_horizontal.html";
-
-/**
-An output file containing the timetable for each subject, arranged in html format.
-Time vertical version.
-*/
 const QString SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="subjects_time_vertical.html";
 
-/**
-An output file containing the timetable for all activities, arranged in html format.
-Days horizontal version.
-*/
 const QString ALL_ACTIVITIES_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="activities_days_horizontal.html";
-
-/**
-An output file containing the timetable for all activities, arranged in html format.
-Days vertical version.
-*/
 const QString ALL_ACTIVITIES_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="activities_days_vertical.html";
-
-
-/**
-An output file containing the timetable for all activities, arranged in html format.
-Time horizontal version.
-*/
 const QString ALL_ACTIVITIES_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="activities_time_horizontal.html";
-
-/**
-An output file containing the timetable for all activities, arranged in html format.
-Time vertical version.
-*/
 const QString ALL_ACTIVITIES_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="activities_time_vertical.html";
 
-
-
-/**
-A file containing the time conflicts
-*/
-const QString CONFLICTS_FILENAME="soft_conflicts.txt";
-
-
-/**
-An output file containing the timetable for free periods of teachers, arranged in html format.
-Days horizontal version.
-*/
 const QString TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="teachers_free_periods_days_horizontal.html";
-
-/**
-An output file containing the timetable for free periods of teachers, arranged in html format.
-Days vertical version.
-*/
 const QString TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="teachers_free_periods_days_vertical.html";
 
 const QString MULTIPLE_TIMETABLE_DATA_RESULTS_FILE="data_and_timetable.fet";
 
-
-/**
-The XML tag used for identification of the output file
-"Subgroup's Timetable"
-*/
+//now the XML tags used for identification of the output file (is that comment correct? it's the old comment)
 const QString STUDENTS_TIMETABLE_TAG="Students_Timetable";
-
-/**
-The XML tag used for identification of the output file
-"Teacher's Timetable"
-*/
 const QString TEACHERS_TIMETABLE_TAG="Teachers_Timetable";
-
 const QString ACTIVITIES_TIMETABLE_TAG="Activities_Timetable";
-
-/**
-The XML tag used for identification of the output file
-"Rooms's Timetable"
-*/
 const QString ROOMS_TIMETABLE_TAG="Rooms_Timetable";
-
 
 
 
@@ -427,6 +241,7 @@ void TimetableExport::writeSimulationResults(){
 
 	computeHashForIDsTimetable();
 	computeActivitiesAtTime();
+	computeActivitiesWithSameStartingTime();
 
 	QString s;
 	QString bar;
@@ -491,9 +306,11 @@ void TimetableExport::writeSimulationResults(){
 		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+STYLESHEET_CSS;
 		writeStylesheetCss(s, sTime, na);
 	}
+	
 	//indexHtml
 	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+INDEX_HTML;
 	writeIndexHtml(s, sTime, na);
+	
 	//subgroups
 	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	writeSubgroupsTimetableDaysHorizontalHtml(s, sTime, na);
@@ -618,6 +435,7 @@ void TimetableExport::writeSimulationResults(){
 	hashTeacherIDsTimetable.clear();
 	hashRoomIDsTimetable.clear();
 	hashDayIDsTimetable.clear();
+
 	cout<<"Writing simulation results to disk completed successfully"<<endl;
 }
 
@@ -821,6 +639,8 @@ void TimetableExport::writeSimulationResults(int n){
 
 	computeHashForIDsTimetable();
 	computeActivitiesAtTime();
+	computeActivitiesWithSameStartingTime();
+
 
 	QString s;
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
@@ -1046,6 +866,8 @@ void TimetableExport::writeSimulationResultsCommandLine(const QString& outputDir
 
 	computeHashForIDsTimetable();
 	computeActivitiesAtTime();
+	computeActivitiesWithSameStartingTime();
+
 
 	TimetableExport::writeSubgroupsTimetableXml(outputDirectory+add+SUBGROUPS_TIMETABLE_FILENAME_XML);
 	TimetableExport::writeTeachersTimetableXml(outputDirectory+add+TEACHERS_TIMETABLE_FILENAME_XML);
@@ -1263,7 +1085,7 @@ void TimetableExport::writeSimulationResultsCommandLine(const QString& outputDir
 
 
 //modified by Volker Dirr (timetabling.de) from old code by Liviu Lalescu
-void TimetableExport::writeConflictsTxt(const QString& filename, QString saveTime, int placedActivities){
+void TimetableExport::writeConflictsTxt(const QString& filename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -1505,7 +1327,7 @@ void TimetableExport::writeActivitiesTimetableXml(const QString& xmlfilename){
 
 
 // writing the index html file by Volker Dirr.
-void TimetableExport::writeIndexHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeIndexHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -1634,7 +1456,7 @@ void TimetableExport::writeIndexHtml(const QString& htmlfilename, QString saveTi
 }
 
 // writing the stylesheet in css format to a file by Volker Dirr.
-void TimetableExport::writeStylesheetCss(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeStylesheetCss(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -1794,7 +1616,7 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, QString sa
 
 //XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
 //(old code by Liviu Lalescu)
-void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -1862,9 +1684,15 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(const QString& h
 				tos<<"          <th>";
 			tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-				int ai=students_timetable_weekly[subgroup][k][j]; //activity index
-				bool notAvailable=subgroupNotAvailableDayHour[subgroup][k][j];
-				tos<<writeActivityStudents(ai, k, j, notAvailable, false, true);
+				QList<qint16> allActivities;
+				allActivities.clear();
+				allActivities<<students_timetable_weekly[subgroup][k][j];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tos<<writeActivityStudents(students_timetable_weekly[subgroup][k][j], k, j, subgroupNotAvailableDayHour[subgroup][k][j], false, true);
+				} else{
+					tos<<writeActivitiesStudents(allActivities);
+				}
 			}
 			tos<<"        </tr>\n";
 		}
@@ -1887,7 +1715,7 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(const QString& h
 
 //XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
 //(old code by Liviu Lalescu)
-void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -1956,9 +1784,15 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(const QString& htm
 			tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
 
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
-				int ai=students_timetable_weekly[subgroup][k][j]; //activity index
-				bool notAvailable=subgroupNotAvailableDayHour[subgroup][k][j];
-				tos<<writeActivityStudents(ai, k, j, notAvailable, true, false);
+				QList<qint16> allActivities;
+				allActivities.clear();
+				allActivities<<students_timetable_weekly[subgroup][k][j];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tos<<writeActivityStudents(students_timetable_weekly[subgroup][k][j], k, j, subgroupNotAvailableDayHour[subgroup][k][j], true, false);
+				} else{
+					tos<<writeActivitiesStudents(allActivities);
+				}
 			}
 			tos<<"        </tr>\n";
 		}
@@ -1981,7 +1815,7 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(const QString& htm
 
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -2028,10 +1862,16 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(const QString& htm
 			else
 				tos<<"          <th>";
 			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
-			for(int i=0; i<gt.rules.nInternalSubgroups; i++){
-				int ai=students_timetable_weekly[i][k][j]; //activity index
-				bool notAvailable=subgroupNotAvailableDayHour[i][k][j];
-				tos<<writeActivityStudents(ai, k, j, notAvailable, false, true);
+			for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
+				QList<qint16> allActivities;
+				allActivities.clear();
+				allActivities<<students_timetable_weekly[subgroup][k][j];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tos<<writeActivityStudents(students_timetable_weekly[subgroup][k][j], k, j, subgroupNotAvailableDayHour[subgroup][k][j], false, true);
+				} else{
+					tos<<writeActivitiesStudents(allActivities);
+				}
 			}
 			tos<<"        </tr>\n";
 		}
@@ -2052,7 +1892,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(const QString& htm
 
 //XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
 //(old code by Liviu Lalescu)
-void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -2093,18 +1933,24 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(const QString& h
 	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
-	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
 		tos << "        <tr>\n";
 		if(TIMETABLE_HTML_LEVEL>=2)
 			tos<<"          <th class=\"yAxis\">";
 		else
 			tos<<"          <th>";
-		tos << gt.rules.internalSubgroupsList[i]->name << "</th>\n";
+		tos << gt.rules.internalSubgroupsList[subgroup]->name << "</th>\n";
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
-				int ai=students_timetable_weekly[i][k][j]; //activity index
-				bool notAvailable=subgroupNotAvailableDayHour[i][k][j];
-				tos<<writeActivityStudents(ai, k, j, notAvailable, true, false);
+				QList<qint16> allActivities;
+				allActivities.clear();
+				allActivities<<students_timetable_weekly[subgroup][k][j];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tos<<writeActivityStudents(students_timetable_weekly[subgroup][k][j], k, j, subgroupNotAvailableDayHour[subgroup][k][j], true, false);
+				} else{
+					tos<<writeActivitiesStudents(allActivities);
+				}
 			}
 		}
 		tos<<"        </tr>\n";
@@ -2124,7 +1970,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(const QString& h
 
 
 // by Volker Dirr
-void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -2149,12 +1995,12 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(const QString
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 	
 		tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
-		for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+		for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"xAxis\">";
 			else
 				tos<<"          <th>";
-			tos << gt.rules.internalSubgroupsList[i]->name << "</th>";
+			tos << gt.rules.internalSubgroupsList[subgroup]->name << "</th>";
 		}
 		tos<<"</tr>\n      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
@@ -2173,10 +2019,16 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(const QString
 			else
 				tos<<"          <th>";
 			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
-			for(int i=0; i<gt.rules.nInternalSubgroups; i++){
-				int ai=students_timetable_weekly[i][k][j]; //activity index
-				bool notAvailable=subgroupNotAvailableDayHour[i][k][j];
-				tos<<writeActivityStudents(ai, k, j, notAvailable, false, true);
+			for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
+				QList<qint16> allActivities;
+				allActivities.clear();
+				allActivities<<students_timetable_weekly[subgroup][k][j];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tos<<writeActivityStudents(students_timetable_weekly[subgroup][k][j], k, j, subgroupNotAvailableDayHour[subgroup][k][j], false, true);
+				} else{
+					tos<<writeActivitiesStudents(allActivities);
+				}
 			}
 			tos<<"        </tr>\n";
 		}
@@ -2200,7 +2052,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(const QString
 
 
 // by Volker Dirr
-void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -2241,17 +2093,23 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(const QStri
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
-		for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+		for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
 			tos << "        <tr>\n";
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"yAxis\">";
 			else
 				tos<<"          <th>";
-			tos << gt.rules.internalSubgroupsList[i]->name << "</th>\n";
+			tos << gt.rules.internalSubgroupsList[subgroup]->name << "</th>\n";
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
-				int ai=students_timetable_weekly[i][k][j]; //activity index
-				bool notAvailable=subgroupNotAvailableDayHour[i][k][j];
-				tos<<writeActivityStudents(ai, k, j, notAvailable, true, false);
+				QList<qint16> allActivities;
+				allActivities.clear();
+				allActivities<<students_timetable_weekly[subgroup][k][j];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tos<<writeActivityStudents(students_timetable_weekly[subgroup][k][j], k, j, subgroupNotAvailableDayHour[subgroup][k][j], true, false);
+				} else{
+					tos<<writeActivitiesStudents(allActivities);
+				}
 			}
 			tos<<"        </tr>\n";
 		}
@@ -2275,7 +2133,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(const QStri
 //Now print the groups
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -2368,9 +2226,9 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 								isNotAvailable=false;
 						}
 						assert(!allActivities.isEmpty());
-						int ai=allActivities[0]; //activity index
-						if(allActivities.size()==1){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(ai, k, j, isNotAvailable, false, true);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, false, true);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -2403,7 +2261,7 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -2496,9 +2354,9 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 								isNotAvailable=false;
 						}
 						assert(!allActivities.isEmpty());
-						int ai=allActivities[0]; //activity index
-						if(allActivities.size()==1){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(ai, k, j, isNotAvailable, true, false);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, true, false);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -2531,7 +2389,7 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -2615,9 +2473,9 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 								isNotAvailable=false;
 						}
 						assert(!allActivities.isEmpty());
-						int ai=allActivities[0]; //activity index
-						if(allActivities.size()==1){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(ai, k, j, isNotAvailable, false, true);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, false, true);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -2648,7 +2506,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 }
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -2729,9 +2587,9 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 								isNotAvailable=false;
 						}
 						assert(!allActivities.isEmpty());
-						int ai=allActivities[0]; //activity index
-						if(allActivities.size()==1){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(ai, k, j, isNotAvailable, true, false);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, true, false);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -2763,7 +2621,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -2847,9 +2705,9 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(const QString& h
 								isNotAvailable=false;
 						}
 						assert(!allActivities.isEmpty());
-						int ai=allActivities[0]; //activity index
-						if(allActivities.size()==1){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(ai, k, j, isNotAvailable, false, true);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, false, true);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -2880,7 +2738,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(const QString& h
 }
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -2959,9 +2817,9 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(const QString&
 								isNotAvailable=false;
 						}
 						assert(!allActivities.isEmpty());
-						int ai=allActivities[0]; //activity index
-						if(allActivities.size()==1){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(ai, k, j, isNotAvailable, true, false);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, true, false);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -2995,7 +2853,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(const QString&
 //Now print the years
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -3083,9 +2941,9 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 							}
 						}
 						assert(!allActivities.isEmpty());
-						int ai=allActivities[0]; //activity index
-						if(allActivities.size()==1){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(ai, k, j, isNotAvailable, false, true);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, false, true);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -3116,7 +2974,7 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -3205,9 +3063,9 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 							}
 						}
 						assert(!allActivities.isEmpty());
-						int ai=allActivities[0]; //activity index
-						if(allActivities.size()==1){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(ai, k, j, isNotAvailable, true, false);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, true, false);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -3238,7 +3096,7 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -3318,9 +3176,9 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 							}
 						}
 						assert(!allActivities.isEmpty());
-						int ai=allActivities[0]; //activity index
-						if(allActivities.size()==1){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(ai, k, j, isNotAvailable, false, true);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, false, true);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -3350,7 +3208,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 }
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -3432,9 +3290,9 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 							}
 						}
 						assert(!allActivities.isEmpty());
-						int ai=allActivities[0]; //activity index
-						if(allActivities.size()==1){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(ai, k, j, isNotAvailable, true, false);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, true, false);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -3465,7 +3323,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -3545,9 +3403,9 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(const QString& ht
 							}
 						}
 						assert(!allActivities.isEmpty());
-						int ai=allActivities[0]; //activity index
-						if(allActivities.size()==1){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(ai, k, j, isNotAvailable, false, true);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, false, true);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -3577,7 +3435,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(const QString& ht
 }
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -3658,9 +3516,9 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(const QString& 
 							}
 						}
 						assert(!allActivities.isEmpty());
-						int ai=allActivities[0]; //activity index
-						if(allActivities.size()==1){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(ai, k, j, isNotAvailable, true, false);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, true, false);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -3695,7 +3553,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(const QString& 
 //Now print all activities
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeAllActivitiesTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeAllActivitiesTimetableDaysHorizontalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -3767,7 +3625,7 @@ void TimetableExport::writeAllActivitiesTimetableDaysHorizontalHtml(const QStrin
 
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeAllActivitiesTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeAllActivitiesTimetableDaysVerticalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -3839,7 +3697,7 @@ void TimetableExport::writeAllActivitiesTimetableDaysVerticalHtml(const QString&
 
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeAllActivitiesTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeAllActivitiesTimetableTimeVerticalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -3909,7 +3767,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalHtml(const QString&
 }
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeAllActivitiesTimetableTimeHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeAllActivitiesTimetableTimeHorizontalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -3986,7 +3844,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalHtml(const QStrin
 
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeAllActivitiesTimetableTimeVerticalDailyHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeAllActivitiesTimetableTimeVerticalDailyHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -4059,7 +3917,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalDailyHtml(const QSt
 }
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -4142,7 +4000,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(const Q
 
 //XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
 //(old code by Liviu Lalescu)
-void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -4200,7 +4058,15 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 				tos<<"          <th>";
 			tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-				tos<<writeActivityTeacher(teacher, k, j, false, true);
+				QList<qint16> allActivities;
+				allActivities.clear();
+				allActivities<<teachers_timetable_weekly[teacher][k][j];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tos<<writeActivityTeacher(teacher, k, j, false, true);
+				} else{
+					tos<<writeActivitiesTeachers(allActivities);
+				}
 			}
 			tos<<"        </tr>\n";
 		}
@@ -4222,7 +4088,7 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 
 //XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
 //(old code by Liviu Lalescu)
-void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -4281,7 +4147,15 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 				tos<<"          <th>";
 			tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
-				tos<<writeActivityTeacher(teacher, k, j, true, false);
+				QList<qint16> allActivities;
+				allActivities.clear();
+				allActivities<<teachers_timetable_weekly[teacher][k][j];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tos<<writeActivityTeacher(teacher, k, j, true, false);
+				} else{
+					tos<<writeActivitiesTeachers(allActivities);
+				}
 			}
 			tos<<"        </tr>\n";
 		}
@@ -4302,7 +4176,7 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 }
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeTeachersTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeTeachersTimetableTimeVerticalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -4348,8 +4222,16 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(const QString& html
 			else
 				tos<<"          <th>";
 			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
-			for(int i=0; i<gt.rules.nInternalTeachers; i++){
-				tos<<writeActivityTeacher(i, k, j, false, true);
+			for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
+				QList<qint16> allActivities;
+				allActivities.clear();
+				allActivities<<teachers_timetable_weekly[teacher][k][j];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tos<<writeActivityTeacher(teacher, k, j, false, true);
+				} else {
+					tos<<writeActivitiesTeachers(allActivities);
+				}
 			}
 			tos<<"        </tr>\n";
 		}
@@ -4369,7 +4251,7 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(const QString& html
 
 //XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
 //(old code by Liviu Lalescu)
-void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -4410,16 +4292,24 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& ht
 	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
-	for(int i=0; i<gt.rules.nInternalTeachers; i++){
+	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
 		tos << "        <tr>\n";
 		if(TIMETABLE_HTML_LEVEL>=2)
 			tos<<"          <th class=\"yAxis\">";
 		else
 			tos<<"          <th>";
-		tos << gt.rules.internalTeachersList[i]->name << "</th>\n";
+		tos << gt.rules.internalTeachersList[teacher]->name << "</th>\n";
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
-				tos<<writeActivityTeacher(i, k, j, true, false);
+				QList<qint16> allActivities;
+				allActivities.clear();
+				allActivities<<teachers_timetable_weekly[teacher][k][j];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tos<<writeActivityTeacher(teacher, k, j, true, false);
+				} else {
+					tos<<writeActivitiesTeachers(allActivities);
+				}
 			}
 		}
 		tos<<"        </tr>\n";
@@ -4439,7 +4329,7 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& ht
 
 
 //by Volker Dirr
-void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -4487,8 +4377,16 @@ void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(const QString&
 			else
 				tos<<"          <th>";
 			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
-			for(int i=0; i<gt.rules.nInternalTeachers; i++){
-				tos<<writeActivityTeacher(i, k, j, false, true);
+			for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
+				QList<qint16> allActivities;
+				allActivities.clear();
+				allActivities<<teachers_timetable_weekly[teacher][k][j];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tos<<writeActivityTeacher(teacher, k, j, false, true);
+				} else {
+					tos<<writeActivitiesTeachers(allActivities);
+				}
 			}
 			tos<<"        </tr>\n";
 		}
@@ -4509,7 +4407,7 @@ void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(const QString&
 }
 
 //by Volker Dirr
-void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -4550,16 +4448,24 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(const QStrin
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
-		for(int i=0; i<gt.rules.nInternalTeachers; i++){
+		for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
 			tos << "        <tr>\n";
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"yAxis\">";
 			else
 				tos<<"          <th>";
-			tos << gt.rules.internalTeachersList[i]->name << "</th>\n";
+			tos << gt.rules.internalTeachersList[teacher]->name << "</th>\n";
 		
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
-				tos<<writeActivityTeacher(i, k, j, true, false);
+				QList<qint16> allActivities;
+				allActivities.clear();
+				allActivities<<teachers_timetable_weekly[teacher][k][j];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tos<<writeActivityTeacher(teacher, k, j, true, false);
+				} else {
+					tos<<writeActivitiesTeachers(allActivities);
+				}
 			}
 			tos<<"        </tr>\n";
 		}
@@ -4583,7 +4489,7 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(const QStrin
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //writing the rooms' timetable html format to a file by Volker Dirr
-void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -4644,7 +4550,15 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 					tos<<"          <th>";
 				tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
 				for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-					tos<<writeActivityRoom(room, k, j, false, true);
+					QList<qint16> allActivities;
+					allActivities.clear();
+					allActivities<<rooms_timetable_weekly[room][k][j];
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+						tos<<writeActivityRoom(room, k, j, false, true);
+					} else {
+						tos<<writeActivitiesRooms(allActivities);
+					}
 				}
 				tos<<"        </tr>\n";
 			}
@@ -4666,7 +4580,7 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 }
 
 //writing the rooms' timetable html format to a file by Volker Dirr
-void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -4729,7 +4643,15 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 					tos<<"          <th>";
 				tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
 				for(int j=0; j<gt.rules.nHoursPerDay; j++){
-					tos<<writeActivityRoom(room, k, j, true, false);
+					QList<qint16> allActivities;
+					allActivities.clear();
+					allActivities<<rooms_timetable_weekly[room][k][j];
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+						tos<<writeActivityRoom(room, k, j, true, false);
+					} else {
+						tos<<writeActivitiesRooms(allActivities);
+					}
 				}
 				tos<<"        </tr>\n";
 			}
@@ -4752,7 +4674,7 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 
 
 //writing the rooms' timetable html format to a file by Volker Dirr
-void TimetableExport::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -4801,8 +4723,16 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfil
 				else
 					tos<<"          <th>";
 				tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
-				for(int i=0; i<gt.rules.nInternalRooms; i++){
-					tos<<writeActivityRoom(i, k, j, false, true);
+				for(int room=0; room<gt.rules.nInternalRooms; room++){
+					QList<qint16> allActivities;
+					allActivities.clear();
+					allActivities<<rooms_timetable_weekly[room][k][j];
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+						tos<<writeActivityRoom(room, k, j, false, true);
+					} else {
+						tos<<writeActivitiesRooms(allActivities);
+					}
 				}
 				tos<<"        </tr>\n";
 			}
@@ -4823,7 +4753,7 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfil
 
 
 // writing the rooms' timetable html format to a file by Volker Dirr
-void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -4867,16 +4797,24 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlf
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
-		for(int i=0; i<gt.rules.nInternalRooms; i++){
+		for(int room=0; room<gt.rules.nInternalRooms; room++){
 			tos << "        <tr>\n";
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"yAxis\">";
 			else
 				tos<<"          <th>";
-			tos << gt.rules.internalRoomsList[i]->name << "</th>\n";
+			tos << gt.rules.internalRoomsList[room]->name << "</th>\n";
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 				for(int j=0; j<gt.rules.nHoursPerDay; j++){
-					tos<<writeActivityRoom(i, k, j, true, false);
+					QList<qint16> allActivities;
+					allActivities.clear();
+					allActivities<<rooms_timetable_weekly[room][k][j];
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+						tos<<writeActivityRoom(room, k, j, true, false);
+					} else {
+						tos<<writeActivitiesRooms(allActivities);
+					}
 				}
 			}
 			tos<<"        </tr>\n";
@@ -4897,7 +4835,7 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlf
 
 
 //by Volker Dirr
-void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -4948,8 +4886,16 @@ void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(const QString& ht
 				else
 					tos<<"          <th>";
 				tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
-				for(int i=0; i<gt.rules.nInternalRooms; i++){
-					tos<<writeActivityRoom(i, k, j, false, true);
+				for(int room=0; room<gt.rules.nInternalRooms; room++){
+					QList<qint16> allActivities;
+					allActivities.clear();
+					allActivities<<rooms_timetable_weekly[room][k][j];
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+						tos<<writeActivityRoom(room, k, j, false, true);
+					} else {
+						tos<<writeActivitiesRooms(allActivities);
+					}
 				}
 				tos<<"        </tr>\n";
 			}
@@ -4972,7 +4918,7 @@ void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(const QString& ht
 
 
 //by Volker Dirr
-void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -5016,15 +4962,23 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(const QString& 
 			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			*/
 			tos<<"      <tbody>\n";
-			for(int i=0; i<gt.rules.nInternalRooms; i++){
+			for(int room=0; room<gt.rules.nInternalRooms; room++){
 				tos << "        <tr>\n";
 				if(TIMETABLE_HTML_LEVEL>=2)
 					tos<<"          <th class=\"yAxis\">";
 				else
 					tos<<"          <th>";
-				tos << gt.rules.internalRoomsList[i]->name << "</th>\n";
+				tos << gt.rules.internalRoomsList[room]->name << "</th>\n";
 				for(int j=0; j<gt.rules.nHoursPerDay; j++){
-					tos<<writeActivityRoom(i, k, j, true, false);
+					QList<qint16> allActivities;
+					allActivities.clear();
+					allActivities<<rooms_timetable_weekly[room][k][j];
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+						tos<<writeActivityRoom(room, k, j, true, false);
+					} else {
+						tos<<writeActivitiesRooms(allActivities);
+					}
 				}
 				tos<<"        </tr>\n";
 			}
@@ -5050,7 +5004,7 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(const QString& 
 //Now print the subjects ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -5152,6 +5106,7 @@ void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(const QString& ht
 							}
 					}
 				}*/
+				addActivitiesWithSameStartingTime(allActivities, j);
 				tos<<writeActivitiesSubjects(allActivities);
 			}
 			tos<<"        </tr>\n";
@@ -5174,7 +5129,7 @@ void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(const QString& ht
 
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -5276,7 +5231,7 @@ void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(const QString& html
 					}
 				}
 				*/
-				
+				addActivitiesWithSameStartingTime(allActivities, j);
 				tos<<writeActivitiesSubjects(allActivities);
 			}
 		tos<<"        </tr>\n";
@@ -5299,7 +5254,7 @@ void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(const QString& html
 
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -5396,7 +5351,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(const QString& html
 							}
 					}
 				}*/
-
+				addActivitiesWithSameStartingTime(allActivities, j);
 				tos<<writeActivitiesSubjects(allActivities);
 			}
 			tos<<"        </tr>\n";
@@ -5416,7 +5371,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(const QString& html
 }
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -5509,7 +5464,7 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(const QString& ht
 							}
 					}
 				}*/
-
+				addActivitiesWithSameStartingTime(allActivities, j);
 				tos<<writeActivitiesSubjects(allActivities);
 			}
 		}
@@ -5530,7 +5485,7 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(const QString& ht
 
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -5625,7 +5580,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(const QString&
 							}
 					}
 				}*/
-
+				addActivitiesWithSameStartingTime(allActivities, j);
 				tos<<writeActivitiesSubjects(allActivities);
 			}
 			tos<<"        </tr>\n";
@@ -5648,7 +5603,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(const QString&
 }
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -5738,7 +5693,7 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(const QStrin
 							}
 					}
 				}*/
-
+				addActivitiesWithSameStartingTime(allActivities, j);
 				tos<<writeActivitiesSubjects(allActivities);
 			}
 			tos<<"        </tr>\n";
@@ -5761,7 +5716,7 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(const QStrin
 
 
 // Now print the teachers free periods. Code by Volker Dirr (http://timetabling.de/) ------------------------------------------------------------------------------------------------------------
-void TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -5915,7 +5870,7 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(const 
 }
 
 //XHTML generation code by Volker Dirr (http://timetabling.de/)
-void TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+void TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -6150,7 +6105,70 @@ void TimetableExport::computeActivitiesAtTime(){		// by Liviu Lalescu
 }
 
 
-QString TimetableExport::writeHead(const bool java, const int placedActivities, const bool printInstitution){		// by Volker Dirr
+void TimetableExport::computeActivitiesWithSameStartingTime(){		// by Volker Dirr
+	activitiesWithSameStartingTime.clear();
+
+	if(PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME){
+		for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+			TimeConstraint* tc=gt.rules.internalTimeConstraintsList[i];
+			if(tc->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME){ //not needed anymore:  && tc->weightPercentage==100
+				ConstraintActivitiesSameStartingTime* c=(ConstraintActivitiesSameStartingTime*) tc;
+				for(int a=0; a<c->_n_activities; a++){
+					QList<int> tmpList;
+					if(activitiesWithSameStartingTime.contains(c->_activities[a]))
+						tmpList=activitiesWithSameStartingTime.value(c->_activities[a]);
+					for(int b=0; b<c->_n_activities; b++){
+						if(a!=b){
+							if(best_solution.times[c->_activities[a]]==best_solution.times[c->_activities[b]]){ 	//because constraint is maybe not with 100% weight and failed
+								if(!tmpList.contains(c->_activities[b])){
+									tmpList<<c->_activities[b];
+								}
+							}
+						}
+					}
+					activitiesWithSameStartingTime.insert(c->_activities[a], tmpList);
+				}
+			}
+		}
+	}
+}
+
+
+bool TimetableExport::addActivitiesWithSameStartingTime(QList<qint16>& allActivities, int hour){			// by Volker Dirr
+	if(PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME){
+		bool activitiesWithSameStartingtime=false;
+		QList<qint16> allActivitiesNew;
+		foreach(qint16 tmpAct, allActivities){
+			allActivitiesNew<<tmpAct;
+			if(activitiesWithSameStartingTime.contains(tmpAct)){
+				QList<int> sameTimeList=activitiesWithSameStartingTime.value(tmpAct);
+				foreach(int sameTimeAct, sameTimeList){
+					if(!allActivitiesNew.contains(sameTimeAct) && !allActivities.contains(sameTimeAct)){
+						if(best_solution.times[sameTimeAct]!=UNALLOCATED_TIME){
+							Activity* act=&gt.rules.internalActivitiesList[sameTimeAct];
+							assert(best_solution.times[tmpAct]==best_solution.times[sameTimeAct]);//{
+								if((best_solution.times[sameTimeAct]/gt.rules.nDaysPerWeek+(act->duration-1))>=hour){
+									allActivitiesNew<<sameTimeAct;
+								}
+								activitiesWithSameStartingtime=true; //don't add this line in previous if command because of activities with different duration!
+							//}
+						}
+					}
+				}
+			}
+		}
+		//allActivities.clear();
+		allActivities=allActivitiesNew;
+		//allActivitiesNew.clear();
+		return activitiesWithSameStartingtime;
+	}
+	else
+		return false;
+}
+
+
+
+QString TimetableExport::writeHead(bool java, int placedActivities, bool printInstitution){		// by Volker Dirr
 	QString tmp;
 	tmp+="<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tmp+="  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -6203,7 +6221,7 @@ QString TimetableExport::writeHead(const bool java, const int placedActivities, 
 	return tmp;
 }
 
-QString TimetableExport::writeTOCDays(const bool detailed){		// by Volker Dirr
+QString TimetableExport::writeTOCDays(bool detailed){		// by Volker Dirr
 	QString tmp;
 	tmp+="    <p><strong>"+TimetableExport::tr("Table of content")+"</strong></p>\n";
 	tmp+="    <ul>\n";
@@ -6224,7 +6242,7 @@ QString TimetableExport::writeTOCDays(const bool detailed){		// by Volker Dirr
 	return tmp;
 }
 
-QString TimetableExport::writeStartTagTDofActivities(const Activity* act, const bool detailed, const bool colspan, const bool rowspan){		// by Volker Dirr
+QString TimetableExport::writeStartTagTDofActivities(const Activity* act, bool detailed, bool colspan, bool rowspan){		// by Volker Dirr
 	QString tmp;
 	assert(!(colspan && rowspan));
 	if(detailed)
@@ -6270,7 +6288,7 @@ QString TimetableExport::writeStartTagTDofActivities(const Activity* act, const 
 
 
 		// by Volker Dirr
-QString TimetableExport::writeSubjectAndActivityTags(const Activity* act, const QString startTag, const QString startTagAttribute, const bool activityTagsOnly){
+QString TimetableExport::writeSubjectAndActivityTags(const Activity* act, const QString& startTag, const QString& startTagAttribute, bool activityTagsOnly){
 	QString tmp;
 	if(act->subjectName.size()>0||act->activityTagsNames.size()>0){
 		if(startTag=="div" && TIMETABLE_HTML_LEVEL>=3)
@@ -6288,17 +6306,19 @@ QString TimetableExport::writeSubjectAndActivityTags(const Activity* act, const 
 			}
 		}
 		if(act->activityTagsNames.size()>0){
+			tmp+="<span class=\"activitytag\">";
 			foreach(QString atn, act->activityTagsNames){
 				switch(TIMETABLE_HTML_LEVEL){
-					case 3 : tmp+="<span class=\"activitytag\">"+protect2(atn)+"</span>"; break;
-					case 4 : tmp+="<span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsTimetable.value(atn)+"\">"+protect2(atn)+"</span></span>"; break;
+					case 3 : tmp+=protect2(atn); break;
+					case 4 : tmp+="<span class=\"at_"+hashActivityTagIDsTimetable.value(atn)+"\">"+protect2(atn)+"</span>"; break;
 					case 5 : ;
-					case 6 : tmp+="<span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsTimetable.value(atn)+"\" onmouseover=\"highlight('at_"+hashActivityTagIDsTimetable.value(atn)+"')\">"+protect2(atn)+"</span></span>"; break;
+					case 6 : tmp+="<span class=\"at_"+hashActivityTagIDsTimetable.value(atn)+"\" onmouseover=\"highlight('at_"+hashActivityTagIDsTimetable.value(atn)+"')\">"+protect2(atn)+"</span>"; break;
 					default: tmp+=protect2(atn); break;
 				}
 				tmp+=", ";
 			}
 			tmp.remove(tmp.size()-2, 2);
+			tmp+="</span>";
 		}
 		if(startTag=="div"){
 			if(TIMETABLE_HTML_LEVEL>=3)
@@ -6309,7 +6329,7 @@ QString TimetableExport::writeSubjectAndActivityTags(const Activity* act, const 
 	return tmp;
 }
 
-QString TimetableExport::writeStudents(const Activity* act, const QString startTag, const QString startTagAttribute){		// by Volker Dirr
+QString TimetableExport::writeStudents(const Activity* act, const QString& startTag, const QString& startTagAttribute){		// by Volker Dirr
 	QString tmp;
 	if(act->studentsNames.size()>0){
 		if(startTag=="div" && TIMETABLE_HTML_LEVEL>=3)
@@ -6333,7 +6353,7 @@ QString TimetableExport::writeStudents(const Activity* act, const QString startT
 	return tmp;
 }
 
-QString TimetableExport::writeTeachers(const Activity* act, const QString startTag, const QString startTagAttribute){		// by Volker Dirr
+QString TimetableExport::writeTeachers(const Activity* act, const QString& startTag, const QString& startTagAttribute){		// by Volker Dirr
 	QString tmp;
 	if(act->teachersNames.size()>0){
 		if(startTag=="div" && TIMETABLE_HTML_LEVEL>=3)
@@ -6357,7 +6377,7 @@ QString TimetableExport::writeTeachers(const Activity* act, const QString startT
 	return tmp;
 }
 
-QString TimetableExport::writeRoom(const int ai, const QString startTag, const QString startTagAttribute){		// by Volker Dirr
+QString TimetableExport::writeRoom(int ai, const QString& startTag, const QString& startTagAttribute){		// by Volker Dirr
 	QString tmp;
 	int r=best_solution.rooms[ai];
 	if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
@@ -6378,7 +6398,7 @@ QString TimetableExport::writeRoom(const int ai, const QString startTag, const Q
 	return tmp;
 }
 
-QString TimetableExport::writeNotAvailable(const QString weight){		// by Volker Dirr
+QString TimetableExport::writeNotAvailable(const QString& weight){		// by Volker Dirr
 	QString tmp;
 	//weight=" "+weight;
 	switch(TIMETABLE_HTML_LEVEL){
@@ -6406,7 +6426,7 @@ QString TimetableExport::writeEmpty(){		// by Volker Dirr
 
 
 
-QString TimetableExport::writeActivityStudents(const int ai, const int day, const int hour, const bool notAvailable, const bool colspan, const bool rowspan){	//by Volker Dirr
+QString TimetableExport::writeActivityStudents(int ai, int day, int hour, bool notAvailable, bool colspan, bool rowspan){	//by Volker Dirr
 	QString tmp;
 	int currentTime=day+gt.rules.nDaysPerWeek*hour;
 	if(ai!=UNALLOCATED_ACTIVITY){
@@ -6486,7 +6506,7 @@ QString TimetableExport::writeActivitiesStudents(const QList<qint16>& allActivit
 }
 
 
-QString TimetableExport::writeActivityTeacher(const int teacher, const int day, const int hour, const bool colspan, const bool rowspan){	//by Volker Dirr
+QString TimetableExport::writeActivityTeacher(int teacher, int day, int hour, bool colspan, bool rowspan){	//by Volker Dirr
 	QString tmp;
 	int ai=teachers_timetable_weekly[teacher][day][hour];
 	int currentTime=day+gt.rules.nDaysPerWeek*hour;
@@ -6511,8 +6531,63 @@ QString TimetableExport::writeActivityTeacher(const int teacher, const int day, 
 }
 
 
+QString TimetableExport::writeActivitiesTeachers(const QList<qint16>& allActivities){	//by Volker Dirr
+	QString tmp;
+	if(TIMETABLE_HTML_LEVEL>=1)
+		tmp+="          <td><table class=\"detailed\">";
+	else
+		tmp+="          <td><table>";
+	if(TIMETABLE_HTML_LEVEL>=3)
+		tmp+="<tr class=\"teacher line0\">";
+	else	tmp+="<tr>";
+	for(int a=0; a<allActivities.size(); a++){
+		int ai=allActivities[a];
+		Activity* act=&gt.rules.internalActivitiesList[ai];
+		if(ai!=UNALLOCATED_ACTIVITY){
+			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeTeachers(act, "", "")+"</td>";
+		}
+	}
+	tmp+="</tr>";
+	if(TIMETABLE_HTML_LEVEL>=3)
+		tmp+="<tr class=\"student line1\">";
+	else	tmp+="<tr>";
+	for(int a=0; a<allActivities.size(); a++){
+		int ai=allActivities[a];
+		Activity* act=&gt.rules.internalActivitiesList[ai];
+		if(ai!=UNALLOCATED_ACTIVITY){
+			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeStudents(act, "", "")+"</td>";
+		}
+	}
+	tmp+="</tr>";
+	if(TIMETABLE_HTML_LEVEL>=3)
+		tmp+="<tr class=\"line2\">";
+	else	tmp+="<tr>";
+	for(int a=0; a<allActivities.size(); a++){
+		int ai=allActivities[a];
+		Activity* act=&gt.rules.internalActivitiesList[ai];
+		if(ai!=UNALLOCATED_ACTIVITY){
+			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeSubjectAndActivityTags(act, "", "", false)+"</td>";
+		}
+	}
+	tmp+="</tr>";
 
-QString TimetableExport::writeActivityRoom(const int room, const int day, const int hour, const bool colspan, const bool rowspan){	//by Volker Dirr
+	if(TIMETABLE_HTML_LEVEL>=3)
+		tmp+="<tr class=\"room line3\">";
+	else	tmp+="<tr>";
+	for(int a=0; a<allActivities.size(); a++){
+		int ai=allActivities[a];
+		if(ai!=UNALLOCATED_ACTIVITY){
+			Activity* act=&gt.rules.internalActivitiesList[ai];
+			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeRoom(ai, "", "")+"</td>";
+		}
+	}
+	tmp+="</tr>";
+	tmp+="</table></td>\n";
+	return tmp;
+}
+
+
+QString TimetableExport::writeActivityRoom(int room, int day, int hour, bool colspan, bool rowspan){	//by Volker Dirr
 	QString tmp;
 	int ai=rooms_timetable_weekly[room][day][hour];
 	int currentTime=day+gt.rules.nDaysPerWeek*hour;
@@ -6542,12 +6617,68 @@ QString TimetableExport::writeActivityRoom(const int room, const int day, const 
 	return tmp;
 }
 
+
+QString TimetableExport::writeActivitiesRooms(const QList<qint16>& allActivities){	//by Volker Dirr
+	QString tmp;
+	if(TIMETABLE_HTML_LEVEL>=1)
+		tmp+="          <td><table class=\"detailed\">";
+	else
+		tmp+="          <td><table>";
+	if(TIMETABLE_HTML_LEVEL>=3)
+		tmp+="<tr class=\"room line0\">";
+	else	tmp+="<tr>";
+	for(int a=0; a<allActivities.size(); a++){
+		int ai=allActivities[a];
+		if(ai!=UNALLOCATED_ACTIVITY){
+			Activity* act=&gt.rules.internalActivitiesList[ai];
+			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeRoom(ai, "", "")+"</td>";
+		}
+	}
+	tmp+="</tr>";
+	if(TIMETABLE_HTML_LEVEL>=3)
+		tmp+="<tr class=\"student line1\">";
+	else	tmp+="<tr>";
+	for(int a=0; a<allActivities.size(); a++){
+		int ai=allActivities[a];
+		Activity* act=&gt.rules.internalActivitiesList[ai];
+		if(ai!=UNALLOCATED_ACTIVITY){
+			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeStudents(act, "", "")+"</td>";
+		}
+	}
+	tmp+="</tr>";
+	if(TIMETABLE_HTML_LEVEL>=3)
+		tmp+="<tr class=\"teacher line2\">";
+	else	tmp+="<tr>";
+	for(int a=0; a<allActivities.size(); a++){
+		int ai=allActivities[a];
+		Activity* act=&gt.rules.internalActivitiesList[ai];
+		if(ai!=UNALLOCATED_ACTIVITY){
+			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeTeachers(act, "", "")+"</td>";
+		}
+	}
+	tmp+="</tr>";
+	if(TIMETABLE_HTML_LEVEL>=3)
+		tmp+="<tr class=\"line3\">";
+	else	tmp+="<tr>";
+	for(int a=0; a<allActivities.size(); a++){
+		int ai=allActivities[a];
+		Activity* act=&gt.rules.internalActivitiesList[ai];
+		if(ai!=UNALLOCATED_ACTIVITY){
+			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeSubjectAndActivityTags(act, "", "", false)+"</td>";
+		}
+	}
+	tmp+="</tr>";
+
+	tmp+="</table></td>\n";
+	return tmp;
+}
+
+
 QString TimetableExport::writeActivitiesSubjects(const QList<qint16>& allActivities){	//by Volker Dirr
 	QString tmp;
 	if(allActivities.isEmpty()){
 		tmp+=writeEmpty();
 	} else {
-		int ai=allActivities[0]; //activity index	//TODO??? is this needed? check everywhere!
 		if(TIMETABLE_HTML_LEVEL>=1)
 			tmp+="          <td><table class=\"detailed\">";
 		else
@@ -6556,26 +6687,23 @@ QString TimetableExport::writeActivitiesSubjects(const QList<qint16>& allActivit
 			tmp+="<tr class=\"line0 activitytag\">";
 		else	tmp+="<tr>";
 		for(int a=0; a<allActivities.size(); a++){
-			ai=allActivities[a];
-			Activity* act=&gt.rules.internalActivitiesList[ai];
+			Activity* act=&gt.rules.internalActivitiesList[allActivities[a]];
 			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeSubjectAndActivityTags(act, "", "", false)+"</td>";
 		}
 		tmp+="</tr>";
 		if(TIMETABLE_HTML_LEVEL>=3)
 			tmp+="<tr class=\"student line1\">";
-					else	tmp+="<tr>";
+		else	tmp+="<tr>";
 		for(int a=0; a<allActivities.size(); a++){
-			ai=allActivities[a];
-			Activity* act=&gt.rules.internalActivitiesList[ai];
+			Activity* act=&gt.rules.internalActivitiesList[allActivities[a]];
 			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeStudents(act, "", "")+"</td>";	
 		}
 		tmp+="</tr>";
 		if(TIMETABLE_HTML_LEVEL>=3)
 			tmp+="<tr class=\"teacher line2\">";
-			else	tmp+="<tr>";
-			for(int a=0; a<allActivities.size(); a++){
-			ai=allActivities[a];
-			Activity* act=&gt.rules.internalActivitiesList[ai];
+		else	tmp+="<tr>";
+		for(int a=0; a<allActivities.size(); a++){
+			Activity* act=&gt.rules.internalActivitiesList[allActivities[a]];
 			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeTeachers(act, "", "")+"</td>";
 		}
 		tmp+="</tr>";
@@ -6583,7 +6711,7 @@ QString TimetableExport::writeActivitiesSubjects(const QList<qint16>& allActivit
 			tmp+="<tr class=\"room line3\">";
 		else	tmp+="<tr>";
 		for(int a=0; a<allActivities.size(); a++){
-			ai=allActivities[a];
+			int ai=allActivities[a];
 			Activity* act=&gt.rules.internalActivitiesList[ai];
 			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeRoom(ai, "", "")+"</td>";
 		}

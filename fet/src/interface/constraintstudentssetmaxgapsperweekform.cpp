@@ -32,6 +32,9 @@ ConstraintStudentsSetMaxGapsPerWeekForm::ConstraintStudentsSetMaxGapsPerWeekForm
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+
+	QSize tmp2=studentsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp2);
 	
 	studentsComboBox->insertItem("");
 

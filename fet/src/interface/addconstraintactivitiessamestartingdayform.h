@@ -47,7 +47,7 @@ public:
 	bool filterOk(Activity* a);
 
 public slots:
-	void filterChanged();	
+	void filterChanged();
 
 	void addActivity();
 	void removeActivity();

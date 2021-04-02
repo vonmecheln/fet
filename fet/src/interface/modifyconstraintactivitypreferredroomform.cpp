@@ -36,6 +36,11 @@ ModifyConstraintActivityPreferredRoomForm::ModifyConstraintActivityPreferredRoom
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+
+	QSize tmp5=roomsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp5);
+	QSize tmp6=activitiesComboBox->minimumSizeHint();
+	Q_UNUSED(tmp6);
 	
 	activitiesComboBox->setMaximumWidth(maxRecommendedWidth(this));
 	

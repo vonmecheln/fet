@@ -40,6 +40,9 @@ AddConstraintRoomNotAvailableTimesForm::AddConstraintRoomNotAvailableTimesForm()
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
+	QSize tmp5=roomsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp5);
+
 	updateRoomsComboBox();
 
 	notAllowedTimesTable->setNumRows(gt.rules.nHoursPerDay);

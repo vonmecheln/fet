@@ -1396,4 +1396,11 @@ Versions 5.10.0 - 5.10.x
 	- Added a 'Related' checkbox in activities and subactivities dialogs (suggested by Bingen).
 	- Speed improvement in some precomputing situations (not in generation).
 	- Improved size for constraints with combo boxes of very large activities (suggested by Bingen).
+- Version 5.10.1
+	- Speed improvement if user has constraints activities same starting time. Idea and partial code by Volker Dirr.
+	- Added possibility to print activities with same starting time in the html timetables (suggested on the forum, implemented by Volker Dirr).
+	- Minor interface improments under GNU/Linux. The combo boxes are now smaller.
+	- Modified the main menu arrangement of constraints (suggested by Massimo Mancini).
+	- Crash bug fix (very rare, if user pressed cancel immediately after hitting generation start in timetable generate dialog).
+	- Added another sample file (by T. Renganathan).
 	

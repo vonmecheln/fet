@@ -158,6 +158,9 @@ using namespace std;
 #include "lockunlock.h"
 
 #include <qmessagebox.h>
+
+#include "longtextmessagebox.h"
+
 //#include <q3filedialog.h>
 #include <QFileDialog>
 #include <qstring.h>
@@ -344,6 +347,9 @@ FetMainForm::FetMainForm()
 	
 	settingsPrintNotAvailableSlotsAction->setCheckable(true);
 	settingsPrintNotAvailableSlotsAction->setChecked(PRINT_NOT_AVAILABLE_TIME_SLOTS);
+
+	settingsPrintActivitiesWithSameStartingTimeAction->setCheckable(true);
+	settingsPrintActivitiesWithSameStartingTimeAction->setChecked(PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME);
 
 	//needed to sync the view table forms
 	pcommunicationSpinBox=&communicationSpinBox;
@@ -982,16 +988,32 @@ void FetMainForm::on_fileSaveAction_activated()
 
 void FetMainForm::on_dataInstitutionNameAction_activated()
 {
-	InstitutionNameForm* form=new InstitutionNameForm();
+/*	InstitutionNameForm* form=new InstitutionNameForm();
 	form->setAttribute(Qt::WA_DeleteOnClose);
-	form->show();
+	form->show();*/
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	InstitutionNameForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataCommentsAction_activated()
 {
-	CommentsForm* form=new CommentsForm();
+/*	CommentsForm* form=new CommentsForm();
 	form->setAttribute(Qt::WA_DeleteOnClose);
-	form->show();
+	form->show();*/
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	CommentsForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataDaysAction_activated()
@@ -1112,16 +1134,21 @@ void FetMainForm::on_helpSettingsAction_activated()
 {
 	QString s;
 	
-	s+=tr("Probably a difficult to understand setting is this one:");
+	s+=tr("Probably some settings which are more difficult to understand are these ones:");
 	s+="\n\n";
-	s+=tr("Divide html timetables with time-axis by days");
-	s+="\n\n";
-	s+=tr("This means simply that the html timetables of type 'time horizontal' or 'time vertical' (see the generated html timetables)"
+	s+=tr("Option 'Divide html timetables with time-axis by days':"
+	" This means simply that the html timetables of type 'time horizontal' or 'time vertical' (see the generated html timetables)"
 	" should be or not divided according to the days.");
 	s+=" ";
-	s+=tr("If the 'time horizontal' or 'time vertical' html timetables are too large for you, then you might need this option");
+	s+=tr("If the 'time horizontal' or 'time vertical' html timetables are too large for you, then you might need to select this option");
 	
-	QMessageBox::information(this, tr("FET information"), s);
+	s+="\n\n";
+	s+=tr("Option 'Print activities with same starting time in timetables': selecting it means that the html timetables will contain for"
+	 " each slot all the activities which have the same starting time (fact specified by your constraints) as the activity(ies) which are normally shown in this slot."
+	 " If you don't use constraints activities same starting time, this option has no effect for you.");
+	
+	//QMessageBox::information(this, tr("FET information"), s);
+	LongTextMessageBox::largeInformation(this, tr("FET information"), s);
 }
 
 void FetMainForm::on_dataHelpOnStatisticsAction_activated()
@@ -2556,6 +2583,9 @@ void FetMainForm::on_languageAction_activated()
 	
 	QComboBox* languagesComboBox=new QComboBox();
 	
+	QSize tmp=languagesComboBox->minimumSizeHint();
+	Q_UNUSED(tmp);
+	
 	/*const int N_LANGUAGES=17;
 	
 	QString shortLang[N_LANGUAGES]={"en_GB", "ar", "ca", "de", "el", 
@@ -2632,11 +2662,11 @@ void FetMainForm::on_languageAction_activated()
 	tapb2->setFocus();
 
 	int w=dialog.sizeHint().width();
-	if(w<250)
-		w=250;
+	if(w<350)
+		w=350;
 	int h=dialog.sizeHint().height();
-	if(h<150)
-		h=150;
+	if(h<180)
+		h=180;
 	dialog.setGeometry(0,0,w,h);
 	centerWidgetOnScreen(&dialog);
 					
@@ -2906,14 +2936,16 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 	s+="\n";
 	s+=tr("8. Divide html timetables with time-axis by days will be false");
 	s+="\n";
-	s+=tr("9. Output (results) directory will be %1").arg(QDir::homePath()+FILE_SEP+"fet-results");
+	s+=tr("9. Output (results) directory will be %1").arg(QDir::toNativeSeparators(QDir::homePath()+FILE_SEP+"fet-results"));
+	s+="\n";
+	s+=tr("10. Print activities with same starting time will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 	//s+="    ";
 	//s+=tr("Explanation: $HOME is usually '/home/username' under UNIX and Mac and 'Documents and Settings\\username' or 'Users\\username' under Windows");
 	//s+="\n";
 	
-	switch( QMessageBox::information( this, tr("FET application"), s,
-	 tr("&Yes"), tr("&No"), 0 , 1 ) ) {
+	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,
+	 tr("&Yes"), tr("&No"), QString(), 0 , 1 ) ) {
 	case 0: // Yes
 		break;
 	case 1: // No
@@ -2949,6 +2981,9 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 	
 	settingsPrintNotAvailableSlotsAction->setChecked(true);
 	PRINT_NOT_AVAILABLE_TIME_SLOTS=true;
+
+	settingsPrintActivitiesWithSameStartingTimeAction->setChecked(false);
+	PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME=false;
 }
 
 void FetMainForm::on_settingsTimetableHtmlLevelAction_activated()
@@ -2966,6 +3001,11 @@ void FetMainForm::on_settingsTimetableHtmlLevelAction_activated()
 void FetMainForm::on_settingsPrintNotAvailableSlotsAction_toggled()
 {
 	PRINT_NOT_AVAILABLE_TIME_SLOTS=settingsPrintNotAvailableSlotsAction->isChecked();
+}
+
+void FetMainForm::on_settingsPrintActivitiesWithSameStartingTimeAction_toggled()
+{
+	PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME=settingsPrintActivitiesWithSameStartingTimeAction->isChecked();
 }
 
 void FetMainForm::on_spreadActivitiesAction_activated()

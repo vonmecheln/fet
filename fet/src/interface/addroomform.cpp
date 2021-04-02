@@ -35,6 +35,9 @@ AddRoomForm::AddRoomForm()
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+
+	QSize tmp5=buildingsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp5);
 	
 	/*typesComboBox->clear();
 	typesComboBox->setDuplicatesEnabled(false);

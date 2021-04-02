@@ -259,6 +259,8 @@ void TimetableGenerateMultipleForm::start(){
 
 	for(int qq=0; qq<gt.rules.nInternalActivities; qq++)
 		savedPermutation[qq]=permutation[qq];
+		
+	genMulti.c.makeUnallocated(gt.rules);
 
 	generateMultipleThread.start();
 }

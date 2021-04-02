@@ -1155,3 +1155,54 @@ I have seen some custom versions of FET considering the morning / afternoon divi
 From Silvia:
 
 Would it be possible to add a time constraint for teachers saying preferred times? I don't mean available times. Sometimes a teacher says: I'd like not to have classes 1st one in the morning, or I'd like not to have classes more than one afternoon. But sometimes a teacher says: I'd prefer to start at first time in the morning. Is that possible?
+
+28---------------------------------------------------------
+From T. Renganathan:
+
+2)      You
+can give a provision for the user to perform his own sorting of years,
+teachers, etc., for e.g., using dragging and dropping.
+ 
+3)      You
+can include a provision for multiple selection of subjects, teachers,
+activities, etc., for example using Ctrl or Shift key.  This will especially be useful for deleting
+multiple entries.
+ 
+4)      You
+have given a time constraint on the maximum hours that can be handled by a
+teacher.  I suggest that this constraint
+can also include an activity tag.  The
+reason is as follows.  Usually teachers
+handle both theory and lab subjects in a day.  While theory subjects are single hours, the lab subjects are spread over
+3 hours.  So to add a time constraint only on the maximum number of theory subjects
+that can be handled by a teacher in a day (which is usually not applicable when
+lab subjects are also taken into account), an activity tag is required in this
+constraint.
+
+29---------------------------------------------------------
+From Volker Dirr:
+
+Volker:
+>> if i am in FET->Data->Subjects
+>> i can't see at the right side all constraints.
+>>
+>> in my latest samplefiles for example the "a set of subactivities has a
+>> set
+>> of preferd time slots" is missing to that subject.
+>>
+>> also in FET->Data->Activity Tags are not all constraints displayed.
+>
+Liviu:
+> Yes, I know, because these are related to activities. I chose not to show
+> them.
+>
+>
+
+Volker:
+please add to TODO. i think this is a nice feature we should not forgot.
+
+Liviu:
+I thought about your proposal. I think it cannot be done and I know the reasons why I didn't do that: 
+a constraint activities preferred starting times has subject "" or specified. If it is "", then it is for 
+all subjects. So, I should write all constraints of this type with subject "" for each subject. But this 
+is not correct. A constraint might have a teacher which don't have this subject.

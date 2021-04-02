@@ -189,8 +189,10 @@ Running FET:
 	variables (these are not used in normal cases). FET seems to need a good amount of virtual memory on Windows
 	(maybe it is best to let Windows manage the virtual memory).
 	
-	COMMAND LINE: no GUI, just run "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u] [--dividetimeaxisbydays=v]",
-	where	x is the input file, for instance "inputfile.fet"
+	COMMAND LINE: no GUI, just run "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u]
+	 [--dividetimeaxisbydays=v] [--printsimultaneousactivities=w]",
+	(under Windows, use fet.exe instead of fet)
+	where	x is the input file, for instance "data.fet"
 			d is the path to results directory, without trailing slash or backslash (default is current working path).
 				Make sure you have write permissions there.
 			y is integer (seconds) (default 2000000000, which is practically infinite)
@@ -200,6 +202,9 @@ Running FET:
 			u is either "true" or "false" and represents if you want -x- (for true) or --- (for false) in the generated timetables for the
 				not available slots (default true)
 			v is either true or false, represents if you want html timetables with time-axis divided by days (default false).
+			w is either true or false, represents if you want html timetables to show related activities which have constraints with same starting time (default false).
+				(for instance, if A1 (T1, G1) and A2 (T2, G2) have constraint activities same starting time, then in T1's timetable will appear also A2, at the same slot
+				as A1).
 	
 	The result of the operation is logged into file outputdir/logs/result.txt.
 		
