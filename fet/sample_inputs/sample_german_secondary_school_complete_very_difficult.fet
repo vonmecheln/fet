@@ -1,4 +1,4 @@
-<!DOCTYPE FET><FET version="5.0.2">
+﻿<!DOCTYPE FET><FET version="5.4.16">
 
 <Institution_Name>german secondary school</Institution_Name>
 
@@ -59,10 +59,6 @@ The teachersnames are replaced by other random names.
 	<Name>5b</Name>
 	<Number_of_Students>0</Number_of_Students>
 		<Subgroup>
-		<Name>5b WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
 		<Name>5bMF</Name>
 		<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
@@ -87,10 +83,6 @@ The teachersnames are replaced by other random names.
 	<Name>5c</Name>
 	<Number_of_Students>0</Number_of_Students>
 		<Subgroup>
-		<Name>5c WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
 		<Name>5cMF</Name>
 		<Number_of_Students>0</Number_of_Students>
 		</Subgroup>
@@ -114,10 +106,6 @@ The teachersnames are replaced by other random names.
 	<Group>
 	<Name>5d</Name>
 	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>5d WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
 		<Subgroup>
 		<Name>5dMF</Name>
 		<Number_of_Students>0</Number_of_Students>

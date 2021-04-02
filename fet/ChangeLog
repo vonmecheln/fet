@@ -1123,4 +1123,8 @@ Versions 5.4.0 - 5.4.
 	- Various translations updates
 	- Update of README file
 	- MAX_ACTIVITIES is now 5000
+- Version 5.4.16
+	- Groups and years timetables contain dashed lines in cells which contain more activities 
+	(suggested by Hatim Ali, done by Volker Dirr)
+	- Arabic translation update by Hatim Ali
 	

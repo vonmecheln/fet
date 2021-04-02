@@ -116,6 +116,8 @@ void TimetableExport::writeSimulationResults(){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
+	assert(TIMETABLE_HTML_LEVEL>=0);
+	assert(TIMETABLE_HTML_LEVEL<=5);
 
 	QString s;
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
@@ -212,6 +214,8 @@ void TimetableExport::writeSimulationResults(int n){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
+	assert(TIMETABLE_HTML_LEVEL>=0);
+	assert(TIMETABLE_HTML_LEVEL<=5);
 
 	QString s;
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
@@ -327,13 +331,11 @@ void TimetableExport::writeConflictsTxt(const QString& filename, QString saveTim
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(filename));
 		return;
-	
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 	
 	if(placedActivities==gt.rules.nInternalActivities){
 		tos<<TimetableExport::tr("Soft conflicts of %1").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1))<<"\n";
@@ -361,7 +363,6 @@ void TimetableExport::writeConflictsTxt(const QString& filename, QString saveTim
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(filename).arg(file.error()));
 	}
-								
 	file.close();
 }
 
@@ -380,7 +381,6 @@ void TimetableExport::writeSubgroupsTimetableXml(const QString& xmlfilename)
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(xmlfilename));
 		return;
-	
 		assert(0);
 	}
 	QTextStream tos(&file);
@@ -442,7 +442,6 @@ void TimetableExport::writeSubgroupsTimetableXml(const QString& xmlfilename)
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(xmlfilename).arg(file.error()));
 	}
-								
 	file.close();
 }
 
@@ -461,7 +460,6 @@ void TimetableExport::writeTeachersTimetableXml(const QString& xmlfilename)
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(xmlfilename));
 		return;
-	
 		assert(0);
 	}
 	QTextStream tos(&file);
@@ -520,7 +518,6 @@ void TimetableExport::writeTeachersTimetableXml(const QString& xmlfilename)
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(xmlfilename).arg(file.error()));
 	}
-								
 	file.close();
 }
 
@@ -538,13 +535,11 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, QString sa
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-	
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"/* "<<TimetableExport::tr("CSS Stylesheet of %1").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1))<<"\n";
 	if(placedActivities!=gt.rules.nInternalActivities)
@@ -555,7 +550,7 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, QString sa
 	tos<<"/* "<<TimetableExport::tr("To hide an element just write the following phrase into the element")<<": display:none; */\n\n";
 	tos<<"table {\n  page-break-before: always;\n  text-align: center;\n}\n\n";
 	tos<<"table.modulo2 {\n\n}\n\n";
-	tos<<"table.detailed {\n  margin-left:auto; margin-right:auto;\n  text-align: center;\n  border: 0px;\n}\n\n";
+	tos<<"table.detailed {\n  margin-left:auto; margin-right:auto;\n  text-align: center;\n  border: 0px;\n  border-spacing: 0;\n  border-collapse: collapse;\n}\n\n";
 	tos<<"caption {\n\n}\n\n";
 	tos<<"thead {\n\n}\n\n";
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
@@ -567,6 +562,7 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, QString sa
 	tos<<"tbody {\n\n}\n\n";
 	tos<<"th {\n\n}\n\n";
 	tos<<"td {\n\n}\n\n";
+	tos<<"td.detailed {\n  border: 1px dashed silver;\n  border-bottom: 0;\n  border-top: 0;\n}\n\n";
 	if(TIMETABLE_HTML_LEVEL>=2){
 		tos<<"th.xAxis {\n/*width: 8em; */\n}\n\n";
 		tos<<"th.yAxis {\n  height: 8ex;\n}\n\n";
@@ -610,8 +606,6 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, QString sa
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
-						
-
 	file.close();
 }
 
@@ -633,13 +627,11 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(const QString& h
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -816,7 +808,6 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(const QString& h
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
-								
 	file.close();
 }
 
@@ -838,13 +829,11 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(const QString& htm
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -1024,7 +1013,6 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(const QString& htm
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
-								
 	file.close();
 }
 
@@ -1046,13 +1034,11 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(const QString& htm
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -1197,8 +1183,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(const QString& htm
 	if(file.error()>0){
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
-	}
-								
+	}	
 	file.close();
 }
 
@@ -1219,13 +1204,11 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(const QString& h
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -1373,7 +1356,6 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(const QString& h
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
-								
 	file.close();
 }
 
@@ -1395,13 +1377,11 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -1577,8 +1557,10 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>\?\?\?</td>\n";
 							else{
-								tos<<"          <td><table class=\"detailed\">";
-								
+								if(TIMETABLE_HTML_LEVEL>=1)
+									tos<<"          <td><table class=\"detailed\">";
+								else
+									tos<<"          <td><table>";
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"<tr class=\"student line0\">";
 								else	tos<<"<tr>";
@@ -1586,7 +1568,10 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->studentsNames.size()>0){
 											for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -1609,7 +1594,10 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -1637,7 +1625,10 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->teachersNames.size()>0){
 											for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -1661,7 +1652,10 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
 										int r=best_solution.rooms[ai];
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -1725,13 +1719,11 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -1907,8 +1899,10 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>\?\?\?</td>\n";
 							else{
-								tos<<"          <td><table class=\"detailed\">";
-								
+								if(TIMETABLE_HTML_LEVEL>=1)
+									tos<<"          <td><table class=\"detailed\">";
+								else
+									tos<<"          <td><table>";
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"<tr class=\"student line0\">";
 								else	tos<<"<tr>";
@@ -1916,7 +1910,10 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->studentsNames.size()>0){
 											for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -1939,7 +1936,10 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -1967,7 +1967,10 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->teachersNames.size()>0){
 											for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -1991,7 +1994,10 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
 										int r=best_solution.rooms[ai];
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2034,7 +2040,6 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
-								
 	file.close();
 }
 
@@ -2056,13 +2061,11 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -2223,8 +2226,10 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>\?\?\?</td>\n";
 							else{
-								tos<<"          <td><table class=\"detailed\">";
-								
+								if(TIMETABLE_HTML_LEVEL>=1)
+									tos<<"          <td><table class=\"detailed\">";
+								else
+									tos<<"          <td><table>";
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"<tr class=\"student line0\">";
 								else	tos<<"<tr>";
@@ -2232,7 +2237,10 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->studentsNames.size()>0){
 											for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2255,7 +2263,10 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2283,7 +2294,10 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->teachersNames.size()>0){
 											for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2307,7 +2321,10 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
 										int r=best_solution.rooms[ai];
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2344,14 +2361,12 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
 	} while(PRINT_DETAILED!=true);
-	//tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
-								
 	file.close();
 }
 
@@ -2371,13 +2386,11 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -2537,8 +2550,10 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>\?\?\?</td>\n";
 							else{
-								tos<<"          <td><table class=\"detailed\">";
-								
+								if(TIMETABLE_HTML_LEVEL>=1)
+									tos<<"          <td><table class=\"detailed\">";
+								else
+									tos<<"          <td><table>";
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"<tr class=\"student line0\">";
 								else	tos<<"<tr>";
@@ -2546,7 +2561,10 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->studentsNames.size()>0){
 											for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2569,7 +2587,10 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2597,7 +2618,10 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->teachersNames.size()>0){
 											for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2621,7 +2645,10 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
 										int r=best_solution.rooms[ai];
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2658,14 +2685,12 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
 	} while(PRINT_DETAILED!=true);
-	//tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
-								
 	file.close();
 }
 
@@ -2687,13 +2712,11 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -2864,8 +2887,10 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>\?\?\?</td>\n";
 							else{
-								tos<<"          <td><table class=\"detailed\">";
-								
+								if(TIMETABLE_HTML_LEVEL>=1)
+									tos<<"          <td><table class=\"detailed\">";
+								else
+									tos<<"          <td><table>";
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"<tr class=\"student line0\">";
 								else	tos<<"<tr>";
@@ -2873,7 +2898,10 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->studentsNames.size()>0){
 											for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2896,7 +2924,10 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2924,7 +2955,10 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->teachersNames.size()>0){
 											for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2948,7 +2982,10 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
 										int r=best_solution.rooms[ai];
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3010,13 +3047,11 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -3188,8 +3223,10 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>\?\?\?</td>\n";
 							else{
-								tos<<"          <td><table class=\"detailed\">";
-								
+								if(TIMETABLE_HTML_LEVEL>=1)
+									tos<<"          <td><table class=\"detailed\">";
+								else
+									tos<<"          <td><table>";
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"<tr class=\"student line0\">";
 								else	tos<<"<tr>";
@@ -3197,7 +3234,10 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->studentsNames.size()>0){
 											for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3220,7 +3260,10 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3248,7 +3291,10 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->teachersNames.size()>0){
 											for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3272,7 +3318,10 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
 										int r=best_solution.rooms[ai];
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3314,7 +3363,6 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
-								
 	file.close();
 }
 
@@ -3336,13 +3384,11 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -3500,8 +3546,10 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>\?\?\?</td>\n";
 							else{
-								tos<<"          <td><table class=\"detailed\">";
-								
+								if(TIMETABLE_HTML_LEVEL>=1)
+									tos<<"          <td><table class=\"detailed\">";
+								else
+									tos<<"          <td><table>";
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"<tr class=\"student line0\">";
 								else	tos<<"<tr>";
@@ -3509,7 +3557,10 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->studentsNames.size()>0){
 											for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3532,7 +3583,10 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3560,7 +3614,10 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->teachersNames.size()>0){
 											for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3584,7 +3641,10 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
 										int r=best_solution.rooms[ai];
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3619,14 +3679,12 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
 	} while(PRINT_DETAILED!=true);
-	//tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
-								
 	file.close();
 }
 
@@ -3646,13 +3704,11 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -3812,8 +3868,10 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>\?\?\?</td>\n";
 							else{
-								tos<<"          <td><table class=\"detailed\">";
-								
+								if(TIMETABLE_HTML_LEVEL>=1)
+									tos<<"          <td><table class=\"detailed\">";
+								else
+									tos<<"          <td><table>";
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"<tr class=\"student line0\">";
 								else	tos<<"<tr>";
@@ -3821,7 +3879,10 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->studentsNames.size()>0){
 											for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3844,7 +3905,10 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3872,7 +3936,10 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(act->teachersNames.size()>0){
 											for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3896,7 +3963,10 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
 										int r=best_solution.rooms[ai];
-										tos<<"<td>";
+										if(TIMETABLE_HTML_LEVEL>=1)
+											tos<<"<td class=\"detailed\">";
+										else
+											tos<<"<td>";
 										if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3932,14 +4002,12 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
 	} while(PRINT_DETAILED!=true);
-	//tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
-								
 	file.close();
 }
 
@@ -3962,13 +4030,11 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -4135,7 +4201,6 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
-								
 	file.close();
 }
 
@@ -4156,13 +4221,11 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -4331,7 +4394,6 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
-								
 	file.close();
 }
 
@@ -4351,13 +4413,11 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(const QString& html
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -4502,7 +4562,6 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(const QString& html
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
-								
 	file.close();
 }
 
@@ -4523,13 +4582,11 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& ht
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -4677,7 +4734,6 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& ht
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
-								
 	file.close();
 }
 
@@ -4696,13 +4752,11 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -4875,7 +4929,6 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
-								
 	file.close();
 }
 
@@ -4900,7 +4953,6 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -5075,7 +5127,6 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
-								
 	file.close();
 }
 
@@ -5095,13 +5146,11 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfil
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -5251,7 +5300,6 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfil
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
-								
 	file.close();
 }
 
@@ -5271,13 +5319,11 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlf
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-
 		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -5431,6 +5477,5 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlf
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
-								
 	file.close();
 }
