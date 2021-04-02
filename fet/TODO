@@ -2,6 +2,13 @@
 
 ----------------------------------------------------------------------------------
 
+From Maciej Deorowicz
+
+Buildings for rooms and constraint students max building changes per day
+and constraint students min gaps between building changes.
+
+----------------------------------------------------------------------------------
+
 From Volker Dirr (28 August 2007):
 
 1. add a constraint. then remoce the constarint. now the constraintlist is

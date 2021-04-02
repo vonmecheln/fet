@@ -68,7 +68,7 @@ void ModifyConstraintTeacherMaxDaysPerWeekForm::updateTeachersComboBox(){
 }
 
 void ModifyConstraintTeacherMaxDaysPerWeekForm::updateMaxDaysSpinBox(){
-	maxDaysSpinBox->setMinValue(0);
+	maxDaysSpinBox->setMinValue(1);
 	maxDaysSpinBox->setMaxValue(gt.rules.nDaysPerWeek);	
 }
 
@@ -109,6 +109,11 @@ void ModifyConstraintTeacherMaxDaysPerWeekForm::ok()
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
 			QObject::tr("Invalid weight (percentage)"));
+		return;
+	}
+	if(weight!=100.0){
+		QMessageBox::warning(this, QObject::tr("FET information"),
+			QObject::tr("Invalid weight (percentage) - it has to be 100%"));
 		return;
 	}
 

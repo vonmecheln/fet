@@ -696,6 +696,28 @@ bool computeNHoursPerTeacher()
 		}
 	}
 	
+	for(int i=0; i<gt.rules.nInternalTeachers; i++)
+		if(teachersMaxDaysPerWeekMaxDays[i]>=0){
+			int nd=teachersMaxDaysPerWeekMaxDays[i];
+			if(nHoursPerTeacher[i] > nd*gt.rules.nHoursPerDay){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize for teacher %1, because the number of hours for teacher is %2"
+				  " and you have only %3 allowed days from constraint teacher max days per week x %4 hours in a day."
+				  " Probably there is an error in your data")
+				 .arg(gt.rules.internalTeachersList[i]->name)
+				 .arg(nHoursPerTeacher[i])
+				 .arg(nd)
+				 .arg(gt.rules.nHoursPerDay),
+				 QObject::tr("Skip rest of teachers problems"), QObject::tr("See next teacher problem"), QString(),
+				 1, 0 );
+		 	
+				if(t==0)
+					return ok;
+			}
+		}
+	
 	return ok;
 }
 
@@ -912,6 +934,22 @@ bool computeMaxDaysPerWeekForTeachers()
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_DAYS_PER_WEEK){
 			ConstraintTeacherMaxDaysPerWeek* tn=(ConstraintTeacherMaxDaysPerWeek*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tn->weightPercentage!=100){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize, because you have constraint teacher max days per week with"
+				 " weight (percentage) below 100 for teacher %1. Starting with FET version 5.2.17 it is only possible"
+				 " to use 100% weight for such constraints. Please make weight 100% and try again")
+				 .arg(tn->teacherName),
+				 QObject::tr("Skip rest of max days problems"), QObject::tr("See next incompatibility max days"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+
 			if(teachersMaxDaysPerWeekMaxDays[tn->teacher_ID]==-1){
 				teachersMaxDaysPerWeekMaxDays[tn->teacher_ID]=tn->maxDaysPerWeek;
 				teachersMaxDaysPerWeekWeightPercentages[tn->teacher_ID]=tn->weightPercentage;

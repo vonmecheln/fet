@@ -3206,6 +3206,14 @@ bool Rules::read(const QString& filename)
 						}
 						else if(elem4.tagName()=="Max_Days_Per_Week"){
 							cn->maxDaysPerWeek=elem4.text().toInt();
+							if(cn->maxDaysPerWeek<=0 || cn->maxDaysPerWeek>this->nDaysPerWeek){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint TeacherMaxDaysPerWeek day corrupt for teacher %1, max days %2 <= 0 or >nDaysPerWeek, ignoring constraint")
+								 .arg(cn->teacherName)
+								 .arg(elem4.text()));
+								cn=NULL;
+								goto corruptConstraintTime;
+							}
 							assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
 							xmlReadingLog+="    Max. days per week="+QString::number(cn->maxDaysPerWeek)+"\n";
 						}
