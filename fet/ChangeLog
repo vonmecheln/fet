@@ -1627,3 +1627,7 @@ Versions 5.18.0 - 5.18.v
 	- Got rid of MAX_SUBJECTS limitation (now there is a virtually unlimited number of subjects) - suggested by Volker Dirr.
 	- Updated to Qt 4.8.2.
 	- Added a new sample file (by L. W. Johnstone, from Belize).
+- Version 5.18.2
+	- Minor interface improvements.
+	- Updated the French translation, by Regis Bouguin.
+	- Added a new sample file, by Daniel.

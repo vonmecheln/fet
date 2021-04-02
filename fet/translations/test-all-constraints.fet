@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.16.0">
+<fet version="5.18.2">
 
 <Institution_Name>Default institution</Institution_Name>
 
@@ -1742,6 +1742,16 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintActivityTagPreferredRooms>
+<ConstraintActivitiesOccupyMaxDifferentRooms>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>2</Activity_Id>
+	<Activity_Id>3</Activity_Id>
+	<Activity_Id>4</Activity_Id>
+	<Max_Number_of_Different_Rooms>2</Max_Number_of_Different_Rooms>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesOccupyMaxDifferentRooms>
 </Space_Constraints_List>
 
 </fet>

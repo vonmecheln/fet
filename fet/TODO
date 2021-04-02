@@ -2178,3 +2178,18 @@ if you click a button in bad example, then something is called twice!
 (once, because one RB is checked and a second time, because the other RB
 is unchecked).
 if you use click, then something is called only once.
+
+130---------------------------------------------------------
+From Daniel (on forum, see http://lalescu.ro/liviu/fet/forum/index.php?topic=1224):
+
+Allow activities to span over breaks. (For the moment, a solution is to split activities
+and add constraints two (or three) activities grouped. Another solution is to not
+consider explicitly the breaks in the timetable, but this way the constraints of
+type max hours continuously may not work as needed.)
+
+131---------------------------------------------------------
+From daviodan:
+
+After clicking 'Add' in the add activity dialog, he suggests that the students list
+widget should be cleared, because usually the user adds activities for a specific
+teacher (with all his students), then goes to another teacher.

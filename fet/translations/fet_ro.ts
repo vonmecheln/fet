@@ -31842,11 +31842,13 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;rjmillett - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;yasin dehghan - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Daniel - sample file.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="574"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="576"/>
         <source>Close</source>
         <translation>Inchide</translation>
     </message>
@@ -31865,7 +31867,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2012 Liviu Lalescu, Volker Dirr&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.18.1 (August 2012).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.18.2 (September 2012).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under GNU GPL v2 or later.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
@@ -37488,17 +37490,17 @@ IMPORTANT: daca vreti 0 ferestre in total, este puternic recomandat sa NU folosi
 <context>
     <name>ModifyConstraintStudentsMaxGapsPerWeekForm_template</name>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="101"/>
+        <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="105"/>
         <source>Ok</source>
         <translation>Bine</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="108"/>
+        <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="112"/>
         <source>Cancel</source>
         <translation>Anuleaza</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="25"/>
+        <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="88"/>
         <source>Max gaps per week</source>
         <translation>Max ferestre pe saptamana</translation>
     </message>
@@ -37509,12 +37511,12 @@ IMPORTANT: daca vreti 0 ferestre in total, este puternic recomandat sa NU folosi
         <translation>Modifica studenti max ferestre pe saptamana</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="87"/>
+        <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="67"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Importanta - procente (necesar: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="47"/>
+        <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="32"/>
         <source>You have to use weight percentage 100%, because otherwise you will get poor timetables. Currently, the algorithm only accepts 100% weight percentage for this constraint (or no constraint).
 Note: students set not available and break are not counted as gaps.</source>
         <translation>Trebuie sa folositi importanta procentuala 100%, deoarece altfel veti obtine orare slabe. In prezent, algoritmul accepta doar 100%importanta pentru aceasta constrangere (sau fara constrangere).
@@ -39768,22 +39770,22 @@ Nota: set de studenti indisponibil si pauzele nu sunt numarate ca ferestre.</tra
 <context>
     <name>ModifyConstraintTeacherMaxGapsPerDayForm_template</name>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="129"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="141"/>
         <source>Ok</source>
         <translation>Bine</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="136"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="148"/>
         <source>Cancel</source>
         <translation>Anuleaza</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="65"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="67"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="110"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="120"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Importanta - procente (necesar: 100%)</translation>
     </message>
@@ -39794,7 +39796,7 @@ Nota: set de studenti indisponibil si pauzele nu sunt numarate ca ferestre.</tra
         <translation>Modifica profesor max ferestre pe zi</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="91"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="97"/>
         <source>Max gaps per day</source>
         <translation>Max ferestre pe zi</translation>
     </message>
@@ -39840,32 +39842,32 @@ Nota: profesor indisponibil si pauza nu sunt numarate ca ferestre.</translation>
         <translation>Modifica profesor max ferestre pe saptamana</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="22"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="141"/>
         <source>Ok</source>
         <translation>Bine</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="29"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="148"/>
         <source>Cancel</source>
         <translation>Anuleaza</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="137"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="97"/>
         <source>Max gaps per week</source>
         <translation>Max ferestre pe saptamana</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="72"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="67"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="111"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="120"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Importanta - procente (necesar: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="55"/>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="32"/>
         <source>You must use weight percentage 100%, because otherwise you will get poor timetables. Try to fix firstly a rather large value for max gaps per week and lower it as you find new timetables.
 Note: teacher not available and break are not counted as gaps.</source>
         <translation>Trebuie sa folositi importanta procentuala 100%, pentru ca altfel veti obtine orare proaste. Incercati sa fixati intai max ferestre la o valoare mare si apoi micsorati-o cand gasiti noi orare. Nota: profesor indisponibil si pauza nu sunt numarate ca ferestre.</translation>
@@ -40608,12 +40610,12 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>ModifyConstraintTeachersMaxGapsPerDayForm_template</name>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="22"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="105"/>
         <source>Ok</source>
         <translation>Bine</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="29"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="112"/>
         <source>Cancel</source>
         <translation>Anuleaza</translation>
     </message>
@@ -40624,17 +40626,17 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation>Modifica profesori max ferestre pe zi</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="69"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="84"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Importanta - procente (necesar: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="86"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="61"/>
         <source>Max gaps per day</source>
         <translation>Max ferestre pe zi</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="52"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="32"/>
         <source>It is recommended to use only one constraint of this type. You must use weight percentage 100%, because otherwise you will get poor timetables. Try to fix firstly a rather large value for max gaps per day and lower it as you find new timetables.
 Note: teacher not available and break are not counted as gaps.</source>
         <translation>Este recomandat sa folositi doar o constrangere de acest tip. Trebuie sa folositi importanta 100%, deoarece altfel veti obtine orare proaste. Incercati sa fixati intai o valoare ridicata pentru max ferestre pe zi si sa o micsorati cand gasiti orare noi.
@@ -40669,27 +40671,27 @@ Nota: profesor indisponibil si pauza nu sunt socotite ca ferestre.</translation>
         <translation>Modifica profesori max ferestre pe saptamana</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="22"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="105"/>
         <source>Ok</source>
         <translation>Bine</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="29"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="112"/>
         <source>Cancel</source>
         <translation>Anuleaza</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="86"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="61"/>
         <source>Max gaps per week</source>
         <translation>Max ferestre pe saptamana</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="69"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="84"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Importanta - procente (necesar: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="52"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="32"/>
         <source>It is recommended to use only one constraint of this type. You must use weight percentage 100%, because otherwise you will get poor timetables. Try to fix firstly a rather large value for max gaps per week and lower it as you find new timetables.
 Note: teacher not available and break are not counted as gaps.</source>
         <translation>Este recomandat sa folositi doar o constrangere de acest tip. Trebuie sa folositi importanta 100%, deoarece altfel veti obtine orare proaste. Incercati sa fixati intai o valoare ridicata pentru max ferestre pe saptamana si sa o micsorati cand gasiti orare noi.
